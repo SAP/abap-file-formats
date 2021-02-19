@@ -18,8 +18,8 @@ Analyzing reports is a bit of work, so please ask yourself these questions befor
 Summarize the issue well. The following are some guidelines:
 
 * Provide detailed, step-by-step instructions for reproducing the issue with an example, including, if possible:
-** A URL to your example
-** Screenshots if it helps us understand better.
+  * A URL to your example
+  * Screenshots if it helps us understand better.
 * Please report issues in English.
 
 ### Issue Reporting Disclaimer
