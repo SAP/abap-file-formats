@@ -1,0 +1,42 @@
+# Contributing to the Our Project
+Thank you for your interest in the repo name! We welcome contributions in all forms.
+
+Here are some of the ways you can contribute to the repository/project.
+
+Note: This is a living document. Like the code, this document will be improved over time with the help of our community. Feedback welcome.
+
+## Reporting Issues
+Bug reports welcome! We are using [GitHub Issues](https://github.com/SAP/abap-file-formats/issues) for tracking bugs and other issues.
+
+### Determining if an Issue Should be Created
+Analyzing reports is a bit of work, so please ask yourself these questions before creating an issue:
+
+* Does the bug really apply to the project?
+* Has this bug already been reported?
+
+### Providing the Right Information for the Issue
+Summarize the issue well. The following are some guidelines:
+
+* Provide detailed, step-by-step instructions for reproducing the issue with an example, including, if possible:
+** A URL to your example
+** Screenshots if it helps us understand better.
+* Please report issues in English.
+
+### Issue Reporting Disclaimer
+Feedback, especially bug reports, is always welcome. However, our capacity as a team is limited -- we cannot answer specific project or consultation requests, nor can we invest time in fleshing out what might be a bug. Because of this, we reserve the right to close or not process issue reports that do not contain enough information. We also do not guarantee that every well-documented issue will be fixed.
+
+## Contributing Code
+We welcome contributions to our codebase. Before you start your first contribution, here are some things you should know:
+
+Create [pull requests](https://github.com/SAP/abap-file-formats/compare)
+if you know exactly what you want to change, and how.
+They are most welcome, and may range
+from minor format corrections to adding whole sections.
+
+When creating a pull request,
+we will ask you to sign our Contributor Licence Agreement (CLA).
+By signing, you will give up ownership of your material
+and make it part of this repository,
+under [this repository's license](LICENSE).
+
+
