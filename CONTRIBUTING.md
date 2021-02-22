@@ -1,5 +1,5 @@
 # Contributing to the Our Project
-Thank you for your interest in the repo name! We welcome contributions in all forms.
+Thank you for your interest in ABAP file formats! We welcome contributions in all forms.
 
 Here are some of the ways you can contribute to the repository/project.
 
@@ -38,5 +38,4 @@ we will ask you to sign our Contributor Licence Agreement (CLA).
 By signing, you will give up ownership of your material
 and make it part of this repository,
 under [this repository's license](LICENSE).
-
 
