@@ -1,6 +1,6 @@
 {
   "header": {
-    "$schema": "http://sap.com/schema/clas.json",
+    "$schema": "http://sap.com/schema/clas1.json",
     "description": "Represents an object without sub objects",
     "masterLanguage": "EN",
     "abapLanguageVersion": "standardUnicode"
