@@ -3,22 +3,112 @@
 This project provides file format definitons of ABAP development objects.
 
 
+
 ## Background and Scope
 
 ABAP development objects are stored on development systems and not as regular text files as many other programing languages including python, C++ and others.
-The aim of the ABAP file formats is to provide a common and transparent definition of how to store ABAP development objects in files.
+The aim of the ABAP File Formats is to provide a common and transparent definition of how to store ABAP development objects in files.
 
-### List of Supported ABAP Objects
+The design of the ABAP File Formats covers the following principles:
 
-| Object | Description |
-| --- | --- |
+1. The file content is **complete** and can be used for the sharing and distribution of ABAP development objects.
+
+3. The file content is **human-readable** and the structure is as close as possible to what users know from their IDE.
+
+6. The files don't contain metadata like dates, last editor, system specific information
+
+-----
+* File formats are **self-contained**.
+ There is as little redundancy as possible in and across files, so that developers must ideally check/change only one place to achieve a desired effect.
+
+* The files are **consumable** at least for abapGit and gCTS.
+-----
+
+
+## Technical Information
+
+todo:
+
+Big-Picture text that relates file format to de-/serializing via abapGIT and AFF.
+
+
+## File Names
+The mapping of ABAP objects to file names follows the pattern
+
+```
+<object_name>.<object_type>.
+  [<sub_object_name>.<sub_object_type>.]
+  [<content_type>.<language>.]
+<file_extension>
+```
+
+### Object Name
+The object name specifies the name of the repository object
+
+### Object Type
+The object type is either the R3TR object type (like DTEL, DOMA, DDLS) or the LIMU object type, if the LIMU object name can be specified uniquely in the system, without its R3TR object name.
+
+### Sub Object Name and Sub Object Type
+If the sub object can be addressed uniquely in the system, it is enough to use the combination object name and object type.
+E.g., for function modules the file name would be function_exists.func.abap.
+
+For sub objects which cannot be addressed uniquely in the system, the main object name and type must be part of the namespace.
+E.g., the file name of a dynpro in a function group could look like this: seo_class_editor.fugr.0152.dynp.json.
+
+### Content Type
+If a transport object needs multiple files which are not represented by transport objects, the content type can be used to differentiate between the different file types.
+Example:
+```
+cl_oo_clif_source.clas.global.abap
+cl_oo_clif_source.clas.definitions.abap
+cl_oo_clif_source.clas.texts.en.json
+```
+
+### Language
+Files with language-specific content (such as translatable-texts) will have also an identifier for the language in the filename to distinguish between the different translations.
+Example:
+```
+cl_oo_clif_source.clas.texts.en.properties
+cl_oo_clif_source.clas.texts.de.properties
+cl_oo_clif_source.clas.texts.fr.properties
+```
+For property files no language has to be added even if they contain translatable texts.
+These files are stored in the master language of the object and the master language is specified in the property file itself
+
+### File Extension
+The file extension will specify the general format of the file content.
+| File | Format |
+| ---  | --- |
+| json | Metadata-based specifications of ABAP object |
+| abap | Plain ABAP source code (could be also DDLS) |
+| properties | Translation-relevant texts |
+
+
+### File Name Examples
+
+Here are some examples how file names will look like:
+
+| File Name | ABAP Repository Object |
+| ---  | --- |
+| cl_my_class.clas.global.abap | Source Code of global class  CL_MY_CLASS |
+| cl_my_class.clas.testclasses.abap | Source Code of local test classes in CL_MY_CLASS |
+| sflight.tabl.abap | Source code of database table SFLIGHT |
+| s_carrid.dtel.json | Properties of data element S_CARRID |
+| function_exists.func.abap | Source code of function module FUNCTION_EXISTS |
+| seo_class_editor.fugr.0152.dynp.json | Dynpro 0152 of function group SEO_CLASS_EDITOR |
+
+
+## List of Supported ABAP Objects
+
+| Type | Description |
+| ---  | --- |
 | CLAS | [Class](./file-formats/clas/clas_example.md) |
-| INTF | Interface |
+| INTF | [Interface](./file-formats/intf/intf_example.md) |
 
 
 
 ## Contributions and License
 
 Comments and suggestions for improvements are most welcome.
-We plan to modify and extend this document as our understanding improves and the language and the set of available libraries improve.
+We plan to modify and extend this document as our understanding improves.
 More details are found at [Contributing](./CONTRIBUTING.md) and [License](./LICENSE).
