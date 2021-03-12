@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft/2019-09/schema#",
-    "$id": "http://sap.com/schema/clas.json",
+    "$id": "http://github.com/SAP/abap-file-formats/file-formats/clas/clas.json",
     "type": "object",
     "properties": {
         "header": {
@@ -135,7 +135,12 @@
                         "title": "Attribute description",
                         "description": "Description of the attribute"
                     }
-                }
+                },
+                "additionalProperties": false,
+                "required": [
+                    "name",
+                    "description"
+                ]
             }
         },
         "methods": {
@@ -180,7 +185,12 @@
                                     "title": "Parameter description",
                                     "description": "Description of the parameter"
                                 }
-                            }
+                            },
+                            "additionalProperties": false,
+                            "required": [
+                                "name",
+                                "description"
+                            ]
                         }
                     },
                     "exceptions": {
@@ -204,10 +214,20 @@
                                     "title": "Exception description",
                                     "description": "Description of the exception"
                                 }
-                            }
+                            },
+                            "additionalProperties": false,
+                            "required": [
+                                "name",
+                                "description"
+                            ]
                         }
                     }
-                }
+                },
+                "additionalProperties": false,
+                "required": [
+                    "name",
+                    "description"
+                ]
             }
         },
         "events": {
@@ -252,10 +272,20 @@
                                     "title": "Parameter description",
                                     "description": "Description of the parameter"
                                 }
-                            }
+                            },
+                            "additionalProperties": false,
+                            "required": [
+                                "name",
+                                "description"
+                            ]
                         }
                     }
-                }
+                },
+                "additionalProperties": false,
+                "required": [
+                    "name",
+                    "description"
+                ]
             }
         },
         "types": {
@@ -279,7 +309,12 @@
                         "title": "Type description",
                         "description": "Description of the type"
                     }
-                }
+                },
+                "additionalProperties": false,
+                "required": [
+                    "name",
+                    "description"
+                ]
             }
         }
     },
