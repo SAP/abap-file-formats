@@ -17,19 +17,6 @@ The design of the ABAP File Formats covers the following principles:
 
 6. The files don't contain metadata like dates, last editor, system specific information
 
------
-* File formats are **self-contained**.
- There is as little redundancy as possible in and across files, so that developers must ideally check/change only one place to achieve a desired effect.
-
-* The files are **consumable** at least for abapGit and gCTS.
------
-
-
-## Technical Information
-
-todo:
-
-Big-Picture text that relates file format to de-/serializing via abapGIT and AFF.
 
 
 ## File Names
@@ -102,8 +89,8 @@ Here are some examples how file names will look like:
 
 | Type | Description |
 | ---  | --- |
-| CLAS | [Class](./file-formats/clas/clas_example.md) |
-| INTF | [Interface](./file-formats/intf/intf_example.md) |
+| CLAS | [Class](./file-formats/clas/format.md) |
+| INTF | [Interface](./file-formats/intf/format.md) |
 
 
 
