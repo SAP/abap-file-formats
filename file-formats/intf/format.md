@@ -1,4 +1,4 @@
-# File Format for Object Type 'INFT'
+# File Format for Object Type INFT
 
 The `.apab` file corresponds to the source code of the infterface and the `.json` is the property file.
 
