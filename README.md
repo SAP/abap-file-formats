@@ -1,6 +1,6 @@
 # ABAP File Formats
 
-This project provides file format definitons of ABAP development objects.
+This project provides file format definitions of ABAP development objects.
 
 
 
