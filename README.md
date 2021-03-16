@@ -88,7 +88,6 @@ Here are some examples of file names and its corresponding content.
 | Type | Description |
 | ---  | --- |
 | CLAS | [Class](./file-formats/clas/format.md) |
-| INTF | [Interface](./file-formats/intf/format.md) |
 
 
 
