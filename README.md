@@ -87,9 +87,11 @@ Here are some examples of file names and its corresponding content.
 
 ## List of Supported ABAP Objects
 
-| Type | Description | JSON Schema |
-| ---  | --- | --- |
-| CLAS | [Class](./file-formats/clas/format.md) | [Schema](./file-formats/clas/clas.json) |
+| Type | Description |
+| ---  | --- |
+| CLAS | [Class](./file-formats/clas/format.md) |
+| INTF | |
+| CHKO | |
 
 
 
