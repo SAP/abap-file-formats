@@ -11,11 +11,8 @@ The aim of the ABAP File Formats is to provide a common and transparent definiti
 The file representation of ABAP development objects facilitates the ongoing effort of applying and adopting existing developer tools and paradigm to ABAP.
 
 The design of the ABAP File Formats covers the following principles:
-
-* The file content is **complete** and can be used for the sharing and distribution of ABAP development objects.
-
+* The file content is **complete** and can be used for the sharing and distribution of ABAP repository objects.
 * The file content is **human-readable** and the structure is as close as possible to what users know from their IDE.
-
 * The files don't contain metadata like dates, last editor, system specific information.
 
 
