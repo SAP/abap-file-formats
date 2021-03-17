@@ -96,9 +96,9 @@ Here are some examples of file names and its corresponding content.
 
 ## List of Supported ABAP Objects
 
-| Type | Description |
-| ---  | --- |
-| CLAS | [Class](./file-formats/clas/format.md) |
+| Type | Description | JSON Schema |
+| ---  | --- | --- |
+| CLAS | [Class](./file-formats/clas/format.md) | [Schema](./file-formats/clas/clas.json) |
 
 
 
