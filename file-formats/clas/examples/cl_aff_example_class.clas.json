@@ -1,0 +1,47 @@
+{
+  "header": {
+    "$schema": "http://github.com/SAP/abap-file-formats/file-formats/clas/clas.json",
+    "description": "Example class for AFF",
+    "masterLanguage": "EN",
+    "abapLanguageVersion": "standardUnicode"
+  },
+  "fixPointArithmetic": true,
+  "category": "GeneralObjectType",
+  "attributes": [
+    {
+      "name": "EXAMPLE_ATTRIBUTE",
+      "description": "Attribute description"
+    }
+  ],
+  "methods": [
+    {
+      "name": "EXAMPLE_METHOD",
+      "description": "Example description",
+      "parameters": [
+        {
+          "name": "I_PARAM",
+          "description": "Importing parameter"
+        }
+      ],
+      "exceptions": [
+        {
+          "name": "CX_AFF_ROOT",
+          "description": "Example exception"
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "name": "EXAMPLE_EVENT",
+      "description": "Example event",
+      "parameters": []
+    }
+  ],
+  "types": [
+    {
+      "name": "EXAMPLE_TYPE",
+      "description": "A description"
+    }
+  ]
+}
