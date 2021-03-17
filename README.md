@@ -29,7 +29,7 @@ The mapping of ABAP objects to files follows the pattern
 with mandatory object_name, object_type and file_extension.
 
 * **Object Name** corresponds to the name of the ABAP object.
-* **Object Type** is either the R3TR or the LIMU object type,
+* **Object Type** is either the R3TR or the LIMU object type.
 * **File Extension** is either `.abap`, `.json` or `.properties`.
 
 Details and full specification can be found [here](./doc/file_names.md).
