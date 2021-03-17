@@ -1,14 +1,14 @@
 # ABAP File Formats
 
-This project provides file format definitions of ABAP development objects.
+This project provides file format definitions of ABAP repository objects.
 
 
 
 ## Background and Scope
 
-ABAP development objects are stored on development systems and not as regular text files as many other programing languages including python, C++ and others.
-The aim of the ABAP File Formats is to provide a common and transparent definition of how to store ABAP development objects in files.
-The file representation of ABAP development objects facilitates the ongoing effort of applying and adopting existing developer tools and paradigm to ABAP.
+ABAP repository objects are stored on development systems and not as regular text files as many other programing languages including python, C++ and others.
+The aim of the ABAP File Formats is to provide a common and transparent definition of how to store ABAP repository objects in files.
+The file representation of ABAP repository objects facilitates the ongoing effort of applying and adopting existing developer tools and paradigm to ABAP.
 
 The design of the ABAP File Formats covers the following principles:
 * The file content is **complete** and can be used for the sharing and distribution of ABAP repository objects.
