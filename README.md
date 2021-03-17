@@ -18,15 +18,18 @@ The design of the ABAP File Formats covers the following principles:
 
 ## Technical Specification
 
-The ABAP File Formats specification consists of a file content and a file name.
+The ABAP File Formats specifies file content and file names for ABAP repository objects or simply ABAP objects.
+Let's consider for example an ABAP interface, for which there are two files specified.
+One file contains the meta data (master_lang, abap_language_version, ..) and an other file stores the plain source code.
 
 ### File Content
 
-ABAP File Formats define three file types by the file extension `.abap`, `.json` and `.properties`.
-The ABAP source code is stored as plain text files with extension `.abap`.
-Content of form-based editors or ABAP repository object properties, such as masterLanguage, abapLanguageVersion and others are stored as `.json` files, also referred to as property file.
-The json schema is provided by the ABAP File Formats.
-Translation relevant text elements are stored as plain text in `.properties` files.
+ABAP File Formats define three file types:
+* **`.abap`** stores ABAP source code as plain text
+* **`.json`** stores content of form-based editors or properties of ABAP object, such as masterLanguage, abapLanguageVersion and others
+* **`.properties`** stores translation relevant text elements as plain text
+
+The `.json` file is referred to as property file and the ABAP File Formats provides json schemata for annotation and validation.
 
 ### File Names
 
@@ -38,7 +41,7 @@ The mapping of ABAP objects to file names follows the pattern
   [<content_type>.<language>.]
 <file_extension>
 ```
-The object_name, object_type and file_extension are mandatory.
+with mandatory object_name, object_type and file_extension.
 
 #### Object Name
 The object name corresponds to the name of the ABAP object.
@@ -69,15 +72,6 @@ cl_oo_clif_source.clas.texts.fr.properties
 ```
 For property files no language is added, even if they contain translatable texts.
 These files are stored in the master language of the object and the master language is specified in the property file itself.
-
-#### File Extension
-The file extension specifies the general format of the file content.
-| File | Format |
-| ---  | --- |
-| json | Metadata-based specifications of ABAP object |
-| abap | Plain ABAP source code (could be also DDLS) |
-| properties | Translation relevant texts |
-
 
 #### File Name Examples
 Here are some examples of file names and its corresponding content.
