@@ -20,7 +20,7 @@ The design of the ABAP File Formats covers the following principles:
 
 The ABAP File Formats specifies file content and file names for ABAP repository objects or simply ABAP objects.
 Let's consider for example an ABAP interface, for which there are two files specified.
-One file contains the meta data (master_lang, abap_language_version, ..) and an other file stores the plain source code.
+One file contains the meta data (master_lang, abap_language_version, ...) and an other file stores the plain source code.
 
 ### File Content
 
