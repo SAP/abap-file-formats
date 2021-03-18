@@ -38,7 +38,7 @@ Details and full specification can be found [here](./doc/file_names.md).
 
 | Type | Description |
 | ---  | --- |
-| CLAS | [Class](./file-formats/clas/format.md) |
+| CLAS | [Class](./doc/aff_clas.md) |
 | INTF | |
 | CHKO | |
 
