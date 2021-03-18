@@ -1,6 +1,7 @@
 # ABAP File Formats
 
 This project provides file format definitions of ABAP repository objects.
+We plan to modify and extend this document as our understanding improves.
 
 
 
@@ -36,7 +37,7 @@ Details and full specification can be found [here](./doc/file_names.md).
 
 ## List of Supported ABAP Objects
 
-| Type | Description |
+| Type | Specification |
 | ---  | --- |
 | CLAS | [Class](./file-formats/clas/format.md) |
 | INTF | |
@@ -47,5 +48,4 @@ Details and full specification can be found [here](./doc/file_names.md).
 ## Contributions and License
 
 Comments and suggestions for improvements are most welcome.
-We plan to modify and extend this document as our understanding improves.
 More details are found at [Contributing](./CONTRIBUTING.md) and [License](./LICENSE).
