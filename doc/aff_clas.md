@@ -2,7 +2,7 @@
 
 The files correspond to the tabs in ABAP in Eclipse enriched with the metadata and translation relevant texts.
 Files with ending `.abap` contain plain source code.
-The JSON schema is found provided [here](./../schemas/clas.json).
+The JSON schema is provided [here](./../schemas/clas.json).
 
 Example files for a class `cl_aff_example_class` are provided in the following table.
 File | Content
