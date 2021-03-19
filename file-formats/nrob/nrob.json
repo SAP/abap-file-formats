@@ -10,8 +10,7 @@
                 "$schema": {
                     "type": "string",
                     "title": "Schema",
-                    "description": "Format version",
-                    "sap.adt.editable": false
+                    "description": "Format version"
                 },
                 "description": {
                     "type": "string",
@@ -24,8 +23,7 @@
                     "minLength": 2,
                     "maxLength": 2,
                     "title": "Master Language",
-                    "description": "Master language of the development object\nAll translatable text shall be maintained in this language",
-                    "sap.adt.editable": false
+                    "description": "Master language of the development object\nAll translatable text shall be maintained in this language"
                 },
                 "abapLanguageVersion": {
                     "type": "string",
@@ -38,8 +36,7 @@
                         "ABAP for Cloud Development"
                     ],
                     "title": "Abap Language Version",
-                    "description": "ABAP language version",
-                    "sap.adt.editable": false
+                    "description": "ABAP language version"
                 }
             },
             "additionalProperties": false,
@@ -59,10 +56,7 @@
                     "minLength": 1,
                     "maxLength": 30,
                     "title": "Number Length Domain",
-                    "description": "Name of domain, which determines the length of the number range number.   Define the amount of characters available for number range intervals. It must be of type NUMC or CHAR and have a field length of at least 1 and at most 20.",
-                    "sap.adt.types": [
-                        "DOMA/DD"
-                    ]
+                    "description": "Name of domain, which determines the length of the number range number.   Define the amount of characters available for number range intervals. It must be of type NUMC or CHAR and have a field length of at least 1 and at most 20."
                 },
                 "percentWarning": {
                     "type": "number",
@@ -75,10 +69,7 @@
                     "type": "string",
                     "maxLength": 30,
                     "title": "Sub Type",
-                    "description": "If you want to create subobjects for the elements of a field of the application table, specify the relevant data element for this table field.This data element must be active in the Data Dictionary and must have a check table. The domain of the data element must have a field length of between 1 and 6.",
-                    "sap.adt.types": [
-                        "DTEL/DE"
-                    ]
+                    "description": "If you want to create subobjects for the elements of a field of the application table, specify the relevant data element for this table field.This data element must be active in the Data Dictionary and must have a check table. The domain of the data element must have a field length of between 1 and 6."
                 },
                 "untilYear": {
                     "type": "boolean",
@@ -114,10 +105,7 @@
                     "type": "string",
                     "maxLength": 20,
                     "title": "Transaction ID",
-                    "description": "Transaction code for application specific transaction",
-                    "sap.adt.types": [
-                        "TRAN/T"
-                    ]
+                    "description": "Transaction code for application specific transaction"
                 },
                 "buffering": {
                     "type": "string",
