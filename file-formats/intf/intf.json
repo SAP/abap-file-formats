@@ -10,8 +10,7 @@
             "$schema":{
                "type":"string",
                "title":"Schema",
-               "description":"Format version",
-               "sap.adt.editable":false
+               "description":"Format version"
             },
             "description":{
                "type":"string",
@@ -24,8 +23,7 @@
                "minLength":2,
                "maxLength":2,
                "title":"Master Language",
-               "description":"Master language of the development object\nAll translatable text shall be maintained in this language",
-               "sap.adt.editable":false
+               "description":"Master language of the development object\nAll translatable text shall be maintained in this language"
             },
             "abapLanguageVersion":{
                "type":"string",
@@ -42,8 +40,7 @@
                   "ABAP for Cloud Development"
                ],
                "title":"Abap Language Version",
-               "description":"ABAP language version",
-               "sap.adt.editable":false
+               "description":"ABAP language version"
             }
          },
          "additionalProperties":false,
