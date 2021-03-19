@@ -15,4 +15,4 @@ File | Content
 [`cl_aff_example_class.clas.testclasses.abap`](./examples/cl_aff_example_class.clas.testclasses.abap)         | Test Classes
 [`cl_aff_example_class.clas.texts.en.properties`](./examples/cl_aff_example_class.clas.texts.en.properties)   | Translation relevant texts
 
-Some classes store local types in only one include. These classes do not provide includes for class-relevant local types, local types, test classes an macros. In this case the local classes are stored in the file `cl_aff_example_class.clas.locals.abap`.
+Some classes store local types in only one include. These classes do not provide includes for class-relevant local types, local types and macros. In this case, local classes are stored in the file `cl_aff_example_class.clas.locals.abap`.
