@@ -40,7 +40,7 @@ Details and full specification can be found [here](./doc/file_names.md).
 | Type | Specification |
 | ---  | --- |
 | CLAS | [Class](./file-formats/clas/format.md) |
-| INTF | |
+| INTF | [INTF](./file-formats/intf/format.md) |
 | CHKO | |
 
 
