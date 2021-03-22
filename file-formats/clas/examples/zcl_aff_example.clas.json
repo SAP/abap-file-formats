@@ -1,7 +1,7 @@
 {
   "header": {
-    "$schema": "http://github.com/SAP/abap-file-formats/file-formats/clas/clas.json",
-    "description": "Example class for AFF",
+    "$schema": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/clas/clas.json",
+    "description": "Example class for ABAP File Formats",
     "masterLanguage": "EN",
     "abapLanguageVersion": "standardUnicode"
   },

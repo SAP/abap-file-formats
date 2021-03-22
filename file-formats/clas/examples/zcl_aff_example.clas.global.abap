@@ -1,4 +1,4 @@
-class CL_AFF_EXAMPLE_CLASS definition
+class ZCL_AFF_EXAMPLE definition
   public
   final
   create public .
@@ -21,10 +21,7 @@ public section.
 ENDCLASS.
 
 
-
-CLASS CL_AFF_EXAMPLE_CLASS IMPLEMENTATION.
-
-
+CLASS ZCL_AFF_EXAMPLE IMPLEMENTATION.
   method example_method.
     example_attribute = ''(txt).
   endmethod.

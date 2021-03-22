@@ -3,7 +3,7 @@ class ltcl_unit_test definition for testing
   duration short risk level harmless.
 
   private section.
-    data cut type ref to cl_aff_example_class.
+    data cut type ref to zcl_aff_example.
 
     methods setup.
     methods assert_smth for testing raising cx_static_check.
@@ -15,7 +15,7 @@ endclass.
 class ltcl_unit_test implementation.
 
   method setup.
-    cut = new CL_AFF_EXAMPLE_CLASS( ).
+    cut = new ZCL_AFF_EXAMPLE( ).
   endmethod.
 
 
