@@ -11,7 +11,5 @@
   "client": "",
   "host": "",
   "includeNumber": "01",
-  "active": true,
-  "parameters": [],
-  "exceptions": []
+  "active": true
 }

@@ -43,6 +43,7 @@ Details and full specification can be found [here](./doc/file_names.md).
 | INTF | |
 | CHKO | |
 | NROB | [Number Range Object](./file-formats/nrob/format.md) |
+| FUGR | [Function Group](./file-formats/fugr/format.md) |
 
 
 
