@@ -1,0 +1,20 @@
+{
+    "header": {
+        "$schema": "http://github.com/SAP/abap-file-formats/file-formats/nrob/nrob.json",
+        "description": "Aff example object for type NROB",
+        "masterLanguage": "EN",
+        "abapLanguageVersion": "standard"
+    },
+    "interval": {
+        "numberLengthDomain": "NUM10",
+        "percentWarning": 10.0,
+        "subType": "",
+        "untilYear": false,
+        "rolling": true,
+        "prefix": false
+    },
+    "configuration": {
+        "buffering": "none",
+        "bufferedNumbers": 0
+    }
+}
