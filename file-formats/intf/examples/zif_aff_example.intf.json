@@ -4,5 +4,42 @@
     "description": "Example interface for ABAP File Formats",
     "masterLanguage": "EN",
     "abapLanguageVersion": "standardUnicode"
-  }
+  },
+  "attributes": [
+    {
+      "name": "EXAMPLE_ATTRIBUTE",
+      "description": "This is an example attribute"
+    }
+  ],
+  "methods": [
+    {
+      "name": "EXAMPLE_METHOD",
+      "description": "This is an example method",
+      "parameters": [
+        {
+          "name": "I_PARAM",
+          "description": "This is an example parameter"
+        }
+      ],
+      "exceptions": [
+        {
+          "name": "CX_AFF_ROOT",
+          "description": "This is an example exception"
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "name": "EXAMPLE_EVENT",
+      "description": "This is an example event",
+      "parameters": []
+    }
+  ],
+  "types": [
+    {
+      "name": "EXAMPLE_TYPE",
+      "description": "This is an example type"
+    }
+  ]
 }
