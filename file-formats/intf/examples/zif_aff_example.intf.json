@@ -32,8 +32,7 @@
   "events": [
     {
       "name": "EXAMPLE_EVENT",
-      "description": "This is an example event",
-      "parameters": []
+      "description": "This is an example event"
     }
   ],
   "types": [
