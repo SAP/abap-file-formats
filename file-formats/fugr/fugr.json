@@ -1,0 +1,84 @@
+{
+   "$schema":"http://json-schema.org/draft/2019-09/schema#",
+   "$id":"http://github.com/SAP/abap-file-formats/file-formats/fugr/fugr.json",
+   "type":"object",
+   "properties":{
+      "header":{
+         "type":"object",
+         "title":"Header",
+         "properties":{
+            "$schema":{
+               "type":"string",
+               "title":"Schema",
+               "description":"Format version"
+            },
+            "description":{
+               "type":"string",
+               "title":"Description",
+               "maxLength":60,
+               "description":"Text description for a Function Group (length 60)"
+            },
+            "masterLanguage":{
+               "type":"string",
+               "minLength":2,
+               "maxLength":2,
+               "title":"Master Language",
+               "description":"Master language of the development object\nAll translatable text shall be maintained in this language"
+            },
+            "abapLanguageVersion":{
+               "type":"string",
+               "enum":[
+                  "standard",
+                  "standardUnicode",
+                  "keyUser",
+                  "cloudDevelopment"
+               ],
+               "enumDescriptions":[
+                  "Standard",
+                  "Standard unicode",
+                  "ABAP for key user tools",
+                  "ABAP for Cloud Development"
+               ],
+               "title":"Abap Language Version",
+               "description":"ABAP language version"
+            }
+         },
+         "additionalProperties":false,
+         "required":[
+            "$schema",
+            "description",
+            "masterLanguage",
+            "abapLanguageVersion"
+         ]
+      },
+      "fixPointArithmetic":{
+         "type":"boolean",
+         "title":"Fix point arithmetic",
+         "description":"Fix point arithmetic"
+      },
+      "status":{
+         "type":"string",
+         "enum":[
+            "sapProgram",
+            "customerProgram",
+            "systemProgram",
+            "testProgram",
+            "notClassified"
+         ],
+         "enumDescriptions":[
+            "SAP Program",
+            "Customer Program",
+            "System Program",
+            "Test Program",
+            "Not Classified"
+         ],
+         "title":"Status",
+         "description":"Status"
+      },
+      "additionalProperties":false,
+      "required":[
+         "fixPointArithmetic",
+         "status"
+      ]
+   }
+}

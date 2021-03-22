@@ -1,0 +1,17 @@
+{
+  "header": {
+    "$schema": "http://sap.com/schema/func.json",
+    "description": "Example FUNC for ABAP File Formats"
+  },
+  "processingType": "normal",
+  "releaseState": "notReleased",
+  "global": false,
+  "exceptionClasses": true,
+  "application": "",
+  "client": "",
+  "host": "",
+  "includeNumber": "01",
+  "active": true,
+  "parameters": [],
+  "exceptions": []
+}

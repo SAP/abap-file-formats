@@ -1,0 +1,51 @@
+{
+   "$schema":"http://json-schema.org/draft/2019-09/schema#",
+   "$id":"http://github.com/SAP/abap-file-formats/file-formats/fugr/reps.json",
+   "type":"object",
+   "properties":{
+      "header":{
+         "type":"object",
+         "title":"Header",
+         "properties":{
+            "$schema":{
+               "type":"string",
+               "title":"Schema",
+               "description":"Format version"
+            },
+            "description":{
+               "type":"string",
+               "title":"Description",
+               "maxLength":60,
+               "description":"Text description for a FUGR Include (length 60)"
+            },
+            "additionalProperties":false,
+            "required":[
+               "$schema",
+               "description"
+            ]
+         },
+         "editLocked":{
+            "type":"boolean",
+            "title":"Edit-Locked",
+            "description":"Edit-Locked"
+         },
+         "includeType":{
+            "type":"string",
+            "enum":[
+               "include",
+               "functionGroup"
+            ],
+            "enumDescriptions":[
+               "Include",
+               "Function Group"
+            ],
+            "title":"Include Type",
+            "description":"Include Type"
+         },
+         "additionalProperties":false,
+         "required":[
+            "includeType"
+         ]
+      }
+   }
+}

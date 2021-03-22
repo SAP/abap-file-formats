@@ -1,0 +1,10 @@
+{
+  "header": {
+    "$schema": "http://sap.com/schema/fugr.json",
+    "description": "Example FUGR for ABAP File Formats",
+    "masterLanguage": "EN",
+    "abapLanguageVersion": "standardUnicode"
+  },
+  "fixPointArithmetic": true,
+  "status": "notClassified"
+}

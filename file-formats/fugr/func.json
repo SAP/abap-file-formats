@@ -1,0 +1,274 @@
+{
+   "$schema":"http://json-schema.org/draft/2019-09/schema#",
+   "$id":"http://github.com/SAP/abap-file-formats/file-formats/fugr/func.json",
+   "type":"object",
+   "properties":{
+      "header":{
+         "type":"object",
+         "title":"Header",
+         "properties":{
+            "$schema":{
+               "type":"string",
+               "title":"Schema",
+               "description":"Format version"
+            },
+            "description":{
+               "type":"string",
+               "title":"Description",
+               "maxLength":60,
+               "description":"Text description for a Function Module(length 60)"
+            },
+            "additionalProperties":false,
+            "required":[
+               "$schema",
+               "description"
+            ]
+         },
+         "processingType":{
+            "type":"string",
+            "enum":[
+               "normal",
+               "rfc",
+               "update"
+            ],
+            "enumDescriptions":[
+               "Normal",
+               "RFC",
+               "Update"
+            ],
+            "title":"Processing Type",
+            "description":"Processing Type"
+         },
+         "basXmlEnabled":{
+            "type":"boolean",
+            "title":"basXml Enabled",
+            "description":"basXml Enabled"
+         },
+         "rfcScope":{
+            "type":"string",
+            "enum":[
+               "fromSameClientAndUser",
+               "fromSameSystem",
+               "fromAnySystem",
+               "notClassified"
+            ],
+            "enumDescriptions":[
+               "From Same Client And User",
+               "From Same System",
+               "From Any System",
+               "Not Classified"
+            ],
+            "title":"RFC Scope",
+            "description":"RFC Scope"
+         },
+         "rfcVersion":{
+            "type":"string",
+            "enum":[
+               "fastSerializationRequired",
+               "any"
+            ],
+            "enumDescriptions":[
+               "Fast Serialization Required",
+               "Any"
+            ],
+            "title":"RFC Version",
+            "description":"RFC Version"
+         },
+         "updateTaskKind":{
+            "type":"string",
+            "enum":[
+               "startImmediate",
+               "startDelayed",
+               "immediateStartNoRestart",
+               "collectiveRun",
+               "unsupportedKind",
+               "none"
+            ],
+            "enumDescriptions":[
+               "Start Immediate",
+               "Start Delayed",
+               "Immediate Start No Restart",
+               "Collective Run",
+               "Unsupported Kind",
+               "none"
+            ],
+            "title":"Update Task Kind",
+            "description":"Update Task Kind"
+         },
+         "releaseState":{
+            "type":"string",
+            "enum":[
+               "external",
+               "internal",
+               "obsolete",
+               "markedForRelease"
+            ],
+            "enumDescriptions":[
+               "External",
+               "Internal",
+               "Obsolete",
+               "Marked For Release"
+            ],
+            "title":"Release State",
+            "description":"Release State"
+         },
+         "releaseDate":{
+            "type":"string",
+            "title":"Release Date",
+            "description":"Release Date"
+         },
+         "abapFromJava":{
+            "type":"boolean",
+            "title":"Abap From Java",
+            "description":"Abap From Java"
+         },
+         "javaFromAbap":{
+            "type":"boolean",
+            "title":"Java From Abap",
+            "description":"Java From Abap"
+         },
+         "javaRemote":{
+            "type":"boolean",
+            "title":"Java Remote",
+            "description":"Java Remote"
+         },
+         "global":{
+            "type":"boolean",
+            "title":"Global",
+            "description":"Global"
+         },
+         "exceptionClasses":{
+            "type":"boolean",
+            "title":"Exception Classes",
+            "description":"Exception Classes"
+         },
+         "application":{
+            "type":"string",
+            "title":"Application",
+            "description":"Application"
+         },
+         "client":{
+            "type":"string",
+            "title":"Client",
+            "description":"Client"
+         },
+         "host":{
+            "type":"string",
+            "title":"Host",
+            "description":"Host"
+         },
+         "includeNumber":{
+            "type":"string",
+            "title":"Include Number",
+            "description":"Include Number"
+         },
+         "active":{
+            "type":"boolean",
+            "title":"Active",
+            "description":"Active"
+         },
+         "editLocked":{
+            "type":"boolean",
+            "title":"Edit-Locked",
+            "description":"Edit-Locked"
+         },
+         "parameters":{
+            "type":"array",
+            "title":"Parameter descriptions",
+            "description":"Parameter descriptions of the FUNC",
+            "items":{
+               "type":"object",
+               "title":"Parameter",
+               "description":"Parameter with name and description",
+               "properties":{
+                  "name":{
+                     "type":"string",
+                     "maxLength":30,
+                     "title":"Parameter name",
+                     "description":"Name of the parameter"
+                  },
+                  "description":{
+                     "type":"string",
+                     "maxLength":60,
+                     "title":"Parameter description",
+                     "description":"Description of the parameter"
+                  }
+               },
+               "additionalProperties":false,
+               "required":[
+                  "name",
+                  "description"
+               ]
+            }
+         },
+         "exceptions":{
+            "type":"array",
+            "title":"Exception descriptions",
+            "description":"Exception descriptions of the FUNC",
+            "items":{
+               "type":"object",
+               "title":"Exception",
+               "description":"Exception with name and description",
+               "properties":{
+                  "name":{
+                     "type":"string",
+                     "maxLength":30,
+                     "title":"Exception name",
+                     "description":"Name of the exception"
+                  },
+                  "description":{
+                     "type":"string",
+                     "maxLength":60,
+                     "title":"Exception description",
+                     "description":"Description of the exception"
+                  }
+               },
+               "additionalProperties":false,
+               "required":[
+                  "name",
+                  "description"
+               ]
+            }
+         }
+      },
+      "additionalProperties":false,
+      "required":[
+         "name",
+         "description"
+      ]
+   },
+   "if":{
+      "processingType":{
+         "const":"rfc"
+      }
+   },
+   "then":{
+      "required":[
+         "basXmlEnabled",
+         "rfcScope",
+         "rfcVersion"
+      ]
+   },
+   "if":{
+      "processingType":{
+         "const":"update"
+      }
+   },
+   "then":{
+      "required":[
+         "updateTaskKind"
+      ]
+   },
+   "additionalProperties":false,
+   "required":[
+      "processingType",
+      "releaseState",
+      "global",
+      "exceptionClasses",
+      "application",
+      "client",
+      "host",
+      "includeNumber",
+      "active"
+   ]
+}
