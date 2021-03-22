@@ -1,5 +1,9 @@
 # File Format for Object Type NROB
 
-The file representation for object `Z_ICI_NR` is provided [here](./examples/z_ici_nr.json).
+The file representation for object `Z_AFF_NR` is provided [here](./examples/z_aff_nr.json).
 
 The JSON schema is provided [here](./nrob.json).
+
+File | Content
+ --- | ---
+[`z_aff_nr.nrob.json`](./examples/z_aff_nr.nrob.json) | Metadata of number range object
