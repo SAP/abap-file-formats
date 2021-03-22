@@ -1,7 +1,10 @@
 # File Format for Object Type FUGR
 
 Files with ending `.abap` contain plain ABAP source code.
+A function group can contain two sub object types (reps and func) which need a metadata file themselves.
 The JSON schema for the function group metadata file is provided [here](./fugr.json).
+The JSON schema for the function group include (reps) metadata file is provided [here](./reps.json).
+The JSON schema for the function module (func) metadata file is provided [here](./func.json).
 
 Example files for a function group `z_aff_example_fugr` are provided in the following table.
 File | Content

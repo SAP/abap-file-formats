@@ -15,8 +15,8 @@
             "description":{
                "type":"string",
                "title":"Description",
-               "maxLength":60,
-               "description":"Text description for a FUGR Include (length 60)"
+               "maxLength":70,
+               "description":"Description for a FUGR Include"
             },
             "additionalProperties":false,
             "required":[

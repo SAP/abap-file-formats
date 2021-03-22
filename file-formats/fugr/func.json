@@ -15,8 +15,8 @@
             "description":{
                "type":"string",
                "title":"Description",
-               "maxLength":60,
-               "description":"Text description for a Function Module(length 60)"
+               "maxLength":74,
+               "description":"Description for a function module"
             },
             "additionalProperties":false,
             "required":[
@@ -53,10 +53,10 @@
                "notClassified"
             ],
             "enumDescriptions":[
-               "From Same Client And User",
-               "From Same System",
-               "From Any System",
-               "Not Classified"
+               "From same client and user",
+               "From same system",
+               "From any system",
+               "Not classified"
             ],
             "title":"RFC Scope",
             "description":"RFC Scope"
@@ -85,15 +85,15 @@
                "none"
             ],
             "enumDescriptions":[
-               "Start Immediate",
-               "Start Delayed",
-               "Immediate Start No Restart",
-               "Collective Run",
-               "Unsupported Kind",
+               "Start immediate",
+               "Start delayed",
+               "Immediate start no restart",
+               "Collective run",
+               "Unsupported kind",
                "none"
             ],
-            "title":"Update Task Kind",
-            "description":"Update Task Kind"
+            "title":"Update task kind",
+            "description":"Update task kind"
          },
          "releaseState":{
             "type":"string",
@@ -107,30 +107,30 @@
                "External",
                "Internal",
                "Obsolete",
-               "Marked For Release"
+               "Marked for release"
             ],
-            "title":"Release State",
-            "description":"Release State"
+            "title":"Release state",
+            "description":"Release state"
          },
          "releaseDate":{
-            "type":"string",
-            "title":"Release Date",
-            "description":"Release Date"
+            "type":"date",
+            "title":"Release date",
+            "description":"Release date"
          },
          "abapFromJava":{
             "type":"boolean",
-            "title":"Abap From Java",
-            "description":"Abap From Java"
+            "title":"Abap from java",
+            "description":"Abap from java"
          },
          "javaFromAbap":{
             "type":"boolean",
-            "title":"Java From Abap",
-            "description":"Java From Abap"
+            "title":"Java from abap",
+            "description":"Java from abap"
          },
          "javaRemote":{
             "type":"boolean",
-            "title":"Java Remote",
-            "description":"Java Remote"
+            "title":"Java remote",
+            "description":"Java remote"
          },
          "global":{
             "type":"boolean",
@@ -139,8 +139,8 @@
          },
          "exceptionClasses":{
             "type":"boolean",
-            "title":"Exception Classes",
-            "description":"Exception Classes"
+            "title":"Exception classes",
+            "description":"Exception classes"
          },
          "application":{
             "type":"string",
@@ -159,8 +159,8 @@
          },
          "includeNumber":{
             "type":"string",
-            "title":"Include Number",
-            "description":"Include Number"
+            "title":"Include number",
+            "description":"Include number"
          },
          "active":{
             "type":"boolean",
@@ -169,8 +169,8 @@
          },
          "editLocked":{
             "type":"boolean",
-            "title":"Edit-Locked",
-            "description":"Edit-Locked"
+            "title":"Edit-locked",
+            "description":"Edit-locked"
          },
          "parameters":{
             "type":"array",
@@ -189,7 +189,7 @@
                   },
                   "description":{
                      "type":"string",
-                     "maxLength":60,
+                     "maxLength":79,
                      "title":"Parameter description",
                      "description":"Description of the parameter"
                   }
@@ -218,7 +218,7 @@
                   },
                   "description":{
                      "type":"string",
-                     "maxLength":60,
+                     "maxLength":79,
                      "title":"Exception description",
                      "description":"Description of the exception"
                   }
