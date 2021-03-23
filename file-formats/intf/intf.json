@@ -174,7 +174,7 @@
       "items": {
         "type": "object",
         "title": "Method",
-        "description": "Method with name, description and parameter descriptions",
+        "description": "Method with name, description, parameter descriptions and exception descriptions",
         "properties": {
           "name": {
             "type": "string",
