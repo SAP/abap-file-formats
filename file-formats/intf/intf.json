@@ -16,7 +16,7 @@
           "type": "string",
           "title": "Description",
           "maxLength": 60,
-          "description": "Text description for an interface (length 60)"
+          "description": "Description for an interface"
         },
         "masterLanguage": {
           "type": "string",
