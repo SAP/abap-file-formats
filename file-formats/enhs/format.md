@@ -1,0 +1,9 @@
+# File Format for Object Type ENHS
+
+The Abap File Format for ENHS (BAdI Enhancement Spot) only consists of a metadata file.
+The JSON schema for the enhs metadata file is provided [here](./enhs.json).
+
+Example files for an ENHS `z_aff_example_enhs` are provided in the following table.
+File | Content
+ --- | ---
+[`z_aff_example_enhs.enhs`](./examples/z_aff_example_enhs.enhs)    | Metadata of the ENHS
