@@ -17,3 +17,8 @@ File | Content
 [`z_aff_example_func.func.abap`](./examples/z_aff_example_func.func.abap)                 | Source Code of the included FUNC
 [`z_aff_example_func.func.json`](./examples/z_aff_example_func.func.json)                 | Metadata of the included FUNC
 [`z_aff_example_fugr.fugr.texts.en.properties`](./examples/z_aff_example_fugr.fugr.texts.en.properties)   | Translation relevant texts
+
+The following sub objects of FUGR are not yet supported:
+* Dynpros
+* PBO Modules
+* PAI Modules
