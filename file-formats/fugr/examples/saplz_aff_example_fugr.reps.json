@@ -1,6 +1,6 @@
 {
   "header": {
-    "$schema": "http://sap.com/schema/reps.json",
+    "$schema": "https://github.com/sap/abap-file-formats/file-formats/fugr/reps.json",
     "description": "Example FUGR for ABAP File Formats"
   },
   "includeType": "functionGroup"
