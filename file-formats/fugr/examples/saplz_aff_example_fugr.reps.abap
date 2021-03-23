@@ -1,2 +1,2 @@
-  INCLUDE LZ_AFF_EXAMPLE_FUGRTOP.            " Global Declarations
-  INCLUDE LZ_AFF_EXAMPLE_FUGRUXX.            " Function Modules
+  include lz_aff_example_fugrtop.            " global declarations
+  include lz_aff_example_fugruxx.            " function modules

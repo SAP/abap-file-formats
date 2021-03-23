@@ -8,5 +8,17 @@
   "global": false,
   "exceptionClasses": true,
   "includeNumber": "01",
-  "active": true
+  "active": true,
+  "parameters": [
+    {
+      "name": "I_PARAM",
+      "description": "This is an example parameter"
+    }
+  ],
+  "exceptions": [
+    {
+      "name": "CX_STATIC_CHECK",
+      "description": "This is an example exception"
+    }
+  ]
 }

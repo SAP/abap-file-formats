@@ -1,14 +1,14 @@
-function Z_AFF_EXAMPLE_FUNC
+function z_aff_example_func
   importing
-    I_PARAM type I
+    i_param type i
   raising
-    CX_STATIC_CHECK.
+    cx_static_check.
 
 
 
-  types EXAMPLE_TYPE type STRING .
+  types example_type type string .
 
-  data EXAMPLE_ATTRIBUTE type EXAMPLE_TYPE .
+  data example_attribute type example_type .
 
   example_attribute = 'This is an example Textelement'(001).
-ENDFUNCTION.
+endfunction.
