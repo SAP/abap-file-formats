@@ -2,7 +2,7 @@ function Z_AFF_EXAMPLE_FUNC
   importing
     I_PARAM type I
   raising
-    CX_AFF_ROOT.
+    CX_STATIC_CHECK.
 
 
 
