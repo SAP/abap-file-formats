@@ -7,9 +7,6 @@
   "releaseState": "notReleased",
   "global": false,
   "exceptionClasses": true,
-  "application": "",
-  "client": "",
-  "host": "",
   "includeNumber": "01",
   "active": true
 }
