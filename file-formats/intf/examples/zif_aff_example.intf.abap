@@ -15,6 +15,6 @@ interface ZIF_AFF_EXAMPLE
     importing
       !I_PARAM type I
     raising
-      CX_AFF_ROOT .
+      CX_STATIC_CHECK .
 
 endinterface.

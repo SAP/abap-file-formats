@@ -23,7 +23,7 @@
       ],
       "exceptions": [
         {
-          "name": "CX_AFF_ROOT",
+          "name": "CX_STATIC_CHECK",
           "description": "This is an example exception"
         }
       ]
