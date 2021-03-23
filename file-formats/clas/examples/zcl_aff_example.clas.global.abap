@@ -1,28 +1,31 @@
-class ZCL_AFF_EXAMPLE definition
+class zcl_aff_example definition
   public
   final
   create public .
 
-public section.
+  public section.
 
-  types EXAMPLE_TYPE type STRING .
+    types example_type type string .
 
-  data EXAMPLE_ATTRIBUTE type EXAMPLE_TYPE .
+    data example_attribute type example_type .
 
-  events EXAMPLE_EVENT .
+    events example_event .
 
-  methods EXAMPLE_METHOD
-    importing
-      !I_PARAM type I
-    raising
-      CX_STATIC_CHECK .
+    methods example_method
+      importing
+        i_param type i
+      raising
+        cx_static_check .
   protected section.
   private section.
-ENDCLASS.
+endclass.
 
 
-CLASS ZCL_AFF_EXAMPLE IMPLEMENTATION.
+
+class zcl_aff_example implementation.
+
+
   method example_method.
     example_attribute = ''(txt).
   endmethod.
-ENDCLASS.
+endclass.
