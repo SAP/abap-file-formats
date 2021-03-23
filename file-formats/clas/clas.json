@@ -1,322 +1,322 @@
 {
-    "$schema": "http://json-schema.org/draft/2019-09/schema#",
-    "$id": "http://github.com/SAP/abap-file-formats/file-formats/clas/clas.json",
-    "type": "object",
-    "properties": {
-        "header": {
-            "type": "object",
-            "title": "Header",
-            "properties": {
-                "$schema": {
-                    "type": "string",
-                    "title": "Schema",
-                    "description": "Format version"
+  "$schema": "http: //json-schema.org/draft/2019-09/schema#",
+  "$id": "http: //github.com/SAP/abap-file-formats/file-formats/clas/clas.json",
+  "type": "object",
+  "properties": {
+    "header": {
+      "type": "object",
+      "title": "Header",
+      "properties": {
+        "$schema": {
+          "type": "string",
+          "title": "Schema",
+          "description": "Format version"
+        },
+        "description": {
+          "type": "string",
+          "title": "Description",
+          "maxLength": 60,
+          "description": "Description of a class"
+        },
+        "masterLanguage": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 2,
+          "title": "Master Language",
+          "description": "Master language of the development object\nAll translatable text shall be maintained in this language"
+        },
+        "abapLanguageVersion": {
+          "type": "string",
+          "enum": [
+            "standard",
+            "standardUnicode",
+            "keyUser",
+            "cloudDevelopment"
+          ],
+          "enumDescriptions": [
+            "Standard",
+            "Standard unicode",
+            "ABAP for key user tools",
+            "ABAP for Cloud Development"
+          ],
+          "title": "Abap Language Version",
+          "description": "ABAP language version"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "$schema",
+        "description",
+        "masterLanguage",
+        "abapLanguageVersion"
+      ]
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "GeneralObjectType",
+        "ExitClass",
+        "PersistentClass",
+        "FactoryForPersistentClass",
+        "StatusClassForPersistentClass",
+        "ViewClass",
+        "ProxyClassForRemoteInterface",
+        "RFCProxyClass",
+        "ExceptionClass",
+        "BusinessClass",
+        "BusinessClassInterfaceForStaticComponents",
+        "BusinessClassInterfaceForInstance-dependentComponents",
+        "BSPApplicationClass",
+        "BasisClassForBSPElementHandlers",
+        "WebDynproRuntimeObject",
+        "ESI: ProviderInterface(Generated)",
+        "AreaClass(SharedObjects)",
+        "TestClass(ABAPUnit)",
+        "InterfaceForParameterTypesForDatabaseProcedureProxies",
+        "BehaviorClass(BehaviorImplementations)"
+      ],
+      "enumDescriptions": [
+        "General object type",
+        "Exit class",
+        "Persistent class",
+        "Factory for persistent class",
+        "Status class for persistent class",
+        "View class",
+        "Proxy class for remote interface",
+        "RFC proxy class",
+        "Exception class",
+        "Business class",
+        "Business class interface for static components",
+        "Business class interface for instance-dependent components",
+        "BSP application class",
+        "Basis class for BSP element handlers",
+        "Web Dynpro runtime object",
+        "ESI:  Provider interface (generated)",
+        "Area class (shared objects)",
+        "Test class (ABAP Unit)",
+        "Interface for parameter types for database procedure proxies",
+        "Behavior class (behavior implementations)"
+      ],
+      "title": "Class category",
+      "description": "Category of the class"
+    },
+    "fixPointArithmetic": {
+      "type": "boolean",
+      "title": "Fix point arithmetic",
+      "description": "Fix point arithmetic"
+    },
+    "messageClass": {
+      "type": "string",
+      "maxLength": 20,
+      "title": "Message class",
+      "description": "The message class of the class"
+    },
+    "types": {
+      "type": "array",
+      "title": "Type descriptions",
+      "description": "Type descriptions of the class",
+      "items": {
+        "type": "object",
+        "title": "Type",
+        "description": "Type with name and description",
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 30,
+            "title": "Type name",
+            "description": "Name of the type"
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 60,
+            "title": "Type description",
+            "description": "Description of the type"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "description"
+        ]
+      }
+    },
+    "attributes": {
+      "type": "array",
+      "title": "Attribute descriptions",
+      "description": "Attribute descriptions of the class",
+      "items": {
+        "type": "object",
+        "title": "Attribute",
+        "description": "Attribute with name and description",
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 30,
+            "title": "Attribute Name",
+            "description": "Name of the attribute"
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 60,
+            "title": "Attribute description",
+            "description": "Description of the attribute"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "description"
+        ]
+      }
+    },
+    "events": {
+      "type": "array",
+      "title": "Event descriptions",
+      "description": "Event descriptions of the class",
+      "items": {
+        "type": "object",
+        "title": "Event",
+        "description": "Event with description, name and parameter descriptions",
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 30,
+            "title": "Event name",
+            "description": "Name of the event"
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 60,
+            "title": "Event descriptions",
+            "description": "Description of the event"
+          },
+          "parameters": {
+            "type": "array",
+            "title": "Event parameters",
+            "description": "Parameters of the event",
+            "items": {
+              "type": "object",
+              "title": "Parameter",
+              "description": "Parameter with name and description",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "maxLength": 30,
+                  "title": "Parameter name",
+                  "description": "Name of the parameter"
                 },
                 "description": {
-                    "type": "string",
-                    "title": "Description",
-                    "maxLength": 60,
-                    "description": "Text description for a class (length 60)"
-                },
-                "masterLanguage": {
-                    "type": "string",
-                    "minLength": 2,
-                    "maxLength": 2,
-                    "title": "Master Language",
-                    "description": "Master language of the development object\nAll translatable text shall be maintained in this language"
-                },
-                "abapLanguageVersion": {
-                    "type": "string",
-                    "enum": [
-                        "standard",
-                        "standardUnicode",
-                        "keyUser",
-                        "cloudDevelopment"
-                    ],
-                    "enumDescriptions": [
-                        "Standard",
-                        "Standard unicode",
-                        "ABAP for key user tools",
-                        "ABAP for Cloud Development"
-                    ],
-                    "title": "Abap Language Version",
-                    "description": "ABAP language version"
+                  "type": "string",
+                  "maxLength": 60,
+                  "title": "Parameter description",
+                  "description": "Description of the parameter"
                 }
-            },
-            "additionalProperties": false,
-            "required": [
-                "$schema",
-                "description",
-                "masterLanguage",
-                "abapLanguageVersion"
-            ]
-        },
-        "category": {
-            "type": "string",
-            "enum": [
-                "GeneralObjectType",
-                "ExitClass",
-                "PersistentClass",
-                "FactoryForPersistentClass",
-                "StatusClassForPersistentClass",
-                "ViewClass",
-                "ProxyClassForRemoteInterface",
-                "RFCProxyClass",
-                "ExceptionClass",
-                "BusinessClass",
-                "BusinessClassInterfaceForStaticComponents",
-                "BusinessClassInterfaceForInstance-dependentComponents",
-                "BSPApplicationClass",
-                "BasisClassForBSPElementHandlers",
-                "WebDynproRuntimeObject",
-                "ESI:ProviderInterface(Generated)",
-                "AreaClass(SharedObjects)",
-                "TestClass(ABAPUnit)",
-                "InterfaceForParameterTypesForDatabaseProcedureProxies",
-                "BehaviorClass(BehaviorImplementations)"
-            ],
-            "enumDescriptions": [
-                "General object type",
-                "Exit class",
-                "Persistent class",
-                "Factory for persistent class",
-                "Status class for persistent class",
-                "View class",
-                "Proxy class for remote interface",
-                "RFC proxy class",
-                "Exception class",
-                "Business class",
-                "Business class interface for static components",
-                "Business class interface for instance-dependent components",
-                "BSP application class",
-                "Basis class for BSP element handlers",
-                "Web Dynpro runtime object",
-                "ESI: Provider interface (generated)",
-                "Area class (shared objects)",
-                "Test class (ABAP Unit)",
-                "Interface for parameter types for database procedure proxies",
-                "Behavior class (behavior implementations)"
-            ],
-            "title": "Class category",
-            "description": "Category of the class"
-        },
-        "fixPointArithmetic": {
-            "type": "boolean",
-            "title": "Fix point arithmetic",
-            "description": "Fix point arithmetic"
-        },
-        "messageClass": {
-            "type": "string",
-            "maxLength": 20,
-            "title": "Message class",
-            "description": "The message class of the class"
-        },
-        "attributes": {
-            "type": "array",
-            "title": "Attribute descriptions",
-            "description": "Attribute descriptions of the class",
-            "items": {
-                "type": "object",
-                "title": "Attribute",
-                "description": "Attribute with name and description",
-                "properties": {
-                    "name": {
-                        "type": "string",
-                        "maxLength": 30,
-                        "title": "Attribute Name",
-                        "description": "Name of the attribute"
-                    },
-                    "description": {
-                        "type": "string",
-                        "maxLength": 60,
-                        "title": "Attribute description",
-                        "description": "Description of the attribute"
-                    }
-                },
-                "additionalProperties": false,
-                "required": [
-                    "name",
-                    "description"
-                ]
+              },
+              "additionalProperties": false,
+              "required": [
+                "name",
+                "description"
+              ]
             }
+          }
         },
-        "methods": {
-            "type": "array",
-            "title": "Method descriptions",
-            "description": "Method descriptions of the class",
-            "items": {
-                "type": "object",
-                "title": "Method",
-                "description": "Method with name, description and parameter descriptions",
-                "properties": {
-                    "name": {
-                        "type": "string",
-                        "maxLength": 30,
-                        "title": "Method name",
-                        "description": "Name of the method"
-                    },
-                    "description": {
-                        "type": "string",
-                        "maxLength": 60,
-                        "title": "Method description",
-                        "description": "Description of the method"
-                    },
-                    "parameters": {
-                        "type": "array",
-                        "title": "Parameter descriptions",
-                        "description": "Parameter descriptions of the method",
-                        "items": {
-                            "type": "object",
-                            "title": "Parameter",
-                            "description": "Parameter with name and description",
-                            "properties": {
-                                "name": {
-                                    "type": "string",
-                                    "maxLength": 30,
-                                    "title": "Parameter name",
-                                    "description": "Name of the parameter"
-                                },
-                                "description": {
-                                    "type": "string",
-                                    "maxLength": 60,
-                                    "title": "Parameter description",
-                                    "description": "Description of the parameter"
-                                }
-                            },
-                            "additionalProperties": false,
-                            "required": [
-                                "name",
-                                "description"
-                            ]
-                        }
-                    },
-                    "exceptions": {
-                        "type": "array",
-                        "title": "Exception descriptions",
-                        "description": "Exception descriptions of the method",
-                        "items": {
-                            "type": "object",
-                            "title": "Exception",
-                            "description": "Exception with name and description",
-                            "properties": {
-                                "name": {
-                                    "type": "string",
-                                    "maxLength": 30,
-                                    "title": "Exception name",
-                                    "description": "Name of the exception"
-                                },
-                                "description": {
-                                    "type": "string",
-                                    "maxLength": 60,
-                                    "title": "Exception description",
-                                    "description": "Description of the exception"
-                                }
-                            },
-                            "additionalProperties": false,
-                            "required": [
-                                "name",
-                                "description"
-                            ]
-                        }
-                    }
-                },
-                "additionalProperties": false,
-                "required": [
-                    "name",
-                    "description"
-                ]
-            }
-        },
-        "events": {
-            "type": "array",
-            "title": "Event descriptions",
-            "description": "Event descriptions of the class",
-            "items": {
-                "type": "object",
-                "title": "Event",
-                "description": "Event with description, name and parameter descriptions",
-                "properties": {
-                    "name": {
-                        "type": "string",
-                        "maxLength": 30,
-                        "title": "Event name",
-                        "description": "Name of the event"
-                    },
-                    "description": {
-                        "type": "string",
-                        "maxLength": 60,
-                        "title": "Event descriptions",
-                        "description": "Description of the event"
-                    },
-                    "parameters": {
-                        "type": "array",
-                        "title": "Event parameters",
-                        "description": "Parameters of the event",
-                        "items": {
-                            "type": "object",
-                            "title": "Parameter",
-                            "description": "Parameter with name and description",
-                            "properties": {
-                                "name": {
-                                    "type": "string",
-                                    "maxLength": 30,
-                                    "title": "Parameter name",
-                                    "description": "Name of the parameter"
-                                },
-                                "description": {
-                                    "type": "string",
-                                    "maxLength": 60,
-                                    "title": "Parameter description",
-                                    "description": "Description of the parameter"
-                                }
-                            },
-                            "additionalProperties": false,
-                            "required": [
-                                "name",
-                                "description"
-                            ]
-                        }
-                    }
-                },
-                "additionalProperties": false,
-                "required": [
-                    "name",
-                    "description"
-                ]
-            }
-        },
-        "types": {
-            "type": "array",
-            "title": "Type descriptions",
-            "description": "Type descriptions of the class",
-            "items": {
-                "type": "object",
-                "title": "Type",
-                "description": "Type with name and description",
-                "properties": {
-                    "name": {
-                        "type": "string",
-                        "maxLength": 30,
-                        "title": "Type name",
-                        "description": "Name of the type"
-                    },
-                    "description": {
-                        "type": "string",
-                        "maxLength": 60,
-                        "title": "Type description",
-                        "description": "Description of the type"
-                    }
-                },
-                "additionalProperties": false,
-                "required": [
-                    "name",
-                    "description"
-                ]
-            }
-        }
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "description"
+        ]
+      }
     },
-    "additionalProperties": false,
-    "required": [
-        "category"
-    ]
+    "methods": {
+      "type": "array",
+      "title": "Method descriptions",
+      "description": "Method descriptions of the class",
+      "items": {
+        "type": "object",
+        "title": "Method",
+        "description": "Method with name, description and parameter descriptions",
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 30,
+            "title": "Method name",
+            "description": "Name of the method"
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 60,
+            "title": "Method description",
+            "description": "Description of the method"
+          },
+          "parameters": {
+            "type": "array",
+            "title": "Parameter descriptions",
+            "description": "Parameter descriptions of the method",
+            "items": {
+              "type": "object",
+              "title": "Parameter",
+              "description": "Parameter with name and description",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "maxLength": 30,
+                  "title": "Parameter name",
+                  "description": "Name of the parameter"
+                },
+                "description": {
+                  "type": "string",
+                  "maxLength": 60,
+                  "title": "Parameter description",
+                  "description": "Description of the parameter"
+                }
+              },
+              "additionalProperties": false,
+              "required": [
+                "name",
+                "description"
+              ]
+            }
+          },
+          "exceptions": {
+            "type": "array",
+            "title": "Exception descriptions",
+            "description": "Exception descriptions of the method",
+            "items": {
+              "type": "object",
+              "title": "Exception",
+              "description": "Exception with name and description",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "maxLength": 30,
+                  "title": "Exception name",
+                  "description": "Name of the exception"
+                },
+                "description": {
+                  "type": "string",
+                  "maxLength": 60,
+                  "title": "Exception description",
+                  "description": "Description of the exception"
+                }
+              },
+              "additionalProperties": false,
+              "required": [
+                "name",
+                "description"
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "description"
+        ]
+      }
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "category"
+  ]
 }

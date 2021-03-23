@@ -1,16 +1,28 @@
 {
   "header": {
-    "$schema": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/clas/clas.json",
+    "$schema": "https: //github.com/SAP/abap-file-formats/blob/main/file-formats/clas/clas.json",
     "description": "Example class for ABAP File Formats",
     "masterLanguage": "EN",
     "abapLanguageVersion": "standardUnicode"
   },
   "fixPointArithmetic": true,
   "category": "GeneralObjectType",
+  "types": [
+    {
+      "name": "EXAMPLE_TYPE",
+      "description": "A description"
+    }
+  ],
   "attributes": [
     {
       "name": "EXAMPLE_ATTRIBUTE",
       "description": "Attribute description"
+    }
+  ],
+  "events": [
+    {
+      "name": "EXAMPLE_EVENT",
+      "description": "Example event"
     }
   ],
   "methods": [
@@ -25,23 +37,10 @@
       ],
       "exceptions": [
         {
-          "name": "CX_AFF_ROOT",
+          "name": "CX_STATIC_CHECK",
           "description": "Example exception"
         }
       ]
-    }
-  ],
-  "events": [
-    {
-      "name": "EXAMPLE_EVENT",
-      "description": "Example event",
-      "parameters": []
-    }
-  ],
-  "types": [
-    {
-      "name": "EXAMPLE_TYPE",
-      "description": "A description"
     }
   ]
 }

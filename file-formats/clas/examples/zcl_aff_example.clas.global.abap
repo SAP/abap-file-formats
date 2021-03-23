@@ -15,7 +15,7 @@ public section.
     importing
       !I_PARAM type I
     raising
-      CX_AFF_ROOT .
+      CX_STATIC_CHECK .
   protected section.
   private section.
 ENDCLASS.
