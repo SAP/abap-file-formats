@@ -63,12 +63,10 @@
         "tool": {
           "type": "string",
           "enum": [
-            "badi_def",
-            "hook_def"
+            "BAdI_def"
           ],
           "enumDescriptions": [
-            "Badi Definition",
-            "Hook Definition"
+            "BAdI Definition"
           ],
           "title": "ENHS Tool type",
           "description": "Tool type of the ENHS"
@@ -82,30 +80,30 @@
     },
     "badiDefinitions": {
       "type": "array",
-      "title": "Badi Definitions of the ENHS",
-      "description": "Badi Definitions of the ENHS",
+      "title": "BAdI Definitions of the ENHS",
+      "description": "BAdI definitions of the ENHS",
       "items": {
         "type": "object",
-        "title": "Badi Definition",
-        "description": "Informations about this Badi Definition",
+        "title": "BAdI Definition",
+        "description": "Information about this BAdI definition",
         "properties": {
           "name": {
             "type": "string",
             "maxLength": 30,
-            "title": "Name of the Badi Definition",
-            "description": "Name of the Badi Definition"
+            "title": "Name of the BAdI Definition",
+            "description": "Name of the BAdI definition"
           },
           "description": {
             "type": "string",
             "maxLength": 255,
-            "title": "Description of the Badi Definition",
-            "description": "Description of the Badi Definition"
+            "title": "Description of the BAdI Definition",
+            "description": "Description of the BAdI definition"
           },
           "interface": {
             "type": "string",
             "maxLength": 30,
-            "title": "Interface of the Badi Definition",
-            "description": "Interface of the Badi Definition"
+            "title": "Interface of the BAdI Definition",
+            "description": "Interface of the BAdI definition"
           },
           "instantiation": {
             "type": "string",
@@ -119,13 +117,13 @@
               "Reuse instances",
               "Context-specific instances"
             ],
-            "title": "Instantiation of the Badi Definition",
-            "description": "Instantiation of the Badi Definition"
+            "title": "Instantiation of the BAdI Definition",
+            "description": "Instantiation of the BAdI definition"
           },
           "multipleUse": {
             "type": "boolean",
-            "title": "Single- or multiple use Badi",
-            "description": "Indicator whether the Badi Definition is single- or multiple usable"
+            "title": "Single- or multiple use BAdI",
+            "description": "Indicator whether the BAdI definition is single- or multiple usable"
           },
           "sapInternal": {
             "type": "boolean",
@@ -134,8 +132,8 @@
           },
           "exampleClasses": {
             "type": "array",
-            "title": "Example classes of the Badi Definition",
-            "description": "Example classes of the Badi Definition",
+            "title": "Example classes of the BAdI Definition",
+            "description": "Example classes of the BAdI definition",
             "items": {
               "type": "object",
               "title": "Example class",
@@ -183,12 +181,12 @@
           },
           "filters": {
             "type": "array",
-            "title": "Filters of the Badi Definition",
-            "description": "Filters of the Badi Definition",
+            "title": "Filters of the BAdI Definition",
+            "description": "Filters of the BAdI definition",
             "items": {
               "type": "object",
               "title": "Filter",
-              "description": "Informations about this Filter",
+              "description": "Information about this Filter",
               "properties": {
                 "name": {
                   "type": "string",
@@ -285,14 +283,17 @@
                 "required": [
                   "name",
                   "description",
-                  "interface",
-                  "instantiation",
-                  "multipleUse",
-                  "sapInternal"
+                  "type"
                 ]
               }
             }
-          }
+          },
+          "additionalProperties": false,
+          "required": [
+            "name",
+            "description",
+            "interface"
+          ]
         }
       }
     }
