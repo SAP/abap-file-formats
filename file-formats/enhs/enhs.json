@@ -124,7 +124,7 @@
           },
           "multipleUse": {
             "type": "boolean",
-            "title": "Indicator whether the Badi Definition is single- or multiple usable",
+            "title": "Single- or multiple use Badi",
             "description": "Indicator whether the Badi Definition is single- or multiple usable"
           },
           "sapInternal": {
@@ -262,8 +262,8 @@
                     "objectName": {
                       "type": "string",
                       "maxLenght": 30,
-                      "title": "Name of the value check object",
-                      "description": "Name of the value check object"
+                      "title": "Name of the value check class",
+                      "description": "Name of the value check class"
                     },
                     "length": {
                       "type": "number",
@@ -277,7 +277,6 @@
                     },
                     "additionalProperties": false,
                     "required": [
-                      "type",
                       "objectName"
                     ]
                   }
