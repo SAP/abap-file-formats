@@ -40,7 +40,7 @@ Details and full specification can be found [here](./doc/file_names.md).
 | Type | Specification |
 | ---  | --- |
 | CLAS | [Class](./file-formats/clas/format.md) |
-| INTF | |
+| INTF | [Interface](./file-formats/intf/format.md) |
 | CHKO | |
 | NROB | [Number Range Object](./file-formats/nrob/format.md) |
 
