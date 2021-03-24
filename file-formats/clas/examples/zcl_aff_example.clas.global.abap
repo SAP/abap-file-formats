@@ -15,13 +15,16 @@ public section.
     importing
       !I_PARAM type I
     raising
-      CX_AFF_ROOT .
+      CX_STATIC_CHECK .
   protected section.
   private section.
 ENDCLASS.
 
 
+
 CLASS ZCL_AFF_EXAMPLE IMPLEMENTATION.
+
+
   method example_method.
     example_attribute = ''(txt).
   endmethod.

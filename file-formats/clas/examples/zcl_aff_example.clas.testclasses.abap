@@ -1,4 +1,3 @@
-*"* use this source file for your ABAP unit test classes
 class ltcl_unit_test definition for testing
   duration short risk level harmless.
 
@@ -11,11 +10,10 @@ class ltcl_unit_test definition for testing
 endclass.
 
 
-
 class ltcl_unit_test implementation.
 
   method setup.
-    cut = new ZCL_AFF_EXAMPLE( ).
+    cut = new zcl_aff_example( ).
   endmethod.
 
 

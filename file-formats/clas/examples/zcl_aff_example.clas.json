@@ -7,16 +7,28 @@
   },
   "fixPointArithmetic": true,
   "category": "GeneralObjectType",
+  "types": [
+    {
+      "name": "EXAMPLE_TYPE",
+      "description": "This is an example type"
+    }
+  ],
   "attributes": [
     {
       "name": "EXAMPLE_ATTRIBUTE",
-      "description": "Attribute description"
+      "description": "This is an example attribute"
+    }
+  ],
+  "events": [
+    {
+      "name": "EXAMPLE_EVENT",
+      "description": "This is an example event"
     }
   ],
   "methods": [
     {
       "name": "EXAMPLE_METHOD",
-      "description": "Example description",
+      "description": "This is an example method",
       "parameters": [
         {
           "name": "I_PARAM",
@@ -25,23 +37,10 @@
       ],
       "exceptions": [
         {
-          "name": "CX_AFF_ROOT",
-          "description": "Example exception"
+          "name": "CX_STATIC_CHECK",
+          "description": "This is an example exception"
         }
       ]
-    }
-  ],
-  "events": [
-    {
-      "name": "EXAMPLE_EVENT",
-      "description": "Example event",
-      "parameters": []
-    }
-  ],
-  "types": [
-    {
-      "name": "EXAMPLE_TYPE",
-      "description": "A description"
     }
   ]
 }
