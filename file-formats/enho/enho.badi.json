@@ -1,0 +1,203 @@
+{
+  "$schema": "http://json-schema.org/draft/2019-09/schema#",
+  "$id": "http://github.com/SAP/abap-file-formats/file-formats/enho/enho.badi.json",
+  "type": "object",
+  "properties": {
+    "header": {
+      "type": "object",
+      "title": "Header",
+      "properties": {
+        "$schema": {
+          "type": "string",
+          "title": "Schema",
+          "description": "Format version"
+        },
+        "description": {
+          "type": "string",
+          "title": "Description",
+          "maxLength": 255,
+          "description": "Description of an BAdI enhancement implementation"
+        },
+        "masterLanguage": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 2,
+          "title": "Master Language",
+          "description": "Master language of the BAdI enhancement implementation\nAll translatable text shall be maintained in this language"
+        },
+        "abapLanguageVersion": {
+          "type": "string",
+          "enum": [
+            "standard",
+            "standardUnicode",
+            "keyUser",
+            "cloudDevelopment"
+          ],
+          "enumDescriptions": [
+            "Standard",
+            "Standard unicode",
+            "ABAP for key user tools",
+            "ABAP for Cloud Development"
+          ],
+          "title": "Abap Language Version",
+          "description": "ABAP language version"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "$schema",
+        "description",
+        "masterLanguage",
+        "abapLanguageVersion"
+      ]
+    },
+    "enhancementSpot": {
+      "type": "string",
+      "title": "Enhancement Spot name",
+      "maxLength": 30,
+      "description": "Name of the Enhancement Spot"
+    },
+    "BAdIimplementations": {
+      "type": "array",
+      "title": "BAdI implementations of the ENHO",
+      "description": "BAdI implementations of the ENHO",
+      "items": {
+        "type": "object",
+        "title": "BAdI implementation",
+        "description": "Information about this BAdI implementation",
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 30,
+            "title": "Name of the BAdI implementation",
+            "description": "Name of the BAdI implementation"
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 255,
+            "title": "Description of the BAdI implementation",
+            "description": "Description of the BAdI implementation"
+          },
+          "BAdIDefinition": {
+            "type": "string",
+            "maxLength": 30,
+            "title": "BAdI Definition of the BAdI implementation",
+            "description": "BAdI Definition of the BAdI implementation"
+          },
+          "implementingClass": {
+            "type": "string",
+            "maxLength": 30,
+            "title": "Implementing class of the BAdI implementation",
+            "description": "Implementing class of the BAdI implementation"
+          },
+          "isExampleimplementation": {
+            "type": "boolean",
+            "title": "BAdI implementation is an example implementation",
+            "description": "BAdI implementation is an example implementation"
+          },
+          "isDefaultimplementation": {
+            "type": "boolean",
+            "title": "BAdI implementation is the default implementation of the BAdI Definition",
+            "description": "BAdI implementation is the default implementation of the BAdI Definition"
+          },
+          "isActiveimplementation": {
+            "type": "boolean",
+            "title": "BAdI implementation is active",
+            "description": "BAdI implementation is active"
+          },
+          "isCustomizingSupported": {
+            "type": "boolean",
+            "title": "BAdI implementation supports customizing",
+            "description": "BAdI implementation supports customizing"
+          },
+          "filterValues": {
+            "type": "array",
+            "title": "Filter value tree of the BAdI implementation",
+            "description": "Filter value tree of the BAdI implementation",
+            "items": {
+              "type": "??????????????",
+              "title": "??????????????",
+              "description": "??????????????"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "name",
+            "description",
+            "BAdIDefinition"
+          ]
+        }
+      }
+    },
+    "referencedObjects": {
+      "type": "array",
+      "title": "Referenced objects of the ENHO",
+      "description": "Referenced objects of the ENHO",
+      "items": {
+        "type": "object",
+        "title": "A referenced object",
+        "description": "A referenced object",
+        "properties": {
+          "objectType": {
+            "type": "string",
+            "maxLength": 4,
+            "title": "Type of the referenced object",
+            "description": "Type of the referenced object"
+          },
+          "objectName": {
+            "type": "string",
+            "maxLength": 120,
+            "title": "Name of the referenced object",
+            "description": "Name of the referenced object"
+          },
+          "programID": {
+            "type": "string",
+            "maxLength": 4,
+            "title": "Program Id of the referenced object",
+            "description": "Program Id of the referenced object"
+          },
+          "elementUsage": {
+            "type": "string",
+            "enum": [
+              "USEO",
+              "EXTO",
+              "MIGR"
+            ],
+            "enumDescriptions": [
+              "usedObject",
+              "enhancedObject",
+              "migratedFrom"
+            ],
+            "title": "Element usage",
+            "description": "Element usage of the referenced object"
+          },
+          "mainType": {
+            "type": "boolean",
+            "maxLength": 4,
+            "title": "Main type of the referenced object",
+            "description": "Main type of the referenced object"
+          },
+          "mainName": {
+            "type": "boolean",
+            "maxLength": 40,
+            "title": "Main name of the referenced object",
+            "description": "Main name of the referenced object"
+          },
+          "additionalProperties": false,
+          "required": [
+            "objectType",
+            "objectName",
+            "programID",
+            "elementUsage",
+            "mainType",
+            "mainName"
+          ]
+        }
+      }
+    },
+    "additionalProperties": false,
+    "required": [
+      "enhancementSpot"
+    ]
+  }
+}
