@@ -164,8 +164,8 @@
       },
       "notExecutable": {
         "type": "boolean",
-        "title": "Is the FUNC executable",
-        "description": "Is the FUNC executable"
+        "title": "Function module is not executable",
+        "description": "If this flag is set, the function module cannot be called. It is deactivated in the function group"
       },
       "editLocked": {
         "type": "boolean",
