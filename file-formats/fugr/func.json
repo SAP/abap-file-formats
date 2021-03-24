@@ -162,10 +162,10 @@
         "title": "Include number",
         "description": "Include number"
       },
-      "active": {
+      "notExecutable": {
         "type": "boolean",
-        "title": "Active",
-        "description": "Active"
+        "title": "Is the FUNC executable",
+        "description": "Is the FUNC executable"
       },
       "editLocked": {
         "type": "boolean",
