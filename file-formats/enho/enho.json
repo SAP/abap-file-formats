@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft/2019-09/schema#",
-  "$id": "http://github.com/SAP/abap-file-formats/file-formats/enho/enho.badi.json",
+  "$id": "http://github.com/SAP/abap-file-formats/file-formats/enho/enho.json",
   "type": "object",
   "properties": {
     "header": {
@@ -57,7 +57,7 @@
       "maxLength": 30,
       "description": "Name of the Enhancement Spot"
     },
-    "BAdIimplementations": {
+    "badiImplementations": {
       "type": "array",
       "title": "BAdI implementations of the ENHO",
       "description": "BAdI implementations of the ENHO",
@@ -78,7 +78,7 @@
             "title": "Description of the BAdI implementation",
             "description": "Description of the BAdI implementation"
           },
-          "BAdIDefinition": {
+          "badiDefinition": {
             "type": "string",
             "maxLength": 30,
             "title": "BAdI Definition of the BAdI implementation",
@@ -124,7 +124,7 @@
           "required": [
             "name",
             "description",
-            "BAdIDefinition"
+            "badiDefinition"
           ]
         }
       }
