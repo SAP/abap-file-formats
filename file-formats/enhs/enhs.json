@@ -15,7 +15,7 @@
         "description": {
           "type": "string",
           "title": "Description",
-          "maxLength": 60,
+          "maxLength": 255,
           "description": "Description of an BAdI Enhancement Spot"
         },
         "masterLanguage": {
@@ -51,245 +51,246 @@
         "abapLanguageVersion"
       ]
     },
-    "type": "object",
-    "properties": {
-      "configuration": {
+    "configuration": {
+      "type": "object",
+      "title": "Configuration",
+      "properties": {
+        "sapInternal": {
+          "type": "boolean",
+          "title": "SAP internal",
+          "description": "SAP internal"
+        },
+        "tool": {
+          "type": "string",
+          "enum": [
+            "badi_def",
+            "hook_def"
+          ],
+          "enumDescriptions": [
+            "Badi Definition",
+            "Hook Definition"
+          ],
+          "title": "ENHS Tool type",
+          "description": "Tool type of the ENHS"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "sapInternal",
+        "tool"
+      ]
+    },
+    "badiDefinitions": {
+      "type": "array",
+      "title": "Badi Definitions of the ENHS",
+      "description": "Badi Definitions of the ENHS",
+      "items": {
         "type": "object",
-        "title": "Configuration",
+        "title": "Badi Definition",
+        "description": "Informations about this Badi Definition",
         "properties": {
-          "sapInternal": {
+          "name": {
             "type": "string",
+            "maxLength": 30,
+            "title": "Name of the Badi Definition",
+            "description": "Name of the Badi Definition"
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 255,
+            "title": "Description of the Badi Definition",
+            "description": "Description of the Badi Definition"
+          },
+          "interface": {
+            "type": "string",
+            "maxLength": 30,
+            "title": "Interface of the Badi Definition",
+            "description": "Interface of the Badi Definition"
+          },
+          "instantiation": {
+            "type": "string",
+            "enum": [
+              "creating new instances",
+              "reuse instances",
+              "context-specific instances"
+            ],
+            "enumDescriptions": [
+              "Creating new instances",
+              "Reuse instances",
+              "Context-specific instances"
+            ],
+            "title": "Instantiation of the Badi Definition",
+            "description": "Instantiation of the Badi Definition"
+          },
+          "multipleUse": {
+            "type": "boolean",
+            "title": "Indicator whether the Badi Definition is single- or multiple usable",
+            "description": "Indicator whether the Badi Definition is single- or multiple usable"
+          },
+          "sapInternal": {
+            "type": "boolean",
             "title": "SAP internal",
             "description": "SAP internal"
           },
-          "tool": {
+          "exampleClasses": {
+            "type": "array",
+            "title": "Example classes of the Badi Definition",
+            "description": "Example classes of the Badi Definition",
+            "items": {
+              "type": "object",
+              "title": "Example class",
+              "description": "Example class",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "maxLength": 30,
+                  "title": "Name of the example class",
+                  "description": "Name of the example class"
+                },
+                "additionalProperties": false,
+                "required": [
+                  "name"
+                ]
+              }
+            }
+          },
+          "fallbackClass": {
             "type": "string",
-            "title": "Tool",
-            "description": "Tool"
-          }
-        },
-        "additionalProperties": false,
-        "required": [
-          "sapInternal",
-          "tool"
-        ]
-      },
-      "badiDefinitions": {
-        "type": "array",
-        "title": "Badi Definitions of the ENHS",
-        "description": "Badi Definitions of the ENHS",
-        "items": {
-          "type": "object",
-          "title": "Badi Definition",
-          "description": "Informations about this Badi Definition",
-          "properties": {
-            "name": {
-              "type": "string",
-              "maxLength": 30,
-              "title": "Name of the Badi Definition",
-              "description": "Name of the Badi Definition"
-            },
-            "description": {
-              "type": "string",
-              "maxLength": 60,
-              "title": "Description of the Badi Definition",
-              "description": "Description of the Badi Definition"
-            },
-            "interface": {
-              "type": "string",
-              "maxLength": 30,
-              "title": "Interface of the Badi Definition",
-              "description": "Interface of the Badi Definition"
-            },
-            "instantiation": {
-              "type": "string",
-              "enum": [
-                "creating new instances",
-                "reuse instances",
-                "context-specific instances"
-              ],
-              "enumDescriptions": [
-                "Creating new instances",
-                "Reuse instances",
-                "Context-specific instances"
-              ],
-              "title": "Instantiation of the Badi Definition",
-              "description": "Instantiation of the Badi Definition"
-            },
-            "multipleUse": {
-              "type": "boolean",
-              "title": "Indicator whether the Badi Definition is single- or multiple usable",
-              "description": "Indicator whether the Badi Definition is single- or multiple usable"
-            },
-            "sapInternal": {
-              "type": "string",
-              "title": "SAP internal",
-              "description": "SAP internal"
-            },
-            "exampleClasses": {
-              "type": "array",
-              "title": "Example classes of the Badi Definition",
-              "description": "Example classes of the Badi Definition",
-              "items": {
-                "type": "object",
-                "title": "Example class",
-                "description": "Example class",
-                "properties": {
-                  "name": {
-                    "type": "string",
-                    "maxLength": 30,
-                    "title": "Name of the example class",
-                    "description": "Name of the example class"
+            "maxLength": 30,
+            "title": "Name of the default/fallback class",
+            "description": "Name of the default/fallback class"
+          },
+          "useFallbackClass": {
+            "type": "boolean",
+            "title": "Use fallback class",
+            "description": "Use fallback class in case no implementation is executed"
+          },
+          "filterLimitation": {
+            "type": "boolean",
+            "title": "Limited filter use",
+            "description": "Limited filter use"
+          },
+          "documentationId": {
+            "type": "string",
+            "maxLength": 30,
+            "title": "Documentation Id",
+            "description": "Documentation Id"
+          },
+          "amdp": {
+            "type": "boolean",
+            "title": "Amdp BAdI",
+            "description": "Amdp BAdI"
+          },
+          "filters": {
+            "type": "array",
+            "title": "Filters of the Badi Definition",
+            "description": "Filters of the Badi Definition",
+            "items": {
+              "type": "object",
+              "title": "Filter",
+              "description": "Informations about this Filter",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "maxLength": 30,
+                  "title": "Name of the Filter",
+                  "description": "Name of the Filter"
+                },
+                "description": {
+                  "type": "string",
+                  "maxLength": 255,
+                  "title": "Description of the Filter",
+                  "description": "Description of the Filter"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "Integer",
+                    "Character",
+                    "String",
+                    "Numeric",
+                    "Packed"
+                  ],
+                  "enumDescriptions": [
+                    "Integer",
+                    "Character",
+                    "String",
+                    "Numeric",
+                    "Packed"
+                  ],
+                  "title": "Type of the filter",
+                  "description": "Type of the filter"
+                },
+                "onlyConstantValues": {
+                  "type": "boolean",
+                  "title": "Only constant filter values",
+                  "description": "The filter has only constant filter values"
+                },
+                "valueCheckDdic": {
+                  "type": "object",
+                  "title": "Value check",
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "Domain",
+                        "DataElement"
+                      ],
+                      "enumDescriptions": [
+                        "Domain",
+                        "Data Element"
+                      ],
+                      "title": "Type of the value check object",
+                      "description": "Type of the value check object"
+                    },
+                    "objectName": {
+                      "type": "string",
+                      "title": "Name of the value check object",
+                      "description": "Name of the value check object"
+                    }
                   },
                   "additionalProperties": false,
                   "required": [
-                    "name"
+                    "type",
+                    "objectName"
                   ]
-                }
-              }
-            },
-            "fallbackClass": {
-              "type": "string",
-              "maxLength": 30,
-              "title": "Name of the default/fallback class",
-              "description": "Name of the default/fallback class"
-            },
-            "useFallbackClass": {
-              "type": "boolean",
-              "title": "Use fallback class",
-              "description": "Use fallback class in case no implementation is executed"
-            },
-            "filterLimitation": {
-              "type": "boolean",
-              "title": "Limited filter use",
-              "description": "Limited filter use"
-            },
-            "documentationId": {
-              "type": "string",
-              "maxLength": 30,
-              "title": "Documentation Id",
-              "description": "Documentation Id"
-            },
-            "amdp": {
-              "type": "boolean",
-              "title": "Amdp BAdI",
-              "description": "Amdp BAdI"
-            },
-            "filters": {
-              "type": "array",
-              "title": "Filters of the Badi Definition",
-              "description": "Filters of the Badi Definition",
-              "items": {
-                "type": "object",
-                "title": "Filter",
-                "description": "Informations about this Filter",
-                "properties": {
-                  "name": {
-                    "type": "string",
-                    "maxLength": 30,
-                    "title": "Name of the Filter",
-                    "description": "Name of the Filter"
-                  },
-                  "description": {
-                    "type": "string",
-                    "maxLength": 60,
-                    "title": "Description of the Filter",
-                    "description": "Description of the Filter"
-                  },
-                  "type": {
-                    "type": "string",
-                    "enum": [
-                      "Integer",
-                      "Character",
-                      "String",
-                      "Numeric",
-                      "Packed"
-                    ],
-                    "enumDescriptions": [
-                      "Integer",
-                      "Character",
-                      "String",
-                      "Numeric",
-                      "Packed"
-                    ],
-                    "title": "Type of the filter",
-                    "description": "Type of the filter"
-                  },
-                  "onlyConstantValues": {
-                    "type": "boolean",
-                    "title": "Only constant filter values",
-                    "description": "The filter has only constant filter values"
-                  },
-                  "valueCheckDdic": {
-                    "type": "object",
-                    "title": "Value check",
-                    "properties": {
-                      "type": {
-                        "type": "string",
-                        "enum": [
-                          "DOMAIN",
-                          "DataElement"
-                        ],
-                        "enumDescriptions": [
-                          "Domain",
-                          "DataElement"
-                        ],
-                        "title": "Type of the value check object",
-                        "description": "Type of the value check object"
-                      },
-                      "objectName": {
-                        "type": "string",
-                        "title": "Name of the value check object",
-                        "description": "Name of the value check object"
-                      }
+                },
+                "valueCheckClass": {
+                  "type": "object",
+                  "title": "Value check",
+                  "properties": {
+                    "objectName": {
+                      "type": "string",
+                      "maxLenght": 30,
+                      "title": "Name of the value check object",
+                      "description": "Name of the value check object"
+                    },
+                    "length": {
+                      "type": "number",
+                      "title": "Length of the value check",
+                      "description": "Length of the value check"
+                    },
+                    "decimalPlaces": {
+                      "type": "number",
+                      "title": "Decimal places of the value check",
+                      "description": "Decimal places of the value check"
                     },
                     "additionalProperties": false,
                     "required": [
                       "type",
                       "objectName"
                     ]
-                  },
-                  "valueCheckClass": {
-                    "type": "object",
-                    "title": "Value check",
-                    "properties": {
-                      "type": {
-                        "type": "string",
-                        "title": "Type of the value check object",
-                        "description": "Type of the value check object"
-                      },
-                      "objectName": {
-                        "type": "string",
-                        "title": "Name of the value check object",
-                        "description": "Name of the value check object"
-                      },
-                      "length": {
-                        "type": "number",
-                        "title": "Length of the value check",
-                        "description": "Length of the value check"
-                      },
-                      "decimalPlaces": {
-                        "type": "number",
-                        "title": "Decimal places of the value check",
-                        "description": "Decimal places of the value check"
-                      },
-                      "additionalProperties": false,
-                      "required": [
-                        "type",
-                        "objectName"
-                      ]
-                    }
-                  },
-                  "additionalProperties": false,
-                  "required": [
-                    "name",
-                    "description",
-                    "interface",
-                    "instantiation",
-                    "multipleUse",
-                    "sapInternal"
-                  ]
-                }
+                  }
+                },
+                "additionalProperties": false,
+                "required": [
+                  "name",
+                  "description",
+                  "interface",
+                  "instantiation",
+                  "multipleUse",
+                  "sapInternal"
+                ]
               }
             }
           }
