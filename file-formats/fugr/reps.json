@@ -1,6 +1,6 @@
 {
-  "$schema": "http: //json-schema.org/draft/2019-09/schema#",
-  "$id": "http: //github.com/SAP/abap-file-formats/file-formats/fugr/reps.json",
+  "$schema": "http://json-schema.org/draft/2019-09/schema#",
+  "$id": "http://github.com/SAP/abap-file-formats/file-formats/fugr/reps.json",
   "type": "object",
   "properties": {
     "header": {

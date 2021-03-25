@@ -6,7 +6,7 @@
     "header": {
       "title": "Header",
       "description": "Header",
-      "type": "object"
+      "type": "object",
       "properties": {
         "$schema": {
           "title": "Schema",
@@ -75,11 +75,11 @@
         "Test Program",
         "Not Classified"
       ]
-    },
+    }
+  },
     "additionalProperties": false,
     "required": [
       "fixPointArithmetic",
       "status"
     ]
-  }
 }
