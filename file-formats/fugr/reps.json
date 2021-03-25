@@ -4,32 +4,35 @@
   "type": "object",
   "properties": {
     "header": {
-      "type": "object",
       "title": "Header",
+      "type": "object",
       "properties": {
         "$schema": {
-          "type": "string",
           "title": "Schema",
-          "description": "Format version"
+          "description": "Format version",
+          "type": "string"
         },
         "description": {
-          "type": "string",
           "title": "Description",
-          "maxLength": 70,
-          "description": "Description for a FUGR Include"
-        },
-        "additionalProperties": false,
-        "required": [
+          "description": "Description for a FUGR Include",
+          "type": "string",
+          "maxLength": 70
+        }
+      },
+      "additionalProperties": false,
+      "required": [
           "$schema",
           "description"
-        ]
+      ]
       },
       "editLocked": {
-        "type": "boolean",
         "title": "Edit-Locked",
-        "description": "Edit-Locked"
+        "description": "Edit-Locked",
+        "type": "boolean"
       },
       "includeType": {
+        "title": "Include Type",
+        "description": "Include Type",
         "type": "string",
         "enum": [
           "include",
@@ -38,14 +41,11 @@
         "enumDescriptions": [
           "Include",
           "Function Group"
-        ],
-        "title": "Include Type",
-        "description": "Include Type"
-      },
-      "additionalProperties": false,
-      "required": [
-        "includeType"
-      ]
-    }
+        ]
+      }
+    },
+    "additionalProperties": false,
+    "required": [
+    "includeType"
+    ]
   }
-}
