@@ -172,8 +172,8 @@
           "mainType": {
             "type": "boolean",
             "maxLength": 4,
-            "title": "Main type of the referenced object",
-            "description": "Main type of the referenced object"
+            "title": "Main object type of the referenced object",
+            "description": "Main object type of the referenced object"
           },
           "mainName": {
             "type": "boolean",
