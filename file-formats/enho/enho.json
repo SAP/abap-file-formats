@@ -159,9 +159,9 @@
           "elementUsage": {
             "type": "string",
             "enum": [
-              "USEO",
-              "EXTO",
-              "MIGR"
+              "usedObject",
+              "enhancedObject",
+              "migratedFrom"
             ],
             "enumDescriptions": [
               "usedObject",
