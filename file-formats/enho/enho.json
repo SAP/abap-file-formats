@@ -90,7 +90,7 @@
             "title": "Implementing class of the BAdI implementation",
             "description": "Implementing class of the BAdI implementation"
           },
-          "isExampleimplementation": {
+          "isExampleImplementation": {
             "type": "boolean",
             "title": "BAdI implementation is an example implementation",
             "description": "BAdI implementation is an example implementation"
