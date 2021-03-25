@@ -129,8 +129,8 @@
     },
     "referencedObjects": {
       "type": "array",
-      "title": "Referenced objects of the ENHO",
-      "description": "Referenced objects of the ENHO",
+      "title": "Referenced objects of the enhancement implementation",
+      "description": "Referenced objects of the enhancement implementation",
       "items": {
         "type": "object",
         "title": "A referenced object",
