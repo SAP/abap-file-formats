@@ -63,7 +63,7 @@
         "tool": {
           "type": "string",
           "enum": [
-            "BAdI_def"
+            "badiDefinition"
           ],
           "enumDescriptions": [
             "BAdI Definition"
