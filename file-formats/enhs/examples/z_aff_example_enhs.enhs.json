@@ -7,16 +7,20 @@
   },
   "configuration": {
     "sapInternal": "false",
-    "tool": "BADI_DEF"
+    "tool": "badiDefinition"
   },
   "badiDefinitions": [
     {
       "name": "Z_AFF_EXAMPLE_BADI_DEFINITION",
       "description": "This is an example Badi Definition",
       "interface": "Z_AFF_EXAMPLE_BADI_INTF",
-      "instantiation": "creating new instances",
+      "instantiation": "creatingNewInstances",
       "multipleUse": "true",
       "sapInternal": "false",
+      "useFallbackClass": false,
+      "filterLimitation": false,
+      "documentationId": "",
+      "amdp": false,
       "filters": [
         {
           "name": "EXAMPLE_FILTER",
