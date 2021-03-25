@@ -29,13 +29,11 @@
           "type": "string",
           "enum": [
             "standard",
-            "standardUnicode",
             "keyUser",
             "cloudDevelopment"
           ],
           "enumDescriptions": [
             "Standard",
-            "Standard unicode",
             "ABAP for key user tools",
             "ABAP for Cloud Development"
           ],
