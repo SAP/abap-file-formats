@@ -100,7 +100,7 @@
             "title": "BAdI implementation is the default implementation of the BAdI Definition",
             "description": "BAdI implementation is the default implementation of the BAdI Definition"
           },
-          "isActiveimplementation": {
+          "isActiveImplementation": {
             "type": "boolean",
             "title": "BAdI implementation is active",
             "description": "BAdI implementation is active"
