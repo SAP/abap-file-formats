@@ -178,8 +178,8 @@
           "mainName": {
             "type": "boolean",
             "maxLength": 40,
-            "title": "Main name of the referenced object",
-            "description": "Main name of the referenced object"
+            "title": "Main object name of the referenced object",
+            "description": "Main object name of the referenced object"
           },
           "additionalProperties": false,
           "required": [
