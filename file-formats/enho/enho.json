@@ -164,9 +164,9 @@
               "migratedFrom"
             ],
             "enumDescriptions": [
-              "usedObject",
-              "enhancedObject",
-              "migratedFrom"
+              "Used object",
+              "Enhanced object",
+              "Migrated from"
             ],
             "title": "Element usage",
             "description": "Element usage of the referenced object"
