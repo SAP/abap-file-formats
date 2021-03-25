@@ -106,9 +106,9 @@
           "instantiation": {
             "type": "string",
             "enum": [
-              "creating new instances",
-              "reuse instances",
-              "context-specific instances"
+              "creatingNewInstances",
+              "reuseInstances",
+              "contextSpecificInstances"
             ],
             "enumDescriptions": [
               "Creating new instances",
@@ -150,16 +150,16 @@
               }
             }
           },
+          "useFallbackClass": {
+            "type": "boolean",
+            "title": "Use fallback class",
+            "description": "Use fallback class in case no implementation is executed"
+          },
           "fallbackClass": {
             "type": "string",
             "maxLength": 30,
             "title": "Name of the default/fallback class",
             "description": "Name of the default/fallback class"
-          },
-          "useFallbackClass": {
-            "type": "boolean",
-            "title": "Use fallback class",
-            "description": "Use fallback class in case no implementation is executed"
           },
           "filterLimitation": {
             "type": "boolean",
@@ -276,23 +276,23 @@
                       "objectName"
                     ]
                   }
-                },
-                "additionalProperties": false,
-                "required": [
-                  "name",
-                  "description",
-                  "type"
-                ]
-              }
+                }
+              },
+              "additionalProperties": false,
+              "required": [
+                "name",
+                "description",
+                "type"
+              ]
             }
-          },
-          "additionalProperties": false,
-          "required": [
-            "name",
-            "description",
-            "interface"
-          ]
-        }
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "description",
+          "interface"
+        ]
       }
     }
   }
