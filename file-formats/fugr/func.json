@@ -1,99 +1,99 @@
 {
-  "$schema":"http://json-schema.org/draft/2019-09/schema#",
-  "$id":"http://github.com/SAP/abap-file-formats/file-formats/fugr/func.json",
-  "type":"object",
-  "properties":{
-    "header":{
-      "type":"object",
-      "title":"Header",
-      "properties":{
-        "$schema":{
-          "type":"string",
-          "title":"Schema",
-          "description":"Format version"
+  "$schema": "http://json-schema.org/draft/2019-09/schema#",
+  "$id": "http://github.com/SAP/abap-file-formats/file-formats/fugr/func.json",
+  "type": "object",
+  "properties": {
+    "header": {
+      "type": "object",
+      "title": "Header",
+      "properties": {
+        "$schema": {
+          "type": "string",
+          "title": "Schema",
+          "description": "Format version"
         },
-        "description":{
-          "type":"string",
-          "title":"Description",
-          "maxLength":74,
-          "description":"Description for a function module"
+        "description": {
+          "type": "string",
+          "title": "Description",
+          "maxLength": 74,
+          "description": "Description for a function module"
         }
       },
-      "additionalProperties":false,
-      "required":[
+      "additionalProperties": false,
+      "required": [
         "$schema",
         "description"
       ]
     },
-    "processingType":{
-      "type":"string",
-      "enum":[
+    "processingType": {
+      "type": "string",
+      "enum": [
         "normal",
         "rfc",
         "update"
       ],
-      "enumDescriptions":[
+      "enumDescriptions": [
         "Normal",
         "RFC",
         "Update"
       ],
-      "title":"Processing Type",
-      "description":"Processing Type"
+      "title": "Processing Type",
+      "description": "Processing Type"
     },
-    "rfcFields":{
-      "type":"object",
-      "title":"RFC specific fields",
-      "properties":{
-        "basXmlEnabled":{
-          "type":"boolean",
-          "title":"basXml Enabled",
-          "description":"basXml Enabled"
+    "rfcFields": {
+      "type": "object",
+      "title": "RFC specific fields",
+      "properties": {
+        "basXmlEnabled": {
+          "type": "boolean",
+          "title": "basXml Enabled",
+          "description": "basXml Enabled"
         },
-        "rfcScope":{
-          "type":"string",
-          "enum":[
+        "rfcScope": {
+          "type": "string",
+          "enum": [
             "fromSameClientAndUser",
             "fromSameSystem",
             "fromAnySystem",
             "notClassified"
           ],
-          "enumDescriptions":[
+          "enumDescriptions": [
             "From same client and user",
             "From same system",
             "From any system",
             "Not classified"
           ],
-          "title":"RFC Scope",
-          "description":"RFC Scope"
+          "title": "RFC Scope",
+          "description": "RFC Scope"
         },
-        "rfcVersion":{
-          "type":"string",
-          "enum":[
+        "rfcVersion": {
+          "type": "string",
+          "enum": [
             "fastSerializationRequired",
             "any"
           ],
-          "enumDescriptions":[
+          "enumDescriptions": [
             "Fast Serialization Required",
             "Any"
           ],
-          "title":"RFC Version",
-          "description":"RFC Version"
+          "title": "RFC Version",
+          "description": "RFC Version"
         }
       },
-      "additionalProperties":false,
-      "required":[
+      "additionalProperties": false,
+      "required": [
         "basXmlEnabled",
         "rfcScope",
         "rfcVersion"
       ]
     },
-    "updateFields":{
-      "type":"object",
-      "title":"Update specific fields",
-      "properties":{
-        "updateTaskKind":{
-          "type":"string",
-          "enum":[
+    "updateFields": {
+      "type": "object",
+      "title": "Update specific fields",
+      "properties": {
+        "updateTaskKind": {
+          "type": "string",
+          "enum": [
             "startImmediate",
             "startDelayed",
             "immediateStartNoRestart",
@@ -101,7 +101,7 @@
             "unsupportedKind",
             "none"
           ],
-          "enumDescriptions":[
+          "enumDescriptions": [
             "Start immediate",
             "Start delayed",
             "Immediate start no restart",
@@ -109,173 +109,173 @@
             "Unsupported kind",
             "none"
           ],
-          "title":"Update task kind",
-          "description":"Update task kind"
+          "title": "Update task kind",
+          "description": "Update task kind"
         }
       },
-      "additionalProperties":false,
-      "required":[
+      "additionalProperties": false,
+      "required": [
         "updateTaskKind"
       ]
     },
-    "releaseState":{
-      "type":"string",
-      "enum":[
+    "releaseState": {
+      "type": "string",
+      "enum": [
         "external",
         "internal",
         "obsolete",
         "markedForRelease"
       ],
-      "enumDescriptions":[
+      "enumDescriptions": [
         "External",
         "Internal",
         "Obsolete",
         "Marked for release"
       ],
-      "title":"Release state",
-      "description":"Release state"
+      "title": "Release state",
+      "description": "Release state"
     },
-    "releaseDate":{
-      "type":"date",
-      "title":"Release date",
-      "description":"Release date"
+    "releaseDate": {
+      "type": "date",
+      "title": "Release date",
+      "description": "Release date"
     },
-    "abapFromJava":{
-      "type":"boolean",
-      "title":"Abap from java",
-      "description":"Abap from java"
+    "abapFromJava": {
+      "type": "boolean",
+      "title": "Abap from java",
+      "description": "Abap from java"
     },
-    "javaFromAbap":{
-      "type":"boolean",
-      "title":"Java from abap",
-      "description":"Java from abap"
+    "javaFromAbap": {
+      "type": "boolean",
+      "title": "Java from abap",
+      "description": "Java from abap"
     },
-    "javaRemote":{
-      "type":"boolean",
-      "title":"Java remote",
-      "description":"Java remote"
+    "javaRemote": {
+      "type": "boolean",
+      "title": "Java remote",
+      "description": "Java remote"
     },
-    "global":{
-      "type":"boolean",
-      "title":"Global",
-      "description":"Global"
+    "global": {
+      "type": "boolean",
+      "title": "Global",
+      "description": "Global"
     },
-    "exceptionClasses":{
-      "type":"boolean",
-      "title":"Exception classes",
-      "description":"Exception classes"
+    "exceptionClasses": {
+      "type": "boolean",
+      "title": "Exception classes",
+      "description": "Exception classes"
     },
-    "application":{
-      "type":"string",
-      "title":"Application",
-      "description":"Application"
+    "application": {
+      "type": "string",
+      "title": "Application",
+      "description": "Application"
     },
-    "client":{
-      "type":"string",
-      "title":"Client",
-      "description":"Client"
+    "client": {
+      "type": "string",
+      "title": "Client",
+      "description": "Client"
     },
-    "host":{
-      "type":"string",
-      "title":"Host",
-      "description":"Host"
+    "host": {
+      "type": "string",
+      "title": "Host",
+      "description": "Host"
     },
-    "includeNumber":{
-      "type":"string",
-      "title":"Include number",
-      "description":"Include number"
+    "includeNumber": {
+      "type": "string",
+      "title": "Include number",
+      "description": "Include number"
     },
-    "notExecutable":{
-      "type":"boolean",
-      "title":"Function module is not executable",
-      "description":"If this flag is set, the function module cannot be called. It is deactivated in the function group"
+    "notExecutable": {
+      "type": "boolean",
+      "title": "Function module is not executable",
+      "description": "If this flag is set, the function module cannot be called. It is deactivated in the function group"
     },
-    "editLocked":{
-      "type":"boolean",
-      "title":"Edit-locked",
-      "description":"Edit-locked"
+    "editLocked": {
+      "type": "boolean",
+      "title": "Edit-locked",
+      "description": "Edit-locked"
     },
-    "parameters":{
-      "type":"array",
-      "title":"Parameter descriptions",
-      "description":"Parameter descriptions of the FUNC",
-      "items":{
-        "type":"object",
-        "title":"Parameter",
-        "description":"Parameter with name and description",
-        "properties":{
-          "name":{
-            "type":"string",
-            "maxLength":30,
-            "title":"Parameter name",
-            "description":"Name of the parameter"
+    "parameters": {
+      "type": "array",
+      "title": "Parameter descriptions",
+      "description": "Parameter descriptions of the FUNC",
+      "items": {
+        "type": "object",
+        "title": "Parameter",
+        "description": "Parameter with name and description",
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 30,
+            "title": "Parameter name",
+            "description": "Name of the parameter"
           },
-          "description":{
-            "type":"string",
-            "maxLength":79,
-            "title":"Parameter description",
-            "description":"Description of the parameter"
+          "description": {
+            "type": "string",
+            "maxLength": 79,
+            "title": "Parameter description",
+            "description": "Description of the parameter"
           }
         },
-        "additionalProperties":false,
-        "required":[
+        "additionalProperties": false,
+        "required": [
           "name",
           "description"
         ]
       }
     },
-    "exceptions":{
-      "type":"array",
-      "title":"Exception descriptions",
-      "description":"Exception descriptions of the FUNC",
-      "items":{
-        "type":"object",
-        "title":"Exception",
-        "description":"Exception with name and description",
-        "properties":{
-          "name":{
-            "type":"string",
-            "maxLength":30,
-            "title":"Exception name",
-            "description":"Name of the exception"
+    "exceptions": {
+      "type": "array",
+      "title": "Exception descriptions",
+      "description": "Exception descriptions of the FUNC",
+      "items": {
+        "type": "object",
+        "title": "Exception",
+        "description": "Exception with name and description",
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 30,
+            "title": "Exception name",
+            "description": "Name of the exception"
           },
-          "description":{
-            "type":"string",
-            "maxLength":79,
-            "title":"Exception description",
-            "description":"Description of the exception"
+          "description": {
+            "type": "string",
+            "maxLength": 79,
+            "title": "Exception description",
+            "description": "Description of the exception"
           }
         },
-        "additionalProperties":false,
-        "required":[
+        "additionalProperties": false,
+        "required": [
           "name",
           "description"
         ]
       }
     }
   },
-  "if":{
-    "processingType":{
-      "const":"rfc"
+  "if": {
+    "processingType": {
+      "const": "rfc"
     }
   },
-  "then":{
-    "required":[
+  "then": {
+    "required": [
       "rfcFields"
     ]
   },
-  "if":{
-    "processingType":{
-      "const":"update"
+  "if": {
+    "processingType": {
+      "const": "update"
     }
   },
-  "then":{
-    "required":[
+  "then": {
+    "required": [
       "updateFields"
     ]
   },
-  "additionalProperties":false,
-  "required":[
+  "additionalProperties": false,
+  "required": [
     "processingType",
     "releaseState",
     "global",
