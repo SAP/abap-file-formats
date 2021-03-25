@@ -151,8 +151,8 @@
           "programID": {
             "type": "string",
             "maxLength": 4,
-            "title": "Program Id of the referenced object",
-            "description": "Program Id of the referenced object"
+            "title": "Program ID of the referenced object",
+            "description": "Program ID (R3TR or LIMU) of the referenced object"
           },
           "elementUsage": {
             "type": "string",
