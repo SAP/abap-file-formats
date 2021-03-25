@@ -110,8 +110,8 @@
           },
           "filterValues": {
             "type": "array",
-            "title": "Filter value tree of the BAdI implementation",
-            "description": "Filter value tree of the BAdI implementation",
+            "title": "Filter values of the BAdI implementation",
+            "description": "Filter values of the BAdI implementation",
             "items": {
               "type": "??????????????",
               "title": "??????????????",
