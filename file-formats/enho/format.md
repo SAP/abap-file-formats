@@ -6,4 +6,4 @@ The JSON schema for the enho metadata file is provided [here](./enho.json).
 Example files for an ENHO `z_aff_example_enho` are provided in the following table.
 File | Content
  --- | ---
-[`z_aff_example_enho.enho.badi`](./examples/z_aff_example_enho.enho.badi)    | Metadata of the ENHO
+[`z_aff_example_enho.enho.badi.json`](./examples/z_aff_example_enho.enho.badi.json)    | Metadata of the ENHO
