@@ -109,22 +109,22 @@
             "description": "BAdI implementation supports customizing"
           },
           "filterValues": {
-            "type": "array",
+            "type": ["number","string","boolean","object","array", "null"],
             "title": "Filter values of the BAdI implementation",
             "description": "Filter values of the BAdI implementation",
             "items": {
-              "type": "??????????????",
-              "title": "??????????????",
-              "description": "??????????????"
+              "type": ["number","string","boolean","object","array", "null"],
+              "title": "Not yet implemented",
+              "description": "Not yet implemented"
             }
-          },
-          "additionalProperties": false,
-          "required": [
-            "name",
-            "description",
-            "badiDefinition"
-          ]
-        }
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "description",
+          "badiDefinition"
+        ]
       }
     },
     "referencedObjects": {
@@ -169,33 +169,33 @@
             "title": "Element usage",
             "description": "Element usage of the referenced object"
           },
-          "mainType": {
+          "mainObjectType": {
             "type": "boolean",
             "maxLength": 4,
             "title": "Main object type of the referenced object",
             "description": "Main object type of the referenced object"
           },
-          "mainName": {
+          "mainObjectName": {
             "type": "boolean",
             "maxLength": 40,
             "title": "Main object name of the referenced object",
             "description": "Main object name of the referenced object"
-          },
-          "additionalProperties": false,
-          "required": [
-            "objectType",
-            "objectName",
-            "programID",
-            "elementUsage",
-            "mainType",
-            "mainName"
-          ]
-        }
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "objectType",
+          "objectName",
+          "programID",
+          "elementUsage",
+          "mainObjectType",
+          "mainObjectName"
+        ]
       }
-    },
-    "additionalProperties": false,
-    "required": [
-      "enhancementSpot"
-    ]
-  }
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "enhancementSpot"
+  ]
 }
