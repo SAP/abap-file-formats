@@ -27,24 +27,24 @@
       "objectName": "Z_AFF_EXAMPLE_BADI_IMPL",
       "programID": "R3TR",
       "elementUsage": "usedObject",
-      "mainType": "CLAS",
-      "mainName": "Z_AFF_EXAMPLE_BADI_IMPL"
+      "mainObjectType": "CLAS",
+      "mainObjectName": "Z_AFF_EXAMPLE_BADI_IMPL"
     },
     {
       "objectType": "ENHS",
       "objectName": "Z_AFF_EXAMPLE_ENHS",
       "programID": "R3TR",
       "elementUsage": "enhancedObject",
-      "mainType": "ENHS",
-      "mainName": "Z_AFF_EXAMPLE_ENHS"
+      "mainObjectType": "ENHS",
+      "mainObjectName": "Z_AFF_EXAMPLE_ENHS"
     },
     {
       "objectType": "INTF",
       "objectName": "Z_AFF_EXAMPLE_BADI_INTF",
       "programID": "R3TR",
       "elementUsage": "usedObject",
-      "mainType": "INTF",
-      "mainName": "Z_AFF_EXAMPLE_BADI_INTF"
+      "mainObjectType": "INTF",
+      "mainObjectName": "Z_AFF_EXAMPLE_BADI_INTF"
     }
   ]
 }
