@@ -95,7 +95,7 @@
             "title": "BAdI implementation is an example implementation",
             "description": "BAdI implementation is an example implementation"
           },
-          "isDefaultimplementation": {
+          "isDefaultImplementation": {
             "type": "boolean",
             "title": "BAdI implementation is the default implementation of the BAdI Definition",
             "description": "BAdI implementation is the default implementation of the BAdI Definition"
