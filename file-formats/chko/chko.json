@@ -52,7 +52,7 @@
 		},
 		"content": {
 			"type": "object",
-			"title": "content",
+			"title": "Content",
 			"description": "content",
 			"properties": {
 				"category": {
