@@ -53,7 +53,7 @@
 		"content": {
 			"type": "object",
 			"title": "Content",
-			"description": "content",
+			"description": "Content of an ATC Check Object",
 			"properties": {
 				"category": {
 					"type": "string",
