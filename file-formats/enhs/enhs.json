@@ -136,19 +136,8 @@
             "items": {
               "title": "Example class",
               "description": "Example class",
-              "type": "object",
-              "properties": {
-                "name": {
-                  "title": "Name of the example class",
-                  "description": "Name of the example class",
-                  "type": "string",
-                  "maxLength": 30
-                }
-              },
-                "additionalProperties": false,
-                "required": [
-                  "name"
-                ]
+              "type": "string",
+              "maxLength": 30
               
             }
           },
