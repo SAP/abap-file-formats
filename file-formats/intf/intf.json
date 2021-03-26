@@ -253,7 +253,7 @@
           "description"
         ]
       }
-    },
-    "additionalProperties": false
-  }
+    }
+  },
+  "additionalProperties": false
 }
