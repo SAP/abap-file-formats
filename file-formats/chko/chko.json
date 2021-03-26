@@ -91,7 +91,7 @@
 							},
 							"description": {
 								"type": "string",
-								"title": "description",
+								"title": "Description",
 								"description": "Description of a parameter"
 							},
 							"modifiable": {
