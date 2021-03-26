@@ -59,7 +59,7 @@
 					"type": "string",
 					"maxLength": 30,
 					"title": "Category",
-					"description": "category"
+					"description": "The parent category of an ATC Check Object "
 				},
 				"implementingClass": {
 					"type": "string",
