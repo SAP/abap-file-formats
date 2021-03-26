@@ -28,8 +28,6 @@
 					"type": "string",
 					"enum": [
 						"standard",
-						"standardUnicode",
-						"keyUser",
 						"cloudDevelopment"
 					],
 					"enumDescriptions": [
