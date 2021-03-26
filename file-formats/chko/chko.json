@@ -97,7 +97,7 @@
 							"modifiable": {
 								"type": "boolean",
 								"title": "modifiable",
-								"description": "modifiable"
+								"description": "The parameter is modifiable"
 							}
 						}
 					}
