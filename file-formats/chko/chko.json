@@ -88,7 +88,7 @@
 							"name": {
 								"type": "string",
 								"maxLength": 30,
-								"title": "name",
+								"title": "Name",
 								"description": "Name of a parameter"
 							},
 							"description": {
