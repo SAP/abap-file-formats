@@ -57,7 +57,7 @@
 			"properties": {
 				"category": {
 					"type": "string",
-					"title": "category",
+					"title": "Category",
 					"description": "category"
 				},
 				"implementingClass": {
