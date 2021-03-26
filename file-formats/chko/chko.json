@@ -34,8 +34,6 @@
 					],
 					"enumDescriptions": [
 						"Standard",
-						"Standard unicode",
-						"ABAP for key user tools",
 						"ABAP for Cloud Development"
 					],
 					"title": "Abap Language Version",
