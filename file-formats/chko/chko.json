@@ -78,7 +78,7 @@
 					"description": "Parameters of the ATC Check Object",
 					"items": {
 						"type": "object",
-						"title": "tyParameter",
+						"title": "Parameter",
 						"description": "A parameter of an ATC Check Object",
 						"properties": {
 							"technicalId": {
