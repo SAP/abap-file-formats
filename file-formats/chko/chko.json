@@ -64,7 +64,7 @@
 				"implementingClass": {
 					"type": "string",
 					"title": "Implementing class",
-					"description": "implementingClass"
+					"description": "The implementing class of the ATC Check Object"
 				},
 				"remoteEnabled": {
 					"type": "boolean",
