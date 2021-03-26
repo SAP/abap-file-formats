@@ -92,7 +92,7 @@
 							"description": {
 								"type": "string",
 								"title": "description",
-								"description": "description"
+								"description": "Description of a parameter"
 							},
 							"modifiable": {
 								"type": "boolean",
