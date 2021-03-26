@@ -68,7 +68,7 @@
 				},
 				"remoteEnabled": {
 					"type": "boolean",
-					"title": "remoteEnabled",
+					"title": "Remote-enabled",
 					"description": "General Flag"
 				},
 				"parameters": {
