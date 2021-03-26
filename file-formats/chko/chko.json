@@ -57,6 +57,7 @@
 			"properties": {
 				"category": {
 					"type": "string",
+					"maxLength": 30,
 					"title": "Category",
 					"description": "category"
 				},
