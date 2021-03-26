@@ -199,7 +199,7 @@
     },
     "parameters": {
       "title": "Parameter descriptions",
-      "description": "Parameter descriptions of the FUNC",
+      "description": "Parameter descriptions of the function module",
       "type": "array",
       "items": {
         "title": "Parameter",
