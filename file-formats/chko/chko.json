@@ -63,7 +63,7 @@
 				},
 				"implementingClass": {
 					"type": "string",
-					"title": "implementingClass",
+					"title": "Implementing class",
 					"description": "implementingClass"
 				},
 				"remoteEnabled": {
