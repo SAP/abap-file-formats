@@ -69,7 +69,7 @@
 				"remoteEnabled": {
 					"type": "boolean",
 					"title": "Remote-enabled",
-					"description": "General Flag"
+					"description": "The ATC Check Object is remote-enabled"
 				},
 				"parameters": {
 					"type": "array",
