@@ -1,6 +1,6 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "http://sap.com/schema/chko.json",
+	"$id": "http://github.com/SAP/abap-file-formats/file-formats/chko/chko.json",
 	"type": "object",
 	"properties": {
 		"header": {
@@ -106,5 +106,4 @@
 		}
 	}
 }                                                                                                                                     
-
 
