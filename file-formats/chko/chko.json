@@ -63,6 +63,7 @@
 				},
 				"implementingClass": {
 					"type": "string",
+					"maxLength": 30,
 					"title": "Implementing class",
 					"description": "The implementing class of the ATC Check Object"
 				},
