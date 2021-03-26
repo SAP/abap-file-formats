@@ -83,7 +83,7 @@
 						"properties": {
 							"technicalId": {
 								"type": "string",
-								"title": "technicalId",
+								"title": "Technical Id",
 								"description": "The technical Id of a parameter"
 							},
 							"name": {
