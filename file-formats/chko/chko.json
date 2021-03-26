@@ -73,7 +73,7 @@
 				},
 				"parameters": {
 					"type": "array",
-					"title": "parameters",
+					"title": "Parameters",
 					"description": "parameters",
 					"items": {
 						"type": "object",
