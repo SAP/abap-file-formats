@@ -1,0 +1,45 @@
+{
+  "header": {
+    "$schema": "http://sap.com/schema/chko.json",
+    "description": "Example CHKO for ABAP File Formats",
+    "masterLanguage": "EN",
+    "abapLanguageVersion": "standard"
+  },
+  "content": {
+    "category": "Z_AFF_EXAMPLE_CHKC",
+    "implementingClass": "CL_CI_TEST_NO_ORDER_BY",
+    "remoteEnabled": true,
+    "parameters": [
+      {
+        "technicalId": "1",
+        "name": "AnalyzeOnlyLocalProcedures",
+        "description": "Analyze only local procedures",
+        "modifiable": true
+      },
+      {
+        "technicalId": "2",
+        "name": "ReportPoolClusterTables",
+        "description": "Report access to Pool/Cluster table",
+        "modifiable": true
+      },
+      {
+        "technicalId": "3",
+        "name": "NonLocalAnalysisDepth",
+        "description": "Non-local analysis depth",
+        "modifiable": true
+      },
+      {
+        "technicalId": "5",
+        "name": "ShowDetails",
+        "description": "Show detail information",
+        "modifiable": true
+      },
+      {
+        "technicalId": "6",
+        "name": "QuickFixSyntaxCheck",
+        "description": "Syntax Check for Quick Fixes",
+        "modifiable": true
+      }
+    ]
+  }
+}
