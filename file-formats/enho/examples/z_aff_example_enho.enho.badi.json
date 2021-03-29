@@ -1,7 +1,7 @@
 {
   "header": {
     "$schema": "http://sap.com/schema/enho.json",
-    "description": "Example ENHS for ABAP File Formats",
+    "description": "Example ENHS for ABAP file formats",
     "masterLanguage": "EN",
     "abapLanguageVersion": "standard"
   },
