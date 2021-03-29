@@ -1,7 +1,7 @@
 {
   "header": {
     "$schema": "http://github.com/sap/abap-file-formats/file-formats/fugr/fugr.json",
-    "description": "Example FUGR for ABAP File Formats",
+    "description": "Example FUGR for ABAP file formats",
     "masterLanguage": "EN",
     "abapLanguageVersion": "standardUnicode"
   },
