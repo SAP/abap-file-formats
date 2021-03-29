@@ -42,12 +42,12 @@ These files are stored in the master language of the object and the master langu
 
 ## File Extensions
 
-ABAP File Formats define three file types:
+ABAP file formats define three file types:
 * **`.abap`** stores ABAP source code as plain text
 * **`.json`** stores content of form-based editors or properties of ABAP object, such as masterLanguage, abapLanguageVersion and others
 * **`.properties`** stores translation relevant text elements as plain text
 
-The `.json` file is referred to as property file and the ABAP File Formats provides JSON schemata for annotation and validation.
+The `.json` file is referred to as property file and the ABAP file formats provides JSON schemata for annotation and validation.
 
 ## File Name Examples
 Here are some examples of file names and its corresponding content.
