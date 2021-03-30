@@ -97,23 +97,23 @@
         "Interface for parameter types for database procedure proxies",
         "Behavior class (behavior implementations)"
       ],
-      "title": "Class category",
+      "title": "Class Category",
       "description": "Category of the class"
     },
     "fixPointArithmetic": {
       "type": "boolean",
-      "title": "Fix point arithmetic",
+      "title": "Fix Point Arithmetic",
       "description": "Fix point arithmetic"
     },
     "messageClass": {
       "type": "string",
       "maxLength": 20,
-      "title": "Message class",
+      "title": "Message Class",
       "description": "The message class of the class"
     },
     "types": {
       "type": "array",
-      "title": "Type descriptions",
+      "title": "Type Descriptions",
       "description": "Type descriptions of the class",
       "items": {
         "type": "object",
@@ -123,13 +123,13 @@
           "name": {
             "type": "string",
             "maxLength": 30,
-            "title": "Type name",
+            "title": "Type Name",
             "description": "Name of the type"
           },
           "description": {
             "type": "string",
             "maxLength": 60,
-            "title": "Type description",
+            "title": "Type Description",
             "description": "Description of the type"
           }
         },
@@ -142,7 +142,7 @@
     },
     "attributes": {
       "type": "array",
-      "title": "Attribute descriptions",
+      "title": "Attribute Descriptions",
       "description": "Attribute descriptions of the class",
       "items": {
         "type": "object",
@@ -158,7 +158,7 @@
           "description": {
             "type": "string",
             "maxLength": 60,
-            "title": "Attribute description",
+            "title": "Attribute Description",
             "description": "Description of the attribute"
           }
         },
@@ -171,7 +171,7 @@
     },
     "events": {
       "type": "array",
-      "title": "Event descriptions",
+      "title": "Event Descriptions",
       "description": "Event descriptions of the class",
       "items": {
         "type": "object",
@@ -181,18 +181,18 @@
           "name": {
             "type": "string",
             "maxLength": 30,
-            "title": "Event name",
+            "title": "Event Name",
             "description": "Name of the event"
           },
           "description": {
             "type": "string",
             "maxLength": 60,
-            "title": "Event descriptions",
+            "title": "Event Descriptions",
             "description": "Description of the event"
           },
           "parameters": {
             "type": "array",
-            "title": "Event parameters",
+            "title": "Event Parameters",
             "description": "Parameters of the event",
             "items": {
               "type": "object",
@@ -208,7 +208,7 @@
                 "description": {
                   "type": "string",
                   "maxLength": 60,
-                  "title": "Parameter description",
+                  "title": "Parameter Description",
                   "description": "Description of the parameter"
                 }
               },
@@ -229,7 +229,7 @@
     },
     "methods": {
       "type": "array",
-      "title": "Method descriptions",
+      "title": "Method Descriptions",
       "description": "Method descriptions of the class",
       "items": {
         "type": "object",
@@ -239,18 +239,18 @@
           "name": {
             "type": "string",
             "maxLength": 30,
-            "title": "Method name",
+            "title": "Method Name",
             "description": "Name of the method"
           },
           "description": {
             "type": "string",
             "maxLength": 60,
-            "title": "Method description",
+            "title": "Method Description",
             "description": "Description of the method"
           },
           "parameters": {
             "type": "array",
-            "title": "Parameter descriptions",
+            "title": "Parameter Descriptions",
             "description": "Parameter descriptions of the method",
             "items": {
               "type": "object",
@@ -260,13 +260,13 @@
                 "name": {
                   "type": "string",
                   "maxLength": 30,
-                  "title": "Parameter name",
+                  "title": "Parameter Name",
                   "description": "Name of the parameter"
                 },
                 "description": {
                   "type": "string",
                   "maxLength": 60,
-                  "title": "Parameter description",
+                  "title": "Parameter Description",
                   "description": "Description of the parameter"
                 }
               },
@@ -279,7 +279,7 @@
           },
           "exceptions": {
             "type": "array",
-            "title": "Exception descriptions",
+            "title": "Exception Descriptions",
             "description": "Exception descriptions of the method",
             "items": {
               "type": "object",
@@ -289,7 +289,7 @@
                 "name": {
                   "type": "string",
                   "maxLength": 30,
-                  "title": "Exception name",
+                  "title": "Exception Name",
                   "description": "Name of the exception"
                 },
                 "description": {
