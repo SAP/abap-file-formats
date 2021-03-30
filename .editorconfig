@@ -1,0 +1,22 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+# ensure the LF line endings
+[*.abap]
+charset = utf-8
+end_of_line = lf
+
+# ensure the LF line endings
+[*.properties]
+charset = utf-8
+end_of_line = lf
+
+
+# we want indentation of 4 spaces
+[*.json]
+charset = utf-8
+end_of_line = lf
+indent_style = space
+indent_size = 4
