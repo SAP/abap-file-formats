@@ -139,8 +139,7 @@
                                                     {
                                                         "title": "Filter Value",
                                                         "description": "Filter value",
-                                                        "type": "string",
-                                                        "minItems": 2
+                                                        "type": "string"
                                                     },
                                                     {
                                                         "title": "Filter Combination",
@@ -160,8 +159,7 @@
                                                                         {
                                                                             "title": "filterValue",
                                                                             "description": "Filter value",
-                                                                            "type": "string",
-                                                                            "minItems": 2
+                                                                            "type": "string"
                                                                         }
                                                                     ]
                                                                 }
