@@ -22,3 +22,5 @@ The following sub objects of FUGR are not yet supported:
 * Dynpros
 * PBO Modules
 * PAI Modules
+
+For FUGR-deserialization there is no need to supply a file for the "UXX"-include.

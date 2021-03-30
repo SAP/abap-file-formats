@@ -231,7 +231,7 @@
     },
     "exceptions": {
       "title": "Exception descriptions",
-      "description": "Exception descriptions of the FUNC",
+      "description": "Exception descriptions of the function module",
       "type": "array",
       "items": {
         "title": "Exception",
