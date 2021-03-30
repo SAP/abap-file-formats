@@ -60,8 +60,8 @@
           "type": "boolean"
         },
         "tool": {
-          "title": "ENHS Tool type",
-          "description": "Tool type of the ENHS",
+          "title": "BAdI Enhancement Spot Tool Type",
+          "description": "Tool type of the BAdI Enhancement Spot",
           "type": "string",
           "enum": [
             "badiDefinition"
@@ -78,8 +78,8 @@
       ]
     },
     "badiDefinitions": {
-      "title": "BAdI Definitions of the ENHS",
-      "description": "BAdI definitions of the ENHS",
+      "title": "BAdI Definitions of the BAdI Enhancement Spot",
+      "description": "BAdI definitions of the BAdI Enhancement Spot",
       "type": "array",
       "items": {
         "title": "BAdI Definition",
@@ -125,16 +125,16 @@
             "type": "boolean"
           },
           "sapInternal": {
-            "title": "SAP internal",
+            "title": "SAP Internal",
             "description": "SAP internal",
             "type": "boolean"
           },
           "exampleClasses": {
-            "title": "Example classes of the BAdI Definition",
+            "title": "Example Classes of the BAdI Definition",
             "description": "Example classes of the BAdI definition",
             "type": "array",
             "items": {
-              "title": "Example class",
+              "title": "Example Class",
               "description": "Example class",
               "type": "string",
               "maxLength": 30
@@ -142,18 +142,18 @@
             }
           },
           "useFallbackClass": {
-            "title": "Use fallback class",
+            "title": "Use Fallback Class",
             "description": "Use fallback class in case no implementation is executed",
             "type": "boolean"
           },
           "fallbackClass": {
-            "title": "Name of the default/fallback class",
+            "title": "Name of the Default/Fallback Class",
             "description": "Name of the default/fallback class",
             "type": "string",
             "maxLength": 30
           },
           "filterLimitation": {
-            "title": "Limited filter use",
+            "title": "Limited Filter use",
             "description": "Limited filter use",
             "type": "boolean"
           },
@@ -190,7 +190,7 @@
                   "maxLength": 255
                 },
                 "type": {
-                  "title": "Type of the filter",
+                  "title": "Type of the Filter",
                   "description": "Type of the filter",
                   "type": "string",
                   "enum": [
@@ -209,17 +209,17 @@
                   ]
                 },
                 "onlyConstantValues": {
-                  "title": "Only constant filter values",
+                  "title": "Only constant Filter Values",
                   "description": "The filter has only constant filter values",
                   "type": "boolean"
                 },
                 "valueCheckDdic": {
-                  "title": "Value check Ddic",
+                  "title": "Value Check Ddic",
                   "description": "Value check via Domain or Data Element",
                   "type": "object",
                   "properties": {
                     "type": {
-                      "title": "Type of the value check object",
+                      "title": "Type of the Value Check Object",
                       "description": "Type of the value check object",
                       "type": "string",
                       "enum": [
@@ -232,7 +232,7 @@
                       ]
                     },
                     "objectName": {
-                      "title": "Name of the value check object",
+                      "title": "Name of the Value Check Object",
                       "description": "Name of the value check object",
                       "type": "string"
                     }
@@ -244,23 +244,23 @@
                   ]
                 },
                 "valueCheckClass": {
-                  "title": "Value check clas",
+                  "title": "Value Check Clas",
                   "description": "Value check via class",
                   "type": "object",
                   "properties": {
                     "objectName": {
-                      "title": "Name of the value check class",
+                      "title": "Name of the Value Check Class",
                       "description": "Name of the value check class",
                       "type": "string",
                       "maxLenght": 30
                     },
                     "length": {
-                      "title": "Length of the value check",
+                      "title": "Length of the Value Check",
                       "description": "Length of the value check",
                       "type": "number"
                     },
                     "decimalPlaces": {
-                      "title": "Decimal places of the value check",
+                      "title": "Decimal Places of the Value Check",
                       "description": "Decimal places of the value check",
                       "type": "number"
                     }
