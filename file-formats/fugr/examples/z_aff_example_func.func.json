@@ -5,7 +5,6 @@
   },
   "processingType": "normal",
   "releaseState": "notReleased",
-  "global": false,
   "exceptionClasses": true,
   "includeNumber": "01",
   "parameters": [
