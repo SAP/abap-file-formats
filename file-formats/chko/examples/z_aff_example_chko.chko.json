@@ -1,7 +1,7 @@
 {
   "header": {
     "$schema": "http://github.com/SAP/abap-file-formats/file-formats/chko/chko.json",
-    "description": "Example CHKO for ABAP File Formats",
+    "description": "Example CHKO for ABAP file formats",
     "masterLanguage": "EN",
     "abapLanguageVersion": "standard"
   },
