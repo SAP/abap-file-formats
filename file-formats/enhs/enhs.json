@@ -165,7 +165,7 @@
           },
           "amdp": {
             "title": "Amdp BAdI",
-            "description": "Amdp BAdI",
+            "description": "BADI is an AMDP BAdI",
             "type": "boolean"
           },
           "filters": {
