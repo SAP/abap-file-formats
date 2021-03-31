@@ -6,4 +6,4 @@ The JSON schema for the enhs metadata file is provided [here](./enhs.json).
 Example files for an ENHS `z_aff_example_enhs` are provided in the following table.
 File | Content
  --- | ---
-[`z_aff_example_enhs.enhs`](./examples/z_aff_example_enhs.enhs)    | Metadata of the ENHS
+[`z_aff_example_enhs.enhs.json`](./examples/z_aff_example_enhs.enhs.json)    | Metadata of the ENHS
