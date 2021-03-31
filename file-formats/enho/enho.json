@@ -157,7 +157,7 @@
                                                                 "items": {
                                                                     "anyOf": [
                                                                         {
-                                                                            "title": "filterValue",
+                                                                            "title": "Filter Value",
                                                                             "description": "Filter value",
                                                                             "type": "string"
                                                                         }
