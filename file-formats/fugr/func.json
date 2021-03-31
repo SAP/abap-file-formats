@@ -162,7 +162,7 @@
     },
     "global": { 
       "title": "Global",
-      "description": "The parameters of this function module are visible",
+      "description": "The parameters of this function module are global visible within the function group",
       "type": "boolean"
     },
     "exceptionClasses": {
