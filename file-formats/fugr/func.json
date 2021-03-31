@@ -86,8 +86,8 @@
         "type": "boolean"
         },
         "javaFromAbap": { 
-        "title": "Java from abap",
-        "description": "Java from abap",
+        "title": "Java from ABAP",
+        "description": "Java from ABAP",
         "type": "boolean"
         },
         "javaRemote": { 
