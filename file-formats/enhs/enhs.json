@@ -244,7 +244,7 @@
                   ]
                 },
                 "valueCheckClass": {
-                  "title": "Value Check Clas",
+                  "title": "Value Check Class",
                   "description": "Value check via class",
                   "type": "object",
                   "properties": {
