@@ -177,13 +177,13 @@
     },
     "client": {
       "title": "Client",
-      "description": "Client",
+      "description": "This field is obsolete and should not be filled",
       "type": "string"
     },
-    "host": {
-      "title": "Host",
-      "description": "Host",
-      "type": "string"
+    "activeFunctionExit": {
+      "title": "Function Exit active",
+      "description": "This function module is registered as function module exit (see SMOD/CMOD) and the function module exit is active",
+      "type": "boolean"
     },
     "includeNumber": {
       "title": "Include number",
@@ -282,10 +282,6 @@
   "additionalProperties": false,
   "required": [
     "processingType",
-    "releaseState",
-    "global",
-    "exceptionClasses",
-    "includeNumber",
-    "notExecutable"
+    "includeNumber"
   ]
 }
