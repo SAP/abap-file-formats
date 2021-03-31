@@ -81,8 +81,8 @@
           ]
         },
         "abapFromJava": { 
-        "title": "Abap from java",
-        "description": "Abap from java",
+        "title": "ABAP from Java",
+        "description": "ABAP from Java",
         "type": "boolean"
         },
         "javaFromAbap": { 
