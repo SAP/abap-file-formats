@@ -55,7 +55,7 @@
       "type": "object",
       "properties": {
         "sapInternal": {
-          "title": "SAP internal",
+          "title": "SAP Internal",
           "description": "SAP internal",
           "type": "boolean"
         },
