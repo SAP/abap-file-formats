@@ -1,0 +1,22 @@
+{
+  "header": {
+    "$schema": "http://github.com/sap/abap-file-formats/file-formats/fugr/func.json",
+    "description": "Example FUNC for ABAP file formats"
+  },
+  "processingType": "normal",
+  "releaseState": "notReleased",
+  "exceptionClasses": true,
+  "includeNumber": "01",
+  "parameters": [
+    {
+      "name": "I_PARAM",
+      "description": "This is an example parameter"
+    }
+  ],
+  "exceptions": [
+    {
+      "name": "CX_STATIC_CHECK",
+      "description": "This is an example exception"
+    }
+  ]
+}
