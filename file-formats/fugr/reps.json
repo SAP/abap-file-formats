@@ -1,51 +1,52 @@
 {
-  "$schema": "http://json-schema.org/draft/2019-09/schema#",
-  "$id": "http://github.com/SAP/abap-file-formats/file-formats/fugr/reps.json",
-  "type": "object",
-  "properties": {
-    "header": {
-      "title": "Header",
-      "type": "object",
-      "properties": {
-        "$schema": {
-          "title": "Schema",
-          "description": "Format version",
-          "type": "string"
+    "$schema": "http://json-schema.org/draft/2019-09/schema#",
+    "$id": "http://github.com/SAP/abap-file-formats/file-formats/fugr/reps.json",
+    "type": "object",
+    "properties": {
+        "header": {
+            "title": "Header",
+            "type": "object",
+            "properties": {
+                "$schema": {
+                    "title": "Schema",
+                    "description": "Format version",
+                    "type": "string"
+                },
+                "description": {
+                    "title": "Description",
+                    "description": "Description for a FUGR Include",
+                    "type": "string",
+                    "maxLength": 70
+                }
+            },
+            "additionalProperties": false,
+            "required": [
+                "$schema",
+                "description"
+            ]
         },
-        "description": {
-          "title": "Description",
-          "description": "Description for a FUGR Include",
-          "type": "string",
-          "maxLength": 70
+        "editLocked": {
+            "title": "Edit-Locked",
+            "description": "Edit-Locked",
+            "type": "boolean"
+        },
+        "includeType": {
+            "title": "Include Type",
+            "description": "Include Type",
+            "type": "string",
+            "enum": [
+                "include",
+                "functionGroup"
+            ],
+            "enumDescriptions": [
+                "Include",
+                "Function Group"
+            ]
         }
-      },
-      "additionalProperties": false,
-      "required": [
-          "$schema",
-          "description"
-      ]
-      },
-      "editLocked": {
-        "title": "Edit-Locked",
-        "description": "Edit-Locked",
-        "type": "boolean"
-      },
-      "includeType": {
-        "title": "Include Type",
-        "description": "Include Type",
-        "type": "string",
-        "enum": [
-          "include",
-          "functionGroup"
-        ],
-        "enumDescriptions": [
-          "Include",
-          "Function Group"
-        ]
-      }
     },
     "additionalProperties": false,
     "required": [
-    "includeType"
+        "header",
+        "includeType"
     ]
-  }
+}
