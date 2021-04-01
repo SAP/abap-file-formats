@@ -1,0 +1,50 @@
+{
+  "header": {
+    "$schema": "http://sap.com/schema/enho.json",
+    "description": "Example ENHS for ABAP file formats",
+    "masterLanguage": "EN",
+    "abapLanguageVersion": "standard"
+  },
+  "enhancementSpot": "Z_AFF_EXAMPLE_ENHS",
+  "badiImplementations": [
+    {
+      "name": "Z_AFF_EXAMPLE_BADI_IMPL",
+      "description": "This is an example Badi Implementation",
+      "badiDefinition": "Z_AFF_EXAMPLE_BADI_DEFINITION",
+      "implementingClass": "Z_AFF_EXAMPLE_BADI_IMPL",
+      "isExampleImplementation": false,
+      "isDefaultImplementation": true,
+      "isActiveImplementation": true,
+      "isCustomizingSupported": false,
+      "filterValues": [
+        "EXAMPLE_FILTER = example_value1"
+      ]
+    }
+  ],
+  "referencedObjects": [
+    {
+      "objectType": "CLAS",
+      "objectName": "Z_AFF_EXAMPLE_BADI_IMPL",
+      "programID": "R3TR",
+      "elementUsage": "usedObject",
+      "mainObjectType": "CLAS",
+      "mainObjectName": "Z_AFF_EXAMPLE_BADI_IMPL"
+    },
+    {
+      "objectType": "ENHS",
+      "objectName": "Z_AFF_EXAMPLE_ENHS",
+      "programID": "R3TR",
+      "elementUsage": "enhancedObject",
+      "mainObjectType": "ENHS",
+      "mainObjectName": "Z_AFF_EXAMPLE_ENHS"
+    },
+    {
+      "objectType": "INTF",
+      "objectName": "Z_AFF_EXAMPLE_BADI_INTF",
+      "programID": "R3TR",
+      "elementUsage": "usedObject",
+      "mainObjectType": "INTF",
+      "mainObjectName": "Z_AFF_EXAMPLE_BADI_INTF"
+    }
+  ]
+}
