@@ -22,7 +22,8 @@ The ABAP file formats specifies file content and file names for ABAP repository 
 
 ### File Content
 
-For each object type, a list of possible files and their file content is describe in the folder [file-formats](./file-formats).
+For each object type, a list of possible files and their file content is describe in the object-specific file `format.md` in the folder [file-formats](./file-formats)
+(e.g., file [file-formats/clas/format.md](./file-formats/clas/format.md) describes the format of ABAP classes)
 
 See also the [list of supported object types](#List-of-Supported-ABAP-Objects).
 
@@ -47,7 +48,7 @@ Details and full specification can be found [here](./doc/file_names.md).
 | Type | Specification |
 | ---  | --- |
 | CHKO | [ATC Check](./file-formats/chko/format.md)|
-| CLAS | [Class](./file-formats/clas/format.md) |
+| CLAS | [Class](./file-formats/clas/format.md)
 | FUGR | [Function Group](./file-formats/fugr/format.md) |
 | INTF | [Interface](./file-formats/intf/format.md) |
 | NROB | [Number Range Object](./file-formats/nrob/format.md) |
