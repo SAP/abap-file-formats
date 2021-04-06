@@ -24,7 +24,7 @@ The ABAP file formats specifies file content and file names for ABAP repository 
 
 For each object type, a list of possible files and their file content is describe in the object-specific file `format.md` in the folder [`file-formats`](./file-formats). For example, the file [`file-formats/clas/format.md`](./file-formats/clas/format.md) describes the format of ABAP classes).
 
-See also the [list of supported object types](#List-of-Supported-ABAP-Objects).
+For other object types refer to the [list of supported object types](#List-of-Supported-ABAP-Objects).
 
 ### File Names
 The mapping of ABAP objects to files follows the pattern
