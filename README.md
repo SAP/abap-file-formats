@@ -1,9 +1,8 @@
 # ABAP File Formats
 
-This project provides file format definitions of ABAP repository objects.
-We plan to modify and extend this document as our understanding improves.
+This project provides file format definitions of ABAP repository objects. 
 
-
+The project is still in an early phase. We plan to modify and extend this document as our understanding improves. Therefore, the ABAP file formats can still change in the future.
 
 ## Background and Scope
 
@@ -20,6 +19,14 @@ The design of the ABAP file formats covers the following principles:
 ## Technical Specification
 
 The ABAP file formats specifies file content and file names for ABAP repository objects or simply ABAP objects.
+
+### File Content
+
+For each object type, a list of possible files and their file content is describe in the folder [file-formats](./file-formats).
+
+See also the [list of supported object types](#List-of-Supported-ABAP-Objects).
+
+### File Names
 The mapping of ABAP objects to files follows the pattern
 ```
 <object_name>.<object_type>.
@@ -41,9 +48,9 @@ Details and full specification can be found [here](./doc/file_names.md).
 | ---  | --- |
 | CHKO | [ATC Check](./file-formats/chko/format.md)|
 | CLAS | [Class](./file-formats/clas/format.md) |
+| FUGR | [Function Group](./file-formats/fugr/format.md) |
 | INTF | [Interface](./file-formats/intf/format.md) |
 | NROB | [Number Range Object](./file-formats/nrob/format.md) |
-| FUGR | [Function Group](./file-formats/fugr/format.md) |
 
 
 
