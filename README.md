@@ -47,7 +47,7 @@ Details and full specification can be found [here](./doc/file_names.md).
 | Type | Specification |
 | ---  | --- |
 | CHKO | [ATC Check](./file-formats/chko/format.md)|
-| CLAS | [Class](./file-formats/clas/format.md)
+| CLAS | [Class](./file-formats/clas/format.md) |
 | FUGR | [Function Group](./file-formats/fugr/format.md) |
 | INTF | [Interface](./file-formats/intf/format.md) |
 | NROB | [Number Range Object](./file-formats/nrob/format.md) |
