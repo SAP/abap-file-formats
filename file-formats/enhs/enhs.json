@@ -1,5 +1,5 @@
 {
-    "$schema": "http://json-schema.org/draft/2019-09/schema#",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "http://github.com/SAP/abap-file-formats/file-formats/enhs/enhs.json",
     "type": "object",
     "properties": {
