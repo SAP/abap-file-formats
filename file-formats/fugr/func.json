@@ -143,16 +143,18 @@
             "description": "Release state",
             "type": "string",
             "enum": [
+                "notReleased",
                 "external",
                 "internal",
                 "obsolete",
                 "markedForRelease"
             ],
             "enumDescriptions": [
-                "External",
-                "Internal",
-                "Obsolete",
-                "Marked for release"
+                "Function module is not released",
+                "Function module is released",
+                "Function module is release SAP-internally",
+                "Function module is deprecated",
+                "Function module is planned to be released"
             ]
         },
         "releaseDate": {
@@ -259,26 +261,28 @@
             }
         }
     },
-    "if": {
-        "processingType": {
-            "const": "rfc"
+    "allOf": [
+        {
+            "if": {
+                "properties": { "processingType": { "const": "rfc" } }
+            },
+            "then": {
+                "required": [
+                    "rfcFields"
+                ]
+            }
+        },
+        {
+            "if": {
+                "properties": { "processingType": { "const": "update" } }
+            },
+            "then": {
+                "required": [
+                    "updateFields"
+                ]
+            }
         }
-    },
-    "then": {
-        "required": [
-            "rfcFields"
-        ]
-    },
-    "if": {
-        "processingType": {
-            "const": "update"
-        }
-    },
-    "then": {
-        "required": [
-            "updateFields"
-        ]
-    },
+    ],
     "additionalProperties": false,
     "required": [
         "header",
