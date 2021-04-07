@@ -9,7 +9,7 @@ The mapping of ABAP objects to file names follows the pattern
 <file_extension>
 ```
 with mandatory object_name, object_type and file_extension.
-Namespaces are converted into brackets, for instance `/NMSPC/ZCL_OBJECT` becomes `(nmspc)zcl_object`.
+Namespaces are converted into brackets, for instance `/NMSPC/CL_OBJECT` becomes `(nmspc)cl_object`.
 
 ## Object Name
 The object name corresponds to the name of the ABAP object.
