@@ -6,4 +6,4 @@ The JSON schema is provided [here](./nrob.json).
 
 File | Content
  --- | ---
-[`z_aff_nr.nrob.json`](./examples/z_aff_nr.nrob.json) | Metadata of number range object
+[`z_aff_nr.nrob.json`](./examples/z_aff_nr.nrob.json) | File representation of a number range object
