@@ -228,13 +228,13 @@
                     "mainObjectType": {
                         "title": "Main object type of the referenced object",
                         "description": "Main object type of the referenced object",
-                        "type": "boolean",
+                        "type": "string",
                         "maxLength": 4
                     },
                     "mainObjectName": {
                         "title": "Main object name of the referenced object",
                         "description": "Main object name of the referenced object",
-                        "type": "boolean",
+                        "type": "string",
                         "maxLength": 40
                     }
                 },
