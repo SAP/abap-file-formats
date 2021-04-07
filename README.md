@@ -13,7 +13,7 @@ The file representation of ABAP repository objects facilitates the ongoing effor
 The design of the ABAP file formats covers the following principles:
 * The file content is **complete** and can be used for the sharing and distribution of ABAP repository objects.
 * The file content is **human-readable** and the structure is as close as possible to what users know from their IDE.
-* The files don't contain metadata like dates, last editor, system specific information.
+* The files don't contain metadata like dates, usernames, last editor, system specific information, plus no obsolete or redundant information.
 
 
 ## Technical Specification
