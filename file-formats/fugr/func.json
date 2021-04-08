@@ -40,7 +40,7 @@
                 "Update"
             ]
         },
-        "rfcFields": {
+        "rfcProperties": {
             "title": "RFC specific fields",
             "description": "Specific fields for rfc function modules",
             "type": "object",
@@ -100,13 +100,10 @@
             "required": [
                 "basXmlEnabled",
                 "rfcScope",
-                "rfcVersion",
-                "abapFromJava",
-                "javaFromAbap",
-                "javaRemote"
+                "rfcVersion"
             ]
         },
-        "updateFields": {
+        "updateProperties": {
             "title": "Update specific fields",
             "description": "Specific fields for update function modules",
             "type": "object",
@@ -116,20 +113,18 @@
                     "description": "Update task kind",
                     "type": "string",
                     "enum": [
-                        "startImmediate",
+                        "startImmediately",
                         "startDelayed",
-                        "immediateStartNoRestart",
+                        "startImmediatelyNoRestart",
                         "collectiveRun",
-                        "unsupportedKind",
-                        "none"
+                        "unsupportedKind"
                     ],
                     "enumDescriptions": [
-                        "Start immediate",
-                        "Start delayed",
-                        "Immediate start no restart",
+                        "Start the update task immediately",
+                        "Start the update task delayed",
+                        "Start the update task immediately, no restart",
                         "Collective run",
-                        "Unsupported kind",
-                        "none"
+                        "Unsupported kind"
                     ]
                 }
             },
@@ -264,12 +259,26 @@
     "allOf": [
         {
             "if": {
+                "properties": { "processingType": { "const": "normal" } }
+            },
+            "then": {
+                "not": {
+                    "anyOf": [
+                        { "required": [ "rfcProperties" ] },
+                        { "required": [ "updateProperties" ] }
+                    ]
+                }
+            }
+        },        
+        {
+            "if": {
                 "properties": { "processingType": { "const": "rfc" } }
             },
             "then": {
-                "required": [
-                    "rfcFields"
-                ]
+                "required": [ "rfcProperties" ],
+                "not": {
+                    "required": [ "updateProperties" ]
+                }
             }
         },
         {
@@ -277,9 +286,10 @@
                 "properties": { "processingType": { "const": "update" } }
             },
             "then": {
-                "required": [
-                    "updateFields"
-                ]
+                "required": [ "updateProperties" ],
+                "not": {
+                    "required": [ "rfcProperties" ]
+                }
             }
         }
     ],
