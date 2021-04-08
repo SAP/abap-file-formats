@@ -139,17 +139,17 @@
             "type": "string",
             "enum": [
                 "notReleased",
-                "external",
-                "internal",
+                "released",
+                "releasedSapInternal",
                 "obsolete",
-                "markedForRelease"
+                "releasePlanned"
             ],
             "enumDescriptions": [
                 "Function module is not released",
                 "Function module is released",
-                "Function module is release SAP-internally",
-                "Function module is deprecated",
-                "Function module is planned to be released"
+                "Function module is released SAP-internally",
+                "Function module is obsolete/deprecated",
+                "Function module is planned to be released [obsolete]"
             ]
         },
         "releaseDate": {
