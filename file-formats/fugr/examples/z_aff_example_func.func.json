@@ -1,31 +1,22 @@
 {
   "header": {
-    "$schema": "http://github.com/sap/abap-file-formats/file-formats/enhs/enhs.json",
-    "description": "Example ENHS for ABAP file formats",
-    "masterLanguage": "EN",
-    "abapLanguageVersion": "standard"
+    "$schema": "http://github.com/sap/abap-file-formats/file-formats/fugr/func.json",
+    "description": "Example FUNC for ABAP file formats"
   },
-  "configuration": {
-    "tool": "badiDefinition"
-  },
-  "badiDefinitions": [
+  "processingType": "normal",
+  "releaseState": "notReleased",
+  "exceptionClasses": true,
+  "includeNumber": "01",
+  "parameters": [
     {
-      "name": "Z_AFF_EXAMPLE_BADI_DEFINITION",
-      "description": "This is an example Badi Definition",
-      "interface": "Z_AFF_EXAMPLE_BADI_INTF",
-      "instantiation": "creatingNewInstances",
-      "multipleUse": true,
-      "useFallbackClass": false,
-      "filterLimitation": false,
-      "documentationId": "",
-      "amdp": false,
-      "filters": [
-        {
-          "name": "EXAMPLE_FILTER",
-          "description": "This is an example Filter",
-          "type": "String"
-        }
-      ]
+      "name": "I_PARAM",
+      "description": "This is an example parameter"
+    }
+  ],
+  "exceptions": [
+    {
+      "name": "CX_STATIC_CHECK",
+      "description": "This is an example exception"
     }
   ]
 }
