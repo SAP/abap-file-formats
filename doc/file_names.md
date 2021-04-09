@@ -1,7 +1,7 @@
 # File Names
 
+The ABAP file formats specifies file content and file names for ABAP repository objects or simply ABAP objects.
 The mapping of ABAP objects to file names follows the pattern
-
 ```
 <object_name>.<object_type>.
   [<sub_object_name>.<sub_object_type>.]
