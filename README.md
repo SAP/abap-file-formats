@@ -1,6 +1,6 @@
 # ABAP File Formats
 
-This project provides file format definitions of ABAP repository objects. 
+This project provides file format definitions of ABAP repository objects.
 
 The project is still in an early phase. We plan to modify and extend this document as our understanding improves. Therefore, the ABAP file formats can still change in the future.
 
@@ -16,31 +16,8 @@ The design of the ABAP file formats covers the following principles:
 * The files don't contain metadata like dates, usernames, last editor, system specific information, plus no obsolete or redundant information.
 
 
-## Technical Specification
+Details on technical specification can be found [here](./doc/file_names.md).
 
-The ABAP file formats specifies file content and file names for ABAP repository objects or simply ABAP objects.
-
-### File Content
-
-For each object type, a list of possible files and their file content is described in the object-specific file `format.md` in the folder [`file-formats`](./file-formats). For example, the file [`file-formats/clas/format.md`](./file-formats/clas/format.md) describes the format of ABAP classes).
-
-For other object types refer to the [list of supported object types](#List-of-Supported-ABAP-Objects).
-
-### File Names
-The mapping of ABAP objects to files follows the pattern
-```
-<object_name>.<object_type>.
-  [<sub_object_name>.<sub_object_type>.]
-  [<content_type>.<language>.]
-<file_extension>
-```
-with mandatory object_name, object_type and file_extension.
-
-* **Object Name** corresponds to the name of the ABAP object.
-* **Object Type** is either the R3TR or the LIMU object type.
-* **File Extension** is either `.abap`, `.json` or `.properties`.
-
-Details and full specification can be found [here](./doc/file_names.md).
 
 ## List of Supported ABAP Objects
 
