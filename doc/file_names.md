@@ -4,6 +4,7 @@ Table of  content
 * [File Names](#File-Names)
 * [File Extensions](#File-Extensions)
 * [File Name Examples](#File-Name-Examples)
+* [Formatting Conventions](#Formatting-Conventions)
 
 ## File Names
 
@@ -68,3 +69,10 @@ Here are some examples of file names and its corresponding content.
 | `s_carrid.dtel.json` | Properties of data element `S_CARRID` |
 | `function_exists.func.abap` | Source code of function module `FUNCTION_EXISTS` |
 | `seo_class_editor.fugr.0152.dynp.json` | Dynpro 0152 of function group `SEO_CLASS_EDITOR` |
+
+## Formatting Conventions
+To enable interchangeability the files are characterized by
+* UTF-8 codepage
+* End-of-line (EOL) character `\n`
+* No newline at end-of-file (EOF)
+* JSON indentation 4 spaces
