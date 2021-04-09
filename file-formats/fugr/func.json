@@ -40,7 +40,7 @@
                 "Update"
             ]
         },
-        "rfcFields": {
+        "rfcProperties": {
             "title": "RFC specific fields",
             "description": "Specific fields for rfc function modules",
             "type": "object",
@@ -100,13 +100,10 @@
             "required": [
                 "basXmlEnabled",
                 "rfcScope",
-                "rfcVersion",
-                "abapFromJava",
-                "javaFromAbap",
-                "javaRemote"
+                "rfcVersion"
             ]
         },
-        "updateFields": {
+        "updateProperties": {
             "title": "Update specific fields",
             "description": "Specific fields for update function modules",
             "type": "object",
@@ -116,20 +113,18 @@
                     "description": "Update task kind",
                     "type": "string",
                     "enum": [
-                        "startImmediate",
+                        "startImmediately",
                         "startDelayed",
-                        "immediateStartNoRestart",
+                        "startImmediatelyNoRestart",
                         "collectiveRun",
-                        "unsupportedKind",
-                        "none"
+                        "unsupportedKind"
                     ],
                     "enumDescriptions": [
-                        "Start immediate",
-                        "Start delayed",
-                        "Immediate start no restart",
+                        "Start the update task immediately",
+                        "Start the update task delayed",
+                        "Start the update task immediately, no restart",
                         "Collective run",
-                        "Unsupported kind",
-                        "none"
+                        "Unsupported kind"
                     ]
                 }
             },
@@ -143,16 +138,18 @@
             "description": "Release state",
             "type": "string",
             "enum": [
-                "external",
-                "internal",
+                "notReleased",
+                "released",
+                "releasedSapInternal",
                 "obsolete",
-                "markedForRelease"
+                "releasePlanned"
             ],
             "enumDescriptions": [
-                "External",
-                "Internal",
-                "Obsolete",
-                "Marked for release"
+                "Function module is not released",
+                "Function module is released",
+                "Function module is released SAP-internally",
+                "Function module is obsolete/deprecated",
+                "Function module is planned to be released [obsolete]"
             ]
         },
         "releaseDate": {
@@ -259,26 +256,43 @@
             }
         }
     },
-    "if": {
-        "processingType": {
-            "const": "rfc"
+    "allOf": [
+        {
+            "if": {
+                "properties": { "processingType": { "const": "normal" } }
+            },
+            "then": {
+                "not": {
+                    "anyOf": [
+                        { "required": [ "rfcProperties" ] },
+                        { "required": [ "updateProperties" ] }
+                    ]
+                }
+            }
+        },        
+        {
+            "if": {
+                "properties": { "processingType": { "const": "rfc" } }
+            },
+            "then": {
+                "required": [ "rfcProperties" ],
+                "not": {
+                    "required": [ "updateProperties" ]
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": { "processingType": { "const": "update" } }
+            },
+            "then": {
+                "required": [ "updateProperties" ],
+                "not": {
+                    "required": [ "rfcProperties" ]
+                }
+            }
         }
-    },
-    "then": {
-        "required": [
-            "rfcFields"
-        ]
-    },
-    "if": {
-        "processingType": {
-            "const": "update"
-        }
-    },
-    "then": {
-        "required": [
-            "updateFields"
-        ]
-    },
+    ],
     "additionalProperties": false,
     "required": [
         "header",
