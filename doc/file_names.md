@@ -75,4 +75,4 @@ To enable interchangeability the files are characterized by
 * UTF-8 codepage
 * End-of-line (EOL) character `\n`
 * No newline at end-of-file (EOF)
-* JSON indentation 4 spaces
+* JSON indentation 2 spaces
