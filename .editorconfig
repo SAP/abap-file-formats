@@ -4,12 +4,7 @@
 root = true
 
 # ensure the LF line endings
-[*.abap]
-charset = utf-8
-end_of_line = lf
-
-# ensure the LF line endings
-[*.properties]
+[*.{abap,md,properties}]
 charset = utf-8
 end_of_line = lf
 

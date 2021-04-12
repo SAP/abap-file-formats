@@ -73,7 +73,6 @@
             },
             "additionalProperties": false,
             "required": [
-                "sapInternal",
                 "tool"
             ]
         },
@@ -280,9 +279,7 @@
                     }
                 },
                 "if": {
-                    "useFallbackClass": {
-                        "const": "true"
-                    }
+                    "properties": { "useFallbackClass": { "const": "true" } }
                 },
                 "then": {
                     "required": [
