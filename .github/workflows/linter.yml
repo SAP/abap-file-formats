@@ -5,6 +5,7 @@
 ###########################
 ###########################
 name: Lint Code Base
+description: "Validate files against editor config"
 
 #
 # Documentation:
@@ -51,6 +52,6 @@ jobs:
         uses: github/super-linter@v3
         env:
           VALIDATE_EDITORCONFIG: true
-          VALIDATE_ALL_CODEBASE: false
+          VALIDATE_ALL_CODEBASE: true
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
