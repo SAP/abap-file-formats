@@ -51,7 +51,6 @@ jobs:
         uses: github/super-linter@v3
         env:
           VALIDATE_EDITORCONFIG: true
-          VALIDATE_JSON: false
           VALIDATE_ALL_CODEBASE: false
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
