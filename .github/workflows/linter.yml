@@ -5,7 +5,6 @@
 ###########################
 ###########################
 name: Lint Code Base
-description: "Validate files against editor config"
 
 #
 # Documentation:
