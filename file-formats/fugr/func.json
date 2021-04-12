@@ -259,36 +259,64 @@
     "allOf": [
         {
             "if": {
-                "properties": { "processingType": { "const": "normal" } }
+                "properties": {
+                    "processingType": {
+                        "const": "normal"
+                    }
+                }
             },
             "then": {
                 "not": {
                     "anyOf": [
-                        { "required": [ "rfcProperties" ] },
-                        { "required": [ "updateProperties" ] }
+                        {
+                            "required": [
+                                "rfcProperties"
+                            ]
+                        },
+                        {
+                            "required": [
+                                "updateProperties"
+                            ]
+                        }
                     ]
-                }
-            }
-        },        
-        {
-            "if": {
-                "properties": { "processingType": { "const": "rfc" } }
-            },
-            "then": {
-                "required": [ "rfcProperties" ],
-                "not": {
-                    "required": [ "updateProperties" ]
                 }
             }
         },
         {
             "if": {
-                "properties": { "processingType": { "const": "update" } }
+                "properties": {
+                    "processingType": {
+                        "const": "rfc"
+                    }
+                }
             },
             "then": {
-                "required": [ "updateProperties" ],
+                "required": [
+                    "rfcProperties"
+                ],
                 "not": {
-                    "required": [ "rfcProperties" ]
+                    "required": [
+                        "updateProperties"
+                    ]
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "processingType": {
+                        "const": "update"
+                    }
+                }
+            },
+            "then": {
+                "required": [
+                    "updateProperties"
+                ],
+                "not": {
+                    "required": [
+                        "rfcProperties"
+                    ]
                 }
             }
         }
