@@ -1,6 +1,6 @@
 {
+  "$schema": "https://raw.githubusercontent.com/SAP/abap-file-formats/main/file-formats/clas/clas.json",
   "header": {
-    "$schema": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/clas/clas.json",
     "description": "Example class for ABAP file formats",
     "masterLanguage": "EN",
     "abapLanguageVersion": "standardUnicode"

@@ -1,6 +1,6 @@
 {
+  "$schema": "https://raw.githubusercontent.com/SAP/abap-file-formats/main/file-formats/enho/enho.json",
   "header": {
-    "$schema": "http://sap.com/schema/enho.json",
     "description": "Example ENHS for ABAP file formats",
     "masterLanguage": "EN",
     "abapLanguageVersion": "standard"

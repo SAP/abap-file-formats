@@ -3,15 +3,15 @@
   "$id": "http://github.com/SAP/abap-file-formats/file-formats/fugr/reps.json",
   "type": "object",
   "properties": {
+    "$schema": {
+      "title": "Schema",
+      "description": "Format version",
+      "type": "string"
+    },
     "header": {
       "title": "Header",
       "type": "object",
       "properties": {
-        "$schema": {
-          "title": "Schema",
-          "description": "Format version",
-          "type": "string"
-        },
         "description": {
           "title": "Description",
           "description": "Description for a FUGR Include",
@@ -21,7 +21,6 @@
       },
       "additionalProperties": false,
       "required": [
-        "$schema",
         "description"
       ]
     },
@@ -46,6 +45,7 @@
   },
   "additionalProperties": false,
   "required": [
+    "$schema",
     "header",
     "includeType"
   ]

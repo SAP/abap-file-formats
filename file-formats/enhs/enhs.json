@@ -3,15 +3,15 @@
   "$id": "http://github.com/SAP/abap-file-formats/file-formats/enhs/enhs.json",
   "type": "object",
   "properties": {
+    "$schema": {
+      "title": "Schema",
+      "description": "Format version",
+      "type": "string"
+    },
     "header": {
       "title": "Header",
       "type": "object",
       "properties": {
-        "$schema": {
-          "title": "Schema",
-          "description": "Format version",
-          "type": "string"
-        },
         "description": {
           "title": "Description",
           "description": "Description of an BAdI Enhancement Spot",
@@ -43,7 +43,6 @@
       },
       "additionalProperties": false,
       "required": [
-        "$schema",
         "description",
         "masterLanguage",
         "abapLanguageVersion"
@@ -301,6 +300,7 @@
   },
   "additionalProperties": false,
   "required": [
+    "$schema",
     "header",
     "configuration"
   ]
