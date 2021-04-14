@@ -3,16 +3,16 @@
   "$id": "http://github.com/SAP/abap-file-formats/file-formats/fugr/fugr.json",
   "type": "object",
   "properties": {
+    "$schema": {
+      "type": "string",
+      "title": "Schema",
+      "description": "Format version"
+    },
     "header": {
       "title": "Header",
       "description": "Header",
       "type": "object",
       "properties": {
-        "$schema": {
-          "title": "Schema",
-          "description": "Format version",
-          "type": "string"
-        },
         "description": {
           "title": "Description",
           "description": "Description for a Function Group",
@@ -46,7 +46,6 @@
       },
       "additionalProperties": false,
       "required": [
-        "$schema",
         "description",
         "masterLanguage",
         "abapLanguageVersion"
@@ -79,6 +78,7 @@
   },
   "additionalProperties": false,
   "required": [
+    "$schema",
     "header",
     "fixPointArithmetic",
     "status"
