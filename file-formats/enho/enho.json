@@ -3,15 +3,15 @@
   "$id": "http://github.com/SAP/abap-file-formats/file-formats/enho/enho.json",
   "type": "object",
   "properties": {
+    "$schema": {
+      "type": "string",
+      "title": "Schema",
+      "description": "Format version"
+    },
     "header": {
       "title": "Header",
       "type": "object",
       "properties": {
-        "$schema": {
-          "title": "Schema",
-          "description": "Format version",
-          "type": "string"
-        },
         "description": {
           "title": "Description",
           "description": "Description of an BAdI enhancement implementation",
@@ -43,7 +43,6 @@
       },
       "additionalProperties": false,
       "required": [
-        "$schema",
         "description",
         "masterLanguage",
         "abapLanguageVersion"
@@ -252,6 +251,7 @@
   },
   "additionalProperties": false,
   "required": [
+    "$schema",
     "header",
     "enhancementSpot",
     "referencedObjects"

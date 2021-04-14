@@ -3,15 +3,15 @@
   "$id": "http://github.com/SAP/abap-file-formats/file-formats/nrob/nrob.json",
   "type": "object",
   "properties": {
+    "$schema": {
+      "type": "string",
+      "title": "Schema",
+      "description": "Format version"
+    },
     "header": {
       "type": "object",
       "title": "Header",
       "properties": {
-        "$schema": {
-          "type": "string",
-          "title": "Schema",
-          "description": "Format version"
-        },
         "description": {
           "type": "string",
           "title": "Description",
@@ -41,7 +41,6 @@
       },
       "additionalProperties": false,
       "required": [
-        "$schema",
         "description",
         "masterLanguage",
         "abapLanguageVersion"
@@ -140,6 +139,7 @@
     }
   },
   "required": [
+    "$schema",
     "header",
     "interval",
     "configuration"

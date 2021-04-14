@@ -1,6 +1,6 @@
 {
+  "$schema": "https://raw.githubusercontent.com/SAP/abap-file-formats/main/file-formats/nrob/nrob.json",
   "header": {
-    "$schema": "http://github.com/SAP/abap-file-formats/file-formats/nrob/nrob.json",
     "description": "Aff example object for type NROB",
     "masterLanguage": "EN",
     "abapLanguageVersion": "standard"
