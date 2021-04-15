@@ -19,18 +19,14 @@ The mapping of ABAP objects to file names follows the pattern
 with mandatory object_name, object_type and file_extension.
 Namespaces are converted into brackets, for instance `/NMSPC/CL_OBJECT` becomes `(nmspc)cl_object`.
 
-### Object Name
-The object name corresponds to the name of the ABAP object.
-
-### Object Type
-The object type is either the R3TR object type (like DTEL, DOMA, DDLS) or the LIMU object type, if the LIMU object name can be specified uniquely in the system, without its R3TR object name.
+### Object Name and Type
+The object name and type represents the ABAP object. It is basically the (R3TR) object name and type stored in the ABAP object directory (aka TADIR).
 
 ### Sub Object Name and Sub Object Type
-If the sub object can be addressed uniquely in the system, it is enough to use the combination object name and object type.
-E.g., for function modules the file name would be `function_exists.func.abap`.
 
-For sub objects which cannot be addressed uniquely in the system, the main object name and type must be part of the namespace.
-E.g., the file name of a dynpro in a function group could be `seo_class_editor.fugr.0152.dynp.json`.
+Some object types support sub objects (like function modules in a function group). For sub objects, the main object name and type must be part of the file name.
+
+E.g., for function module FUNCTION_EXISTS in function group SUNI, the file name would be `suni.fugr.function_exists.func.abap`.
 
 ### Content Type
 If a transport object needs multiple files which are not represented by transport objects, the content type is used to differentiate between the different file types.
@@ -67,7 +63,7 @@ Here are some examples of file names and its corresponding content.
 | `cl_my_class.clas.testclasses.abap` | Source code of local test classes in `CL_MY_CLASS` |
 | `sflight.tabl.abap` | Source code of database table `SFLIGHT` |
 | `s_carrid.dtel.json` | Properties of data element `S_CARRID` |
-| `function_exists.func.abap` | Source code of function module `FUNCTION_EXISTS` |
+| [`z_aff_example_fugr.fugr.z_aff_example_func.func.abap`](/file-formats/fugr/examples/z_aff_example_fugr.fugr.z_aff_example_func.func.abap) | Source code of function module `Z_AFF_EXAMPLE_FUNC` |
 | `seo_class_editor.fugr.0152.dynp.json` | Dynpro 0152 of function group `SEO_CLASS_EDITOR` |
 
 ## Formatting Conventions
