@@ -10,12 +10,12 @@ Example files for a function group `z_aff_example_fugr` are provided in the foll
 File | Content
  --- | ---
 [`z_aff_example_fugr.fugr.json`](./examples/z_aff_example_fugr.fugr.json)                 | Properties and descriptions of the FUGR
-[`saplz_aff_example_fugr.reps.abap`](./examples/saplz_aff_example_fugr.reps.abap)         | Source Code of the SAPL Include
-[`saplz_aff_example_fugr.reps.json`](./examples/saplz_aff_example_fugr.reps.json)         | Properties and descriptions of the SAPL Include
-[`lz_aff_example_fugrtop.reps.abap`](./examples/lz_aff_example_fugrtop.reps.abap) 	  | Source Code of the TOP Include
-[`lz_aff_example_fugrtop.reps.json`](./examples/lz_aff_example_fugrtop.reps.json)         | Properties and descriptions of the TOP Include
-[`z_aff_example_func.func.abap`](./examples/z_aff_example_func.func.abap)                 | Source Code of the included FUNC
-[`z_aff_example_func.func.json`](./examples/z_aff_example_func.func.json)                 | Properties and descriptionss of the included FUNC
+[`z_aff_example_fugr.fugr.saplz_aff_example_fugr.reps.abap`](./examples/z_aff_example_fugr.fugr.saplz_aff_example_fugr.reps.abap)         | Source Code of the SAPL Include
+[`z_aff_example_fugr.fugr.saplz_aff_example_fugr.reps.json`](./examples/z_aff_example_fugr.fugr.saplz_aff_example_fugr.reps.json)         | Properties and descriptions of the SAPL Include
+[`z_aff_example_fugr.fugr.lz_aff_example_fugrtop.reps.abap`](./examples/z_aff_example_fugr.fugr.lz_aff_example_fugrtop.reps.abap) 	  | Source Code of the TOP Include
+[`z_aff_example_fugr.fugr.lz_aff_example_fugrtop.reps.json`](./examples/z_aff_example_fugr.fugr.lz_aff_example_fugrtop.reps.json)         | Properties and descriptions of the TOP Include
+[`z_aff_example_fugr.fugr.z_aff_example_func.func.abap`](./examples/z_aff_example_fugr.fugr.z_aff_example_func.func.abap)                 | Source Code of the included FUNC
+[`z_aff_example_fugr.fugr.z_aff_example_func.func.json`](./examples/z_aff_example_fugr.fugr.z_aff_example_func.func.json)                 | Properties and descriptionss of the included FUNC
 [`z_aff_example_fugr.fugr.texts.en.properties`](./examples/z_aff_example_fugr.fugr.texts.en.properties)   | Translation relevant texts
 
 The following sub objects of FUGR are not yet supported:
