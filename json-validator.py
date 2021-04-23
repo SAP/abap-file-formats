@@ -33,7 +33,7 @@ def match_schema_instance( schemas, repo_objects ):
     # build dict with key: json schema and value: json example
     dict_json = {}
     for schema in schemas:
-        filename = os.path.basename(schema)
+        filename = "." + os.path.basename(schema)
         dict_json[schema] = list(filter(lambda el: el.endswith(filename) and os.path.basename(el) != filename, repo_objects))
     print(f"::group::Print schema/instance matches")
     pprint.pprint(dict_json)
