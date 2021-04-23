@@ -1,59 +1,83 @@
 {
-    "header": {
-        "http://github.com/SAP/abap-file-formats/file-formats/chkv/chkv.json",
-        "description": "Example CHKV for ABAP File Formats",
-        "masterLanguage": "EN",
-        "abapLanguageVersion": "standard"
+  "header": {
+      "http://github.com/SAP/abap-file-formats/file-formats/chkv/chkv.json",
+      "description": "Example CHKV for ABAP File Formats",
+      "masterLanguage": "EN",
+      "abapLanguageVersion": "standard"
+  },
+  "remoteEnabled": false,
+  "referencedVariant": "",
+  "selectedChecks": [
+    {
+      "chkoObject": "CI_SEARCH_ABAP_PATTERN",
+      "parameters": [
+        {
+          "id": "StatementPattern",
+          "type": "tableOfSychar72",
+          "description": "Pattern",
+          "value": "",
+          "lines": [
+            "CALL FUNCTION 'DB_EXISTS_INDEX' *",
+            "CALL FUNCTION 'DD_INDEX_NAME' *"
+          ]
+        },
+        {
+          "id": "FindingSeverity",
+          "type": "sychar01",
+          "description": "Message Type",
+          "value": "E"
+        }
+      ]
     },
-    "content": {
-        "name": "Z_AFF_EXAMPLE_CHKV",
-        "remoteEnabled": "",
-        "referencedVariant": "",
-        "selectedChecks": [
+    {
+      "chkoObject": "SLIN_VERS",
+      "parameters": [
+        {
+          "id": "ABAPLanguageVersion",
+          "type": "enum_MSGF_CL_CI_TEST_EXTENDED_CHECK_VERS",
+          "description": "ABAP Language Version",
+          "value": "4"
+        }
+      ]
+    },
+    {
+      "chkoObject": "SYCM_S4H_SEARCH_DB_OPS",
+      "parameters": [
+        {
+          "id": "ReleaseID",
+          "type": "sycm_release_id",
+          "description": "Release ID",
+          "value": "S4HANA_READINESS_1809"
+        },
+        {
+          "id": "SAPNotes",
+          "type": "rangeOfSycm_sap_note_number_db_ops",
+          "description": "SAP Notes",
+          "value": "",
+          "ranges": [
             {
-                "chkoObject": "Z_AFF_EXAMPLE_CHKO1",
-                "properties": "\"<check name=\"ABAP_UNIT\" xmlns:xsi=\"http: \/\/www.w3.org\/2001\/XMLSchema-Instance\">\r\n                <parameter id=\"MaximumRiskLevel\" xsi:type=\"asListSaunit_d_allowed_risk_level\" description=\"Maximum Risk Level\" value=\"11\"\/>\r\n                <parameter id=\"MaximumRuntimeCategory\" xsi:type=\"asListSaunit_d_allowed_rt_duration\" description=\"Maximum Runtime Category\" value=\"12\"\/>\r\n                <parameter id=\"RuntimeRestriction\" xsi:type=\"asListSaunit_d_duration_check_option\" description=\"Runtime Restriction\" value=\"2\"\/>\r\n                <parameter id=\"DurationLong\" xsi:type=\"integer\" description=\"Long\" value=\"3600\"\/>\r\n                <parameter id=\"DurationMedium\" xsi:type=\"integer\" description=\"Medium\" value=\"300\"\/>\r\n                <parameter id=\"DurationShort\" xsi:type=\"integer\" description=\"Short\" value=\"60\"\/>\r\n               <\/check>\"",
-                "atomLinks": [
-                    {
-                        "common": "",
-                        "href": "/sap/bc/adt/documentation/atc/documents/test/CL_CI_TEST_S4H_AMDP_CLIENT",
-                        "rel": "http://www.sap.com/adt/relations/documentation",
-                        "type": "application/vnd.sap.adt.docu.v1+html",
-                        "hreflang": "",
-                        "title": "",
-                        "length": ""
-                    },
-                    {
-                        "common": "",
-                        "href": "/sap/bc/adt/atc/checkvariants/formtemplate?test=Z_CH_CHECK_1",
-                        "rel": "http://www.sap.com/adt/relations/technicalsettings",
-                        "type": "text/plain",
-                        "hreflang": "",
-                        "title": "",
-                        "length": ""
-                    }
-                ]
+              "sign": "E",
+              "option": "EQ",
+              "low": "0002470721",
+              "high": "0000000000"
             }
-        ],
-        "atomLinks": [
+          ]
+        },
+        {
+          "id": "SimplificationItemCategories",
+          "type": "rangeOfSycm_sitem_state",
+          "description": "Simplification Item Categories",
+          "value": "",
+          "ranges": [
             {
-                "common": "",
-                "href": "/sap/bc/adt/documentation/atc/documents/test/CL_CI_TEST_S4H_AMDP_CLIENT",
-                "rel": "http://www.sap.com/adt/relations/documentation",
-                "type": "application/vnd.sap.adt.docu.v1+html",
-                "hreflang": "",
-                "title": "",
-                "length": ""
-            },
-            {
-                "common": "",
-                "href": "/sap/bc/adt/atc/checkvariants/formtemplate?test=Z_CH_CHECK_1",
-                "rel": "http://www.sap.com/adt/relations/technicalsettings",
-                "type": "text/plain",
-                "hreflang": "",
-                "title": "",
-                "length": ""
+              "sign": "E",
+              "option": "EQ",
+              "low": "P",
+              "high": ""
             }
-        ]
+          ]
+        }
+      ]
     }
+  ]
 }
