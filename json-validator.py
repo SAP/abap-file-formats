@@ -9,7 +9,7 @@ import pprint
 
 # provide ABAP objects as list
 # only schema for this objects are validated
-object_type = ['clas', 'intf', 'func', 'reps', 'nrob', 'chko', 'fugr', 'enho', 'enhs']
+object_type = ['clas', 'intf', 'func', 'reps', 'nrob', 'chko', 'fugr', 'enho', 'enhs', 'chkv']
 nb_errors = 0
 
 
