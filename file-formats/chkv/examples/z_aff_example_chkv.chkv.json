@@ -1,0 +1,83 @@
+{
+  "$schema": "https://raw.githubusercontent.com/SAP/abap-file-formats/main/file-formats/chkv/chkv.json",
+  "header": {
+    "description": "Example CHKV for ABAP File Formats",
+    "masterLanguage": "EN",
+    "abapLanguageVersion": "standard"
+  },
+  "remoteEnabled": false,
+  "referencedVariant": "",
+  "selectedChecks": [
+    {
+      "chkoObject": "CI_SEARCH_ABAP_PATTERN",
+      "parameters": [
+        {
+          "id": "StatementPattern",
+          "type": "tableOfSychar72",
+          "description": "Pattern",
+          "value": "",
+          "lines": [
+            "CALL FUNCTION 'DB_EXISTS_INDEX' *",
+            "CALL FUNCTION 'DD_INDEX_NAME' *"
+          ]
+        },
+        {
+          "id": "FindingSeverity",
+          "type": "sychar01",
+          "description": "Message Type",
+          "value": "E"
+        }
+      ]
+    },
+    {
+      "chkoObject": "SLIN_VERS",
+      "parameters": [
+        {
+          "id": "ABAPLanguageVersion",
+          "type": "enum_MSGF_CL_CI_TEST_EXTENDED_CHECK_VERS",
+          "description": "ABAP Language Version",
+          "value": "4"
+        }
+      ]
+    },
+    {
+      "chkoObject": "SYCM_S4H_SEARCH_DB_OPS",
+      "parameters": [
+        {
+          "id": "ReleaseID",
+          "type": "sycm_release_id",
+          "description": "Release ID",
+          "value": "S4HANA_READINESS_1809"
+        },
+        {
+          "id": "SAPNotes",
+          "type": "rangeOfSycm_sap_note_number_db_ops",
+          "description": "SAP Notes",
+          "value": "",
+          "ranges": [
+            {
+              "sign": "E",
+              "option": "EQ",
+              "low": "0002470721",
+              "high": "0000000000"
+            }
+          ]
+        },
+        {
+          "id": "SimplificationItemCategories",
+          "type": "rangeOfSycm_sitem_state",
+          "description": "Simplification Item Categories",
+          "value": "",
+          "ranges": [
+            {
+              "sign": "E",
+              "option": "EQ",
+              "low": "P",
+              "high": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://sap.com/schema/chkv.json",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "title": "Schema",
+      "description": "Format version",
+      "type": "string"
+    },
+    "header": {
+      "title": "Header",
+      "description": "Header data",
+      "type": "object",
+      "properties": {
+        "description": {
+          "title": "Description",
+          "description": "Description of an ATC Check Variant",
+          "type": "string"
+        },
+        "masterLanguage": {
+          "title": "Master Language",
+          "description": "Master language of the development object\nAll translatable text shall be maintained in this language",
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 2
+        },
+        "abapLanguageVersion": {
+          "title": "Abap Language Version",
+          "description": "ABAP language version",
+          "type": "string",
+          "enum": [
+            "standard",
+            "cloudDevelopment"
+          ],
+          "enumDescriptions": [
+            "Standard",
+            "ABAP for Cloud Development"
+          ]
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "description",
+        "masterLanguage",
+        "abapLanguageVersion"
+      ]
+    },
+    "remoteEnabled": {
+      "title": "Remote-enabled",
+      "description": "The Check Variant is remote-enabled",
+      "type": "boolean"
+    },
+    "referencedVariant": {
+      "title": "Referenced Variant",
+      "description": "The referenced ATC Check Variant",
+      "type": "string",
+      "maxLength": 30
+    },
+    "selectedChecks": {
+      "title": "Selected-Checks",
+      "description": "The checks selected in the ATC Check Variant",
+      "type": "array",
+      "items": {
+        "title": "Check",
+        "description": "ATC Check",
+        "type": "object",
+        "properties": {
+          "chkoObject": {
+            "title": "CHKO Object",
+            "description": "The CHKO Object",
+            "type": "string"
+          },
+          "parameters": {
+            "title": "Parameters",
+            "description": "Parameters of ATC Check",
+            "type": "array",
+            "items": {
+              "title": "Parameter",
+              "description": "A parameter of ATC Check",
+              "type": "object",
+              "properties": {
+                "id": {
+                  "title": "Id",
+                  "description": "The parameter Id of ATC Check",
+                  "type": "string"
+                },
+                "type": {
+                  "title": "Type",
+                  "description": "The parameter type",
+                  "type": "string"
+                },
+                "description": {
+                  "title": "Description",
+                  "description": "Description of a parameter",
+                  "type": "string"
+                },
+                "value": {
+                  "title": "Value",
+                  "description": "The value of the parameter",
+                  "type": "string"
+                },
+                "lines": {
+                  "title": "lines",
+                  "description": "lines",
+                  "type": "array",
+                  "items": {
+                    "title": "Line",
+                    "description": "A line of a parameter",
+                    "type": "string"
+                  }
+                },
+                "ranges": {
+                  "title": "Ranges",
+                  "description": "The ranges of the ATC Check",
+                  "type": "array",
+                  "items": {
+                    "title": "A Range",
+                    "description": "A range of ATC Check",
+                    "type": "object",
+                    "properties": {
+                      "sign": {
+                        "title": "Sign",
+                        "description": "The sign type of the range",
+                        "type": "string",
+                        "maxLength": 1
+                      },
+                      "option": {
+                        "title": "Option",
+                        "description": "Sign option of the range",
+                        "type": "string",
+                        "maxLength": 2
+                      },
+                      "low": {
+                        "title": "Low",
+                        "description": "The low value of the range",
+                        "type": "string"
+                      },
+                      "high": {
+                        "title": "High",
+                        "description": "The high value of the range",
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "header"
+  ]
+}
