@@ -44,9 +44,9 @@ def decode_json( file ):
     global nb_errors
     with open(file, 'r') as json_f:
         try:
-            json_instance = json.loads(json_f.read())
+            json_instance = json.load(json_f)
         except json.JSONDecodeError as ex:
-            print(f"::error file={file},line=1,col=1::{ex.msg}")
+            print(f"::error file={file},line={ex.lineno},col={ex.colno}::{ex.msg}")
             nb_errors += 1
         else:
             return json_instance
