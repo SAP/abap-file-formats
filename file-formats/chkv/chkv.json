@@ -16,7 +16,8 @@
         "description": {
           "title": "Description",
           "description": "Description of an ATC Check Variant",
-          "type": "string"
+          "type": "string",
+          "maxLenght": 60
         },
         "masterLanguage": {
           "title": "Master Language",
