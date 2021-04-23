@@ -1,0 +1,87 @@
+{
+    "header": {
+        "http://github.com/SAP/abap-file-formats/file-formats/chkv/chkv.json",
+        "description": "Example CHKV for ABAP File Formats",
+        "masterLanguage": "EN",
+        "abapLanguageVersion": "standard"
+    },
+    "content": {
+        "name": "Z_AFF_EXAMPLE_CHKV",
+        "remoteEnabled": "",
+        "referencedVariant": "",
+        "selectedChecks": [
+            {
+                "chkoObject": "Z_AFF_EXAMPLE_CHKO1",
+                "properties": [
+                    {
+                        "parameterId": "MaximumRiskLevel",
+                        "type": "asListSaunit_d_allowed_risk_level",
+                        "description": "Maximum Risk Level",
+                        "value": "11"
+                    },
+                    {
+                        "parameterId": "MaximumRuntimeCategory",
+                        "type": "asListSaunit_d_allowed_rt_duration",
+                        "description": "Maximum Runtime Category",
+                        "value": "12"
+                    },
+                    {
+                        "parameterId": "RuntimeRestriction",
+                        "type": "asListSaunit_d_duration_check_option",
+                        "description": "Runtime Restriction",
+                        "value": "2"
+                    },
+                    {
+                        "parameterId": "DurationLong",
+                        "type": "integer",
+                        "description": "Long",
+                        "value": "3600"
+                    },
+                    {
+                        "parameterId": "StatementPattern",
+                        "type": "tableOfSychar72",
+                        "description": "Pattern",
+                        "lines": [
+                            "CALL FUNCTION 'DB_EXISTS_INDEX' *",
+                            "CALL FUNCTION 'DD_INDEX_NAME' *"
+                        ]
+                    },
+                    {
+                        "parameterId": "SAPNotes",
+                        "type": "rangeOfSycm_sap_note_number_db_ops",
+                        "description": "SAP Notes",
+                        "ranges": [
+                            {
+                                "sign": "E",
+                                "option": "eq",
+                                "low": "0002470721",
+                                "high": "0000000000",
+                            }
+
+                        ] 
+                    }
+                ],
+                "atomLinks": [
+                    {
+                        "common": "",
+                        "href": "/sap/bc/adt/documentation/atc/documents/test/CL_CI_TEST_S4H_AMDP_CLIENT",
+                        "rel": "http://www.sap.com/adt/relations/documentation",
+                        "type": "application/vnd.sap.adt.docu.v1+html",
+                        "hreflang": "",
+                        "title": "",
+                        "length": ""
+                    },
+                    {
+                        "common": "",
+                        "href": "/sap/bc/adt/atc/checkvariants/formtemplate?test=Z_CH_CHECK_1",
+                        "rel": "http://www.sap.com/adt/relations/technicalsettings",
+                        "type": "text/plain",
+                        "hreflang": "",
+                        "title": "",
+                        "length": ""
+                    }
+                ]
+            }
+        ]
+    }
+}

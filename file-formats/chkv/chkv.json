@@ -1,0 +1,268 @@
+{                                                                                                                                  
+    "$schema": "https://json-schema.org/draft/2020-12/schema",                                                                       
+    "$id": "http://sap.com/schema/chkv.json",                                                                                        
+    "type": "object",                                                                                                                
+    "properties": {                                                                                                                  
+      "header": {                                                                                                                    
+        "title": "Header",                                                                                                           
+        "description": "Header data",                                                                                                
+        "type": "object",                                                                                                            
+        "properties": {                                                                                                              
+          "$schema": {                                                                                                               
+            "title": "Schema",                                                                                                       
+            "description": "Format version",                                                                                         
+            "type": "string"                                                                                                         
+          },                                                                                                                         
+          "description": {                                                                                                           
+            "title": "Description",                                                                                                  
+            "description": "Description of an ATC Check Variant",                                                                                       
+            "type": "string"                                                                                                         
+          },                                                                                                                         
+          "masterLanguage": {                                                                                                        
+            "title": "Master Language",                                                                                              
+            "description": "Master language of the development object\nAll translatable text shall be maintained in this language",  
+            "type": "string",                                                                                                        
+            "minLength": 2,                                                                                                          
+            "maxLength": 2                                                                                                           
+          },                                                                                                                         
+          "abapLanguageVersion": {                                                                                                   
+            "title": "Abap Language Version",                                                                                        
+            "description": "ABAP language version",                                                                                  
+            "type": "string",                                                                                                        
+            "enum": ["standard","cloudDevelopment"],                                                     
+            "enumDescriptions": ["Standard","ABAP for Cloud Development"]               
+          }                                                                                                                          
+        },                                                                                                                           
+        "additionalProperties": false,                                                                                               
+        "required": ["$schema","description","masterLanguage","abapLanguageVersion"]                                                 
+      },                                                                                                                             
+      "content": {                                                                                                                   
+        "title": "Content",                                                                                                          
+        "description": "Content of an ATC Check Variant",                                                                                                    
+        "type": "object",                                                                                                            
+        "properties": {                                                                                                              
+          "name": {                                                                                                                  
+            "title": "Check Variant",                                                                                                         
+            "description": "The ATC Check Variant",                                                                                                   
+            "type": "string",         
+            "maxLength": 30                                                                                                
+          },                                                                                                                         
+          "remoteEnabled": {                                                                                                         
+            "title": "Remote-enabled",                                                                                                
+            "description": "The Check Variant is remote-enabled",                                                                                          
+            "type": "boolean"                                                                                                        
+          },                                                                                                                         
+          "referencedVariant": {                                                                                                     
+            "title": "Referenced Variant",                                                                                            
+            "description": "The referenced ATC Check Variant",                                                                         
+            "type": "string",                                                                                                        
+            "maxLength": 30                                                                                                          
+          },                                                                                                                         
+          "selectedChecks": {                                                                                                        
+            "title": "Selected-Checks",                                                                                               
+            "description": "The checks selected in the ATC Check Variant",
+            "type": "array",                                                                                                         
+            "items": {                                                                                                               
+              "title": "Check",                                                                                       
+              "description": "ATC Check",
+              "type": "object",                                                                                                      
+              "properties": {                                                                                                        
+                "chkoObject": {                                                                                                      
+                    "title": "CHKO Object",
+                    "description": "The CHKO Object",
+                    "type": "string"                                                                                                   
+                },                                                                                                                   
+                "properties": {                                                                                                      
+                  "title": "Properties",                                                                                             
+                  "description": "Properties of ATC Check",                                                                                       
+                  "type": "array",                                                                                                   
+                  "items": {                                                                                                         
+                    "title": "Property",                                                                                         
+                    "description": "The property of ATC Check",                                                                                   
+                    "type": "object",                                                                                                
+                    "properties": {                                                                                                  
+                      "parameterId": {                                                                                               
+                        "title": "Parameter Id",                                                                                      
+                        "description": "The parameter Id of ATC Check",
+                        "type": "string"                                                                                             
+                      },                                                                                                             
+                      "type": {                                                                                                      
+                        "title": "Type",                                                                                             
+                        "description": "The parameter type",
+                        "type": "string"                                                                                             
+                      },                                                                                                             
+                      "description": {                                                                                               
+                        "title": "Description",                                                                                      
+                        "description": "Description of a parameter",
+                        "type": "string"                                                                                             
+                      },                                                                                                             
+                      "value": {                                                                                                     
+                        "title": "Value",                                                                                            
+                        "description": "The value of the parameter",
+                        "type": "string"                                                                                             
+                      },                                                                                                             
+                      "lines": {                                                                                                     
+                        "title": "lines",                                                                                            
+                        "description": "lines",                                                                                      
+                        "type": "array",                                                                                             
+                        "items": {                                                                                                   
+                          "title": "Line",                                                                                         
+                          "description": "A line of a parameter",
+                          "type": "string"                                                                                           
+                        }                                                                                                            
+                      },                                                                                                             
+                      "ranges": {                                                                                                     
+                        "title": "Ranges",                                                                                            
+                        "description": "The ranges of the ATC Check",
+                        "type": "array",                                                                                             
+                        "items": {                                                                                                   
+                          "title": "A Range",                                                                                        
+                          "description": "A range of ATC Check",                                                                                  
+                          "type": "object",                                                                                          
+                          "properties": {                                                                                            
+                            "sign": {                                                                                                
+                              "title": "Sign",                                                                                       
+                              "description": "The sign type of the range",
+                              "type": "string",                                                                                      
+                              "maxLength": 1                                                                                         
+                            },                                                                                                       
+                            "option": {                                                                                              
+                              "title": "Option",                                                                                     
+                              "description": "Sign option of the range",
+                              "type": "string",                                                                                      
+                              "maxLength": 2                                                                                         
+                            },                                                                                                       
+                            "low": {                                                                                                 
+                              "title": "Low",                                                                                        
+                              "description": "The low value of the range",
+                              "type": "string"                                                                                       
+                            },                                                                                                       
+                            "high": {                                                                                                
+                              "title": "High",                                                                                       
+                              "description": "The high value of the range",
+                              "type": "string"                                                                                       
+                            }                                                                                                        
+                          }                                                                                                          
+                        }                                                                                                            
+                      }                                                                                                              
+                    }                                                                                                                
+                  }                                                                                                                  
+                },                                                                                                                   
+                "atomLinks": {
+                    "title": "Atom-Links",
+                    "description": "Atom Links of ATC Checks",
+                    "type": "array",
+                    "items": {
+                      "title": "Atom Link",
+                      "description": "An Atom Link of an ATC Check",
+                      "type": "object",
+                      "properties": {
+                        "commonAttributes": {
+                          "title": "Common Attributes",
+                          "description": "The common attributes of an Atom Link",
+                          "type": "object",
+                          "properties": {
+                            "xmlBase": {
+                              "title": "XML-Base",
+                              "description": "The XML base of an Atom Link",
+                              "type": "string"
+                            },
+                            "xmlLang": {
+                              "title": "XML-Lang",
+                              "description": "The XML Lang of the atom link",
+                              "type": "string"
+                            },
+                            "undefinedAttributes": {
+                              "title": "Undefined Attributes",
+                              "description": "The undefined attributes of the atom link",
+                              "type": "array",
+                              "items": {
+                                "title": "extAttributeS",
+                                "description": "extAttributeS",
+                                "type": "object",
+                                "properties": {
+                                  "namespace": {
+                                    "title": "namespace",
+                                    "description": "namespace",
+                                    "type": "string"
+                                  },
+                                  "prefix": {
+                                    "title": "prefix",
+                                    "description": "prefix",
+                                    "type": "string"
+                                  },
+                                  "name": {
+                                    "title": "name",
+                                    "description": "name",
+                                    "type": "string"
+                                  },
+                                  "text": {
+                                    "title": "text",
+                                    "description": "text",
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "href": {
+                          "title": "Href",
+                          "description": "The href of the atom link",
+                          "type": "string"
+                        },
+                        "rel": {
+                          "title": "Rel",
+                          "description": "The relation of the atom link",
+                          "type": "string"
+                        },
+                        "type": {
+                          "title": "Type",
+                          "description": "type",
+                          "type": "string"
+                        },
+                        "hreflang": {
+                          "title": "Hreflang",
+                          "description": "The hreflang of an atom link",
+                          "type": "string"
+                        },
+                        "title": {
+                          "title": "Title",
+                          "description": "Title of the atom link",
+                          "type": "string"
+                        },
+                        "length": {
+                          "title": "Length",
+                          "description": "The length of the atom link",
+                          "type": "string"
+                        },
+                        "undefinedContent": {
+                          "title": "Undefined Content",
+                          "description": "Undefined Content of atom link",
+                          "type": "array",
+                          "items": {
+                            "title": "Text or XML Data",
+                            "description": "Text or XML Data of undefined content",
+                            "type": "object",
+                            "properties": {
+                              "text": {
+                                "title": "Text",
+                                "description": "Text",
+                                "type": "string"
+                              },
+                              "xmldata": {
+                                "title": "XML Data",
+                                "description": "XML Fragment",
+                                "type": "string"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }

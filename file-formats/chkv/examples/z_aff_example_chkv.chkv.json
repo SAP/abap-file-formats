@@ -1,0 +1,59 @@
+{
+    "header": {
+        "http://github.com/SAP/abap-file-formats/file-formats/chkv/chkv.json",
+        "description": "Example CHKV for ABAP File Formats",
+        "masterLanguage": "EN",
+        "abapLanguageVersion": "standard"
+    },
+    "content": {
+        "name": "Z_AFF_EXAMPLE_CHKV",
+        "remoteEnabled": "",
+        "referencedVariant": "",
+        "selectedChecks": [
+            {
+                "chkoObject": "Z_AFF_EXAMPLE_CHKO1",
+                "properties": "\"<check name=\"ABAP_UNIT\" xmlns:xsi=\"http: \/\/www.w3.org\/2001\/XMLSchema-Instance\">\r\n                <parameter id=\"MaximumRiskLevel\" xsi:type=\"asListSaunit_d_allowed_risk_level\" description=\"Maximum Risk Level\" value=\"11\"\/>\r\n                <parameter id=\"MaximumRuntimeCategory\" xsi:type=\"asListSaunit_d_allowed_rt_duration\" description=\"Maximum Runtime Category\" value=\"12\"\/>\r\n                <parameter id=\"RuntimeRestriction\" xsi:type=\"asListSaunit_d_duration_check_option\" description=\"Runtime Restriction\" value=\"2\"\/>\r\n                <parameter id=\"DurationLong\" xsi:type=\"integer\" description=\"Long\" value=\"3600\"\/>\r\n                <parameter id=\"DurationMedium\" xsi:type=\"integer\" description=\"Medium\" value=\"300\"\/>\r\n                <parameter id=\"DurationShort\" xsi:type=\"integer\" description=\"Short\" value=\"60\"\/>\r\n               <\/check>\"",
+                "atomLinks": [
+                    {
+                        "common": "",
+                        "href": "/sap/bc/adt/documentation/atc/documents/test/CL_CI_TEST_S4H_AMDP_CLIENT",
+                        "rel": "http://www.sap.com/adt/relations/documentation",
+                        "type": "application/vnd.sap.adt.docu.v1+html",
+                        "hreflang": "",
+                        "title": "",
+                        "length": ""
+                    },
+                    {
+                        "common": "",
+                        "href": "/sap/bc/adt/atc/checkvariants/formtemplate?test=Z_CH_CHECK_1",
+                        "rel": "http://www.sap.com/adt/relations/technicalsettings",
+                        "type": "text/plain",
+                        "hreflang": "",
+                        "title": "",
+                        "length": ""
+                    }
+                ]
+            }
+        ],
+        "atomLinks": [
+            {
+                "common": "",
+                "href": "/sap/bc/adt/documentation/atc/documents/test/CL_CI_TEST_S4H_AMDP_CLIENT",
+                "rel": "http://www.sap.com/adt/relations/documentation",
+                "type": "application/vnd.sap.adt.docu.v1+html",
+                "hreflang": "",
+                "title": "",
+                "length": ""
+            },
+            {
+                "common": "",
+                "href": "/sap/bc/adt/atc/checkvariants/formtemplate?test=Z_CH_CHECK_1",
+                "rel": "http://www.sap.com/adt/relations/technicalsettings",
+                "type": "text/plain",
+                "hreflang": "",
+                "title": "",
+                "length": ""
+            }
+        ]
+    }
+}
