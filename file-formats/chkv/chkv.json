@@ -1,23 +1,22 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "http://github.com/SAP/abap-file-formats/file-formats/chkv/chkv.json",
+  "$id": "http://sap.com/schema/chkv.json",
   "type": "object",
   "properties": {
-    "$schema": {
-      "title": "Schema",
-      "description": "Format version",
-      "type": "string"
-    },
     "header": {
       "title": "Header",
       "description": "Header data",
       "type": "object",
       "properties": {
+        "$schema": {
+          "title": "Schema",
+          "description": "Format version",
+          "type": "string"
+        },
         "description": {
           "title": "Description",
           "description": "Description of an ATC Check Variant",
-          "type": "string",
-          "maxLenght": 60
+          "type": "string"
         },
         "masterLanguage": {
           "title": "Master Language",
@@ -42,6 +41,7 @@
       },
       "additionalProperties": false,
       "required": [
+        "$schema",
         "description",
         "masterLanguage",
         "abapLanguageVersion"
@@ -91,11 +91,6 @@
                   "description": "The parameter type",
                   "type": "string"
                 },
-                "description": {
-                  "title": "Description",
-                  "description": "Description of a parameter",
-                  "type": "string"
-                },
                 "value": {
                   "title": "Value",
                   "description": "The value of the parameter",
@@ -124,13 +119,41 @@
                         "title": "Sign",
                         "description": "The sign type of the range",
                         "type": "string",
-                        "maxLength": 1
+                        "enum": [
+                          "exclude",
+                          "include"
+                        ],
+                        "enumDescriptions": [
+                          "Exclude",
+                          "Include"
+                        ]
                       },
                       "option": {
                         "title": "Option",
                         "description": "Sign option of the range",
                         "type": "string",
-                        "maxLength": 2
+                        "enum": [
+                          "equals",
+                          "between",
+                          "greaterThan",
+                          "lessEqual",
+                          "containsPattern",
+                          "notEqual",
+                          "notBetween",
+                          "notContainsPattern",
+                          "greaterEqual"
+                        ],
+                        "enumDescriptions": [
+                          "EQ",
+                          "BT",
+                          "GT",
+                          "LE",
+                          "CP",
+                          "NE",
+                          "NB",
+                          "NP",
+                          "GE"
+                        ]
                       },
                       "low": {
                         "title": "Low",
