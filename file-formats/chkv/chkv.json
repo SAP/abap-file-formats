@@ -179,11 +179,11 @@
       "lines",
       "ranges",
       "value"
-    ],
+    ]
   },
   "additionalProperties": false,
   "required": [
     "$schema",
     "header"
-  ],
+  ]
 }
