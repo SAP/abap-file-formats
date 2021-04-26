@@ -1,12 +1,10 @@
 {
   "header": {
-      "http://github.com/SAP/abap-file-formats/file-formats/chkv/chkv.json",
-      "description": "Example CHKV for ABAP File Formats",
-      "masterLanguage": "EN",
-      "abapLanguageVersion": "standard"
+    "description": "Example CHKV for ABAP file formats",
+    "masterLanguage": "",
+    "abapLanguageVersion": "standard"
   },
   "remoteEnabled": false,
-  "referencedVariant": "",
   "selectedChecks": [
     {
       "chkoObject": "CI_SEARCH_ABAP_PATTERN",
@@ -14,7 +12,6 @@
         {
           "id": "StatementPattern",
           "type": "tableOfSychar72",
-          "description": "Pattern",
           "value": "",
           "lines": [
             "CALL FUNCTION 'DB_EXISTS_INDEX' *",
@@ -24,7 +21,6 @@
         {
           "id": "FindingSeverity",
           "type": "sychar01",
-          "description": "Message Type",
           "value": "E"
         }
       ]
@@ -35,7 +31,6 @@
         {
           "id": "ABAPLanguageVersion",
           "type": "enum_MSGF_CL_CI_TEST_EXTENDED_CHECK_VERS",
-          "description": "ABAP Language Version",
           "value": "4"
         }
       ]
@@ -46,18 +41,16 @@
         {
           "id": "ReleaseID",
           "type": "sycm_release_id",
-          "description": "Release ID",
           "value": "S4HANA_READINESS_1809"
         },
         {
           "id": "SAPNotes",
           "type": "rangeOfSycm_sap_note_number_db_ops",
-          "description": "SAP Notes",
           "value": "",
           "ranges": [
             {
-              "sign": "E",
-              "option": "EQ",
+              "sign": "exclude",
+              "option": "equals",
               "low": "0002470721",
               "high": "0000000000"
             }
@@ -66,12 +59,11 @@
         {
           "id": "SimplificationItemCategories",
           "type": "rangeOfSycm_sitem_state",
-          "description": "Simplification Item Categories",
           "value": "",
           "ranges": [
             {
-              "sign": "E",
-              "option": "EQ",
+              "sign": "exclude",
+              "option": "equals",
               "low": "P",
               "high": ""
             }

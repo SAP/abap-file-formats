@@ -91,11 +91,6 @@
                     "description": "The parameter type",
                     "type": "string"
                   },
-                  "description": {
-                    "title": "Description",
-                    "description": "Description of a parameter",
-                    "type": "string"
-                  },
                   "value": {
                     "title": "Value",
                     "description": "The value of the parameter",
@@ -124,13 +119,41 @@
                           "title": "Sign",
                           "description": "The sign type of the range",
                           "type": "string",
-                          "maxLength": 1
+                          "enum": [
+                            "exclude",
+                            "include"
+                          ],
+                          "enumDescriptions": [
+                            "Exclude",
+                            "Include"
+                          ]
                         },
                         "option": {
                           "title": "Option",
                           "description": "Sign option of the range",
                           "type": "string",
-                          "maxLength": 2
+                          "enum": [
+                            "equals",
+                            "between",
+                            "greaterThan",
+                            "lessEqual",
+                            "containsPattern",
+                            "notEqual",
+                            "notBetween",
+                            "notContainsPattern",
+                            "greaterEqual"
+                          ],
+                          "enumDescriptions": [
+                            "EQ",
+                            "BT",
+                            "GT",
+                            "LE",
+                            "CP",
+                            "NE",
+                            "NB",
+                            "NP",
+                            "GE"
+                          ]
                         },
                         "low": {
                           "title": "Low",
