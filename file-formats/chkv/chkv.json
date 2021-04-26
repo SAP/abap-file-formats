@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "http://sap.com/schema/chkv.json",
+  "$id": "http://github.com/SAP/abap-file-formats/file-formats/chkv/chkv.json",
   "type": "object",
   "properties": {
     "header": {
