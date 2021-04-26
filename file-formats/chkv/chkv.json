@@ -3,20 +3,21 @@
   "$id": "http://github.com/SAP/abap-file-formats/file-formats/chkv/chkv.json",
   "type": "object",
   "properties": {
+    "$schema": {
+      "title": "Schema",
+      "description": "Format version",
+      "type": "string"
+    },
     "header": {
       "title": "Header",
       "description": "Header data",
       "type": "object",
       "properties": {
-        "$schema": {
-          "title": "Schema",
-          "description": "Format version",
-          "type": "string"
-        },
         "description": {
           "title": "Description",
           "description": "Description of an ATC Check Variant",
-          "type": "string"
+          "type": "string",
+          "maxLenght": 60
         },
         "masterLanguage": {
           "title": "Master Language",
@@ -41,7 +42,6 @@
       },
       "additionalProperties": false,
       "required": [
-        "$schema",
         "description",
         "masterLanguage",
         "abapLanguageVersion"
