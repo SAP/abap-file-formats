@@ -173,11 +173,17 @@
           }
         }
       }
-    }
+    },
+    "optional": [
+      "referencedVariant",
+      "lines",
+      "ranges",
+      "value"
+    ],
   },
   "additionalProperties": false,
   "required": [
     "$schema",
     "header"
-  ]
+  ],
 }
