@@ -8,18 +8,18 @@
   "remoteEnabled": false,
   "selectedChecks": [
     {
-      "chkoObject": "CI_SEARCH_ABAP_PATTERN",
+      "checkName": "CI_SEARCH_ABAP_PATTERN",
       "parameters": [
         {
-          "id": "StatementPattern",
+          "name": "StatementPattern",
           "type": "tableOfSychar72",
-          "lines": [
+          "valueList": [
             "CALL FUNCTION 'DB_EXISTS_INDEX' *",
             "CALL FUNCTION 'DD_INDEX_NAME' *"
           ]
         },
         {
-          "id": "FindingSeverity",
+          "name": "FindingSeverity",
           "type": "sychar01",
           "description": "Message Type",
           "value": "E"
@@ -27,25 +27,25 @@
       ]
     },
     {
-      "chkoObject": "SLIN_VERS",
+      "checkName": "SLIN_VERS",
       "parameters": [
         {
-          "id": "ABAPLanguageVersion",
+          "name": "ABAPLanguageVersion",
           "type": "enum_MSGF_CL_CI_TEST_EXTENDED_CHECK_VERS",
           "value": "4"
         }
       ]
     },
     {
-      "chkoObject": "SYCM_S4H_SEARCH_DB_OPS",
+      "checkName": "SYCM_S4H_SEARCH_DB_OPS",
       "parameters": [
         {
-          "id": "ReleaseID",
+          "name": "ReleaseID",
           "type": "sycm_release_id",
           "value": "S4HANA_READINESS_1809"
         },
         {
-          "id": "SAPNotes",
+          "name": "SAPNotes",
           "type": "rangeOfSycm_sap_note_number_db_ops",
           "value": "",
           "ranges": [
@@ -58,7 +58,7 @@
           ]
         },
         {
-          "id": "SimplificationItemCategories",
+          "name": "SimplificationItemCategories",
           "type": "rangeOfSycm_sitem_state",
           "ranges": [
             {

@@ -49,41 +49,41 @@
     },
     "remoteEnabled": {
       "title": "Remote-enabled",
-      "description": "The Check Variant is remote-enabled",
+      "description": "The check variant is remote-enabled",
       "type": "boolean"
     },
     "referencedVariant": {
       "title": "Referenced Variant",
-      "description": "The referenced ATC Check Variant",
+      "description": "The referenced ATC check variant",
       "type": "string",
       "maxLength": 30
     },
     "selectedChecks": {
       "title": "Selected Checks",
-      "description": "The checks selected in the ATC Check Variant",
+      "description": "The checks selected in the ATC check variant",
       "type": "array",
       "items": {
         "title": "Check",
         "description": "ATC Check",
         "type": "object",
         "properties": {
-          "chkoObject": {
-            "title": "CHKO Object",
-            "description": "The CHKO Object",
+          "checkName": {
+            "title": "Check Name",
+            "description": "The name of ATC check",
             "type": "string"
           },
           "parameters": {
             "title": "Parameters",
-            "description": "Parameters of ATC Check",
+            "description": "Parameters of ATC check",
             "type": "array",
             "items": {
               "title": "Parameter",
-              "description": "A parameter of ATC Check",
+              "description": "A parameter of ATC check",
               "type": "object",
               "properties": {
-                "id": {
-                  "title": "Id",
-                  "description": "The parameter Id of ATC Check",
+                "name": {
+                  "title": "Name",
+                  "description": "The parameter name of ATC check",
                   "type": "string"
                 },
                 "type": {
@@ -96,23 +96,23 @@
                   "description": "The value of the parameter",
                   "type": "string"
                 },
-                "lines": {
-                  "title": "lines",
-                  "description": "lines",
+                "valueList": {
+                  "title": "List of parameter values",
+                  "description": "List of values for a multi-value check parameter",
                   "type": "array",
                   "items": {
-                    "title": "Line",
-                    "description": "A line of a parameter",
+                    "title": "Entry in Value list",
+                    "description": "A parameter value in the parameter value list",
                     "type": "string"
                   }
                 },
                 "ranges": {
                   "title": "Ranges",
-                  "description": "The ranges of the ATC Check",
+                  "description": "The ranges of the ATC check",
                   "type": "array",
                   "items": {
                     "title": "A Range",
-                    "description": "A range of ATC Check",
+                    "description": "A range of ATC check",
                     "type": "object",
                     "properties": {
                       "sign": {
@@ -144,15 +144,15 @@
                           "greaterEqual"
                         ],
                         "enumDescriptions": [
-                          "EQ",
-                          "BT",
-                          "GT",
-                          "LE",
-                          "CP",
-                          "NE",
-                          "NB",
-                          "NP",
-                          "GE"
+                          "Equals",
+                          "Between",
+                          "Greater than",
+                          "Less equal",
+                          "Contains pattern",
+                          "Not equal",
+                          "Not between",
+                          "Not contains pattern",
+                          "Greater equal"
                         ]
                       },
                       "low": {
@@ -174,11 +174,48 @@
         }
       }
     },
-    "optional": [
-      "referencedVariant",
-      "lines",
-      "ranges",
-      "value"
+    "oneOf": [
+      {
+        "required": [
+          "valueList"
+        ]
+      },
+      {
+        "required": [
+          "ranges"
+        ]
+      },
+      {
+        "required": [
+          "value"
+        ]
+      }
+    ],
+    "allOf": [
+      {
+        "if": {
+          "properties": {
+            "type": {
+              "const": "^rangeOf"
+            }
+          }
+        },
+        "then": {
+          "required": "ranges"
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "type": {
+              "const": "^tableOf"
+            }
+          }
+        },
+        "then": {
+          "required": "valueList"
+        }
+      }
     ]
   },
   "additionalProperties": false,
