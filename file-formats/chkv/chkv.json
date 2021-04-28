@@ -59,7 +59,7 @@
       "maxLength": 30
     },
     "selectedChecks": {
-      "title": "Selected-Checks",
+      "title": "Selected Checks",
       "description": "The checks selected in the ATC Check Variant",
       "type": "array",
       "items": {
