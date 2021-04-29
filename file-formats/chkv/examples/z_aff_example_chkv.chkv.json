@@ -47,7 +47,6 @@
         {
           "name": "SAPNotes",
           "type": "rangeOfSycm_sap_note_number_db_ops",
-          "value": "",
           "ranges": [
             {
               "sign": "exclude",
