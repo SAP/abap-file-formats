@@ -47,7 +47,7 @@
         {
           "name": "SAPNotes",
           "type": "rangeOfSycm_sap_note_number_db_ops",
-          "ranges": [
+          "valueRangeList": [
             {
               "sign": "exclude",
               "option": "equals",
@@ -59,7 +59,7 @@
         {
           "name": "SimplificationItemCategories",
           "type": "rangeOfSycm_sitem_state",
-          "ranges": [
+          "valueRangeList": [
             {
               "sign": "exclude",
               "option": "equals",

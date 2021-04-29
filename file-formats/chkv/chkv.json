@@ -106,9 +106,9 @@
                     "type": "string"
                   }
                 },
-                "ranges": {
-                  "title": "Ranges",
-                  "description": "The ranges of the ATC check",
+                "valueRangeList": {
+                  "title": "List of range values",
+                  "description": "List of range values for a check parameter",
                   "type": "array",
                   "items": {
                     "title": "A Range",
@@ -182,7 +182,7 @@
       },
       {
         "required": [
-          "ranges"
+          "valueRangeList"
         ]
       },
       {
@@ -201,7 +201,7 @@
           }
         },
         "then": {
-          "required": "ranges"
+          "required": "valueRangeList"
         }
       },
       {
