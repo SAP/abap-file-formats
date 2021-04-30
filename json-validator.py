@@ -9,7 +9,7 @@ import pprint
 
 # provide ABAP objects as list
 # only schema for this objects are validated
-object_type = ['clas', 'intf', 'func', 'reps', 'nrob', 'chko', 'fugr', 'enho', 'enhs']
+object_type = ['clas', 'intf', 'func', 'reps', 'nrob', 'chko', 'fugr', 'enho', 'enhs', 'chkv']
 nb_errors = 0
 
 
@@ -66,7 +66,7 @@ def validate_json( schema, instances):
             print(f"::error file={instance},line=1,col=1::{error_ex.message}")
         else:
             #print(f"::set-output name={os.path.basename(instance).ljust(31)} valid instance of schema {os.path.basename(schema)}" )
-            print(os.path.basename(instance).ljust(41) + " valid instance of schema " + os.path.basename(schema))
+            print(os.path.basename(instance) + "\tvalid instance of schema " + os.path.basename(schema))
 
 
 def validate_json_and_example( schemas, repo_objects ):
