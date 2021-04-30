@@ -33,9 +33,5 @@ if you know exactly what you want to change, and how.
 They are most welcome, and may range
 from minor format corrections to adding whole sections.
 
-When creating a pull request,
-we will ask you to sign our Contributor Licence Agreement (CLA).
-By signing, you will give up ownership of your material
-and make it part of this repository,
-under [this repository's license](LICENSE).
-
+## Developer Certificate of Origin (DCO)
+Due to legal reasons, contributors will be asked to accept a DCO before they submit the first pull request to this projects, this happens in an automated fashion during the submission process. SAP uses [the standard DCO text of the Linux Foundation](https://developercertificate.org/).
