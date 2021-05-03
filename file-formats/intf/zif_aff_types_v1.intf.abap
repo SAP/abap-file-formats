@@ -2,7 +2,7 @@ INTERFACE zif_aff_types_v1 PUBLIC .
 
   types:
     begin of enum abap_language_version ,
-      stanard,
+      standard,
       cloud_development,
     end of enum abap_language_version.
 
