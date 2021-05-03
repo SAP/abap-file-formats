@@ -15,7 +15,7 @@ INTERFACE zif_intf_v1 PUBLIC.
            name TYPE c LENGTH 30,
            description TYPE c LENGTH 60,
            parameters TYPE STANDARD TABLE OF name_description WITH EMPTY KEY,
-           exception TYPE STANDARD TABLE OF name_description WITH EMPTY KEY,
+           exceptions TYPE STANDARD TABLE OF name_description WITH EMPTY KEY,
          END OF method.
 
   TYPES: BEGIN OF main,
