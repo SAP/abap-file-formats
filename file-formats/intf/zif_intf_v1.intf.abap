@@ -20,10 +20,10 @@ INTERFACE zif_intf_v1 PUBLIC.
 
   TYPES: BEGIN OF main,
            header TYPE header,
-           typess TYPE STANDARD TABLE OF name_description WITH EMPTY KEY,
+           types TYPE STANDARD TABLE OF name_description WITH EMPTY KEY,
            attributes TYPE STANDARD TABLE OF name_description WITH EMPTY KEY,
            events TYPE STANDARD TABLE OF name_description WITH EMPTY KEY,
-           events TYPE STANDARD TABLE OF method WITH EMPTY KEY,
+           methods TYPE STANDARD TABLE OF method WITH EMPTY KEY,
          END OF main.
 
 ENDINTERFACE.
