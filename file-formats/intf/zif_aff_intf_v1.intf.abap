@@ -15,7 +15,8 @@ INTERFACE zif_aff_intf_v1 PUBLIC.
 
     "! Method description
     BEGIN OF method.
-      INCLUDE TYPE component_description. TYPES:
+      INCLUDE TYPE component_description.
+  TYPES:
       "! Parameter descriptions
       parameters TYPE subcomponent_descriptions,
       "! Exception descriptions
@@ -26,7 +27,8 @@ INTERFACE zif_aff_intf_v1 PUBLIC.
 
     "! Event description
     BEGIN OF event.
-      INCLUDE TYPE component_description. TYPES:
+      INCLUDE TYPE component_description.
+  TYPES:
       "! Parameter descriptions
       parameters TYPE subcomponent_descriptions,
     END OF event,
@@ -48,7 +50,8 @@ INTERFACE zif_aff_intf_v1 PUBLIC.
     "! Interface properties
     BEGIN OF main.
       INCLUDE TYPE zif_aff_types_v1=>head.
-      INCLUDE TYPE content. TYPES:
+      INCLUDE TYPE content.
+  TYPES:
     END OF main.
 
 ENDINTERFACE.
