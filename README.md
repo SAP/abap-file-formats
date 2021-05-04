@@ -31,7 +31,7 @@ Details on technical specification can be found [here](./doc/file_names.md).
 | INTF | [Interface](./file-formats/intf/format.md) |
 | NROB | [Number Range Object](./file-formats/nrob/format.md) |
 
-## How to obtain support
+## How to Obtain Support
 
 Feel free to raise issues to ask questions or report bugs.
 
