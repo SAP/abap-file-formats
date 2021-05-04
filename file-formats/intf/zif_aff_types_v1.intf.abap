@@ -1,8 +1,16 @@
 INTERFACE zif_aff_types_v1 PUBLIC .
 
+
   types:
+    "! Language
+    language type c length 2.
+
+  types:
+    "! ABAP language version
     begin of enum abap_language_version ,
-      standard value is intial,
+      "! Standard
+      standard value is initial,
+      "! ABAP cloud development
       cloud_development value '5',
     end of enum abap_language_version.
 
@@ -14,11 +22,11 @@ INTERFACE zif_aff_types_v1 PUBLIC .
       schema TYPE string,
       "! The header for an ABAP main object
       BEGIN OF header,
-        "! Description of the ABAP main object
+        "! Description of the ABAP object
         description        TYPE string,
-        "! Master language of the ABAP main object
-        master_language    TYPE syst_langu,
-        "! ABAP language version (standard, keyUser or cloudDevelopment)
+        "! Original language of the ABAP object
+        master_language    TYPE language,
+        "! ABAP language version
         abap_langu_version TYPE abap_language_version,
       END OF header,
     END OF head.
