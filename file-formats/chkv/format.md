@@ -6,4 +6,4 @@ The JSON schema is provided [here](./chkv.json).
 
 File | Content
  --- | ---
-[`ci_search_pattern.chkv.json`](./examples/ci_search_pattern.chkv.json) | File representation of a ATC check variant.
+[`z_aff_example_chkv.chkv.json`](./examples/z_aff_example_chkv.chkv.json) | File representation of a ATC check variant.
