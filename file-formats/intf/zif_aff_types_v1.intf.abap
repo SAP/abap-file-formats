@@ -5,8 +5,11 @@ INTERFACE zif_aff_types_v1 PUBLIC.
     language TYPE c LENGTH 2.
 
   TYPES:
+    "! ABAP language version
     BEGIN OF ENUM abap_language_version,
+      "! Standard
       standard VALUE IS INITIAL,
+      "! ABAP cloud development
       cloud_development VALUE '5',
     END OF ENUM abap_language_version.
 
