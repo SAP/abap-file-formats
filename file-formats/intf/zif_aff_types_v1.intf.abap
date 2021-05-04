@@ -1,18 +1,18 @@
 INTERFACE zif_aff_types_v1 PUBLIC .
 
 
-  types:
+  TYPES:
     "! Language
-    language type c length 2.
+    language TYPE c LENGTH 2.
 
-  types:
+  TYPES:
     "! ABAP language version
-    begin of enum abap_language_version ,
+    BEGIN OF ENUM abap_language_version ,
       "! Standard
-      standard value is initial,
+      standard VALUE IS INITIAL,
       "! ABAP cloud development
-      cloud_development value '5',
-    end of enum abap_language_version.
+      cloud_development VALUE '5',
+    END OF ENUM abap_language_version.
 
 
   TYPES:
@@ -31,12 +31,12 @@ INTERFACE zif_aff_types_v1 PUBLIC .
       END OF header,
     END OF head.
 
-  types:
+  TYPES:
     "! Description with 60 characters
-    description_60    type c length 60.
+    description_60    TYPE c LENGTH 60.
 
-  types:
+  TYPES:
     "! Object name with max. length 30
-    object_name_30 type c length 30.
+    object_name_30 TYPE c LENGTH 30.
 
 ENDINTERFACE.
