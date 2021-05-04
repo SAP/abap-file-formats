@@ -1,5 +1,7 @@
 # ABAP File Formats
 
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP/abap-file-formats)](https://api.reuse.software/info/github.com/SAP/abap-file-formats)
+
 ## Description
 
 This project provides file format definitions of ABAP repository objects.
