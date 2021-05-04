@@ -38,9 +38,9 @@ INTERFACE zif_aff_intf_v1 PUBLIC.
     "! Interface properties content
     BEGIN OF content,
       "! Type descriptions
-      types      TYPE components,
+      types      TYPE component_descriptions,
       "! Attribute descriptions
-      attributes TYPE components,
+      attributes TYPE component_descriptions,
       "! Event descriptions
       events     TYPE events,
       "! Method descriptions
