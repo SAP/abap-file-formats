@@ -69,6 +69,7 @@ Here are some examples of file names and its corresponding content.
 ## Formatting Conventions
 To enable interchangeability the files are characterized by
 * UTF-8 codepage
+* No [byte order mark](https://en.wikipedia.org/wiki/Byte_order_mark)
 * End-of-line (EOL) character `\n`
 * No newline at end-of-file (EOF)
 
