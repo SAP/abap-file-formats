@@ -1,24 +1,24 @@
-class ltcl_unit_test definition for testing
-  duration short risk level harmless.
+CLASS ltcl_unit_test DEFINITION FOR TESTING
+  DURATION SHORT RISK LEVEL HARMLESS.
 
-  private section.
-    data cut type ref to zcl_aff_example.
+  PRIVATE SECTION.
+    DATA cut TYPE REF TO zcl_aff_example.
 
-    methods setup.
-    methods assert_smth for testing raising cx_static_check.
+    METHODS setup.
+    METHODS assert_smth FOR TESTING RAISING cx_static_check.
 
-endclass.
-
-
-class ltcl_unit_test implementation.
-
-  method setup.
-    cut = new zcl_aff_example( ).
-  endmethod.
+ENDCLASS.
 
 
-  method assert_smth.
+CLASS ltcl_unit_test IMPLEMENTATION.
+
+  METHOD setup.
+    cut = NEW zcl_aff_example( ).
+  ENDMETHOD.
+
+
+  METHOD assert_smth.
     cl_abap_unit_assert=>fail( 'Implement your first test here' ).
-  endmethod.
+  ENDMETHOD.
 
-endclass.
+ENDCLASS.

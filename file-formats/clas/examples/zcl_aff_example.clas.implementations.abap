@@ -1,12 +1,12 @@
-class lcl_local_class definition create private.
+CLASS lcl_local_class DEFINITION CREATE PRIVATE.
 
-  public section.
-    data local_attribute type i.
-  protected section.
-  private section.
+  PUBLIC SECTION.
+    DATA local_attribute TYPE i.
+  PROTECTED SECTION.
+  PRIVATE SECTION.
 
-endclass.
+ENDCLASS.
 
-class lcl_local_class implementation.
+CLASS lcl_local_class IMPLEMENTATION.
 
-endclass.
+ENDCLASS.
