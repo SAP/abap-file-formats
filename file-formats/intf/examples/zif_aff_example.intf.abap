@@ -1,16 +1,16 @@
-interface ZIF_AFF_EXAMPLE
-  public .
+INTERFACE zif_aff_example
+  PUBLIC .
 
 
-  types EXAMPLE_TYPE type STRING .
+  TYPES example_type TYPE string .
 
-  data EXAMPLE_ATTRIBUTE type EXAMPLE_TYPE .
+  DATA example_attribute TYPE example_type .
 
-  events EXAMPLE_EVENT .
+  EVENTS example_event .
 
-  methods EXAMPLE_METHOD
-    importing
-      !I_PARAM type I
-    raising
-      CX_STATIC_CHECK .
-endinterface.
+  METHODS example_method
+    IMPORTING
+      !i_param TYPE i
+    RAISING
+      cx_static_check .
+ENDINTERFACE.
