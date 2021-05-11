@@ -26,8 +26,9 @@ INTERFACE zif_aff_intf_v1 PUBLIC.
     "! Method descriptions
     methods TYPE SORTED TABLE OF method WITH UNIQUE KEY name.
 
-  "! Event description
-  TYPES: BEGIN OF event,
+  TYPES: 
+    "! Event description
+    BEGIN OF event,
       "! Name of the component
       name        TYPE zif_aff_types_v1=>object_name_30,
       "! Description of the component
