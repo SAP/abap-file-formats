@@ -42,7 +42,7 @@ Feel free to raise issues to ask questions or report bugs.
 
 Comments and suggestions for improvements are most welcome.
 
-You are an owner of an ABAP object type? We will be more than happy if you contribute your object type to this project. Just open a new pull request. 
+You feel responsible for an ABAP object type? We will be more than happy if you contribute your object type to this project. Just open a new pull request. 
 
 More details are found at [Contributing](./CONTRIBUTING.md).
 
