@@ -40,8 +40,9 @@ INTERFACE zif_aff_intf_v1 PUBLIC.
     "! Event descriptions
     events TYPE SORTED TABLE OF event WITH UNIQUE KEY name.
 
-  "! Interface properties
-  TYPES: BEGIN OF main,
+  TYPES:
+    "! Interface properties
+    BEGIN OF main,
       header TYPE zif_aff_types_v1=>head-header,
       "! Type descriptions
       types      TYPE component_descriptions,
