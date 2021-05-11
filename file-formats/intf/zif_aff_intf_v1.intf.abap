@@ -13,8 +13,9 @@ INTERFACE zif_aff_intf_v1 PUBLIC.
     "! Sub component descriptions (e.g., for parameters or exceptions)
     subcomponent_descriptions TYPE SORTED TABLE OF component_description WITH UNIQUE KEY name.
 
-  "! Method description
-  TYPES: BEGIN OF method,
+  TYPES:
+    "! Method description
+    BEGIN OF method,
       name        TYPE zif_aff_types_v1=>object_name_30,
       "! Description of the component
       description TYPE zif_aff_types_v1=>description_60,
