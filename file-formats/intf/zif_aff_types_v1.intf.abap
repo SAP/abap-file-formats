@@ -1,8 +1,7 @@
 INTERFACE zif_aff_types_v1 PUBLIC.
 
-  TYPES:
-    "! Language
-    language TYPE c LENGTH 2.
+  "! Language
+  TYPES language TYPE c LENGTH 2.
 
   TYPES:
     "! ABAP language version
@@ -29,12 +28,10 @@ INTERFACE zif_aff_types_v1 PUBLIC.
       END OF header,
     END OF head.
 
-  TYPES:
-    "! Description with 60 characters
-    description_60    TYPE c LENGTH 60.
+  "! Description with 60 characters
+  TYPES description_60 TYPE c LENGTH 60.
 
-  TYPES:
-    "! Object name with max. length 30
-    object_name_30 TYPE c LENGTH 30.
+  "! Object name with max. length 30
+  TYPES object_name_30 TYPE c LENGTH 30.
 
 ENDINTERFACE.
