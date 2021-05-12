@@ -1,75 +1,32 @@
-INTERFACE zif_aff_intf_v1 PUBLIC.
+INTERFACE zif_aff_types_v1 PUBLIC.
+
+  "! Language
+  TYPES language TYPE c LENGTH 2.
 
   TYPES:
-    category_base TYPE n LENGTH 2,
-    "! Interface category
-    BEGIN OF ENUM category BASE TYPE category_base,
-      "! Standard interface
-      standard           VALUE IS INITIAL,
-      "! Interface definition of a classic BAdI
-      classic_badi       VALUE '01',
-      "! Generated interface of a database procedure proxy
-      db_procedure_proxy VALUE '65',
-      "! Generated interface of enterprise services
-      enterprise_service VALUE '90',
-    END OF ENUM category.
+    "! ABAP language version
+    BEGIN OF ENUM abap_language_version,
+      "! Standard
+      standard VALUE IS INITIAL,
+      "! ABAP cloud development
+      cloud_development VALUE '5',
+    END OF ENUM abap_language_version.
 
   TYPES:
-    "! Component description (e.g., for methods, attributes, types)
-    BEGIN OF component_description,
-      "! Name of the component
-      name        TYPE zif_aff_types_v1=>object_name_30,
-      "! Description of the component
-      description TYPE zif_aff_types_v1=>description_60,
-    END OF component_description,
-    "! Interface component descriptions
-    component_descriptions    TYPE SORTED TABLE OF component_description WITH UNIQUE KEY name,
-    "! Sub component descriptions (e.g., for parameters or exceptions)
-    subcomponent_descriptions TYPE SORTED TABLE OF component_description WITH UNIQUE KEY name.
+    "! The header for an ABAP main object
+    BEGIN OF header,
+      "! Description of the ABAP object
+      description        TYPE string,
+      "! Original language of the ABAP object
+      master_language    TYPE language,
+      "! ABAP language version
+      abap_langu_version TYPE abap_language_version,
+    END OF header.
 
-  TYPES:
-    "! Method description
-    BEGIN OF method,
-      name        TYPE zif_aff_types_v1=>object_name_30,
-      "! Description of the component
-      description TYPE zif_aff_types_v1=>description_60,
-      "! Parameter descriptions
-      parameters  TYPE subcomponent_descriptions,
-      "! Exception descriptions
-      exceptions  TYPE subcomponent_descriptions,
-    END OF method,
-    "! Method descriptions
-    methods TYPE SORTED TABLE OF method WITH UNIQUE KEY name.
+  "! Description with 60 characters
+  TYPES description_60 TYPE c LENGTH 60.
 
-  TYPES:
-    "! Event description
-    BEGIN OF event,
-      "! Name of the component
-      name        TYPE zif_aff_types_v1=>object_name_30,
-      "! Description of the component
-      description TYPE zif_aff_types_v1=>description_60,
-      "! Parameter descriptions
-      parameters  TYPE subcomponent_descriptions,
-    END OF event,
-    "! Event descriptions
-    events TYPE SORTED TABLE OF event WITH UNIQUE KEY name.
-
-  TYPES:
-    "! Interface properties
-    BEGIN OF main,
-      header     TYPE zif_aff_types_v1=>header,
-      "! Interface category
-      category   TYPE category,
-      "! Interface is a proxy interface
-      proxy      TYPE abap_bool,
-      "! Type descriptions
-      types      TYPE component_descriptions,
-      "! Attribute descriptions
-      attributes TYPE component_descriptions,
-      "! Event descriptions
-      events     TYPE events,
-      "! Method descriptions
-      methods    TYPE methods,
-    END OF main.
+  "! Object name with max. length 30
+  TYPES object_name_30 TYPE c LENGTH 30.
 
 ENDINTERFACE.
