@@ -43,7 +43,7 @@ INTERFACE zif_aff_intf_v1 PUBLIC.
   TYPES:
     "! Interface properties
     BEGIN OF main,
-      header TYPE zif_aff_types_v1=>head-header,
+      header TYPE zif_aff_types_v1=>header,
       "! Type descriptions
       types      TYPE component_descriptions,
       "! Attribute descriptions
