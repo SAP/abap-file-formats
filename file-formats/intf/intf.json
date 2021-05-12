@@ -69,7 +69,7 @@
     },
     "proxy": {
       "title": "Interface is a proxy interface",
-      "description": "Interface is a proxy interface",      
+      "description": "Interface is a proxy interface",
       "type": "boolean"
     },
     "types": {
