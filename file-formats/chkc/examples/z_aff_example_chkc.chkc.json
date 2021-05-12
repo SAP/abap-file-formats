@@ -1,6 +1,6 @@
 {
-  "$schema": "https://raw.githubusercontent.com/SAP/abap-file-formats/main/file-formats/chkc/chkc.json",
   "header": {
+    "$schema": "https://raw.githubusercontent.com/SAP/abap-file-formats/main/file-formats/chkc/chkc.json",
     "description": "Example CHKC for ABAP file formats",
     "masterLanguage": "EN",
     "abapLanguageVersion": "standard"

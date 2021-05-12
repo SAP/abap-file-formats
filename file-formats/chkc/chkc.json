@@ -3,6 +3,11 @@
   "$id": "http://sap.com/schema/chkc.json",
   "type": "object",
   "properties": {
+    "$schema": {
+      "type": "string",
+      "title": "Schema",
+      "description": "Format version"
+    },
     "header": {
       "title": "Header",
       "description": "Header data",
