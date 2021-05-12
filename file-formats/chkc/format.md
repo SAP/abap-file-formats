@@ -1,4 +1,4 @@
-# File Format for Object Type CHKV
+# File Format for Object Type CHKC
 
 The file representation for object `Z_AFF_EXAMPLE_CHKC` is provided [here](./examples/z_aff_example_chkc.chkc.json).
 
