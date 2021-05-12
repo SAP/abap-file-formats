@@ -50,6 +50,28 @@
         "abapLanguageVersion"
       ]
     },
+    "category": {
+      "title": "Interface category",
+      "description": "Interface category",
+      "type": "string",
+      "enum": [
+        "standard",
+        "classicBadi",
+        "dbProcedureProxy",
+        "enterpriseService"
+      ],
+      "enumDescriptions": [
+        "Standard interface",
+        "Interface definition of a classic BAdI",
+        "Generated interface of a database procedure proxy",
+        "Generated interface of enterprise services"
+      ]
+    },
+    "proxy": {
+      "title": "Interface is a proxy interface",
+      "description": "Interface is a proxy interface",      
+      "type": "boolean"
+    },
     "types": {
       "type": "array",
       "title": "Type Descriptions",
