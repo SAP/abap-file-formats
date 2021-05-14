@@ -7,6 +7,7 @@ root = true
 [*.{abap,md,properties}]
 charset = utf-8
 end_of_line = lf
+insert_final_newline = true
 
 
 # we want indentation of 4 spaces
@@ -16,4 +17,4 @@ end_of_line = lf
 indent_style = space
 indent_size = 2
 trim_trailing_whitespace = true
-insert_final_newline = false
+insert_final_newline = true
