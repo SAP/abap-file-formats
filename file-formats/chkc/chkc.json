@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://sap.com/schema/chkc.json",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "title": "Schema",
+      "description": "Format version"
+    },
+    "header": {
+      "title": "Header",
+      "description": "Header data",
+      "type": "object",
+      "properties": {
+        "$schema": {
+          "title": "Schema",
+          "description": "Format version",
+          "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "description": "Text description",
+          "type": "string"
+        },
+        "masterLanguage": {
+          "title": "Master Language",
+          "description": "Master language of the development object\nAll translatable text shall be maintained in this language",
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 2
+        },
+        "abapLanguageVersion": {
+          "title": "Abap Language Version",
+          "description": "ABAP language version",
+          "type": "string",
+          "enum": ["standard","standardUnicode","keyUser","cloudDevelopment"],
+          "enumDescriptions": ["Standard","Standard unicode","ABAP for key user tools","ABAP for Cloud Development"]
+        }
+      },
+      "additionalProperties": false,
+      "required": ["$schema","description","masterLanguage","abapLanguageVersion"]
+    },
+    "parentCategory": {
+      "title": "parentCategory",
+      "description": "parentCategory",
+      "type": "string",
+      "maxLength": 30
+    }
+  }
+}
