@@ -27,6 +27,7 @@ Details on technical specification can be found [here](./doc/file_names.md).
 
 | Type | Specification |
 | ---  | --- |
+| CHKC | [ATC Check Category](./file-formats/chkc/format.md)|
 | CHKO | [ATC Check](./file-formats/chko/format.md)|
 | CHKV | [ATC Check Variant](./file-formats/chkv/format.md)|
 | CLAS | [Class](./file-formats/clas/format.md) |
