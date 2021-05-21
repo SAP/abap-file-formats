@@ -29,4 +29,4 @@ INTERFACE zif_aff_types_v1 PUBLIC.
   "! Object name with max. length 30
   TYPES object_name_30 TYPE c LENGTH 30.
 
-  ENDINTERFACE.
+ENDINTERFACE.
