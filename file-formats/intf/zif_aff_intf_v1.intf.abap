@@ -1,6 +1,20 @@
 INTERFACE zif_aff_intf_v1 PUBLIC.
 
   TYPES:
+    category_base TYPE n LENGTH 2,
+    "! Interface category
+    BEGIN OF ENUM category BASE TYPE category_base,
+      "! Standard interface
+      standard           VALUE IS INITIAL,
+      "! Interface definition of a classic BAdI
+      classic_badi       VALUE '01',
+      "! Generated interface of a database procedure proxy
+      db_procedure_proxy VALUE '65',
+      "! Generated interface of enterprise services
+      enterprise_service VALUE '90',
+    END OF ENUM category.
+
+  TYPES:
     "! Component description (e.g., for methods, attributes, types)
     BEGIN OF component_description,
       "! Name of the component
@@ -20,9 +34,9 @@ INTERFACE zif_aff_intf_v1 PUBLIC.
       "! Description of the component
       description TYPE zif_aff_types_v1=>description_60,
       "! Parameter descriptions
-      parameters TYPE subcomponent_descriptions,
+      parameters  TYPE subcomponent_descriptions,
       "! Exception descriptions
-      exceptions TYPE subcomponent_descriptions,
+      exceptions  TYPE subcomponent_descriptions,
     END OF method,
     "! Method descriptions
     methods TYPE SORTED TABLE OF method WITH UNIQUE KEY name.
@@ -35,7 +49,7 @@ INTERFACE zif_aff_intf_v1 PUBLIC.
       "! Description of the component
       description TYPE zif_aff_types_v1=>description_60,
       "! Parameter descriptions
-      parameters TYPE subcomponent_descriptions,
+      parameters  TYPE subcomponent_descriptions,
     END OF event,
     "! Event descriptions
     events TYPE SORTED TABLE OF event WITH UNIQUE KEY name.
@@ -43,7 +57,11 @@ INTERFACE zif_aff_intf_v1 PUBLIC.
   TYPES:
     "! Interface properties
     BEGIN OF main,
-      header TYPE zif_aff_types_v1=>head-header,
+      header     TYPE zif_aff_types_v1=>header,
+      "! Interface category
+      category   TYPE category,
+      "! Interface is a proxy interface
+      proxy      TYPE abap_bool,
       "! Type descriptions
       types      TYPE component_descriptions,
       "! Attribute descriptions

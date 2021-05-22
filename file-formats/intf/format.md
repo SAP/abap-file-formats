@@ -9,3 +9,5 @@ File | Content
  --- | ---
 [`zif_aff_example.intf.json`](./examples/zif_aff_example.intf.json)         | Properties and descriptions of the ABAP interface
 [`zif_aff_example.intf.abap`](./examples/zif_aff_example.intf.abap)         | Interface source code
+
+Documentation of interfaces is not covered, yet.
