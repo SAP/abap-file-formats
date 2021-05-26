@@ -4,14 +4,20 @@ INTERFACE zif_aff_intf_v1 PUBLIC.
     category_base TYPE n LENGTH 2,
     "! Interface category
     BEGIN OF ENUM category BASE TYPE category_base,
-      "! Standard interface
-      standard           VALUE IS INITIAL,
+      "! General interface
+      general                      VALUE IS INITIAL,
       "! Interface definition of a classic BAdI
-      classic_badi       VALUE '01',
+      classic_badi                 VALUE '01',
+      "! Business interface for static components
+      business_static_components   VALUE '51',
+      "! Business interface for instance-dependent components
+      business_instance_components VALUE '52',
       "! Generated interface of a database procedure proxy
-      db_procedure_proxy VALUE '65',
+      db_procedure_proxy           VALUE '65',
+      "! Web Dynpro runtime interface
+      web_dynpro_runtime           VALUE '80',
       "! Generated interface of enterprise services
-      enterprise_service VALUE '90',
+      enterprise_service           VALUE '90',
     END OF ENUM category.
 
   TYPES:

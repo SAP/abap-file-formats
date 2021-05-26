@@ -55,15 +55,21 @@
       "description": "Interface category",
       "type": "string",
       "enum": [
-        "standard",
+        "general",
         "classicBadi",
+        "businessStaticComponents",
+        "businessInstanceComponents",
         "dbProcedureProxy",
+        "webDynproRuntime",
         "enterpriseService"
       ],
       "enumDescriptions": [
-        "Standard interface",
+        "General interface",
         "Interface definition of a classic BAdI",
+        "Business interface for static components",
+        "Business interface for instance-dependent components",
         "Generated interface of a database procedure proxy",
+        "Web Dynpro runtime interface",
         "Generated interface of enterprise services"
       ]
     },
