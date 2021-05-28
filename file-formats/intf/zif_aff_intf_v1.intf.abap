@@ -1,24 +1,25 @@
 INTERFACE zif_aff_intf_v1 PUBLIC.
 
-  TYPES:
-    category_base TYPE n LENGTH 2,
+  TYPES: ty_category TYPE c LENGTH 2.
+
+  CONSTANTS:
     "! Interface category
-    BEGIN OF ENUM category BASE TYPE category_base,
+    BEGIN OF co_category,
       "! General interface
-      general                      VALUE IS INITIAL,
+      general                      TYPE ty_category VALUE '00',
       "! Interface definition of a classic BAdI
-      classic_badi                 VALUE '01',
+      classic_badi                 TYPE ty_category VALUE '01',
       "! Business interface for static components
-      business_static_components   VALUE '51',
+      business_static_components   TYPE ty_category VALUE '51',
       "! Business interface for instance-dependent components
-      business_instance_components VALUE '52',
+      business_instance_components TYPE ty_category VALUE '52',
       "! Generated interface of a database procedure proxy
-      db_procedure_proxy           VALUE '65',
+      db_procedure_proxy           TYPE ty_category VALUE '65',
       "! Web Dynpro runtime interface
-      web_dynpro_runtime           VALUE '80',
+      web_dynpro_runtime           TYPE ty_category VALUE '80',
       "! Generated interface of enterprise services
-      enterprise_service           VALUE '90',
-    END OF ENUM category.
+      enterprise_service           TYPE ty_category VALUE '90',
+    END OF co_category.
 
   TYPES:
     "! Component description (e.g., for methods, attributes, types)
@@ -65,7 +66,7 @@ INTERFACE zif_aff_intf_v1 PUBLIC.
     BEGIN OF main,
       header     TYPE zif_aff_types_v1=>header,
       "! Interface category
-      category   TYPE category,
+      category   TYPE ty_category,
       "! Interface is a proxy interface
       proxy      TYPE abap_bool,
       "! Type descriptions
