@@ -7,7 +7,7 @@ INTERFACE zif_aff_intf_v1 PUBLIC.
 
   CONSTANTS:
     "! Interface category
-    BEGIN OF co_category ,
+    BEGIN OF co_category,
       "! General interface
       general                      TYPE ty_category VALUE '00',
       "! Interface definition of a classic BAdI
