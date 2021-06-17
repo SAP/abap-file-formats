@@ -31,6 +31,8 @@ Details on technical specification can be found [here](./doc/file_names.md).
 | CHKO | [ATC Check](./file-formats/chko/format.md)|
 | CHKV | [ATC Check Variant](./file-formats/chkv/format.md)|
 | CLAS | [Class](./file-formats/clas/format.md) |
+| ENHO | [BAdI Enhancement Implementation)](./file-formats/enho/format.md) |
+| ENHS | [BAdI Enhancement Spot](./file-formats/enhs/format.md) |
 | FUGR | [Function Group](./file-formats/fugr/format.md) |
 | INTF | [Interface](./file-formats/intf/format.md) |
 | NROB | [Number Range Object](./file-formats/nrob/format.md) |
