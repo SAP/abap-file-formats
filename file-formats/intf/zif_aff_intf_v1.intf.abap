@@ -53,16 +53,16 @@ INTERFACE zif_aff_intf_v1 PUBLIC.
 
   TYPES:
     "! Event description
-    BEGIN OF event,
+    BEGIN OF ty_event,
       "! Name of the component
       name        TYPE zif_aff_types_v1=>ty_object_name_30,
       "! Description of the component
       description TYPE zif_aff_types_v1=>ty_description_60,
       "! Parameter descriptions
       parameters  TYPE ty_subcomponent_descriptions,
-    END OF event,
+    END OF ty_event,
     "! Event descriptions
-    ty_events TYPE SORTED TABLE OF event WITH UNIQUE KEY name.
+    ty_events TYPE SORTED TABLE OF ty_event WITH UNIQUE KEY name.
 
   TYPES:
     "! Interface properties

@@ -35,7 +35,19 @@
     "check_syntax": true,
     "check_text_elements": true,
     "check_transformation_exists": true,
-    "class_attribute_names": true,
+    "class_attribute_names": {
+      "exclude": [],
+      "severity": "Error",
+      "patternKind": "required",
+      "ignoreNames": [],
+      "ignorePatterns": [],
+      "ignoreExceptions": true,
+      "ignoreLocal": true,
+      "ignoreInterfaces": false,
+      "statics": "",
+      "instance": "",
+      "constants": "^CO_.+$"
+    },
     "cloud_types": true,
     "colon_missing_space": true,
     "commented_code": true,
@@ -133,7 +145,11 @@
     "tabl_enhancement_category": true,
     "try_without_catch": true,
     "type_form_parameters": true,
-    "types_naming": false,
+    "types_naming": {
+      "exclude": [],
+      "severity": "Error",
+      "pattern": "^TY_.+$"
+    },
     "uncaught_exception": true,
     "unknown_types": true,
     "unreachable_code": true,
