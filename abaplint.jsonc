@@ -156,7 +156,7 @@
     "unsecure_fae": true,
     "unused_methods": true,
     "unused_types": {
-      "skipNames": ["main"]
+      "skipNames": ["ty_main"]
     },
     "unused_variables": true,
     "use_bool_expression": true,
