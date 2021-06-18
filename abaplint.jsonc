@@ -10,7 +10,7 @@
   },
   "dependencies": [],
   "syntax": {
-    "version": "v751",
+    "version": "v702",
     "errorNamespace": ".",
     "globalConstants": [],
     "globalMacros": []
