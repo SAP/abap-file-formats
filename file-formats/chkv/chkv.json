@@ -165,58 +165,46 @@
                         "description": "The high value of the range",
                         "type": "string"
                       }
-                    }
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                      "sign",
+                      "option",
+                      "low",
+                      "high"
+                    ]
                   }
                 }
-              }
-            }
-          }
-        }
-      }
-    },
-    "oneOf": [
-      {
-        "required": [
-          "valueList"
-        ]
-      },
-      {
-        "required": [
-          "valueRangeList"
-        ]
-      },
-      {
-        "required": [
-          "value"
-        ]
-      }
-    ],
-    "allOf": [
-      {
-        "if": {
-          "properties": {
-            "type": {
-              "const": "^rangeOf"
+              },
+              "oneOf": [
+                {
+                  "required": [
+                    "valueList"
+                  ]
+                },
+                {
+                  "required": [
+                    "valueRangeList"
+                  ]
+                },
+                {
+                  "required": [
+                    "value"
+                  ]
+                }
+              ],
+              "required": [
+                "name",
+                "type"
+              ]
             }
           }
         },
-        "then": {
-          "required": "valueRangeList"
-        }
-      },
-      {
-        "if": {
-          "properties": {
-            "type": {
-              "const": "^tableOf"
-            }
-          }
-        },
-        "then": {
-          "required": "valueList"
-        }
+        "required": [
+          "checkName"
+        ]
       }
-    ]
+    }
   },
   "additionalProperties": false,
   "required": [
