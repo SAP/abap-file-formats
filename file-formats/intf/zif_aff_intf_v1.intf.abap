@@ -102,7 +102,7 @@ INTERFACE zif_aff_intf_v1 PUBLIC.
       "! <p class="shorttext">Schema</p>
       "! Format version
       "! $required
-      schema type string,
+      schema TYPE string,
       "! <p class="shorttext">Header</p>
       "! header
       "! $required
