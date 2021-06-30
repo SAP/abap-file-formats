@@ -1,290 +1,290 @@
-{                                                                                             
-  "$schema": "https://json-schema.org/draft/2020-12/schema",                                  
-  "$id": "http://sap.com/schema/intf.json",                                                   
-  "title": "Interface Properties",                                                            
-  "description": "Interface properties",                                                      
-  "type": "object",                                                                           
-  "properties": {                                                                             
-    "$schema": {                                                                              
-      "title": "Schema",                                                                      
-      "description": "Format version",                                                        
-      "type": "string"                                                                        
-    },                                                                                        
-    "header": {                                                                               
-      "title": "Header",                                                                      
-      "description": "header",                                                                
-      "type": "object",                                                                       
-      "properties": {                                                                         
-        "description": {                                                                      
-          "title": "Description",                                                             
-          "description": "Description of the ABAP object",                                    
-          "type": "string",                                                                   
-          "maxLength": 60                                                                     
-        },                                                                                    
-        "masterLanguage": {                                                                   
-          "title": "Original Language",                                                       
-          "description": "Original language of the ABAP object",                              
-          "type": "string",                                                                   
-          "maxLength": 1                                                                      
-        },                                                                                    
-        "abapLanguageVersion": {                                                              
-          "title": "ABAP Language Version (source code object)",                              
-          "description": "ABAP language version for source code objects",                     
-          "type": "string",                                                                   
-          "enum": [                                                                           
-            "standard",                                                                       
-            "keyUser",                                                                        
-            "cloudDevelopment"                                                                
-          ],                                                                                  
-          "enumDescriptions": [                                                               
-            "Standard",                                                                       
-            "Key user",                                                                       
-            "ABAP cloud development"                                                          
-          ]                                                                                   
-        }                                                                                     
-      },                                                                                      
-      "additionalProperties": false,                                                          
-      "required": [                                                                           
-        "description",                                                                        
-        "masterLanguage",                                                                     
-        "abapLanguageVersion"                                                                 
-      ]                                                                                       
-    },                                                                                        
-    "category": {                                                                             
-      "title": "Interface Category",                                                          
-      "description": "Interface category",                                                    
-      "type": "string",                                                                       
-      "enum": [                                                                               
-        "general",                                                                            
-        "classicBadi",                                                                        
-        "businessStaticComponents",                                                           
-        "businessInstanceComponents",                                                         
-        "dbProcedureProxy",                                                                   
-        "webDynproRuntime",                                                                   
-        "enterpriseService"                                                                   
-      ],                                                                                      
-      "enumDescriptions": [                                                                   
-        "General interface",                                                                  
-        "Interface definition of a classic BAdI",                                             
-        "Business interface for static components",                                           
-        "Business interface for instance-dependent components",                               
-        "Generated interface of a database procedure proxy",                                  
-        "Web Dynpro runtime interface",                                                       
-        "Generated interface of enterprise services"                                          
-      ]                                                                                       
-    },                                                                                        
-    "proxy": {                                                                                
-      "title": "Proxy Interface",                                                             
-      "description": "Interface is a proxy interface",                                        
-      "type": "boolean"                                                                       
-    },                                                                                        
-    "types": {                                                                                
-      "title": "types",                                                                       
-      "description": "types",                                                                 
-      "type": "array",                                                                        
-      "items": {                                                                              
-        "title": "Component Description",                                                     
-        "description": "Component description (e.g., for methods, attributes, types)",        
-        "type": "object",                                                                     
-        "properties": {                                                                       
-          "name": {                                                                           
-            "title": "Component Name",                                                        
-            "description": "Name of the component",                                           
-            "type": "string",                                                                 
-            "maxLength": 30                                                                   
-          },                                                                                  
-          "description": {                                                                    
-            "title": "Component Description",                                                 
-            "description": "Description of the component",                                    
-            "type": "string",                                                                 
-            "maxLength": 60                                                                   
-          }                                                                                   
-        },                                                                                    
-        "additionalProperties": false,                                                        
-        "required": [                                                                         
-          "name",                                                                             
-          "description"                                                                       
-        ]                                                                                     
-      }                                                                                       
-    },                                                                                        
-    "attributes": {                                                                           
-      "title": "Attribute Descriptions",                                                      
-      "description": "Attribute descriptions",                                                
-      "type": "array",                                                                        
-      "items": {                                                                              
-        "title": "Component Description",                                                     
-        "description": "Component description (e.g., for methods, attributes, types)",        
-        "type": "object",                                                                     
-        "properties": {                                                                       
-          "name": {                                                                           
-            "title": "Component Name",                                                        
-            "description": "Name of the component",                                           
-            "type": "string",                                                                 
-            "maxLength": 30                                                                   
-          },                                                                                  
-          "description": {                                                                    
-            "title": "Component Description",                                                 
-            "description": "Description of the component",                                    
-            "type": "string",                                                                 
-            "maxLength": 60                                                                   
-          }                                                                                   
-        },                                                                                    
-        "additionalProperties": false,                                                        
-        "required": [                                                                         
-          "name",                                                                             
-          "description"                                                                       
-        ]                                                                                     
-      }                                                                                       
-    },                                                                                        
-    "events": {                                                                               
-      "title": "Event Descriptions",                                                          
-      "description": "Event descriptions",                                                    
-      "type": "array",                                                                        
-      "items": {                                                                              
-        "title": "Event Description",                                                         
-        "description": "Event description",                                                   
-        "type": "object",                                                                     
-        "properties": {                                                                       
-          "name": {                                                                           
-            "title": "Event Name",                                                            
-            "description": "Name of the event",                                               
-            "type": "string",                                                                 
-            "maxLength": 30                                                                   
-          },                                                                                  
-          "description": {                                                                    
-            "title": "Event Description",                                                     
-            "description": "Description of the event",                                        
-            "type": "string",                                                                 
-            "maxLength": 60                                                                   
-          },                                                                                  
-          "parameters": {                                                                     
-            "title": "Parameter Descriptions",                                                
-            "description": "Parameter descriptions",                                          
-            "type": "array",                                                                  
-            "items": {                                                                        
-              "title": "Component Description",                                               
-              "description": "Component description (e.g., for methods, attributes, types)",  
-              "type": "object",                                                               
-              "properties": {                                                                 
-                "name": {                                                                     
-                  "title": "Component Name",                                                  
-                  "description": "Name of the component",                                     
-                  "type": "string",                                                           
-                  "maxLength": 30                                                             
-                },                                                                            
-                "description": {                                                              
-                  "title": "Component Description",                                           
-                  "description": "Description of the component",                              
-                  "type": "string",                                                           
-                  "maxLength": 60                                                             
-                }                                                                             
-              },                                                                              
-              "additionalProperties": false,                                                  
-              "required": [                                                                   
-                "name",                                                                       
-                "description"                                                                 
-              ]                                                                               
-            }                                                                                 
-          }                                                                                   
-        },                                                                                    
-        "additionalProperties": false,                                                        
-        "required": [                                                                         
-          "name",                                                                             
-          "description"                                                                       
-        ]                                                                                     
-      }                                                                                       
-    },                                                                                        
-    "methods": {                                                                              
-      "title": "Method Descriptions",                                                         
-      "description": "Method descriptions",                                                   
-      "type": "array",                                                                        
-      "items": {                                                                              
-        "title": "Method Description",                                                        
-        "description": "Method description",                                                  
-        "type": "object",                                                                     
-        "properties": {                                                                       
-          "name": {                                                                           
-            "title": "Method Name",                                                           
-            "description": "Name of the method",                                              
-            "type": "string",                                                                 
-            "maxLength": 30                                                                   
-          },                                                                                  
-          "description": {                                                                    
-            "title": "Method Description",                                                    
-            "description": "Description of the method",                                       
-            "type": "string",                                                                 
-            "maxLength": 60                                                                   
-          },                                                                                  
-          "parameters": {                                                                     
-            "title": "Parameter Descriptions",                                                
-            "description": "Parameter descriptions",                                          
-            "type": "array",                                                                  
-            "items": {                                                                        
-              "title": "Component Description",                                               
-              "description": "Component description (e.g., for methods, attributes, types)",  
-              "type": "object",                                                               
-              "properties": {                                                                 
-                "name": {                                                                     
-                  "title": "Component Name",                                                  
-                  "description": "Name of the component",                                     
-                  "type": "string",                                                           
-                  "maxLength": 30                                                             
-                },                                                                            
-                "description": {                                                              
-                  "title": "Component Description",                                           
-                  "description": "Description of the component",                              
-                  "type": "string",                                                           
-                  "maxLength": 60                                                             
-                }                                                                             
-              },                                                                              
-              "additionalProperties": false,                                                  
-              "required": [                                                                   
-                "name",                                                                       
-                "description"                                                                 
-              ]                                                                               
-            }                                                                                 
-          },                                                                                  
-          "exceptions": {                                                                     
-            "title": "Exception Descriptions",                                                
-            "description": "Exception descriptions",                                          
-            "type": "array",                                                                  
-            "items": {                                                                        
-              "title": "Component Description",                                               
-              "description": "Component description (e.g., for methods, attributes, types)",  
-              "type": "object",                                                               
-              "properties": {                                                                 
-                "name": {                                                                     
-                  "title": "Component Name",                                                  
-                  "description": "Name of the component",                                     
-                  "type": "string",                                                           
-                  "maxLength": 30                                                             
-                },                                                                            
-                "description": {                                                              
-                  "title": "Component Description",                                           
-                  "description": "Description of the component",                              
-                  "type": "string",                                                           
-                  "maxLength": 60                                                             
-                }                                                                             
-              },                                                                              
-              "additionalProperties": false,                                                  
-              "required": [                                                                   
-                "name",                                                                       
-                "description"                                                                 
-              ]                                                                               
-            }                                                                                 
-          }                                                                                   
-        },                                                                                    
-        "additionalProperties": false,                                                        
-        "required": [                                                                         
-          "name",                                                                             
-          "description"                                                                       
-        ]                                                                                     
-      }                                                                                       
-    }                                                                                         
-  },                                                                                          
-  "additionalProperties": false,                                                              
-  "required": [                                                                               
-    "$schema",                                                                                
-    "header"                                                                                  
-  ]                                                                                           
-}                                                                                             
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://sap.com/schema/intf.json",
+  "title": "Interface Properties",
+  "description": "Interface properties",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "title": "Schema",
+      "description": "Format version",
+      "type": "string"
+    },
+    "header": {
+      "title": "Header",
+      "description": "header",
+      "type": "object",
+      "properties": {
+        "description": {
+          "title": "Description",
+          "description": "Description of the ABAP object",
+          "type": "string",
+          "maxLength": 60
+        },
+        "masterLanguage": {
+          "title": "Original Language",
+          "description": "Original language of the ABAP object",
+          "type": "string",
+          "maxLength": 2
+        },
+        "abapLanguageVersion": {
+          "title": "ABAP Language Version (source code object)",
+          "description": "ABAP language version for source code objects",
+          "type": "string",
+          "enum": [
+            "standard",
+            "keyUser",
+            "cloudDevelopment"
+          ],
+          "enumDescriptions": [
+            "Standard",
+            "Key user",
+            "ABAP cloud development"
+          ]
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "description",
+        "masterLanguage",
+        "abapLanguageVersion"
+      ]
+    },
+    "category": {
+      "title": "Interface Category",
+      "description": "Interface category",
+      "type": "string",
+      "enum": [
+        "general",
+        "classicBadi",
+        "businessStaticComponents",
+        "businessInstanceComponents",
+        "dbProcedureProxy",
+        "webDynproRuntime",
+        "enterpriseService"
+      ],
+      "enumDescriptions": [
+        "General interface",
+        "Interface definition of a classic BAdI",
+        "Business interface for static components",
+        "Business interface for instance-dependent components",
+        "Generated interface of a database procedure proxy",
+        "Web Dynpro runtime interface",
+        "Generated interface of enterprise services"
+      ]
+    },
+    "proxy": {
+      "title": "Proxy Interface",
+      "description": "Interface is a proxy interface",
+      "type": "boolean"
+    },
+    "types": {
+      "title": "types",
+      "description": "types",
+      "type": "array",
+      "items": {
+        "title": "Component Description",
+        "description": "Component description (e.g., for methods, attributes, types)",
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Component Name",
+            "description": "Name of the component",
+            "type": "string",
+            "maxLength": 30
+          },
+          "description": {
+            "title": "Component Description",
+            "description": "Description of the component",
+            "type": "string",
+            "maxLength": 60
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "description"
+        ]
+      }
+    },
+    "attributes": {
+      "title": "Attribute Descriptions",
+      "description": "Attribute descriptions",
+      "type": "array",
+      "items": {
+        "title": "Component Description",
+        "description": "Component description (e.g., for methods, attributes, types)",
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Component Name",
+            "description": "Name of the component",
+            "type": "string",
+            "maxLength": 30
+          },
+          "description": {
+            "title": "Component Description",
+            "description": "Description of the component",
+            "type": "string",
+            "maxLength": 60
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "description"
+        ]
+      }
+    },
+    "events": {
+      "title": "Event Descriptions",
+      "description": "Event descriptions",
+      "type": "array",
+      "items": {
+        "title": "Event Description",
+        "description": "Event description",
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Event Name",
+            "description": "Name of the event",
+            "type": "string",
+            "maxLength": 30
+          },
+          "description": {
+            "title": "Event Description",
+            "description": "Description of the event",
+            "type": "string",
+            "maxLength": 60
+          },
+          "parameters": {
+            "title": "Parameter Descriptions",
+            "description": "Parameter descriptions",
+            "type": "array",
+            "items": {
+              "title": "Component Description",
+              "description": "Component description (e.g., for methods, attributes, types)",
+              "type": "object",
+              "properties": {
+                "name": {
+                  "title": "Component Name",
+                  "description": "Name of the component",
+                  "type": "string",
+                  "maxLength": 30
+                },
+                "description": {
+                  "title": "Component Description",
+                  "description": "Description of the component",
+                  "type": "string",
+                  "maxLength": 60
+                }
+              },
+              "additionalProperties": false,
+              "required": [
+                "name",
+                "description"
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "description"
+        ]
+      }
+    },
+    "methods": {
+      "title": "Method Descriptions",
+      "description": "Method descriptions",
+      "type": "array",
+      "items": {
+        "title": "Method Description",
+        "description": "Method description",
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Method Name",
+            "description": "Name of the method",
+            "type": "string",
+            "maxLength": 30
+          },
+          "description": {
+            "title": "Method Description",
+            "description": "Description of the method",
+            "type": "string",
+            "maxLength": 60
+          },
+          "parameters": {
+            "title": "Parameter Descriptions",
+            "description": "Parameter descriptions",
+            "type": "array",
+            "items": {
+              "title": "Component Description",
+              "description": "Component description (e.g., for methods, attributes, types)",
+              "type": "object",
+              "properties": {
+                "name": {
+                  "title": "Component Name",
+                  "description": "Name of the component",
+                  "type": "string",
+                  "maxLength": 30
+                },
+                "description": {
+                  "title": "Component Description",
+                  "description": "Description of the component",
+                  "type": "string",
+                  "maxLength": 60
+                }
+              },
+              "additionalProperties": false,
+              "required": [
+                "name",
+                "description"
+              ]
+            }
+          },
+          "exceptions": {
+            "title": "Exception Descriptions",
+            "description": "Exception descriptions",
+            "type": "array",
+            "items": {
+              "title": "Component Description",
+              "description": "Component description (e.g., for methods, attributes, types)",
+              "type": "object",
+              "properties": {
+                "name": {
+                  "title": "Component Name",
+                  "description": "Name of the component",
+                  "type": "string",
+                  "maxLength": 30
+                },
+                "description": {
+                  "title": "Component Description",
+                  "description": "Description of the component",
+                  "type": "string",
+                  "maxLength": 60
+                }
+              },
+              "additionalProperties": false,
+              "required": [
+                "name",
+                "description"
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "description"
+        ]
+      }
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "header"
+  ]
+}
