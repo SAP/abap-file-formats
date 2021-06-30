@@ -1,8 +1,8 @@
-INTERFACE zif_aff_intf_v1 PUBLIC.
+INTERFACE if_oo_aff_intf_v1 PUBLIC.
 
   "! <p class="shorttext">Interface Category</p>
   "! Interface category
-  "! $values {@link zif_aff_intf_v1.data:co_category}
+  "! $values {@link if_oo_aff_intf_v1.data:co_category}
   TYPES ty_category TYPE n LENGTH 2.
 
   CONSTANTS:
@@ -39,11 +39,11 @@ INTERFACE zif_aff_intf_v1 PUBLIC.
       "! <p class="shorttext">Component Name</p>
       "! Name of the component
       "! $required
-      name        TYPE zif_aff_types_v1=>ty_object_name_30,
+      name        TYPE if_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Component Description</p>
       "! Description of the component
       "! $required
-      description TYPE zif_aff_types_v1=>ty_description_60,
+      description TYPE if_aff_types_v1=>ty_description_60,
     END OF ty_component_description,
     "! <p class="shorttext">Component Descriptions</p>
     "! Interface component descriptions
@@ -59,11 +59,11 @@ INTERFACE zif_aff_intf_v1 PUBLIC.
       "! <p class="shorttext">Method Name</p>
       "! Name of the method
       "! $required
-      name        TYPE zif_aff_types_v1=>ty_object_name_30,
+      name        TYPE if_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Method Description</p>
       "! Description of the method
       "! $required
-      description TYPE zif_aff_types_v1=>ty_description_60,
+      description TYPE if_aff_types_v1=>ty_description_60,
       "! <p class="shorttext">Parameter Descriptions</p>
       "! Parameter descriptions
       parameters  TYPE ty_subcomponent_descriptions,
@@ -82,11 +82,11 @@ INTERFACE zif_aff_intf_v1 PUBLIC.
       "! <p class="shorttext">Event Name</p>
       "! Name of the event
       "! $required
-      name        TYPE zif_aff_types_v1=>ty_object_name_30,
+      name        TYPE if_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Event Description</p>
       "! Description of the event
       "! $required
-      description TYPE zif_aff_types_v1=>ty_description_60,
+      description TYPE if_aff_types_v1=>ty_description_60,
       "! <p class="shorttext">Parameter Descriptions</p>
       "! Parameter descriptions
       parameters  TYPE ty_subcomponent_descriptions,
@@ -106,7 +106,7 @@ INTERFACE zif_aff_intf_v1 PUBLIC.
       "! <p class="shorttext">Header</p>
       "! header
       "! $required
-      header     TYPE zif_aff_types_v1=>ty_header_60,
+      header     TYPE if_aff_types_v1=>ty_header_60_sco,
       "! <p class="shorttext">Interface Category</p>
       "! Interface category
       category   TYPE ty_category,
