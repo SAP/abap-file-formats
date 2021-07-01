@@ -81,7 +81,7 @@ INTERFACE zif_aff_types_v1 PUBLIC.
       "! <p class="shorttext">Original Language</p>
       "! Original language of the ABAP object
       "! $required
-      master_language    TYPE ty_language,
+      original_language    TYPE ty_language,
       "! <p class="shorttext">ABAP Language Version</p>
       "! ABAP language version
       "! $required
