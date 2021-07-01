@@ -50,9 +50,9 @@ INTERFACE zif_aff_types_v1 PUBLIC.
 
   "! <p class="shorttext">Object Name</p>
   "! Object name with max. length 30
-  TYPES ty_object_name_30 TYPE c LENGTH 30.
+  TYPES ty_object_name_30 TYPE c LENGTH 30 ##NEEDED.
 
-  TYPES:
+  TYPES ##NEEDED:
     "! <p class="shorttext">Header for Source Code Objects</p>
     "! The header for an ABAP main object (with source code) with a description of 60 characters
     BEGIN OF ty_header_60_sco,
@@ -70,7 +70,7 @@ INTERFACE zif_aff_types_v1 PUBLIC.
       abap_language_version TYPE ty_abap_language_version_sco,
     END OF ty_header_60_sco.
 
-  TYPES:
+  TYPES ##NEEDED:
     "! <p class="shorttext">Header for Non-Source Code Objects</p>
     "! The header for an ABAP main object (without source code) with a description of 60 characters
     BEGIN OF ty_header_60,
