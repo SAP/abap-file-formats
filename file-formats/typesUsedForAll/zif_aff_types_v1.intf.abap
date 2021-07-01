@@ -1,4 +1,4 @@
-INTERFACE if_aff_types_v1 PUBLIC.
+INTERFACE zif_aff_types_v1 PUBLIC.
 
   "! <p class="shorttext">Language</p>
   "! Language
@@ -63,7 +63,7 @@ INTERFACE if_aff_types_v1 PUBLIC.
       "! <p class="shorttext">Original Language</p>
       "! Original language of the ABAP object
       "! $required
-      master_language    TYPE ty_language,
+      original_language    TYPE sy-langu,
       "! <p class="shorttext">ABAP Language Version (source code object)</p>
       "! ABAP language version for source code objects
       "! $required
@@ -86,6 +86,6 @@ INTERFACE if_aff_types_v1 PUBLIC.
       "! ABAP language version
       "! $required
       abap_language_version TYPE ty_abap_language_version,
-    END OF ty_header_60.
+    END OF ty_header_60 ##NEEDED.
 
 ENDINTERFACE.
