@@ -1,4 +1,4 @@
-INTERFACE if_oo_aff_intf_v1 PUBLIC.
+INTERFACE zif_oo_aff_intf_v1 PUBLIC.
 
   "! <p class="shorttext">Interface Category</p>
   "! Interface category

@@ -21,7 +21,7 @@
           "type": "string",
           "maxLength": 60
         },
-        "masterLanguage": {
+        "originalLanguage": {
           "title": "Original Language",
           "description": "Original language of the ABAP object",
           "type": "string",
@@ -46,7 +46,7 @@
       "additionalProperties": false,
       "required": [
         "description",
-        "masterLanguage",
+        "originalLanguage",
         "abapLanguageVersion"
       ]
     },
@@ -79,8 +79,8 @@
       "type": "boolean"
     },
     "types": {
-      "title": "types",
-      "description": "types",
+      "title": "Component Descriptions",
+      "description": "Interface component descriptions",
       "type": "array",
       "items": {
         "title": "Component Description",

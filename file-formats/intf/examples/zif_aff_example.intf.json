@@ -2,7 +2,7 @@
   "$schema": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/intf/intf.json",
   "header": {
     "description": "Example interface for ABAP file formats",
-    "masterLanguage": "EN",
+    "originalLanguage": "EN",
     "abapLanguageVersion": "standard"
   },
   "types": [
