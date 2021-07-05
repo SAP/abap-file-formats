@@ -1,91 +1,70 @@
-INTERFACE zif_aff_types_v1 PUBLIC.
-
-  "! <p class="shorttext">Language</p>
-  "! Language
-  TYPES ty_language TYPE c LENGTH 1.
+interface if_aff_types_v1 public.
 
   "! <p class="shorttext">ABAP Language Version (Source Code Objects)</p>
   "! ABAP language version for source code objects
-  "! $values {@link if_aff_types_v1.data:co_abap_language_version_sco}
-  TYPES ty_abap_language_version_sco TYPE c LENGTH 1.
+  "! $values {@link if_aff_types_v1.data:co_abap_language_version_src}
+  types ty_abap_language_version_src type c length 1.
 
-  CONSTANTS:
+  constants:
     "! <p class="shorttext">ABAP Language Version (Source Code Objects)</p>
-    "! ABAP language version for source code objects
-    BEGIN OF co_abap_language_version_sco,
+    "! "! ABAP language version for source code objects. For non-source-code objects use
+    "! {@link data: ty_abap_language_version}
+    begin of co_abap_language_version_src,
       "! <p class="shorttext">Standard</p>
       "! Standard
-      standard          TYPE ty_abap_language_version_sco VALUE 'X',
+      standard          type ty_abap_language_version_src value 'X',
       "! <p class="shorttext">Key User</p>
       "! Key user
-      key_user          TYPE ty_abap_language_version_sco VALUE '2',
+      key_user          type ty_abap_language_version_src value '2',
       "! <p class="shorttext">ABAP Cloud Development</p>
       "! ABAP cloud development
-      cloud_development TYPE ty_abap_language_version_sco VALUE '5',
-    END OF co_abap_language_version_sco.
+      cloud_development type ty_abap_language_version_src value '5',
+    end of co_abap_language_version_src.
 
-  "! <p class="shorttext">ABAP Language Version (Non-Source Code Objects)</p>
-  "! ABAP language version for non-source code objects
+  "! <p class="shorttext">ABAP Language Version</p>
+  "! ABAP language version
   "! $values {@link if_aff_types_v1.data:co_abap_language_version}
-  TYPES ty_abap_language_version TYPE c LENGTH 1.
+  types ty_abap_language_version type c length 1.
 
-  CONSTANTS:
+  constants:
     "! <p class="shorttext">ABAP Language Version (Non-Source Code Objects)</p>
     "! ABAP language version for non-source code objects
-    BEGIN OF co_abap_language_version,
+    begin of co_abap_language_version,
       "! <p class="shorttext">Standard</p>
       "! Standard
-      standard          TYPE ty_abap_language_version VALUE ' ',
-      "! <p class="shorttext">Key User</p>
-      "! Key user
-      key_user          TYPE ty_abap_language_version VALUE '2',
+      standard          type ty_abap_language_version value ' ',
+      "! <p class="shorttext">ABAP for Key Users</p>
+      "! ABAP for key user extensibility
+      key_user          type ty_abap_language_version value '2',
       "! <p class="shorttext">ABAP Cloud Development</p>
       "! ABAP cloud development
-      cloud_development TYPE ty_abap_language_version VALUE '5',
-    END OF co_abap_language_version.
+      cloud_development type ty_abap_language_version value '5',
+    end of co_abap_language_version.
 
   "! <p class="shorttext">Description</p>
   "! Description with 60 characters
-  TYPES ty_description_60 TYPE c LENGTH 60.
+  types ty_description_60 type c length 60.
 
   "! <p class="shorttext">Object Name</p>
   "! Object name with max. length 30
-  TYPES ty_object_name_30 TYPE c LENGTH 30 ##NEEDED.
+  types ty_object_name_30 type c length 30.
 
-  TYPES ##NEEDED:
+  types:
     "! <p class="shorttext">Header for Source Code Objects</p>
     "! The header for an ABAP main object (with source code) with a description of 60 characters
-    BEGIN OF ty_header_60_sco,
+    begin of ty_header_60_src,
       "! <p class="shorttext">Description</p>
       "! Description of the ABAP object
       "! $required
-      description        TYPE ty_description_60,
+      description           type ty_description_60,
       "! <p class="shorttext">Original Language</p>
       "! Original language of the ABAP object
       "! $required
-      original_language    TYPE sy-langu,
+      original_language     type sy-langu,
       "! <p class="shorttext">ABAP Language Version (source code object)</p>
       "! ABAP language version for source code objects
       "! $required
-      abap_language_version TYPE ty_abap_language_version_sco,
-    END OF ty_header_60_sco.
-
-  TYPES ##NEEDED:
-    "! <p class="shorttext">Header for Non-Source Code Objects</p>
-    "! The header for an ABAP main object (without source code) with a description of 60 characters
-    BEGIN OF ty_header_60,
-      "! <p class="shorttext">Description</p>
-      "! Description of the ABAP object
-      "! $required
-      description        TYPE ty_description_60,
-      "! <p class="shorttext">Original Language</p>
-      "! Original language of the ABAP object
-      "! $required
-      original_language    TYPE ty_language,
-      "! <p class="shorttext">ABAP Language Version</p>
-      "! ABAP language version
-      "! $required
-      abap_language_version TYPE ty_abap_language_version,
-    END OF ty_header_60 ##NEEDED.
-
-ENDINTERFACE.
+      abap_language_version type ty_abap_language_version_src,
+    end of ty_header_60_src.
+    
+endinterface.

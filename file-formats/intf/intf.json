@@ -12,7 +12,7 @@
     },
     "header": {
       "title": "Header",
-      "description": "header",
+      "description": "Header",
       "type": "object",
       "properties": {
         "description": {
@@ -79,23 +79,23 @@
       "type": "boolean"
     },
     "types": {
-      "title": "Component Descriptions",
-      "description": "Interface component descriptions",
+      "title": "Type Descriptions",
+      "description": "Type descriptions",
       "type": "array",
       "items": {
-        "title": "Component Description",
-        "description": "Component description (e.g., for methods, attributes, types)",
+        "title": "Name and Description",
+        "description": "Name and description",
         "type": "object",
         "properties": {
           "name": {
-            "title": "Component Name",
-            "description": "Name of the component",
+            "title": "Name",
+            "description": "Name",
             "type": "string",
             "maxLength": 30
           },
           "description": {
-            "title": "Component Description",
-            "description": "Description of the component",
+            "title": "Description",
+            "description": "Description",
             "type": "string",
             "maxLength": 60
           }
@@ -112,19 +112,19 @@
       "description": "Attribute descriptions",
       "type": "array",
       "items": {
-        "title": "Component Description",
-        "description": "Component description (e.g., for methods, attributes, types)",
+        "title": "Name and Description",
+        "description": "Name and description",
         "type": "object",
         "properties": {
           "name": {
-            "title": "Component Name",
-            "description": "Name of the component",
+            "title": "Name",
+            "description": "Name",
             "type": "string",
             "maxLength": 30
           },
           "description": {
-            "title": "Component Description",
-            "description": "Description of the component",
+            "title": "Description",
+            "description": "Description",
             "type": "string",
             "maxLength": 60
           }
@@ -162,19 +162,19 @@
             "description": "Parameter descriptions",
             "type": "array",
             "items": {
-              "title": "Component Description",
-              "description": "Component description (e.g., for methods, attributes, types)",
+              "title": "Name and Description",
+              "description": "Name and description",
               "type": "object",
               "properties": {
                 "name": {
-                  "title": "Component Name",
-                  "description": "Name of the component",
+                  "title": "Name",
+                  "description": "Name",
                   "type": "string",
                   "maxLength": 30
                 },
                 "description": {
-                  "title": "Component Description",
-                  "description": "Description of the component",
+                  "title": "Description",
+                  "description": "Description",
                   "type": "string",
                   "maxLength": 60
                 }
@@ -220,19 +220,19 @@
             "description": "Parameter descriptions",
             "type": "array",
             "items": {
-              "title": "Component Description",
-              "description": "Component description (e.g., for methods, attributes, types)",
+              "title": "Name and Description",
+              "description": "Name and description",
               "type": "object",
               "properties": {
                 "name": {
-                  "title": "Component Name",
-                  "description": "Name of the component",
+                  "title": "Name",
+                  "description": "Name",
                   "type": "string",
                   "maxLength": 30
                 },
                 "description": {
-                  "title": "Component Description",
-                  "description": "Description of the component",
+                  "title": "Description",
+                  "description": "Description",
                   "type": "string",
                   "maxLength": 60
                 }
@@ -249,19 +249,19 @@
             "description": "Exception descriptions",
             "type": "array",
             "items": {
-              "title": "Component Description",
-              "description": "Component description (e.g., for methods, attributes, types)",
+              "title": "Name and Description",
+              "description": "Name and description",
               "type": "object",
               "properties": {
                 "name": {
-                  "title": "Component Name",
-                  "description": "Name of the component",
+                  "title": "Name",
+                  "description": "Name",
                   "type": "string",
                   "maxLength": 30
                 },
                 "description": {
-                  "title": "Component Description",
-                  "description": "Description of the component",
+                  "title": "Description",
+                  "description": "Description",
                   "type": "string",
                   "maxLength": 60
                 }
