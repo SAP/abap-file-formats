@@ -12,7 +12,7 @@ INTERFACE zif_aff_types_v1 PUBLIC.
     BEGIN OF co_abap_language_version_src,
       "! <p class="shorttext">Standard</p>
       "! Standard
-      STANDARD          TYPE ty_abap_language_version_src VALUE 'X',
+      standard          TYPE ty_abap_language_version_src VALUE 'X',
       "! <p class="shorttext">Key User</p>
       "! Key user
       key_user          TYPE ty_abap_language_version_src VALUE '2',
