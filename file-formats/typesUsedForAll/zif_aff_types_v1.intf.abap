@@ -13,8 +13,8 @@ INTERFACE zif_aff_types_v1 PUBLIC.
       "! <p class="shorttext">Standard</p>
       "! Standard
       standard          TYPE ty_abap_language_version_src VALUE 'X',
-      "! <p class="shorttext">Key User</p>
-      "! Key user
+      "! <p class="shorttext">ABAP for Key Users</p>
+      "! ABAP for key user extensibility
       key_user          TYPE ty_abap_language_version_src VALUE '2',
       "! <p class="shorttext">ABAP Cloud Development</p>
       "! ABAP cloud development
