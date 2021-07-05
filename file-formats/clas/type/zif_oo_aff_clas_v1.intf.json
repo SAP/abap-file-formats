@@ -1,0 +1,8 @@
+{
+  "$schema": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/intf/intf.json",
+  "header": {
+    "description": "AFF: Interface v1",
+    "originalLanguage": "EN",
+    "abapLanguageVersion": "standard"
+  }
+}

@@ -23,10 +23,10 @@ ENDCLASS.
 
 
 
-CLASS zcl_aff_example IMPLEMENTATION.
+CLASS ZCL_AFF_EXAMPLE IMPLEMENTATION.
+
 
   METHOD example_method.
     example_attribute = ''(txt).
   ENDMETHOD.
-
 ENDCLASS.
