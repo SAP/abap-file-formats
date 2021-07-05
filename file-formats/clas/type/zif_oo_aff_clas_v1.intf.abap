@@ -133,11 +133,6 @@ INTERFACE zif_oo_aff_clas_v1 PUBLIC.
     "! Event descriptions
     ty_events TYPE SORTED TABLE OF ty_event WITH UNIQUE KEY name.
 
-  TYPES ##Needed:
-    BEGIN OF ty_class_properties.
-      INCLUDE TYPE zif_oo_aff_types=>ty_clif_properties.
-  TYPES END OF ty_class_properties.
-
   TYPES:
     "! <p class="shorttext">Interface Properties</p>
     "! Interface properties
