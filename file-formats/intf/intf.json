@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "http://sap.com/schema/intf.json",
+  "$id": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/intf/intf.json",
   "title": "Interface Properties",
   "description": "Interface properties",
   "type": "object",
