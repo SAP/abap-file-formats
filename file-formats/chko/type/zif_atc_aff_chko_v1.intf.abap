@@ -22,7 +22,7 @@ INTERFACE zif_atc_aff_chko_v1
   TYPES:
     "! <p class="shorttext">Parameters</p>
     "! List of parameters
-    ty_parameters TYPE HASHED TABLE OF ty_parameter WITH UNIQUE KEY technical_id 
+    ty_parameters TYPE HASHED TABLE OF ty_parameter WITH UNIQUE KEY technical_id
       WITH UNIQUE HASHED KEY xml_name COMPONENTS name.
 
   TYPES:
