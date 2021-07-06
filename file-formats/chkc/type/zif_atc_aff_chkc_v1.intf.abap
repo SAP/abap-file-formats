@@ -1,5 +1,5 @@
 INTERFACE zif_atc_aff_chkc_v1
-  PUBLIC .
+  PUBLIC.
 
   TYPES:
     "! <p class="shorttext">Object Type CHKC</p>
