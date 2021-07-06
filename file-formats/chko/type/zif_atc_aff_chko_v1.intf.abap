@@ -19,10 +19,11 @@ INTERFACE zif_atc_aff_chko_v1
       modifiable   TYPE abap_bool,
     END OF ty_parameter.
 
-  TYPES :
+  TYPES:
     "! <p class="shorttext">Parameters</p>
     "! List of parameters
-    ty_parameters TYPE HASHED TABLE OF ty_parameter WITH UNIQUE KEY technical_id WITH UNIQUE HASHED KEY xml_name COMPONENTS name.
+    ty_parameters TYPE HASHED TABLE OF ty_parameter WITH UNIQUE KEY technical_id 
+      WITH UNIQUE HASHED KEY xml_name COMPONENTS name.
 
   TYPES:
     "! <p class="shorttext">Object Type CHKO</p>
@@ -45,7 +46,7 @@ INTERFACE zif_atc_aff_chko_v1
       implementing_class TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Remote-enabled flag</p>
       "! The ATC Check Object is remote-enabled
-      remote_enabled     TYPE abap_bool, "was type flag
+      remote_enabled     TYPE abap_bool,
       "! <p class="shorttext">Parameters</p>
       "! Parameters of the ATC Check Object
       parameters         TYPE ty_parameters,
