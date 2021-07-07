@@ -2,8 +2,8 @@ INTERFACE zif_atc_aff_chkc_v1
   PUBLIC.
 
   TYPES:
-    "! <p class="shorttext">Object Type CHKC</p>
-    "! CHKC object type
+    "! <p class="shorttext">ATC Check Category</p>
+    "! ATC check category properties
     BEGIN OF ty_main,
       "! <p class="shorttext">Schema</p>
       "! Format version

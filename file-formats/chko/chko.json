@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/chko/chko.json",
-  "title": "Object Type CHKO",
-  "description": "CHKO object type",
+  "title": "ATC Check",
+  "description": "ATC check object properties",
   "type": "object",
   "properties": {
     "$schema": {

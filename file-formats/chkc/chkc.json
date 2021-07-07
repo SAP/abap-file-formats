@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/chkc/chkc.json",
-  "title": "Object Type CHKC",
-  "description": "CHKC object type",
+  "title": "ATC Check Category",
+  "description": "ATC check category properties",
   "type": "object",
   "properties": {
     "$schema": {

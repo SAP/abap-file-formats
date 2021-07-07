@@ -26,8 +26,8 @@ INTERFACE zif_atc_aff_chko_v1
       WITH UNIQUE HASHED KEY xml_name COMPONENTS name.
 
   TYPES:
-    "! <p class="shorttext">Object Type CHKO</p>
-    "! CHKO object type
+    "! <p class="shorttext">ATC Check</p>
+    "! ATC check object properties
     BEGIN OF ty_main,
       "! <p class="shorttext">Schema</p>
       "! Format version
