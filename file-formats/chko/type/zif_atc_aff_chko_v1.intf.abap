@@ -8,13 +8,13 @@ INTERFACE zif_atc_aff_chko_v1
       "! <p class="shorttext">Technical ID</p>
       "! The technical Id of a parameter
       technical_id TYPE c LENGTH 4,
-      "! <p class="shorttext">Parameter name</p>
+      "! <p class="shorttext">Parameter Name</p>
       "! Name of a parameter
       name         TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Parameter Description</p>
       "! Description of a parameter
       description  TYPE c LENGTH 255,
-      "! <p class="shorttext">Modifiable flag</p>
+      "! <p class="shorttext">Modifiable Flag</p>
       "! The parameter is modifiable
       modifiable   TYPE abap_bool,
     END OF ty_parameter.

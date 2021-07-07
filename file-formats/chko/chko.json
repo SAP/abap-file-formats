@@ -83,7 +83,7 @@
             "maxLength": 4
           },
           "name": {
-            "title": "Parameter name",
+            "title": "Parameter Name",
             "description": "Name of a parameter",
             "type": "string",
             "maxLength": 30
@@ -95,7 +95,7 @@
             "maxLength": 255
           },
           "modifiable": {
-            "title": "Modifiable flag",
+            "title": "Modifiable Flag",
             "description": "The parameter is modifiable",
             "type": "boolean"
           }
