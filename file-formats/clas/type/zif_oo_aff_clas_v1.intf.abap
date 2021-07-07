@@ -15,6 +15,12 @@ INTERFACE zif_oo_aff_clas_v1 PUBLIC.
       "! <p class="shorttext">Exit class</p>
       "! Exit class
       exit_class                     TYPE ty_category VALUE '01',
+      "! <p class="shorttext">Test class (ABAP Unit)</p>
+      "! Test class (ABAP Unit)
+      testclass_abap_unit            TYPE ty_category VALUE '05',
+      "! <p class="shorttext">Behavior class (behavior implementations)</p>
+      "! Behavior class (behavior implementations)
+      behavior_class                 TYPE ty_category VALUE '06',
       "! <p class="shorttext">Persistent class</p>
       "! Persistent class
       persistent_class               TYPE ty_category VALUE '10',
@@ -30,6 +36,9 @@ INTERFACE zif_oo_aff_clas_v1 PUBLIC.
       "! <p class="shorttext">Exception class</p>
       "! Exception class
       exception_class                TYPE ty_category VALUE '40',
+      "! <p class="shorttext">Area class (shared objects)</p>
+      "! Area class (shared objects)
+      area_class_shared_objects      TYPE ty_category VALUE '45',
       "! <p class="shorttext">Business class</p>
       "! Business class
       business_class                 TYPE ty_category VALUE '50',
@@ -39,15 +48,9 @@ INTERFACE zif_oo_aff_clas_v1 PUBLIC.
       "! <p class="shorttext">Basis class for BSP element handlers</p>
       "! Basis class for BSP element handlers
       basis_class_bsp_element_hdlr   TYPE ty_category VALUE '70',
-      "! <p class="shorttext">Area class (shared objects)</p>
-      "! Area class (shared objects)
-      area_class_shared_objects      TYPE ty_category VALUE '45',
-      "! <p class="shorttext">Test class (ABAP Unit)</p>
-      "! Test class (ABAP Unit)
-      testclass_abap_unit            TYPE ty_category VALUE '05',
-      "! <p class="shorttext">Behavior class (behavior implementations)</p>
-      "! Behavior class (behavior implementations)
-      behavior_class                 TYPE ty_category VALUE '06',
+      "! <p class="shorttext">Web Dynpro runtime object</p>
+      "! Web Dynpro runtime object
+      web_dynpro_runtime_object      TYPE ty_category VALUE '80',
     END OF co_category.
 
   TYPES:

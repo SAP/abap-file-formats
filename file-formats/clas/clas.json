@@ -57,32 +57,34 @@
       "enum": [
         "generalObjectType",
         "exitClass",
+        "testclassAbapUnit",
+        "behaviorClass",
         "persistentClass",
         "factoryForPersistentClass",
         "statusClassForPersistClass",
         "rfcProxyClass",
         "exceptionClass",
+        "areaClassSharedObjects",
         "businessClass",
         "bspApplicationClass",
         "basisClassBspElementHdlr",
-        "areaClassSharedObjects",
-        "testclassAbapUnit",
-        "behaviorClass"
+        "webDynproRuntimeObject"
       ],
       "enumDescriptions": [
         "General object type",
         "Exit class",
+        "Test class (ABAP Unit)",
+        "Behavior class (behavior implementations)",
         "Persistent class",
         "Factory for persistent class",
         "Status class for persistent class",
         "RFC proxy class",
         "Exception class",
+        "Area class (shared objects)",
         "Business class",
         "BSP application class",
         "Basis class for BSP element handlers",
-        "Area class (shared objects)",
-        "Test class (ABAP Unit)",
-        "Behavior class (behavior implementations)"
+        "Web Dynpro runtime object"
       ]
     },
     "fixPointArithmetic": {
