@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/clas/clas.json",
-  "title": "Interface Properties",
-  "description": "Interface properties",
+  "title": "Class Properties",
+  "description": "Class properties",
   "type": "object",
   "properties": {
     "$schema": {
@@ -60,20 +60,13 @@
         "persistentClass",
         "factoryForPersistentClass",
         "statusClassForPersistClass",
-        "viewClass",
-        "proxyClassForRemoteIntf",
         "rfcProxyClass",
         "exceptionClass",
         "businessClass",
-        "businessClassIntfForStatic",
-        "businessClassIntfForInstan",
         "bspApplicationClass",
         "basisClassBspElementHdlr",
-        "webDynproRuntimeObject",
-        "esiProviderIntfGenerated",
         "areaClassSharedObjects",
         "testclassAbapUnit",
-        "intfForParameterTypes",
         "behaviorClass"
       ],
       "enumDescriptions": [
@@ -82,20 +75,13 @@
         "Persistent class",
         "Factory for persistent class",
         "Status class for persistent class",
-        "View class",
-        "Proxy class for remote interface",
         "RFC proxy class",
         "Exception class",
         "Business class",
-        "Business class interface for static components",
-        "Business class interface for instance-dependent components",
         "BSP application class",
         "Basis class for BSP element handlers",
-        "Web Dynpro runtime object",
-        "ESI: Provider interface (generated)",
         "Area class (shared objects)",
         "Test class (ABAP Unit)",
-        "Interface for parameter types for database procedure proxies",
         "Behavior class (behavior implementations)"
       ]
     },
@@ -317,7 +303,6 @@
   "additionalProperties": false,
   "required": [
     "$schema",
-    "header",
-    "category"
+    "header"
   ]
 }

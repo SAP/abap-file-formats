@@ -24,12 +24,6 @@ INTERFACE zif_oo_aff_clas_v1 PUBLIC.
       "! <p class="shorttext">Status class for persistent class</p>
       "! Status class for persistent class
       status_class_for_persist_class TYPE ty_category VALUE '12',
-      "! <p class="shorttext">View class</p>
-      "! View class
-      view_class                     TYPE ty_category VALUE '20',
-      "! <p class="shorttext">Proxy class for remote interface</p>
-      "! Proxy class for remote interface
-      proxy_class_for_remote_intf    TYPE ty_category VALUE '30',
       "! <p class="shorttext">RFC proxy class</p>
       "! RFC proxy class
       rfc_proxy_class                TYPE ty_category VALUE '35',
@@ -39,33 +33,18 @@ INTERFACE zif_oo_aff_clas_v1 PUBLIC.
       "! <p class="shorttext">Business class</p>
       "! Business class
       business_class                 TYPE ty_category VALUE '50',
-      "! <p class="shorttext">Business class (static components)</p>
-      "! Business class interface for static components
-      business_class_intf_for_static TYPE ty_category VALUE '51',
-      "! <p class="shorttext">Business class (instance-dep. components)</p>
-      "! Business class interface for instance-dependent components
-      business_class_intf_for_instan TYPE ty_category VALUE '52',
       "! <p class="shorttext">BSP application class</p>
       "! BSP application class
       bsp_application_class          TYPE ty_category VALUE '60',
       "! <p class="shorttext">Basis class for BSP element handlers</p>
       "! Basis class for BSP element handlers
       basis_class_bsp_element_hdlr   TYPE ty_category VALUE '70',
-      "! <p class="shorttext">Web Dynpro runtime object</p>
-      "! Web Dynpro runtime object
-      web_dynpro_runtime_object      TYPE ty_category VALUE '80',
-      "! <p class="shorttext">ESI: Provider interface (generated)</p>
-      "! ESI: Provider interface (generated)
-      esi_provider_intf_generated    TYPE ty_category VALUE '90',
       "! <p class="shorttext">Area class (shared objects)</p>
       "! Area class (shared objects)
       area_class_shared_objects      TYPE ty_category VALUE '45',
       "! <p class="shorttext">Test class (ABAP Unit)</p>
       "! Test class (ABAP Unit)
       testclass_abap_unit            TYPE ty_category VALUE '05',
-      "! <p class="shorttext">Interface for parameter types for database procedure proxies</p>
-      "! Interface for parameter types for database procedure proxies
-      intf_for_parameter_types       TYPE ty_category VALUE '65',
       "! <p class="shorttext">Behavior class (behavior implementations)</p>
       "! Behavior class (behavior implementations)
       behavior_class                 TYPE ty_category VALUE '06',
@@ -134,8 +113,8 @@ INTERFACE zif_oo_aff_clas_v1 PUBLIC.
     ty_events TYPE SORTED TABLE OF ty_event WITH UNIQUE KEY name.
 
   TYPES:
-    "! <p class="shorttext">Interface Properties</p>
-    "! Interface properties
+    "! <p class="shorttext">Class Properties</p>
+    "! Class properties
     BEGIN OF ty_main,
       "! <p class="shorttext">Schema</p>
       "! Format version
@@ -147,7 +126,6 @@ INTERFACE zif_oo_aff_clas_v1 PUBLIC.
       header               TYPE zif_aff_types_v1=>ty_header_60_src,
       "! <p class="shorttext">Class Category</p>
       "! Class category
-      "! $required
       category             TYPE ty_category,
       "! <p class="shorttext">Fix Point Arithmetic</p>
       "! Fix point arithmetic
