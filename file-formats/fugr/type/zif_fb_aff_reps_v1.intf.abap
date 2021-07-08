@@ -1,5 +1,5 @@
 INTERFACE zif_fb_aff_reps_v1
-  PUBLIC .
+  PUBLIC.
   "! <p class="shorttext">Include Type</p>
   "! Include Type
   "! $values {@link zif_fb_aff_reps_v1.data:co_include_type}

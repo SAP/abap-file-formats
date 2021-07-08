@@ -18,13 +18,13 @@ INTERFACE zif_fb_aff_func_v1
 
   "! <p class="shorttext">Components with description</p>
   "! Components with description
-  TYPES  ty_parameters TYPE SORTED TABLE OF ty_parameter WITH UNIQUE KEY name.
+  TYPES ty_parameters TYPE SORTED TABLE OF ty_parameter WITH UNIQUE KEY name.
 
 
   "! <p class="shorttext">Processing Type</p>
   "! Processing type
   "! $values {@link ZIF_FB_AFF_FUNC_V1.data:co_processing_type}
-  TYPES  ty_processing_type TYPE c LENGTH 1.
+  TYPES ty_processing_type TYPE c LENGTH 1.
 
   CONSTANTS:
     "! <p class="shorttext">Processing Type</p>
@@ -43,13 +43,15 @@ INTERFACE zif_fb_aff_func_v1
 
 
   "! <p class="shorttext">RFC Scope</p>
-  "! Indicates the scope of function module calls. Modules whose call scope is not defined explicitly can be called from anywhere.
+  "! Indicates the scope of function module calls.
+  "! Modules whose call scope is not defined explicitly can be called from anywhere.
   "! $values {@link zif_fb_aff_func_v1.data:co_rfc_scope}
-  TYPES  ty_rfc_scope TYPE c LENGTH 1.
+  TYPES ty_rfc_scope TYPE c LENGTH 1.
 
   CONSTANTS:
     "! <p class="shorttext">RFC Scope</p>
-    "! Indicates the scope of function module calls. Modules whose call scope is not defined explicitly can be called from anywhere.
+    "! Indicates the scope of function module calls.
+    "! Modules whose call scope is not defined explicitly can be called from anywhere.
     BEGIN OF co_rfc_scope,
       "! <p class="shorttext">From Same Client And User</p>
       "! From same client and user
@@ -66,13 +68,15 @@ INTERFACE zif_fb_aff_func_v1
     END OF co_rfc_scope.
 
   "! <p class="shorttext">RFC Version</p>
-  "! Indicates which serializations are permitted for the function module. Among other things, the selected serializations determine where the function module can be enhanced.
+  "! Indicates which serializations are permitted for the function module.
+  "! Among other things, the selected serializations determine where the function module can be enhanced.
   "! $values {@link zif_fb_aff_func_v1.data:co_rfc_version}
-  TYPES  ty_rfc_version TYPE c LENGTH 10.
+  TYPES ty_rfc_version TYPE c LENGTH 10.
 
   CONSTANTS:
     "! <p class="shorttext">RFC Version</p>
-    "! Indicates which serializations are permitted for the function module. Among other things, the selected serializations determine where the function module can be enhanced.
+    "! Indicates which serializations are permitted for the function module.
+    "! Among other things, the selected serializations determine where the function module can be enhanced.
     BEGIN OF co_rfc_version,
       "! <p class="shorttext">Fast Serialization Required</p>
       "! Fast serialization required
@@ -88,7 +92,8 @@ INTERFACE zif_fb_aff_func_v1
     "! Specific fields for rfc function modules
     BEGIN OF ty_rfc_properties,
       "! <p class="shorttext">basXml enabled</p>
-      "! When this indicator is set, the developer of the function module shows that the function module for the classic RFC protocol and the basXML protocol behaves in the same way, from a semantic point of view
+      "! When this indicator is set, the developer of the function module shows that the function module for the classic
+      "! RFC protocol and the basXML protocol behaves in the same way, from a semantic point of view
       "! $required
       basxml_enabled TYPE abap_bool,
       "! <p class="shorttext">RFC Scope</p>
@@ -96,9 +101,10 @@ INTERFACE zif_fb_aff_func_v1
       "! $required
       rfcscope       TYPE ty_rfc_scope,
       "! <p class="shorttext">RFC Version</p>
-      "! Indicates which serializations are permitted for the function module. Among other things, the selected serializations determine where the function module can be enhanced.
+      "! Indicates which serializations are permitted for the function module.
+      "! Among other things, the selected serializations determine where the function module can be enhanced.
       "! $required
-      rfcvers        TYPE ty_rfc_version, 
+      rfcvers        TYPE ty_rfc_version,
       "! <p class="shorttext">ABAP from Java</p>
       "! ABAP from Java
       abap_from_java TYPE abap_bool,
@@ -113,7 +119,7 @@ INTERFACE zif_fb_aff_func_v1
   "! <p class="shorttext">Update task kind</p>
   "! Update task kind
   "! $values {@link zif_fb_aff_func_v1.data:co_update_task_kind}
-  TYPES  ty_update_task_kind TYPE c LENGTH 1.
+  TYPES ty_update_task_kind TYPE c LENGTH 1.
 
   CONSTANTS:
     "! <p class="shorttext">Update task kind</p>
@@ -139,7 +145,7 @@ INTERFACE zif_fb_aff_func_v1
   "! <p class="shorttext">Release State</p>
   "! Release state
   "! $values {@link zif_fb_aff_func_v1.data:co_release_state}
-  TYPES  ty_release_state TYPE c LENGTH 1.
+  TYPES ty_release_state TYPE c LENGTH 1.
 
   CONSTANTS:
     "! <p class="shorttext">Release State</p>
@@ -208,11 +214,12 @@ INTERFACE zif_fb_aff_func_v1
       "! Exception classes
       exception_classes    TYPE abap_bool,
       "! <p class="shorttext">Application to which function module is assigned</p>
-      "! For organizational reasons, function modules are either assigned to the applications for which they were created, or they are flagged as cross-application to show that they can be used anywhere.
+      "! For organizational reasons, function modules are either assigned to the applications
+      "! for which they were created, or they are flagged as cross-application to show that they can be used anywhere.
       application          TYPE c LENGTH 1,
       "! <p class="shorttext">Client</p>
       "! This field is obsolete and should not be filled
-      client               TYPE mandt,
+      client               TYPE sy-mandt,
       "! <p class="shorttext">Function Exit active</p>
       "! This function module is registered as function module exit (see SMOD/CMOD) and the function module exit is active
       active_function_exit TYPE abap_bool,
