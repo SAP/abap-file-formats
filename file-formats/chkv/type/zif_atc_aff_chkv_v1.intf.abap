@@ -133,7 +133,7 @@ INTERFACE zif_atc_aff_chkv_v1
       "! Header
       "! $required
       header             TYPE zif_aff_types_v1=>ty_header_60,
-      "! <p class="shorttext">Remote-Enabled Flag</p>
+      "! <p class="shorttext">Remote-Enabled</p>
       "! The ATC check variant is remote-enabled
       remote_enabled     TYPE abap_bool,
       "! <p class="shorttext">Referenced Check Variant</p>
