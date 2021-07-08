@@ -61,7 +61,8 @@
             {
               "sign": "exclude",
               "option": "equals",
-              "low": "P"
+              "low": "P",
+              "high": ""
             }
           ]
         }
