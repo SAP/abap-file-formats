@@ -116,7 +116,7 @@ INTERFACE zif_atc_aff_chkv_v1
     END OF ty_check_parameter_json.
 
   TYPES:
-       "! <p class="shorttext">Selected Checks</p>
+      "! <p class="shorttext">Selected Checks</p>
       "! List of selected checks of the ATC check variant
         ty_selected_checks TYPE STANDARD TABLE OF ty_check_parameter_json WITH DEFAULT KEY.
 
