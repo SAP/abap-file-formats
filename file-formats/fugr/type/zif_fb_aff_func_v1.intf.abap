@@ -97,7 +97,8 @@ INTERFACE zif_fb_aff_func_v1
       "! $required
       basxml_enabled TYPE abap_bool,
       "! <p class="shorttext">RFC Scope</p>
-      "! Indicates the scope of function module calls. Modules whose call scope is not defined explicitly can be called from anywhere.
+      "! Indicates the scope of function module calls.
+      "! Modules whose call scope is not defined explicitly can be called from anywhere.
       "! $required
       rfcscope       TYPE ty_rfc_scope,
       "! <p class="shorttext">RFC Version</p>
@@ -221,7 +222,8 @@ INTERFACE zif_fb_aff_func_v1
       "! This field is obsolete and should not be filled
       client               TYPE sy-mandt,
       "! <p class="shorttext">Function Exit active</p>
-      "! This function module is registered as function module exit (see SMOD/CMOD) and the function module exit is active
+      "! This function module is registered as function module exit (see SMOD/CMOD)
+      "! and the function module exit is active
       active_function_exit TYPE abap_bool,
       "! <p class="shorttext">Include number</p>
       "! Include number
