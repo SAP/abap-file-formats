@@ -116,7 +116,7 @@
                   "description": "List of range values for a check parameter",
                   "type": "array",
                   "items": {
-                    "title": "Range value",
+                    "title": "Range Value",
                     "description": "A range value for an ATC check parameter",
                     "type": "object",
                     "properties": {
