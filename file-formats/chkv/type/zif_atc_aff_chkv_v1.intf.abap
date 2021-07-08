@@ -20,7 +20,7 @@ INTERFACE zif_atc_aff_chkv_v1
       "! Greater than
       greater_than         TYPE ty_option VALUE 'GT',
       "! <p class="shorttext">Contains Pattern</p>
-      "! Contains patter
+      "! Contains pattern
       contains_pattern     TYPE ty_option VALUE 'CP',
       "! <p class="shorttext">Not Equal</p>
       "! Not equal
