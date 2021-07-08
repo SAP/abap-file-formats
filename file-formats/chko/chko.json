@@ -12,7 +12,7 @@
     },
     "header": {
       "title": "Header",
-      "description": "header",
+      "description": "Header",
       "type": "object",
       "properties": {
         "description": {
@@ -52,28 +52,28 @@
     },
     "category": {
       "title": "Category",
-      "description": "The parent category of an ATC Check Object",
+      "description": "The parent category of an ATC check object",
       "type": "string",
       "maxLength": 30
     },
     "implementingClass": {
       "title": "Implementing Class",
-      "description": "The implementing class of the ATC Check Object",
+      "description": "The implementing class of the ATC check object",
       "type": "string",
       "maxLength": 30
     },
     "remoteEnabled": {
       "title": "Remote-enabled flag",
-      "description": "The ATC Check Object is remote-enabled",
+      "description": "The ATC check object is remote-enabled",
       "type": "boolean"
     },
     "parameters": {
       "title": "Parameters",
-      "description": "Parameters of the ATC Check Object",
+      "description": "Parameters of the ATC check object",
       "type": "array",
       "items": {
         "title": "Parameter",
-        "description": "A parameter of an ATC Check Object",
+        "description": "A parameter of an ATC check object",
         "type": "object",
         "properties": {
           "technicalId": {
@@ -108,6 +108,7 @@
   "required": [
     "$schema",
     "header",
+    "category",
     "implementingClass"
   ]
 }

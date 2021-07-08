@@ -3,7 +3,7 @@ INTERFACE zif_atc_aff_chko_v1
 
   TYPES:
     "! <p class="shorttext">Parameter</p>
-    "! A parameter of an ATC Check Object
+    "! A parameter of an ATC check object
     BEGIN OF ty_parameter,
       "! <p class="shorttext">Technical ID</p>
       "! The technical Id of a parameter
@@ -34,21 +34,22 @@ INTERFACE zif_atc_aff_chko_v1
       "! $required
       schema             TYPE string,
       "! <p class="shorttext">Header</p>
-      "! header
+      "! Header
       "! $required
       header             TYPE zif_aff_types_v1=>ty_header_60,
       "! <p class="shorttext">Category</p>
-      "! The parent category of an ATC Check Object
+      "! The parent category of an ATC check object
+      "! $required
       category           TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Implementing Class</p>
-      "! The implementing class of the ATC Check Object
+      "! The implementing class of the ATC check object
       "! $required
       implementing_class TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Remote-enabled flag</p>
-      "! The ATC Check Object is remote-enabled
+      "! The ATC check object is remote-enabled
       remote_enabled     TYPE abap_bool,
       "! <p class="shorttext">Parameters</p>
-      "! Parameters of the ATC Check Object
+      "! Parameters of the ATC check object
       parameters         TYPE ty_parameters,
     END OF ty_main.
 ENDINTERFACE.
