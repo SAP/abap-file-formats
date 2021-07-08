@@ -54,8 +54,8 @@ INTERFACE zif_atc_aff_chkv_v1
     END OF co_sign.
 
   TYPES:
-    "! <p class="shorttext">A Range</p>
-    "! A range of ATC check
+    "! <p class="shorttext">Range value</p>
+    "! A range value for an ATC check parameter
     BEGIN OF ty_range,
       "! <p class="shorttext">Sign</p>
       "! The sign type of the range
