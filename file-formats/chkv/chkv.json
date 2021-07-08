@@ -82,7 +82,7 @@
             "type": "array",
             "items": {
               "title": "Parameter",
-              "description": "Parameters of ATC check",
+              "description": "Parameter of ATC check",
               "type": "object",
               "properties": {
                 "name": {

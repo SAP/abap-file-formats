@@ -54,20 +54,24 @@ INTERFACE zif_atc_aff_chkv_v1
     END OF co_sign.
 
   TYPES:
-    "! <p class="shorttext">Range value</p>
+    "! <p class="shorttext">Range Value</p>
     "! A range value for an ATC check parameter
     BEGIN OF ty_range,
       "! <p class="shorttext">Sign</p>
       "! The sign type of the range
+      "! $required
       sign   TYPE ty_sign,
       "! <p class="shorttext">Option</p>
       "! Sign option of the range
+      "! $required
       option TYPE ty_option,
       "! <p class="shorttext">Low</p>
       "! The low value of the range
+      "! $required
       low    TYPE string,
       "! <p class="shorttext">High</p>
       "! The high value of the range
+      "! $required
       high   TYPE string,
     END OF ty_range,
 
@@ -109,6 +113,7 @@ INTERFACE zif_atc_aff_chkv_v1
     BEGIN OF ty_check,
       "! <p class="shorttext">Check Name</p>
       "! The name of check
+      "! $required
       check_name TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Check Parameters</p>
       "! Parameters of check
