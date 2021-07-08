@@ -51,12 +51,12 @@
       ]
     },
     "remoteEnabled": {
-      "title": "Remote-Enabled Flag",
+      "title": "Remote-Enabled",
       "description": "The ATC check variant is remote-enabled",
       "type": "boolean"
     },
     "referencedVariant": {
-      "title": "Referenced SCI Variant",
+      "title": "Referenced Check Variant",
       "description": "Name of the referenced ATC check variant",
       "type": "string",
       "maxLength": 30
@@ -82,7 +82,7 @@
             "type": "array",
             "items": {
               "title": "Parameter",
-              "description": "A parameter of ATC check",
+              "description": "Parameters of ATC check",
               "type": "object",
               "properties": {
                 "name": {
@@ -116,8 +116,8 @@
                   "description": "List of range values for a check parameter",
                   "type": "array",
                   "items": {
-                    "title": "A Range",
-                    "description": "A range of ATC check",
+                    "title": "Range value",
+                    "description": "A range value for an ATC check parameter",
                     "type": "object",
                     "properties": {
                       "sign": {
@@ -169,7 +169,13 @@
                         "type": "string"
                       }
                     },
-                    "additionalProperties": false
+                    "additionalProperties": false,
+                    "required": [
+                      "sign",
+                      "option",
+                      "low",
+                      "high"
+                    ]
                   }
                 }
               },
@@ -181,7 +187,10 @@
             }
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "required": [
+          "checkName"
+        ]
       }
     }
   },
