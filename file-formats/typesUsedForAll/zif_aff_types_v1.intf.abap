@@ -32,7 +32,7 @@ INTERFACE zif_aff_types_v1 PUBLIC.
     BEGIN OF co_abap_language_version,
       "! <p class="shorttext">Standard</p>
       "! Standard
-      standard          TYPE ty_abap_language_version VALUE SPACE,
+      standard          TYPE ty_abap_language_version VALUE space,
       "! <p class="shorttext">ABAP for Key Users</p>
       "! ABAP for key user extensibility
       key_user          TYPE ty_abap_language_version VALUE '2',
