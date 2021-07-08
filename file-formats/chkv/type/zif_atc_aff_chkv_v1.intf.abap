@@ -78,8 +78,8 @@ INTERFACE zif_atc_aff_chkv_v1
     ty_param_value TYPE string,
 
     "! <p class="shorttext">Parameter</p>
-    "! A parameter of ATC check
-    BEGIN OF ty_properties,
+    "! Parameter of ATC check
+    BEGIN OF ty_parameter,
       "! <p class="shorttext">Parameter Name</p>
       "! The parameter name
       "! $required
@@ -97,28 +97,28 @@ INTERFACE zif_atc_aff_chkv_v1
       "! <p class="shorttext">List of Range Values</p>
       "! List of range values for a check parameter
       value_range_list TYPE ty_ranges,
-    END OF ty_properties,
+    END OF ty_parameter,
 
     "! <p class="shorttext">Parameters</p>
-    "! List of check parameters
-    ty_properties_tab TYPE STANDARD TABLE OF ty_properties WITH DEFAULT KEY.
+    "! Table of check parameters
+    ty_parameters TYPE STANDARD TABLE OF ty_parameter WITH DEFAULT KEY.
 
   TYPES:
     "! <p class="shorttext">Check</p>
     "! Check with its parameters
-    BEGIN OF ty_check_parameter_json,
+    BEGIN OF ty_check,
       "! <p class="shorttext">Check Name</p>
       "! The name of check
       check_name TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Check Parameters</p>
       "! Parameters of check
-      parameters TYPE ty_properties_tab,
-    END OF ty_check_parameter_json.
+      parameters TYPE ty_parameters,
+    END OF ty_check.
 
   TYPES:
       "! <p class="shorttext">Selected Checks</p>
-      "! List of selected checks of the ATC check variant
-        ty_selected_checks TYPE STANDARD TABLE OF ty_check_parameter_json WITH DEFAULT KEY.
+      "! Table of selected checks of the ATC check variant
+      ty_checks TYPE STANDARD TABLE OF ty_check WITH DEFAULT KEY.
 
 
   TYPES:
@@ -141,7 +141,7 @@ INTERFACE zif_atc_aff_chkv_v1
       referenced_variant TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Selected Checks</p>
       "! The checks selected in the ATC check variant
-      selected_checks    TYPE ty_selected_checks,
+      selected_checks    TYPE ty_checks,
     END OF ty_main.
 
 ENDINTERFACE.
