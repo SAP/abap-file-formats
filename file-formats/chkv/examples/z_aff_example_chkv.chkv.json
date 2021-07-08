@@ -1,11 +1,10 @@
 {
-  "$schema": "https://raw.githubusercontent.com/SAP/abap-file-formats/main/file-formats/chkv/chkv.json",
+  "$schema": "http://github.com/SAP/abap-file-formats/file-formats/chkv/chkv.json",
   "header": {
-    "description": "Example CHKV for ABAP File Formats",
-    "masterLanguage": "EN",
-    "abapLanguageVersion": "standard"
+    "description": "Example CHKV for ABAP file formats",
+    "originalLanguage": "EN",
+    "abapLanguageVersion": "cloudDevelopment"
   },
-  "remoteEnabled": false,
   "selectedChecks": [
     {
       "checkName": "CI_SEARCH_ABAP_PATTERN",
@@ -21,7 +20,6 @@
         {
           "name": "FindingSeverity",
           "type": "sychar01",
-          "description": "Message Type",
           "value": "E"
         }
       ]
@@ -52,7 +50,7 @@
               "sign": "exclude",
               "option": "equals",
               "low": "0002470721",
-              "high": "0000000000"
+              "high": "0000000001"
             }
           ]
         },
@@ -63,8 +61,7 @@
             {
               "sign": "exclude",
               "option": "equals",
-              "low": "P",
-              "high": ""
+              "low": "P"
             }
           ]
         }
