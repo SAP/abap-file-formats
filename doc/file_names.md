@@ -61,7 +61,6 @@ Here are some examples of file names and its corresponding content.
 | `cl_my_class.clas.global.abap` | Source code of global class `CL_MY_CLASS` |
 | `(nmspc)cl_my_class.clas.global.abap` | Source code of global class with namespace `/NMSPC/CL_MY_CLASS` |
 | `cl_my_class.clas.testclasses.abap` | Source code of local test classes in `CL_MY_CLASS` |
-| `sflight.tabl.abap` | Source code of database table `SFLIGHT` |
 | `s_carrid.dtel.json` | Properties of data element `S_CARRID` |
 | [`z_aff_example_fugr.fugr.z_aff_example_func.func.abap`](/file-formats/fugr/examples/z_aff_example_fugr.fugr.z_aff_example_func.func.abap) | Source code of function module `Z_AFF_EXAMPLE_FUNC` |
 | `seo_class_editor.fugr.0152.dynp.json` | Dynpro 0152 of function group `SEO_CLASS_EDITOR` |
