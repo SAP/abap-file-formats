@@ -1,6 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "http://github.com/SAP/abap-file-formats/file-formats/chkv/chkv.json",
+  "$id": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/chkv/chkv.json",
+  "title": "ATC Check Variant Properties",
+  "description": "ATC check variant properties",
   "type": "object",
   "properties": {
     "$schema": {
@@ -10,51 +12,52 @@
     },
     "header": {
       "title": "Header",
-      "description": "Header data",
+      "description": "Header",
       "type": "object",
       "properties": {
         "description": {
           "title": "Description",
-          "description": "Description of an ATC Check Variant",
+          "description": "Description of the ABAP object",
           "type": "string",
           "maxLength": 60
         },
-        "masterLanguage": {
-          "title": "Master Language",
-          "description": "Master language of the development object\nAll translatable text shall be maintained in this language",
+        "originalLanguage": {
+          "title": "Original Language",
+          "description": "Original language of the ABAP object",
           "type": "string",
-          "minLength": 2,
           "maxLength": 2
         },
         "abapLanguageVersion": {
-          "title": "Abap Language Version",
+          "title": "ABAP Language Version",
           "description": "ABAP language version",
           "type": "string",
           "enum": [
             "standard",
+            "keyUser",
             "cloudDevelopment"
           ],
           "enumDescriptions": [
             "Standard",
-            "ABAP for Cloud Development"
+            "ABAP for key user extensibility",
+            "ABAP cloud development"
           ]
         }
       },
       "additionalProperties": false,
       "required": [
         "description",
-        "masterLanguage",
+        "originalLanguage",
         "abapLanguageVersion"
       ]
     },
     "remoteEnabled": {
-      "title": "Remote-enabled",
-      "description": "The check variant is remote-enabled",
+      "title": "Remote-Enabled Flag",
+      "description": "The ATC check variant is remote-enabled",
       "type": "boolean"
     },
     "referencedVariant": {
-      "title": "Referenced Variant",
-      "description": "The referenced ATC check variant",
+      "title": "Referenced SCI Variant",
+      "description": "Name of the referenced ATC check variant",
       "type": "string",
       "maxLength": 30
     },
@@ -64,17 +67,18 @@
       "type": "array",
       "items": {
         "title": "Check",
-        "description": "ATC Check",
+        "description": "Check with its parameters",
         "type": "object",
         "properties": {
           "checkName": {
             "title": "Check Name",
-            "description": "The name of ATC check",
-            "type": "string"
+            "description": "The name of check",
+            "type": "string",
+            "maxLength": 30
           },
           "parameters": {
-            "title": "Parameters",
-            "description": "Parameters of ATC check",
+            "title": "Check Parameters",
+            "description": "Parameters of check",
             "type": "array",
             "items": {
               "title": "Parameter",
@@ -82,32 +86,33 @@
               "type": "object",
               "properties": {
                 "name": {
-                  "title": "Name",
-                  "description": "The parameter name of ATC check",
-                  "type": "string"
+                  "title": "Parameter Name",
+                  "description": "The parameter name",
+                  "type": "string",
+                  "maxLength": 30
                 },
                 "type": {
-                  "title": "Type",
+                  "title": "Parameter Type",
                   "description": "The parameter type",
                   "type": "string"
                 },
                 "value": {
-                  "title": "Value",
+                  "title": "Parameter Value",
                   "description": "The value of the parameter",
                   "type": "string"
                 },
                 "valueList": {
-                  "title": "List of parameter values",
+                  "title": "List of Parameter Values",
                   "description": "List of values for a multi-value check parameter",
                   "type": "array",
                   "items": {
-                    "title": "Entry in Value list",
+                    "title": "Entry in Value List",
                     "description": "A parameter value in the parameter value list",
                     "type": "string"
                   }
                 },
                 "valueRangeList": {
-                  "title": "List of range values",
+                  "title": "List of Range Values",
                   "description": "List of range values for a check parameter",
                   "type": "array",
                   "items": {
@@ -136,7 +141,6 @@
                           "equals",
                           "between",
                           "greaterThan",
-                          "lessEqual",
                           "containsPattern",
                           "notEqual",
                           "notBetween",
@@ -147,8 +151,7 @@
                           "Equals",
                           "Between",
                           "Greater than",
-                          "Less equal",
-                          "Contains pattern",
+                          "Contains patter",
                           "Not equal",
                           "Not between",
                           "Not contains pattern",
@@ -165,58 +168,22 @@
                         "description": "The high value of the range",
                         "type": "string"
                       }
-                    }
+                    },
+                    "additionalProperties": false
                   }
                 }
-              }
-            }
-          }
-        }
-      }
-    },
-    "oneOf": [
-      {
-        "required": [
-          "valueList"
-        ]
-      },
-      {
-        "required": [
-          "valueRangeList"
-        ]
-      },
-      {
-        "required": [
-          "value"
-        ]
-      }
-    ],
-    "allOf": [
-      {
-        "if": {
-          "properties": {
-            "type": {
-              "const": "^rangeOf"
+              },
+              "additionalProperties": false,
+              "required": [
+                "name",
+                "type"
+              ]
             }
           }
         },
-        "then": {
-          "required": "valueRangeList"
-        }
-      },
-      {
-        "if": {
-          "properties": {
-            "type": {
-              "const": "^tableOf"
-            }
-          }
-        },
-        "then": {
-          "required": "valueList"
-        }
+        "additionalProperties": false
       }
-    ]
+    }
   },
   "additionalProperties": false,
   "required": [
