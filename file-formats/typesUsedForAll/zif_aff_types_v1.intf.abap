@@ -7,8 +7,8 @@ INTERFACE zif_aff_types_v1 PUBLIC.
 
   CONSTANTS:
     "! <p class="shorttext">ABAP Language Version (Source Code Objects)</p>
-    "! "! ABAP language version for source code objects. For non-source-code objects use
-    "! {@link data: ty_abap_language_version}
+    "! ABAP language version for source code objects. For non-source-code objects use
+    "! {@link zif_aff_types_v1.data:ty_abap_language_version }
     BEGIN OF co_abap_language_version_src,
       "! <p class="shorttext">Standard</p>
       "! Standard
@@ -32,7 +32,7 @@ INTERFACE zif_aff_types_v1 PUBLIC.
     BEGIN OF co_abap_language_version,
       "! <p class="shorttext">Standard</p>
       "! Standard
-      standard          TYPE ty_abap_language_version VALUE ' ',
+      standard          TYPE ty_abap_language_version VALUE SPACE,
       "! <p class="shorttext">ABAP for Key Users</p>
       "! ABAP for key user extensibility
       key_user          TYPE ty_abap_language_version VALUE '2',
