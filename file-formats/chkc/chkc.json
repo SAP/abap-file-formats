@@ -1,51 +1,65 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "http://sap.com/schema/chkc.json",
+  "$id": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/chkc/chkc.json",
+  "title": "ATC Check Category",
+  "description": "ATC check category properties",
   "type": "object",
   "properties": {
     "$schema": {
-      "type": "string",
       "title": "Schema",
-      "description": "Format version"
+      "description": "Format version",
+      "type": "string"
     },
     "header": {
       "title": "Header",
-      "description": "Header data",
+      "description": "Header",
       "type": "object",
       "properties": {
-        "$schema": {
-          "title": "Schema",
-          "description": "Format version",
-          "type": "string"
-        },
         "description": {
           "title": "Description",
-          "description": "Text description",
-          "type": "string"
-        },
-        "masterLanguage": {
-          "title": "Master Language",
-          "description": "Master language of the development object\nAll translatable text shall be maintained in this language",
+          "description": "Description of the ABAP object",
           "type": "string",
-          "minLength": 2,
+          "maxLength": 60
+        },
+        "originalLanguage": {
+          "title": "Original Language",
+          "description": "Original language of the ABAP object",
+          "type": "string",
           "maxLength": 2
         },
         "abapLanguageVersion": {
-          "title": "Abap Language Version",
+          "title": "ABAP Language Version",
           "description": "ABAP language version",
           "type": "string",
-          "enum": ["standard","standardUnicode","keyUser","cloudDevelopment"],
-          "enumDescriptions": ["Standard","Standard unicode","ABAP for key user tools","ABAP for Cloud Development"]
+          "enum": [
+            "standard",
+            "keyUser",
+            "cloudDevelopment"
+          ],
+          "enumDescriptions": [
+            "Standard",
+            "ABAP for key user extensibility",
+            "ABAP cloud development"
+          ]
         }
       },
       "additionalProperties": false,
-      "required": ["$schema","description","masterLanguage","abapLanguageVersion"]
+      "required": [
+        "description",
+        "originalLanguage",
+        "abapLanguageVersion"
+      ]
     },
     "parentCategory": {
-      "title": "parentCategory",
-      "description": "parentCategory",
+      "title": "Parent Category",
+      "description": "Name of the parent category",
       "type": "string",
       "maxLength": 30
     }
-  }
+  },
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "header"
+  ]
 }

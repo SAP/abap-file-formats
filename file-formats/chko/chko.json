@@ -1,105 +1,106 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "http://github.com/SAP/abap-file-formats/file-formats/chko/chko.json",
+  "$id": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/chko/chko.json",
+  "title": "ATC Check",
+  "description": "ATC check object properties",
   "type": "object",
   "properties": {
     "$schema": {
-      "type": "string",
       "title": "Schema",
-      "description": "Format version"
+      "description": "Format version",
+      "type": "string"
     },
     "header": {
-      "type": "object",
       "title": "Header",
+      "description": "Header",
+      "type": "object",
       "properties": {
         "description": {
-          "type": "string",
           "title": "Description",
-          "description": "Description of an ATC Check Object"
-        },
-        "masterLanguage": {
+          "description": "Description of the ABAP object",
           "type": "string",
-          "minLength": 2,
-          "maxLength": 2,
-          "title": "Master Language",
-          "description": "Master language of the development object\nAll translatable text shall be maintained in this language"
+          "maxLength": 60
+        },
+        "originalLanguage": {
+          "title": "Original Language",
+          "description": "Original language of the ABAP object",
+          "type": "string",
+          "maxLength": 2
         },
         "abapLanguageVersion": {
+          "title": "ABAP Language Version",
+          "description": "ABAP language version",
           "type": "string",
           "enum": [
             "standard",
+            "keyUser",
             "cloudDevelopment"
           ],
           "enumDescriptions": [
             "Standard",
-            "ABAP for Cloud Development"
-          ],
-          "title": "Abap Language Version",
-          "description": "ABAP language version"
+            "ABAP for key user extensibility",
+            "ABAP cloud development"
+          ]
         }
       },
       "additionalProperties": false,
       "required": [
         "description",
-        "masterLanguage",
+        "originalLanguage",
         "abapLanguageVersion"
       ]
     },
-    "content": {
-      "type": "object",
-      "title": "Content",
-      "description": "Content of an ATC Check Object",
-      "properties": {
-        "category": {
-          "type": "string",
-          "maxLength": 30,
-          "title": "Category",
-          "description": "The parent category of an ATC Check Object "
-        },
-        "implementingClass": {
-          "type": "string",
-          "maxLength": 30,
-          "title": "Implementing class",
-          "description": "The implementing class of the ATC Check Object"
-        },
-        "remoteEnabled": {
-          "type": "boolean",
-          "title": "Remote-enabled",
-          "description": "The ATC Check Object is remote-enabled"
-        },
-        "parameters": {
-          "type": "array",
-          "title": "Parameters",
-          "description": "Parameters of the ATC Check Object",
-          "items": {
-            "type": "object",
-            "title": "Parameter",
-            "description": "A parameter of an ATC Check Object",
-            "properties": {
-              "technicalId": {
-                "type": "string",
-                "title": "Technical Id",
-                "description": "The technical Id of a parameter"
-              },
-              "name": {
-                "type": "string",
-                "maxLength": 30,
-                "title": "Name",
-                "description": "Name of a parameter"
-              },
-              "description": {
-                "type": "string",
-                "title": "Description",
-                "description": "Description of a parameter"
-              },
-              "modifiable": {
-                "type": "boolean",
-                "title": "Modifiable",
-                "description": "The parameter is modifiable"
-              }
-            }
+    "category": {
+      "title": "Category",
+      "description": "The parent category of an ATC check object",
+      "type": "string",
+      "maxLength": 30
+    },
+    "implementingClass": {
+      "title": "Implementing Class",
+      "description": "The implementing class of the ATC check object",
+      "type": "string",
+      "maxLength": 30
+    },
+    "remoteEnabled": {
+      "title": "Remote-enabled flag",
+      "description": "The ATC check object is remote-enabled",
+      "type": "boolean"
+    },
+    "parameters": {
+      "title": "Parameters",
+      "description": "Parameters of the ATC check object",
+      "type": "array",
+      "items": {
+        "title": "Parameter",
+        "description": "A parameter of an ATC check object",
+        "type": "object",
+        "properties": {
+          "technicalId": {
+            "title": "Technical ID",
+            "description": "The technical Id of a parameter",
+            "type": "string",
+            "maxLength": 4
+          },
+          "name": {
+            "title": "Parameter Name",
+            "description": "Name of a parameter",
+            "type": "string",
+            "maxLength": 30
+          },
+          "description": {
+            "title": "Parameter Description",
+            "description": "Description of a parameter",
+            "type": "string",
+            "maxLength": 255
+          },
+          "modifiable": {
+            "title": "Modifiable Flag",
+            "description": "The parameter is modifiable",
+            "type": "boolean"
           }
-        }
+        },
+        "additionalProperties": false
       }
     }
   },
@@ -107,6 +108,7 @@
   "required": [
     "$schema",
     "header",
-    "content"
+    "category",
+    "implementingClass"
   ]
 }

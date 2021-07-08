@@ -1,21 +1,18 @@
 {
-  "$schema": "https://raw.githubusercontent.com/SAP/abap-file-formats/main/file-formats/chko/chko.json",
+  "$schema": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/chko/chko.json",
   "header": {
     "description": "Example CHKO for ABAP file formats",
-    "masterLanguage": "EN",
+    "originalLanguage": "EN",
     "abapLanguageVersion": "standard"
   },
-  "content": {
-    "category": "Z_AFF_EXAMPLE_CHKC",
-    "implementingClass": "ZCL_CI_TEST_AFF_EXAMPLE_CHECK",
-    "remoteEnabled": false,
-    "parameters": [
-      {
-        "technicalId": "1",
-        "name": "ParameterName",
-        "description": "Parameter description",
-        "modifiable": true
-      }
-    ]
-  }
+  "category": "Z_AFF_EXAMPLE_CHKC",
+  "implementingClass": "ZCL_CI_TEST_AFF_EXAMPLE_CHECK",
+  "parameters": [
+    {
+      "technicalId": "1",
+      "name": "ParameterName",
+      "description": "Parameter description",
+      "modifiable": true
+    }
+  ]
 }
