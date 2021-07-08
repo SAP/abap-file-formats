@@ -136,7 +136,7 @@ INTERFACE zif_atc_aff_chkv_v1
       "! <p class="shorttext">Remote-Enabled Flag</p>
       "! The ATC check variant is remote-enabled
       remote_enabled     TYPE abap_bool,
-      "! <p class="shorttext">Referenced SCI Variant</p>
+      "! <p class="shorttext">Referenced Check Variant</p>
       "! Name of the referenced ATC check variant
       referenced_variant TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Selected Checks</p>
