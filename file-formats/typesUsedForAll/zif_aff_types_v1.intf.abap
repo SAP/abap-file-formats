@@ -40,7 +40,7 @@ INTERFACE zif_aff_types_v1 PUBLIC.
       "! ABAP cloud development
       cloud_development TYPE ty_abap_language_version VALUE '5',
     END OF co_abap_language_version.
-  
+
   "! <p class="shorttext">Status</p>
   "! status
   "! $values {@link if_aff_types_v1.data:co_status}

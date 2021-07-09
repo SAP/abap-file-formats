@@ -19,7 +19,7 @@ INTERFACE zif_fb_aff_fugr_v1
       fix_point_arithmetic TYPE abap_bool,
       "! <p class="shorttext">Status</p>
       "! status
-      status               TYPE ty_status,
+      status               TYPE zif_aff_types_v1=>ty_status,
     END OF ty_main.
 
 ENDINTERFACE.
