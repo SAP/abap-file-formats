@@ -204,7 +204,7 @@ INTERFACE zif_fb_aff_func_v1
       update_properties    TYPE ty_update_properties,
       "! <p class="shorttext">Release state</p>
       "! Release state
-      release_state        TYPE c LENGTH 1,
+      release_state        TYPE ty_release_state,
       "! <p class="shorttext">Release date</p>
       "! Release date
       release_date         TYPE sy-datum,
