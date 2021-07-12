@@ -1,7 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/SAP/abap-file-formats/main/file-formats/fugr/reps.json",
-  "header": {
-    "description": "Example description of FUGR TOP Include"
-  },
+  "$schema": "http://github.com/sap/abap-file-formats/blob/main/file-formats/fugr/reps.json",
+  "description": "Example description of FUGR TOP Include",
   "includeType": "include"
 }
