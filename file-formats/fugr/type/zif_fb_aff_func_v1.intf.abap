@@ -23,7 +23,7 @@ INTERFACE zif_fb_aff_func_v1
 
   "! <p class="shorttext">Processing Type</p>
   "! Processing type
-  "! $values {@link ZIF_FB_AFF_FUNC_V1.data:co_processing_type}
+  "! $values {@link zif_fb_aff_func_v1.data:co_processing_type}
   TYPES ty_processing_type TYPE c LENGTH 1.
 
   CONSTANTS:
@@ -43,15 +43,13 @@ INTERFACE zif_fb_aff_func_v1
 
 
   "! <p class="shorttext">RFC Scope</p>
-  "! Indicates the scope of function module calls.
-  "! Modules whose call scope is not defined explicitly can be called from anywhere.
+  "! Indicates the scope of function module calls
   "! $values {@link zif_fb_aff_func_v1.data:co_rfc_scope}
   TYPES ty_rfc_scope TYPE c LENGTH 1.
 
   CONSTANTS:
     "! <p class="shorttext">RFC Scope</p>
-    "! Indicates the scope of function module calls.
-    "! Modules whose call scope is not defined explicitly can be called from anywhere.
+    "! Indicates the scope of function module calls
     BEGIN OF co_rfc_scope,
       "! <p class="shorttext">From Same Client And User</p>
       "! From same client and user
@@ -68,21 +66,19 @@ INTERFACE zif_fb_aff_func_v1
     END OF co_rfc_scope.
 
   "! <p class="shorttext">RFC Version</p>
-  "! Indicates which serializations are permitted for the function module.
-  "! Among other things, the selected serializations determine where the function module can be enhanced.
+  "! Indicates the permitted serializations for the function module
   "! $values {@link zif_fb_aff_func_v1.data:co_rfc_version}
   TYPES ty_rfc_version TYPE c LENGTH 10.
 
   CONSTANTS:
     "! <p class="shorttext">RFC Version</p>
-    "! Indicates which serializations are permitted for the function module.
-    "! Among other things, the selected serializations determine where the function module can be enhanced.
+    "! Indicates the permitted serializations for the function module
     BEGIN OF co_rfc_version,
       "! <p class="shorttext">Fast Serialization Required</p>
       "! Fast serialization required
       fast_serialization_required TYPE ty_rfc_version VALUE '1',
       "! <p class="shorttext">Any</p>
-      "! any
+      "! Any
       any                         TYPE ty_rfc_version VALUE ' ',
     END OF co_rfc_version.
 
@@ -91,55 +87,52 @@ INTERFACE zif_fb_aff_func_v1
     "! <p class="shorttext">RFC specific fields</p>
     "! Specific fields for rfc function modules
     BEGIN OF ty_rfc_properties,
-      "! <p class="shorttext">basXml enabled</p>
-      "! When this indicator is set, the developer of the function module shows that the function module for the classic
-      "! RFC protocol and the basXML protocol behaves in the same way, from a semantic point of view
+      "! <p class="shorttext">BasXml Enabled</p>
+      "! Function module for classic RFC protocol and basXML protocol behaves the same from a semantic point of view
       "! $required
       basxml_enabled TYPE abap_bool,
       "! <p class="shorttext">RFC Scope</p>
-      "! Indicates the scope of function module calls.
-      "! Modules whose call scope is not defined explicitly can be called from anywhere.
+      "! Indicates the scope of function module calls
       "! $required
       rfcscope       TYPE ty_rfc_scope,
       "! <p class="shorttext">RFC Version</p>
-      "! Indicates which serializations are permitted for the function module.
-      "! Among other things, the selected serializations determine where the function module can be enhanced.
+      "! Indicates the permitted serializations for the function module
       "! $required
       rfcvers        TYPE ty_rfc_version,
-      "! <p class="shorttext">ABAP from Java</p>
+      "! <p class="shorttext">ABAP From Java</p>
       "! ABAP from Java
       abap_from_java TYPE abap_bool,
-      "! <p class="shorttext">Java from ABAP</p>
+      "! <p class="shorttext">Java From ABAP</p>
       "! Java from ABAP
       java_from_abap TYPE abap_bool,
-      "! <p class="shorttext">Java remote</p>
+      "! <p class="shorttext">Java Remote</p>
       "! Java remote
       java_remote    TYPE abap_bool,
     END OF ty_rfc_properties.
 
-  "! <p class="shorttext">Update task kind</p>
+  "! <p class="shorttext">Update Task Kind</p>
   "! Update task kind
   "! $values {@link zif_fb_aff_func_v1.data:co_update_task_kind}
   TYPES ty_update_task_kind TYPE c LENGTH 1.
 
   CONSTANTS:
-    "! <p class="shorttext">Update task kind</p>
+    "! <p class="shorttext">Update Task Kind</p>
     "! Update task kind
     BEGIN OF co_update_task_kind,
-      "! <p class="shorttext">Start immediately</p>
+      "! <p class="shorttext">Start Immediately</p>
       "! Start immediately
       start_immediately            TYPE ty_update_task_kind VALUE '1',
       "! <p class="shorttext">Start Delayed</p>
       "! Start delayed
       start_delayed                TYPE ty_update_task_kind VALUE '2',
-      "! <p class="shorttext">Start immediately no restart</p>
+      "! <p class="shorttext">Start Immediately No Restart</p>
       "! Start immediately no restart
       start_immediately_no_restart TYPE ty_update_task_kind VALUE '3',
       "! <p class="shorttext">Collective Run</p>
-      "! Collective Run
+      "! Collective run
       collective_run               TYPE ty_update_task_kind VALUE '5',
       "! <p class="shorttext">Unsupported Kind</p>
-      "! Unsupported Kind
+      "! Unsupported kind
       unsupported_kind             TYPE ty_update_task_kind VALUE '6',
     END OF co_update_task_kind.
 
@@ -152,28 +145,28 @@ INTERFACE zif_fb_aff_func_v1
     "! <p class="shorttext">Release State</p>
     "! Release state
     BEGIN OF co_release_state,
-      "! <p class="shorttext">Function module is released</p>
+      "! <p class="shorttext">Released</p>
       "! Function module is released
       released              TYPE ty_release_state VALUE 'E',
-      "! <p class="shorttext">Function module is released SAP-internally</p>
+      "! <p class="shorttext">Released SAP-Internally</p>
       "! Function module is released SAP-internally
       released_sap_internal TYPE ty_release_state VALUE 'I',
-      "! <p class="shorttext">Function module is obsolete/deprecated</p>
+      "! <p class="shorttext">Obsolete/Deprecated</p>
       "! Function module is obsolete/deprecated
       obsolete              TYPE ty_release_state VALUE 'O',
-      "! <p class="shorttext">Function module is planned to be released [obsolete]</p>
+      "! <p class="shorttext">Planned To Be Released [Obsolete]</p>
       "! Function module is planned to be released [obsolete]
       release_planned       TYPE ty_release_state VALUE 'M',
-      "! <p class="shorttext">Function module is not released</p>
+      "! <p class="shorttext">Not Released</p>
       "! Function module is not released
       not_released          TYPE ty_release_state VALUE 'N',
     END OF co_release_state.
 
   TYPES:
-    "! <p class="shorttext">Update specific fields</p>
+    "! <p class="shorttext">Update Specific Fields</p>
     "! Specific fields for update function modules
     BEGIN OF ty_update_properties,
-      "! <p class="shorttext">Update task kind</p>
+      "! <p class="shorttext">Update Task Kind</p>
       "! Update task kind
       "! $required
       update_task_kind TYPE ty_update_task_kind,
