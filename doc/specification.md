@@ -106,7 +106,7 @@ Following changes to file formats are considered as incompatible:
 - Non-mandatory fields are added 
 - Non-mandatory fields are removed 
 - Fields are renamed 
-- Type of a field is changed (e.g. from `string` to `number`)
+- Type of a field is changed (e.g., from `string` to `number`)
 - Semantic of a field is changed
 - Values of a field (e.g., in enum) are removed
 - Length of a field is shortened
