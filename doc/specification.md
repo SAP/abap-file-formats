@@ -110,7 +110,7 @@ Following changes to file formats are considered as incompatible:
 - Semantic of a field is changed
 - Values of a field (e.g., in enum) are removed
 - Length of a field is shortened
-- Length of a field is extended, if some systems cannot store this information
+- Length of a field is extended if some systems cannot store this information
 
 ---
 **Note**: Currently, ABAP file formats are not kept stable, yet. They might still change incompatible without creating a new file format version.
