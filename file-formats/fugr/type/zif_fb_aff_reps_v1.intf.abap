@@ -1,13 +1,13 @@
 INTERFACE zif_fb_aff_reps_v1
   PUBLIC.
   "! <p class="shorttext">Include Type</p>
-  "! Include Type
+  "! Include type
   "! $values {@link zif_fb_aff_reps_v1.data:co_include_type}
   TYPES ty_include_type TYPE c LENGTH 1.
 
   CONSTANTS:
     "! <p class="shorttext">Include Type</p>
-    "! Include Type
+    "! Include type
     BEGIN OF co_include_type,
       "! <p class="shorttext">Include</p>
       "! Include
@@ -26,11 +26,11 @@ INTERFACE zif_fb_aff_reps_v1
       "! $required
       schema       TYPE string,
       "! <p class="shorttext">Description</p>
-      "! description
+      "! Description
       "! $required
       description  TYPE zif_aff_types_v1=>ty_description_60,
       "! <p class="shorttext">Edit-Locked</p>
-      "! Edit-Locked
+      "! Edit-locked
       edit_locked  TYPE abap_bool,
       "! <p class="shorttext">Include Type</p>
       "! Include type
