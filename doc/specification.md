@@ -104,7 +104,7 @@ Following changes to file formats are considered as incompatible:
 - Mandatory fields are added
 - Mandatory fields are removed  (old implementations might rely on the field to be mandatory)
 - Non-mandatory fields are added 
-- Non-mandatory fields iare removed 
+- Non-mandatory fields are removed 
 - Fields are renamed 
 - Type of a field is changed (e.g. from `string` to `number`)
 - Semantic of a field is changed
