@@ -10,7 +10,7 @@ INTERFACE zif_fb_aff_fugr_v1
       "! $required
       schema               TYPE string,
       "! <p class="shorttext">Header</p>
-      "! header
+      "! Header
       "! $required
       header               TYPE zif_aff_types_v1=>ty_header_60_src,
       "! <p class="shorttext">Fix Point Arithmetic</p>
@@ -18,7 +18,7 @@ INTERFACE zif_fb_aff_fugr_v1
       "! $required
       fix_point_arithmetic TYPE abap_bool,
       "! <p class="shorttext">Status</p>
-      "! status
+      "! Status
       status               TYPE zif_aff_types_v1=>ty_status,
     END OF ty_main.
 
