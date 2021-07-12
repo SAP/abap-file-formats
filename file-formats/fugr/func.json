@@ -1,6 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "http://github.com/SAP/abap-file-formats/file-formats/fugr/func.json",
+  "$id": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/fugr/func.json",
+  "title": "Object Type FUNC",
+  "description": "FUNC object type",
   "type": "object",
   "properties": {
     "$schema": {
@@ -8,25 +10,15 @@
       "description": "Format version",
       "type": "string"
     },
-    "header": {
-      "title": "Header",
-      "type": "object",
-      "properties": {
-        "description": {
-          "title": "Description",
-          "description": "Description of a function module",
-          "type": "string",
-          "maxLength": 74
-        }
-      },
-      "additionalProperties": false,
-      "required": [
-        "description"
-      ]
+    "description": {
+      "title": "Description",
+      "description": "Description of a function module",
+      "type": "string",
+      "maxLength": 60
     },
     "processingType": {
       "title": "Processing Type",
-      "description": "Processing Type",
+      "description": "Processing type",
       "type": "string",
       "enum": [
         "normal",
@@ -34,24 +26,24 @@
         "update"
       ],
       "enumDescriptions": [
-        "Normal",
-        "RFC",
-        "Update"
+        "normal",
+        "rfc",
+        "update"
       ]
     },
     "rfcProperties": {
-      "title": "RFC specific fields",
+      "title": "RFC Specific Fields",
       "description": "Specific fields for rfc function modules",
       "type": "object",
       "properties": {
-        "basXmlEnabled": {
-          "title": "basXml enabled",
-          "description": "When this indicator is set, the developer of the function module shows that the function module for the classic RFC protocol and the basXML protocol behaves in the same way, from a semantic point of view",
+        "basxmlEnabled": {
+          "title": "BasXml Enabled",
+          "description": "Function module for classic RFC protocol and basXML protocol behaves the same from a semantic point of view",
           "type": "boolean"
         },
-        "rfcScope": {
+        "rfcscope": {
           "title": "RFC Scope",
-          "description": "Indicates the scope of function module calls. Modules whose call scope is not defined explicitly can be called from anywhere.",
+          "description": "Indicates the scope of function module calls",
           "type": "string",
           "enum": [
             "fromSameClientAndUser",
@@ -66,49 +58,49 @@
             "Not classified"
           ]
         },
-        "rfcVersion": {
+        "rfcvers": {
           "title": "RFC Version",
-          "description": "Indicates which serializations are permitted for the function module. Among other things, the selected serializations determine where the function module can be enhanced.",
+          "description": "Indicates the permitted serializations for the function module",
           "type": "string",
           "enum": [
             "fastSerializationRequired",
             "any"
           ],
           "enumDescriptions": [
-            "Fast Serialization Required",
+            "Fast serialization required",
             "Any"
           ]
         },
         "abapFromJava": {
-          "title": "ABAP from Java",
+          "title": "ABAP From Java",
           "description": "ABAP from Java",
           "type": "boolean"
         },
         "javaFromAbap": {
-          "title": "Java from ABAP",
+          "title": "Java From ABAP",
           "description": "Java from ABAP",
           "type": "boolean"
         },
         "javaRemote": {
-          "title": "Java remote",
+          "title": "Java Remote",
           "description": "Java remote",
           "type": "boolean"
         }
       },
       "additionalProperties": false,
       "required": [
-        "basXmlEnabled",
-        "rfcScope",
-        "rfcVersion"
+        "basxmlEnabled",
+        "rfcscope",
+        "rfcvers"
       ]
     },
     "updateProperties": {
-      "title": "Update specific fields",
+      "title": "Update Specific Fields",
       "description": "Specific fields for update function modules",
       "type": "object",
       "properties": {
         "updateTaskKind": {
-          "title": "Update task kind",
+          "title": "Update Task Kind",
           "description": "Update task kind",
           "type": "string",
           "enum": [
@@ -119,11 +111,11 @@
             "unsupportedKind"
           ],
           "enumDescriptions": [
-            "Start the update task immediately",
-            "Start the update task delayed",
-            "Start the update task immediately, no restart",
-            "Collective run",
-            "Unsupported kind"
+            "Start immediately",
+            "Start delayed",
+            "Start immediately no restart",
+            "Collective Run",
+            "Unsupported Kind"
           ]
         }
       },
@@ -133,28 +125,29 @@
       ]
     },
     "releaseState": {
-      "title": "Release state",
+      "title": "Release State",
       "description": "Release state",
       "type": "string",
       "enum": [
-        "notReleased",
         "released",
         "releasedSapInternal",
         "obsolete",
-        "releasePlanned"
+        "releasePlanned",
+        "notReleased"
       ],
       "enumDescriptions": [
-        "Function module is not released",
         "Function module is released",
         "Function module is released SAP-internally",
         "Function module is obsolete/deprecated",
-        "Function module is planned to be released [obsolete]"
+        "Function module is planned to be released [obsolete]",
+        "Function module is not released"
       ]
     },
     "releaseDate": {
-      "title": "Release date",
+      "title": "Release Date",
       "description": "Release date",
-      "type": "date"
+      "type": "string",
+      "format": "date-time"
     },
     "global": {
       "title": "Global",
@@ -162,58 +155,61 @@
       "type": "boolean"
     },
     "exceptionClasses": {
-      "title": "Exception classes",
+      "title": "Exception Classes",
       "description": "Exception classes",
       "type": "boolean"
     },
     "application": {
-      "title": "Application",
-      "description": "Application",
-      "type": "string"
+      "title": "Application Of Function Module",
+      "description": "Application to which function module is assigned",
+      "type": "string",
+      "maxLength": 1
     },
     "client": {
       "title": "Client",
       "description": "This field is obsolete and should not be filled",
-      "type": "string"
+      "type": "string",
+      "maxLength": 3
     },
     "activeFunctionExit": {
-      "title": "Function Exit active",
-      "description": "This function module is registered as function module exit (see SMOD/CMOD) and the function module exit is active",
+      "title": "Function Exit Active",
+      "description": "Function module is registered as function module exit and the function module exit is active",
       "type": "boolean"
     },
     "includeNumber": {
-      "title": "Include number",
+      "title": "Include Number",
       "description": "Include number",
-      "type": "string"
+      "type": "string",
+      "maxLength": 2
     },
     "notExecutable": {
-      "title": "Function module is not executable",
-      "description": "If this flag is set, the function module cannot be called. It is deactivated in the function group",
+      "title": "Not Executable",
+      "description": "Function module cannot be called if this flag is set",
       "type": "boolean"
     },
     "editLocked": {
-      "title": "Edit-locked",
+      "title": "Edit-Locked",
       "description": "The function module is not editable",
       "type": "boolean"
     },
     "parameters": {
-      "title": "Parameter descriptions",
+      "title": "Parameter Descriptions",
       "description": "Parameter descriptions of the function module",
       "type": "array",
       "items": {
-        "title": "Parameter",
-        "description": "Parameter with name and description",
+        "title": "Component with description",
+        "description": "Component with description",
         "type": "object",
         "properties": {
           "name": {
-            "title": "Parameter name",
-            "description": "Name of the parameter",
+            "title": "Component Name",
+            "description": "Component name",
             "type": "string",
             "maxLength": 30
           },
           "description": {
-            "title": "Parameter description",
-            "description": "Description of the parameter",
+            "title": "Component Description",
+            "description": "Component description",
             "type": "string",
             "maxLength": 79
           }
@@ -226,23 +222,23 @@
       }
     },
     "exceptions": {
-      "title": "Exception descriptions",
+      "title": "Exception Descriptions",
       "description": "Exception descriptions of the function module",
       "type": "array",
       "items": {
-        "title": "Exception",
-        "description": "Exception with name and description",
+        "title": "Component with description",
+        "description": "Component with description",
         "type": "object",
         "properties": {
           "name": {
-            "title": "Exception name",
-            "description": "Name of the exception",
+            "title": "Component Name",
+            "description": "Component name",
             "type": "string",
             "maxLength": 30
           },
           "description": {
-            "title": "Exception description",
-            "description": "Description of the exception",
+            "title": "Component Description",
+            "description": "Component description",
             "type": "string",
             "maxLength": 79
           }
@@ -255,75 +251,10 @@
       }
     }
   },
-  "allOf": [
-    {
-      "if": {
-        "properties": {
-          "processingType": {
-            "const": "normal"
-          }
-        }
-      },
-      "then": {
-        "not": {
-          "anyOf": [
-            {
-              "required": [
-                "rfcProperties"
-              ]
-            },
-            {
-              "required": [
-                "updateProperties"
-              ]
-            }
-          ]
-        }
-      }
-    },
-    {
-      "if": {
-        "properties": {
-          "processingType": {
-            "const": "rfc"
-          }
-        }
-      },
-      "then": {
-        "required": [
-          "rfcProperties"
-        ],
-        "not": {
-          "required": [
-            "updateProperties"
-          ]
-        }
-      }
-    },
-    {
-      "if": {
-        "properties": {
-          "processingType": {
-            "const": "update"
-          }
-        }
-      },
-      "then": {
-        "required": [
-          "updateProperties"
-        ],
-        "not": {
-          "required": [
-            "rfcProperties"
-          ]
-        }
-      }
-    }
-  ],
   "additionalProperties": false,
   "required": [
     "$schema",
-    "header",
+    "description",
     "processingType",
     "includeNumber"
   ]

@@ -1,6 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "http://github.com/SAP/abap-file-formats/file-formats/fugr/reps.json",
+  "$id": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/fugr/reps.json",
+  "title": "Object Type REPS",
+  "description": "REPS object type",
   "type": "object",
   "properties": {
     "$schema": {
@@ -8,30 +10,20 @@
       "description": "Format version",
       "type": "string"
     },
-    "header": {
-      "title": "Header",
-      "type": "object",
-      "properties": {
-        "description": {
-          "title": "Description",
-          "description": "Description for a FUGR Include",
-          "type": "string",
-          "maxLength": 70
-        }
-      },
-      "additionalProperties": false,
-      "required": [
-        "description"
-      ]
+    "description": {
+      "title": "Description",
+      "description": "Description",
+      "type": "string",
+      "maxLength": 60
     },
     "editLocked": {
       "title": "Edit-Locked",
-      "description": "Edit-Locked",
+      "description": "Edit-locked",
       "type": "boolean"
     },
     "includeType": {
       "title": "Include Type",
-      "description": "Include Type",
+      "description": "Include type",
       "type": "string",
       "enum": [
         "include",
@@ -39,14 +31,14 @@
       ],
       "enumDescriptions": [
         "Include",
-        "Function Group"
+        "Function group"
       ]
     }
   },
   "additionalProperties": false,
   "required": [
     "$schema",
-    "header",
+    "description",
     "includeType"
   ]
 }
