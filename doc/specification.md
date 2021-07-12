@@ -90,7 +90,7 @@ For compatible changes to the file format, the format is just updated. The indic
 Following changes to file formats are considered as compatible : 
 
 - Descriptions or titles are changed
-- Values for a field (enum) are added (remark: this might lead to syntax errors in ABAP system that don't support this value)
+- Values for a field (enum) are added (remark: this might lead to syntax errors in ABAP systems which don't support this value)
 
 
 ### Incompatible File Format Changes
