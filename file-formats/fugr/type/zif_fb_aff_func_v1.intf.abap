@@ -213,6 +213,7 @@ INTERFACE zif_fb_aff_func_v1
       global               TYPE abap_bool,
       "! <p class="shorttext">Exception classes</p>
       "! Exception classes
+      "! $showAlways
       exception_classes    TYPE abap_bool,
       "! <p class="shorttext">Application to which function module is assigned</p>
       "! For organizational reasons, function modules are either assigned to the applications
