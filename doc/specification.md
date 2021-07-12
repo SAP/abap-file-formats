@@ -85,31 +85,34 @@ As of today, the format version is indicated by the `$schema` attribute. This is
 
 ### Compatible File Format Changes 
 
-For compatible changes to the file format, the file format is updated. The indicator whether the format has to be changed should not be updated.
+For compatible changes to the file format, the format is just updated. The indicator whether the format has to be changed should not be updated.
 
-Following changes are considered as compatible to the file format: 
+Following changes to file formats are considered as compatible : 
 
 - Descriptions or titles are changed
-- Value for a field (enum) is added (remark: this might lead to syntax errors in ABAP system that don't support this value)
+- Values for a field (enum) are added (remark: this might lead to syntax errors in ABAP system that don't support this value)
 
 
 ### Incompatible File Format Changes
 
-If a file format is changed incompatibly, a new file format with a new format version has to be created. The old file format is kept. It can be used for old/exisiting versions of files.
+If a file format is changed incompatibly, a new file format with a new version has to be created. The old file format is kept. It can be used for old/exisiting versions of files.
 
-Following changes are considered as incompatible to the file format:
+Following changes to file formats are considered as incompatible:
 
-- File type is changed (e.g., from xml to json)
-- Structure is changed (e.g., field is moved to a sub structure)
-- Mandatory field is added
-- Mandatory field is removed  (old implementations might rely on the field to be mandatory)
-- Non-mandatory field is added [as of now, we might want to change `additionalProperties` to `true` to make it compatible]
-- Non-mandatory field is removed [as of now, we might want to change `additionalProperties` to `true` to make it compatible]
-- Field is renamed 
+- Content type of the file is changed (e.g., from xml to json)
+- Content structure within the file is changed (e.g., field is moved to a sub structure)
+- Mandatory fields are added
+- Mandatory fields are removed  (old implementations might rely on the field to be mandatory)
+- Non-mandatory fields are added 
+- Non-mandatory fields iare removed 
+- Fields are renamed 
 - Type of a field is changed (e.g. from `string` to `number`)
 - Semantic of a field is changed
-- Value for a field (e.g., in enum) is removed
+- Values of a field (e.g., in enum) are removed
 - Length of a field is shortened
 - Length of a field is extended, if some systems cannot store this information
 
-Currently, ABAP file formats are not kept stable, yet. They might still change incompatible without creating a new file format version.
+---
+**Note**: Currently, ABAP file formats are not kept stable, yet. They might still change incompatible without creating a new file format version.
+
+---
