@@ -81,7 +81,7 @@ The JSON files additionally follow
 
 The format of object types will evolve over time. If a change to the format is considered incompatible, the version of the file format has to be increased.
 
-As of today, the format version is indicated by the `$schema` attribute. This is approach is in discussion and might be changed.
+As of today, the format version is indicated by the `$schema` attribute. This approach is in discussion and might be changed.
 
 ### Compatible File Format Changes 
 
