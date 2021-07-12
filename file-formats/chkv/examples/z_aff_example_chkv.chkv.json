@@ -50,7 +50,7 @@
               "sign": "exclude",
               "option": "equals",
               "low": "0002470721",
-              "high": "0000000001"
+              "high": ""
             }
           ]
         },
