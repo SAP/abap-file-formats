@@ -20,7 +20,7 @@ The design of the ABAP file formats covers the following principles:
 * The files don't contain metadata like dates, usernames, last editor, system specific information, plus no obsolete or redundant information.
 
 
-Details on technical specification can be found [here](./doc/file_names.md).
+Details on technical specification can be found [here](./doc/specification.md). 
 
 
 ### List of Supported ABAP Objects
