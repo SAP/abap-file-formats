@@ -54,7 +54,7 @@ INTERFACE zif_aff_types_v1 PUBLIC.
       "! SAP program
       sap_program      TYPE ty_status VALUE 'P',
       "! <p class="shorttext">Customer Program</p>
-      "! Customer Production Program
+      "! Customer production program
       customer_program TYPE ty_status VALUE 'K',
       "! <p class="shorttext">System Program</p>
       "! System program
