@@ -55,12 +55,6 @@
       "description": "The ATC check variant is remote-enabled",
       "type": "boolean"
     },
-    "referencedVariant": {
-      "title": "Referenced Check Variant",
-      "description": "Name of the referenced ATC check variant",
-      "type": "string",
-      "maxLength": 30
-    },
     "selectedChecks": {
       "title": "Selected Checks",
       "description": "The checks selected in the ATC check variant",
