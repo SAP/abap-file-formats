@@ -41,7 +41,7 @@
           "description": "Function module for classic RFC protocol and basXML protocol behaves the same from a semantic point of view",
           "type": "boolean"
         },
-        "rfcscope": {
+        "rfcScope": {
           "title": "RFC Scope",
           "description": "Indicates the scope of function module calls",
           "type": "string",
@@ -58,7 +58,7 @@
             "Not classified"
           ]
         },
-        "rfcvers": {
+        "rfcVers": {
           "title": "RFC Version",
           "description": "Indicates the permitted serializations for the function module",
           "type": "string",

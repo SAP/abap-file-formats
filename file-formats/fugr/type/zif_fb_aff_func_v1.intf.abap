@@ -94,11 +94,11 @@ INTERFACE zif_fb_aff_func_v1
       "! <p class="shorttext">RFC Scope</p>
       "! Indicates the scope of function module calls
       "! $required
-      rfcscope       TYPE ty_rfc_scope,
+      rfc_scope       TYPE ty_rfc_scope,
       "! <p class="shorttext">RFC Version</p>
       "! Indicates the permitted serializations for the function module
       "! $required
-      rfcvers        TYPE ty_rfc_version,
+      rfc_vers        TYPE ty_rfc_version,
       "! <p class="shorttext">ABAP From Java</p>
       "! ABAP from Java
       abap_from_java TYPE abap_bool,
