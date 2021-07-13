@@ -5,6 +5,8 @@ Table of  content
 * [File Extensions](#File-Extensions)
 * [File Name Examples](#File-Name-Examples)
 * [Formatting Conventions](#Formatting-Conventions)
+* [Type Specification](#Type-Specification)
+* [Type Specification Example](#Type-Specification-Example)
 
 ## File Names
 
@@ -75,3 +77,120 @@ To enable interchangeability the files are characterized by
 
 The JSON files additionally follow
 * 2 spaces indentation
+
+## Type Specification
+
+Each JSON schema provided in this repository is automatically genereated. For this purpose, an interface corresponds
+to each ABAP object type in which the necessary components of the type are described in the type `ty_main`.
+One component of the type is the field `schema` which is translated to `$schema` in the JSON schema. Its value in the `.json` files is the link given in the field `$id` of the JSON schema. 
+
+In order to specify the type, ABAP Doc can be used. The comments areplaced directly above the components of the type `ty_main`, but they are also read over several levels as, e.g., in the case of nested structures. The different possibilities are summarized in the following.
+
+### Title
+To provide a title, the annotation
+```abap
+"! <p class="shorttext">Insert Title</p> 
+```
+is used. If no title is specified, the component name transformed to camel case is written. 
+
+### Description
+An ABAP Doc comment without annotations is passed as description to the JSON schema. 
+```abap
+"! This is the description
+```
+If no description is given, either the title if it is provided or the componenet name tranformed to camel case is shown in the JSON schema. 
+
+### Enum Values
+To pass enum values to a JSON schema, a type and a constant are specified. The constant consists of the internel (ABAP) values, the names of its components are written as external (JSON) values. Descriptions of the enum values are passed in the same way as above. 
+The type specifies the underlying data type and links to the constant via the ABAP Doc annotation
+```abap
+"! $values {@link source_name.data:category_name}
+```
+
+### Required Fields
+If a field is to be declared as "required" in the JSON schema, the annotation
+```abap
+"! $required
+```
+is used. 
+
+### Always Shown Fields
+Normally, if an ABAP object is serialised, only the components of the corresponding type with a non-initial value are writte to the `.json` file. If a component shall be shown regardless to its value, the annotation
+```abap
+"! $showAlways
+```
+is added. Remark that also the `$required` annotation leads to such a behavior. 
+
+## Type Specification Example
+Here is the shortened type used to generate the JSON schema for interfaces. It can be found in the interface [`zif_oo_aff_intf_v1`](/file-formats/intf/type/zif_oo_aff_intf_v1.intf.abap). 
+```abap
+  TYPES:
+    "! <p class="shorttext">Interface Properties</p>
+    "! Interface properties
+    BEGIN OF ty_main,
+      "! <p class="shorttext">Schema</p>
+      "! Format version
+      "! $required
+      schema     TYPE string,
+      "! <p class="shorttext">Interface Category</p>
+      "! Interface category
+      category   TYPE ty_category,
+      "! <p class="shorttext">Proxy Interface</p>
+      "! Interface is a proxy interface
+      proxy      TYPE abap_bool.
+    END OF ty_main.
+```
+With the also shortened specification of the enum values for the component `category`
+```abap
+  "! $values {@link zif_oo_aff_intf_v1.data:co_category}
+  TYPES ty_category TYPE n LENGTH 2.
+
+  CONSTANTS:
+    BEGIN OF co_category,
+      "! <p class="shorttext">General</p>
+      "! General interface
+      general                      TYPE ty_category VALUE '00',
+      "! <p class="shorttext">Classic BAdI</p>
+      "! Interface definition of a classic BAdI
+      classic_badi                 TYPE ty_category VALUE '01',
+    END OF co_category.
+```
+this leads to the following generated JSON schema.
+```json
+ {
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/intf/intf.json",
+  "title": "Interface Properties",
+  "description": "Interface properties",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "title": "Schema",
+      "description": "Format version",
+      "type": "string"
+    },
+    "category": {
+      "title": "Interface Category",
+      "description": "Interface category",
+      "type": "string",
+      "enum": [
+        "general",
+        "classicBadi"
+      ],
+      "enumDescriptions": [
+        "General interface",
+        "Interface definition of a classic BAdI"
+      ]
+    },
+    "proxy": {
+      "title": "Proxy Interface",
+      "description": "Interface is a proxy interface",
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "$schema"
+  ]
+}
+```
