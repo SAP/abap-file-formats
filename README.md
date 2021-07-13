@@ -37,6 +37,10 @@ Details on technical specification can be found [here](./doc/specification.md).
 | INTF | [Interface](./file-formats/intf/format.md) |
 | NROB | [Number Range Object](./file-formats/nrob/format.md) |
 
+### Structure of the Repository
+For each supported ABAP object type, there is a corresponding folder in [file-formats](./file-formats). The documntation as well as the JSON Schema for the types are located in the root of the folder. The file representation of the underlying interface can be found in the subfolder `type`, the file representation of an exemplary object is contained in the subfolder `examples`. 
+
+
 ## How to Obtain Support
 
 Feel free to raise issues to ask questions or report bugs.
