@@ -41,32 +41,6 @@ INTERFACE zif_aff_types_v1 PUBLIC.
       cloud_development TYPE ty_abap_language_version VALUE '5',
     END OF co_abap_language_version.
 
-  "! <p class="shorttext">Status</p>
-  "! status
-  "! $values {@link zif_aff_types_v1.data:co_status}
-  TYPES ty_status TYPE c LENGTH 1.
-
-  CONSTANTS:
-    "! <p class="shorttext">Status</p>
-    "! status
-    BEGIN OF co_status,
-      "! <p class="shorttext">SAP Program</p>
-      "! SAP program
-      sap_program      TYPE ty_status VALUE 'P',
-      "! <p class="shorttext">Customer Program</p>
-      "! Customer production program
-      customer_program TYPE ty_status VALUE 'K',
-      "! <p class="shorttext">System Program</p>
-      "! System program
-      system_program   TYPE ty_status VALUE 'S',
-      "! <p class="shorttext">Test Program</p>
-      "! Test program
-      test_program     TYPE ty_status VALUE 'T',
-      "! <p class="shorttext">Not Classified</p>
-      "! Not classified
-      not_classified   TYPE ty_status VALUE space,
-    END OF co_status.
-
   "! <p class="shorttext">Description</p>
   "! Description with 60 characters
   TYPES ty_description_60 TYPE c LENGTH 60.
