@@ -10,11 +10,22 @@
       "description": "Format version",
       "type": "string"
     },
-    "description": {
-      "title": "Description",
-      "description": "Description of a function module",
-      "type": "string",
-      "maxLength": 60
+    "header": {
+      "title": "Header",
+      "description": "Header",
+      "type": "object",
+      "properties": {
+        "description": {
+          "title": "Description",
+          "description": "Description of the ABAP object",
+          "type": "string",
+          "maxLength": 60
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "description"
+      ]
     },
     "processingType": {
       "title": "Processing Type",
@@ -90,8 +101,8 @@
       "additionalProperties": false,
       "required": [
         "basxmlEnabled",
-        "rfcscope",
-        "rfcvers"
+        "rfcScope",
+        "rfcVers"
       ]
     },
     "updateProperties": {
@@ -254,7 +265,7 @@
   "additionalProperties": false,
   "required": [
     "$schema",
-    "description",
+    "header",
     "processingType",
     "includeNumber"
   ]
