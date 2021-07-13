@@ -43,7 +43,7 @@ INTERFACE zif_aff_types_v1 PUBLIC.
 
   "! <p class="shorttext">Status</p>
   "! status
-  "! $values {@link if_aff_types_v1.data:co_status}
+  "! $values {@link zif_aff_types_v1.data:co_status}
   TYPES ty_status TYPE c LENGTH 1.
 
   CONSTANTS:
