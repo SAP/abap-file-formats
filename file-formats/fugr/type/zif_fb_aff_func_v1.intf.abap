@@ -169,7 +169,7 @@ INTERFACE zif_fb_aff_func_v1
       "! <p class="shorttext">Update Task Kind</p>
       "! Update task kind
       "! $required
-      update_task_kind TYPE ty_update_task_kind,  " update task
+      update_task_kind TYPE ty_update_task_kind,
     END OF ty_update_properties.
 
 
