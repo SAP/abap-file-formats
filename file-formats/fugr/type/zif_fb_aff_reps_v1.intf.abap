@@ -25,10 +25,10 @@ INTERFACE zif_fb_aff_reps_v1
       "! Format version
       "! $required
       schema       TYPE string,
-      "! <p class="shorttext">Description</p>
-      "! Description
+      "! <p class="shorttext">Header</p>
+      "! Header
       "! $required
-      description  TYPE zif_aff_types_v1=>ty_description_60,
+      header               TYPE zif_aff_types_v1=>ty_header_only_description,
       "! <p class="shorttext">Edit-Locked</p>
       "! Edit-locked
       edit_locked  TYPE abap_bool,
