@@ -128,11 +128,11 @@ INTERFACE zif_fb_aff_func_v1
       "! <p class="shorttext">Start Immediately No Restart</p>
       "! Start immediately no restart
       start_immediately_no_restart TYPE ty_update_task_kind VALUE '3',
-      "! <p class="shorttext">Collective Run</p>
-      "! Collective run
+      "! <p class="shorttext">Collective run</p>
+      "! Collective Run
       collective_run               TYPE ty_update_task_kind VALUE '5',
-      "! <p class="shorttext">Unsupported Kind</p>
-      "! Unsupported kind
+      "! <p class="shorttext">Unsupported kind</p>
+      "! Unsupported Kind
       unsupported_kind             TYPE ty_update_task_kind VALUE '6',
     END OF co_update_task_kind.
 
@@ -169,7 +169,7 @@ INTERFACE zif_fb_aff_func_v1
       "! <p class="shorttext">Update Task Kind</p>
       "! Update task kind
       "! $required
-      update_task_kind TYPE ty_update_task_kind,
+      update_task_kind TYPE ty_update_task_kind,  " update task
     END OF ty_update_properties.
 
 
@@ -181,58 +181,56 @@ INTERFACE zif_fb_aff_func_v1
       "! Format version
       "! $required
       schema               TYPE string,
-      "! <p class="shorttext">Description</p>
-      "! Description of a function module
+      "! <p class="shorttext">Header</p>
+      "! Header
       "! $required
-      description          TYPE zif_aff_types_v1=>ty_description_60,
+      header               TYPE zif_aff_types_v1=>ty_header_only_description,
       "! <p class="shorttext">Processing Type</p>
       "! Processing type
       "! $required
       processing_type      TYPE ty_processing_type,
-      "! <p class="shorttext">RFC specific fields</p>
+      "! <p class="shorttext">RFC Specific Fields</p>
       "! Specific fields for rfc function modules
       rfc_properties       TYPE ty_rfc_properties,
-      "! <p class="shorttext">Update specific fields</p>
+      "! <p class="shorttext">Update Specific Fields</p>
       "! Specific fields for update function modules
       update_properties    TYPE ty_update_properties,
-      "! <p class="shorttext">Release state</p>
+      "! <p class="shorttext">Release State</p>
       "! Release state
       release_state        TYPE ty_release_state,
-      "! <p class="shorttext">Release date</p>
+      "! <p class="shorttext">Release Date</p>
       "! Release date
       release_date         TYPE sy-datum,
       "! <p class="shorttext">Global</p>
       "! The parameters of this function module are global visible within the function group
       global               TYPE abap_bool,
-      "! <p class="shorttext">Exception classes</p>
+      "! <p class="shorttext">Exception Classes</p>
       "! Exception classes
       "! $showAlways
       exception_classes    TYPE abap_bool,
-      "! <p class="shorttext">Application to which function module is assigned</p>
-      "! For organizational reasons, function modules are either assigned to the applications
-      "! for which they were created, or they are flagged as cross-application to show that they can be used anywhere.
+      "! <p class="shorttext">Application Of Function Module</p>
+      "! Application to which function module is assigned
       application          TYPE c LENGTH 1,
       "! <p class="shorttext">Client</p>
       "! This field is obsolete and should not be filled
       client               TYPE sy-mandt,
-      "! <p class="shorttext">Function Exit active</p>
-      "! This function module is registered as function module exit (see SMOD/CMOD)
-      "! and the function module exit is active
+      "! <p class="shorttext">Function Exit Active</p>
+      "! Function module is registered as function module exit and the function module exit is active
       active_function_exit TYPE abap_bool,
-      "! <p class="shorttext">Include number</p>
+      "! <p class="shorttext">Include Number</p>
       "! Include number
       "! $required
       include_number       TYPE n LENGTH 2,
-      "! <p class="shorttext">Function module is not executable</p>
-      "! If this flag is set, the function module cannot be called. It is deactivated in the function group
+      "! <p class="shorttext">Not Executable</p>
+      "! Function module cannot be called if this flag is set
       not_executable       TYPE abap_bool,
-      "! <p class="shorttext">Edit-locked</p>
+      "! <p class="shorttext">Edit-Locked</p>
       "! The function module is not editable
       edit_locked          TYPE abap_bool,
-      "! <p class="shorttext">Parameter descriptions</p>
+      "! <p class="shorttext">Parameter Descriptions</p>
       "! Parameter descriptions of the function module
       parameters           TYPE ty_parameters,
-      "! <p class="shorttext">Exception descriptions</p>
+      "! <p class="shorttext">Exception Descriptions</p>
       "! Exception descriptions of the function module
       exceptions           TYPE ty_parameters,
     END OF ty_main.
