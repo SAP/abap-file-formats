@@ -10,11 +10,22 @@
       "description": "Format version",
       "type": "string"
     },
-    "description": {
-      "title": "Description",
-      "description": "Description",
-      "type": "string",
-      "maxLength": 60
+    "header": {
+      "title": "Header",
+      "description": "Header",
+      "type": "object",
+      "properties": {
+        "description": {
+          "title": "Description",
+          "description": "Description of the ABAP object",
+          "type": "string",
+          "maxLength": 60
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "description"
+      ]
     },
     "editLocked": {
       "title": "Edit-Locked",
@@ -38,7 +49,7 @@
   "additionalProperties": false,
   "required": [
     "$schema",
-    "description",
+    "header",
     "includeType"
   ]
 }
