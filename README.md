@@ -49,7 +49,7 @@ Feel free to raise issues to ask questions or report bugs.
 
 Comments and suggestions for improvements are most welcome.
 
-You feel responsible for an ABAP object type? We will be more than happy if you contribute your object type to this project. Just open a new pull request. 
+You feel responsible for an ABAP object type? We will be more than happy if you contribute your object type to this project. Just open a new pull request and create a type like it is specified in [Specification](./doc/specification.md#Type-Specification). Feel free to hand over the type to us, so we can generate the JSON schema for you. 
 
 More details are found at [Contributing](./CONTRIBUTING.md).
 
