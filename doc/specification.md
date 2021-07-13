@@ -102,7 +102,7 @@ If no description is given, either the title if it is provided or the componenet
 
 ### Enum Values
 To pass enum values to a JSON schema, a type and a constant are specified. The constant consists of the internel (ABAP) values, the names of its components are written as external (JSON) values. Descriptions of the enum values are passed in the same way as above. 
-The type specifies the underlying data type and links to the constant via the ABAP Doc annotation
+The type specifies the underlying data type and links to the constant via the following ABAP Doc annotation.
 ```abap
 "! $values {@link source_name.data:category_name}
 ```
