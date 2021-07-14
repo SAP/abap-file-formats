@@ -5,6 +5,7 @@ Table of  content
 * [File Extensions](#File-Extensions)
 * [File Name Examples](#File-Name-Examples)
 * [Formatting Conventions](#Formatting-Conventions)
+* [Format Compatibility](#Format-Compatibility)
 
 ## File Names
 
@@ -61,7 +62,6 @@ Here are some examples of file names and its corresponding content.
 | `cl_my_class.clas.global.abap` | Source code of global class `CL_MY_CLASS` |
 | `(nmspc)cl_my_class.clas.global.abap` | Source code of global class with namespace `/NMSPC/CL_MY_CLASS` |
 | `cl_my_class.clas.testclasses.abap` | Source code of local test classes in `CL_MY_CLASS` |
-| `sflight.tabl.abap` | Source code of database table `SFLIGHT` |
 | `s_carrid.dtel.json` | Properties of data element `S_CARRID` |
 | [`z_aff_example_fugr.fugr.z_aff_example_func.func.abap`](/file-formats/fugr/examples/z_aff_example_fugr.fugr.z_aff_example_func.func.abap) | Source code of function module `Z_AFF_EXAMPLE_FUNC` |
 | `seo_class_editor.fugr.0152.dynp.json` | Dynpro 0152 of function group `SEO_CLASS_EDITOR` |
@@ -75,3 +75,43 @@ To enable interchangeability the files are characterized by
 
 The JSON files additionally follow
 * 2 spaces indentation
+
+## Format Compatibility
+
+The format of object types will evolve over time. If a change to the format is considered incompatible, the version of the file format has to be increased.
+
+As of today, the format version is indicated by the `$schema` attribute. This approach is in discussion and might be changed.
+
+### Compatible File Format Changes 
+
+For compatible changes to the file format, the format is just updated. The indicator whether the format has to be changed should not be updated.
+
+Following changes to file formats are considered as compatible : 
+
+- Descriptions or titles are changed
+- Values for a field (enum) are added (remark: this might lead to syntax errors in ABAP systems which don't support this value)
+
+
+### Incompatible File Format Changes
+
+If a file format is changed incompatibly, a new file format with a new version has to be created. The old file format is kept. It can be used for old/exisiting versions of files.
+
+Following changes to file formats are considered as incompatible:
+
+- Content type of the file is changed (e.g., from xml to json)
+- Content structure within the file is changed (e.g., field is moved to a sub structure)
+- Mandatory fields are added
+- Mandatory fields are removed  (old implementations might rely on the field to be mandatory)
+- Non-mandatory fields are added 
+- Non-mandatory fields are removed 
+- Fields are renamed 
+- Type of a field is changed (e.g., from `string` to `number`)
+- Semantic of a field is changed
+- Values of a field (e.g., in enum) are removed
+- Length of a field is shortened
+- Length of a field is extended if some systems cannot store this information
+
+---
+**Note**: Currently, ABAP file formats are not kept stable, yet. They might still change incompatible without creating a new file format version.
+
+---
