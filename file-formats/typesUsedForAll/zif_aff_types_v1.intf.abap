@@ -85,4 +85,14 @@ INTERFACE zif_aff_types_v1 PUBLIC.
       abap_language_version TYPE ty_abap_language_version,
     END OF ty_header_60.
 
+  TYPES:
+    "! <p class="shorttext">Header for Subobjects</p>
+    "! The header for an ABAP  subobject with a description of 60 characters
+    BEGIN OF ty_header_only_description,
+      "! <p class="shorttext">Description</p>
+      "! Description of the ABAP object
+      "! $required
+      description           TYPE ty_description_60,
+    END OF ty_header_only_description.
+
 ENDINTERFACE.
