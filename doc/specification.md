@@ -84,10 +84,12 @@ Each JSON schema provided in this repository is automatically genereated. For th
 to each ABAP object type in which the necessary components of the type are described in the type `ty_main`.
 One component of the type is the field `schema` which is translated to `$schema` in the JSON schema. Its value in the `.json` files is the link given in the field `$id` of the JSON schema. 
 
-In order to specify the type, ABAP Doc can be used. The comments areplaced directly above the components of the type `ty_main`, but they are also read over several levels as, e.g., in the case of nested structures. The different possibilities are summarized in the following.
+The ABAP types are self-contained, so it is possible to work on them in any system (e.g., in a SAP BTP system).
+
+In order to add more information to the JSON schema than that provided by the ABAP type, ABAP Doc can be used. The comments are placed directly above the components of the type `ty_main`, but they are also read over several levels as, e.g., in the case of nested structures. The different possibilities are summarized in the following.
 
 ### Title
-To provide a title, the annotation
+To provide a title, an ABAP Doc shorttext
 ```abap
 "! <p class="shorttext">Insert Title</p> 
 ```
@@ -101,8 +103,9 @@ An ABAP Doc comment without annotations is passed as description to the JSON sch
 If no description is given, either the title if it is provided or the componenet name tranformed to camel case is shown in the JSON schema. 
 
 ### Enum Values
-To pass enum values to a JSON schema, a type and a constant are specified. The constant consists of the internel (ABAP) values, the names of its components are written as external (JSON) values. Descriptions of the enum values are passed in the same way as above. 
-The type specifies the underlying data type and links to the constant via the following ABAP Doc annotation.
+To pass enum values to a JSON schema, a type and a constant are specified. The names of the components of the constant are written as external (JSON) values to the JSON schema after being transformed to camel case. The corresponding values of the components represent the internel (ABAP) values. Descriptions of the enum values are passed to the schema in the same way as above. 
+
+The type specifies the underlying data type and links to the constant via the following annotation.
 ```abap
 "! $values {@link source_name.data:category_name}
 ```
@@ -120,6 +123,8 @@ Normally, if an ABAP object is serialised, only the components of the correspond
 "! $showAlways
 ```
 is added. Remark that also the `$required` annotation leads to such a behavior. 
+
+The order of these comments is important: First, there is the comment for the title followed by that for the description, in case they are both provided. After the two, the remaining annotations are always located. Between them, the order is irrelevant.
 
 ## Type Specification Example
 Here is the shortened type used to generate the JSON schema for interfaces. It can be found in the interface [`zif_oo_aff_intf_v1`](/file-formats/intf/type/zif_oo_aff_intf_v1.intf.abap). 
