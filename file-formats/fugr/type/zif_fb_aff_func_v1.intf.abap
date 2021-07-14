@@ -88,15 +88,19 @@ INTERFACE zif_fb_aff_func_v1
     "! Specific fields for rfc function modules
     BEGIN OF ty_rfc_properties,
       "! <p class="shorttext">BasXml Enabled</p>
-      "! Function module for classic RFC protocol and basXML protocol behaves the same from a semantic point of view
+      "! When this indicator is set, it shows that the function module for the classic RFC protocol and
+      "! the basXML protocol behaves in the same way, from a semantic point of view.
+      "! The classic RFC protocol uses a position logic, while the basXML protocol uses a name identification.
       "! $required
       basxml_enabled TYPE abap_bool,
       "! <p class="shorttext">RFC Scope</p>
-      "! Indicates the scope of function module calls
+      "! Indicates the scope of function module calls.
+      "! Modules whose call scope is not defined explicitly can be called from anywhere.
       "! $required
       rfc_scope       TYPE ty_rfc_scope,
       "! <p class="shorttext">RFC Version</p>
-      "! Indicates the permitted serializations for the function module
+      "! Indicates which serializations are permitted for the function module.
+      "! Among other things, the selected serializations determine where the function module can be enhanced.
       "! $required
       rfc_version        TYPE ty_rfc_version,
       "! <p class="shorttext">ABAP From Java</p>
@@ -215,14 +219,16 @@ INTERFACE zif_fb_aff_func_v1
       "! This field is obsolete and should not be filled
       client               TYPE sy-mandt,
       "! <p class="shorttext">Function Exit Active</p>
-      "! Function module is registered as function module exit and the function module exit is active
+      "! This function module is registered as function module exit (see SMOD/CMOD)
+      "! and the function module exit is active
       active_function_exit TYPE abap_bool,
       "! <p class="shorttext">Include Number</p>
       "! Include number
       "! $required
       include_number       TYPE n LENGTH 2,
       "! <p class="shorttext">Not Executable</p>
-      "! Function module cannot be called if this flag is set
+      "! If this flag is set, the function module cannot be called.
+      "! It is deactivated in the function group
       not_executable       TYPE abap_bool,
       "! <p class="shorttext">Edit-Locked</p>
       "! The function module is not editable
