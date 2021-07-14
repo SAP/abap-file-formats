@@ -98,7 +98,7 @@ INTERFACE zif_fb_aff_func_v1
       "! <p class="shorttext">RFC Version</p>
       "! Indicates the permitted serializations for the function module
       "! $required
-      rfc_vers        TYPE ty_rfc_version,
+      rfc_version        TYPE ty_rfc_version,
       "! <p class="shorttext">ABAP From Java</p>
       "! ABAP from Java
       abap_from_java TYPE abap_bool,
