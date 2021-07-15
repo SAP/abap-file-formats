@@ -6,4 +6,4 @@ The JSON schema is provided [here](./chkc.json).
 
 File | Content
  --- | ---
-[`z_aff_example_chkc.chkc.json`](./examples/z_aff_example_chkc.chkc.json) | File representation of an ATC check category.
+[`z_aff_example_chkc.chkc.json`](./examples/z_aff_example_chkc.chkc.json) | File representation of an ATC check category
