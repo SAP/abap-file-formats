@@ -84,7 +84,7 @@ Each JSON schema provided in this repository is automatically genereated. For th
 to each ABAP object type in which the necessary components of the type are described in the type `ty_main`.
 One component of the type is the field `schema` which is translated to `$schema` in the JSON schema. Its value in the `.json` files is the link given in the field `$id` of the JSON schema. 
 
-The ABAP types are self-contained, so it is possible to work on them in any system (e.g., in a SAP BTP system).
+The ABAP types are self-contained, so it is possible to work on them in any system (e.g., in an SAP BTP, ABAP environmnt system).
 
 In order to add more information to the JSON schema than that provided by the ABAP type, ABAP Doc can be used. The comments are placed directly above the components of the type `ty_main`, but they are also read over several levels as, e.g., in the case of nested structures. The different possibilities are summarized in the following.
 
