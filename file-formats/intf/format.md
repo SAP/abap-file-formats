@@ -1,6 +1,6 @@
 # File Format for Object Type INTF
 
-The file with ending `.abap` contains plain ABAP source code.
+The file with the ending `.abap` contains plain ABAP source code.
 The JSON schema for the interface properties file is provided [here](./intf.json).
 The ABAP type for the interface properties is provided [here](./zif_aff_intf_v1.intf.abap).
 
