@@ -1,6 +1,6 @@
 # File Format for Object Type CHKV
 
-The file representation for object `Z_AFF_EXAMPLE_CHKV` is provided [here](./examples/z_aff_example_chkv.chkv.json).
+The file representation for example ATC check variant `Z_AFF_EXAMPLE_CHKV` is provided [here](./examples/z_aff_example_chkv.chkv.json).
 
 The JSON schema is provided [here](./chkv.json).
 
