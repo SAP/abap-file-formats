@@ -115,7 +115,7 @@ Following changes to file formats are considered as incompatible:
 
 ## Type Specification
 
-Each JSON schema provided in this repository is automatically genereated. For this purpose, an interface corresponds
+Each JSON schema provided in this repository is automatically generated. For this purpose, an interface corresponds
 to each ABAP object type in which the necessary components of the type are described in the type `ty_main`.
 One component of the type is the field `schema` which is translated to `$schema` in the JSON schema. Its value in the `.json` files is the link given in the field `$id` of the JSON schema. 
 
@@ -135,7 +135,7 @@ An ABAP Doc comment without annotations is passed as description to the JSON sch
 ```abap
 "! This is the description
 ```
-If no description is given, either the title if it is provided or the componenet name tranformed to camel case is shown in the JSON schema. 
+If no description is given, either the title if it is provided or the componenet name transformed to camel case is shown in the JSON schema. 
 
 ### Enum Values
 To pass enum values to a JSON schema, a type and a constant are specified. The names of the components of the constant are written as external (JSON) values to the JSON schema after being transformed to camel case. The corresponding values of the components represent the internel (ABAP) values. Descriptions of the enum values are passed to the schema in the same way as above. 
@@ -153,7 +153,7 @@ If a field is to be declared as "required" in the JSON schema, the annotation
 is used. 
 
 ### Always Shown Fields
-Normally, if an ABAP object is serialised, only the components of the corresponding type with a non-initial value are writte to the `.json` file. If a component shall be shown regardless to its value, the annotation
+Normally, if an ABAP object is serialised, only the components of the corresponding type with a non-initial value are written to the `.json` file. If a component shall be shown regardless to its value, the annotation
 ```abap
 "! $showAlways
 ```
