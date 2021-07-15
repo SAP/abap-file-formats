@@ -1,4 +1,4 @@
-# Contributing to the Our Project
+# Contributing to Our Project
 Thank you for your interest in ABAP file formats! We welcome contributions in all forms.
 
 Here are some of the ways you can contribute to the repository/project.
@@ -15,7 +15,7 @@ Analyzing reports is a bit of work, so please ask yourself these questions befor
 * Has this bug already been reported?
 
 ### Providing the Right Information for the Issue
-Summarize the issue well. The following are some guidelines:
+Summarize the issue well. Here are some guidelines:
 
 * Provide detailed, step-by-step instructions for reproducing the issue with an example, including, if possible:
   * A URL to your example
