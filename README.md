@@ -10,9 +10,9 @@ The project is still in an early phase. We plan to modify and extend this docume
 
 ### Background and Scope
 
-ABAP repository objects are stored on development systems and not as regular text files as many other programing languages including python, C++ and others.
+ABAP repository objects are stored on development systems and not as regular text files like in many other programing languages including python, C++ and others.
 The aim of the ABAP file formats is to provide a common and transparent definition of how to store ABAP repository objects in files.
-The file representation of ABAP repository objects facilitates the ongoing effort of applying and adopting existing developer tools and paradigm to ABAP.
+The file representation of ABAP repository objects facilitates the ongoing effort of applying and adopting existing developer tools and paradigms to ABAP.
 
 The design of the ABAP file formats covers the following principles:
 * The file content is **complete** and can be used for the sharing and distribution of ABAP repository objects.
@@ -31,7 +31,7 @@ Details on technical specification can be found [here](./doc/specification.md).
 | CHKO | [ATC Check](./file-formats/chko/format.md)|
 | CHKV | [ATC Check Variant](./file-formats/chkv/format.md)|
 | CLAS | [Class](./file-formats/clas/format.md) |
-| ENHO | [BAdI Enhancement Implementation)](./file-formats/enho/format.md) |
+| ENHO | [BAdI Enhancement Implementation](./file-formats/enho/format.md) |
 | ENHS | [BAdI Enhancement Spot](./file-formats/enhs/format.md) |
 | FUGR | [Function Group](./file-formats/fugr/format.md) |
 | INTF | [Interface](./file-formats/intf/format.md) |
