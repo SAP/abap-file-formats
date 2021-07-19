@@ -64,6 +64,8 @@ Here are some examples of file names and its corresponding content.
 | File Name | Content |
 | ---  | --- |
 | `cl_my_class.clas.abap` | Source code of global class `CL_MY_CLASS` |
+| `foo.prog.abap` | Source code of global report `FOO` |
+| `if_bar.intf.abap` | Source code of global class `IF_BAR` |
 | `(nmspc)cl_my_class.clas.abap` | Source code of global class with namespace `/NMSPC/CL_MY_CLASS` |
 | `cl_my_class.clas.testclasses.abap` | Source code of local test classes in `CL_MY_CLASS` |
 | `s_carrid.dtel.json` | Properties of data element `S_CARRID` |
