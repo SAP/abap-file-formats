@@ -31,10 +31,12 @@ Some object types support sub objects (like function modules in a function group
 
 E.g., for function module FUNCTION_EXISTS in function group SUNI, the file name would be `suni.fugr.function_exists.func.abap`.
 
+Only one JSON file is created for each object, eg. for reports it will contain Dynpro + CUA + texts + metadata.
+
 ### Content Type
 If a transport object needs multiple files which are not represented by transport objects, the content type is used to differentiate between the different file types.
 ```
-cl_oo_clif_source.clas.global.abap
+cl_oo_clif_source.clas.abap
 cl_oo_clif_source.clas.testclasses.abap
 ```
 
@@ -61,12 +63,12 @@ The `.json` file is referred to as property file and the ABAP file formats provi
 Here are some examples of file names and its corresponding content.
 | File Name | Content |
 | ---  | --- |
-| `cl_my_class.clas.global.abap` | Source code of global class `CL_MY_CLASS` |
-| `(nmspc)cl_my_class.clas.global.abap` | Source code of global class with namespace `/NMSPC/CL_MY_CLASS` |
+| `cl_my_class.clas.abap` | Source code of global class `CL_MY_CLASS` |
+| `(nmspc)cl_my_class.clas.abap` | Source code of global class with namespace `/NMSPC/CL_MY_CLASS` |
 | `cl_my_class.clas.testclasses.abap` | Source code of local test classes in `CL_MY_CLASS` |
 | `s_carrid.dtel.json` | Properties of data element `S_CARRID` |
 | [`z_aff_example_fugr.fugr.z_aff_example_func.func.abap`](/file-formats/fugr/examples/z_aff_example_fugr.fugr.z_aff_example_func.func.abap) | Source code of function module `Z_AFF_EXAMPLE_FUNC` |
-| `seo_class_editor.fugr.0152.dynp.json` | Dynpro 0152 of function group `SEO_CLASS_EDITOR` |
+| `seo_class_editor.fugr.json` | Metadata for function group `SEO_CLASS_EDITOR`, containing DynPros + CUA + titles + parameters + more |
 
 ## Formatting Conventions
 To enable interchangeability the files are characterized by
