@@ -64,10 +64,13 @@ Here are some examples of file names and its corresponding content.
 | File Name | Content |
 | ---  | --- |
 | `cl_my_class.clas.abap` | Source code of global class `CL_MY_CLASS` |
-| `foo.prog.abap` | Source code of global report `FOO` |
-| `if_bar.intf.abap` | Source code of global class `IF_BAR` |
+| `cl_my_class.clas.json` | Metadata for global class `CL_MY_CLASS` |
 | `(nmspc)cl_my_class.clas.abap` | Source code of global class with namespace `/NMSPC/CL_MY_CLASS` |
 | `cl_my_class.clas.testclasses.abap` | Source code of local test classes in `CL_MY_CLASS` |
+| `foo.prog.abap` | Source code of global report `FOO` |
+| `foo.prog.json` | Metadata global report `FOO` |
+| `if_bar.intf.abap` | Source code of global interface `IF_BAR` |
+| `if_bar.intf.json` | Metadata for global interface `IF_BAR` |
 | `s_carrid.dtel.json` | Properties of data element `S_CARRID` |
 | [`z_aff_example_fugr.fugr.z_aff_example_func.func.abap`](/file-formats/fugr/examples/z_aff_example_fugr.fugr.z_aff_example_func.func.abap) | Source code of function module `Z_AFF_EXAMPLE_FUNC` |
 | `seo_class_editor.fugr.json` | Metadata for function group `SEO_CLASS_EDITOR`, containing DynPros + CUA + titles + parameters + more |
