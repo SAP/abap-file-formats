@@ -124,6 +124,7 @@ INTERFACE zif_oo_aff_intf_v1 PUBLIC.
       "! <p class="shorttext">Method Descriptions</p>
       "! Method descriptions
       methods    TYPE ty_methods,
+      documentation TYPE zif_aff_types_v1=>ty_documentation,
     END OF ty_main.
 
 ENDINTERFACE.

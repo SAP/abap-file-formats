@@ -95,4 +95,10 @@ INTERFACE zif_aff_types_v1 PUBLIC.
       description           TYPE ty_description_60,
     END OF ty_header_only_description.
 
+  TYPES: BEGIN OF ty_documentation_line,
+           format TYPE c LENGTH 2,
+           line   TYPE c LENGTH 132,
+         END OF ty_documentation_line.
+  TYPES ty_documentation TYPE STANDARD TABLE OF ty_documentation_line WITH DEFAULT KEY.
+
 ENDINTERFACE.
