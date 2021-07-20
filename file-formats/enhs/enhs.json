@@ -19,7 +19,7 @@
           "title": "Description",
           "description": "Description of the ABAP object",
           "type": "string",
-          "maxLength": 60
+          "maxLength": 100
         },
         "originalLanguage": {
           "title": "Original Language",

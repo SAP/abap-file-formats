@@ -210,7 +210,7 @@ INTERFACE zif_seef_aff_enhs_v1
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header           TYPE zif_aff_types_v1=>ty_header_60,
+      header           TYPE zif_aff_types_v1=>ty_header_100,
       "! <p class="shorttext">Configuration</p>
       "! Configuration-specific fields
       "! $required
