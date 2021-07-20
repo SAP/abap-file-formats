@@ -139,7 +139,7 @@ INTERFACE zif_seef_aff_enhs_v1
 
   "! <p class="shorttext">Example Class</p>
   "! Example class
-  TYPES ty_example_class TYPE if_aff_types_v1=>ty_object_name_30.
+  TYPES ty_example_class TYPE zif_aff_types_v1=>ty_object_name_30.
 
   TYPES ty_example_classes TYPE STANDARD TABLE OF ty_example_class WITH DEFAULT KEY.
 
