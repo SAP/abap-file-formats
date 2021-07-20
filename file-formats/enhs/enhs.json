@@ -147,7 +147,7 @@
           },
           "fallbackClass": {
             "title": "Name of the Default/Fallback Class",
-            "description": "Name of the default/fallback Class",
+            "description": "Name of the default/fallback class",
             "type": "string",
             "maxLength": 30
           },

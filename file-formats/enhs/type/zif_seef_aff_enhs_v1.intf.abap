@@ -171,7 +171,7 @@ INTERFACE zif_seef_aff_enhs_v1
       "! Use fallback class in case no implementation is executed
       use_fallback_class TYPE abap_bool,
       "! <p class="shorttext">Name of the Default/Fallback Class</p>
-      "! Name of the default/fallback Class
+      "! Name of the default/fallback class
       fallback_class     TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Limited Filter Use</p>
       "! Limited filter use
