@@ -165,6 +165,7 @@ INTERFACE zif_seef_aff_enhs_v1
       instantiation      TYPE ty_instantiation,
       "! <p class="shorttext">Single- or Multiple Use BAdI</p>
       "! Indicator whether the BAdI definition is single- or multiple usable
+      "! $showAlways
       multiple_use       TYPE abap_bool,
       "! <p class="shorttext">SAP Internal</p>
       "! SAP internal
