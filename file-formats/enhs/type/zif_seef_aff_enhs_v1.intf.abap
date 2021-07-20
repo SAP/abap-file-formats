@@ -136,7 +136,12 @@ INTERFACE zif_seef_aff_enhs_v1
     END OF ty_badi_def_filter.
 
   TYPES ty_badi_def_filters TYPE STANDARD TABLE OF ty_badi_def_filter WITH DEFAULT KEY.
-  TYPES ty_example_classes TYPE STANDARD TABLE OF zif_aff_types_v1=>ty_object_name_30 WITH DEFAULT KEY.
+
+  "! <p class="shorttext">Example Class</p>
+  "! Example class
+  TYPES ty_example_class TYPE if_aff_types_v1=>ty_object_name_30.
+
+  TYPES ty_example_classes TYPE STANDARD TABLE OF ty_example_class WITH DEFAULT KEY.
 
 
   TYPES:

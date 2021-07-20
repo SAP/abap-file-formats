@@ -134,8 +134,8 @@
             "description": "Example classes of the BAdI definition",
             "type": "array",
             "items": {
-              "title": "Object Name",
-              "description": "Object name with max. length 30",
+              "title": "Example Class",
+              "description": "Example class",
               "type": "string",
               "maxLength": 30
             }
