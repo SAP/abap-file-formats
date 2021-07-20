@@ -67,8 +67,8 @@ INTERFACE zif_seef_aff_enhs_v1
   TYPES ty_value_check_object_type TYPE string.
 
   CONSTANTS:
+    "! <p class="shorttext">Type of the Value Check Object</p>
     "! Type of the value check object
-    "! $values {@link zif_seef_aff_enhs_v1.data:co_value_check_object_type}
     BEGIN OF co_value_check_object_type,
       "! <p class="shorttext">Domain</p>
       "! Domain
