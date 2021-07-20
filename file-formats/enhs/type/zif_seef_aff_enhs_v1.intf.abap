@@ -132,7 +132,7 @@ INTERFACE zif_seef_aff_enhs_v1
       value_check_ddic     TYPE zif_seef_aff_enhs_v1=>ty_value_check_ddic,
       "! <p class="shorttext">Value Check Class</p>
       "! Value check via class
-      value_check_class type zif_seef_aff_enhs_v1=>ty_value_check_class,
+      value_check_class    TYPE zif_seef_aff_enhs_v1=>ty_value_check_class,
     END OF ty_badi_def_filter.
 
   TYPES ty_badi_def_filters TYPE STANDARD TABLE OF ty_badi_def_filter WITH DEFAULT KEY.
