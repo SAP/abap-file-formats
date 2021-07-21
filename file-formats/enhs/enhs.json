@@ -140,11 +140,6 @@
               "maxLength": 30
             }
           },
-          "useFallbackClass": {
-            "title": "Use Fallback Class",
-            "description": "Use fallback class in case no implementation is executed",
-            "type": "boolean"
-          },
           "fallbackClass": {
             "title": "Name of the Default/Fallback Class",
             "description": "Name of the default/fallback class",

@@ -173,9 +173,6 @@ INTERFACE zif_seef_aff_enhs_v1
       "! <p class="shorttext">Example Classes of the BAdI Definition</p>
       "! Example classes of the BAdI definition
       example_classes    TYPE ty_example_classes,
-      "! <p class="shorttext">Use Fallback Class</p>
-      "! Use fallback class in case no implementation is executed
-      use_fallback_class TYPE abap_bool,
       "! <p class="shorttext">Name of the Default/Fallback Class</p>
       "! Name of the default/fallback class
       fallback_class     TYPE zif_aff_types_v1=>ty_object_name_30,
