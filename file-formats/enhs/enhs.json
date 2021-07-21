@@ -142,7 +142,7 @@
           },
           "fallbackClass": {
             "title": "Name of the Default/Fallback Class",
-            "description": "Name of the default/fallback class",
+            "description": "Name of the default/fallback class. The fallback class is executed if no BAdI implementation exists.",
             "type": "string",
             "maxLength": 30
           },
