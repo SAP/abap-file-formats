@@ -19,23 +19,7 @@ The design of the ABAP file formats covers the following principles:
 * The file content is **human-readable** and the structure is as close as possible to what users know from their IDE.
 * The files don't contain metadata like dates, usernames, last editor, system specific information, plus no obsolete or redundant information.
 
-
 Details on technical specification can be found [here](./doc/specification.md). 
-
-
-### List of Supported ABAP Objects
-
-| Type | Specification |
-| ---  | --- |
-| CHKC | [ATC Check Category](./file-formats/chkc/format.md)|
-| CHKO | [ATC Check](./file-formats/chko/format.md)|
-| CHKV | [ATC Check Variant](./file-formats/chkv/format.md)|
-| CLAS | [Class](./file-formats/clas/format.md) |
-| ENHO | [BAdI Enhancement Implementation](./file-formats/enho/format.md) |
-| ENHS | [BAdI Enhancement Spot](./file-formats/enhs/format.md) |
-| FUGR | [Function Group](./file-formats/fugr/format.md) |
-| INTF | [Interface](./file-formats/intf/format.md) |
-| NROB | [Number Range Object](./file-formats/nrob/format.md) |
 
 ### Structure of the Repository
 For each supported ABAP object type, there is a corresponding folder in [`file-formats`](./file-formats). The documentation as well as the JSON schema for every type are located in the root of the folder. The file representation of the underlying interface can be found in the subfolder `type`, the file representation of an exemplary object is contained in the subfolder `examples`. 
