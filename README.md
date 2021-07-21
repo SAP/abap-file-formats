@@ -14,6 +14,10 @@ ABAP repository objects are stored on development systems and not as regular tex
 The aim of the ABAP file formats is to provide a common and transparent definition of how to store ABAP repository objects in files.
 The file representation of ABAP repository objects facilitates the ongoing effort of applying and adopting existing developer tools and paradigms to ABAP.
 
+This endeavour is on the one hand a commitment of SAP to use these file formats in future whenever ABAP objects need to be written to files, 
+e.g., in [ADT](https://tools.hana.ondemand.com/#abap) and [gCTS](https://blogs.sap.com/2019/11/14/gcts-is-here/), 
+and on the other hand an offer to the ABAP community to adopt them also in [abapGit](https://abapgit.org/) and other tools.
+
 The design of the ABAP file formats covers the following principles:
 * The file content is **complete** and can be used for the sharing and distribution of ABAP repository objects.
 * The file content is **human-readable** and the structure is as close as possible to what users know from their IDE.
