@@ -11,7 +11,6 @@ insert_final_newline = true
 trim_trailing_whitespace = true
 
 
-# we want indentation of 4 spaces
 [*.json]
 charset = utf-8
 end_of_line = lf
