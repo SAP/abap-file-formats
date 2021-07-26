@@ -74,7 +74,7 @@ INTERFACE if_nr_aff_nrob_v1
       "! This value specifies the numbers in buffer. In case of parallel and main memory buffering, add a number for \u0027bufferedNumbers\u0027. It determines how many numbers are reserved in buffer for the intervals.Default number of buffers is 10.
       "! $required
       buffered_numbers TYPE n LENGTH 8,
-    END OF ty_configuration .
+    END OF ty_configuration.
 
   TYPES:
     "! <p class="shorttext">NROB Object Type</p>
