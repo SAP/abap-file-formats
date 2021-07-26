@@ -1,4 +1,4 @@
-INTERFACE if_nr_aff_nrob_v1
+INTERFACE zif_nr_aff_nrob_v1
   PUBLIC.
 
   TYPES:
@@ -47,7 +47,7 @@ INTERFACE if_nr_aff_nrob_v1
 
   "! <p class="shorttext">Buffering</p>
   "! Choose a buffer type for no buffering, for buffering via main memory or for parallel buffering.
-  "! $values {@link if_nr_aff_nrob_v1.data:co_buffering}
+  "! $values {@link zif_nr_aff_nrob_v1.data:co_buffering}
   TYPES ty_buffering TYPE c LENGTH 1.
 
   CONSTANTS:
