@@ -85,8 +85,7 @@
           "name": {
             "title": "Parameter Name",
             "description": "Name of a parameter",
-            "type": "string",
-            "maxLength": 30
+            "type": "string"
           },
           "description": {
             "title": "Parameter Description",
@@ -94,9 +93,9 @@
             "type": "string",
             "maxLength": 255
           },
-          "modifiable": {
-            "title": "Modifiable Flag",
-            "description": "The parameter is modifiable",
+          "hidden": {
+            "title": "Hidden Flag",
+            "description": "The parameter is hidden",
             "type": "boolean"
           }
         },
