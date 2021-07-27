@@ -12,7 +12,7 @@
       "technicalId": "1",
       "name": "ParameterName",
       "description": "Parameter description",
-      "modifiable": true
+      "hidden": true
     }
   ]
 }
