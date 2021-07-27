@@ -103,7 +103,7 @@ INTERFACE zif_nr_aff_nrob_v1
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header        TYPE if_aff_types_v1=>ty_header_60,
+      header        TYPE zif_aff_types_v1=>ty_header_60,
       "! <p class="shorttext">Interval</p>
       "! Interval
       "! $required
