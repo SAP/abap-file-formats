@@ -61,7 +61,7 @@
           "type": "string",
           "maxLength": 30
         },
-        "percentage": {
+        "percentWarning": {
           "title": "Percent Warning",
           "description": "Percentage of numbers remaining in a number range, upon reaching which in number assignment a warning is given. It must be between 0.1 and 99.9.\n\nExample: You have defined an interval from 1 to 1000. If you want to issue a warning at the number 900, enter 10 (%) here.",
           "type": "number",

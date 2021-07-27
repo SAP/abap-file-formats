@@ -7,7 +7,7 @@
   },
   "interval": {
     "numberLengthDomain": "NUM10",
-    "percentage": 10.0,
+    "percentWarning": 10.0,
     "subType": "",
     "untilYear": false,
     "rolling": true,

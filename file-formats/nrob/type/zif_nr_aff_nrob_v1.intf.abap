@@ -17,7 +17,7 @@ INTERFACE zif_nr_aff_nrob_v1
       "! a warning is given. It must be between 0.1 and 99.9.\n\nExample: You have defined an interval
       "!  from 1 to 1000. If you want to issue a warning at the number 900, enter 10 (%) here.
       "! $required
-      percentage           TYPE p LENGTH 3 DECIMALS 1,
+      percent_warning           TYPE p LENGTH 3 DECIMALS 1,
       "! <p class="shorttext">Sub Type</p>
       "! If you want to create subobjects for the elements of a field of the application table, specify
       "! the relevant data element for this table field. This data element must be active in the Data Dictionary
