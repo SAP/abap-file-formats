@@ -93,7 +93,7 @@
       "additionalProperties": false,
       "required": [
         "numberLengthDomain",
-        "percentage",
+        "percentWarning",
         "subType",
         "untilYear",
         "rolling",
