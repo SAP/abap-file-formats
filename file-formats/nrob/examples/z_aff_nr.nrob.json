@@ -7,7 +7,7 @@
   },
   "interval": {
     "numberLengthDomain": "NUM10",
-    "percentWarning": 10.0,
+    "percentage": 10.0,
     "subType": "",
     "untilYear": false,
     "rolling": true,
@@ -15,6 +15,6 @@
   },
   "configuration": {
     "buffering": "none",
-    "bufferedNumbers": 0
+    "bufferedNumbers": "0"
   }
 }
