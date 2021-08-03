@@ -1,5 +1,5 @@
 INTERFACE zif_nr_aff_nrob_v1
-  PUBLIC.
+  PUBLIC .
 
   TYPES:
     "! <p class="shorttext">Schema</p>
@@ -17,7 +17,10 @@ INTERFACE zif_nr_aff_nrob_v1
       "! a warning is given. It must be between 0.1 and 99.9.\n\nExample: You have defined an interval
       "!  from 1 to 1000. If you want to issue a warning at the number 900, enter 10 (%) here.
       "! $required
-      percent_warning           TYPE p LENGTH 3 DECIMALS 1,
+      "! $minimum: 0.1
+      "! $maximum: 99.9
+      "! $multipleOf: 0.1
+      percent_warning      TYPE p LENGTH 3 DECIMALS 1,
       "! <p class="shorttext">Sub Type</p>
       "! If you want to create subobjects for the elements of a field of the application table, specify
       "! the relevant data element for this table field. This data element must be active in the Data Dictionary
@@ -42,7 +45,7 @@ INTERFACE zif_nr_aff_nrob_v1
       "! If it is set to true determined numbers consist of the prefix (name of subobject) and the numbers.
       "! $required
       prefix               TYPE abap_bool,
-    END OF ty_interval.
+    END OF ty_interval .
 
 
   "! <p class="shorttext">Buffering</p>
@@ -83,14 +86,16 @@ INTERFACE zif_nr_aff_nrob_v1
       "! Choose a buffer type for no buffering, for buffering via main memory or for parallel buffering.
       "! Default is mainBuffer.
       "! $required
+      "! $default {@link zif_nr_aff_nrob_v1.data:co_buffering.main_buffer}
       buffering        TYPE ty_buffering,
       "! <p class="shorttext">Buffered Numbers</p>
       "! This value specifies the numbers in buffer. In case of parallel and main memory buffering, add a
       "! number for \u0027bufferedNumbers\u0027. It determines how many numbers are reserved in buffer for
       "!  the intervals.Default number of buffers is 10.
       "! $required
+      "! $default 10
       buffered_numbers TYPE n LENGTH 8,
-    END OF ty_configuration.
+    END OF ty_configuration .
 
   TYPES:
     "! <p class="shorttext">NROB Object Type</p>
