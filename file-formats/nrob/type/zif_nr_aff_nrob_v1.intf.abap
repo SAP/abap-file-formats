@@ -1,5 +1,5 @@
 INTERFACE zif_nr_aff_nrob_v1
-  PUBLIC .
+  PUBLIC.
 
   TYPES:
     "! <p class="shorttext">Schema</p>
