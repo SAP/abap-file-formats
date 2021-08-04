@@ -1,6 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "http://github.com/SAP/abap-file-formats/file-formats/enhs/enhs.json",
+  "$id": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/enhs/enhs.json",
+  "title": "ENHS Object Type",
+  "description": "Object type ENHS",
   "type": "object",
   "properties": {
     "$schema": {
@@ -10,23 +12,23 @@
     },
     "header": {
       "title": "Header",
+      "description": "Header",
       "type": "object",
       "properties": {
         "description": {
           "title": "Description",
-          "description": "Description of an BAdI Enhancement Spot",
+          "description": "Description of the ABAP object",
           "type": "string",
-          "maxLength": 255
+          "maxLength": 100
         },
-        "masterLanguage": {
-          "title": "Master Language",
-          "description": "Master language of the BAdI Enhancement Spot\nAll translatable text shall be maintained in this language",
+        "originalLanguage": {
+          "title": "Original Language",
+          "description": "Original language of the ABAP object",
           "type": "string",
-          "minLength": 2,
           "maxLength": 2
         },
         "abapLanguageVersion": {
-          "title": "Abap Language Version",
+          "title": "ABAP Language Version",
           "description": "ABAP language version",
           "type": "string",
           "enum": [
@@ -36,15 +38,15 @@
           ],
           "enumDescriptions": [
             "Standard",
-            "ABAP for key user tools",
-            "ABAP for Cloud Development"
+            "ABAP for key user extensibility",
+            "ABAP cloud development"
           ]
         }
       },
       "additionalProperties": false,
       "required": [
         "description",
-        "masterLanguage",
+        "originalLanguage",
         "abapLanguageVersion"
       ]
     },
@@ -66,7 +68,7 @@
             "badiDefinition"
           ],
           "enumDescriptions": [
-            "BAdI Definition"
+            "BAdI definition"
           ]
         }
       },
@@ -118,7 +120,7 @@
             ]
           },
           "multipleUse": {
-            "title": "Single- or multiple use BAdI",
+            "title": "Single- or Multiple Use BAdI",
             "description": "Indicator whether the BAdI definition is single- or multiple usable",
             "type": "boolean"
           },
@@ -138,19 +140,14 @@
               "maxLength": 30
             }
           },
-          "useFallbackClass": {
-            "title": "Use Fallback Class",
-            "description": "Use fallback class in case no implementation is executed",
-            "type": "boolean"
-          },
           "fallbackClass": {
             "title": "Name of the Default/Fallback Class",
-            "description": "Name of the default/fallback class",
+            "description": "Name of the default/fallback class. The fallback class is executed if no BAdI implementation exists.",
             "type": "string",
             "maxLength": 30
           },
           "filterLimitation": {
-            "title": "Limited Filter use",
+            "title": "Limited Filter Use",
             "description": "Limited filter use",
             "type": "boolean"
           },
@@ -158,7 +155,7 @@
             "title": "Documentation Id",
             "description": "Documentation Id",
             "type": "string",
-            "maxLength": 30
+            "maxLength": 60
           },
           "amdp": {
             "title": "Amdp BAdI",
@@ -171,18 +168,18 @@
             "type": "array",
             "items": {
               "title": "Filter",
-              "description": "Information about this Filter",
+              "description": "Information about this filter",
               "type": "object",
               "properties": {
                 "name": {
                   "title": "Name of the Filter",
-                  "description": "Name of the Filter",
+                  "description": "Name of the filter",
                   "type": "string",
                   "maxLength": 30
                 },
                 "description": {
                   "title": "Description of the Filter",
-                  "description": "Description of the Filter",
+                  "description": "Description of the filter",
                   "type": "string",
                   "maxLength": 255
                 },
@@ -191,15 +188,15 @@
                   "description": "Type of the filter",
                   "type": "string",
                   "enum": [
-                    "Integer",
-                    "Character",
-                    "String",
-                    "Numeric",
-                    "Packed"
+                    "integer",
+                    "characterLike",
+                    "string",
+                    "numeric",
+                    "packed"
                   ],
                   "enumDescriptions": [
                     "Integer",
-                    "Character",
+                    "Character-like",
                     "String",
                     "Numeric",
                     "Packed"
@@ -212,7 +209,7 @@
                 },
                 "valueCheckDdic": {
                   "title": "Value Check Ddic",
-                  "description": "Value check via Domain or Data Element",
+                  "description": "Value check via domain or data element",
                   "type": "object",
                   "properties": {
                     "type": {
@@ -220,18 +217,19 @@
                       "description": "Type of the value check object",
                       "type": "string",
                       "enum": [
-                        "Domain",
-                        "DataElement"
+                        "domain",
+                        "dataElement"
                       ],
                       "enumDescriptions": [
                         "Domain",
-                        "Data Element"
+                        "Data element"
                       ]
                     },
                     "objectName": {
                       "title": "Name of the Value Check Object",
                       "description": "Name of the value check object",
-                      "type": "string"
+                      "type": "string",
+                      "maxLength": 30
                     }
                   },
                   "additionalProperties": false,
@@ -249,17 +247,21 @@
                       "title": "Name of the Value Check Class",
                       "description": "Name of the value check class",
                       "type": "string",
-                      "maxLenght": 30
+                      "maxLength": 30
                     },
                     "length": {
                       "title": "Length of the Value Check",
                       "description": "Length of the value check",
-                      "type": "number"
+                      "type": "integer",
+                      "minimum": -2147483648,
+                      "maximum": 2147483647
                     },
                     "decimalPlaces": {
                       "title": "Decimal Places of the Value Check",
                       "description": "Decimal places of the value check",
-                      "type": "number"
+                      "type": "integer",
+                      "minimum": -2147483648,
+                      "maximum": 2147483647
                     }
                   },
                   "additionalProperties": false,
@@ -276,18 +278,6 @@
               ]
             }
           }
-        },
-        "if": {
-          "properties": {
-            "useFallbackClass": {
-              "const": "true"
-            }
-          }
-        },
-        "then": {
-          "required": [
-            "fallbackClass"
-          ]
         },
         "additionalProperties": false,
         "required": [

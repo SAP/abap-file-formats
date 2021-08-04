@@ -5,7 +5,6 @@
     "originalLanguage": "EN",
     "abapLanguageVersion": "standard"
   },
-  "category": "generalObjectType",
   "fixPointArithmetic": true,
   "types": [
     {
