@@ -262,7 +262,6 @@ With the specification of the component `header` and its used types in the inter
       original_language     TYPE sy-langu,
       "! <p class="shorttext">ABAP Language Version (source code object)</p>
       "! ABAP language version for source code objects
-      "! $required
       abap_language_version TYPE ty_abap_language_version_src,
     END OF ty_header_60_src.
 ```
@@ -317,8 +316,7 @@ this leads to the following generated JSON schema.
       "additionalProperties": false,
       "required": [
         "description",
-        "originalLanguage",
-        "abapLanguageVersion"
+        "originalLanguage"
       ]
     },
     "proxy": {
