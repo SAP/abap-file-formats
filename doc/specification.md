@@ -179,9 +179,9 @@ is added. Remark that also the `$required` annotation leads to such a behavior.
 ### Default Values
 To ensure that only components whose value is not equal to a specific default value are written to the schema, the annotation
 ```abap
-"! $default 
+"! $default
 ```
-followed by the specification of the default is used. To provide the default, there are two different possibilities.  
+followed by the specification of the default is used. To provide the default, there are two different possibilities.
 1. If the component has enum values, the default value is specified by a link to the corresponding component of the constant describing the enum.
 ```abap
 "! $default {@link source_name.data:constant_name.default_component}
@@ -192,7 +192,7 @@ followed by the specification of the default is used. To provide the default, th
 ```
 Remark that specifying a default value leads to the fact that initial values are written to the JSON schema, of course unless they are not equal to the selected default.
 
-The order of these comments is important: First, there is the comment for the title followed by that for the description, in case they are both provided. After the two, the remaining annotations are always located. Between them, the order is irrelevant. 
+The order of these comments is important: First, there is the comment for the title followed by that for the description, in case they are both provided. After the two, the remaining annotations are always located. Between them, the order is irrelevant.
 
 
 ## Type Specification Example
@@ -304,7 +304,7 @@ this leads to the following generated JSON schema.
             "ABAP for key user extensibility",
             "ABAP cloud development"
           ],
-          "default": "standard" 
+          "default": "standard"
         }
       },
       "additionalProperties": false,
