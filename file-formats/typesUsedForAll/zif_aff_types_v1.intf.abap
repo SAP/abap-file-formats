@@ -8,7 +8,8 @@ INTERFACE zif_aff_types_v1 PUBLIC.
 
   CONSTANTS:
     "! <p class="shorttext">ABAP Language Version (Source Code Objects)</p>
-    "! ABAP language version for source code objects like CLAS, INTF, FUGR or PROG. Other source code objects (f.ex. DDLS) and non-source code objects have to use
+    "! ABAP language version for source code objects like CLAS, INTF, FUGR or PROG.
+    "! Other source code objects (f.ex. DDLS) and non-source code objects have to use
     "! {@link zif_aff_types_v1.data:ty_abap_language_version }
     BEGIN OF co_abap_language_version_src,
       "! <p class="shorttext">Standard</p>
