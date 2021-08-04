@@ -115,9 +115,9 @@ Following changes to file formats are considered as incompatible:
 
 ## Type Specification
 
-Each JSON schema provided in this repository is automatically generated. For this purpose, an interface corresponds
-to each ABAP object type in which the necessary components of the type are described in the type `ty_main`.
-One component of the type is the field `schema` which is translated to `$schema` in the JSON schema. Its value in the `.json` files is the link given in the field `$id` of the JSON schema.
+Each JSON schema provided in this repository is automatically generated. For this purpose, an interface corresponds to each ABAP object type in which the necessary components of the type are described in the type `ty_main`. The name of the interface follows the pattern `zif_aff_<object_type>_v<version_number>`.
+
+One mandatory component of the type is the field `schema` which is translated to `$schema` in the JSON schema. Its value in the `.json` files is the link given in the field `$id` of the JSON schema. Furthermore, a `header` has to be supplied. The interface [`zif_aff_types_v1`](/file-formats/typesUsedForAll/zif_aff_types_v1.intf.abap) offers different headers for reuse, but also other often repeated types.
 
 The ABAP types are self-contained, so it is possible to work on them in any system (e.g., in an SAP BTP, ABAP environment system).
 
@@ -142,8 +142,25 @@ To pass enum values to a JSON schema, a type and a constant are specified. The n
 
 The type specifies the underlying data type and links to the constant via the following annotation.
 ```abap
-"! $values {@link source_name.data:category_name}
+"! $values {@link source_name.data:constant_name}
 ```
+### Extreme Values
+For numerical types, (exclusive) minimum and (exclusive) maximum values can be specified via the annoational keywords
+```abap
+"! $minimum value
+"! $exclusiveMinimum value
+"! $maximum value
+"! $exclusiveMaximum value
+```
+followed by a space and the desired value.
+
+### Length Specification
+Choosing an ABAP data type with length specification leads to the fact that the field `maxLength` is written. In order to do this also for ABAP types whose length is not already set or to specify a minimum length, the annoations
+```abap
+"! $maxLength value
+"! $minLength value
+```
+followed by a space and the desired value are used.
 
 ### Required Fields
 If a field is to be declared as "required" in the JSON schema, the annotation
@@ -159,7 +176,24 @@ Normally, if an ABAP object is serialized, only the components of the correspond
 ```
 is added. Remark that also the `$required` annotation leads to such a behavior.
 
-The order of these comments is important: First, there is the comment for the title followed by that for the description, in case they are both provided. After the two, the remaining annotations are always located. Between them, the order is irrelevant.
+### Default Values
+To ensure that only components whose value is not equal to a specific default value are written to schema, the annotation
+```abap
+"! $default 
+```
+followed by the specification of the default is used. To provide the default, there are two different possibilities.  
+1. If the component has enum values, the default value is specified by a link to the corresponding component of the constant describing the enum.
+```abap
+"! $default {@link source_name.data:constant_name.default_component}
+```
+2. In the oher cases, the default value is given surrounded by single quotation marks.
+```abap
+"! $default 'value'
+```
+Remark that specifying a default value leads to the fact that initial values are written to the JSON schema, of course unless they are not equal to the selected default.
+
+The order of these comments is important: First, there is the comment for the title followed by that for the description, in case they are both provided. After the two, the remaining annotations are always located. Between them, the order is irrelevant. 
+
 
 ## Type Specification Example
 Here is the shortened type used to generate the JSON schema for interfaces. It can be found in the interface [`zif_oo_aff_intf_v1`](/file-formats/intf/type/zif_oo_aff_intf_v1.intf.abap).
@@ -172,28 +206,58 @@ Here is the shortened type used to generate the JSON schema for interfaces. It c
       "! Format version
       "! $required
       schema     TYPE string,
-      "! <p class="shorttext">Interface Category</p>
-      "! Interface category
-      category   TYPE ty_category,
+      "! <p class="shorttext">Header</p>
+      "! Header
+      "! $required
+      header     TYPE zif_aff_types_v1=>ty_header_60_src,
       "! <p class="shorttext">Proxy Interface</p>
       "! Interface is a proxy interface
       proxy      TYPE abap_bool.
     END OF ty_main.
 ```
-With the also shortened specification of the enum values for the component `category`
+With the specification of the component `header` and its used types in the interface [`zif_aff_types_v1`](/file-formats/typesUsedForAll/zif_aff_types_v1.intf.abap)
 ```abap
-  "! $values {@link zif_oo_aff_intf_v1.data:co_category}
-  TYPES ty_category TYPE n LENGTH 2.
+  "! $values {@link if_aff_types_v1.data:co_abap_language_version_src}
+  "! $default {@link if_aff_types_v1.data:co_abap_language_version_src.standard}
+  TYPES ty_abap_language_version_src TYPE c LENGTH 1.
 
   CONSTANTS:
-    BEGIN OF co_category,
-      "! <p class="shorttext">General</p>
-      "! General interface
-      general                      TYPE ty_category VALUE '00',
-      "! <p class="shorttext">Classic BAdI</p>
-      "! Interface definition of a classic BAdI
-      classic_badi                 TYPE ty_category VALUE '01',
-    END OF co_category.
+    "! <p class="shorttext">ABAP Language Version (Source Code Objects)</p>
+    "! ABAP language version for source code objects. For non-source-code objects use
+    "! {@link if_aff_types_v1.data:ty_abap_language_version }
+    BEGIN OF co_abap_language_version_src,
+      "! <p class="shorttext">Standard</p>
+      "! Standard
+      standard          TYPE ty_abap_language_version_src VALUE 'X',
+      "! <p class="shorttext">ABAP for Key Users</p>
+      "! ABAP for key user extensibility
+      key_user          TYPE ty_abap_language_version_src VALUE '2',
+      "! <p class="shorttext">ABAP Cloud Development</p>
+      "! ABAP cloud development
+      cloud_development TYPE ty_abap_language_version_src VALUE '5',
+    END OF co_abap_language_version_src.
+
+  "! <p class="shorttext">Description</p>
+  "! Description with 60 characters
+  TYPES ty_description_60 TYPE c LENGTH 60.
+
+  TYPES:
+    "! <p class="shorttext">Header for Source Code Objects</p>
+    "! The header for an ABAP main object (with source code) with a description of 60 characters
+    BEGIN OF ty_header_60_src,
+      "! <p class="shorttext">Description</p>
+      "! Description of the ABAP object
+      "! $required
+      description           TYPE ty_description_60,
+      "! <p class="shorttext">Original Language</p>
+      "! Original language of the ABAP object
+      "! $required
+      original_language     TYPE sy-langu,
+      "! <p class="shorttext">ABAP Language Version (source code object)</p>
+      "! ABAP language version for source code objects
+      "! $required
+      abap_language_version TYPE ty_abap_language_version_src,
+    END OF ty_header_60_src.
 ```
 this leads to the following generated JSON schema.
 ```json
@@ -209,17 +273,45 @@ this leads to the following generated JSON schema.
       "description": "Format version",
       "type": "string"
     },
-    "category": {
-      "title": "Interface Category",
-      "description": "Interface category",
-      "type": "string",
-      "enum": [
-        "general",
-        "classicBadi"
-      ],
-      "enumDescriptions": [
-        "General interface",
-        "Interface definition of a classic BAdI"
+    "header": {
+      "title": "Header",
+      "description": "Header",
+      "type": "object",
+      "properties": {
+        "description": {
+          "title": "Description",
+          "description": "Description of the ABAP object",
+          "type": "string",
+          "maxLength": 60
+        },
+        "originalLanguage": {
+          "title": "Original Language",
+          "description": "Original language of the ABAP object",
+          "type": "string",
+          "maxLength": 2
+        },
+        "abapLanguageVersion": {
+          "title": "ABAP Language Version (source code object)",
+          "description": "ABAP language version for source code objects",
+          "type": "string",
+          "enum": [
+            "standard",
+            "keyUser",
+            "cloudDevelopment"
+          ],
+          "enumDescriptions": [
+            "Standard",
+            "ABAP for key user extensibility",
+            "ABAP cloud development"
+          ],
+          "default": "standard" 
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "description",
+        "originalLanguage",
+        "abapLanguageVersion"
       ]
     },
     "proxy": {
@@ -230,7 +322,8 @@ this leads to the following generated JSON schema.
   },
   "additionalProperties": false,
   "required": [
-    "$schema"
+    "$schema",
+    "header"
   ]
 }
 ```
