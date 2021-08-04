@@ -177,7 +177,7 @@ Normally, if an ABAP object is serialized, only the components of the correspond
 is added. Remark that also the `$required` annotation leads to such a behavior.
 
 ### Default Values
-To ensure that only components whose value is not equal to a specific default value are written to schema, the annotation
+To ensure that only components whose value is not equal to a specific default value are written to the schema, the annotation
 ```abap
 "! $default 
 ```
@@ -186,7 +186,7 @@ followed by the specification of the default is used. To provide the default, th
 ```abap
 "! $default {@link source_name.data:constant_name.default_component}
 ```
-2. In the oher cases, the default value is given surrounded by single quotation marks.
+2. In the other cases, the default value is given surrounded by single quotation marks.
 ```abap
 "! $default 'value'
 ```
