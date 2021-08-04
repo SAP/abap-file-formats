@@ -162,6 +162,13 @@ Choosing an ABAP data type with length specification leads to the fact that the 
 ```
 followed by a space and the desired value are used.
 
+### Multiple Of
+The annotation
+```abap
+"! $multipleOf value
+```
+ensures that values of a component described by this ABAP Doc comment can only be a multiple of the provided value.
+
 ### Required Fields
 If a field is to be declared as "required" in the JSON schema, the annotation
 ```abap
