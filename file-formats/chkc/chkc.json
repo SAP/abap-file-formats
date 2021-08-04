@@ -40,14 +40,14 @@
             "Standard",
             "ABAP for key user extensibility",
             "ABAP cloud development"
-          ]
+          ],
+          "default": "standard"
         }
       },
       "additionalProperties": false,
       "required": [
         "description",
-        "originalLanguage",
-        "abapLanguageVersion"
+        "originalLanguage"
       ]
     },
     "parentCategory": {

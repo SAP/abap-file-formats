@@ -2,8 +2,7 @@
   "$schema": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/nrob/nrob.json",
   "header": {
     "description": "Aff example object for type NROB",
-    "originalLanguage": "EN",
-    "abapLanguageVersion": "standard"
+    "originalLanguage": "EN"
   },
   "interval": {
     "numberLengthDomain": "NUM10",

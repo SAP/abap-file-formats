@@ -2,8 +2,7 @@
   "$schema": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/clas/clas.json",
   "header": {
     "description": "Example class for ABAP file formats",
-    "originalLanguage": "EN",
-    "abapLanguageVersion": "standard"
+    "originalLanguage": "EN"
   },
   "fixPointArithmetic": true,
   "types": [

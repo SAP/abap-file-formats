@@ -3,11 +3,12 @@ INTERFACE zif_aff_types_v1 PUBLIC.
   "! <p class="shorttext">ABAP Language Version (Source Code Objects)</p>
   "! ABAP language version for source code objects
   "! $values {@link zif_aff_types_v1.data:co_abap_language_version_src}
+  "! $default {@link zif_aff_types_v1.data:co_abap_language_version_src.standard}
   TYPES ty_abap_language_version_src TYPE c LENGTH 1.
 
   CONSTANTS:
     "! <p class="shorttext">ABAP Language Version (Source Code Objects)</p>
-    "! ABAP language version for source code objects. For non-source-code objects use
+    "! ABAP language version for source code objects like CLAS, INTF, FUGR or PROG. Other source code objects (f.ex. DDLS) and non-source code objects have to use
     "! {@link zif_aff_types_v1.data:ty_abap_language_version }
     BEGIN OF co_abap_language_version_src,
       "! <p class="shorttext">Standard</p>
@@ -24,6 +25,7 @@ INTERFACE zif_aff_types_v1 PUBLIC.
   "! <p class="shorttext">ABAP Language Version</p>
   "! ABAP language version
   "! $values {@link zif_aff_types_v1.data:co_abap_language_version}
+  "! $default {@link zif_aff_types_v1.data:co_abap_language_version.standard}
   TYPES ty_abap_language_version TYPE c LENGTH 1.
 
   CONSTANTS:
@@ -44,7 +46,6 @@ INTERFACE zif_aff_types_v1 PUBLIC.
   "! <p class="shorttext">Description</p>
   "! Description with 60 characters
   TYPES ty_description_60 TYPE c LENGTH 60.
-
   "! <p class="shorttext">Description</p>
   "! Description with 100 characters
   TYPES ty_description_100 TYPE c LENGTH 100.
@@ -67,7 +68,6 @@ INTERFACE zif_aff_types_v1 PUBLIC.
       original_language     TYPE sy-langu,
       "! <p class="shorttext">ABAP Language Version (source code object)</p>
       "! ABAP language version for source code objects
-      "! $required
       abap_language_version TYPE ty_abap_language_version_src,
     END OF ty_header_60_src.
 
@@ -85,7 +85,6 @@ INTERFACE zif_aff_types_v1 PUBLIC.
       original_language     TYPE sy-langu,
       "! <p class="shorttext">ABAP Language Version</p>
       "! ABAP language version
-      "! $required
       abap_language_version TYPE ty_abap_language_version,
     END OF ty_header_60.
 
@@ -103,7 +102,6 @@ INTERFACE zif_aff_types_v1 PUBLIC.
       original_language     TYPE sy-langu,
       "! <p class="shorttext">ABAP Language Version</p>
       "! ABAP language version
-      "! $required
       abap_language_version TYPE ty_abap_language_version,
     END OF ty_header_100.
 
