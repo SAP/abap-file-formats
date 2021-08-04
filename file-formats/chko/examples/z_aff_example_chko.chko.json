@@ -2,8 +2,7 @@
   "$schema": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/chko/chko.json",
   "header": {
     "description": "Example CHKO for ABAP file formats",
-    "originalLanguage": "EN",
-    "abapLanguageVersion": "standard"
+    "originalLanguage": "EN"
   },
   "category": "Z_AFF_EXAMPLE_CHKC",
   "implementingClass": "ZCL_CI_TEST_AFF_EXAMPLE_CHECK",
