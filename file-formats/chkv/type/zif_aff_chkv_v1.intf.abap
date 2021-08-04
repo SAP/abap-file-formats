@@ -1,9 +1,9 @@
-INTERFACE zif_atc_aff_chkv_v1
+INTERFACE zif_aff_chkv_v1
   PUBLIC.
 
   "! <p class="shorttext">Option</p>
   "! Option
-  "! $values {@link zif_atc_aff_chkv_v1.data:co_option}
+  "! $values {@link zif_aff_chkv_v1.data:co_option}
   TYPES ty_option TYPE c LENGTH 2.
 
   CONSTANTS:
@@ -38,7 +38,7 @@ INTERFACE zif_atc_aff_chkv_v1
 
   "! <p class="shorttext">Sign</p>
   "! Sign
-  "! $values {@link zif_atc_aff_chkv_v1.data:co_sign}
+  "! $values {@link zif_aff_chkv_v1.data:co_sign}
   TYPES ty_sign TYPE c LENGTH 1.
 
   CONSTANTS:

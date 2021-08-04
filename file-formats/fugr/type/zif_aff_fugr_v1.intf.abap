@@ -1,9 +1,9 @@
-INTERFACE zif_fb_aff_fugr_v1
+INTERFACE zif_aff_fugr_v1
   PUBLIC.
 
   "! <p class="shorttext">Status</p>
   "! status
-  "! $values {@link zif_fb_aff_fugr.data:co_status}
+  "! $values {@link zif_aff_fugr.data:co_status}
   TYPES ty_status TYPE c LENGTH 1.
 
   CONSTANTS:
