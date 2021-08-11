@@ -46,13 +46,13 @@ cl_oo_clif_source.clas.texts.de.properties
 cl_oo_clif_source.clas.texts.fr.properties
 ```
 For property files, no language is added, even if they contain translatable texts.
-These files are stored in the master language of the object and the master language is specified in the property file itself.
+These files are stored in the original language of the object and the original language is specified in the property file itself.
 
 ## File Extensions
 
 ABAP file formats define three file types:
 * **`.abap`** stores ABAP source code as plain text
-* **`.json`** stores content of form-based editors or properties of ABAP objects, such as masterLanguage, abapLanguageVersion and others
+* **`.json`** stores content of form-based editors or properties of ABAP objects, such as originalLanguage, abapLanguageVersion and others
 * **`.properties`** stores translation relevant text elements as plain text
 
 The `.json` file is referred to as the property file. The ABAP file formats provide JSON schemas for its annotation and validation.
