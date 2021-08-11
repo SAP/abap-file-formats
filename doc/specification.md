@@ -1,6 +1,6 @@
 # Technical Specification
 
-Table of  content
+Table of Contents
 * [File Names](#File-Names)
 * [File Extensions](#File-Extensions)
 * [File Name Examples](#File-Name-Examples)
@@ -11,7 +11,7 @@ Table of  content
 
 ## File Names
 
-The ABAP file formats specifies file content and file names for ABAP repository objects or simply ABAP objects.
+The ABAP file formats specify file content and file names for ABAP repository objects or simply ABAP objects.
 The mapping of ABAP objects to file names follows the pattern
 ```
 <object_name>.<object_type>.
@@ -19,11 +19,11 @@ The mapping of ABAP objects to file names follows the pattern
   [<content_type>.<language>.]
 <file_extension>
 ```
-with mandatory object_name, object_type and file_extension.
+with the mandatory elements object_name, object_type and file_extension.
 Namespaces are converted into brackets, for instance `/NMSPC/CL_OBJECT` becomes `(nmspc)cl_object`.
 
 ### Object Name and Type
-The object name and type represents the ABAP object. It is basically the (R3TR) object name and type stored in the ABAP object directory (aka TADIR).
+The object name and type represent the ABAP object. Basically, the object name (R3TR) and type are stored in the ABAP object directory (aka TADIR).
 
 ### Sub Object Name and Sub Object Type
 
@@ -39,26 +39,26 @@ cl_oo_clif_source.clas.testclasses.abap
 ```
 
 ### Language
-Files with language specific content (such as translatable-texts) have also an identifier for the language in the filename to distinguish between the different translations.
+Files with language specific content (such as translatable-texts) also have an identifier for the language in the filename to distinguish between the different translations.
 ```
 cl_oo_clif_source.clas.texts.en.properties
 cl_oo_clif_source.clas.texts.de.properties
 cl_oo_clif_source.clas.texts.fr.properties
 ```
-For property files no language is added, even if they contain translatable texts.
+For property files, no language is added, even if they contain translatable texts.
 These files are stored in the master language of the object and the master language is specified in the property file itself.
 
 ## File Extensions
 
 ABAP file formats define three file types:
 * **`.abap`** stores ABAP source code as plain text
-* **`.json`** stores content of form-based editors or properties of ABAP object, such as masterLanguage, abapLanguageVersion and others
+* **`.json`** stores content of form-based editors or properties of ABAP objects, such as masterLanguage, abapLanguageVersion and others
 * **`.properties`** stores translation relevant text elements as plain text
 
-The `.json` file is referred to as property file and the ABAP file formats provide JSON schemas for its annotation and validation.
+The `.json` file is referred to as the property file. The ABAP file formats provide JSON schemas for its annotation and validation.
 
 ## File Name Examples
-Here are some examples of file names and its corresponding content.
+Here are some examples of file names and their corresponding content:
 | File Name | Content |
 | ---  | --- |
 | `cl_my_class.clas.global.abap` | Source code of global class `CL_MY_CLASS` |
@@ -69,7 +69,7 @@ Here are some examples of file names and its corresponding content.
 | `seo_class_editor.fugr.0152.dynp.json` | Dynpro 0152 of function group `SEO_CLASS_EDITOR` |
 
 ## Formatting Conventions
-To enable interchangeability the files are characterized by
+To enable interchangeability, the files are characterized by
 * UTF-8 codepage
 * No [byte order mark](https://en.wikipedia.org/wiki/Byte_order_mark)
 * End-of-line (EOL) character `\n`
@@ -88,7 +88,7 @@ As of today, the format version is indicated by the `$schema` attribute. This ap
 
 For compatible changes to the file format, the format is just updated. The indicator whether the format has to be changed should not be updated.
 
-Following changes to file formats are considered as compatible :
+Following changes to file formats are considered as compatible:
 
 - Values for a field (enum) are added (remark: this might lead to syntax errors in ABAP systems which don't support this value)
 - Descriptions or titles are changed
@@ -98,7 +98,7 @@ Following changes to file formats are considered as compatible :
 
 If a file format is changed incompatibly, a new file format with a new version has to be created. The old file format is kept. It can be used for old/existing versions of files.
 
-Following changes to file formats are considered as incompatible:
+The following changes to file formats are considered as incompatible:
 
 - Content type of the file is changed (e.g., from xml to json)
 - Mandatory fields are added
@@ -115,7 +115,7 @@ Following changes to file formats are considered as incompatible:
 
 ## Type Specification
 
-Each JSON schema provided in this repository is automatically generated. For this purpose, an interface corresponds to each ABAP object type in which the necessary components of the type are described in the type `ty_main`. The name of the interface follows the pattern `zif_aff_<object_type>_v<version_number>`. `<object_type>` can be either the (R3TR) object type or the (LIMU) sub object type because R3TR and LIMU object types share the same namespace. `<version_number>` is an increasing integer which starts with `1`.
+Each JSON schema provided in this repository is automatically generated. For this purpose, an interface corresponds to each ABAP object type in which the necessary components of the type are described in the type `ty_main`. The name of the interface follows the pattern `zif_aff_<object_type>_v<version_number>`. `<object_type>` can be either the (R3TR) object type or the (LIMU) sub object type, since R3TR and LIMU object types share the same namespace. `<version_number>` is an increasing integer which starts with `1`.
 
 One mandatory component of the type is the field `schema` which is translated to `$schema` in the JSON schema. Its value in the `.json` files is the link given in the field `$id` of the JSON schema. Furthermore, a `header` has to be supplied. The interface [`zif_aff_types_v1`](/file-formats/typesUsedForAll/zif_aff_types_v1.intf.abap) offers different headers for reuse, but also other often repeated types.
 
@@ -135,17 +135,17 @@ An ABAP Doc comment without annotations is passed as description to the JSON sch
 ```abap
 "! This is the description
 ```
-If no description is given, either the title if it is provided or the component name transformed to camel case is shown in the JSON schema.
+If no description is given, either the title, if provided, or the component name transformed to camel case is shown in the JSON schema.
 
 ### Enum Values
-To pass enum values to a JSON schema, a type and a constant are specified. The names of the components of the constant are written as external (JSON) values to the JSON schema after being transformed to camel case. The corresponding values of the components represent the internal (ABAP) values. Descriptions of the enum values are passed to the schema in the same way as above.
+To pass enum values to a JSON schema, a type and a constant are specified. The names of the components of the constant are written as external (JSON) values to the JSON schema after being transformed to camel case. The corresponding values of the components represent the internal (ABAP) values. Descriptions of the enum values are passed to the schema in the same way as described above.
 
-The type specifies the underlying data type and links to the constant via the following annotation.
+The type specifies the underlying data type and links to the constant via the following annotation:
 ```abap
 "! $values {@link source_name.data:constant_name}
 ```
 ### Extreme Values
-For numerical types, (exclusive) minimum and (exclusive) maximum values can be specified via the annoational keywords
+For numerical types, (exclusive) minimum and (exclusive) maximum values can be specified via the annotational keywords
 ```abap
 "! $minimum value
 "! $exclusiveMinimum value
@@ -155,7 +155,7 @@ For numerical types, (exclusive) minimum and (exclusive) maximum values can be s
 followed by a space and the desired value.
 
 ### Length Specification
-Choosing an ABAP data type with length specification leads to the fact that the field `maxLength` is written. In order to do this also for ABAP types whose length is not already set or to specify a minimum length, the annoations
+Choosing an ABAP data type with length specification results in the field `maxLength` being written. In order to do this including ABAP types whose length is not already set or to specify a minimum length, the annotations
 ```abap
 "! $maxLength value
 "! $minLength value
@@ -181,25 +181,25 @@ Normally, if an ABAP object is serialized, only the components of the correspond
 ```abap
 "! $showAlways
 ```
-is added. Remark that also the `$required` annotation leads to such a behavior.
+is added. Note that also the `$required` annotation leads to such a behavior.
 
 ### Default Values
 To ensure that only components whose value is not equal to a specific default value are written to the schema, the annotation
 ```abap
 "! $default
 ```
-followed by the specification of the default is used. To provide the default, there are two different possibilities.
+ is used, followed by the specification of the default. To provide the default, there are two different possibilities:
 1. If the component has enum values, the default value is specified by a link to the corresponding component of the constant describing the enum.
 ```abap
 "! $default {@link source_name.data:constant_name.default_component}
 ```
-2. In the other cases, the default value is given surrounded by single quotation marks.
+2. In all other cases, the default value is given, surrounded by single quotation marks.
 ```abap
 "! $default 'value'
 ```
-Remark that specifying a default value leads to the fact that initial values are written to the JSON schema, of course unless they are not equal to the selected default.
+Note that if you specify a default value, the initial values are written to the JSON schema, unless they are not equal to the selected default.
 
-The order of these comments is important: First, there is the comment for the title followed by that for the description, in case they are both provided. After the two, the remaining annotations are always located. Between them, the order is irrelevant.
+The order of these comments is important: First, there is the comment for the title followed by the one for the description, in case they are both provided. After these two, the remaining annotations are always located. Between them, the order is irrelevant.
 
 
 ## Type Specification Example
@@ -265,7 +265,7 @@ With the specification of the component `header` and its used types in the inter
       abap_language_version TYPE ty_abap_language_version_src,
     END OF ty_header_60_src.
 ```
-this leads to the following generated JSON schema.
+This leads to the following generated JSON schema:
 ```json
  {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
@@ -333,6 +333,6 @@ this leads to the following generated JSON schema.
 }
 ```
 ---
-**Note**: Currently, ABAP file formats are not kept stable, yet. They might still change incompatible without creating a new file format version.
+**Note**: Currently, ABAP file formats are not kept stable, yet. They might still change incompatibly without creating a new file format version.
 
 ---
