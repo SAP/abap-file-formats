@@ -1,4 +1,4 @@
-INTERFACE zif_fb_aff_func_v1
+INTERFACE zif_aff_func_v1
   PUBLIC.
 
   TYPES:
@@ -23,7 +23,7 @@ INTERFACE zif_fb_aff_func_v1
 
   "! <p class="shorttext">Processing Type</p>
   "! Processing type
-  "! $values {@link zif_fb_aff_func_v1.data:co_processing_type}
+  "! $values {@link zif_aff_func_v1.data:co_processing_type}
   TYPES ty_processing_type TYPE c LENGTH 1.
 
   CONSTANTS:
@@ -44,7 +44,7 @@ INTERFACE zif_fb_aff_func_v1
 
   "! <p class="shorttext">RFC Scope</p>
   "! Indicates the scope of function module calls
-  "! $values {@link zif_fb_aff_func_v1.data:co_rfc_scope}
+  "! $values {@link zif_aff_func_v1.data:co_rfc_scope}
   TYPES ty_rfc_scope TYPE c LENGTH 1.
 
   CONSTANTS:
@@ -67,7 +67,7 @@ INTERFACE zif_fb_aff_func_v1
 
   "! <p class="shorttext">RFC Version</p>
   "! Indicates the permitted serializations for the function module
-  "! $values {@link zif_fb_aff_func_v1.data:co_rfc_version}
+  "! $values {@link zif_aff_func_v1.data:co_rfc_version}
   TYPES ty_rfc_version TYPE c LENGTH 10.
 
   CONSTANTS:
@@ -116,7 +116,7 @@ INTERFACE zif_fb_aff_func_v1
 
   "! <p class="shorttext">Update Task Kind</p>
   "! Update task kind
-  "! $values {@link zif_fb_aff_func_v1.data:co_update_task_kind}
+  "! $values {@link zif_aff_func_v1.data:co_update_task_kind}
   TYPES ty_update_task_kind TYPE c LENGTH 1.
 
   CONSTANTS:
@@ -142,7 +142,7 @@ INTERFACE zif_fb_aff_func_v1
 
   "! <p class="shorttext">Release State</p>
   "! Release state
-  "! $values {@link zif_fb_aff_func_v1.data:co_release_state}
+  "! $values {@link zif_aff_func_v1.data:co_release_state}
   TYPES ty_release_state TYPE c LENGTH 1.
 
   CONSTANTS:
