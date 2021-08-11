@@ -203,7 +203,7 @@ The order of these comments is important: First, there is the comment for the ti
 
 
 ## Type Specification Example
-Here is the shortened type used to generate the JSON schema for interfaces. It can be found in the interface [`zif_oo_aff_intf_v1`](/file-formats/intf/type/zif_oo_aff_intf_v1.intf.abap).
+Here is the shortened type used to generate the JSON schema for interfaces. It can be found in the interface [`zif_aff_intf_v1`](/file-formats/intf/type/zif_aff_intf_v1.intf.abap).
 ```abap
   TYPES:
     "! <p class="shorttext">Interface Properties</p>
@@ -224,14 +224,14 @@ Here is the shortened type used to generate the JSON schema for interfaces. It c
 ```
 With the specification of the component `header` and its used types in the interface [`zif_aff_types_v1`](/file-formats/typesUsedForAll/zif_aff_types_v1.intf.abap)
 ```abap
-  "! $values {@link if_aff_types_v1.data:co_abap_language_version_src}
-  "! $default {@link if_aff_types_v1.data:co_abap_language_version_src.standard}
+  "! $values {@link zif_aff_types_v1.data:co_abap_language_version_src}
+  "! $default {@link zif_aff_types_v1.data:co_abap_language_version_src.standard}
   TYPES ty_abap_language_version_src TYPE c LENGTH 1.
 
   CONSTANTS:
     "! <p class="shorttext">ABAP Language Version (Source Code Objects)</p>
     "! ABAP language version for source code objects. For non-source-code objects use
-    "! {@link if_aff_types_v1.data:ty_abap_language_version }
+    "! {@link zif_aff_types_v1.data:ty_abap_language_version }
     BEGIN OF co_abap_language_version_src,
       "! <p class="shorttext">Standard</p>
       "! Standard

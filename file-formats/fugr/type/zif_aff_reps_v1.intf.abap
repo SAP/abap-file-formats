@@ -1,8 +1,8 @@
-INTERFACE zif_fb_aff_reps_v1
+INTERFACE zif_aff_reps_v1
   PUBLIC.
   "! <p class="shorttext">Include Type</p>
   "! Include type
-  "! $values {@link zif_fb_aff_reps_v1.data:co_include_type}
+  "! $values {@link zif_aff_reps_v1.data:co_include_type}
   TYPES ty_include_type TYPE c LENGTH 1.
 
   CONSTANTS:

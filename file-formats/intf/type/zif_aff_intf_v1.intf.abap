@@ -1,8 +1,8 @@
-INTERFACE zif_oo_aff_intf_v1 PUBLIC.
+INTERFACE zif_aff_intf_v1 PUBLIC.
 
   "! <p class="shorttext">Interface Category</p>
   "! Interface category
-  "! $values {@link zif_oo_aff_intf_v1.data:co_category}
+  "! $values {@link zif_aff_intf_v1.data:co_category}
   TYPES ty_category TYPE n LENGTH 2.
 
   CONSTANTS:

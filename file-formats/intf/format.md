@@ -2,7 +2,7 @@
 
 The file with the ending `.abap` contains plain ABAP source code.
 The JSON schema for the interface properties file is provided [here](./intf.json).
-The ABAP type for the interface properties is provided [here](./zif_aff_intf_v1.intf.abap).
+The ABAP type for the interface properties is provided [here](./type/zif_aff_intf_v1.intf.abap).
 
 Example files for an interface `zif_aff_example` are provided in the following table.
 File | Content
