@@ -27,7 +27,7 @@ The object name and type represents the ABAP object. It is basically the (R3TR) 
 
 ### Sub Object Name and Sub Object Type
 
-Some object types support sub objects (like function modules in a function group). For sub objects, the main object name and type must be part of the file name.
+Some object types support sub objects (LIMU object types) like function modules in a function group. For sub objects, the main object name and type must be part of the file name.
 
 E.g., for function module FUNCTION_EXISTS in function group SUNI, the file name would be `suni.fugr.function_exists.func.abap`.
 
@@ -115,7 +115,7 @@ Following changes to file formats are considered as incompatible:
 
 ## Type Specification
 
-Each JSON schema provided in this repository is automatically generated. For this purpose, an interface corresponds to each ABAP object type in which the necessary components of the type are described in the type `ty_main`. The name of the interface follows the pattern `zif_aff_<object_type>_v<version_number>`.
+Each JSON schema provided in this repository is automatically generated. For this purpose, an interface corresponds to each ABAP object type in which the necessary components of the type are described in the type `ty_main`. The name of the interface follows the pattern `zif_aff_<object_type>_v<version_number>`. `<object_type>` can be either the (R3TR) object type or the (LIMU) sub object type because R3TR and LIMU object types share the same namespace. `<version_number>` is an increasing integer which starts with `1`.
 
 One mandatory component of the type is the field `schema` which is translated to `$schema` in the JSON schema. Its value in the `.json` files is the link given in the field `$id` of the JSON schema. Furthermore, a `header` has to be supplied. The interface [`zif_aff_types_v1`](/file-formats/typesUsedForAll/zif_aff_types_v1.intf.abap) offers different headers for reuse, but also other often repeated types.
 
