@@ -389,7 +389,7 @@ The ABAP language version `standard` specifies no limitation with regards to the
 The ABAP language versions `cloudDevelopment` and `keyUser` are a subset of ABAP language version standard and you can use only a subset of ABAP language  elements and released objects.
 For more details you can refer to the [ABAP keyword documentation](https://help.sap.com/doc/abapdocu_latest_index_htm/latest/en-US/index.htm).
 
-The field `abpaLanguageVersion` is optional. Allowed values are `standard`, `cloudDevelopment` or `keyUser`. The default value is `standard`.
+The field `abapLanguageVersion` is optional. Allowed values are `standard`, `cloudDevelopment` or `keyUser`. The default value is `standard`.
 
 Implementations of ABAP file format can decide whether they serialize the ABAP language version.
 
