@@ -23,7 +23,7 @@ with the mandatory elements object_name, object_type and file_extension.
 Namespaces are converted into brackets, for instance `/NMSPC/CL_OBJECT` becomes `(nmspc)cl_object`.
 
 ### Object Name and Type
-The object name and type represent the object. Basically, the object name (R3TR) and type are stored in the ABAP object directory (aka TADIR).
+The object name (R3TR) and object type are derived from the object itself, as stored in the ABAP object directory (aka TADIR).
 
 ### Sub Object Name and Sub Object Type
 
