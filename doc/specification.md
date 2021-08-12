@@ -340,13 +340,13 @@ This leads to the following generated JSON schema:
 ```
 ## Reusable Fields in JSON files
 
-In this section fields are described which can be reused by all file formats. 
+In this section fields are described which can be reused by all file formats.
 
 The types for these reusable are defined in interface [`ZIF_AFF_TYPES_V1`](file-formats/typesUsedForAll/zif_aff_types_v1.intf.abap).
 
 ### Schema
 
-The field `$schema` is a meta field and defines the format and the format version of the json content. 
+The field `$schema` is a meta field and defines the format and the format version of the json content.
 Basically, it is  needed to allow the incompatible evolution of an content type.
 
 `$schema` specifies the location of the json schema with an URI.
@@ -363,12 +363,12 @@ The field `description` contains the description of the object.
 
 ### Original Language
 
-The field `originalLanguage` stores the information about the original language of the the object. 
+The field `originalLanguage` stores the information about the original language of the the object.
 
 The original language is specified with [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language codes.
 
 ---
-**Note**: It has to be decided whether the language code is specified upper case (like in ABAP) or lower case as in the ISO 639-1 specification. 
+**Note**: It has to be decided whether the language code is specified upper case (like in ABAP) or lower case as in the ISO 639-1 specification.
 Refer to issue [#34](https://github.com/SAP/abap-file-formats/issues/53).
 
 ---
@@ -384,7 +384,7 @@ The field `abapLanguageVersion` specifies the ABAP language version of an object
 
 
 With the ABAP language version, it is possible to specify which ABAP language   elements and which other objects you can use in your object.
-It does not specify the compatibility with a specific release (like SAP_BASIS 7.55). 
+It does not specify the compatibility with a specific release (like SAP_BASIS 7.55).
 The ABAP language version `standard` specifies no limitation with regards to the usage of ABAP language elements or other objects.
 The ABAP language versions `cloudDevelopment` and `keyUser` are a subset of ABAP language version standard and you can use only a subset of ABAP language  elements and released objects.
 For more details you can refer to the [ABAP keyword documentation](https://help.sap.com/doc/abapdocu_latest_index_htm/latest/en-US/index.htm).
@@ -393,5 +393,5 @@ The field `abpaLanguageVersion` is optional. Allowed values are `standard`, `clo
 
 Implementations of ABAP file format can decide whether they serialize the ABAP language version.
 
-During deserialization, ABAP systems might change the ABAP language version needed in the specific context. 
+During deserialization, ABAP systems might change the ABAP language version needed in the specific context.
 E.g., SAP BTP, ABAP environment systems set the ABAP language version to `cloudDevelopment` or systems which do not support the ABAP language version might set it to `standard`.
