@@ -369,7 +369,7 @@ The original language is specified with [ISO 639-1](https://en.wikipedia.org/wik
 
 ---
 **Note**: It has to be decided whether the language code is specified upper case (like in ABAP) or lower case as in the ISO 639-1 specification. 
-Refer to issue #34.
+Refer to issue [#34](https://github.com/SAP/abap-file-formats/issues/53).
 
 ---
 
