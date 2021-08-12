@@ -1,0 +1,9 @@
+{
+  "$schema": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/ddls/ddls.json",
+  "header": {
+    "description": "AFF Example DDLS",
+    "originalLanguage": "EN"
+  },
+  "sourceOrigin": "abapDevelopmentTools",
+  "sourceType": "viewEntity"
+}
