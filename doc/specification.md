@@ -391,7 +391,7 @@ For more details you can refer to the [ABAP keyword documentation](https://help.
 
 The field `abapLanguageVersion` is optional. Allowed values are `standard`, `cloudDevelopment` or `keyUser`. The default value is `standard`.
 
-Implementations of ABAP file format can decide whether they serialize the ABAP language version.
+Implementations of ABAP file formats can decide whether they serialize the ABAP language version.
 
 During deserialization, ABAP systems might change the ABAP language version needed in the specific context.
 E.g., SAP BTP, ABAP environment systems set the ABAP language version to `cloudDevelopment` or systems which do not support the ABAP language version might set it to `standard`.
