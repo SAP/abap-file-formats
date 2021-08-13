@@ -363,7 +363,7 @@ The field `description` contains the description of the object.
 
 ### Original Language
 
-The field `originalLanguage` stores the information about the original language of the the object.
+The field `originalLanguage` stores the information about the original language of the object.
 
 The original language is specified with [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language codes.
 
