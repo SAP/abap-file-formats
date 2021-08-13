@@ -85,11 +85,6 @@
                   "type": "string",
                   "maxLength": 30
                 },
-                "type": {
-                  "title": "Parameter Type",
-                  "description": "The parameter type",
-                  "type": "string"
-                },
                 "value": {
                   "title": "Parameter Value",
                   "description": "The value of the parameter",
@@ -175,8 +170,7 @@
               },
               "additionalProperties": false,
               "required": [
-                "name",
-                "type"
+                "name"
               ]
             }
           }
