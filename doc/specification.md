@@ -383,7 +383,7 @@ The original language is not specified for sub objects. Sub objects have the sam
 The field `abapLanguageVersion` specifies the ABAP language version of an object.
 
 
-With the ABAP language version, it is possible to specify which ABAP language   elements and which other objects you can use in your object.
+With the ABAP language version, it is possible to specify which ABAP language elements and which other objects you can use in your object.
 It does not specify the compatibility with a specific release (like SAP_BASIS 7.55).
 The ABAP language version `standard` specifies no limitation with regards to the usage of ABAP language elements or other objects.
 The ABAP language versions `cloudDevelopment` and `keyUser` are a subset of ABAP language version standard and you can use only a subset of ABAP language  elements and released objects.
