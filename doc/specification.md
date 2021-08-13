@@ -342,7 +342,7 @@ This leads to the following generated JSON schema:
 
 In this section fields are described which can be reused by all file formats.
 
-The types for these reusable are defined in interface [`ZIF_AFF_TYPES_V1`](file-formats/typesUsedForAll/zif_aff_types_v1.intf.abap).
+The types for these reusables are defined in the interface [`ZIF_AFF_TYPES_V1`](file-formats/typesUsedForAll/zif_aff_types_v1.intf.abap).
 
 ### Schema
 
