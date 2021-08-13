@@ -17,8 +17,8 @@
 
 ## File Names
 
-The ABAP file formats specify file content and file names for ABAP repository objects or simply ABAP objects.
-The mapping of ABAP objects to file names follows the pattern
+The ABAP file formats specify file content and unique file names for ABAP repository objects or simply objects.
+The mapping of objects to file names follows the pattern
 ```
 <object_name>.<object_type>.
   [<sub_object_name>.<sub_object_type>.]
@@ -29,7 +29,7 @@ with the mandatory elements object_name, object_type and file_extension.
 Namespaces are converted into brackets, for instance `/NMSPC/CL_OBJECT` becomes `(nmspc)cl_object`.
 
 ### Object Name and Type
-The object name and type represent the ABAP object. Basically, the object name (R3TR) and type are stored in the ABAP object directory (aka TADIR).
+The object name (R3TR) and object type are derived from the object itself, as stored in the ABAP object directory (aka TADIR).
 
 ### Sub Object Name and Sub Object Type
 
@@ -38,7 +38,7 @@ Some object types support sub objects (LIMU object types) like function modules 
 E.g., for function module FUNCTION_EXISTS in function group SUNI, the file name would be `suni.fugr.function_exists.func.abap`.
 
 ### Content Type
-If a transport object needs multiple files which are not represented by transport objects, the content type is used to differentiate between the different file types.
+If an object needs multiple files which are not represented by transport objects, the content type is used to differentiate between the different file types.
 ```
 cl_oo_clif_source.clas.global.abap
 cl_oo_clif_source.clas.testclasses.abap
@@ -58,7 +58,7 @@ These files are stored in the original language of the object and the original l
 
 ABAP file formats define three file types:
 * **`.abap`** stores ABAP source code as plain text
-* **`.json`** stores content of form-based editors or properties of ABAP objects, such as originalLanguage, abapLanguageVersion and others
+* **`.json`** stores content of form-based editors or properties of objects, such as originalLanguage, abapLanguageVersion and others
 * **`.properties`** stores translation relevant text elements as plain text
 
 The `.json` file is referred to as the property file. The ABAP file formats provide JSON schemas for its annotation and validation.
@@ -121,7 +121,7 @@ The following changes to file formats are considered as incompatible:
 
 ## Type Specification
 
-Each JSON schema provided in this repository is automatically generated. For this purpose, an interface corresponds to each ABAP object type in which the necessary components of the type are described in the type `ty_main`. The name of the interface follows the pattern `zif_aff_<object_type>_v<version_number>`. `<object_type>` can be either the (R3TR) object type or the (LIMU) sub object type, since R3TR and LIMU object types share the same namespace. `<version_number>` is an increasing integer which starts with `1`.
+Each JSON schema provided in this repository is automatically generated. For this purpose, an interface corresponds to each object type in which the necessary components of the type are described in the type `ty_main`. The name of the interface follows the pattern `zif_aff_<object_type>_v<version_number>`. `<object_type>` can be either the (R3TR) object type or the (LIMU) sub object type, since R3TR and LIMU object types share the same namespace. `<version_number>` is an increasing integer which starts with `1`.
 
 One mandatory component of the type is the field `schema` which is translated to `$schema` in the JSON schema. Its value in the `.json` files is the link given in the field `$id` of the JSON schema. Furthermore, a `header` has to be supplied. The interface [`zif_aff_types_v1`](/file-formats/typesUsedForAll/zif_aff_types_v1.intf.abap) offers different headers for reuse, but also other often repeated types.
 
