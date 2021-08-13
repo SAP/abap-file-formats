@@ -338,7 +338,7 @@ This leads to the following generated JSON schema:
   ]
 }
 ```
-## Reusable Fields in JSON files
+## Reusable Fields in JSON Files
 
 In this section fields are described which can be reused by all file formats.
 
