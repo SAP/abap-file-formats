@@ -349,7 +349,7 @@ The types for these reusables are defined in the interface [`ZIF_AFF_TYPES_V1`](
 The field `$schema` is a meta field and defines the format and the format version of the JSON content.
 Basically, it is needed to allow the incompatible evolution of a content type.
 
-`$schema` specifies the location of the json schema with an URI.
+The field `$schema` specifies the location of the JSON schema with an URI.
 As of now, this is a link within this repository.
 
 ---
