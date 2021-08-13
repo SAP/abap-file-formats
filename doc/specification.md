@@ -394,4 +394,4 @@ The field `abapLanguageVersion` is optional. Allowed values are `standard`, `clo
 Implementations of ABAP file formats can decide whether they serialize the ABAP language version.
 
 During deserialization, ABAP systems might change the ABAP language version needed in the specific context.
-E.g., SAP BTP, ABAP environment systems set the ABAP language version to `cloudDevelopment` or systems which do not support the ABAP language version might set it to `standard`.
+E.g., SAP BTP, ABAP environment systems set the ABAP language version to `cloudDevelopment`, while systems which do not support the ABAP language version might set it to `standard`.
