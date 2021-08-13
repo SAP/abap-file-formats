@@ -11,7 +11,6 @@
       "parameters": [
         {
           "name": "StatementPattern",
-          "type": "tableOfSychar72",
           "valueList": [
             "CALL FUNCTION 'DB_EXISTS_INDEX' *",
             "CALL FUNCTION 'DD_INDEX_NAME' *"
@@ -19,7 +18,6 @@
         },
         {
           "name": "FindingSeverity",
-          "type": "sychar01",
           "value": "E"
         }
       ]
@@ -29,7 +27,6 @@
       "parameters": [
         {
           "name": "ABAPLanguageVersion",
-          "type": "enum_MSGF_CL_CI_TEST_EXTENDED_CHECK_VERS",
           "value": "4"
         }
       ]
@@ -39,12 +36,10 @@
       "parameters": [
         {
           "name": "ReleaseID",
-          "type": "sycm_release_id",
           "value": "S4HANA_READINESS_1809"
         },
         {
           "name": "SAPNotes",
-          "type": "rangeOfSycm_sap_note_number_db_ops",
           "valueRangeList": [
             {
               "sign": "exclude",
@@ -56,7 +51,6 @@
         },
         {
           "name": "SimplificationItemCategories",
-          "type": "rangeOfSycm_sitem_state",
           "valueRangeList": [
             {
               "sign": "exclude",

@@ -88,10 +88,6 @@ INTERFACE zif_aff_chkv_v1
       "! The parameter name
       "! $required
       name             TYPE zif_aff_types_v1=>ty_object_name_30,
-      "! <p class="shorttext">Parameter Type</p>
-      "! The parameter type
-      "! $required
-      type             TYPE string,
       "! <p class="shorttext">Parameter Value</p>
       "! The value of the parameter
       value            TYPE string,
