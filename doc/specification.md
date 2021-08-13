@@ -13,7 +13,7 @@
 * [Format Compatibility](#Format-Compatibility)
 * [Type Specification](#Type-Specification)
 * [Type Specification Example](#Type-Specification-Example)
-* [Reusable Fields in JSON files](#Reusable-Fields-in-JSON-files)
+* [Reusable Fields in JSON Files](#Reusable-Fields-in-JSON-files)
 
 ## File Names
 
@@ -22,7 +22,7 @@ The mapping of objects to file names follows the pattern
 ```
 <object_name>.<object_type>.
   [<sub_object_name>.<sub_object_type>.]
-  [<content_type>.<language>.]
+  [<content_type>.][<language>.]
 <file_extension>
 ```
 with the mandatory elements object_name, object_type and file_extension.
