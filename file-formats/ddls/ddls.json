@@ -54,7 +54,7 @@
     "sourceOrigin": {
       "title": "Source Origin",
       "description": "Source Origin",
-      "type": "integer",
+      "type": "string",
       "enum": [
         "abapDevelopmentTools",
         "customCdsViews",
