@@ -1,6 +1,11 @@
 # Technical Specification
 
-Table of Contents
+---
+**Note**: Currently, ABAP file formats are not kept stable, yet. They might still change incompatibly without creating a new file format version.
+
+---
+
+## Table of Contents
 * [File Names](#File-Names)
 * [File Extensions](#File-Extensions)
 * [File Name Examples](#File-Name-Examples)
@@ -8,6 +13,7 @@ Table of Contents
 * [Format Compatibility](#Format-Compatibility)
 * [Type Specification](#Type-Specification)
 * [Type Specification Example](#Type-Specification-Example)
+* [Reusable Fields in JSON files](#Reusable-Fields-in-JSON-files)
 
 ## File Names
 
@@ -332,7 +338,60 @@ This leads to the following generated JSON schema:
   ]
 }
 ```
----
-**Note**: Currently, ABAP file formats are not kept stable, yet. They might still change incompatibly without creating a new file format version.
+## Reusable Fields in JSON Files
+
+This section describes fields that can be reused by all file formats.
+
+The types for these reusables are defined in the interface [`ZIF_AFF_TYPES_V1`](file-formats/typesUsedForAll/zif_aff_types_v1.intf.abap).
+
+### Schema
+
+The field `$schema` is a meta field and defines the format and the format version of the JSON content.
+Basically, it is needed to allow the incompatible evolution of a content type.
+
+The field `$schema` specifies the location of the JSON schema with an URI.
+As of now, this is a link within this repository.
 
 ---
+**Note**: Versioning is not finally decided. Please refer to issue [#53](https://github.com/SAP/abap-file-formats/issues/53).
+
+---
+
+### Description
+
+The field `description` contains the description of the object.
+
+### Original Language
+
+The field `originalLanguage` stores the information about the original language of the object.
+
+The original language is specified with [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language codes.
+
+---
+**Note**: It has to be decided whether the language code is specified in upper case (like in ABAP) or lower case as in the ISO 639-1 specification.
+Refer to issue [#34](https://github.com/SAP/abap-file-formats/issues/53).
+
+---
+
+All translatable texts in the object shall be maintained in their original language.
+Translations of the texts shall be stored in separate files.
+
+The original language is not specified for sub objects. Sub objects have the same original version as their main objects.
+
+### ABAP Language Version
+
+The field `abapLanguageVersion` specifies the ABAP language version of an object.
+
+
+With the ABAP language version, it is possible to specify which ABAP language elements and which other objects you can use in your object.
+It does not specify the compatibility with a specific release (like SAP_BASIS 7.55).
+The ABAP language version `standard` specifies no limitation with regards to the usage of ABAP language elements or other objects.
+The ABAP language versions `cloudDevelopment` and `keyUser` are a subset of the ABAP language version `standard` and you can use only a subset of ABAP language elements and released objects.
+For more details, you can refer to the [ABAP keyword documentation](https://help.sap.com/doc/abapdocu_latest_index_htm/latest/en-US/index.htm).
+
+The field `abapLanguageVersion` is optional. Allowed values are `standard`, `cloudDevelopment` or `keyUser`. The default value is `standard`.
+
+Implementations of ABAP file formats can decide whether they serialize the ABAP language version.
+
+During deserialization, ABAP systems might change the ABAP language version needed in the specific context.
+E.g., SAP BTP, ABAP environment systems set the ABAP language version to `cloudDevelopment`, while systems which do not support the ABAP language version might set it to `standard`.
