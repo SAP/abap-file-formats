@@ -3,11 +3,11 @@ INTERFACE zif_aff_ddls_v1
 
   "! <p class="shorttext">Source Type</p>
   "! Source Type
-  TYPES ty_source_type TYPE char01.
+  TYPES ty_source_type TYPE c LENGTH 1.
 
   "! <p class="shorttext">Source Origin</p>
   "! Source Origin
-  TYPES ty_source_origin TYPE int1.
+  TYPES ty_source_origin TYPE i.
 
   CONSTANTS:
     "! <p class="shorttext">Source Type</p>
@@ -50,34 +50,34 @@ INTERFACE zif_aff_ddls_v1
     BEGIN OF co_source_origin,
       "! <p class="shorttext">ABAP Development Tools</p>
       "! ABAP Development Tools
-      abap_development_tools         TYPE ty_source_origin VALUE '0',
+      abap_development_tools         TYPE ty_source_origin VALUE 0,
       "! <p class="shorttext">Custom CDS Views</p>
       "! Custom CDS Views
-      custom_cds_views               TYPE ty_source_origin VALUE '1',
+      custom_cds_views               TYPE ty_source_origin VALUE 1,
       "! <p class="shorttext">Custom Analytical Queries</p>
       "! Custom Analytical Queries
-      custom_analytical_queries      TYPE ty_source_origin VALUE '2',
+      custom_analytical_queries      TYPE ty_source_origin VALUE 2,
       "! <p class="shorttext">Custom Business Object</p>
       "! Custom Business Object
-      custom_business_object         TYPE ty_source_origin VALUE '3',
+      custom_business_object         TYPE ty_source_origin VALUE 3,
       "! <p class="shorttext">Custom Code List</p>
       "! Custom Code List
-      custom_code_list               TYPE ty_source_origin VALUE '4',
+      custom_code_list               TYPE ty_source_origin VALUE 4,
       "! <p class="shorttext">Custom CDS Views for Variant Configurations</p>
       "! Custom CDS Views for Variant Configurations
-      custom_cds_views_variant_confg TYPE ty_source_origin VALUE '5',
+      custom_cds_views_variant_confg TYPE ty_source_origin VALUE 5,
       "! <p class="shorttext">Custom Fields</p>
       "! Custom Fields
-      custom_fields                  TYPE ty_source_origin VALUE '6',
+      custom_fields                  TYPE ty_source_origin VALUE 6,
       "! <p class="shorttext">Extensions for Data Sources</p>
       "! Extensions for Data Sources
-      extensions_for_data_sources    TYPE ty_source_origin VALUE '7',
+      extensions_for_data_sources    TYPE ty_source_origin VALUE 7,
       "! <p class="shorttext">Custom Search Modeler</p>
       "! Custom Search Modeler
-      custom_search_modeler          TYPE ty_source_origin VALUE '8',
+      custom_search_modeler          TYPE ty_source_origin VALUE 8,
       "! <p class="shorttext">Service Consumption Model</p>
       "! Service Consumption Model
-      service_consumption_model      TYPE ty_source_origin VALUE '9',
+      service_consumption_model      TYPE ty_source_origin VALUE 9,
     END OF co_source_origin.
 
   TYPES:
@@ -91,7 +91,7 @@ INTERFACE zif_aff_ddls_v1
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header        TYPE if_aff_types_v1=>ty_header_60,
+      header        TYPE zif_aff_types_v1=>ty_header_60,
       "! <p class="shorttext">Source Origin</p>
       "! Source Origin
       "! $required
@@ -102,7 +102,7 @@ INTERFACE zif_aff_ddls_v1
       source_type   TYPE ty_source_type,
       "! <p class="shorttext">Parent Name</p>
       "! DDLS Name of the parent of an extend
-      parent_name   TYPE char40,
+      parent_name   TYPE c LENGTH 40,
     END OF ty_main.
 
 ENDINTERFACE.
