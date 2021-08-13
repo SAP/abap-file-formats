@@ -373,7 +373,7 @@ Refer to issue [#34](https://github.com/SAP/abap-file-formats/issues/53).
 
 ---
 
-All translatable texts in the object shall be maintained in its original language.
+All translatable texts in the object shall be maintained in their original language.
 Translations of the texts shall be stored in separate files.
 
 The original language is not specified for sub objects. Sub objects have the same original version as their main objects.
