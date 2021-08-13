@@ -27,7 +27,7 @@ The object name (R3TR) and object type are derived from the object itself, as st
 
 ### Sub Object Name and Sub Object Type
 
-Some objects support sub objects (LIMU object) like function modules in a function group. For sub objects, the main object name and type must be part of the file name.
+Some object types support sub objects (LIMU object types) like function modules in a function group. For sub objects, the main object name and type must be part of the file name.
 
 E.g., for function module FUNCTION_EXISTS in function group SUNI, the file name would be `suni.fugr.function_exists.func.abap`.
 
@@ -80,7 +80,7 @@ The JSON files additionally follow
 
 ## Format Compatibility
 
-The format of objects will evolve over time. If a change to the format is considered incompatible, the version of the file format has to be increased.
+The format of object types will evolve over time. If a change to the format is considered incompatible, the version of the file format has to be increased.
 
 As of today, the format version is indicated by the `$schema` attribute. This approach is in discussion and might be changed.
 
