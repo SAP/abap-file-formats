@@ -1,6 +1,6 @@
 # File Format for Object Type CLAS
 
-The files correspond to the tabs in ABAP in Eclipse, enriched with metadata and translation relevant texts.
+The files correspond to the tabs in the ABAP Development Tools, enriched with metadata and translation relevant texts.
 Files with the ending `.abap` contain plain ABAP source code.
 The JSON schema for the class metadata file is provided [here](./clas.json).
 
