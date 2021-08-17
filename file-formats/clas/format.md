@@ -9,7 +9,7 @@ File | Content
  --- | ---
 [`zcl_aff_example.clas.json`](./examples/zcl_aff_example.clas.json)                                 | Properties and descriptions of the ABAP class
 [`zcl_aff_example.clas.definitions.abap`](./examples/zcl_aff_example.clas.definitions.abap)         | Class-relevant local types
-[`zcl_aff_example.clas.global.abap`](./examples/zcl_aff_example.clas.global.abap)                   | Global class
+[`zcl_aff_example.clas.abap`](./examples/zcl_aff_example.clas.abap)                                 | Global class
 [`zcl_aff_example.clas.implementations.abap`](./examples/zcl_aff_example.clas.implementations.abap) | Local types
 [`zcl_aff_example.clas.macros.abap`](./examples/zcl_aff_example.clas.macros.abap)                   | Macros
 [`zcl_aff_example.clas.testclasses.abap`](./examples/zcl_aff_example.clas.testclasses.abap)         | Test classes
