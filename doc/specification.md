@@ -153,6 +153,7 @@ The type specifies the underlying data type and links to the constant via the fo
 ```abap
 "! $values {@link source_name.data:constant_name}
 ```
+
 ### Extreme Values
 For numerical types, (exclusive) minimum and (exclusive) maximum values can be specified via the annotational keywords
 ```abap
