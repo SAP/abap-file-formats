@@ -79,6 +79,6 @@ INTERFACE zif_oo_aff_types_v1
       "! <p class="shorttext">Type Descriptions</p>
       "! Type descriptions
       types      TYPE ty_component_descriptions,
-    end of ty_clif_properties.
+    END OF ty_clif_properties.
 
 ENDINTERFACE.
