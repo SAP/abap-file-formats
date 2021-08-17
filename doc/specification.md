@@ -123,9 +123,11 @@ The following changes to file formats are considered as incompatible:
 
 Each JSON schema provided in this repository is automatically generated. For this purpose, an interface corresponds to each object type in which the necessary components of the type are described in the type `ty_main`. The name of the interface follows the pattern `zif_aff_<object_type>_v<version_number>`. `<object_type>` can be either the (R3TR) object type or the (LIMU) sub object type, since R3TR and LIMU object types share the same namespace. `<version_number>` is an increasing integer which starts with `1`.
 
-One mandatory component of the type is the field `schema` which is translated to `$schema` in the JSON schema. Its value in the `.json` files is the link given in the field `$id` of the JSON schema. Furthermore, a `header` has to be supplied. The interface [`zif_aff_types_v1`](/file-formats/typesUsedForAll/zif_aff_types_v1.intf.abap) offers different headers for reuse, but also other often repeated types.
-
 The ABAP types are self-contained, so it is possible to work on them in any system (e.g., in an SAP BTP, ABAP environment system).
+
+The JSON schema is generated based on the fields and their ABAP type specification defined in `ty_main`. Each field defined in the structure is transformed to a JSON representation using a camel case notation (e.g, field `abap_language_version` is transformed to the field `abapLanguageVersion` in the JSON schema). The ABAP type information fills the JSON schema fields `type`, `length`, `minimum`, `maximum`.
+
+One mandatory component of the type is the field `schema` which is translated to `$schema` in the JSON schema. Its value in the `.json` files is the link given in the field `$id` of the JSON schema. Furthermore, a `header` has to be supplied. The interface [`zif_aff_types_v1`](/file-formats/typesUsedForAll/zif_aff_types_v1.intf.abap) offers different headers for reuse, but also other often repeated types.
 
 In order to add more information to the JSON schema than that provided by the ABAP type, ABAP Doc can be used. The comments are placed directly above the components of the type `ty_main`, but they are also read over several levels as, e.g., in the case of nested structures. The different possibilities are summarized in the following.
 
@@ -144,12 +146,14 @@ An ABAP Doc comment without annotations is passed as description to the JSON sch
 If no description is given, either the title, if provided, or the component name transformed to camel case is shown in the JSON schema.
 
 ### Enum Values
-To pass enum values to a JSON schema, a type and a constant are specified. The names of the components of the constant are written as external (JSON) values to the JSON schema after being transformed to camel case. The corresponding values of the components represent the internal (ABAP) values. Descriptions of the enum values are passed to the schema in the same way as described above.
+To pass enum values to a JSON schema, a type and a constant are specified. The names of the components of the constant are written as external (JSON) values to the JSON schema after being transformed to camel case (e.g, component `badi_definition` is transformed to the enum value `badiDefinition` in the JSON schema).
+The corresponding values of the components represent the internal (ABAP) values. Descriptions of the enum values are passed to the schema in the same way as described above.
 
 The type specifies the underlying data type and links to the constant via the following annotation:
 ```abap
 "! $values {@link source_name.data:constant_name}
 ```
+
 ### Extreme Values
 For numerical types, (exclusive) minimum and (exclusive) maximum values can be specified via the annotational keywords
 ```abap
