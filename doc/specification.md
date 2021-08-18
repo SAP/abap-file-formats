@@ -40,7 +40,7 @@ E.g., for function module FUNCTION_EXISTS in function group SUNI, the file name 
 ### Content Type
 If an object needs multiple files which are not represented by transport objects, the content type is used to differentiate between the different file types.
 ```
-cl_oo_clif_source.clas.global.abap
+cl_oo_clif_source.clas.abap
 cl_oo_clif_source.clas.testclasses.abap
 ```
 
@@ -67,8 +67,8 @@ The `.json` file is referred to as the property file. The ABAP file formats prov
 Here are some examples of file names and their corresponding content:
 | File Name | Content |
 | ---  | --- |
-| `cl_my_class.clas.global.abap` | Source code of global class `CL_MY_CLASS` |
-| `(nmspc)cl_my_class.clas.global.abap` | Source code of global class with namespace `/NMSPC/CL_MY_CLASS` |
+| `cl_my_class.clas.abap` | Source code of class `CL_MY_CLASS` |
+| `(nmspc)cl_my_class.clas.abap` | Source code of class with namespace `/NMSPC/CL_MY_CLASS` |
 | `cl_my_class.clas.testclasses.abap` | Source code of local test classes in `CL_MY_CLASS` |
 | `s_carrid.dtel.json` | Properties of data element `S_CARRID` |
 | [`z_aff_example_fugr.fugr.z_aff_example_func.func.abap`](/file-formats/fugr/examples/z_aff_example_fugr.fugr.z_aff_example_func.func.abap) | Source code of function module `Z_AFF_EXAMPLE_FUNC` |
