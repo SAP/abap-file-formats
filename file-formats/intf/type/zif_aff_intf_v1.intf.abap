@@ -52,7 +52,7 @@ INTERFACE zif_aff_intf_v1 PUBLIC.
       proxy        TYPE abap_bool,
       "! <p class="sharttext"> Descriptions</p>
       "! Descriptions maintained in SE80
-      descriptions TYPE  zif_oo_aff_types_v1=>descriptions,
+      descriptions TYPE  zif_oo_aff_types_v1=>ty_descriptions,
     END OF ty_main.
 
 ENDINTERFACE.
