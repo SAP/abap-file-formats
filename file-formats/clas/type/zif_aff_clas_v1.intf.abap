@@ -76,7 +76,7 @@ INTERFACE zif_aff_clas_v1 PUBLIC.
       message_class        TYPE c LENGTH 20,
       "! <p class="sharttext"> Descriptions</p>
       "! Descriptions maintained in SE80
-      descriptions         TYPE  zif_oo_aff_types_v1=>ty_clif_properties,
+      descriptions         TYPE  zif_oo_aff_types_v1=>ty_descriptions,
     END OF ty_main.
 
 ENDINTERFACE.

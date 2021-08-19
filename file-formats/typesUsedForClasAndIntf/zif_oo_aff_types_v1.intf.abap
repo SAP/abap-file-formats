@@ -66,7 +66,7 @@ INTERFACE zif_oo_aff_types_v1
   TYPES:
    "! <p class="shorttext">Descriptions</p>
    "! Descriptions maintained in SE80
-    BEGIN OF ty_clif_properties,
+    BEGIN OF ty_descriptions,
       "! <p class="shorttext">Type Descriptions</p>
       "! Type descriptions
       types      TYPE ty_component_descriptions,
@@ -79,6 +79,6 @@ INTERFACE zif_oo_aff_types_v1
       "! <p class="shorttext">Method Descriptions</p>
       "! Method descriptions
       methods    TYPE ty_methods,
-    END OF ty_clif_properties.
+    END OF ty_descriptions.
 
 ENDINTERFACE.
