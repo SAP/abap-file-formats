@@ -1,6 +1,6 @@
 {
   "global": {
-    "files": "/util/**/+(typesUsedForAll|typesUsedForClasAndIntf|type)/*.intf.abap",
+    "files": "/file-formats/**/+(typesUsedForAll|typesUsedForClasAndIntf|type)/*.intf.abap",
     "exclude": [],
     "skipGeneratedGatewayClasses": true,
     "skipGeneratedPersistentClasses": true,
