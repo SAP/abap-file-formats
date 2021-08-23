@@ -78,208 +78,216 @@
       "description": "Interface is a proxy interface",
       "type": "boolean"
     },
-    "types": {
-      "title": "Type Descriptions",
-      "description": "Type descriptions",
-      "type": "array",
-      "items": {
-        "title": "Name and Description",
-        "description": "Name and description",
-        "type": "object",
-        "properties": {
-          "name": {
-            "title": "Name",
-            "description": "Name",
-            "type": "string",
-            "maxLength": 30
-          },
-          "description": {
-            "title": "Description",
-            "description": "Description",
-            "type": "string",
-            "maxLength": 60
+    "descriptions": {
+      "title": "Descriptions",
+      "description": "Descriptions maintained in SE80",
+      "type": "object",
+      "properties": {
+        "types": {
+          "title": "Type Description",
+          "description": "Type description",
+          "type": "array",
+          "items": {
+            "title": "Name and Description",
+            "description": "Name and description",
+            "type": "object",
+            "properties": {
+              "name": {
+                "title": "Name",
+                "description": "Name",
+                "type": "string",
+                "maxLength": 30
+              },
+              "description": {
+                "title": "Description",
+                "description": "Description",
+                "type": "string",
+                "maxLength": 60
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "name",
+              "description"
+            ]
           }
         },
-        "additionalProperties": false,
-        "required": [
-          "name",
-          "description"
-        ]
-      }
-    },
-    "attributes": {
-      "title": "Attribute Descriptions",
-      "description": "Attribute descriptions",
-      "type": "array",
-      "items": {
-        "title": "Name and Description",
-        "description": "Name and description",
-        "type": "object",
-        "properties": {
-          "name": {
-            "title": "Name",
-            "description": "Name",
-            "type": "string",
-            "maxLength": 30
-          },
-          "description": {
-            "title": "Description",
-            "description": "Description",
-            "type": "string",
-            "maxLength": 60
+        "attributes": {
+          "title": "Attribute Description",
+          "description": "Attribute description",
+          "type": "array",
+          "items": {
+            "title": "Name and Description",
+            "description": "Name and description",
+            "type": "object",
+            "properties": {
+              "name": {
+                "title": "Name",
+                "description": "Name",
+                "type": "string",
+                "maxLength": 30
+              },
+              "description": {
+                "title": "Description",
+                "description": "Description",
+                "type": "string",
+                "maxLength": 60
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "name",
+              "description"
+            ]
           }
         },
-        "additionalProperties": false,
-        "required": [
-          "name",
-          "description"
-        ]
-      }
-    },
-    "events": {
-      "title": "Event Descriptions",
-      "description": "Event descriptions",
-      "type": "array",
-      "items": {
-        "title": "Event Description",
-        "description": "Event description",
-        "type": "object",
-        "properties": {
-          "name": {
-            "title": "Event Name",
-            "description": "Name of the event",
-            "type": "string",
-            "maxLength": 30
-          },
-          "description": {
+        "events": {
+          "title": "Event Description",
+          "description": "Event description",
+          "type": "array",
+          "items": {
             "title": "Event Description",
-            "description": "Description of the event",
-            "type": "string",
-            "maxLength": 60
-          },
-          "parameters": {
-            "title": "Parameter Descriptions",
-            "description": "Parameter descriptions",
-            "type": "array",
-            "items": {
-              "title": "Name and Description",
-              "description": "Name and description",
-              "type": "object",
-              "properties": {
-                "name": {
-                  "title": "Name",
-                  "description": "Name",
-                  "type": "string",
-                  "maxLength": 30
-                },
-                "description": {
-                  "title": "Description",
-                  "description": "Description",
-                  "type": "string",
-                  "maxLength": 60
-                }
+            "description": "Event description",
+            "type": "object",
+            "properties": {
+              "name": {
+                "title": "Event Name",
+                "description": "Name of the event",
+                "type": "string",
+                "maxLength": 30
               },
-              "additionalProperties": false,
-              "required": [
-                "name",
-                "description"
-              ]
-            }
+              "description": {
+                "title": "Event Description",
+                "description": "Description of the event",
+                "type": "string",
+                "maxLength": 60
+              },
+              "parameters": {
+                "title": "Parameter Descriptions",
+                "description": "Parameter descriptions",
+                "type": "array",
+                "items": {
+                  "title": "Name and Description",
+                  "description": "Name and description",
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "title": "Name",
+                      "description": "Name",
+                      "type": "string",
+                      "maxLength": 30
+                    },
+                    "description": {
+                      "title": "Description",
+                      "description": "Description",
+                      "type": "string",
+                      "maxLength": 60
+                    }
+                  },
+                  "additionalProperties": false,
+                  "required": [
+                    "name",
+                    "description"
+                  ]
+                }
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "name",
+              "description"
+            ]
           }
         },
-        "additionalProperties": false,
-        "required": [
-          "name",
-          "description"
-        ]
-      }
-    },
-    "methods": {
-      "title": "Method Descriptions",
-      "description": "Method descriptions",
-      "type": "array",
-      "items": {
-        "title": "Method Description",
-        "description": "Method description",
-        "type": "object",
-        "properties": {
-          "name": {
-            "title": "Method Name",
-            "description": "Name of the method",
-            "type": "string",
-            "maxLength": 30
-          },
-          "description": {
+        "methods": {
+          "title": "Method Description",
+          "description": "Method description",
+          "type": "array",
+          "items": {
             "title": "Method Description",
-            "description": "Description of the method",
-            "type": "string",
-            "maxLength": 60
-          },
-          "parameters": {
-            "title": "Parameter Descriptions",
-            "description": "Parameter descriptions",
-            "type": "array",
-            "items": {
-              "title": "Name and Description",
-              "description": "Name and description",
-              "type": "object",
-              "properties": {
-                "name": {
-                  "title": "Name",
-                  "description": "Name",
-                  "type": "string",
-                  "maxLength": 30
-                },
-                "description": {
-                  "title": "Description",
-                  "description": "Description",
-                  "type": "string",
-                  "maxLength": 60
+            "description": "Method description",
+            "type": "object",
+            "properties": {
+              "name": {
+                "title": "Method Name",
+                "description": "Name of the method",
+                "type": "string",
+                "maxLength": 30
+              },
+              "description": {
+                "title": "Method Description",
+                "description": "Description of the method",
+                "type": "string",
+                "maxLength": 60
+              },
+              "parameters": {
+                "title": "Parameter Descriptions",
+                "description": "Parameter descriptions",
+                "type": "array",
+                "items": {
+                  "title": "Name and Description",
+                  "description": "Name and description",
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "title": "Name",
+                      "description": "Name",
+                      "type": "string",
+                      "maxLength": 30
+                    },
+                    "description": {
+                      "title": "Description",
+                      "description": "Description",
+                      "type": "string",
+                      "maxLength": 60
+                    }
+                  },
+                  "additionalProperties": false,
+                  "required": [
+                    "name",
+                    "description"
+                  ]
                 }
               },
-              "additionalProperties": false,
-              "required": [
-                "name",
-                "description"
-              ]
-            }
-          },
-          "exceptions": {
-            "title": "Exception Descriptions",
-            "description": "Exception descriptions",
-            "type": "array",
-            "items": {
-              "title": "Name and Description",
-              "description": "Name and description",
-              "type": "object",
-              "properties": {
-                "name": {
-                  "title": "Name",
-                  "description": "Name",
-                  "type": "string",
-                  "maxLength": 30
-                },
-                "description": {
-                  "title": "Description",
-                  "description": "Description",
-                  "type": "string",
-                  "maxLength": 60
+              "exceptions": {
+                "title": "Exception Descriptions",
+                "description": "Exception descriptions",
+                "type": "array",
+                "items": {
+                  "title": "Name and Description",
+                  "description": "Name and description",
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "title": "Name",
+                      "description": "Name",
+                      "type": "string",
+                      "maxLength": 30
+                    },
+                    "description": {
+                      "title": "Description",
+                      "description": "Description",
+                      "type": "string",
+                      "maxLength": 60
+                    }
+                  },
+                  "additionalProperties": false,
+                  "required": [
+                    "name",
+                    "description"
+                  ]
                 }
-              },
-              "additionalProperties": false,
-              "required": [
-                "name",
-                "description"
-              ]
-            }
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "name",
+              "description"
+            ]
           }
-        },
-        "additionalProperties": false,
-        "required": [
-          "name",
-          "description"
-        ]
-      }
+        }
+      },
+      "additionalProperties": false
     }
   },
   "additionalProperties": false,
