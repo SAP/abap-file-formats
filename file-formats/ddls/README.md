@@ -8,5 +8,5 @@ Example files for a CDS Data Definition `z_aff_example_ddls` are provided in the
 File | Content
  --- | ---
 [`z_aff_example_ddls.ddls.json`](./examples/z_aff_example_ddls.ddls.json)                                   | Properties and descriptions of the CDS Data Definition
-[`z_aff_example_ddls.ddls.cds`](./examples/z_aff_example_ddls.cds)                                          | CDS Source Code
-[`z_aff_example_ddls.ddls.objectdependencies.json`](./examples/z_aff_example_ddls.objectdependencies.json)  | All direct objects that are used in the CDS Data Definition
+[`z_aff_example_ddls.ddls.cds`](./examples/z_aff_example_ddls.ddls.cds)                                          | CDS Source Code
+[`z_aff_example_ddls.ddls.objectdependencies.json`](./examples/z_aff_example_ddls.ddls.objectdependencies.json)  | All direct objects that are used in the CDS Data Definition
