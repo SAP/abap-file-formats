@@ -127,9 +127,14 @@ The ABAP types are self-contained, so it is possible to work on them in any syst
 
 The JSON schema is generated based on the fields and their ABAP type specification defined in `ty_main`. Each field defined in the structure is transformed to a JSON representation using a camel case notation (e.g, field `abap_language_version` is transformed to the field `abapLanguageVersion` in the JSON schema). The ABAP type information fills the JSON schema fields `type`, `length`, `minimum`, `maximum`.
 
-One mandatory component of the type is the field `schema` which is translated to `$schema` in the JSON schema. Its value in the `.json` files is the link given in the field `$id` of the JSON schema. Furthermore, a `header` has to be supplied. The interface [`zif_aff_types_v1`](/file-formats/typesUsedForAll/zif_aff_types_v1.intf.abap) offers different headers for reuse, but also other often repeated types.
+One mandatory component of the type is the field `schema` which is translated to `$schema` in the JSON schema.
+Its value in the `.json` files is the link given in the field `$id` of the JSON schema.
+Furthermore, a `header` has to be supplied.
+The interface [`zif_aff_types_v1`](/file-formats/zif_aff_types_v1.intf.abap) offers different headers for reuse, but also other often repeated types.
 
-In order to add more information to the JSON schema than that provided by the ABAP type, ABAP Doc can be used. The comments are placed directly above the components of the type `ty_main`, but they are also read over several levels as, e.g., in the case of nested structures. The different possibilities are summarized in the following.
+In order to add more information to the JSON schema than that provided by the ABAP type, ABAP Doc can be used.
+The comments are placed directly above the components of the type `ty_main`, but they are also read over several levels as, e.g., in the case of nested structures.
+The different possibilities are summarized in the following.
 
 ### Title
 To provide a title, an ABAP Doc shorttext
@@ -232,7 +237,7 @@ Here is the shortened type used to generate the JSON schema for interfaces. It c
       proxy      TYPE abap_bool.
     END OF ty_main.
 ```
-With the specification of the component `header` and its used types in the interface [`zif_aff_types_v1`](/file-formats/typesUsedForAll/zif_aff_types_v1.intf.abap)
+With the specification of the component `header` and its used types in the interface [`zif_aff_types_v1`](/file-formats/zif_aff_types_v1.intf.abap)
 ```abap
   "! $values {@link zif_aff_types_v1.data:co_abap_language_version_src}
   "! $default {@link zif_aff_types_v1.data:co_abap_language_version_src.standard}
@@ -346,7 +351,7 @@ This leads to the following generated JSON schema:
 
 This section describes fields that can be reused by all file formats.
 
-The types for these reusables are defined in the interface [`ZIF_AFF_TYPES_V1`](file-formats/typesUsedForAll/zif_aff_types_v1.intf.abap).
+The types for these reusables are defined in the interface [`ZIF_AFF_TYPES_V1`](file-formats/zif_aff_types_v1.intf.abap).
 
 ### Schema
 
