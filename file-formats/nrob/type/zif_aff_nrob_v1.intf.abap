@@ -93,7 +93,7 @@ INTERFACE zif_aff_nrob_v1
       "! number for \u0027bufferedNumbers\u0027. It determines how many numbers are reserved in buffer for
       "!  the intervals.Default number of buffers is 10.
       "! $required
-      "! $default 10
+      "! $default '10'
       buffered_numbers TYPE n LENGTH 8,
     END OF ty_configuration.
 
