@@ -7,9 +7,6 @@ import sys
 from git import Repo
 import pprint
 
-# provide ABAP objects as list
-# only schema for this objects are validated
-object_type = ['clas', 'ddls', 'intf', 'func', 'reps', 'nrob', 'chko', 'chkc', 'fugr', 'enho', 'enhs', 'chkv']
 nb_errors = 0
 
 
@@ -23,8 +20,8 @@ def gather_schemas( repo_objects ):
     schemas = []
     # find json schema of type <ABAB_object>.json
     for object_with_path in repo_objects:
-        obj = os.path.basename(object_with_path)
-        if obj.startswith(tuple(object_type)) and obj.endswith('json'):
+        path_file = os.path.split(object_with_path)
+        if path_file[0].startswith('file-formats/') and path_file[1].endswith('json') and not path_file[1].startswith('z'):
             schemas.append(object_with_path)
     return schemas
 
