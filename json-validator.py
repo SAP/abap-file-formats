@@ -14,8 +14,8 @@ def match_schema_instance( schemas, instances ):
     # build dict with key: json schema and value: json example
     dict_json = {}
     for schema in schemas:
-        filename = "." + os.path.basename(schema)
-        dict_json[schema] = list(filter(lambda el: el.endswith(filename), instances))
+        dot_object = "." + os.path.basename(schema)
+        dict_json[schema] = list(filter(lambda el: el.endswith(dot_object), instances))
     print(f"::group::Print schema/instance matches")
     pprint.pprint(dict_json)
     print(f"::endgroup::")
