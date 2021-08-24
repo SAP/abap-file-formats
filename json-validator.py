@@ -3,6 +3,7 @@ import jsonschema
 from jsonschema import Draft7Validator
 from jsonschema import exceptions
 import os
+import glob
 import sys
 from git import Repo
 import pprint
@@ -17,12 +18,7 @@ def get_all_files_from_repo():
 
 
 def gather_schemas( repo_objects ):
-    schemas = []
-    # find json schema of type <ABAB_object>.json
-    for object_with_path in repo_objects:
-        path_file = os.path.split(object_with_path)
-        if path_file[0].startswith('file-formats/') and path_file[1].endswith('json') and not path_file[1].startswith('z'):
-            schemas.append(object_with_path)
+    schemas = glob.glob( './file-formats/*/*.json', recursive=True)
     return schemas
 
 
