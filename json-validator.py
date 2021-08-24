@@ -5,21 +5,9 @@ from jsonschema import exceptions
 import os
 import glob
 import sys
-from git import Repo
 import pprint
 
 nb_errors = 0
-
-
-def get_all_files_from_repo():
-    repo = Repo('./')
-    git = repo.git
-    return git.ls_tree('-r', '--name-only', 'HEAD').split('\n')
-
-
-def gather_schemas( repo_objects ):
-    schemas = glob.glob( './file-formats/*/*.json')
-    return schemas
 
 
 def match_schema_instance( schemas, repo_objects ):
@@ -70,8 +58,8 @@ def validate_json_and_example( schemas, repo_objects ):
     print(f"::endgroup::")
 
 
-repo_objects = get_all_files_from_repo()
-schemas = gather_schemas( repo_objects )
+repo_objects = glob.glob('./file-formats/*/*/**.json', recursive=True)
+schemas = glob.glob('./file-formats/*/*.json')
 
 validate_json_and_example( schemas, repo_objects)
 if nb_errors > 0:
