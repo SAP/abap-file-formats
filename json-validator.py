@@ -18,7 +18,7 @@ def get_all_files_from_repo():
 
 
 def gather_schemas( repo_objects ):
-    schemas = glob.glob( './file-formats/*/*.json', recursive=True)
+    schemas = glob.glob( './file-formats/*/*.json')
     return schemas
 
 
