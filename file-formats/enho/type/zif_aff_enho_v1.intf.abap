@@ -261,11 +261,11 @@ INTERFACE zif_aff_enho_v1
       enhancement_spot     TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">BAdI Implementations of the ENHO</p>
       "! BAdI implementations of the ENHO
-      badi_implementations TYPE tt_badi_impls,
+      badi_implementations TYPE ty_badi_impls,
       "! <p class="shorttext">Referenced Objects</p>
       "! Referenced objects of the enhancement implementation
       "! $required
-      referenced_objects   TYPE tt_referenced_objects,
+      referenced_objects   TYPE ty_referenced_objects,
     END OF ty_main.
 
 ENDINTERFACE.
