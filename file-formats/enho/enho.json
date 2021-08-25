@@ -19,7 +19,7 @@
                     "title": "Description",
                     "description": "Description of the ABAP object",
                     "type": "string",
-                    "maxLength": 60
+                    "maxLength": 100
                 },
                 "originalLanguage": {
                     "title": "Original Language",
@@ -51,17 +51,17 @@
             ]
         },
         "enhancementSpot": {
-            "title": "Enhancement Spot name",
+            "title": "Enhancement Spot Name",
             "description": "Name of the Enhancement Spot",
             "type": "string",
             "maxLength": 30
         },
         "badiImplementations": {
-            "title": "BAdI implementations of the ENHO",
+            "title": "BAdI Implementations of the ENHO",
             "description": "BAdI implementations of the ENHO",
             "type": "array",
             "items": {
-                "title": "BAdI implementation",
+                "title": "BAdI Implementation",
                 "description": "Information about this BAdI implementation",
                 "type": "object",
                 "properties": {
@@ -100,12 +100,12 @@
                         "type": "boolean"
                     },
                     "isActiveImplementation": {
-                        "title": "BAdI implementation is active",
+                        "title": "BAdI Implementation is Active",
                         "description": "BAdI implementation is active",
                         "type": "boolean"
                     },
                     "isCustomizingSupported": {
-                        "title": "BAdI implementation supports customizing",
+                        "title": "BAdI Implementation supports Customizing",
                         "description": "BAdI implementation supports customizing",
                         "type": "boolean"
                     },
@@ -185,34 +185,34 @@
             }
         },
         "referencedObjects": {
-            "title": "Referenced objects",
+            "title": "Referenced Objects",
             "description": "Referenced objects of the enhancement implementation",
             "type": "array",
             "items": {
-                "title": "A referenced object",
+                "title": "A Referenced Object",
                 "description": "A referenced object",
                 "type": "object",
                 "properties": {
                     "objectType": {
-                        "title": "Type of the referenced object",
+                        "title": "Type of the Referenced Object",
                         "description": "Type of the referenced object",
                         "type": "string",
                         "maxLength": 4
                     },
                     "objectName": {
-                        "title": "Name of the referenced object",
+                        "title": "Name of the Referenced Object",
                         "description": "Name of the referenced object",
                         "type": "string",
                         "maxLength": 120
                     },
                     "programId": {
-                        "title": "Program ID of the referenced object",
+                        "title": "Program ID of the Referenced Object",
                         "description": "Program ID (R3TR or LIMU) of the referenced object",
                         "type": "string",
                         "maxLength": 4
                     },
                     "elementUsage": {
-                        "title": "Element usage",
+                        "title": "Element Usage",
                         "description": "Element usage of the referenced object",
                         "type": "string",
                         "enum": [
@@ -221,19 +221,19 @@
                             "migratedFrom"
                         ],
                         "enumDescriptions": [
-                            "Used Object",
-                            "Enhanced Object",
+                            "Used object",
+                            "Enhanced object",
                             "Migrated from"
                         ]
                     },
                     "mainObjectType": {
-                        "title": "Main object type",
+                        "title": "Main Object Type",
                         "description": "Main object type of the referenced object",
                         "type": "string",
                         "maxLength": 4
                     },
                     "mainObjectName": {
-                        "title": "Main object name",
+                        "title": "Main Object Name",
                         "description": "Main object name of the referenced object",
                         "type": "string",
                         "maxLength": 40
