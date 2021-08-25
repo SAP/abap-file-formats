@@ -40,7 +40,7 @@ E.g., for function module FUNCTION_EXISTS in function group SUNI, the file name 
 ### Content Type
 If an object needs multiple files which are not represented by transport objects, the content type is used to differentiate between the different file types.
 ```
-cl_oo_clif_source.clas.global.abap
+cl_oo_clif_source.clas.abap
 cl_oo_clif_source.clas.testclasses.abap
 ```
 
@@ -67,11 +67,11 @@ The `.json` file is referred to as the property file. The ABAP file formats prov
 Here are some examples of file names and their corresponding content:
 | File Name | Content |
 | ---  | --- |
-| `cl_my_class.clas.global.abap` | Source code of global class `CL_MY_CLASS` |
-| `(nmspc)cl_my_class.clas.global.abap` | Source code of global class with namespace `/NMSPC/CL_MY_CLASS` |
+| `cl_my_class.clas.abap` | Source code of class `CL_MY_CLASS` |
+| `(nmspc)cl_my_class.clas.abap` | Source code of class with namespace `/NMSPC/CL_MY_CLASS` |
 | `cl_my_class.clas.testclasses.abap` | Source code of local test classes in `CL_MY_CLASS` |
 | `s_carrid.dtel.json` | Properties of data element `S_CARRID` |
-| [`z_aff_example_fugr.fugr.z_aff_example_func.func.abap`](/file-formats/fugr/examples/z_aff_example_fugr.fugr.z_aff_example_func.func.abap) | Source code of function module `Z_AFF_EXAMPLE_FUNC` |
+| [`z_aff_example_fugr.fugr.z_aff_example_func.func.abap`](../file-formats/fugr/examples/z_aff_example_fugr.fugr.z_aff_example_func.func.abap) | Source code of function module `Z_AFF_EXAMPLE_FUNC` |
 | `seo_class_editor.fugr.0152.dynp.json` | Dynpro 0152 of function group `SEO_CLASS_EDITOR` |
 
 ## Formatting Conventions
@@ -123,11 +123,18 @@ The following changes to file formats are considered as incompatible:
 
 Each JSON schema provided in this repository is automatically generated. For this purpose, an interface corresponds to each object type in which the necessary components of the type are described in the type `ty_main`. The name of the interface follows the pattern `zif_aff_<object_type>_v<version_number>`. `<object_type>` can be either the (R3TR) object type or the (LIMU) sub object type, since R3TR and LIMU object types share the same namespace. `<version_number>` is an increasing integer which starts with `1`.
 
-One mandatory component of the type is the field `schema` which is translated to `$schema` in the JSON schema. Its value in the `.json` files is the link given in the field `$id` of the JSON schema. Furthermore, a `header` has to be supplied. The interface [`zif_aff_types_v1`](/file-formats/typesUsedForAll/zif_aff_types_v1.intf.abap) offers different headers for reuse, but also other often repeated types.
-
 The ABAP types are self-contained, so it is possible to work on them in any system (e.g., in an SAP BTP, ABAP environment system).
 
-In order to add more information to the JSON schema than that provided by the ABAP type, ABAP Doc can be used. The comments are placed directly above the components of the type `ty_main`, but they are also read over several levels as, e.g., in the case of nested structures. The different possibilities are summarized in the following.
+The JSON schema is generated based on the fields and their ABAP type specification defined in `ty_main`. Each field defined in the structure is transformed to a JSON representation using a camel case notation (e.g, field `abap_language_version` is transformed to the field `abapLanguageVersion` in the JSON schema). The ABAP type information fills the JSON schema fields `type`, `length`, `minimum`, `maximum`.
+
+One mandatory component of the type is the field `schema` which is translated to `$schema` in the JSON schema.
+Its value in the `.json` files is the link given in the field `$id` of the JSON schema.
+Furthermore, a `header` has to be supplied.
+The interface [`zif_aff_types_v1`](../file-formats/zif_aff_types_v1.intf.abap) offers different headers for reuse, but also other often repeated types.
+
+In order to add more information to the JSON schema than that provided by the ABAP type, ABAP Doc can be used.
+The comments are placed directly above the components of the type `ty_main`, but they are also read over several levels as, e.g., in the case of nested structures.
+The different possibilities are summarized in the following.
 
 ### Title
 To provide a title, an ABAP Doc shorttext
@@ -144,12 +151,14 @@ An ABAP Doc comment without annotations is passed as description to the JSON sch
 If no description is given, either the title, if provided, or the component name transformed to camel case is shown in the JSON schema.
 
 ### Enum Values
-To pass enum values to a JSON schema, a type and a constant are specified. The names of the components of the constant are written as external (JSON) values to the JSON schema after being transformed to camel case. The corresponding values of the components represent the internal (ABAP) values. Descriptions of the enum values are passed to the schema in the same way as described above.
+To pass enum values to a JSON schema, a type and a constant are specified. The names of the components of the constant are written as external (JSON) values to the JSON schema after being transformed to camel case (e.g, component `badi_definition` is transformed to the enum value `badiDefinition` in the JSON schema).
+The corresponding values of the components represent the internal (ABAP) values. Descriptions of the enum values are passed to the schema in the same way as described above.
 
 The type specifies the underlying data type and links to the constant via the following annotation:
 ```abap
 "! $values {@link source_name.data:constant_name}
 ```
+
 ### Extreme Values
 For numerical types, (exclusive) minimum and (exclusive) maximum values can be specified via the annotational keywords
 ```abap
@@ -209,7 +218,7 @@ The order of these comments is important: First, there is the comment for the ti
 
 
 ## Type Specification Example
-Here is the shortened type used to generate the JSON schema for interfaces. It can be found in the interface [`zif_aff_intf_v1`](/file-formats/intf/type/zif_aff_intf_v1.intf.abap).
+Here is the shortened type used to generate the JSON schema for interfaces. It can be found in the interface [`zif_aff_intf_v1`](../file-formats/intf/type/zif_aff_intf_v1.intf.abap).
 ```abap
   TYPES:
     "! <p class="shorttext">Interface Properties</p>
@@ -228,7 +237,7 @@ Here is the shortened type used to generate the JSON schema for interfaces. It c
       proxy      TYPE abap_bool.
     END OF ty_main.
 ```
-With the specification of the component `header` and its used types in the interface [`zif_aff_types_v1`](/file-formats/typesUsedForAll/zif_aff_types_v1.intf.abap)
+With the specification of the component `header` and its used types in the interface [`zif_aff_types_v1`](../file-formats/zif_aff_types_v1.intf.abap)
 ```abap
   "! $values {@link zif_aff_types_v1.data:co_abap_language_version_src}
   "! $default {@link zif_aff_types_v1.data:co_abap_language_version_src.standard}
@@ -342,7 +351,7 @@ This leads to the following generated JSON schema:
 
 This section describes fields that can be reused by all file formats.
 
-The types for these reusables are defined in the interface [`ZIF_AFF_TYPES_V1`](file-formats/typesUsedForAll/zif_aff_types_v1.intf.abap).
+The types for these reusables are defined in the interface [`ZIF_AFF_TYPES_V1`](../file-formats/zif_aff_types_v1.intf.abap).
 
 ### Schema
 
