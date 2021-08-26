@@ -39,7 +39,7 @@ INTERFACE zif_aff_enho_v1
       greater_equal      TYPE ty_comparator VALUE '>=',
       "! <p class="shorttext">Not Equal</p>
       "! Not Equal: True if the value of operand1 does not match the value of operand2.
-      packed             TYPE ty_comparator VALUE '<>',
+      not_equal          TYPE ty_comparator VALUE '<>',
       "! <p class="shorttext">Covers Pattern</p>
       "! Covers Pattern: True, if the content of operand1 fits the pattern in operand2.
       "! Wildcard characters can be used to create the operand2 pattern,
