@@ -12,7 +12,7 @@
         },
         "header": {
             "title": "Header",
-            "description": "header",
+            "description": "Header",
             "type": "object",
             "properties": {
                 "description": {
@@ -96,7 +96,7 @@
                     },
                     "isDefaultImplementation": {
                         "title": "Is Default Implementation",
-                        "description": "BAdI implementation is the default implementation of the BAdI Definition",
+                        "description": "BAdI implementation is the default implementation of the BAdI definition",
                         "type": "boolean"
                     },
                     "isActiveImplementation": {
@@ -105,7 +105,7 @@
                         "type": "boolean"
                     },
                     "isCustomizingSupported": {
-                        "title": "BAdI Implementation supports Customizing",
+                        "title": "BAdI Implementation Supports Customizing",
                         "description": "BAdI implementation supports customizing",
                         "type": "boolean"
                     },

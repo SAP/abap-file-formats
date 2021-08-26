@@ -108,14 +108,14 @@ INTERFACE zif_aff_enho_v1
 
   TYPES:
     "! This structure contains all relevant data of one BADI implementation filter:
-    "! it compares one filter-name (from the BADI definition) with one or two filter-values.
+    "! It compares one filter-name (from the BADI definition) with one or two filter-values.
     "! It corresponds to structure ENH_BADIIMPL_FILTER_VALUE.
     BEGIN OF ty_badi_impl_filter,
       "! <p class="shorttext">Filter Name</p>
-      "! Name of the filter
+      "! Filter name
       filter_name        TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Filter Type</p>
-      "! Type of the filter
+      "! Filter type
       filter_type        TYPE ty_filter_type,
       "! <p class="shorttext">Comparators</p>
       "! Comparators
@@ -225,14 +225,14 @@ INTERFACE zif_aff_enho_v1
       "! $showAlways
       is_example_implementation TYPE abap_bool,
       "! <p class="shorttext">Is Default Implementation</p>
-      "! BAdI implementation is the default implementation of the BAdI Definition
+      "! BAdI implementation is the default implementation of the BAdI definition
       "! $showAlways
       is_default_implementation TYPE abap_bool,
       "! <p class="shorttext">BAdI Implementation is Active</p>
       "! BAdI implementation is active
       "! $showAlways
       is_active_implementation  TYPE abap_bool,
-      "! <p class="shorttext">BAdI Implementation supports Customizing</p>
+      "! <p class="shorttext">BAdI Implementation Supports Customizing</p>
       "! BAdI implementation supports customizing
       "! $showAlways
       is_customizing_supported  TYPE abap_bool,
@@ -256,11 +256,11 @@ INTERFACE zif_aff_enho_v1
       "! $required
       schema               TYPE string,
       "! <p class="shorttext">Header</p>
-      "! header
+      "! Header
       "! $required
       header               TYPE zif_aff_types_v1=>ty_header_100,
       "! <p class="shorttext">Enhancement Spot Name</p>
-      "! Name of the Enhancement Spot
+      "! Enhancement Spot name
       "! $required
       enhancement_spot     TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">BAdI Implementations of the ENHO</p>
