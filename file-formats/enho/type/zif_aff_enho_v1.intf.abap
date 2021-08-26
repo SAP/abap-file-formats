@@ -222,15 +222,19 @@ INTERFACE zif_aff_enho_v1
       implementing_class        TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Is Example Implementation</p>
       "! BAdI implementation is an example implementation
+      "! $showAlways
       is_example_implementation TYPE abap_bool,
       "! <p class="shorttext">Is Default Implementation</p>
       "! BAdI implementation is the default implementation of the BAdI Definition
+      "! $showAlways
       is_default_implementation TYPE abap_bool,
       "! <p class="shorttext">BAdI Implementation is Active</p>
       "! BAdI implementation is active
+      "! $showAlways
       is_active_implementation  TYPE abap_bool,
       "! <p class="shorttext">BAdI Implementation supports Customizing</p>
       "! BAdI implementation supports customizing
+      "! $showAlways
       is_customizing_supported  TYPE abap_bool,
       "! <p class="shorttext">Filter Values</p>
       "! Filter values for this BAdI implementation
