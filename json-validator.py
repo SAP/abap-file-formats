@@ -3,38 +3,19 @@ import jsonschema
 from jsonschema import Draft7Validator
 from jsonschema import exceptions
 import os
+import glob
 import sys
-from git import Repo
 import pprint
 
-# provide ABAP objects as list
-# only schema for this objects are validated
-object_type = ['clas', 'ddls', 'intf', 'func', 'reps', 'nrob', 'chko', 'chkc', 'fugr', 'enho', 'enhs', 'chkv']
 nb_errors = 0
 
 
-def get_all_files_from_repo():
-    repo = Repo('./')
-    git = repo.git
-    return git.ls_tree('-r', '--name-only', 'HEAD').split('\n')
-
-
-def gather_schemas( repo_objects ):
-    schemas = []
-    # find json schema of type <ABAB_object>.json
-    for object_with_path in repo_objects:
-        obj = os.path.basename(object_with_path)
-        if obj.startswith(tuple(object_type)) and obj.endswith('json'):
-            schemas.append(object_with_path)
-    return schemas
-
-
-def match_schema_instance( schemas, repo_objects ):
+def match_schema_instance( schemas, instances ):
     # build dict with key: json schema and value: json example
     dict_json = {}
     for schema in schemas:
-        filename = "." + os.path.basename(schema)
-        dict_json[schema] = list(filter(lambda el: el.endswith(filename) and os.path.basename(el) != filename, repo_objects))
+        dot_object = "." + os.path.basename(schema)
+        dict_json[schema] = list(filter(lambda el: el.endswith(dot_object), instances))
     print(f"::group::Print schema/instance matches")
     pprint.pprint(dict_json)
     print(f"::endgroup::")
@@ -69,17 +50,17 @@ def validate_json( schema, instances):
             print(os.path.basename(instance) + "\tvalid instance of schema " + os.path.basename(schema))
 
 
-def validate_json_and_example( schemas, repo_objects ):
-    dict_as_list = match_schema_instance( schemas, repo_objects)
+def validate_json_and_example( schemas, instances ):
+    dict_as_list = match_schema_instance( schemas, instances)
     print(f"::group::Validate JSON")
     for match in dict_as_list:
         validate_json( match[0], match[1])
     print(f"::endgroup::")
 
 
-repo_objects = get_all_files_from_repo()
-schemas = gather_schemas( repo_objects )
+instances = glob.glob('./file-formats/*/*/**.json', recursive=True)
+schemas = glob.glob('./file-formats/*/*.json')
 
-validate_json_and_example( schemas, repo_objects)
+validate_json_and_example( schemas, instances)
 if nb_errors > 0:
     sys.exit(1)
