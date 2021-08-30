@@ -10,7 +10,7 @@ File | Cardinality | Definition | Schema | Example
 `<name>.clas.implementations.abap` | 0...1 | | - | [`zcl_aff_example.clas.implementations.abap`](./examples/zcl_aff_example.clas.implementations.abap)
 `<name>.clas.macros.abap` | 0...1 | | - | [`zcl_aff_example.clas.macros.abap`](./examples/zcl_aff_example.clas.macros.abap)
 `<name>.clas.testclasses.abap` | 0...1 | | - | [`zcl_aff_example.clas.testclasses.abap`](./examples/zcl_aff_example.clas.testclasses.abap)
-`<name>.clas.texts.<lang>.properties` | 0...n | [Text Elements](https://help.sap.com/viewer/c238d694b825421f940829321ffa326a/7.40.19/en-US/4ec6cf916e391014adc9fffe4e204223.html) | - | [`zcl_aff_example.clas.testclasses.abap`](./examples/zcl_aff_example.clas.testclasses.abap)
+`<name>.clas.texts.<lang>.properties` | 0...n | [Text Elements](https://help.sap.com/viewer/c238d694b825421f940829321ffa326a/7.40.19/en-US/4ec6cf916e391014adc9fffe4e204223.html) | - | [`zcl_aff_example.clas.texts.en.properties`](./examples/zcl_aff_example.clas.texts.en.properties)
 
 
 Some classes store local types in only one include.
