@@ -1,22 +1,16 @@
-# File Format for Object Type FUGR
+# FUGR File Format
 
-Files with the ending `.abap` contain plain ABAP source code.
-A function group can contain two sub object types (reps and func) which need a properties file themselves.
-The JSON schema for the function group property file is provided [here](./fugr.json).
-The JSON schema for the function group include (reps) property file is provided [here](./reps.json).
-The JSON schema for the function module (func) property file is provided [here](./func.json).
+File | Cardinality | Definition | Schema | Example
+:--- | :---  | :--- | :--- | :---
+`<name>.fugr.json` | 1 | [`zif_aff_fugr_v1.abap`](./type/zif_aff_fugr_v1.intf.abap) | [`fugr.json`](./fugr.json) | [`z_example.fugr.json`](./examples/z_aff_example_fugr.fugr.json)
+`<name>.fugr.sapl<name>.reps.abap` | 1 | ? | - | [`z_aff_example_fugr.fugr.saplz_aff_example_fugr.reps.abap`](./examples/z_aff_example_fugr.fugr.saplz_aff_example_fugr.reps.abap)
+`<name>.fugr.sapl<name>.reps.json` | 1 | [`zif_aff_reps_v1.abap`](./type/zif_aff_reps_v1.intf.abap) |  [`reps.json`](./reps.json) | [`z_aff_example_fugr.fugr.saplz_aff_example_fugr.reps.json`](./examples/z_aff_example_fugr.fugr.saplz_aff_example_fugr.reps.json)
+`<name>.fugr.l<name>top.reps.abap` | 1 | ? | - | [`z_aff_example_fugr.fugr.lz_aff_example_fugrtop.reps.abap`](./examples/z_aff_example_fugr.fugr.lz_aff_example_fugrtop.reps.abap)
+`<name>.fugr.l<name>top.reps.json` | 1 | [`zif_aff_reps_v1.abap`](./type/zif_aff_reps_v1.intf.abap) | [`reps.json`](./reps.json) | [`z_aff_example_fugr.fugr.lz_aff_example_fugrtop.reps.json`](./examples/z_aff_example_fugr.fugr.lz_aff_example_fugrtop.reps.json)
+`<name>.fugr.<fmname>.func.abap` | 0...n | ? | - | [`z_aff_example_fugr.fugr.z_aff_example_func.func.abap`](./examples/z_aff_example_fugr.fugr.z_aff_example_func.func.abap)
+`<name>.fugr.<fmname>.func.json` | 0...n | [`zif_aff_func_v1.abap`](./type/zif_aff_func_v1.intf.abap) | [`func.json`](./func.json) | [`z_aff_example_fugr.fugr.z_aff_example_func.func.json`](./examples/z_aff_example_fugr.fugr.z_aff_example_func.func.json)
+`<name>.fugr.texts.<lang>.properties` | 0...n | ? | - | [`z_aff_example_fugr.fugr.texts.en.properties`](./examples/z_aff_example_fugr.fugr.texts.en.properties)
 
-Example files for a function group `z_aff_example_fugr` are provided in the following table.
-File | Content
- --- | ---
-[`z_aff_example_fugr.fugr.json`](./examples/z_aff_example_fugr.fugr.json)                 | Properties and descriptions of the FUGR
-[`z_aff_example_fugr.fugr.saplz_aff_example_fugr.reps.abap`](./examples/z_aff_example_fugr.fugr.saplz_aff_example_fugr.reps.abap)         | Source code of the SAPL include
-[`z_aff_example_fugr.fugr.saplz_aff_example_fugr.reps.json`](./examples/z_aff_example_fugr.fugr.saplz_aff_example_fugr.reps.json)         | Properties and descriptions of the SAPL include
-[`z_aff_example_fugr.fugr.lz_aff_example_fugrtop.reps.abap`](./examples/z_aff_example_fugr.fugr.lz_aff_example_fugrtop.reps.abap) 	  | Source code of the TOP include
-[`z_aff_example_fugr.fugr.lz_aff_example_fugrtop.reps.json`](./examples/z_aff_example_fugr.fugr.lz_aff_example_fugrtop.reps.json)         | Properties and descriptions of the TOP include
-[`z_aff_example_fugr.fugr.z_aff_example_func.func.abap`](./examples/z_aff_example_fugr.fugr.z_aff_example_func.func.abap)                 | Source code of the included FUNC
-[`z_aff_example_fugr.fugr.z_aff_example_func.func.json`](./examples/z_aff_example_fugr.fugr.z_aff_example_func.func.json)                 | Properties and descriptions of the included FUNC
-[`z_aff_example_fugr.fugr.texts.en.properties`](./examples/z_aff_example_fugr.fugr.texts.en.properties)   | Translation relevant texts
 
 The following sub objects of FUGR are not yet supported:
 * Dynpros
