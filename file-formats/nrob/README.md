@@ -1,9 +1,5 @@
-# File Format for Object Type NROB
+# NROB File Format
 
-The file representation for object `Z_AFF_NR` is provided [here](./examples/z_aff_nr.nrob.json).
-
-The JSON schema is provided [here](./nrob.json).
-
-File | Content
- --- | ---
-[`z_aff_nr.nrob.json`](./examples/z_aff_nr.nrob.json) | File representation of a number range object
+File | Cardinality | Definition | Schema | Example
+:--- | :---  | :--- | :--- | :---
+`<name>.nrob.json` | 1 | [`zif_aff_intf_v1.intf.abap`](./type/zif_aff_nrob_v1.intf.abap) | [`nrob.json`](./nrob.json) | [`z_aff_nr.nrob.json`](./examples/z_aff_nr.nrob.json)
