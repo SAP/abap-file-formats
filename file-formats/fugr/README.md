@@ -9,7 +9,7 @@ File | Cardinality | Definition | Schema | Example
 `<name>.fugr.l<name>top.reps.json` | 1 | [`zif_aff_reps_v1.abap`](./type/zif_aff_reps_v1.intf.abap) | [`reps.json`](./reps.json) | [`z_aff_example_fugr.fugr.lz_aff_example_fugrtop.reps.json`](./examples/z_aff_example_fugr.fugr.lz_aff_example_fugrtop.reps.json)
 `<name>.fugr.<fmname>.func.abap` | 0...n | ? | - | [`z_aff_example_fugr.fugr.z_aff_example_func.func.abap`](./examples/z_aff_example_fugr.fugr.z_aff_example_func.func.abap)
 `<name>.fugr.<fmname>.func.json` | 0...n | [`zif_aff_func_v1.abap`](./type/zif_aff_func_v1.intf.abap) | [`func.json`](./func.json) | [`z_aff_example_fugr.fugr.z_aff_example_func.func.json`](./examples/z_aff_example_fugr.fugr.z_aff_example_func.func.json)
-`<name>.fugr.texts.<lang>.properties` | 0...n | ? | - | [`z_aff_example_fugr.fugr.texts.en.properties`](./examples/z_aff_example_fugr.fugr.texts.en.properties)
+`<name>.fugr.texts.<lang>.properties` | 0...n | [Text Elements](https://help.sap.com/viewer/c238d694b825421f940829321ffa326a/7.40.19/en-US/4ec6cf916e391014adc9fffe4e204223.html) | - | [`z_aff_example_fugr.fugr.texts.en.properties`](./examples/z_aff_example_fugr.fugr.texts.en.properties)
 
 
 The following sub objects of FUGR are not yet supported:
