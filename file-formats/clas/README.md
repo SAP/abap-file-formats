@@ -6,7 +6,7 @@ File | Cardinality | Definition | Schema | Example
 :--- | :---  | :--- | :--- | :---
 `<name>.clas.json` | 1 | [`zif_aff_clas_v1.intf.abap`](./type/zif_aff_clas_v1.intf.abap) | [`clas.json`](./clas.json) | [`zcl_aff_example.clas.json`](./examples/zcl_aff_example.clas.json)
 `<name>.clas.abap` | 1 | [ABAP](https://help.sap.com/doc/abapdocu_cp_index_htm/CLOUD/en-US/index.htm?file=abapclass.htm) | - | [`zcl_aff_example.clas.abap`](./examples/zcl_aff_example.clas.abap)
-`<name>.clas.definition.abap` | 0...1 | | - | [`zcl_aff_example.clas.definitions.abap`](./examples/zcl_aff_example.clas.definitions.abap)
+`<name>.clas.definitions.abap` | 0...1 | | - | [`zcl_aff_example.clas.definitions.abap`](./examples/zcl_aff_example.clas.definitions.abap)
 `<name>.clas.implementations.abap` | 0...1 | | - | [`zcl_aff_example.clas.implementations.abap`](./examples/zcl_aff_example.clas.implementations.abap)
 `<name>.clas.macros.abap` | 0...1 | | - | [`zcl_aff_example.clas.macros.abap`](./examples/zcl_aff_example.clas.macros.abap)
 `<name>.clas.testclasses.abap` | 0...1 | | - | [`zcl_aff_example.clas.testclasses.abap`](./examples/zcl_aff_example.clas.testclasses.abap)
