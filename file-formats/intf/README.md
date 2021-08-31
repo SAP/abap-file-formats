@@ -1,13 +1,8 @@
-# File Format for Object Type INTF
+# INTF File Format
 
-The file with the ending `.abap` contains plain ABAP source code.
-The JSON schema for the interface properties file is provided [here](./intf.json).
-The ABAP type for the interface properties is provided [here](./type/zif_aff_intf_v1.intf.abap).
-
-Example files for an interface `zif_aff_example` are provided in the following table.
-File | Content
- --- | ---
-[`zif_aff_example.intf.json`](./examples/zif_aff_example.intf.json)         | Properties and descriptions of the ABAP interface
-[`zif_aff_example.intf.abap`](./examples/zif_aff_example.intf.abap)         | Interface source code
+File | Cardinality | Definition | Schema | Example
+:--- | :---  | :--- | :--- | :---
+`<name>.intf.json` | 1 | [`zif_aff_intf_v1.intf.abap`](./type/zif_aff_intf_v1.intf.abap) | [`intf.json`](./intf.json) | [`zif_aff_example.intf.json`](./examples/zif_aff_example.intf.json)
+`<name>.intf.abap` | 1 | [ABAP](https://help.sap.com/doc/abapdocu_cp_index_htm/CLOUD/en-US/index.htm?file=abapinterface_definition.htm) | - | [`zif_aff_example.intf.abap`](./examples/zif_aff_example.intf.abap)
 
 Documentation of interfaces is not covered, yet.
