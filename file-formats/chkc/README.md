@@ -1,9 +1,6 @@
-# File Format for Object Type CHKC
+# CHKC File Format
 
-The file representation for object `Z_AFF_EXAMPLE_CHKC` is provided [here](./examples/z_aff_example_chkc.chkc.json).
 
-The JSON schema is provided [here](./chkc.json).
-
-File | Content
- --- | ---
-[`z_aff_example_chkc.chkc.json`](./examples/z_aff_example_chkc.chkc.json) | File representation of an ATC check category
+File | Cardinality | Definition | Schema | Example
+:--- | :---  | :--- | :--- | :---
+`<name>.chkc.json` | 1 | [`zif_aff_chkc_v1.intf.abap`](./type/zif_aff_chkc_v1.intf.abap)| [`chkc.json`](./chkc.json) | [`z_aff_example_chkc.chkc.json`](./examples/z_aff_example_chkc.chkc.json)
