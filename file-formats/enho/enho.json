@@ -1,261 +1,261 @@
 {
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/enho/enho.json",
-    "title": "ENHO Object Type",
-    "description": "Object type ENHO",
-    "type": "object",
-    "properties": {
-        "$schema": {
-            "title": "Schema",
-            "description": "Format version",
-            "type": "string"
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/enho/enho.json",
+  "title": "ENHO Object Type",
+  "description": "Object type ENHO",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "title": "Schema",
+      "description": "Format version",
+      "type": "string"
+    },
+    "header": {
+      "title": "Header",
+      "description": "Header",
+      "type": "object",
+      "properties": {
+        "description": {
+          "title": "Description",
+          "description": "Description of the ABAP object",
+          "type": "string",
+          "maxLength": 100
         },
-        "header": {
-            "title": "Header",
-            "description": "Header",
-            "type": "object",
-            "properties": {
-                "description": {
-                    "title": "Description",
-                    "description": "Description of the ABAP object",
-                    "type": "string",
-                    "maxLength": 100
-                },
-                "originalLanguage": {
-                    "title": "Original Language",
-                    "description": "Original language of the ABAP object",
-                    "type": "string",
-                    "maxLength": 2
-                },
-                "abapLanguageVersion": {
-                    "title": "ABAP Language Version",
-                    "description": "ABAP language version",
-                    "type": "string",
-                    "enum": [
-                        "standard",
-                        "keyUser",
-                        "cloudDevelopment"
-                    ],
-                    "enumDescriptions": [
-                        "Standard",
-                        "ABAP for key user extensibility",
-                        "ABAP cloud development"
-                    ],
-                    "default": "standard"
-                }
-            },
-            "additionalProperties": false,
-            "required": [
-                "description",
-                "originalLanguage"
-            ]
+        "originalLanguage": {
+          "title": "Original Language",
+          "description": "Original language of the ABAP object",
+          "type": "string",
+          "maxLength": 2
         },
-        "enhancementSpot": {
-            "title": "Enhancement Spot Name",
-            "description": "Name of the Enhancement Spot",
+        "abapLanguageVersion": {
+          "title": "ABAP Language Version",
+          "description": "ABAP language version",
+          "type": "string",
+          "enum": [
+            "standard",
+            "keyUser",
+            "cloudDevelopment"
+          ],
+          "enumDescriptions": [
+            "Standard",
+            "ABAP for key user extensibility",
+            "ABAP cloud development"
+          ],
+          "default": "standard"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "description",
+        "originalLanguage"
+      ]
+    },
+    "enhancementSpot": {
+      "title": "Enhancement Spot Name",
+      "description": "Enhancement Spot name",
+      "type": "string",
+      "maxLength": 30
+    },
+    "badiImplementations": {
+      "title": "BAdI Implementations of the ENHO",
+      "description": "BAdI implementations of the ENHO",
+      "type": "array",
+      "items": {
+        "title": "BAdI Implementation",
+        "description": "Information about this BAdI implementation",
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Name",
+            "description": "Name of the BAdI implementation",
             "type": "string",
             "maxLength": 30
-        },
-        "badiImplementations": {
-            "title": "BAdI Implementations of the ENHO",
-            "description": "BAdI implementations of the ENHO",
+          },
+          "description": {
+            "title": "Description",
+            "description": "Description of the BAdI implementation",
+            "type": "string",
+            "maxLength": 255
+          },
+          "badiDefinition": {
+            "title": "BAdI Definition",
+            "description": "BAdI Definition of the BAdI implementation",
+            "type": "string",
+            "maxLength": 30
+          },
+          "implementingClass": {
+            "title": "Implementing Class",
+            "description": "Implementing class of the BAdI implementation",
+            "type": "string",
+            "maxLength": 30
+          },
+          "isExampleImplementation": {
+            "title": "Is Example Implementation",
+            "description": "BAdI implementation is an example implementation",
+            "type": "boolean"
+          },
+          "isDefaultImplementation": {
+            "title": "Is Default Implementation",
+            "description": "BAdI implementation is the default implementation of the BAdI definition",
+            "type": "boolean"
+          },
+          "isActiveImplementation": {
+            "title": "BAdI Implementation is Active",
+            "description": "BAdI implementation is active",
+            "type": "boolean"
+          },
+          "isCustomizingSupported": {
+            "title": "BAdI Implementation Supports Customizing",
+            "description": "BAdI implementation supports customizing",
+            "type": "boolean"
+          },
+          "filterValues": {
+            "title": "Filter Values",
+            "description": "Filter values for this BAdI implementation",
             "type": "array",
             "items": {
-                "title": "BAdI Implementation",
-                "description": "Information about this BAdI implementation",
-                "type": "object",
-                "properties": {
-                    "name": {
-                        "title": "Name",
-                        "description": "Name of the BAdI implementation",
-                        "type": "string",
-                        "maxLength": 30
-                    },
-                    "description": {
-                        "title": "Description",
-                        "description": "Description of the BAdI implementation",
-                        "type": "string",
-                        "maxLength": 255
-                    },
-                    "badiDefinition": {
-                        "title": "BAdI Definition",
-                        "description": "BAdI Definition of the BAdI implementation",
-                        "type": "string",
-                        "maxLength": 30
-                    },
-                    "implementingClass": {
-                        "title": "Implementing Class",
-                        "description": "Implementing class of the BAdI implementation",
-                        "type": "string",
-                        "maxLength": 30
-                    },
-                    "isExampleImplementation": {
-                        "title": "Is Example Implementation",
-                        "description": "BAdI implementation is an example implementation",
-                        "type": "boolean"
-                    },
-                    "isDefaultImplementation": {
-                        "title": "Is Default Implementation",
-                        "description": "BAdI implementation is the default implementation of the BAdI definition",
-                        "type": "boolean"
-                    },
-                    "isActiveImplementation": {
-                        "title": "BAdI Implementation is Active",
-                        "description": "BAdI implementation is active",
-                        "type": "boolean"
-                    },
-                    "isCustomizingSupported": {
-                        "title": "BAdI Implementation Supports Customizing",
-                        "description": "BAdI implementation supports customizing",
-                        "type": "boolean"
+              "oneOf": [
+                {
+                  "title": "Filter Value",
+                  "description": "Filter value",
+                  "type": "string",
+                  "maxItems": 1
+                },
+                {
+                  "title": "Filter Combination",
+                  "description": "Filter combination",
+                  "type": "object",
+                  "properties": {
+                    "operator": {
+                      "title": "Operator",
+                      "description": "An and/or-operator combining filters",
+                      "type": "string"
                     },
                     "filterValues": {
-                        "title": "Filter Values",
-                        "description": "Filter values for this BAdI implementation",
-                        "type": "array",
-                        "items": {
-                            "oneOf": [
-                                {
-                                    "title": "Filter Value",
-                                    "description": "Filter value",
-                                    "type": "string",
-                                    "maxItems": 1
-                                },
-                                {
-                                    "title": "Filter Combination",
-                                    "description": "Filter combination",
-                                    "type": "object",
-                                    "properties": {
-                                        "operator": {
-                                            "title": "Operator",
-                                            "description": "An and/or-operator combining filters",
-                                            "type": "string"
-                                        },
-                                        "filterValues": {
-                                            "title": "Filter Values",
-                                            "description": "Filter values",
-                                            "type": "array",
-                                            "items": {
-                                                "anyOf": [
-                                                    {
-                                                        "title": "Filter Value",
-                                                        "description": "Filter value",
-                                                        "type": "string"
-                                                    },
-                                                    {
-                                                        "title": "Filter Combination",
-                                                        "description": "Filter combination",
-                                                        "properties": {
-                                                            "operator": {
-                                                                "title": "Operator",
-                                                                "description": "An and/or-operator combining filters",
-                                                                "type": "string"
-                                                            },
-                                                            "filterValues": {
-                                                                "title": "Filter Values",
-                                                                "description": "Filter values",
-                                                                "type": "array",
-                                                                "items": {
-                                                                    "anyOf": [
-                                                                        {
-                                                                            "title": "Filter Value",
-                                                                            "description": "Filter value",
-                                                                            "type": "string"
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        }
+                      "title": "Filter Values",
+                      "description": "Filter values",
+                      "type": "array",
+                      "items": {
+                        "anyOf": [
+                          {
+                            "title": "Filter Value",
+                            "description": "Filter value",
+                            "type": "string"
+                          },
+                          {
+                            "title": "Filter Combination",
+                            "description": "Filter combination",
+                            "properties": {
+                              "operator": {
+                                "title": "Operator",
+                                "description": "An and/or-operator combining filters",
+                                "type": "string"
+                              },
+                              "filterValues": {
+                                "title": "Filter Values",
+                                "description": "Filter values",
+                                "type": "array",
+                                "items": {
+                                  "anyOf": [
+                                    {
+                                      "title": "Filter Value",
+                                      "description": "Filter value",
+                                      "type": "string"
                                     }
+                                  ]
                                 }
-                            ]
-                        }
-                    }
-                },
-                "additionalProperties": false,
-                "required": [
-                    "name",
-                    "description",
-                    "badiDefinition"
-                ]
-            }
-        },
-        "referencedObjects": {
-            "title": "Referenced Objects",
-            "description": "Referenced objects of the enhancement implementation",
-            "type": "array",
-            "items": {
-                "title": "A Referenced Object",
-                "description": "A referenced object",
-                "type": "object",
-                "properties": {
-                    "objectType": {
-                        "title": "Type of the Referenced Object",
-                        "description": "Type of the referenced object",
-                        "type": "string",
-                        "maxLength": 4
-                    },
-                    "objectName": {
-                        "title": "Name of the Referenced Object",
-                        "description": "Name of the referenced object",
-                        "type": "string",
-                        "maxLength": 120
-                    },
-                    "programId": {
-                        "title": "Program ID of the Referenced Object",
-                        "description": "Program ID (R3TR or LIMU) of the referenced object",
-                        "type": "string",
-                        "maxLength": 4
-                    },
-                    "elementUsage": {
-                        "title": "Element Usage",
-                        "description": "Element usage of the referenced object",
-                        "type": "string",
-                        "enum": [
-                            "usedObject",
-                            "enhancedObject",
-                            "migratedFrom"
-                        ],
-                        "enumDescriptions": [
-                            "Used object",
-                            "Enhanced object",
-                            "Migrated from"
+                              }
+                            }
+                          }
                         ]
-                    },
-                    "mainObjectType": {
-                        "title": "Main Object Type",
-                        "description": "Main object type of the referenced object",
-                        "type": "string",
-                        "maxLength": 4
-                    },
-                    "mainObjectName": {
-                        "title": "Main Object Name",
-                        "description": "Main object name of the referenced object",
-                        "type": "string",
-                        "maxLength": 40
+                      }
                     }
-                },
-                "additionalProperties": false,
-                "required": [
-                    "objectType",
-                    "objectName",
-                    "programId",
-                    "elementUsage",
-                    "mainObjectType",
-                    "mainObjectName"
-                ]
+                  }
+                }
+              ]
             }
-        }
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "description",
+          "badiDefinition"
+        ]
+      }
     },
-    "additionalProperties": false,
-    "required": [
-        "$schema",
-        "header",
-        "enhancementSpot",
-        "referencedObjects"
-    ]
+    "referencedObjects": {
+      "title": "Referenced Objects",
+      "description": "Referenced objects of the enhancement implementation",
+      "type": "array",
+      "items": {
+        "title": "A Referenced Object",
+        "description": "A referenced object",
+        "type": "object",
+        "properties": {
+          "objectType": {
+            "title": "Type of the Referenced Object",
+            "description": "Type of the referenced object",
+            "type": "string",
+            "maxLength": 4
+          },
+          "objectName": {
+            "title": "Name of the Referenced Object",
+            "description": "Name of the referenced object",
+            "type": "string",
+            "maxLength": 120
+          },
+          "programId": {
+            "title": "Program ID of the Referenced Object",
+            "description": "Program ID (R3TR or LIMU) of the referenced object",
+            "type": "string",
+            "maxLength": 4
+          },
+          "elementUsage": {
+            "title": "Element Usage",
+            "description": "Element usage of the referenced object",
+            "type": "string",
+            "enum": [
+              "usedObject",
+              "enhancedObject",
+              "migratedFrom"
+            ],
+            "enumDescriptions": [
+              "Used object",
+              "Enhanced object",
+              "Migrated from"
+            ]
+          },
+          "mainObjectType": {
+            "title": "Main Object Type",
+            "description": "Main object type of the referenced object",
+            "type": "string",
+            "maxLength": 4
+          },
+          "mainObjectName": {
+            "title": "Main Object Name",
+            "description": "Main object name of the referenced object",
+            "type": "string",
+            "maxLength": 40
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "objectType",
+          "objectName",
+          "programId",
+          "elementUsage",
+          "mainObjectType",
+          "mainObjectName"
+        ]
+      }
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "header",
+    "enhancementSpot",
+    "referencedObjects"
+  ]
 }
