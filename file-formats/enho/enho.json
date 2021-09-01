@@ -1,11 +1,11 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/sap/abap-file-formats/blob/main/file-formats/enho/enho.json",
+  "$id": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/enho/enho.json",
   "title": "ENHO Object Type",
   "description": "Object type ENHO",
   "type": "object",
   "properties": {
-    "$schema": { 
+    "$schema": {
       "title": "Schema",
       "description": "Format version",
       "type": "string"
