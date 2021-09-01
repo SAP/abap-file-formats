@@ -5,7 +5,7 @@
   "description": "Object type ENHO",
   "type": "object",
   "properties": {
-    "$schema": {
+    "$schema": { 
       "title": "Schema",
       "description": "Format version",
       "type": "string"
@@ -173,7 +173,7 @@
                   }
                 }
               ]
-            } 
+            }
           }
         },
         "additionalProperties": false,
