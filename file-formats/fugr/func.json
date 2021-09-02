@@ -191,7 +191,8 @@
       "title": "Include Number",
       "description": "Include number",
       "type": "string",
-      "maxLength": 2
+      "maxLength": 2,
+      "pattern": "[0-9]*"
     },
     "notExecutable": {
       "title": "Not Executable",
