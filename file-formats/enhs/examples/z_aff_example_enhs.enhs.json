@@ -2,7 +2,8 @@
   "$schema": "http://github.com/sap/abap-file-formats/blob/main/file-formats/enhs/enhs.json",
   "header": {
     "description": "Example ENHS for ABAP file formats",
-    "originalLanguage": "EN"
+    "originalLanguage": "EN",
+    "abapLanguageVersion": "standard"
   },
   "configuration": {
     "tool": "badiDefinition"
