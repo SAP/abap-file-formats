@@ -61,7 +61,7 @@ ABAP file formats define three file types:
 * **`.json`** stores content of form-based editors or properties of objects, such as `originalLanguage`, `abapLanguageVersion` and others
 * **`.properties`** stores translation relevant text elements as plain text
 
-The `.json` file is referred to as the property file. The ABAP file formats provide JSON schemas for its annotation and validation, see [JSON Type Specification](./json) for additional details.
+The `.json` file is referred to as the property file. The ABAP file formats provide JSON schemas for its annotation and validation, see [JSON Type Specification](./json.md) for additional details.
 
 ## File Name Examples
 Here are some examples of file names and their corresponding content:
