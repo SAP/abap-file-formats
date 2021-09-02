@@ -1,9 +1,5 @@
-# File Format for Object Type ENHS
+# ENHS File Format
 
-For ENHS (BAdI Enhancement Spot), there is a metadata file.
-The JSON schema for the ENHS metadata file is provided [here](./enhs.json).
-
-Example files for an ENHS `z_aff_example_enhs` are provided in the following table.
-File | Content
- --- | ---
-[`z_aff_example_enhs.enhs.json`](./examples/z_aff_example_enhs.enhs.json)    | Metadata of the ENHS
+File | Cardinality | Definition | Schema | Example
+:--- | :---  | :--- | :--- | :---
+`<name>.enhs.json` | 1 | [`zif_aff_enhs_v1.intf.abap`](./type/zif_aff_enhs_v1.intf.abap) | [`enhs.json`](./enhs.json) | [`z_aff_example_enhs.enhs.json`](./examples/z_aff_example_enhs.enhs.json)
