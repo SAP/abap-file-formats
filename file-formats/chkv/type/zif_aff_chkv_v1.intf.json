@@ -1,5 +1,5 @@
 {
-  "$schema": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/chkv/chkv.json",
+  "$schema": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/intf/intf.json",
   "header": {
     "description": "AFF: ATC check variant v1",
     "originalLanguage": "EN",
