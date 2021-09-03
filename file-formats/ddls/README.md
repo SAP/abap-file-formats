@@ -1,12 +1,8 @@
-# File Format for Object Type DDLS
+# DDLS File Format
 
-The files correspond to the CDS Data Definition source code, enriched with metadata and translation relevant texts.
-Files with the ending `.cds` contain plain CDS source code.
-The JSON schema is provided [here](./ddls.json).
 
-Example files for a CDS Data Definition `z_ddls_aff_example` are provided in the following table.
-File | Content
- --- | ---
-[`z_ddls_aff_example.ddls.json`](./examples/z_ddls_aff_example.ddls.json)                                   | Properties and descriptions of the CDS Data Definition
-[`z_ddls_aff_example.ddls.cds`](./examples/z_ddls_aff_example.ddls.cds)                                          | CDS Source Code
-[`z_ddls_aff_example.ddls.objectdependencies.json`](./examples/z_ddls_aff_example.ddls.objectdependencies.json)  | All direct objects that are used in the CDS Data Definition
+File | Cardinality | Definition | Schema | Example
+:--- | :---  | :--- | :--- | :---
+`<name>.ddls.json` | 1 | [`zif_aff_ddls_v1.intf.abap`](./type/zif_aff_ddls_v1.intf.abap) | [`ddls.json`](./ddls.json) | [`z_ddls_aff_example.ddls.json`](./examples/z_ddls_aff_example.ddls.json)
+`<name>.ddls.cds` | 1 | CDS | | [`z_ddls_aff_example.ddls.cds`](./examples/z_ddls_aff_example.ddls.cds)
+`<name>.ddls.objectdependencies.json` | 1 | | | [`z_ddls_aff_example.ddls.objectdependencies.json`](./examples/z_ddls_aff_example.ddls.objectdependencies.json)
