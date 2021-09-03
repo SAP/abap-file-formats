@@ -28,4 +28,4 @@ FUNCTION z_aff_example_func
     i_param TYPE i
   RAISING
     cx_static_check.
-```    
+```
