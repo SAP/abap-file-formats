@@ -93,25 +93,25 @@ INTERFACE zif_aff_func_v1
       "! behaves in the same way, from a semantic point of view.
       "! The classic RFC protocol uses a position logic, while the basXML protocol uses a name identification.
       "! $required
-      basxml_enabled TYPE abap_bool,  " TFDIR-FMODE = X  -> one flavour of RFC kind
+      basxml_enabled TYPE abap_bool,
       "! <p class="shorttext">RFC Scope</p>
       "! Indicates the scope of function module calls. Modules whose call scope is not defined explicitly can be called from anywhere
       "! $required
-      rfc_scope       TYPE ty_rfc_scope,    " additional info of RFC funcs - scope
+      rfc_scope       TYPE ty_rfc_scope,
       "! <p class="shorttext">RFC Version</p>
       "! Indicates which serializations are permitted for the function module.
       "! Among other things, the selected serializations determine where the function module can be enhanced
       "! $required
-      rfc_version        TYPE ty_rfc_version,     " additional info of RFC funcs - interface contract
+      rfc_version        TYPE ty_rfc_version,
       "! <p class="shorttext">ABAP From Java</p>
       "! ABAP from Java
-      abap_from_java TYPE abap_bool,  " TFDIR-FMODE = L  -> another flavour of RFC kind
+      abap_from_java TYPE abap_bool,
       "! <p class="shorttext">Java From ABAP</p>
       "! Java from ABAP
-      java_from_abap TYPE abap_bool,  " TFDIR-FMODE = J   idem
+      java_from_abap TYPE abap_bool,
       "! <p class="shorttext">Java Remote</p>
       "! Java remote
-      java_remote    TYPE abap_bool,  " TFDIR-FMODE = K   idem
+      java_remote    TYPE abap_bool,
     END OF ty_rfc_properties.
 
   "! <p class="shorttext">Update Task Kind</p>
@@ -192,7 +192,7 @@ INTERFACE zif_aff_func_v1
       "! <p class="shorttext">Processing Type</p>
       "! Processing type
       "! $required
-      processing_type      TYPE ty_processing_type,  " TFDIR-FMODE -> normal/rfc/update
+      processing_type      TYPE ty_processing_type,
       "! <p class="shorttext">RFC Specific Fields</p>
       "! Specific fields for rfc function modules
       rfc_properties       TYPE ty_rfc_properties,
@@ -201,17 +201,17 @@ INTERFACE zif_aff_func_v1
       update_properties    TYPE ty_update_properties,
       "! <p class="shorttext">Release State</p>
       "! Release state
-      release_state        TYPE ty_release_state,  " internal/external/obsolete  from RODIR
+      release_state        TYPE ty_release_state,
       "! <p class="shorttext">Release Date</p>
       "! Release date
-      release_date         TYPE sy-datum,   " date when FUNC was released  TFDIR-FREEDATE
+      release_date         TYPE sy-datum,
       "! <p class="shorttext">Global</p>
       "! The parameters of this function module are global visible within the function group
-      global               TYPE abap_bool,  " true/false  from ENLFDIR
+      global               TYPE abap_bool,
       "! <p class="shorttext">Exception Classes</p>
       "! Exception classes
       "! $showAlways
-      exception_classes    TYPE abap_bool,  " true/false  from ENLFDIR
+      exception_classes    TYPE abap_bool,
       "! <p class="shorttext">Application Of Function Module</p>
       "! Application to which function module is assigned
       application          TYPE c LENGTH 1,

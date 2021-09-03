@@ -2,7 +2,6 @@
   "$schema": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/intf/intf.json",
   "header": {
     "description": "CHKO AFF Types",
-    "originalLanguage": "EN",
-    "abapLanguageVersion": "standard"
+    "originalLanguage": "EN"
   }
 }

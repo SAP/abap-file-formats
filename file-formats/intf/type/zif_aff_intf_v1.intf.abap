@@ -39,20 +39,20 @@ INTERFACE zif_aff_intf_v1 PUBLIC.
       "! <p class="shorttext">Schema</p>
       "! Format version
       "! $required
-      schema       TYPE string,
+      schema     TYPE string,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header       TYPE zif_aff_types_v1=>ty_header_60_src,
+      header     TYPE zif_aff_types_v1=>ty_header_60_src,
       "! <p class="shorttext">Interface Category</p>
       "! Interface category
-      category     TYPE ty_category,
+      category   TYPE ty_category,
       "! <p class="shorttext">Proxy Interface</p>
       "! Interface is a proxy interface
-      proxy        TYPE abap_bool,
-      "! <p class="sharttext"> Descriptions</p>
+      proxy      TYPE abap_bool,
+      "! <p class="shorttext">Descriptions</p>
       "! Descriptions maintained in SE80
-      descriptions TYPE  zif_oo_aff_types_v1=>ty_descriptions,
+      descriptions      TYPE zif_oo_aff_types_v1=>ty_descriptions,
     END OF ty_main.
 
-ENDINTERFACE.
+endinterface.
