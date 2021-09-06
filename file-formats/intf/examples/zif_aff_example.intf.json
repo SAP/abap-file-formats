@@ -7,7 +7,7 @@
   "descriptions": {
     "types": [
       {
-        "name": "EXAMPLE_TYPE",
+        "name": "TY_EXAMPLE_TYPE",
         "description": "This is an example type"
       }
     ],
