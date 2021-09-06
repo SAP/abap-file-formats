@@ -50,7 +50,7 @@ INTERFACE zif_aff_intf_v1 PUBLIC.
       "! <p class="shorttext">Proxy Interface</p>
       "! Interface is a proxy interface
       proxy        TYPE abap_bool,
-      "! <p class="sharttext"> Descriptions</p>
+      "! <p class="shorttext">Descriptions</p>
       "! Descriptions maintained in SE80
       descriptions TYPE  zif_oo_aff_types_v1=>ty_descriptions,
     END OF ty_main.
