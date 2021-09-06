@@ -1,16 +1,16 @@
 INTERFACE zif_aff_example
-  PUBLIC .
+  PUBLIC.
 
 
-  TYPES example_type TYPE string .
+  TYPES example_type TYPE string.
 
-  DATA example_attribute TYPE example_type .
+  DATA example_attribute TYPE example_type.
 
-  EVENTS example_event .
+  EVENTS example_event.
 
   METHODS example_method
     IMPORTING
       !i_param TYPE i
     RAISING
-      cx_static_check .
+      cx_static_check.
 ENDINTERFACE.
