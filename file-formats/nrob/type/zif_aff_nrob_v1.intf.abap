@@ -95,7 +95,7 @@ INTERFACE zif_aff_nrob_v1
       "! $required
       "! $default '10'
       buffered_numbers TYPE n LENGTH 8,
-    END OF ty_configuration .
+    END OF ty_configuration.
 
   TYPES:
     "! <p class="shorttext">NROB Object Type</p>
