@@ -8,7 +8,7 @@ INTERFACE zif_aff_example
   "! Method description, lorem ipsum
   METHODS example_method
     IMPORTING
-      !i_param TYPE i
+      !i_param TYPE ty_example_type
     RAISING
       cx_static_check.
 ENDINTERFACE.
