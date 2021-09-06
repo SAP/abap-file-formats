@@ -45,7 +45,7 @@ INTERFACE zif_aff_nrob_v1
       "! If it is set to true determined numbers consist of the prefix (name of subobject) and the numbers.
       "! $required
       prefix               TYPE abap_bool,
-    END OF ty_interval .
+    END OF ty_interval.
 
 
   "! <p class="shorttext">Buffering</p>
