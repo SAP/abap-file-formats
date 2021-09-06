@@ -1,8 +1,8 @@
 {
+  "$schema": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/nrob/nrob.json",
   "header": {
     "description": "Example number range object for ABAP file formats",
-    "originalLanguage": "EN",
-    "abapLanguageVersion": "standard"
+    "originalLanguage": "EN"
   },
   "interval": {
     "numberLengthDomain": "NUM10",
