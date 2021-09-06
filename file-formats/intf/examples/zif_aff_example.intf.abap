@@ -9,8 +9,7 @@ INTERFACE zif_aff_example
   EVENTS example_event.
 
   "! Method description, lorem ipsum
-  METHODS
-  example_method
+  METHODS example_method
     IMPORTING
       !i_param TYPE i
     RAISING
