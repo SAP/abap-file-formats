@@ -1,7 +1,5 @@
 INTERFACE zif_aff_reps_v1
   PUBLIC.
-
-  INTERFACES zif_aff_fugr_v1.
   "! <p class="shorttext">Include Type</p>
   "! Include type
   "! $values {@link zif_aff_reps_v1.data:co_include_type}
