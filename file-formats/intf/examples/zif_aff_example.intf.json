@@ -7,8 +7,14 @@
   "descriptions": {
     "types": [
       {
-        "name": "TY_EXAMPLE_TYPE",
+        "name": "EXAMPLE_TYPE",
         "description": "This is an example type"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "EXAMPLE_ATTRIBUTE",
+        "description": "This is an example attribute"
       }
     ],
     "events": [
