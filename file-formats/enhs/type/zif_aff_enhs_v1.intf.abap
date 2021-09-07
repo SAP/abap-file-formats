@@ -74,7 +74,7 @@ INTERFACE zif_aff_enhs_v1
       "! Domain
       domain       TYPE ty_value_check_object_type VALUE 'DOMADD',
       "! <p class="shorttext">Data Element</p>
-      "! Data Element
+      "! Data element
       data_element TYPE ty_value_check_object_type VALUE 'DTELDE',
     END OF co_value_check_object_type.
 

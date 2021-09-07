@@ -10,7 +10,7 @@ INTERFACE zif_aff_chkc_v1
       "! $required
       schema          TYPE string,
       "! <p class="shorttext">Header</p>
-      "! header
+      "! Header
       "! $required
       header          TYPE zif_aff_types_v1=>ty_header_60,
       "! <p class="shorttext">Parent Category</p>

@@ -104,8 +104,8 @@
       "type": "object",
       "properties": {
         "types": {
-          "title": "Type Description",
-          "description": "Type description",
+          "title": "Type Descriptions",
+          "description": "Type descriptions",
           "type": "array",
           "items": {
             "title": "Name and Description",
@@ -133,8 +133,8 @@
           }
         },
         "attributes": {
-          "title": "Attribute Description",
-          "description": "Attribute description",
+          "title": "Attribute Descriptions",
+          "description": "Attribute descriptions",
           "type": "array",
           "items": {
             "title": "Name and Description",
@@ -162,8 +162,8 @@
           }
         },
         "events": {
-          "title": "Event Description",
-          "description": "Event description",
+          "title": "Event Descriptions",
+          "description": "Event descriptions",
           "type": "array",
           "items": {
             "title": "Event Description",
@@ -220,8 +220,8 @@
           }
         },
         "methods": {
-          "title": "Method Description",
-          "description": "Method description",
+          "title": "Method Descriptions",
+          "description": "Method descriptions",
           "type": "array",
           "items": {
             "title": "Method Description",
