@@ -1,6 +1,5 @@
 {
   "global": {
-    
     "files": "/file-formats/**/*.intf.abap",
     "exclude": [],
     "skipGeneratedGatewayClasses": true,
