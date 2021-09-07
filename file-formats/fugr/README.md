@@ -16,5 +16,16 @@ The following sub objects of FUGR are not yet supported:
 * Dynpros
 * PBO Modules
 * PAI Modules
+* Documentation
 
 For FUGR-deserialization, there is no need to supply a file for the "UXX"-include.
+
+Note that function modules are serialized with the [ABAP pseudo syntax](https://help.sap.com/doc/abapdocu_cp_index_htm/CLOUD/en-US/index.htm?file=abenfunction.htm):
+
+```abap
+FUNCTION z_aff_example_func
+  IMPORTING
+    i_param TYPE i
+  RAISING
+    cx_static_check.
+```
