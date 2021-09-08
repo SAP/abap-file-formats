@@ -1,15 +1,15 @@
-interface z_aff_example_intf public .
+INTERFACE z_aff_example_intf PUBLIC.
 
-  types ty_example_type type string .
+  TYPES ty_example_type TYPE string.
 
-  data example_attribute type ty_example_type .
+  DATA example_attribute TYPE ty_example_type.
 
-  events example_event .
+  EVENTS example_event.
 
   "! Method description, lorem ipsum
-  methods example_method
-    importing
-      !i_param type ty_example_type
-    raising
-      cx_static_check .
-endinterface.
+  METHODS example_method
+    IMPORTING
+      !i_param TYPE ty_example_type
+    RAISING
+      cx_static_check.
+ENDINTERFACE.
