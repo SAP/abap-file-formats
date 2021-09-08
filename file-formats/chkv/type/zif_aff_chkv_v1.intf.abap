@@ -121,7 +121,6 @@ INTERFACE zif_aff_chkv_v1
       "! Table of selected checks of the ATC check variant
       ty_checks TYPE STANDARD TABLE OF ty_check WITH DEFAULT KEY.
 
-
   TYPES:
     "! <p class="shorttext">ATC Check Variant Properties</p>
     "! ATC check variant properties
