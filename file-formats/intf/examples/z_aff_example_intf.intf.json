@@ -11,12 +11,6 @@
         "description": "This is an example type"
       }
     ],
-    "attributes": [
-      {
-        "name": "CO_EXAMPLE_CONSTANT",
-        "description": "This is an example constant"
-      }
-    ],
     "events": [
       {
         "name": "EXAMPLE_EVENT",
