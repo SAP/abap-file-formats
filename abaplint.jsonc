@@ -113,8 +113,8 @@
     "no_public_attributes": true,
     "no_yoda_conditions": true,
     "object_naming": {
-      "clas": "^ZC(L|X)\\_AFF\\_",
-      "intf": "^ZIF\\_AFF\\_",
+      "clas": "^Z",
+      "intf": "^Z",
       "prog": "^Z",
       "fugr": "^Z",
       "tabl": "^Z",
