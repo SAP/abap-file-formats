@@ -88,6 +88,7 @@
           "title": "Type Descriptions",
           "description": "Type descriptions",
           "type": "array",
+          "uniqueItems": true,
           "items": {
             "title": "Name and Description",
             "description": "Name and description",
@@ -117,6 +118,7 @@
           "title": "Attribute Descriptions",
           "description": "Attribute descriptions",
           "type": "array",
+          "uniqueItems": true,
           "items": {
             "title": "Name and Description",
             "description": "Name and description",
@@ -146,6 +148,7 @@
           "title": "Event Descriptions",
           "description": "Event descriptions",
           "type": "array",
+          "uniqueItems": true,
           "items": {
             "title": "Event Description",
             "description": "Event description",
@@ -167,6 +170,7 @@
                 "title": "Parameter Descriptions",
                 "description": "Parameter descriptions",
                 "type": "array",
+                "uniqueItems": true,
                 "items": {
                   "title": "Name and Description",
                   "description": "Name and description",
@@ -204,6 +208,7 @@
           "title": "Method Descriptions",
           "description": "Method descriptions",
           "type": "array",
+          "uniqueItems": true,
           "items": {
             "title": "Method Description",
             "description": "Method description",
@@ -225,6 +230,7 @@
                 "title": "Parameter Descriptions",
                 "description": "Parameter descriptions",
                 "type": "array",
+                "uniqueItems": true,
                 "items": {
                   "title": "Name and Description",
                   "description": "Name and description",
@@ -254,6 +260,7 @@
                 "title": "Exception Descriptions",
                 "description": "Exception descriptions",
                 "type": "array",
+                "uniqueItems": true,
                 "items": {
                   "title": "Name and Description",
                   "description": "Name and description",

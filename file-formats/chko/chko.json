@@ -72,6 +72,7 @@
       "title": "Parameters",
       "description": "Parameters of the ATC check object",
       "type": "array",
+      "uniqueItems": true,
       "items": {
         "title": "Parameter",
         "description": "A parameter of an ATC check object",

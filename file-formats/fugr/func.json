@@ -209,6 +209,7 @@
       "title": "Parameter Descriptions",
       "description": "Parameter descriptions of the function module",
       "type": "array",
+      "uniqueItems": true,
       "items": {
         "title": "Component with description",
         "description": "Component with description",
@@ -238,6 +239,7 @@
       "title": "Exception Descriptions",
       "description": "Exception descriptions of the function module",
       "type": "array",
+      "uniqueItems": true,
       "items": {
         "title": "Component with description",
         "description": "Component with description",
