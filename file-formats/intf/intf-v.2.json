@@ -6,11 +6,6 @@
   "description": "Interface properties",
   "type": "object",
   "properties": {
-    "$schema": {
-      "title": "Schema",
-      "description": "Format version",
-      "type": "string"
-    },
     "version": {
       "description": "The ABAP file format version for INTF.",
       "enum": [ "2" ]
@@ -304,7 +299,6 @@
   },
   "additionalProperties": false,
   "required": [
-    "$schema",
     "version",
     "header"
   ]
