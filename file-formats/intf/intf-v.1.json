@@ -11,6 +11,10 @@
       "description": "Format version",
       "type": "string"
     },
+    "version": {
+      "description": "The ABAP file format version for INTF.",
+      "enum": [ "1" ]
+    },
     "header": {
       "title": "Header",
       "description": "Header",
@@ -301,6 +305,7 @@
   "additionalProperties": false,
   "required": [
     "$schema",
+    "version",
     "header"
   ]
 }
