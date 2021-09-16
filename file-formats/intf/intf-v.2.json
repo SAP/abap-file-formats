@@ -297,7 +297,6 @@
       "additionalProperties": false
     }
   },
-  "additionalProperties": false,
   "required": [
     "version",
     "header"
