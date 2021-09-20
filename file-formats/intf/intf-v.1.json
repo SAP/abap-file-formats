@@ -6,7 +6,7 @@
   "description": "Interface properties",
   "type": "object",
   "properties": {
-    "version": {
+    "formatVersion": {
       "description": "The ABAP file format version for INTF.",
       "enum": [ "1" ]
     },
