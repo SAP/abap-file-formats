@@ -350,7 +350,7 @@ This section describes fields that can be reused by all file formats.
 
 The types for these reusables are defined in the interface [`ZIF_AFF_TYPES_V1`](../file-formats/zif_aff_types_v1.intf.abap).
 
-### FormatVersion
+### Format Version
 
 The field `formatVersion` is a meta field and defines the ABAP file format version of the JSON content.
 Basically, it is needed to allow the incompatible evolution of a content type.
