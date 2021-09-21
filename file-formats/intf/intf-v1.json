@@ -299,7 +299,7 @@
   },
   "additionalProperties": false,
   "required": [
-    "version",
+    "formatVersion",
     "header"
   ]
 }
