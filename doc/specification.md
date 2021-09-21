@@ -298,6 +298,7 @@ This leads to the following generated JSON schema:
   "type": "object",
   "properties": {
     "formatVersion": {
+      "title": "ABAP File Format Version",
       "description": "Format version",
       "enum": [ "1" ]
     },
