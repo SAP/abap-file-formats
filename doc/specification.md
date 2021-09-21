@@ -126,7 +126,7 @@ The ABAP types are self-contained, so it is possible to work on them in any syst
 
 The JSON schema is generated based on the fields and their ABAP type specification defined in `ty_main`. Each field defined in the structure is transformed to a JSON representation using a camel case notation (e.g, field `abap_language_version` is transformed to the field `abapLanguageVersion` in the JSON schema). The ABAP type information fills the JSON schema fields `type`, `length`, `minimum`, `maximum`.
 
-One mandatory component is the `header`.
+Fields `formatVersion` and `header` are mandatory on root level.
 The interface [`zif_aff_types_v1`](../file-formats/zif_aff_types_v1.intf.abap) offers different headers for reuse, but also other often repeated types.
 
 In order to add more information to the JSON schema than that provided by the ABAP type, ABAP Doc can be used.
