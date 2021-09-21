@@ -86,9 +86,8 @@ The JSON files additionally follow
 
 ## Format Compatibility
 
-The format of object types will evolve over time. If a change to the format is considered incompatible, the version of the file format has to be increased.
-
-As of today, the format version is indicated by the `$schema` attribute. This approach is in discussion and might be changed.
+The ABAP file format of object types will evolve over time.
+If a change to the format is considered incompatible, then the `formatVersion` has to be increased.
 
 ### Compatible File Format Changes
 
@@ -127,9 +126,7 @@ The ABAP types are self-contained, so it is possible to work on them in any syst
 
 The JSON schema is generated based on the fields and their ABAP type specification defined in `ty_main`. Each field defined in the structure is transformed to a JSON representation using a camel case notation (e.g, field `abap_language_version` is transformed to the field `abapLanguageVersion` in the JSON schema). The ABAP type information fills the JSON schema fields `type`, `length`, `minimum`, `maximum`.
 
-One mandatory component of the type is the field `schema` which is translated to `$schema` in the JSON schema.
-Its value in the `.json` files is the link given in the field `$id` of the JSON schema.
-Furthermore, a `header` has to be supplied.
+One mandatory component is the `header`.
 The interface [`zif_aff_types_v1`](../file-formats/zif_aff_types_v1.intf.abap) offers different headers for reuse, but also other often repeated types.
 
 In order to add more information to the JSON schema than that provided by the ABAP type, ABAP Doc can be used.
@@ -290,10 +287,9 @@ This leads to the following generated JSON schema:
   "description": "Interface properties",
   "type": "object",
   "properties": {
-    "$schema": {
-      "title": "Schema",
+    "formatVersion": {
       "description": "Format version",
-      "type": "string"
+      "enum": [ "1" ]
     },
     "header": {
       "title": "Header",
@@ -343,7 +339,7 @@ This leads to the following generated JSON schema:
   },
   "additionalProperties": false,
   "required": [
-    "$schema",
+    "formatVersion",
     "header"
   ]
 }
@@ -354,18 +350,11 @@ This section describes fields that can be reused by all file formats.
 
 The types for these reusables are defined in the interface [`ZIF_AFF_TYPES_V1`](../file-formats/zif_aff_types_v1.intf.abap).
 
-### Schema
+### FormatVersion
 
-The field `$schema` is a meta field and defines the format and the format version of the JSON content.
+The field `formatVersion` is a meta field and defines the ABAP file format version of the JSON content.
 Basically, it is needed to allow the incompatible evolution of a content type.
 
-The field `$schema` specifies the location of the JSON schema with an URI.
-As of now, this is a link within this repository.
-
----
-**Note**: Versioning is not finally decided. Please refer to issue [#53](https://github.com/SAP/abap-file-formats/issues/53).
-
----
 
 ### Description
 
