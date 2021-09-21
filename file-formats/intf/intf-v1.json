@@ -7,6 +7,7 @@
   "type": "object",
   "properties": {
     "formatVersion": {
+      "title": "ABAP File Format Version",
       "description": "The ABAP file format version for INTF.",
       "enum": [ "1" ]
     },
