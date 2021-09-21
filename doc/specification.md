@@ -87,6 +87,16 @@ The JSON files additionally follow
 ## Format Compatibility
 
 The ABAP file format of object types will evolve over time.
+For this purpose the JSON schema specifies the field `formatVersion` and the file itself, is named after the version.
+For example, the JSON schema file for INTF for the first version is named `intf-v1.json` and specifies the `formatVersion` by
+```
+"formatVersion": {
+  "title": "ABAP File Format Version",
+  "description": "The ABAP file format version for INTF.",
+  "enum": [ "1" ]
+}
+```
+
 If a change to the format is considered incompatible, then the `formatVersion` has to be increased.
 
 ### Compatible File Format Changes
