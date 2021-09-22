@@ -84,7 +84,7 @@ To enable interchangeability, the files are characterized by
 The JSON files additionally follow
 * 2 spaces indentation
 
-## Format Compatibility
+## Format Versions and Compatibility
 
 The ABAP file format of object types will evolve over time.
 For this purpose the JSON schema specifies the field `formatVersion` and the file itself, is named after the version.
