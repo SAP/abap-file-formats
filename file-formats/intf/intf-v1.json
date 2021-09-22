@@ -9,7 +9,7 @@
     "formatVersion": {
       "title": "ABAP File Format Version",
       "description": "The ABAP file format version for INTF.",
-      "enum": [ "1" ]
+      "const": "1"
     },
     "header": {
       "title": "Header",

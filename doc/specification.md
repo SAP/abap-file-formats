@@ -93,7 +93,7 @@ For example, the JSON schema file for INTF for the first version is named `intf-
 "formatVersion": {
   "title": "ABAP File Format Version",
   "description": "The ABAP file format version for INTF.",
-  "enum": [ "1" ]
+  "const": "1"
 }
 ```
 
@@ -300,7 +300,7 @@ This leads to the following generated JSON schema:
     "formatVersion": {
       "title": "ABAP File Format Version",
       "description": "Format version",
-      "enum": [ "1" ]
+      "const": "1"
     },
     "header": {
       "title": "Header",
