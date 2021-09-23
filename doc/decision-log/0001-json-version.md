@@ -70,7 +70,7 @@ File name | name.ABCD-v1.json | ABCD-v1.json
 
 ### [option 2]
 
-As decides, but without field `formatVersion` or `version`.
+As decided, but without field `formatVersion` or `version`.
 
 * Bad, the version information should be easily retrievable, not by decoding URIs
 
