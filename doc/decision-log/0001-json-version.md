@@ -25,7 +25,7 @@ JSON data:
 
 JSON schema:
 * Declare field `version` as `const` located on root level
-1. Name `ABCD-v1.json` or `ABCD-v.1.json` for the first version of the JSON schema for ABAP object type `ABCD`
+1. Name `ABCD-v1.json` for the first version of the JSON schema for ABAP object type `ABCD`
 2. Store all versions in `ABCD.json` and resolve the version inside by JSON schema logic
 
 
@@ -49,7 +49,7 @@ The JSON version is declared as const on root level.
 
 ### Negative Consequences
 
-* Build-in validation and annotation, of JSON data, in editors like eclipse or VS Code is based on `$schema` and is not accessible out-of-the box
+* Build-in validation and annotation of JSON data in editors like Eclipse or VS Code is based on `$schema` and is not accessible out-of-the box
 * The logic of assigning JSON data to its JSON schema has to be provided by a third party, since it is no longer possible to resolve the URI in the JSON data
 * Change type of `const` to number is bad, because for JSON schema the following representation of integer `1` are equivalent: `1`, `1.0`, `1.00`, ...
 
