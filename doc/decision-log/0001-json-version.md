@@ -31,7 +31,7 @@ JSON schema:
 
 ## Decision Outcome
 
-In the context of ABAP, `version` ambiguous as it suggests 'in-/active' versions.
+In the context of ABAP, `version` is ambiguous as it suggests 'in-/active' versions.
 Instead we agreed on `formatVersion`.
 Together with the JSON schema annotation, this is considered to be precise.
 
@@ -43,13 +43,13 @@ The JSON version is declared as const on root level.
 
 * JSON data does not invalidate with URI changes in `$schema`, provoked by any change of folders or filenames
 * JSON data still decodes its version by `formatVersion`
-* Ever version of a JSON schema corresponds to a single file
+* Every version of a JSON schema corresponds to a single file
 * Name `ABCD.json` is still possible, for example for a generated JSON schema that encodes all versions
 * The type `const` suits the purpose of validation of a single value (preferred over `enum`)
 
 ### Negative Consequences
 
-* Build in validation and annotation, of JSON data, in editors like eclipse or VS Code is based on `$schema` and is not accessible out-of-the box
+* Build-in validation and annotation, of JSON data, in editors like eclipse or VS Code is based on `$schema` and is not accessible out-of-the box
 * The logic of assigning JSON data to its JSON schema has to be provided by a third party, since it is no longer possible to resolve the URI in the JSON data
 * Change type of `const` to number is bad, because for JSON schema the following representation of integer `1` are equivalent: `1`, `1.0`, `1.00`, ...
 
