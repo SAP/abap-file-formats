@@ -6,10 +6,10 @@
   "description": "Interface properties",
   "type": "object",
   "properties": {
-    "$schema": {
-      "title": "Schema",
-      "description": "Format version",
-      "type": "string"
+    "formatVersion": {
+      "title": "ABAP File Format Version",
+      "description": "The ABAP file format version for INTF",
+      "const": "1"
     },
     "header": {
       "title": "Header",
@@ -300,7 +300,7 @@
   },
   "additionalProperties": false,
   "required": [
-    "$schema",
+    "formatVersion",
     "header"
   ]
 }
