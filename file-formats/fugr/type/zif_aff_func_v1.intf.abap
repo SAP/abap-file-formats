@@ -1,6 +1,5 @@
 INTERFACE zif_aff_func_v1
   PUBLIC.
-  INTERFACES zif_aff_fugr_v1.
 
   TYPES:
     "! <p class="shorttext">Component with description</p>
