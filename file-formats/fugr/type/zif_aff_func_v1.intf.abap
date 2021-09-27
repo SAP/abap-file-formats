@@ -1,4 +1,5 @@
-INTERFACE zif_aff_func_v1 PUBLIC.
+INTERFACE zif_aff_func_v1
+  PUBLIC.
 
   TYPES:
     "! <p class="shorttext">Component with description</p>
