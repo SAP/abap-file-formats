@@ -1,0 +1,25 @@
+{
+  "$schema": "http://github.com/sap/abap-file-formats/file-formats/srvb/srvb.json",
+  "header": {
+    "description": "Example SRVB for ABAP File Formats",
+    "originalLanguage": "EN"
+  },
+  "bindTypeImpl": "Z_AFF_EXAMPLE_SRVB",
+  "bindType": "ODATA",
+  "bindTypeCategory": "0",
+  "bindTypeVersion": "V4",
+  "services": [
+    {
+      "serviceName": "SRVD_HOME",
+      "serviceContent": [
+        {
+          "serviceVersion": "0001",
+          "serviceMinorVersion": "0",
+          "servicePatchVersion": "0",
+          "releaseState": "",
+          "srvdName": "SRVD_HOME"
+        }
+      ]
+    }
+  ]
+}
