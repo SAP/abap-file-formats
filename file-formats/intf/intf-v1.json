@@ -37,6 +37,11 @@
             "keyUser",
             "cloudDevelopment"
           ],
+          "enumTitles": [
+            "Standard",
+            "ABAP for Key Users",
+            "ABAP Cloud Development"
+          ],
           "enumDescriptions": [
             "Standard",
             "ABAP for key user extensibility",
@@ -63,6 +68,15 @@
         "dbProcedureProxy",
         "webDynproRuntime",
         "enterpriseService"
+      ],
+      "enumTitles": [
+        "General",
+        "Classic BAdI",
+        "Business (Static Components)",
+        "Business (Instance-dep. components)",
+        "DB Procedure Proxy",
+        "Web Dynpro Runtime",
+        "Enterprise Services"
       ],
       "enumDescriptions": [
         "General interface",

@@ -37,6 +37,11 @@
             "keyUser",
             "cloudDevelopment"
           ],
+          "enumTitles": [
+            "Standard",
+            "ABAP for Key Users",
+            "ABAP Cloud Development"
+          ],
           "enumDescriptions": [
             "Standard",
             "ABAP for key user extensibility",
@@ -118,6 +123,10 @@
                           "exclude",
                           "include"
                         ],
+                        "enumTitles": [
+                          "Exclude",
+                          "Include"
+                        ],
                         "enumDescriptions": [
                           "Exclude",
                           "Include"
@@ -136,6 +145,16 @@
                           "notBetween",
                           "notContainsPattern",
                           "greaterEqual"
+                        ],
+                        "enumTitles": [
+                          "Equals",
+                          "Between",
+                          "Greater Than",
+                          "Contains Pattern",
+                          "Not Equal",
+                          "Not Between",
+                          "Not Contains Pattern",
+                          "Greater Equal"
                         ],
                         "enumDescriptions": [
                           "Equals",

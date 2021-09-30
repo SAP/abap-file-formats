@@ -41,6 +41,10 @@
         "include",
         "functionGroup"
       ],
+      "enumTitles": [
+        "Include",
+        "Function Group"
+      ],
       "enumDescriptions": [
         "Include",
         "Function group"

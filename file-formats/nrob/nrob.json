@@ -37,6 +37,11 @@
             "keyUser",
             "cloudDevelopment"
           ],
+          "enumTitles": [
+            "Standard",
+            "ABAP for Key Users",
+            "ABAP Cloud Development"
+          ],
           "enumDescriptions": [
             "Standard",
             "ABAP for key user extensibility",
@@ -121,6 +126,11 @@
             "mainBuffer",
             "parallel",
             "none"
+          ],
+          "enumTitles": [
+            "Main Buffer",
+            "Parallel",
+            "None"
           ],
           "enumDescriptions": [
             "Main memory buffering. \n\n Main memory buffering is the most efficient buffering solution with regards to system performance. Almost all number range objects use main memory buffering. However, it does have two restrictions: Numbers can no longer be assigned in chronological order. The numbering may contain gaps.",
