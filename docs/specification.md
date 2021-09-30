@@ -151,15 +151,15 @@ An ABAP Doc comment without annotations is passed as description to the JSON sch
 If no description is given, either the title, if provided, or the component name transformed to camel case is shown in the JSON schema.
 
 ### Enum Values
-To pass enum values to a JSON schema, a type and a constant are necessary. 
+To pass enum values to a JSON schema, a type and a constant are necessary.
 The type specifies the underlying data type and links to the constant via the following annotation:
 ```abap
 "! $values {@link source_name.data:constant_name}
 ```
 The names of the components of the constant are written as external (JSON) values to the JSON schema after being transformed to camel case (e.g, component `badi_definition` is transformed to the enum value `badiDefinition` in the JSON schema).
-The corresponding values of the components represent the internal (ABAP) values. 
+The corresponding values of the components represent the internal (ABAP) values.
 Titles and descriptions of the enum values are passed to the schema in the same way as described above. 
-They are written in the fields `enumTitles` and `enumDescriptions`. 
+They are written in the fields `enumTitles` and `enumDescriptions`.
 
 ### Extreme Values
 For numerical types, (exclusive) minimum and (exclusive) maximum values can be specified via the annotational keywords
