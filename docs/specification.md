@@ -141,7 +141,8 @@ To provide a title, an ABAP Doc shorttext
 ```abap
 "! <p class="shorttext">Insert Title</p>
 ```
-is used. If no title is specified, the component name transformed to camel case is written.
+is used.
+If no title is specified, the component name transformed to camel case is written.
 
 ### Description
 An ABAP Doc comment without annotations is passed as description to the JSON schema.
