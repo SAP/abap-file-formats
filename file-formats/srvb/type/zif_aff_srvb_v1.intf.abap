@@ -1,5 +1,5 @@
 INTERFACE zif_aff_srvb_v1
-  PUBLIC .
+  PUBLIC.
   TYPES:
     "! <p class="shorttext">Service Content</p>
     "! Service content
