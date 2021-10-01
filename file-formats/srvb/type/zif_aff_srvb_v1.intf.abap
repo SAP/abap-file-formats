@@ -26,9 +26,9 @@ INTERFACE zif_aff_srvb_v1
       "! <p class="shorttext">Service Definition</p>
       "! Service Definition
       "! $required
-      srvd_name             TYPE string,
+      srvd_name             TYPE c length 30,
     END OF ty_service_content.
-  TYPES: tt_service_content TYPE TABLE OF ty_service_content WITH DEFAULT KEY.
+  TYPES: ty_service_contents TYPE TABLE OF ty_service_content WITH DEFAULT KEY.
   TYPES:
     "! <p class="shorttext">Service Properties</p>
     "! Service properties
@@ -40,9 +40,9 @@ INTERFACE zif_aff_srvb_v1
       "! <p class="shorttext">Service Content</p>
       "! Service Content
       "! $required
-      service_content TYPE tt_service_content,
+      service_content TYPE ty_service_contents,
     END OF ty_service.
-  TYPES: tt_services TYPE TABLE OF  ty_service WITH DEFAULT KEY.
+  TYPES: ty_services TYPE TABLE OF  ty_service WITH DEFAULT KEY.
   TYPES:
     "! <p class="shorttext">Service Binding Properties</p>
     "! Service Binding properties
@@ -74,7 +74,7 @@ INTERFACE zif_aff_srvb_v1
       "! <p class="shorttext">Services</p>
       "! Services
       "! $required
-      services           TYPE tt_services,
+      services           TYPE ty_services,
     END OF ty_main.
 
 ENDINTERFACE.

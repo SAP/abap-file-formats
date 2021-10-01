@@ -139,7 +139,8 @@
                 "srvdName": {
                   "title": "Service Definition",
                   "description": "Service Definition",
-                  "type": "string"
+                  "type": "string",
+                  "maxLength": 30
                 }
               },
               "additionalProperties": false,
