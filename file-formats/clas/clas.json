@@ -37,6 +37,11 @@
             "keyUser",
             "cloudDevelopment"
           ],
+          "enumTitles": [
+            "Standard",
+            "ABAP for Key Users",
+            "ABAP Cloud Development"
+          ],
           "enumDescriptions": [
             "Standard",
             "ABAP for key user extensibility",
@@ -70,6 +75,22 @@
         "bspApplicationClass",
         "basisClassBspElementHdlr",
         "webDynproRuntimeObject"
+      ],
+      "enumTitles": [
+        "General object type",
+        "Exit class",
+        "Test class (ABAP Unit)",
+        "Behavior class (behavior implementations)",
+        "Persistent class",
+        "Factory for persistent class",
+        "Status class for persistent class",
+        "RFC proxy class",
+        "Exception class",
+        "Area class (shared objects)",
+        "Business class",
+        "BSP application class",
+        "Basis class for BSP element handlers",
+        "Web Dynpro runtime object"
       ],
       "enumDescriptions": [
         "General object type",

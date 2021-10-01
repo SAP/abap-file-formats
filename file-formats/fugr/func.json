@@ -37,6 +37,11 @@
         "rfc",
         "update"
       ],
+      "enumTitles": [
+        "Normal",
+        "RFC",
+        "Update"
+      ],
       "enumDescriptions": [
         "normal",
         "rfc",
@@ -63,6 +68,12 @@
             "fromAnySystem",
             "notClassified"
           ],
+          "enumTitles": [
+            "From Same Client And User",
+            "From Same System",
+            "From Any System",
+            "Not Classified"
+          ],
           "enumDescriptions": [
             "From same client and user",
             "From same system",
@@ -77,6 +88,10 @@
           "enum": [
             "fastSerializationRequired",
             "any"
+          ],
+          "enumTitles": [
+            "Fast Serialization Required",
+            "Any"
           ],
           "enumDescriptions": [
             "Fast serialization required",
@@ -122,6 +137,13 @@
             "collectiveRun",
             "unsupportedKind"
           ],
+          "enumTitles": [
+            "Start Immediately",
+            "Start Delayed",
+            "Start Immediately No Restart",
+            "Collective run",
+            "Unsupported kind"
+          ],
           "enumDescriptions": [
             "Start immediately",
             "Start delayed",
@@ -146,6 +168,13 @@
         "obsolete",
         "releasePlanned",
         "notReleased"
+      ],
+      "enumTitles": [
+        "Released",
+        "Released SAP-Internally",
+        "Obsolete/Deprecated",
+        "Planned To Be Released [Obsolete]",
+        "Not Released"
       ],
       "enumDescriptions": [
         "Function module is released",

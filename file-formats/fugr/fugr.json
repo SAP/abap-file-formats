@@ -37,6 +37,11 @@
             "keyUser",
             "cloudDevelopment"
           ],
+          "enumTitles": [
+            "Standard",
+            "ABAP for Key Users",
+            "ABAP Cloud Development"
+          ],
           "enumDescriptions": [
             "Standard",
             "ABAP for key user extensibility",
@@ -66,6 +71,13 @@
         "systemProgram",
         "testProgram",
         "notClassified"
+      ],
+      "enumTitles": [
+        "SAP Program",
+        "Customer Program",
+        "System Program",
+        "Test Program",
+        "Not Classified"
       ],
       "enumDescriptions": [
         "SAP program",
