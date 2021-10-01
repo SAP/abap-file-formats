@@ -26,7 +26,7 @@ INTERFACE zif_aff_srvb_v1
       "! <p class="shorttext">Service Definition</p>
       "! Service Definition
       "! $required
-      srvd_name             TYPE c length 30,
+      srvd_name             TYPE c LENGTH 30,
     END OF ty_service_content.
   TYPES: ty_service_contents TYPE TABLE OF ty_service_content WITH DEFAULT KEY.
   TYPES:
