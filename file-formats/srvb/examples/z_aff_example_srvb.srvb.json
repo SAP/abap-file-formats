@@ -4,20 +4,15 @@
     "description": "Example SRVB for ABAP File Formats",
     "originalLanguage": "EN"
   },
-  "bindTypeImpl": "Z_AFF_EXAMPLE_SRVB",
-  "bindType": "ODATA",
-  "bindTypeCategory": "0",
-  "bindTypeVersion": "V4",
+  "bindingType": "ODATA V4",
+  "bindingTypeCategory": "ui",
   "services": [
     {
-      "serviceName": "SRVD_HOME",
-      "serviceContent": [
+      "name": "SRVD_HOME",
+      "content": [
         {
-          "serviceVersion": "0001",
-          "serviceMinorVersion": "0",
-          "servicePatchVersion": "0",
-          "releaseState": "",
-          "srvdName": "SRVD_HOME"
+          "serviceVersion": "1.0.0",
+          "serviceDefinition": "SRVD_HOME"
         }
       ]
     }

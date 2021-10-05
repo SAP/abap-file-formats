@@ -56,29 +56,28 @@
         "originalLanguage"
       ]
     },
-    "bindTypeImpl": {
-      "title": "Bind Type Impl",
-      "description": "Service Binding Implementation Name",
-      "type": "string",
-      "maxLength": 40
-    },
-    "bindType": {
+    "bindingType": {
       "title": "Bind Type",
       "description": "Service Binding Type",
       "type": "string",
       "maxLength": 30
     },
-    "bindTypeCategory": {
+    "bindingTypeCategory": {
       "title": "Binding Category",
       "description": "Service Binding Category",
       "type": "string",
-      "maxLength": 1
-    },
-    "bindTypeVersion": {
-      "title": "Bind Type Version",
-      "description": "Service Binding Version",
-      "type": "string",
-      "maxLength": 30
+      "enum": [
+        "ui",
+        "webApi"
+      ],
+      "enumTitles": [
+        "UI",
+        "Web API"
+      ],
+      "enumDescriptions": [
+        "UI",
+        "Web API"
+      ]
     },
     "services": {
       "title": "Services",
@@ -89,13 +88,13 @@
         "description": "Service properties",
         "type": "object",
         "properties": {
-          "serviceName": {
+          "name": {
             "title": "Service Name",
             "description": "Service Name",
             "type": "string",
             "maxLength": 40
           },
-          "serviceContent": {
+          "content": {
             "title": "Service Content",
             "description": "Service Content",
             "type": "array",
@@ -108,21 +107,7 @@
                   "title": "Service Major Version",
                   "description": "Service Major Version",
                   "type": "string",
-                  "maxLength": 4
-                },
-                "serviceMinorVersion": {
-                  "title": "Service Minor Version",
-                  "description": "Service Minor Version",
-                  "type": "string",
-                  "maxLength": 10,
-                  "pattern": "[0-9]*"
-                },
-                "servicePatchVersion": {
-                  "title": "Service Patch Version",
-                  "description": "Service Patch Version",
-                  "type": "string",
-                  "maxLength": 10,
-                  "pattern": "[0-9]*"
+                  "maxLength": 24
                 },
                 "serviceBuildVersion": {
                   "title": "Service Build Version",
@@ -131,12 +116,7 @@
                   "maxLength": 10,
                   "pattern": "[0-9]*"
                 },
-                "releaseState": {
-                  "title": "API Release State",
-                  "description": "API Release State",
-                  "type": "string"
-                },
-                "srvdName": {
+                "serviceDefinition": {
                   "title": "Service Definition",
                   "description": "Service Definition",
                   "type": "string",
@@ -146,18 +126,15 @@
               "additionalProperties": false,
               "required": [
                 "serviceVersion",
-                "serviceMinorVersion",
-                "servicePatchVersion",
-                "releaseState",
-                "srvdName"
+                "serviceDefinition"
               ]
             }
           }
         },
         "additionalProperties": false,
         "required": [
-          "serviceName",
-          "serviceContent"
+          "name",
+          "content"
         ]
       }
     }
@@ -166,10 +143,8 @@
   "required": [
     "$schema",
     "header",
-    "bindTypeImpl",
-    "bindType",
-    "bindTypeCategory",
-    "bindTypeVersion",
+    "bindingType",
+    "bindingTypeCategory",
     "services"
   ]
 }
