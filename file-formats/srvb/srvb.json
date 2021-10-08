@@ -57,7 +57,7 @@
       ]
     },
     "bindingType": {
-      "title": "Bind Type",
+      "title": "Binding Type",
       "description": "Service Binding Type",
       "type": "string",
       "maxLength": 30
@@ -94,18 +94,18 @@
             "type": "string",
             "maxLength": 40
           },
-          "content": {
-            "title": "Service Content",
-            "description": "Service Content",
+          "versions": {
+            "title": "Service Versions",
+            "description": "Service Versions",
             "type": "array",
             "items": {
-              "title": "Service Content",
-              "description": "Service content",
+              "title": "Service Version",
+              "description": "Service version",
               "type": "object",
               "properties": {
                 "serviceVersion": {
-                  "title": "Service Major Version",
-                  "description": "Service Major Version",
+                  "title": "Service Version",
+                  "description": "Service Version",
                   "type": "string",
                   "maxLength": 24
                 },
@@ -134,7 +134,7 @@
         "additionalProperties": false,
         "required": [
           "name",
-          "content"
+          "versions"
         ]
       }
     }

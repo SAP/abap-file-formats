@@ -15,11 +15,11 @@ INTERFACE zif_aff_srvb_v1
       web_api TYPE ty_bind_type_category VALUE 1,
     END OF co_bind_type_category.
   TYPES:
-    "! <p class="shorttext">Service Content</p>
-    "! Service content
+    "! <p class="shorttext">Service Version</p>
+    "! Service version
     BEGIN OF ty_service_content,
-      "! <p class="shorttext">Service Major Version</p>
-      "! Service Major Version
+      "! <p class="shorttext">Service Version</p>
+      "! Service Version
       "! $required
       service_version         TYPE c LENGTH 24,
       "! <p class="shorttext">Service Build Version</p>
@@ -39,10 +39,10 @@ INTERFACE zif_aff_srvb_v1
       "! Service Name
       "! $required
       name    TYPE c LENGTH 40,
-      "! <p class="shorttext">Service Content</p>
-      "! Service Content
+      "! <p class="shorttext">Service Versions</p>
+      "! Service Versions
       "! $required
-     content TYPE ty_service_contents,
+     versions TYPE ty_service_contents,
     END OF ty_service.
   TYPES: ty_services TYPE TABLE OF  ty_service WITH DEFAULT KEY.
   TYPES:
@@ -57,7 +57,7 @@ INTERFACE zif_aff_srvb_v1
       "! Header
       "! $required
       header             TYPE zif_aff_types_v1=>ty_header_60,
-      "! <p class="shorttext">Bind Type</p>
+      "! <p class="shorttext">Binding Type</p>
       "! Service Binding Type
       "! $required
       binding_type          TYPE c LENGTH 30,
