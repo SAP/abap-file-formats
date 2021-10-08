@@ -9,7 +9,7 @@
   "services": [
     {
       "name": "SRVD_HOME",
-      "content": [
+      "versions": [
         {
           "serviceVersion": "1.0.0",
           "serviceDefinition": "SRVD_HOME"
