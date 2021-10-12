@@ -57,18 +57,18 @@ INTERFACE zif_aff_nrob_v1
     "! <p class="shorttext">Buffering</p>
     "! Choose a buffer type for no buffering, for buffering via main memory or for parallel buffering.
     BEGIN OF co_buffering,
-      "! <p class="shorttext">Main Buffer</p>
-      "! Main memory buffering. \n\n Main memory buffering is the most efficient buffering solution with regards
+      "! <p class="shorttext">Main Memory Buffering</p>
+      "! Main memory buffering is the most efficient buffering solution with regards
       "! to system performance. Almost all number range objects use main memory buffering. However, it does have
       "! two restrictions: Numbers can no longer be assigned in chronological order. The numbering may contain gaps.
       main_buffer TYPE ty_buffering VALUE 'X',
-      "! <p class="shorttext">Parallel</p>
-      "! Parallel buffering, \n\n Parallel buffering works in the same way as main memory buffering, with the
+      "! <p class="shorttext">Parallel Buffering</p>
+      "! Parallel buffering works in the same way as main memory buffering, with the
       "! difference that the number packages are not stored in the main memory, but are written to the
       "! table NRIVSHADOW.
       parallel    TYPE ty_buffering VALUE 'S',
-      "! <p class="shorttext">None</p>
-      "! No buffering \n\n A number is taken from an interval stored in database NRIV. The table line is
+      "! <p class="shorttext">No Buffering</p>
+      "! No buffering method is used. A number is taken from an interval stored in database NRIV. The table line is
       "! locked and this lock remains until the application that requested the number is closed, either
       "! with a COMMIT WORK or a ROLLBACK.
       none        TYPE ty_buffering VALUE ' ',
