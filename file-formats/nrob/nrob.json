@@ -37,6 +37,11 @@
             "keyUser",
             "cloudDevelopment"
           ],
+          "enumTitles": [
+            "Standard",
+            "ABAP for Key Users",
+            "ABAP Cloud Development"
+          ],
           "enumDescriptions": [
             "Standard",
             "ABAP for key user extensibility",
@@ -122,10 +127,15 @@
             "parallel",
             "none"
           ],
+          "enumTitles": [
+            "Main Memory Buffering",
+            "Parallel Buffering",
+            "No Buffering"
+          ],
           "enumDescriptions": [
-            "Main memory buffering. \n\n Main memory buffering is the most efficient buffering solution with regards to system performance. Almost all number range objects use main memory buffering. However, it does have two restrictions: Numbers can no longer be assigned in chronological order. The numbering may contain gaps.",
-            "Parallel buffering, \n\n Parallel buffering works in the same way as main memory buffering, with the difference that the number packages are not stored in the main memory, but are written to the table NRIVSHADOW.",
-            "No buffering \n\n A number is taken from an interval stored in database NRIV. The table line is locked and this lock remains until the application that requested the number is closed, either with a COMMIT WORK or a ROLLBACK."
+            "Main memory buffering is the most efficient buffering solution with regards to system performance. Almost all number range objects use main memory buffering. However, it does have two restrictions: Numbers can no longer be assigned in chronological order. The numbering may contain gaps.",
+            "Parallel buffering works in the same way as main memory buffering, with the difference that the number packages are not stored in the main memory, but are written to the table NRIVSHADOW.",
+            "No buffering method is used. A number is taken from an interval stored in database NRIV. The table line is locked and this lock remains until the application that requested the number is closed, either with a COMMIT WORK or a ROLLBACK."
           ],
           "default": "mainBuffer"
         },

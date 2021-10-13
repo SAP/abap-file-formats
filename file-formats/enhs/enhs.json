@@ -37,6 +37,11 @@
             "keyUser",
             "cloudDevelopment"
           ],
+          "enumTitles": [
+            "Standard",
+            "ABAP for Key Users",
+            "ABAP Cloud Development"
+          ],
           "enumDescriptions": [
             "Standard",
             "ABAP for key user extensibility",
@@ -67,6 +72,9 @@
           "type": "string",
           "enum": [
             "badiDefinition"
+          ],
+          "enumTitles": [
+            "BAdI Definition"
           ],
           "enumDescriptions": [
             "BAdI definition"
@@ -113,6 +121,11 @@
               "creatingNewInstances",
               "reuseInstances",
               "contextSpecificInstances"
+            ],
+            "enumTitles": [
+              "Creating New Instances",
+              "Reuse Instances",
+              "Context-Specific Instances"
             ],
             "enumDescriptions": [
               "Creating new instances",
@@ -195,6 +208,13 @@
                     "numeric",
                     "packed"
                   ],
+                  "enumTitles": [
+                    "Integer",
+                    "Character-Like",
+                    "String",
+                    "Numeric",
+                    "Packed"
+                  ],
                   "enumDescriptions": [
                     "Integer",
                     "Character-like",
@@ -220,6 +240,10 @@
                       "enum": [
                         "domain",
                         "dataElement"
+                      ],
+                      "enumTitles": [
+                        "Domain",
+                        "Data Element"
                       ],
                       "enumDescriptions": [
                         "Domain",
