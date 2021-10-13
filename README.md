@@ -23,7 +23,7 @@ The design of the ABAP file formats covers the following principles:
 * The file content is **human-readable** and the structure is as close as possible to what users know from their IDE.
 * The files don't contain metadata like dates, usernames, last editor, system specific information, plus no obsolete or redundant information.
 
-Details on technical specification can be found [here](./doc/specification.md).
+Details on technical specification can be found [here](./docs/specification.md).
 
 ### Structure of the Repository
 For each supported ABAP object type, there is a corresponding folder in [`file-formats`](./file-formats). The documentation as well as the JSON schema for every type are located in the root of the folder. The file representation of the underlying interface can be found in the subfolder `type`, the file representation of an exemplary object is contained in the subfolder `examples`.
@@ -37,7 +37,7 @@ Feel free to raise issues to ask questions or report bugs.
 
 Comments and suggestions for improvements are most welcome.
 
-You feel responsible for an ABAP object type? We will be more than happy if you contribute your object type to this project. Just open a new pull request and create a type like it is specified in [Specification](./doc/specification.md#Type-Specification). Feel free to hand over the type to us, so we can generate the JSON schema for you.
+You feel responsible for an ABAP object type? We will be more than happy if you contribute your object type to this project. Just open a new pull request and create a type like it is specified in [Specification](./docs/specification.md#Type-Specification). Feel free to hand over the type to us, so we can generate the JSON schema for you.
 
 More details are found at [Contributing](./CONTRIBUTING.md).
 

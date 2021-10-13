@@ -1,4 +1,4 @@
-define view entity z_ddls_aff_example
+define view entity z_aff_example_ddls
   as select from spfli
 {
   key carrid    as Carrid,

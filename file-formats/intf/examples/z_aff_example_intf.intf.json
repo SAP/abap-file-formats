@@ -1,5 +1,5 @@
 {
-  "$schema": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/intf/intf.json",
+  "formatVersion": "1",
   "header": {
     "description": "Example interface for ABAP file formats",
     "originalLanguage": "EN"
@@ -7,14 +7,14 @@
   "descriptions": {
     "types": [
       {
-        "name": "EXAMPLE_TYPE",
+        "name": "TY_EXAMPLE_TYPE",
         "description": "This is an example type"
       }
     ],
     "attributes": [
       {
-        "name": "EXAMPLE_ATTRIBUTE",
-        "description": "This is an example attribute"
+        "name": "CO_EXAMPLE_CONSTANT",
+        "description": "This is an example constant"
       }
     ],
     "events": [
