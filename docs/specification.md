@@ -11,9 +11,6 @@
 * [File Name Examples](#File-Name-Examples)
 * [Formatting Conventions](#Formatting-Conventions)
 * [Format Compatibility](#Format-Compatibility)
-* [Type Specification](#Type-Specification)
-* [Type Specification Example](#Type-Specification-Example)
-* [Reusable Fields in JSON Files](#Reusable-Fields-in-JSON-files)
 
 ## File Names
 
