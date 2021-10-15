@@ -1,4 +1,4 @@
-INTERFACE zif_oo_aff_types_v1
+INTERFACE zif_aff_oo_types_v1
   PUBLIC.
 
   TYPES:
