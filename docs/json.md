@@ -33,15 +33,16 @@ An ABAP Doc comment without annotations is passed as description to the JSON sch
 If no description is given, either the title, if provided, or the component name transformed to camel case is shown in the JSON schema.
 
 ### Enum Values
-To pass enum values to a JSON schema, a type and a constant are specified.
-The names of the components of the constant are written as external (JSON) values to the JSON schema after being transformed to camel case (e.g, component `badi_definition` is transformed to the enum value `badiDefinition` in the JSON schema).
-The corresponding values of the components represent the internal (ABAP) values.
-Descriptions of the enum values are passed to the schema in the same way as described above.
-
+To pass enum values to a JSON schema, a type and a constant are necessary.
 The type specifies the underlying data type and links to the constant via the following annotation:
 ```abap
 "! $values {@link source_name.data:constant_name}
 ```
+The names of the components of the constant are written as external (JSON) values to the JSON schema after being transformed to camel case (e.g, component `badi_definition` is transformed to the enum value `badiDefinition` in the JSON schema).
+The corresponding values of the components represent the internal (ABAP) values.
+Titles and descriptions of the enum values are passed to the schema in the same way as described above.
+They are written in the fields `enumTitles` and `enumDescriptions`.
+
 
 ### Extreme Values
 For numerical types, (exclusive) minimum and (exclusive) maximum values can be specified via the annotational keywords
@@ -210,6 +211,11 @@ This leads to the following generated JSON schema:
             "ABAP for key user extensibility",
             "ABAP cloud development"
           ],
+          "enumTitles": [
+            "Standard",
+            "ABAP for Key Users",
+            "ABAP Cloud Development"
+          ],
           "default": "standard"
         }
       },
@@ -282,3 +288,4 @@ Implementations of ABAP file formats can decide whether they serialize the ABAP 
 
 During deserialization, ABAP systems might change the ABAP language version needed in the specific context.
 E.g., SAP BTP, ABAP environment systems set the ABAP language version to `cloudDevelopment`, while systems which do not support the ABAP language version might set it to `standard`.
+nn
