@@ -108,10 +108,10 @@ Here is the shortened type used to generate the JSON schema for interfaces. It c
     "! <p class="shorttext">Interface Properties</p>
     "! Interface properties
     BEGIN OF ty_main,
-      "! <p class="shorttext">Schema</p>
-      "! Format version
+      "! <p class="shorttext">ABAP File Format Version</p>
+      "! The ABAP file format version for INTF
       "! $required
-      schema     TYPE string,
+      format_version     TYPE string,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
