@@ -102,6 +102,13 @@ Note that if you specify a default value, the initial values are written to the 
 
 The order of these comments is important: First, there is the comment for the title followed by the one for the description, in case they are both provided. After these two, the remaining annotations are always located. Between them, the order is irrelevant.
 
+### Additional Properties
+
+Generated JSON schemas do not contain the property `additionalProperties`. This means, additional properties are allowed in the JSON files.
+We want to support additional properties to be able to evolve the ABAP file formats in a compatible way. This allows us adding or removing non-mandatory fields in the future.
+
+Adding additional custom fields any ABAP file formats JSON file is not allowed.
+
 
 ## Type Specification Example
 Here is the shortened type used to generate the JSON schema for interfaces. It can be found in the interface [`zif_aff_intf_v1`](../file-formats/intf/type/zif_aff_intf_v1.intf.abap).
