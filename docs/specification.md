@@ -81,6 +81,10 @@ To enable interchangeability, the files are characterized by
 The JSON files additionally follow
 * 2 spaces indentation
 
+We provide an [EditorConfig](https://editorconfig.org) based formatting configuration file [here](../.editorconfig) where the above convention is reflected.
+A GitHub action validates that the repository follows this configuration.
+Note that many text editors are compatible with EditorConfig.
+
 ## Format Versions and Compatibility
 
 The ABAP file format of object types will evolve over time.
@@ -124,4 +128,3 @@ The following changes to file formats are considered as incompatible:
 - Values of a field (e.g., in enum) are removed
 - Length of a field is shortened
 - Length of a field is extended if some systems cannot store this information
-

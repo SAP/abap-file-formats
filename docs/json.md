@@ -22,7 +22,8 @@ To provide a title, an ABAP Doc shorttext
 ```abap
 "! <p class="shorttext">Insert Title</p>
 ```
-is used. If no title is specified, the component name transformed to camel case is written.
+is used.
+If no title is specified, the component name transformed to camel case is written.
 
 ### Description
 An ABAP Doc comment without annotations is passed as description to the JSON schema.
@@ -32,8 +33,10 @@ An ABAP Doc comment without annotations is passed as description to the JSON sch
 If no description is given, either the title, if provided, or the component name transformed to camel case is shown in the JSON schema.
 
 ### Enum Values
-To pass enum values to a JSON schema, a type and a constant are specified. The names of the components of the constant are written as external (JSON) values to the JSON schema after being transformed to camel case (e.g, component `badi_definition` is transformed to the enum value `badiDefinition` in the JSON schema).
-The corresponding values of the components represent the internal (ABAP) values. Descriptions of the enum values are passed to the schema in the same way as described above.
+To pass enum values to a JSON schema, a type and a constant are specified.
+The names of the components of the constant are written as external (JSON) values to the JSON schema after being transformed to camel case (e.g, component `badi_definition` is transformed to the enum value `badiDefinition` in the JSON schema).
+The corresponding values of the components represent the internal (ABAP) values.
+Descriptions of the enum values are passed to the schema in the same way as described above.
 
 The type specifies the underlying data type and links to the constant via the following annotation:
 ```abap
@@ -279,4 +282,3 @@ Implementations of ABAP file formats can decide whether they serialize the ABAP 
 
 During deserialization, ABAP systems might change the ABAP language version needed in the specific context.
 E.g., SAP BTP, ABAP environment systems set the ABAP language version to `cloudDevelopment`, while systems which do not support the ABAP language version might set it to `standard`.
-
