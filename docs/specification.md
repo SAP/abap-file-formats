@@ -8,7 +8,6 @@
 ## Table of Contents
 * [File Names](#File-Names)
 * [File Extensions](#File-Extensions)
-* [File Name Examples](#File-Name-Examples)
 * [Formatting Conventions](#Formatting-Conventions)
 * [Format Compatibility](#Format-Compatibility)
 
