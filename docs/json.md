@@ -220,7 +220,6 @@ This leads to the following generated JSON schema:
           "default": "standard"
         }
       },
-      "additionalProperties": false,
       "required": [
         "description",
         "originalLanguage"
@@ -232,7 +231,6 @@ This leads to the following generated JSON schema:
       "type": "boolean"
     }
   },
-  "additionalProperties": false,
   "required": [
     "$schema",
     "header"
