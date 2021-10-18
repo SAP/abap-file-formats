@@ -43,7 +43,6 @@ The corresponding values of the components represent the internal (ABAP) values.
 Titles and descriptions of the enum values are passed to the schema in the same way as described above.
 They are written in the fields `enumTitles` and `enumDescriptions`.
 
-
 ### Extreme Values
 For numerical types, (exclusive) minimum and (exclusive) maximum values can be specified via the annotational keywords
 ```abap
@@ -206,15 +205,15 @@ This leads to the following generated JSON schema:
             "keyUser",
             "cloudDevelopment"
           ],
-          "enumDescriptions": [
-            "Standard",
-            "ABAP for key user extensibility",
-            "ABAP cloud development"
-          ],
           "enumTitles": [
             "Standard",
             "ABAP for Key Users",
             "ABAP Cloud Development"
+          ],
+          "enumDescriptions": [
+            "Standard",
+            "ABAP for key user extensibility",
+            "ABAP cloud development"
           ],
           "default": "standard"
         }
@@ -288,4 +287,3 @@ Implementations of ABAP file formats can decide whether they serialize the ABAP 
 
 During deserialization, ABAP systems might change the ABAP language version needed in the specific context.
 E.g., SAP BTP, ABAP environment systems set the ABAP language version to `cloudDevelopment`, while systems which do not support the ABAP language version might set it to `standard`.
-nn
