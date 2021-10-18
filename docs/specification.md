@@ -60,17 +60,6 @@ ABAP file formats define three file types:
 
 The `.json` file is referred to as the property file. The ABAP file formats provide JSON schemas for its annotation and validation, see [JSON Type Specification](./json.md) for additional details.
 
-## File Name Examples
-Here are some examples of file names and their corresponding content:
-| File Name | Content |
-| ---  | --- |
-| `cl_my_class.clas.abap` | Source code of class `CL_MY_CLASS` |
-| `(nmspc)cl_my_class.clas.abap` | Source code of class with namespace `/NMSPC/CL_MY_CLASS` |
-| `cl_my_class.clas.testclasses.abap` | Source code of local test classes in `CL_MY_CLASS` |
-| `s_carrid.dtel.json` | Properties of data element `S_CARRID` |
-| [`z_aff_example_fugr.fugr.z_aff_example_func.func.abap`](../file-formats/fugr/examples/z_aff_example_fugr.fugr.z_aff_example_func.func.abap) | Source code of function module `Z_AFF_EXAMPLE_FUNC` |
-| `seo_class_editor.fugr.0152.dynp.json` | Dynpro 0152 of function group `SEO_CLASS_EDITOR` |
-
 ## Formatting Conventions
 To enable interchangeability, the files are characterized by
 * UTF-8 codepage
@@ -80,6 +69,10 @@ To enable interchangeability, the files are characterized by
 
 The JSON files additionally follow
 * 2 spaces indentation
+
+We provide an [EditorConfig](https://editorconfig.org) based formatting configuration file [here](../.editorconfig) where the above convention is reflected.
+A GitHub action run validations based of this configuration file, to ensure the repository follows the formatting convention.
+Developers might choose one of the many compatible text editors for the sake of convenience.
 
 ## Format Compatibility
 
