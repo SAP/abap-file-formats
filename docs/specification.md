@@ -87,6 +87,8 @@ Following changes to file formats are considered as compatible:
 
 - Values for a field (enum) are added (remark: this might lead to syntax errors in ABAP systems which don't support this value)
 - Descriptions or titles are changed
+- Non-mandatory fields are added
+- Non-mandatory fields are removed
 
 
 ### Incompatible File Format Changes
@@ -99,8 +101,6 @@ The following changes to file formats are considered as incompatible:
 - Mandatory fields are added
 - Content structure within the file is changed (e.g., field is moved to a sub structure)
 - Mandatory fields are removed  (old implementations might rely on the field to be mandatory)
-- Non-mandatory fields are added
-- Non-mandatory fields are removed
 - Fields are renamed
 - Type of a field is changed (e.g., from `string` to `number`)
 - Semantic of a field is changed
