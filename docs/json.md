@@ -153,7 +153,7 @@ The order of these comments is important: First, there is the comment for the ti
 ### Additional Properties
 
 Generated JSON schemas do not contain the property `additionalProperties`. This means, additional properties are allowed in the JSON files.
-We want to support additional properties to be able to evolve the ABAP file formats in a compatible way. This allows us adding or removing non-mandatory fields in the future.
+We want to support additional properties to be able to evolve the ABAP file formats in a compatible way, see [Issue-248](https://github.com/SAP/abap-file-formats/issues/248). This allows us adding or removing non-mandatory fields in the future.
 
 Adding additional custom fields in any ABAP file formats JSON file is not allowed.
 
