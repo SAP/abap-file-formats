@@ -2,9 +2,10 @@
 The ABAP file formats provide JSON schemas for annotation and validation of serialized ABAP objects.
 
 ## Table of Contents
-* [Format Versions and Compatibility](#Format-Versions-and-Compatibility)
-* [Type Specification Example](#Type-Specification-Example)
-* [Reusable Fields in JSON Files](#Reusable-Fields-in-JSON-Files)
+* [Format Versions and Compatibility](#format-versions-and-compatibility)
+* [Writing JSON Schema with ABAP Types](#writing-JSON-schema-with-ABAP-types)
+* [Type Specification Example](#type-specification-example)
+* [Reusable Fields in JSON Files](#reusable-fields-in-json-files)
 
 ## Format Versions and Compatibility
 
@@ -50,6 +51,8 @@ The following changes to file formats are considered as incompatible:
 - Length of a field is shortened
 - Length of a field is extended if some systems cannot store this information
 
+
+## Writing JSON Schema with ABAP Types
 
 Each JSON schema provided in this repository is automatically generated. For this purpose, an interface corresponds to each object type in which the necessary components of the type are described in the type `ty_main`. The name of the interface follows the pattern `zif_aff_<object_type>_v<version_number>`. `<object_type>` can be either the (R3TR) object type or the (LIMU) sub object type, since R3TR and LIMU object types share the same namespace. `<version_number>` is an increasing integer which starts with `1`.
 
