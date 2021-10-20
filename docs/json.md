@@ -1,8 +1,58 @@
-## JSON Type Specification
+## JSON Files in ABAP File Formats
+The ABAP file formats provide JSON schemas for annotation and validation of serialized ABAP objects.
 
-* [Type Specification Example](#Type-Specification-Example)
-* [Reusable Fields in JSON Files](#Reusable-Fields-in-JSON-Files)
+## Table of Contents
+* [Format Versions and Compatibility](#format-versions-and-compatibility)
+* [Writing JSON Schema with ABAP Types](#writing-JSON-schema-with-ABAP-types)
+* [Example](#example)
+* [Reusable Fields in JSON Files](#reusable-fields-in-json-files)
 
+## Format Versions and Compatibility
+
+The ABAP file format of object types will evolve over time.
+For this purpose the JSON schema specifies the field `formatVersion` and the file itself, is named after the version.
+For example, the JSON schema file for INTF for the first version is named `intf-v1.json` and specifies the `formatVersion` by
+```
+"formatVersion": {
+  "title": "ABAP File Format Version",
+  "description": "The ABAP file format version for INTF.",
+  "const": "1"
+}
+```
+
+If a change to the format is considered incompatible, then the `formatVersion` has to be increased.
+
+### Compatible File Format Changes
+
+For compatible changes to the file format, the format is just updated. The indicator whether the format has to be changed should not be updated.
+
+Following changes to file formats are considered as compatible:
+
+- Values for a field (enum) are added (remark: this might lead to syntax errors in ABAP systems which don't support this value)
+- Descriptions or titles are changed
+- Non-mandatory fields are added
+- Non-mandatory fields are removed
+
+
+### Incompatible File Format Changes
+
+If a file format is changed incompatibly, a new file format with a new version has to be created. The old file format is kept. It can be used for old/existing versions of files.
+
+The following changes to file formats are considered as incompatible:
+
+- Content type of the file is changed (e.g., from xml to json)
+- Mandatory fields are added
+- Content structure within the file is changed (e.g., field is moved to a sub structure)
+- Mandatory fields are removed  (old implementations might rely on the field to be mandatory)
+- Fields are renamed
+- Type of a field is changed (e.g., from `string` to `number`)
+- Semantic of a field is changed
+- Values of a field (e.g., in enum) are removed
+- Length of a field is shortened
+- Length of a field is extended if some systems cannot store this information
+
+
+## Writing JSON Schema with ABAP Types
 
 Each JSON schema provided in this repository is automatically generated. For this purpose, an interface corresponds to each object type in which the necessary components of the type are described in the type `ty_main`. The name of the interface follows the pattern `zif_aff_<object_type>_v<version_number>`. `<object_type>` can be either the (R3TR) object type or the (LIMU) sub object type, since R3TR and LIMU object types share the same namespace. `<version_number>` is an increasing integer which starts with `1`.
 
@@ -103,12 +153,12 @@ The order of these comments is important: First, there is the comment for the ti
 ### Additional Properties
 
 Generated JSON schemas do not contain the property `additionalProperties`. This means, additional properties are allowed in the JSON files.
-We want to support additional properties to be able to evolve the ABAP file formats in a compatible way. This allows us adding or removing non-mandatory fields in the future.
+We want to support additional properties to be able to evolve the ABAP file formats in a compatible way, see [Issue-248](https://github.com/SAP/abap-file-formats/issues/248). This allows us adding or removing non-mandatory fields in the future.
 
 Adding additional custom fields in any ABAP file formats JSON file is not allowed.
 
 
-## Type Specification Example
+## Example
 Here is the shortened type used to generate the JSON schema for interfaces. It can be found in the interface [`zif_aff_intf_v1`](../file-formats/intf/type/zif_aff_intf_v1.intf.abap).
 ```abap
   TYPES:
