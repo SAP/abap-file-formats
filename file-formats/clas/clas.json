@@ -50,7 +50,6 @@
           "default": "standard"
         }
       },
-      "additionalProperties": false,
       "required": [
         "description",
         "originalLanguage"
@@ -148,7 +147,6 @@
                 "maxLength": 60
               }
             },
-            "additionalProperties": false,
             "required": [
               "name",
               "description"
@@ -178,7 +176,6 @@
                 "maxLength": 60
               }
             },
-            "additionalProperties": false,
             "required": [
               "name",
               "description"
@@ -230,7 +227,6 @@
                       "maxLength": 60
                     }
                   },
-                  "additionalProperties": false,
                   "required": [
                     "name",
                     "description"
@@ -238,7 +234,6 @@
                 }
               }
             },
-            "additionalProperties": false,
             "required": [
               "name",
               "description"
@@ -290,7 +285,6 @@
                       "maxLength": 60
                     }
                   },
-                  "additionalProperties": false,
                   "required": [
                     "name",
                     "description"
@@ -320,7 +314,6 @@
                       "maxLength": 60
                     }
                   },
-                  "additionalProperties": false,
                   "required": [
                     "name",
                     "description"
@@ -328,18 +321,15 @@
                 }
               }
             },
-            "additionalProperties": false,
             "required": [
               "name",
               "description"
             ]
           }
         }
-      },
-      "additionalProperties": false
+      }
     }
   },
-  "additionalProperties": false,
   "required": [
     "$schema",
     "header"

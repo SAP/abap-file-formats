@@ -50,7 +50,6 @@
           "default": "standard"
         }
       },
-      "additionalProperties": false,
       "required": [
         "description",
         "originalLanguage"
@@ -145,7 +144,6 @@
       "maxLength": 40
     }
   },
-  "additionalProperties": false,
   "required": [
     "$schema",
     "header",

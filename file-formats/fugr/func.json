@@ -23,7 +23,6 @@
           "maxLength": 60
         }
       },
-      "additionalProperties": false,
       "required": [
         "description"
       ]
@@ -114,7 +113,6 @@
           "type": "boolean"
         }
       },
-      "additionalProperties": false,
       "required": [
         "basxmlEnabled",
         "rfcScope",
@@ -153,7 +151,6 @@
           ]
         }
       },
-      "additionalProperties": false,
       "required": [
         "updateTaskKind"
       ]
@@ -257,7 +254,6 @@
             "maxLength": 79
           }
         },
-        "additionalProperties": false,
         "required": [
           "name",
           "description"
@@ -287,7 +283,6 @@
             "maxLength": 79
           }
         },
-        "additionalProperties": false,
         "required": [
           "name",
           "description"
@@ -295,7 +290,6 @@
       }
     }
   },
-  "additionalProperties": false,
   "required": [
     "$schema",
     "header",

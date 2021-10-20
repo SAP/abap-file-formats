@@ -50,7 +50,6 @@
           "default": "standard"
         }
       },
-      "additionalProperties": false,
       "required": [
         "description",
         "originalLanguage"
@@ -81,7 +80,6 @@
           ]
         }
       },
-      "additionalProperties": false,
       "required": [
         "tool"
       ]
@@ -257,7 +255,6 @@
                       "maxLength": 30
                     }
                   },
-                  "additionalProperties": false,
                   "required": [
                     "type",
                     "objectName"
@@ -289,13 +286,11 @@
                       "maximum": 2147483647
                     }
                   },
-                  "additionalProperties": false,
                   "required": [
                     "objectName"
                   ]
                 }
               },
-              "additionalProperties": false,
               "required": [
                 "name",
                 "description",
@@ -304,7 +299,6 @@
             }
           }
         },
-        "additionalProperties": false,
         "required": [
           "name",
           "description",
@@ -313,7 +307,6 @@
       }
     }
   },
-  "additionalProperties": false,
   "required": [
     "$schema",
     "header",

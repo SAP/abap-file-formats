@@ -50,7 +50,6 @@
           "default": "standard"
         }
       },
-      "additionalProperties": false,
       "required": [
         "description",
         "originalLanguage"
@@ -105,12 +104,10 @@
             "description": "The parameter is hidden",
             "type": "boolean"
           }
-        },
-        "additionalProperties": false
+        }
       }
     }
   },
-  "additionalProperties": false,
   "required": [
     "$schema",
     "header",

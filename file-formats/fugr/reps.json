@@ -23,7 +23,6 @@
           "maxLength": 60
         }
       },
-      "additionalProperties": false,
       "required": [
         "description"
       ]
@@ -51,7 +50,6 @@
       ]
     }
   },
-  "additionalProperties": false,
   "required": [
     "$schema",
     "header",

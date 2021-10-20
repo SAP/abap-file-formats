@@ -50,7 +50,6 @@
           "default": "standard"
         }
       },
-      "additionalProperties": false,
       "required": [
         "description",
         "originalLanguage"
@@ -97,7 +96,6 @@
           "type": "boolean"
         }
       },
-      "additionalProperties": false,
       "required": [
         "numberLengthDomain",
         "percentWarning",
@@ -148,14 +146,12 @@
           "default": "10"
         }
       },
-      "additionalProperties": false,
       "required": [
         "buffering",
         "bufferedNumbers"
       ]
     }
   },
-  "additionalProperties": false,
   "required": [
     "$schema",
     "header",

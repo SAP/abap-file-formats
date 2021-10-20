@@ -50,7 +50,6 @@
           "default": "standard"
         }
       },
-      "additionalProperties": false,
       "required": [
         "description",
         "originalLanguage"
@@ -178,7 +177,6 @@
                         "type": "string"
                       }
                     },
-                    "additionalProperties": false,
                     "required": [
                       "sign",
                       "option",
@@ -188,21 +186,18 @@
                   }
                 }
               },
-              "additionalProperties": false,
               "required": [
                 "name"
               ]
             }
           }
         },
-        "additionalProperties": false,
         "required": [
           "checkName"
         ]
       }
     }
   },
-  "additionalProperties": false,
   "required": [
     "$schema",
     "header"
