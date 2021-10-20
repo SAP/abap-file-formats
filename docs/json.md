@@ -4,7 +4,7 @@ The ABAP file formats provide JSON schemas for annotation and validation of seri
 ## Table of Contents
 * [Format Versions and Compatibility](#format-versions-and-compatibility)
 * [Writing JSON Schema with ABAP Types](#writing-JSON-schema-with-ABAP-types)
-* [Type Specification Example](#type-specification-example)
+* [Example](#example)
 * [Reusable Fields in JSON Files](#reusable-fields-in-json-files)
 
 ## Format Versions and Compatibility
@@ -158,7 +158,7 @@ We want to support additional properties to be able to evolve the ABAP file form
 Adding additional custom fields in any ABAP file formats JSON file is not allowed.
 
 
-## Type Specification Example
+## Example
 Here is the shortened type used to generate the JSON schema for interfaces. It can be found in the interface [`zif_aff_intf_v1`](../file-formats/intf/type/zif_aff_intf_v1.intf.abap).
 ```abap
   TYPES:
