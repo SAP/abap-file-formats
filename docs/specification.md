@@ -54,10 +54,10 @@ These files are stored in the original language of the object and the original l
 
 ABAP file formats define three file types:
 * **`.abap`** stores ABAP source code as plain text
-* **`.json`** stores content of form-based editors or properties of objects, such as `originalLanguage`, `abapLanguageVersion` and others
+* **`.json`** stores content of form-based editors or properties of objects, such as `originalLanguage`, `abapLanguageVersion` and others.
+Details are found in [JSON Files in ABAP File Formats](./json.md)
 * **`.properties`** stores translation relevant text elements as plain text
 
-The `.json` file is referred to as the property file. The ABAP file formats provide JSON schemas for its annotation and validation, see [JSON Type Specification](./json.md) for additional details.
 
 ## Formatting Conventions
 To enable interchangeability, the files are characterized by
@@ -72,47 +72,3 @@ The JSON files additionally follow
 We provide an [EditorConfig](https://editorconfig.org) based formatting configuration file [here](../.editorconfig) where the above convention is reflected.
 A GitHub action run validations based of this configuration file, to ensure the repository follows the formatting convention.
 Developers might choose one of the many compatible text editors for the sake of convenience.
-
-## Format Versions and Compatibility
-
-The ABAP file format of object types will evolve over time.
-For this purpose the JSON schema specifies the field `formatVersion` and the file itself, is named after the version.
-For example, the JSON schema file for INTF for the first version is named `intf-v1.json` and specifies the `formatVersion` by
-```
-"formatVersion": {
-  "title": "ABAP File Format Version",
-  "description": "The ABAP file format version for INTF.",
-  "const": "1"
-}
-```
-
-If a change to the format is considered incompatible, then the `formatVersion` has to be increased.
-
-### Compatible File Format Changes
-
-For compatible changes to the file format, the format is just updated. The indicator whether the format has to be changed should not be updated.
-
-Following changes to file formats are considered as compatible:
-
-- Values for a field (enum) are added (remark: this might lead to syntax errors in ABAP systems which don't support this value)
-- Descriptions or titles are changed
-- Non-mandatory fields are added
-- Non-mandatory fields are removed
-
-
-### Incompatible File Format Changes
-
-If a file format is changed incompatibly, a new file format with a new version has to be created. The old file format is kept. It can be used for old/existing versions of files.
-
-The following changes to file formats are considered as incompatible:
-
-- Content type of the file is changed (e.g., from xml to json)
-- Mandatory fields are added
-- Content structure within the file is changed (e.g., field is moved to a sub structure)
-- Mandatory fields are removed  (old implementations might rely on the field to be mandatory)
-- Fields are renamed
-- Type of a field is changed (e.g., from `string` to `number`)
-- Semantic of a field is changed
-- Values of a field (e.g., in enum) are removed
-- Length of a field is shortened
-- Length of a field is extended if some systems cannot store this information
