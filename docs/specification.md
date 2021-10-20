@@ -9,7 +9,6 @@
 * [File Names](#File-Names)
 * [File Extensions](#File-Extensions)
 * [Formatting Conventions](#Formatting-Conventions)
-* [Format Compatibility](#Format-Compatibility)
 
 ## File Names
 
