@@ -10,9 +10,7 @@ The ABAP types are self-contained, so it is possible to work on them in any syst
 
 The JSON schema is generated based on the fields and their ABAP type specification defined in `ty_main`. Each field defined in the structure is transformed to a JSON representation using a camel case notation (e.g, field `abap_language_version` is transformed to the field `abapLanguageVersion` in the JSON schema). The ABAP type information fills the JSON schema fields `type`, `length`, `minimum`, `maximum`.
 
-One mandatory component of the type is the field `schema` which is translated to `$schema` in the JSON schema.
-Its value in the `.json` files is the link given in the field `$id` of the JSON schema.
-Furthermore, a `header` has to be supplied.
+Fields `format_version` and `header` are mandatory and translate to `formatVersion` and `header` in the JSON schema.
 The interface [`zif_aff_types_v1`](../file-formats/zif_aff_types_v1.intf.abap) offers different headers for reuse, but also other often repeated types.
 
 In order to add more information to the JSON schema than that provided by the ABAP type, ABAP Doc can be used.
@@ -102,6 +100,13 @@ Note that if you specify a default value, the initial values are written to the 
 
 The order of these comments is important: First, there is the comment for the title followed by the one for the description, in case they are both provided. After these two, the remaining annotations are always located. Between them, the order is irrelevant.
 
+### Additional Properties
+
+Generated JSON schemas do not contain the property `additionalProperties`. This means, additional properties are allowed in the JSON files.
+We want to support additional properties to be able to evolve the ABAP file formats in a compatible way. This allows us adding or removing non-mandatory fields in the future.
+
+Adding additional custom fields in any ABAP file formats JSON file is not allowed.
+
 
 ## Type Specification Example
 Here is the shortened type used to generate the JSON schema for interfaces. It can be found in the interface [`zif_aff_intf_v1`](../file-formats/intf/type/zif_aff_intf_v1.intf.abap).
@@ -110,10 +115,10 @@ Here is the shortened type used to generate the JSON schema for interfaces. It c
     "! <p class="shorttext">Interface Properties</p>
     "! Interface properties
     BEGIN OF ty_main,
-      "! <p class="shorttext">Schema</p>
-      "! Format version
+      "! <p class="shorttext">ABAP File Format Version</p>
+      "! The ABAP file format version for INTF
       "! $required
-      schema     TYPE string,
+      format_version     TYPE string,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
@@ -176,10 +181,10 @@ This leads to the following generated JSON schema:
   "description": "Interface properties",
   "type": "object",
   "properties": {
-    "$schema": {
-      "title": "Schema",
+    "formatVersion": {
+      "title": "ABAP File Format Version",
       "description": "Format version",
-      "type": "string"
+      "const": "1"
     },
     "header": {
       "title": "Header",
@@ -220,7 +225,6 @@ This leads to the following generated JSON schema:
           "default": "standard"
         }
       },
-      "additionalProperties": false,
       "required": [
         "description",
         "originalLanguage"
@@ -232,9 +236,8 @@ This leads to the following generated JSON schema:
       "type": "boolean"
     }
   },
-  "additionalProperties": false,
   "required": [
-    "$schema",
+    "formatVersion",
     "header"
   ]
 }
@@ -245,18 +248,11 @@ This section describes fields that can be reused by all file formats.
 
 The types for these reusables are defined in the interface [`ZIF_AFF_TYPES_V1`](../file-formats/zif_aff_types_v1.intf.abap).
 
-### Schema
+### Format Version
 
-The field `$schema` is a meta field and defines the format and the format version of the JSON content.
+The field `formatVersion` is a meta field and defines the ABAP file format version of the JSON content.
 Basically, it is needed to allow the incompatible evolution of a content type.
 
-The field `$schema` specifies the location of the JSON schema with an URI.
-As of now, this is a link within this repository.
-
----
-**Note**: Versioning is not finally decided. Please refer to issue [#53](https://github.com/SAP/abap-file-formats/issues/53).
-
----
 
 ### Description
 
