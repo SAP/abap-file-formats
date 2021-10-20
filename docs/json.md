@@ -1,4 +1,5 @@
-## JSON Type Specification
+## JSON Files in ABAP File Formats
+The ABAP file formats provide JSON schemas for annotation and validation of serialized ABAP objects.
 
 ## Table of Contents
 * [Format Versions and Compatibility](#Format-Versions-and-Compatibility)
