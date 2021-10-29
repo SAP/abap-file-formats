@@ -4,7 +4,7 @@ The files correspond to the tabs in ABAP Development Tools, enriched with metada
 
 File | Cardinality | Definition | Schema | Example
 :--- | :---  | :--- | :--- | :---
-`<name>.clas.json` | 1 | [`zif_aff_clas_v1.intf.abap`](./type/zif_aff_clas_v1.intf.abap) | [`clas.json`](./clas.json) | [`z_aff_example_clas.clas.json`](./examples/z_aff_example_clas.clas.json)
+`<name>.clas.json` | 1 | [`zif_aff_clas_v1.intf.abap`](./type/zif_aff_clas_v1.intf.abap) | [`clas-v1.json`](./clas-v1.json) | [`z_aff_example_clas.clas.json`](./examples/z_aff_example_clas.clas.json)
 `<name>.clas.abap` | 1 | [ABAP](https://help.sap.com/doc/abapdocu_cp_index_htm/CLOUD/en-US/index.htm?file=abapclass.htm) | - | [`z_aff_example_clas.clas.abap`](./examples/z_aff_example_clas.clas.abap)
 `<name>.clas.definitions.abap` | 0...1 | | - | [`z_aff_example_clas.clas.definitions.abap`](./examples/z_aff_example_clas.clas.definitions.abap)
 `<name>.clas.implementations.abap` | 0...1 | | - | [`z_aff_example_clas.clas.implementations.abap`](./examples/z_aff_example_clas.clas.implementations.abap)
