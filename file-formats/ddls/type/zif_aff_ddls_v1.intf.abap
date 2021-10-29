@@ -86,25 +86,23 @@ INTERFACE zif_aff_ddls_v1
     "! <p class="shorttext">Object Type DDLS</p>
     "! DDLS object type
     BEGIN OF ty_main,
-      "! <p class="shorttext">Schema</p>
-      "! Format version
       "! $required
-      schema        TYPE string,
+      format_version TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header        TYPE zif_aff_types_v1=>ty_header_60,
+      header         TYPE zif_aff_types_v1=>ty_header_60,
       "! <p class="shorttext">Source Origin</p>
       "! Source Origin
       "! $required
-      source_origin TYPE ty_source_origin,
+      source_origin  TYPE ty_source_origin,
       "! <p class="shorttext">Source Type</p>
       "! Source Type
       "! $required
-      source_type   TYPE ty_source_type,
+      source_type    TYPE ty_source_type,
       "! <p class="shorttext">Parent Name</p>
       "! DDLS Name of the parent of an extend
-      parent_name   TYPE c LENGTH 40,
+      parent_name    TYPE c LENGTH 40,
     END OF ty_main.
 
 ENDINTERFACE.

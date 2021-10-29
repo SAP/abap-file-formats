@@ -36,23 +36,21 @@ INTERFACE zif_aff_intf_v1 PUBLIC.
     "! <p class="shorttext">Interface Properties</p>
     "! Interface properties
     BEGIN OF ty_main,
-      "! <p class="shorttext">ABAP File Format Version</p>
-      "! The ABAP file format version for INTF
       "! $required
-      format_version       TYPE string,
+      format_version TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header       TYPE zif_aff_types_v1=>ty_header_60_src,
+      header         TYPE zif_aff_types_v1=>ty_header_60_src,
       "! <p class="shorttext">Interface Category</p>
       "! Interface category
-      category     TYPE ty_category,
+      category       TYPE ty_category,
       "! <p class="shorttext">Proxy Interface</p>
       "! Interface is a proxy interface
-      proxy        TYPE abap_bool,
+      proxy          TYPE abap_bool,
       "! <p class="shorttext">Descriptions</p>
       "! Descriptions maintained in SE80
-      descriptions TYPE zif_aff_oo_types_v1=>ty_descriptions,
+      descriptions   TYPE zif_aff_oo_types_v1=>ty_descriptions,
     END OF ty_main.
 
 ENDINTERFACE.

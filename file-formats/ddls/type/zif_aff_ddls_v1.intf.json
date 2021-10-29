@@ -1,5 +1,5 @@
 {
-  "$schema": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/intf/intf.json",
+  "formatVersion": "1",
   "header": {
     "description": "AFF type for DDLS objects",
     "originalLanguage": "EN"

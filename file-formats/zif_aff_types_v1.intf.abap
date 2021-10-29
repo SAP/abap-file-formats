@@ -116,5 +116,9 @@ INTERFACE zif_aff_types_v1 PUBLIC.
       description TYPE ty_description_60,
     END OF ty_header_only_description.
 
+   TYPES:
+      "! <p class="shorttext">ABAP File Format Version</p>
+      "! The ABAP file format version
+      ty_format_version TYPE string.
 
 ENDINTERFACE.

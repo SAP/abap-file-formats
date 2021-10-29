@@ -6,10 +6,11 @@
   "description": "Object type NROB",
   "type": "object",
   "properties": {
-    "$schema": {
-      "title": "Schema",
-      "description": "Format version",
-      "type": "string"
+    "formatVersion": {
+      "title": "ABAP File Format Version",
+      "description": "The ABAP file format version",
+      "type": "string",
+      "const": "1"
     },
     "header": {
       "title": "Header",
