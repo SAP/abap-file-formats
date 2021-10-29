@@ -1,8 +1,8 @@
 INTERFACE zif_aff_types_v1 PUBLIC.
-  
+
   "! <p class="shorttext">ABAP File Format Version</p>
   "! The ABAP file format version
-  TYPES ty_format_version TYPE string. 
+  TYPES ty_format_version TYPE string.
 
   "! <p class="shorttext">ABAP Language Version (Source Code Objects)</p>
   "! ABAP language version for source code objects

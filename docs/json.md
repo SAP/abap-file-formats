@@ -181,7 +181,7 @@ With the specification of the component `format_version` and `header` as well as
 ```abap
   "! <p class="shorttext">ABAP File Format Version</p>
   "! The ABAP file format version
-  TYPES ty_format_version TYPE string. 
+  TYPES ty_format_version TYPE string.
 
   "! $values {@link zif_aff_types_v1.data:co_abap_language_version_src}
   "! $default {@link zif_aff_types_v1.data:co_abap_language_version_src.standard}
