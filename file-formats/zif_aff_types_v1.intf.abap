@@ -1,4 +1,8 @@
 INTERFACE zif_aff_types_v1 PUBLIC.
+  
+  "! <p class="shorttext">ABAP File Format Version</p>
+  "! The ABAP file format version
+  TYPES ty_format_version TYPE string. 
 
   "! <p class="shorttext">ABAP Language Version (Source Code Objects)</p>
   "! ABAP language version for source code objects
@@ -115,10 +119,5 @@ INTERFACE zif_aff_types_v1 PUBLIC.
       "! $required
       description TYPE ty_description_60,
     END OF ty_header_only_description.
-
-  TYPES:
-    "! <p class="shorttext">ABAP File Format Version</p>
-    "! The ABAP file format version
-    ty_format_version TYPE string.
 
 ENDINTERFACE.
