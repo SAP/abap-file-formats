@@ -57,10 +57,8 @@ INTERFACE zif_aff_clas_v1 PUBLIC.
     "! <p class="shorttext">Class Properties</p>
     "! Class properties
     BEGIN OF ty_main,
-      "! <p class="shorttext">Schema</p>
-      "! Format version
       "! $required
-      schema               TYPE string,
+      format_version       TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! header
       "! $required

@@ -101,22 +101,20 @@ INTERFACE zif_aff_nrob_v1
     "! <p class="shorttext">NROB Object Type</p>
     "! Object type NROB
     BEGIN OF ty_main,
-      "! <p class="shorttext">Schema</p>
-      "! Format version
       "! $required
-      schema        TYPE string,
+      format_version TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header        TYPE zif_aff_types_v1=>ty_header_60,
+      header         TYPE zif_aff_types_v1=>ty_header_60,
       "! <p class="shorttext">Interval</p>
       "! Interval
       "! $required
-      interval      TYPE ty_interval,
+      interval       TYPE ty_interval,
       "! <p class="shorttext">Configuration</p>
       "! Configuration-specific fields
       "! $required
-      configuration TYPE ty_configuration,
+      configuration  TYPE ty_configuration,
     END OF ty_main.
 
 ENDINTERFACE.
