@@ -1,5 +1,5 @@
 {
-  "$schema": "http://github.com/sap/abap-file-formats/blob/main/file-formats/fugr/func.json",
+  "formatVersion": "1",
   "header": {
     "description": "Example FUNC for ABAP file formats"
   },

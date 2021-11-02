@@ -16,6 +16,7 @@ For example, the JSON schema file for INTF for the first version is named `intf-
 "formatVersion": {
   "title": "ABAP File Format Version",
   "description": "The ABAP file format version for INTF.",
+  "type": "string",
   "const": "1"
 }
 ```
@@ -54,14 +55,14 @@ The following changes to file formats are considered as incompatible:
 
 ## Writing JSON Schema with ABAP Types
 
-Each JSON schema provided in this repository is automatically generated. For this purpose, an interface corresponds to each object type in which the necessary components of the type are described in the type `ty_main`. The name of the interface follows the pattern `zif_aff_<object_type>_v<version_number>`. `<object_type>` can be either the (R3TR) object type or the (LIMU) sub object type, since R3TR and LIMU object types share the same namespace. `<version_number>` is an increasing integer which starts with `1`.
+Each JSON schema provided in this repository is automatically generated. For this purpose, an interface corresponds to each object type in which the necessary components of the type are described in the type `ty_main`. The name of the interface follows the pattern `zif_aff_<object_type>_v<version_number>`. Here, `<object_type>` can be either the (R3TR) object type or the (LIMU) sub object type, since R3TR and LIMU object types share the same namespace. `<version_number>` is an increasing integer which starts with `1`.
 
 The ABAP types are self-contained, so it is possible to work on them in any system (e.g., in an SAP BTP, ABAP environment system).
 
 The JSON schema is generated based on the fields and their ABAP type specification defined in `ty_main`. Each field defined in the structure is transformed to a JSON representation using a camel case notation (e.g, field `abap_language_version` is transformed to the field `abapLanguageVersion` in the JSON schema). The ABAP type information fills the JSON schema fields `type`, `length`, `minimum`, `maximum`.
 
 Fields `format_version` and `header` are mandatory and translate to `formatVersion` and `header` in the JSON schema.
-The interface [`zif_aff_types_v1`](../file-formats/zif_aff_types_v1.intf.abap) offers different headers for reuse, but also other often repeated types.
+The interface [`zif_aff_types_v1`](../file-formats/zif_aff_types_v1.intf.abap) offers a type for the format version and different headers for reuse, but also other often repeated types.
 
 In order to add more information to the JSON schema than that provided by the ABAP type, ABAP Doc can be used.
 The comments are placed directly above the components of the type `ty_main`, but they are also read over several levels as, e.g., in the case of nested structures.
@@ -165,21 +166,23 @@ Here is the shortened type used to generate the JSON schema for interfaces. It c
     "! <p class="shorttext">Interface Properties</p>
     "! Interface properties
     BEGIN OF ty_main,
-      "! <p class="shorttext">ABAP File Format Version</p>
-      "! The ABAP file format version for INTF
       "! $required
-      format_version     TYPE string,
+      format_version TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header     TYPE zif_aff_types_v1=>ty_header_60_src,
+      header         TYPE zif_aff_types_v1=>ty_header_60_src,
       "! <p class="shorttext">Proxy Interface</p>
       "! Interface is a proxy interface
-      proxy      TYPE abap_bool.
+      proxy          TYPE abap_bool.
     END OF ty_main.
 ```
-With the specification of the component `header` and its used types in the interface [`zif_aff_types_v1`](../file-formats/zif_aff_types_v1.intf.abap)
+With the specification of the component `format_version` and `header` as well as its used types in the interface [`zif_aff_types_v1`](../file-formats/zif_aff_types_v1.intf.abap)
 ```abap
+  "! <p class="shorttext">ABAP File Format Version</p>
+  "! The ABAP file format version
+  TYPES ty_format_version TYPE string.
+
   "! $values {@link zif_aff_types_v1.data:co_abap_language_version_src}
   "! $default {@link zif_aff_types_v1.data:co_abap_language_version_src.standard}
   TYPES ty_abap_language_version_src TYPE c LENGTH 1.
@@ -234,6 +237,7 @@ This leads to the following generated JSON schema:
     "formatVersion": {
       "title": "ABAP File Format Version",
       "description": "Format version",
+      "type": "string",
       "const": "1"
     },
     "header": {

@@ -22,21 +22,19 @@ INTERFACE zif_aff_reps_v1
     "! <p class="shorttext">Object Type REPS</p>
     "! REPS object type
     BEGIN OF ty_main,
-      "! <p class="shorttext">Schema</p>
-      "! Format version
       "! $required
-      schema       TYPE string,
+      format_version TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header               TYPE zif_aff_types_v1=>ty_header_only_description,
+      header         TYPE zif_aff_types_v1=>ty_header_only_description,
       "! <p class="shorttext">Edit-Locked</p>
       "! Edit-locked
-      edit_locked  TYPE abap_bool,
+      edit_locked    TYPE abap_bool,
       "! <p class="shorttext">Include Type</p>
       "! Include type
       "! $required
-      include_type TYPE ty_include_type,
+      include_type   TYPE ty_include_type,
     END OF ty_main.
 
 ENDINTERFACE.

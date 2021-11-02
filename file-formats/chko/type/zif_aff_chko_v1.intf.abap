@@ -16,7 +16,7 @@ INTERFACE zif_aff_chko_v1
       description  TYPE c LENGTH 255,
       "! <p class="shorttext">Hidden Flag</p>
       "! The parameter is hidden
-      hidden   TYPE abap_bool,
+      hidden       TYPE abap_bool,
     END OF ty_parameter.
 
   TYPES:
@@ -29,10 +29,8 @@ INTERFACE zif_aff_chko_v1
     "! <p class="shorttext">ATC Check</p>
     "! ATC check object properties
     BEGIN OF ty_main,
-      "! <p class="shorttext">Schema</p>
-      "! Format version
       "! $required
-      schema             TYPE string,
+      format_version     TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
