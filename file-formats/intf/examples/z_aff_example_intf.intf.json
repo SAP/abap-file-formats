@@ -32,12 +32,6 @@
             "name": "I_PARAM",
             "description": "This is an example parameter"
           }
-        ],
-        "exceptions": [
-          {
-            "name": "CX_STATIC_CHECK",
-            "description": "This is an example exception"
-          }
         ]
       }
     ]
