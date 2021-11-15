@@ -46,7 +46,7 @@ def decode_json( file ):
         else:
             return json_instance
 
-def validate_json( instance, schema ):
+def validate_json( schema, instance ):
     global nb_errors
     json_schema = decode_json( schema )
     json_instance = decode_json( instance )
@@ -69,7 +69,7 @@ def validate_json_and_example( matches ):
         # no schema found
         if matches[match] == "":
             continue
-        validate_json( match, matches[match] )
+        validate_json( matches[match], match )
     print(f"::endgroup::")
 
 
