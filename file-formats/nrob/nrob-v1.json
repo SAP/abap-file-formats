@@ -158,7 +158,7 @@
   },
   "additionalProperties": false,
   "required": [
-    "$schema",
+    "formatVersion",
     "header",
     "interval",
     "configuration"
