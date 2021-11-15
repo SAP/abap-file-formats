@@ -11,6 +11,29 @@ nb_errors = 0
 schemas = glob.glob('./file-formats/*/*.json')
 instances = glob.glob('./file-formats/*/examples/**.json', recursive=True)
 
+def match_schema_instance( instances ):
+    matches = {}
+    for instance in instances:
+        # get ABAP object type
+        file_name = os.path.basename(instance)
+        try:
+            object_type = re.search('\.(([a-z]{4})+?)\.json', file_name).group(1)
+        except AttributeError:
+            continue
+        # access formatVersion
+        json_data = decode_json( instance )
+        try:
+            version = json_data["formatVersion"]
+        except KeyError:
+            continue
+        # match data with schema
+        schema_name =  object_type + '-v'+ version + '.json'
+        schema = [s for s in schemas if schema_name in s]
+        try:
+            matches[instance] = schema[0]
+        except IndexError:
+            matches[instance] = ""
+    return matches
 
 def decode_json( file ):
     global nb_errors
@@ -50,33 +73,10 @@ def validate_json_and_example( matches ):
     print(f"::endgroup::")
 
 
-def get_instance_and_schema_match( instances ):
-    matches = {}
-    for instance in instances:
-        # get ABAP object type
-        file_name = os.path.basename(instance)
-        try:
-            object_type = re.search('\.(([a-z]{4})+?)\.json', file_name).group(1)
-        except AttributeError:
-            continue
-        # access formatVersion
-        json_data = decode_json( instance )
-        try:
-            version = json_data["formatVersion"]
-        except KeyError:
-            continue
-        # match data with schema
-        schema_name =  object_type + '-v'+ version + '.json'
-        schema = [s for s in schemas if schema_name in s]
-        try:
-            matches[instance] = schema[0]
-        except IndexError:
-            matches[instance] = ""
-    return matches
 
 
 
-matches = get_instance_and_schema_match( instances )
+matches = match_schema_instance( instances )
 
 validate_json_and_example( matches )
 if nb_errors > 0:
