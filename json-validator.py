@@ -5,21 +5,35 @@ from jsonschema import exceptions
 import os
 import glob
 import sys
-import pprint
+import re
 
 nb_errors = 0
+schemas = glob.glob('./file-formats/*/*.json')
+instances = glob.glob('./file-formats/*/examples/**.json', recursive=True)
 
-
-def match_schema_instance( schemas, instances ):
-    # build dict with key: json schema and value: json example
-    dict_json = {}
-    for schema in schemas:
-        dot_object = "." + os.path.basename(schema)
-        dict_json[schema] = list(filter(lambda el: el.endswith(dot_object), instances))
-    print(f"::group::Print schema/instance matches")
-    pprint.pprint(dict_json)
-    print(f"::endgroup::")
-    return dict_json.items()
+def match_schema_instance( instances ):
+    matches = {}
+    for instance in instances:
+        # get ABAP object type
+        file_name = os.path.basename(instance)
+        try:
+            object_type = re.search('\.(([a-z]{4})+?)\.json', file_name).group(1)
+        except AttributeError:
+            continue
+        # access formatVersion
+        json_data = decode_json( instance )
+        try:
+            version = json_data["formatVersion"]
+        except KeyError:
+            continue
+        # match data with schema
+        schema_name =  object_type + '-v'+ version + '.json'
+        schema = [s for s in schemas if schema_name in s]
+        try:
+            matches[instance] = schema[0]
+        except IndexError:
+            matches[instance] = ""
+    return matches
 
 def decode_json( file ):
     global nb_errors
@@ -32,35 +46,38 @@ def decode_json( file ):
         else:
             return json_instance
 
-def validate_json( schema, instances):
+def validate_json( schema, instance ):
     global nb_errors
     json_schema = decode_json( schema )
-    for instance in instances:
-        json_instance = decode_json( instance )
-        try:
-            Draft7Validator(json_schema).validate(json_instance)
-        except jsonschema.exceptions.ValidationError as exVal:
-            nb_errors += 1
-            print(f"::error file={instance},line=1,col=1::{exVal.message}")
-        except jsonschema.exceptions.SchemaError as error_ex:
-            nb_errors += 1
-            print(f"::error file={instance},line=1,col=1::{error_ex.message}")
-        else:
-            #print(f"::set-output name={os.path.basename(instance).ljust(31)} valid instance of schema {os.path.basename(schema)}" )
-            print(os.path.basename(instance) + "\tvalid instance of schema " + os.path.basename(schema))
+    json_instance = decode_json( instance )
+    try:
+        Draft7Validator(json_schema).validate(json_instance)
+    except jsonschema.exceptions.ValidationError as exVal:
+        nb_errors += 1
+        print(f"::error file={instance},line=1,col=1::{exVal.message}")
+    except jsonschema.exceptions.SchemaError as error_ex:
+        nb_errors += 1
+        print(f"::error file={instance},line=1,col=1::{error_ex.message}")
+    else:
+        #print(f"::set-output name={os.path.basename(instance).ljust(31)} valid instance of schema {os.path.basename(schema)}" )
+        print( "valid: " + os.path.basename(schema) + "; " + os.path.basename(instance))
 
 
-def validate_json_and_example( schemas, instances ):
-    dict_as_list = match_schema_instance( schemas, instances)
+def validate_json_and_example( matches ):
     print(f"::group::Validate JSON")
-    for match in dict_as_list:
-        validate_json( match[0], match[1])
+    for match in matches:
+        # no schema found
+        if matches[match] == "":
+            continue
+        validate_json( matches[match], match )
     print(f"::endgroup::")
 
 
-instances = glob.glob('./file-formats/*/*/**.json', recursive=True)
-schemas = glob.glob('./file-formats/*/*.json')
 
-validate_json_and_example( schemas, instances)
+
+
+matches = match_schema_instance( instances )
+
+validate_json_and_example( matches )
 if nb_errors > 0:
     sys.exit(1)

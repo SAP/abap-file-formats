@@ -80,4 +80,4 @@ As decided, but without field `formatVersion` or `version`.
 
 * Discussion of whether put `$schema` into data or not https://github.com/json-schema/json-schema/issues/220
 * Catalog of collection of common JSON Schema on https://www.schemastore.org/api/json/catalog.json
-* Documentation of JSON editing, validation and annotation in VS Code https://vscode.readthedocs.io/en/latest/languages/json/
+* Documentation of JSON editing, validation and annotation in VS Code https://code.visualstudio.com/Docs/languages/json
