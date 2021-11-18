@@ -30,7 +30,7 @@
           "maxLength": 2
         },
         "abapLanguageVersion": {
-          "title": "ABAP Language Version (source code object)",
+          "title": "ABAP Language Version (Source Code Objects)",
           "description": "ABAP language version for source code objects",
           "type": "string",
           "enum": [
