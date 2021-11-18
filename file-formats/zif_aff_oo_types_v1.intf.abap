@@ -65,9 +65,9 @@ INTERFACE zif_aff_oo_types_v1
     "! Event descriptions
     ty_events TYPE SORTED TABLE OF ty_event WITH UNIQUE KEY name.
 
-    TYPES:
-   "! <p class="shorttext">Descriptions</p>
-   "! Descriptions maintained in SE80
+  TYPES:
+    "! <p class="shorttext">Descriptions</p>
+    "! Descriptions maintained in SE80
     BEGIN OF ty_descriptions,
       "! <p class="shorttext">Type Descriptions</p>
       "! Type descriptions
