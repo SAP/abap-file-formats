@@ -1,3 +1,5 @@
+"! <p class="shorttext synchronized" lang="en">Common types for classes and interfaces</p>
+"! Types which can be reused for Class and Interface AFF Types
 INTERFACE zif_aff_oo_types_v1
   PUBLIC.
 
@@ -64,8 +66,8 @@ INTERFACE zif_aff_oo_types_v1
     ty_events TYPE SORTED TABLE OF ty_event WITH UNIQUE KEY name.
 
   TYPES:
-   "! <p class="shorttext">Descriptions</p>
-   "! Descriptions maintained in SE80
+    "! <p class="shorttext">Descriptions</p>
+    "! Descriptions maintained in SE80
     BEGIN OF ty_descriptions,
       "! <p class="shorttext">Type Descriptions</p>
       "! Type descriptions
