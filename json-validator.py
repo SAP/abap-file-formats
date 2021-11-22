@@ -9,9 +9,12 @@ import re
 
 nb_errors = 0
 schemas = glob.glob('./file-formats/*/*.json')
-instances = glob.glob('./file-formats/*/examples/**.json', recursive=True)
+json_in_repo = glob.glob('./file-formats/**/*.json', recursive=True)
+only_instances = set(json_in_repo) - set(schemas)
+instances = sorted(only_instances, key = lambda x:x[-9])
+instance_without_schema = []
 
-def match_schema_instance( instances ):
+def match_schema_instance( ):
     matches = {}
     for instance in instances:
         # get ABAP object type
@@ -33,6 +36,7 @@ def match_schema_instance( instances ):
             matches[instance] = schema[0]
         except IndexError:
             matches[instance] = ""
+            instance_without_schema.append(instance)
     return matches
 
 def decode_json( file ):
@@ -76,8 +80,12 @@ def validate_json_and_example( matches ):
 
 
 
-matches = match_schema_instance( instances )
+matches = match_schema_instance( )
 
 validate_json_and_example( matches )
+if instance_without_schema:
+    print("\nFiles without an associated JSON Schema in repository:")
+    print(*instance_without_schema, sep='\n')
+
 if nb_errors > 0:
     sys.exit(1)
