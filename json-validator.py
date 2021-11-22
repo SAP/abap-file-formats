@@ -13,7 +13,7 @@ json_in_repo = glob.glob('./file-formats/**/*.json', recursive=True)
 only_instances = set(json_in_repo) - set(schemas)
 instances = sorted(only_instances, key = lambda x:x[-9])
 
-def match_schema_instance( instances ):
+def match_schema_instance( ):
     matches = {}
     for instance in instances:
         # get ABAP object type
@@ -78,7 +78,7 @@ def validate_json_and_example( matches ):
 
 
 
-matches = match_schema_instance( instances )
+matches = match_schema_instance( )
 
 validate_json_and_example( matches )
 if nb_errors > 0:
