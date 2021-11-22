@@ -9,7 +9,9 @@ import re
 
 nb_errors = 0
 schemas = glob.glob('./file-formats/*/*.json')
-instances = glob.glob('./file-formats/*/examples/**.json', recursive=True)
+json_in_repo = glob.glob('./file-formats/**/*.json', recursive=True)
+only_instances = set(json_in_repo) - set(schemas)
+instances = sorted(only_instances, key = lambda x:x[-9])
 
 def match_schema_instance( instances ):
     matches = {}
