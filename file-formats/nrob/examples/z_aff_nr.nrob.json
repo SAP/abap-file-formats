@@ -1,7 +1,7 @@
 {
   "formatVersion": "1",
   "header": {
-    "description": "Aff example object for type NROB",
+    "description": "Example number range object for ABAP file formats",
     "originalLanguage": "EN"
   },
   "interval": {
@@ -9,11 +9,11 @@
     "percentWarning": 10.0,
     "subType": "",
     "untilYear": false,
-    "rolling": true,
+    "rolling": false,
     "prefix": false
   },
   "configuration": {
     "buffering": "none",
-    "bufferedNumbers": "0"
+    "bufferedNumbers": 0
   }
 }
