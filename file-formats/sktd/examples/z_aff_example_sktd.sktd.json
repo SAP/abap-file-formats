@@ -1,0 +1,11 @@
+{
+  "$schema": "http://github.com/SAP/abap-file-formats/file-formats/sktd/sktd.json",
+  "header": {
+    "description": "Documentation for Z_AFF_EXAMPLE_SKTD",
+    "originalLanguage": "EN"
+  },
+  "documentedObject": {
+    "type": "BDEF",
+    "name": "Z_AFF_EXAMPLE_SKTD"
+  }
+}
