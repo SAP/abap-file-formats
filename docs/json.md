@@ -74,14 +74,12 @@ To provide a title, an ABAP Doc shorttext
 "! <p class="shorttext">Insert Title</p>
 ```
 is used.
-If no title is specified, the component name transformed to camel case is written.
 
 ### Description
 An ABAP Doc comment without annotations is passed as description to the JSON schema.
 ```abap
 "! This is the description
 ```
-If no description is given, either the title, if provided, or the component name transformed to camel case is shown in the JSON schema.
 
 ### Enum Values
 To pass enum values to a JSON schema, a type and a constant are necessary.
