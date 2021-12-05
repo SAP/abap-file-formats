@@ -15,6 +15,10 @@ Section headings can be specified in six different levels using the hash charact
 ```
 
 
+[//]: # (id:/sap/bc/adt/bo/behaviordefinitions/z_aff_example_sktd/source/main#type=BDEF/BAC;name=z_aff_example_sktd.headings )
+
+
+
 [//]: # (id:/sap/bc/adt/bo/behaviordefinitions/z_aff_example_sktd/source/main#type=BDEF/BAC;name=z_aff_example_sktd.linesAndParagraphs )
 
 ## Lines and paragraphs
@@ -31,6 +35,10 @@ This is a new line in the same paragraph.
  
 This is a separate paragraph.
 ```
+
+[//]: # (id:/sap/bc/adt/bo/behaviordefinitions/z_aff_example_sktd/source/main#type=BDEF/BAC;name=z_aff_example_sktd.linesAndParagraphs )
+
+
 
 [//]: # (id:/sap/bc/adt/bo/behaviordefinitions/z_aff_example_sktd/source/main#type=BDEF/BAC;name=z_aff_example_sktd.links )
 
@@ -57,6 +65,10 @@ This is a separate paragraph.
 * See [Link to BDEF](BDEF:Z_AFF_EXAMPLE_SKTD)
 * A direct link goes is specified like this: <BDEF:Z_AFF_EXAMPLE_SKTD>
 ```
+
+[//]: # (id:/sap/bc/adt/bo/behaviordefinitions/z_aff_example_sktd/source/main#type=BDEF/BAC;name=z_aff_example_sktd.links )
+
+
 
 [//]: # (id:/sap/bc/adt/bo/behaviordefinitions/z_aff_example_sktd/source/main#type=BDEF/BAC;name=z_aff_example_sktd.lists )
 
@@ -95,6 +107,10 @@ This is a separate paragraph.
 ```
  
 
+[//]: # (id:/sap/bc/adt/bo/behaviordefinitions/z_aff_example_sktd/source/main#type=BDEF/BAC;name=z_aff_example_sktd.lists )
+
+
+
 [//]: # (id:/sap/bc/adt/bo/behaviordefinitions/z_aff_example_sktd/source/main#type=BDEF/BAC;name=z_aff_example_sktd.quote )
 
 ### Quote
@@ -111,6 +127,10 @@ Quote break.
 > A blockquote starts with the greater-than character (>).
 ```
  
+
+[//]: # (id:/sap/bc/adt/bo/behaviordefinitions/z_aff_example_sktd/source/main#type=BDEF/BAC;name=z_aff_example_sktd.quote )
+
+
 
 [//]: # (id:/sap/bc/adt/bo/behaviordefinitions/z_aff_example_sktd/source/main#type=BDEF/BAC;name=z_aff_example_sktd.sourceCode )
 
@@ -134,6 +154,10 @@ if (a == b) {
 }
 \`\`\`
 ```
+
+[//]: # (id:/sap/bc/adt/bo/behaviordefinitions/z_aff_example_sktd/source/main#type=BDEF/BAC;name=z_aff_example_sktd.sourceCode )
+
+
 
 [//]: # (id:/sap/bc/adt/bo/behaviordefinitions/z_aff_example_sktd/source/main#type=BDEF/BAC;name=z_aff_example_sktd.table )
 
@@ -187,6 +211,10 @@ Columns can be aligned using colons (`:`) with the dashes.
 ```
  
 
+[//]: # (id:/sap/bc/adt/bo/behaviordefinitions/z_aff_example_sktd/source/main#type=BDEF/BAC;name=z_aff_example_sktd.table )
+
+
+
 [//]: # (id:/sap/bc/adt/bo/behaviordefinitions/z_aff_example_sktd/source/main#type=BDEF/BAC;name=z_aff_example_sktd.textFormatting )
 
 ## Text formatting
@@ -199,10 +227,26 @@ Text can be formatted in *Italics*, **Bold** or ~~Strikethrough~~.
 ```
 
 
+[//]: # (id:/sap/bc/adt/bo/behaviordefinitions/z_aff_example_sktd/source/main#type=BDEF/BAC;name=z_aff_example_sktd.textFormatting )
+
+
+
 [//]: # (id:/sap/bc/adt/bo/behaviordefinitions/z_aff_example_sktd/source/main#type=BDEF/BAE;name=z_aff_example_sktd )
 
 Here are some documentation texts for the different actions named after the different possibilities of KTD Markdown. 
 
+[//]: # (id:/sap/bc/adt/bo/behaviordefinitions/z_aff_example_sktd/source/main#type=BDEF/BAE;name=z_aff_example_sktd )
+
+
+
 [//]: # (id:[z_aff_example_sktd] )
 
-This is an example KTD documentation of a *Behavior Definition* (**BDEF**) and will be used to create an example *ABAP File Format* (**AFF**)
+This is an example KTD documentation of a *Behavior Definition* (**BDEF**) and will be used to create an example *ABAP File Format* (**AFF**).
+
+The serialization of a KTD object will be done by serialization of each documentation element, for each element the ID followed by the markdown content. The ID will be serialized as comment, e.g. this element ID:
+
+```
+\[//]: # (id:/sap/bc/adt/bo/behaviordefinitions/z_aff_example_sktd/source/main#type=BDEF/BAC;name=z_aff_example_sktd.headings )
+```
+
+Lines in the content starting with `[//]:` will be escaped as `\[//]:`.
