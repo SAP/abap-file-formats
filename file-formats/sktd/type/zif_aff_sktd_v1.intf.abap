@@ -8,11 +8,11 @@ INTERFACE zif_aff_sktd_v1
       "! <p class="shorttext">Object Type</p>
       "! Type of the documented object
       "! $required
-      type TYPE trobjtype,  " TYPE c LENGTH 4,
+      type TYPE c LENGTH 4,
       "! <p class="shorttext">Object Name</p>
       "! Name of the documented object
       "! $required
-      name TYPE sobj_name,  " zif_aff_types_v1=>ty_object_name_30,
+      name TYPE c LENGTH 40,
     END OF ty_sktd_documented_object.
 
 
@@ -20,10 +20,8 @@ INTERFACE zif_aff_sktd_v1
     "! <p class="shorttext">Knowledge Transfer Document Properties</p>
     "! KTD properties
     BEGIN OF ty_main,
-      "! <p class="shorttext">Schema</p>
-      "! Format version
       "! $required
-      schema            TYPE string,
+      format_version TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
