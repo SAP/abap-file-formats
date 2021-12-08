@@ -1,5 +1,5 @@
 INTERFACE zif_aff_sktd_v1
-  PUBLIC .
+  PUBLIC.
 
   TYPES:
     "! <p class="shorttext">Documented Object</p>
