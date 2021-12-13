@@ -25,7 +25,7 @@ If a change to the format is considered incompatible, then the `formatVersion` h
 
 ### Compatible File Format Changes
 
-For compatible changes to the file format, the JSON schema is just updated. 
+For compatible changes to the file format, the JSON schema is just updated.
 The indicator whether the format has changed is not updated.
 JSON files are always validated against the latest update of the JSON schema of the corresponding format vaersion.
 
