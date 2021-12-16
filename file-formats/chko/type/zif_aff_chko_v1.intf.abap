@@ -1,4 +1,4 @@
-INTERFACE if_aff_chko_v1
+INTERFACE zif_aff_chko_v1
   PUBLIC.
 
   TYPES:
@@ -31,19 +31,19 @@ INTERFACE if_aff_chko_v1
     "! ATC check object properties
     BEGIN OF ty_main,
       "! $required
-      format_version     TYPE if_aff_types_v1=>ty_format_version,
+      format_version     TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header             TYPE if_aff_types_v1=>ty_header_60,
+      header             TYPE zif_aff_types_v1=>ty_header_60,
       "! <p class="shorttext">Category</p>
       "! The parent category of an ATC check object
       "! $required
-      category           TYPE if_aff_types_v1=>ty_object_name_30,
+      category           TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Implementing Class</p>
       "! The implementing class of the ATC check object
       "! $required
-      implementing_class TYPE if_aff_types_v1=>ty_object_name_30,
+      implementing_class TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Check Type</p>
       "! The check type of ATC check
       check_type     TYPE ty_check_type,
