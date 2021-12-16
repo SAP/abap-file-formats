@@ -52,7 +52,7 @@ INTERFACE if_aff_chko_v1
       parameters         TYPE ty_parameters,
     END OF ty_main.
 
-    CONSTANTS:
+  CONSTANTS:
     "! <p class="shorttext">Check Type</p>
     "! Check Type
       BEGIN OF co_check_type,
