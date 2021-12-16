@@ -34,33 +34,35 @@ INTERFACE zif_aff_doma_v1 PUBLIC.
 
   "! <p class="shorttext">Single Values</p>
   "! Single Values
-  BEGIN OF ty_single_value,
-    "! <p class="shorttext">Fixed value</p>
-    "! Value
-    fixed_value                 TYPE c LENGTH 10,
-    "! <p class="shorttext">Description</p>
-    "! Description
-    description                 TYPE zif_aff_types_v1=>ty_header_60_src,
-  END OF ty_single_value.
+  TYPES: 
+    BEGIN OF ty_single_value,
+      "! <p class="shorttext">Fixed value</p>
+      "! Value
+      fixed_value                 TYPE c LENGTH 10,
+      "! <p class="shorttext">Description</p>
+      "! Description
+      description                 TYPE zif_aff_types_v1=>ty_header_60_src,
+    END OF ty_single_value,
 
-  TYPES ty_single_values        TYPE STANDARD TABLE OF ty_single_value WITH DEFAULT KEY.
+    ty_single_values        TYPE STANDARD TABLE OF ty_single_value WITH DEFAULT KEY.
 
   "! <p class="shorttext">Interval values</p>
   "! Interval values
-  BEGIN OF ty_intervals_value,
-    "! <p class="shorttext">Low limit of the interval</p>
-    "! Low value for the interval
-    low_limit                   TYPE c LENGTH 10,
-    "! <p class="shorttext">High limit of the interval</p>
-    "! High value for the interval
-    "! $required
-    high_limit                  TYPE c LENGTH 10,
-    "! <p class="shorttext">Description</p>
-    "! Description
-    description                 TYPE zif_aff_types_v1=>ty_header_60_src,
-  END OF ty_intervals_value.
+  TYPES: 
+    BEGIN OF ty_intervals_value,
+      "! <p class="shorttext">Low limit of the interval</p>
+      "! Low value for the interval
+      low_limit                   TYPE c LENGTH 10,
+      "! <p class="shorttext">High limit of the interval</p>
+      "! High value for the interval
+      "! $required
+      high_limit                  TYPE c LENGTH 10,
+      "! <p class="shorttext">Description</p>
+      "! Description
+      description                 TYPE zif_aff_types_v1=>ty_header_60_src,
+    END OF ty_intervals_value,
 
-  TYPES ty_intervals_values     TYPE STANDARD TABLE OF ty_intervals_value WITH DEFAULT KEY.
+    ty_intervals_values     TYPE STANDARD TABLE OF ty_intervals_value WITH DEFAULT KEY.
 
   TYPES:
     "! <p class="shorttext">Domain Properties</p>
