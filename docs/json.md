@@ -1,5 +1,7 @@
 ## JSON Files in ABAP File Formats
-The ABAP file formats provide JSON schemas for annotation and validation of serialized ABAP objects.
+JSON data files are central, since very ABAP object specifies a JSON file.
+Depending on the object, there might be additional files, but there is always a JSON file.
+For its annotation and validation the ABAP file formats provide JSON schemas.
 
 ## Table of Contents
 * [Format Versions and Compatibility](#format-versions-and-compatibility)
