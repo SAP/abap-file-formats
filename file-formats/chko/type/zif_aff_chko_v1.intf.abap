@@ -55,7 +55,7 @@ INTERFACE if_aff_chko_v1
     CONSTANTS:
     "! <p class="shorttext">Check Type</p>
     "! Check Type
-    BEGIN OF co_check_type,
+      BEGIN OF co_check_type,
       "! <p class="shorttext">Local</p>
       "! Local
       local              TYPE ty_check_type VALUE 'L',
