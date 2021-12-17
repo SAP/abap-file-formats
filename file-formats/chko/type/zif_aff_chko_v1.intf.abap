@@ -11,7 +11,7 @@ INTERFACE zif_aff_chko_v1
       "! <p class="shorttext">Parameter Description</p>
       "! Description of a parameter
       description  TYPE c LENGTH 255,
-      "! <p class="shorttext">Is hidden</p>
+      "! <p class="shorttext">Is Hidden</p>
       "! The parameter is hidden
       hidden       TYPE abap_bool,
     END OF ty_parameter.
