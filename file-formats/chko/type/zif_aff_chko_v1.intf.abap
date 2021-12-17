@@ -54,7 +54,7 @@ INTERFACE zif_aff_chko_v1
 
   CONSTANTS:
     "! <p class="shorttext">Check Type</p>
-    "! Check Type
+    "! Check type
     BEGIN OF co_check_type,
       "! <p class="shorttext">Local</p>
       "! Local
