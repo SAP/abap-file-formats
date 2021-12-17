@@ -2,7 +2,7 @@
   "formatVersion": "1",
   "header": {
     "description": "Example ENHO for ABAP file formats",
-    "originalLanguage": "EN"
+    "originalLanguage": "en"
   },
   "enhancementSpot": "Z_AFF_EXAMPLE_ENHS",
   "badiImplementations": [
