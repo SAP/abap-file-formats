@@ -60,7 +60,7 @@ INTERFACE zif_aff_chko_v1
       "! Local
       local              TYPE ty_check_type VALUE 'L',
       "! <p class="shorttext">Remote Enabled</p>
-      "! Remote Enabled
+      "! Remote enabled
       remote_enabled     TYPE ty_check_type VALUE 'R',
     END OF co_check_type.
 ENDINTERFACE.
