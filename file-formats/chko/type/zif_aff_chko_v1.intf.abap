@@ -22,7 +22,7 @@ INTERFACE zif_aff_chko_v1
     ty_parameters TYPE HASHED TABLE OF ty_parameter WITH UNIQUE KEY name.
 
   "! <p class="shorttext">Check Type</p>
-  "! Check Type
+  "! Check type
   "! $values {@link if_aff_chko_v1.data:co_check_type}
   TYPES ty_check_type TYPE c LENGTH 1.
 
