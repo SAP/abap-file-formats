@@ -108,7 +108,7 @@
             "maxLength": 255
           },
           "hidden": {
-            "title": "Is hidden",
+            "title": "Is Hidden",
             "description": "The parameter is hidden",
             "type": "boolean"
           }
