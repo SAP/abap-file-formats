@@ -31,7 +31,7 @@ INTERFACE zif_aff_enho_v1
       "! <p class="shorttext">Customizing supported (no transport)</p>
       "! Customizing is supported (without transport)
       customizing_supported_no_trans              TYPE ty_customizing VALUE 'D',
-      end of co_customizing.
+      END of co_customizing.
 
   "! <p class="shorttext">Filter Comparator</p>
   "! Filter comparator
