@@ -41,7 +41,7 @@ INTERFACE zif_aff_doma_v1 PUBLIC.
       fixed_value                 TYPE c LENGTH 10,
       "! <p class="shorttext">Description</p>
       "! Description
-      description                 TYPE zif_aff_types_v1=>ty_header_60_src,
+      description                 TYPE zif_aff_types_v1=>ty_description_60,
     END OF ty_single_value,
 
     ty_single_values        TYPE STANDARD TABLE OF ty_single_value WITH DEFAULT KEY.
