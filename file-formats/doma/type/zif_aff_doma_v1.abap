@@ -73,7 +73,7 @@ INTERFACE zif_aff_doma_v1 PUBLIC.
       "! <p class="shorttext">Header</p>
       "! header
       "! $required
-      header                    TYPE zif_aff_types_v1=>ty_header_60_src,
+      header                    TYPE zif_aff_types_v1=>ty_header_60,
       "! <p class="shorttext">Descriptions</p>
       "! Descriptions maintained in SE11
       descriptions              TYPE zif_aff_oo_types_v1=>ty_descriptions,
