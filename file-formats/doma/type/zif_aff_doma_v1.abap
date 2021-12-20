@@ -102,8 +102,8 @@ INTERFACE zif_aff_doma_v1 PUBLIC.
       "! Valule table
       value_table               TYPE ty_value_table,
 
-      "! Single values
-      single_val                TYPE ty_single_values,
+      "! Fixed values
+      fixed_value                TYPE ty_fixed_values,
 
       "! Interval values
       intervals_val             TYPE ty_intervals_values,
