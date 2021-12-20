@@ -105,8 +105,8 @@ INTERFACE zif_aff_doma_v1 PUBLIC.
       "! Fixed values
       fixed_value                TYPE ty_fixed_values,
 
-      "! Interval values
-      intervals_val             TYPE ty_intervals_values,
+      "! Fixed value intervals
+      fixed_value_intervals             TYPE ty_intervals_values,
     END OF ty_main.
 
 ENDINTERFACE.
