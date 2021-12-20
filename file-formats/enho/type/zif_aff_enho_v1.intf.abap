@@ -13,6 +13,26 @@ INTERFACE zif_aff_enho_v1
       value2 TYPE string,
     END OF ty_filter_values.
 
+  "! <p class="shorttext">Customizing</p>
+  "! Customizing
+  "! $values {@link zif_aff_enho_v1.data:co_customizing}
+  TYPES ty_customizing TYPE c LENGTH 1.
+
+  CONSTANTS:
+    "! <p class="shorttext">Customizing</p>
+    "! Customizing
+    BEGIN OF co_customizing,
+      "! <p class="shorttext">Customizing supported</p>
+      "! Customizing is supported
+      customizing_supported              TYPE ty_customizing VALUE ' ',
+      "! <p class="shorttext">Customizing not supported</p>
+      "! Customizing is not supported
+      customizing_not_supported              TYPE ty_customizing VALUE 'X',
+      "! <p class="shorttext">Customizing supported (no transport)</p>
+      "! Customizing is supported (without transport)
+      customizing_supported_no_trans              TYPE ty_customizing VALUE 'D',
+      end of co_customizing.
+
   "! <p class="shorttext">Filter Comparator</p>
   "! Filter comparator
   "! $values {@link zif_aff_enho_v1.data:co_comparator}
@@ -232,10 +252,10 @@ INTERFACE zif_aff_enho_v1
       "! BAdI implementation is active
       "! $showAlways
       is_active_implementation  TYPE abap_bool,
-      "! <p class="shorttext">BAdI Implementation Supports Customizing</p>
-      "! BAdI implementation supports customizing
+      "! <p class="shorttext">BAdI Implementation Customizing</p>
+      "! Does the BAdI implementation support customizing
       "! $showAlways
-      is_customizing_supported  TYPE abap_bool,
+      customizing  TYPE ty_customizing,
       "! <p class="shorttext">Filter Values</p>
       "! Filter values for this BAdI implementation
       "! $callbackClass {@link cl_seef_aff_enho_filter_st}
