@@ -116,9 +116,9 @@
             "description": "Does the BAdI implementation support customizing",
             "type": "string",
             "enum": [
-              "customizingSupported",
-              "customizingNotSupported",
-              "customizingSupportedNoTrans"
+              "supported",
+              "notSupported",
+              "supportedNoTransport"
             ],
             "enumTitles": [
               "Customizing supported",
