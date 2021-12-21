@@ -14,15 +14,21 @@ INTERFACE zif_aff_doma_v1 PUBLIC.
 
   "! <p class="shorttext">No Characters</p>
   "! Number of Characters
-  TYPES ty_numb_char            TYPE c LENGTH 6.
+ "! $minimum 0
+ "! $maximum 999999
+ TYPES ty_numb_char            TYPE i.
 
-  "! <p class="shorttext">Decimals</p>
-  "! Decimals
-  TYPES ty_decimals             TYPE c LENGTH 6.
+ "! <p class="shorttext">Decimals</p>
+ "! Decimals
+ "! $minimum 0
+ "! $maximum 999999
+ TYPES ty_decimals             TYPE i.
 
-  "! <p class="shorttext">Output Length</p>
-  "! Output Length
-  TYPES ty_output_length        TYPE c LENGTH 6.
+ "! <p class="shorttext">Output Length</p>
+ "! Output Length
+ "! $minimum 0
+ "! $maximum 999999
+ TYPES ty_output_length        TYPE i.
 
   "! <p class="shorttext">Convertion Routine</p>
   "! Convertion Routine
