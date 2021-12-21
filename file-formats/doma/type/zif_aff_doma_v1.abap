@@ -65,7 +65,7 @@ INTERFACE zif_aff_doma_v1 PUBLIC.
       high_limit                  TYPE c LENGTH 10,
       "! <p class="shorttext">Description</p>
       "! Description
-      description                 TYPE zif_aff_types_v1=>ty_header_60_src,
+      description                 TYPE zif_aff_types_v1=>ty_description_60,
     END OF ty_intervals_value,
 
     ty_intervals_values     TYPE STANDARD TABLE OF ty_intervals_value WITH DEFAULT KEY.
@@ -80,9 +80,6 @@ INTERFACE zif_aff_doma_v1 PUBLIC.
       "! header
       "! $required
       header                    TYPE zif_aff_types_v1=>ty_header_60,
-      "! <p class="shorttext">Descriptions</p>
-      "! Descriptions maintained in SE11
-      descriptions              TYPE zif_aff_oo_types_v1=>ty_descriptions,
 
       "! Plus, minus sign
       sign                      TYPE ty_sign,
