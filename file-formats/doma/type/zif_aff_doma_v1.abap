@@ -103,7 +103,7 @@ INTERFACE zif_aff_doma_v1 PUBLIC.
       value_table               TYPE ty_value_table,
 
       "! Fixed values
-      fixed_value                TYPE ty_fixed_values,
+      fixed_values                TYPE ty_fixed_values,
 
       "! Fixed value intervals
       fixed_value_intervals             TYPE ty_intervals_values,
