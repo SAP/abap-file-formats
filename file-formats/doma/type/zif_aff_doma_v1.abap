@@ -4,7 +4,7 @@ INTERFACE zif_aff_doma_v1 PUBLIC.
   "! Plus - Minus sign for domains
   TYPES ty_sign                 TYPE c.
 
-  "! <p class="shorttext">Case sensiive flag for domains</p>
+  "! <p class="shorttext">Case sensitive flag for domains</p>
   "! Case sensiive flag for domains
   TYPES ty_case_sensitive       TYPE c.
 
@@ -105,7 +105,7 @@ INTERFACE zif_aff_doma_v1 PUBLIC.
       "! Convertion Routine
       conv_rout                 TYPE ty_conv_routine,
 
-      "! Valule table
+      "! Value table
       value_table               TYPE ty_value_table,
 
       "! Fixed values
