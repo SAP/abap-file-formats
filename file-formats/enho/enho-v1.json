@@ -111,10 +111,25 @@
             "description": "BAdI implementation is active",
             "type": "boolean"
           },
-          "isCustomizingSupported": {
-            "title": "BAdI Implementation Supports Customizing",
-            "description": "BAdI implementation supports customizing",
-            "type": "boolean"
+          "customizing": {
+            "title": "BAdI Implementation Customizing",
+            "description": "Does the BAdI implementation support customizing",
+            "type": "string",
+            "enum": [
+              "supported",
+              "notSupported",
+              "supportedNoTransport"
+            ],
+            "enumTitles": [
+              "Customizing supported",
+              "Customizing not supported",
+              "Customizing supported (no transport)"
+            ],
+            "enumDescriptions": [
+              "Customizing is supported",
+              "Customizing is not supported",
+              "Customizing is supported (without transport)"
+            ]
           },
           "filterValues": {
             "title": "Filter Values",
