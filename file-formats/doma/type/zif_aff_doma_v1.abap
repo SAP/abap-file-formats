@@ -40,7 +40,7 @@ INTERFACE zif_aff_doma_v1 PUBLIC.
 
   "! <p class="shorttext">Single Values</p>
   "! Single Values
-  TYPES: 
+  TYPES:
     BEGIN OF ty_single_value,
       "! <p class="shorttext">Fixed value</p>
       "! Value
