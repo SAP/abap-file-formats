@@ -14,7 +14,7 @@
       "isExampleImplementation": false,
       "isDefaultImplementation": true,
       "isActiveImplementation": true,
-      "isCustomizingSupported": false,
+      "customizing": "notSupported",
       "filterValues": [
         "EXAMPLE_FILTER=example_value1"
       ]
