@@ -6,7 +6,7 @@ INTERFACE zif_aff_doma_v1 PUBLIC.
 
   "! <p class="shorttext">Case sensitive flag for domains</p>
   "! Case sensiive flag for domains
-  TYPES ty_case_sensitive       TYPE c.
+  TYPES ty_case_sensitive       TYPE abap_bool.
 
   "! <p class="shorttext">Data type for the domain</p>
   "! Data type for the domain
