@@ -261,7 +261,9 @@ This leads to the following generated JSON schema:
           "title": "Original Language",
           "description": "Original language of the ABAP object",
           "type": "string",
-          "maxLength": 2
+          "minLength": 2,
+          "maxLength": 2,
+          "pattern": "^[a-z]+$"
         },
         "abapLanguageVersion": {
           "title": "ABAP Language Version (source code object)",
