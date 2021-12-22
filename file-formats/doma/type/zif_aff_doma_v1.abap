@@ -54,7 +54,7 @@ INTERFACE zif_aff_doma_v1 PUBLIC.
 
   "! <p class="shorttext">Interval values</p>
   "! Interval values
-  TYPES: 
+  TYPES:
     BEGIN OF ty_intervals_value,
       "! <p class="shorttext">Low limit of the interval</p>
       "! Low value for the interval
