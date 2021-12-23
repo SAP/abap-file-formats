@@ -2,7 +2,7 @@
   "formatVersion": "1",
   "header": {
     "description": "Example interface for ABAP file formats",
-    "originalLanguage": "EN"
+    "originalLanguage": "en"
   },
   "descriptions": {
     "types": [

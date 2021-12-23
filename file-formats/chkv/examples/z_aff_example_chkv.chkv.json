@@ -2,7 +2,7 @@
   "formatVersion": "1",
   "header": {
     "description": "Example CHKV for ABAP file formats",
-    "originalLanguage": "EN",
+    "originalLanguage": "en",
     "abapLanguageVersion": "cloudDevelopment"
   },
   "selectedChecks": [
