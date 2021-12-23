@@ -2,7 +2,7 @@
   "formatVersion": "1",
   "header": {
     "description": "Example class for ABAP file formats",
-    "originalLanguage": "EN"
+    "originalLanguage": "en"
   },
   "fixPointArithmetic": true,
   "descriptions": {

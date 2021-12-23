@@ -2,7 +2,7 @@
   "formatVersion": "1",
   "header": {
     "description": "Example DDLs for ABAP file formats",
-    "originalLanguage": "EN"
+    "originalLanguage": "en"
   },
   "sourceOrigin": "abapDevelopmentTools",
   "sourceType": "viewEntity"
