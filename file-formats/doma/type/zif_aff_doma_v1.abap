@@ -82,7 +82,7 @@ INTERFACE zif_aff_doma_v1 PUBLIC.
       header                    TYPE zif_aff_types_v1=>ty_header_60,
 
       "! Plus, minus sign
-      sign                      TYPE ty_sign,
+      negative_values                      TYPE ty_negative_values,
 
       "! Set if case sensitive
       case_sensitive            TYPE ty_case_sensitive,
