@@ -100,7 +100,7 @@ INTERFACE zif_aff_doma_v1 PUBLIC.
       output_length             TYPE ty_output_length,
 
       "! Convertion Routine
-      conv_rout                 TYPE ty_conv_routine,
+      conversion_routine                 TYPE ty_conv_routine,
 
       "! Value table
       value_table               TYPE ty_value_table,
