@@ -91,7 +91,7 @@ INTERFACE zif_aff_doma_v1 PUBLIC.
       data_type                 TYPE ty_data_type,
 
       "! $required
-      num_chars                 TYPE ty_numb_char,
+      length                 TYPE ty_length,
 
       "! Set if decimal
       decimals                  TYPE ty_decimals,
