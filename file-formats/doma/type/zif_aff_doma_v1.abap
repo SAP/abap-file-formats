@@ -2,7 +2,7 @@ INTERFACE zif_aff_doma_v1 PUBLIC.
 
   "! <p class="shorttext">Plus - Minus sign for domains</p>
   "! Plus - Minus sign for domains
-  TYPES ty_sign                 TYPE c.
+  TYPES ty_negative_values TYPE abap_bool.
 
   "! <p class="shorttext">Case sensitive flag for domains</p>
   "! Case sensiive flag for domains
