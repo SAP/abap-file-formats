@@ -16,7 +16,7 @@ INTERFACE zif_aff_doma_v1 PUBLIC.
   "! Number of Characters
  "! $minimum 0
  "! $maximum 999999
- TYPES ty_numb_char            TYPE i.
+ TYPES ty_length            TYPE i.
 
  "! <p class="shorttext">Decimals</p>
  "! Decimals
