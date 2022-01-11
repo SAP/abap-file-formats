@@ -157,11 +157,13 @@ The order of these comments is important: First, there is the comment for the ti
 
 ### Additional Properties
 
-Generated JSON schemas do not contain the property `additionalProperties`. This means, additional properties are allowed in the JSON files.
-We want to support additional properties to be able to evolve the ABAP file formats in a compatible way, see [Issue-248](https://github.com/SAP/abap-file-formats/issues/248). This allows us adding or removing non-mandatory fields in the future.
-
 Adding additional custom fields in any ABAP file formats JSON file is not allowed.
 
+Therefore, generated JSON schemas contain the property `"additionalProperties": false`.
+This means, no additional fields can be added to the JSON files.
+
+If new fields are added to the ABAP file format, the JSON schema will be updated with the new field.
+If fields are removed from the ABAP file format, a new schema will be defined and the `formatVersion` will be increased.
 
 ## Example
 Here is the shortened type used to generate the JSON schema for interfaces. It can be found in the interface [`zif_aff_intf_v1`](../file-formats/intf/type/zif_aff_intf_v1.intf.abap).
@@ -259,7 +261,9 @@ This leads to the following generated JSON schema:
           "title": "Original Language",
           "description": "Original language of the ABAP object",
           "type": "string",
-          "maxLength": 2
+          "minLength": 2,
+          "maxLength": 2,
+          "pattern": "^[a-z]+$"
         },
         "abapLanguageVersion": {
           "title": "ABAP Language Version (source code object)",
@@ -321,12 +325,6 @@ The field `description` contains the description of the object.
 The field `originalLanguage` stores the information about the original language of the object.
 
 The original language is specified with [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language codes.
-
----
-**Note**: It has to be decided whether the language code is specified in upper case (like in ABAP) or lower case as in the ISO 639-1 specification.
-Refer to issue [#34](https://github.com/SAP/abap-file-formats/issues/53).
-
----
 
 All translatable texts in the object shall be maintained in their original language.
 Translations of the texts shall be stored in separate files.

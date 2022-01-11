@@ -27,7 +27,9 @@
           "title": "Original Language",
           "description": "Original language of the ABAP object",
           "type": "string",
-          "maxLength": 2
+          "minLength": 2,
+          "maxLength": 2,
+          "pattern": "^[a-z]+$"
         },
         "abapLanguageVersion": {
           "title": "ABAP Language Version",
@@ -69,10 +71,22 @@
       "type": "string",
       "maxLength": 30
     },
-    "remoteEnabled": {
-      "title": "Remote-enabled flag",
-      "description": "The ATC check object is remote-enabled",
-      "type": "boolean"
+    "checkType": {
+      "title": "Check Type",
+      "description": "The check type of ATC check",
+      "type": "string",
+      "enum": [
+        "local",
+        "remoteEnabled"
+      ],
+      "enumTitles": [
+        "Local",
+        "Remote Enabled"
+      ],
+      "enumDescriptions": [
+        "Local",
+        "Remote Enabled"
+      ]
     },
     "parameters": {
       "title": "Parameters",
@@ -84,12 +98,6 @@
         "description": "A parameter of an ATC check object",
         "type": "object",
         "properties": {
-          "technicalId": {
-            "title": "Technical ID",
-            "description": "The technical Id of a parameter",
-            "type": "string",
-            "maxLength": 4
-          },
           "name": {
             "title": "Parameter Name",
             "description": "Name of a parameter",
@@ -102,7 +110,7 @@
             "maxLength": 255
           },
           "hidden": {
-            "title": "Hidden Flag",
+            "title": "Is Hidden",
             "description": "The parameter is hidden",
             "type": "boolean"
           }

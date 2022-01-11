@@ -2,13 +2,12 @@
   "formatVersion": "1",
   "header": {
     "description": "Example CHKO for ABAP file formats",
-    "originalLanguage": "EN"
+    "originalLanguage": "en"
   },
   "category": "Z_AFF_EXAMPLE_CHKC",
   "implementingClass": "ZCL_CI_TEST_AFF_EXAMPLE_CHECK",
   "parameters": [
     {
-      "technicalId": "1",
       "name": "ParameterName",
       "description": "Parameter description",
       "hidden": true
