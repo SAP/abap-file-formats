@@ -1,24 +1,22 @@
 {
-    "formatVersion": "1",
-    "header": {
-      "description": "Example DOMA for ABAP file formats",
-      "originalLanguage": "en"
-    },
-    "negative_values": false,
-    "case_sensitive": false,
-    "data_type": "CHAR",
-    "length": 3,
-    "decimals": 2,
-    "output_length": 3,
-    "conversion_routine": "",
-    "value_table": "",
-    "fixed_values": {
-        "fixed_value": "D",
-        "description": "Test fixed values description"
-    },
-    "fixed_value_intervals": {
-        "low_limit": "1",
-        "high_limit": "5",
-        "description": "Test interval description"
-    }
+  "formatVersion": "1",
+  "header": {
+    "description": "Example DOMA for ABAP file formats",
+    "originalLanguage": "en"
+  },
+  "negative_values": false,
+  "case_sensitive": false,
+  "data_type": "CHAR",
+  "length": 3,
+  "decimals": 2,
+  "output_length": 3,
+  "fixed_values": {
+    "fixed_value": "D",
+    "description": "Test fixed values description"
+  },
+  "fixed_value_intervals": {
+    "low_limit": "1",
+    "high_limit": "5",
+    "description": "Test interval description"
   }
+}
