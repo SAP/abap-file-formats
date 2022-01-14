@@ -14,21 +14,21 @@ INTERFACE zif_aff_doma_v1 PUBLIC.
 
   "! <p class="shorttext">No Characters</p>
   "! Number of Characters
- "! $minimum 0
- "! $maximum 999999
- TYPES ty_length            TYPE i.
+  "! $minimum 0
+  "! $maximum 999999
+  TYPES ty_length            TYPE i.
 
- "! <p class="shorttext">Decimals</p>
- "! Decimals
- "! $minimum 0
- "! $maximum 999999
- TYPES ty_decimals             TYPE i.
+  "! <p class="shorttext">Decimals</p>
+  "! Decimals
+  "! $minimum 0
+  "! $maximum 999999
+  TYPES ty_decimals             TYPE i.
 
- "! <p class="shorttext">Output Length</p>
- "! Output Length
- "! $minimum 0
- "! $maximum 999999
- TYPES ty_output_length        TYPE i.
+  "! <p class="shorttext">Output Length</p>
+  "! Output Length
+  "! $minimum 0
+  "! $maximum 999999
+  TYPES ty_output_length        TYPE i.
 
   "! <p class="shorttext">Convertion Routine</p>
   "! Convertion Routine
@@ -38,23 +38,23 @@ INTERFACE zif_aff_doma_v1 PUBLIC.
   "! Value table
   TYPES ty_value_table          TYPE c LENGTH 30.
 
-  "! <p class="shorttext">Single Values</p>
-  "! Single Values
   TYPES:
+    "! <p class="shorttext">Single Values</p>
+    "! Single Values
     BEGIN OF ty_single_value,
       "! <p class="shorttext">Fixed value</p>
       "! Value
-      fixed_value                 TYPE c LENGTH 10,
+      fixed_value TYPE c LENGTH 10,
       "! <p class="shorttext">Description</p>
       "! Description
-      description                 TYPE zif_aff_types_v1=>ty_description_60,
+      description TYPE zif_aff_types_v1=>ty_description_60,
     END OF ty_single_value,
 
-    ty_single_values        TYPE STANDARD TABLE OF ty_single_value WITH DEFAULT KEY.
+    ty_single_values TYPE STANDARD TABLE OF ty_single_value WITH DEFAULT KEY.
 
-  "! <p class="shorttext">Interval values</p>
-  "! Interval values
   TYPES:
+    "! <p class="shorttext">Interval values</p>
+    "! Interval values
     BEGIN OF ty_intervals_value,
       "! <p class="shorttext">Low limit of the interval</p>
       "! Low value for the interval
@@ -96,10 +96,10 @@ INTERFACE zif_aff_doma_v1 PUBLIC.
       "! Set if decimal
       decimals                  TYPE ty_decimals,
 
-      "! Set the oputput length
+      "! Set the output length
       output_length             TYPE ty_output_length,
 
-      "! Convertion Routine
+      "! Conversion Routine
       conversion_routine                 TYPE ty_conv_routine,
 
       "! Value table
