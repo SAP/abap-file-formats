@@ -7,7 +7,7 @@ import glob
 import sys
 import re
 
-nb_errors = 0
+msg_errors = list()
 schemas = glob.glob('./file-formats/*/*.json')
 json_in_repo = glob.glob('./file-formats/**/*.json', recursive=True)
 only_instances = set(json_in_repo) - set(schemas)
@@ -40,28 +40,23 @@ def match_schema_instance( ):
     return matches
 
 def decode_json( file ):
-    global nb_errors
     with open(file, 'r') as json_f:
         try:
             json_instance = json.load(json_f)
         except json.JSONDecodeError as ex:
-            print(f"::error file={file},line={ex.lineno},col={ex.colno}::{ex.msg}")
-            nb_errors += 1
+            msg_error.append(f"::error file={file},line={ex.lineno},col={ex.colno}::{ex.msg}")
         else:
             return json_instance
 
 def validate_json( schema, instance ):
-    global nb_errors
     json_schema = decode_json( schema )
     json_instance = decode_json( instance )
     try:
         Draft7Validator(json_schema).validate(json_instance)
     except jsonschema.exceptions.ValidationError as exVal:
-        nb_errors += 1
-        print(f"::error file={instance},line=1,col=1::{exVal.message}")
+        msg_errors.append(f"::error file={instance},line=1,col=1::{exVal.message}")
     except jsonschema.exceptions.SchemaError as error_ex:
-        nb_errors += 1
-        print(f"::error file={instance},line=1,col=1::{error_ex.message}")
+        msg_errors.print(f"::error file={instance},line=1,col=1::{error_ex.message}")
     else:
         #print(f"::set-output name={os.path.basename(instance).ljust(31)} valid instance of schema {os.path.basename(schema)}" )
         print( "valid: " + os.path.basename(schema) + "; " + os.path.basename(instance))
@@ -87,5 +82,7 @@ if instance_without_schema:
     print("\nFiles without an associated JSON Schema in repository:")
     print(*instance_without_schema, sep='\n')
 
-if nb_errors > 0:
+if len(msg_errors) > 0:
+    print()
+    print(*msg_errors, sep='\n')
     sys.exit(1)
