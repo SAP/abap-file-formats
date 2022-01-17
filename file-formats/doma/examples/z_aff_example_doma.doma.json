@@ -4,19 +4,17 @@
     "description": "Example DOMA for ABAP file formats",
     "originalLanguage": "en"
   },
-  "negativeValues": false,
-  "caseSensitive": false,
   "dataType": "CHAR",
   "length": 3,
-  "decimals": 2,
-  "outputLength": 3,
-  "fixedValues": {
-    "fixedValue": "D",
-    "description": "Test fixed values description"
-  },
-  "fixedValueIntervals": {
-    "lowLimit": "1",
-    "highLimit": "5",
-    "description": "Test interval description"
-  }
+  "outputLength":3,
+  "fixedValues": [
+    {
+      "fixedValue": "ABC",
+      "description": "Fixed value ABC"
+    },
+    {
+      "fixedValue": "XYZ",
+      "description": "Fixed value XYZ"
+    }
+  ]
 }
