@@ -1,12 +1,5 @@
 INTERFACE zif_aff_doma_v1 PUBLIC.
 
-  "! <p class="shorttext">Plus - Minus sign for domains</p>
-  "! Plus - Minus sign for domains
-  TYPES ty_negative_values TYPE abap_bool.
-
-  "! <p class="shorttext">Case sensitive flag for domains</p>
-  "! Case sensiive flag for domains
-  TYPES ty_case_sensitive       TYPE abap_bool.
 
   "! <p class="shorttext">Data type for the domain</p>
   "! Data type for the domain
@@ -58,58 +51,60 @@ INTERFACE zif_aff_doma_v1 PUBLIC.
     BEGIN OF ty_intervals_value,
       "! <p class="shorttext">Low limit of the interval</p>
       "! Low value for the interval
-      low_limit                   TYPE c LENGTH 10,
+      low_limit   TYPE c LENGTH 10,
       "! <p class="shorttext">High limit of the interval</p>
       "! High value for the interval
       "! $required
-      high_limit                  TYPE c LENGTH 10,
+      high_limit  TYPE c LENGTH 10,
       "! <p class="shorttext">Description</p>
       "! Description
-      description                 TYPE zif_aff_types_v1=>ty_description_60,
+      description TYPE zif_aff_types_v1=>ty_description_60,
     END OF ty_intervals_value,
 
-    ty_intervals_values     TYPE STANDARD TABLE OF ty_intervals_value WITH DEFAULT KEY.
+    ty_intervals_values TYPE STANDARD TABLE OF ty_intervals_value WITH DEFAULT KEY.
 
   TYPES:
     "! <p class="shorttext">Domain Properties</p>
     "! Domain properties
     BEGIN OF ty_main,
       "! $required
-      format_version            TYPE zif_aff_types_v1=>ty_format_version,
+      format_version        TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! header
       "! $required
-      header                    TYPE zif_aff_types_v1=>ty_header_60,
-
-      "! Plus, minus sign
-      negative_values                      TYPE ty_negative_values,
-
-      "! Set if case sensitive
-      case_sensitive            TYPE ty_case_sensitive,
+      header                TYPE zif_aff_types_v1=>ty_header_60,
 
       "! $required
-      data_type                 TYPE ty_data_type,
+      data_type             TYPE ty_data_type,
 
       "! $required
-      length                 TYPE ty_length,
+      length                TYPE ty_length,
 
       "! Set if decimal
-      decimals                  TYPE ty_decimals,
+      decimals              TYPE ty_decimals,
+
+      "! <p class="shorttext">Supports Negative Values</p>
+      "! Supports negative values
+      negative_values       TYPE abap_bool,
+
+      "! <p class="shorttext">Case Sensitive</p>
+      "! Values are case sensitive
+      case_sensitive        TYPE abap_bool,
 
       "! Set the output length
-      output_length             TYPE ty_output_length,
+      output_length         TYPE ty_output_length,
 
       "! Conversion Routine
-      conversion_routine                 TYPE ty_conv_routine,
+      conversion_routine    TYPE ty_conv_routine,
 
       "! Value table
-      value_table               TYPE ty_value_table,
+      value_table           TYPE ty_value_table,
 
       "! Fixed values
-      fixed_values                TYPE ty_single_values,
+      fixed_values          TYPE ty_single_values,
 
       "! Fixed value intervals
-      fixed_value_intervals             TYPE ty_intervals_values,
+      fixed_value_intervals TYPE ty_intervals_values,
     END OF ty_main.
 
 ENDINTERFACE.

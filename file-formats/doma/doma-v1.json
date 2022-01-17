@@ -59,16 +59,6 @@
         "originalLanguage"
       ]
     },
-    "negativeValues": {
-      "description": "Plus, minus sign",
-      "type": "string",
-      "maxLength": 1
-    },
-    "caseSensitive": {
-      "description": "Set if case sensitive",
-      "type": "string",
-      "maxLength": 1
-    },
     "dataType": {
       "title": "Data type for the domain",
       "description": "Data type for the domain",
@@ -87,6 +77,16 @@
       "type": "integer",
       "minimum": 0,
       "maximum": 999999
+    },
+    "negativeValues": {
+      "title": "Supports Negative Values",
+      "description": "Supports negative values",
+      "type": "boolean"
+    },
+    "caseSensitive": {
+      "title": "Case Sensitive",
+      "description": "Values are case sensitive",
+      "type": "boolean"
     },
     "outputLength": {
       "description": "Set the output length",
