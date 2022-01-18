@@ -1,0 +1,46 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Example class for ABAP file formats",
+    "originalLanguage": "EN"
+  },
+  "fixPointArithmetic": true,
+  "descriptions": {
+    "types": [
+      {
+        "name": "EXAMPLE_TYPE",
+        "description": "This is an example type"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "EXAMPLE_ATTRIBUTE",
+        "description": "This is an example attribute"
+      }
+    ],
+    "events": [
+      {
+        "name": "EXAMPLE_EVENT",
+        "description": "This is an example event"
+      }
+    ],
+    "methods": [
+      {
+        "name": "EXAMPLE_METHOD",
+        "description": "This is an example method",
+        "parameters": [
+          {
+            "name": "I_PARAM",
+            "description": "Importing parameter"
+          }
+        ],
+        "exceptions": [
+          {
+            "name": "CX_STATIC_CHECK",
+            "description": "This is an example exception"
+          }
+        ]
+      }
+    ]
+  }
+}
