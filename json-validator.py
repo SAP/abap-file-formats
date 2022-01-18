@@ -82,7 +82,7 @@ print("\nFiles without an associated JSON Schema in repository:")
 for instance in instance_without_schema:
     print(f"::notice file={instance},line=1,col=1,endColumn=2::File without an associated JSON Schema in repository is {instance}")
 
+print()
 if len(msg_errors) > 0:
-    print()
     print(*msg_errors, sep='\n')
     sys.exit(1)
