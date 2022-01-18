@@ -44,7 +44,7 @@ def decode_json( file ):
         try:
             json_instance = json.load(json_f)
         except json.JSONDecodeError as ex:
-            msg_error.append(f"::error file={file},line={ex.lineno},col={ex.colno}::{ex.msg}")
+            msg_errors.append(f"::error file={file},line={ex.lineno},col={ex.colno}::{ex.msg}")
         else:
             return json_instance
 
