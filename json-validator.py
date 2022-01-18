@@ -80,8 +80,7 @@ matches = match_schema_instance( )
 validate_json_and_example( matches )
 print("\nFiles without an associated JSON Schema in repository:")
 for instance in instance_without_schema:
-    print(f"::notice file={instance},line=1,col=1,endColumn=2::File without an associated JSON Schema in repository")
-    print(instance)
+    print(f"::notice file={instance},line=1,col=1,endColumn=2::File without an associated JSON Schema in repository is {instance}")
 
 if len(msg_errors) > 0:
     print()
