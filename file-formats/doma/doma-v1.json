@@ -14,7 +14,7 @@
     },
     "header": {
       "title": "Header",
-      "description": "header",
+      "description": "Header",
       "type": "object",
       "properties": {
         "description": {
@@ -60,14 +60,14 @@
       ]
     },
     "dataType": {
-      "title": "Data type for the domain",
+      "title": "Data Type for the Domain",
       "description": "Data type for the domain",
       "type": "string",
       "maxLength": 4
     },
     "length": {
       "title": "No Characters",
-      "description": "Number of Characters",
+      "description": "Number of characters",
       "type": "integer",
       "minimum": 0,
       "maximum": 999999
@@ -109,11 +109,11 @@
       "type": "array",
       "items": {
         "title": "Single Values",
-        "description": "Single Values",
+        "description": "Single values",
         "type": "object",
         "properties": {
           "fixedValue": {
-            "title": "Fixed value",
+            "title": "Fixed Value",
             "description": "Value",
             "type": "string",
             "maxLength": 10
@@ -132,18 +132,18 @@
       "description": "Fixed value intervals",
       "type": "array",
       "items": {
-        "title": "Interval values",
+        "title": "Interval Values",
         "description": "Interval values",
         "type": "object",
         "properties": {
           "lowLimit": {
-            "title": "Low limit of the interval",
+            "title": "Low Limit of the Interval",
             "description": "Low value for the interval",
             "type": "string",
             "maxLength": 10
           },
           "highLimit": {
-            "title": "High limit of the interval",
+            "title": "High Limit of the Interval",
             "description": "High value for the interval",
             "type": "string",
             "maxLength": 10
