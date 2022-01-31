@@ -138,7 +138,7 @@ Normally, if an ABAP object is serialized, only the components of the correspond
 is added. Note that also the `$required` annotation leads to such a behavior.
 
 ### Default Values
-To ensure that only components whose value is not equal to a specific default value are written to the json file, the annotation
+To ensure that only components whose value is not equal to a specific default value are written to the JSON file, the annotation
 ```abap
 "! $default
 ```
