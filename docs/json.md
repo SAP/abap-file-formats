@@ -151,7 +151,7 @@ To ensure that only components whose value is not equal to a specific default va
 ```abap
 "! $default 'value'
 ```
-Note that if you specify a default value, the initial values are written to the json file, unless they are not equal to the selected default.
+Note that if you specify a default value, the initial values are written to the JSON file, unless they are not equal to the selected default.
 
 The order of these comments is important: First, there is the comment for the title followed by the one for the description, in case they are both provided. After these two, the remaining annotations are always located. Between them, the order is irrelevant.
 
