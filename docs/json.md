@@ -73,6 +73,7 @@ The interface [`zif_aff_types_v1`](../file-formats/zif_aff_types_v1.intf.abap) o
 In order to add more information to the JSON schema than that provided by the ABAP type, ABAP Doc can be used.
 The comments are placed directly above the components of the type `ty_main`, but they are also read over several levels as, e.g., in the case of nested structures.
 The different possibilities are summarized in the following.
+Note that the order of these comments is important: First, there is the comment for the title followed by the one for the description, in case they are both provided. After these two, the remaining annotations are always located. Between them, the order is irrelevant.
 
 ### Title
 To provide a title, an ABAP Doc shorttext
@@ -153,7 +154,6 @@ To ensure that only components whose value is not equal to a specific default va
 ```
 Note that if you specify a default value, the initial values are written to the JSON schema, unless they are not equal to the selected default.
 
-The order of these comments is important: First, there is the comment for the title followed by the one for the description, in case they are both provided. After these two, the remaining annotations are always located. Between them, the order is irrelevant.
 
 ### Additional Properties
 
