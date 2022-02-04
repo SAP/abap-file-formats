@@ -24,6 +24,7 @@ INTERFACE zif_aff_chko_v1
   "! <p class="shorttext">Check Type</p>
   "! Check type
   "! $values {@link zif_aff_chko_v1.data:co_check_type}
+  "! $default {@link zif_aff_chko_v1.data:co_check_type.local}
   TYPES ty_check_type TYPE c LENGTH 1.
 
   TYPES:
