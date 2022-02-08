@@ -86,7 +86,8 @@
       "enumDescriptions": [
         "Local",
         "Remote Enabled"
-      ]
+      ],
+      "default": "local"
     },
     "parameters": {
       "title": "Parameters",
