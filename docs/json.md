@@ -131,14 +131,14 @@ If a field is to be declared as "required" in the JSON schema, the annotation
 is used.
 
 ### Always Shown Fields
-Normally, if an ABAP object is serialized, only the components of the corresponding type with a non-initial value are written to the `.json` file. If a component shall be shown regardless to its value, the annotation
+Normally, if an ABAP object is serialized, only the components of the corresponding type with a non-initial value are written to the JSON data file. If a component shall be shown regardless to its value, the annotation
 ```abap
 "! $showAlways
 ```
 is added. Note that also the `$required` annotation leads to such a behavior.
 
 ### Default Values
-To ensure that only components whose value is not equal to a specific default value are written to the schema, the annotation
+To set the `default` for a component of the JSON schema, the annotation
 ```abap
 "! $default
 ```
@@ -151,7 +151,9 @@ To ensure that only components whose value is not equal to a specific default va
 ```abap
 "! $default 'value'
 ```
-Note that if you specify a default value, the initial values are written to the JSON schema, unless they are not equal to the selected default.
+This also ensures that only components whose value is not equal to a specific default value are written to the JSON data file.
+Note that if you specify a default value, the initial values are written to the JSON data file, unless they are not equal to the selected default.
+
 
 The order of these comments is important: First, there is the comment for the title followed by the one for the description, in case they are both provided. After these two, the remaining annotations are always located. Between them, the order is irrelevant.
 
