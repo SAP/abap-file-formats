@@ -1,46 +1,6 @@
 INTERFACE zif_aff_chkv_v1
   PUBLIC.
 
-  "! <p class="shorttext">Option</p>
-  "! Option
-  "! $values {@link zif_aff_chkv_v1.data:co_option}
-  TYPES ty_option TYPE c LENGTH 2.
-
-  CONSTANTS:
-    "! <p class="shorttext">Option</p>
-    "! Option
-    BEGIN OF co_option,
-      "! <p class="shorttext">Equals</p>
-      "! Equals
-      equals               TYPE ty_option VALUE 'EQ',
-      "! <p class="shorttext">Between</p>
-      "! Between
-      between              TYPE ty_option VALUE 'BT',
-      "! <p class="shorttext">Greater Than</p>
-      "! Greater than
-      greater_than         TYPE ty_option VALUE 'GT',
-      "! <p class="shorttext">Contains Pattern</p>
-      "! Contains pattern
-      contains_pattern     TYPE ty_option VALUE 'CP',
-      "! <p class="shorttext">Not Equal</p>
-      "! Not equal
-      not_equal            TYPE ty_option VALUE 'NE',
-      "! <p class="shorttext">Not Between</p>
-      "! Not between
-      not_between          TYPE ty_option VALUE 'NB',
-      "! <p class="shorttext">Not Contains Pattern</p>
-      "! Not contains pattern
-      not_contains_pattern TYPE ty_option VALUE 'NP',
-      "! <p class="shorttext">Greater Equal</p>
-      "! Greater equal
-      greater_equal        TYPE ty_option VALUE 'GE',
-      "! <p class="shorttext">Less Than</p>
-      "! Less than
-      less_than            TYPE ty_option VALUE 'LT',
-      "! <p class="shorttext">Less Equal</p>
-      "! Less equal
-      less_equal           TYPE ty_option VALUE 'LE',
-    END OF co_option.
 
   "! <p class="shorttext">Sign</p>
   "! Sign
@@ -70,7 +30,7 @@ INTERFACE zif_aff_chkv_v1
       "! <p class="shorttext">Option</p>
       "! Sign option of the range
       "! $required
-      option TYPE ty_option,
+      option TYPE zif_aff_types_v1=>ty_option,
       "! <p class="shorttext">Low</p>
       "! The low value of the range
       "! $required
