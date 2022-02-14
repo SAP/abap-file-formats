@@ -34,6 +34,12 @@ INTERFACE zif_aff_chkv_v1
       "! <p class="shorttext">Greater Equal</p>
       "! Greater equal
       greater_equal        TYPE ty_option VALUE 'GE',
+      "! <p class="shorttext">Lower Than</p>
+      "! Lower than
+      lower_than           TYPE ty_option VALUE 'LT',
+      "! <p class="shorttext">Lower Equal</p>
+      "! Lower equal
+      lower_equal          TYPE ty_option VALUE 'LE',
     END OF co_option.
 
   "! <p class="shorttext">Sign</p>
