@@ -54,7 +54,7 @@
           "valueRangeList": [
             {
               "sign": "exclude",
-              "option": "equals",
+              "option": "lessEqual",
               "low": "P",
               "high": ""
             }

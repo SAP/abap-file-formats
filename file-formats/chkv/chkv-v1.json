@@ -147,7 +147,9 @@
                           "notEqual",
                           "notBetween",
                           "notContainsPattern",
-                          "greaterEqual"
+                          "greaterEqual",
+                          "lessThan",
+                          "lessEqual"
                         ],
                         "enumTitles": [
                           "Equals",
@@ -157,7 +159,9 @@
                           "Not Equal",
                           "Not Between",
                           "Not Contains Pattern",
-                          "Greater Equal"
+                          "Greater Equal",
+                          "Less Than",
+                          "Less Equal"
                         ],
                         "enumDescriptions": [
                           "Equals",
@@ -167,7 +171,9 @@
                           "Not equal",
                           "Not between",
                           "Not contains pattern",
-                          "Greater equal"
+                          "Greater equal",
+                          "Less than",
+                          "Less equal"
                         ]
                       },
                       "low": {
