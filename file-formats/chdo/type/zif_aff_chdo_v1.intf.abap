@@ -92,5 +92,5 @@ INTERFACE zif_aff_chdo_v1
       "! Generated Object
       "! $required
       generated_object        TYPE ty_genobject,
-    END OF ty_main .
+    END OF ty_main.
 ENDINTERFACE.
