@@ -31,7 +31,7 @@ INTERFACE zif_aff_evtb_v1
       "! <p class="shorttext">Registered</p>
       "! Registered
       producer_topic_registered TYPE abap_bool,
-    END OF ty_event .
+    END OF ty_event.
 
   TYPES:
     "! <p class="shorttext">General Information</p>
