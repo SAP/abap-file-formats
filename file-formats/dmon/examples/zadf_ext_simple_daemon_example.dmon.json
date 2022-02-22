@@ -1,0 +1,10 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Simple ABAP Daemon Example",
+    "originalLanguage": "en"
+  },
+  "daemonClassName": "CL_AD_EXT_SIMPLE_DAEMON",
+  "callerProgramType": "prog",
+  "callerProgramName": "RS_ABAP_DAEMON_STARTUP_TEST"
+}
