@@ -28,7 +28,7 @@ INTERFACE zif_aff_dmon_v1
       "! Caller Program Name
       "! $required
       caller_program_name TYPE c LENGTH 40,
-    END OF ty_main .
+    END OF ty_main.
 
   CONSTANTS:
     "! <p class="shorttext">Caller Program Type</p>
