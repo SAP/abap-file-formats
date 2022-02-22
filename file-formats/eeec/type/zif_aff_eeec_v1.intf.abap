@@ -1,6 +1,6 @@
 "! <p class="shorttext synchronized" lang="en">Event Consumption Model</p>
 INTERFACE zif_aff_eeec_v1
-  PUBLIC .
+  PUBLIC.
 
   TYPES:
     "! <p class="shorttext">Event Type</p>
