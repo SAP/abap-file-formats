@@ -59,7 +59,7 @@ INTERFACE zif_aff_chdo_v1
       number TYPE n LENGTH 3,
     END OF ty_errormess.
 
-   TYPES:
+  TYPES:
     "! <p class="shorttext">Error Message</p>
     "! Error Message
     "! $required
