@@ -43,5 +43,5 @@ INTERFACE zif_aff_dmon_v1
       "! <p class="shorttext">Program</p>
       "! Program Name
       prog TYPE ty_caller_program_type VALUE 'PROG',
-    END OF co_caller_program_type .
+    END OF co_caller_program_type.
 ENDINTERFACE.
