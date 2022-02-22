@@ -5,7 +5,7 @@ INTERFACE zif_aff_dmon_v1
   "! <p class="shorttext">Caller Program Type</p>
   "! Caller Program Type
   "! $values {@link zif_aff_dmon_v1.data:co_caller_program_type}
-    ty_caller_program_type TYPE c LENGTH 4 .
+    ty_caller_program_type TYPE c LENGTH 4.
 
   TYPES:
     "! <p class="shorttext">ABAP Daemon Settings</p>
