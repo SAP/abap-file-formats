@@ -68,7 +68,7 @@ INTERFACE zif_aff_chdo_v1
       "! generated Class or Function
       "! $showAlways
       class_or_function TYPE c LENGTH 30,
-    END OF ty_genobject.
+     END OF ty_genobject.
 
   TYPES:
     "! <p class="shorttext">CHDO Object Type</p>
