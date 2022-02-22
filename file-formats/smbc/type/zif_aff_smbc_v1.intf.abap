@@ -1,5 +1,5 @@
 INTERFACE zif_aff_smbc_v1
-  PUBLIC .
+  PUBLIC.
   CONSTANTS:
     "! <p class="shorttext synchronized">Table Type</p>
     BEGIN OF co_table_type,
