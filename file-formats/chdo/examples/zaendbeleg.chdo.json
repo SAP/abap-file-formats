@@ -1,0 +1,43 @@
+{
+  "formatVersion": "",
+  "header": {
+    "description": "Change document",
+    "originalLanguage": "de"
+  },
+  "tablesAndStructures": [
+    {
+      "name": "TCDOB",
+      "multipleChanges": true,
+      "deleteLogValues": true,
+      "deleteLogInitialValues": true,
+      "insertLogValues": false,
+      "insertLogInitialValues": false,
+      "referenceTable": ""
+    },
+    {
+      "name": "TCDRP",
+      "multipleChanges": true,
+      "deleteLogValues": true,
+      "deleteLogInitialValues": true,
+      "insertLogValues": false,
+      "insertLogInitialValues": false,
+      "referenceTable": ""
+    },
+    {
+      "name": "TCDRS",
+      "multipleChanges": true,
+      "deleteLogValues": false,
+      "deleteLogInitialValues": true,
+      "insertLogValues": false,
+      "insertLogInitialValues": false,
+      "referenceTable": ""
+    }
+  ],
+  "errorMessage": {
+    "id": "CD",
+    "number": "600"
+  },
+  "generatedObject": {
+    "classOrFunction": ""
+  }
+}
