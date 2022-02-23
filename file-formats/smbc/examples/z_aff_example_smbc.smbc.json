@@ -1,21 +1,21 @@
 {
   "formatVersion": "1",
   "header": {
-    "description": "ADT Integration test",
+    "description": "AFF Example Object for SMBC",
     "originalLanguage": "en",
-    "abapLanguageVersion": "cloudDevelopment"
+    "abapLanguageVersion": "standard"
   },
   "serviceConfiguration": {
-    "serviceBinding": "SMBC_ADT_O4",
-    "serviceName": "SMBC_ADT_UI",
+    "serviceBinding": "/DMO/SB_CUSTOMER_MSSK_O4",
+    "serviceName": "/DMO/SD_CUSTOMER_MSSK",
     "serviceVersion": "0001",
-    "rootEntity": "SMBC_I_ADT_INT",
-    "name": "zsmbc_adt_test",
+    "rootEntity": "Customer",
+    "name": "Maintain customer",
     "skipRootEntity": false
   },
   "appConfiguration": {
     "listReport": {
-      "initialLoad": "auto",
+      "initialLoad": "enabled",
       "type": "responsiveTable"
     },
     "objectPages": []
