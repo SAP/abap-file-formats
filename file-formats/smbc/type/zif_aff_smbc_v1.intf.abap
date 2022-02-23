@@ -62,9 +62,6 @@ INTERFACE zif_aff_smbc_v1
       "! If true, a new row is added to the end of the table instead of the beginning of the table
       create_at_end TYPE abap_bool,
     END OF ty_creation_mode,
-    "! <p class="shorttext synchronized">Condensed Table Layout</p>
-    "! If true, display rows in a condensed way. Only applicaple to Table Type 'GridTable'.
-    ty_condensed_table_layout TYPE abap_bool,
     "! <p class="shorttext synchronized">Table Type</p>
     "! $values {@link zif_aff_smbc_v1.data:co_table_type}
     ty_table_type             TYPE string,
@@ -131,7 +128,7 @@ INTERFACE zif_aff_smbc_v1
       hide_column        TYPE ty_personalization-hide_column,
     END OF ty_object_page,
     "! <p class="shorttext synchronized" >Object Page Configurations</p>
-    tt_object_pages TYPE SORTED TABLE OF ty_object_page WITH UNIQUE KEY entity,
+    ty_object_pages TYPE SORTED TABLE OF ty_object_page WITH UNIQUE KEY entity,
     "! <p class="shorttext synchronized" >Confguration of List Report and Object Pages</p>
     "! The Object Page of the Root Entity cannot be configured.
     "! It is sufficient to maintain only those attributes that should deviate from the standard behavior.
@@ -139,7 +136,7 @@ INTERFACE zif_aff_smbc_v1
       "! $showAlways
       list_report  TYPE ty_list_report,
       "! $showAlways
-      object_pages TYPE tt_object_pages,
+      object_pages TYPE ty_object_pages,
     END OF ty_settings.
   TYPES:
 *        See also {@link if_mbc_cp_api_business_config}
@@ -172,7 +169,7 @@ INTERFACE zif_aff_smbc_v1
       "! If true, the UI automatically navigates to the Object Page of the root entity skipping the List Report.
       "! Exactly one root entity must exist
       "! $showAlways
-      skip_root_entity TYPE abap_boolean,
+      skip_root_entity TYPE abap_bool,
     END OF ty_service_configuration.
 
   TYPES:

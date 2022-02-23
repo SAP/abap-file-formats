@@ -7,14 +7,6 @@
   "descriptions": {
     "types": [
       {
-        "name": "TT_OBJECT_PAGES",
-        "description": "Object Page Configurations"
-      },
-      {
-        "name": "TY_CONDENSED_TABLE_LAYOUT",
-        "description": "Condensed Table Layout"
-      },
-      {
         "name": "TY_CREATION_MODE",
         "description": "Table Creation Mode"
       },
@@ -25,6 +17,10 @@
       {
         "name": "TY_OBJECT_PAGE",
         "description": "Object Page Configuration"
+      },
+      {
+        "name": "TY_OBJECT_PAGES",
+        "description": "Object Page Configurations"
       },
       {
         "name": "TY_PERSONALIZATION",
