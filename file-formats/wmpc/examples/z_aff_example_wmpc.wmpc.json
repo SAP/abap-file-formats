@@ -1,0 +1,9 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "AFF WMPC Application",
+    "originalLanguage": "en"
+  },
+  "wmpcInterpretationClass": "CL_WMPC_VARIANT_COUNTRY",
+  "wmpcInterpretationDtel": "LAND1"
+}
