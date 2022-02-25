@@ -1,5 +1,5 @@
 # WMPC File Format
-This file format is used for the ADT Editor for WMPC
+This file format is used by the ADT editor for Workload Management Process Classes (WMPC).
 
 File | Cardinality | Definition | Schema | Example
 :--- | :---  | :--- | :--- | :---
