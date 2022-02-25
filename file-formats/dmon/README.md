@@ -1,5 +1,5 @@
 # DMON File Format
-This file format is used for the ADT Editor for DMON
+This file format is used by the ADT editor for ABAP daemons (DMON).
 
 File | Cardinality | Definition | Schema | Example
 :--- | :---  | :--- | :--- | :---
