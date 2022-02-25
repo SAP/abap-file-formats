@@ -1,5 +1,5 @@
 # CHDO File Format
-This file format is used for the ADT Editor for CHDO
+This file format is used by the ADT editor for Change Documents (CHDO)
 
 File | Cardinality | Definition | Schema | Example
 :--- | :---  | :--- | :--- | :---
