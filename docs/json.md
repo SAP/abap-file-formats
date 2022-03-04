@@ -155,7 +155,7 @@ Titles and descriptions of the enum values are passed to the JSON Schema in the 
 They are written in the fields `enumTitles` and `enumDescriptions`.
 
 Remark: If an enum is used, it should be checked if one of the following points applies to your type:
-1. The used constant has a component which value is initial.
+1. The used constant has a component whose value is initial.
 2. The field with enum values is marked as required.
 3. The field with enum values has a specified default value.
 
