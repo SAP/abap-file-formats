@@ -46,14 +46,14 @@
           "enumDescriptions": [
             "Standard",
             "ABAP cloud development"
-          ]
+          ],
+          "default": "standard"
         }
       },
       "additionalProperties": false,
       "required": [
         "description",
-        "originalLanguage",
-        "abapLanguageVersion"
+        "originalLanguage"
       ]
     },
     "className": {

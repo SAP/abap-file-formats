@@ -11,8 +11,8 @@ INTERFACE zif_aff_sajc_v1
       "! Original language of the development object.
       "! $required
       original_language     TYPE sy-langu,
-      "! $required
       "! $values {@link zif_aff_types_v1.data:co_abap_language_version_cloud}
+      "! $default {@link zif_aff_types_v1.data:co_abap_language_version_cloud.standard}
       abap_language_version TYPE zif_aff_types_v1=>ty_abap_language_version,
     END OF ty_header.
 
