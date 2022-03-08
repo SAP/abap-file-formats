@@ -80,7 +80,7 @@ INTERFACE zif_aff_sajt_v1
   TYPES:
     "! <p class="shorttext">Parameter Table</p>
     "! Table of parameters
-    ty_parameter_table TYPE STANDARD TABLE OF ty_parameter WITH KEY name .
+    ty_parameter_table TYPE STANDARD TABLE OF ty_parameter WITH KEY name.
 
   TYPES:
     "! <p class="shorttext">SAJC Object Type</p>
