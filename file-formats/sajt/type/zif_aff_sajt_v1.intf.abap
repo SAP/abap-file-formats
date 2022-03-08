@@ -99,5 +99,5 @@ INTERFACE zif_aff_sajt_v1
       "! <p class="shorttext">Parameter Values</p>
       "! Values of the parameters of the class which runs within the job
       parameters     TYPE ty_parameter_table,
-    END OF ty_main .
+    END OF ty_main.
 ENDINTERFACE.
