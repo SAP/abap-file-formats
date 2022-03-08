@@ -75,7 +75,7 @@ INTERFACE zif_aff_sajt_v1
       "! <p class="shorttext">Values</p>
       "! Values of the parameter as ranges table
       value_ranges TYPE ty_value_ranges_table,
-    END OF ty_parameter .
+    END OF ty_parameter.
 
   TYPES:
     "! <p class="shorttext">Parameter Table</p>
