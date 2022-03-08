@@ -23,7 +23,7 @@ INTERFACE zif_aff_sajt_v1
   TYPES:
     "! <p class="shorttext">Application Job Catalog Entry</p>
     "! Name of the application job catalog entry
-    ty_catalog_name TYPE c LENGTH 40 .
+    ty_catalog_name TYPE c LENGTH 40.
 
   "! <p class="shorttext">Sign</p>
   "! Include/exclude values (I/E)
