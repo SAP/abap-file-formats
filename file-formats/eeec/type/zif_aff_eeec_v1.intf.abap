@@ -3,16 +3,15 @@ INTERFACE zif_aff_eeec_v1
   PUBLIC.
 
   TYPES:
-    "! <p class="shorttext">Event Type</p>
-    ty_event_type TYPE string.
+    "! <p class="shorttext">Type</p>
+    ty_type TYPE string.
 
   TYPES:
     "! <p class="shorttext synchronized" lang="en">Event Type</p>
-    "! View information of the specific event type
     BEGIN OF ty_s_event_type,
-      "! <p class="shorttext synchronized" lang="en">Event Type</p>
-      "! Event Type
-      type  TYPE ty_event_type,
+      "! <p class="shorttext synchronized" lang="en">Type</p>
+      "! Type
+      type  TYPE ty_type,
       "! <p class="shorttext synchronized" lang="en">Entity Name</p>
       "! Entity Name
       entity_name TYPE zif_aff_types_v1=>ty_object_name_30,
@@ -21,7 +20,6 @@ INTERFACE zif_aff_eeec_v1
 
   TYPES:
     "! <p class="shorttext">General Information</p>
-    "! View information of the Event Consumption Model
     BEGIN OF ty_main,
       "! $required
       format_version TYPE zif_aff_types_v1=>ty_format_version,
