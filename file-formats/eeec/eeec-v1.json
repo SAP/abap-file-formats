@@ -3,7 +3,6 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/eeec/eeec-v1.json",
   "title": "General Information",
-  "description": "View information of the Event Consumption Model",
   "type": "object",
   "properties": {
     "formatVersion": {
@@ -73,17 +72,15 @@
     },
     "eventTypes": {
       "title": "Event Types",
-      "description": "View information on the Event Types",
       "type": "array",
       "uniqueItems": true,
       "items": {
         "title": "Event Type",
-        "description": "View information of the specific event type",
         "type": "object",
         "properties": {
           "type": {
-            "title": "Event Type",
-            "description": "Event Type",
+            "title": "Type",
+            "description": "Type",
             "type": "string"
           },
           "entityName": {
