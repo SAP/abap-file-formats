@@ -24,33 +24,17 @@ INTERFACE zif_aff_sajt_v1
     "! <p class="shorttext">Application Job Catalog Entry</p>
     "! Name of the application job catalog entry
     ty_catalog_name TYPE c LENGTH 40.
-
-  "! <p class="shorttext">Sign</p>
-  "! Include/exclude values (I/E)
-  "! $values {@link zif_aff_sajt_v1.data:co_sign}
-  TYPES ty_sign TYPE c LENGTH 1.
-
-  CONSTANTS:
-    "! <p class="shorttext">Sign</p>
-    "! Include/exclude values (I/E)
-    BEGIN OF co_sign,
-      "! <p class="shorttext">Exclude</p>
-      "! Exclude values
-      exclude TYPE ty_sign VALUE 'E',
-      "! <p class="shorttext">Include</p>
-      "! Include values
-      include TYPE ty_sign VALUE 'I',
-    END OF co_sign.
-
   TYPES:
     "! <p class="shorttext">Entry of Ranges Table</p>
     "! Entry of ranges table
     BEGIN OF ty_value_range_entry,
       "! <p class="shorttext">Sign</p>
       "! Include/exclude values (I/E)
-      sign      TYPE  ty_sign,
+      "! $required
+      sign      TYPE  zif_aff_types_v1=>ty_sign,
       "! <p class="shorttext">Option</p>
       "! Operator of the ranges condition (EQ/NE/GE/GT/LE/LT/CP/NP/BT/NB)
+      "! $required
       option    TYPE  zif_aff_types_v1=>ty_option,
       "! <p class="shorttext">Low Value</p>
       "! Low value of the ranges condition
@@ -67,13 +51,15 @@ INTERFACE zif_aff_sajt_v1
 
   TYPES:
     "! <p class="shorttext">Parameter Name and Values</p>
-    "! Name of the parameter and it value as ranges table
+    "! Name of the parameter and its value as ranges table
     BEGIN OF ty_parameter,
       "! <p class="shorttext">Parameter Name</p>
       "! Name of the parameter
+      "! $required
       name         TYPE  c LENGTH 8,
       "! <p class="shorttext">Values</p>
       "! Values of the parameter as ranges table
+      "! $required
       value_ranges TYPE ty_value_ranges_table,
     END OF ty_parameter.
 
@@ -83,8 +69,8 @@ INTERFACE zif_aff_sajt_v1
     ty_parameter_table TYPE STANDARD TABLE OF ty_parameter WITH KEY name.
 
   TYPES:
-    "! <p class="shorttext">SAJC Object Type</p>
-    "! Object type SAJC
+    "! <p class="shorttext">SAJT Object Type</p>
+    "! Object type SAJT
     BEGIN OF ty_main,
       "! $required
       format_version TYPE zif_aff_types_v1=>ty_format_version,
