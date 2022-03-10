@@ -173,7 +173,6 @@ INTERFACE zif_aff_types_v1 PUBLIC.
       less_equal           TYPE ty_option VALUE 'LE',
     END OF co_option.
 
-
   "! <p class="shorttext">Sign</p>
   "! Sign
   "! $values {@link zif_aff_types_v1.data:co_sign}
