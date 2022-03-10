@@ -36,7 +36,6 @@ INTERFACE zif_aff_eeec_v1
       "! $required
       descriptor_class TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext synchronized" lang="en">Event Types</p>
-      "! View information on the Event Types
       event_types       TYPE ty_t_event_type,
     END OF ty_main.
 
