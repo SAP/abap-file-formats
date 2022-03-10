@@ -1,7 +1,7 @@
 ## JSON Files in ABAP File Formats
 JSON files are central, since every ABAP object specifies at least a JSON file.
 Depending on the object, there might be additional files containing source code or other information, but there is always a JSON file with the pattern `<object_name>.<object_type>.json`, see [`File Names`](./specification.md#File-Names).
-For its annotation and validation the ABAP file formats provide JSON schemas.
+For its annotation and validation the ABAP file formats provide JSON Schemas.
 
 ## Table of Contents
 * [Format Versions and Compatibility](#format-versions-and-compatibility)
@@ -12,8 +12,8 @@ For its annotation and validation the ABAP file formats provide JSON schemas.
 ## Format Versions and Compatibility
 
 The ABAP file format of object types will evolve over time.
-For this purpose the JSON schema specifies the field `formatVersion` and the file itself, is named after the version.
-For example, the JSON schema file for INTF for the first version is named `intf-v1.json` and specifies the `formatVersion` by
+For this purpose the JSON Schema specifies the field `formatVersion` and the file itself, is named after the version.
+For example, the JSON Schema file for INTF for the first version is named `intf-v1.json` and specifies the `formatVersion` by
 ```
 "formatVersion": {
   "title": "ABAP File Format Version",
@@ -27,9 +27,9 @@ If a change to the format is considered incompatible, then the `formatVersion` h
 
 ### Compatible File Format Changes
 
-For compatible changes to the file format, the JSON schema is just updated.
+For compatible changes to the file format, the JSON Schema is just updated.
 The indicator whether the format has changed is not updated.
-JSON files are always validated against the latest update of the JSON schema of the corresponding format version.
+JSON files are always validated against the latest update of the JSON Schema of the corresponding format version.
 
 Following changes to file formats are considered as compatible:
 
@@ -61,16 +61,16 @@ The following changes to file formats are considered as incompatible:
 
 ## Writing JSON Schema with ABAP Types
 
-Each JSON schema provided in this repository is automatically generated. For this purpose, an interface corresponds to each object type in which the necessary components of the type are described in the type `ty_main`. The name of the interface follows the pattern `zif_aff_<object_type>_v<version_number>`. Here, `<object_type>` can be either the (R3TR) object type or the (LIMU) sub object type, since R3TR and LIMU object types share the same namespace. `<version_number>` is an increasing integer which starts with `1`.
+Each JSON Schema provided in this repository is automatically generated. For this purpose, an interface corresponds to each object type in which the necessary components of the type are described in the type `ty_main`. The name of the interface follows the pattern `zif_aff_<object_type>_v<version_number>`. Here, `<object_type>` can be either the (R3TR) object type or the (LIMU) sub object type, since R3TR and LIMU object types share the same namespace. `<version_number>` is an increasing integer which starts with `1`.
 
 The ABAP types are self-contained, so it is possible to work on them in any system (e.g., in an SAP BTP, ABAP environment system).
 
-The JSON schema is generated based on the fields and their ABAP type specification defined in `ty_main`. Each field defined in the structure is transformed to a JSON representation using a camel case notation (e.g, field `abap_language_version` is transformed to the field `abapLanguageVersion` in the JSON schema). The ABAP type information fills the JSON schema fields `type`, `length`, `minimum`, `maximum`.
+The JSON Schema is generated based on the fields and their ABAP type specification defined in `ty_main`. Each field defined in the structure is transformed to a JSON representation using a camel case notation (e.g, field `abap_language_version` is transformed to the field `abapLanguageVersion` in the JSON Schema). The ABAP type information fills the JSON Schema fields `type`, `length`, `minimum`, `maximum`.
 
-Fields `format_version` and `header` are mandatory and translate to `formatVersion` and `header` in the JSON schema.
+Fields `format_version` and `header` are mandatory and translate to `formatVersion` and `header` in the JSON Schema.
 The interface [`zif_aff_types_v1`](../file-formats/zif_aff_types_v1.intf.abap) offers a type for the format version and different headers for reuse, but also other often repeated types.
 
-In order to add more information to the JSON schema than that provided by the ABAP type, ABAP Doc can be used.
+In order to add more information to the JSON Schema than that provided by the ABAP type, ABAP Doc can be used.
 The comments are placed directly above the components of the type `ty_main`, but they are also read over several levels as, e.g., in the case of nested structures.
 The different possibilities are summarized in the following.
 
@@ -82,21 +82,10 @@ To provide a title, an ABAP Doc shorttext
 is used.
 
 ### Description
-An ABAP Doc comment without annotations is passed as description to the JSON schema.
+An ABAP Doc comment without annotations is passed as description to the JSON Schema.
 ```abap
 "! This is the description
 ```
-
-### Enum Values
-To pass enum values to a JSON schema, a type and a constant are necessary.
-The type specifies the underlying data type and links to the constant via the following annotation:
-```abap
-"! $values {@link source_name.data:constant_name}
-```
-The names of the components of the constant are written as external (JSON) values to the JSON schema after being transformed to camel case (e.g, component `badi_definition` is transformed to the enum value `badiDefinition` in the JSON schema).
-The corresponding values of the components represent the internal (ABAP) values.
-Titles and descriptions of the enum values are passed to the schema in the same way as described above.
-They are written in the fields `enumTitles` and `enumDescriptions`.
 
 ### Extreme Values
 For numerical types, (exclusive) minimum and (exclusive) maximum values can be specified via the annotational keywords
@@ -124,7 +113,7 @@ The annotation
 ensures that values of a component described by this ABAP Doc comment can only be a multiple of the provided value.
 
 ### Required Fields
-If a field is to be declared as "required" in the JSON schema, the annotation
+If a field is to be declared as "required" in the JSON Schema, the annotation
 ```abap
 "! $required
 ```
@@ -138,7 +127,7 @@ Normally, if an ABAP object is serialized, only the components of the correspond
 is added. Note that also the `$required` annotation leads to such a behavior.
 
 ### Default Values
-To set the `default` for a component of the JSON schema, the annotation
+To set the `default` for a component of the JSON Schema, the annotation
 ```abap
 "! $default
 ```
@@ -154,21 +143,39 @@ To set the `default` for a component of the JSON schema, the annotation
 This also ensures that only components whose value is not equal to a specific default value are written to the JSON data file.
 Note that if you specify a default value, the initial values are written to the JSON data file, unless they are not equal to the selected default.
 
+### Enum Values
+To pass enum values to a JSON Schema, a type and a constant are necessary.
+The type specifies the underlying data type and links to the constant via the following annotation:
+```abap
+"! $values {@link source_name.data:constant_name}
+```
+The names of the components of the constant are written as external (JSON) values to the JSON Schema after being transformed to camel case (e.g, component `badi_definition` is transformed to the enum value `badiDefinition` in the JSON Schema).
+The corresponding values of the components represent the internal (ABAP) values.
+Titles and descriptions of the enum values are passed to the JSON Schema in the same way as described above.
+They are written in the fields `enumTitles` and `enumDescriptions`.
 
-The order of these comments is important: First, there is the comment for the title followed by the one for the description, in case they are both provided. After these two, the remaining annotations are always located. Between them, the order is irrelevant.
+Remark: If an enum is used, it should be checked if one of the following points applies to your type:
+1. The used constant has a component whose value is initial.
+2. The field with enum values is marked as required.
+3. The field with enum values has a specified default value.
+
+It is enough and recommended to fulfill only one of these points.
+
+
+The order of the comments and annotations presented here is important: First, there is the comment for the title followed by the one for the description, in case they are both provided. After these two, the remaining annotations are always located. Between them, the order is irrelevant.
 
 ### Additional Properties
 
 Adding additional custom fields in any ABAP file formats JSON file is not allowed.
 
-Therefore, generated JSON schemas contain the property `"additionalProperties": false`.
+Therefore, generated JSON Schemas contain the property `"additionalProperties": false`.
 This means, no additional fields can be added to the JSON files.
 
-If new fields are added to the ABAP file format, the JSON schema will be updated with the new field.
-If fields are removed from the ABAP file format, a new schema will be defined and the `formatVersion` will be increased.
+If new fields are added to the ABAP file format, the JSON Schema will be updated with the new field.
+If fields are removed from the ABAP file format, a new JSON Schema will be defined and the `formatVersion` will be increased.
 
 ## Example
-Here is the shortened type used to generate the JSON schema for interfaces. It can be found in the interface [`zif_aff_intf_v1`](../file-formats/intf/type/zif_aff_intf_v1.intf.abap).
+Here is the shortened type used to generate the JSON Schema for interfaces. It can be found in the interface [`zif_aff_intf_v1`](../file-formats/intf/type/zif_aff_intf_v1.intf.abap).
 ```abap
   TYPES:
     "! <p class="shorttext">Interface Properties</p>
