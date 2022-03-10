@@ -1,24 +1,6 @@
 INTERFACE zif_aff_chkv_v1
   PUBLIC.
 
-
-  "! <p class="shorttext">Sign</p>
-  "! Sign
-  "! $values {@link zif_aff_chkv_v1.data:co_sign}
-  TYPES ty_sign TYPE c LENGTH 1.
-
-  CONSTANTS:
-    "! <p class="shorttext">Sign</p>
-    "! Sign
-    BEGIN OF co_sign,
-      "! <p class="shorttext">Exclude</p>
-      "! Exclude
-      exclude TYPE ty_sign VALUE 'E',
-      "! <p class="shorttext">Include</p>
-      "! Include
-      include TYPE ty_sign VALUE 'I',
-    END OF co_sign.
-
   TYPES:
     "! <p class="shorttext">Range Value</p>
     "! A range value for an ATC check parameter
@@ -26,7 +8,7 @@ INTERFACE zif_aff_chkv_v1
       "! <p class="shorttext">Sign</p>
       "! The sign type of the range
       "! $required
-      sign   TYPE ty_sign,
+      sign   TYPE zif_aff_types_v1=>ty_sign,
       "! <p class="shorttext">Option</p>
       "! Sign option of the range
       "! $required
