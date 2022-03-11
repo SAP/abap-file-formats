@@ -38,6 +38,7 @@ INTERFACE zif_aff_sajt_v1
       option    TYPE  zif_aff_types_v1=>ty_option,
       "! <p class="shorttext">Low Value</p>
       "! Low value of the ranges condition
+      "! $showAlways
       low       TYPE  c LENGTH 255,
       "! <p class="shorttext">High Value</p>
       "! High value of the ranges condition
