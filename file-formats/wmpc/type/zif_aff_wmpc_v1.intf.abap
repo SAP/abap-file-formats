@@ -5,7 +5,6 @@ INTERFACE zif_aff_wmpc_v1
   "! <p class="shorttext">Priority</p>
   "! Priority
   "! $values {@link zif_aff_wmpc_v1.data:co_wmpc_priority}
-  "! $default {@link zif_aff_wmpc_v1.data:co_wmpc_priority.normal}
     ty_wmpc_priority TYPE c LENGTH 10.
 
   TYPES:
