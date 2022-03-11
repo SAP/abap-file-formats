@@ -1,26 +1,33 @@
 INTERFACE zif_aff_dsfi_v1
   PUBLIC.
 
-  TYPES:
-    BEGIN OF ENUM ty_engine STRUCTURE en_engine BASE TYPE dddsfi_engine,
-      analytical_engine VALUE 'ANA',
-      sql_engine        VALUE 'SQL',
-      built_in          VALUE 'BLT',
-      undefined         VALUE IS INITIAL,
-    END OF ENUM ty_engine STRUCTURE en_engine.
+
+  "! <p class="shorttext">Engine</p>
+  "! Engine
+  "! $values {@link if_aff_dsfi_v1.data:co_engine}
+  TYPES: ty_engine TYPE c LENGTH 3.
+
+  CONSTANTS:
+    BEGIN OF co_engine,
+      "! <p class="shorttext">Analytical Engine</p>
+      "! Analytical engine
+      analytical_engine TYPE ty_engine VALUE 'ANA',
+    END OF co_engine.
+
 
   TYPES:
     BEGIN OF ty_dsfi,
-      scalar_function_name TYPE dddsfd_name,
+      "! <p class="shorttext">Scalar Function</p>
+      "! Scalar function
+      scalar_function_name TYPE c LENGTH 30,
+      "! <p class="shorttext">Engine</p>
+      "! Engine
       engine               TYPE ty_engine,
-      BEGIN OF sql,
-        amdp_name TYPE ddamdpname,
-      END OF sql,
     END OF ty_dsfi.
 
   TYPES:
-    "! <p class="shorttext">Interface Properties</p>
-    "! Interface properties
+    "! <p class="shorttext">ABAP file formats for object type DSFI</p>
+    "! DSFI object type
     BEGIN OF ty_main,
       "! $required
       format_version TYPE zif_aff_types_v1=>ty_format_version,
@@ -28,12 +35,9 @@ INTERFACE zif_aff_dsfi_v1
       "! Header
       "! $required
       header         TYPE zif_aff_types_v1=>ty_header_60_src,
-
-      "! <p class="shorttext">Implementation Type</p>
-      "! DSFI properties
+      "! <p class="shorttext">General Information</p>
       "! $required
       content        TYPE ty_dsfi,
-
     END OF ty_main.
 
 ENDINTERFACE.

@@ -2,7 +2,11 @@
   "formatVersion": "1",
   "header": {
     "description": "This is a description of the present DSFI object",
-    "originalLanguage": "en"
+    "originalLanguage": "en",
+    "abapLanguageVersion": "standard"
   },
-  "content": {}
+  "content": {
+    "scalarFunctionName": "my_scalar_function",
+    "engine": "analyticalEngine"
+  }
 }
