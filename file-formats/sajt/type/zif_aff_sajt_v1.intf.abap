@@ -1,6 +1,7 @@
 INTERFACE zif_aff_sajt_v1
   PUBLIC.
 
+
   TYPES:
     "! <p class="shorttext">Header for SAJT Object</p>
     "! The header for an application job template
