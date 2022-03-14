@@ -3,13 +3,5 @@
   "header": {
     "description": "Event Consumption Model",
     "originalLanguage": "en"
-  },
-  "descriptions": {
-    "types": [
-      {
-        "name": "TY_S_EVENT_TYPE",
-        "description": "Event Type"
-      }
-    ]
   }
 }
