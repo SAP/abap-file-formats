@@ -28,7 +28,7 @@ INTERFACE zif_aff_eeec_v1
       "! $required
       header           TYPE zif_aff_types_v1=>ty_header_60,
       "! <p class="shorttext synchronized" lang="en">Consumer Class</p>
-      "! Consumer Class
+      "! Consumer class
       "! $required
       consumer_class   TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext synchronized" lang="en">Descriptor Class</p>
