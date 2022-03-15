@@ -65,12 +65,12 @@ INTERFACE zif_aff_chdo_v1
     "! <p class="shorttext">Error Message</p>
     "! Error Message
     "! $required
-     BEGIN OF ty_genobject,
+    BEGIN OF ty_genobject,
       "! <p class="shorttext">Class or Function</p>
       "! generated Class or Function
       "! $showAlways
       class_or_function TYPE c LENGTH 30,
-     END OF ty_genobject.
+    END OF ty_genobject.
 
   TYPES:
     "! <p class="shorttext">CHDO Object Type</p>
