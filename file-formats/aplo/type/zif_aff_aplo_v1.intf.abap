@@ -31,7 +31,7 @@ INTERFACE zif_aff_aplo_v1
       "! <p class="shorttext">Subobject Description</p>
       "! Description text of the subobject
       description TYPE c LENGTH 60,
-    END OF ty_subobject .
+    END OF ty_subobject.
 
   TYPES:
     "! <p class="shorttext">APLO Object Type</p>
