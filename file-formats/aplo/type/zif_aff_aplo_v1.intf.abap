@@ -46,5 +46,5 @@ INTERFACE zif_aff_aplo_v1
       "! <p class="shorttext">Array of Subobjects</p>
       "! Array of all subobjects (may be empty)
       sub_objects    TYPE SORTED TABLE OF ty_subobject WITH NON-UNIQUE KEY name,
-    END OF ty_main .
+    END OF ty_main.
 ENDINTERFACE.
