@@ -85,7 +85,7 @@
       ],
       "enumDescriptions": [
         "Local",
-        "Remote Enabled"
+        "Remote enabled"
       ],
       "default": "local"
     },
