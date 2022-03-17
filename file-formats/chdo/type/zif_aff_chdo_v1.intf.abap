@@ -15,7 +15,7 @@ INTERFACE zif_aff_chdo_v1
       "! $showAlways
       multiple_changes        TYPE abap_bool,
       "! <p class="shorttext">Log Field Values for Deletions</p>
-      "! Logging of field values for deletions.
+      "! Log field values for deletions.
       "! Logging of initial values depends on setting 'Log Initial Values for Deletions'
       "! $showAlways
       delete_log_values        TYPE abap_bool,
