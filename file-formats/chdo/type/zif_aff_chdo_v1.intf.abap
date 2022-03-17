@@ -83,7 +83,7 @@ INTERFACE zif_aff_chdo_v1
       "! $required
       tables_and_structures TYPE ty_tables,
       "! <p class="shorttext">Error Message</p>
-      "! Error Message
+      "! Error message
       "! $required
       error_message        TYPE ty_errormess,
       "! <p class="shorttext">Generated Object</p>
