@@ -53,7 +53,7 @@ INTERFACE zif_aff_chdo_v1
       "! Error message identifier
       "! $required
       id     TYPE c LENGTH 20,
-      "! <p class="shorttext">Message number</p>
+      "! <p class="shorttext">Message Number</p>
       "! Error message number
       "! $minLength 3
       "! $required
