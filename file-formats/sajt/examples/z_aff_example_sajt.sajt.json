@@ -10,13 +10,13 @@
       "name": "S_ID",
       "valueRanges": [
         {
-          "sign": "I",
-          "option": "EQ",
+          "sign": "include",
+          "option": "equals",
           "low": "4711"
         },
         {
-          "sign": "I",
-          "option": "BT",
+          "sign": "include",
+          "option": "between",
           "low": "AAA"
         }
       ]
@@ -25,8 +25,8 @@
       "name": "P_DESCR",
       "valueRanges": [
         {
-          "sign": "I",
-          "option": "EQ",
+          "sign": "include",
+          "option": "equals",
           "low": "My Default Description"
         }
       ]
@@ -35,8 +35,8 @@
       "name": "P_COUNT",
       "valueRanges": [
         {
-          "sign": "I",
-          "option": "EQ",
+          "sign": "include",
+          "option": "equals",
           "low": "200"
         }
       ]
@@ -45,8 +45,8 @@
       "name": "P_SIMUL",
       "valueRanges": [
         {
-          "sign": "I",
-          "option": "EQ",
+          "sign": "include",
+          "option": "equals",
           "low": "X"
         }
       ]
