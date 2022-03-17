@@ -77,7 +77,7 @@ INTERFACE zif_aff_chdo_v1
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header              TYPE zif_aff_types_v1=>ty_header_60,
+      header              TYPE zif_aff_types_v1=>ty_header_60_cloud,
       "! <p class="shorttext">Tables and Structures</p>
       "! Tables and structures
       "! $required
