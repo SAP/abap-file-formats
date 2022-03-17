@@ -96,9 +96,9 @@ INTERFACE zif_aff_types_v1 PUBLIC.
       abap_language_version TYPE ty_abap_language_version_src,
     END OF ty_header_60_src.
 
-   TYPES:
+  TYPES:
     "! <p class="shorttext">Header for Non-Source Code Objects (no key user)</p>
-    "! The header for an ABAP main object (without source code) with a description of 60 characters (no key user extensibility)
+    "! The header for an ABAP main object (without source code) with a description of 60 characters (no key user)
     BEGIN OF ty_header_60_cloud,
       "! <p class="shorttext">Description</p>
       "! Description of the ABAP object
@@ -108,7 +108,7 @@ INTERFACE zif_aff_types_v1 PUBLIC.
       original_language     TYPE ty_original_language,
       "! <p class="shorttext">ABAP Language Version</p>
       "! ABAP language version
-      abap_language_version TYPE zif_aff_types_v1=>ty_abap_language_version_cloud,
+      abap_language_version TYPE ty_abap_language_version_cloud,
     END OF ty_header_60_cloud.
 
   TYPES:
