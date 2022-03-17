@@ -4,8 +4,7 @@ INTERFACE zif_aff_chdo_v1
 
   TYPES:
     "! <p class="shorttext">Table or Structure</p>
-    "! Table or Structure
-    "! $showAlways
+    "! Table or structure
     BEGIN OF ty_tablestruc,
       "! <p class="shorttext">Name of Table or Structure</p>
       "! Name of table or structure
