@@ -45,8 +45,7 @@ INTERFACE zif_aff_chdo_v1
 
   TYPES:
     "! <p class="shorttext">Error Message</p>
-    "! Error Message
-    "! $required
+    "! Error message
     BEGIN OF ty_errormess,
       "! <p class="shorttext">Message ID</p>
       "! Error message identifier
