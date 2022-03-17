@@ -83,7 +83,7 @@ INTERFACE zif_aff_chdo_v1
       "! $required
       header              TYPE zif_aff_types_v1=>ty_header_60,
       "! <p class="shorttext">Tables and Structures</p>
-      "! Tables and Structures
+      "! Tables and structures
       "! $required
       tables_and_structures TYPE ty_tables,
       "! <p class="shorttext">Error Message</p>
