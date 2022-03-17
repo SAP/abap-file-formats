@@ -87,7 +87,7 @@ INTERFACE zif_aff_chdo_v1
       "! $required
       error_message        TYPE ty_errormess,
       "! <p class="shorttext">Generated Object</p>
-      "! Generated Object
+      "! Generated object
       "! $required
       generated_object        TYPE ty_genobject,
     END OF ty_main.
