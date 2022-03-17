@@ -63,9 +63,9 @@ INTERFACE zif_aff_chdo_v1
     "! Generated object
     BEGIN OF ty_genobject,
       "! <p class="shorttext">Class or Function</p>
-      "! generated Class or Function
-      "! $showAlways
-      class_or_function TYPE c LENGTH 30,
+      "! Generated class or function
+      "! $required
+      class_or_function TYPE zif_aff_types_v1=>ty_object_name_30,
     END OF ty_genobject.
 
   TYPES:
