@@ -6,7 +6,7 @@ INTERFACE zif_aff_chdo_v1
     "! <p class="shorttext">Table or Structure</p>
     "! Table or structure
     BEGIN OF ty_tablestruc,
-      "! <p class="shorttext">Name of Table or Structure</p>
+      "! <p class="shorttext">Name</p>
       "! Name of table or structure
       "! $required
       name                   TYPE c LENGTH 30,
@@ -24,12 +24,12 @@ INTERFACE zif_aff_chdo_v1
       "! $showAlways
       delete_log_initial_values TYPE abap_bool,
       "! <p class="shorttext">Log Field Values for Creations</p>
-      "! Logging of field values for creations.
+      "! Log field values for creations.
       "! Logging of initial values depends on setting 'Log Initial Values for Creations'
       "! $showAlways
       insert_log_values        TYPE abap_bool,
       "! <p class="shorttext">Log Initial Values for Creations</p>
-      "! Logging of initial values for creations
+      "! Log initial values for creations
       "! $showAlways
       insert_log_initial_values TYPE abap_bool,
       "! <p class="shorttext">Reference Table</p>
@@ -63,14 +63,14 @@ INTERFACE zif_aff_chdo_v1
     "! Generated object
     BEGIN OF ty_genobject,
       "! <p class="shorttext">Class or Function</p>
-      "! Generated class or function
+      "! Generated class or function module
       "! $required
       class_or_function TYPE zif_aff_types_v1=>ty_object_name_30,
     END OF ty_genobject.
 
   TYPES:
-    "! <p class="shorttext">CHDO Object Type</p>
-    "! Object type CHDO
+    "! <p class="shorttext">Change Documents</p>
+    "! Change Documents (CHDO) v1
     BEGIN OF ty_main,
       "! $required
       format_version TYPE zif_aff_types_v1=>ty_format_version,
