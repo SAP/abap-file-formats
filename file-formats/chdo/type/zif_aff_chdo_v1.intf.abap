@@ -62,9 +62,8 @@ INTERFACE zif_aff_chdo_v1
     END OF ty_errormess.
 
   TYPES:
-    "! <p class="shorttext">Error Message</p>
-    "! Error Message
-    "! $required
+    "! <p class="shorttext">Generated Object</p>
+    "! Generated object
     BEGIN OF ty_genobject,
       "! <p class="shorttext">Class or Function</p>
       "! generated Class or Function
