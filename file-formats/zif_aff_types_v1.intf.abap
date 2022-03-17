@@ -6,20 +6,20 @@ INTERFACE zif_aff_types_v1 PUBLIC.
   "! The ABAP file format version
   TYPES ty_format_version TYPE string.
 
-  "! <p class="shorttext">ABAP Language Version (Non-Source Code Objects)</p>
+  "! <p class="shorttext">ABAP Language Version</p>
   "! ABAP language version
   "! $values {@link zif_aff_types_v1.data:co_abap_language_version}
   "! $default {@link zif_aff_types_v1.data:co_abap_language_version.standard}
   TYPES ty_abap_language_version TYPE c LENGTH 1.
 
-  "! <p class="shorttext">ABAP Language Version (Non-Source Code Objects)</p>
-  "! ABAP language version (without key user)
+  "! <p class="shorttext">ABAP Language Version</p>
+  "! ABAP language version
   "! $values {@link zif_aff_types_v1.data:co_abap_language_version_cloud}
   "! $default {@link zif_aff_types_v1.data:co_abap_language_version_cloud.standard}
   TYPES ty_abap_language_version_cloud TYPE c LENGTH 1.
 
-  "! <p class="shorttext">ABAP Language Version (Source Code Objects)</p>
-  "! ABAP language version for source code objects
+  "! <p class="shorttext">ABAP Language Version</p>
+  "! ABAP language version
   "! $values {@link zif_aff_types_v1.data:co_abap_language_version_src}
   "! $default {@link zif_aff_types_v1.data:co_abap_language_version_src.standard}
   TYPES ty_abap_language_version_src TYPE c LENGTH 1.
@@ -91,8 +91,6 @@ INTERFACE zif_aff_types_v1 PUBLIC.
       description           TYPE ty_description_60,
       "! $required
       original_language     TYPE ty_original_language,
-      "! <p class="shorttext">ABAP Language Version</p>
-      "! ABAP language version
       abap_language_version TYPE ty_abap_language_version_src,
     END OF ty_header_60_src.
 
@@ -106,8 +104,6 @@ INTERFACE zif_aff_types_v1 PUBLIC.
       description           TYPE ty_description_60,
       "! $required
       original_language     TYPE ty_original_language,
-      "! <p class="shorttext">ABAP Language Version</p>
-      "! ABAP language version
       abap_language_version TYPE ty_abap_language_version_cloud,
     END OF ty_header_60_cloud.
 
@@ -121,8 +117,6 @@ INTERFACE zif_aff_types_v1 PUBLIC.
       description           TYPE ty_description_60,
       "! $required
       original_language     TYPE ty_original_language,
-      "! <p class="shorttext">ABAP Language Version</p>
-      "! ABAP language version
       abap_language_version TYPE ty_abap_language_version,
     END OF ty_header_60.
 
@@ -134,12 +128,8 @@ INTERFACE zif_aff_types_v1 PUBLIC.
       "! Description of the ABAP object
       "! $required
       description           TYPE ty_description_100,
-      "! <p class="shorttext">Original Language</p>
-      "! Original language of the ABAP object
       "! $required
       original_language     TYPE ty_original_language,
-      "! <p class="shorttext">ABAP Language Version</p>
-      "! ABAP language version
       abap_language_version TYPE ty_abap_language_version,
     END OF ty_header_100.
 
