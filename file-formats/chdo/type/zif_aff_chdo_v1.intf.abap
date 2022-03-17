@@ -9,7 +9,7 @@ INTERFACE zif_aff_chdo_v1
     BEGIN OF ty_tablestruc,
       "! <p class="shorttext">Name of Table or Structure</p>
       "! Name of table or structure
-      "! $showAlways
+      "! $required
       name                   TYPE c LENGTH 30,
       "! <p class="shorttext">Log Multiple Changes</p>
       "! Specifies whether multiple changes can be logged
