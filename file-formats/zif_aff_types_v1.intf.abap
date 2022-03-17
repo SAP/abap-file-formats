@@ -67,10 +67,10 @@ INTERFACE zif_aff_types_v1 PUBLIC.
     END OF co_abap_language_version_cloud.
 
   "! <p class="shorttext">Description</p>
-  "! Description with 60 characters
+  "! Description of the ABAP object
   TYPES ty_description_60 TYPE c LENGTH 60.
   "! <p class="shorttext">Description</p>
-  "! Description with 100 characters
+  "! Description of the ABAP object
   TYPES ty_description_100 TYPE c LENGTH 100.
 
   "! <p class="shorttext">Object Name</p>
@@ -85,8 +85,6 @@ INTERFACE zif_aff_types_v1 PUBLIC.
     "! <p class="shorttext">Header for Source Code Objects</p>
     "! The header for an ABAP main object (with source code) with a description of 60 characters
     BEGIN OF ty_header_60_src,
-      "! <p class="shorttext">Description</p>
-      "! Description of the ABAP object
       "! $required
       description           TYPE ty_description_60,
       "! $required
@@ -98,8 +96,6 @@ INTERFACE zif_aff_types_v1 PUBLIC.
     "! <p class="shorttext">Header for Non-Source Code Objects (no key user)</p>
     "! The header for an ABAP main object (without source code) with a description of 60 characters (no key user)
     BEGIN OF ty_header_60_cloud,
-      "! <p class="shorttext">Description</p>
-      "! Description of the ABAP object
       "! $required
       description           TYPE ty_description_60,
       "! $required
@@ -111,8 +107,6 @@ INTERFACE zif_aff_types_v1 PUBLIC.
     "! <p class="shorttext">Header for Non-Source Code Objects</p>
     "! The header for an ABAP main object (without source code) with a description of 60 characters
     BEGIN OF ty_header_60,
-      "! <p class="shorttext">Description</p>
-      "! Description of the ABAP object
       "! $required
       description           TYPE ty_description_60,
       "! $required
@@ -124,8 +118,6 @@ INTERFACE zif_aff_types_v1 PUBLIC.
     "! <p class="shorttext">Header for Non-Source Code Objects</p>
     "! The header for an ABAP main object (without source code) with a description of 100 characters
     BEGIN OF ty_header_100,
-      "! <p class="shorttext">Description</p>
-      "! Description of the ABAP object
       "! $required
       description           TYPE ty_description_100,
       "! $required
@@ -137,8 +129,6 @@ INTERFACE zif_aff_types_v1 PUBLIC.
     "! <p class="shorttext">Header for Subobjects</p>
     "! The header for an ABAP  subobject with a description of 60 characters
     BEGIN OF ty_header_only_description,
-      "! <p class="shorttext">Description</p>
-      "! Description of the ABAP object
       "! $required
       description TYPE ty_description_60,
     END OF ty_header_only_description.
