@@ -39,8 +39,7 @@ INTERFACE zif_aff_chdo_v1
     END OF ty_tablestruc.
 
   "! <p class="shorttext">Tables and Structures</p>
-  "! Tables and Structures
-  "! $showAlways
+  "! Tables and structures
   TYPES ty_tables TYPE SORTED TABLE OF ty_tablestruc WITH UNIQUE KEY name.
 
 
