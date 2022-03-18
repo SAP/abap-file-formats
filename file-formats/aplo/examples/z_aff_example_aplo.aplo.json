@@ -1,8 +1,8 @@
 {
+  "formatVersion": "1",
   "header": {
     "description": "Application Log Test Object",
-    "masterLanguage": "EN",
-    "abapLanguageVersion": "standard"
+    "originalLanguage": "en"
   },
   "subObjects": [
     {
