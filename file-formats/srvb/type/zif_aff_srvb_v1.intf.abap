@@ -23,7 +23,7 @@ INTERFACE zif_aff_srvb_v1
       "! $required
       service_version         TYPE c LENGTH 24,
       "! <p class="shorttext">Service Build Version</p>
-      "! Service Build Version
+      "! Service build version
       service_build_version   TYPE n LENGTH 10,
       "! <p class="shorttext">Service Definition</p>
       "! Service Definition
