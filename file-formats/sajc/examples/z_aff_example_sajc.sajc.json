@@ -1,10 +1,10 @@
 {
   "formatVersion": "1",
   "header": {
-    "description": "in non elit",
+    "description": "Example for CL_APJ_SIMPLE",
     "originalLanguage": "en"
   },
-  "className": "Lorem in est cillum incid",
-  "valueHelpExitClass": "laborum amet deser",
-  "checkExitClass": "deserunt Lorem occaecat est"
+  "className": "CL_APJ_SIMPLE",
+  "checkExitClass": "CL_CHECK_APJ_SIMPLE",
+  "valueHelpExitClass": "CL_VALUE_HELP_APJ_SIMPLE"
 }
