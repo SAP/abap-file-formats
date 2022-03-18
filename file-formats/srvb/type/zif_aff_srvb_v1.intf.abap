@@ -36,7 +36,7 @@ INTERFACE zif_aff_srvb_v1
     "! Service properties
     BEGIN OF ty_service,
       "! <p class="shorttext">Service Name</p>
-      "! Service Name
+      "! Service name
       "! $required
       name    TYPE c LENGTH 40,
       "! <p class="shorttext">Service Versions</p>
