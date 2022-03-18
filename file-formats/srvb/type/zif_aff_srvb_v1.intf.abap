@@ -40,7 +40,7 @@ INTERFACE zif_aff_srvb_v1
       "! $required
       name    TYPE c LENGTH 40,
       "! <p class="shorttext">Service Versions</p>
-      "! Service Versions
+      "! Service versions
       "! $required
      versions TYPE ty_service_contents,
     END OF ty_service.
