@@ -162,6 +162,7 @@ INTERFACE zif_aff_enhs_v1
       interface          TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Instantiation of the BAdI Definition</p>
       "! Instantiation of the BAdI definition
+      "! $required
       instantiation      TYPE ty_instantiation,
       "! <p class="shorttext">Single- or Multiple Use BAdI</p>
       "! Indicator whether the BAdI definition is single- or multiple usable
