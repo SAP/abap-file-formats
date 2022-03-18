@@ -1,0 +1,17 @@
+{
+  "header": {
+    "description": "Application Log Test Object",
+    "masterLanguage": "EN",
+    "abapLanguageVersion": "standard"
+  },
+  "subObjects": [
+    {
+      "name": "SUBOBJECT1",
+      "description": "Subobject 1"
+    },
+    {
+      "name": "SUBOBJECT2",
+      "description": "Subobject 2"
+    }
+  ]
+}
