@@ -80,12 +80,16 @@ To provide a title, an ABAP Doc shorttext
 "! <p class="shorttext">Insert Title</p>
 ```
 is used.
+Please write the title in title case. This means that all words are capitalized except for minor words. Example: "The Quick Brown Fox Jumps over the Lazy Dog".
+A title must consist of a maximum of 255 characters.
 
 ### Description
 An ABAP Doc comment without annotations is passed as description to the JSON Schema.
 ```abap
 "! This is the description
 ```
+Please write the description in sentence case. This means to write the description as if it was a normal english sentence. Example: "The quick brown fox jumps over the lazy dog"
+A description must consist of a maximum of 255 characters.
 
 ### Extreme Values
 For numerical types, (exclusive) minimum and (exclusive) maximum values can be specified via the annotational keywords
