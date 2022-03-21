@@ -29,6 +29,9 @@ def match_schema_instance( ):
             version = json_data["formatVersion"]
         except KeyError:
             continue
+        except TypeError:
+            # in case decoding failed
+            continue
         # match data with schema
         schema_name =  object_type + '-v'+ version + '.json'
         schema = [s for s in schemas if schema_name in s]
