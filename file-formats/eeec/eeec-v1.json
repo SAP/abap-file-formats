@@ -85,7 +85,7 @@
           },
           "entityName": {
             "title": "Entity Name",
-            "description": "Entity Name",
+            "description": "Entity name",
             "type": "string",
             "maxLength": 30
           }
