@@ -36,7 +36,7 @@ INTERFACE zif_aff_ront_v1
       "! <p class="shorttext">Description</p>
       "! Description
       "! $required
-      description TYPE c length 60,
+      description   TYPE c LENGTH 60,
     END OF ty_rontnode.
 
   TYPES:
