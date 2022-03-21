@@ -1,5 +1,4 @@
 # EVTB File Format
-This file format is used by the ADT editor for RAP Business Event Bindings (EVTB).
 
 File | Cardinality | Definition | Schema | Example
 :--- | :---  | :--- | :--- | :---
