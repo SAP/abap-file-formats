@@ -1,5 +1,5 @@
 INTERFACE zif_aff_ront_v1
-  PUBLIC .
+  PUBLIC.
 
   CONSTANTS:
     BEGIN OF co_category,
