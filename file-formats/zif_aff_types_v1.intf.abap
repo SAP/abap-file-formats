@@ -96,8 +96,6 @@ INTERFACE zif_aff_types_v1 PUBLIC.
     "! <p class="shorttext">Header for Non-Source Code Objects (no key user)</p>
     "! The header for an ABAP main object (without source code) with a description of 60 characters (no key user)
     BEGIN OF ty_header_60_cloud,
-      "! <p class="shorttext">Description</p>
-      "! Description of the ABAP object
       "! $required
       description           TYPE ty_description_60,
       "! $required
