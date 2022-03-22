@@ -3,7 +3,7 @@ INTERFACE zif_aff_aplo_v1
 
   TYPES:
     "! <p class="shorttext">Subobject</p>
-    "! Attibutes of the subobject
+    "! Attributes of the subobject
     BEGIN OF ty_subobject,
       "! <p class="shorttext">Name</p>
       "! Name of the subobject
