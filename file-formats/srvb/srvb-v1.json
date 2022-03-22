@@ -61,13 +61,13 @@
     },
     "bindingType": {
       "title": "Binding Type",
-      "description": "Service Binding Type",
+      "description": "Service Binding type",
       "type": "string",
       "maxLength": 30
     },
     "bindingTypeCategory": {
       "title": "Binding Category",
-      "description": "Service Binding Category",
+      "description": "Service Binding category",
       "type": "string",
       "enum": [
         "ui",
@@ -93,13 +93,13 @@
         "properties": {
           "name": {
             "title": "Service Name",
-            "description": "Service Name",
+            "description": "Service name",
             "type": "string",
             "maxLength": 40
           },
           "versions": {
             "title": "Service Versions",
-            "description": "Service Versions",
+            "description": "Service versions",
             "type": "array",
             "items": {
               "title": "Service Version",
@@ -108,20 +108,20 @@
               "properties": {
                 "serviceVersion": {
                   "title": "Service Version",
-                  "description": "Service Version",
+                  "description": "Service version",
                   "type": "string",
                   "maxLength": 24
                 },
                 "serviceBuildVersion": {
                   "title": "Service Build Version",
-                  "description": "Service Build Version",
+                  "description": "Service build version",
                   "type": "string",
                   "maxLength": 10,
                   "pattern": "^[0-9]+$"
                 },
                 "serviceDefinition": {
                   "title": "Service Definition",
-                  "description": "Service Definition",
+                  "description": "Service definition",
                   "type": "string",
                   "maxLength": 30
                 }

@@ -1,7 +1,7 @@
 INTERFACE zif_aff_srvb_v1
   PUBLIC.
   "! <p class="shorttext">Binding Category</p>
-  "! Service Binding Category
+  "! Service Binding category
   "! $values {@link zif_aff_srvb_v1.data:co_bind_type_category}
   TYPES ty_bind_type_category TYPE c LENGTH 1.
 
@@ -19,14 +19,14 @@ INTERFACE zif_aff_srvb_v1
     "! Service version
     BEGIN OF ty_service_content,
       "! <p class="shorttext">Service Version</p>
-      "! Service Version
+      "! Service version
       "! $required
       service_version         TYPE c LENGTH 24,
       "! <p class="shorttext">Service Build Version</p>
-      "! Service Build Version
+      "! Service build version
       service_build_version   TYPE n LENGTH 10,
       "! <p class="shorttext">Service Definition</p>
-      "! Service Definition
+      "! Service definition
       "! $required
       service_definition TYPE c LENGTH 30,
     END OF ty_service_content.
@@ -36,11 +36,11 @@ INTERFACE zif_aff_srvb_v1
     "! Service properties
     BEGIN OF ty_service,
       "! <p class="shorttext">Service Name</p>
-      "! Service Name
+      "! Service name
       "! $required
       name    TYPE c LENGTH 40,
       "! <p class="shorttext">Service Versions</p>
-      "! Service Versions
+      "! Service versions
       "! $required
      versions TYPE ty_service_contents,
     END OF ty_service.
@@ -56,11 +56,11 @@ INTERFACE zif_aff_srvb_v1
       "! $required
       header             TYPE zif_aff_types_v1=>ty_header_60,
       "! <p class="shorttext">Binding Type</p>
-      "! Service Binding Type
+      "! Service Binding type
       "! $required
       binding_type          TYPE c LENGTH 30,
       "! <p class="shorttext">Binding Category</p>
-      "! Service Binding Category
+      "! Service Binding category
       "! $required
       binding_type_category TYPE ty_bind_type_category,
       "! <p class="shorttext">Services</p>
