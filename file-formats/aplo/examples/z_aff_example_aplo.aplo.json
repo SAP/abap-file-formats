@@ -1,0 +1,17 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Application Log Test Object",
+    "originalLanguage": "en"
+  },
+  "subObjects": [
+    {
+      "name": "SUBOBJECT1",
+      "description": "Subobject 1"
+    },
+    {
+      "name": "SUBOBJECT2",
+      "description": "Subobject 2"
+    }
+  ]
+}
