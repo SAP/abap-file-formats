@@ -1,0 +1,20 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Example SRVB for ABAP File Formats",
+    "originalLanguage": "en"
+  },
+  "bindingType": "ODATA V4",
+  "bindingTypeCategory": "ui",
+  "services": [
+    {
+      "name": "SRVD_HOME",
+      "versions": [
+        {
+          "serviceVersion": "1.0.0",
+          "serviceDefinition": "SRVD_HOME"
+        }
+      ]
+    }
+  ]
+}
