@@ -36,17 +36,14 @@
           "type": "string",
           "enum": [
             "standard",
-            "keyUser",
             "cloudDevelopment"
           ],
           "enumTitles": [
             "Standard",
-            "ABAP for Key Users",
             "ABAP Cloud Development"
           ],
           "enumDescriptions": [
             "Standard",
-            "ABAP for key user extensibility",
             "ABAP cloud development"
           ],
           "default": "standard"
@@ -59,8 +56,8 @@
       ]
     },
     "typeCategory": {
-      "title": "Category",
-      "description": "Category",
+      "title": "Type Category",
+      "description": "Type Category",
       "type": "string",
       "enum": [
         "businessObject",
@@ -82,7 +79,7 @@
       ]
     },
     "rontnodes": {
-      "title": "SAP Object Node Type",
+      "title": "SAP Object Node Types",
       "type": "array",
       "items": {
         "title": "Node",
@@ -114,6 +111,7 @@
         },
         "additionalProperties": false,
         "required": [
+          "isRoot",
           "nodeNameRaw",
           "description"
         ]

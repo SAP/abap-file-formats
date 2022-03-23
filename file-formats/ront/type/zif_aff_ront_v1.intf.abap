@@ -26,6 +26,7 @@ INTERFACE zif_aff_ront_v1
 
       "! <p class="shorttext">Root Node Flag</p>
       "! Root node flag
+      "! $required
       is_root       TYPE abap_bool,
 
       "! <p class="shorttext">Name</p>
@@ -36,7 +37,7 @@ INTERFACE zif_aff_ront_v1
       "! <p class="shorttext">Description</p>
       "! Description
       "! $required
-      description   TYPE c LENGTH 60,
+      description   TYPE zif_aff_types_v1=>ty_description_60,
     END OF ty_rontnode.
 
   TYPES:
@@ -48,15 +49,15 @@ INTERFACE zif_aff_ront_v1
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header         TYPE zif_aff_types_v1=>ty_header_60,
+      header         TYPE zif_aff_types_v1=>ty_header_60_cloud,
 
-      "! <p class="shorttext">Category</p>
-      "! Category
+      "! <p class="shorttext">Type Category</p>
+      "! Type Category
       "! $required
       "! $values {@link zif_aff_ront_v1.data:co_category}
       type_category  TYPE c LENGTH 2,
 
-      "! <p class="shorttext">SAP Object Node Type</p>
+      "! <p class="shorttext">SAP Object Node Types</p>
       "! $required
       rontnodes      TYPE SORTED TABLE OF ty_rontnode WITH NON-UNIQUE KEY node_name,
 
