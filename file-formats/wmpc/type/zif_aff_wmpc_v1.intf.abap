@@ -2,13 +2,13 @@ INTERFACE zif_aff_wmpc_v1
   PUBLIC.
 
   TYPES:
-  "! <p class="shorttext">Priority</p>
-  "! Priority
-  "! $values {@link zif_aff_wmpc_v1.data:co_priority}
-  "! $default {@link zif_aff_wmpc_v1.data:co_priority.normal}
+    "! <p class="shorttext">Priority</p>
+    "! Priority
+    "! $values {@link zif_aff_wmpc_v1.data:co_priority}
+    "! $default {@link zif_aff_wmpc_v1.data:co_priority.normal}
     ty_priority TYPE c LENGTH 10.
 
-    CONSTANTS:
+  CONSTANTS:
     "! <p class="shorttext">Priority</p>
     "! Priority
       BEGIN OF co_priority,
