@@ -9,7 +9,7 @@
   "producerVersion": "0001",
   "boName": "BusinessUser",
   "boOperation": "Deleted",
-  "producerTopic": "sap.s4.BusinessUser.Deleted.v*",
+  "producerType": "sap.s4.BusinessUser.Deleted.v*",
   "events": [
     {
       "eventVersion": "0001",

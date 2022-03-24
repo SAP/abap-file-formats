@@ -36,17 +36,14 @@
           "type": "string",
           "enum": [
             "standard",
-            "keyUser",
             "cloudDevelopment"
           ],
           "enumTitles": [
             "Standard",
-            "ABAP for Key Users",
             "ABAP Cloud Development"
           ],
           "enumDescriptions": [
             "Standard",
-            "ABAP for key user extensibility",
             "ABAP cloud development"
           ],
           "default": "standard"
@@ -94,7 +91,7 @@
       "type": "string",
       "maxLength": 18
     },
-    "producerTopic": {
+    "producerType": {
       "title": "Type",
       "description": "Type",
       "type": "string",
@@ -140,7 +137,7 @@
             "type": "string",
             "maxLength": 30
           },
-          "producerTopicRegistered": {
+          "producerTypeRegistered": {
             "title": "Registered",
             "description": "Registered",
             "type": "boolean"

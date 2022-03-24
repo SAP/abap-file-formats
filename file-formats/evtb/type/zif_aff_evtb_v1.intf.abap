@@ -30,7 +30,7 @@ INTERFACE zif_aff_evtb_v1
 
       "! <p class="shorttext">Registered</p>
       "! Registered
-      producer_topic_registered TYPE abap_bool,
+      producer_type_registered  TYPE abap_bool,
     END OF ty_event.
 
   TYPES:
@@ -42,13 +42,12 @@ INTERFACE zif_aff_evtb_v1
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header             TYPE zif_aff_types_v1=>ty_header_60,
+      header             TYPE zif_aff_types_v1=>ty_header_60_cloud,
 
       "! <p class="shorttext">Namespace</p>
       "! Namespace
-      "! $maxLength 15
       "! $required
-      producer_namespace TYPE c LENGTH 30,
+      producer_namespace TYPE c LENGTH 15,
 
       "! <p class="shorttext">Producer Legacy</p>
       "! Producer legacy
@@ -70,12 +69,11 @@ INTERFACE zif_aff_evtb_v1
       "! <p class="shorttext">Business Object Operation</p>
       "! Business object operation
       "! $required
-      "! $maxLength 18
-      bo_operation       TYPE c LENGTH 30,
+      bo_operation       TYPE c LENGTH 18,
 
       "! <p class="shorttext">Type</p>
       "! Type
-      producer_topic     TYPE c LENGTH 83,
+      producer_type      TYPE c LENGTH 83,
 
       "! <p class="shorttext">Events</p>
       "! $required
