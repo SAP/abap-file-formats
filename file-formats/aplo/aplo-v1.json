@@ -56,7 +56,7 @@
         "originalLanguage"
       ]
     },
-    "subObjects": {
+    "subobjects": {
       "title": "Subobjects",
       "description": "Table of all subobjects (may be empty)",
       "type": "array",

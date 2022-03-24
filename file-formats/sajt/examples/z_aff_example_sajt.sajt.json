@@ -7,17 +7,12 @@
   "catalogName": "JCE_APJ_SIMPLE",
   "parameters": [
     {
-      "name": "S_ID",
+      "name": "P_COUNT",
       "valueRanges": [
         {
           "sign": "include",
           "option": "equals",
-          "low": "4711"
-        },
-        {
-          "sign": "include",
-          "option": "between",
-          "low": "AAA"
+          "low": "200"
         }
       ]
     },
@@ -32,22 +27,28 @@
       ]
     },
     {
-      "name": "P_COUNT",
-      "valueRanges": [
-        {
-          "sign": "include",
-          "option": "equals",
-          "low": "200"
-        }
-      ]
-    },
-    {
       "name": "P_SIMUL",
       "valueRanges": [
         {
           "sign": "include",
           "option": "equals",
           "low": "X"
+        }
+      ]
+    },
+    {
+      "name": "S_ID",
+      "valueRanges": [
+        {
+          "sign": "include",
+          "option": "equals",
+          "low": "4711"
+        },
+        {
+          "sign": "include",
+          "option": "between",
+          "low": "AAA",
+          "high": "ZZZ"
         }
       ]
     }

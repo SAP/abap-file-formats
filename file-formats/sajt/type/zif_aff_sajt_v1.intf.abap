@@ -24,6 +24,7 @@ INTERFACE zif_aff_sajt_v1
     "! <p class="shorttext">Application Job Catalog Entry</p>
     "! Name of the application job catalog entry
     ty_catalog_name TYPE c LENGTH 40.
+
   TYPES:
     "! <p class="shorttext">Entry of Ranges Table</p>
     "! Entry of ranges table
@@ -31,18 +32,18 @@ INTERFACE zif_aff_sajt_v1
       "! <p class="shorttext">Sign</p>
       "! Include/exclude values (I/E)
       "! $required
-      sign      TYPE  zif_aff_types_v1=>ty_sign,
+      sign   TYPE  zif_aff_types_v1=>ty_sign,
       "! <p class="shorttext">Option</p>
       "! Operator of the ranges condition (EQ/NE/GE/GT/LE/LT/CP/NP/BT/NB)
       "! $required
-      option    TYPE  zif_aff_types_v1=>ty_option,
+      option TYPE  zif_aff_types_v1=>ty_option,
       "! <p class="shorttext">Low Value</p>
       "! Low value of the ranges condition
       "! $showAlways
-      low       TYPE  c LENGTH 255,
+      low    TYPE  c LENGTH 255,
       "! <p class="shorttext">High Value</p>
       "! High value of the ranges condition
-      high      TYPE  c LENGTH 255,
+      high   TYPE  c LENGTH 255,
     END OF ty_value_range_entry.
 
   TYPES:
@@ -52,7 +53,7 @@ INTERFACE zif_aff_sajt_v1
 
   TYPES:
     "! <p class="shorttext">Parameter Name and Values</p>
-    "! Name of the parameter and its value as ranges table
+    "! Name of the parameter and its values as ranges table
     BEGIN OF ty_parameter,
       "! <p class="shorttext">Parameter Name</p>
       "! Name of the parameter
@@ -70,8 +71,8 @@ INTERFACE zif_aff_sajt_v1
     ty_parameter_table TYPE STANDARD TABLE OF ty_parameter WITH KEY name.
 
   TYPES:
-    "! <p class="shorttext">SAJT Object Type</p>
-    "! Object type SAJT
+    "! <p class="shorttext">Application Job Template</p>
+    "! Attributes of the application job template
     BEGIN OF ty_main,
       "! $required
       format_version TYPE zif_aff_types_v1=>ty_format_version,
@@ -83,8 +84,9 @@ INTERFACE zif_aff_sajt_v1
       "! Name of the application job catalog entry to which the template refers
       "! $required
       catalog_name   TYPE ty_catalog_name,
-      "! <p class="shorttext">Parameter Values</p>
-      "! Values of the parameters of the class which runs within the job
+      "! <p class="shorttext">Parameters</p>
+      "! Parameters of the class which runs within the job
       parameters     TYPE ty_parameter_table,
     END OF ty_main.
+
 ENDINTERFACE.
