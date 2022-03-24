@@ -11,7 +11,7 @@ INTERFACE zif_aff_wmpc_v1
     CONSTANTS:
     "! <p class="shorttext">Priority</p>
     "! Priority
-    BEGIN OF co_priority,
+      BEGIN OF co_priority,
       "! <p class="shorttext">Normal</p>
       "! Normal
       normal TYPE ty_priority VALUE 'NORMAL',
