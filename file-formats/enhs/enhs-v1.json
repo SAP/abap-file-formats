@@ -311,7 +311,8 @@
         "required": [
           "name",
           "description",
-          "interface"
+          "interface",
+          "instantiation"
         ]
       }
     }
