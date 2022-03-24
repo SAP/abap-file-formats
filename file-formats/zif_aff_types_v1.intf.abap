@@ -14,6 +14,12 @@ INTERFACE zif_aff_types_v1 PUBLIC.
 
   "! <p class="shorttext">ABAP Language Version</p>
   "! ABAP language version
+  "! $values {@link zif_aff_types_v1.data:co_abap_language_version_cloud}
+  "! $default {@link zif_aff_types_v1.data:co_abap_language_version_cloud.standard}
+  TYPES ty_abap_language_version_cloud TYPE c LENGTH 1.
+
+  "! <p class="shorttext">ABAP Language Version</p>
+  "! ABAP language version
   "! $values {@link zif_aff_types_v1.data:co_abap_language_version_src}
   "! $default {@link zif_aff_types_v1.data:co_abap_language_version_src.standard}
   TYPES ty_abap_language_version_src TYPE c LENGTH 1.
@@ -48,6 +54,18 @@ INTERFACE zif_aff_types_v1 PUBLIC.
       cloud_development TYPE ty_abap_language_version VALUE '5',
     END OF co_abap_language_version.
 
+  CONSTANTS:
+    "! <p class="shorttext">ABAP Language Version</p>
+    "! ABAP language version for objects which only exist for standard and cloud development (no key user extensibility)
+    BEGIN OF co_abap_language_version_cloud,
+      "! <p class="shorttext">Standard</p>
+      "! Standard
+      standard          TYPE ty_abap_language_version_cloud VALUE space,
+      "! <p class="shorttext">ABAP Cloud Development</p>
+      "! ABAP cloud development
+      cloud_development TYPE ty_abap_language_version_cloud VALUE '5',
+    END OF co_abap_language_version_cloud.
+
   "! <p class="shorttext">Description</p>
   "! Description of the ABAP object
   TYPES ty_description_60 TYPE c LENGTH 60.
@@ -73,6 +91,17 @@ INTERFACE zif_aff_types_v1 PUBLIC.
       original_language     TYPE ty_original_language,
       abap_language_version TYPE ty_abap_language_version_src,
     END OF ty_header_60_src.
+
+  TYPES:
+    "! <p class="shorttext">Header for Non-Source Code Objects (no key user)</p>
+    "! The header for an ABAP main object (without source code) with a description of 60 characters (no key user)
+    BEGIN OF ty_header_60_cloud,
+      "! $required
+      description           TYPE ty_description_60,
+      "! $required
+      original_language     TYPE ty_original_language,
+      abap_language_version TYPE ty_abap_language_version_cloud,
+    END OF ty_header_60_cloud.
 
   TYPES:
     "! <p class="shorttext">Header for Non-Source Code Objects</p>
