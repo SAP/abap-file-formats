@@ -4,6 +4,6 @@
     "description": "AFF WMPC Application",
     "originalLanguage": "en"
   },
-  "wmpcInterpretationClass": "CL_WMPC_VARIANT_COUNTRY",
-  "wmpcInterpretationDtel": "LAND1"
+  "interpretationClass": "CL_WMPC_VARIANT_COUNTRY",
+  "interpretationDtel": "LAND1"
 }
