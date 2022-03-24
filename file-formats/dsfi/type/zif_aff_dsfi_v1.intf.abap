@@ -5,7 +5,7 @@ INTERFACE zif_aff_dsfi_v1
   "! <p class="shorttext">Engine</p>
   "! Engine
   "! $values {@link zif_aff_dsfi_v1.data:co_engine}
-  TYPES: ty_engine TYPE c LENGTH 3.
+  TYPES: ty_engine TYPE zif_aff_types_v1=>ty_object_name_30.
 
   CONSTANTS:
     BEGIN OF co_engine,
