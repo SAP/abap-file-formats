@@ -4,7 +4,7 @@
     "description": "Application Log Test Object",
     "originalLanguage": "en"
   },
-  "subObjects": [
+  "subobjects": [
     {
       "name": "SUBOBJECT1",
       "description": "Subobject 1"
