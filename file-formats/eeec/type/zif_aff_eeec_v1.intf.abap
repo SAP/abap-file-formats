@@ -26,7 +26,7 @@ INTERFACE zif_aff_eeec_v1
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header           TYPE zif_aff_types_v1=>ty_header_60,
+      header           TYPE zif_aff_types_v1=>ty_header_60_cloud,
       "! <p class="shorttext synchronized" lang="en">Consumer Class</p>
       "! Consumer class
       "! $required
