@@ -2,8 +2,7 @@
   "formatVersion": "1",
   "header": {
     "description": "AFF Example Object for SMBC",
-    "originalLanguage": "en",
-    "abapLanguageVersion": "standard"
+    "originalLanguage": "en"
   },
   "serviceConfiguration": {
     "serviceBinding": "/DMO/SB_CUSTOMER_MSSK_O4",
@@ -14,10 +13,7 @@
     "skipRootEntity": false
   },
   "appConfiguration": {
-    "listReport": {
-      "initialLoad": "enabled",
-      "type": "responsiveTable"
-    },
+    "listReport": {},
     "objectPages": []
   }
 }

@@ -64,12 +64,14 @@ INTERFACE zif_aff_smbc_v1
     END OF ty_creation_mode,
     "! <p class="shorttext synchronized">Table Type</p>
     "! $values {@link zif_aff_smbc_v1.data:co_table_type}
+    "! $default {@link zif_aff_smbc_v1.data:co_table_type.responsive_table}
     ty_table_type             TYPE string,
     "! <p class="shorttext synchronized">List Report Configuration</p>
     BEGIN OF ty_list_report,
       "! <p class="shorttext synchronized">Initial Load</p>
       "! Defines whether data in the List Report is automatically loaded on first app start.
       "! $values {@link zif_aff_smbc_v1.data:co_initial_load}
+      "! $default {@link zif_aff_smbc_v1.data:co_initial_load.enabled}
       initial_load           TYPE string,
       type                   TYPE ty_table_type,
       "! <p class="shorttext synchronized">Condensed Table Layout</p>
@@ -107,12 +109,14 @@ INTERFACE zif_aff_smbc_v1
     BEGIN OF ty_object_page.
       INCLUDE TYPE ty_object_page_common.
   TYPES:
-    "! <p class="shorttext synchronized">Section Layout</p>
-    "! Toggle between onepage concept and tabs.
-    "! $values {@link zif_aff_smbc_v1.data:co_section_layout}
+      "! <p class="shorttext synchronized">Section Layout</p>
+      "! Toggle between onepage concept and tabs.
+      "! $values {@link zif_aff_smbc_v1.data:co_section_layout}
+      "! $default {@link zif_aff_smbc_v1.data:co_section_layout.page}
       section_layout     TYPE string,
       "! <p class="shorttext synchronized">Table Creation Mode</p>
       "! $values {@link zif_aff_smbc_v1.data:co_creation_mode_name}
+      "! $default {@link zif_aff_smbc_v1.data:co_creation_mode_name.new_page}
       creation_mode_name TYPE ty_creation_mode-name,
       "! <p class="shorttext synchronized">Create at End</p>
       "! If true, a new row is added to the end of the table instead of the beginning of the table
@@ -185,8 +189,8 @@ INTERFACE zif_aff_smbc_v1
       "! Attributes Name and Description must be maintained in this language
       "! $required
       original_language     TYPE sy-langu,
-      "! $required
       "! $values {@link zif_aff_types_v1.data:co_abap_language_version_cloud}
+      "! $default {@link zif_aff_types_v1.data:co_abap_language_version_cloud.standard}
       abap_language_version TYPE zif_aff_types_v1=>ty_abap_language_version,
     END OF ty_header.
 

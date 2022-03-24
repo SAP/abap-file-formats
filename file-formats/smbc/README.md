@@ -1,5 +1,4 @@
 # SMBC File Format
-This file format is used by the ADT editor for business configuration maintenance objects (SMBC).
 
 File | Cardinality | Definition | Schema | Example
 :--- | :---  | :--- | :--- | :---

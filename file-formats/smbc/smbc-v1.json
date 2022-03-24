@@ -44,14 +44,14 @@
           "enumDescriptions": [
             "Standard",
             "ABAP cloud development"
-          ]
+          ],
+          "default": "standard"
         }
       },
       "additionalProperties": false,
       "required": [
         "description",
-        "originalLanguage",
-        "abapLanguageVersion"
+        "originalLanguage"
       ]
     },
     "serviceConfiguration": {
@@ -131,7 +131,8 @@
                 "Data is always loaded when opening the app",
                 "Data is never loaded when opening the app without an app state",
                 "Data is only loaded, if initial/preset filters are available"
-              ]
+              ],
+              "default": "enabled"
             },
             "type": {
               "title": "Table Type",
@@ -147,7 +148,8 @@
               "enumDescriptions": [
                 "",
                 ""
-              ]
+              ],
+              "default": "responsiveTable"
             },
             "condensedTableLayout": {
               "title": "Condensed Table Layout",
@@ -199,7 +201,8 @@
                 "enumDescriptions": [
                   "",
                   ""
-                ]
+                ],
+                "default": "responsiveTable"
               },
               "editableHeaderContent": {
                 "title": "Editable Header Content",
@@ -236,7 +239,8 @@
                 "enumDescriptions": [
                   "",
                   ""
-                ]
+                ],
+                "default": "page"
               },
               "creationModeName": {
                 "title": "Table Creation Mode",
@@ -255,7 +259,8 @@
                   "Item is created in subpage",
                   "By clicking on 'Create' a new line is created but automatic navigation to subpage is not triggered.",
                   "By clicking on 'Add row' a new line is created but automatic navigation to subpage is not triggered."
-                ]
+                ],
+                "default": "newPage"
               },
               "createAtEnd": {
                 "title": "Create at End",
