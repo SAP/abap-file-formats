@@ -4,7 +4,7 @@ INTERFACE zif_aff_dsfi_v1
 
   "! <p class="shorttext">Engine</p>
   "! Engine
-  "! $values {@link if_aff_dsfi_v1.data:co_engine}
+  "! $values {@link zif_aff_dsfi_v1.data:co_engine}
   TYPES: ty_engine TYPE c LENGTH 3.
 
   CONSTANTS:
