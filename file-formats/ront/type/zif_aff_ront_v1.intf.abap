@@ -26,7 +26,6 @@ INTERFACE zif_aff_ront_v1
 
       "! <p class="shorttext">Root Node Flag</p>
       "! Root node flag
-      "! $required
       is_root       TYPE abap_bool,
 
       "! <p class="shorttext">Name</p>
