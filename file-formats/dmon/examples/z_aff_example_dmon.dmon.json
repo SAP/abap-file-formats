@@ -4,7 +4,10 @@
     "description": "AFF ABAP Daemon Application",
     "originalLanguage": "en"
   },
-  "daemonClassName": "CL_AD_EXT_SIMPLE_DAEMON",
-  "callerProgramType": "prog",
-  "callerProgramName": "RS_ABAP_DAEMON_STARTUP_TEST"
+  "className": "CL_AD_EXT_SIMPLE_DAEMON",
+  "callerObject": {
+    "type": "prog",
+    "name": "RS_ABAP_DAEMON_STARTUP_TEST"
+  },
+  "daemonType": ""
 }
