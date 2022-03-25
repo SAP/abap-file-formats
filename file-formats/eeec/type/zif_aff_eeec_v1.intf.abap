@@ -11,9 +11,11 @@ INTERFACE zif_aff_eeec_v1
     BEGIN OF ty_s_event_type,
       "! <p class="shorttext synchronized" lang="en">Type</p>
       "! Type
+      "! $required
       type  TYPE ty_type,
       "! <p class="shorttext synchronized" lang="en">Entity Name</p>
       "! Entity name
+      "! $required
       entity_name TYPE zif_aff_types_v1=>ty_object_name_30,
     END OF ty_s_event_type,
     ty_t_event_type TYPE SORTED TABLE OF ty_s_event_type WITH UNIQUE KEY type.

@@ -87,7 +87,11 @@
             "maxLength": 30
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "required": [
+          "type",
+          "entityName"
+        ]
       }
     }
   },
