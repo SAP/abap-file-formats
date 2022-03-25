@@ -1,5 +1,4 @@
 # EEEC File Format
-This file format is used by the ADT editor for Event Consumers (EEEC).
 
 File | Cardinality | Definition | Schema | Example
 :--- | :---  | :--- | :--- | :---
