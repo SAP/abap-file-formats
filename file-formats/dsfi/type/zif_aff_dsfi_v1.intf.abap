@@ -14,30 +14,19 @@ INTERFACE zif_aff_dsfi_v1
       analytical_engine TYPE ty_engine VALUE 'ANA',
     END OF co_engine.
 
-
   TYPES:
-    BEGIN OF ty_dsfi,
-      "! <p class="shorttext">Scalar Function</p>
-      "! Scalar function
-      scalar_function_name TYPE c LENGTH 30,
-      "! <p class="shorttext">Engine</p>
-      "! Engine
-      engine               TYPE ty_engine,
-    END OF ty_dsfi.
-
-  TYPES:
-    "! <p class="shorttext">ABAP file formats for object type DSFI</p>
-    "! DSFI object type
+    "! <p class="shorttext">General Information</p>
     BEGIN OF ty_main,
       "! $required
       format_version TYPE zif_aff_types_v1=>ty_format_version,
-      "! <p class="shorttext">Header</p>
-      "! Header
       "! $required
       header         TYPE zif_aff_types_v1=>ty_header_60_src,
-      "! <p class="shorttext">General Information</p>
-      "! $required
-      content        TYPE ty_dsfi,
+      "! <p class="shorttext">Scalar Function Name</p>
+      "! The name of the scalar function
+      scalar_function_name TYPE zif_aff_types_v1=>ty_object_name_30,
+      "! <p class="shorttext">Engine</p>
+      "! Engine
+      engine               TYPE ty_engine,
     END OF ty_main.
 
 ENDINTERFACE.
