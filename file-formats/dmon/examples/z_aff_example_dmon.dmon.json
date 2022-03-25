@@ -8,6 +8,5 @@
   "callerObject": {
     "type": "prog",
     "name": "RS_ABAP_DAEMON_STARTUP_TEST"
-  },
-  "daemonType": ""
+  }
 }
