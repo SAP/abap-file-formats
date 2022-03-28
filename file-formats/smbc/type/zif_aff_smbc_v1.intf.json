@@ -1,0 +1,57 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "SMBC AFF Type",
+    "originalLanguage": "en"
+  },
+  "descriptions": {
+    "types": [
+      {
+        "name": "TY_CREATION_MODE",
+        "description": "Table Creation Mode"
+      },
+      {
+        "name": "TY_LIST_REPORT",
+        "description": "List Report Configuration"
+      },
+      {
+        "name": "TY_OBJECT_PAGE",
+        "description": "Object Page Configuration"
+      },
+      {
+        "name": "TY_OBJECT_PAGES",
+        "description": "Object Page Configurations"
+      },
+      {
+        "name": "TY_PERSONALIZATION",
+        "description": "Personalization"
+      },
+      {
+        "name": "TY_SETTINGS",
+        "description": "Confguration of List Report and Object Pages"
+      },
+      {
+        "name": "TY_TABLE_TYPE",
+        "description": "Table Type"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "CO_CREATION_MODE_NAME",
+        "description": "Table Creation Mode"
+      },
+      {
+        "name": "CO_INITIAL_LOAD",
+        "description": "Initial Load"
+      },
+      {
+        "name": "CO_SECTION_LAYOUT",
+        "description": "Section Layout"
+      },
+      {
+        "name": "CO_TABLE_TYPE",
+        "description": "Table Type"
+      }
+    ]
+  }
+}
