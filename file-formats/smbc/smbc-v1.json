@@ -77,7 +77,7 @@
           "maxLength": 4,
           "pattern": "^[0-9]+$"
         },
-        "rootEntity": {
+        "rootEntitySet": {
           "title": "Root Entity Set",
           "description": "The name of an entity set as exposed by the Service Definition. This entity set is used as the root node for the UI. Only for this root entity set and its associations a UI is shown.",
           "type": "string",
@@ -100,7 +100,7 @@
         "serviceBinding",
         "serviceName",
         "serviceVersion",
-        "rootEntity",
+        "rootEntitySet",
         "name"
       ]
     },
@@ -134,7 +134,7 @@
               ],
               "default": "enabled"
             },
-            "type": {
+            "tableType": {
               "title": "Table Type",
               "type": "string",
               "enum": [
@@ -187,23 +187,6 @@
                 "description": "Entity Name of the Object Page",
                 "type": "string"
               },
-              "type": {
-                "title": "Table Type",
-                "type": "string",
-                "enum": [
-                  "responsiveTable",
-                  "gridTable"
-                ],
-                "enumTitles": [
-                  "Responsive Table",
-                  "Grid Table"
-                ],
-                "enumDescriptions": [
-                  "",
-                  ""
-                ],
-                "default": "responsiveTable"
-              },
               "editableHeaderContent": {
                 "title": "Editable Header Content",
                 "description": "If true, the header content is changeable in edit mode",
@@ -223,6 +206,23 @@
                 "title": "Enable Full Screen",
                 "description": "If true, a button on the table toolbar allows the user to open the table in fullscreen dialog",
                 "type": "boolean"
+              },
+              "tableType": {
+                "title": "Table Type",
+                "type": "string",
+                "enum": [
+                  "responsiveTable",
+                  "gridTable"
+                ],
+                "enumTitles": [
+                  "Responsive Table",
+                  "Grid Table"
+                ],
+                "enumDescriptions": [
+                  "",
+                  ""
+                ],
+                "default": "responsiveTable"
               },
               "sectionLayout": {
                 "title": "Section Layout",

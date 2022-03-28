@@ -73,7 +73,7 @@ INTERFACE zif_aff_smbc_v1
       "! $values {@link zif_aff_smbc_v1.data:co_initial_load}
       "! $default {@link zif_aff_smbc_v1.data:co_initial_load.enabled}
       initial_load           TYPE string,
-      type                   TYPE ty_table_type,
+      table_type             TYPE ty_table_type,
       "! <p class="shorttext synchronized">Condensed Table Layout</p>
       "! If true, display rows in a condensed way. Only applicaple to Table Type 'GridTable'.
       condensed_table_layout TYPE abap_bool,
@@ -91,7 +91,6 @@ INTERFACE zif_aff_smbc_v1
       "! <p class="shorttext synchronized">Entity</p>
       "! Entity Name of the Object Page
       entity                  TYPE string,
-      type                    TYPE ty_table_type,
       "! <p class="shorttext synchronized">Editable Header Content</p>
       "! If true, the header content is changeable in edit mode
       editable_header_content TYPE abap_bool,
@@ -109,6 +108,7 @@ INTERFACE zif_aff_smbc_v1
     BEGIN OF ty_object_page.
       INCLUDE TYPE ty_object_page_common.
   TYPES:
+      table_type              TYPE ty_table_type,
       "! <p class="shorttext synchronized">Section Layout</p>
       "! Toggle between onepage concept and tabs.
       "! $values {@link zif_aff_smbc_v1.data:co_section_layout}
@@ -137,13 +137,10 @@ INTERFACE zif_aff_smbc_v1
     "! The Object Page of the Root Entity cannot be configured.
     "! It is sufficient to maintain only those attributes that should deviate from the standard behavior.
     BEGIN OF ty_settings,
-      "! $showAlways
       list_report  TYPE ty_list_report,
-      "! $showAlways
       object_pages TYPE ty_object_pages,
     END OF ty_settings.
   TYPES:
-*        See also {@link if_mbc_cp_api_business_config}
     "! <p class="shorttext">Service Configuration</p>
     BEGIN OF ty_service_configuration,
       "! <p class="shorttext">Service Binding</p>
@@ -163,7 +160,7 @@ INTERFACE zif_aff_smbc_v1
       "! This entity set is used as the root node for the UI.
       "! Only for this root entity set and its associations a UI is shown.
       "! $required
-      root_entity      TYPE c LENGTH 30,
+      root_entity_set      TYPE c LENGTH 30,
       "! <p class="shorttext">Name</p>
       "! Name of the Business Configuration shown in the Maintain Business Configurations app.
       "! Can be translated with the Maintain Translations app
@@ -203,7 +200,6 @@ INTERFACE zif_aff_smbc_v1
       header                TYPE ty_header,
       "! $required
       service_configuration TYPE ty_service_configuration,
-      "! $showAlways
       app_configuration     TYPE ty_settings,
     END OF ty_main.
 

@@ -8,12 +8,11 @@
     "serviceBinding": "/DMO/SB_CUSTOMER_MSSK_O4",
     "serviceName": "/DMO/SD_CUSTOMER_MSSK",
     "serviceVersion": "0001",
-    "rootEntity": "Customer",
+    "rootEntitySet": "Customer",
     "name": "Maintain customer",
     "skipRootEntity": false
   },
   "appConfiguration": {
-    "listReport": {},
-    "objectPages": []
+    "listReport": {}
   }
 }
