@@ -1,4 +1,4 @@
-INTERFACE if_aff_apic_v1
+INTERFACE zif_aff_apic_v1
   PUBLIC.
 
   TYPES:
@@ -8,10 +8,10 @@ INTERFACE if_aff_apic_v1
       "! <p class="shorttext">Format version</p>
       "! Format version
       "! $required
-      format_version TYPE if_aff_types_v1=>ty_format_version,
+      format_version TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header         TYPE if_aff_types_v1=>ty_header_60_cloud,
+      header         TYPE zif_aff_types_v1=>ty_header_60_cloud,
     END OF ty_main.
 ENDINTERFACE.
