@@ -1,6 +1,5 @@
 INTERFACE if_aff_apic_v1
-  PUBLIC .
-
+  PUBLIC.
 
   TYPES:
     "! <p class="shorttext">API Catalog Properties</p>
@@ -14,5 +13,5 @@ INTERFACE if_aff_apic_v1
       "! Header
       "! $required
       header         TYPE if_aff_types_v1=>ty_header_60_cloud,
-    END OF ty_main .
+    END OF ty_main.
 ENDINTERFACE.
