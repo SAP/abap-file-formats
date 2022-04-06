@@ -142,12 +142,12 @@ INTERFACE zif_aff_scp1_v1
     END OF ty_data.
 
   "! <p class="shorttext">Data</p>
-  TYPES tt_data TYPE SORTED TABLE OF ty_data WITH UNIQUE KEY field_name.
+  TYPES ty_row_data TYPE SORTED TABLE OF ty_data WITH UNIQUE KEY field_name.
 
   TYPES:
     "! <p class="shorttext">Selected Language</p>
     "! Details of selected language
-    BEGIN OF ty_translations,
+    BEGIN OF ty_translation,
       "! <p class="shorttext">Language</p>
       "! Language in which the data record is translated
       language    TYPE c LENGTH 1,
@@ -157,10 +157,10 @@ INTERFACE zif_aff_scp1_v1
       "! <p class="shorttext">Value</p>
       "! Value of data record field
       field_value TYPE string,
-    END OF ty_translations.
+    END OF ty_translation.
 
   "! <p class="shorttext">Translations</p>
-  TYPES tt_translations TYPE SORTED TABLE OF ty_translations WITH UNIQUE KEY language field_name.
+  TYPES ty_translations TYPE SORTED TABLE OF ty_translation WITH UNIQUE KEY language field_name.
 
   TYPES:
     "! <p class="shorttext">Data Record</p>
@@ -183,14 +183,14 @@ INTERFACE zif_aff_scp1_v1
       "! <p class="shorttext">Data</p>
       "! Complete data record of selected key value
       "! $required
-      data                    TYPE tt_data,
+      data                    TYPE ty_row_data,
       "! <p class="shorttext">Translations</p>
       "! Translated data records of Table or View included in a BC Set
-      translations            TYPE tt_translations,
+      translations            TYPE ty_translations,
     END OF ty_record.
 
   "! <p class="shorttext">Data Records</p>
-  TYPES tt_records TYPE SORTED TABLE OF ty_record WITH UNIQUE KEY key_value.
+  TYPES ty_records TYPE SORTED TABLE OF ty_record WITH UNIQUE KEY key_value.
 
   TYPES:
     "! <p class="shorttext">Attributes of Table/View Field</p>
@@ -208,7 +208,7 @@ INTERFACE zif_aff_scp1_v1
       additional_info TYPE ty_additional_info,
     END OF ty_field_attribute.
 
-  TYPES tt_field_attributes TYPE SORTED TABLE OF ty_field_attribute WITH UNIQUE KEY field_name.
+  TYPES ty_field_attributes TYPE SORTED TABLE OF ty_field_attribute WITH UNIQUE KEY field_name.
 
   TYPES:
     "! <p class="shorttext">Entity</p>
@@ -221,15 +221,15 @@ INTERFACE zif_aff_scp1_v1
       "! <p class="shorttext">Field Attributes</p>
       "! You can define the behavior for field of table/view during activation
       "! $required
-      field_attributes TYPE tt_field_attributes,
+      field_attributes TYPE ty_field_attributes,
       "! <p class="shorttext">Data Records</p>
       "! Data records of Table or View included in a BC Set
       "! $required
-      data_records     TYPE tt_records,
+      data_records     TYPE ty_records,
     END OF ty_entity.
 
   "! <p class="shorttext">Tables and Views for Selected Customizing Object</p>
-  TYPES tt_entities TYPE SORTED TABLE OF ty_entity WITH UNIQUE KEY table_name.
+  TYPES ty_entities TYPE SORTED TABLE OF ty_entity WITH UNIQUE KEY table_name.
 
   TYPES:
     "! <p class="shorttext">Customizing Object</p>
@@ -251,12 +251,13 @@ INTERFACE zif_aff_scp1_v1
       "! <p class="shorttext">Entities(Tables or Views)</p>
       "! Involved Tables or Views of a Customizing Object
       "! $required
-      entities     TYPE tt_entities,
+      entities     TYPE ty_entities,
     END OF ty_customizing_object.
 
   "! <p class="shorttext">Customizing Objects/Tables</p>
   "! Customizing Objects or Tables included in the BC Set
-  TYPES tt_customizing_objects TYPE SORTED TABLE OF ty_customizing_object WITH UNIQUE KEY object_name object_type img_activity.
+  TYPES ty_customizing_objects TYPE SORTED TABLE OF ty_customizing_object
+                               WITH UNIQUE KEY object_name object_type img_activity.
 
   TYPES:
     "! <p class="shorttext">Sub-BC Sets</p>
@@ -271,7 +272,7 @@ INTERFACE zif_aff_scp1_v1
   "! <p class="shorttext">Sub-BC Sets</p>
   "! A hierarchical BC Set comprises several other BC Sets, which can also be hierarchical.
   "! The hierarchy can have any number of levels.
-  TYPES tt_sub_bcsets TYPE SORTED TABLE OF ty_sub_bcset WITH UNIQUE KEY bc_set.
+  TYPES ty_sub_bcsets TYPE SORTED TABLE OF ty_sub_bcset WITH UNIQUE KEY bc_set.
 
   TYPES:
     "! <p class="shorttext">Business Configuration Set</p>
@@ -290,10 +291,10 @@ INTERFACE zif_aff_scp1_v1
       "! <p class="shorttext">Sub-BC Sets</p>
       "! A hierarchical BC Set comprises several other BC Sets, which can also be hierarchical.
       "! The hierarchy can have any number of levels.
-      sub_bcsets        TYPE tt_sub_bcsets,
+      sub_bcsets          TYPE ty_sub_bcsets,
       "! <p class="shorttext">Customizing Objects</p>
       "! Customizing Objects or Tables included in the BC Set
-      customizing_objects TYPE tt_customizing_objects,
+      customizing_objects TYPE ty_customizing_objects,
     END OF ty_main.
 
 ENDINTERFACE.
