@@ -1,5 +1,5 @@
 INTERFACE zif_aff_scp1_v1
-  PUBLIC .
+  PUBLIC.
 
   "! <p class="shorttext">Type</p>
   TYPES ty_type TYPE c LENGTH 3.
