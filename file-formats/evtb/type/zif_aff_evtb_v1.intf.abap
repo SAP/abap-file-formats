@@ -27,10 +27,6 @@ INTERFACE zif_aff_evtb_v1
       "! Entity event name
       "! $required
       entity_event_name         TYPE c LENGTH 30,
-
-      "! <p class="shorttext">Registered</p>
-      "! Registered
-      producer_type_registered  TYPE abap_bool,
     END OF ty_event.
 
   TYPES:
