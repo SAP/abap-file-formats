@@ -136,11 +136,6 @@
             "description": "Entity event name",
             "type": "string",
             "maxLength": 30
-          },
-          "producerTypeRegistered": {
-            "title": "Registered",
-            "description": "Registered",
-            "type": "boolean"
           }
         },
         "additionalProperties": false,
