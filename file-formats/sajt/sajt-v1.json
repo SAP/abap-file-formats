@@ -91,16 +91,16 @@
                   "description": "Include/exclude values (I/E)",
                   "type": "string",
                   "enum": [
-                    "exclude",
-                    "include"
+                    "include",
+                    "exclude"
                   ],
                   "enumTitles": [
-                    "Exclude",
-                    "Include"
+                    "Include",
+                    "Exclude"
                   ],
                   "enumDescriptions": [
-                    "Exclude",
-                    "Include"
+                    "Include",
+                    "Exclude"
                   ]
                 },
                 "option": {
