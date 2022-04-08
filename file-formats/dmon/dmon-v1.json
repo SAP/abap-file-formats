@@ -81,7 +81,7 @@
           ],
           "enumDescriptions": [
             "Class",
-            "Function Group",
+            "Function group",
             "Program"
           ]
         },
@@ -111,8 +111,8 @@
         "System Daemon"
       ],
       "enumDescriptions": [
-        "application",
-        "system"
+        "Application daemon",
+        "System daemon"
       ],
       "default": "application"
     }

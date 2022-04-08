@@ -15,7 +15,7 @@ INTERFACE zif_aff_dmon_v1
       "! Class
       clas TYPE ty_caller_object_type VALUE 'CLAS',
       "! <p class="shorttext">Function Group</p>
-      "! Function Group
+      "! Function group
       fugr TYPE ty_caller_object_type VALUE 'FUGR',
       "! <p class="shorttext">Program</p>
       "! Program
@@ -45,10 +45,10 @@ INTERFACE zif_aff_dmon_v1
     "! Daemon type
     BEGIN OF co_daemon_type,
       "! <p class="shorttext">Application Daemon</p>
-      "! application
+      "! Application daemon
       application TYPE ty_daemon_type VALUE 'A',
       "! <p class="shorttext">System Daemon</p>
-      "! system
+      "! System daemon
       system      TYPE ty_daemon_type VALUE 'S',
     END OF co_daemon_type.
 
