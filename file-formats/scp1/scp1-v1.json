@@ -256,7 +256,7 @@
                       },
                       "operationAtActivation": {
                         "title": "Operation at Activation",
-                        "description": "Data records which are to be deleted at activation are flagged with value \u0027L\u0027",
+                        "description": "Data records which are to be deleted at activation are flagged with value 'L'",
                         "type": "string",
                         "enum": [
                           "insertOrUpdate",
@@ -267,8 +267,8 @@
                           "Delete"
                         ],
                         "enumDescriptions": [
-                          "Data records which are to be inserted/updated at activation are flagged with value \u0027\u0027",
-                          "Data records which are to be deleted at activation are flagged with value \u0027L\u0027"
+                          "Data records which are to be inserted/updated at activation are flagged with value ''",
+                          "Data records which are to be deleted at activation are flagged with value 'L'"
                         ]
                       },
                       "data": {
