@@ -1,1202 +1,1493 @@
 {
-    "header": {
-      "abapLanguageVersion": "standard"
+  "formatVersion": "1",
+  "header": {
+    "abapLanguageVersion": "standard",
+    "description": "AFF Example Object for SCP1",
+    "originalLanguage": "en"
+  },
+  "attributes": {
+    "type": "simple",
+    "minimumRelease": "allReleases",
+    "maximumRelease": "allReleases"
+  },
+  "subBcSets": [],
+  "customizingObjects": [
+    {
+      "objectName": "ADDR_PCDFORMAT",
+      "objectType": "tableWithTextTable",
+      "imgActivity": "SAPG_0005",
+      "entities": [
+        {
+          "name": "ADDR_PCDFORMAT",
+          "fieldAttributes": [
+            {
+              "fieldName": "COUNTRY",
+              "fieldAttributeValue": "fixedKeyField"
+            },
+            {
+              "fieldName": "POSTAL_CODE_FORMAT",
+              "fieldAttributeValue": "defaultValue"
+            }
+          ],
+          "dataRecords": [
+            {
+              "keyValue": "BN",
+              "incomplete": false,
+              "operationAtActivation": "insertOrUpdate",
+              "data": [
+                {
+                  "fieldName": "COUNTRY",
+                  "fieldValue": "BN"
+                },
+                {
+                  "fieldName": "POSTAL_CODE_FORMAT",
+                  "fieldValue": "AANNNN"
+                }
+              ]
+            },
+            {
+              "keyValue": "BR",
+              "incomplete": false,
+              "operationAtActivation": "insertOrUpdate",
+              "data": [
+                {
+                  "fieldName": "COUNTRY",
+                  "fieldValue": "BR"
+                },
+                {
+                  "fieldName": "POSTAL_CODE_FORMAT",
+                  "fieldValue": "NNNNN-NNN"
+                }
+              ]
+            },
+            {
+              "keyValue": "CA",
+              "incomplete": false,
+              "operationAtActivation": "insertOrUpdate",
+              "data": [
+                {
+                  "fieldName": "COUNTRY",
+                  "fieldValue": "CA"
+                },
+                {
+                  "fieldName": "POSTAL_CODE_FORMAT",
+                  "fieldValue": "ANA NAN"
+                }
+              ]
+            },
+            {
+              "keyValue": "CH",
+              "incomplete": false,
+              "operationAtActivation": "insertOrUpdate",
+              "data": [
+                {
+                  "fieldName": "COUNTRY",
+                  "fieldValue": "CH"
+                },
+                {
+                  "fieldName": "POSTAL_CODE_FORMAT",
+                  "fieldValue": "ANNN"
+                }
+              ]
+            },
+            {
+              "keyValue": "CZ",
+              "incomplete": false,
+              "operationAtActivation": "insertOrUpdate",
+              "data": [
+                {
+                  "fieldName": "COUNTRY",
+                  "fieldValue": "CZ"
+                },
+                {
+                  "fieldName": "POSTAL_CODE_FORMAT",
+                  "fieldValue": "NNN NN"
+                }
+              ]
+            },
+            {
+              "keyValue": "HN",
+              "incomplete": false,
+              "operationAtActivation": "insertOrUpdate",
+              "data": [
+                {
+                  "fieldName": "COUNTRY",
+                  "fieldValue": "HN"
+                },
+                {
+                  "fieldName": "POSTAL_CODE_FORMAT",
+                  "fieldValue": "AANNNN"
+                }
+              ]
+            },
+            {
+              "keyValue": "JP",
+              "incomplete": false,
+              "operationAtActivation": "insertOrUpdate",
+              "data": [
+                {
+                  "fieldName": "COUNTRY",
+                  "fieldValue": "JP"
+                },
+                {
+                  "fieldName": "POSTAL_CODE_FORMAT",
+                  "fieldValue": "NNN-NNNN"
+                }
+              ]
+            },
+            {
+              "keyValue": "KR",
+              "incomplete": false,
+              "operationAtActivation": "insertOrUpdate",
+              "data": [
+                {
+                  "fieldName": "COUNTRY",
+                  "fieldValue": "KR"
+                },
+                {
+                  "fieldName": "POSTAL_CODE_FORMAT",
+                  "fieldValue": "NNNNN"
+                }
+              ]
+            },
+            {
+              "keyValue": "MT",
+              "incomplete": false,
+              "operationAtActivation": "insertOrUpdate",
+              "data": [
+                {
+                  "fieldName": "COUNTRY",
+                  "fieldValue": "MT"
+                },
+                {
+                  "fieldName": "POSTAL_CODE_FORMAT",
+                  "fieldValue": "AAA NNNN"
+                }
+              ]
+            },
+            {
+              "keyValue": "MU",
+              "incomplete": false,
+              "operationAtActivation": "insertOrUpdate",
+              "data": [
+                {
+                  "fieldName": "COUNTRY",
+                  "fieldValue": "MU"
+                },
+                {
+                  "fieldName": "POSTAL_CODE_FORMAT",
+                  "fieldValue": "NNNNN"
+                }
+              ]
+            },
+            {
+              "keyValue": "NI",
+              "incomplete": false,
+              "operationAtActivation": "insertOrUpdate",
+              "data": [
+                {
+                  "fieldName": "COUNTRY",
+                  "fieldValue": "NI"
+                },
+                {
+                  "fieldName": "POSTAL_CODE_FORMAT",
+                  "fieldValue": "NNNNN"
+                }
+              ]
+            },
+            {
+              "keyValue": "NL",
+              "incomplete": false,
+              "operationAtActivation": "insertOrUpdate",
+              "data": [
+                {
+                  "fieldName": "COUNTRY",
+                  "fieldValue": "NL"
+                },
+                {
+                  "fieldName": "POSTAL_CODE_FORMAT",
+                  "fieldValue": "NNNN BB"
+                }
+              ]
+            },
+            {
+              "keyValue": "PL",
+              "incomplete": false,
+              "operationAtActivation": "insertOrUpdate",
+              "data": [
+                {
+                  "fieldName": "COUNTRY",
+                  "fieldValue": "PL"
+                },
+                {
+                  "fieldName": "POSTAL_CODE_FORMAT",
+                  "fieldValue": "NN-NNN"
+                }
+              ]
+            },
+            {
+              "keyValue": "SE",
+              "incomplete": false,
+              "operationAtActivation": "insertOrUpdate",
+              "data": [
+                {
+                  "fieldName": "COUNTRY",
+                  "fieldValue": "SE"
+                },
+                {
+                  "fieldName": "POSTAL_CODE_FORMAT",
+                  "fieldValue": "NNN NN"
+                }
+              ]
+            },
+            {
+              "keyValue": "SK",
+              "incomplete": false,
+              "operationAtActivation": "insertOrUpdate",
+              "data": [
+                {
+                  "fieldName": "COUNTRY",
+                  "fieldValue": "SK"
+                },
+                {
+                  "fieldName": "POSTAL_CODE_FORMAT",
+                  "fieldValue": "NNN NN"
+                }
+              ]
+            },
+            {
+              "keyValue": "SO",
+              "incomplete": false,
+              "operationAtActivation": "insertOrUpdate",
+              "data": [
+                {
+                  "fieldName": "COUNTRY",
+                  "fieldValue": "SO"
+                },
+                {
+                  "fieldName": "POSTAL_CODE_FORMAT",
+                  "fieldValue": "AA  NNNNN"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
-    "attributes": {
-      "type": "simple",
-      "minimumRelease": "700",
-      "maximumRelease": "allReleases"
+    {
+      "objectName": "V_T005S",
+      "objectType": "view",
+      "imgActivity": "SIMG_CFMENUSAPCOVK2",
+      "entities": [
+        {
+          "name": "V_T005S",
+          "fieldAttributes": [
+            {
+              "fieldName": "LAND1",
+              "fieldAttributeValue": "fixedKeyField"
+            },
+            {
+              "fieldName": "BLAND",
+              "fieldAttributeValue": "fixedKeyField"
+            },
+            {
+              "fieldName": "BEZEI",
+              "fieldAttributeValue": "defaultValue"
+            }
+          ],
+          "dataRecords": [
+            {
+              "keyValue": "AD 02",
+              "incomplete": false,
+              "operationAtActivation": "insertOrUpdate",
+              "data": [
+                {
+                  "fieldName": "LAND1",
+                  "fieldValue": "AD"
+                },
+                {
+                  "fieldName": "BLAND",
+                  "fieldValue": "02"
+                }
+              ],
+              "translations": [
+                {
+                  "language": "E",
+                  "fieldName": "BEZEI",
+                  "fieldValue": "Canillo"
+                },
+                {
+                  "language": "D",
+                  "fieldName": "BEZEI",
+                  "fieldValue": "Canillo"
+                }
+              ]
+            },
+            {
+              "keyValue": "AD 03",
+              "incomplete": false,
+              "operationAtActivation": "insertOrUpdate",
+              "data": [
+                {
+                  "fieldName": "LAND1",
+                  "fieldValue": "AD"
+                },
+                {
+                  "fieldName": "BLAND",
+                  "fieldValue": "03"
+                }
+              ],
+              "translations": [
+                {
+                  "language": "E",
+                  "fieldName": "BEZEI",
+                  "fieldValue": "Encamp"
+                },
+                {
+                  "language": "D",
+                  "fieldName": "BEZEI",
+                  "fieldValue": "Encamp"
+                }
+              ]
+            },
+            {
+              "keyValue": "AD 04",
+              "incomplete": false,
+              "operationAtActivation": "insertOrUpdate",
+              "data": [
+                {
+                  "fieldName": "LAND1",
+                  "fieldValue": "AD"
+                },
+                {
+                  "fieldName": "BLAND",
+                  "fieldValue": "04"
+                }
+              ],
+              "translations": [
+                {
+                  "language": "E",
+                  "fieldName": "BEZEI",
+                  "fieldValue": "La Massana"
+                },
+                {
+                  "language": "D",
+                  "fieldName": "BEZEI",
+                  "fieldValue": "La Massana"
+                }
+              ]
+            },
+            {
+              "keyValue": "AD 05",
+              "incomplete": false,
+              "operationAtActivation": "insertOrUpdate",
+              "data": [
+                {
+                  "fieldName": "LAND1",
+                  "fieldValue": "AD"
+                },
+                {
+                  "fieldName": "BLAND",
+                  "fieldValue": "05"
+                }
+              ],
+              "translations": [
+                {
+                  "language": "E",
+                  "fieldName": "BEZEI",
+                  "fieldValue": "Ordino"
+                },
+                {
+                  "language": "D",
+                  "fieldName": "BEZEI",
+                  "fieldValue": "Ordino"
+                }
+              ]
+            },
+            {
+              "keyValue": "AD 06",
+              "incomplete": false,
+              "operationAtActivation": "insertOrUpdate",
+              "data": [
+                {
+                  "fieldName": "LAND1",
+                  "fieldValue": "AD"
+                },
+                {
+                  "fieldName": "BLAND",
+                  "fieldValue": "06"
+                }
+              ],
+              "translations": [
+                {
+                  "language": "E",
+                  "fieldName": "BEZEI",
+                  "fieldValue": "Sant Julià de Lòria"
+                },
+                {
+                  "language": "D",
+                  "fieldName": "BEZEI",
+                  "fieldValue": "Sant Julià de Lòria"
+                }
+              ]
+            },
+            {
+              "keyValue": "AD 07",
+              "incomplete": false,
+              "operationAtActivation": "insertOrUpdate",
+              "data": [
+                {
+                  "fieldName": "LAND1",
+                  "fieldValue": "AD"
+                },
+                {
+                  "fieldName": "BLAND",
+                  "fieldValue": "07"
+                }
+              ],
+              "translations": [
+                {
+                  "language": "E",
+                  "fieldName": "BEZEI",
+                  "fieldValue": "Andorra la Vella"
+                },
+                {
+                  "language": "D",
+                  "fieldName": "BEZEI",
+                  "fieldValue": "Andorra la Vella"
+                }
+              ]
+            },
+            {
+              "keyValue": "AD 08",
+              "incomplete": false,
+              "operationAtActivation": "insertOrUpdate",
+              "data": [
+                {
+                  "fieldName": "LAND1",
+                  "fieldValue": "AD"
+                },
+                {
+                  "fieldName": "BLAND",
+                  "fieldValue": "08"
+                }
+              ],
+              "translations": [
+                {
+                  "language": "E",
+                  "fieldName": "BEZEI",
+                  "fieldValue": "Escaldes-Engordany"
+                },
+                {
+                  "language": "D",
+                  "fieldName": "BEZEI",
+                  "fieldValue": "Escaldes-Engordany"
+                }
+              ]
+            },
+            {
+              "keyValue": "AE AJ",
+              "incomplete": false,
+              "operationAtActivation": "insertOrUpdate",
+              "data": [
+                {
+                  "fieldName": "LAND1",
+                  "fieldValue": "AE"
+                },
+                {
+                  "fieldName": "BLAND",
+                  "fieldValue": "AJ"
+                }
+              ],
+              "translations": [
+                {
+                  "language": "E",
+                  "fieldName": "BEZEI",
+                  "fieldValue": "Ajman"
+                },
+                {
+                  "language": "D",
+                  "fieldName": "BEZEI",
+                  "fieldValue": "Ajman"
+                }
+              ]
+            },
+            {
+              "keyValue": "AE AZ",
+              "incomplete": false,
+              "operationAtActivation": "insertOrUpdate",
+              "data": [
+                {
+                  "fieldName": "LAND1",
+                  "fieldValue": "AE"
+                },
+                {
+                  "fieldName": "BLAND",
+                  "fieldValue": "AZ"
+                }
+              ],
+              "translations": [
+                {
+                  "language": "E",
+                  "fieldName": "BEZEI",
+                  "fieldValue": "Abu Dhabi"
+                },
+                {
+                  "language": "D",
+                  "fieldName": "BEZEI",
+                  "fieldValue": "Abu Dhabi"
+                }
+              ]
+            },
+            {
+              "keyValue": "AE DU",
+              "incomplete": false,
+              "operationAtActivation": "insertOrUpdate",
+              "data": [
+                {
+                  "fieldName": "LAND1",
+                  "fieldValue": "AE"
+                },
+                {
+                  "fieldName": "BLAND",
+                  "fieldValue": "DU"
+                }
+              ],
+              "translations": [
+                {
+                  "language": "E",
+                  "fieldName": "BEZEI",
+                  "fieldValue": "Dubai"
+                },
+                {
+                  "language": "D",
+                  "fieldName": "BEZEI",
+                  "fieldValue": "Dubai"
+                }
+              ]
+            },
+            {
+              "keyValue": "AE FU",
+              "incomplete": false,
+              "operationAtActivation": "insertOrUpdate",
+              "data": [
+                {
+                  "fieldName": "LAND1",
+                  "fieldValue": "AE"
+                },
+                {
+                  "fieldName": "BLAND",
+                  "fieldValue": "FU"
+                }
+              ],
+              "translations": [
+                {
+                  "language": "E",
+                  "fieldName": "BEZEI",
+                  "fieldValue": "Fujairah"
+                },
+                {
+                  "language": "D",
+                  "fieldName": "BEZEI",
+                  "fieldValue": "Fujairah"
+                }
+              ]
+            },
+            {
+              "keyValue": "AE RK",
+              "incomplete": false,
+              "operationAtActivation": "insertOrUpdate",
+              "data": [
+                {
+                  "fieldName": "LAND1",
+                  "fieldValue": "AE"
+                },
+                {
+                  "fieldName": "BLAND",
+                  "fieldValue": "RK"
+                }
+              ],
+              "translations": [
+                {
+                  "language": "E",
+                  "fieldName": "BEZEI",
+                  "fieldValue": "Ras al-Khaimah"
+                },
+                {
+                  "language": "D",
+                  "fieldName": "BEZEI",
+                  "fieldValue": "Ras al-Khaimah"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
-    "subBcsets": [],
-    "customizingObjects": [
-      {
-        "objectName": "ADDR_PCDFORMAT",
-        "objectType": "tableWithTextTable",
-        "imgActivity": "SAPG_0005",
-        "entities": [
-          {
-            "tableName": "ADDR_PCDFORMAT",
-            "fieldAttributes": [
-              {
-                "fieldName": "COUNTRY",
-                "additionalInfo": "fixedKeyField"
-              },
-              {
-                "fieldName": "POSTAL_CODE_FORMAT",
-                "additionalInfo": "defaultValue"
-              }
-            ],
-            "dataRecords": [
-              {
-                "keyValue": "BN",
-                "incomplete": "complete",
-                "operationAtActivation": "insertOrUpdate",
-                "data": [
-                  {
-                    "fieldName": "COUNTRY",
-                    "fieldValue": "BN"
-                  },
-                  {
-                    "fieldName": "POSTAL_CODE_FORMAT",
-                    "fieldValue": "AANNNN"
-                  }
-                ]
-              },
-              {
-                "keyValue": "BR",
-                "incomplete": "complete",
-                "operationAtActivation": "insertOrUpdate",
-                "data": [
-                  {
-                    "fieldName": "COUNTRY",
-                    "fieldValue": "BR"
-                  },
-                  {
-                    "fieldName": "POSTAL_CODE_FORMAT",
-                    "fieldValue": "NNNNN-NNN"
-                  }
-                ]
-              },
-              {
-                "keyValue": "CA",
-                "incomplete": "complete",
-                "operationAtActivation": "insertOrUpdate",
-                "data": [
-                  {
-                    "fieldName": "COUNTRY",
-                    "fieldValue": "CA"
-                  },
-                  {
-                    "fieldName": "POSTAL_CODE_FORMAT",
-                    "fieldValue": "ANA NAN"
-                  }
-                ]
-              },
-              {
-                "keyValue": "CH",
-                "incomplete": "complete",
-                "operationAtActivation": "insertOrUpdate",
-                "data": [
-                  {
-                    "fieldName": "COUNTRY",
-                    "fieldValue": "CH"
-                  },
-                  {
-                    "fieldName": "POSTAL_CODE_FORMAT",
-                    "fieldValue": "ANNN"
-                  }
-                ]
-              },
-              {
-                "keyValue": "CZ",
-                "incomplete": "complete",
-                "operationAtActivation": "insertOrUpdate",
-                "data": [
-                  {
-                    "fieldName": "COUNTRY",
-                    "fieldValue": "CZ"
-                  },
-                  {
-                    "fieldName": "POSTAL_CODE_FORMAT",
-                    "fieldValue": "NNN NN"
-                  }
-                ]
-              },
-              {
-                "keyValue": "HN",
-                "incomplete": "complete",
-                "operationAtActivation": "insertOrUpdate",
-                "data": [
-                  {
-                    "fieldName": "COUNTRY",
-                    "fieldValue": "HN"
-                  },
-                  {
-                    "fieldName": "POSTAL_CODE_FORMAT",
-                    "fieldValue": "AANNNN"
-                  }
-                ]
-              },
-              {
-                "keyValue": "JP",
-                "incomplete": "complete",
-                "operationAtActivation": "insertOrUpdate",
-                "data": [
-                  {
-                    "fieldName": "COUNTRY",
-                    "fieldValue": "JP"
-                  },
-                  {
-                    "fieldName": "POSTAL_CODE_FORMAT",
-                    "fieldValue": "NNN-NNNN"
-                  }
-                ]
-              },
-              {
-                "keyValue": "KR",
-                "incomplete": "complete",
-                "operationAtActivation": "insertOrUpdate",
-                "data": [
-                  {
-                    "fieldName": "COUNTRY",
-                    "fieldValue": "KR"
-                  },
-                  {
-                    "fieldName": "POSTAL_CODE_FORMAT",
-                    "fieldValue": "NNNNN"
-                  }
-                ]
-              },
-              {
-                "keyValue": "MT",
-                "incomplete": "complete",
-                "operationAtActivation": "insertOrUpdate",
-                "data": [
-                  {
-                    "fieldName": "COUNTRY",
-                    "fieldValue": "MT"
-                  },
-                  {
-                    "fieldName": "POSTAL_CODE_FORMAT",
-                    "fieldValue": "AAA NNNN"
-                  }
-                ]
-              },
-              {
-                "keyValue": "MU",
-                "incomplete": "complete",
-                "operationAtActivation": "insertOrUpdate",
-                "data": [
-                  {
-                    "fieldName": "COUNTRY",
-                    "fieldValue": "MU"
-                  },
-                  {
-                    "fieldName": "POSTAL_CODE_FORMAT",
-                    "fieldValue": "NNNNN"
-                  }
-                ]
-              },
-              {
-                "keyValue": "NI",
-                "incomplete": "complete",
-                "operationAtActivation": "insertOrUpdate",
-                "data": [
-                  {
-                    "fieldName": "COUNTRY",
-                    "fieldValue": "NI"
-                  },
-                  {
-                    "fieldName": "POSTAL_CODE_FORMAT",
-                    "fieldValue": "NNNNN"
-                  }
-                ]
-              },
-              {
-                "keyValue": "NL",
-                "incomplete": "complete",
-                "operationAtActivation": "insertOrUpdate",
-                "data": [
-                  {
-                    "fieldName": "COUNTRY",
-                    "fieldValue": "NL"
-                  },
-                  {
-                    "fieldName": "POSTAL_CODE_FORMAT",
-                    "fieldValue": "NNNN BB"
-                  }
-                ]
-              },
-              {
-                "keyValue": "PL",
-                "incomplete": "complete",
-                "operationAtActivation": "insertOrUpdate",
-                "data": [
-                  {
-                    "fieldName": "COUNTRY",
-                    "fieldValue": "PL"
-                  },
-                  {
-                    "fieldName": "POSTAL_CODE_FORMAT",
-                    "fieldValue": "NN-NNN"
-                  }
-                ]
-              },
-              {
-                "keyValue": "SE",
-                "incomplete": "complete",
-                "operationAtActivation": "insertOrUpdate",
-                "data": [
-                  {
-                    "fieldName": "COUNTRY",
-                    "fieldValue": "SE"
-                  },
-                  {
-                    "fieldName": "POSTAL_CODE_FORMAT",
-                    "fieldValue": "NNN NN"
-                  }
-                ]
-              },
-              {
-                "keyValue": "SK",
-                "incomplete": "complete",
-                "operationAtActivation": "insertOrUpdate",
-                "data": [
-                  {
-                    "fieldName": "COUNTRY",
-                    "fieldValue": "SK"
-                  },
-                  {
-                    "fieldName": "POSTAL_CODE_FORMAT",
-                    "fieldValue": "NNN NN"
-                  }
-                ]
-              },
-              {
-                "keyValue": "SO",
-                "incomplete": "complete",
-                "operationAtActivation": "insertOrUpdate",
-                "data": [
-                  {
-                    "fieldName": "COUNTRY",
-                    "fieldValue": "SO"
-                  },
-                  {
-                    "fieldName": "POSTAL_CODE_FORMAT",
-                    "fieldValue": "AA  NNNNN"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "objectName": "V_T005S",
-        "objectType": "view",
-        "imgActivity": "SIMG_CFMENUSAPCOVK2",
-        "entities": [
-          {
-            "tableName": "V_T005S",
-            "fieldAttributes": [
-              {
-                "fieldName": "LAND1",
-                "additionalInfo": "fixedKeyField"
-              },
-              {
-                "fieldName": "BLAND",
-                "additionalInfo": "fixedKeyField"
-              },
-              {
-                "fieldName": "BEZEI",
-                "additionalInfo": "defaultValue"
-              }
-            ],
-            "dataRecords": [
-              {
-                "keyValue": "AD 02",
-                "incomplete": "complete",
-                "operationAtActivation": "insertOrUpdate",
-                "data": [
-                  {
-                    "fieldName": "LAND1",
-                    "fieldValue": "AD"
-                  },
-                  {
-                    "fieldName": "BLAND",
-                    "fieldValue": "02"
-                  }
-                ],
-                "translations": [
-                  {
-                    "language": "E",
-                    "fieldName": "BEZEI",
-                    "fieldValue": "Canillo"
-                  },
-                  {
-                    "language": "D",
-                    "fieldName": "BEZEI",
-                    "fieldValue": "Canillo"
-                  }
-                ]
-              },
-              {
-                "keyValue": "AD 03",
-                "incomplete": "complete",
-                "operationAtActivation": "insertOrUpdate",
-                "data": [
-                  {
-                    "fieldName": "LAND1",
-                    "fieldValue": "AD"
-                  },
-                  {
-                    "fieldName": "BLAND",
-                    "fieldValue": "03"
-                  }
-                ],
-                "translations": [
-                  {
-                    "language": "E",
-                    "fieldName": "BEZEI",
-                    "fieldValue": "Encamp"
-                  },
-                  {
-                    "language": "D",
-                    "fieldName": "BEZEI",
-                    "fieldValue": "Encamp"
-                  }
-                ]
-              },
-              {
-                "keyValue": "AD 04",
-                "incomplete": "complete",
-                "operationAtActivation": "insertOrUpdate",
-                "data": [
-                  {
-                    "fieldName": "LAND1",
-                    "fieldValue": "AD"
-                  },
-                  {
-                    "fieldName": "BLAND",
-                    "fieldValue": "04"
-                  }
-                ],
-                "translations": [
-                  {
-                    "language": "E",
-                    "fieldName": "BEZEI",
-                    "fieldValue": "La Massana"
-                  },
-                  {
-                    "language": "D",
-                    "fieldName": "BEZEI",
-                    "fieldValue": "La Massana"
-                  }
-                ]
-              },
-              {
-                "keyValue": "AD 05",
-                "incomplete": "complete",
-                "operationAtActivation": "insertOrUpdate",
-                "data": [
-                  {
-                    "fieldName": "LAND1",
-                    "fieldValue": "AD"
-                  },
-                  {
-                    "fieldName": "BLAND",
-                    "fieldValue": "05"
-                  }
-                ],
-                "translations": [
-                  {
-                    "language": "E",
-                    "fieldName": "BEZEI",
-                    "fieldValue": "Ordino"
-                  },
-                  {
-                    "language": "D",
-                    "fieldName": "BEZEI",
-                    "fieldValue": "Ordino"
-                  }
-                ]
-              },
-              {
-                "keyValue": "AD 06",
-                "incomplete": "complete",
-                "operationAtActivation": "insertOrUpdate",
-                "data": [
-                  {
-                    "fieldName": "LAND1",
-                    "fieldValue": "AD"
-                  },
-                  {
-                    "fieldName": "BLAND",
-                    "fieldValue": "06"
-                  }
-                ],
-                "translations": [
-                  {
-                    "language": "E",
-                    "fieldName": "BEZEI",
-                    "fieldValue": "Sant Julià de Lòria"
-                  },
-                  {
-                    "language": "D",
-                    "fieldName": "BEZEI",
-                    "fieldValue": "Sant Julià de Lòria"
-                  }
-                ]
-              },
-              {
-                "keyValue": "AD 07",
-                "incomplete": "complete",
-                "operationAtActivation": "insertOrUpdate",
-                "data": [
-                  {
-                    "fieldName": "LAND1",
-                    "fieldValue": "AD"
-                  },
-                  {
-                    "fieldName": "BLAND",
-                    "fieldValue": "07"
-                  }
-                ],
-                "translations": [
-                  {
-                    "language": "E",
-                    "fieldName": "BEZEI",
-                    "fieldValue": "Andorra la Vella"
-                  },
-                  {
-                    "language": "D",
-                    "fieldName": "BEZEI",
-                    "fieldValue": "Andorra la Vella"
-                  }
-                ]
-              },
-              {
-                "keyValue": "AD 08",
-                "incomplete": "complete",
-                "operationAtActivation": "insertOrUpdate",
-                "data": [
-                  {
-                    "fieldName": "LAND1",
-                    "fieldValue": "AD"
-                  },
-                  {
-                    "fieldName": "BLAND",
-                    "fieldValue": "08"
-                  }
-                ],
-                "translations": [
-                  {
-                    "language": "E",
-                    "fieldName": "BEZEI",
-                    "fieldValue": "Escaldes-Engordany"
-                  },
-                  {
-                    "language": "D",
-                    "fieldName": "BEZEI",
-                    "fieldValue": "Escaldes-Engordany"
-                  }
-                ]
-              },
-              {
-                "keyValue": "AE AJ",
-                "incomplete": "complete",
-                "operationAtActivation": "insertOrUpdate",
-                "data": [
-                  {
-                    "fieldName": "LAND1",
-                    "fieldValue": "AE"
-                  },
-                  {
-                    "fieldName": "BLAND",
-                    "fieldValue": "AJ"
-                  }
-                ],
-                "translations": [
-                  {
-                    "language": "E",
-                    "fieldName": "BEZEI",
-                    "fieldValue": "Ajman"
-                  },
-                  {
-                    "language": "D",
-                    "fieldName": "BEZEI",
-                    "fieldValue": "Ajman"
-                  }
-                ]
-              },
-              {
-                "keyValue": "AE AZ",
-                "incomplete": "complete",
-                "operationAtActivation": "insertOrUpdate",
-                "data": [
-                  {
-                    "fieldName": "LAND1",
-                    "fieldValue": "AE"
-                  },
-                  {
-                    "fieldName": "BLAND",
-                    "fieldValue": "AZ"
-                  }
-                ],
-                "translations": [
-                  {
-                    "language": "E",
-                    "fieldName": "BEZEI",
-                    "fieldValue": "Abu Dhabi"
-                  },
-                  {
-                    "language": "D",
-                    "fieldName": "BEZEI",
-                    "fieldValue": "Abu Dhabi"
-                  }
-                ]
-              },
-              {
-                "keyValue": "AE DU",
-                "incomplete": "complete",
-                "operationAtActivation": "insertOrUpdate",
-                "data": [
-                  {
-                    "fieldName": "LAND1",
-                    "fieldValue": "AE"
-                  },
-                  {
-                    "fieldName": "BLAND",
-                    "fieldValue": "DU"
-                  }
-                ],
-                "translations": [
-                  {
-                    "language": "E",
-                    "fieldName": "BEZEI",
-                    "fieldValue": "Dubai"
-                  },
-                  {
-                    "language": "D",
-                    "fieldName": "BEZEI",
-                    "fieldValue": "Dubai"
-                  }
-                ]
-              },
-              {
-                "keyValue": "AE FU",
-                "incomplete": "complete",
-                "operationAtActivation": "insertOrUpdate",
-                "data": [
-                  {
-                    "fieldName": "LAND1",
-                    "fieldValue": "AE"
-                  },
-                  {
-                    "fieldName": "BLAND",
-                    "fieldValue": "FU"
-                  }
-                ],
-                "translations": [
-                  {
-                    "language": "E",
-                    "fieldName": "BEZEI",
-                    "fieldValue": "Fujairah"
-                  },
-                  {
-                    "language": "D",
-                    "fieldName": "BEZEI",
-                    "fieldValue": "Fujairah"
-                  }
-                ]
-              },
-              {
-                "keyValue": "AE RK",
-                "incomplete": "complete",
-                "operationAtActivation": "insertOrUpdate",
-                "data": [
-                  {
-                    "fieldName": "LAND1",
-                    "fieldValue": "AE"
-                  },
-                  {
-                    "fieldName": "BLAND",
-                    "fieldValue": "RK"
-                  }
-                ],
-                "translations": [
-                  {
-                    "language": "E",
-                    "fieldName": "BEZEI",
-                    "fieldValue": "Ras al-Khaimah"
-                  },
-                  {
-                    "language": "D",
-                    "fieldName": "BEZEI",
-                    "fieldValue": "Ras al-Khaimah"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "objectName": "V_T005_BAS",
-        "objectType": "view",
-        "imgActivity": "SIMG_CFMENUSAPCOY07",
-        "entities": [
-          {
-            "tableName": "V_T005_BAS",
-            "fieldAttributes": [
-              {
-                "fieldName": "LAND1",
-                "additionalInfo": "fixedKeyField"
-              },
-              {
-                "fieldName": "LANDK",
-                "additionalInfo": "defaultValue"
-              },
-              {
-                "fieldName": "LANDX",
-                "additionalInfo": "defaultValue"
-              },
-              {
-                "fieldName": "LANDX50",
-                "additionalInfo": "defaultValue"
-              },
-              {
-                "fieldName": "NATIO",
-                "additionalInfo": "defaultValue"
-              },
-              {
-                "fieldName": "NATIO50",
-                "additionalInfo": "defaultValue"
-              },
-              {
-                "fieldName": "LNPLZ",
-                "additionalInfo": "defaultValue"
-              },
-              {
-                "fieldName": "PRPLZ",
-                "additionalInfo": "defaultValue"
-              },
-              {
-                "fieldName": "XPLZS",
-                "additionalInfo": "defaultValue"
-              },
-              {
-                "fieldName": "XPLPF",
-                "additionalInfo": "defaultValue"
-              },
-              {
-                "fieldName": "ADDRS",
-                "additionalInfo": "defaultValue"
-              },
-              {
-                "fieldName": "XADDR",
-                "additionalInfo": "defaultValue"
-              },
-              {
-                "fieldName": "NMFMT",
-                "additionalInfo": "defaultValue"
-              },
-              {
-                "fieldName": "XREGS",
-                "additionalInfo": "defaultValue"
-              },
-              {
-                "fieldName": "XPLST",
-                "additionalInfo": "defaultValue"
-              },
-              {
-                "fieldName": "SPRAS",
-                "additionalInfo": "defaultValue"
-              },
-              {
-                "fieldName": "SPTXT",
-                "additionalInfo": "defaultValue"
-              },
-              {
-                "fieldName": "XDEZP",
-                "additionalInfo": "defaultValue"
-              },
-              {
-                "fieldName": "DATFM",
-                "additionalInfo": "defaultValue"
-              },
-              {
-                "fieldName": "TIMEFM",
-                "additionalInfo": "defaultValue"
-              },
-              {
-                "fieldName": "INTCA",
-                "additionalInfo": "defaultValue"
-              },
-              {
-                "fieldName": "INTCA3",
-                "additionalInfo": "defaultValue"
-              },
-              {
-                "fieldName": "INTCN3",
-                "additionalInfo": "defaultValue"
-              },
-              {
-                "fieldName": "XEGLD",
-                "additionalInfo": "defaultValue"
-              },
-              {
-                "fieldName": "XSKFN",
-                "additionalInfo": "defaultValue"
-              },
-              {
-                "fieldName": "XMWSN",
-                "additionalInfo": "defaultValue"
-              }
-            ],
-            "dataRecords": [
-              {
-                "keyValue": "AD",
-                "incomplete": "complete",
-                "operationAtActivation": "insertOrUpdate",
-                "data": [
-                  {
-                    "fieldName": "LAND1",
-                    "fieldValue": "AD"
-                  },
-                  {
-                    "fieldName": "LANDK",
-                    "fieldValue": "AND"
-                  },
-                  {
-                    "fieldName": "LNPLZ",
-                    "fieldValue": "05"
-                  },
-                  {
-                    "fieldName": "PRPLZ",
-                    "fieldValue": "9"
-                  },
-                  {
-                    "fieldName": "XPLZS",
-                    "fieldValue": "X"
-                  },
-                  {
-                    "fieldName": "XPLPF",
-                    "fieldValue": ""
-                  },
-                  {
-                    "fieldName": "ADDRS",
-                    "fieldValue": ""
-                  },
-                  {
-                    "fieldName": "XADDR",
-                    "fieldValue": "X"
-                  },
-                  {
-                    "fieldName": "NMFMT",
-                    "fieldValue": ""
-                  },
-                  {
-                    "fieldName": "XREGS",
-                    "fieldValue": ""
-                  },
-                  {
-                    "fieldName": "XPLST",
-                    "fieldValue": ""
-                  },
-                  {
-                    "fieldName": "SPRAS",
-                    "fieldValue": "S"
-                  },
-                  {
-                    "fieldName": "XDEZP",
-                    "fieldValue": ""
-                  },
-                  {
-                    "fieldName": "DATFM",
-                    "fieldValue": "1"
-                  },
-                  {
-                    "fieldName": "TIMEFM",
-                    "fieldValue": "0"
-                  },
-                  {
-                    "fieldName": "INTCA",
-                    "fieldValue": "AD"
-                  },
-                  {
-                    "fieldName": "INTCA3",
-                    "fieldValue": "AND"
-                  },
-                  {
-                    "fieldName": "INTCN3",
-                    "fieldValue": "020"
-                  },
-                  {
-                    "fieldName": "XEGLD",
-                    "fieldValue": ""
-                  },
-                  {
-                    "fieldName": "XSKFN",
-                    "fieldValue": ""
-                  },
-                  {
-                    "fieldName": "XMWSN",
-                    "fieldValue": ""
-                  }
-                ],
-                "translations": [
-                  {
-                    "language": "E",
-                    "fieldName": "LANDX",
-                    "fieldValue": "Andorra"
-                  },
-                  {
-                    "language": "E",
-                    "fieldName": "LANDX50",
-                    "fieldValue": "Andorra"
-                  },
-                  {
-                    "language": "E",
-                    "fieldName": "NATIO",
-                    "fieldValue": "Andorran"
-                  },
-                  {
-                    "language": "E",
-                    "fieldName": "NATIO50",
-                    "fieldValue": "Andorran"
-                  },
-                  {
-                    "language": "D",
-                    "fieldName": "LANDX",
-                    "fieldValue": "Andorra"
-                  },
-                  {
-                    "language": "D",
-                    "fieldName": "LANDX50",
-                    "fieldValue": "Andorra"
-                  },
-                  {
-                    "language": "D",
-                    "fieldName": "NATIO",
-                    "fieldValue": "Andorranisch"
-                  },
-                  {
-                    "language": "D",
-                    "fieldName": "NATIO50",
-                    "fieldValue": "Andorranisch"
-                  },
-                  {
-                    "language": "F",
-                    "fieldName": "LANDX",
-                    "fieldValue": "Andorre"
-                  },
-                  {
-                    "language": "F",
-                    "fieldName": "LANDX50",
-                    "fieldValue": "Principauté d'Andorre"
-                  },
-                  {
-                    "language": "F",
-                    "fieldName": "NATIO",
-                    "fieldValue": "Andorrane"
-                  },
-                  {
-                    "language": "F",
-                    "fieldName": "NATIO50",
-                    "fieldValue": "Andorrane"
-                  }
-                ]
-              },
-              {
-                "keyValue": "AE",
-                "incomplete": "complete",
-                "operationAtActivation": "insertOrUpdate",
-                "data": [
-                  {
-                    "fieldName": "LAND1",
-                    "fieldValue": "AE"
-                  },
-                  {
-                    "fieldName": "LANDK",
-                    "fieldValue": "UAE"
-                  },
-                  {
-                    "fieldName": "LNPLZ",
-                    "fieldValue": "00"
-                  },
-                  {
-                    "fieldName": "PRPLZ",
-                    "fieldValue": ""
-                  },
-                  {
-                    "fieldName": "XPLZS",
-                    "fieldValue": "X"
-                  },
-                  {
-                    "fieldName": "XPLPF",
-                    "fieldValue": ""
-                  },
-                  {
-                    "fieldName": "ADDRS",
-                    "fieldValue": ""
-                  },
-                  {
-                    "fieldName": "XADDR",
-                    "fieldValue": "X"
-                  },
-                  {
-                    "fieldName": "NMFMT",
-                    "fieldValue": ""
-                  },
-                  {
-                    "fieldName": "XREGS",
-                    "fieldValue": ""
-                  },
-                  {
-                    "fieldName": "XPLST",
-                    "fieldValue": ""
-                  },
-                  {
-                    "fieldName": "SPRAS",
-                    "fieldValue": "A"
-                  },
-                  {
-                    "fieldName": "XDEZP",
-                    "fieldValue": "X"
-                  },
-                  {
-                    "fieldName": "DATFM",
-                    "fieldValue": "1"
-                  },
-                  {
-                    "fieldName": "TIMEFM",
-                    "fieldValue": "1"
-                  },
-                  {
-                    "fieldName": "INTCA",
-                    "fieldValue": "AE"
-                  },
-                  {
-                    "fieldName": "INTCA3",
-                    "fieldValue": "ARE"
-                  },
-                  {
-                    "fieldName": "INTCN3",
-                    "fieldValue": "784"
-                  },
-                  {
-                    "fieldName": "XEGLD",
-                    "fieldValue": ""
-                  },
-                  {
-                    "fieldName": "XSKFN",
-                    "fieldValue": ""
-                  },
-                  {
-                    "fieldName": "XMWSN",
-                    "fieldValue": ""
-                  }
-                ],
-                "translations": [
-                  {
-                    "language": "E",
-                    "fieldName": "LANDX",
-                    "fieldValue": "Utd.Arab Emir."
-                  },
-                  {
-                    "language": "E",
-                    "fieldName": "LANDX50",
-                    "fieldValue": "United Arab Emirates"
-                  },
-                  {
-                    "language": "E",
-                    "fieldName": "NATIO",
-                    "fieldValue": "Emirian"
-                  },
-                  {
-                    "language": "E",
-                    "fieldName": "NATIO50",
-                    "fieldValue": "Unit.Arab Emir."
-                  },
-                  {
-                    "language": "D",
-                    "fieldName": "LANDX",
-                    "fieldValue": "Ver.Arab.Emir"
-                  },
-                  {
-                    "language": "D",
-                    "fieldName": "LANDX50",
-                    "fieldValue": "Vereinigte Arabische Emirate"
-                  },
-                  {
-                    "language": "D",
-                    "fieldName": "NATIO",
-                    "fieldValue": "Emiratisch"
-                  },
-                  {
-                    "language": "D",
-                    "fieldName": "NATIO50",
-                    "fieldValue": "Vereinigte Arabische Emirate"
-                  },
-                  {
-                    "language": "F",
-                    "fieldName": "LANDX",
-                    "fieldValue": "Emir.arab.unis"
-                  },
-                  {
-                    "language": "F",
-                    "fieldName": "LANDX50",
-                    "fieldValue": "Emirats arabes unis"
-                  },
-                  {
-                    "language": "F",
-                    "fieldName": "NATIO",
-                    "fieldValue": "des Emir.arabes"
-                  },
-                  {
-                    "language": "F",
-                    "fieldName": "NATIO50",
-                    "fieldValue": "des Emirats arabes unis"
-                  }
-                ]
-              },
-              {
-                "keyValue": "AF",
-                "incomplete": "complete",
-                "operationAtActivation": "insertOrUpdate",
-                "data": [
-                  {
-                    "fieldName": "LAND1",
-                    "fieldValue": "AF"
-                  },
-                  {
-                    "fieldName": "LANDK",
-                    "fieldValue": "AFG"
-                  },
-                  {
-                    "fieldName": "LNPLZ",
-                    "fieldValue": "00"
-                  },
-                  {
-                    "fieldName": "PRPLZ",
-                    "fieldValue": ""
-                  },
-                  {
-                    "fieldName": "XPLZS",
-                    "fieldValue": "X"
-                  },
-                  {
-                    "fieldName": "XPLPF",
-                    "fieldValue": ""
-                  },
-                  {
-                    "fieldName": "ADDRS",
-                    "fieldValue": ""
-                  },
-                  {
-                    "fieldName": "XADDR",
-                    "fieldValue": "X"
-                  },
-                  {
-                    "fieldName": "NMFMT",
-                    "fieldValue": ""
-                  },
-                  {
-                    "fieldName": "XREGS",
-                    "fieldValue": ""
-                  },
-                  {
-                    "fieldName": "XPLST",
-                    "fieldValue": ""
-                  },
-                  {
-                    "fieldName": "SPRAS",
-                    "fieldValue": ""
-                  },
-                  {
-                    "fieldName": "XDEZP",
-                    "fieldValue": ""
-                  },
-                  {
-                    "fieldName": "DATFM",
-                    "fieldValue": "5"
-                  },
-                  {
-                    "fieldName": "TIMEFM",
-                    "fieldValue": "1"
-                  },
-                  {
-                    "fieldName": "INTCA",
-                    "fieldValue": "AF"
-                  },
-                  {
-                    "fieldName": "INTCA3",
-                    "fieldValue": "AFG"
-                  },
-                  {
-                    "fieldName": "INTCN3",
-                    "fieldValue": "004"
-                  },
-                  {
-                    "fieldName": "XEGLD",
-                    "fieldValue": ""
-                  },
-                  {
-                    "fieldName": "XSKFN",
-                    "fieldValue": ""
-                  },
-                  {
-                    "fieldName": "XMWSN",
-                    "fieldValue": ""
-                  }
-                ],
-                "translations": [
-                  {
-                    "language": "E",
-                    "fieldName": "LANDX",
-                    "fieldValue": "Afghanistan"
-                  },
-                  {
-                    "language": "E",
-                    "fieldName": "LANDX50",
-                    "fieldValue": "Afghanistan"
-                  },
-                  {
-                    "language": "E",
-                    "fieldName": "NATIO",
-                    "fieldValue": "Afghan"
-                  },
-                  {
-                    "language": "E",
-                    "fieldName": "NATIO50",
-                    "fieldValue": "Afghan"
-                  },
-                  {
-                    "language": "D",
-                    "fieldName": "LANDX",
-                    "fieldValue": "Afghanistan"
-                  },
-                  {
-                    "language": "D",
-                    "fieldName": "LANDX50",
-                    "fieldValue": "Afghanistan"
-                  },
-                  {
-                    "language": "D",
-                    "fieldName": "NATIO",
-                    "fieldValue": "Afghanisch"
-                  },
-                  {
-                    "language": "D",
-                    "fieldName": "NATIO50",
-                    "fieldValue": "Afghanisch"
-                  },
-                  {
-                    "language": "F",
-                    "fieldName": "LANDX",
-                    "fieldValue": "Afghanistan"
-                  },
-                  {
-                    "language": "F",
-                    "fieldName": "LANDX50",
-                    "fieldValue": "Afghanistan"
-                  },
-                  {
-                    "language": "F",
-                    "fieldName": "NATIO",
-                    "fieldValue": "Afghane"
-                  },
-                  {
-                    "language": "F",
-                    "fieldName": "NATIO50",
-                    "fieldValue": "Afghane"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  }
+    {
+      "objectName": "V_T005_BAS",
+      "objectType": "view",
+      "imgActivity": "SIMG_CFMENUSAPCOY07",
+      "entities": [
+        {
+          "name": "V_T005_BAS",
+          "fieldAttributes": [
+            {
+              "fieldName": "LAND1",
+              "fieldAttributeValue": "fixedKeyField"
+            },
+            {
+              "fieldName": "LANDK",
+              "fieldAttributeValue": "defaultValue"
+            },
+            {
+              "fieldName": "LANDX",
+              "fieldAttributeValue": "defaultValue"
+            },
+            {
+              "fieldName": "LANDX50",
+              "fieldAttributeValue": "defaultValue"
+            },
+            {
+              "fieldName": "NATIO",
+              "fieldAttributeValue": "defaultValue"
+            },
+            {
+              "fieldName": "NATIO50",
+              "fieldAttributeValue": "defaultValue"
+            },
+            {
+              "fieldName": "LNPLZ",
+              "fieldAttributeValue": "defaultValue"
+            },
+            {
+              "fieldName": "PRPLZ",
+              "fieldAttributeValue": "defaultValue"
+            },
+            {
+              "fieldName": "XPLZS",
+              "fieldAttributeValue": "defaultValue"
+            },
+            {
+              "fieldName": "XPLPF",
+              "fieldAttributeValue": "defaultValue"
+            },
+            {
+              "fieldName": "ADDRS",
+              "fieldAttributeValue": "defaultValue"
+            },
+            {
+              "fieldName": "XADDR",
+              "fieldAttributeValue": "defaultValue"
+            },
+            {
+              "fieldName": "NMFMT",
+              "fieldAttributeValue": "defaultValue"
+            },
+            {
+              "fieldName": "XREGS",
+              "fieldAttributeValue": "defaultValue"
+            },
+            {
+              "fieldName": "XPLST",
+              "fieldAttributeValue": "defaultValue"
+            },
+            {
+              "fieldName": "SPRAS",
+              "fieldAttributeValue": "defaultValue"
+            },
+            {
+              "fieldName": "SPTXT",
+              "fieldAttributeValue": "defaultValue"
+            },
+            {
+              "fieldName": "XDEZP",
+              "fieldAttributeValue": "defaultValue"
+            },
+            {
+              "fieldName": "DATFM",
+              "fieldAttributeValue": "defaultValue"
+            },
+            {
+              "fieldName": "TIMEFM",
+              "fieldAttributeValue": "defaultValue"
+            },
+            {
+              "fieldName": "INTCA",
+              "fieldAttributeValue": "defaultValue"
+            },
+            {
+              "fieldName": "INTCA3",
+              "fieldAttributeValue": "defaultValue"
+            },
+            {
+              "fieldName": "INTCN3",
+              "fieldAttributeValue": "defaultValue"
+            },
+            {
+              "fieldName": "XEGLD",
+              "fieldAttributeValue": "defaultValue"
+            },
+            {
+              "fieldName": "XSKFN",
+              "fieldAttributeValue": "defaultValue"
+            },
+            {
+              "fieldName": "XMWSN",
+              "fieldAttributeValue": "defaultValue"
+            }
+          ],
+          "dataRecords": [
+            {
+              "keyValue": "AD",
+              "incomplete": false,
+              "operationAtActivation": "insertOrUpdate",
+              "data": [
+                {
+                  "fieldName": "LAND1",
+                  "fieldValue": "AD"
+                },
+                {
+                  "fieldName": "LANDK",
+                  "fieldValue": "AND"
+                },
+                {
+                  "fieldName": "LNPLZ",
+                  "fieldValue": "05"
+                },
+                {
+                  "fieldName": "PRPLZ",
+                  "fieldValue": "9"
+                },
+                {
+                  "fieldName": "XPLZS",
+                  "fieldValue": "X"
+                },
+                {
+                  "fieldName": "XPLPF",
+                  "fieldValue": ""
+                },
+                {
+                  "fieldName": "ADDRS",
+                  "fieldValue": ""
+                },
+                {
+                  "fieldName": "XADDR",
+                  "fieldValue": "X"
+                },
+                {
+                  "fieldName": "NMFMT",
+                  "fieldValue": ""
+                },
+                {
+                  "fieldName": "XREGS",
+                  "fieldValue": ""
+                },
+                {
+                  "fieldName": "XPLST",
+                  "fieldValue": ""
+                },
+                {
+                  "fieldName": "SPRAS",
+                  "fieldValue": "S"
+                },
+                {
+                  "fieldName": "XDEZP",
+                  "fieldValue": ""
+                },
+                {
+                  "fieldName": "DATFM",
+                  "fieldValue": "1"
+                },
+                {
+                  "fieldName": "TIMEFM",
+                  "fieldValue": "0"
+                },
+                {
+                  "fieldName": "INTCA",
+                  "fieldValue": "AD"
+                },
+                {
+                  "fieldName": "INTCA3",
+                  "fieldValue": "AND"
+                },
+                {
+                  "fieldName": "INTCN3",
+                  "fieldValue": "020"
+                },
+                {
+                  "fieldName": "XEGLD",
+                  "fieldValue": ""
+                },
+                {
+                  "fieldName": "XSKFN",
+                  "fieldValue": ""
+                },
+                {
+                  "fieldName": "XMWSN",
+                  "fieldValue": ""
+                }
+              ],
+              "translations": [
+                {
+                  "language": "E",
+                  "fieldName": "LANDX",
+                  "fieldValue": "Andorra"
+                },
+                {
+                  "language": "E",
+                  "fieldName": "LANDX50",
+                  "fieldValue": "Andorra"
+                },
+                {
+                  "language": "E",
+                  "fieldName": "NATIO",
+                  "fieldValue": "Andorran"
+                },
+                {
+                  "language": "E",
+                  "fieldName": "NATIO50",
+                  "fieldValue": "Andorran"
+                },
+                {
+                  "language": "D",
+                  "fieldName": "LANDX",
+                  "fieldValue": "Andorra"
+                },
+                {
+                  "language": "D",
+                  "fieldName": "LANDX50",
+                  "fieldValue": "Andorra"
+                },
+                {
+                  "language": "D",
+                  "fieldName": "NATIO",
+                  "fieldValue": "Andorranisch"
+                },
+                {
+                  "language": "D",
+                  "fieldName": "NATIO50",
+                  "fieldValue": "Andorranisch"
+                },
+                {
+                  "language": "F",
+                  "fieldName": "LANDX",
+                  "fieldValue": "Andorre"
+                },
+                {
+                  "language": "F",
+                  "fieldName": "LANDX50",
+                  "fieldValue": "Principauté d'Andorre"
+                },
+                {
+                  "language": "F",
+                  "fieldName": "NATIO",
+                  "fieldValue": "Andorrane"
+                },
+                {
+                  "language": "F",
+                  "fieldName": "NATIO50",
+                  "fieldValue": "Andorrane"
+                }
+              ]
+            },
+            {
+              "keyValue": "AE",
+              "incomplete": false,
+              "operationAtActivation": "insertOrUpdate",
+              "data": [
+                {
+                  "fieldName": "LAND1",
+                  "fieldValue": "AE"
+                },
+                {
+                  "fieldName": "LANDK",
+                  "fieldValue": "UAE"
+                },
+                {
+                  "fieldName": "LNPLZ",
+                  "fieldValue": "00"
+                },
+                {
+                  "fieldName": "PRPLZ",
+                  "fieldValue": ""
+                },
+                {
+                  "fieldName": "XPLZS",
+                  "fieldValue": "X"
+                },
+                {
+                  "fieldName": "XPLPF",
+                  "fieldValue": ""
+                },
+                {
+                  "fieldName": "ADDRS",
+                  "fieldValue": ""
+                },
+                {
+                  "fieldName": "XADDR",
+                  "fieldValue": "X"
+                },
+                {
+                  "fieldName": "NMFMT",
+                  "fieldValue": ""
+                },
+                {
+                  "fieldName": "XREGS",
+                  "fieldValue": ""
+                },
+                {
+                  "fieldName": "XPLST",
+                  "fieldValue": ""
+                },
+                {
+                  "fieldName": "SPRAS",
+                  "fieldValue": "A"
+                },
+                {
+                  "fieldName": "XDEZP",
+                  "fieldValue": "X"
+                },
+                {
+                  "fieldName": "DATFM",
+                  "fieldValue": "1"
+                },
+                {
+                  "fieldName": "TIMEFM",
+                  "fieldValue": "1"
+                },
+                {
+                  "fieldName": "INTCA",
+                  "fieldValue": "AE"
+                },
+                {
+                  "fieldName": "INTCA3",
+                  "fieldValue": "ARE"
+                },
+                {
+                  "fieldName": "INTCN3",
+                  "fieldValue": "784"
+                },
+                {
+                  "fieldName": "XEGLD",
+                  "fieldValue": ""
+                },
+                {
+                  "fieldName": "XSKFN",
+                  "fieldValue": ""
+                },
+                {
+                  "fieldName": "XMWSN",
+                  "fieldValue": ""
+                }
+              ],
+              "translations": [
+                {
+                  "language": "E",
+                  "fieldName": "LANDX",
+                  "fieldValue": "Utd.Arab Emir."
+                },
+                {
+                  "language": "E",
+                  "fieldName": "LANDX50",
+                  "fieldValue": "United Arab Emirates"
+                },
+                {
+                  "language": "E",
+                  "fieldName": "NATIO",
+                  "fieldValue": "Emirian"
+                },
+                {
+                  "language": "E",
+                  "fieldName": "NATIO50",
+                  "fieldValue": "Unit.Arab Emir."
+                },
+                {
+                  "language": "D",
+                  "fieldName": "LANDX",
+                  "fieldValue": "Ver.Arab.Emir"
+                },
+                {
+                  "language": "D",
+                  "fieldName": "LANDX50",
+                  "fieldValue": "Vereinigte Arabische Emirate"
+                },
+                {
+                  "language": "D",
+                  "fieldName": "NATIO",
+                  "fieldValue": "Emiratisch"
+                },
+                {
+                  "language": "D",
+                  "fieldName": "NATIO50",
+                  "fieldValue": "Vereinigte Arabische Emirate"
+                },
+                {
+                  "language": "F",
+                  "fieldName": "LANDX",
+                  "fieldValue": "Emir.arab.unis"
+                },
+                {
+                  "language": "F",
+                  "fieldName": "LANDX50",
+                  "fieldValue": "Emirats arabes unis"
+                },
+                {
+                  "language": "F",
+                  "fieldName": "NATIO",
+                  "fieldValue": "des Emir.arabes"
+                },
+                {
+                  "language": "F",
+                  "fieldName": "NATIO50",
+                  "fieldValue": "des Emirats arabes unis"
+                }
+              ]
+            },
+            {
+              "keyValue": "AF",
+              "incomplete": false,
+              "operationAtActivation": "insertOrUpdate",
+              "data": [
+                {
+                  "fieldName": "LAND1",
+                  "fieldValue": "AF"
+                },
+                {
+                  "fieldName": "LANDK",
+                  "fieldValue": "AFG"
+                },
+                {
+                  "fieldName": "LNPLZ",
+                  "fieldValue": "00"
+                },
+                {
+                  "fieldName": "PRPLZ",
+                  "fieldValue": ""
+                },
+                {
+                  "fieldName": "XPLZS",
+                  "fieldValue": "X"
+                },
+                {
+                  "fieldName": "XPLPF",
+                  "fieldValue": ""
+                },
+                {
+                  "fieldName": "ADDRS",
+                  "fieldValue": ""
+                },
+                {
+                  "fieldName": "XADDR",
+                  "fieldValue": "X"
+                },
+                {
+                  "fieldName": "NMFMT",
+                  "fieldValue": ""
+                },
+                {
+                  "fieldName": "XREGS",
+                  "fieldValue": ""
+                },
+                {
+                  "fieldName": "XPLST",
+                  "fieldValue": ""
+                },
+                {
+                  "fieldName": "SPRAS",
+                  "fieldValue": ""
+                },
+                {
+                  "fieldName": "XDEZP",
+                  "fieldValue": ""
+                },
+                {
+                  "fieldName": "DATFM",
+                  "fieldValue": "5"
+                },
+                {
+                  "fieldName": "TIMEFM",
+                  "fieldValue": "1"
+                },
+                {
+                  "fieldName": "INTCA",
+                  "fieldValue": "AF"
+                },
+                {
+                  "fieldName": "INTCA3",
+                  "fieldValue": "AFG"
+                },
+                {
+                  "fieldName": "INTCN3",
+                  "fieldValue": "004"
+                },
+                {
+                  "fieldName": "XEGLD",
+                  "fieldValue": ""
+                },
+                {
+                  "fieldName": "XSKFN",
+                  "fieldValue": ""
+                },
+                {
+                  "fieldName": "XMWSN",
+                  "fieldValue": ""
+                }
+              ],
+              "translations": [
+                {
+                  "language": "E",
+                  "fieldName": "LANDX",
+                  "fieldValue": "Afghanistan"
+                },
+                {
+                  "language": "E",
+                  "fieldName": "LANDX50",
+                  "fieldValue": "Afghanistan"
+                },
+                {
+                  "language": "E",
+                  "fieldName": "NATIO",
+                  "fieldValue": "Afghan"
+                },
+                {
+                  "language": "E",
+                  "fieldName": "NATIO50",
+                  "fieldValue": "Afghan"
+                },
+                {
+                  "language": "D",
+                  "fieldName": "LANDX",
+                  "fieldValue": "Afghanistan"
+                },
+                {
+                  "language": "D",
+                  "fieldName": "LANDX50",
+                  "fieldValue": "Afghanistan"
+                },
+                {
+                  "language": "D",
+                  "fieldName": "NATIO",
+                  "fieldValue": "Afghanisch"
+                },
+                {
+                  "language": "D",
+                  "fieldName": "NATIO50",
+                  "fieldValue": "Afghanisch"
+                },
+                {
+                  "language": "F",
+                  "fieldName": "LANDX",
+                  "fieldValue": "Afghanistan"
+                },
+                {
+                  "language": "F",
+                  "fieldName": "LANDX50",
+                  "fieldValue": "Afghanistan"
+                },
+                {
+                  "language": "F",
+                  "fieldName": "NATIO",
+                  "fieldValue": "Afghane"
+                },
+                {
+                  "language": "F",
+                  "fieldName": "NATIO50",
+                  "fieldValue": "Afghane"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "objectName": "SNUMS",
+      "objectType": "individualTransactionObject",
+      "entities": [
+        {
+          "name": "NRIVS",
+          "fieldAttributes": [
+            {
+              "fieldName": "OBJECT",
+              "fieldAttributeValue": "fixedKeyField"
+            },
+            {
+              "fieldName": "SUBOBJECT",
+              "fieldAttributeValue": "fixedKeyField"
+            },
+            {
+              "fieldName": "NRRANGENR",
+              "fieldAttributeValue": "fixedKeyField"
+            },
+            {
+              "fieldName": "TOYEAR",
+              "fieldAttributeValue": "fixedKeyField"
+            },
+            {
+              "fieldName": "FROMNUMBER",
+              "fieldAttributeValue": "defaultValue"
+            },
+            {
+              "fieldName": "TONUMBER",
+              "fieldAttributeValue": "defaultValue"
+            },
+            {
+              "fieldName": "NRLEVEL",
+              "fieldAttributeValue": "defaultValue"
+            },
+            {
+              "fieldName": "EXTERNIND",
+              "fieldAttributeValue": "defaultValue"
+            },
+            {
+              "fieldName": "NR_DATE",
+              "fieldAttributeValue": "defaultValue"
+            },
+            {
+              "fieldName": "NR_TIME",
+              "fieldAttributeValue": "defaultValue"
+            }
+          ],
+          "dataRecords": [
+            {
+              "keyValue": "BU_PARTNER      010000",
+              "incomplete": false,
+              "operationAtActivation": "insertOrUpdate",
+              "data": [
+                {
+                  "fieldName": "OBJECT",
+                  "fieldValue": "BU_PARTNER"
+                },
+                {
+                  "fieldName": "SUBOBJECT",
+                  "fieldValue": ""
+                },
+                {
+                  "fieldName": "NRRANGENR",
+                  "fieldValue": "01"
+                },
+                {
+                  "fieldName": "TOYEAR",
+                  "fieldValue": "0000"
+                },
+                {
+                  "fieldName": "FROMNUMBER",
+                  "fieldValue": "0000000001"
+                },
+                {
+                  "fieldName": "TONUMBER",
+                  "fieldValue": "0000999999"
+                },
+                {
+                  "fieldName": "NRLEVEL",
+                  "fieldValue": "00000000000000000000"
+                },
+                {
+                  "fieldName": "EXTERNIND",
+                  "fieldValue": "X"
+                },
+                {
+                  "fieldName": "NR_DATE",
+                  "fieldValue": "20200722"
+                },
+                {
+                  "fieldName": "NR_TIME",
+                  "fieldValue": "135320"
+                }
+              ]
+            },
+            {
+              "keyValue": "BU_PARTNER      020000",
+              "incomplete": false,
+              "operationAtActivation": "insertOrUpdate",
+              "data": [
+                {
+                  "fieldName": "OBJECT",
+                  "fieldValue": "BU_PARTNER"
+                },
+                {
+                  "fieldName": "SUBOBJECT",
+                  "fieldValue": ""
+                },
+                {
+                  "fieldName": "NRRANGENR",
+                  "fieldValue": "02"
+                },
+                {
+                  "fieldName": "TOYEAR",
+                  "fieldValue": "0000"
+                },
+                {
+                  "fieldName": "FROMNUMBER",
+                  "fieldValue": "0001000000"
+                },
+                {
+                  "fieldName": "TONUMBER",
+                  "fieldValue": "0009999999"
+                },
+                {
+                  "fieldName": "NRLEVEL",
+                  "fieldValue": "00000000000000000000"
+                },
+                {
+                  "fieldName": "EXTERNIND",
+                  "fieldValue": ""
+                },
+                {
+                  "fieldName": "NR_DATE",
+                  "fieldValue": "20200722"
+                },
+                {
+                  "fieldName": "NR_TIME",
+                  "fieldValue": "135320"
+                }
+              ]
+            },
+            {
+              "keyValue": "BU_PARTNER      030000",
+              "incomplete": false,
+              "operationAtActivation": "insertOrUpdate",
+              "data": [
+                {
+                  "fieldName": "OBJECT",
+                  "fieldValue": "BU_PARTNER"
+                },
+                {
+                  "fieldName": "SUBOBJECT",
+                  "fieldValue": ""
+                },
+                {
+                  "fieldName": "NRRANGENR",
+                  "fieldValue": "03"
+                },
+                {
+                  "fieldName": "TOYEAR",
+                  "fieldValue": "0000"
+                },
+                {
+                  "fieldName": "FROMNUMBER",
+                  "fieldValue": "0010000000"
+                },
+                {
+                  "fieldName": "TONUMBER",
+                  "fieldValue": "0999999999"
+                },
+                {
+                  "fieldName": "NRLEVEL",
+                  "fieldValue": "00000000000000000000"
+                },
+                {
+                  "fieldName": "EXTERNIND",
+                  "fieldValue": "X"
+                },
+                {
+                  "fieldName": "NR_DATE",
+                  "fieldValue": "20200722"
+                },
+                {
+                  "fieldName": "NR_TIME",
+                  "fieldValue": "135320"
+                }
+              ]
+            },
+            {
+              "keyValue": "BU_PARTNER      AB0000",
+              "incomplete": false,
+              "operationAtActivation": "insertOrUpdate",
+              "data": [
+                {
+                  "fieldName": "OBJECT",
+                  "fieldValue": "BU_PARTNER"
+                },
+                {
+                  "fieldName": "SUBOBJECT",
+                  "fieldValue": ""
+                },
+                {
+                  "fieldName": "NRRANGENR",
+                  "fieldValue": "AB"
+                },
+                {
+                  "fieldName": "TOYEAR",
+                  "fieldValue": "0000"
+                },
+                {
+                  "fieldName": "FROMNUMBER",
+                  "fieldValue": "A"
+                },
+                {
+                  "fieldName": "TONUMBER",
+                  "fieldValue": "ZZZZZZZZZZ"
+                },
+                {
+                  "fieldName": "NRLEVEL",
+                  "fieldValue": "00000000000000000000"
+                },
+                {
+                  "fieldName": "EXTERNIND",
+                  "fieldValue": "X"
+                },
+                {
+                  "fieldName": "NR_DATE",
+                  "fieldValue": "20200722"
+                },
+                {
+                  "fieldName": "NR_TIME",
+                  "fieldValue": "135320"
+                }
+              ]
+            },
+            {
+              "keyValue": "BU_PARTNER      EE0000",
+              "incomplete": false,
+              "operationAtActivation": "insertOrUpdate",
+              "data": [
+                {
+                  "fieldName": "OBJECT",
+                  "fieldValue": "BU_PARTNER"
+                },
+                {
+                  "fieldName": "SUBOBJECT",
+                  "fieldValue": ""
+                },
+                {
+                  "fieldName": "NRRANGENR",
+                  "fieldValue": "EE"
+                },
+                {
+                  "fieldName": "TOYEAR",
+                  "fieldValue": "0000"
+                },
+                {
+                  "fieldName": "FROMNUMBER",
+                  "fieldValue": "9980000000"
+                },
+                {
+                  "fieldName": "TONUMBER",
+                  "fieldValue": "9999999999"
+                },
+                {
+                  "fieldName": "NRLEVEL",
+                  "fieldValue": "00000000000000000000"
+                },
+                {
+                  "fieldName": "EXTERNIND",
+                  "fieldValue": ""
+                },
+                {
+                  "fieldName": "NR_DATE",
+                  "fieldValue": "20200722"
+                },
+                {
+                  "fieldName": "NR_TIME",
+                  "fieldValue": "135320"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
