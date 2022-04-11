@@ -3,7 +3,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/scp1/scp1-v1.json",
   "title": "Business Configuration Set",
-  "description": "Business Configuration Set Definition",
+  "description": "Metadata information of BC Set",
   "type": "object",
   "properties": {
     "formatVersion": {
@@ -13,8 +13,8 @@
       "const": "1"
     },
     "header": {
-      "title": "Header",
-      "description": "Header",
+      "title": "Header for Non-Source Code Objects (no key user)",
+      "description": "The header for an ABAP main object (without source code) with a description of 60 characters (no key user)",
       "type": "object",
       "properties": {
         "description": {
@@ -58,7 +58,7 @@
     },
     "attributes": {
       "title": "Attributes",
-      "description": "Attributes of BC Set",
+      "description": "Header information of BC Set",
       "type": "object",
       "properties": {
         "type": {
@@ -89,30 +89,28 @@
           "title": "Minimum Release",
           "description": "To activate the BC Set successfully, installed Software Component must be atleast at this Release",
           "type": "string",
-          "maxLength": 10,
-          "default": "allReleases"
+          "maxLength": 10
         },
         "maximumRelease": {
           "title": "Maximum Release",
           "description": "To activate the BC Set successfully, installed Software Component must be within this Release",
           "type": "string",
-          "maxLength": 10,
-          "default": "allReleases"
+          "maxLength": 10
         }
       },
       "additionalProperties": false
     },
-    "subBcsets": {
+    "subBcSets": {
       "title": "Sub-BC Sets",
       "description": "A hierarchical BC Set comprises several other BC Sets, which can also be hierarchical. The hierarchy can have any number of levels.",
       "type": "array",
       "uniqueItems": true,
       "items": {
-        "title": "Sub-BC Sets",
+        "title": "Sub-BC Set",
         "description": "A hierarchical BC Set comprises several other BC Sets, which can also be hierarchical. The hierarchy can have any number of levels.",
         "type": "object",
         "properties": {
-          "bcSet": {
+          "name": {
             "title": "Business Configuration Sets",
             "description": "Name of the BC Set",
             "type": "string",
@@ -150,7 +148,7 @@
               "view"
             ],
             "enumTitles": [
-              "Viewcluster",
+              "View Cluster",
               "Logical Transport Object",
               "Table (with Text Table)",
               "Individual Transaction Object",
@@ -180,7 +178,7 @@
               "description": "Details of selected View or Table",
               "type": "object",
               "properties": {
-                "tableName": {
+                "name": {
                   "title": "Entity Name",
                   "description": "Table name of each data record",
                   "type": "string",
@@ -202,7 +200,7 @@
                         "type": "string",
                         "maxLength": 30
                       },
-                      "additionalInfo": {
+                      "fieldAttributeValue": {
                         "title": "Field Attribute",
                         "description": "Defines the attribute of field like during BC Set activation, the field value must be copied to database table or not",
                         "type": "string",
@@ -214,11 +212,11 @@
                           "variable"
                         ],
                         "enumTitles": [
-                          "Key field that is relevant and has Fixed value",
-                          "Key field must be specified at activation",
-                          "Value taken from BC Set at activation",
-                          "Value from BC Set is not modifiable in source table",
-                          "Value must be specified at activation"
+                          "Fixed Key Field Value",
+                          "Changed Key Field Value",
+                          "Default Field Value",
+                          "Fixed Field Value",
+                          "Changed Field Value"
                         ],
                         "enumDescriptions": [
                           "Fixed value for a key field. The value can not be changed after activation",
@@ -232,7 +230,7 @@
                     "additionalProperties": false,
                     "required": [
                       "fieldName",
-                      "additionalInfo"
+                      "fieldAttributeValue"
                     ]
                   }
                 },
@@ -254,23 +252,11 @@
                       "incomplete": {
                         "title": "Record is incomplete",
                         "description": "Automatic Customizing Recording only puts the key fields of a data record or data records, in the BC Set. Such BC Sets must be post-processed. Such data reocrds are flagged as incomplete",
-                        "type": "string",
-                        "enum": [
-                          "complete",
-                          "incomplete"
-                        ],
-                        "enumTitles": [
-                          "Record is complete",
-                          "Record is incomplete"
-                        ],
-                        "enumDescriptions": [
-                          "BC Sets created using Transport or any API, puts all fields of a data record or data records. Such data records are flagged as complete",
-                          "Automatic Customizing Recording only puts the key fields of a data record or data records, in the BC Set. Such BC Sets must be post-processed. Such data records are flagged as incomplete"
-                        ]
+                        "type": "boolean"
                       },
                       "operationAtActivation": {
                         "title": "Operation at Activation",
-                        "description": "Data records which are to be deleted at activation are flagged with value 'L'",
+                        "description": "Data records which are to be deleted at activation are flagged with value \u0027L\u0027",
                         "type": "string",
                         "enum": [
                           "insertOrUpdate",
@@ -281,8 +267,8 @@
                           "Delete"
                         ],
                         "enumDescriptions": [
-                          "Data records which are to be inserted/updated at activation are flagged with value ''",
-                          "Data records which are to be deleted at activation are flagged with value 'L'"
+                          "Data records which are to be inserted/updated at activation are flagged with value \u0027\u0027",
+                          "Data records which are to be deleted at activation are flagged with value \u0027L\u0027"
                         ]
                       },
                       "data": {
@@ -327,7 +313,9 @@
                               "title": "Language",
                               "description": "Language in which the data record is translated",
                               "type": "string",
-                              "maxLength": 1
+                              "minLength": 2,
+                              "maxLength": 2,
+                              "pattern": "^[a-z]+$"
                             },
                             "fieldName": {
                               "title": "Field Name",
@@ -355,7 +343,7 @@
               },
               "additionalProperties": false,
               "required": [
-                "tableName",
+                "name",
                 "fieldAttributes",
                 "dataRecords"
               ]
