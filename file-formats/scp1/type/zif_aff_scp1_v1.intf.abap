@@ -41,11 +41,9 @@ INTERFACE zif_aff_scp1_v1
       software_component TYPE c LENGTH 30,
       "! <p class="shorttext">Minimum Release</p>
       "! To activate the BC Set successfully, installed Software Component must be atleast at this Release
-      "! $default {@link zif_aff_scp1_v1.data:co_validity.all_releases}
       minimum_release    TYPE ty_release,
       "! <p class="shorttext">Maximum Release</p>
       "! To activate the BC Set successfully, installed Software Component must be within this Release
-      "! $default {@link zif_aff_scp1_v1.data:co_validity.all_releases}
       maximum_release    TYPE ty_release,
     END OF ty_attributes.
 
@@ -55,7 +53,7 @@ INTERFACE zif_aff_scp1_v1
   CONSTANTS:
     "! <p class="shorttext">Allowed Customizing Object Types</p>
     BEGIN OF co_object_type,
-      "! <p class="shorttext">Viewcluster</p>
+      "! <p class="shorttext">View Cluster</p>
       "! A view cluster is a group of maintenance dialogs which are collected in one maintenance unit
       view_cluster                  TYPE ty_object_type VALUE 'C',
       "! <p class="shorttext">Logical Transport Object</p>
@@ -74,23 +72,6 @@ INTERFACE zif_aff_scp1_v1
       view                          TYPE ty_object_type VALUE 'V',
     END OF co_object_type.
 
-  "! <p class="shorttext">Record is incomplete</p>
-  TYPES ty_incomplete TYPE c LENGTH 1.
-
-  CONSTANTS:
-    "! <p class="shorttext">Record is incomplete</p>
-    BEGIN OF co_incomplete,
-      "! <p class="shorttext">Record is complete</p>
-      "! BC Sets created using Transport or any API, puts all fields of a data record or data records.
-      "! Such data records are flagged as complete
-      complete   TYPE ty_incomplete VALUE ' ',
-      "! <p class="shorttext">Record is incomplete</p>
-      "! Automatic Customizing Recording only puts the key fields of a data record or
-      "! data records, in the BC Set. Such BC Sets must be post-processed.
-      "! Such data records are flagged as incomplete
-      incomplete TYPE ty_incomplete VALUE 'U',
-    END OF co_incomplete.
-
   "! <p class="shorttext">Data Record Operation at Activation</p>
   TYPES ty_operation_at_activation TYPE c LENGTH 1.
 
@@ -106,26 +87,26 @@ INTERFACE zif_aff_scp1_v1
     END OF co_operation_at_activation.
 
   "! <p class="shorttext">Attribute of a field in a data record</p>
-  TYPES ty_additional_info TYPE c LENGTH 3.
+  TYPES ty_field_attribute_value TYPE c LENGTH 3.
 
   CONSTANTS:
-    "! <p class="shorttext">Attribute of a field in a data record</p>
+    "! <p class="shorttext">Field Attribute</p>
     BEGIN OF co_field_attribute,
-      "! <p class="shorttext">Key field that is relevant and has Fixed value</p>
+      "! <p class="shorttext">Fixed Key Field Value</p>
       "! Fixed value for a key field. The value can not be changed after activation
-      fixed_key_field TYPE ty_additional_info VALUE 'FKY',
-      "! <p class="shorttext">Key field must be specified at activation</p>
+      fixed_key_field TYPE ty_field_attribute_value VALUE 'FKY',
+      "! <p class="shorttext">Changed Key Field Value</p>
       "! Key field in which the user can change the value of the field when activating the data
-      key_field       TYPE ty_additional_info VALUE 'KEY',
-      "! <p class="shorttext">Value taken from BC Set at activation</p>
+      key_field       TYPE ty_field_attribute_value VALUE 'KEY',
+      "! <p class="shorttext">Default Field Value</p>
       "! Default value of a data field
-      default_value   TYPE ty_additional_info VALUE 'USE',
-      "! <p class="shorttext">Value from BC Set is not modifiable in source table</p>
+      default_value   TYPE ty_field_attribute_value VALUE 'USE',
+      "! <p class="shorttext">Fixed Field Value</p>
       "! The value of this data field can no longer be changed after an activation
-      fixed_value     TYPE ty_additional_info VALUE 'FIX',
-      "! <p class="shorttext">Value must be specified at activation</p>
+      fixed_value     TYPE ty_field_attribute_value VALUE 'FIX',
+      "! <p class="shorttext">Changed Field Value</p>
       "! Data field whose value the user can change when activating
-      variable        TYPE ty_additional_info VALUE 'VAR',
+      variable        TYPE ty_field_attribute_value VALUE 'VAR',
     END OF co_field_attribute.
 
   TYPES:
@@ -144,13 +125,16 @@ INTERFACE zif_aff_scp1_v1
   "! <p class="shorttext">Data</p>
   TYPES ty_row_data TYPE SORTED TABLE OF ty_data WITH UNIQUE KEY field_name.
 
+  "! <p class="shorttext">Language</p>
+  TYPES ty_language TYPE sy-langu.
+
   TYPES:
     "! <p class="shorttext">Selected Language</p>
     "! Details of selected language
     BEGIN OF ty_translation,
       "! <p class="shorttext">Language</p>
       "! Language in which the data record is translated
-      language    TYPE c LENGTH 1,
+      language    TYPE ty_language,
       "! <p class="shorttext">Field Name</p>
       "! Name of data record field
       field_name  TYPE c LENGTH 30,
@@ -174,7 +158,6 @@ INTERFACE zif_aff_scp1_v1
       "! Automatic Customizing Recording only puts the key fields of a data record or
       "! data records, in the BC Set. Such BC Sets must be post-processed.
       "! Such data reocrds are flagged as incomplete
-      "! $values {@link zif_aff_scp1_v1.data:co_incomplete}
       incomplete              TYPE abap_bool,
       "! <p class="shorttext">Operation at Activation</p>
       "! Data records which are to be deleted at activation are flagged with value 'L'
@@ -199,13 +182,13 @@ INTERFACE zif_aff_scp1_v1
       "! <p class="shorttext">Field Name</p>
       "! Name of field in Table/View
       "! $required
-      field_name      TYPE c LENGTH 30,
+      field_name            TYPE c LENGTH 30,
       "! <p class="shorttext">Field Attribute</p>
       "! Defines the attribute of field like during BC Set activation, the field value must be copied to database
       "! table or not
       "! $values {@link zif_aff_scp1_v1.data:co_field_attribute}
       "! $required
-      additional_info TYPE ty_additional_info,
+      field_attribute_value TYPE ty_field_attribute_value,
     END OF ty_field_attribute.
 
   TYPES ty_field_attributes TYPE SORTED TABLE OF ty_field_attribute WITH UNIQUE KEY field_name.
@@ -217,7 +200,7 @@ INTERFACE zif_aff_scp1_v1
       "! <p class="shorttext">Entity Name</p>
       "! Table name of each data record
       "! $required
-      table_name       TYPE c LENGTH 30,
+      name             TYPE c LENGTH 30,
       "! <p class="shorttext">Field Attributes</p>
       "! You can define the behavior for field of table/view during activation
       "! $required
@@ -229,7 +212,7 @@ INTERFACE zif_aff_scp1_v1
     END OF ty_entity.
 
   "! <p class="shorttext">Tables and Views for Selected Customizing Object</p>
-  TYPES ty_entities TYPE SORTED TABLE OF ty_entity WITH UNIQUE KEY table_name.
+  TYPES ty_entities TYPE SORTED TABLE OF ty_entity WITH UNIQUE KEY name.
 
   TYPES:
     "! <p class="shorttext">Customizing Object</p>
@@ -260,38 +243,36 @@ INTERFACE zif_aff_scp1_v1
                                WITH UNIQUE KEY object_name object_type img_activity.
 
   TYPES:
-    "! <p class="shorttext">Sub-BC Sets</p>
+    "! <p class="shorttext">Sub-BC Set</p>
     "! A hierarchical BC Set comprises several other BC Sets, which can also be hierarchical.
     "! The hierarchy can have any number of levels.
     BEGIN OF ty_sub_bcset,
       "! <p class="shorttext">Business Configuration Sets</p>
       "! Name of the BC Set
-      bc_set TYPE c LENGTH 32,
+      name TYPE c LENGTH 32,
     END OF ty_sub_bcset.
 
   "! <p class="shorttext">Sub-BC Sets</p>
   "! A hierarchical BC Set comprises several other BC Sets, which can also be hierarchical.
   "! The hierarchy can have any number of levels.
-  TYPES ty_sub_bcsets TYPE SORTED TABLE OF ty_sub_bcset WITH UNIQUE KEY bc_set.
+  TYPES ty_sub_bcsets TYPE SORTED TABLE OF ty_sub_bcset WITH UNIQUE KEY name.
 
   TYPES:
     "! <p class="shorttext">Business Configuration Set</p>
-    "! Business Configuration Set Definition
+    "! Metadata information of BC Set
     BEGIN OF ty_main,
       "! $required
       format_version      TYPE zif_aff_types_v1=>ty_format_version,
-      "! <p class="shorttext">Header</p>
-      "! Header
       "! $required
       header              TYPE zif_aff_types_v1=>ty_header_60_cloud,
       "! <p class="shorttext">Attributes</p>
-      "! Attributes of BC Set
+      "! Header information of BC Set
       "! $required
       attributes          TYPE ty_attributes,
       "! <p class="shorttext">Sub-BC Sets</p>
       "! A hierarchical BC Set comprises several other BC Sets, which can also be hierarchical.
       "! The hierarchy can have any number of levels.
-      sub_bcsets          TYPE ty_sub_bcsets,
+      sub_bc_sets         TYPE ty_sub_bcsets,
       "! <p class="shorttext">Customizing Objects</p>
       "! Customizing Objects or Tables included in the BC Set
       customizing_objects TYPE ty_customizing_objects,
