@@ -3,7 +3,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/scp1/scp1-v1.json",
   "title": "Business Configuration Set",
-  "description": "Metadata information of BC Set",
+  "description": "Metadata information of BC set",
   "type": "object",
   "properties": {
     "formatVersion": {
@@ -58,42 +58,42 @@
     },
     "attributes": {
       "title": "Attributes",
-      "description": "Header information of BC Set",
+      "description": "Header information of BC set",
       "type": "object",
       "properties": {
         "type": {
           "title": "Type",
-          "description": "Type of BC Set i.e. a simple BC Set or Hierarchical BC Set, which contains several other BC Sets",
+          "description": "Type of BC set i.e. a simple BC set or hierarchical BC set, which contains several other BC sets",
           "type": "string",
           "enum": [
             "simple",
             "hierarchical"
           ],
           "enumTitles": [
-            "BC Set With Direct Value Assignment",
+            "BC set With Direct Value Assignment",
             "Hierarchical BC Sets"
           ],
           "enumDescriptions": [
-            "A BC Set contains selected data from any number of Customizing Objects/Tables",
-            "A hierarchical BC Set comprises several other BC Sets, which can also be hierarchical. The hierarchy can have any number of levels"
+            "A BC set contains selected data from any number of Customizing objects/tables",
+            "A hierarchical BC set comprises several other BC sets, which can also be hierarchical. The hierarchy can have any number of levels"
           ],
           "default": "simple"
         },
         "softwareComponent": {
           "title": "Software Component",
-          "description": "BC Set is assigned to a Software Component. If the Software Component is not installed in the system, then activation of BC Set is aborted",
+          "description": "BC set is assigned to a software component. If the software component is not installed in the system, then activation of BC set is aborted",
           "type": "string",
           "maxLength": 30
         },
         "minimumRelease": {
           "title": "Minimum Release",
-          "description": "To activate the BC Set successfully, installed Software Component must be atleast at this Release",
+          "description": "To activate the BC set successfully, installed software component must be at least at this release",
           "type": "string",
           "maxLength": 10
         },
         "maximumRelease": {
           "title": "Maximum Release",
-          "description": "To activate the BC Set successfully, installed Software Component must be within this Release",
+          "description": "To activate the BC set successfully, installed software component must be within this release",
           "type": "string",
           "maxLength": 10
         }
@@ -102,17 +102,17 @@
     },
     "subBcSets": {
       "title": "Sub-BC Sets",
-      "description": "A hierarchical BC Set comprises several other BC Sets, which can also be hierarchical. The hierarchy can have any number of levels.",
+      "description": "A hierarchical BC set comprises several other BC sets, which can also be hierarchical. The hierarchy can have any number of levels.",
       "type": "array",
       "uniqueItems": true,
       "items": {
-        "title": "Sub-BC Set",
-        "description": "A hierarchical BC Set comprises several other BC Sets, which can also be hierarchical. The hierarchy can have any number of levels.",
+        "title": "Sub-BC set",
+        "description": "A hierarchical BC set comprises several other BC sets, which can also be hierarchical. The hierarchy can have any number of levels.",
         "type": "object",
         "properties": {
           "name": {
-            "title": "Business Configuration Sets",
-            "description": "Name of the BC Set",
+            "title": "Name",
+            "description": "Name of the BC set",
             "type": "string",
             "maxLength": 32
           }
@@ -122,7 +122,7 @@
     },
     "customizingObjects": {
       "title": "Customizing Objects",
-      "description": "Customizing Objects or Tables included in the BC Set",
+      "description": "Customizing objects or tables included in the BC set",
       "type": "array",
       "uniqueItems": true,
       "items": {
@@ -170,12 +170,12 @@
           },
           "entities": {
             "title": "Entities(Tables or Views)",
-            "description": "Involved Tables or Views of a Customizing Object",
+            "description": "Involved tables or views of a Customizing Object",
             "type": "array",
             "uniqueItems": true,
             "items": {
               "title": "Entity",
-              "description": "Details of selected View or Table",
+              "description": "Details of selected view or table",
               "type": "object",
               "properties": {
                 "name": {
@@ -196,13 +196,13 @@
                     "properties": {
                       "fieldName": {
                         "title": "Field Name",
-                        "description": "Name of field in Table/View",
+                        "description": "Name of field in table/view",
                         "type": "string",
                         "maxLength": 30
                       },
                       "fieldAttributeValue": {
                         "title": "Field Attribute",
-                        "description": "Defines the attribute of field like during BC Set activation, the field value must be copied to database table or not",
+                        "description": "Defines the attribute of field like during BC set activation, the field value must be copied to database table or not",
                         "type": "string",
                         "enum": [
                           "fixedKeyField",
@@ -236,7 +236,7 @@
                 },
                 "dataRecords": {
                   "title": "Data Records",
-                  "description": "Data records of Table or View included in a BC Set",
+                  "description": "Data records of table or view included in a BC set",
                   "type": "array",
                   "uniqueItems": true,
                   "items": {
@@ -251,7 +251,7 @@
                       },
                       "incomplete": {
                         "title": "Record is incomplete",
-                        "description": "Automatic Customizing Recording only puts the key fields of a data record or data records, in the BC Set. Such BC Sets must be post-processed. Such data reocrds are flagged as incomplete",
+                        "description": "Automatic customizing recording only puts the key fields of a data record or data records, in the BC set. Such BC sets must be post-processed. Such data records are flagged as incomplete",
                         "type": "boolean"
                       },
                       "operationAtActivation": {
@@ -278,7 +278,7 @@
                         "uniqueItems": true,
                         "items": {
                           "title": "Data",
-                          "description": "Data record represented in Field-Value pair",
+                          "description": "Data record represented as field-value pair",
                           "type": "object",
                           "properties": {
                             "fieldName": {
@@ -301,7 +301,7 @@
                       },
                       "translations": {
                         "title": "Translations",
-                        "description": "Translated data records of Table or View included in a BC Set",
+                        "description": "Translated data records of table or view included in a BC set",
                         "type": "array",
                         "uniqueItems": true,
                         "items": {
@@ -344,7 +344,6 @@
               "additionalProperties": false,
               "required": [
                 "name",
-                "fieldAttributes",
                 "dataRecords"
               ]
             }
