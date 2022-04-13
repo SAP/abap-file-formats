@@ -59,11 +59,11 @@ INTERFACE zif_aff_ront_v1
       "! <p class="shorttext">Root SAP Object Node Type</p>
       "! Root SAP object node type
       "! $required
-      root_node_type type ty_rontnode,
+      root_node_type TYPE ty_rontnode,
 
       "! <p class="shorttext">SAP Object Node Types</p>
       "! $required
-      node_types      TYPE SORTED TABLE OF ty_rontnode WITH NON-UNIQUE KEY node_name,
+      node_types     TYPE SORTED TABLE OF ty_rontnode WITH NON-UNIQUE KEY node_name,
 
     END OF ty_main.
 ENDINTERFACE.
