@@ -51,14 +51,19 @@ INTERFACE zif_aff_ront_v1
       header         TYPE zif_aff_types_v1=>ty_header_60_cloud,
 
       "! <p class="shorttext">Type Category</p>
-      "! Type Category
+      "! Type category
       "! $required
       "! $values {@link zif_aff_ront_v1.data:co_category}
       type_category  TYPE c LENGTH 2,
 
+      "! <p class="shorttext">Root SAP Object Node Type</p>
+      "! Root SAP object node type
+      "! $required
+      root_node_type type ty_rontnode,
+
       "! <p class="shorttext">SAP Object Node Types</p>
       "! $required
-      rontnodes      TYPE SORTED TABLE OF ty_rontnode WITH NON-UNIQUE KEY node_name,
+      node_types      TYPE SORTED TABLE OF ty_rontnode WITH NON-UNIQUE KEY node_name,
 
     END OF ty_main.
 ENDINTERFACE.

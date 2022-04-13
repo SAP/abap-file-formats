@@ -1,0 +1,31 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Example description for SAP Object Type.",
+    "originalLanguage": "en"
+  },
+  "typeCategory": "businessObject",
+  "rootNodeType": {
+    "nodeName": "Z_AFF_EXAMPLE_RONT",
+    "isRoot": true,
+    "nodeNameRaw": "rootNodeType",
+    "description": "Short text description for root SAP Object Node Type."
+  },
+  "nodeTypes": [
+    {
+      "nodeName": "NODETYPE1",
+      "nodeNameRaw": "nodeType1",
+      "description": "Short text description for SAP Object Node Type 1."
+    },
+    {
+      "nodeName": "NODETYPE2",
+      "nodeNameRaw": "nodeType2",
+      "description": "Short text description for SAP Object Node Type 2."
+    },
+    {
+      "nodeName": "NODETYPE3",
+      "nodeNameRaw": "nodeType3",
+      "description": "Short text description for SAP Object Node Type 3."
+    }
+  ]
+}

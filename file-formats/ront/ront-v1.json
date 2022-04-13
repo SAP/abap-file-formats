@@ -57,7 +57,7 @@
     },
     "typeCategory": {
       "title": "Type Category",
-      "description": "Type Category",
+      "description": "Type category",
       "type": "string",
       "enum": [
         "businessObject",
@@ -78,7 +78,42 @@
         "Configuration object"
       ]
     },
-    "rontnodes": {
+    "rootNodeType": {
+      "title": "Root SAP Object Node Type",
+      "description": "Root SAP object node type",
+      "type": "object",
+      "properties": {
+        "nodeName": {
+          "title": "Name",
+          "description": "Node name",
+          "type": "string",
+          "maxLength": 40
+        },
+        "isRoot": {
+          "title": "Root Node Flag",
+          "description": "Root node flag",
+          "type": "boolean"
+        },
+        "nodeNameRaw": {
+          "title": "Name",
+          "description": "Raw (camel case) node name",
+          "type": "string",
+          "maxLength": 40
+        },
+        "description": {
+          "title": "Description",
+          "description": "Description",
+          "type": "string",
+          "maxLength": 60
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "nodeNameRaw",
+        "description"
+      ]
+    },
+    "nodeTypes": {
       "title": "SAP Object Node Types",
       "type": "array",
       "items": {
@@ -122,6 +157,7 @@
     "formatVersion",
     "header",
     "typeCategory",
-    "rontnodes"
+    "rootNodeType",
+    "nodeTypes"
   ]
 }
