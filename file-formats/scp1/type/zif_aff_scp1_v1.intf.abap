@@ -4,14 +4,15 @@ INTERFACE zif_aff_scp1_v1
   "! <p class="shorttext">Type</p>
   TYPES ty_type TYPE c LENGTH 3.
 
+
   CONSTANTS:
     "! <p class="shxorttext">Type</p>
     BEGIN OF co_type,
-      "! <p class="shorttext">BC set With Direct Value Assignment</p>
-      "! A BC set contains selected data from any number of Customizing objects/tables
+      "! <p class="shorttext">BC Set With Direct Value Assignment</p>
+      "! A BC Set contains selected data from any number of Customizing objects/tables
       simple       TYPE ty_type VALUE 'TMV',
       "! <p class="shorttext">Hierarchical BC Sets</p>
-      "! A hierarchical BC set comprises several other BC sets, which can also be hierarchical.
+      "! A hierarchical BC Set comprises several other BC Sets, which can also be hierarchical.
       "! The hierarchy can have any number of levels
       hierarchical TYPE ty_type VALUE 'TMP',
     END OF co_type.
@@ -28,22 +29,22 @@ INTERFACE zif_aff_scp1_v1
 
   TYPES:
     "! <p class="shorttext">Attribute</p>
-    "! Attributes of BC set
+    "! Attributes of BC Set
     BEGIN OF ty_attributes,
       "! <p class="shorttext">Type</p>
-      "! Type of BC set i.e. a simple BC set or hierarchical BC set, which contains several other BC sets
+      "! Type of BC Set i.e. a simple BC Set or hierarchical BC Set, which contains several other BC Sets
       "! $values {@link zif_aff_scp1_v1.data:co_type}
       "! $default {@link zif_aff_scp1_v1.data:co_type.simple}
       type               TYPE ty_type,
       "! <p class="shorttext">Software Component</p>
-      "! BC set is assigned to a software component. If the software component is not installed in the system,
-      "! then activation of BC set is aborted
+      "! BC Set is assigned to a software component. If the software component is not installed in the system,
+      "! then activation of BC Set is aborted
       software_component TYPE c LENGTH 30,
       "! <p class="shorttext">Minimum Release</p>
-      "! To activate the BC set successfully, installed software component must be at least at this release
+      "! To activate the BC Set successfully, installed software component must be at least at this release
       minimum_release    TYPE ty_release,
       "! <p class="shorttext">Maximum Release</p>
-      "! To activate the BC set successfully, installed software component must be within this release
+      "! To activate the BC Set successfully, installed software component must be within this release
       maximum_release    TYPE ty_release,
     END OF ty_attributes.
 
@@ -51,7 +52,7 @@ INTERFACE zif_aff_scp1_v1
   TYPES ty_object_type TYPE c LENGTH 1.
 
   CONSTANTS:
-    "! <p class="shorttext">Allowed Customizing Object Types</p>
+    "! <p class="shorttext">Allowed Object Types</p>
     BEGIN OF co_object_type,
       "! <p class="shorttext">View Cluster</p>
       "! A view cluster is a group of maintenance dialogs which are collected in one maintenance unit
@@ -157,7 +158,7 @@ INTERFACE zif_aff_scp1_v1
       key_value               TYPE string,
       "! <p class="shorttext">Record is incomplete</p>
       "! Automatic customizing recording only puts the key fields of a data record or
-      "! data records, in the BC set. Such BC sets must be post-processed.
+      "! data records, in the BC Set. Such BC Sets must be post-processed.
       "! Such data records are flagged as incomplete
       incomplete              TYPE abap_bool,
       "! <p class="shorttext">Operation at Activation</p>
@@ -169,7 +170,7 @@ INTERFACE zif_aff_scp1_v1
       "! $required
       data                    TYPE ty_row_data,
       "! <p class="shorttext">Translations</p>
-      "! Translated data records of table or view included in a BC set
+      "! Translated data records of table or view included in a BC Set
       translations            TYPE ty_translations,
     END OF ty_record.
 
@@ -185,7 +186,7 @@ INTERFACE zif_aff_scp1_v1
       "! $required
       field_name            TYPE c LENGTH 30,
       "! <p class="shorttext">Field Attribute</p>
-      "! Defines the attribute of field like during BC set activation, the field value must be copied to database
+      "! Defines the attribute of field like during BC Set activation, the field value must be copied to database
       "! table or not
       "! $required
       field_attribute_value TYPE ty_field_attribute_value,
@@ -205,7 +206,7 @@ INTERFACE zif_aff_scp1_v1
       "! You can define the behavior for field of table/view during activation
       field_attributes TYPE ty_field_attributes,
       "! <p class="shorttext">Data Records</p>
-      "! Data records of table or view included in a BC set
+      "! Data records of table or view included in a BC Set
       "! $required
       data_records     TYPE ty_records,
     END OF ty_entity.
@@ -231,49 +232,49 @@ INTERFACE zif_aff_scp1_v1
       "! Customizing object assigned to an IMG Activity
       img_activity TYPE c LENGTH 20,
       "! <p class="shorttext">Entities(Tables or Views)</p>
-      "! Involved tables or views of a Customizing Object
+      "! Involved tables or views of a Customizing object
       "! $required
       entities     TYPE ty_entities,
     END OF ty_customizing_object.
 
   "! <p class="shorttext">Customizing objects/Tables</p>
-  "! Customizing objects or tables included in the BC set
+  "! Customizing objects or tables included in the BC Set
   TYPES ty_customizing_objects TYPE SORTED TABLE OF ty_customizing_object
                                WITH UNIQUE KEY object_name object_type img_activity.
 
   TYPES:
-    "! <p class="shorttext">Sub-BC set</p>
-    "! A hierarchical BC set comprises several other BC sets, which can also be hierarchical.
+    "! <p class="shorttext">Sub-BC Set</p>
+    "! A hierarchical BC Set comprises several other BC Sets, which can also be hierarchical.
     "! The hierarchy can have any number of levels.
     BEGIN OF ty_sub_bcset,
       "! <p class="shorttext">Name</p>
-      "! Name of the BC set
+      "! Name of the BC Set
       name TYPE c LENGTH 32,
     END OF ty_sub_bcset.
 
   "! <p class="shorttext">Sub-BC Sets</p>
-  "! A hierarchical BC set comprises several other BC sets, which can also be hierarchical.
+  "! A hierarchical BC Set comprises several other BC Sets, which can also be hierarchical.
   "! The hierarchy can have any number of levels.
   TYPES ty_sub_bcsets TYPE SORTED TABLE OF ty_sub_bcset WITH UNIQUE KEY name.
 
   TYPES:
     "! <p class="shorttext">Business Configuration Set</p>
-    "! Metadata information of BC set
+    "! Metadata information of BC Set
     BEGIN OF ty_main,
       "! $required
       format_version      TYPE zif_aff_types_v1=>ty_format_version,
       "! $required
       header              TYPE zif_aff_types_v1=>ty_header_60_cloud,
       "! <p class="shorttext">Attributes</p>
-      "! Header information of BC set
+      "! Header information of BC Set
       "! $required
       attributes          TYPE ty_attributes,
       "! <p class="shorttext">Sub-BC Sets</p>
-      "! A hierarchical BC set comprises several other BC sets, which can also be hierarchical.
+      "! A hierarchical BC Set comprises several other BC Sets, which can also be hierarchical.
       "! The hierarchy can have any number of levels.
       sub_bc_sets         TYPE ty_sub_bcsets,
       "! <p class="shorttext">Customizing Objects</p>
-      "! Customizing objects or tables included in the BC set
+      "! Customizing objects or tables included in the BC Set
       customizing_objects TYPE ty_customizing_objects,
     END OF ty_main.
 
