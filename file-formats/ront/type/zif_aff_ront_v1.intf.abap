@@ -22,10 +22,12 @@ INTERFACE zif_aff_ront_v1
     BEGIN OF ty_rontnode,
       "! <p class="shorttext">Name</p>
       "! Node name
+      "! $required
       node_name     TYPE c LENGTH 40,
 
       "! <p class="shorttext">Root Node Flag</p>
       "! Root node flag
+      "! $required
       is_root       TYPE abap_bool,
 
       "! <p class="shorttext">Name</p>
