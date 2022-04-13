@@ -14,16 +14,19 @@
   "nodeTypes": [
     {
       "nodeName": "NODETYPE1",
+      "isRoot": false,
       "nodeNameRaw": "nodeType1",
       "description": "Short text description for SAP Object Node Type 1."
     },
     {
       "nodeName": "NODETYPE2",
+      "isRoot": false,
       "nodeNameRaw": "nodeType2",
       "description": "Short text description for SAP Object Node Type 2."
     },
     {
       "nodeName": "NODETYPE3",
+      "isRoot": false,
       "nodeNameRaw": "nodeType3",
       "description": "Short text description for SAP Object Node Type 3."
     }
