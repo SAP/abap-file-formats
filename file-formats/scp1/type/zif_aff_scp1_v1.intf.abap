@@ -6,7 +6,7 @@ INTERFACE zif_aff_scp1_v1
 
 
   CONSTANTS:
-    "! <p class="shxorttext">Type</p>
+    "! <p class="shorttext">Type</p>
     BEGIN OF co_type,
       "! <p class="shorttext">BC Set With Direct Value Assignment</p>
       "! A BC Set contains selected data from any number of Customizing objects/tables
@@ -156,7 +156,7 @@ INTERFACE zif_aff_scp1_v1
       "! Key value of a record
       "! $required
       key_value               TYPE string,
-      "! <p class="shorttext">Record is incomplete</p>
+      "! <p class="shorttext">Record Is Incomplete</p>
       "! Automatic customizing recording only puts the key fields of a data record or
       "! data records, in the BC Set. Such BC Sets must be post-processed.
       "! Such data records are flagged as incomplete
@@ -231,13 +231,13 @@ INTERFACE zif_aff_scp1_v1
       "! <p class="shorttext">IMG Activity</p>
       "! Customizing object assigned to an IMG Activity
       img_activity TYPE c LENGTH 20,
-      "! <p class="shorttext">Entities(Tables or Views)</p>
+      "! <p class="shorttext">Entities</p>
       "! Involved tables or views of a Customizing object
       "! $required
       entities     TYPE ty_entities,
     END OF ty_customizing_object.
 
-  "! <p class="shorttext">Customizing objects/Tables</p>
+  "! <p class="shorttext">Customizing Objects/Tables</p>
   "! Customizing objects or tables included in the BC Set
   TYPES ty_customizing_objects TYPE SORTED TABLE OF ty_customizing_object
                                WITH UNIQUE KEY object_name object_type img_activity.
