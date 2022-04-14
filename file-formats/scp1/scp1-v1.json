@@ -169,7 +169,7 @@
             "maxLength": 20
           },
           "entities": {
-            "title": "Entities(Tables or Views)",
+            "title": "Entities",
             "description": "Involved tables or views of a Customizing object",
             "type": "array",
             "uniqueItems": true,
@@ -250,7 +250,7 @@
                         "type": "string"
                       },
                       "incomplete": {
-                        "title": "Record is incomplete",
+                        "title": "Record Is Incomplete",
                         "description": "Automatic customizing recording only puts the key fields of a data record or data records, in the BC Set. Such BC Sets must be post-processed. Such data records are flagged as incomplete",
                         "type": "boolean"
                       },
