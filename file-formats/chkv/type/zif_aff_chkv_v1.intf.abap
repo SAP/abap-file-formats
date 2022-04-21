@@ -15,11 +15,10 @@ INTERFACE zif_aff_chkv_v1
       option TYPE zif_aff_types_v1=>ty_option,
       "! <p class="shorttext">Low</p>
       "! The low value of the range
-      "! $required
+      "! $showAlways
       low    TYPE string,
       "! <p class="shorttext">High</p>
       "! The high value of the range
-      "! $required
       high   TYPE string,
     END OF ty_range,
 
