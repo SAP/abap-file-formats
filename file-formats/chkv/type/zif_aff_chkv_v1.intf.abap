@@ -78,7 +78,7 @@ INTERFACE zif_aff_chkv_v1
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header             TYPE zif_aff_types_v1=>ty_header_60,
+      header             TYPE zif_aff_types_v1=>ty_header_60_cloud,
       "! <p class="shorttext">Remote-Enabled</p>
       "! The ATC check variant is remote-enabled
       remote_enabled     TYPE abap_bool,
