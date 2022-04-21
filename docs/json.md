@@ -160,7 +160,7 @@ If not the transformed name of a component shall be used, the enum value can be 
 ```abap
 "! $enumValue 'newEnumValue'
 ```
-to the specific component. 
+to the specific component.
 
 Titles and descriptions of the enum values are passed to the JSON Schema in the same way as described above.
 They are written in the fields `enumTitles` and `enumDescriptions`.
