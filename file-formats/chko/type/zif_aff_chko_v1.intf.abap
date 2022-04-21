@@ -36,7 +36,7 @@ INTERFACE zif_aff_chko_v1
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header             TYPE zif_aff_types_v1=>ty_header_60,
+      header             TYPE zif_aff_types_v1=>ty_header_60_cloud,
       "! <p class="shorttext">Category</p>
       "! The parent category of an ATC check object
       "! $required
