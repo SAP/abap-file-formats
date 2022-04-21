@@ -161,6 +161,7 @@ If not the transformed name of a component shall be used, the enum value can be 
 "! $enumValue 'newEnumValue'
 ```
 to the specific component.
+However, we recommend to use this feature for overwriting the enum values rarely.
 
 Titles and descriptions of the enum values are passed to the JSON Schema in the same way as described above.
 They are written in the fields `enumTitles` and `enumDescriptions`.
