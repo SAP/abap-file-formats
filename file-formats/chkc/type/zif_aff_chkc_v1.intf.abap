@@ -10,7 +10,7 @@ INTERFACE zif_aff_chkc_v1
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header          TYPE zif_aff_types_v1=>ty_header_60,
+      header          TYPE zif_aff_types_v1=>ty_header_60_cloud,
       "! <p class="shorttext">Parent Category</p>
       "! Name of the parent category
       parent_category TYPE zif_aff_types_v1=>ty_object_name_30,
