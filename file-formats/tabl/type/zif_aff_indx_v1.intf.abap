@@ -7,7 +7,8 @@ INTERFACE zif_aff_indx_v1
     BEGIN OF ty_indexfield,
       "! <p class="shorttext">Field Name</p>
       "! Field name
-      fieldname TYPE c LENGTH 30,
+      "! $required
+      field_name TYPE c LENGTH 30,
       "! <p class="shorttext">Field Position</p>
       "! Position
       position  TYPE n LENGTH 4,
