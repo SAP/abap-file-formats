@@ -1,7 +1,7 @@
 {
   "formatVersion": "1",
   "header": {
-    "description": "DDIC: form based editor for secondary indexes",
+    "description": "DDIC: ABAP file format for secondary indexes",
     "originalLanguage": "en"
   }
 }
