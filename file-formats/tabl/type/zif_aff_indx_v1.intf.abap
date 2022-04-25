@@ -32,7 +32,6 @@ INTERFACE zif_aff_indx_v1
       "! <p class="shorttext">Unique</p>
       "! Unique flag
       "! $required
-      "! $default 'abap_false'
       unique_index   TYPE abap_bool,
       "! <p class="shorttext">Fields</p>
       "! Index fields
