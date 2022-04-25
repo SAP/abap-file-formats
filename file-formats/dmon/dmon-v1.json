@@ -70,9 +70,9 @@
           "description": "type",
           "type": "string",
           "enum": [
-            "clas",
-            "fugr",
-            "prog"
+            "CLAS",
+            "FUGR",
+            "PROG"
           ],
           "enumTitles": [
             "Class",
