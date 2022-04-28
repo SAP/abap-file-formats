@@ -183,12 +183,12 @@ INTERFACE zif_aff_types_v1 PUBLIC.
     "! <p class="shorttext">Sign</p>
     "! Sign
     BEGIN OF co_sign,
-      "! <p class="shorttext">Exclude</p>
-      "! Exclude
-      exclude TYPE ty_sign VALUE 'E',
       "! <p class="shorttext">Include</p>
       "! Include
       include TYPE ty_sign VALUE 'I',
+      "! <p class="shorttext">Exclude</p>
+      "! Exclude
+      exclude TYPE ty_sign VALUE 'E',
     END OF co_sign.
 
 ENDINTERFACE.
