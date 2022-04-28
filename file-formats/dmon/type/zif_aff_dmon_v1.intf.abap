@@ -13,12 +13,15 @@ INTERFACE zif_aff_dmon_v1
     BEGIN OF co_caller_object_type,
       "! <p class="shorttext">Class</p>
       "! Class
+      "! $enumValue 'CLAS'
       clas TYPE ty_caller_object_type VALUE 'CLAS',
       "! <p class="shorttext">Function Group</p>
       "! Function group
+      "! $enumValue 'FUGR'
       fugr TYPE ty_caller_object_type VALUE 'FUGR',
       "! <p class="shorttext">Program</p>
       "! Program
+      "! $enumValue 'PROG'
       prog TYPE ty_caller_object_type VALUE 'PROG',
     END OF co_caller_object_type.
 

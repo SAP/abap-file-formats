@@ -37,17 +37,14 @@
           "type": "string",
           "enum": [
             "standard",
-            "keyUser",
             "cloudDevelopment"
           ],
           "enumTitles": [
             "Standard",
-            "ABAP for Key Users",
             "ABAP Cloud Development"
           ],
           "enumDescriptions": [
             "Standard",
-            "ABAP for key user extensibility",
             "ABAP cloud development"
           ],
           "default": "standard"
@@ -190,9 +187,7 @@
                     "additionalProperties": false,
                     "required": [
                       "sign",
-                      "option",
-                      "low",
-                      "high"
+                      "option"
                     ]
                   }
                 }

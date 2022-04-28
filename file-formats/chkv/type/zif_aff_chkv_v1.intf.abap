@@ -15,11 +15,10 @@ INTERFACE zif_aff_chkv_v1
       option TYPE zif_aff_types_v1=>ty_option,
       "! <p class="shorttext">Low</p>
       "! The low value of the range
-      "! $required
+      "! $showAlways
       low    TYPE string,
       "! <p class="shorttext">High</p>
       "! The high value of the range
-      "! $required
       high   TYPE string,
     END OF ty_range,
 
@@ -78,7 +77,7 @@ INTERFACE zif_aff_chkv_v1
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header             TYPE zif_aff_types_v1=>ty_header_60,
+      header             TYPE zif_aff_types_v1=>ty_header_60_cloud,
       "! <p class="shorttext">Remote-Enabled</p>
       "! The ATC check variant is remote-enabled
       remote_enabled     TYPE abap_bool,
