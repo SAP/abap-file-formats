@@ -83,17 +83,6 @@
       "description": "Root SAP object node type",
       "type": "object",
       "properties": {
-        "nodeName": {
-          "title": "Name",
-          "description": "Node name",
-          "type": "string",
-          "maxLength": 40
-        },
-        "isRoot": {
-          "title": "Root Node Flag",
-          "description": "Root node flag",
-          "type": "boolean"
-        },
         "nodeNameRaw": {
           "title": "Name",
           "description": "Raw (camel case) node name",
@@ -109,8 +98,6 @@
       },
       "additionalProperties": false,
       "required": [
-        "nodeName",
-        "isRoot",
         "nodeNameRaw",
         "description"
       ]
@@ -122,17 +109,6 @@
         "title": "Node",
         "type": "object",
         "properties": {
-          "nodeName": {
-            "title": "Name",
-            "description": "Node name",
-            "type": "string",
-            "maxLength": 40
-          },
-          "isRoot": {
-            "title": "Root Node Flag",
-            "description": "Root node flag",
-            "type": "boolean"
-          },
           "nodeNameRaw": {
             "title": "Name",
             "description": "Raw (camel case) node name",
@@ -148,8 +124,6 @@
         },
         "additionalProperties": false,
         "required": [
-          "nodeName",
-          "isRoot",
           "nodeNameRaw",
           "description"
         ]
@@ -161,7 +135,6 @@
     "formatVersion",
     "header",
     "typeCategory",
-    "rootNodeType",
-    "nodeTypes"
+    "rootNodeType"
   ]
 }

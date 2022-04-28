@@ -21,16 +21,6 @@ INTERFACE zif_aff_ront_v1
     "! <p class="shorttext">Node</p>
     BEGIN OF ty_rontnode,
       "! <p class="shorttext">Name</p>
-      "! Node name
-      "! $required
-      node_name     TYPE c LENGTH 40,
-
-      "! <p class="shorttext">Root Node Flag</p>
-      "! Root node flag
-      "! $required
-      is_root       TYPE abap_bool,
-
-      "! <p class="shorttext">Name</p>
       "! Raw (camel case) node name
       "! $required
       node_name_raw TYPE c LENGTH 40,
@@ -64,8 +54,7 @@ INTERFACE zif_aff_ront_v1
       root_node_type TYPE ty_rontnode,
 
       "! <p class="shorttext">SAP Object Node Types</p>
-      "! $required
-      node_types     TYPE SORTED TABLE OF ty_rontnode WITH NON-UNIQUE KEY node_name,
+      node_types     TYPE SORTED TABLE OF ty_rontnode WITH NON-UNIQUE KEY node_name_raw,
 
     END OF ty_main.
 ENDINTERFACE.

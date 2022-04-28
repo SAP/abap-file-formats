@@ -6,27 +6,19 @@
   },
   "typeCategory": "businessObject",
   "rootNodeType": {
-    "nodeName": "Z_AFF_EXAMPLE_RONT",
-    "isRoot": true,
-    "nodeNameRaw": "rootNodeType",
+    "nodeNameRaw": "z_Aff_Example_Ront",
     "description": "Short text description for root SAP Object Node Type."
   },
   "nodeTypes": [
     {
-      "nodeName": "NODETYPE1",
-      "isRoot": false,
       "nodeNameRaw": "nodeType1",
       "description": "Short text description for SAP Object Node Type 1."
     },
     {
-      "nodeName": "NODETYPE2",
-      "isRoot": false,
       "nodeNameRaw": "nodeType2",
       "description": "Short text description for SAP Object Node Type 2."
     },
     {
-      "nodeName": "NODETYPE3",
-      "isRoot": false,
       "nodeNameRaw": "nodeType3",
       "description": "Short text description for SAP Object Node Type 3."
     }
