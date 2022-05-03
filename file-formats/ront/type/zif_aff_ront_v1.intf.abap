@@ -19,17 +19,17 @@ INTERFACE zif_aff_ront_v1
 
   TYPES:
     "! <p class="shorttext">Node</p>
-    BEGIN OF ty_rontnode,
+    BEGIN OF ty_node_type,
       "! <p class="shorttext">Name</p>
-      "! Raw (camel case) node name
+      "! Node type name in camel case
       "! $required
-      node_name_raw TYPE c LENGTH 40,
+      name TYPE c LENGTH 40,
 
       "! <p class="shorttext">Description</p>
       "! Description
       "! $required
       description   TYPE zif_aff_types_v1=>ty_description_60,
-    END OF ty_rontnode.
+    END OF ty_node_type.
 
   TYPES:
     "! <p class="shorttext">General Information</p>
@@ -51,10 +51,10 @@ INTERFACE zif_aff_ront_v1
       "! <p class="shorttext">Root SAP Object Node Type</p>
       "! Root SAP object node type
       "! $required
-      root_node_type TYPE ty_rontnode,
+      root_node_type TYPE ty_node_type,
 
       "! <p class="shorttext">SAP Object Node Types</p>
-      node_types     TYPE SORTED TABLE OF ty_rontnode WITH NON-UNIQUE KEY node_name_raw,
+      node_types     TYPE SORTED TABLE OF ty_node_type WITH NON-UNIQUE KEY name,
 
     END OF ty_main.
 ENDINTERFACE.

@@ -83,9 +83,9 @@
       "description": "Root SAP object node type",
       "type": "object",
       "properties": {
-        "nodeNameRaw": {
+        "name": {
           "title": "Name",
-          "description": "Raw (camel case) node name",
+          "description": "Node type name in camel case",
           "type": "string",
           "maxLength": 40
         },
@@ -98,7 +98,7 @@
       },
       "additionalProperties": false,
       "required": [
-        "nodeNameRaw",
+        "name",
         "description"
       ]
     },
@@ -109,9 +109,9 @@
         "title": "Node",
         "type": "object",
         "properties": {
-          "nodeNameRaw": {
+          "name": {
             "title": "Name",
-            "description": "Raw (camel case) node name",
+            "description": "Node type name in camel case",
             "type": "string",
             "maxLength": 40
           },
@@ -124,7 +124,7 @@
         },
         "additionalProperties": false,
         "required": [
-          "nodeNameRaw",
+          "name",
           "description"
         ]
       }
