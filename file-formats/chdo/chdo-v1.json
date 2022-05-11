@@ -141,8 +141,8 @@
       "description": "Generated object",
       "type": "object",
       "properties": {
-        "classOrFunction": {
-          "title": "Class or Function",
+        "name": {
+          "title": "Name",
           "description": "Generated class or function module",
           "type": "string",
           "maxLength": 30
@@ -150,7 +150,7 @@
       },
       "additionalProperties": false,
       "required": [
-        "classOrFunction"
+        "name"
       ]
     }
   },

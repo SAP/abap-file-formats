@@ -187,9 +187,7 @@
                     "additionalProperties": false,
                     "required": [
                       "sign",
-                      "option",
-                      "low",
-                      "high"
+                      "option"
                     ]
                   }
                 }
