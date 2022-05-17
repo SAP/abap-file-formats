@@ -1,0 +1,410 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "TM_SITO_TRANS_TEST_01",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "sit2Object": {
+    "sitnobjectid": "TM_SITO_TRANS_TEST_01",
+    "abapLanguageVersion": "5",
+    "sitnobjscope": "01",
+    "sit2ObjectT": [
+      {
+        "sitnobjectname": "TM_SITO_TRANS_TEST_01",
+        "sitnobjectdescription": "Das Buchungsobjekt wird im Demo-Szenario \"Flugprofitabilität\" verwendet (SITDEMO_FLIGHT_PROFITABILITY).",
+        "language": "de"
+      },
+      {
+        "sitnobjectname": "TM_SITO_TRANS_TEST_01",
+        "sitnobjectdescription": "The booking object is used in the demo scenario Flight Profitability (SITDEMO_FLIGHT_PROFITABILITY).",
+        "language": "en"
+      }
+    ],
+    "sit2ObjStruc": [
+      {
+        "sitnobjstructype": "01",
+        "sitnobjstrucscope": "01",
+        "sitnobjstrucname": "I_SITN2DEMOBOOKING",
+        "sitnobjstrucid": "SITDEMO_CDS_BOOKING",
+        "sit2ObjStrucT": [
+          {
+            "sitnobjstrucdesc": "CDS view of booking (demo object)",
+            "language": "en"
+          }
+        ],
+        "sit2ObjStrSk": [
+          {
+            "sitnobjectfieldorder": "01",
+            "sitnobjectfield": "SITNDEMOCARRIERID"
+          },
+          {
+            "sitnobjectfieldorder": "02",
+            "sitnobjectfield": "SITNDEMOCONNECTIONID"
+          },
+          {
+            "sitnobjectfieldorder": "03",
+            "sitnobjectfield": "SITNDEMOFLIGHTDATE"
+          },
+          {
+            "sitnobjectfieldorder": "04",
+            "sitnobjectfield": "SITNDEMOBOOKINGID"
+          }
+        ],
+        "sit2OsVhMap": [
+          {
+            "sitnobjstrucvhapptype": "01",
+            "sitnobjstrucvhtype": "01",
+            "sitnobjstrucvhscope": "01",
+            "sitnobjstrucfieldname": "SITNDEMOCARRIERREGION"
+          },
+          {
+            "sitnobjstrucvhapptype": "01",
+            "sitnobjstrucvhtype": "01",
+            "sitnobjstrucvhscope": "01",
+            "sitnobjstrucfieldname": "SITNDEMOBOOKINGCLASS"
+          },
+          {
+            "sitnobjstrucvhapptype": "01",
+            "sitnobjstrucvhtype": "01",
+            "sitnobjstrucvhscope": "01",
+            "sitnobjstrucfieldname": "SITNDEMOCARRIERID"
+          },
+          {
+            "sitnobjstrucvhapptype": "01",
+            "sitnobjstrucvhtype": "01",
+            "sitnobjstrucvhscope": "01",
+            "sitnobjstrucfieldname": "SITNDEMOCONNECTIONID"
+          },
+          {
+            "sitnobjstrucvhapptype": "01",
+            "sitnobjstrucvhtype": "01",
+            "sitnobjstrucvhscope": "01",
+            "sitnobjstrucfieldname": "SITNDEMOAGENCYID"
+          },
+          {
+            "sitnobjstrucvhapptype": "01",
+            "sitnobjstrucvhtype": "01",
+            "sitnobjstrucvhscope": "01",
+            "sitnobjstrucfieldname": "SITNDEMOAGENCYREGION"
+          },
+          {
+            "sitnobjstrucvhapptype": "01",
+            "sitnobjstrucvhtype": "01",
+            "sitnobjstrucvhscope": "01",
+            "sitnobjstrucfieldname": "SITNDEMOBOOKINGID"
+          }
+        ],
+        "sit2OsVhMapS": [
+          {
+            "sitnobjstrucvhapptype": "01",
+            "sitnobjstrucfieldname": "SITNDEMOCARRIERREGION",
+            "sitnobjvhsrventityset": "C_Sitn2DemoFlightVH",
+            "sitnobjvhsrvproperty": "SitnDemoRegionCode",
+            "sitnobjvhsrvcid": "SITDEMO_VH"
+          },
+          {
+            "sitnobjstrucvhapptype": "01",
+            "sitnobjstrucfieldname": "SITNDEMOBOOKINGCLASS",
+            "sitnobjvhsrventityset": "C_Sitn2DemoFlightVH",
+            "sitnobjvhsrvproperty": "SitnDemoBookingClass",
+            "sitnobjvhsrvcid": "SITDEMO_VH"
+          },
+          {
+            "sitnobjstrucvhapptype": "01",
+            "sitnobjstrucfieldname": "SITNDEMOCARRIERID",
+            "sitnobjvhsrventityset": "C_Sitn2DemoFlightVH",
+            "sitnobjvhsrvproperty": "SitnDemoCarrierID",
+            "sitnobjvhsrvcid": "SITDEMO_VH"
+          },
+          {
+            "sitnobjstrucvhapptype": "01",
+            "sitnobjstrucfieldname": "SITNDEMOCONNECTIONID",
+            "sitnobjvhsrventityset": "C_Sitn2DemoFlightVH",
+            "sitnobjvhsrvproperty": "SitnDemoConnectionID",
+            "sitnobjvhsrvcid": "SITDEMO_VH"
+          },
+          {
+            "sitnobjstrucvhapptype": "01",
+            "sitnobjstrucfieldname": "SITNDEMOAGENCYID",
+            "sitnobjvhsrventityset": "C_Sitn2DemoFlightVH",
+            "sitnobjvhsrvproperty": "SitnDemoAgencyID",
+            "sitnobjvhsrvcid": "SITDEMO_VH"
+          },
+          {
+            "sitnobjstrucvhapptype": "01",
+            "sitnobjstrucfieldname": "SITNDEMOAGENCYREGION",
+            "sitnobjvhsrventityset": "C_Sitn2DemoFlightVH",
+            "sitnobjvhsrvproperty": "SitnDemoRegionCode",
+            "sitnobjvhsrvcid": "SITDEMO_VH"
+          },
+          {
+            "sitnobjstrucvhapptype": "01",
+            "sitnobjstrucfieldname": "SITNDEMOBOOKINGID",
+            "sitnobjvhsrventityset": "C_Sitn2DemoFlightVH",
+            "sitnobjvhsrvproperty": "SitnDemoBookingID",
+            "sitnobjvhsrvcid": "SITDEMO_VH"
+          }
+        ]
+      }
+    ],
+    "sit2ObjEvents": [
+      {
+        "sitnobjeventcategory": "CL",
+        "sitnobjevtscope": "01",
+        "sitnobjeventid": "SITDEMO_EV_BOOKING_UNCONFIRMED",
+        "sitnobjeventobject": "CL_SIT2_DEMO_BOOKING",
+        "sitnobjeventtype": "UNCONFIRMED",
+        "sit2ObjEventT": [
+          {
+            "sitnobjeventdesc": "Event triggered by unconfirmed booking (demo event)",
+            "language": "en"
+          }
+        ]
+      },
+      {
+        "sitnobjeventcategory": "CL",
+        "sitnobjevtscope": "01",
+        "sitnobjeventid": "SITDEMO_EV_BOOKING_CREATED",
+        "sitnobjeventobject": "CL_SIT2_DEMO_BOOKING",
+        "sitnobjeventtype": "CREATED",
+        "sit2ObjEventT": [
+          {
+            "sitnobjeventdesc": "Event triggered by created booking (demo event)",
+            "language": "en"
+          }
+        ]
+      },
+      {
+        "sitnobjeventcategory": "CL",
+        "sitnobjevtscope": "01",
+        "sitnobjeventid": "SITDEMO_EV_BOOKING_DELETED",
+        "sitnobjeventobject": "CL_SIT2_DEMO_BOOKING",
+        "sitnobjeventtype": "DELETED",
+        "sit2ObjEventT": [
+          {
+            "sitnobjeventdesc": "Event triggered by deleted booking (demo event)",
+            "language": "en"
+          }
+        ]
+      },
+      {
+        "sitnobjeventcategory": "CL",
+        "sitnobjevtscope": "01",
+        "sitnobjeventid": "SITDEMO_EV_BOOKING_CONFIRMED",
+        "sitnobjeventobject": "CL_SIT2_DEMO_BOOKING",
+        "sitnobjeventtype": "CONFIRMED",
+        "sit2ObjEventT": [
+          {
+            "sitnobjeventdesc": "Event triggered by confirmed booking (demo event)",
+            "language": "en"
+          }
+        ]
+      }
+    ],
+    "sit2ObjNav": [
+      {
+        "sitnobjnavscope": "01",
+        "sitnnavigationid": "SITDEMO_NAV_MANAGE_FLIGHT",
+        "sitnsemanticobjectaction": "maintain",
+        "sitnsemanticobject": "SituationDemoFlight",
+        "sit2ObjNavPar": [
+          {
+            "sitnnavgnparamname": "SitnDemoCarrierID"
+          },
+          {
+            "sitnnavgnparamname": "SitnDemoConnectionID"
+          },
+          {
+            "sitnnavgnparamname": "aha"
+          }
+        ]
+      }
+    ],
+    "sit2ObjAct": [
+      {
+        "sitnactiontype": "02",
+        "sitnobjactscope": "01",
+        "sitnactionid": "SITDEMO_ACT_UPGRADE_BOOKING",
+        "sit2ObjActT": [
+          {
+            "language": "en",
+            "sitnactionname": "Upgrade Passengers",
+            "sitnactiondescription": "Upgrade economy passengers to business class"
+          },
+          {
+            "language": "de",
+            "sitnactionname": "Passagiere upgraden",
+            "sitnactiondescription": "Economy-Passagiere auf Business Class upgraden"
+          }
+        ],
+        "sit2ObjActCb": [
+          {
+            "sitncallbackid": "SITDEMO_CB_UPGRADE_BOOKING"
+          }
+        ]
+      },
+      {
+        "sitnactiontype": "02",
+        "sitnobjactscope": "01",
+        "sitnactionid": "SITDEMO_ACT_REBOOK_BOOKING",
+        "sit2ObjActT": [
+          {
+            "language": "en",
+            "sitnactionname": "Rebook Passengers",
+            "sitnactiondescription": "Change bookings to the next flight with the same airline and connection ID"
+          },
+          {
+            "language": "de",
+            "sitnactionname": "Passagiere umbuchen",
+            "sitnactiondescription": "Buchungen auf den nächten Flug mit der gleichen Fluggesellschaft und Verbindungs-ID ändern"
+          }
+        ],
+        "sit2ObjActCb": [
+          {
+            "sitncallbackid": "SITDEMO_CB_REBOOK_BOOKING"
+          }
+        ]
+      },
+      {
+        "sitnactiontype": "02",
+        "sitnobjactscope": "01",
+        "sitnactionid": "SITDEMO_ACT_DELETE_BOOKING",
+        "sit2ObjActT": [
+          {
+            "language": "en",
+            "sitnactionname": "Cancel Bookings",
+            "sitnactiondescription": "Delete the bookings from the flight"
+          },
+          {
+            "language": "de",
+            "sitnactionname": "Buchungen stornieren",
+            "sitnactiondescription": "Buchungen aus dem Flug löschen"
+          }
+        ],
+        "sit2ObjActCb": [
+          {
+            "sitncallbackid": "SITDEMO_CB_DELETE_BOOKING"
+          }
+        ]
+      },
+      {
+        "sitnactiontype": "01",
+        "sitnobjactscope": "01",
+        "sitnactionid": "SITDEMO_ACT_MANAGE_FLIGHT",
+        "sit2ObjActT": [
+          {
+            "language": "en",
+            "sitnactionname": "Manage Flight Bookings",
+            "sitnactiondescription": "Maintain booking details of the flight"
+          },
+          {
+            "language": "de",
+            "sitnactionname": "Flugbuchungen verwalten",
+            "sitnactiondescription": "Buchungsdetails des Flugs pflegen"
+          }
+        ],
+        "sit2ObjActNav": [
+          {
+            "sitnnavigationid": "SITDEMO_NAV_MANAGE_FLIGHT"
+          }
+        ]
+      }
+    ],
+    "sit2ObjCb": [
+      {
+        "sitnobjclbkscope": "01",
+        "sitncallbackclassname": "CL_SIT2_DEMO_CB_CANCEL_BOOKING",
+        "sitncallbackid": "SITDEMO_CB_DELETE_BOOKING",
+        "sit2ObjCbPar": [
+          {
+            "sitncallbackparamname": "BOOKID"
+          },
+          {
+            "sitncallbackparamname": "CARRID"
+          },
+          {
+            "sitncallbackparamname": "CONNID"
+          },
+          {
+            "sitncallbackparamname": "FLDATE"
+          }
+        ]
+      },
+      {
+        "sitnobjclbkscope": "01",
+        "sitncallbackclassname": "CL_SIT2_DEMO_CB_REBOOK_BOOKING",
+        "sitncallbackid": "SITDEMO_CB_REBOOK_BOOKING",
+        "sit2ObjCbPar": [
+          {
+            "sitncallbackparamname": "BOOKID"
+          },
+          {
+            "sitncallbackparamname": "CARRID"
+          },
+          {
+            "sitncallbackparamname": "CONNID"
+          },
+          {
+            "sitncallbackparamname": "FLDATE"
+          }
+        ]
+      },
+      {
+        "sitnobjclbkscope": "01",
+        "sitncallbackclassname": "CL_SIT2_DEMO_CB_UPGR_BOOKING",
+        "sitncallbackid": "SITDEMO_CB_UPGRADE_BOOKING",
+        "sit2ObjCbPar": [
+          {
+            "sitncallbackparamname": "BOOKID"
+          },
+          {
+            "sitncallbackparamname": "CARRID"
+          },
+          {
+            "sitncallbackparamname": "CONNID"
+          },
+          {
+            "sitncallbackparamname": "FLDATE"
+          }
+        ]
+      }
+    ],
+    "sit2ObjVhS": [
+      {
+        "sitnobjvhsrvcversion": "0001",
+        "sitnobjvhsrvcprotocolversion": "01",
+        "sitnobjvhsrvcpathtype": "01",
+        "sitnobjvhsrvcscope": "01",
+        "sitnobjvhsrvcbinding": "C_SITN2DEMOFLIGHTVH_CDS",
+        "sitnobjvhsrvcid": "SITDEMO_VH",
+        "sit2ObjVhSP": [
+          {
+            "sitnobjvhsrvproperty": "SitnDemoAgencyID",
+            "sitnobjvhsrventityset": "C_Sitn2DemoFlightVH"
+          },
+          {
+            "sitnobjvhsrvproperty": "SitnDemoBookingClass",
+            "sitnobjvhsrventityset": "C_Sitn2DemoFlightVH"
+          },
+          {
+            "sitnobjvhsrvproperty": "SitnDemoBookingID",
+            "sitnobjvhsrventityset": "C_Sitn2DemoFlightVH"
+          },
+          {
+            "sitnobjvhsrvproperty": "SitnDemoCarrierID",
+            "sitnobjvhsrventityset": "C_Sitn2DemoFlightVH"
+          },
+          {
+            "sitnobjvhsrvproperty": "SitnDemoConnectionID",
+            "sitnobjvhsrventityset": "C_Sitn2DemoFlightVH"
+          },
+          {
+            "sitnobjvhsrvproperty": "SitnDemoRegionCode",
+            "sitnobjvhsrventityset": "C_Sitn2DemoFlightVH"
+          }
+        ]
+      }
+    ]
+  }
+}
