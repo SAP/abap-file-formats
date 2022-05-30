@@ -74,6 +74,20 @@ In order to add more information to the JSON Schema than that provided by the AB
 The comments are placed directly above the components of the type `ty_main`, but they are also read over several levels as, e.g., in the case of nested structures.
 The different possibilities are summarized in the following.
 
+### Type Mapping
+
+An ABAP type is mapped to a JSON Schema `type` as follows:
+
+ABAP Type | JSON Schema Type | JSON Schema Additions
+:--- | :---  | :---
+string | string |
+c | string | `"maxLength": <length of character field>`
+i | integer | `minimum": -2147483648, "maximum": 2147483647`
+n | string | `"maxLength": <length of character field>, "pattern": "^[0-9]+$"`
+p | number | `"minimum": <minimum value>, "maximum": <maximum value>, "multipleOf": <e.g., 0.01 for 2 decimals>`
+abap_bool | boolean |
+sy-langu | string | `"minLength": 2, "maxLength": 2, "pattern": "^[a-z]+$"`
+
 ### Title
 To provide a title, an ABAP Doc shorttext
 ```abap
