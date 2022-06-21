@@ -62,10 +62,10 @@ INTERFACE zif_aff_chdo_v1
     "! <p class="shorttext">Generated Object</p>
     "! Generated object
     BEGIN OF ty_genobject,
-      "! <p class="shorttext">Class or Function</p>
+      "! <p class="shorttext">Name</p>
       "! Generated class or function module
       "! $required
-      class_or_function TYPE zif_aff_types_v1=>ty_object_name_30,
+      name TYPE zif_aff_types_v1=>ty_object_name_30,
     END OF ty_genobject.
 
   TYPES:

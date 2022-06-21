@@ -82,6 +82,7 @@
   "additionalProperties": false,
   "required": [
     "formatVersion",
-    "header"
+    "header",
+    "scalarFunctionName"
   ]
 }
