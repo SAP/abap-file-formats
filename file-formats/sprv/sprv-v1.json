@@ -14,7 +14,7 @@
     },
     "header": {
       "title": "Header",
-      "description": "Header",
+      "description": "Header Data",
       "type": "object",
       "properties": {
         "description": {
@@ -56,9 +56,9 @@
         "originalLanguage"
       ]
     },
-    "providerDetails": {
+    "serviceProvider": {
       "title": "Service Provider",
-      "description": "Service Provider",
+      "description": "Service Provider Details",
       "type": "object",
       "properties": {
         "name": {
@@ -66,12 +66,6 @@
           "description": "Name of the Service Provider",
           "type": "string",
           "maxLength": 30
-        },
-        "orgLang": {
-          "title": "Original Language",
-          "description": "Original Language",
-          "type": "string",
-          "maxLength": 2
         },
         "prefix": {
           "title": "Prefix",
@@ -90,6 +84,6 @@
   "required": [
     "formatVersion",
     "header",
-    "providerDetails"
+    "serviceProvider"
   ]
 }
