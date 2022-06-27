@@ -29,5 +29,5 @@ INTERFACE zif_aff_sprv_v1
       "! Service provider details
       "! $required
       service_provider TYPE ty_servprovider,
-    END OF ty_main .
+    END OF ty_main.
 ENDINTERFACE.
