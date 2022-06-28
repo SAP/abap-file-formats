@@ -22,7 +22,7 @@ INTERFACE zif_aff_sprv_v1
       "! $required
       format_version   TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
-      "! Header Data
+      "! Header data
       "! $required
       header           TYPE zif_aff_types_v1=>ty_header_60_cloud,
       "! <p class="shorttext">Service Provider</p>
