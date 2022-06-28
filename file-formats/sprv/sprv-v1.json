@@ -3,7 +3,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/sprv/sprv-v1.json",
   "title": "SOAP Web Service Provider Model",
-  "description": "SOAP Web Service Provider Model",
+  "description": "SOAP web service provider model",
   "type": "object",
   "properties": {
     "formatVersion": {
@@ -14,7 +14,7 @@
     },
     "header": {
       "title": "Header",
-      "description": "Header Data",
+      "description": "Header data",
       "type": "object",
       "properties": {
         "description": {
@@ -58,12 +58,12 @@
     },
     "serviceProvider": {
       "title": "Service Provider",
-      "description": "Service Provider Details",
+      "description": "Service provider details",
       "type": "object",
       "properties": {
         "name": {
           "title": "Name",
-          "description": "Name of the Service Provider",
+          "description": "Name of the service provider",
           "type": "string",
           "maxLength": 30
         },
