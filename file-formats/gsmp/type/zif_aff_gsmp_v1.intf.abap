@@ -150,4 +150,4 @@ INTERFACE zif_aff_gsmp_v1
 
     END OF ty_main.
 
-endinterface.
+ENDINTERFACE.
