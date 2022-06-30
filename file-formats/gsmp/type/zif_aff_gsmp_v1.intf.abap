@@ -36,7 +36,7 @@ INTERFACE zif_aff_gsmp_v1
       "! $enumValue 'CDSA'
       type_cds_view TYPE ty_provider_type VALUE 'CDSA',
 
-    end of co_provider_type,
+    END of co_provider_type,
 
 
 
