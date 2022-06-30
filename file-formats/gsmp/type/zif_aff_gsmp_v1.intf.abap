@@ -1,5 +1,5 @@
 INTERFACE zif_aff_gsmp_v1
-  public .
+  PUBLIC .
 
   types:
 
