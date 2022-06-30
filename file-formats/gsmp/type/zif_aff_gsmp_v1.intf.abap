@@ -20,7 +20,7 @@ INTERFACE zif_aff_gsmp_v1
     ty_provider_pos   TYPE i.
 
 
-  constants:
+  CONSTANTS:
 
     "! <p class="shorttext">Provider Type</p>
     "! Provider type
