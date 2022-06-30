@@ -17,7 +17,7 @@ INTERFACE zif_aff_gsmp_v1
     "! <p class="shorttext">Provider Position</p>
     "! Provider position
     "! $values {@link zif_aff_gsmp_v1.data:co_provider_pos}
-    ty_provider_pos   type i.
+    ty_provider_pos   TYPE i.
 
 
   constants:
