@@ -24,7 +24,7 @@ INTERFACE zif_aff_gsmp_v1
 
     "! <p class="shorttext">Provider Type</p>
     "! Provider type
-    begin of co_provider_type,
+    BEGIN of co_provider_type,
 
       "! <p class="shorttext">Class</p>
       "! Class
