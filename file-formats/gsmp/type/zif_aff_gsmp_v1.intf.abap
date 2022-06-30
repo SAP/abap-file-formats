@@ -6,7 +6,7 @@ INTERFACE zif_aff_gsmp_v1
     "! <p class="shorttext">Provider Type</p>
     "! Provider type
     "! $values {@link zif_aff_gsmp_v1.data:co_provider_type}
-    ty_provider_type  type c length 4,
+    ty_provider_type  TYPE c length 4,
 
     "! <p class="shorttext">Execution Mode</p>
     "! Execution mode
