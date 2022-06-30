@@ -1,7 +1,7 @@
 INTERFACE zif_aff_gsmp_v1
   PUBLIC .
 
-  types:
+  TYPES:
 
     "! <p class="shorttext">Provider Type</p>
     "! Provider type
