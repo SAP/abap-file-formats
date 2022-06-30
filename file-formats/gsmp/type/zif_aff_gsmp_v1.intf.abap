@@ -11,7 +11,7 @@ INTERFACE zif_aff_gsmp_v1
     "! <p class="shorttext">Execution Mode</p>
     "! Execution mode
     "! $values {@link zif_aff_gsmp_v1.data:co_execution_mode}
-    ty_execution_mode TYPE c length 1,
+    ty_execution_mode TYPE c LENGTH 1,
 
 
     "! <p class="shorttext">Provider Position</p>
