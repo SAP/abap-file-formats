@@ -34,7 +34,7 @@ INTERFACE zif_aff_gsmp_v1
       "! <p class="shorttext">CDS View</p>
       "! CDS view
       "! $enumValue 'CDSA'
-      type_cds_view TYPE ty_provider_type value 'CDSA',
+      type_cds_view TYPE ty_provider_type VALUE 'CDSA',
 
     end of co_provider_type,
 
