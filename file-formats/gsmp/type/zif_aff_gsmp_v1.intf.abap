@@ -29,7 +29,7 @@ INTERFACE zif_aff_gsmp_v1
       "! <p class="shorttext">Class</p>
       "! Class
       "! $enumValue 'CLAS'
-      type_class    type ty_provider_type value 'CLAS',
+      type_class    TYPE ty_provider_type value 'CLAS',
 
       "! <p class="shorttext">CDS View</p>
       "! CDS view
