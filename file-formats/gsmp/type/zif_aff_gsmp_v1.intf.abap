@@ -89,7 +89,7 @@ INTERFACE zif_aff_gsmp_v1
       normal       TYPE ty_provider_pos VALUE 300,
 
 
-      "! <p class="shorttext">Lown</p>
+      "! <p class="shorttext">Low</p>
       "! Low
       "! $enumValue '400'
       low          TYPE ty_provider_pos VALUE 400,
