@@ -88,7 +88,6 @@ INTERFACE zif_aff_gsmp_v1
 
       "! <p class="shorttext">Low</p>
       "! Low
-      "! $enumValue '400'
       low          TYPE ty_provider_pos VALUE 400,
 
     END OF co_provider_pos.
