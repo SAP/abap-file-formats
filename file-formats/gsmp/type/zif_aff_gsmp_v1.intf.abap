@@ -143,7 +143,7 @@ INTERFACE zif_aff_gsmp_v1
       provider_position   TYPE ty_provider_pos,
 
 
-      "! <p class="shorttext">Model Date</p>
+      "! <p class="shorttext">Model Data</p>
       "! Model data
       model_data     TYPE string,
 
