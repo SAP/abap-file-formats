@@ -9,8 +9,8 @@
     "type": "CLAS",
     "implementation": "ZCL_AFF_GSMP_TEST"
   },
-  "executionMode": "S",
+  "executionMode": "system",
   "scopeDependent": false,
-  "position": "300",
+  "position": "normal",
   "modelData": ""
 }
