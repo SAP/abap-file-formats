@@ -6,6 +6,7 @@ INTERFACE zif_aff_gsmp_v1
     "! <p class="shorttext">Provider Type</p>
     "! Provider type
     "! $values {@link zif_aff_gsmp_v1.data:co_provider_type}
+    "! $default {@link zif_aff_gsmp_v1.data:co_provider_type.class}
     ty_provider_type  TYPE c LENGTH 4,
 
     "! <p class="shorttext">Execution Mode</p>
@@ -17,6 +18,7 @@ INTERFACE zif_aff_gsmp_v1
     "! <p class="shorttext">Provider Position</p>
     "! Provider position
     "! $values {@link zif_aff_gsmp_v1.data:co_provider_pos}
+    "! $default {@link zif_aff_gsmp_v1.data:co_provider_pos.normal}
     ty_provider_pos   TYPE i.
 
 
