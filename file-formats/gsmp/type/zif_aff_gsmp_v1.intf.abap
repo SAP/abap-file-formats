@@ -83,7 +83,6 @@ INTERFACE zif_aff_gsmp_v1
 
       "! <p class="shorttext">Normal</p>
       "! Normal
-      "! $enumValue '300'
       normal       TYPE ty_provider_pos VALUE 300,
 
 
