@@ -56,38 +56,48 @@
         "originalLanguage"
       ]
     },
-    "providerType": {
-      "title": "Provider Type",
-      "description": "Provider type",
-      "type": "string",
-      "enum": [
-        "CLAS",
-        "CDSA"
-      ],
-      "enumTitles": [
-        "Class",
-        "CDS View"
-      ],
-      "enumDescriptions": [
-        "Class",
-        "CDS view"
-      ]
-    },
     "implementation": {
-      "title": "Implementation",
-      "description": "Implementation",
-      "type": "string",
-      "maxLength": 30
+      "title": "Provider Implementation",
+      "description": "Provider implementation",
+      "type": "object",
+      "properties": {
+        "type": {
+          "title": "Type",
+          "description": "Type",
+          "type": "string",
+          "enum": [
+            "CLAS"
+          ],
+          "enumTitles": [
+            "Class"
+          ],
+          "enumDescriptions": [
+            "Class"
+          ],
+          "default": "class"
+        },
+        "implementation": {
+          "title": "Implementation",
+          "description": "Implementation",
+          "type": "string",
+          "maxLength": 30
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "implementation"
+      ]
     },
     "executionMode": {
       "title": "Execution Mode",
       "description": "Execution mode",
       "type": "string",
       "enum": [
-        "S",
-        "I",
-        "A",
-        "N"
+        "system",
+        "instance",
+        "application",
+        "none"
       ],
       "enumTitles": [
         "System",
@@ -102,36 +112,37 @@
         "No execution. Only model. Data from external."
       ]
     },
-    "isScope": {
+    "scopeDependent": {
       "title": "Scope Dependent",
       "description": "Scope dependent",
       "type": "boolean"
     },
-    "providerPos": {
+    "position": {
       "title": "Provider Position",
       "description": "Provider Position",
       "type": "string",
       "enum": [
-        "1",
-        "200",
-        "300",
-        "400"
+        "availability",
+        "high",
+        "normal",
+        "low"
       ],
       "enumTitles": [
         "Availability",
         "High",
         "Normal",
-        "Lown"
+        "Low"
       ],
       "enumDescriptions": [
         "Availability",
         "High",
         "Normal",
         "Low"
-      ]
+      ],
+      "default": "normal"
     },
     "modelData": {
-      "title": "Model Date",
+      "title": "Model Data",
       "description": "Model data",
       "type": "string"
     }
@@ -140,10 +151,9 @@
   "required": [
     "formatVersion",
     "header",
-    "providerType",
     "implementation",
     "executionMode",
-    "isScope",
-    "providerPos"
+    "scopeDependent",
+    "position"
   ]
 }
