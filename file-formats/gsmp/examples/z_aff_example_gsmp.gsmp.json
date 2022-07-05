@@ -5,10 +5,12 @@
     "originalLanguage": "en",
     "abapLanguageVersion": "standard"
   },
-  "providerType": "CLAS",
-  "implementation": "ZCL_AFF_GSMP_TEST",
+  "implementation": {
+    "type": "CLAS",
+    "implementation": "ZCL_AFF_GSMP_TEST"
+  },
   "executionMode": "S",
-  "isScope": false,
-  "providerPos": "300",
+  "scopeDependent": false,
+  "position": "300",
   "modelData": ""
 }
