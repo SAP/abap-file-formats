@@ -79,7 +79,6 @@ INTERFACE zif_aff_gsmp_v1
 
       "! <p class="shorttext">High</p>
       "! High
-      "! $enumValue '200'
       high         TYPE ty_provider_pos VALUE 200,
 
       "! <p class="shorttext">Normal</p>
