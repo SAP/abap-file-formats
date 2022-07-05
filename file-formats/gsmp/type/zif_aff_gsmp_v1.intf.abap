@@ -19,7 +19,24 @@ INTERFACE zif_aff_gsmp_v1
     "! Provider position
     "! $values {@link zif_aff_gsmp_v1.data:co_provider_pos}
     "! $default {@link zif_aff_gsmp_v1.data:co_provider_pos.normal}
-    ty_provider_pos   TYPE i.
+    ty_provider_pos   TYPE i,
+
+
+    "! <p class="shorttext">Provider Implementation</p>
+    "! Provider implementation
+    BEGIN OF ty_provider_implementation,
+
+      "! <p class="shorttext">Type</p>
+      "! Type
+      "! $required
+      type TYPE ty_provider_type,
+
+      "! <p class="shorttext">Implementation</p>
+      "! Implementation
+      "! $required
+      implementation TYPE zif_aff_types_v1=>ty_object_name_30,
+
+    END OF ty_provider_implementation.
 
 
   CONSTANTS:
@@ -32,11 +49,6 @@ INTERFACE zif_aff_gsmp_v1
       "! Class
       "! $enumValue 'CLAS'
       class    TYPE ty_provider_type VALUE 'CLAS',
-
-      "! <p class="shorttext">CDS View</p>
-      "! CDS view
-      "! $enumValue 'CDSA'
-      cds_view TYPE ty_provider_type VALUE 'CDSA',
 
     END OF co_provider_type,
 
@@ -107,16 +119,10 @@ INTERFACE zif_aff_gsmp_v1
       header         TYPE zif_aff_types_v1=>ty_header_60_cloud,
 
 
-      "! <p class="shorttext">Provider Type</p>
-      "! Provider type
+      "! <p class="shorttext">Provider Implementation</p>
+      "! Provider implementation
       "! $required
-      provider_type  TYPE ty_provider_type,
-
-
-      "! <p class="shorttext">Implementation</p>
-      "! Implementation
-      "! $required
-      implementation TYPE zif_aff_types_v1=>ty_object_name_30,
+      implementation TYPE ty_provider_implementation,
 
 
       "! <p class="shorttext">Execution Mode</p>
@@ -134,7 +140,7 @@ INTERFACE zif_aff_gsmp_v1
       "! <p class="shorttext">Provider Position</p>
       "! Provider Position
       "! $required
-      provider_position   TYPE ty_provider_pos,
+      position   TYPE ty_provider_pos,
 
 
       "! <p class="shorttext">Model Data</p>
