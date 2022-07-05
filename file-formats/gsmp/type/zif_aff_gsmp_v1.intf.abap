@@ -140,7 +140,7 @@ INTERFACE zif_aff_gsmp_v1
       "! <p class="shorttext">Provider Position</p>
       "! Provider Position
       "! $required
-      provider_pos   TYPE ty_provider_pos,
+      provider_position   TYPE ty_provider_pos,
 
 
       "! <p class="shorttext">Model Date</p>
