@@ -29,12 +29,12 @@ INTERFACE zif_aff_gsmp_v1
       "! <p class="shorttext">Class</p>
       "! Class
       "! $enumValue 'CLAS'
-      type_class    TYPE ty_provider_type VALUE 'CLAS',
+      class    TYPE ty_provider_type VALUE 'CLAS',
 
       "! <p class="shorttext">CDS View</p>
       "! CDS view
       "! $enumValue 'CDSA'
-      type_cds_view TYPE ty_provider_type VALUE 'CDSA',
+      cds_view TYPE ty_provider_type VALUE 'CDSA',
 
     END OF co_provider_type,
 
@@ -46,22 +46,18 @@ INTERFACE zif_aff_gsmp_v1
 
       "! <p class="shorttext">System</p>
       "! System
-      "! $enumValue 'S'
       system      TYPE ty_execution_mode VALUE 'S',
 
       "! <p class="shorttext">Instance</p>
       "! Instance
-      "! $enumValue 'I'
       instance    TYPE ty_execution_mode VALUE 'I',
 
       "! <p class="shorttext">Application</p>
       "! Application
-      "! $enumValue 'A'
       application TYPE ty_execution_mode VALUE 'A',
 
       "! <p class="shorttext">None</p>
       "! No execution. Only model. Data from external.
-      "! $enumValue 'N'
       none        TYPE ty_execution_mode VALUE 'N',
 
     END OF co_execution_mode,
@@ -130,7 +126,7 @@ INTERFACE zif_aff_gsmp_v1
       "! <p class="shorttext">Scope Dependent</p>
       "! Scope dependent
       "! $required
-      is_scope       TYPE abap_bool,
+      scope_dependent       TYPE abap_bool,
 
 
       "! <p class="shorttext">Provider Position</p>
