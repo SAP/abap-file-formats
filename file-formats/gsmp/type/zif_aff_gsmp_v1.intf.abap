@@ -75,7 +75,6 @@ INTERFACE zif_aff_gsmp_v1
 
       "! <p class="shorttext">Availability</p>
       "! Availability
-      "! $enumValue '1'
       availability TYPE ty_provider_pos VALUE 1,
 
       "! <p class="shorttext">High</p>
