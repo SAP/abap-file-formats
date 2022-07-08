@@ -31,12 +31,50 @@ INTERFACE zif_aff_gsmp_v1
       "! $required
       type TYPE ty_provider_type,
 
-      "! <p class="shorttext">Implementation</p>
-      "! Implementation
+      "! <p class="shorttext">Name</p>
+      "! Name
       "! $required
-      implementation TYPE zif_aff_types_v1=>ty_object_name_30,
+      name TYPE zif_aff_types_v1=>ty_object_name_30,
 
-    END OF ty_provider_implementation.
+    END OF ty_provider_implementation,
+
+
+
+    "! <p class="shorttext">Provider Execution</p>
+    "! Provider execution
+    BEGIN OF ty_provider_execution,
+
+      "! <p class="shorttext">Execution Mode</p>
+      "! Execution mode
+      "! $required
+      execution_mode TYPE ty_execution_mode,
+
+      "! <p class="shorttext">Provider Position</p>
+      "! Provider Position
+      "! $required
+      position   TYPE ty_provider_pos,
+
+      "! <p class="shorttext">Scope Dependent</p>
+      "! Scope dependent
+      "! $required
+      scope_dependent       TYPE abap_bool,
+
+    END OF ty_provider_execution,
+
+
+
+    "! <p class="shorttext">Provider Data Model</p>
+    "! Provider data model
+    BEGIN OF ty_data_model,
+
+      "! <p class="shorttext">JSON Data Model</p>
+      "! JSON data model
+      model_data     TYPE string,
+
+    END OF ty_data_model.
+
+
+
 
 
   CONSTANTS:
@@ -125,27 +163,15 @@ INTERFACE zif_aff_gsmp_v1
       implementation TYPE ty_provider_implementation,
 
 
-      "! <p class="shorttext">Execution Mode</p>
-      "! Execution mode
+      "! <p class="shorttext">Provider Execution</p>
+      "! Provider execution
       "! $required
-      execution_mode TYPE ty_execution_mode,
+      execution TYPE ty_provider_execution,
 
 
-      "! <p class="shorttext">Scope Dependent</p>
-      "! Scope dependent
-      "! $required
-      scope_dependent       TYPE abap_bool,
-
-
-      "! <p class="shorttext">Provider Position</p>
-      "! Provider Position
-      "! $required
-      position   TYPE ty_provider_pos,
-
-
-      "! <p class="shorttext">Model Data</p>
-      "! Model data
-      model_data     TYPE string,
+      "! <p class="shorttext">Provider Data Model</p>
+      "! Provider data model
+      data_model     TYPE ty_data_model,
 
 
     END OF ty_main.
