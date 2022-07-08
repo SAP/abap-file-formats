@@ -18,7 +18,7 @@ INTERFACE zif_aff_indx_v1
     "! Object type INDX
     BEGIN OF ty_main,
       "! $required
-      format_version        TYPE if_aff_types_v1=>ty_format_version,
+      format_version        TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
