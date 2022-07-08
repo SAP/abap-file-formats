@@ -76,9 +76,9 @@
           ],
           "default": "class"
         },
-        "implementation": {
-          "title": "Implementation",
-          "description": "Implementation",
+        "name": {
+          "title": "Name",
+          "description": "Name",
           "type": "string",
           "maxLength": 30
         }
@@ -86,65 +86,86 @@
       "additionalProperties": false,
       "required": [
         "type",
-        "implementation"
+        "name"
       ]
     },
-    "executionMode": {
-      "title": "Execution Mode",
-      "description": "Execution mode",
-      "type": "string",
-      "enum": [
-        "system",
-        "instance",
-        "application",
-        "none"
-      ],
-      "enumTitles": [
-        "System",
-        "Instance",
-        "Application",
-        "None"
-      ],
-      "enumDescriptions": [
-        "System",
-        "Instance",
-        "Application",
-        "No execution. Only model. Data from external."
+    "execution": {
+      "title": "Provider Execution",
+      "description": "Provider execution",
+      "type": "object",
+      "properties": {
+        "executionMode": {
+          "title": "Execution Mode",
+          "description": "Execution mode",
+          "type": "string",
+          "enum": [
+            "system",
+            "instance",
+            "application",
+            "none"
+          ],
+          "enumTitles": [
+            "System",
+            "Instance",
+            "Application",
+            "None"
+          ],
+          "enumDescriptions": [
+            "System",
+            "Instance",
+            "Application",
+            "No execution. Only model. Data from external."
+          ]
+        },
+        "position": {
+          "title": "Provider Position",
+          "description": "Provider Position",
+          "type": "string",
+          "enum": [
+            "availability",
+            "high",
+            "normal",
+            "low"
+          ],
+          "enumTitles": [
+            "Availability",
+            "High",
+            "Normal",
+            "Low"
+          ],
+          "enumDescriptions": [
+            "Availability",
+            "High",
+            "Normal",
+            "Low"
+          ],
+          "default": "normal"
+        },
+        "scopeDependent": {
+          "title": "Scope Dependent",
+          "description": "Scope dependent",
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "executionMode",
+        "position",
+        "scopeDependent"
       ]
     },
-    "scopeDependent": {
-      "title": "Scope Dependent",
-      "description": "Scope dependent",
-      "type": "boolean"
-    },
-    "position": {
-      "title": "Provider Position",
-      "description": "Provider Position",
-      "type": "string",
-      "enum": [
-        "availability",
-        "high",
-        "normal",
-        "low"
-      ],
-      "enumTitles": [
-        "Availability",
-        "High",
-        "Normal",
-        "Low"
-      ],
-      "enumDescriptions": [
-        "Availability",
-        "High",
-        "Normal",
-        "Low"
-      ],
-      "default": "normal"
-    },
-    "modelData": {
-      "title": "Model Data",
-      "description": "Model data",
-      "type": "string"
+    "dataModel": {
+      "title": "Provider Data Model",
+      "description": "Provider data model",
+      "type": "object",
+      "properties": {
+        "modelData": {
+          "title": "JSON Data Model",
+          "description": "JSON data model",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
     }
   },
   "additionalProperties": false,
@@ -152,8 +173,6 @@
     "formatVersion",
     "header",
     "implementation",
-    "executionMode",
-    "scopeDependent",
-    "position"
+    "execution"
   ]
 }
