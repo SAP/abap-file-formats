@@ -17,10 +17,9 @@ INTERFACE zif_aff_gsmp_v1
 
     "! <p class="shorttext">Provider Position</p>
     "! Provider position
-    "! $values {@link zif_aff_gsmp_v1.data:co_provider_pos}
-    "! $default {@link zif_aff_gsmp_v1.data:co_provider_pos.normal}
-    ty_provider_pos   TYPE i,
-
+    "! $values {@link zif_aff_gsmp_v1.data:co_priority}
+    "! $default {@link zif_aff_gsmp_v1.data:co_priority.normal}
+    ty_priority   TYPE i,
 
     "! <p class="shorttext">Provider Implementation</p>
     "! Provider implementation
@@ -38,21 +37,19 @@ INTERFACE zif_aff_gsmp_v1
 
     END OF ty_provider_implementation,
 
-
-
     "! <p class="shorttext">Provider Execution</p>
     "! Provider execution
     BEGIN OF ty_provider_execution,
 
-      "! <p class="shorttext">Execution Mode</p>
-      "! Execution mode
+      "! <p class="shorttext">Mode</p>
+      "! Mode
       "! $required
-      execution_mode TYPE ty_execution_mode,
+      mode TYPE ty_execution_mode,
 
-      "! <p class="shorttext">Provider Position</p>
-      "! Provider Position
+      "! <p class="shorttext">Provider Priority</p>
+      "! Provider priority
       "! $required
-      position   TYPE ty_provider_pos,
+      priority   TYPE ty_priority,
 
       "! <p class="shorttext">Scope Dependent</p>
       "! Scope dependent
@@ -61,21 +58,15 @@ INTERFACE zif_aff_gsmp_v1
 
     END OF ty_provider_execution,
 
+    "! <p class="shorttext">Provider Model</p>
+    "! Provider model
+    BEGIN OF ty_model,
 
+      "! <p class="shorttext">JSON Data</p>
+      "! JSON data
+      data     TYPE string,
 
-    "! <p class="shorttext">Provider Data Model</p>
-    "! Provider data model
-    BEGIN OF ty_data_model,
-
-      "! <p class="shorttext">JSON Data Model</p>
-      "! JSON data model
-      model_data     TYPE string,
-
-    END OF ty_data_model.
-
-
-
-
+    END OF ty_model.
 
   CONSTANTS:
 
@@ -89,8 +80,6 @@ INTERFACE zif_aff_gsmp_v1
       class    TYPE ty_provider_type VALUE 'CLAS',
 
     END OF co_provider_type,
-
-
 
     "! <p class="shorttext">Execution Mode</p>
     "! Execution mode
@@ -114,32 +103,27 @@ INTERFACE zif_aff_gsmp_v1
 
     END OF co_execution_mode,
 
+    "! <p class="shorttext">Provider Priority</p>
+    "! Provider priority
+    BEGIN OF co_priority,
 
-
-
-    "! <p class="shorttext">Provider Position</p>
-    "! Provider position
-    BEGIN OF co_provider_pos,
-
-      "! <p class="shorttext">Availability</p>
-      "! Availability
-      availability TYPE ty_provider_pos VALUE 1,
+      "! <p class="shorttext">Very High (Availability)</p>
+      "! Very high (Availability)
+      availability TYPE ty_priority VALUE 1,
 
       "! <p class="shorttext">High</p>
       "! High
-      high         TYPE ty_provider_pos VALUE 200,
+      high         TYPE ty_priority VALUE 200,
 
       "! <p class="shorttext">Normal</p>
       "! Normal
-      normal       TYPE ty_provider_pos VALUE 300,
-
+      normal       TYPE ty_priority VALUE 300,
 
       "! <p class="shorttext">Low</p>
       "! Low
-      low          TYPE ty_provider_pos VALUE 400,
+      low          TYPE ty_priority VALUE 400,
 
-    END OF co_provider_pos.
-
+    END OF co_priority.
 
   TYPES:
 
@@ -150,29 +134,24 @@ INTERFACE zif_aff_gsmp_v1
       "! $required
       format_version TYPE zif_aff_types_v1=>ty_format_version,
 
-
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
       header         TYPE zif_aff_types_v1=>ty_header_60_cloud,
-
 
       "! <p class="shorttext">Provider Implementation</p>
       "! Provider implementation
       "! $required
       implementation TYPE ty_provider_implementation,
 
-
       "! <p class="shorttext">Provider Execution</p>
       "! Provider execution
       "! $required
       execution TYPE ty_provider_execution,
 
-
-      "! <p class="shorttext">Provider Data Model</p>
-      "! Provider data model
-      data_model     TYPE ty_data_model,
-
+      "! <p class="shorttext">Provider Model</p>
+      "! Provider model
+      model     TYPE ty_model,
 
     END OF ty_main.
 
