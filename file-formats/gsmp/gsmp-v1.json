@@ -94,9 +94,9 @@
       "description": "Provider execution",
       "type": "object",
       "properties": {
-        "executionMode": {
-          "title": "Execution Mode",
-          "description": "Execution mode",
+        "mode": {
+          "title": "Mode",
+          "description": "Mode",
           "type": "string",
           "enum": [
             "system",
@@ -117,9 +117,9 @@
             "No execution. Only model. Data from external."
           ]
         },
-        "position": {
-          "title": "Provider Position",
-          "description": "Provider Position",
+        "priority": {
+          "title": "Provider Priority",
+          "description": "Provider priority",
           "type": "string",
           "enum": [
             "availability",
@@ -128,13 +128,13 @@
             "low"
           ],
           "enumTitles": [
-            "Availability",
+            "Very High (Availability)",
             "High",
             "Normal",
             "Low"
           ],
           "enumDescriptions": [
-            "Availability",
+            "Very high (Availability)",
             "High",
             "Normal",
             "Low"
@@ -149,19 +149,19 @@
       },
       "additionalProperties": false,
       "required": [
-        "executionMode",
-        "position",
+        "mode",
+        "priority",
         "scopeDependent"
       ]
     },
-    "dataModel": {
-      "title": "Provider Data Model",
-      "description": "Provider data model",
+    "model": {
+      "title": "Provider Model",
+      "description": "Provider model",
       "type": "object",
       "properties": {
-        "modelData": {
-          "title": "JSON Data Model",
-          "description": "JSON data model",
+        "data": {
+          "title": "JSON Data",
+          "description": "JSON data",
           "type": "string"
         }
       },
