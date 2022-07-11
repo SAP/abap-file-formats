@@ -57,27 +57,27 @@
       ]
     },
     "attributes": {
-      "title": "Attributes of an archiving object",
+      "title": "Attributes of an Archiving Object",
       "description": "Attributes of an archiving object",
       "type": "object",
       "properties": {
         "writeClass": {
-          "title": "Name of executable class which writes the data to the archive",
-          "description": "Name of executable class which writes the data to the archive",
+          "title": "Write Class",
+          "description": "Name of executable class or program which writes the data to the archive",
           "type": "string",
-          "maxLength": 40
+          "maxLength": 30
         },
         "deleteClass": {
-          "title": "Name of executable class which deletes the data from the tables",
-          "description": "Name of executable class which deletes the data from the tables",
+          "title": "Delete Class",
+          "description": "Name of executable class or program which deletes the data from the tables",
           "type": "string",
-          "maxLength": 40
+          "maxLength": 30
         },
         "reloadClass": {
-          "title": "Name of executable class which reloads the data to the tables",
-          "description": "Name of executable class which reloads the data to the the tables (may be empty)",
+          "title": "Reload Class",
+          "description": "Name of executable class or program which reloads the data to the tables (may be empty)",
           "type": "string",
-          "maxLength": 40
+          "maxLength": 30
         }
       },
       "additionalProperties": false,
@@ -87,17 +87,16 @@
       ]
     },
     "tablesToBeArchived": {
-      "title": "Tables from which data is archived",
-      "description": "Tables of business object instance from which data is archived",
+      "title": "Tables to Be Archived",
+      "description": "Tables of business object instance from which data is archived.",
       "type": "array",
       "uniqueItems": true,
       "items": {
-        "title": "Table from which data is archived",
+        "title": "Table to Be Archived",
         "description": "Tables of business object instance from which data is archived",
         "type": "object",
         "properties": {
           "name": {
-            "title": "Name of table or structure",
             "description": "Name of table or structure",
             "type": "string",
             "maxLength": 30
@@ -110,17 +109,17 @@
       }
     },
     "archivingClasses": {
-      "title": "Names of archiving classes",
-      "description": "Archiving classes are no ABAP classes, but IDs of reuse objects, whose data should be archived together with the business object instance (for example change documents).",
+      "title": "Archiving Classes",
+      "description": "Archiving classes are no ABAP classes, but IDs of reuse objects, whose data should be archived Together with the business object instance (for example change documents).",
       "type": "array",
       "uniqueItems": true,
       "items": {
-        "title": "Name of archiving class",
-        "description": "Archiving classes are no ABAP classes, but IDs of reuse objects, whose data should be archived together with the business object instance (for example change documents).",
+        "title": "Name of Archiving Class",
+        "description": "Archiving classes are no ABAP classes, but IDs of reuse objects, whose data should be archived Together with the business object instance (for example change documents).",
         "type": "object",
         "properties": {
           "name": {
-            "title": "Name of archiving class",
+            "title": "Name",
             "description": "Name of archiving class",
             "type": "string",
             "maxLength": 10
