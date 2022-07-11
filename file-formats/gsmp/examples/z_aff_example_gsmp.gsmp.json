@@ -10,11 +10,11 @@
 		"name": "ZCL_AFF_GSMP_TEST"
 	},
 	"execution": {
-		"executionMode": "system",
+		"mode": "system",
 		"position": "normal",
 		"scopeDependent": true
 	},
-	"dataModel": {
-		"modelData": ""
+	"model": {
+		"data": ""
 	}
 }
