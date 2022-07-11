@@ -1,40 +1,40 @@
 INTERFACE if_aff_aobj_v1
 
-  PUBLIC.
+ PUBLIC.
 
   TYPES:
     BEGIN OF ty_attributes,
       "! <p class="shorttext">Write Class</p>
-      "! name of executable class or program which writes the data to the archive
+      "! Name of executable class or program which writes the data to the archive
       "! $required
       write_class  TYPE if_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Delete Class</p>
-      "! name of executable class or program which deletes the data from the tables
+      "! Name of executable class or program which deletes the data from the tables
       "! $required
       delete_class TYPE if_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Reload Class</p>
-      "! name of executable class or program which reloads the data to the tables (may be empty)
+      "! Name of executable class or program which reloads the data to the tables (may be empty)
       reload_class TYPE if_aff_types_v1=>ty_object_name_30,
     END OF ty_attributes.
 
   TYPES:
     "! <p class="shorttext">Table to Be Archived</p>
-    "! tables of business object instance from which data is archived
+    "! Tables of business object instance from which data is archived
     BEGIN OF ty_table_to_be_archived,
       "! <p class="shorttext"></p>
-      "! name of table or structure
+      "! Name of table or structure
       "! $required
       name TYPE c LENGTH 30,
     END OF ty_table_to_be_archived.
 
   "! <p class="shorttext">Tables to Be Archived</p>
-  "! tables from which data is archived
+  "! Tables from which data is archived
   TYPES ty_tables_to_be_archived TYPE SORTED TABLE OF ty_table_to_be_archived WITH UNIQUE KEY name.
 
   TYPES:
     "! <p class="shorttext">Name of Archiving Class</p>
     "! Archiving classes are no ABAP classes, but IDs of reuse objects, whose data should be archived
-    "! together with the business object instance (for example change documents).
+    "! Together with the business object instance (for example change documents).
     BEGIN OF ty_archiving_class,
       "! <p class="shorttext">Name</p>
       "! Name of archiving class
