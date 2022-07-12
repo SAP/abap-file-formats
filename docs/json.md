@@ -158,8 +158,11 @@ To set the `default` for a component of the JSON Schema, the annotation
 ```abap
 "! $default 'value'
 ```
-This also ensures that only components whose value is not equal to a specific default value are written to the JSON data file.
-Note that if you specify a default value, the initial values are written to the JSON data file, unless they are not equal to the selected default.
+This also ensures that only components whose value is not equal to a specific default value are serialized to the JSON data file.
+Fields, which are not specified in the JSON data file, are deserialized to their default values.
+Note that if you specify a default value, initial values are written to the JSON data file, unless they are not equal to the selected default.
+
+Since fields, which are not specified in the JSON data, might be represented by either initial values or default values, implementations of serialization and deserialization of ABAP file formats must consider fields with default values as specified here.
 
 ### Enum Values
 To pass enum values to a JSON Schema, a type and a constant are necessary.
