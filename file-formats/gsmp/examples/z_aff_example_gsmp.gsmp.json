@@ -11,7 +11,7 @@
 	},
 	"execution": {
 		"mode": "system",
-		"position": "normal",
+		"priority": "normal",
 		"scopeDependent": true
 	},
 	"model": {
