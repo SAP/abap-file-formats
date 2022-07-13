@@ -57,7 +57,7 @@
       ]
     },
     "attributes": {
-      "title": "Attributes of an Archiving Object",
+      "title": "Attributes",
       "description": "Attributes of an archiving object",
       "type": "object",
       "properties": {
