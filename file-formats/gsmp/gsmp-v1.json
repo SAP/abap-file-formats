@@ -57,8 +57,8 @@
       ]
     },
     "implementation": {
-      "title": "Provider Implementation",
-      "description": "Provider implementation",
+      "title": "Implementation",
+      "description": "Implementation",
       "type": "object",
       "properties": {
         "type": {
@@ -90,8 +90,8 @@
       ]
     },
     "execution": {
-      "title": "Provider Execution",
-      "description": "Provider execution",
+      "title": "Execution",
+      "description": "Execution",
       "type": "object",
       "properties": {
         "mode": {
@@ -118,8 +118,8 @@
           ]
         },
         "priority": {
-          "title": "Provider Priority",
-          "description": "Provider priority",
+          "title": "Priority",
+          "description": "Priority",
           "type": "string",
           "enum": [
             "availability",
@@ -155,8 +155,8 @@
       ]
     },
     "model": {
-      "title": "Provider Model",
-      "description": "Provider model",
+      "title": "Model",
+      "description": "Model",
       "type": "object",
       "properties": {
         "data": {
