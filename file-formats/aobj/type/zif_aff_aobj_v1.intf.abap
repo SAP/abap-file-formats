@@ -51,7 +51,7 @@ INTERFACE zif_aff_aobj_v1
       "! Header
       "! $required
       header                TYPE zif_aff_types_v1=>ty_header_60_cloud,
-      "! <p class="shorttext">Attributes of an Archiving Object</p>
+      "! <p class="shorttext">Attributes</p>
       "! Attributes of an archiving object
       "! $required
       attributes            TYPE ty_attributes,
