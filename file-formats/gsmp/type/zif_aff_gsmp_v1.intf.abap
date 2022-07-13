@@ -3,8 +3,8 @@ INTERFACE zif_aff_gsmp_v1
 
   TYPES:
 
-    "! <p class="shorttext">Provider Type</p>
-    "! Provider type
+    "! <p class="shorttext">Type</p>
+    "! Type
     "! $values {@link zif_aff_gsmp_v1.data:co_provider_type}
     "! $default {@link zif_aff_gsmp_v1.data:co_provider_type.class}
     ty_provider_type  TYPE c LENGTH 4,
@@ -15,14 +15,14 @@ INTERFACE zif_aff_gsmp_v1
     ty_execution_mode TYPE c LENGTH 1,
 
 
-    "! <p class="shorttext">Provider Position</p>
-    "! Provider position
+    "! <p class="shorttext">Priority</p>
+    "! Priority
     "! $values {@link zif_aff_gsmp_v1.data:co_priority}
     "! $default {@link zif_aff_gsmp_v1.data:co_priority.normal}
     ty_priority   TYPE i,
 
-    "! <p class="shorttext">Provider Implementation</p>
-    "! Provider implementation
+    "! <p class="shorttext">Implementation</p>
+    "! Implementation
     BEGIN OF ty_provider_implementation,
 
       "! <p class="shorttext">Type</p>
@@ -37,8 +37,8 @@ INTERFACE zif_aff_gsmp_v1
 
     END OF ty_provider_implementation,
 
-    "! <p class="shorttext">Provider Execution</p>
-    "! Provider execution
+    "! <p class="shorttext">Execution</p>
+    "! Execution
     BEGIN OF ty_provider_execution,
 
       "! <p class="shorttext">Mode</p>
@@ -46,8 +46,8 @@ INTERFACE zif_aff_gsmp_v1
       "! $required
       mode TYPE ty_execution_mode,
 
-      "! <p class="shorttext">Provider Priority</p>
-      "! Provider priority
+      "! <p class="shorttext">Priority</p>
+      "! Priority
       "! $required
       priority   TYPE ty_priority,
 
@@ -58,8 +58,8 @@ INTERFACE zif_aff_gsmp_v1
 
     END OF ty_provider_execution,
 
-    "! <p class="shorttext">Provider Model</p>
-    "! Provider model
+    "! <p class="shorttext">Model</p>
+    "! Model
     BEGIN OF ty_model,
 
       "! <p class="shorttext">JSON Data</p>
@@ -139,18 +139,18 @@ INTERFACE zif_aff_gsmp_v1
       "! $required
       header         TYPE zif_aff_types_v1=>ty_header_60_cloud,
 
-      "! <p class="shorttext">Provider Implementation</p>
-      "! Provider implementation
+      "! <p class="shorttext">Implementation</p>
+      "! Implementation
       "! $required
       implementation TYPE ty_provider_implementation,
 
-      "! <p class="shorttext">Provider Execution</p>
-      "! Provider execution
+      "! <p class="shorttext">Execution</p>
+      "! Execution
       "! $required
       execution TYPE ty_provider_execution,
 
-      "! <p class="shorttext">Provider Model</p>
-      "! Provider model
+      "! <p class="shorttext">Model</p>
+      "! Model
       model     TYPE ty_model,
 
     END OF ty_main.
