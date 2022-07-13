@@ -1,5 +1,5 @@
 INTERFACE zif_aff_aobj_v1
-  PUBLIC.
+ PUBLIC.
 
   TYPES:
     BEGIN OF ty_attributes,
@@ -20,7 +20,7 @@ INTERFACE zif_aff_aobj_v1
     "! <p class="shorttext">Table to Be Archived</p>
     "! Tables of business object instance from which data is archived
     BEGIN OF ty_table_to_be_archived,
-      "! <p class="shorttext"></p>
+      "! <p class="shorttext">Name</p>
       "! Name of table or structure
       "! $required
       name TYPE c LENGTH 30,
