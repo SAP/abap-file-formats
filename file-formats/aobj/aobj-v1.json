@@ -122,10 +122,13 @@
             "title": "Name",
             "description": "Name of archiving class",
             "type": "string",
-            "maxLength": 10
+            "maxLength": 30
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "required": [
+          "name"
+        ]
       }
     }
   },
