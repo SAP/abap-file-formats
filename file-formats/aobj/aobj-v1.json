@@ -97,6 +97,7 @@
         "type": "object",
         "properties": {
           "name": {
+            "title": "Name",
             "description": "Name of table or structure",
             "type": "string",
             "maxLength": 30
