@@ -84,7 +84,7 @@ INTERFACE zif_aff_sajt_v1
   TYPES:
     "! <p class="shorttext">Table of Parameters with Value Ranges</p>
     "! Table of parameters with value ranges
-    ty_value_ranges_param_table TYPE STANDARD TABLE OF ty_value_ranges_parameter WITH KEY name .
+    ty_value_ranges_param_table TYPE STANDARD TABLE OF ty_value_ranges_parameter WITH KEY name.
 
   TYPES:
     "! <p class="shorttext">Parameters</p>
