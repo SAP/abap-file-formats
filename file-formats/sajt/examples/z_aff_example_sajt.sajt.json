@@ -5,8 +5,7 @@
     "originalLanguage": "en"
   },
   "catalogName": "JCE_APJ_SIMPLE",
-  "parameters": 
-  {
+  "parameters": {
     "singleValueParameters": [
       {
         "name": "P_COUNT",
@@ -22,7 +21,7 @@
       }
     ],
     "valueRangesParameters": [
-      {	  
+      {
         "name": "S_ID",
         "valueRanges": [
           {
@@ -38,6 +37,6 @@
           }
         ]
       }
-    ]	
+    ]
   }
 }
