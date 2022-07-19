@@ -36,7 +36,7 @@ INTERFACE zif_aff_sajt_v1
       "! <p class="shorttext">Option</p>
       "! Operator of the ranges condition (EQ/NE/GE/GT/LE/LT/CP/NP/BT/NB)
       "! $required
-      option TYPE  if_aff_types_v1=>ty_option,
+      option TYPE  zif_aff_types_v1=>ty_option,
       "! <p class="shorttext">Low Value</p>
       "! Low value of the ranges condition
       "! $showAlways
