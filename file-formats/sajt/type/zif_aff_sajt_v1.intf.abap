@@ -18,7 +18,7 @@ INTERFACE zif_aff_sajt_v1
       "! $values {@link if_aff_types_v1.data:co_abap_language_version_cloud}
       "! $default {@link if_aff_types_v1.data:co_abap_language_version_cloud.standard}
       abap_language_version TYPE if_aff_types_v1=>ty_abap_language_version_cloud,
-    END OF ty_header .
+    END OF ty_header.
 
   TYPES:
     "! <p class="shorttext">Application Job Catalog Entry</p>
