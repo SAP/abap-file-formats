@@ -1,5 +1,5 @@
 INTERFACE zif_aff_sajt_v1
-  PUBLIC .
+  PUBLIC.
 
   TYPES:
     "! <p class="shorttext">Header for SAJT Object</p>
