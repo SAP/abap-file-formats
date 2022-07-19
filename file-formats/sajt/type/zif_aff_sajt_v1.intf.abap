@@ -15,7 +15,7 @@ INTERFACE zif_aff_sajt_v1
       original_language     TYPE sy-langu,
       "! <p class="shorttext">ABAP Language Version</p>
       "! ABAP language version
-      "! $values {@link if_aff_types_v1.data:co_abap_language_version_cloud}
+      "! $values {@link zif_aff_types_v1.data:co_abap_language_version_cloud}
       "! $default {@link if_aff_types_v1.data:co_abap_language_version_cloud.standard}
       abap_language_version TYPE if_aff_types_v1=>ty_abap_language_version_cloud,
     END OF ty_header.
