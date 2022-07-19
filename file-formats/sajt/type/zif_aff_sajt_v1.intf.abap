@@ -66,7 +66,7 @@ INTERFACE zif_aff_sajt_v1
   TYPES:
     "! <p class="shorttext">Table of Parameters with Single Value</p>
     "! Table of parameters with single value
-    ty_single_value_param_table TYPE STANDARD TABLE OF ty_single_value_parameter WITH KEY name .
+    ty_single_value_param_table TYPE STANDARD TABLE OF ty_single_value_parameter WITH KEY name.
 
   TYPES:
     "! <p class="shorttext">Parameter Details</p>
@@ -80,7 +80,7 @@ INTERFACE zif_aff_sajt_v1
       "! Values of the parameter as ranges table
       "! $required
       value_ranges TYPE ty_value_ranges_table,
-    END OF ty_value_ranges_parameter .
+    END OF ty_value_ranges_parameter.
   TYPES:
     "! <p class="shorttext">Table of Parameters with Value Ranges</p>
     "! Table of parameters with value ranges
@@ -96,7 +96,7 @@ INTERFACE zif_aff_sajt_v1
       "! <p class="shorttext">Parameters with Value Ranges</p>
       "! List of parameters with value ranges
       value_ranges_parameters TYPE ty_value_ranges_param_table,
-    END OF ty_parameters .
+    END OF ty_parameters.
 
   TYPES:
     "! <p class="shorttext">General Information</p>
@@ -115,5 +115,5 @@ INTERFACE zif_aff_sajt_v1
       "! <p class="shorttext">Parameters</p>
       "! Parameters of the class which runs within the job
       parameters     TYPE ty_parameters,
-    END OF ty_main .
+    END OF ty_main.
 ENDINTERFACE.
