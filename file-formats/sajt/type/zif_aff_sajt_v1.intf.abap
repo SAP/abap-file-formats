@@ -44,7 +44,7 @@ INTERFACE zif_aff_sajt_v1
       "! <p class="shorttext">High Value</p>
       "! High value of the ranges condition
       high   TYPE  c LENGTH 255,
-    END OF ty_value_range_entry .
+    END OF ty_value_range_entry.
   TYPES:
     "! <p class="shorttext">Parameter Values</p>
     "! Parameter values as ranges table
