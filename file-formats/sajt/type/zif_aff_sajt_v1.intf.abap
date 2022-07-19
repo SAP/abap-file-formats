@@ -62,7 +62,7 @@ INTERFACE zif_aff_sajt_v1
       "! Value of the parameter
       "! $required
       value TYPE  c LENGTH 255,
-    END OF ty_single_value_parameter .
+    END OF ty_single_value_parameter.
   TYPES:
     "! <p class="shorttext">Table of Parameters with Single Value</p>
     "! Table of parameters with single value
