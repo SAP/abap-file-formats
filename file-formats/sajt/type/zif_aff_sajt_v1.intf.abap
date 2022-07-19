@@ -32,7 +32,7 @@ INTERFACE zif_aff_sajt_v1
       "! <p class="shorttext">Sign</p>
       "! Include/exclude values (I/E)
       "! $required
-      sign   TYPE  if_aff_types_v1=>ty_sign,
+      sign   TYPE  zif_aff_types_v1=>ty_sign,
       "! <p class="shorttext">Option</p>
       "! Operator of the ranges condition (EQ/NE/GE/GT/LE/LT/CP/NP/BT/NB)
       "! $required
