@@ -15,7 +15,7 @@ INTERFACE zif_aff_sito_v1
       sap      TYPE ty_sit2_do_scope VALUE '01',
       "! <p class="shorttext">Customer</p>
       "! Customer
-      Customer TYPE ty_sit2_do_scope VALUE '02',
+      customer TYPE ty_sit2_do_scope VALUE '02',
     END OF co_sit2_do_scope.
 
   "! <p class="shorttext">SIT2_DO_OBJ_STRUC_TYPE</p>
@@ -32,7 +32,7 @@ INTERFACE zif_aff_sito_v1
       cds       TYPE ty_sit2_do_obj_struc_type VALUE '01',
       "! <p class="shorttext">In Memory</p>
       "! In Memory
-      In_Memory TYPE ty_sit2_do_obj_struc_type VALUE '02',
+      in_memory TYPE ty_sit2_do_obj_struc_type VALUE '02',
     END OF co_sit2_do_obj_struc_type.
 
   "! <p class="shorttext">SWFECLSTYP</p>
@@ -46,19 +46,19 @@ INTERFACE zif_aff_sito_v1
     BEGIN OF co_swfeclstyp,
       "! <p class="shorttext">Business Class</p>
       "! Business Class
-      Business_Class       TYPE ty_swfeclstyp VALUE 'BC',
+      business_class       TYPE ty_swfeclstyp VALUE 'BC',
       "! <p class="shorttext">BOR Object Type</p>
       "! BOR Object Type
-      BOR_Object_Type      TYPE ty_swfeclstyp VALUE 'BO',
+      bor_object_type      TYPE ty_swfeclstyp VALUE 'BO',
       "! <p class="shorttext">ABAP Class</p>
       "! ABAP Class
-      ABAP_Class           TYPE ty_swfeclstyp VALUE 'CL',
+      abap_class           TYPE ty_swfeclstyp VALUE 'CL',
       "! <p class="shorttext">Business Object Type</p>
       "! Business Object Type
-      Business_Object_Type TYPE ty_swfeclstyp VALUE 'EO',
+      business_object_type TYPE ty_swfeclstyp VALUE 'EO',
       "! <p class="shorttext">XML Object Type</p>
       "! XML Object Type
-      XML_Object_Type      TYPE ty_swfeclstyp VALUE 'XC',
+      xml_object_type      TYPE ty_swfeclstyp VALUE 'XC',
     END OF co_swfeclstyp.
 
   "! <p class="shorttext">SIT2_DO_ACTION_TYPE</p>
@@ -72,10 +72,10 @@ INTERFACE zif_aff_sito_v1
     BEGIN OF co_sit2_do_action_type,
       "! <p class="shorttext">Navigation Action</p>
       "! Navigation Action
-      Navigation_Action TYPE ty_sit2_do_action_type VALUE '01',
+      navigation_action TYPE ty_sit2_do_action_type VALUE '01',
       "! <p class="shorttext">Callback Action</p>
       "! Callback Action
-      Callback_Action   TYPE ty_sit2_do_action_type VALUE '02',
+      callback_action   TYPE ty_sit2_do_action_type VALUE '02',
     END OF co_sit2_do_action_type.
 
   "! <p class="shorttext">SIT2_DO_VH_SRV_PROTOCOL_VER</p>
@@ -106,10 +106,10 @@ INTERFACE zif_aff_sito_v1
     BEGIN OF co_sit2_do_vh_srv_path_type,
       "! <p class="shorttext">Standard</p>
       "! Standard
-      Standard TYPE ty_sit2_do_vh_srv_path_type VALUE '01',
+      standard TYPE ty_sit2_do_vh_srv_path_type VALUE '01',
       "! <p class="shorttext">Custom</p>
       "! Custom
-      Custom   TYPE ty_sit2_do_vh_srv_path_type VALUE '02',
+      custom   TYPE ty_sit2_do_vh_srv_path_type VALUE '02',
     END OF co_sit2_do_vh_srv_path_type.
 
   "! <p class="shorttext">SIT2_DO_VH_APP_TYPE</p>
@@ -123,7 +123,7 @@ INTERFACE zif_aff_sito_v1
     BEGIN OF co_sit2_do_vh_app_type,
       "! <p class="shorttext">All Apps</p>
       "! All Apps
-      All_Apps TYPE ty_sit2_do_vh_app_type VALUE '01',
+      all_apps TYPE ty_sit2_do_vh_app_type VALUE '01',
     END OF co_sit2_do_vh_app_type.
 
   "! <p class="shorttext">SIT2_DO_VH_TYPE</p>
@@ -137,7 +137,7 @@ INTERFACE zif_aff_sito_v1
     BEGIN OF co_sit2_do_vh_type,
       "! <p class="shorttext">Service</p>
       "! Service
-      Service TYPE ty_sit2_do_vh_type VALUE '01',
+      service TYPE ty_sit2_do_vh_type VALUE '01',
     END OF co_sit2_do_vh_type.
 
   TYPES:
@@ -528,6 +528,7 @@ INTERFACE zif_aff_sito_v1
       Situation_Object_Callback   TYPE ty_sit2_obj_cb_list,
       Value_Help_Service          TYPE ty_sit2_obj_vh_s_list,
     END OF ty_sit2_object,
+
 
 
 
