@@ -147,7 +147,7 @@ INTERFACE zif_aff_sito_v1
     BEGIN OF ty_sit2_obj_struc_t,
       "! <p class="shorttext">Description</p>
       "! Situation Object Structure Description
-      Description TYPE c LENGTH 255,
+      description TYPE c LENGTH 255,
     END OF ty_sit2_obj_struc_t,
 
     "! <p class="shorttext">Structure Text</p>
@@ -159,10 +159,10 @@ INTERFACE zif_aff_sito_v1
     BEGIN OF ty_sit2_obj_str_sk,
       "! <p class="shorttext">Field Order</p>
       "! Object Field Order for Situation
-      Field_Order TYPE n LENGTH 2,
+      field_order TYPE n LENGTH 2,
       "! <p class="shorttext">Field</p>
       "! Object Field
-      Field       TYPE c LENGTH 30,
+      field       TYPE c LENGTH 30,
     END OF ty_sit2_obj_str_sk,
 
     "! <p class="shorttext">Structure Semantic Key</p>
@@ -175,18 +175,18 @@ INTERFACE zif_aff_sito_v1
       "! <p class="shorttext">App Type</p>
       "! App for Value Help
       "! $required
-      App_Type   TYPE ty_sit2_do_vh_app_type,
+      app_type   TYPE ty_sit2_do_vh_app_type,
       "! <p class="shorttext">Type</p>
       "! Type of Value Help
       "! $required
-      Type       TYPE ty_sit2_do_vh_type,
+      type       TYPE ty_sit2_do_vh_type,
       "! <p class="shorttext">Scope</p>
       "! Source
       "! $required
-      Scope      TYPE ty_sit2_do_scope,
+      scope      TYPE ty_sit2_do_scope,
       "! <p class="shorttext">Field Name</p>
       "! Object Field
-      Field_Name TYPE c LENGTH 30,
+      field_name TYPE c LENGTH 30,
     END OF ty_sit2_os_vh_map,
 
     "! <p class="shorttext">Structure Value Help Map</p>
@@ -199,16 +199,16 @@ INTERFACE zif_aff_sito_v1
       "! <p class="shorttext">Type</p>
       "! App for Value Help
       "! $required
-      Type       TYPE ty_sit2_do_vh_app_type,
+      type       TYPE ty_sit2_do_vh_app_type,
       "! <p class="shorttext">Field Name</p>
       "! Object Field
-      Field_Name TYPE c LENGTH 30,
+      field_name TYPE c LENGTH 30,
       "! <p class="shorttext">Entity Set</p>
       "! Name
-      Entity_Set TYPE c LENGTH 40,
+      entity_set TYPE c LENGTH 40,
       "! <p class="shorttext">Property</p>
       "! Name
-      Property   TYPE c LENGTH 40,
+      property   TYPE c LENGTH 40,
       "! <p class="shorttext">ID</p>
       "! Service ID for Value Help
       id         TYPE c LENGTH 32,
@@ -223,7 +223,7 @@ INTERFACE zif_aff_sito_v1
     BEGIN OF ty_sit2_obj_event_t,
       "! <p class="shorttext">Description</p>
       "! Description
-      Description TYPE c LENGTH 255,
+      description TYPE c LENGTH 255,
     END OF ty_sit2_obj_event_t,
 
     "! <p class="shorttext">Event Text</p>
@@ -235,10 +235,10 @@ INTERFACE zif_aff_sito_v1
     BEGIN OF ty_sit2_obj_act_t,
       "! <p class="shorttext">Name</p>
       "! Name of Action
-      Name        TYPE c LENGTH 40,
+      name        TYPE c LENGTH 40,
       "! <p class="shorttext">Description</p>
       "! Description of Action
-      Description TYPE c LENGTH 255,
+      description TYPE c LENGTH 255,
     END OF ty_sit2_obj_act_t,
 
     "! <p class="shorttext">Action Text</p>
@@ -262,7 +262,7 @@ INTERFACE zif_aff_sito_v1
     BEGIN OF ty_sit2_obj_act_cb,
       "! <p class="shorttext">Callback ID</p>
       "! Callback ID
-      Callback_ID TYPE c LENGTH 32,
+      callback_id TYPE c LENGTH 32,
     END OF ty_sit2_obj_act_cb,
 
     "! <p class="shorttext">Action Callback</p>
@@ -274,7 +274,7 @@ INTERFACE zif_aff_sito_v1
     BEGIN OF ty_sit2_obj_nav_par,
       "! <p class="shorttext">Name</p>
       "! Name of Navigation Parameter
-      Name TYPE c LENGTH 30,
+      name TYPE c LENGTH 30,
     END OF ty_sit2_obj_nav_par,
 
     "! <p class="shorttext">Navigation Parameter</p>
@@ -286,7 +286,7 @@ INTERFACE zif_aff_sito_v1
     BEGIN OF ty_sit2_obj_cb_par,
       "! <p class="shorttext">Name</p>
       "! Name of Callback Parameter
-      Name TYPE c LENGTH 30,
+      name TYPE c LENGTH 30,
     END OF ty_sit2_obj_cb_par,
 
     "! <p class="shorttext">Callback Parameter</p>
@@ -298,10 +298,10 @@ INTERFACE zif_aff_sito_v1
     BEGIN OF ty_sit2_obj_vh_s_p,
       "! <p class="shorttext">Property</p>
       "! Name
-      Property   TYPE c LENGTH 40,
+      property   TYPE c LENGTH 40,
       "! <p class="shorttext">Entity Set</p>
       "! Name
-      Entity_Set TYPE c LENGTH 40,
+      entity_set TYPE c LENGTH 40,
     END OF ty_sit2_obj_vh_s_p,
 
     "! <p class="shorttext">Value Help Service Provider</p>
@@ -313,10 +313,10 @@ INTERFACE zif_aff_sito_v1
     BEGIN OF ty_sit2_object_t,
       "! <p class="shorttext">Name</p>
       "! Situation Object Name
-      Name        TYPE c LENGTH 40,
+      name        TYPE c LENGTH 40,
       "! <p class="shorttext">Description</p>
       "! Description
-      Description TYPE c LENGTH 255,
+      description TYPE c LENGTH 255,
     END OF ty_sit2_object_t,
 
     "! <p class="shorttext">Situation Object Text</p>
@@ -328,21 +328,21 @@ INTERFACE zif_aff_sito_v1
     BEGIN OF ty_sit2_obj_struc,
       "! <p class="shorttext">Reusable</p>
       "! Object Reusable
-      Reusable                     TYPE abap_bool,
+      reusable                     TYPE abap_bool,
       "! <p class="shorttext">Type</p>
       "! Situation Object Structure Type
       "! $required
-      Type                         TYPE ty_sit2_do_obj_struc_type,
+      type                         TYPE ty_sit2_do_obj_struc_type,
       "! <p class="shorttext">Scope</p>
       "! Source
       "! $required
-      Scope                        TYPE ty_sit2_do_scope,
+      scope                        TYPE ty_sit2_do_scope,
       "! <p class="shorttext">Name</p>
       "!
-      Name                         TYPE c LENGTH 30,
+      name                         TYPE c LENGTH 30,
       "! <p class="shorttext">SAP Object Node Type</p>
       "! SAP Object Node Type
-      SAP_Object_Node_Type         TYPE c LENGTH 30,
+      sap_object_node_type         TYPE c LENGTH 30,
       "! <p class="shorttext">ID</p>
       "! Situation Object Structure ID
       id                           TYPE c LENGTH 32,
@@ -361,27 +361,27 @@ INTERFACE zif_aff_sito_v1
     BEGIN OF ty_sit2_obj_events,
       "! <p class="shorttext">Reusable</p>
       "! Object Reusable
-      Reusable               TYPE abap_bool,
+      reusable               TYPE abap_bool,
       "! <p class="shorttext">Category</p>
       "! Object Type Category
       "! $required
-      Category               TYPE ty_swfeclstyp,
+      category               TYPE ty_swfeclstyp,
       "! <p class="shorttext">Scope</p>
       "! Source
       "! $required
-      Scope                  TYPE ty_sit2_do_scope,
+      scope                  TYPE ty_sit2_do_scope,
       "! <p class="shorttext">ID</p>
       "! Situation Event ID
       id                     TYPE c LENGTH 32,
       "! <p class="shorttext">Object</p>
       "! Object Type
-      Object                 TYPE c LENGTH 32,
+      object                 TYPE c LENGTH 32,
       "! <p class="shorttext">Type</p>
       "! Object Type
-      Type                   TYPE c LENGTH 32,
+      type                   TYPE c LENGTH 32,
       "! <p class="shorttext">Parameter Structure ID</p>
       "! Situation Object Structure ID
-      Parameter_Structure_ID TYPE c LENGTH 32,
+      parameter_structure_id TYPE c LENGTH 32,
       Event_Text             TYPE ty_sit2_obj_event_t_list,
     END OF ty_sit2_obj_events,
 
@@ -394,15 +394,15 @@ INTERFACE zif_aff_sito_v1
     BEGIN OF ty_sit2_obj_act,
       "! <p class="shorttext">Reusable</p>
       "! Object Reusable
-      Reusable          TYPE abap_bool,
+      reusable          TYPE abap_bool,
       "! <p class="shorttext">Type</p>
       "! Action Type of Situation
       "! $required
-      Type              TYPE ty_sit2_do_action_type,
+      type              TYPE ty_sit2_do_action_type,
       "! <p class="shorttext">Scope</p>
       "! Source
       "! $required
-      Scope             TYPE ty_sit2_do_scope,
+      scope             TYPE ty_sit2_do_scope,
       "! <p class="shorttext">ID</p>
       "! Action ID
       id                TYPE c LENGTH 32,
@@ -420,20 +420,20 @@ INTERFACE zif_aff_sito_v1
     BEGIN OF ty_sit2_obj_nav,
       "! <p class="shorttext">Reusable</p>
       "! Object Reusable
-      Reusable               TYPE abap_bool,
+      reusable               TYPE abap_bool,
       "! <p class="shorttext">Scope</p>
       "! Source
       "! $required
-      Scope                  TYPE ty_sit2_do_scope,
+      scope                  TYPE ty_sit2_do_scope,
       "! <p class="shorttext">ID</p>
       "! Navigation ID
       id                     TYPE c LENGTH 32,
       "! <p class="shorttext">Semantic Object Action</p>
       "! Semantic Object Action
-      Semantic_Object_Action TYPE c LENGTH 50,
+      semantic_object_action TYPE c LENGTH 50,
       "! <p class="shorttext">Semantic Object</p>
       "! Semantic Object
-      Semantic_Object        TYPE c LENGTH 50,
+      semantic_object        TYPE c LENGTH 50,
       Navigation_Parameter   TYPE ty_sit2_obj_nav_par_list,
     END OF ty_sit2_obj_nav,
 
@@ -446,14 +446,14 @@ INTERFACE zif_aff_sito_v1
     BEGIN OF ty_sit2_obj_cb,
       "! <p class="shorttext">Reusable</p>
       "! Object Reusable
-      Reusable           TYPE abap_bool,
+      reusable           TYPE abap_bool,
       "! <p class="shorttext">Scope</p>
       "! Source
       "! $required
-      Scope              TYPE ty_sit2_do_scope,
+      scope              TYPE ty_sit2_do_scope,
       "! <p class="shorttext">Class Name</p>
       "! Reference to
-      Class_Name         TYPE c LENGTH 30,
+      class_name         TYPE c LENGTH 30,
       "! <p class="shorttext">ID</p>
       "! Callback ID
       id                 TYPE c LENGTH 32,
@@ -469,34 +469,34 @@ INTERFACE zif_aff_sito_v1
     BEGIN OF ty_sit2_obj_vh_s,
       "! <p class="shorttext">Reusable</p>
       "! Object Reusable
-      Reusable                    TYPE abap_bool,
+      reusable                    TYPE abap_bool,
       "! <p class="shorttext">Version</p>
       "! Service Version for Value Help
-      Version                     TYPE n LENGTH 4,
+      version                     TYPE n LENGTH 4,
       "! <p class="shorttext">Protocol Version</p>
       "! Service Protocol Version for Value Help
       "! $required
-      Protocol_Version            TYPE ty_sit2_do_vh_srv_protocol_ver,
+      protocol_version            TYPE ty_sit2_do_vh_srv_protocol_ver,
       "! <p class="shorttext">Path Type</p>
       "! Service Path Type for Value Help
       "! $required
-      Path_Type                   TYPE ty_sit2_do_vh_srv_path_type,
+      path_type                   TYPE ty_sit2_do_vh_srv_path_type,
       "! <p class="shorttext">Scope</p>
       "! Source
       "! $required
-      Scope                       TYPE ty_sit2_do_scope,
+      scope                       TYPE ty_sit2_do_scope,
       "! <p class="shorttext">Definition</p>
       "! Service Definition for Value Help
-      Definition                  TYPE c LENGTH 30,
+      definition                  TYPE c LENGTH 30,
       "! <p class="shorttext">Binding</p>
       "! Service Binding for Value Help
-      Binding                     TYPE c LENGTH 40,
+      binding                     TYPE c LENGTH 40,
       "! <p class="shorttext">ID</p>
       "! Service ID for Value Help
       id                          TYPE c LENGTH 32,
       "! <p class="shorttext">Custom Path</p>
       "! Service Custom Path for Value Help
-      Custom_Path                 TYPE c LENGTH 255,
+      custom_path                 TYPE c LENGTH 255,
       Value_Help_Service_Provider TYPE ty_sit2_obj_vh_s_p_list,
     END OF ty_sit2_obj_vh_s,
 
@@ -509,17 +509,17 @@ INTERFACE zif_aff_sito_v1
     BEGIN OF ty_sit2_object,
       "! <p class="shorttext">Extensible</p>
       "! Object Extensible
-      Extensible                  TYPE abap_bool,
+      extensible                  TYPE abap_bool,
       "! <p class="shorttext">Reusable</p>
       "! Object Reusable
-      Reusable                    TYPE abap_bool,
+      reusable                    TYPE abap_bool,
       "! <p class="shorttext">Scope</p>
       "! Source
       "! $required
-      Scope                       TYPE ty_sit2_do_scope,
+      scope                       TYPE ty_sit2_do_scope,
       "! <p class="shorttext">SAP Object Type</p>
       "! SAP Object Type
-      SAP_Object_Type             TYPE c LENGTH 30,
+      sap_object_type             TYPE c LENGTH 30,
       Situation_Object_Text       TYPE ty_sit2_object_t_list,
       Situation_Object_Structure  TYPE ty_sit2_obj_struc_list,
       Situation_Object_Event      TYPE ty_sit2_obj_events_list,
