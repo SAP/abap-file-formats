@@ -545,7 +545,7 @@ INTERFACE zif_aff_sito_v1
       "! <p class="shorttext">Situation Object</p>
       "! Situation Object
       "! $required
-      Situation_Object TYPE ty_sit2_object,
+      situation_object TYPE ty_sit2_object,
     END OF ty_main.
 
 ENDINTERFACE.
