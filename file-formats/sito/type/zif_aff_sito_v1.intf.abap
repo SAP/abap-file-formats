@@ -346,10 +346,10 @@ INTERFACE zif_aff_sito_v1
       "! <p class="shorttext">ID</p>
       "! Situation Object Structure ID
       id                           TYPE c LENGTH 32,
-      Structure_Text               TYPE ty_sit2_obj_struc_t_list,
-      Structure_Semantic_Key       TYPE ty_sit2_obj_str_sk_list,
-      Structure_Value_Help_Map     TYPE ty_sit2_os_vh_map_list,
-      Structure_Value_Help_Map_Srv TYPE ty_sit2_os_vh_map_s_list,
+      structure_text               TYPE ty_sit2_obj_struc_t_list,
+      structure_semantic_key       TYPE ty_sit2_obj_str_sk_list,
+      structure_value_help_map     TYPE ty_sit2_os_vh_map_list,
+      structure_value_help_map_srv TYPE ty_sit2_os_vh_map_s_list,
     END OF ty_sit2_obj_struc,
 
     "! <p class="shorttext">Situation Object Structure</p>
@@ -382,7 +382,7 @@ INTERFACE zif_aff_sito_v1
       "! <p class="shorttext">Parameter Structure ID</p>
       "! Situation Object Structure ID
       parameter_structure_id TYPE c LENGTH 32,
-      Event_Text             TYPE ty_sit2_obj_event_t_list,
+      event_text             TYPE ty_sit2_obj_event_t_list,
     END OF ty_sit2_obj_events,
 
     "! <p class="shorttext">Situation Object Event</p>
@@ -406,9 +406,9 @@ INTERFACE zif_aff_sito_v1
       "! <p class="shorttext">ID</p>
       "! Action ID
       id                TYPE c LENGTH 32,
-      Action_Text       TYPE ty_sit2_obj_act_t_list,
-      Action_Navigation TYPE ty_sit2_obj_act_nav_list,
-      Action_Callback   TYPE ty_sit2_obj_act_cb_list,
+      action_text       TYPE ty_sit2_obj_act_t_list,
+      action_navigation TYPE ty_sit2_obj_act_nav_list,
+      action_callback   TYPE ty_sit2_obj_act_cb_list,
     END OF ty_sit2_obj_act,
 
     "! <p class="shorttext">Situation Object Action</p>
@@ -434,7 +434,7 @@ INTERFACE zif_aff_sito_v1
       "! <p class="shorttext">Semantic Object</p>
       "! Semantic Object
       semantic_object        TYPE c LENGTH 50,
-      Navigation_Parameter   TYPE ty_sit2_obj_nav_par_list,
+      navigation_parameter   TYPE ty_sit2_obj_nav_par_list,
     END OF ty_sit2_obj_nav,
 
     "! <p class="shorttext">Situation Object Navigation</p>
@@ -457,7 +457,7 @@ INTERFACE zif_aff_sito_v1
       "! <p class="shorttext">ID</p>
       "! Callback ID
       id                 TYPE c LENGTH 32,
-      Callback_Parameter TYPE ty_sit2_obj_cb_par_list,
+      callback_parameter TYPE ty_sit2_obj_cb_par_list,
     END OF ty_sit2_obj_cb,
 
     "! <p class="shorttext">Situation Object Callback</p>
@@ -497,7 +497,7 @@ INTERFACE zif_aff_sito_v1
       "! <p class="shorttext">Custom Path</p>
       "! Service Custom Path for Value Help
       custom_path                 TYPE c LENGTH 255,
-      Value_Help_Service_Provider TYPE ty_sit2_obj_vh_s_p_list,
+      value_help_service_provider TYPE ty_sit2_obj_vh_s_p_list,
     END OF ty_sit2_obj_vh_s,
 
     "! <p class="shorttext">Value Help Service</p>
@@ -520,15 +520,14 @@ INTERFACE zif_aff_sito_v1
       "! <p class="shorttext">SAP Object Type</p>
       "! SAP Object Type
       sap_object_type             TYPE c LENGTH 30,
-      Situation_Object_Text       TYPE ty_sit2_object_t_list,
-      Situation_Object_Structure  TYPE ty_sit2_obj_struc_list,
-      Situation_Object_Event      TYPE ty_sit2_obj_events_list,
-      Situation_Object_Action     TYPE ty_sit2_obj_act_list,
-      Situation_Object_Navigation TYPE ty_sit2_obj_nav_list,
-      Situation_Object_Callback   TYPE ty_sit2_obj_cb_list,
-      Value_Help_Service          TYPE ty_sit2_obj_vh_s_list,
+      situation_object_text       TYPE ty_sit2_object_t_list,
+      situation_object_structure  TYPE ty_sit2_obj_struc_list,
+      situation_object_event      TYPE ty_sit2_obj_events_list,
+      situation_object_action     TYPE ty_sit2_obj_act_list,
+      situation_object_navigation TYPE ty_sit2_obj_nav_list,
+      situation_object_callback   TYPE ty_sit2_obj_cb_list,
+      value_help_service          TYPE ty_sit2_obj_vh_s_list,
     END OF ty_sit2_object,
-
 
 
 
