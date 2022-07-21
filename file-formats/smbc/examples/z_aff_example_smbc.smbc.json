@@ -10,9 +10,25 @@
     "serviceVersion": "0001",
     "rootEntitySet": "Customer",
     "name": "Maintain customer",
+    "configurationGroup": "/DMO/ADMIN_GROUP",
     "skipRootEntity": false
   },
   "appConfiguration": {
-    "listReport": {}
+    "listReport": {
+      "variantManagement": "none"
+    },
+    "objectPages": [
+      {
+        "entitySet": "Customer",
+        "sectionLayout": "tabs"
+      }
+    ],
+    "tableSettings": [
+      {
+        "entitySet": "Customer",
+        "tableType": "gridTable",
+        "enableFullScreen": true
+      }
+    ]
   }
 }
