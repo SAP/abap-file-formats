@@ -102,7 +102,7 @@ INTERFACE zif_aff_gsmp_v1
       none        TYPE ty_execution_mode VALUE 'N',
 
       "! <p class="shorttext">Job</p>
-      "! Job.
+      "! Job
       job        TYPE ty_execution_mode VALUE 'J',
 
     END OF co_execution_mode,
@@ -132,7 +132,7 @@ INTERFACE zif_aff_gsmp_v1
   TYPES:
 
     "! <p class="shorttext">Metric Provider</p>
-    "! Metric Provider (GSMP) v1
+    "! Metric Provider (GSMP)
     BEGIN OF ty_main,
 
       "! $required
