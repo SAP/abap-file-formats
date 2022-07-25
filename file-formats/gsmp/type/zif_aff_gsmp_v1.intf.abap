@@ -101,6 +101,10 @@ INTERFACE zif_aff_gsmp_v1
       "! No execution. Only model. Data from external.
       none        TYPE ty_execution_mode VALUE 'N',
 
+      "! <p class="shorttext">Job</p>
+      "! Job.
+      job        TYPE ty_execution_mode VALUE 'J',
+
     END OF co_execution_mode,
 
     "! <p class="shorttext">Provider Priority</p>
