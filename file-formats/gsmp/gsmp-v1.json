@@ -3,7 +3,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/gsmp/gsmp-v1.json",
   "title": "Metric Provider",
-  "description": "Metric Provider (GSMP) v1",
+  "description": "Metric Provider (GSMP)",
   "type": "object",
   "properties": {
     "formatVersion": {
@@ -117,7 +117,7 @@
             "Instance",
             "Application",
             "No execution. Only model. Data from external.",
-            "Job."
+            "Job"
           ]
         },
         "priority": {
