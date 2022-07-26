@@ -1,4 +1,4 @@
-## JSON Files in ABAP File Formats
+## JSON Files in ABAP File Formats .
 JSON files are central, since every ABAP object specifies at least a JSON file.
 Depending on the object, there might be additional files containing source code or other information, but there is always a JSON file with the pattern `<object_name>.<object_type>.json`, see [`File Names`](./specification.md#File-Names).
 For its annotation and validation the ABAP file formats provide JSON Schemas.
@@ -82,7 +82,7 @@ ABAP Type | JSON Schema Type | JSON Schema Additions
 :--- | :---  | :---
 string | string |
 c | string | `"maxLength": <length of character field>`
-i | integer | `minimum": -2147483648, "maximum": 2147483647`
+i | integer | `"minimum": -2147483648, "maximum": 2147483647`
 n | string | `"maxLength": <length of character field>, "pattern": "^[0-9]+$"`
 p | number | `"minimum": <minimum value>, "maximum": <maximum value>, "multipleOf": <e.g., 0.01 for 2 decimals>`
 abap_bool | boolean |
