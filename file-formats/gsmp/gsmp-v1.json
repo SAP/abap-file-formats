@@ -102,22 +102,22 @@
             "system",
             "instance",
             "application",
-            "none",
-            "job"
+            "job",
+            "none"
           ],
           "enumTitles": [
             "System",
             "Instance",
             "Application",
-            "None",
-            "Job"
+            "Job",
+            "None"
           ],
           "enumDescriptions": [
             "System",
             "Instance",
             "Application",
-            "No execution. Only model. Data from external.",
-            "Job"
+            "Job",
+            "No execution. Only model. Data from external."
           ]
         },
         "priority": {
