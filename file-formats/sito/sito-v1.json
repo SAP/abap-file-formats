@@ -66,12 +66,12 @@
       "properties": {
         "extensible": {
           "title": "Extensible",
-          "description": "Object Extensible",
+          "description": "Object extensible",
           "type": "boolean"
         },
         "reusable": {
           "title": "Reusable",
-          "description": "Object Reusable",
+          "description": "Object reusable",
           "type": "boolean"
         },
         "scope": {
@@ -93,22 +93,22 @@
         },
         "sapObjectType": {
           "title": "SAP Object Type",
-          "description": "SAP Object Type",
+          "description": "Sap object type",
           "type": "string",
           "maxLength": 30
         },
-        "situationObjectText": {
-          "title": "Situation Object Text",
-          "description": "Situation Object Text",
+        "texts": {
+          "title": "Texts",
+          "description": "Situation object text",
           "type": "array",
           "items": {
-            "title": "Situation Object Text",
-            "description": "Situation Object Text",
+            "title": "Texts",
+            "description": "Situation object text",
             "type": "object",
             "properties": {
               "name": {
                 "title": "Name",
-                "description": "Situation Object Name",
+                "description": "Situation object name",
                 "type": "string",
                 "maxLength": 40
               },
@@ -122,23 +122,23 @@
             "additionalProperties": false
           }
         },
-        "situationObjectStructure": {
-          "title": "Situation Object Structure",
-          "description": "Situation Object Structure",
+        "structures": {
+          "title": "Structures",
+          "description": "Situation object structure",
           "type": "array",
           "items": {
-            "title": "Situation Object Structure",
-            "description": "Situation Object Structure",
+            "title": "Structures",
+            "description": "Situation object structure",
             "type": "object",
             "properties": {
               "reusable": {
                 "title": "Reusable",
-                "description": "Object Reusable",
+                "description": "Object reusable",
                 "type": "boolean"
               },
               "type": {
                 "title": "Type",
-                "description": "Situation Object Structure Type",
+                "description": "Situation object structure type",
                 "type": "string",
                 "enum": [
                   "cds",
@@ -177,28 +177,28 @@
               },
               "sapObjectNodeType": {
                 "title": "SAP Object Node Type",
-                "description": "SAP Object Node Type",
+                "description": "Sap object node type",
                 "type": "string",
                 "maxLength": 30
               },
               "id": {
                 "title": "ID",
-                "description": "Situation Object Structure ID",
+                "description": "Situation object structure id",
                 "type": "string",
                 "maxLength": 32
               },
-              "structureText": {
-                "title": "Structure Text",
-                "description": "Situation Object Structue",
+              "texts": {
+                "title": "Texts",
+                "description": "Situation object structue",
                 "type": "array",
                 "items": {
-                  "title": "Structure Text",
-                  "description": "Situation Object Structue",
+                  "title": "Texts",
+                  "description": "Situation object structue",
                   "type": "object",
                   "properties": {
                     "description": {
                       "title": "Description",
-                      "description": "Situation Object Structure Description",
+                      "description": "Situation object structure description",
                       "type": "string",
                       "maxLength": 255
                     }
@@ -206,25 +206,25 @@
                   "additionalProperties": false
                 }
               },
-              "structureSemanticKey": {
-                "title": "Structure Semantic Key",
-                "description": "Semantic Keys of an Object Structure",
+              "semanticKeys": {
+                "title": "Semantic Keys",
+                "description": "Semantic keys of an object structure",
                 "type": "array",
                 "items": {
-                  "title": "Structure Semantic Key",
-                  "description": "Semantic Keys of an Object Structure",
+                  "title": "Semantic Keys",
+                  "description": "Semantic keys of an object structure",
                   "type": "object",
                   "properties": {
                     "fieldOrder": {
                       "title": "Field Order",
-                      "description": "Object Field Order for Situation",
+                      "description": "Object field order for situation",
                       "type": "string",
                       "maxLength": 2,
                       "pattern": "^[0-9]+$"
                     },
                     "field": {
                       "title": "Field",
-                      "description": "Object Field",
+                      "description": "Object field",
                       "type": "string",
                       "maxLength": 30
                     }
@@ -232,18 +232,18 @@
                   "additionalProperties": false
                 }
               },
-              "structureValueHelpMap": {
-                "title": "Structure Value Help Map",
-                "description": "Value Help Mapping for Situation Object Structure",
+              "valueHelpMappings": {
+                "title": "Value Help Mappings",
+                "description": "Value help mapping for situation object structure",
                 "type": "array",
                 "items": {
-                  "title": "Structure Value Help Map",
-                  "description": "Value Help Mapping for Situation Object Structure",
+                  "title": "Value Help Mappings",
+                  "description": "Value help mapping for situation object structure",
                   "type": "object",
                   "properties": {
                     "appType": {
                       "title": "App Type",
-                      "description": "App for Value Help",
+                      "description": "App for value help",
                       "type": "string",
                       "enum": [
                         "allApps"
@@ -257,7 +257,7 @@
                     },
                     "type": {
                       "title": "Type",
-                      "description": "Type of Value Help",
+                      "description": "Type of value help",
                       "type": "string",
                       "enum": [
                         "service"
@@ -288,7 +288,7 @@
                     },
                     "fieldName": {
                       "title": "Field Name",
-                      "description": "Object Field",
+                      "description": "Object field",
                       "type": "string",
                       "maxLength": 30
                     }
@@ -301,18 +301,18 @@
                   ]
                 }
               },
-              "structureValueHelpMapSrv": {
-                "title": "Structure Value Help Map Srv",
-                "description": "Value Help Mapping for Situation Object Structure - Service",
+              "services": {
+                "title": "Services",
+                "description": "Value help mapping for situation object structure - service",
                 "type": "array",
                 "items": {
-                  "title": "Structure Value Help Map Srv",
-                  "description": "Value Help Mapping for Situation Object Structure - Service",
+                  "title": "Services",
+                  "description": "Value help mapping for situation object structure - service",
                   "type": "object",
                   "properties": {
                     "type": {
                       "title": "Type",
-                      "description": "App for Value Help",
+                      "description": "App for value help",
                       "type": "string",
                       "enum": [
                         "allApps"
@@ -326,7 +326,7 @@
                     },
                     "fieldName": {
                       "title": "Field Name",
-                      "description": "Object Field",
+                      "description": "Object field",
                       "type": "string",
                       "maxLength": 30
                     },
@@ -344,7 +344,7 @@
                     },
                     "id": {
                       "title": "ID",
-                      "description": "Service ID for Value Help",
+                      "description": "Service id for value help",
                       "type": "string",
                       "maxLength": 32
                     }
@@ -363,23 +363,23 @@
             ]
           }
         },
-        "situationObjectEvent": {
-          "title": "Situation Object Event",
-          "description": "Situation Object Events",
+        "events": {
+          "title": "Events",
+          "description": "Situation object events",
           "type": "array",
           "items": {
-            "title": "Situation Object Event",
-            "description": "Situation Object Events",
+            "title": "Events",
+            "description": "Situation object events",
             "type": "object",
             "properties": {
               "reusable": {
                 "title": "Reusable",
-                "description": "Object Reusable",
+                "description": "Object reusable",
                 "type": "boolean"
               },
               "category": {
                 "title": "Category",
-                "description": "Object Type Category",
+                "description": "Object type category",
                 "type": "string",
                 "enum": [
                   "businessClass",
@@ -422,35 +422,35 @@
               },
               "id": {
                 "title": "ID",
-                "description": "Situation Event ID",
+                "description": "Situation event id",
                 "type": "string",
                 "maxLength": 32
               },
               "object": {
                 "title": "Object",
-                "description": "Object Type",
+                "description": "Object type",
                 "type": "string",
                 "maxLength": 32
               },
               "type": {
                 "title": "Type",
-                "description": "Object Type",
+                "description": "Object type",
                 "type": "string",
                 "maxLength": 32
               },
               "parameterStructureId": {
                 "title": "Parameter Structure ID",
-                "description": "Situation Object Structure ID",
+                "description": "Situation object structure id",
                 "type": "string",
                 "maxLength": 32
               },
-              "eventText": {
-                "title": "Event Text",
-                "description": "Situation Object Events Text",
+              "texts": {
+                "title": "Texts",
+                "description": "Situation object events text",
                 "type": "array",
                 "items": {
-                  "title": "Event Text",
-                  "description": "Situation Object Events Text",
+                  "title": "Texts",
+                  "description": "Situation object events text",
                   "type": "object",
                   "properties": {
                     "description": {
@@ -471,23 +471,23 @@
             ]
           }
         },
-        "situationObjectAction": {
-          "title": "Situation Object Action",
-          "description": "Situation Object Actions",
+        "endUserActions": {
+          "title": "End User Actions",
+          "description": "Situation object actions",
           "type": "array",
           "items": {
-            "title": "Situation Object Action",
-            "description": "Situation Object Actions",
+            "title": "End User Actions",
+            "description": "Situation object actions",
             "type": "object",
             "properties": {
               "reusable": {
                 "title": "Reusable",
-                "description": "Object Reusable",
+                "description": "Object reusable",
                 "type": "boolean"
               },
               "type": {
                 "title": "Type",
-                "description": "Action Type of Situation",
+                "description": "Action type of situation",
                 "type": "string",
                 "enum": [
                   "navigationAction",
@@ -521,28 +521,28 @@
               },
               "id": {
                 "title": "ID",
-                "description": "Action ID",
+                "description": "Action id",
                 "type": "string",
                 "maxLength": 32
               },
-              "actionText": {
-                "title": "Action Text",
-                "description": "Text Table for Situation Object Actions",
+              "texts": {
+                "title": "Texts",
+                "description": "Text table for situation object actions",
                 "type": "array",
                 "items": {
-                  "title": "Action Text",
-                  "description": "Text Table for Situation Object Actions",
+                  "title": "Texts",
+                  "description": "Text table for situation object actions",
                   "type": "object",
                   "properties": {
                     "name": {
                       "title": "Name",
-                      "description": "Name of Action",
+                      "description": "Name of action",
                       "type": "string",
                       "maxLength": 40
                     },
                     "description": {
                       "title": "Description",
-                      "description": "Description of Action",
+                      "description": "Description of action",
                       "type": "string",
                       "maxLength": 255
                     }
@@ -550,18 +550,18 @@
                   "additionalProperties": false
                 }
               },
-              "actionNavigation": {
-                "title": "Action Navigation",
-                "description": "Situation Object Action - Navigation",
+              "navigations": {
+                "title": "Navigations",
+                "description": "Situation object action - navigation",
                 "type": "array",
                 "items": {
-                  "title": "Action Navigation",
-                  "description": "Situation Object Action - Navigation",
+                  "title": "Navigations",
+                  "description": "Situation object action - navigation",
                   "type": "object",
                   "properties": {
                     "id": {
                       "title": "ID",
-                      "description": "Navigation ID",
+                      "description": "Navigation id",
                       "type": "string",
                       "maxLength": 32
                     }
@@ -569,18 +569,18 @@
                   "additionalProperties": false
                 }
               },
-              "actionCallback": {
-                "title": "Action Callback",
-                "description": "Situation Object Action - Callback",
+              "callbacks": {
+                "title": "Callbacks",
+                "description": "Situation object action - callback",
                 "type": "array",
                 "items": {
-                  "title": "Action Callback",
-                  "description": "Situation Object Action - Callback",
+                  "title": "Callbacks",
+                  "description": "Situation object action - callback",
                   "type": "object",
                   "properties": {
-                    "callbackId": {
-                      "title": "Callback ID",
-                      "description": "Callback ID",
+                    "id": {
+                      "title": "ID",
+                      "description": "Callback id",
                       "type": "string",
                       "maxLength": 32
                     }
@@ -596,18 +596,18 @@
             ]
           }
         },
-        "situationObjectNavigation": {
-          "title": "Situation Object Navigation",
-          "description": "Situation Object Navigation",
+        "navigations": {
+          "title": "Navigations",
+          "description": "Situation object navigation",
           "type": "array",
           "items": {
-            "title": "Situation Object Navigation",
-            "description": "Situation Object Navigation",
+            "title": "Navigations",
+            "description": "Situation object navigation",
             "type": "object",
             "properties": {
               "reusable": {
                 "title": "Reusable",
-                "description": "Object Reusable",
+                "description": "Object reusable",
                 "type": "boolean"
               },
               "scope": {
@@ -629,34 +629,34 @@
               },
               "id": {
                 "title": "ID",
-                "description": "Navigation ID",
+                "description": "Navigation id",
                 "type": "string",
                 "maxLength": 32
               },
               "semanticObjectAction": {
                 "title": "Semantic Object Action",
-                "description": "Semantic Object Action",
+                "description": "Semantic object action",
                 "type": "string",
                 "maxLength": 50
               },
               "semanticObject": {
                 "title": "Semantic Object",
-                "description": "Semantic Object",
+                "description": "Semantic object",
                 "type": "string",
                 "maxLength": 50
               },
-              "navigationParameter": {
-                "title": "Navigation Parameter",
-                "description": "Situation Object Navigation Parameter",
+              "parameters": {
+                "title": "Parameters",
+                "description": "Situation object navigation parameter",
                 "type": "array",
                 "items": {
-                  "title": "Navigation Parameter",
-                  "description": "Situation Object Navigation Parameter",
+                  "title": "Parameters",
+                  "description": "Situation object navigation parameter",
                   "type": "object",
                   "properties": {
                     "name": {
                       "title": "Name",
-                      "description": "Name of Navigation Parameter",
+                      "description": "Name of navigation parameter",
                       "type": "string",
                       "maxLength": 30
                     }
@@ -671,18 +671,18 @@
             ]
           }
         },
-        "situationObjectCallback": {
-          "title": "Situation Object Callback",
-          "description": "Situation Object Callback",
+        "callbacks": {
+          "title": "Callbacks",
+          "description": "Situation object callback",
           "type": "array",
           "items": {
-            "title": "Situation Object Callback",
-            "description": "Situation Object Callback",
+            "title": "Callbacks",
+            "description": "Situation object callback",
             "type": "object",
             "properties": {
               "reusable": {
                 "title": "Reusable",
-                "description": "Object Reusable",
+                "description": "Object reusable",
                 "type": "boolean"
               },
               "scope": {
@@ -710,22 +710,22 @@
               },
               "id": {
                 "title": "ID",
-                "description": "Callback ID",
+                "description": "Callback id",
                 "type": "string",
                 "maxLength": 32
               },
-              "callbackParameter": {
-                "title": "Callback Parameter",
-                "description": "Situation Object Callback Parameter",
+              "parameters": {
+                "title": "Parameters",
+                "description": "Situation object callback parameter",
                 "type": "array",
                 "items": {
-                  "title": "Callback Parameter",
-                  "description": "Situation Object Callback Parameter",
+                  "title": "Parameters",
+                  "description": "Situation object callback parameter",
                   "type": "object",
                   "properties": {
                     "name": {
                       "title": "Name",
-                      "description": "Name of Callback Parameter",
+                      "description": "Name of callback parameter",
                       "type": "string",
                       "maxLength": 30
                     }
@@ -740,30 +740,30 @@
             ]
           }
         },
-        "valueHelpService": {
-          "title": "Value Help Service",
-          "description": "Value Help Service for Situation Object",
+        "valueHelpServices": {
+          "title": "Value Help Services",
+          "description": "Value help service for situation object",
           "type": "array",
           "items": {
-            "title": "Value Help Service",
-            "description": "Value Help Service for Situation Object",
+            "title": "Value Help Services",
+            "description": "Value help service for situation object",
             "type": "object",
             "properties": {
               "reusable": {
                 "title": "Reusable",
-                "description": "Object Reusable",
+                "description": "Object reusable",
                 "type": "boolean"
               },
               "version": {
                 "title": "Version",
-                "description": "Service Version for Value Help",
+                "description": "Service version for value help",
                 "type": "string",
                 "maxLength": 4,
                 "pattern": "^[0-9]+$"
               },
               "protocolVersion": {
                 "title": "Protocol Version",
-                "description": "Service Protocol Version for Value Help",
+                "description": "Service protocol version for value help",
                 "type": "string",
                 "enum": [
                   "v2",
@@ -780,7 +780,7 @@
               },
               "pathType": {
                 "title": "Path Type",
-                "description": "Service Path Type for Value Help",
+                "description": "Service path type for value help",
                 "type": "string",
                 "enum": [
                   "standard",
@@ -814,35 +814,35 @@
               },
               "definition": {
                 "title": "Definition",
-                "description": "Service Definition for Value Help",
+                "description": "Service definition for value help",
                 "type": "string",
                 "maxLength": 30
               },
               "binding": {
                 "title": "Binding",
-                "description": "Service Binding for Value Help",
+                "description": "Service binding for value help",
                 "type": "string",
                 "maxLength": 40
               },
               "id": {
                 "title": "ID",
-                "description": "Service ID for Value Help",
+                "description": "Service id for value help",
                 "type": "string",
                 "maxLength": 32
               },
               "customPath": {
                 "title": "Custom Path",
-                "description": "Service Custom Path for Value Help",
+                "description": "Service custom path for value help",
                 "type": "string",
                 "maxLength": 255
               },
-              "valueHelpServiceProvider": {
-                "title": "Value Help Service Provider",
-                "description": "Property of Value Help Service for Situation Object",
+              "valueHelpServiceProviders": {
+                "title": "Value Help Service Providers",
+                "description": "Property of value help service for situation object",
                 "type": "array",
                 "items": {
-                  "title": "Value Help Service Provider",
-                  "description": "Property of Value Help Service for Situation Object",
+                  "title": "Value Help Service Providers",
+                  "description": "Property of value help service for situation object",
                   "type": "object",
                   "properties": {
                     "property": {

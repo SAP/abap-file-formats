@@ -142,42 +142,42 @@ INTERFACE zif_aff_sito_v1
 
   TYPES:
 
-    "! <p class="shorttext">Structure Text</p>
-    "! Situation Object Structue
+    "! <p class="shorttext">Texts</p>
+    "! Situation object structue
     BEGIN OF ty_sit2_obj_struc_t,
       "! <p class="shorttext">Description</p>
-      "! Situation Object Structure Description
+      "! Situation object structure description
       description TYPE c LENGTH 255,
     END OF ty_sit2_obj_struc_t,
 
-    "! <p class="shorttext">Structure Text</p>
-    "! Situation Object Structue
+    "! <p class="shorttext">Texts</p>
+    "! Situation object structue
     ty_sit2_obj_struc_t_list TYPE STANDARD TABLE OF ty_sit2_obj_struc_t WITH DEFAULT KEY,
 
-    "! <p class="shorttext">Structure Semantic Key</p>
-    "! Semantic Keys of an Object Structure
+    "! <p class="shorttext">Semantic Keys</p>
+    "! Semantic keys of an object structure
     BEGIN OF ty_sit2_obj_str_sk,
       "! <p class="shorttext">Field Order</p>
-      "! Object Field Order for Situation
+      "! Object field order for situation
       field_order TYPE n LENGTH 2,
       "! <p class="shorttext">Field</p>
-      "! Object Field
+      "! Object field
       field       TYPE c LENGTH 30,
     END OF ty_sit2_obj_str_sk,
 
-    "! <p class="shorttext">Structure Semantic Key</p>
-    "! Semantic Keys of an Object Structure
+    "! <p class="shorttext">Semantic Keys</p>
+    "! Semantic keys of an object structure
     ty_sit2_obj_str_sk_list TYPE STANDARD TABLE OF ty_sit2_obj_str_sk WITH DEFAULT KEY,
 
-    "! <p class="shorttext">Structure Value Help Map</p>
-    "! Value Help Mapping for Situation Object Structure
+    "! <p class="shorttext">Value Help Mappings</p>
+    "! Value help mapping for situation object structure
     BEGIN OF ty_sit2_os_vh_map,
       "! <p class="shorttext">App Type</p>
-      "! App for Value Help
+      "! App for value help
       "! $required
       app_type   TYPE ty_sit2_do_vh_app_type,
       "! <p class="shorttext">Type</p>
-      "! Type of Value Help
+      "! Type of value help
       "! $required
       type       TYPE ty_sit2_do_vh_type,
       "! <p class="shorttext">Scope</p>
@@ -185,23 +185,23 @@ INTERFACE zif_aff_sito_v1
       "! $required
       scope      TYPE ty_sit2_do_scope,
       "! <p class="shorttext">Field Name</p>
-      "! Object Field
+      "! Object field
       field_name TYPE c LENGTH 30,
     END OF ty_sit2_os_vh_map,
 
-    "! <p class="shorttext">Structure Value Help Map</p>
-    "! Value Help Mapping for Situation Object Structure
+    "! <p class="shorttext">Value Help Mappings</p>
+    "! Value help mapping for situation object structure
     ty_sit2_os_vh_map_list TYPE STANDARD TABLE OF ty_sit2_os_vh_map WITH DEFAULT KEY,
 
-    "! <p class="shorttext">Structure Value Help Map Srv</p>
-    "! Value Help Mapping for Situation Object Structure - Service
+    "! <p class="shorttext">Services</p>
+    "! Value help mapping for situation object structure - service
     BEGIN OF ty_sit2_os_vh_map_s,
       "! <p class="shorttext">Type</p>
-      "! App for Value Help
+      "! App for value help
       "! $required
       type       TYPE ty_sit2_do_vh_app_type,
       "! <p class="shorttext">Field Name</p>
-      "! Object Field
+      "! Object field
       field_name TYPE c LENGTH 30,
       "! <p class="shorttext">Entity Set</p>
       "! Name
@@ -210,91 +210,91 @@ INTERFACE zif_aff_sito_v1
       "! Name
       property   TYPE c LENGTH 40,
       "! <p class="shorttext">ID</p>
-      "! Service ID for Value Help
+      "! Service id for value help
       id         TYPE c LENGTH 32,
     END OF ty_sit2_os_vh_map_s,
 
-    "! <p class="shorttext">Structure Value Help Map Srv</p>
-    "! Value Help Mapping for Situation Object Structure - Service
+    "! <p class="shorttext">Services</p>
+    "! Value help mapping for situation object structure - service
     ty_sit2_os_vh_map_s_list TYPE STANDARD TABLE OF ty_sit2_os_vh_map_s WITH DEFAULT KEY,
 
-    "! <p class="shorttext">Event Text</p>
-    "! Situation Object Events Text
+    "! <p class="shorttext">Texts</p>
+    "! Situation object events text
     BEGIN OF ty_sit2_obj_event_t,
       "! <p class="shorttext">Description</p>
       "! Description
       description TYPE c LENGTH 255,
     END OF ty_sit2_obj_event_t,
 
-    "! <p class="shorttext">Event Text</p>
-    "! Situation Object Events Text
+    "! <p class="shorttext">Texts</p>
+    "! Situation object events text
     ty_sit2_obj_event_t_list TYPE STANDARD TABLE OF ty_sit2_obj_event_t WITH DEFAULT KEY,
 
-    "! <p class="shorttext">Action Text</p>
-    "! Text Table for Situation Object Actions
+    "! <p class="shorttext">Texts</p>
+    "! Text table for situation object actions
     BEGIN OF ty_sit2_obj_act_t,
       "! <p class="shorttext">Name</p>
-      "! Name of Action
+      "! Name of action
       name        TYPE c LENGTH 40,
       "! <p class="shorttext">Description</p>
-      "! Description of Action
+      "! Description of action
       description TYPE c LENGTH 255,
     END OF ty_sit2_obj_act_t,
 
-    "! <p class="shorttext">Action Text</p>
-    "! Text Table for Situation Object Actions
+    "! <p class="shorttext">Texts</p>
+    "! Text table for situation object actions
     ty_sit2_obj_act_t_list TYPE STANDARD TABLE OF ty_sit2_obj_act_t WITH DEFAULT KEY,
 
-    "! <p class="shorttext">Action Navigation</p>
-    "! Situation Object Action - Navigation
+    "! <p class="shorttext">Navigations</p>
+    "! Situation object action - navigation
     BEGIN OF ty_sit2_obj_act_nav,
       "! <p class="shorttext">ID</p>
-      "! Navigation ID
+      "! Navigation id
       id TYPE c LENGTH 32,
     END OF ty_sit2_obj_act_nav,
 
-    "! <p class="shorttext">Action Navigation</p>
-    "! Situation Object Action - Navigation
+    "! <p class="shorttext">Navigations</p>
+    "! Situation object action - navigation
     ty_sit2_obj_act_nav_list TYPE STANDARD TABLE OF ty_sit2_obj_act_nav WITH DEFAULT KEY,
 
-    "! <p class="shorttext">Action Callback</p>
-    "! Situation Object Action - Callback
+    "! <p class="shorttext">Callbacks</p>
+    "! Situation object action - callback
     BEGIN OF ty_sit2_obj_act_cb,
-      "! <p class="shorttext">Callback ID</p>
-      "! Callback ID
-      callback_id TYPE c LENGTH 32,
+      "! <p class="shorttext">ID</p>
+      "! Callback id
+      id TYPE c LENGTH 32,
     END OF ty_sit2_obj_act_cb,
 
-    "! <p class="shorttext">Action Callback</p>
-    "! Situation Object Action - Callback
+    "! <p class="shorttext">Callbacks</p>
+    "! Situation object action - callback
     ty_sit2_obj_act_cb_list TYPE STANDARD TABLE OF ty_sit2_obj_act_cb WITH DEFAULT KEY,
 
-    "! <p class="shorttext">Navigation Parameter</p>
-    "! Situation Object Navigation Parameter
+    "! <p class="shorttext">Parameters</p>
+    "! Situation object navigation parameter
     BEGIN OF ty_sit2_obj_nav_par,
       "! <p class="shorttext">Name</p>
-      "! Name of Navigation Parameter
+      "! Name of navigation parameter
       name TYPE c LENGTH 30,
     END OF ty_sit2_obj_nav_par,
 
-    "! <p class="shorttext">Navigation Parameter</p>
-    "! Situation Object Navigation Parameter
+    "! <p class="shorttext">Parameters</p>
+    "! Situation object navigation parameter
     ty_sit2_obj_nav_par_list TYPE STANDARD TABLE OF ty_sit2_obj_nav_par WITH DEFAULT KEY,
 
-    "! <p class="shorttext">Callback Parameter</p>
-    "! Situation Object Callback Parameter
+    "! <p class="shorttext">Parameters</p>
+    "! Situation object callback parameter
     BEGIN OF ty_sit2_obj_cb_par,
       "! <p class="shorttext">Name</p>
-      "! Name of Callback Parameter
+      "! Name of callback parameter
       name TYPE c LENGTH 30,
     END OF ty_sit2_obj_cb_par,
 
-    "! <p class="shorttext">Callback Parameter</p>
-    "! Situation Object Callback Parameter
+    "! <p class="shorttext">Parameters</p>
+    "! Situation object callback parameter
     ty_sit2_obj_cb_par_list TYPE STANDARD TABLE OF ty_sit2_obj_cb_par WITH DEFAULT KEY,
 
-    "! <p class="shorttext">Value Help Service Provider</p>
-    "! Property of Value Help Service for Situation Object
+    "! <p class="shorttext">Value Help Service Providers</p>
+    "! Property of value help service for situation object
     BEGIN OF ty_sit2_obj_vh_s_p,
       "! <p class="shorttext">Property</p>
       "! Name
@@ -304,66 +304,66 @@ INTERFACE zif_aff_sito_v1
       entity_set TYPE c LENGTH 40,
     END OF ty_sit2_obj_vh_s_p,
 
-    "! <p class="shorttext">Value Help Service Provider</p>
-    "! Property of Value Help Service for Situation Object
+    "! <p class="shorttext">Value Help Service Providers</p>
+    "! Property of value help service for situation object
     ty_sit2_obj_vh_s_p_list TYPE STANDARD TABLE OF ty_sit2_obj_vh_s_p WITH DEFAULT KEY,
 
-    "! <p class="shorttext">Situation Object Text</p>
-    "! Situation Object Text
+    "! <p class="shorttext">Texts</p>
+    "! Situation object text
     BEGIN OF ty_sit2_object_t,
       "! <p class="shorttext">Name</p>
-      "! Situation Object Name
+      "! Situation object name
       name        TYPE c LENGTH 40,
       "! <p class="shorttext">Description</p>
       "! Description
       description TYPE c LENGTH 255,
     END OF ty_sit2_object_t,
 
-    "! <p class="shorttext">Situation Object Text</p>
-    "! Situation Object Text
+    "! <p class="shorttext">Texts</p>
+    "! Situation object text
     ty_sit2_object_t_list TYPE STANDARD TABLE OF ty_sit2_object_t WITH DEFAULT KEY,
 
-    "! <p class="shorttext">Situation Object Structure</p>
-    "! Situation Object Structure
+    "! <p class="shorttext">Structures</p>
+    "! Situation object structure
     BEGIN OF ty_sit2_obj_struc,
       "! <p class="shorttext">Reusable</p>
-      "! Object Reusable
-      reusable                     TYPE abap_bool,
+      "! Object reusable
+      reusable             TYPE abap_bool,
       "! <p class="shorttext">Type</p>
-      "! Situation Object Structure Type
+      "! Situation object structure type
       "! $required
-      type                         TYPE ty_sit2_do_obj_struc_type,
+      type                 TYPE ty_sit2_do_obj_struc_type,
       "! <p class="shorttext">Scope</p>
       "! Source
       "! $required
-      scope                        TYPE ty_sit2_do_scope,
+      scope                TYPE ty_sit2_do_scope,
       "! <p class="shorttext">Name</p>
       "!
-      name                         TYPE c LENGTH 30,
+      name                 TYPE c LENGTH 30,
       "! <p class="shorttext">SAP Object Node Type</p>
-      "! SAP Object Node Type
-      sap_object_node_type         TYPE c LENGTH 30,
+      "! Sap object node type
+      sap_object_node_type TYPE c LENGTH 30,
       "! <p class="shorttext">ID</p>
-      "! Situation Object Structure ID
-      id                           TYPE c LENGTH 32,
-      structure_text               TYPE ty_sit2_obj_struc_t_list,
-      structure_semantic_key       TYPE ty_sit2_obj_str_sk_list,
-      structure_value_help_map     TYPE ty_sit2_os_vh_map_list,
-      structure_value_help_map_srv TYPE ty_sit2_os_vh_map_s_list,
+      "! Situation object structure id
+      id                   TYPE c LENGTH 32,
+      texts                TYPE ty_sit2_obj_struc_t_list,
+      semantic_keys        TYPE ty_sit2_obj_str_sk_list,
+      value_help_mappings  TYPE ty_sit2_os_vh_map_list,
+      services             TYPE ty_sit2_os_vh_map_s_list,
     END OF ty_sit2_obj_struc,
 
-    "! <p class="shorttext">Situation Object Structure</p>
-    "! Situation Object Structure
+    "! <p class="shorttext">Structures</p>
+    "! Situation object structure
     ty_sit2_obj_struc_list TYPE STANDARD TABLE OF ty_sit2_obj_struc WITH DEFAULT KEY,
 
-    "! <p class="shorttext">Situation Object Event</p>
-    "! Situation Object Events
+    "! <p class="shorttext">Events</p>
+    "! Situation object events
     BEGIN OF ty_sit2_obj_events,
       "! <p class="shorttext">Reusable</p>
-      "! Object Reusable
+      "! Object reusable
       reusable               TYPE abap_bool,
       "! <p class="shorttext">Category</p>
-      "! Object Type Category
+      "! Object type category
       "! $required
       category               TYPE ty_swfeclstyp,
       "! <p class="shorttext">Scope</p>
@@ -371,162 +371,162 @@ INTERFACE zif_aff_sito_v1
       "! $required
       scope                  TYPE ty_sit2_do_scope,
       "! <p class="shorttext">ID</p>
-      "! Situation Event ID
+      "! Situation event id
       id                     TYPE c LENGTH 32,
       "! <p class="shorttext">Object</p>
-      "! Object Type
+      "! Object type
       object                 TYPE c LENGTH 32,
       "! <p class="shorttext">Type</p>
-      "! Object Type
+      "! Object type
       type                   TYPE c LENGTH 32,
       "! <p class="shorttext">Parameter Structure ID</p>
-      "! Situation Object Structure ID
+      "! Situation object structure id
       parameter_structure_id TYPE c LENGTH 32,
-      event_text             TYPE ty_sit2_obj_event_t_list,
+      texts                  TYPE ty_sit2_obj_event_t_list,
     END OF ty_sit2_obj_events,
 
-    "! <p class="shorttext">Situation Object Event</p>
-    "! Situation Object Events
+    "! <p class="shorttext">Events</p>
+    "! Situation object events
     ty_sit2_obj_events_list TYPE STANDARD TABLE OF ty_sit2_obj_events WITH DEFAULT KEY,
 
-    "! <p class="shorttext">Situation Object Action</p>
-    "! Situation Object Actions
+    "! <p class="shorttext">End User Actions</p>
+    "! Situation object actions
     BEGIN OF ty_sit2_obj_act,
       "! <p class="shorttext">Reusable</p>
-      "! Object Reusable
-      reusable          TYPE abap_bool,
+      "! Object reusable
+      reusable    TYPE abap_bool,
       "! <p class="shorttext">Type</p>
-      "! Action Type of Situation
+      "! Action type of situation
       "! $required
-      type              TYPE ty_sit2_do_action_type,
+      type        TYPE ty_sit2_do_action_type,
       "! <p class="shorttext">Scope</p>
       "! Source
       "! $required
-      scope             TYPE ty_sit2_do_scope,
+      scope       TYPE ty_sit2_do_scope,
       "! <p class="shorttext">ID</p>
-      "! Action ID
-      id                TYPE c LENGTH 32,
-      action_text       TYPE ty_sit2_obj_act_t_list,
-      action_navigation TYPE ty_sit2_obj_act_nav_list,
-      action_callback   TYPE ty_sit2_obj_act_cb_list,
+      "! Action id
+      id          TYPE c LENGTH 32,
+      texts       TYPE ty_sit2_obj_act_t_list,
+      navigations TYPE ty_sit2_obj_act_nav_list,
+      callbacks   TYPE ty_sit2_obj_act_cb_list,
     END OF ty_sit2_obj_act,
 
-    "! <p class="shorttext">Situation Object Action</p>
-    "! Situation Object Actions
+    "! <p class="shorttext">End User Actions</p>
+    "! Situation object actions
     ty_sit2_obj_act_list TYPE STANDARD TABLE OF ty_sit2_obj_act WITH DEFAULT KEY,
 
-    "! <p class="shorttext">Situation Object Navigation</p>
-    "! Situation Object Navigation
+    "! <p class="shorttext">Navigations</p>
+    "! Situation object navigation
     BEGIN OF ty_sit2_obj_nav,
       "! <p class="shorttext">Reusable</p>
-      "! Object Reusable
+      "! Object reusable
       reusable               TYPE abap_bool,
       "! <p class="shorttext">Scope</p>
       "! Source
       "! $required
       scope                  TYPE ty_sit2_do_scope,
       "! <p class="shorttext">ID</p>
-      "! Navigation ID
+      "! Navigation id
       id                     TYPE c LENGTH 32,
       "! <p class="shorttext">Semantic Object Action</p>
-      "! Semantic Object Action
+      "! Semantic object action
       semantic_object_action TYPE c LENGTH 50,
       "! <p class="shorttext">Semantic Object</p>
-      "! Semantic Object
+      "! Semantic object
       semantic_object        TYPE c LENGTH 50,
-      navigation_parameter   TYPE ty_sit2_obj_nav_par_list,
+      parameters             TYPE ty_sit2_obj_nav_par_list,
     END OF ty_sit2_obj_nav,
 
-    "! <p class="shorttext">Situation Object Navigation</p>
-    "! Situation Object Navigation
+    "! <p class="shorttext">Navigations</p>
+    "! Situation object navigation
     ty_sit2_obj_nav_list TYPE STANDARD TABLE OF ty_sit2_obj_nav WITH DEFAULT KEY,
 
-    "! <p class="shorttext">Situation Object Callback</p>
-    "! Situation Object Callback
+    "! <p class="shorttext">Callbacks</p>
+    "! Situation object callback
     BEGIN OF ty_sit2_obj_cb,
       "! <p class="shorttext">Reusable</p>
-      "! Object Reusable
-      reusable           TYPE abap_bool,
+      "! Object reusable
+      reusable   TYPE abap_bool,
       "! <p class="shorttext">Scope</p>
       "! Source
       "! $required
-      scope              TYPE ty_sit2_do_scope,
+      scope      TYPE ty_sit2_do_scope,
       "! <p class="shorttext">Class Name</p>
       "! Reference to
-      class_name         TYPE c LENGTH 30,
+      class_name TYPE c LENGTH 30,
       "! <p class="shorttext">ID</p>
-      "! Callback ID
-      id                 TYPE c LENGTH 32,
-      callback_parameter TYPE ty_sit2_obj_cb_par_list,
+      "! Callback id
+      id         TYPE c LENGTH 32,
+      parameters TYPE ty_sit2_obj_cb_par_list,
     END OF ty_sit2_obj_cb,
 
-    "! <p class="shorttext">Situation Object Callback</p>
-    "! Situation Object Callback
+    "! <p class="shorttext">Callbacks</p>
+    "! Situation object callback
     ty_sit2_obj_cb_list TYPE STANDARD TABLE OF ty_sit2_obj_cb WITH DEFAULT KEY,
 
-    "! <p class="shorttext">Value Help Service</p>
-    "! Value Help Service for Situation Object
+    "! <p class="shorttext">Value Help Services</p>
+    "! Value help service for situation object
     BEGIN OF ty_sit2_obj_vh_s,
       "! <p class="shorttext">Reusable</p>
-      "! Object Reusable
-      reusable                    TYPE abap_bool,
+      "! Object reusable
+      reusable                     TYPE abap_bool,
       "! <p class="shorttext">Version</p>
-      "! Service Version for Value Help
-      version                     TYPE n LENGTH 4,
+      "! Service version for value help
+      version                      TYPE n LENGTH 4,
       "! <p class="shorttext">Protocol Version</p>
-      "! Service Protocol Version for Value Help
+      "! Service protocol version for value help
       "! $required
-      protocol_version            TYPE ty_sit2_do_vh_srv_protocol_ver,
+      protocol_version             TYPE ty_sit2_do_vh_srv_protocol_ver,
       "! <p class="shorttext">Path Type</p>
-      "! Service Path Type for Value Help
+      "! Service path type for value help
       "! $required
-      path_type                   TYPE ty_sit2_do_vh_srv_path_type,
+      path_type                    TYPE ty_sit2_do_vh_srv_path_type,
       "! <p class="shorttext">Scope</p>
       "! Source
       "! $required
-      scope                       TYPE ty_sit2_do_scope,
+      scope                        TYPE ty_sit2_do_scope,
       "! <p class="shorttext">Definition</p>
-      "! Service Definition for Value Help
-      definition                  TYPE c LENGTH 30,
+      "! Service definition for value help
+      definition                   TYPE c LENGTH 30,
       "! <p class="shorttext">Binding</p>
-      "! Service Binding for Value Help
-      binding                     TYPE c LENGTH 40,
+      "! Service binding for value help
+      binding                      TYPE c LENGTH 40,
       "! <p class="shorttext">ID</p>
-      "! Service ID for Value Help
-      id                          TYPE c LENGTH 32,
+      "! Service id for value help
+      id                           TYPE c LENGTH 32,
       "! <p class="shorttext">Custom Path</p>
-      "! Service Custom Path for Value Help
-      custom_path                 TYPE c LENGTH 255,
-      value_help_service_provider TYPE ty_sit2_obj_vh_s_p_list,
+      "! Service custom path for value help
+      custom_path                  TYPE c LENGTH 255,
+      value_help_service_providers TYPE ty_sit2_obj_vh_s_p_list,
     END OF ty_sit2_obj_vh_s,
 
-    "! <p class="shorttext">Value Help Service</p>
-    "! Value Help Service for Situation Object
+    "! <p class="shorttext">Value Help Services</p>
+    "! Value help service for situation object
     ty_sit2_obj_vh_s_list TYPE STANDARD TABLE OF ty_sit2_obj_vh_s WITH DEFAULT KEY,
 
     "! <p class="shorttext">Situation Object</p>
-    "! Situation Object
+    "! Situation object
     BEGIN OF ty_sit2_object,
       "! <p class="shorttext">Extensible</p>
-      "! Object Extensible
-      extensible                  TYPE abap_bool,
+      "! Object extensible
+      extensible          TYPE abap_bool,
       "! <p class="shorttext">Reusable</p>
-      "! Object Reusable
-      reusable                    TYPE abap_bool,
+      "! Object reusable
+      reusable            TYPE abap_bool,
       "! <p class="shorttext">Scope</p>
       "! Source
       "! $required
-      scope                       TYPE ty_sit2_do_scope,
+      scope               TYPE ty_sit2_do_scope,
       "! <p class="shorttext">SAP Object Type</p>
-      "! SAP Object Type
-      sap_object_type             TYPE c LENGTH 30,
-      situation_object_text       TYPE ty_sit2_object_t_list,
-      situation_object_structure  TYPE ty_sit2_obj_struc_list,
-      situation_object_event      TYPE ty_sit2_obj_events_list,
-      situation_object_action     TYPE ty_sit2_obj_act_list,
-      situation_object_navigation TYPE ty_sit2_obj_nav_list,
-      situation_object_callback   TYPE ty_sit2_obj_cb_list,
-      value_help_service          TYPE ty_sit2_obj_vh_s_list,
+      "! Sap object type
+      sap_object_type     TYPE c LENGTH 30,
+      texts               TYPE ty_sit2_object_t_list,
+      structures          TYPE ty_sit2_obj_struc_list,
+      events              TYPE ty_sit2_obj_events_list,
+      end_user_actions    TYPE ty_sit2_obj_act_list,
+      navigations         TYPE ty_sit2_obj_nav_list,
+      callbacks           TYPE ty_sit2_obj_cb_list,
+      value_help_services TYPE ty_sit2_obj_vh_s_list,
     END OF ty_sit2_object,
 
 

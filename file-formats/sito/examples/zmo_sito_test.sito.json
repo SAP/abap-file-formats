@@ -7,25 +7,25 @@
   "situationObject": {
     "scope": "sap",
     "sapObjectType": "BusinessSituationDemoFlight",
-    "situationObjectText": [
+    "texts": [
       {
         "name": "Flight (Demo Object)",
         "description": "The flight object is used in the demo scenario Flight Profitability (SITDEMO_FLIGHT_PROFITABILITY)."
       }
     ],
-    "situationObjectStructure": [
+    "structures": [
       {
         "type": "cds",
         "scope": "sap",
         "name": "I_SITN2DEMOFLIGHT",
         "sapObjectNodeType": "BusinessSituationDemoFlight",
         "id": "SITDEMO_CDS_FLIGHT",
-        "structureText": [
+        "texts": [
           {
             "description": "CDS view of flight (demo object)"
           }
         ],
-        "structureSemanticKey": [
+        "semanticKeys": [
           {
             "fieldOrder": "02",
             "field": "SITNDEMOCONNECTIONID"
@@ -39,7 +39,7 @@
             "field": "SITNDEMOCARRIERID"
           }
         ],
-        "structureValueHelpMap": [
+        "valueHelpMappings": [
           {
             "appType": "allApps",
             "type": "service",
@@ -65,7 +65,7 @@
             "fieldName": "SITNDEMOCONNECTIONID"
           }
         ],
-        "structureValueHelpMapSrv": [
+        "services": [
           {
             "type": "allApps",
             "fieldName": "SITNDEMOCARRIERID",
@@ -97,20 +97,20 @@
         ]
       }
     ],
-    "situationObjectAction": [
+    "endUserActions": [
       {
         "type": "callbackAction",
         "scope": "sap",
         "id": "SITDEMO_ACT_CANCEL_FLIGHT",
-        "actionText": [
+        "texts": [
           {
             "name": "Cancel Flight",
             "description": "Set flight status to unscheduled"
           }
         ],
-        "actionCallback": [
+        "callbacks": [
           {
-            "callbackId": "SITDEMO_CB_CANCEL_FLIGHT"
+            "id": "SITDEMO_CB_CANCEL_FLIGHT"
           }
         ]
       },
@@ -118,15 +118,15 @@
         "type": "callbackAction",
         "scope": "sap",
         "id": "SITDEMO_ACT_CHANGE_PLANE",
-        "actionText": [
+        "texts": [
           {
             "name": "Change Plane",
             "description": "Assign another plane to the flight"
           }
         ],
-        "actionCallback": [
+        "callbacks": [
           {
-            "callbackId": "SITDEMO_CB_CHANGE_PLANE"
+            "id": "SITDEMO_CB_CHANGE_PLANE"
           }
         ]
       },
@@ -134,13 +134,13 @@
         "type": "navigationAction",
         "scope": "sap",
         "id": "SITDEMO_ACT_MANAGE_AIRLINE",
-        "actionText": [
+        "texts": [
           {
             "name": "Display Airline",
             "description": "Show contact details"
           }
         ],
-        "actionNavigation": [
+        "navigations": [
           {
             "id": "SITDEMO_NAV_MANAGE_AIRLINE"
           }
@@ -150,26 +150,26 @@
         "type": "navigationAction",
         "scope": "sap",
         "id": "SITDEMO_ACT_MANAGE_FLIGHT",
-        "actionText": [
+        "texts": [
           {
             "name": "Manage Flight",
             "description": "Maintain bookings and flight details"
           }
         ],
-        "actionNavigation": [
+        "navigations": [
           {
             "id": "SITDEMO_NAV_MANAGE_FLIGHT"
           }
         ]
       }
     ],
-    "situationObjectNavigation": [
+    "navigations": [
       {
         "scope": "sap",
         "id": "SITDEMO_NAV_MANAGE_FLIGHT",
         "semanticObjectAction": "maintain",
         "semanticObject": "SituationDemoFlight",
-        "navigationParameter": [
+        "parameters": [
           {
             "name": "SitnDemoCarrierID"
           },
@@ -186,19 +186,19 @@
         "id": "SITDEMO_NAV_MANAGE_AIRLINE",
         "semanticObjectAction": "maintain",
         "semanticObject": "SituationDemoFlight",
-        "navigationParameter": [
+        "parameters": [
           {
             "name": "SitnDemoCarrierID"
           }
         ]
       }
     ],
-    "situationObjectCallback": [
+    "callbacks": [
       {
         "scope": "sap",
         "className": "CL_SIT2_DEMO_CB_CHANGE_PLANE",
         "id": "SITDEMO_CB_CHANGE_PLANE",
-        "callbackParameter": [
+        "parameters": [
           {
             "name": "CARRID"
           },
@@ -217,7 +217,7 @@
         "scope": "sap",
         "className": "CL_SIT2_DEMO_CB_CANCEL_FLIGHT",
         "id": "SITDEMO_CB_CANCEL_FLIGHT",
-        "callbackParameter": [
+        "parameters": [
           {
             "name": "CARRID"
           },
@@ -230,7 +230,7 @@
         ]
       }
     ],
-    "valueHelpService": [
+    "valueHelpServices": [
       {
         "version": "0001",
         "protocolVersion": "v2",
@@ -238,7 +238,7 @@
         "scope": "sap",
         "binding": "C_SITN2DEMOFLIGHTVH_CDS",
         "id": "SITDEMO_VH",
-        "valueHelpServiceProvider": [
+        "valueHelpServiceProviders": [
           {
             "property": "SitnDemoCarrierID",
             "entitySet": "C_Sitn2DemoFlightVH"
