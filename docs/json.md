@@ -65,6 +65,8 @@ Each JSON Schema provided in this repository is automatically generated. For thi
 
 The ABAP types are self-contained, so it is possible to work on them in any system (e.g., in an SAP BTP, ABAP environment system).
 
+Instead of hashed tables, please use sorted tables with a defined key.
+
 The JSON Schema is generated based on the fields and their ABAP type specification defined in `ty_main`. Each field defined in the structure is transformed to a JSON representation using a camel case notation (e.g, field `abap_language_version` is transformed to the field `abapLanguageVersion` in the JSON Schema). The ABAP type information fills the JSON Schema fields `type`, `length`, `minimum`, `maximum`.
 
 Fields `format_version` and `header` are mandatory and translate to `formatVersion` and `header` in the JSON Schema.
