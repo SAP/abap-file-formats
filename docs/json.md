@@ -89,6 +89,7 @@ n | string | `"maxLength": <length of character field>, "pattern": "^[0-9]+$"`
 p | number | `"minimum": <minimum value>, "maximum": <maximum value>, "multipleOf": <e.g., 0.01 for 2 decimals>`
 abap_bool | boolean |
 sy-langu | string | `"minLength": 2, "maxLength": 2, "pattern": "^[a-z]+$"`
+table | array | if the table has unique keys `"uniqueItems": true` is added to the schema; hashed tables are not allowed in AFF
 
 ### Title
 To provide a title, an ABAP Doc shorttext
