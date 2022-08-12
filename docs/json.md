@@ -65,6 +65,8 @@ Each JSON Schema provided in this repository is automatically generated. For thi
 
 The ABAP types are self-contained, so it is possible to work on them in any system (e.g., in an SAP BTP, ABAP environment system).
 
+Instead of hashed tables, please use sorted tables with a defined key.
+
 The JSON Schema is generated based on the fields and their ABAP type specification defined in `ty_main`. Each field defined in the structure is transformed to a JSON representation using a camel case notation (e.g, field `abap_language_version` is transformed to the field `abapLanguageVersion` in the JSON Schema). The ABAP type information fills the JSON Schema fields `type`, `length`, `minimum`, `maximum`.
 
 Fields `format_version` and `header` are mandatory and translate to `formatVersion` and `header` in the JSON Schema.
@@ -82,11 +84,12 @@ ABAP Type | JSON Schema Type | JSON Schema Additions
 :--- | :---  | :---
 string | string |
 c | string | `"maxLength": <length of character field>`
-i | integer | `minimum": -2147483648, "maximum": 2147483647`
+i | integer | `"minimum": -2147483648, "maximum": 2147483647`
 n | string | `"maxLength": <length of character field>, "pattern": "^[0-9]+$"`
 p | number | `"minimum": <minimum value>, "maximum": <maximum value>, "multipleOf": <e.g., 0.01 for 2 decimals>`
 abap_bool | boolean |
 sy-langu | string | `"minLength": 2, "maxLength": 2, "pattern": "^[a-z]+$"`
+table | array | if the table has unique keys, `"uniqueItems": true` is added to the schema; hashed tables are not supported
 
 ### Title
 To provide a title, an ABAP Doc shorttext
