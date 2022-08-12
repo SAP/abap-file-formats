@@ -1,5 +1,5 @@
 INTERFACE zif_aff_aobj_v1
- PUBLIC.
+  PUBLIC.
 
   TYPES:
     BEGIN OF ty_attributes,
