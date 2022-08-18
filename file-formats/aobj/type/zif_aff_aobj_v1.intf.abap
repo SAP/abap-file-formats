@@ -13,7 +13,7 @@ INTERFACE zif_aff_aobj_v1
       delete_class TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Reload Class</p>
       "! Name of executable class or program which reloads the data to the tables (may be empty)
-      reload_class TYPE if_aff_types_v1=>ty_object_name_30,
+      reload_class TYPE zif_aff_types_v1=>ty_object_name_30,
     END OF ty_attributes.
 
   TYPES:
