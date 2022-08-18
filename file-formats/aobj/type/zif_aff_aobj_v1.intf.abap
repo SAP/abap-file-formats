@@ -1,19 +1,19 @@
-INTERFACE zif_aff_aobj_v1
-  PUBLIC.
+INTERFACE if_aff_aobj_v1
+ PUBLIC.
 
   TYPES:
     BEGIN OF ty_attributes,
       "! <p class="shorttext">Write Class</p>
       "! Name of executable class or program which writes the data to the archive
       "! $required
-      write_class  TYPE zif_aff_types_v1=>ty_object_name_30,
+      write_class  TYPE if_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Delete Class</p>
       "! Name of executable class or program which deletes the data from the tables
       "! $required
-      delete_class TYPE zif_aff_types_v1=>ty_object_name_30,
+      delete_class TYPE if_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Reload Class</p>
       "! Name of executable class or program which reloads the data to the tables (may be empty)
-      reload_class TYPE zif_aff_types_v1=>ty_object_name_30,
+      reload_class TYPE if_aff_types_v1=>ty_object_name_30,
     END OF ty_attributes.
 
   TYPES:
@@ -38,7 +38,7 @@ INTERFACE zif_aff_aobj_v1
       "! <p class="shorttext">Name</p>
       "! Name of archiving class
       "! $required
-      name TYPE zif_aff_types_v1=>ty_object_name_30,
+      name TYPE c LENGTH 10,
     END OF ty_archiving_class.
   TYPES: ty_archiving_classes TYPE SORTED TABLE OF ty_archiving_class WITH UNIQUE KEY name.
   TYPES:
@@ -46,11 +46,11 @@ INTERFACE zif_aff_aobj_v1
     "! Archiving Object (AOBJ) v1
     BEGIN OF ty_main,
       "! $required
-      format_version        TYPE zif_aff_types_v1=>ty_format_version,
+      format_version        TYPE if_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header                TYPE zif_aff_types_v1=>ty_header_60_cloud,
+      header                TYPE if_aff_types_v1=>ty_header_60_cloud,
       "! <p class="shorttext">Attributes</p>
       "! Attributes of an archiving object
       "! $required
