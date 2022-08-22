@@ -5,109 +5,107 @@
     "originalLanguage": "en"
   },
   "situationObject": {
-    "scope": "sap",
+    "reusable": false,
+    "scope": "SAP",
     "sapObjectType": "BusinessSituationDemoFlight",
-    "texts": [
-      {
-        "name": "Flight (Demo Object)",
-        "description": "The flight object is used in the demo scenario Flight Profitability (SITDEMO_FLIGHT_PROFITABILITY)."
-      }
-    ],
+    "extensible": false,
+    "text": {
+      "name": "Flight (Demo Object)",
+      "description": "The flight object is used in the demo scenario Flight Profitability (SITDEMO_FLIGHT_PROFITABILITY)."
+    },
     "structures": [
       {
-        "type": "cds",
-        "scope": "sap",
-        "name": "I_SITN2DEMOFLIGHT",
-        "sapObjectNodeType": "BusinessSituationDemoFlight",
         "id": "SITDEMO_CDS_FLIGHT",
-        "texts": [
-          {
-            "description": "CDS view of flight (demo object)"
-          }
-        ],
+        "name": "I_SITN2DEMOFLIGHT",
+        "type": "CDS",
+        "reusable": false,
+        "scope": "SAP",
+        "sapObjectNodeType": "BusinessSituationDemoFlight",
+        "text": {
+          "description": "CDS view of flight (demo object)"
+        },
         "semanticKeys": [
           {
-            "fieldOrder": "02",
-            "field": "SITNDEMOCONNECTIONID"
+            "field": "SITNDEMOCONNECTIONID",
+            "fieldOrder": "02"
           },
           {
-            "fieldOrder": "03",
-            "field": "SITNDEMOFLIGHTDATE"
+            "field": "SITNDEMOFLIGHTDATE",
+            "fieldOrder": "03"
           },
           {
-            "fieldOrder": "01",
-            "field": "SITNDEMOCARRIERID"
+            "field": "SITNDEMOCARRIERID",
+            "fieldOrder": "01"
           }
         ],
         "valueHelpMappings": [
           {
+            "fieldName": "SITNDEMOCARRIERID",
             "appType": "allApps",
             "type": "service",
-            "scope": "sap",
-            "fieldName": "SITNDEMOCARRIERID"
+            "scope": "SAP"
           },
           {
+            "fieldName": "SITNDEMOPLANETYPE",
             "appType": "allApps",
             "type": "service",
-            "scope": "sap",
-            "fieldName": "SITNDEMOPLANETYPE"
+            "scope": "SAP"
           },
           {
+            "fieldName": "SITNDEMOCARRIERREGION",
             "appType": "allApps",
             "type": "service",
-            "scope": "sap",
-            "fieldName": "SITNDEMOCARRIERREGION"
+            "scope": "SAP"
           },
           {
+            "fieldName": "SITNDEMOCONNECTIONID",
             "appType": "allApps",
             "type": "service",
-            "scope": "sap",
-            "fieldName": "SITNDEMOCONNECTIONID"
+            "scope": "SAP"
           }
         ],
         "services": [
           {
-            "type": "allApps",
+            "id": "SITDEMO_VH",
             "fieldName": "SITNDEMOCARRIERID",
+            "type": "allApps",
             "entitySet": "C_Sitn2DemoFlightVH",
-            "property": "SitnDemoCarrierID",
-            "id": "SITDEMO_VH"
+            "property": "SitnDemoCarrierID"
           },
           {
-            "type": "allApps",
+            "id": "SITDEMO_VH",
             "fieldName": "SITNDEMOPLANETYPE",
+            "type": "allApps",
             "entitySet": "C_Sitn2DemoFlightVH",
-            "property": "SitnDemoPlaneType",
-            "id": "SITDEMO_VH"
+            "property": "SitnDemoPlaneType"
           },
           {
-            "type": "allApps",
+            "id": "SITDEMO_VH",
             "fieldName": "SITNDEMOCARRIERREGION",
+            "type": "allApps",
             "entitySet": "C_Sitn2DemoFlightVH",
-            "property": "SitnDemoRegionCode",
-            "id": "SITDEMO_VH"
+            "property": "SitnDemoRegionCode"
           },
           {
-            "type": "allApps",
+            "id": "SITDEMO_VH",
             "fieldName": "SITNDEMOCONNECTIONID",
+            "type": "allApps",
             "entitySet": "C_Sitn2DemoFlightVH",
-            "property": "SitnDemoConnectionID",
-            "id": "SITDEMO_VH"
+            "property": "SitnDemoConnectionID"
           }
         ]
       }
     ],
     "endUserActions": [
       {
-        "type": "callbackAction",
-        "scope": "sap",
         "id": "SITDEMO_ACT_CANCEL_FLIGHT",
-        "texts": [
-          {
-            "name": "Cancel Flight",
-            "description": "Set flight status to unscheduled"
-          }
-        ],
+        "type": "callbackAction",
+        "reusable": false,
+        "scope": "SAP",
+        "text": {
+          "name": "Cancel Flight",
+          "description": "Set flight status to unscheduled"
+        },
         "callbacks": [
           {
             "id": "SITDEMO_CB_CANCEL_FLIGHT"
@@ -115,15 +113,14 @@
         ]
       },
       {
-        "type": "callbackAction",
-        "scope": "sap",
         "id": "SITDEMO_ACT_CHANGE_PLANE",
-        "texts": [
-          {
-            "name": "Change Plane",
-            "description": "Assign another plane to the flight"
-          }
-        ],
+        "type": "callbackAction",
+        "reusable": false,
+        "scope": "SAP",
+        "text": {
+          "name": "Change Plane",
+          "description": "Assign another plane to the flight"
+        },
         "callbacks": [
           {
             "id": "SITDEMO_CB_CHANGE_PLANE"
@@ -131,15 +128,14 @@
         ]
       },
       {
-        "type": "navigationAction",
-        "scope": "sap",
         "id": "SITDEMO_ACT_MANAGE_AIRLINE",
-        "texts": [
-          {
-            "name": "Display Airline",
-            "description": "Show contact details"
-          }
-        ],
+        "type": "navigationAction",
+        "reusable": false,
+        "scope": "SAP",
+        "text": {
+          "name": "Display Airline",
+          "description": "Show contact details"
+        },
         "navigations": [
           {
             "id": "SITDEMO_NAV_MANAGE_AIRLINE"
@@ -147,15 +143,14 @@
         ]
       },
       {
-        "type": "navigationAction",
-        "scope": "sap",
         "id": "SITDEMO_ACT_MANAGE_FLIGHT",
-        "texts": [
-          {
-            "name": "Manage Flight",
-            "description": "Maintain bookings and flight details"
-          }
-        ],
+        "type": "navigationAction",
+        "reusable": false,
+        "scope": "SAP",
+        "text": {
+          "name": "Manage Flight",
+          "description": "Maintain bookings and flight details"
+        },
         "navigations": [
           {
             "id": "SITDEMO_NAV_MANAGE_FLIGHT"
@@ -165,10 +160,11 @@
     ],
     "navigations": [
       {
-        "scope": "sap",
         "id": "SITDEMO_NAV_MANAGE_FLIGHT",
-        "semanticObjectAction": "maintain",
+        "reusable": false,
+        "scope": "SAP",
         "semanticObject": "SituationDemoFlight",
+        "semanticObjectAction": "maintain",
         "parameters": [
           {
             "name": "SitnDemoCarrierID"
@@ -182,10 +178,11 @@
         ]
       },
       {
-        "scope": "sap",
         "id": "SITDEMO_NAV_MANAGE_AIRLINE",
-        "semanticObjectAction": "maintain",
+        "reusable": false,
+        "scope": "SAP",
         "semanticObject": "SituationDemoFlight",
+        "semanticObjectAction": "maintain",
         "parameters": [
           {
             "name": "SitnDemoCarrierID"
@@ -195,9 +192,10 @@
     ],
     "callbacks": [
       {
-        "scope": "sap",
-        "className": "CL_SIT2_DEMO_CB_CHANGE_PLANE",
         "id": "SITDEMO_CB_CHANGE_PLANE",
+        "reusable": false,
+        "scope": "SAP",
+        "className": "CL_SIT2_DEMO_CB_CHANGE_PLANE",
         "parameters": [
           {
             "name": "CARRID"
@@ -214,9 +212,10 @@
         ]
       },
       {
-        "scope": "sap",
-        "className": "CL_SIT2_DEMO_CB_CANCEL_FLIGHT",
         "id": "SITDEMO_CB_CANCEL_FLIGHT",
+        "reusable": false,
+        "scope": "SAP",
+        "className": "CL_SIT2_DEMO_CB_CANCEL_FLIGHT",
         "parameters": [
           {
             "name": "CARRID"
@@ -232,28 +231,31 @@
     ],
     "valueHelpServices": [
       {
-        "version": "0001",
-        "protocolVersion": "v2",
-        "pathType": "standard",
-        "scope": "sap",
-        "binding": "C_SITN2DEMOFLIGHTVH_CDS",
         "id": "SITDEMO_VH",
+        "reusable": false,
+        "scope": "SAP",
+        "protocolVersion": "V2",
+        "pathType": "standard",
+        "customPath": "",
+        "binding": "C_SITN2DEMOFLIGHTVH_CDS",
+        "definition": "",
+        "version": "0001",
         "valueHelpServiceProviders": [
           {
-            "property": "SitnDemoCarrierID",
-            "entitySet": "C_Sitn2DemoFlightVH"
+            "entitySet": "C_Sitn2DemoFlightVH",
+            "property": "SitnDemoCarrierID"
           },
           {
-            "property": "SitnDemoConnectionID",
-            "entitySet": "C_Sitn2DemoFlightVH"
+            "entitySet": "C_Sitn2DemoFlightVH",
+            "property": "SitnDemoConnectionID"
           },
           {
-            "property": "SitnDemoPlaneType",
-            "entitySet": "C_Sitn2DemoFlightVH"
+            "entitySet": "C_Sitn2DemoFlightVH",
+            "property": "SitnDemoPlaneType"
           },
           {
-            "property": "SitnDemoRegionCode",
-            "entitySet": "C_Sitn2DemoFlightVH"
+            "entitySet": "C_Sitn2DemoFlightVH",
+            "property": "SitnDemoRegionCode"
           }
         ]
       }
