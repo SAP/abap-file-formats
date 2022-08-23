@@ -123,7 +123,7 @@
         },
         "structures": {
           "title": "Structures",
-          "description": "Situation object structure",
+          "description": "Situation object structures",
           "type": "array",
           "items": {
             "title": "Structure Details",
@@ -210,7 +210,7 @@
                 "type": "array",
                 "items": {
                   "title": "Semantic Key Details",
-                  "description": "Semantic keys of an object structure",
+                  "description": "Semantic key of an object structure",
                   "type": "object",
                   "properties": {
                     "field": {
@@ -236,7 +236,7 @@
               },
               "valueHelpMappings": {
                 "title": "Value Help Mappings",
-                "description": "Value help mapping for situation object structure",
+                "description": "Value help mappings for situation object structure",
                 "type": "array",
                 "items": {
                   "title": "Value Help Mapping Details",
@@ -306,7 +306,7 @@
               },
               "services": {
                 "title": "Services",
-                "description": "Value help mapping for situation object structure - service",
+                "description": "Value help mapping for situation object structure - services",
                 "type": "array",
                 "items": {
                   "title": "Service Details",
@@ -321,7 +321,7 @@
                     },
                     "fieldName": {
                       "title": "Field Name",
-                      "description": "Object field",
+                      "description": "Field name",
                       "type": "string",
                       "maxLength": 30
                     },
@@ -377,7 +377,7 @@
         },
         "events": {
           "title": "Events",
-          "description": "Situation object event",
+          "description": "Situation object events",
           "type": "array",
           "items": {
             "title": "Event Details",
@@ -398,7 +398,7 @@
               },
               "type": {
                 "title": "Type",
-                "description": "Object type",
+                "description": "Type",
                 "type": "string",
                 "maxLength": 32
               },
@@ -489,7 +489,7 @@
         },
         "endUserActions": {
           "title": "End User Actions",
-          "description": "Situation object action",
+          "description": "Situation object end user actions",
           "type": "array",
           "items": {
             "title": "End User Action Details",
@@ -567,7 +567,7 @@
               },
               "navigations": {
                 "title": "Navigations",
-                "description": "Situation object action - navigation",
+                "description": "Situation object action - navigations",
                 "type": "array",
                 "items": {
                   "title": "Navigation Details",
@@ -589,7 +589,7 @@
               },
               "callbacks": {
                 "title": "Callbacks",
-                "description": "Situation object action - callback",
+                "description": "Situation object action - callbacks",
                 "type": "array",
                 "items": {
                   "title": "Callback Details",
@@ -622,7 +622,7 @@
         },
         "navigations": {
           "title": "Navigations",
-          "description": "Situation object navigation",
+          "description": "Situation object navigations",
           "type": "array",
           "items": {
             "title": "Navigation Details",
@@ -671,7 +671,7 @@
               },
               "parameters": {
                 "title": "Parameters",
-                "description": "Parameter",
+                "description": "Parameters",
                 "type": "array",
                 "items": {
                   "title": "Parameter Details",
@@ -747,7 +747,7 @@
               },
               "parameters": {
                 "title": "Parameters",
-                "description": "Parameter",
+                "description": "Parameters",
                 "type": "array",
                 "items": {
                   "title": "Parameter Details",
@@ -779,7 +779,7 @@
         },
         "valueHelpServices": {
           "title": "Value Help Services",
-          "description": "Value help service for situation object",
+          "description": "Value help services for situation object",
           "type": "array",
           "items": {
             "title": "Value Help Service Details",
@@ -875,11 +875,11 @@
               },
               "valueHelpServiceProviders": {
                 "title": "Value Help Service Providers",
-                "description": "Property of value help service for situation object",
+                "description": "Providers of value help service for situation object",
                 "type": "array",
                 "items": {
                   "title": "Value Help Service Provider Details",
-                  "description": "Property of value help service for situation object",
+                  "description": "Provider of value help service for situation object",
                   "type": "object",
                   "properties": {
                     "entitySet": {

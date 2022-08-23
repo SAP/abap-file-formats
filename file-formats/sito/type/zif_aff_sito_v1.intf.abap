@@ -155,7 +155,7 @@ INTERFACE zif_aff_sito_v1
     END OF ty_sit2_obj_struc_t,
 
     "! <p class="shorttext">Semantic Key Details</p>
-    "! Semantic keys of an object structure
+    "! Semantic key of an object structure
     BEGIN OF ty_sit2_obj_str_sk,
       "! <p class="shorttext">Field</p>
       "! Object field
@@ -193,7 +193,7 @@ INTERFACE zif_aff_sito_v1
     END OF ty_sit2_os_vh_map,
 
     "! <p class="shorttext">Value Help Mappings</p>
-    "! Value help mapping for situation object structure
+    "! Value help mappings for situation object structure
     ty_sit2_os_vh_map_list TYPE STANDARD TABLE OF ty_sit2_os_vh_map WITH DEFAULT KEY,
 
     "! <p class="shorttext">Service Details</p>
@@ -204,7 +204,7 @@ INTERFACE zif_aff_sito_v1
       "! $required
       id         TYPE c LENGTH 32,
       "! <p class="shorttext">Field Name</p>
-      "! Object field
+      "! Field name
       "! $required
       field_name TYPE c LENGTH 30,
       "! <p class="shorttext">Type</p>
@@ -222,7 +222,7 @@ INTERFACE zif_aff_sito_v1
     END OF ty_sit2_os_vh_map_s,
 
     "! <p class="shorttext">Services</p>
-    "! Value help mapping for situation object structure - service
+    "! Value help mapping for situation object structure - services
     ty_sit2_os_vh_map_s_list TYPE STANDARD TABLE OF ty_sit2_os_vh_map_s WITH DEFAULT KEY,
 
     "! <p class="shorttext">Text</p>
@@ -257,7 +257,7 @@ INTERFACE zif_aff_sito_v1
     END OF ty_sit2_obj_act_nav,
 
     "! <p class="shorttext">Navigations</p>
-    "! Situation object action - navigation
+    "! Situation object action - navigations
     ty_sit2_obj_act_nav_list TYPE STANDARD TABLE OF ty_sit2_obj_act_nav WITH DEFAULT KEY,
 
     "! <p class="shorttext">Callback Details</p>
@@ -270,7 +270,7 @@ INTERFACE zif_aff_sito_v1
     END OF ty_sit2_obj_act_cb,
 
     "! <p class="shorttext">Callbacks</p>
-    "! Situation object action - callback
+    "! Situation object action - callbacks
     ty_sit2_obj_act_cb_list TYPE STANDARD TABLE OF ty_sit2_obj_act_cb WITH DEFAULT KEY,
 
     "! <p class="shorttext">Parameter Details</p>
@@ -283,11 +283,11 @@ INTERFACE zif_aff_sito_v1
     END OF ty_sit2_obj_par,
 
     "! <p class="shorttext">Parameters</p>
-    "! Parameter
+    "! Parameters
     ty_sit2_obj_par_list TYPE STANDARD TABLE OF ty_sit2_obj_par WITH DEFAULT KEY,
 
     "! <p class="shorttext">Value Help Service Provider Details</p>
-    "! Property of value help service for situation object
+    "! Provider of value help service for situation object
     BEGIN OF ty_sit2_obj_vh_s_p,
       "! <p class="shorttext">Entity Set</p>
       "! Entity set
@@ -300,7 +300,7 @@ INTERFACE zif_aff_sito_v1
     END OF ty_sit2_obj_vh_s_p,
 
     "! <p class="shorttext">Value Help Service Providers</p>
-    "! Property of value help service for situation object
+    "! Providers of value help service for situation object
     ty_sit2_obj_vh_s_p_list TYPE STANDARD TABLE OF ty_sit2_obj_vh_s_p WITH DEFAULT KEY,
 
     "! <p class="shorttext">Text</p>
@@ -351,7 +351,7 @@ INTERFACE zif_aff_sito_v1
     END OF ty_sit2_obj_struc,
 
     "! <p class="shorttext">Structures</p>
-    "! Situation object structure
+    "! Situation object structures
     ty_sit2_obj_struc_list TYPE STANDARD TABLE OF ty_sit2_obj_struc WITH DEFAULT KEY,
 
     "! <p class="shorttext">Event Details</p>
@@ -366,7 +366,7 @@ INTERFACE zif_aff_sito_v1
       "! $required
       object                 TYPE c LENGTH 32,
       "! <p class="shorttext">Type</p>
-      "! Object type
+      "! Type
       "! $required
       type                   TYPE c LENGTH 32,
       "! <p class="shorttext">Reusable</p>
@@ -390,7 +390,7 @@ INTERFACE zif_aff_sito_v1
     END OF ty_sit2_obj_events,
 
     "! <p class="shorttext">Events</p>
-    "! Situation object event
+    "! Situation object events
     ty_sit2_obj_events_list TYPE STANDARD TABLE OF ty_sit2_obj_events WITH DEFAULT KEY,
 
     "! <p class="shorttext">End User Action Details</p>
@@ -419,7 +419,7 @@ INTERFACE zif_aff_sito_v1
     END OF ty_sit2_obj_act,
 
     "! <p class="shorttext">End User Actions</p>
-    "! Situation object action
+    "! Situation object end user actions
     ty_sit2_obj_act_list TYPE STANDARD TABLE OF ty_sit2_obj_act WITH DEFAULT KEY,
 
     "! <p class="shorttext">Navigation Details</p>
@@ -449,7 +449,7 @@ INTERFACE zif_aff_sito_v1
     END OF ty_sit2_obj_nav,
 
     "! <p class="shorttext">Navigations</p>
-    "! Situation object navigation
+    "! Situation object navigations
     ty_sit2_obj_nav_list TYPE STANDARD TABLE OF ty_sit2_obj_nav WITH DEFAULT KEY,
 
     "! <p class="shorttext">Callback Details</p>
@@ -521,7 +521,7 @@ INTERFACE zif_aff_sito_v1
     END OF ty_sit2_obj_vh_s,
 
     "! <p class="shorttext">Value Help Services</p>
-    "! Value help service for situation object
+    "! Value help services for situation object
     ty_sit2_obj_vh_s_list TYPE STANDARD TABLE OF ty_sit2_obj_vh_s WITH DEFAULT KEY,
 
     "! <p class="shorttext">Situation Object</p>
