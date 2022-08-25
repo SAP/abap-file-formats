@@ -1,0 +1,25 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Example WB2j",
+    "originalLanguage": "en"
+  },
+  "firstName": "Harry",
+  "lastName": "Potter",
+  "startAtSap": 1991,
+  "location": "LONDON",
+  "favorites": {
+    "wb2k": "Z_AFF_EXAMPLE_WB2K",
+    "canteen": "wdf01"
+  },
+  "skills": [
+    {
+      "name": "Defence against the Dark Arts",
+      "level": "expert"
+    },
+    {
+      "name": "Quidditch",
+      "level": "expert"
+    }
+  ]
+}
