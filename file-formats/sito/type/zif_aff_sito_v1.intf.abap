@@ -1,13 +1,11 @@
 INTERFACE zif_aff_sito_v1
   PUBLIC.
 
-  "! <p class="shorttext">SIT2_DO_SCOPE</p>
   "! SIT2_DO_SCOPE
   "! $values {@link zif_aff_sito_v1.data:co_sit2_do_scope}
   TYPES ty_sit2_do_scope TYPE n LENGTH 2.
 
   CONSTANTS:
-    "! <p class="shorttext">SIT2_DO_SCOPE</p>
     "! SIT2_DO_SCOPE
     BEGIN OF co_sit2_do_scope,
       "! <p class="shorttext">SAP</p>
@@ -19,13 +17,11 @@ INTERFACE zif_aff_sito_v1
       customer TYPE ty_sit2_do_scope VALUE '02',
     END OF co_sit2_do_scope.
 
-  "! <p class="shorttext">SIT2_DO_OBJ_STRUC_TYPE</p>
   "! SIT2_DO_OBJ_STRUC_TYPE
   "! $values {@link zif_aff_sito_v1.data:co_sit2_do_obj_struc_type}
   TYPES ty_sit2_do_obj_struc_type TYPE n LENGTH 2.
 
   CONSTANTS:
-    "! <p class="shorttext">SIT2_DO_OBJ_STRUC_TYPE</p>
     "! SIT2_DO_OBJ_STRUC_TYPE
     BEGIN OF co_sit2_do_obj_struc_type,
       "! <p class="shorttext">CDS</p>
@@ -37,13 +33,11 @@ INTERFACE zif_aff_sito_v1
       in_memory TYPE ty_sit2_do_obj_struc_type VALUE '02',
     END OF co_sit2_do_obj_struc_type.
 
-  "! <p class="shorttext">SWFECLSTYP</p>
   "! SWFECLSTYP
   "! $values {@link zif_aff_sito_v1.data:co_swfeclstyp}
   TYPES ty_swfeclstyp TYPE c LENGTH 2.
 
   CONSTANTS:
-    "! <p class="shorttext">SWFECLSTYP</p>
     "! SWFECLSTYP
     BEGIN OF co_swfeclstyp,
       "! <p class="shorttext">Business Class</p>
@@ -63,13 +57,11 @@ INTERFACE zif_aff_sito_v1
       xml_object_type      TYPE ty_swfeclstyp VALUE 'XC',
     END OF co_swfeclstyp.
 
-  "! <p class="shorttext">SIT2_DO_ACTION_TYPE</p>
   "! SIT2_DO_ACTION_TYPE
   "! $values {@link zif_aff_sito_v1.data:co_sit2_do_action_type}
   TYPES ty_sit2_do_action_type TYPE n LENGTH 2.
 
   CONSTANTS:
-    "! <p class="shorttext">SIT2_DO_ACTION_TYPE</p>
     "! SIT2_DO_ACTION_TYPE
     BEGIN OF co_sit2_do_action_type,
       "! <p class="shorttext">Navigation Action</p>
@@ -80,13 +72,11 @@ INTERFACE zif_aff_sito_v1
       callback_action   TYPE ty_sit2_do_action_type VALUE '02',
     END OF co_sit2_do_action_type.
 
-  "! <p class="shorttext">SIT2_DO_VH_SRV_PROTOCOL_VER</p>
   "! SIT2_DO_VH_SRV_PROTOCOL_VER
   "! $values {@link zif_aff_sito_v1.data:co_sit2_do_vh_srv_protocol_ver}
   TYPES ty_sit2_do_vh_srv_protocol_ver TYPE n LENGTH 2.
 
   CONSTANTS:
-    "! <p class="shorttext">SIT2_DO_VH_SRV_PROTOCOL_VER</p>
     "! SIT2_DO_VH_SRV_PROTOCOL_VER
     BEGIN OF co_sit2_do_vh_srv_protocol_ver,
       "! <p class="shorttext">V2</p>
@@ -99,13 +89,11 @@ INTERFACE zif_aff_sito_v1
       v4 TYPE ty_sit2_do_vh_srv_protocol_ver VALUE '02',
     END OF co_sit2_do_vh_srv_protocol_ver.
 
-  "! <p class="shorttext">SIT2_DO_VH_SRV_PATH_TYPE</p>
   "! SIT2_DO_VH_SRV_PATH_TYPE
   "! $values {@link zif_aff_sito_v1.data:co_sit2_do_vh_srv_path_type}
   TYPES ty_sit2_do_vh_srv_path_type TYPE n LENGTH 2.
 
   CONSTANTS:
-    "! <p class="shorttext">SIT2_DO_VH_SRV_PATH_TYPE</p>
     "! SIT2_DO_VH_SRV_PATH_TYPE
     BEGIN OF co_sit2_do_vh_srv_path_type,
       "! <p class="shorttext">Standard</p>
@@ -116,13 +104,11 @@ INTERFACE zif_aff_sito_v1
       custom   TYPE ty_sit2_do_vh_srv_path_type VALUE '02',
     END OF co_sit2_do_vh_srv_path_type.
 
-  "! <p class="shorttext">SIT2_DO_VH_APP_TYPE</p>
   "! SIT2_DO_VH_APP_TYPE
   "! $values {@link zif_aff_sito_v1.data:co_sit2_do_vh_app_type}
   TYPES ty_sit2_do_vh_app_type TYPE n LENGTH 2.
 
   CONSTANTS:
-    "! <p class="shorttext">SIT2_DO_VH_APP_TYPE</p>
     "! SIT2_DO_VH_APP_TYPE
     BEGIN OF co_sit2_do_vh_app_type,
       "! <p class="shorttext">All Apps</p>
@@ -130,13 +116,11 @@ INTERFACE zif_aff_sito_v1
       all_apps TYPE ty_sit2_do_vh_app_type VALUE '01',
     END OF co_sit2_do_vh_app_type.
 
-  "! <p class="shorttext">SIT2_DO_VH_TYPE</p>
   "! SIT2_DO_VH_TYPE
   "! $values {@link zif_aff_sito_v1.data:co_sit2_do_vh_type}
   TYPES ty_sit2_do_vh_type TYPE n LENGTH 2.
 
   CONSTANTS:
-    "! <p class="shorttext">SIT2_DO_VH_TYPE</p>
     "! SIT2_DO_VH_TYPE
     BEGIN OF co_sit2_do_vh_type,
       "! <p class="shorttext">Service</p>
@@ -169,7 +153,7 @@ INTERFACE zif_aff_sito_v1
 
     "! <p class="shorttext">Semantic Keys</p>
     "! Semantic keys of an object structure
-    ty_sit2_obj_str_sk_list TYPE STANDARD TABLE OF ty_sit2_obj_str_sk WITH DEFAULT KEY,
+    ty_sit2_obj_str_sk_list TYPE SORTED TABLE OF ty_sit2_obj_str_sk WITH UNIQUE KEY field_order,
 
     "! <p class="shorttext">Value Help Mapping Details</p>
     "! Value help mapping for situation object structure
@@ -256,10 +240,6 @@ INTERFACE zif_aff_sito_v1
       id TYPE c LENGTH 32,
     END OF ty_sit2_obj_act_nav,
 
-    "! <p class="shorttext">Navigations</p>
-    "! Situation object action - navigations
-    ty_sit2_obj_act_nav_list TYPE STANDARD TABLE OF ty_sit2_obj_act_nav WITH DEFAULT KEY,
-
     "! <p class="shorttext">Callback Details</p>
     "! Situation object action - callback
     BEGIN OF ty_sit2_obj_act_cb,
@@ -268,10 +248,6 @@ INTERFACE zif_aff_sito_v1
       "! $required
       id TYPE c LENGTH 32,
     END OF ty_sit2_obj_act_cb,
-
-    "! <p class="shorttext">Callbacks</p>
-    "! Situation object action - callbacks
-    ty_sit2_obj_act_cb_list TYPE STANDARD TABLE OF ty_sit2_obj_act_cb WITH DEFAULT KEY,
 
     "! <p class="shorttext">Parameter Details</p>
     "! Parameter
@@ -414,8 +390,8 @@ INTERFACE zif_aff_sito_v1
       scope       TYPE ty_sit2_do_scope,
       "! $required
       text        TYPE ty_sit2_obj_act_t,
-      navigations TYPE ty_sit2_obj_act_nav_list,
-      callbacks   TYPE ty_sit2_obj_act_cb_list,
+      navigation TYPE ty_sit2_obj_act_nav,
+      callback   TYPE ty_sit2_obj_act_cb,
     END OF ty_sit2_obj_act,
 
     "! <p class="shorttext">End User Actions</p>
@@ -475,7 +451,7 @@ INTERFACE zif_aff_sito_v1
     END OF ty_sit2_obj_cb,
 
     "! <p class="shorttext">Callbacks</p>
-    "! Situation object callback
+    "! Situation object callbacks
     ty_sit2_obj_cb_list TYPE STANDARD TABLE OF ty_sit2_obj_cb WITH DEFAULT KEY,
 
     "! <p class="shorttext">Value Help Service Details</p>

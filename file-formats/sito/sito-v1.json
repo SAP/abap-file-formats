@@ -208,6 +208,7 @@
                 "title": "Semantic Keys",
                 "description": "Semantic keys of an object structure",
                 "type": "array",
+                "uniqueItems": true,
                 "items": {
                   "title": "Semantic Key Details",
                   "description": "Semantic key of an object structure",
@@ -565,49 +566,39 @@
                   "description"
                 ]
               },
-              "navigations": {
-                "title": "Navigations",
-                "description": "Situation object action - navigations",
-                "type": "array",
-                "items": {
-                  "title": "Navigation Details",
-                  "description": "Situation object action - navigation",
-                  "type": "object",
-                  "properties": {
-                    "id": {
-                      "title": "ID",
-                      "description": "Navigation id",
-                      "type": "string",
-                      "maxLength": 32
-                    }
-                  },
-                  "additionalProperties": false,
-                  "required": [
-                    "id"
-                  ]
-                }
+              "navigation": {
+                "title": "Navigation Details",
+                "description": "Situation object action - navigation",
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "title": "ID",
+                    "description": "Navigation id",
+                    "type": "string",
+                    "maxLength": 32
+                  }
+                },
+                "additionalProperties": false,
+                "required": [
+                  "id"
+                ]
               },
-              "callbacks": {
-                "title": "Callbacks",
-                "description": "Situation object action - callbacks",
-                "type": "array",
-                "items": {
-                  "title": "Callback Details",
-                  "description": "Situation object action - callback",
-                  "type": "object",
-                  "properties": {
-                    "id": {
-                      "title": "ID",
-                      "description": "Callback id",
-                      "type": "string",
-                      "maxLength": 32
-                    }
-                  },
-                  "additionalProperties": false,
-                  "required": [
-                    "id"
-                  ]
-                }
+              "callback": {
+                "title": "Callback Details",
+                "description": "Situation object action - callback",
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "title": "ID",
+                    "description": "Callback id",
+                    "type": "string",
+                    "maxLength": 32
+                  }
+                },
+                "additionalProperties": false,
+                "required": [
+                  "id"
+                ]
               }
             },
             "additionalProperties": false,
@@ -704,7 +695,7 @@
         },
         "callbacks": {
           "title": "Callbacks",
-          "description": "Situation object callback",
+          "description": "Situation object callbacks",
           "type": "array",
           "items": {
             "title": "Callback Details",

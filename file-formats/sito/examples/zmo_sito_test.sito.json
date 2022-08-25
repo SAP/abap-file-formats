@@ -26,16 +26,16 @@
         },
         "semanticKeys": [
           {
+            "field": "SITNDEMOCARRIERID",
+            "fieldOrder": "01"
+          },
+          {
             "field": "SITNDEMOCONNECTIONID",
             "fieldOrder": "02"
           },
           {
             "field": "SITNDEMOFLIGHTDATE",
             "fieldOrder": "03"
-          },
-          {
-            "field": "SITNDEMOCARRIERID",
-            "fieldOrder": "01"
           }
         ],
         "valueHelpMappings": [
@@ -106,11 +106,9 @@
           "name": "Cancel Flight",
           "description": "Set flight status to unscheduled"
         },
-        "callbacks": [
-          {
-            "id": "SITDEMO_CB_CANCEL_FLIGHT"
-          }
-        ]
+        "callback": {
+          "id": "SITDEMO_CB_CANCEL_FLIGHT"
+        }
       },
       {
         "id": "SITDEMO_ACT_CHANGE_PLANE",
@@ -121,11 +119,9 @@
           "name": "Change Plane",
           "description": "Assign another plane to the flight"
         },
-        "callbacks": [
-          {
-            "id": "SITDEMO_CB_CHANGE_PLANE"
-          }
-        ]
+        "callback": {
+          "id": "SITDEMO_CB_CHANGE_PLANE"
+        }
       },
       {
         "id": "SITDEMO_ACT_MANAGE_AIRLINE",
@@ -136,11 +132,9 @@
           "name": "Display Airline",
           "description": "Show contact details"
         },
-        "navigations": [
-          {
-            "id": "SITDEMO_NAV_MANAGE_AIRLINE"
-          }
-        ]
+        "navigation": {
+          "id": "SITDEMO_NAV_MANAGE_AIRLINE"
+        }
       },
       {
         "id": "SITDEMO_ACT_MANAGE_FLIGHT",
@@ -151,11 +145,9 @@
           "name": "Manage Flight",
           "description": "Maintain bookings and flight details"
         },
-        "navigations": [
-          {
-            "id": "SITDEMO_NAV_MANAGE_FLIGHT"
-          }
-        ]
+        "navigation": {
+          "id": "SITDEMO_NAV_MANAGE_FLIGHT"
+        }
       }
     ],
     "navigations": [
