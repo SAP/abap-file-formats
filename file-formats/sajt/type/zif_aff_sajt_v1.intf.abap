@@ -99,7 +99,7 @@ INTERFACE zif_aff_sajt_v1
     END OF ty_parameters.
 
   TYPES:
-    "! <p class="shorttext">General Information</p>
+    "! <p class="shorttext">Application Job Template</p>
     "! Attributes of the application job template
     BEGIN OF ty_main,
       "! $required
@@ -116,4 +116,4 @@ INTERFACE zif_aff_sajt_v1
       "! Parameters of the class which runs within the job
       parameters     TYPE ty_parameters,
     END OF ty_main.
-ENDINTERFACE.
+ENDINTERFACE. 
