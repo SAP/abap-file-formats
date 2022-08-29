@@ -116,4 +116,4 @@ INTERFACE zif_aff_sajt_v1
       "! Parameters of the class which runs within the job
       parameters     TYPE ty_parameters,
     END OF ty_main.
-ENDINTERFACE. 
+ENDINTERFACE.
