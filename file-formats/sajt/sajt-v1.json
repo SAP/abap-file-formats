@@ -57,7 +57,7 @@
       ]
     },
     "catalogName": {
-      "title": "Application Job Catalog Entry",
+      "title": "Job Catalog Entry",
       "description": "Name of the application job catalog entry to which the template refers",
       "type": "string",
       "maxLength": 40
@@ -65,112 +65,149 @@
     "parameters": {
       "title": "Parameters",
       "description": "Parameters of the class which runs within the job",
-      "type": "array",
-      "items": {
-        "title": "Parameter Name and Values",
-        "description": "Name of the parameter and its values as ranges table",
-        "type": "object",
-        "properties": {
-          "name": {
-            "title": "Parameter Name",
-            "description": "Name of the parameter",
-            "type": "string",
-            "maxLength": 8
-          },
-          "valueRanges": {
-            "title": "Values",
-            "description": "Values of the parameter as ranges table",
-            "type": "array",
-            "items": {
-              "title": "Entry of Ranges Table",
-              "description": "Entry of ranges table",
-              "type": "object",
-              "properties": {
-                "sign": {
-                  "title": "Sign",
-                  "description": "Include/exclude values (I/E)",
-                  "type": "string",
-                  "enum": [
-                    "include",
-                    "exclude"
-                  ],
-                  "enumTitles": [
-                    "Include",
-                    "Exclude"
-                  ],
-                  "enumDescriptions": [
-                    "Include",
-                    "Exclude"
-                  ]
-                },
-                "option": {
-                  "title": "Option",
-                  "description": "Operator of the ranges condition (EQ/NE/GE/GT/LE/LT/CP/NP/BT/NB)",
-                  "type": "string",
-                  "enum": [
-                    "equals",
-                    "between",
-                    "greaterThan",
-                    "containsPattern",
-                    "notEqual",
-                    "notBetween",
-                    "notContainsPattern",
-                    "greaterEqual",
-                    "lessThan",
-                    "lessEqual"
-                  ],
-                  "enumTitles": [
-                    "Equals",
-                    "Between",
-                    "Greater Than",
-                    "Contains Pattern",
-                    "Not Equal",
-                    "Not Between",
-                    "Not Contains Pattern",
-                    "Greater Equal",
-                    "Less Than",
-                    "Less Equal"
-                  ],
-                  "enumDescriptions": [
-                    "Equals",
-                    "Between",
-                    "Greater than",
-                    "Contains pattern",
-                    "Not equal",
-                    "Not between",
-                    "Not contains pattern",
-                    "Greater equal",
-                    "Less than",
-                    "Less equal"
-                  ]
-                },
-                "low": {
-                  "title": "Low Value",
-                  "description": "Low value of the ranges condition",
-                  "type": "string",
-                  "maxLength": 255
-                },
-                "high": {
-                  "title": "High Value",
-                  "description": "High value of the ranges condition",
-                  "type": "string",
-                  "maxLength": 255
-                }
+      "type": "object",
+      "properties": {
+        "singleValueParameters": {
+          "title": "Parameters with Single Value",
+          "description": "List of parameters with single value",
+          "type": "array",
+          "items": {
+            "title": "Parameter Details",
+            "description": "Name of the parameter and its value",
+            "type": "object",
+            "properties": {
+              "name": {
+                "title": "Name",
+                "description": "Name of the parameter",
+                "type": "string",
+                "maxLength": 8
               },
-              "additionalProperties": false,
-              "required": [
-                "sign",
-                "option"
-              ]
-            }
+              "value": {
+                "title": "Value",
+                "description": "Value of the parameter",
+                "type": "string",
+                "maxLength": 255
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "name",
+              "value"
+            ]
           }
         },
-        "additionalProperties": false,
-        "required": [
-          "name",
-          "valueRanges"
-        ]
-      }
+        "valueRangesParameters": {
+          "title": "Parameters with Value Ranges",
+          "description": "List of parameters with value ranges",
+          "type": "array",
+          "items": {
+            "title": "Parameter Details",
+            "description": "Name of the parameter and its values as ranges table",
+            "type": "object",
+            "properties": {
+              "name": {
+                "title": "Name",
+                "description": "Name of the parameter",
+                "type": "string",
+                "maxLength": 8
+              },
+              "valueRanges": {
+                "title": "Values",
+                "description": "Values of the parameter as ranges table",
+                "type": "array",
+                "items": {
+                  "title": "Entry of Ranges Table",
+                  "description": "Entry of ranges table",
+                  "type": "object",
+                  "properties": {
+                    "sign": {
+                      "title": "Sign",
+                      "description": "Include/exclude values (I/E)",
+                      "type": "string",
+                      "enum": [
+                        "include",
+                        "exclude"
+                      ],
+                      "enumTitles": [
+                        "Include",
+                        "Exclude"
+                      ],
+                      "enumDescriptions": [
+                        "Include",
+                        "Exclude"
+                      ]
+                    },
+                    "option": {
+                      "title": "Option",
+                      "description": "Operator of the ranges condition (EQ/NE/GE/GT/LE/LT/CP/NP/BT/NB)",
+                      "type": "string",
+                      "enum": [
+                        "equals",
+                        "between",
+                        "greaterThan",
+                        "containsPattern",
+                        "notEqual",
+                        "notBetween",
+                        "notContainsPattern",
+                        "greaterEqual",
+                        "lessThan",
+                        "lessEqual"
+                      ],
+                      "enumTitles": [
+                        "Equals",
+                        "Between",
+                        "Greater Than",
+                        "Contains Pattern",
+                        "Not Equal",
+                        "Not Between",
+                        "Not Contains Pattern",
+                        "Greater Equal",
+                        "Less Than",
+                        "Less Equal"
+                      ],
+                      "enumDescriptions": [
+                        "Equals",
+                        "Between",
+                        "Greater than",
+                        "Contains pattern",
+                        "Not equal",
+                        "Not between",
+                        "Not contains pattern",
+                        "Greater equal",
+                        "Less than",
+                        "Less equal"
+                      ]
+                    },
+                    "low": {
+                      "title": "Low Value",
+                      "description": "Low value of the ranges condition",
+                      "type": "string",
+                      "maxLength": 255
+                    },
+                    "high": {
+                      "title": "High Value",
+                      "description": "High value of the ranges condition",
+                      "type": "string",
+                      "maxLength": 255
+                    }
+                  },
+                  "additionalProperties": false,
+                  "required": [
+                    "sign",
+                    "option"
+                  ]
+                }
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "name",
+              "valueRanges"
+            ]
+          }
+        }
+      },
+      "additionalProperties": false
     }
   },
   "additionalProperties": false,
