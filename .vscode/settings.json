@@ -1,0 +1,7 @@
+{
+    "github.codespaces.defaultExtensions": [
+        "EditorConfig.EditorConfig",
+        "GitHub.codespaces",
+        "GitHub.vscode-pull-request-github"
+    ]
+}
