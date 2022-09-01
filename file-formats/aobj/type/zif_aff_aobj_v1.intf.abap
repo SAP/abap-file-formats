@@ -1,5 +1,5 @@
 INTERFACE zif_aff_aobj_v1
-  PUBLIC.
+ PUBLIC.
 
   TYPES:
     BEGIN OF ty_attributes,
@@ -14,6 +14,11 @@ INTERFACE zif_aff_aobj_v1
       "! <p class="shorttext">Reload Class</p>
       "! Name of executable class or program which reloads the data to the tables (may be empty)
       reload_class TYPE zif_aff_types_v1=>ty_object_name_30,
+      "! <p class="shorttext">Storage Class</p>
+      "! Name of class which stores and retrieves archived data. The class needs to implement
+      "! the interface IF_ARCH_STORAGE_MANAGER.
+      "! $required
+      storage_class TYPE zif_aff_types_v1=>ty_object_name_30,
     END OF ty_attributes.
 
   TYPES:
