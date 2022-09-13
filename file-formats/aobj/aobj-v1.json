@@ -78,12 +78,19 @@
                     "description": "Name of executable class or program which reloads the data to the tables (may be empty)",
                     "type": "string",
                     "maxLength": 30
+                },
+                "storageClass": {
+                    "title": "Storage Class",
+                    "description": "Name of class which stores and retrieves archived data. The class needs to implement the interface IF_ARCH_STORAGE_MANAGER.",
+                    "type": "string",
+                    "maxLength": 30
                 }
             },
             "additionalProperties": false,
             "required": [
                 "writeClass",
-                "deleteClass"
+                "deleteClass",
+                "storageClass"
             ]
         },
         "tablesToBeArchived": {
