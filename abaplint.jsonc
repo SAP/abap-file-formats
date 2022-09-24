@@ -38,7 +38,9 @@
     "unnecessary_chaining": false,
     "unnecessary_pragma": true,
     "7bit_ascii": true,
-    "abapdoc": true,
+    "abapdoc": {
+      "interfaceDefinition": false
+    },
     "allowed_object_naming": true,
     "allowed_object_types": true,
     "ambiguous_statement": true,
