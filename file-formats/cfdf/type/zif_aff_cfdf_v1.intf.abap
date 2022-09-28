@@ -5,21 +5,21 @@ INTERFACE zif_aff_cfdf_v1
 
   TYPES:
     "! <p class="shorttext">Label and Tooltip</p>
-    "! Label and Tooltip
+    "! Label and tooltip
     BEGIN OF ty_gs_ui_text,
       "! <p class="shorttext">Translation Language</p>
-      "! Translation Language
+      "! Translation language
       "! $required
       language      TYPE langu,
 
       "! <p class="shorttext">Field Label</p>
-      "! Field Label
+      "! Field label
       "! $required
       "! $maxLength 40
       field_label   TYPE cfd_field_label,
 
       "! <p class="shorttext">Field Tooltip</p>
-      "! Field Tooltip
+      "! Field tooltip
       "! $required
       "! $maxLength 60
       field_tooltip TYPE cfd_field_tooltip,
@@ -29,16 +29,16 @@ INTERFACE zif_aff_cfdf_v1
 
   TYPES:
     "! <p class="shorttext">Business Context</p>
-    "! Business Context
+    "! Business context
     BEGIN OF ty_gs_business_context,
       "! <p class="shorttext">Business Context</p>
-      "! Business Context
+      "! Business context
       "! $required
       "! $maxLength 30
       business_context     TYPE cfd_business_context,
 
       "! <p class="shorttext">Deviating Field Name</p>
-      "! Deviating Field Name
+      "! Deviating field name
       "! $maxLength 30
       deviating_field_name TYPE cfd_deviating_field_name,
     END OF ty_gs_business_context.
@@ -47,31 +47,31 @@ INTERFACE zif_aff_cfdf_v1
 
   TYPES:
     "! <p class="shorttext">Extended CDS View</p>
-    "! Extended CDS View
+    "! Extended CDS view
     BEGIN OF ty_gs_cds_usage,
       "! <p class="shorttext">CDS View Name</p>
-      "! CDS View Name
+      "! CDS view name
       "! $required
       "! $maxLength 30
       cds_view_name                 TYPE cfd_cds_view_name,
 
       "! <p class="shorttext">Business Context</p>
-      "! Business Context
+      "! Business context
       "! $required
       "! $maxLength 30
       business_context              TYPE cfd_business_context,
 
       "! <p class="shorttext">Basic Search Relevance</p>
-      "! Basic Search Relevance
+      "! Basic search relevance
       is_search_relevant            TYPE abap_bool,
 
       "! <p class="shorttext">BAdI Implementation for Visibility Control</p>
-      "! BAdI Implementation for Visibility Control
+      "! BAdI implementation for visibility control
       "! $maxLength 30
       badi_impl_for_visibility_ctrl TYPE cfd_badi_implementation_name,
 
       "! <p class="shorttext">Field Control Property</p>
-      "! Field Control Property
+      "! Field control property
       "! $maxLength 1
       "! $values {@link zif_aff_cfdf_v1.data:gc_field_control_property}
       "! $default {@link zif_aff_cfdf_v1.data:gc_field_control_property.optional}
@@ -81,22 +81,22 @@ INTERFACE zif_aff_cfdf_v1
 
   TYPES:
     "! <p class="shorttext">Extended OData Service</p>
-    "! Extended OData Service
+    "! Extended OData service
     BEGIN OF ty_gs_odata_usage,
       "! <p class="shorttext">OData Service Key</p>
-      "! OData Service Key
+      "! OData service key
       "! $required
       "! $maxLength 81
       odata_service_key  TYPE c LENGTH 81,
 
       "! <p class="shorttext">Business Context</p>
-      "! Business Context
+      "! Business context
       "! $required
       "! $maxLength 30
       business_context   TYPE cfd_business_context,
 
       "! <p class="shorttext">Basic Search Relevance</p>
-      "! Basic Search Relevance
+      "! Basic search relevance
       is_search_relevant TYPE abap_bool,
     END OF ty_gs_odata_usage.
   TYPES: ty_gt_odata_usage TYPE STANDARD TABLE OF ty_gs_odata_usage WITH KEY business_context odata_service_key.
@@ -104,16 +104,16 @@ INTERFACE zif_aff_cfdf_v1
 
   TYPES:
     "! <p class="shorttext">Extended Business Scenario</p>
-    "! Extended Business Scenario
+    "! Extended business scenario
     BEGIN OF ty_gs_business_scenario,
       "! <p class="shorttext">Business Scenario</p>
-      "! Business Scenario
+      "! Business scenario
       "! $required
       "! $maxLength 30
       business_scenario TYPE cfd_scenario_name,
 
       "! <p class="shorttext">Data Transfer</p>
-      "! Data Transfer
+      "! Data transfer
       "! $required
       "! $maxLength 30
       data_transfer     TYPE cfd_data_transfer_name,
@@ -122,16 +122,16 @@ INTERFACE zif_aff_cfdf_v1
 
   TYPES:
     "! <p class="shorttext">Extended Dynpro Screen</p>
-    "! Extended Dynpro Screen
+    "! Extended dynpro screen
     BEGIN OF ty_gs_dynpro_usage,
       "! <p class="shorttext">Dynpro Context</p>
-      "! Dynpro Context
+      "! Dynpro context
       "! $required
       "! $maxLength 30
       dynpro_context   TYPE cfd_gui_context,
 
       "! <p class="shorttext">Business Context</p>
-      "! Business Context
+      "! Business context
       "! $required
       "! $maxLength 30
       business_context TYPE cfd_business_context,
@@ -140,10 +140,10 @@ INTERFACE zif_aff_cfdf_v1
 
   TYPES:
     "! <p class="shorttext">Extended SOAP Service</p>
-    "! Extended SOAP Service
+    "! Extended SOAP service
     BEGIN OF ty_gs_soap_usage,
       "! <p class="shorttext">Service Interface</p>
-      "! Service Interface
+      "! Service interface
       "! $required
       "! $maxLength 30
       service_interface    TYPE cfd_service_interface_name,
@@ -155,31 +155,31 @@ INTERFACE zif_aff_cfdf_v1
       operation            TYPE cfd_service_operation,
 
       "! <p class="shorttext">Message Direction</p>
-      "! Message Direction
+      "! Message direction
       "! $required
       "! $maxLength 3
       "! $values {@link zif_aff_cfdf_v1.data:gc_soap_message_direction}
       message_direction    TYPE cfd_soap_message_direction,
 
       "! <p class="shorttext">Business Context</p>
-      "! Business Context
+      "! Business context
       "! $required
       "! $maxLength 30
       business_context     TYPE cfd_business_context,
 
       "! <p class="shorttext">Component Identifier</p>
-      "! Component Identifier
+      "! Component identifier
       "! $maxLength 5
       component_identifier TYPE cfd_component_identifier,
 
       "! <p class="shorttext">External Namespace</p>
-      "! External Namespace
+      "! External namespace
       "! $required
       "! $maxLength 255
       external_namespace   TYPE cfd_soap_namespace,
 
       "! <p class="shorttext">External Field Name</p>
-      "! External Field Name
+      "! External field name
       "! $required
       "! $maxLength 120
       external_field_name  TYPE cfd_field_external_soap_name,
@@ -188,7 +188,7 @@ INTERFACE zif_aff_cfdf_v1
 
   TYPES:
     "! <p class="shorttext">Code Description</p>
-    "! Code Description
+    "! Code description
     BEGIN OF ty_gs_codelistvalue_descr,
       "! <p class="shorttext">Language</p>
       "! Language
@@ -212,7 +212,7 @@ INTERFACE zif_aff_cfdf_v1
 
   TYPES:
     "! <p class="shorttext">Code Value</p>
-    "! Code Value
+    "! Code value
     BEGIN OF ty_gs_codelistvalue,
       "! <p class="shorttext">Code</p>
       "! Code
@@ -228,21 +228,21 @@ INTERFACE zif_aff_cfdf_v1
 
   TYPES:
     "! <p class="shorttext">Value Help Key Mapping</p>
-    "! Value Help Key Mapping
+    "! Value help key mapping
     BEGIN OF ty_gs_value_help_key_mapping,
       "! <p class="shorttext">Component Identifier</p>
-      "! Component Identifier
+      "! Component identifier
       "! $maxLength 5
       component_identifier      TYPE cfd_component_identifier,
 
       "! <p class="shorttext">Value Help Field Name</p>
-      "! Value Help Field Name
+      "! Value help field name
       "! $required
       "! $maxLength 30
       value_help_field_name	    TYPE cfd_field_name,
 
       "! <p class="shorttext">Dimension View Field Name</p>
-      "! Dimension View Field Name
+      "! Dimension view field name
       "! $maxLength 30
       dimension_view_field_name TYPE cfd_field_name,
     END OF ty_gs_value_help_key_mapping.
@@ -252,22 +252,22 @@ INTERFACE zif_aff_cfdf_v1
 
   TYPES:
     "! <p class="shorttext">Value Help Binding</p>
-    "! Value Help Binding
+    "! Value help binding
     BEGIN OF ty_gs_value_help_binding,
       "! <p class="shorttext">Extended CDS View Name</p>
-      "! Extended CDS View Name
+      "! Extended CDS view name
       "! $required
       "! $maxLength 30
       cds_view_name         TYPE  cfd_cds_view_name,
 
       "! <p class="shorttext">Extended CDS View Field Name</p>
-      "! Extended CDS View Field Name
+      "! Extended CDS view field name
       "! $required
       "! $maxLength 30
       cds_view_field_name   TYPE cfd_cds_field_name_cc,
 
       "! <p class="shorttext">Value Help Field Name</p>
-      "! Value Help Field Name
+      "! Value help field name
       "! $required
       "! $maxLength 30
       value_help_field_name TYPE  cfd_cds_field_name_cc,
@@ -277,17 +277,17 @@ INTERFACE zif_aff_cfdf_v1
 
   TYPES:
     "! <p class="shorttext">Data Protection and Privacy</p>
-    "! Data Protection and Privacy
+    "! Data protection and privacy
     BEGIN OF ty_gs_dpp_properties,
       "! <p class="shorttext">Data Subject</p>
-      "! Data Subject
+      "! Data subject
       "! $maxLength 10
       "! $values {@link zif_aff_cfdf_v1.data:gc_data_subject_id_type}
       "! $default {@link zif_aff_cfdf_v1.data:gc_data_subject_id_type.not_applicable}
       data_subject_id_type       TYPE cfd_irf_data_subject_id_type,
 
       "! <p class="shorttext">BAdI Implementation for Data Subject</p>
-      "! BAdI Implementation for Data Subject
+      "! BAdI implementation for data subject
       "! $maxLength 30
       badi_impl_for_data_subject TYPE cfd_badi_implementation_name,
     END OF ty_gs_dpp_properties.
@@ -295,25 +295,25 @@ INTERFACE zif_aff_cfdf_v1
 
   TYPES:
     "! <p class="shorttext">Characteristic Reference</p>
-    "! Characteristic Reference
+    "! Characteristic reference
     BEGIN OF ty_gs_characteristic_reference,
       "! <p class="shorttext">Characteristic Name</p>
-      "! Characteristic Name
+      "! Characteristic name
       characteristic_name TYPE cfd_characteristic_name,
 
       "! <p class="shorttext">Class Name</p>
-      "! Class Name
+      "! Class name
       class_type          TYPE cfd_characteristic_class_type,
 
       "! <p class="shorttext">Object Type</p>
-      "! Object Type
+      "! Object type
       object_type         TYPE cfd_characteristic_object_type,
     END OF ty_gs_characteristic_reference.
 
 
   TYPES:
     "! <p class="shorttext">Custom Field</p>
-    "! Custom Field
+    "! Custom field
     BEGIN OF ty_main,
       "! $required
       format_version              TYPE zif_aff_types_v1=>ty_format_version,
@@ -323,7 +323,7 @@ INTERFACE zif_aff_cfdf_v1
       header                      TYPE zif_aff_types_v1=>ty_header_60,
 
       "! <p class="shorttext">External Field Name</p>
-      "! External Field Name
+      "! External field name
       "! $required
       "! $maxLength 30
       external_field_name         TYPE cfd_field_external_name,
@@ -333,7 +333,7 @@ INTERFACE zif_aff_cfdf_v1
       "! $required
       BEGIN OF type,
         "! <p class="shorttext">Semantic Field Type</p>
-        "! Semantic Field Type
+        "! Semantic field type
         "! $required
         "! $maxLength 10
         "! $values {@link zif_aff_cfdf_v1.data:gc_type}
@@ -361,79 +361,79 @@ INTERFACE zif_aff_cfdf_v1
         code_list_uppercase_only   TYPE abap_bool,
 
         "! <p class="shorttext">Associated Business Object</p>
-        "! Associated Business Object
+        "! Associated business object
         "! $maxLength 30
         associated_business_object TYPE cfd_associated_business_object,
 
         "! <p class="shorttext">Value Help View</p>
-        "! Value Help View
+        "! Value help view
         "! $maxLength 30
         value_help_view            TYPE cfd_field_value_help_view,
 
         "! <p class="shorttext">Dimension View</p>
-        "! Dimension View
+        "! Dimension view
         "! $maxLength 30
         dimension_view             TYPE cfd_cds_view_name,
       END OF type,
 
       "! <p class="shorttext">Data Protection and Privacy</p>
-      "! Data Protection and Privacy
+      "! Data protection and privacy
       data_protection_and_privacy TYPE ty_gs_dpp_properties,
 
       "! <p class="shorttext">Reference to Characteristic</p>
-      "! Reference to Characteristic
+      "! Reference to characteristic
       characteristic_reference    TYPE ty_gs_characteristic_reference,
 
       "! <p class="shorttext">Label and Tooltip</p>
-      "! Label and Tooltip
+      "! Label and tooltip
       "! $required
       ui_texts                    TYPE ty_gt_ui_text,
 
       "! <p class="shorttext">Business Contexts</p>
-      "! Business Contexts
+      "! Business contexts
       business_contexts           TYPE ty_gt_business_context,
 
       "! <p class="shorttext">Code List Values</p>
-      "! Code List Values
+      "! Code list values
       code_list_values            TYPE ty_gt_codelistvalue,
 
       "! <p class="shorttext">Code List Descriptions</p>
-      "! Code List Descriptions
+      "! Code list descriptions
       code_list_descriptions      TYPE ty_gt_codelistvalue_descr,
 
       "! <p class="shorttext">Value Help Key Mappings</p>
-      "! Value Help Key Mappings
+      "! Value help key mappings
       value_help_key_mappings     TYPE ty_gt_value_help_key_mapping,
 
       "! <p class="shorttext">Value Help Bindings</p>
-      "! Value Help Bindings
+      "! Value help bindings
       value_help_bindings         TYPE ty_gt_value_help_binding,
 
       "! <p class="shorttext">Extended CDS Views</p>
-      "! Extended CDS Views
+      "! Extended CDS views
       cds_usages                  TYPE ty_gt_cds_usage,
 
       "! <p class="shorttext">Extended OData Services</p>
-      "! Extended OData Services
+      "! Extended OData services
       odata_usages                TYPE ty_gt_odata_usage,
 
       "! <p class="shorttext">Extended Business Scenarios</p>
-      "! Extended Business Scenarios
+      "! Extended business scenarios
       business_scenarios          TYPE ty_gt_business_scenario,
 
       "! <p class="shorttext">Extended Dynpro Screens</p>
-      "! Extended Dynpro Screens
+      "! Extended dynpro screens
       dynpro_usages               TYPE ty_gt_dynpro_usage,
 
       "! <p class="shorttext">Extended SOAP Services</p>
-      "! Extended SOAP Services
+      "! Extended SOAP services
       soap_usages                 TYPE ty_gt_soap_usage,
     END OF ty_main.
 
   CONSTANTS:
     BEGIN OF gc_type,
       "! <p class="shorttext">Amount with Currency</p>
-      "! Amount with Currency
+      "! Amount with currency
       amount                     TYPE ty_type VALUE 'AMOUNT' ##no_text,
       "! <p class="shorttext">Boolean</p>
       "! Boolean
@@ -451,7 +451,7 @@ INTERFACE zif_aff_cfdf_v1
       "! Number
       number                     TYPE ty_type VALUE 'NUMBER' ##no_text,
       "! <p class="shorttext">Quantity with Unit</p>
-      "! Quantity with Unit
+      "! Quantity with unit
       quantity                   TYPE ty_type VALUE 'QUANTITY' ##no_text,
       "! <p class="shorttext">Text</p>
       "! Text
@@ -460,19 +460,19 @@ INTERFACE zif_aff_cfdf_v1
       "! Time
       time                       TYPE ty_type VALUE 'TIME' ##no_text,
       "! <p class="shorttext">Web Address</p>
-      "! Web Address
+      "! Web address
       url                        TYPE ty_type VALUE 'URL' ##no_text,
       "! <p class="shorttext">Phone Number</p>
-      "! Phone Number
+      "! Phone number
       phone                      TYPE ty_type VALUE 'PHONE' ##no_text,
       "! <p class="shorttext">Amount Only</p>
-      "! Amount Only
+      "! Amount only
       amount_only                TYPE ty_type VALUE 'AMNT_ONLY' ##no_text,
       "! <p class="shorttext">Currency</p>
       "! Currency
       currency_code              TYPE ty_type VALUE 'CURRENCY' ##no_text,
       "! <p class="shorttext">Quantity Only</p>
-      "! Quantity Only
+      "! Quantity only
       quantity_only              TYPE ty_type VALUE 'QUAN_ONLY' ##no_text,
       "! <p class="shorttext">Unit</p>
       "! Unit
@@ -481,40 +481,40 @@ INTERFACE zif_aff_cfdf_v1
       "! Language
       language_code              TYPE ty_type VALUE 'LANGUAGE' ##no_text,
       "! <p class="shorttext">Numerical Text</p>
-      "! Numerical Text
+      "! Numerical text
       numerical_text             TYPE ty_type VALUE 'NUMC_TEXT' ##no_text,
       "! <p class="shorttext">Posting Perioid</p>
-      "! Posting Perioid
+      "! Posting perioid
       posting_period             TYPE ty_type VALUE 'PST_PERIOD' ##no_text,
       "! <p class="shorttext">Raw</p>
       "! Raw
       raw                        TYPE ty_type VALUE 'RAW' ##no_text,
       "! <p class="shorttext">Association to Standard Business Object</p>
-      "! Association to Standard Business Object
+      "! Association to standard business object
       association_to_standard_bo TYPE ty_type VALUE 'ASC_TO_STD' ##no_text,
       "! <p class="shorttext">Timestamp</p>
       "! Timestamp
       timestamp                  TYPE ty_type VALUE 'TIMESTAMP' ##no_text,
       "! <p class="shorttext">Code List based on CDS View</p>
-      "! Code List based on CDS View
+      "! Code list based on CDS view
       list_cview                 TYPE ty_type VALUE 'LIST_CVIEW' ##no_text,
       "! <p class="shorttext">Characteristics - List</p>
       "!Characteristics - List
       characteristic_list        TYPE ty_type VALUE 'CHRCS_LIST' ##no_text,
       "! <p class="shorttext">Characteristics - Number</p>
-      "! Characteristics - Number Interval
+      "! Characteristics - Number interval
       numeric_interval           TYPE ty_type VALUE 'NUMBER_ITV' ##no_text,
       "! <p class="shorttext">Characteristics - Amount Interval</p>
-      "! Characteristics - Amount Interval
+      "! Characteristics - Amount interval
       amount_interval            TYPE ty_type VALUE 'AMOUNT_ITV' ##no_text,
       "! <p class="shorttext">Characteristics - Date Interval</p>
-      "! Characteristics - Date Interval
+      "! Characteristics - Date interval
       date_interval              TYPE ty_type VALUE 'DATE_ITV' ##no_text,
       "! <p class="shorttext">Characteristics - Time Interval</p>
-      "! Characteristics - Time Interval
+      "! Characteristics - Time interval
       time_interval              TYPE ty_type VALUE 'TIME_ITV' ##no_text,
       "! <p class="shorttext">Association to Custom Business Object</p>
-      "! Association to Custom Business Object
+      "! Association to custom business object
       association_to_custom_bo   TYPE ty_type VALUE 'ASC_TO_CBO' ##no_text,
     END OF gc_type .
 
@@ -523,7 +523,7 @@ INTERFACE zif_aff_cfdf_v1
                "! Not applicable
                not_applicable           TYPE cfd_irf_data_subject_id_type VALUE '',
                "! <p class="shorttext">Central Business Partner</p>
-               "! Central Business Partner
+               "! Central business partner
                central_business_partner TYPE cfd_irf_data_subject_id_type VALUE 'BP',
                "! <p class="shorttext">Customer</p>
                "! Customer
@@ -532,10 +532,10 @@ INTERFACE zif_aff_cfdf_v1
                "! Supplier
                supplier                 TYPE cfd_irf_data_subject_id_type VALUE 'SUPPLIER',
                "! <p class="shorttext">Contact Person</p>
-               "! Contact Person
+               "! Contact person
                contact_person           TYPE cfd_irf_data_subject_id_type VALUE 'CONTACT',
                "! <p class="shorttext">Workforce Person</p>
-               "! Workforce Person
+               "! Workforce person
                workforce_person         TYPE cfd_irf_data_subject_id_type VALUE 'WFP',
              END OF gc_data_subject_id_type.
 

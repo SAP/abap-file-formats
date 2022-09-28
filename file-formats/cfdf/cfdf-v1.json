@@ -3,7 +3,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/cfdf/cfdf-v1.json",
   "title": "Custom Field",
-  "description": "Custom Field",
+  "description": "Custom field",
   "type": "object",
   "properties": {
     "formatVersion": {
@@ -61,7 +61,7 @@
     },
     "externalFieldName": {
       "title": "External Field Name",
-      "description": "External Field Name",
+      "description": "External field name",
       "type": "string",
       "maxLength": 30
     },
@@ -72,7 +72,7 @@
       "properties": {
         "semanticFieldType": {
           "title": "Semantic Field Type",
-          "description": "Semantic Field Type",
+          "description": "Semantic field type",
           "type": "string",
           "enum": [
             "amount",
@@ -135,34 +135,34 @@
             "Association to Custom Business Object"
           ],
           "enumDescriptions": [
-            "Amount with Currency",
+            "Amount with currency",
             "Boolean",
             "Date",
             "E-Mail",
             "List",
             "Number",
-            "Quantity with Unit",
+            "Quantity with unit",
             "Text",
             "Time",
-            "Web Address",
-            "Phone Number",
-            "Amount Only",
+            "Web address",
+            "Phone number",
+            "Amount only",
             "Currency",
-            "Quantity Only",
+            "Quantity only",
             "Unit",
             "Language",
-            "Numerical Text",
-            "Posting Perioid",
+            "Numerical text",
+            "Posting perioid",
             "Raw",
-            "Association to Standard Business Object",
+            "Association to standard business object",
             "Timestamp",
-            "Code List based on CDS View",
+            "Code list based on CDS view",
             "Characteristics - List",
-            "Characteristics - Number Interval",
-            "Characteristics - Amount Interval",
-            "Characteristics - Date Interval",
-            "Characteristics - Time Interval",
-            "Association to Custom Business Object"
+            "Characteristics - Number interval",
+            "Characteristics - Amount interval",
+            "Characteristics - Date interval",
+            "Characteristics - Time interval",
+            "Association to custom business object"
           ]
         },
         "length": {
@@ -210,19 +210,19 @@
         },
         "associatedBusinessObject": {
           "title": "Associated Business Object",
-          "description": "Associated Business Object",
+          "description": "Associated business object",
           "type": "string",
           "maxLength": 30
         },
         "valueHelpView": {
           "title": "Value Help View",
-          "description": "Value Help View",
+          "description": "Value help view",
           "type": "string",
           "maxLength": 30
         },
         "dimensionView": {
           "title": "Dimension View",
-          "description": "Dimension View",
+          "description": "Dimension view",
           "type": "string",
           "maxLength": 30
         }
@@ -234,12 +234,12 @@
     },
     "dataProtectionAndPrivacy": {
       "title": "Data Protection and Privacy",
-      "description": "Data Protection and Privacy",
+      "description": "Data protection and privacy",
       "type": "object",
       "properties": {
         "dataSubjectIdType": {
           "title": "Data Subject",
-          "description": "Data Subject",
+          "description": "Data subject",
           "type": "string",
           "enum": [
             "notApplicable",
@@ -259,17 +259,17 @@
           ],
           "enumDescriptions": [
             "Not applicable",
-            "Central Business Partner",
+            "Central business partner",
             "Customer",
             "Supplier",
-            "Contact Person",
-            "Workforce Person"
+            "Contact person",
+            "Workforce person"
           ],
           "default": "notApplicable"
         },
         "badiImplForDataSubject": {
           "title": "BAdI Implementation for Data Subject",
-          "description": "BAdI Implementation for Data Subject",
+          "description": "BAdI implementation for data subject",
           "type": "string",
           "maxLength": 30
         }
@@ -278,24 +278,24 @@
     },
     "characteristicReference": {
       "title": "Reference to Characteristic",
-      "description": "Reference to Characteristic",
+      "description": "Reference to characteristic",
       "type": "object",
       "properties": {
         "characteristicName": {
           "title": "Characteristic Name",
-          "description": "Characteristic Name",
+          "description": "Characteristic name",
           "type": "string",
           "maxLength": 30
         },
         "classType": {
           "title": "Class Name",
-          "description": "Class Name",
+          "description": "Class name",
           "type": "string",
           "maxLength": 3
         },
         "objectType": {
           "title": "Object Type",
-          "description": "Object Type",
+          "description": "Object type",
           "type": "string",
           "maxLength": 30
         }
@@ -304,16 +304,16 @@
     },
     "uiTexts": {
       "title": "Label and Tooltip",
-      "description": "Label and Tooltip",
+      "description": "Label and tooltip",
       "type": "array",
       "items": {
         "title": "Label and Tooltip",
-        "description": "Label and Tooltip",
+        "description": "Label and tooltip",
         "type": "object",
         "properties": {
           "language": {
             "title": "Translation Language",
-            "description": "Translation Language",
+            "description": "Translation language",
             "type": "string",
             "minLength": 2,
             "maxLength": 2,
@@ -321,13 +321,13 @@
           },
           "fieldLabel": {
             "title": "Field Label",
-            "description": "Field Label",
+            "description": "Field label",
             "type": "string",
             "maxLength": 40
           },
           "fieldTooltip": {
             "title": "Field Tooltip",
-            "description": "Field Tooltip",
+            "description": "Field tooltip",
             "type": "string",
             "maxLength": 60
           }
@@ -342,22 +342,22 @@
     },
     "businessContexts": {
       "title": "Business Contexts",
-      "description": "Business Contexts",
+      "description": "Business contexts",
       "type": "array",
       "items": {
         "title": "Business Context",
-        "description": "Business Context",
+        "description": "Business context",
         "type": "object",
         "properties": {
           "businessContext": {
             "title": "Business Context",
-            "description": "Business Context",
+            "description": "Business context",
             "type": "string",
             "maxLength": 30
           },
           "deviatingFieldName": {
             "title": "Deviating Field Name",
-            "description": "Deviating Field Name",
+            "description": "Deviating field name",
             "type": "string",
             "maxLength": 30
           }
@@ -370,11 +370,11 @@
     },
     "codeListValues": {
       "title": "Code List Values",
-      "description": "Code List Values",
+      "description": "Code list values",
       "type": "array",
       "items": {
         "title": "Code Value",
-        "description": "Code Value",
+        "description": "Code value",
         "type": "object",
         "properties": {
           "code": {
@@ -397,11 +397,11 @@
     },
     "codeListDescriptions": {
       "title": "Code List Descriptions",
-      "description": "Code List Descriptions",
+      "description": "Code list descriptions",
       "type": "array",
       "items": {
         "title": "Code Description",
-        "description": "Code Description",
+        "description": "Code description",
         "type": "object",
         "properties": {
           "language": {
@@ -435,28 +435,28 @@
     },
     "valueHelpKeyMappings": {
       "title": "Value Help Key Mappings",
-      "description": "Value Help Key Mappings",
+      "description": "Value help key mappings",
       "type": "array",
       "items": {
         "title": "Value Help Key Mapping",
-        "description": "Value Help Key Mapping",
+        "description": "Value help key mapping",
         "type": "object",
         "properties": {
           "componentIdentifier": {
             "title": "Component Identifier",
-            "description": "Component Identifier",
+            "description": "Component identifier",
             "type": "string",
             "maxLength": 5
           },
           "valueHelpFieldName": {
             "title": "Value Help Field Name",
-            "description": "Value Help Field Name",
+            "description": "Value help field name",
             "type": "string",
             "maxLength": 30
           },
           "dimensionViewFieldName": {
             "title": "Dimension View Field Name",
-            "description": "Dimension View Field Name",
+            "description": "Dimension view field name",
             "type": "string",
             "maxLength": 30
           }
@@ -469,28 +469,28 @@
     },
     "valueHelpBindings": {
       "title": "Value Help Bindings",
-      "description": "Value Help Bindings",
+      "description": "Value help bindings",
       "type": "array",
       "items": {
         "title": "Value Help Binding",
-        "description": "Value Help Binding",
+        "description": "Value help binding",
         "type": "object",
         "properties": {
           "cdsViewName": {
             "title": "Extended CDS View Name",
-            "description": "Extended CDS View Name",
+            "description": "Extended CDS view name",
             "type": "string",
             "maxLength": 30
           },
           "cdsViewFieldName": {
             "title": "Extended CDS View Field Name",
-            "description": "Extended CDS View Field Name",
+            "description": "Extended CDS view field name",
             "type": "string",
             "maxLength": 30
           },
           "valueHelpFieldName": {
             "title": "Value Help Field Name",
-            "description": "Value Help Field Name",
+            "description": "Value help field name",
             "type": "string",
             "maxLength": 30
           }
@@ -505,39 +505,39 @@
     },
     "cdsUsages": {
       "title": "Extended CDS Views",
-      "description": "Extended CDS Views",
+      "description": "Extended CDS views",
       "type": "array",
       "items": {
         "title": "Extended CDS View",
-        "description": "Extended CDS View",
+        "description": "Extended CDS view",
         "type": "object",
         "properties": {
           "cdsViewName": {
             "title": "CDS View Name",
-            "description": "CDS View Name",
+            "description": "CDS view name",
             "type": "string",
             "maxLength": 30
           },
           "businessContext": {
             "title": "Business Context",
-            "description": "Business Context",
+            "description": "Business context",
             "type": "string",
             "maxLength": 30
           },
           "isSearchRelevant": {
             "title": "Basic Search Relevance",
-            "description": "Basic Search Relevance",
+            "description": "Basic search relevance",
             "type": "boolean"
           },
           "badiImplForVisibilityCtrl": {
             "title": "BAdI Implementation for Visibility Control",
-            "description": "BAdI Implementation for Visibility Control",
+            "description": "BAdI implementation for visibility control",
             "type": "string",
             "maxLength": 30
           },
           "fieldControlProperty": {
             "title": "Field Control Property",
-            "description": "Field Control Property",
+            "description": "Field control property",
             "type": "string",
             "enum": [
               "optional",
@@ -566,28 +566,28 @@
     },
     "odataUsages": {
       "title": "Extended OData Services",
-      "description": "Extended OData Services",
+      "description": "Extended OData services",
       "type": "array",
       "items": {
         "title": "Extended OData Service",
-        "description": "Extended OData Service",
+        "description": "Extended OData service",
         "type": "object",
         "properties": {
           "odataServiceKey": {
             "title": "OData Service Key",
-            "description": "OData Service Key",
+            "description": "OData service key",
             "type": "string",
             "maxLength": 81
           },
           "businessContext": {
             "title": "Business Context",
-            "description": "Business Context",
+            "description": "Business context",
             "type": "string",
             "maxLength": 30
           },
           "isSearchRelevant": {
             "title": "Basic Search Relevance",
-            "description": "Basic Search Relevance",
+            "description": "Basic search relevance",
             "type": "boolean"
           }
         },
@@ -600,22 +600,22 @@
     },
     "businessScenarios": {
       "title": "Extended Business Scenarios",
-      "description": "Extended Business Scenarios",
+      "description": "Extended business scenarios",
       "type": "array",
       "items": {
         "title": "Extended Business Scenario",
-        "description": "Extended Business Scenario",
+        "description": "Extended business scenario",
         "type": "object",
         "properties": {
           "businessScenario": {
             "title": "Business Scenario",
-            "description": "Business Scenario",
+            "description": "Business scenario",
             "type": "string",
             "maxLength": 30
           },
           "dataTransfer": {
             "title": "Data Transfer",
-            "description": "Data Transfer",
+            "description": "Data transfer",
             "type": "string",
             "maxLength": 30
           }
@@ -629,22 +629,22 @@
     },
     "dynproUsages": {
       "title": "Extended Dynpro Screens",
-      "description": "Extended Dynpro Screens",
+      "description": "Extended dynpro screens",
       "type": "array",
       "items": {
         "title": "Extended Dynpro Screen",
-        "description": "Extended Dynpro Screen",
+        "description": "Extended dynpro screen",
         "type": "object",
         "properties": {
           "dynproContext": {
             "title": "Dynpro Context",
-            "description": "Dynpro Context",
+            "description": "Dynpro context",
             "type": "string",
             "maxLength": 30
           },
           "businessContext": {
             "title": "Business Context",
-            "description": "Business Context",
+            "description": "Business context",
             "type": "string",
             "maxLength": 30
           }
@@ -658,16 +658,16 @@
     },
     "soapUsages": {
       "title": "Extended SOAP Services",
-      "description": "Extended SOAP Services",
+      "description": "Extended SOAP services",
       "type": "array",
       "items": {
         "title": "Extended SOAP Service",
-        "description": "Extended SOAP Service",
+        "description": "Extended SOAP service",
         "type": "object",
         "properties": {
           "serviceInterface": {
             "title": "Service Interface",
-            "description": "Service Interface",
+            "description": "Service interface",
             "type": "string",
             "maxLength": 30
           },
@@ -679,7 +679,7 @@
           },
           "messageDirection": {
             "title": "Message Direction",
-            "description": "Message Direction",
+            "description": "Message direction",
             "type": "string",
             "enum": [
               "request",
@@ -696,25 +696,25 @@
           },
           "businessContext": {
             "title": "Business Context",
-            "description": "Business Context",
+            "description": "Business context",
             "type": "string",
             "maxLength": 30
           },
           "componentIdentifier": {
             "title": "Component Identifier",
-            "description": "Component Identifier",
+            "description": "Component identifier",
             "type": "string",
             "maxLength": 5
           },
           "externalNamespace": {
             "title": "External Namespace",
-            "description": "External Namespace",
+            "description": "External namespace",
             "type": "string",
             "maxLength": 255
           },
           "externalFieldName": {
             "title": "External Field Name",
-            "description": "External Field Name",
+            "description": "External field name",
             "type": "string",
             "maxLength": 120
           }
