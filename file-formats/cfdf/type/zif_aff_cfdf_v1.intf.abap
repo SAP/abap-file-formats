@@ -401,7 +401,6 @@ INTERFACE zif_aff_cfdf_v1
 
       "! <p class="shorttext">Label and Tooltip</p>
       "! Label and tooltip
-      "! $required
       ui_texts                    TYPE ty_gt_ui_text,
 
       "! <p class="shorttext">Business Contexts</p>

@@ -736,7 +736,6 @@
     "formatVersion",
     "header",
     "externalFieldName",
-    "type",
-    "uiTexts"
+    "type"
   ]
 }
