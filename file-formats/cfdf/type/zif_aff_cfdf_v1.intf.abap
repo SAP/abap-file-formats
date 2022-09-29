@@ -1,5 +1,5 @@
 INTERFACE zif_aff_cfdf_v1
- PUBLIC .
+  PUBLIC.
 
   TYPES: ty_field_name              TYPE c LENGTH 30.
   TYPES: ty_component_identifier    TYPE c LENGTH 5.
