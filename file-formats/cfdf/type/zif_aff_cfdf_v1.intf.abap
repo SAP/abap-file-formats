@@ -250,7 +250,7 @@ INTERFACE zif_aff_cfdf_v1
       "! Value help field name
       "! $required
       "! $maxLength 30
-      value_help_field_name	    TYPE ty_field_name,
+      value_help_field_name    TYPE ty_field_name,
 
       "! <p class="shorttext">Dimension View Field Name</p>
       "! Dimension view field name
@@ -531,7 +531,7 @@ INTERFACE zif_aff_cfdf_v1
       "! <p class="shorttext">Association to Custom Business Object</p>
       "! Association to custom business object
       association_to_custom_bo   TYPE ty_field_type VALUE 'ASC_TO_CBO' ##NO_TEXT,
-    END OF gc_type .
+    END OF gc_type.
 
   CONSTANTS: BEGIN OF gc_data_subject_id_type,
                "! <p class="shorttext">Not applicable</p>
