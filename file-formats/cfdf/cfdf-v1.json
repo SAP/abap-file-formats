@@ -75,7 +75,7 @@
           "description": "Semantic field type",
           "type": "string",
           "enum": [
-            "amount",
+            "amountWithCurrency",
             "boolean",
             "date",
             "email",
@@ -86,7 +86,7 @@
             "time",
             "url",
             "phone",
-            "amountOnly",
+            "amountWithoutCurrency",
             "currencyCode",
             "quantityOnly",
             "unitCode",
@@ -96,8 +96,8 @@
             "raw",
             "associationToStandardBo",
             "timestamp",
-            "listCview",
-            "characteristicList",
+            "listBasedOnCdsView",
+            "characteristicsList",
             "numericInterval",
             "amountInterval",
             "dateInterval",
@@ -116,9 +116,9 @@
             "Time",
             "Web Address",
             "Phone Number",
-            "Amount Only",
+            "Amount Without Currency",
             "Currency",
-            "Quantity Only",
+            "Quantity Without Unit",
             "Unit",
             "Language",
             "Numerical Text",
@@ -146,9 +146,9 @@
             "Time",
             "Web address",
             "Phone number",
-            "Amount only",
+            "Amount without currency",
             "Currency",
-            "Quantity only",
+            "Quantity without unit",
             "Unit",
             "Language",
             "Numerical text",
@@ -303,8 +303,8 @@
       "additionalProperties": false
     },
     "uiTexts": {
-      "title": "Label and Tooltip",
-      "description": "Label and tooltip",
+      "title": "Labels and Tooltips",
+      "description": "Labels and tooltips",
       "type": "array",
       "items": {
         "title": "Label and Tooltip",
@@ -341,12 +341,12 @@
       }
     },
     "businessContexts": {
-      "title": "Business Contexts",
-      "description": "Business contexts",
+      "title": "Business Contexts Details",
+      "description": "Business contexts details",
       "type": "array",
       "items": {
-        "title": "Business Context",
-        "description": "Business context",
+        "title": "Business Context Details",
+        "description": "Business context details",
         "type": "object",
         "properties": {
           "businessContext": {
@@ -482,7 +482,7 @@
             "type": "string",
             "maxLength": 30
           },
-          "cdsViewFieldName": {
+          "extendedCdsViewFieldName": {
             "title": "Extended CDS View Field Name",
             "description": "Extended CDS view field name",
             "type": "string",
@@ -498,12 +498,12 @@
         "additionalProperties": false,
         "required": [
           "cdsViewName",
-          "cdsViewFieldName",
+          "extendedCdsViewFieldName",
           "valueHelpFieldName"
         ]
       }
     },
-    "cdsUsages": {
+    "extendedCdsViews": {
       "title": "Extended CDS Views",
       "description": "Extended CDS views",
       "type": "array",
@@ -564,7 +564,7 @@
         ]
       }
     },
-    "odataUsages": {
+    "extendedOdataServices": {
       "title": "Extended OData Services",
       "description": "Extended OData services",
       "type": "array",
@@ -598,7 +598,7 @@
         ]
       }
     },
-    "businessScenarios": {
+    "extendedBusinessScenarios": {
       "title": "Extended Business Scenarios",
       "description": "Extended business scenarios",
       "type": "array",
@@ -627,13 +627,13 @@
         ]
       }
     },
-    "dynproUsages": {
-      "title": "Extended Dynpro Screens",
-      "description": "Extended dynpro screens",
+    "extendedDynproContexts": {
+      "title": "Extended Dynpro Contexts",
+      "description": "Extended dynpro contexts",
       "type": "array",
       "items": {
-        "title": "Extended Dynpro Screen",
-        "description": "Extended dynpro screen",
+        "title": "Extended Dynpro Context",
+        "description": "Extended dynpro context",
         "type": "object",
         "properties": {
           "dynproContext": {
@@ -656,7 +656,7 @@
         ]
       }
     },
-    "soapUsages": {
+    "extendedSoapServices": {
       "title": "Extended SOAP Services",
       "description": "Extended SOAP services",
       "type": "array",

@@ -1,5 +1,5 @@
 {
-  "formatVersion": "1 ",
+  "formatVersion": "1",
   "header": {
     "description": "YY1_AFF_Example",
     "originalLanguage": "en"
@@ -59,14 +59,44 @@
       "description": "Blau"
     },
     {
+      "language": "en",
+      "code": "B",
+      "description": "Blue"
+    },
+    {
+      "language": "fr",
+      "code": "B",
+      "description": "Bleu"
+    },
+    {
       "language": "de",
       "code": "G",
       "description": "Grün"
     },
     {
+      "language": "en",
+      "code": "G",
+      "description": "Green"
+    },
+    {
+      "language": "fr",
+      "code": "G",
+      "description": "Vert"
+    },
+    {
       "language": "de",
       "code": "R",
       "description": "Rot"
+    },
+    {
+      "language": "en",
+      "code": "R",
+      "description": "Red"
+    },
+    {
+      "language": "fr",
+      "code": "R",
+      "description": "Rouge"
     },
     {
       "language": "de",
@@ -75,38 +105,8 @@
     },
     {
       "language": "en",
-      "code": "B",
-      "description": "Blue"
-    },
-    {
-      "language": "en",
-      "code": "G",
-      "description": "Green"
-    },
-    {
-      "language": "en",
-      "code": "R",
-      "description": "Red"
-    },
-    {
-      "language": "en",
       "code": "Y",
       "description": "Yellow"
-    },
-    {
-      "language": "fr",
-      "code": "B",
-      "description": "Bleu"
-    },
-    {
-      "language": "fr",
-      "code": "G",
-      "description": "Vert"
-    },
-    {
-      "language": "fr",
-      "code": "R",
-      "description": "Rouge"
     },
     {
       "language": "fr",
@@ -114,7 +114,7 @@
       "description": "Jaune"
     }
   ],
-  "cdsUsages": [
+  "extendedCdsViews": [
     {
       "cdsViewName": "C_CFDTSM_BUPATP",
       "businessContext": "CFD_TSM_BUPA"
@@ -165,7 +165,7 @@
       "businessContext": "CFD_TSM_SO_HEADER"
     }
   ],
-  "odataUsages": [
+  "extendedOdataServices": [
     {
       "odataServiceKey": "CFD_TSM_BUPA_MAINTAIN_RDS_SRV 0001",
       "businessContext": "CFD_TSM_BUPA"
@@ -179,7 +179,7 @@
       "businessContext": "CFD_TSM_INV"
     }
   ],
-  "businessScenarios": [
+  "extendedBusinessScenarios": [
     {
       "businessScenario": "CFD_BUPA_2_INVOICE",
       "dataTransfer": "CFD_BUPA_2_SALES_ORDER"
@@ -189,7 +189,7 @@
       "dataTransfer": "CFD_SALES_ORDER_2_INVOICE"
     }
   ],
-  "dynproUsages": [
+  "extendedDynproContexts": [
     {
       "dynproContext": "CFD_TSM_BUPA_GUI",
       "businessContext": "CFD_TSM_BUPA"
