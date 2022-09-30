@@ -3,6 +3,7 @@ INTERFACE zif_aff_cfdf_v1
 
   TYPES: ty_field_name              TYPE c LENGTH 30.
   TYPES: ty_component_identifier    TYPE c LENGTH 5.
+  TYPES: ty_business_context        TYPE c LENGTH 30.
   TYPES: ty_code_value              TYPE c LENGTH 30.
   TYPES: ty_data_subject_id_type    TYPE c LENGTH 10.
   TYPES: ty_field_type              TYPE c LENGTH 10.
@@ -42,7 +43,7 @@ INTERFACE zif_aff_cfdf_v1
       "! Business context
       "! $required
       "! $maxLength 30
-      business_context     TYPE zif_aff_types_v1=>ty_object_name_30,
+      business_context     TYPE ty_business_context,
 
       "! <p class="shorttext">Deviating Field Name</p>
       "! Deviating field name
@@ -66,7 +67,7 @@ INTERFACE zif_aff_cfdf_v1
       "! Business context
       "! $required
       "! $maxLength 30
-      business_context              TYPE zif_aff_types_v1=>ty_object_name_30,
+      business_context              TYPE ty_business_context,
 
       "! <p class="shorttext">Basic Search Relevance</p>
       "! Basic search relevance
@@ -100,13 +101,14 @@ INTERFACE zif_aff_cfdf_v1
       "! Business context
       "! $required
       "! $maxLength 30
-      business_context   TYPE zif_aff_types_v1=>ty_object_name_30,
+      business_context   TYPE ty_business_context,
 
       "! <p class="shorttext">Basic Search Relevance</p>
       "! Basic search relevance
       is_search_relevant TYPE abap_bool,
     END OF ty_gs_extended_odata_service.
-  TYPES: ty_gt_extended_odata_service TYPE STANDARD TABLE OF ty_gs_extended_odata_service WITH KEY business_context odata_service_key.
+  TYPES: ty_gt_extended_odata_service TYPE STANDARD TABLE OF ty_gs_extended_odata_service
+                                           WITH KEY business_context odata_service_key.
 
 
   TYPES:
@@ -143,7 +145,8 @@ INTERFACE zif_aff_cfdf_v1
       "! $maxLength 30
       business_context TYPE zif_aff_types_v1=>ty_object_name_30,
     END OF ty_gs_extended_dynpro_context.
-  TYPES ty_gt_extended_dynpro_context TYPE STANDARD TABLE OF ty_gs_extended_dynpro_context WITH KEY dynpro_context business_context.
+  TYPES ty_gt_extended_dynpro_context TYPE STANDARD TABLE OF ty_gs_extended_dynpro_context
+                                      WITH KEY dynpro_context business_context.
 
   TYPES:
     "! <p class="shorttext">Extended SOAP Service</p>
@@ -172,7 +175,7 @@ INTERFACE zif_aff_cfdf_v1
       "! Business context
       "! $required
       "! $maxLength 30
-      business_context     TYPE zif_aff_types_v1=>ty_object_name_30,
+      business_context     TYPE ty_business_context,
 
       "! <p class="shorttext">Component Identifier</p>
       "! Component identifier
