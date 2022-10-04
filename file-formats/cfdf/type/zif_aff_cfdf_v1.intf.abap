@@ -479,13 +479,13 @@ INTERFACE zif_aff_cfdf_v1
       "! <p class="shorttext">Phone Number</p>
       "! Phone number
       phone                      TYPE ty_field_type VALUE 'PHONE' ##NO_TEXT,
-      "! <p class="shorttext">Amount Without Currency</p>
+      "! <p class="shorttext">Amount without Currency</p>
       "! Amount without currency
       amount_without_currency    TYPE ty_field_type VALUE 'AMNT_ONLY' ##NO_TEXT,
       "! <p class="shorttext">Currency</p>
       "! Currency
       currency_code              TYPE ty_field_type VALUE 'CURRENCY' ##NO_TEXT,
-      "! <p class="shorttext">Quantity Without Unit</p>
+      "! <p class="shorttext">Quantity without Unit</p>
       "! Quantity without unit
       quantity_only              TYPE ty_field_type VALUE 'QUAN_ONLY' ##NO_TEXT,
       "! <p class="shorttext">Unit</p>
