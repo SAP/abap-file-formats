@@ -56,13 +56,45 @@
         "originalLanguage"
       ]
     },
+    "generalInformation": {
+      "title": "General Information",
+      "description": "General information",
+      "type": "object",
+      "properties": {
+        "category": {
+          "title": "Category",
+          "description": "Change document category",
+          "type": "string",
+          "enum": [
+            "standard",
+            "behaviorDefiniton"
+          ],
+          "enumTitles": [
+            "Standard",
+            "Behavior Definition"
+          ],
+          "enumDescriptions": [
+            "Standard change document",
+            "Change document for behavior definitions"
+          ],
+          "default": "standard"
+        },
+        "generatedObject": {
+          "title": "Generated Object",
+          "description": "Generated object",
+          "type": "string",
+          "maxLength": 30
+        }
+      },
+      "additionalProperties": false
+    },
     "tablesAndStructures": {
       "title": "Tables and Structures",
       "description": "Tables and structures",
       "type": "array",
       "uniqueItems": true,
       "items": {
-        "title": "Table or Structure",
+        "title": "Table or Structure Details",
         "description": "Table or structure",
         "type": "object",
         "properties": {
@@ -72,36 +104,52 @@
             "type": "string",
             "maxLength": 30
           },
-          "multipleChanges": {
-            "title": "Log Multiple Changes",
-            "description": "Specifies whether multiple changes can be logged",
-            "type": "boolean"
-          },
-          "deleteLogValues": {
-            "title": "Log Field Values for Deletions",
-            "description": "Log field values for deletions. Logging of initial values depends on setting 'Log Initial Values for Deletions'",
-            "type": "boolean"
-          },
-          "deleteLogInitialValues": {
-            "title": "Log Initial Values for Deletions",
-            "description": "Logging of initial values for deletions",
-            "type": "boolean"
-          },
-          "insertLogValues": {
-            "title": "Log Field Values for Creations",
-            "description": "Log field values for creations. Logging of initial values depends on setting 'Log Initial Values for Creations'",
-            "type": "boolean"
-          },
-          "insertLogInitialValues": {
-            "title": "Log Initial Values for Creations",
-            "description": "Log initial values for creations",
-            "type": "boolean"
-          },
           "referenceTable": {
             "title": "Reference Table",
             "description": "Reference table for currencies and units",
             "type": "string",
             "maxLength": 30
+          },
+          "multipleChanges": {
+            "title": "Log Multiple Changes",
+            "description": "Specifies whether multiple changes can be logged",
+            "type": "boolean"
+          },
+          "databaseInsertions": {
+            "title": "Database Insertions",
+            "description": "Log field values for insertions.",
+            "type": "object",
+            "properties": {
+              "logValues": {
+                "title": "Log Field Values",
+                "description": "Log field values for insertions.",
+                "type": "boolean"
+              },
+              "logInitialValues": {
+                "title": "Log Initial Values",
+                "description": "Log initial values for insertions Logging of initial values depends on setting 'Log Field Values for Database Insertions'",
+                "type": "boolean"
+              }
+            },
+            "additionalProperties": false
+          },
+          "databaseDeletions": {
+            "title": "Database Deletions",
+            "description": "Log field values for deletions.",
+            "type": "object",
+            "properties": {
+              "logValues": {
+                "title": "Log Field Values",
+                "description": "Log field values for deletions.",
+                "type": "boolean"
+              },
+              "logInitialValues": {
+                "title": "Log Initial Values",
+                "description": "Log initial values for deletions Logging of initial values depends on setting 'Log Field Values for Database Deletions'",
+                "type": "boolean"
+              }
+            },
+            "additionalProperties": false
           }
         },
         "additionalProperties": false,
@@ -135,23 +183,6 @@
         "id",
         "number"
       ]
-    },
-    "generatedObject": {
-      "title": "Generated Object",
-      "description": "Generated object",
-      "type": "object",
-      "properties": {
-        "name": {
-          "title": "Name",
-          "description": "Generated class or function module",
-          "type": "string",
-          "maxLength": 30
-        }
-      },
-      "additionalProperties": false,
-      "required": [
-        "name"
-      ]
     }
   },
   "additionalProperties": false,
@@ -162,4 +193,3 @@
     "errorMessage"
   ]
 }
-
