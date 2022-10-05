@@ -328,7 +328,7 @@ INTERFACE zif_aff_cfdf_v1
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header                      TYPE zif_aff_types_v1=>ty_header_60,
+      header                      TYPE zif_aff_types_v1=>ty_header_60_no_abap_lv,
 
       "! <p class="shorttext">External Name</p>
       "! External name
