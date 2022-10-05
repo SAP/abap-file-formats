@@ -115,6 +115,17 @@ INTERFACE zif_aff_types_v1 PUBLIC.
     END OF ty_header_60.
 
   TYPES:
+    "! <p class="shorttext">Header</p>
+    "! The header for an ABAP main object (without source code; without ABAP language  version)
+    "! with a description of 60 characters
+    BEGIN OF ty_header_60_no_abap_lv,
+      "! $required
+      description           TYPE ty_description_60,
+      "! $required
+      original_language     TYPE ty_original_language,
+    END OF ty_header_60_no_abap_lv.
+
+  TYPES:
     "! <p class="shorttext">Header for Non-Source Code Objects</p>
     "! The header for an ABAP main object (without source code) with a description of 100 characters
     BEGIN OF ty_header_100,
