@@ -5,8 +5,8 @@
     "originalLanguage": "en"
   },
   "externalFieldName": "YY1_AFF_Example",
-  "type": {
-    "semanticFieldType": "list",
+  "semanticFieldType": "list",
+  "typeDetails": {
     "length": 1
   },
   "uiTexts": [
@@ -24,17 +24,6 @@
       "language": "fr",
       "fieldLabel": "(FR) YY1_AFF_Example",
       "fieldTooltip": "(FR) YY1_AFF_Example"
-    }
-  ],
-  "businessContexts": [
-    {
-      "businessContext": "CFD_TSM_BUPA"
-    },
-    {
-      "businessContext": "CFD_TSM_INV"
-    },
-    {
-      "businessContext": "CFD_TSM_SO_HEADER"
     }
   ],
   "codeListValues": [
@@ -112,6 +101,17 @@
       "language": "fr",
       "code": "Y",
       "description": "Jaune"
+    }
+  ],
+  "extendedBusinessContexts": [
+    {
+      "businessContext": "CFD_TSM_BUPA"
+    },
+    {
+      "businessContext": "CFD_TSM_INV"
+    },
+    {
+      "businessContext": "CFD_TSM_SO_HEADER"
     }
   ],
   "extendedCdsViews": [

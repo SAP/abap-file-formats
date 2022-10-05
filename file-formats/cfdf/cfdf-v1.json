@@ -65,106 +65,106 @@
       "type": "string",
       "maxLength": 30
     },
-    "type": {
-      "title": "Type",
-      "description": "Custom field type",
+    "semanticFieldType": {
+      "title": "Semantic Field Type",
+      "description": "Semantic field type",
+      "type": "string",
+      "enum": [
+        "amountWithCurrency",
+        "boolean",
+        "date",
+        "email",
+        "list",
+        "number",
+        "quantity",
+        "text",
+        "time",
+        "url",
+        "phone",
+        "amountWithoutCurrency",
+        "currencyCode",
+        "quantityOnly",
+        "unitCode",
+        "languageCode",
+        "numericalText",
+        "postingPeriod",
+        "raw",
+        "associationToStandardBo",
+        "timestamp",
+        "listBasedOnCdsView",
+        "characteristicsList",
+        "numericInterval",
+        "amountInterval",
+        "dateInterval",
+        "timeInterval",
+        "associationToCustomBo"
+      ],
+      "enumTitles": [
+        "Amount with Currency",
+        "Boolean",
+        "Date",
+        "E-Mail",
+        "List",
+        "Number",
+        "Quantity with Unit",
+        "Text",
+        "Time",
+        "Web Address",
+        "Phone Number",
+        "Amount without Currency",
+        "Currency",
+        "Quantity without Unit",
+        "Unit",
+        "Language",
+        "Numerical Text",
+        "Posting Perioid",
+        "Raw",
+        "Association to Standard Business Object",
+        "Timestamp",
+        "Code List based on CDS View",
+        "Characteristics - List",
+        "Characteristics - Number",
+        "Characteristics - Amount Interval",
+        "Characteristics - Date Interval",
+        "Characteristics - Time Interval",
+        "Association to Custom Business Object"
+      ],
+      "enumDescriptions": [
+        "Amount with currency",
+        "Boolean",
+        "Date",
+        "E-Mail",
+        "List",
+        "Number",
+        "Quantity with unit",
+        "Text",
+        "Time",
+        "Web address",
+        "Phone number",
+        "Amount without currency",
+        "Currency",
+        "Quantity without unit",
+        "Unit",
+        "Language",
+        "Numerical text",
+        "Posting perioid",
+        "Raw",
+        "Association to standard business object",
+        "Timestamp",
+        "Code list based on CDS view",
+        "Characteristics - List",
+        "Characteristics - Number interval",
+        "Characteristics - Amount interval",
+        "Characteristics - Date interval",
+        "Characteristics - Time interval",
+        "Association to custom business object"
+      ]
+    },
+    "typeDetails": {
+      "title": "Type Details",
+      "description": "Type details",
       "type": "object",
       "properties": {
-        "semanticFieldType": {
-          "title": "Semantic Field Type",
-          "description": "Semantic field type",
-          "type": "string",
-          "enum": [
-            "amountWithCurrency",
-            "boolean",
-            "date",
-            "email",
-            "list",
-            "number",
-            "quantity",
-            "text",
-            "time",
-            "url",
-            "phone",
-            "amountWithoutCurrency",
-            "currencyCode",
-            "quantityOnly",
-            "unitCode",
-            "languageCode",
-            "numericalText",
-            "postingPeriod",
-            "raw",
-            "associationToStandardBo",
-            "timestamp",
-            "listBasedOnCdsView",
-            "characteristicsList",
-            "numericInterval",
-            "amountInterval",
-            "dateInterval",
-            "timeInterval",
-            "associationToCustomBo"
-          ],
-          "enumTitles": [
-            "Amount with Currency",
-            "Boolean",
-            "Date",
-            "E-Mail",
-            "List",
-            "Number",
-            "Quantity with Unit",
-            "Text",
-            "Time",
-            "Web Address",
-            "Phone Number",
-            "Amount without Currency",
-            "Currency",
-            "Quantity without Unit",
-            "Unit",
-            "Language",
-            "Numerical Text",
-            "Posting Perioid",
-            "Raw",
-            "Association to Standard Business Object",
-            "Timestamp",
-            "Code List based on CDS View",
-            "Characteristics - List",
-            "Characteristics - Number",
-            "Characteristics - Amount Interval",
-            "Characteristics - Date Interval",
-            "Characteristics - Time Interval",
-            "Association to Custom Business Object"
-          ],
-          "enumDescriptions": [
-            "Amount with currency",
-            "Boolean",
-            "Date",
-            "E-Mail",
-            "List",
-            "Number",
-            "Quantity with unit",
-            "Text",
-            "Time",
-            "Web address",
-            "Phone number",
-            "Amount without currency",
-            "Currency",
-            "Quantity without unit",
-            "Unit",
-            "Language",
-            "Numerical text",
-            "Posting perioid",
-            "Raw",
-            "Association to standard business object",
-            "Timestamp",
-            "Code list based on CDS view",
-            "Characteristics - List",
-            "Characteristics - Number interval",
-            "Characteristics - Amount interval",
-            "Characteristics - Date interval",
-            "Characteristics - Time interval",
-            "Association to custom business object"
-          ]
-        },
         "length": {
           "title": "Length",
           "description": "Length",
@@ -227,10 +227,7 @@
           "maxLength": 30
         }
       },
-      "additionalProperties": false,
-      "required": [
-        "semanticFieldType"
-      ]
+      "additionalProperties": false
     },
     "dataProtectionAndPrivacy": {
       "title": "Data Protection and Privacy",
@@ -340,34 +337,6 @@
         ]
       }
     },
-    "businessContexts": {
-      "title": "Business Contexts Details",
-      "description": "Business contexts details",
-      "type": "array",
-      "items": {
-        "title": "Business Context Details",
-        "description": "Business context details",
-        "type": "object",
-        "properties": {
-          "businessContext": {
-            "title": "Business Context",
-            "description": "Business context",
-            "type": "string",
-            "maxLength": 30
-          },
-          "deviatingFieldName": {
-            "title": "Deviating Field Name",
-            "description": "Deviating field name",
-            "type": "string",
-            "maxLength": 30
-          }
-        },
-        "additionalProperties": false,
-        "required": [
-          "businessContext"
-        ]
-      }
-    },
     "codeListValues": {
       "title": "Code List Values",
       "description": "Code list values",
@@ -433,83 +402,41 @@
         ]
       }
     },
-    "valueHelpKeyMappings": {
-      "title": "Value Help Key Mappings",
-      "description": "Value help key mappings",
+    "extendedBusinessContexts": {
+      "title": "Extended Business Context Details",
+      "description": "Extended business context details",
       "type": "array",
       "items": {
-        "title": "Value Help Key Mapping",
-        "description": "Value help key mapping",
+        "title": "Extended Business Context Details",
+        "description": "Extended business context details",
         "type": "object",
         "properties": {
-          "componentIdentifier": {
-            "title": "Component Identifier",
-            "description": "Component identifier",
-            "type": "string",
-            "maxLength": 5
-          },
-          "valueHelpFieldName": {
-            "title": "Value Help Field Name",
-            "description": "Value help field name",
+          "businessContext": {
+            "title": "Business Context",
+            "description": "Business context",
             "type": "string",
             "maxLength": 30
           },
-          "dimensionViewFieldName": {
-            "title": "Dimension View Field Name",
-            "description": "Dimension view field name",
+          "deviatingFieldName": {
+            "title": "Deviating Field Name",
+            "description": "Deviating field name",
             "type": "string",
             "maxLength": 30
           }
         },
         "additionalProperties": false,
         "required": [
-          "valueHelpFieldName"
-        ]
-      }
-    },
-    "valueHelpBindings": {
-      "title": "Value Help Bindings",
-      "description": "Value help bindings",
-      "type": "array",
-      "items": {
-        "title": "Value Help Binding",
-        "description": "Value help binding",
-        "type": "object",
-        "properties": {
-          "cdsViewName": {
-            "title": "Extended CDS View Name",
-            "description": "Extended CDS view name",
-            "type": "string",
-            "maxLength": 30
-          },
-          "extendedCdsViewFieldName": {
-            "title": "Extended CDS View Field Name",
-            "description": "Extended CDS view field name",
-            "type": "string",
-            "maxLength": 30
-          },
-          "valueHelpFieldName": {
-            "title": "Value Help Field Name",
-            "description": "Value help field name",
-            "type": "string",
-            "maxLength": 30
-          }
-        },
-        "additionalProperties": false,
-        "required": [
-          "cdsViewName",
-          "extendedCdsViewFieldName",
-          "valueHelpFieldName"
+          "businessContext"
         ]
       }
     },
     "extendedCdsViews": {
-      "title": "Extended CDS Views",
-      "description": "Extended CDS views",
+      "title": "Extended CDS View Details",
+      "description": "Extended CDS view details",
       "type": "array",
       "items": {
-        "title": "Extended CDS View",
-        "description": "Extended CDS view",
+        "title": "Extended CDS View Details",
+        "description": "Extended CDS view details",
         "type": "object",
         "properties": {
           "cdsViewName": {
@@ -565,12 +492,12 @@
       }
     },
     "extendedOdataServices": {
-      "title": "Extended OData Services",
-      "description": "Extended OData services",
+      "title": "Extended OData Service Details",
+      "description": "Extended OData service details",
       "type": "array",
       "items": {
-        "title": "Extended OData Service",
-        "description": "Extended OData service",
+        "title": "Extended OData Service Details",
+        "description": "Extended OData service details",
         "type": "object",
         "properties": {
           "odataServiceKey": {
@@ -599,12 +526,12 @@
       }
     },
     "extendedBusinessScenarios": {
-      "title": "Extended Business Scenarios",
-      "description": "Extended business scenarios",
+      "title": "Extended Business Scenario Details",
+      "description": "Extended business scenario details",
       "type": "array",
       "items": {
-        "title": "Extended Business Scenario",
-        "description": "Extended business scenario",
+        "title": "Extended Business Scenario Details",
+        "description": "Extended business scenario details",
         "type": "object",
         "properties": {
           "businessScenario": {
@@ -628,12 +555,12 @@
       }
     },
     "extendedDynproContexts": {
-      "title": "Extended Dynpro Contexts",
-      "description": "Extended dynpro contexts",
+      "title": "Extended Dynpro Context Details",
+      "description": "Extended dynpro context details",
       "type": "array",
       "items": {
-        "title": "Extended Dynpro Context",
-        "description": "Extended dynpro context",
+        "title": "Extended Dynpro Context Details",
+        "description": "Extended dynpro context details",
         "type": "object",
         "properties": {
           "dynproContext": {
@@ -657,12 +584,12 @@
       }
     },
     "extendedSoapServices": {
-      "title": "Extended SOAP Services",
-      "description": "Extended SOAP services",
+      "title": "Extended SOAP Service Details",
+      "description": "Extended SOAP service details",
       "type": "array",
       "items": {
-        "title": "Extended SOAP Service",
-        "description": "Extended SOAP service",
+        "title": "Extended SOAP Service Details",
+        "description": "Extended SOAP service details",
         "type": "object",
         "properties": {
           "serviceInterface": {
@@ -729,6 +656,76 @@
           "externalFieldName"
         ]
       }
+    },
+    "valueHelpKeyMappings": {
+      "title": "Value Help Key Mapping Details",
+      "description": "Value help key mapping details",
+      "type": "array",
+      "items": {
+        "title": "Value Help Key Mapping Details",
+        "description": "Value help key mapping details",
+        "type": "object",
+        "properties": {
+          "componentIdentifier": {
+            "title": "Component Identifier",
+            "description": "Component identifier",
+            "type": "string",
+            "maxLength": 5
+          },
+          "valueHelpFieldName": {
+            "title": "Value Help Field Name",
+            "description": "Value help field name",
+            "type": "string",
+            "maxLength": 30
+          },
+          "dimensionViewFieldName": {
+            "title": "Dimension View Field Name",
+            "description": "Dimension view field name",
+            "type": "string",
+            "maxLength": 30
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "valueHelpFieldName"
+        ]
+      }
+    },
+    "valueHelpBindings": {
+      "title": "Value Help Binding Details",
+      "description": "Value help binding details",
+      "type": "array",
+      "items": {
+        "title": "Value Help Binding Details",
+        "description": "Value help binding details",
+        "type": "object",
+        "properties": {
+          "cdsViewName": {
+            "title": "Extended CDS View Name",
+            "description": "Extended CDS view name",
+            "type": "string",
+            "maxLength": 30
+          },
+          "extendedCdsViewFieldName": {
+            "title": "Extended CDS View Field Name",
+            "description": "Extended CDS view field name",
+            "type": "string",
+            "maxLength": 30
+          },
+          "valueHelpFieldName": {
+            "title": "Value Help Field Name",
+            "description": "Value help field name",
+            "type": "string",
+            "maxLength": 30
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "cdsViewName",
+          "extendedCdsViewFieldName",
+          "valueHelpFieldName"
+        ]
+      }
     }
   },
   "additionalProperties": false,
@@ -736,6 +733,6 @@
     "formatVersion",
     "header",
     "externalFieldName",
-    "type"
+    "semanticFieldType"
   ]
 }

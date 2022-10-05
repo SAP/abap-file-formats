@@ -32,13 +32,12 @@ INTERFACE zif_aff_cfdf_v1
       "! $maxLength 60
       field_tooltip TYPE c LENGTH 60,
     END OF ty_gs_ui_text.
-
   TYPES: ty_gt_ui_text TYPE STANDARD TABLE OF ty_gs_ui_text WITH KEY language.
 
   TYPES:
-    "! <p class="shorttext">Business Context Details</p>
-    "! Business context details
-    BEGIN OF ty_gs_business_context,
+    "! <p class="shorttext">Extended Business Context Details</p>
+    "! Extended business context details
+    BEGIN OF ty_gs_extended_bus_context,
       "! <p class="shorttext">Business Context</p>
       "! Business context
       "! $required
@@ -49,13 +48,12 @@ INTERFACE zif_aff_cfdf_v1
       "! Deviating field name
       "! $maxLength 30
       deviating_field_name TYPE ty_field_name,
-    END OF ty_gs_business_context.
-
-  TYPES: ty_gt_business_context TYPE STANDARD TABLE OF ty_gs_business_context WITH KEY business_context.
+    END OF ty_gs_extended_bus_context.
+  TYPES: ty_gt_extended_bus_context TYPE STANDARD TABLE OF ty_gs_extended_bus_context WITH KEY business_context.
 
   TYPES:
-    "! <p class="shorttext">Extended CDS View</p>
-    "! Extended CDS view
+    "! <p class="shorttext">Extended CDS View Details</p>
+    "! Extended CDS view details
     BEGIN OF ty_gs_extended_cds_view,
       "! <p class="shorttext">CDS View Name</p>
       "! CDS view name
@@ -88,8 +86,8 @@ INTERFACE zif_aff_cfdf_v1
   TYPES: ty_gt_extended_cds_view TYPE STANDARD TABLE OF ty_gs_extended_cds_view WITH KEY business_context cds_view_name.
 
   TYPES:
-    "! <p class="shorttext">Extended OData Service</p>
-    "! Extended OData service
+    "! <p class="shorttext">Extended OData Service Details</p>
+    "! Extended OData service details
     BEGIN OF ty_gs_extended_odata_service,
       "! <p class="shorttext">OData Service Key</p>
       "! OData service key
@@ -110,10 +108,9 @@ INTERFACE zif_aff_cfdf_v1
   TYPES: ty_gt_extended_odata_service TYPE STANDARD TABLE OF ty_gs_extended_odata_service
                                            WITH KEY business_context odata_service_key.
 
-
   TYPES:
-    "! <p class="shorttext">Extended Business Scenario</p>
-    "! Extended business scenario
+    "! <p class="shorttext">Extended Business Scenario Details</p>
+    "! Extended business scenario details
     BEGIN OF ty_gs_extended_bus_scenario,
       "! <p class="shorttext">Business Scenario</p>
       "! Business scenario
@@ -130,8 +127,8 @@ INTERFACE zif_aff_cfdf_v1
   TYPES: ty_gt_extended_bus_scenario TYPE STANDARD TABLE OF ty_gs_extended_bus_scenario WITH KEY business_scenario.
 
   TYPES:
-    "! <p class="shorttext">Extended Dynpro Context</p>
-    "! Extended dynpro context
+    "! <p class="shorttext">Extended Dynpro Context Details</p>
+    "! Extended dynpro context details
     BEGIN OF ty_gs_extended_dynpro_context,
       "! <p class="shorttext">Dynpro Context</p>
       "! Dynpro context
@@ -149,8 +146,8 @@ INTERFACE zif_aff_cfdf_v1
                                       WITH KEY dynpro_context business_context.
 
   TYPES:
-    "! <p class="shorttext">Extended SOAP Service</p>
-    "! Extended SOAP service
+    "! <p class="shorttext">Extended SOAP Service Details</p>
+    "! Extended SOAP service details
     BEGIN OF ty_gs_extended_soap_service,
       "! <p class="shorttext">Service Interface</p>
       "! Service interface
@@ -200,7 +197,7 @@ INTERFACE zif_aff_cfdf_v1
   TYPES:
     "! <p class="shorttext">Code Description</p>
     "! Code description
-    BEGIN OF ty_gs_codelistvalue_descr,
+    BEGIN OF ty_gs_code_list_value_descr,
       "! <p class="shorttext">Language</p>
       "! Language
       "! $required
@@ -218,13 +215,13 @@ INTERFACE zif_aff_cfdf_v1
       "! $required
       "! $maxLength 60
       description TYPE c LENGTH 60,
-    END OF ty_gs_codelistvalue_descr.
-  TYPES: ty_gt_codelistvalue_descr TYPE STANDARD TABLE OF ty_gs_codelistvalue_descr WITH KEY language code.
+    END OF ty_gs_code_list_value_descr.
+  TYPES: ty_gt_code_list_value_descr TYPE STANDARD TABLE OF ty_gs_code_list_value_descr WITH KEY language code.
 
   TYPES:
     "! <p class="shorttext">Code Value</p>
     "! Code value
-    BEGIN OF ty_gs_codelistvalue,
+    BEGIN OF ty_gs_code_list_value,
       "! <p class="shorttext">Code</p>
       "! Code
       "! $required
@@ -234,12 +231,12 @@ INTERFACE zif_aff_cfdf_v1
       "! <p class="shorttext">Disabled</p>
       "! Disabled
       is_disabled TYPE abap_bool,
-    END OF ty_gs_codelistvalue.
-  TYPES: ty_gt_codelistvalue TYPE STANDARD TABLE OF ty_gs_codelistvalue WITH KEY code.
+    END OF ty_gs_code_list_value.
+  TYPES: ty_gt_code_list_value TYPE STANDARD TABLE OF ty_gs_code_list_value WITH KEY code.
 
   TYPES:
-    "! <p class="shorttext">Value Help Key Mapping</p>
-    "! Value help key mapping
+    "! <p class="shorttext">Value Help Key Mapping Details</p>
+    "! Value help key mapping details
     BEGIN OF ty_gs_value_help_key_mapping,
       "! <p class="shorttext">Component Identifier</p>
       "! Component identifier
@@ -257,13 +254,11 @@ INTERFACE zif_aff_cfdf_v1
       "! $maxLength 30
       dimension_view_field_name TYPE ty_field_name,
     END OF ty_gs_value_help_key_mapping.
-
   TYPES ty_gt_value_help_key_mapping TYPE STANDARD TABLE OF ty_gs_value_help_key_mapping WITH KEY component_identifier.
 
-
   TYPES:
-    "! <p class="shorttext">Value Help Binding</p>
-    "! Value help binding
+    "! <p class="shorttext">Value Help Binding Details</p>
+    "! Value help binding details
     BEGIN OF ty_gs_value_help_binding,
       "! <p class="shorttext">Extended CDS View Name</p>
       "! Extended CDS view name
@@ -286,7 +281,6 @@ INTERFACE zif_aff_cfdf_v1
   TYPES ty_gt_value_help_binding TYPE STANDARD TABLE OF ty_gs_value_help_binding
                                  WITH KEY cds_view_name value_help_field_name.
 
-
   TYPES:
     "! <p class="shorttext">Data Protection and Privacy</p>
     "! Data protection and privacy
@@ -303,7 +297,6 @@ INTERFACE zif_aff_cfdf_v1
       "! $maxLength 30
       badi_impl_for_data_subject TYPE zif_aff_types_v1=>ty_object_name_30,
     END OF ty_gs_dpp_properties.
-
 
   TYPES:
     "! <p class="shorttext">Characteristic Reference</p>
@@ -325,13 +318,13 @@ INTERFACE zif_aff_cfdf_v1
       object_type         TYPE c LENGTH 30,
     END OF ty_gs_characteristic_reference.
 
-
   TYPES:
     "! <p class="shorttext">Custom Field</p>
     "! Custom field
     BEGIN OF ty_main,
       "! $required
       format_version              TYPE zif_aff_types_v1=>ty_format_version,
+
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
@@ -343,17 +336,17 @@ INTERFACE zif_aff_cfdf_v1
       "! $maxLength 30
       external_field_name         TYPE ty_field_name,
 
-      "! <p class="shorttext">Type</p>
-      "! Custom field type
+      "! <p class="shorttext">Semantic Field Type</p>
+      "! Semantic field type
       "! $required
-      BEGIN OF type,
-        "! <p class="shorttext">Semantic Field Type</p>
-        "! Semantic field type
-        "! $required
-        "! $maxLength 10
-        "! $values {@link zif_aff_cfdf_v1.data:co_type}
-        semantic_field_type        TYPE ty_field_type,
+      "! $maxLength 10
+      "! $values {@link zif_aff_cfdf_v1.data:co_type}
+      semantic_field_type        TYPE ty_field_type,
 
+      "! <p class="shorttext">Type Details</p>
+      "! Type details
+      "! $required
+      BEGIN OF type_details,
         "! <p class="shorttext">Length</p>
         "! Length
         "! $maximum 500
@@ -389,7 +382,7 @@ INTERFACE zif_aff_cfdf_v1
         "! Dimension view
         "! $maxLength 30
         dimension_view             TYPE zif_aff_types_v1=>ty_object_name_30,
-      END OF type,
+      END OF type_details,
 
       "! <p class="shorttext">Data Protection and Privacy</p>
       "! Data protection and privacy
@@ -403,190 +396,194 @@ INTERFACE zif_aff_cfdf_v1
       "! Labels and tooltips
       ui_texts                    TYPE ty_gt_ui_text,
 
-      "! <p class="shorttext">Business Contexts Details</p>
-      "! Business contexts details
-      business_contexts           TYPE ty_gt_business_context,
-
       "! <p class="shorttext">Code List Values</p>
       "! Code list values
-      code_list_values            TYPE ty_gt_codelistvalue,
+      code_list_values            TYPE ty_gt_code_list_value,
 
       "! <p class="shorttext">Code List Descriptions</p>
       "! Code list descriptions
-      code_list_descriptions      TYPE ty_gt_codelistvalue_descr,
+      code_list_descriptions      TYPE ty_gt_code_list_value_descr,
 
-      "! <p class="shorttext">Value Help Key Mappings</p>
-      "! Value help key mappings
-      value_help_key_mappings     TYPE ty_gt_value_help_key_mapping,
+      "! <p class="shorttext">Extended Business Context Details</p>
+      "! Extended business context details
+      extended_business_contexts  TYPE ty_gt_extended_bus_context,
 
-      "! <p class="shorttext">Value Help Bindings</p>
-      "! Value help bindings
-      value_help_bindings         TYPE ty_gt_value_help_binding,
-
-      "! <p class="shorttext">Extended CDS Views</p>
-      "! Extended CDS views
+      "! <p class="shorttext">Extended CDS View Details</p>
+      "! Extended CDS view details
       extended_cds_views          TYPE ty_gt_extended_cds_view,
 
-      "! <p class="shorttext">Extended OData Services</p>
-      "! Extended OData services
+      "! <p class="shorttext">Extended OData Service Details</p>
+      "! Extended OData service details
       extended_odata_services     TYPE ty_gt_extended_odata_service,
 
-      "! <p class="shorttext">Extended Business Scenarios</p>
-      "! Extended business scenarios
+      "! <p class="shorttext">Extended Business Scenario Details</p>
+      "! Extended business scenario details
       extended_business_scenarios TYPE ty_gt_extended_bus_scenario,
 
-      "! <p class="shorttext">Extended Dynpro Contexts</p>
-      "! Extended dynpro contexts
+      "! <p class="shorttext">Extended Dynpro Context Details</p>
+      "! Extended dynpro context details
       extended_dynpro_contexts    TYPE ty_gt_extended_dynpro_context,
 
-      "! <p class="shorttext">Extended SOAP Services</p>
-      "! Extended SOAP services
+      "! <p class="shorttext">Extended SOAP Service Details</p>
+      "! Extended SOAP service details
       extended_soap_services      TYPE ty_gt_extended_soap_service,
+
+      "! <p class="shorttext">Value Help Key Mapping Details</p>
+      "! Value help key mapping details
+      value_help_key_mappings     TYPE ty_gt_value_help_key_mapping,
+
+      "! <p class="shorttext">Value Help Binding Details</p>
+      "! Value help binding details
+      value_help_bindings         TYPE ty_gt_value_help_binding,
     END OF ty_main.
 
   CONSTANTS:
     BEGIN OF co_type,
       "! <p class="shorttext">Amount with Currency</p>
       "! Amount with currency
-      amount_with_currency       TYPE ty_field_type VALUE 'AMOUNT' ##NO_TEXT,
+      amount_with_currency       TYPE ty_field_type VALUE 'AMOUNT',
       "! <p class="shorttext">Boolean</p>
       "! Boolean
-      boolean                    TYPE ty_field_type VALUE 'BOOLEAN' ##NO_TEXT,
+      boolean                    TYPE ty_field_type VALUE 'BOOLEAN',
       "! <p class="shorttext">Date</p>
       "! Date
-      date                       TYPE ty_field_type VALUE 'DATE' ##NO_TEXT,
+      date                       TYPE ty_field_type VALUE 'DATE',
       "! <p class="shorttext">E-Mail</p>
       "! E-Mail
-      email                      TYPE ty_field_type VALUE 'EMAIL' ##NO_TEXT,
+      email                      TYPE ty_field_type VALUE 'EMAIL',
       "! <p class="shorttext">List</p>
       "! List
-      list                       TYPE ty_field_type VALUE 'LIST' ##NO_TEXT,
+      list                       TYPE ty_field_type VALUE 'LIST',
       "! <p class="shorttext">Number</p>
       "! Number
-      number                     TYPE ty_field_type VALUE 'NUMBER' ##NO_TEXT,
+      number                     TYPE ty_field_type VALUE 'NUMBER',
       "! <p class="shorttext">Quantity with Unit</p>
       "! Quantity with unit
-      quantity                   TYPE ty_field_type VALUE 'QUANTITY' ##NO_TEXT,
+      quantity                   TYPE ty_field_type VALUE 'QUANTITY',
       "! <p class="shorttext">Text</p>
       "! Text
-      text                       TYPE ty_field_type VALUE 'TEXT' ##NO_TEXT,
+      text                       TYPE ty_field_type VALUE 'TEXT',
       "! <p class="shorttext">Time</p>
       "! Time
-      time                       TYPE ty_field_type VALUE 'TIME' ##NO_TEXT,
+      time                       TYPE ty_field_type VALUE 'TIME',
       "! <p class="shorttext">Web Address</p>
       "! Web address
-      url                        TYPE ty_field_type VALUE 'URL' ##NO_TEXT,
+      url                        TYPE ty_field_type VALUE 'URL',
       "! <p class="shorttext">Phone Number</p>
       "! Phone number
-      phone                      TYPE ty_field_type VALUE 'PHONE' ##NO_TEXT,
+      phone                      TYPE ty_field_type VALUE 'PHONE',
       "! <p class="shorttext">Amount without Currency</p>
       "! Amount without currency
-      amount_without_currency    TYPE ty_field_type VALUE 'AMNT_ONLY' ##NO_TEXT,
+      amount_without_currency    TYPE ty_field_type VALUE 'AMNT_ONLY',
       "! <p class="shorttext">Currency</p>
       "! Currency
-      currency_code              TYPE ty_field_type VALUE 'CURRENCY' ##NO_TEXT,
+      currency_code              TYPE ty_field_type VALUE 'CURRENCY',
       "! <p class="shorttext">Quantity without Unit</p>
       "! Quantity without unit
-      quantity_only              TYPE ty_field_type VALUE 'QUAN_ONLY' ##NO_TEXT,
+      quantity_only              TYPE ty_field_type VALUE 'QUAN_ONLY',
       "! <p class="shorttext">Unit</p>
       "! Unit
-      unit_code                  TYPE ty_field_type VALUE 'UNIT' ##NO_TEXT,
+      unit_code                  TYPE ty_field_type VALUE 'UNIT',
       "! <p class="shorttext">Language</p>
       "! Language
-      language_code              TYPE ty_field_type VALUE 'LANGUAGE' ##NO_TEXT,
+      language_code              TYPE ty_field_type VALUE 'LANGUAGE',
       "! <p class="shorttext">Numerical Text</p>
       "! Numerical text
-      numerical_text             TYPE ty_field_type VALUE 'NUMC_TEXT' ##NO_TEXT,
+      numerical_text             TYPE ty_field_type VALUE 'NUMC_TEXT',
       "! <p class="shorttext">Posting Perioid</p>
       "! Posting perioid
-      posting_period             TYPE ty_field_type VALUE 'PST_PERIOD' ##NO_TEXT,
+      posting_period             TYPE ty_field_type VALUE 'PST_PERIOD',
       "! <p class="shorttext">Raw</p>
       "! Raw
-      raw                        TYPE ty_field_type VALUE 'RAW' ##NO_TEXT,
+      raw                        TYPE ty_field_type VALUE 'RAW',
       "! <p class="shorttext">Association to Standard Business Object</p>
       "! Association to standard business object
-      association_to_standard_bo TYPE ty_field_type VALUE 'ASC_TO_STD' ##NO_TEXT,
+      association_to_standard_bo TYPE ty_field_type VALUE 'ASC_TO_STD',
       "! <p class="shorttext">Timestamp</p>
       "! Timestamp
-      timestamp                  TYPE ty_field_type VALUE 'TIMESTAMP' ##NO_TEXT,
+      timestamp                  TYPE ty_field_type VALUE 'TIMESTAMP',
       "! <p class="shorttext">Code List based on CDS View</p>
       "! Code list based on CDS view
-      list_based_on_cds_view     TYPE ty_field_type VALUE 'LIST_CVIEW' ##NO_TEXT,
+      list_based_on_cds_view     TYPE ty_field_type VALUE 'LIST_CVIEW',
       "! <p class="shorttext">Characteristics - List</p>
       "!Characteristics - List
-      characteristics_list       TYPE ty_field_type VALUE 'CHRCS_LIST' ##NO_TEXT,
+      characteristics_list       TYPE ty_field_type VALUE 'CHRCS_LIST',
       "! <p class="shorttext">Characteristics - Number</p>
       "! Characteristics - Number interval
-      numeric_interval           TYPE ty_field_type VALUE 'NUMBER_ITV' ##NO_TEXT,
+      numeric_interval           TYPE ty_field_type VALUE 'NUMBER_ITV',
       "! <p class="shorttext">Characteristics - Amount Interval</p>
       "! Characteristics - Amount interval
-      amount_interval            TYPE ty_field_type VALUE 'AMOUNT_ITV' ##NO_TEXT,
+      amount_interval            TYPE ty_field_type VALUE 'AMOUNT_ITV',
       "! <p class="shorttext">Characteristics - Date Interval</p>
       "! Characteristics - Date interval
-      date_interval              TYPE ty_field_type VALUE 'DATE_ITV' ##NO_TEXT,
+      date_interval              TYPE ty_field_type VALUE 'DATE_ITV',
       "! <p class="shorttext">Characteristics - Time Interval</p>
       "! Characteristics - Time interval
-      time_interval              TYPE ty_field_type VALUE 'TIME_ITV' ##NO_TEXT,
+      time_interval              TYPE ty_field_type VALUE 'TIME_ITV',
       "! <p class="shorttext">Association to Custom Business Object</p>
       "! Association to custom business object
-      association_to_custom_bo   TYPE ty_field_type VALUE 'ASC_TO_CBO' ##NO_TEXT,
+      association_to_custom_bo   TYPE ty_field_type VALUE 'ASC_TO_CBO',
     END OF co_type.
 
-  CONSTANTS: BEGIN OF co_data_subject_id_type,
-               "! <p class="shorttext">Not applicable</p>
-               "! Not applicable
-               not_applicable           TYPE ty_data_subject_id_type VALUE '' ##NO_TEXT,
-               "! <p class="shorttext">Central Business Partner</p>
-               "! Central business partner
-               central_business_partner TYPE ty_data_subject_id_type VALUE 'BP' ##NO_TEXT,
-               "! <p class="shorttext">Customer</p>
-               "! Customer
-               customer                 TYPE ty_data_subject_id_type VALUE 'CUSTOMER' ##NO_TEXT,
-               "! <p class="shorttext">Supplier</p>
-               "! Supplier
-               supplier                 TYPE ty_data_subject_id_type VALUE 'SUPPLIER' ##NO_TEXT,
-               "! <p class="shorttext">Contact Person</p>
-               "! Contact person
-               contact_person           TYPE ty_data_subject_id_type VALUE 'CONTACT' ##NO_TEXT,
-               "! <p class="shorttext">Workforce Person</p>
-               "! Workforce person
-               workforce_person         TYPE ty_data_subject_id_type VALUE 'WFP' ##NO_TEXT,
-             END OF co_data_subject_id_type.
+  CONSTANTS:
+    BEGIN OF co_data_subject_id_type,
+      "! <p class="shorttext">Not applicable</p>
+      "! Not applicable
+      not_applicable           TYPE ty_data_subject_id_type VALUE '',
+      "! <p class="shorttext">Central Business Partner</p>
+      "! Central business partner
+      central_business_partner TYPE ty_data_subject_id_type VALUE 'BP',
+      "! <p class="shorttext">Customer</p>
+      "! Customer
+      customer                 TYPE ty_data_subject_id_type VALUE 'CUSTOMER',
+      "! <p class="shorttext">Supplier</p>
+      "! Supplier
+      supplier                 TYPE ty_data_subject_id_type VALUE 'SUPPLIER',
+      "! <p class="shorttext">Contact Person</p>
+      "! Contact person
+      contact_person           TYPE ty_data_subject_id_type VALUE 'CONTACT',
+      "! <p class="shorttext">Workforce Person</p>
+      "! Workforce person
+      workforce_person         TYPE ty_data_subject_id_type VALUE 'WFP',
+    END OF co_data_subject_id_type.
 
-  CONSTANTS: BEGIN OF co_soap_message_direction,
-               "! <p class="shorttext">Request</p>
-               "! Request
-               request  TYPE ty_message_direction VALUE 'REQ' ##NO_TEXT,
-               "! <p class="shorttext">Response</p>
-               "! Response
-               response TYPE ty_message_direction VALUE 'RES' ##NO_TEXT,
-             END OF co_soap_message_direction.
+  CONSTANTS:
+    BEGIN OF co_soap_message_direction,
+      "! <p class="shorttext">Request</p>
+      "! Request
+      request  TYPE ty_message_direction VALUE 'REQ',
+      "! <p class="shorttext">Response</p>
+      "! Response
+      response TYPE ty_message_direction VALUE 'RES',
+    END OF co_soap_message_direction.
 
-  CONSTANTS: BEGIN OF co_aggregation,
-               "! <p class="shorttext">None</p>
-               "! None
-               none TYPE ty_aggregation VALUE 'NONE' ##NO_TEXT,
-               "! <p class="shorttext">Min</p>
-               "! Min
-               min  TYPE ty_aggregation VALUE 'MIN' ##NO_TEXT,
-               "! <p class="shorttext">Max</p>
-               "! Max
-               max  TYPE ty_aggregation VALUE 'MAX' ##NO_TEXT,
-               "! <p class="shorttext">Sum</p>
-               "! Sum
-               sum  TYPE ty_aggregation VALUE 'SUM' ##NO_TEXT,
-             END OF co_aggregation.
+  CONSTANTS:
+    BEGIN OF co_aggregation,
+      "! <p class="shorttext">None</p>
+      "! None
+      none TYPE ty_aggregation VALUE 'NONE',
+      "! <p class="shorttext">Min</p>
+      "! Min
+      min  TYPE ty_aggregation VALUE 'MIN',
+      "! <p class="shorttext">Max</p>
+      "! Max
+      max  TYPE ty_aggregation VALUE 'MAX',
+      "! <p class="shorttext">Sum</p>
+      "! Sum
+      sum  TYPE ty_aggregation VALUE 'SUM',
+    END OF co_aggregation.
 
-  CONSTANTS: BEGIN OF co_field_control_property,
-               "! <p class="shorttext">Optional</p>
-               "! Optional
-               optional  TYPE ty_field_control_property VALUE '' ##NO_TEXT,
-               "! <p class="shorttext">Read Only</p>
-               "! Read Only
-               read_only TYPE ty_field_control_property VALUE 'R' ##NO_TEXT,
-               "! <p class="shorttext">Mandatory</p>
-               "! Mandatory
-               mandatory TYPE ty_field_control_property VALUE 'M' ##NO_TEXT,
-             END OF co_field_control_property.
+  CONSTANTS:
+    BEGIN OF co_field_control_property,
+      "! <p class="shorttext">Optional</p>
+      "! Optional
+      optional  TYPE ty_field_control_property VALUE '',
+      "! <p class="shorttext">Read Only</p>
+      "! Read Only
+      read_only TYPE ty_field_control_property VALUE 'R',
+      "! <p class="shorttext">Mandatory</p>
+      "! Mandatory
+      mandatory TYPE ty_field_control_property VALUE 'M',
+    END OF co_field_control_property.
 
 ENDINTERFACE.
