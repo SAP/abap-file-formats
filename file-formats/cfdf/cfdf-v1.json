@@ -59,15 +59,15 @@
         "originalLanguage"
       ]
     },
-    "externalFieldName": {
-      "title": "External Field Name",
-      "description": "External field name",
+    "externalName": {
+      "title": "External Name",
+      "description": "External name",
       "type": "string",
       "maxLength": 30
     },
-    "semanticFieldType": {
-      "title": "Semantic Field Type",
-      "description": "Semantic field type",
+    "type": {
+      "title": "Type",
+      "description": "Type",
       "type": "string",
       "enum": [
         "amountWithCurrency",
@@ -732,7 +732,7 @@
   "required": [
     "formatVersion",
     "header",
-    "externalFieldName",
-    "semanticFieldType"
+    "externalName",
+    "type"
   ]
 }

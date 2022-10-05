@@ -4,8 +4,8 @@
     "description": "YY1_AFF_Example",
     "originalLanguage": "en"
   },
-  "externalFieldName": "YY1_AFF_Example",
-  "semanticFieldType": "list",
+  "externalName": "YY1_AFF_Example",
+  "type": "list",
   "typeDetails": {
     "length": 1
   },

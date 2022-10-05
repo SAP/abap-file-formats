@@ -6,7 +6,7 @@ INTERFACE zif_aff_cfdf_v1
   TYPES: ty_business_context        TYPE c LENGTH 30.
   TYPES: ty_code_value              TYPE c LENGTH 30.
   TYPES: ty_data_subject_id_type    TYPE c LENGTH 10.
-  TYPES: ty_field_type              TYPE c LENGTH 10.
+  TYPES: ty_type                    TYPE c LENGTH 10.
   TYPES: ty_message_direction       TYPE c LENGTH 3.
   TYPES: ty_field_control_property  TYPE c LENGTH 1.
   TYPES: ty_aggregation             TYPE c LENGTH 5.
@@ -330,18 +330,18 @@ INTERFACE zif_aff_cfdf_v1
       "! $required
       header                      TYPE zif_aff_types_v1=>ty_header_60,
 
-      "! <p class="shorttext">External Field Name</p>
-      "! External field name
+      "! <p class="shorttext">External Name</p>
+      "! External name
       "! $required
       "! $maxLength 30
-      external_field_name         TYPE ty_field_name,
+      external_name               TYPE ty_field_name,
 
-      "! <p class="shorttext">Semantic Field Type</p>
-      "! Semantic field type
+      "! <p class="shorttext">Type</p>
+      "! Type
       "! $required
       "! $maxLength 10
       "! $values {@link zif_aff_cfdf_v1.data:co_type}
-      semantic_field_type        TYPE ty_field_type,
+      type                        TYPE ty_type,
 
       "! <p class="shorttext">Type Details</p>
       "! Type details
@@ -441,88 +441,88 @@ INTERFACE zif_aff_cfdf_v1
     BEGIN OF co_type,
       "! <p class="shorttext">Amount with Currency</p>
       "! Amount with currency
-      amount_with_currency       TYPE ty_field_type VALUE 'AMOUNT',
+      amount_with_currency       TYPE ty_type VALUE 'AMOUNT',
       "! <p class="shorttext">Boolean</p>
       "! Boolean
-      boolean                    TYPE ty_field_type VALUE 'BOOLEAN',
+      boolean                    TYPE ty_type VALUE 'BOOLEAN',
       "! <p class="shorttext">Date</p>
       "! Date
-      date                       TYPE ty_field_type VALUE 'DATE',
+      date                       TYPE ty_type VALUE 'DATE',
       "! <p class="shorttext">E-Mail</p>
       "! E-Mail
-      email                      TYPE ty_field_type VALUE 'EMAIL',
+      email                      TYPE ty_type VALUE 'EMAIL',
       "! <p class="shorttext">List</p>
       "! List
-      list                       TYPE ty_field_type VALUE 'LIST',
+      list                       TYPE ty_type VALUE 'LIST',
       "! <p class="shorttext">Number</p>
       "! Number
-      number                     TYPE ty_field_type VALUE 'NUMBER',
+      number                     TYPE ty_type VALUE 'NUMBER',
       "! <p class="shorttext">Quantity with Unit</p>
       "! Quantity with unit
-      quantity                   TYPE ty_field_type VALUE 'QUANTITY',
+      quantity                   TYPE ty_type VALUE 'QUANTITY',
       "! <p class="shorttext">Text</p>
       "! Text
-      text                       TYPE ty_field_type VALUE 'TEXT',
+      text                       TYPE ty_type VALUE 'TEXT',
       "! <p class="shorttext">Time</p>
       "! Time
-      time                       TYPE ty_field_type VALUE 'TIME',
+      time                       TYPE ty_type VALUE 'TIME',
       "! <p class="shorttext">Web Address</p>
       "! Web address
-      url                        TYPE ty_field_type VALUE 'URL',
+      url                        TYPE ty_type VALUE 'URL',
       "! <p class="shorttext">Phone Number</p>
       "! Phone number
-      phone                      TYPE ty_field_type VALUE 'PHONE',
+      phone                      TYPE ty_type VALUE 'PHONE',
       "! <p class="shorttext">Amount without Currency</p>
       "! Amount without currency
-      amount_without_currency    TYPE ty_field_type VALUE 'AMNT_ONLY',
+      amount_without_currency    TYPE ty_type VALUE 'AMNT_ONLY',
       "! <p class="shorttext">Currency</p>
       "! Currency
-      currency_code              TYPE ty_field_type VALUE 'CURRENCY',
+      currency_code              TYPE ty_type VALUE 'CURRENCY',
       "! <p class="shorttext">Quantity without Unit</p>
       "! Quantity without unit
-      quantity_only              TYPE ty_field_type VALUE 'QUAN_ONLY',
+      quantity_only              TYPE ty_type VALUE 'QUAN_ONLY',
       "! <p class="shorttext">Unit</p>
       "! Unit
-      unit_code                  TYPE ty_field_type VALUE 'UNIT',
+      unit_code                  TYPE ty_type VALUE 'UNIT',
       "! <p class="shorttext">Language</p>
       "! Language
-      language_code              TYPE ty_field_type VALUE 'LANGUAGE',
+      language_code              TYPE ty_type VALUE 'LANGUAGE',
       "! <p class="shorttext">Numerical Text</p>
       "! Numerical text
-      numerical_text             TYPE ty_field_type VALUE 'NUMC_TEXT',
+      numerical_text             TYPE ty_type VALUE 'NUMC_TEXT',
       "! <p class="shorttext">Posting Perioid</p>
       "! Posting perioid
-      posting_period             TYPE ty_field_type VALUE 'PST_PERIOD',
+      posting_period             TYPE ty_type VALUE 'PST_PERIOD',
       "! <p class="shorttext">Raw</p>
       "! Raw
-      raw                        TYPE ty_field_type VALUE 'RAW',
+      raw                        TYPE ty_type VALUE 'RAW',
       "! <p class="shorttext">Association to Standard Business Object</p>
       "! Association to standard business object
-      association_to_standard_bo TYPE ty_field_type VALUE 'ASC_TO_STD',
+      association_to_standard_bo TYPE ty_type VALUE 'ASC_TO_STD',
       "! <p class="shorttext">Timestamp</p>
       "! Timestamp
-      timestamp                  TYPE ty_field_type VALUE 'TIMESTAMP',
+      timestamp                  TYPE ty_type VALUE 'TIMESTAMP',
       "! <p class="shorttext">Code List based on CDS View</p>
       "! Code list based on CDS view
-      list_based_on_cds_view     TYPE ty_field_type VALUE 'LIST_CVIEW',
+      list_based_on_cds_view     TYPE ty_type VALUE 'LIST_CVIEW',
       "! <p class="shorttext">Characteristics - List</p>
       "!Characteristics - List
-      characteristics_list       TYPE ty_field_type VALUE 'CHRCS_LIST',
+      characteristics_list       TYPE ty_type VALUE 'CHRCS_LIST',
       "! <p class="shorttext">Characteristics - Number</p>
       "! Characteristics - Number interval
-      numeric_interval           TYPE ty_field_type VALUE 'NUMBER_ITV',
+      numeric_interval           TYPE ty_type VALUE 'NUMBER_ITV',
       "! <p class="shorttext">Characteristics - Amount Interval</p>
       "! Characteristics - Amount interval
-      amount_interval            TYPE ty_field_type VALUE 'AMOUNT_ITV',
+      amount_interval            TYPE ty_type VALUE 'AMOUNT_ITV',
       "! <p class="shorttext">Characteristics - Date Interval</p>
       "! Characteristics - Date interval
-      date_interval              TYPE ty_field_type VALUE 'DATE_ITV',
+      date_interval              TYPE ty_type VALUE 'DATE_ITV',
       "! <p class="shorttext">Characteristics - Time Interval</p>
       "! Characteristics - Time interval
-      time_interval              TYPE ty_field_type VALUE 'TIME_ITV',
+      time_interval              TYPE ty_type VALUE 'TIME_ITV',
       "! <p class="shorttext">Association to Custom Business Object</p>
       "! Association to custom business object
-      association_to_custom_bo   TYPE ty_field_type VALUE 'ASC_TO_CBO',
+      association_to_custom_bo   TYPE ty_type VALUE 'ASC_TO_CBO',
     END OF co_type.
 
   CONSTANTS:
