@@ -484,7 +484,7 @@ INTERFACE zif_aff_cfdf_v1
 
   CONSTANTS:
     BEGIN OF co_data_subject_id_type,
-      "! <p class="shorttext">Not applicable</p>
+      "! <p class="shorttext">Not Applicable</p>
       "! Not applicable
       not_applicable           TYPE ty_data_subject_id_type VALUE '',
       "! <p class="shorttext">Central Business Partner</p>
