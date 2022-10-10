@@ -71,8 +71,8 @@ INTERFACE zif_aff_cfdf_v1
 
       "! <p class="shorttext">Field Control Property</p>
       "! Field control property
-      "! $values {@link if_aff_cfdf_v1.data:co_field_control_property}
-      "! $default {@link if_aff_cfdf_v1.data:co_field_control_property.optional}
+      "! $values {@link zif_aff_cfdf_v1.data:co_field_control_property}
+      "! $default {@link zif_aff_cfdf_v1.data:co_field_control_property.optional}
       field_control_property        TYPE ty_field_control_property,
     END OF ty_gs_extended_cds_view.
   TYPES: ty_gt_extended_cds_view TYPE STANDARD TABLE OF ty_gs_extended_cds_view WITH KEY business_context cds_view_name.
@@ -148,7 +148,7 @@ INTERFACE zif_aff_cfdf_v1
       "! <p class="shorttext">Message Direction</p>
       "! Message direction
       "! $required
-      "! $values {@link if_aff_cfdf_v1.data:co_soap_message_direction}
+      "! $values {@link zif_aff_cfdf_v1.data:co_soap_message_direction}
       message_direction    TYPE ty_message_direction,
 
       "! <p class="shorttext">Business Context</p>
@@ -256,8 +256,8 @@ INTERFACE zif_aff_cfdf_v1
     BEGIN OF ty_gs_dpp_properties,
       "! <p class="shorttext">Data Subject</p>
       "! Data subject
-      "! $values {@link if_aff_cfdf_v1.data:co_data_subject_id_type}
-      "! $default {@link if_aff_cfdf_v1.data:co_data_subject_id_type.not_applicable}
+      "! $values {@link zif_aff_cfdf_v1.data:co_data_subject_id_type}
+      "! $default {@link zif_aff_cfdf_v1.data:co_data_subject_id_type.not_applicable}
       data_subject_id_type       TYPE ty_data_subject_id_type,
 
       "! <p class="shorttext">BAdI Implementation for Data Subject</p>
@@ -302,7 +302,7 @@ INTERFACE zif_aff_cfdf_v1
       "! <p class="shorttext">Type</p>
       "! Type
       "! $required
-      "! $values {@link if_aff_cfdf_v1.data:co_type}
+      "! $values {@link zif_aff_cfdf_v1.data:co_type}
       type                        TYPE ty_type,
 
       "! <p class="shorttext">Type Details</p>
@@ -320,8 +320,8 @@ INTERFACE zif_aff_cfdf_v1
 
         "! <p class="shorttext">Aggregation</p>
         "! Aggregation
-        "! $values {@link if_aff_cfdf_v1.data:co_aggregation}
-        "! $default {@link if_aff_cfdf_v1.data:co_aggregation.none}
+        "! $values {@link zif_aff_cfdf_v1.data:co_aggregation}
+        "! $default {@link zif_aff_cfdf_v1.data:co_aggregation.none}
         aggregation                TYPE ty_aggregation,
 
         "! <p class="shorttext">Code List Uppercase Only</p>
