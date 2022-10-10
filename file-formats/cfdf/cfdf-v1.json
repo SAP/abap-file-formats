@@ -30,27 +30,6 @@
           "minLength": 2,
           "maxLength": 2,
           "pattern": "^[a-z]+$"
-        },
-        "abapLanguageVersion": {
-          "title": "ABAP Language Version",
-          "description": "ABAP language version",
-          "type": "string",
-          "enum": [
-            "standard",
-            "keyUser",
-            "cloudDevelopment"
-          ],
-          "enumTitles": [
-            "Standard",
-            "ABAP for Key Users",
-            "ABAP Cloud Development"
-          ],
-          "enumDescriptions": [
-            "Standard",
-            "ABAP for key user extensibility",
-            "ABAP cloud development"
-          ],
-          "default": "standard"
         }
       },
       "additionalProperties": false,

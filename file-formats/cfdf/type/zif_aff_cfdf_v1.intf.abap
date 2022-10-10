@@ -23,13 +23,11 @@ INTERFACE zif_aff_cfdf_v1
       "! <p class="shorttext">Field Label</p>
       "! Field label
       "! $required
-      "! $maxLength 40
       field_label   TYPE c LENGTH 40,
 
       "! <p class="shorttext">Field Tooltip</p>
       "! Field tooltip
       "! $required
-      "! $maxLength 60
       field_tooltip TYPE c LENGTH 60,
     END OF ty_gs_ui_text.
   TYPES: ty_gt_ui_text TYPE STANDARD TABLE OF ty_gs_ui_text WITH KEY language.
@@ -41,12 +39,10 @@ INTERFACE zif_aff_cfdf_v1
       "! <p class="shorttext">Business Context</p>
       "! Business context
       "! $required
-      "! $maxLength 30
       business_context     TYPE ty_business_context,
 
       "! <p class="shorttext">Deviating Field Name</p>
       "! Deviating field name
-      "! $maxLength 30
       deviating_field_name TYPE ty_field_name,
     END OF ty_gs_extended_bus_context.
   TYPES: ty_gt_extended_bus_context TYPE STANDARD TABLE OF ty_gs_extended_bus_context WITH KEY business_context.
@@ -58,13 +54,11 @@ INTERFACE zif_aff_cfdf_v1
       "! <p class="shorttext">CDS View Name</p>
       "! CDS view name
       "! $required
-      "! $maxLength 30
       cds_view_name                 TYPE zif_aff_types_v1=>ty_object_name_30,
 
       "! <p class="shorttext">Business Context</p>
       "! Business context
       "! $required
-      "! $maxLength 30
       business_context              TYPE ty_business_context,
 
       "! <p class="shorttext">Basic Search Relevance</p>
@@ -73,14 +67,12 @@ INTERFACE zif_aff_cfdf_v1
 
       "! <p class="shorttext">BAdI Implementation for Visibility Control</p>
       "! BAdI implementation for visibility control
-      "! $maxLength 30
       badi_impl_for_visibility_ctrl TYPE zif_aff_types_v1=>ty_object_name_30,
 
       "! <p class="shorttext">Field Control Property</p>
       "! Field control property
-      "! $maxLength 1
-      "! $values {@link zif_aff_cfdf_v1.data:co_field_control_property}
-      "! $default {@link zif_aff_cfdf_v1.data:co_field_control_property.optional}
+      "! $values {@link if_aff_cfdf_v1.data:co_field_control_property}
+      "! $default {@link if_aff_cfdf_v1.data:co_field_control_property.optional}
       field_control_property        TYPE ty_field_control_property,
     END OF ty_gs_extended_cds_view.
   TYPES: ty_gt_extended_cds_view TYPE STANDARD TABLE OF ty_gs_extended_cds_view WITH KEY business_context cds_view_name.
@@ -92,13 +84,11 @@ INTERFACE zif_aff_cfdf_v1
       "! <p class="shorttext">OData Service Key</p>
       "! OData service key
       "! $required
-      "! $maxLength 81
       odata_service_key  TYPE c LENGTH 81,
 
       "! <p class="shorttext">Business Context</p>
       "! Business context
       "! $required
-      "! $maxLength 30
       business_context   TYPE ty_business_context,
 
       "! <p class="shorttext">Basic Search Relevance</p>
@@ -115,13 +105,11 @@ INTERFACE zif_aff_cfdf_v1
       "! <p class="shorttext">Business Scenario</p>
       "! Business scenario
       "! $required
-      "! $maxLength 30
       business_scenario TYPE c LENGTH 30,
 
       "! <p class="shorttext">Data Transfer</p>
       "! Data transfer
       "! $required
-      "! $maxLength 30
       data_transfer     TYPE c LENGTH 30,
     END OF ty_gs_extended_bus_scenario.
   TYPES: ty_gt_extended_bus_scenario TYPE STANDARD TABLE OF ty_gs_extended_bus_scenario WITH KEY business_scenario.
@@ -133,14 +121,12 @@ INTERFACE zif_aff_cfdf_v1
       "! <p class="shorttext">Dynpro Context</p>
       "! Dynpro context
       "! $required
-      "! $maxLength 30
       dynpro_context   TYPE c LENGTH 30,
 
       "! <p class="shorttext">Business Context</p>
       "! Business context
       "! $required
-      "! $maxLength 30
-      business_context TYPE zif_aff_types_v1=>ty_object_name_30,
+      business_context TYPE ty_business_context,
     END OF ty_gs_extended_dynpro_context.
   TYPES ty_gt_extended_dynpro_context TYPE STANDARD TABLE OF ty_gs_extended_dynpro_context
                                       WITH KEY dynpro_context business_context.
@@ -152,43 +138,36 @@ INTERFACE zif_aff_cfdf_v1
       "! <p class="shorttext">Service Interface</p>
       "! Service interface
       "! $required
-      "! $maxLength 30
       service_interface    TYPE c LENGTH 30,
 
       "! <p class="shorttext">Operation</p>
       "! Operation
       "! $required
-      "! $maxLength 30
       operation            TYPE c LENGTH 30,
 
       "! <p class="shorttext">Message Direction</p>
       "! Message direction
       "! $required
-      "! $maxLength 3
-      "! $values {@link zif_aff_cfdf_v1.data:co_soap_message_direction}
+      "! $values {@link if_aff_cfdf_v1.data:co_soap_message_direction}
       message_direction    TYPE ty_message_direction,
 
       "! <p class="shorttext">Business Context</p>
       "! Business context
       "! $required
-      "! $maxLength 30
       business_context     TYPE ty_business_context,
 
       "! <p class="shorttext">Component Identifier</p>
       "! Component identifier
-      "! $maxLength 5
       component_identifier TYPE ty_component_identifier,
 
       "! <p class="shorttext">External Namespace</p>
       "! External namespace
       "! $required
-      "! $maxLength 255
       external_namespace   TYPE c LENGTH 255,
 
       "! <p class="shorttext">External Field Name</p>
       "! External field name
       "! $required
-      "! $maxLength 120
       external_field_name  TYPE c LENGTH 120,
     END OF ty_gs_extended_soap_service.
   TYPES: ty_gt_extended_soap_service TYPE STANDARD TABLE OF ty_gs_extended_soap_service
@@ -201,19 +180,16 @@ INTERFACE zif_aff_cfdf_v1
       "! <p class="shorttext">Language</p>
       "! Language
       "! $required
-      "! $maxLength 2
       language    TYPE sy-langu,
 
       "! <p class="shorttext">Code</p>
       "! Code
       "! $required
-      "! $maxLength 30
       code        TYPE ty_code_value,
 
       "! <p class="shorttext">Description</p>
       "! Description
       "! $required
-      "! $maxLength 60
       description TYPE c LENGTH 60,
     END OF ty_gs_code_list_value_descr.
   TYPES: ty_gt_code_list_value_descr TYPE STANDARD TABLE OF ty_gs_code_list_value_descr WITH KEY language code.
@@ -225,7 +201,6 @@ INTERFACE zif_aff_cfdf_v1
       "! <p class="shorttext">Code</p>
       "! Code
       "! $required
-      "! $maxLength 30
       code        TYPE ty_code_value,
 
       "! <p class="shorttext">Disabled</p>
@@ -240,18 +215,15 @@ INTERFACE zif_aff_cfdf_v1
     BEGIN OF ty_gs_value_help_key_mapping,
       "! <p class="shorttext">Component Identifier</p>
       "! Component identifier
-      "! $maxLength 5
       component_identifier      TYPE ty_component_identifier,
 
       "! <p class="shorttext">Value Help Field Name</p>
       "! Value help field name
       "! $required
-      "! $maxLength 30
       value_help_field_name     TYPE ty_field_name,
 
       "! <p class="shorttext">Dimension View Field Name</p>
       "! Dimension view field name
-      "! $maxLength 30
       dimension_view_field_name TYPE ty_field_name,
     END OF ty_gs_value_help_key_mapping.
   TYPES ty_gt_value_help_key_mapping TYPE STANDARD TABLE OF ty_gs_value_help_key_mapping WITH KEY component_identifier.
@@ -263,19 +235,16 @@ INTERFACE zif_aff_cfdf_v1
       "! <p class="shorttext">Extended CDS View Name</p>
       "! Extended CDS view name
       "! $required
-      "! $maxLength 30
       cds_view_name                TYPE  zif_aff_types_v1=>ty_object_name_30,
 
       "! <p class="shorttext">Extended CDS View Field Name</p>
       "! Extended CDS view field name
       "! $required
-      "! $maxLength 30
       extended_cds_view_field_name TYPE ty_field_name,
 
       "! <p class="shorttext">Value Help Field Name</p>
       "! Value help field name
       "! $required
-      "! $maxLength 30
       value_help_field_name        TYPE  ty_field_name,
     END OF ty_gs_value_help_binding.
   TYPES ty_gt_value_help_binding TYPE STANDARD TABLE OF ty_gs_value_help_binding
@@ -287,14 +256,12 @@ INTERFACE zif_aff_cfdf_v1
     BEGIN OF ty_gs_dpp_properties,
       "! <p class="shorttext">Data Subject</p>
       "! Data subject
-      "! $maxLength 10
-      "! $values {@link zif_aff_cfdf_v1.data:co_data_subject_id_type}
-      "! $default {@link zif_aff_cfdf_v1.data:co_data_subject_id_type.not_applicable}
+      "! $values {@link if_aff_cfdf_v1.data:co_data_subject_id_type}
+      "! $default {@link if_aff_cfdf_v1.data:co_data_subject_id_type.not_applicable}
       data_subject_id_type       TYPE ty_data_subject_id_type,
 
       "! <p class="shorttext">BAdI Implementation for Data Subject</p>
       "! BAdI implementation for data subject
-      "! $maxLength 30
       badi_impl_for_data_subject TYPE zif_aff_types_v1=>ty_object_name_30,
     END OF ty_gs_dpp_properties.
 
@@ -304,17 +271,14 @@ INTERFACE zif_aff_cfdf_v1
     BEGIN OF ty_gs_characteristic_reference,
       "! <p class="shorttext">Characteristic Name</p>
       "! Characteristic name
-      "! $maxLength 30
       characteristic_name TYPE c LENGTH 30,
 
       "! <p class="shorttext">Class Name</p>
       "! Class name
-      "! $maxLength 3
       class_type          TYPE c LENGTH 3,
 
       "! <p class="shorttext">Object Type</p>
       "! Object type
-      "! $maxLength 30
       object_type         TYPE c LENGTH 30,
     END OF ty_gs_characteristic_reference.
 
@@ -333,19 +297,16 @@ INTERFACE zif_aff_cfdf_v1
       "! <p class="shorttext">External Name</p>
       "! External name
       "! $required
-      "! $maxLength 30
       external_name               TYPE ty_field_name,
 
       "! <p class="shorttext">Type</p>
       "! Type
       "! $required
-      "! $maxLength 10
-      "! $values {@link zif_aff_cfdf_v1.data:co_type}
+      "! $values {@link if_aff_cfdf_v1.data:co_type}
       type                        TYPE ty_type,
 
       "! <p class="shorttext">Type Details</p>
       "! Type details
-      "! $required
       BEGIN OF type_details,
         "! <p class="shorttext">Length</p>
         "! Length
@@ -359,9 +320,8 @@ INTERFACE zif_aff_cfdf_v1
 
         "! <p class="shorttext">Aggregation</p>
         "! Aggregation
-        "! $maxLength 5
-        "! $values {@link zif_aff_cfdf_v1.data:co_aggregation}
-        "! $default {@link zif_aff_cfdf_v1.data:co_aggregation.none}
+        "! $values {@link if_aff_cfdf_v1.data:co_aggregation}
+        "! $default {@link if_aff_cfdf_v1.data:co_aggregation.none}
         aggregation                TYPE ty_aggregation,
 
         "! <p class="shorttext">Code List Uppercase Only</p>
@@ -370,17 +330,14 @@ INTERFACE zif_aff_cfdf_v1
 
         "! <p class="shorttext">Associated Business Object</p>
         "! Associated business object
-        "! $maxLength 30
-        associated_business_object TYPE c LENGTH 30,
+        associated_business_object TYPE zif_aff_types_v1=>ty_object_name_30,
 
         "! <p class="shorttext">Value Help View</p>
         "! Value help view
-        "! $maxLength 30
         value_help_view            TYPE zif_aff_types_v1=>ty_object_name_30,
 
         "! <p class="shorttext">Dimension View</p>
         "! Dimension view
-        "! $maxLength 30
         dimension_view             TYPE zif_aff_types_v1=>ty_object_name_30,
       END OF type_details,
 
