@@ -44,11 +44,11 @@ INTERFACE zif_aff_dmon_v1
     ty_daemon_type TYPE c LENGTH 1.
 
   TYPES:
-  "! <p class="shorttext">Start Type</p>
+   "! <p class="shorttext">Start Type</p>
    "! Start type
    "! $values {@link zif_aff_dmon_v1.data:co_start_type}
    "! $default {@link zif_aff_dmon_v1.data:co_start_type.automatically_started}
-   ty_start_type TYPE c LENGTH 1.
+    ty_start_type TYPE c LENGTH 1.
 
   CONSTANTS:
     "! <p class="shorttext">start Type</p>
