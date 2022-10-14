@@ -1,0 +1,31 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Generated consump. model for /IWXBE/TESTCONSUMER",
+    "originalLanguage": "en"
+  },
+  "consumerClass": "/IWXBE/CL_TESTCONSUMER_V2",
+  "descriptorClass": "/IWXBE/CL_GENERIC_CONS_DESCRIP",
+  "eventTypes": [
+    {
+      "type": "sap.eee.iwxbe.testproducer.v1.Event.Conversion",
+      "entityName": "/IWXBE/D_Event_Conversion"
+    },
+    {
+      "type": "sap.eee.iwxbe.testproducer.v1.Event.Created.v1",
+      "entityName": "/IWXBE/D_Event_Created_v1"
+    },
+    {
+      "type": "sap.eee.iwxbe.testproducer.v1.Event.DeepStructure",
+      "entityName": "/IWXBE/D_Event_DeepStructure"
+    },
+    {
+      "type": "sap.eee.iwxbe.testproducer.v1.Event.HealthCheck",
+      "entityName": "/IWXBE/D_Event_HealthCheck"
+    },
+    {
+      "type": "sap.eee.iwxbe.testproducer.v1.Event.Test",
+      "entityName": "/IWXBE/D_Event_Test"
+    }
+  ]
+}
