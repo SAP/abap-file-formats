@@ -54,13 +54,13 @@ INTERFACE zif_aff_dmon_v1
     "! <p class="shorttext">start Type</p>
     "! start type
     BEGIN OF co_start_type,
-      "! <p class="shorttext">Automatically started Daemon</p>
+      "! <p class="shorttext">Automatically Started Daemon</p>
       "! Automatically started Daemon
       automatically_started       TYPE ty_start_type VALUE 'A',
-      "! <p class="shorttext">Explicitly started Daemon (same user)</p>
-      "! Explicitly started Daemon (Same User)
+      "! <p class="shorttext">Explicitly Started Daemon (same user)</p>
+      "! Explicitly started Daemon (same User)
       explicitly_started_sameuser TYPE ty_start_type VALUE 'H',
-      "! <p class="shorttext">Explicitly started Daemon (different user, deprecated)</p>
+      "! <p class="shorttext">Explicitly Started Daemon (different user, deprecated)</p>
       "! Explicitly started Daemon (different user, deprecated)
       explicitly_started_diffuser TYPE ty_start_type VALUE 'D',
     END OF co_start_type.
