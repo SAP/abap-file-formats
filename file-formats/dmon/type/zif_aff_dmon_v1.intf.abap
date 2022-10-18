@@ -58,7 +58,7 @@ INTERFACE zif_aff_dmon_v1
       "! Automatically started Daemon
       automatically_started       TYPE ty_start_type VALUE 'A',
       "! <p class="shorttext">Explicitly Started Daemon (same user)</p>
-      "! Explicitly started Daemon (same User)
+      "! Explicitly started Daemon (same user)
       explicitly_started_sameuser TYPE ty_start_type VALUE 'H',
       "! <p class="shorttext">Explicitly Started Daemon (different user, deprecated)</p>
       "! Explicitly started Daemon (different user, deprecated)
