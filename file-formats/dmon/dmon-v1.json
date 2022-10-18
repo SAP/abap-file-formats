@@ -132,7 +132,7 @@
       ],
       "enumDescriptions": [
         "Automatically started Daemon",
-        "Explicitly started Daemon (same User)",
+        "Explicitly started Daemon (same user)",
         "Explicitly started Daemon (different user, deprecated)"
       ],
       "default": "automaticallyStarted"
