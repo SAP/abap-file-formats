@@ -99,7 +99,7 @@
       ]
     },
     "daemonType": {
-      "title": "Type",
+      "title": "Daemon Type",
       "description": "Daemon type",
       "type": "string",
       "enum": [
@@ -111,10 +111,31 @@
         "System Daemon"
       ],
       "enumDescriptions": [
-        "Application daemon",
-        "System daemon"
+        "Application Daemon",
+        "System Daemon"
       ],
       "default": "application"
+    },
+    "startType": {
+      "title": "Start Type",
+      "description": "Start type",
+      "type": "string",
+      "enum": [
+        "automaticallyStarted",
+        "explicitlyStartedSameuser",
+        "explicitlyStartedDiffuser"
+      ],
+      "enumTitles": [
+        "Automatically Started Daemon",
+        "Explicitly Started Daemon (same user)",
+        "Explicitly Started Daemon (different user, deprecated)"
+      ],
+      "enumDescriptions": [
+        "Automatically started Daemon",
+        "Explicitly started Daemon (same user)",
+        "Explicitly started Daemon (different user, deprecated)"
+      ],
+      "default": "automaticallyStarted"
     }
   },
   "additionalProperties": false,
