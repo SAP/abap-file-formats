@@ -78,56 +78,23 @@
         "Configuration object"
       ]
     },
-    "rootNodeType": {
-      "title": "Root SAP Object Node Type",
-      "description": "Root SAP object node type",
-      "type": "object",
-      "properties": {
-        "name": {
-          "title": "Name",
-          "description": "Node type name in camel case",
-          "type": "string",
-          "maxLength": 40
-        },
-        "description": {
-          "title": "Description",
-          "description": "Description",
-          "type": "string",
-          "maxLength": 60
-        }
-      },
-      "additionalProperties": false,
-      "required": [
-        "name",
-        "description"
-      ]
+    "name": {
+      "title": "Name",
+      "description": "Node type name in camel case",
+      "type": "string",
+      "maxLength": 30
     },
-    "nodeTypes": {
-      "title": "SAP Object Node Types",
-      "type": "array",
-      "items": {
-        "title": "Node",
-        "type": "object",
-        "properties": {
-          "name": {
-            "title": "Name",
-            "description": "Node type name in camel case",
-            "type": "string",
-            "maxLength": 40
-          },
-          "description": {
-            "title": "Description",
-            "description": "Description",
-            "type": "string",
-            "maxLength": 60
-          }
-        },
-        "additionalProperties": false,
-        "required": [
-          "name",
-          "description"
-        ]
-      }
+    "expandedName": {
+      "title": "Expanded Name",
+      "description": "Expanded name",
+      "type": "string",
+      "maxLength": 255
+    },
+    "objectTypeCode": {
+      "title": "Object Type Code",
+      "description": "Object type code",
+      "type": "string",
+      "maxLength": 5
     }
   },
   "additionalProperties": false,
@@ -135,6 +102,7 @@
     "formatVersion",
     "header",
     "typeCategory",
-    "rootNodeType"
+    "name",
+    "expandedName"
   ]
 }
