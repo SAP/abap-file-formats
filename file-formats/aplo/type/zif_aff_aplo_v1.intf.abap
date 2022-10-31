@@ -26,6 +26,7 @@ INTERFACE zif_aff_aplo_v1
       header         TYPE zif_aff_types_v1=>ty_header_60_cloud,
       "! <p class="shorttext">Subobjects</p>
       "! Table of all subobjects (may be empty)
+      "! $required
       subobjects    TYPE SORTED TABLE OF ty_subobject WITH NON-UNIQUE KEY name,
     END OF ty_main.
 ENDINTERFACE.
