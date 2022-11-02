@@ -21,9 +21,9 @@ INTERFACE zif_aff_clas_v1 PUBLIC.
       "! <p class="shorttext">Behavior class (behavior implementations)</p>
       "! Behavior class (behavior implementations)
       behavior_class                 TYPE ty_category VALUE '06',
-      "! <p class="shorttext">Event handler class</p>
-      "! Event handler class
-      event_handler                  TYPE ty_category VALUE '07',
+      "! <p class="shorttext">Entity event handler class</p>
+      "! Entity event handler class
+      entity_event_handler           TYPE ty_category VALUE '07',
       "! <p class="shorttext">Persistent class</p>
       "! Persistent class
       persistent_class               TYPE ty_category VALUE '10',
