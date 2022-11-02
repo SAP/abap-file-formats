@@ -189,7 +189,7 @@ INTERFACE zif_aff_smbc_v1
       name             TYPE c LENGTH 50,
       "! <p class="shorttext">Configuration Group</p>
       "! $showAlways
-      configuration_group type c LENGTH 30,
+      configuration_group TYPE c LENGTH 30,
       "! <p class="shorttext">Skip Root Entity List Report</p>
       "! If true, the UI automatically navigates to the Object Page of the root entity
       "! $showAlways
