@@ -97,6 +97,10 @@ INTERFACE zif_aff_gsmp_v1
       "! Application
       application TYPE ty_execution_mode VALUE 'A',
 
+      "! <p class="shorttext">Job</p>
+      "! Job
+      job        TYPE ty_execution_mode VALUE 'J',
+
       "! <p class="shorttext">None</p>
       "! No execution. Only model. Data from external.
       none        TYPE ty_execution_mode VALUE 'N',
@@ -128,7 +132,7 @@ INTERFACE zif_aff_gsmp_v1
   TYPES:
 
     "! <p class="shorttext">Metric Provider</p>
-    "! Metric Provider (GSMP) v1
+    "! Metric Provider (GSMP)
     BEGIN OF ty_main,
 
       "! $required
