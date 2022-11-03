@@ -1,9 +1,8 @@
 {
   "formatVersion": "1",
-    "header": {
+  "header": {
     "description": "AFF Example",
-    "originalLanguage": "en",
-    "abapLanguageVersion": "standard"
+    "originalLanguage": "en"
   },
   "implementation": {
     "type": "CLAS",
@@ -12,9 +11,6 @@
   "execution": {
     "mode": "system",
     "priority": "normal",
-    "scopeDependent": true
-  },
-  "model": {
-    "data": ""
+    "scopeDependent": false
   }
 }
