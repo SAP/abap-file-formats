@@ -1,5 +1,5 @@
 INTERFACE zif_aff_sajc_v1
-  PUBLIC .
+  PUBLIC.
 
   TYPES:
     "! <p class="shorttext">Header for SAJC Object</p>
@@ -20,10 +20,9 @@ INTERFACE zif_aff_sajc_v1
       abap_language_version TYPE zif_aff_types_v1=>ty_abap_language_version_cloud,
     END OF ty_header.
 
-  TYPES:
-      "! <p class="shorttext">Report Name</p>
-      "! Name of the report
-      ty_report_name(40) TYPE c.
+  "! <p class="shorttext">Report Name</p>
+  "! Name of the report
+  TYPES ty_report_name TYPE c LENGTH 40.
 
   TYPES:
     "! <p class="shorttext">General Information</p>
@@ -48,5 +47,5 @@ INTERFACE zif_aff_sajc_v1
       "! <p class="shorttext">Class with Value Help Exit</p>
       "! Name of the class which contains the value help exit
       value_help_exit_class TYPE zif_aff_types_v1=>ty_object_name_30,
-    END OF ty_main .
+    END OF ty_main.
 ENDINTERFACE.
