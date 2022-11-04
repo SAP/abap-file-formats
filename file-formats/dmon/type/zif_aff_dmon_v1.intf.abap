@@ -1,11 +1,10 @@
 INTERFACE zif_aff_dmon_v1
   PUBLIC.
 
-  TYPES:
   "! <p class="shorttext">Caller Object Type</p>
   "! Caller object type
   "! $values {@link zif_aff_dmon_v1.data:co_caller_object_type}
-    ty_caller_object_type TYPE c LENGTH 4.
+  TYPES ty_caller_object_type TYPE c LENGTH 4.
 
   CONSTANTS:
     "! <p class="shorttext">Caller Object Type</p>
@@ -30,25 +29,24 @@ INTERFACE zif_aff_dmon_v1
       "! <p class="shorttext">Type</p>
       "! type
       "! $required
-      type TYPE ty_caller_object_type,
+      type         TYPE ty_caller_object_type,
       "! <p class="shorttext">Name</p>
       "! name
       "! $required
-      name TYPE c LENGTH 40,
+      name         TYPE c                     LENGTH 40,
     END OF ty_caller_object,
 
     "! <p class="shorttext">Daemon Type</p>
     "! Daemon type
     "! $values {@link zif_aff_dmon_v1.data:co_daemon_type}
     "! $default {@link zif_aff_dmon_v1.data:co_daemon_type.application}
-    ty_daemon_type TYPE c LENGTH 1.
+    ty_daemon_type TYPE c                     LENGTH 1.
 
-  TYPES:
-   "! <p class="shorttext">Start Type</p>
-   "! Start type
-   "! $values {@link zif_aff_dmon_v1.data:co_start_type}
-   "! $default {@link zif_aff_dmon_v1.data:co_start_type.automatically_started}
-    ty_start_type TYPE c LENGTH 1.
+  "! <p class="shorttext">Start Type</p>
+  "! Start type
+  "! $values {@link zif_aff_dmon_v1.data:co_start_type}
+  "! $default {@link zif_aff_dmon_v1.data:co_start_type.automatically_started}
+  TYPES ty_start_type TYPE c LENGTH 1.
 
   CONSTANTS:
     "! <p class="shorttext">start Type</p>

@@ -63,27 +63,26 @@ INTERFACE zif_aff_chkv_v1
       parameters TYPE ty_parameters,
     END OF ty_check.
 
-  TYPES:
-      "! <p class="shorttext">Selected Checks</p>
-      "! Table of selected checks of the ATC check variant
-      ty_checks TYPE STANDARD TABLE OF ty_check WITH DEFAULT KEY.
+  "! <p class="shorttext">Selected Checks</p>
+  "! Table of selected checks of the ATC check variant
+  TYPES ty_checks TYPE STANDARD TABLE OF ty_check WITH DEFAULT KEY.
 
   TYPES:
     "! <p class="shorttext">ATC Check Variant Properties</p>
     "! ATC check variant properties
     BEGIN OF ty_main,
       "! $required
-      format_version     TYPE zif_aff_types_v1=>ty_format_version,
+      format_version  TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header             TYPE zif_aff_types_v1=>ty_header_60_cloud,
+      header          TYPE zif_aff_types_v1=>ty_header_60_cloud,
       "! <p class="shorttext">Remote-Enabled</p>
       "! The ATC check variant is remote-enabled
-      remote_enabled     TYPE abap_bool,
+      remote_enabled  TYPE abap_bool,
       "! <p class="shorttext">Selected Checks</p>
       "! The checks selected in the ATC check variant
-      selected_checks    TYPE ty_checks,
+      selected_checks TYPE ty_checks,
     END OF ty_main.
 
 ENDINTERFACE.

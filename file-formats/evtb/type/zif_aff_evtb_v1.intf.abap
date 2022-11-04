@@ -6,27 +6,27 @@ INTERFACE zif_aff_evtb_v1
     BEGIN OF ty_event,
       "! <p class="shorttext">Event Version</p>
       "! Event version
-      event_version             TYPE n LENGTH 4,
+      event_version       TYPE n LENGTH 4,
 
       "! <p class="shorttext">Event Minor Version</p>
       "! Event minor version
       "! $minimum 0
-      event_minor_version       TYPE i,
+      event_minor_version TYPE i,
 
       "! <p class="shorttext">Event Patch Version</p>
       "! Event patch version
       "! $minimum 0
-      event_patch_version       TYPE i,
+      event_patch_version TYPE i,
 
       "! <p class="shorttext">Root Entity Name</p>
       "! Root entity name
       "! $required
-      entity_name               TYPE c LENGTH 30,
+      entity_name         TYPE c LENGTH 30,
 
       "! <p class="shorttext">Entity Event Name</p>
       "! Entity event name
       "! $required
-      entity_event_name         TYPE c LENGTH 30,
+      entity_event_name   TYPE c LENGTH 30,
     END OF ty_event.
 
   TYPES:

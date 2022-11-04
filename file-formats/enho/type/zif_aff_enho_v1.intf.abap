@@ -27,10 +27,10 @@ INTERFACE zif_aff_enho_v1
       supported              TYPE ty_customizing VALUE ' ',
       "! <p class="shorttext">Customizing not supported</p>
       "! Customizing is not supported
-      not_supported              TYPE ty_customizing VALUE 'X',
+      not_supported          TYPE ty_customizing VALUE 'X',
       "! <p class="shorttext">Customizing supported (no transport)</p>
       "! Customizing is supported (without transport)
-      supported_no_transport              TYPE ty_customizing VALUE 'D',
+      supported_no_transport TYPE ty_customizing VALUE 'D',
     END OF co_customizing.
 
   "! <p class="shorttext">Filter Comparator</p>

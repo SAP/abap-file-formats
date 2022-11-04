@@ -38,11 +38,11 @@ INTERFACE zif_aff_chdo_v1
       "! <p class="shorttext">Name</p>
       "! Name of table or structure
       "! $required
-      name                TYPE c LENGTH 30,
+      name                TYPE c         LENGTH 30,
       "! <p class="shorttext">Reference Table</p>
       "! Reference table for currencies and units
       "! $showAlways
-      reference_table     TYPE c LENGTH 30,
+      reference_table     TYPE c         LENGTH 30,
       "! <p class="shorttext">Log Multiple Changes</p>
       "! Specifies whether multiple changes can be logged
       "! $showAlways
@@ -77,12 +77,11 @@ INTERFACE zif_aff_chdo_v1
       number TYPE n LENGTH 3,
     END OF ty_errormess.
 
-  TYPES:
   "! <p class="shorttext">Category</p>
   "! Change Document Category
   "! $values {@link zif_aff_chdo_v1.data:co_category}
   "! $default {@link zif_aff_chdo_v1.data:co_category.standard }
-    ty_category TYPE c LENGTH 1.
+  TYPES ty_category TYPE c LENGTH 1.
 
   CONSTANTS:
     "! <p class="shorttext">Category Values</p>
