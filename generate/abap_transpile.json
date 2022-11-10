@@ -18,7 +18,7 @@
     "addFilenames": true,
     "addCommonJS": true,
     "unknownTypes": "runtimeError",
-    "extraSetup": "../test/setup.mjs",
+    "extraSetup": "../setup.mjs",
     "skip": []
   }
 }
