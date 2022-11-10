@@ -7,6 +7,7 @@
   "releaseState": "notReleased",
   "exceptionClasses": true,
   "includeNumber": "01",
+  "notExecutable": true,
   "parameters": [
     {
       "name": "I_PARAM",
