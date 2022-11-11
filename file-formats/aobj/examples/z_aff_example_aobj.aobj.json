@@ -1,0 +1,24 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Example Object",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "attributes": {
+    "writeClass": "CL_ARCH_EXAMPLE_WRITE",
+    "deleteClass": "CL_ARCH_EXAMPLE_DELETE",
+    "reloadClass": "CL_ARCH_EXAMPLE_RELOAD",
+    "storageClass": "CL_ARCH_EXAMPLE_STORE"
+  },
+  "tablesToBeArchived": [
+    {
+      "name": "SBOOK"
+    }
+  ],
+  "archivingClasses": [
+    {
+      "name": "CHANGEDOCU"
+    }
+  ]
+}
