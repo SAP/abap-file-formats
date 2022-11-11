@@ -1,11 +1,10 @@
 name: Validate JSON
 
 on:
-  push:
-    branches-ignore: [main]
-    # Remove the line above to run when pushing to master
   pull_request:
-    branches: [main]
+
+permissions:
+  contents: read
 
 jobs:
   build:
@@ -13,6 +12,8 @@ jobs:
     name: Validate JSON with python jsonschema
 
     runs-on: ubuntu-latest
+
+    timeout-minutes: 10
 
     steps:
     - uses: actions/checkout@v2
