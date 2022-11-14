@@ -1,0 +1,29 @@
+{
+  "name": "abap-file-formats",
+  "private": true,
+  "version": "0.0.0",
+  "description": "File formats that define and specify the file representation for ABAP development objects",
+  "scripts": {
+    "pull": "oras-pull ghcr.io/sap/abap-file-formats-tools/abap-file-formats-tools:latest",
+    "copy": "cp ../file-formats/*.abap downport && cp ../file-formats/*/type/*.abap downport && cp cl_run.clas.abap downport",
+    "transpile": "rm -rf output && abap_transpile abap_transpile.json",
+    "generate": "rm -rf generated && node aff.mjs",
+    "test": "rm -rf downport && npm run pull && npm run copy && npm run transpile && npm run generate"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SAP/abap-file-formats.git"
+  },
+  "author": "SAP",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SAP/abap-file-formats/issues"
+  },
+  "homepage": "https://github.com/SAP/abap-file-formats#readme",
+  "dependencies": {
+    "oras-pull": "^0.1.3",
+    "@abaplint/runtime": "^2.3.40",
+    "@abaplint/database-sqlite": "^2.3.38",
+    "@abaplint/transpiler-cli": "^2.3.40"
+  }
+}

@@ -1,0 +1,17 @@
+name: Generate Schemas
+
+on:
+  pull_request:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+    - name: Run
+      run: |
+        cd generate
+        npm ci
+        npm test

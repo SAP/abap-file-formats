@@ -1,26 +1,11 @@
 {
   "formatVersion": "1",
   "header": {
-    "description": "Example description for SAP Object Type.",
+    "description": "Example SAP Object Type.",
     "originalLanguage": "en"
   },
   "typeCategory": "businessObject",
-  "rootNodeType": {
-    "name": "Z_Aff_Example_Ront",
-    "description": "Short text description for root SAP Object Node Type."
-  },
-  "nodeTypes": [
-    {
-      "name": "nodeType1",
-      "description": "Short text description for SAP Object Node Type 1."
-    },
-    {
-      "name": "nodeType2",
-      "description": "Short text description for SAP Object Node Type 2."
-    },
-    {
-      "name": "nodeType3",
-      "description": "Short text description for SAP Object Node Type 3."
-    }
-  ]
+  "name": "Z_Aff_Example_Ront",
+  "expandedName": "Z_Aff_Example_Ront_Expanded",
+  "objectTypeCode": "12345"
 }
