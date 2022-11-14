@@ -1,5 +1,5 @@
 # ABAP File Formats
-
+<!-- markdown-link-check-disable-next-line -->
 [![REUSE status](https://api.reuse.software/badge/github.com/SAP/abap-file-formats)](https://api.reuse.software/info/github.com/SAP/abap-file-formats)
 
 ## Description
@@ -43,4 +43,5 @@ More details are found in [Contributing](./CONTRIBUTING.md).
 
 ## Licensing
 
+<!-- markdown-link-check-disable-next-line -->
 Please see our [LICENSE](LICENSE) for copyright and license information. Detailed information including third-party components and their licensing/copyright information is available via the [REUSE tool](https://api.reuse.software/info/github.com/SAP/abap-file-formats).

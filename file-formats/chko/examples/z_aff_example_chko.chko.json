@@ -9,8 +9,7 @@
   "parameters": [
     {
       "name": "ParameterName",
-      "description": "Parameter description",
-      "hidden": true
+      "description": "Parameter description"
     }
   ]
 }
