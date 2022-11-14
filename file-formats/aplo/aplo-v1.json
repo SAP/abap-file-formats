@@ -62,7 +62,7 @@
       "type": "array",
       "items": {
         "title": "Subobject",
-        "description": "Attibutes of the subobject",
+        "description": "Attributes of the subobject",
         "type": "object",
         "properties": {
           "name": {
@@ -88,6 +88,7 @@
   "additionalProperties": false,
   "required": [
     "formatVersion",
-    "header"
+    "header",
+    "subobjects"
   ]
 }

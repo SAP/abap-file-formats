@@ -74,7 +74,7 @@
           "enumDescriptions": [
             "Class"
           ],
-          "default": "class"
+          "default": "CLAS"
         },
         "name": {
           "title": "Name",

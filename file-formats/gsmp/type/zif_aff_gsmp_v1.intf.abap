@@ -21,8 +21,8 @@ INTERFACE zif_aff_gsmp_v1
     "! $default {@link zif_aff_gsmp_v1.data:co_priority.normal}
     ty_priority   TYPE i,
 
-    "! <p class="shorttext">Implementation</p>
-    "! Implementation
+    "! <p class="shorttext">Implementing Object</p>
+    "! Implementing object
     BEGIN OF ty_provider_implementation,
 
       "! <p class="shorttext">Type</p>
@@ -37,8 +37,8 @@ INTERFACE zif_aff_gsmp_v1
 
     END OF ty_provider_implementation,
 
-    "! <p class="shorttext">Execution</p>
-    "! Execution
+    "! <p class="shorttext">Execution Configuration</p>
+    "! Execution configuration
     BEGIN OF ty_provider_execution,
 
       "! <p class="shorttext">Mode</p>
