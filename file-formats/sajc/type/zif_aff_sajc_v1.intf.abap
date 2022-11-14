@@ -25,7 +25,7 @@ INTERFACE zif_aff_sajc_v1
   TYPES ty_report_name TYPE c LENGTH 40.
 
   TYPES:
-    "! <p class="shorttext">General Information</p>
+    "! <p class="shorttext">Application Job Catalog Entry</p>
     "! Attributes of the application job catalog entry
     BEGIN OF ty_main,
       "! $required
