@@ -87,7 +87,7 @@
       "title": "Expanded Name",
       "description": "Expanded name",
       "type": "string",
-      "maxLength": 255
+      "maxLength": 512
     },
     "objectTypeCode": {
       "title": "Object Type Code",
