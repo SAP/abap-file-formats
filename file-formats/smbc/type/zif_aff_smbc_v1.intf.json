@@ -16,7 +16,7 @@
       },
       {
         "name": "TY_OBJECT_PAGE",
-        "description": "Object Page Configuration"
+        "description": "Object Page Settings"
       },
       {
         "name": "TY_OBJECT_PAGES",
@@ -29,6 +29,14 @@
       {
         "name": "TY_SETTINGS",
         "description": "Confguration of List Report and Object Pages"
+      },
+      {
+        "name": "TY_TABLE_SETTING",
+        "description": "Table Settings"
+      },
+      {
+        "name": "TY_TABLE_SETTINGS",
+        "description": "Table Settings"
       },
       {
         "name": "TY_TABLE_TYPE",
@@ -45,8 +53,20 @@
         "description": "Initial Load"
       },
       {
+        "name": "CO_LIST_VARIANT_MANAGEMENT",
+        "description": "List Report Variant Management"
+      },
+      {
+        "name": "CO_PAGE_VARIANT_MANAGEMENT",
+        "description": "Object Page Variant Management"
+      },
+      {
         "name": "CO_SECTION_LAYOUT",
         "description": "Section Layout"
+      },
+      {
+        "name": "CO_SELECTION_MODE",
+        "description": "Selection Mode"
       },
       {
         "name": "CO_TABLE_TYPE",
