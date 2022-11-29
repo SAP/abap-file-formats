@@ -30,7 +30,7 @@ INTERFACE zif_aff_dobj_v1
       "! <p class="shorttext">Destruction Program</p>
       "! Destruction Program
       "! $required
-      destr_program        TYPE char40,
+      destr_program        TYPE progname,
       "! <p class="shorttext">Application Component</p>
       "! Application Component
       applic_component     TYPE uffctr,
@@ -51,7 +51,7 @@ INTERFACE zif_aff_dobj_v1
       "! <p class="shorttext">Description</p>
       "! Description
       "! $required
-      description    TYPE char50,
+      description    TYPE text50,
       "! <p class="shorttext">Data destruction object</p>
       "!Data destruction object
       "! $required
