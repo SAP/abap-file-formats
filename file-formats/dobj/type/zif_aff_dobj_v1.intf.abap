@@ -33,7 +33,7 @@ INTERFACE zif_aff_dobj_v1
       destr_program        TYPE zif_aff_types_v1=>ty_description_60,
       "! <p class="shorttext">Application Component</p>
       "! Application Component
-      applic_component     TYPE uffctr,
+      applic_component     TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Structure Definition</p>
       "! Structure Definition
       structure_definition TYPE ty_structure_definitions,

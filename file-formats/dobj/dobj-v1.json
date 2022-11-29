@@ -77,7 +77,7 @@
           "title": "Application Component",
           "description": "Application Component",
           "type": "string",
-          "maxLength": 20
+          "maxLength": 30
         },
         "structureDefinition": {
           "title": "Structure Definition",
