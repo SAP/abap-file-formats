@@ -60,7 +60,7 @@
       "title": "Description",
       "description": "Description",
       "type": "string",
-      "maxLength": 50
+      "maxLength": 60
     },
     "dobjDetails": {
       "title": "Data destruction object",
@@ -71,7 +71,7 @@
           "title": "Destruction Program",
           "description": "Destruction Program",
           "type": "string",
-          "maxLength": 40
+          "maxLength": 60
         },
         "applicComponent": {
           "title": "Application Component",
