@@ -1,7 +1,7 @@
 INTERFACE zif_aff_dobj_v1
   PUBLIC.
 
-  TYPES :
+  TYPES:
     "! <p class="shorttext">Structure Definition</p>
     "! Structure Definition
     BEGIN OF ty_structure_definition,
@@ -12,30 +12,31 @@ INTERFACE zif_aff_dobj_v1
       "! <p class="shorttext">Parent Table</p>
       "! Parent Table
       "! $required
-      parent_table    TYPE arc_destr_parent,
+      parent_table    TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Dependent table</p>
       "! Dependent table
       "! $required
-      dependent_table TYPE arc_destr_dependent,
-
+      dependent_table TYPE zif_aff_types_v1=>ty_object_name_30,
     END OF ty_structure_definition,
-    tt_structure_definition TYPE SORTED TABLE OF  ty_structure_definition WITH UNIQUE KEY record_no.
+    "! <p class="shorttext">Structure Definitions</p>
+    "! Structure Definitions
+    ty_structure_definitions TYPE SORTED TABLE OF  ty_structure_definition WITH UNIQUE KEY record_no.
 
 
-  TYPES :
+  TYPES:
     "! <p class="shorttext">Data destruction object</p>
     "! $required
     BEGIN OF ty_dobj_details,
       "! <p class="shorttext">Destruction Program</p>
       "! Destruction Program
       "! $required
-      destr_program        TYPE arc_destr_destr_prog,
+      destr_program        TYPE char40,
       "! <p class="shorttext">Application Component</p>
       "! Application Component
       applic_component     TYPE uffctr,
       "! <p class="shorttext">Structure Definition</p>
       "! Structure Definition
-      structure_definition TYPE tt_structure_definition,
+      structure_definition TYPE ty_structure_definitions,
     END OF ty_dobj_details.
   TYPES:
     "! <p class="shorttext">Data Destruction Object</p>
@@ -50,7 +51,7 @@ INTERFACE zif_aff_dobj_v1
       "! <p class="shorttext">Description</p>
       "! Description
       "! $required
-      description    TYPE arc_destr_obj_text,
+      description    TYPE char50,
       "! <p class="shorttext">Data destruction object</p>
       "!Data destruction object
       "! $required
