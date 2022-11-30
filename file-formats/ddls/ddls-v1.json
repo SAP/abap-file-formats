@@ -61,7 +61,7 @@
     },
     "sourceOrigin": {
       "title": "Source Origin",
-      "description": "Source Origin",
+      "description": "Source origin",
       "type": "string",
       "enum": [
         "abapDevelopmentTools",
@@ -89,20 +89,20 @@
       ],
       "enumDescriptions": [
         "ABAP Development Tools",
-        "Custom CDS Views",
-        "Custom Analytical Queries",
-        "Custom Business Object",
-        "Custom Code List",
-        "Custom CDS Views for Variant Configurations",
-        "Custom Fields",
-        "Extensions for Data Sources",
-        "Custom Search Modeler",
-        "Service Consumption Model"
+        "Custom CDS views",
+        "Custom analytical queries",
+        "Custom business object",
+        "Custom code list",
+        "Custom CDS views for variant configurations",
+        "Custom fields",
+        "Extensions for data sources",
+        "Custom search modeler",
+        "Service consumption model"
       ]
     },
     "sourceType": {
       "title": "Source Type",
-      "description": "Source Type",
+      "description": "Source type",
       "type": "string",
       "enum": [
         "ddicBasedView",
@@ -129,21 +129,21 @@
         "Projection View"
       ],
       "enumDescriptions": [
-        "DDIC-Based Views",
-        "View Entity",
-        "View Extend",
-        "View Entity Extend",
-        "Table Function",
-        "Table Entity",
-        "Abstract Entity",
-        "Custom Entity",
+        "DDIC-based views",
+        "View entity",
+        "View extend",
+        "View entity extend",
+        "Table function",
+        "Table entity",
+        "Abstract entity",
+        "Custom entity",
         "Hierarchy",
-        "Projection View"
+        "Projection view"
       ]
     },
     "parentName": {
       "title": "Parent Name",
-      "description": "DDLS Name of the parent of an extend",
+      "description": "DDLS name of the parent of an extend",
       "type": "string",
       "maxLength": 40
     }
