@@ -1,0 +1,202 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "YY1_AFF_Example",
+    "originalLanguage": "en"
+  },
+  "externalName": "YY1_AFF_Example",
+  "type": "list",
+  "typeDetails": {
+    "length": 1
+  },
+  "uiTexts": [
+    {
+      "language": "de",
+      "fieldLabel": "(DE) YY1_AFF_Example",
+      "fieldTooltip": "(DE) YY1_AFF_Example"
+    },
+    {
+      "language": "en",
+      "fieldLabel": "(EN) YY1_AFF_Example",
+      "fieldTooltip": "(EN) YY1_AFF_Example"
+    },
+    {
+      "language": "fr",
+      "fieldLabel": "(FR) YY1_AFF_Example",
+      "fieldTooltip": "(FR) YY1_AFF_Example"
+    }
+  ],
+  "codeListValues": [
+    {
+      "code": "B"
+    },
+    {
+      "code": "G"
+    },
+    {
+      "code": "R"
+    },
+    {
+      "code": "Y",
+      "isDisabled": true
+    }
+  ],
+  "codeListDescriptions": [
+    {
+      "language": "de",
+      "code": "B",
+      "description": "Blau"
+    },
+    {
+      "language": "en",
+      "code": "B",
+      "description": "Blue"
+    },
+    {
+      "language": "fr",
+      "code": "B",
+      "description": "Bleu"
+    },
+    {
+      "language": "de",
+      "code": "G",
+      "description": "Grün"
+    },
+    {
+      "language": "en",
+      "code": "G",
+      "description": "Green"
+    },
+    {
+      "language": "fr",
+      "code": "G",
+      "description": "Vert"
+    },
+    {
+      "language": "de",
+      "code": "R",
+      "description": "Rot"
+    },
+    {
+      "language": "en",
+      "code": "R",
+      "description": "Red"
+    },
+    {
+      "language": "fr",
+      "code": "R",
+      "description": "Rouge"
+    },
+    {
+      "language": "de",
+      "code": "Y",
+      "description": "Gelb"
+    },
+    {
+      "language": "en",
+      "code": "Y",
+      "description": "Yellow"
+    },
+    {
+      "language": "fr",
+      "code": "Y",
+      "description": "Jaune"
+    }
+  ],
+  "extendedBusinessContexts": [
+    {
+      "businessContext": "CFD_TSM_BUPA"
+    },
+    {
+      "businessContext": "CFD_TSM_INV"
+    },
+    {
+      "businessContext": "CFD_TSM_SO_HEADER"
+    }
+  ],
+  "extendedCdsViews": [
+    {
+      "cdsViewName": "C_CFDTSM_BUPATP",
+      "businessContext": "CFD_TSM_BUPA"
+    },
+    {
+      "cdsViewName": "C_CFD_TSM_BUPA_PUBLISH",
+      "businessContext": "CFD_TSM_BUPA"
+    },
+    {
+      "cdsViewName": "C_CFD_TSM_BUPA_RAP",
+      "businessContext": "CFD_TSM_BUPA",
+      "badiImplForVisibilityCtrl": "ZZ1_TDBL_BUPAHEADV1"
+    },
+    {
+      "cdsViewName": "C_CFD_TSM_BUPA_RAP_PROJECTION",
+      "businessContext": "CFD_TSM_BUPA"
+    },
+    {
+      "cdsViewName": "C_CFD_TSM_BUPA_RAP_RELEASED",
+      "businessContext": "CFD_TSM_BUPA"
+    },
+    {
+      "cdsViewName": "I_CFDTSM_BUPA",
+      "businessContext": "CFD_TSM_BUPA"
+    },
+    {
+      "cdsViewName": "I_CFDTSM_BUPATP",
+      "businessContext": "CFD_TSM_BUPA"
+    },
+    {
+      "cdsViewName": "I_CFD_TSM_BUPA_PUBLISH",
+      "businessContext": "CFD_TSM_BUPA"
+    },
+    {
+      "cdsViewName": "I_CFD_TSM_BUPA_RAP_BO",
+      "businessContext": "CFD_TSM_BUPA"
+    },
+    {
+      "cdsViewName": "I_CFD_TSM_BUPA_RAP_BO_MANAGED",
+      "businessContext": "CFD_TSM_BUPA"
+    },
+    {
+      "cdsViewName": "I_CFD_TSM_INV",
+      "businessContext": "CFD_TSM_INV"
+    },
+    {
+      "cdsViewName": "I_CFD_TSM_RAP_SO_MANAGED",
+      "businessContext": "CFD_TSM_SO_HEADER"
+    }
+  ],
+  "extendedOdataServices": [
+    {
+      "odataServiceKey": "CFD_TSM_BUPA_MAINTAIN_RDS_SRV 0001",
+      "businessContext": "CFD_TSM_BUPA"
+    },
+    {
+      "odataServiceKey": "CFD_TSM_BUPA_MAINT_SRV 0001",
+      "businessContext": "CFD_TSM_BUPA"
+    },
+    {
+      "odataServiceKey": "CFD_TSM_CUSTOMER_INV_MAINT_SRV 0001",
+      "businessContext": "CFD_TSM_INV"
+    }
+  ],
+  "extendedBusinessScenarios": [
+    {
+      "businessScenario": "CFD_BUPA_2_INVOICE",
+      "dataTransfer": "CFD_BUPA_2_SALES_ORDER"
+    },
+    {
+      "businessScenario": "CFD_BUPA_2_INVOICE",
+      "dataTransfer": "CFD_SALES_ORDER_2_INVOICE"
+    }
+  ],
+  "extendedDynproContexts": [
+    {
+      "dynproContext": "CFD_TSM_BUPA_GUI",
+      "businessContext": "CFD_TSM_BUPA"
+    },
+    {
+      "dynproContext": "CFD_TSM_SO_HEADER_GUI",
+      "businessContext": "CFD_TSM_SO_HEADER"
+    }
+  ]
+}
