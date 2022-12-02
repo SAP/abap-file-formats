@@ -13,21 +13,21 @@ INTERFACE zif_aff_nont_v1
       header          TYPE zif_aff_types_v1=>ty_header_60_cloud,
 
       "! <p class="shorttext">Name</p>
-      "! Node type name in camel case
+      "! The name of the SAP Object Node Type.
       "! $required
       name            TYPE c LENGTH 30,
 
       "! <p class="shorttext">Expanded Name</p>
-      "! Expanded name
+      "! The expanded name of the SAP Object Node Type.
       "! $required
       expanded_name   TYPE c LENGTH 512,
 
       "! <p class="shorttext">SAP Object Type</p>
-      "! Name of SAP object type
+      "! The name of referenced SAP Object Type.
       sap_object_type TYPE c LENGTH 30,
 
       "! <p class="shorttext">Root Node Flag</p>
-      "! SAP object root node indicator
+      "! Indicates the SAP Object Node Type corresponding to the referenced SAP Object Type.
       root_node_flag  TYPE abap_bool,
 
     END OF ty_main.
