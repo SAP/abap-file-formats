@@ -14,7 +14,7 @@ INTERFACE zif_aff_nrob_v1
       number_length_domain TYPE c LENGTH 30,
       "! <p class="shorttext">Percent Warning</p>
       "! Percentage of numbers remaining in a number range, upon reaching which in number assignment
-      "! a warning is given. It must be between 0.1 and 99.9.\n\nExample: You have defined an interval
+      "! a warning is given. It must be between 0.1 and 99.9. Example: You have defined an interval
       "!  from 1 to 1000. If you want to issue a warning at the number 900, enter 10 (%) here.
       "! $required
       "! $minimum: 0.1
@@ -90,7 +90,7 @@ INTERFACE zif_aff_nrob_v1
       buffering        TYPE ty_buffering,
       "! <p class="shorttext">Buffered Numbers</p>
       "! This value specifies the numbers in buffer. In case of parallel and main memory buffering, add a
-      "! number for \u0027bufferedNumbers\u0027. It determines how many numbers are reserved in buffer for
+      "! number for 'bufferedNumbers'. It determines how many numbers are reserved in buffer for
       "!  the intervals.Default number of buffers is 10.
       "! $required
       "! $minimum 0
