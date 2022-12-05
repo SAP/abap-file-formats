@@ -18,7 +18,7 @@ INTERFACE zif_aff_nont_v1
       name            TYPE c LENGTH 30,
 
       "! <p class="shorttext">Expanded Name</p>
-      "! The expanded name of the SAP Object Node Type.
+      "! The expanded name of the SAP Object Node Type further describes the SAP Object Node Type
       "! $required
       expanded_name   TYPE c LENGTH 512,
 
