@@ -74,7 +74,7 @@
     },
     "rootNodeFlag": {
       "title": "Root Node Flag",
-      "description": "Indicates the SAP Object Node Type corresponding to the referenced SAP Object Type.",
+      "description": "Indicates that the SAP Object Node Type corresponds to the referenced SAP Object Type.",
       "type": "boolean"
     }
   },
