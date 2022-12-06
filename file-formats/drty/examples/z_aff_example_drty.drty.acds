@@ -1,0 +1,3 @@
+@EndUserText.label : 'This is a test label simple type'
+@EndUserText.quickInfo : 'This is the quick info for the simple type'
+define type z_aff_example_drty : abap.char( 10 ); 

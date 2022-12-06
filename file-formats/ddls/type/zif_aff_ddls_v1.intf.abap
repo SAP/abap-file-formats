@@ -2,12 +2,12 @@ INTERFACE zif_aff_ddls_v1
   PUBLIC.
 
   "! <p class="shorttext">Source Type</p>
-  "! Source Type
+  "! Source type
   "! $values {@link zif_aff_ddls_v1.data:co_source_type}
   TYPES ty_source_type TYPE c LENGTH 1.
 
   "! <p class="shorttext">Source Origin</p>
-  "! Source Origin
+  "! Source origin
   "! $values {@link zif_aff_ddls_v1.data:co_source_origin}
   TYPES ty_source_origin TYPE c LENGTH 1.
 
@@ -15,35 +15,35 @@ INTERFACE zif_aff_ddls_v1
     "! <p class="shorttext">Source Type</p>
     "! Source type
     BEGIN OF co_source_type,
-      "! <p class="shorttext">View</p>
-      "! View
-      view               TYPE ty_source_type VALUE 'V',
+      "! <p class="shorttext">DDIC-Based Views</p>
+      "! DDIC-based views
+      ddic_based_view    TYPE ty_source_type VALUE 'V',
       "! <p class="shorttext">View Entity</p>
-      "! View Entity
+      "! View entity
       view_entity        TYPE ty_source_type VALUE 'W',
       "! <p class="shorttext">View Extend</p>
-      "! View Extend
+      "! View extend
       view_extend        TYPE ty_source_type VALUE 'E',
       "! <p class="shorttext">View Entity Extend</p>
-      "! View Entity Extend
+      "! View entity extend
       view_entity_extend TYPE ty_source_type VALUE 'X',
       "! <p class="shorttext">Table Function</p>
-      "! Table Function
+      "! Table function
       table_function     TYPE ty_source_type VALUE 'F',
       "! <p class="shorttext">Table Entity</p>
-      "! Table Entity
+      "! Table entity
       table_entity       TYPE ty_source_type VALUE 'T',
       "! <p class="shorttext">Abstract Entity</p>
-      "! Abstract Entity
+      "! Abstract entity
       abstract_entity    TYPE ty_source_type VALUE 'A',
       "! <p class="shorttext">Custom Entity</p>
-      "! Custom Entity
+      "! Custom entity
       custom_entity      TYPE ty_source_type VALUE 'Q',
       "! <p class="shorttext">Hierarchy</p>
       "! Hierarchy
       hierarchy          TYPE ty_source_type VALUE 'H',
       "! <p class="shorttext">Projection View</p>
-      "! Projection View
+      "! Projection view
       projection_view    TYPE ty_source_type VALUE 'P',
     END OF co_source_type,
 
@@ -54,28 +54,28 @@ INTERFACE zif_aff_ddls_v1
       "! ABAP Development Tools
       abap_development_tools         TYPE ty_source_origin VALUE '0',
       "! <p class="shorttext">Custom CDS Views</p>
-      "! Custom CDS Views
+      "! Custom CDS views
       custom_cds_views               TYPE ty_source_origin VALUE '1',
       "! <p class="shorttext">Custom Analytical Queries</p>
-      "! Custom Analytical Queries
+      "! Custom analytical queries
       custom_analytical_queries      TYPE ty_source_origin VALUE '2',
       "! <p class="shorttext">Custom Business Object</p>
-      "! Custom Business Object
+      "! Custom business object
       custom_business_object         TYPE ty_source_origin VALUE '3',
       "! <p class="shorttext">Custom Code List</p>
-      "! Custom Code List
+      "! Custom code list
       custom_code_list               TYPE ty_source_origin VALUE '4',
       "! <p class="shorttext">Custom CDS Views for Variant Configurations</p>
-      "! Custom CDS Views for Variant Configurations
+      "! Custom CDS views for variant configurations
       custom_cds_views_variant_confg TYPE ty_source_origin VALUE '5',
       "! <p class="shorttext">Custom Fields</p>
-      "! Custom Fields
+      "! Custom fields
       custom_fields                  TYPE ty_source_origin VALUE '6',
       "! <p class="shorttext">Extensions for Data Sources</p>
-      "! Extensions for Data Sources
+      "! Extensions for data sources
       extensions_for_data_sources    TYPE ty_source_origin VALUE '7',
       "! <p class="shorttext">Custom Search Modeler</p>
-      "! Custom Search Modeler
+      "! Custom search modeler
       custom_search_modeler          TYPE ty_source_origin VALUE '8',
       "! <p class="shorttext">Service Consumption Model</p>
       "! Service Consumption Model
@@ -93,15 +93,15 @@ INTERFACE zif_aff_ddls_v1
       "! $required
       header         TYPE zif_aff_types_v1=>ty_header_60,
       "! <p class="shorttext">Source Origin</p>
-      "! Source Origin
+      "! Source origin
       "! $required
       source_origin  TYPE ty_source_origin,
       "! <p class="shorttext">Source Type</p>
-      "! Source Type
+      "! Source type
       "! $required
       source_type    TYPE ty_source_type,
       "! <p class="shorttext">Parent Name</p>
-      "! DDLS Name of the parent of an extend
+      "! DDLS name of the parent of an extend
       parent_name    TYPE c LENGTH 40,
     END OF ty_main.
 
