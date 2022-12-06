@@ -62,9 +62,9 @@
       "type": "string",
       "maxLength": 30
     },
-    "reportName": {
-      "title": "Executed Report",
-      "description": "Name of the report which is executed within the job",
+    "programName": {
+      "title": "Executed Program",
+      "description": "Name of the program which is executed within the job",
       "type": "string",
       "maxLength": 40
     },
