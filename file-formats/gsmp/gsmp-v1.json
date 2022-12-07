@@ -144,6 +144,24 @@
           ],
           "default": "normal"
         },
+        "instanceCreationMode": {
+          "title": "Instance Creation Mode",
+          "description": "Instance creation mode",
+          "type": "string",
+          "enum": [
+            "reuse",
+            "create"
+          ],
+          "enumTitles": [
+            "Reuse Instantiation",
+            "Create Instantiation"
+          ],
+          "enumDescriptions": [
+            "Reuse instantiation",
+            "Create instantiation"
+          ],
+          "default": "create"
+        },
         "scopeDependent": {
           "title": "Scope Dependent",
           "description": "Scope dependent",
