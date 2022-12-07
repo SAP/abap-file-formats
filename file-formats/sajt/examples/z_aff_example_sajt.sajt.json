@@ -1,0 +1,42 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Example for JCE_APJ_SIMPLE",
+    "originalLanguage": "en"
+  },
+  "catalogName": "JCE_APJ_SIMPLE",
+  "parameters": {
+    "singleValueParameters": [
+      {
+        "name": "P_COUNT",
+        "value": "200"
+      },
+      {
+        "name": "P_DESCR",
+        "value": "My Default Description"
+      },
+      {
+        "name": "P_SIMUL",
+        "value": "X"
+      }
+    ],
+    "valueRangesParameters": [
+      {
+        "name": "S_ID",
+        "valueRanges": [
+          {
+            "sign": "include",
+            "option": "equals",
+            "low": "4711"
+          },
+          {
+            "sign": "include",
+            "option": "between",
+            "low": "AAA",
+            "high": "ZZZ"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "AFF Example",
+    "originalLanguage": "en"
+  },
+  "implementation": {
+    "type": "CLAS",
+    "name": "ZCL_AFF_GSMP_TEST"
+  },
+  "execution": {
+    "mode": "system",
+    "priority": "normal",
+    "scopeDependent": false
+  }
+}

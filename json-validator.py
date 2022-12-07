@@ -3,83 +3,91 @@ import jsonschema
 from jsonschema import Draft7Validator
 from jsonschema import exceptions
 import os
+import glob
 import sys
-from git import Repo
-import pprint
+import re
 
-# provide ABAP objects as list
-# only schema for this objects are validated
-object_type = ['clas', 'intf', 'func', 'reps', 'nrob', 'chko', 'fugr', 'enho', 'enhs', 'chkv']
-nb_errors = 0
+msg_errors = list()
+schemas = glob.glob('./file-formats/*/*.json')
+json_in_repo = glob.glob('./file-formats/**/*.json', recursive=True)
+only_instances = set(json_in_repo) - set(schemas)
+instances = sorted(only_instances, key = lambda x:x[-9])
+instance_without_schema = []
 
-
-def get_all_files_from_repo():
-    repo = Repo('./')
-    git = repo.git
-    return git.ls_tree('-r', '--name-only', 'HEAD').split('\n')
-
-
-def gather_schemas( repo_objects ):
-    schemas = []
-    # find json schema of type <ABAB_object>.json
-    for object_with_path in repo_objects:
-        obj = os.path.basename(object_with_path)
-        if obj.startswith(tuple(object_type)) and obj.endswith('json'):
-            schemas.append(object_with_path)
-    return schemas
-
-
-def match_schema_instance( schemas, repo_objects ):
-    # build dict with key: json schema and value: json example
-    dict_json = {}
-    for schema in schemas:
-        filename = "." + os.path.basename(schema)
-        dict_json[schema] = list(filter(lambda el: el.endswith(filename) and os.path.basename(el) != filename, repo_objects))
-    print(f"::group::Print schema/instance matches")
-    pprint.pprint(dict_json)
-    print(f"::endgroup::")
-    return dict_json.items()
+def match_schema_instance( ):
+    matches = {}
+    for instance in instances:
+        # get ABAP object type
+        file_name = os.path.basename(instance)
+        try:
+            object_type = re.search('\.(([a-z]{4})+?)\.json', file_name).group(1)
+        except AttributeError:
+            continue
+        # access formatVersion
+        json_data = decode_json( instance )
+        try:
+            version = json_data["formatVersion"]
+        except KeyError:
+            continue
+        except TypeError:
+            # in case decoding failed
+            continue
+        # match data with schema
+        schema_name =  object_type + '-v'+ version + '.json'
+        schema = [s for s in schemas if schema_name in s]
+        try:
+            matches[instance] = schema[0]
+        except IndexError:
+            matches[instance] = ""
+            instance_without_schema.append(instance)
+    return matches
 
 def decode_json( file ):
-    global nb_errors
     with open(file, 'r') as json_f:
         try:
             json_instance = json.load(json_f)
         except json.JSONDecodeError as ex:
-            print(f"::error file={file},line={ex.lineno},col={ex.colno}::{ex.msg}")
-            nb_errors += 1
+            msg_errors.append(f"::error file={file},line={ex.lineno},col={ex.colno}::{ex.msg}")
         else:
             return json_instance
 
-def validate_json( schema, instances):
-    global nb_errors
+def validate_json( schema, instance ):
     json_schema = decode_json( schema )
-    for instance in instances:
-        json_instance = decode_json( instance )
-        try:
-            Draft7Validator(json_schema).validate(json_instance)
-        except jsonschema.exceptions.ValidationError as exVal:
-            nb_errors += 1
-            print(f"::error file={instance},line=1,col=1::{exVal.message}")
-        except jsonschema.exceptions.SchemaError as error_ex:
-            nb_errors += 1
-            print(f"::error file={instance},line=1,col=1::{error_ex.message}")
-        else:
-            #print(f"::set-output name={os.path.basename(instance).ljust(31)} valid instance of schema {os.path.basename(schema)}" )
-            print(os.path.basename(instance) + "\tvalid instance of schema " + os.path.basename(schema))
+    json_instance = decode_json( instance )
+    try:
+        Draft7Validator(json_schema).validate(json_instance)
+    except jsonschema.exceptions.ValidationError as exVal:
+        msg_errors.append(f"::error file={instance},line=1,col=1::{exVal.message} in {instance}")
+    except jsonschema.exceptions.SchemaError as error_ex:
+        msg_errors.print(f"::error file={instance},line=1,col=1::{error_ex.message} in {instance}")
+    else:
+        #print(f"::set-output name={os.path.basename(instance).ljust(31)} valid instance of schema {os.path.basename(schema)}" )
+        print( "valid: " + os.path.basename(schema) + "; " + os.path.basename(instance))
 
 
-def validate_json_and_example( schemas, repo_objects ):
-    dict_as_list = match_schema_instance( schemas, repo_objects)
+def validate_json_and_example( matches ):
     print(f"::group::Validate JSON")
-    for match in dict_as_list:
-        validate_json( match[0], match[1])
+    for match in matches:
+        # no schema found
+        if matches[match] == "":
+            continue
+        validate_json( matches[match], match )
     print(f"::endgroup::")
 
 
-repo_objects = get_all_files_from_repo()
-schemas = gather_schemas( repo_objects )
 
-validate_json_and_example( schemas, repo_objects)
-if nb_errors > 0:
+
+
+matches = match_schema_instance( )
+
+validate_json_and_example( matches )
+if len(instance_without_schema) > 0:
+    print("\nFiles without an associated JSON Schema in repository:")
+
+for instance in instance_without_schema:
+    print(f"::notice file={instance},line=1,col=1,endColumn=2::File without an associated JSON Schema in repository is {instance}")
+
+print()
+if len(msg_errors) > 0:
+    print(*msg_errors, sep='\n')
     sys.exit(1)

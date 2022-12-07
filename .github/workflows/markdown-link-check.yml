@@ -1,0 +1,17 @@
+name: Check Markdown links
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  markdown-link-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+    - uses: actions/checkout@main
+    - uses: gaurav-nelson/github-action-markdown-link-check@v1
+      with:
+        base-branch: 'main'

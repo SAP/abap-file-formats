@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/SAP/abap-file-formats/main/file-formats/fugr/func.json",
+  "formatVersion": "1",
   "header": {
     "description": "Example FUNC for ABAP file formats"
   },
@@ -7,6 +7,7 @@
   "releaseState": "notReleased",
   "exceptionClasses": true,
   "includeNumber": "01",
+  "notExecutable": true,
   "parameters": [
     {
       "name": "I_PARAM",

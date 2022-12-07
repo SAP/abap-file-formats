@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/SAP/abap-file-formats/main/file-formats/fugr/reps.json",
+  "formatVersion": "1",
   "header": {
     "description": "Example FUGR for ABAP file formats"
   },

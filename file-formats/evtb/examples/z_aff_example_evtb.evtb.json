@@ -1,0 +1,20 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Event binding example",
+    "originalLanguage": "en"
+  },
+  "producerNamespace": "sap.s4",
+  "producer": "PC59C0E46A5E8B597EB82CB1AA2890FE8",
+  "producerVersion": "0001",
+  "boName": "BusinessUser",
+  "boOperation": "Deleted",
+  "producerType": "sap.s4.BusinessUser.Deleted.v*",
+  "events": [
+    {
+      "eventVersion": "0001",
+      "entityName": "I_SBOI_RAP_ATC",
+      "entityEventName": "DELETED"
+    }
+  ]
+}

@@ -1,1 +1,1 @@
-FUNCTION-POOL Z_AFF_EXAMPLE_FUGR.           "MESSAGE-ID ..
+FUNCTION-POOL z_aff_example_fugr.           "MESSAGE-ID ..

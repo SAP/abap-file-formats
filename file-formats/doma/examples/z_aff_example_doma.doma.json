@@ -1,0 +1,20 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Example DOMA for ABAP file formats",
+    "originalLanguage": "en"
+  },
+  "dataType": "CHAR",
+  "length": 3,
+  "outputLength":3,
+  "fixedValues": [
+    {
+      "fixedValue": "ABC",
+      "description": "Fixed value ABC"
+    },
+    {
+      "fixedValue": "XYZ",
+      "description": "Fixed value XYZ"
+    }
+  ]
+}

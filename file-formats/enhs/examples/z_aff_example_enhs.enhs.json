@@ -1,9 +1,8 @@
 {
-  "$schema": "https://raw.githubusercontent.com/SAP/abap-file-formats/main/file-formats/enhs/enhs.json",
+  "formatVersion": "1",
   "header": {
     "description": "Example ENHS for ABAP file formats",
-    "masterLanguage": "EN",
-    "abapLanguageVersion": "standard"
+    "originalLanguage": "en"
   },
   "configuration": {
     "tool": "badiDefinition"
@@ -15,15 +14,11 @@
       "interface": "Z_AFF_EXAMPLE_BADI_INTF",
       "instantiation": "creatingNewInstances",
       "multipleUse": true,
-      "useFallbackClass": false,
-      "filterLimitation": false,
-      "documentationId": "",
-      "amdp": false,
       "filters": [
         {
           "name": "EXAMPLE_FILTER",
           "description": "This is an example Filter",
-          "type": "String"
+          "type": "string"
         }
       ]
     }

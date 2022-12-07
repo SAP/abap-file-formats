@@ -1,10 +1,8 @@
 {
-  "$schema": "https://raw.githubusercontent.com/SAP/abap-file-formats/main/file-formats/fugr/fugr.json",
+  "formatVersion": "1",
   "header": {
     "description": "Example FUGR for ABAP file formats",
-    "masterLanguage": "EN",
-    "abapLanguageVersion": "standardUnicode"
+    "originalLanguage": "en"
   },
-  "fixPointArithmetic": true,
-  "status": "notClassified"
+  "fixPointArithmetic": true
 }

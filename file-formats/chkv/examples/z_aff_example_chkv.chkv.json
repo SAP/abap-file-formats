@@ -1,18 +1,16 @@
 {
-  "$schema": "https://raw.githubusercontent.com/SAP/abap-file-formats/main/file-formats/chkv/chkv.json",
+  "formatVersion": "1",
   "header": {
-    "description": "Example CHKV for ABAP File Formats",
-    "masterLanguage": "EN",
-    "abapLanguageVersion": "standard"
+    "description": "Example CHKV for ABAP file formats",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
   },
-  "remoteEnabled": false,
   "selectedChecks": [
     {
       "checkName": "CI_SEARCH_ABAP_PATTERN",
       "parameters": [
         {
           "name": "StatementPattern",
-          "type": "tableOfSychar72",
           "valueList": [
             "CALL FUNCTION 'DB_EXISTS_INDEX' *",
             "CALL FUNCTION 'DD_INDEX_NAME' *"
@@ -20,8 +18,6 @@
         },
         {
           "name": "FindingSeverity",
-          "type": "sychar01",
-          "description": "Message Type",
           "value": "E"
         }
       ]
@@ -31,7 +27,6 @@
       "parameters": [
         {
           "name": "ABAPLanguageVersion",
-          "type": "enum_MSGF_CL_CI_TEST_EXTENDED_CHECK_VERS",
           "value": "4"
         }
       ]
@@ -41,30 +36,25 @@
       "parameters": [
         {
           "name": "ReleaseID",
-          "type": "sycm_release_id",
           "value": "S4HANA_READINESS_1809"
         },
         {
           "name": "SAPNotes",
-          "type": "rangeOfSycm_sap_note_number_db_ops",
           "valueRangeList": [
             {
               "sign": "exclude",
               "option": "equals",
-              "low": "0002470721",
-              "high": "0000000000"
+              "low": "0002470721"
             }
           ]
         },
         {
           "name": "SimplificationItemCategories",
-          "type": "rangeOfSycm_sitem_state",
           "valueRangeList": [
             {
               "sign": "exclude",
-              "option": "equals",
-              "low": "P",
-              "high": ""
+              "option": "lessEqual",
+              "low": "P"
             }
           ]
         }

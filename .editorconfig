@@ -4,16 +4,13 @@
 root = true
 
 # ensure the LF line endings
-[*.{abap,md,properties}]
+[*.{abap,md,properties,acds,json,mjs,gitignore}]
 charset = utf-8
 end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
 
 
-# we want indentation of 4 spaces
 [*.json]
-charset = utf-8
-end_of_line = lf
 indent_style = space
 indent_size = 2
-trim_trailing_whitespace = true
-insert_final_newline = false
