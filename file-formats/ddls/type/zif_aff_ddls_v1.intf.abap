@@ -78,7 +78,7 @@ INTERFACE zif_aff_ddls_v1
       "! Custom search modeler
       custom_search_modeler          TYPE ty_source_origin VALUE '8',
       "! <p class="shorttext">Service Consumption Model</p>
-      "! Service consumption model
+      "! Service Consumption Model
       service_consumption_model      TYPE ty_source_origin VALUE '9',
     END OF co_source_origin.
 

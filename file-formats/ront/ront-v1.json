@@ -56,7 +56,7 @@
     },
     "typeCategory": {
       "title": "Type Category",
-      "description": "Type category",
+      "description": "The category of the SAP Object Type",
       "type": "string",
       "enum": [
         "businessObject",
@@ -79,19 +79,19 @@
     },
     "name": {
       "title": "Name",
-      "description": "Node type name in camel case",
+      "description": "The name of the SAP Object Type.",
       "type": "string",
       "maxLength": 30
     },
     "expandedName": {
       "title": "Expanded Name",
-      "description": "Expanded name",
+      "description": "The expanded name of the SAP Object Type is its unabbreviated name.",
       "type": "string",
       "maxLength": 512
     },
     "objectTypeCode": {
       "title": "Object Type Code",
-      "description": "Object type code",
+      "description": "The object type code uniquely identifies the SAP Object Type.",
       "type": "string",
       "maxLength": 5
     }

@@ -60,7 +60,7 @@ INTERFACE zif_aff_evtb_v1
       "! <p class="shorttext">Business Object</p>
       "! Business object
       "! $required
-      bo_name            TYPE zif_aff_types_v1=>ty_object_name_30,
+      bo_name            TYPE c LENGTH 30,
 
       "! <p class="shorttext">Business Object Operation</p>
       "! Business object operation
