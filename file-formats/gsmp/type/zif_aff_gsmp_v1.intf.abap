@@ -21,11 +21,11 @@ INTERFACE zif_aff_gsmp_v1
     "! $default {@link zif_aff_gsmp_v1.data:co_priority.normal}
     ty_priority   TYPE i,
 
-    "! <p class="shorttext">Instance Creation Mode</p>
-    "! Instance Creation Mode
-    "! $values {@link zif_aff_gsmp_v1.data:co_instance_creation_mode}
-    "! $default {@link zif_aff_gsmp_v1.data:co_instance_creation_mode.create}
-    ty_instance_creation_mode TYPE c LENGTH 1,
+    "! <p class="shorttext">Instantiation</p>
+    "! Instantiation
+    "! $values {@link zif_aff_gsmp_v1.data:co_instantiation}
+    "! $default {@link zif_aff_gsmp_v1.data:co_instantiation.create}
+    ty_instantiation TYPE c LENGTH 1,
 
     "! <p class="shorttext">Implementation</p>
     "! Implementation
@@ -57,10 +57,10 @@ INTERFACE zif_aff_gsmp_v1
       "! $required
       priority   TYPE ty_priority,
 
-      "! <p class="shorttext">Instance Creation Mode</p>
-      "! Instance creation mode
+      "! <p class="shorttext">Instantiation</p>
+      "! Instantiation
       "! $showAlways
-      instance_creation_mode TYPE ty_instance_creation_mode,
+      instantiation TYPE ty_instantiation,
 
       "! <p class="shorttext">Scope Dependent</p>
       "! Scope dependent
@@ -140,19 +140,19 @@ INTERFACE zif_aff_gsmp_v1
 
     END OF co_priority,
 
-    "! <p class="shorttext">Instance Creation Mode</p>
-    "! Instance creation mode
-    BEGIN OF co_instance_creation_mode,
+    "! <p class="shorttext">Instantiation</p>
+    "! Instantiation
+    BEGIN OF co_instantiation,
 
-      "! <p class="shorttext">Reuse Instantiation</p>
-      "! Reuse instantiation
-      reuse       TYPE ty_instance_creation_mode VALUE 'R',
+      "! <p class="shorttext">Reuse Instances</p>
+      "! Reuse instances
+      reuse       TYPE ty_instantiation VALUE 'R',
 
-      "! <p class="shorttext">Create Instantiation</p>
-      "! Create instantiation
-      create      TYPE ty_instance_creation_mode VALUE 'C',
+      "! <p class="shorttext">Creating New Instances</p>
+      "! Creating new instances
+      create      TYPE ty_instantiation VALUE 'C',
 
-    END OF co_instance_creation_mode.
+    END OF co_instantiation.
 
   TYPES:
 
