@@ -144,21 +144,21 @@
           ],
           "default": "normal"
         },
-        "instanceCreationMode": {
-          "title": "Instance Creation Mode",
-          "description": "Instance creation mode",
+        "instantiation": {
+          "title": "Instantiation",
+          "description": "Instantiation",
           "type": "string",
           "enum": [
             "reuse",
             "create"
           ],
           "enumTitles": [
-            "Reuse Instantiation",
-            "Create Instantiation"
+            "Reuse Instances",
+            "Creating New Instances"
           ],
           "enumDescriptions": [
-            "Reuse instantiation",
-            "Create instantiation"
+            "Reuse instances",
+            "Creating new instances"
           ],
           "default": "create"
         },
