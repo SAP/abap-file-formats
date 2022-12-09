@@ -2,41 +2,41 @@ INTERFACE zif_aff_dobj_v1
   PUBLIC.
 
   TYPES:
-    "! <p class="shorttext">Structure Definition</p>
-    "! Structure Definition
+    "! <p class="shorttext">Structure Definition Details</p>
+    "! Structure definition details
     BEGIN OF ty_structure_definition,
-      "! <p class="shorttext">Structure Definition</p>
-      "! Parent Table
+      "! <p class="shorttext">Item</p>
+      "! Item
       "! $required
-      record_no       TYPE n LENGTH 4,
+      item      TYPE n LENGTH 4,
       "! <p class="shorttext">Parent Table</p>
-      "! Parent Table
+      "! Parent table
       "! $required
       parent_table    TYPE zif_aff_types_v1=>ty_object_name_30,
-      "! <p class="shorttext">Dependent table</p>
+      "! <p class="shorttext">Dependent Table</p>
       "! Dependent table
       "! $required
       dependent_table TYPE zif_aff_types_v1=>ty_object_name_30,
     END OF ty_structure_definition,
     "! <p class="shorttext">Structure Definitions</p>
-    "! Structure Definitions
-    ty_structure_definitions TYPE SORTED TABLE OF  ty_structure_definition WITH UNIQUE KEY record_no.
+    "! Structure definitions
+    ty_structure_definitions TYPE SORTED TABLE OF  ty_structure_definition WITH UNIQUE KEY item.
 
 
   TYPES:
-    "! <p class="shorttext">Data destruction object</p>
+    "! <p class="shorttext">Data Destruction Object Details</p>
     "! $required
     BEGIN OF ty_dobj_details,
-      "! <p class="shorttext">Destruction Program</p>
-      "! Destruction Program
+      "! <p class="shorttext">Destruction Class</p>
+      "! Destruction class
       "! $required
-      destr_program        TYPE zif_aff_types_v1=>ty_description_60,
+      destructionClass    TYPE zif_aff_types_v1=>ty_description_60,
       "! <p class="shorttext">Application Component</p>
-      "! Application Component
-      applic_component     TYPE zif_aff_types_v1=>ty_object_name_30,
+      "! Application component
+      applicationComponent     TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Structure Definition</p>
-      "! Structure Definition
-      structure_definition TYPE ty_structure_definitions,
+      "! Structure definition
+      structureDefinition TYPE ty_structure_definitions,
     END OF ty_dobj_details.
   TYPES:
     "! <p class="shorttext">Data Destruction Object</p>
@@ -48,11 +48,7 @@ INTERFACE zif_aff_dobj_v1
       "! Header
       "! $required
       header         TYPE zif_aff_types_v1=>ty_header_60_cloud,
-      "! <p class="shorttext">Description</p>
-      "! Description
-      "! $required
-      description    TYPE zif_aff_types_v1=>ty_description_60,
-      "! <p class="shorttext">Data destruction object</p>
+      "! <p class="shorttext">Data Destruction Object</p>
       "!Data destruction object
       "! $required
       dobj_details   TYPE ty_dobj_details,

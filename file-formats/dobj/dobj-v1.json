@@ -56,54 +56,48 @@
         "originalLanguage"
       ]
     },
-    "description": {
-      "title": "Description",
-      "description": "Description",
-      "type": "string",
-      "maxLength": 60
-    },
     "dobjDetails": {
-      "title": "Data destruction object",
+      "title": "Data Destruction Object",
       "description": "Data destruction object",
       "type": "object",
       "properties": {
-        "destrProgram": {
-          "title": "Destruction Program",
-          "description": "Destruction Program",
+        "destructionclass": {
+          "title": "Destruction Class",
+          "description": "Destruction class",
           "type": "string",
           "maxLength": 60
         },
-        "applicComponent": {
+        "applicationcomponent": {
           "title": "Application Component",
-          "description": "Application Component",
+          "description": "Application component",
           "type": "string",
           "maxLength": 30
         },
-        "structureDefinition": {
+        "structuredefinition": {
           "title": "Structure Definition",
-          "description": "Structure Definition",
+          "description": "Structure definition",
           "type": "array",
           "uniqueItems": true,
           "items": {
-            "title": "Structure Definition",
-            "description": "Structure Definition",
+            "title": "Structure Definition Details",
+            "description": "Structure definition details",
             "type": "object",
             "properties": {
-              "recordNo": {
-                "title": "Structure Definition",
-                "description": "Parent Table",
+              "item": {
+                "title": "Item",
+                "description": "Item",
                 "type": "string",
                 "maxLength": 4,
                 "pattern": "^[0-9]+$"
               },
               "parentTable": {
                 "title": "Parent Table",
-                "description": "Parent Table",
+                "description": "Parent table",
                 "type": "string",
                 "maxLength": 30
               },
               "dependentTable": {
-                "title": "Dependent table",
+                "title": "Dependent Table",
                 "description": "Dependent table",
                 "type": "string",
                 "maxLength": 30
@@ -111,7 +105,7 @@
             },
             "additionalProperties": false,
             "required": [
-              "recordNo",
+              "item",
               "parentTable",
               "dependentTable"
             ]
@@ -120,7 +114,7 @@
       },
       "additionalProperties": false,
       "required": [
-        "destrProgram"
+        "destructionclass"
       ]
     }
   },
@@ -128,7 +122,6 @@
   "required": [
     "formatVersion",
     "header",
-    "description",
     "dobjDetails"
   ]
 }
