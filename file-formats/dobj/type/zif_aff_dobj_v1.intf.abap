@@ -30,13 +30,13 @@ INTERFACE zif_aff_dobj_v1
       "! <p class="shorttext">Destruction Class</p>
       "! Destruction class
       "! $required
-      destructionClass    TYPE zif_aff_types_v1=>ty_description_60,
+      destructionclass    TYPE zif_aff_types_v1=>ty_description_60,
       "! <p class="shorttext">Application Component</p>
       "! Application component
-      applicationComponent     TYPE zif_aff_types_v1=>ty_object_name_30,
+      applicationcomponent     TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Structure Definition</p>
       "! Structure definition
-      structureDefinition TYPE ty_structure_definitions,
+      structuredefinition TYPE ty_structure_definitions,
     END OF ty_dobj_details.
   TYPES:
     "! <p class="shorttext">Data Destruction Object</p>
