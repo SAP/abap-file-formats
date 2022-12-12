@@ -21,8 +21,14 @@ INTERFACE zif_aff_gsmp_v1
     "! $default {@link zif_aff_gsmp_v1.data:co_priority.normal}
     ty_priority   TYPE i,
 
-    "! <p class="shorttext">Implementing Object</p>
-    "! Implementing object
+    "! <p class="shorttext">Instantiation</p>
+    "! Instantiation
+    "! $values {@link zif_aff_gsmp_v1.data:co_instantiation}
+    "! $default {@link zif_aff_gsmp_v1.data:co_instantiation.create_new}
+    ty_instantiation TYPE c LENGTH 1,
+
+    "! <p class="shorttext">Implementation</p>
+    "! Implementation
     BEGIN OF ty_provider_implementation,
 
       "! <p class="shorttext">Type</p>
@@ -50,6 +56,11 @@ INTERFACE zif_aff_gsmp_v1
       "! Priority
       "! $required
       priority   TYPE ty_priority,
+
+      "! <p class="shorttext">Instantiation</p>
+      "! Instantiation
+      "! $showAlways
+      instantiation TYPE ty_instantiation,
 
       "! <p class="shorttext">Scope Dependent</p>
       "! Scope dependent
@@ -127,7 +138,21 @@ INTERFACE zif_aff_gsmp_v1
       "! Low
       low          TYPE ty_priority VALUE 400,
 
-    END OF co_priority.
+    END OF co_priority,
+
+    "! <p class="shorttext">Instantiation</p>
+    "! Instantiation
+    BEGIN OF co_instantiation,
+
+      "! <p class="shorttext">Reuse Instances</p>
+      "! Reuse instances
+      reuse       TYPE ty_instantiation VALUE 'R',
+
+      "! <p class="shorttext">Creating New Instances</p>
+      "! Creating new instances
+      create_new  TYPE ty_instantiation VALUE 'C',
+
+    END OF co_instantiation.
 
   TYPES:
 
