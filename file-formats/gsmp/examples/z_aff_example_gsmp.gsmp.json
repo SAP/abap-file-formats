@@ -11,7 +11,7 @@
   "execution": {
     "mode": "system",
     "priority": "normal",
-    "instantiation": "create",
+    "instantiation": "createNew",
     "scopeDependent": false
   }
 }
