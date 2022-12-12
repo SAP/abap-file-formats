@@ -24,7 +24,7 @@ INTERFACE zif_aff_gsmp_v1
     "! <p class="shorttext">Instantiation</p>
     "! Instantiation
     "! $values {@link zif_aff_gsmp_v1.data:co_instantiation}
-    "! $default {@link zif_aff_gsmp_v1.data:co_instantiation.create}
+    "! $default {@link zif_aff_gsmp_v1.data:co_instantiation.create_new}
     ty_instantiation TYPE c LENGTH 1,
 
     "! <p class="shorttext">Implementation</p>
@@ -150,7 +150,7 @@ INTERFACE zif_aff_gsmp_v1
 
       "! <p class="shorttext">Creating New Instances</p>
       "! Creating new instances
-      create      TYPE ty_instantiation VALUE 'C',
+      create_new  TYPE ty_instantiation VALUE 'C',
 
     END OF co_instantiation.
 
