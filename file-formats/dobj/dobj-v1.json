@@ -90,13 +90,13 @@
                 "maxLength": 4,
                 "pattern": "^[0-9]+$"
               },
-              "parentTable": {
+              "parenttable": {
                 "title": "Parent Table",
                 "description": "Parent table",
                 "type": "string",
                 "maxLength": 30
               },
-              "dependentTable": {
+              "dependenttable": {
                 "title": "Dependent Table",
                 "description": "Dependent table",
                 "type": "string",
@@ -106,8 +106,8 @@
             "additionalProperties": false,
             "required": [
               "item",
-              "parentTable",
-              "dependentTable"
+              "parenttable",
+              "dependenttable"
             ]
           }
         }
