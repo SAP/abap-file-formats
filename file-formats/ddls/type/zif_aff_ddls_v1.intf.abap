@@ -15,8 +15,8 @@ INTERFACE zif_aff_ddls_v1
     "! <p class="shorttext">Source Type</p>
     "! Source type
     BEGIN OF co_source_type,
-      "! <p class="shorttext">DDIC-Based Views</p>
-      "! DDIC-based views
+      "! <p class="shorttext">DDIC-Based View</p>
+      "! DDIC-based view
       ddic_based_view    TYPE ty_source_type VALUE 'V',
       "! <p class="shorttext">View Entity</p>
       "! View entity
