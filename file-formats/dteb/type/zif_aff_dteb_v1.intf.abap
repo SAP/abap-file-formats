@@ -10,7 +10,7 @@ INTERFACE zif_aff_dteb_v1
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header         TYPE zif_aff_types_v1=>ty_header_60,
+      header         TYPE zif_aff_types_v1=>ty_header_60_cloud,
     END OF ty_main.
 
 ENDINTERFACE.
