@@ -56,24 +56,24 @@
         "originalLanguage"
       ]
     },
-    "dobjDetails": {
+    "attributes": {
       "title": "Data Destruction Object",
       "description": "Data destruction object",
       "type": "object",
       "properties": {
-        "destructionclass": {
+        "destructionClass": {
           "title": "Destruction Class",
           "description": "Destruction class",
           "type": "string",
           "maxLength": 60
         },
-        "applicationcomponent": {
+        "applicationComponent": {
           "title": "Application Component",
           "description": "Application component",
           "type": "string",
           "maxLength": 30
         },
-        "structuredefinition": {
+        "structureDefinition": {
           "title": "Structure Definition",
           "description": "Structure definition",
           "type": "array",
@@ -90,13 +90,13 @@
                 "maxLength": 4,
                 "pattern": "^[0-9]+$"
               },
-              "parenttable": {
+              "parentTable": {
                 "title": "Parent Table",
                 "description": "Parent table",
                 "type": "string",
                 "maxLength": 30
               },
-              "dependenttable": {
+              "dependentTable": {
                 "title": "Dependent Table",
                 "description": "Dependent table",
                 "type": "string",
@@ -106,15 +106,15 @@
             "additionalProperties": false,
             "required": [
               "item",
-              "parenttable",
-              "dependenttable"
+              "parentTable",
+              "dependentTable"
             ]
           }
         }
       },
       "additionalProperties": false,
       "required": [
-        "destructionclass"
+        "destructionClass"
       ]
     }
   },
@@ -122,6 +122,6 @@
   "required": [
     "formatVersion",
     "header",
-    "dobjDetails"
+    "attributes"
   ]
 }

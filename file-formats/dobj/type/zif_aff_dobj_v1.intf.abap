@@ -12,11 +12,11 @@ INTERFACE zif_aff_dobj_v1
       "! <p class="shorttext">Parent Table</p>
       "! Parent table
       "! $required
-      parentTable    TYPE zif_aff_types_v1=>ty_object_name_30,
+      parent_Table    TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Dependent Table</p>
       "! Dependent table
       "! $required
-      dependentTable TYPE zif_aff_types_v1=>ty_object_name_30,
+      dependent_Table TYPE zif_aff_types_v1=>ty_object_name_30,
     END OF ty_structure_definition,
     "! <p class="shorttext">Structure Definitions</p>
     "! Structure definitions
@@ -30,13 +30,13 @@ INTERFACE zif_aff_dobj_v1
       "! <p class="shorttext">Destruction Class</p>
       "! Destruction class
       "! $required
-      destructionClass    TYPE zif_aff_types_v1=>ty_description_60,
+      destruction_Class    TYPE zif_aff_types_v1=>ty_description_60,
       "! <p class="shorttext">Application Component</p>
       "! Application component
-      applicationComponent     TYPE zif_aff_types_v1=>ty_object_name_30,
+      application_Component     TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Structure Definition</p>
       "! Structure definition
-      structureDefinition TYPE ty_structure_definitions,
+      structure_Definition TYPE ty_structure_definitions,
     END OF ty_dobj_details.
   TYPES:
     "! <p class="shorttext">Data Destruction Object</p>
@@ -51,7 +51,7 @@ INTERFACE zif_aff_dobj_v1
       "! <p class="shorttext">Data Destruction Object</p>
       "!Data destruction object
       "! $required
-      dobj_details   TYPE ty_dobj_details,
+      attributes   TYPE ty_dobj_details,
     END OF ty_main.
 
 ENDINTERFACE.
