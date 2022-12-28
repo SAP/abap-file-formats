@@ -18,16 +18,16 @@ INTERFACE zif_aff_nont_v1
       name            TYPE c LENGTH 30,
 
       "! <p class="shorttext">Expanded Name</p>
-      "! The expanded name of the SAP Object Node Type further describes the SAP Object Node Type
+      "! The expanded name of the SAP Object Node Type is its unabbreviated name.
       "! $required
       expanded_name   TYPE c LENGTH 512,
 
       "! <p class="shorttext">SAP Object Type</p>
-      "! The name of referenced SAP Object Type.
+      "! The name of the referenced SAP Object Type.
       sap_object_type TYPE c LENGTH 30,
 
       "! <p class="shorttext">Root Node Flag</p>
-      "! Indicates the SAP Object Node Type corresponding to the referenced SAP Object Type.
+      "! Indicates that the SAP Object Node Type corresponds to the referenced SAP Object Type.
       root_node_flag  TYPE abap_bool,
 
     END OF ty_main.
