@@ -62,13 +62,13 @@
     },
     "expandedName": {
       "title": "Expanded Name",
-      "description": "The expanded name of the SAP Object Node Type.",
+      "description": "The expanded name of the SAP Object Node Type is its unabbreviated name.",
       "type": "string",
       "maxLength": 512
     },
     "sapObjectType": {
       "title": "SAP Object Type",
-      "description": "The name of referenced SAP Object Type.",
+      "description": "The name of the referenced SAP Object Type.",
       "type": "string",
       "maxLength": 30
     },
