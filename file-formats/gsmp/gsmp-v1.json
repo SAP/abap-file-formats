@@ -144,6 +144,24 @@
           ],
           "default": "normal"
         },
+        "instantiation": {
+          "title": "Instantiation",
+          "description": "Instantiation",
+          "type": "string",
+          "enum": [
+            "reuse",
+            "createNew"
+          ],
+          "enumTitles": [
+            "Reuse Instances",
+            "Creating New Instances"
+          ],
+          "enumDescriptions": [
+            "Reuse instances",
+            "Creating new instances"
+          ],
+          "default": "createNew"
+        },
         "scopeDependent": {
           "title": "Scope Dependent",
           "description": "Scope dependent",
