@@ -62,19 +62,22 @@
         "businessObject",
         "technicalObject",
         "analyticalObject",
-        "configurationObject"
+        "configurationObject",
+        "dependentObject"
       ],
       "enumTitles": [
         "Business Object",
         "Technical Object",
         "Analytical Object",
-        "Configuration Object"
+        "Configuration Object",
+        "Dependent Object"
       ],
       "enumDescriptions": [
         "Business object",
         "Technical object",
         "Analytical object",
-        "Configuration object"
+        "Configuration object",
+        "Dependent object"
       ]
     },
     "name": {

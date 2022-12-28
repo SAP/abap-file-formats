@@ -15,6 +15,9 @@ INTERFACE zif_aff_ront_v1
       "! <p class="shorttext">Configuration Object</p>
       "! Configuration object
       configuration_object TYPE c LENGTH 2 VALUE `CO`,
+      "! <p class="shorttext">Dependent Object</p>
+      "! Dependent object
+      dependent_object TYPE c LENGTH 2 VALUE `DO`,
     END OF co_category.
 
   TYPES:
@@ -35,7 +38,7 @@ INTERFACE zif_aff_ront_v1
       type_category    TYPE c LENGTH 2,
 
       "! <p class="shorttext">Name</p>
-      "! Name of the SAP Object Type.
+      "! The name of the SAP Object Type.
       "! $required
       name             TYPE c LENGTH 30,
 
