@@ -1,5 +1,5 @@
 INTERFACE zif_aff_sush_v1
-  public .
+  PUBLIC .
 
   types:
     "! <p class="shorttext">Maintenance Mode</p>
