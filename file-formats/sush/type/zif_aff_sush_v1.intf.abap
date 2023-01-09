@@ -1,104 +1,186 @@
-INTERFACE zif_aff_sush_v1
-  PUBLIC.
+interface zif_aff_sush_v1
+  public .
 
-  TYPES:
+  types:
+    "! <p class="shorttext">Maintenance Mode</p>
+    "! Maintenance Mode
+    "! $values {@link zif_aff_sush_v1.data:co_usob_status_flag}
+    ty_usob_status_flag type c length 1,
+    "! <p class="shorttext">Maintenance Status</p>
+    "! Maintenance Status
+    "! $values {@link zif_aff_sush_v1.data:co_okflag}
+    "! $default {@link zif_aff_sush_v1.data:co_okflag.y_flag}
+    ty_okflag           type c length 1.
+
+  constants:
+    "! <p class="shorttext">Maintenance Mode</p>
+    "! Maintenance Mode
+    begin of co_usob_status_flag,
+      "! <p class="shorttext">Manual Maintenance</p>
+      "! Manual Maintenance
+      manual type ty_usob_status_flag value space,
+      "! <p class="shorttext">Autom. Maintenance (All Objects)</p>
+      "! Autom. Maintenance (All Objects)
+      a_flag type ty_usob_status_flag value 'A',
+      "! <p class="shorttext">Automatic Maintenance (Basis Authorization Objects Only)</p>
+      "! Automatic Maintenance (Basis Authorization Objects Only)
+      b_flag type ty_usob_status_flag value 'B',
+      "! <p class="shorttext">Application Does Not Require Default Values</p>
+      "! Application Does Not Require Default Values
+      i_flag type ty_usob_status_flag value 'I',
+      "! <p class="shorttext">Application is Deprecated</p>
+      "! Application is Deprecated
+      d_flag type ty_usob_status_flag value 'D',
+      "! <p class="shorttext">Application Is Obsolete</p>
+      "! Application Is Obsolete
+      o_flag type ty_usob_status_flag value 'O',
+    end of co_usob_status_flag,
+
+    "! <p class="shorttext">Maintenance Status</p>
+    "! Maintenance Status
+    begin of co_okflag,
+      "! <p class="shorttext">No Default</p>
+      "! No Default
+      x_flag type ty_okflag value 'X',
+      "! <p class="shorttext">Default With Field Values</p>
+      "! Default With Field Values
+      y_flag type ty_okflag value 'Y',
+      "! <p class="shorttext">Default Without Field Values</p>
+      "! Default Without Field Values
+      v_flag type ty_okflag value 'V',
+      "! <p class="shorttext">Default Inactive</p>
+      "! Default Inactive
+      i_flag type ty_okflag value 'I',
+      "! <p class="shorttext">Unmaintained Object Status</p>
+      "! Unmaintained Object Status
+      u_flag type ty_okflag value 'U',
+      "! <p class="shorttext">Authorization Check Inactive</p>
+      "! Authorization Check Inactive
+      n_flag type ty_okflag value 'N',
+    end of co_okflag.
+
+  types:
+    "! <p class="shorttext">Application Name</p>
+    "! Name of Application
+    ty_name type c length 30,
+    "! <p class="shorttext">Application Type</p>
+    "! Type of Application
+    ty_type type c length 2.
+
+  types:
     "! <p class="shorttext">General</p>
     "! General
     "! $required
-    BEGIN OF ty_general,
+    begin of ty_general,
       "! <p class="shorttext">Application Name</p>
       "! Application Name of Authorization Default Value.
       "! $required
-      obj_name TYPE string,
+      name   type ty_name,
       "! <p class="shorttext">Type</p>
       "! Type of Authorization Default Value.
       "! $required
-      type     TYPE usobtype,
+      type   type ty_type,
       "! <p class="shorttext">Maintenance Mode</p>
       "! Maintenance Mode.
+      "! $values {@link zif_aff_sush_v1.data:co_usob_status_flag}
       "! $required
-      okflag   TYPE usob_status_flag,
-    END OF ty_general.
+      okflag type ty_usob_status_flag,
+    end of ty_general .
 
-  TYPES:
+  types:
+    "! <p class="shorttext">Authorization Value</p>
+    "! Authorization Value
+    ty_val type c length 40.
+
+  types:
     "! <p class="shorttext">Default Authorization Values</p>
     "! Default Authorization Values
-    BEGIN OF ty_value,
+    begin of ty_value,
       "! <p class="shorttext">From</p>
       "! From Value
       "! $showAlways
-      low  TYPE xuval,
+      low  type ty_val,
       "! <p class="shorttext">To</p>
       "! To Values
       "! $showAlways
-      high TYPE xuval,
-    END OF ty_value.
+      high type ty_val,
+    end of ty_value .
 
-  "! <p class="shorttext">Authorization Fields</p>
-  "! Authorization Fields
-  TYPES ty_values  TYPE STANDARD TABLE OF ty_value WITH DEFAULT KEY.
+  types:
+    "! <p class="shorttext">Authorization Fields</p>
+    "! Authorization Fields
+    ty_values  type standard table of ty_value with default key.
 
-  TYPES:
+  types:
+    "! <p class="shorttext">Authorization Field</p>
+    "! Authorization Field
+    ty_field type c length 10.
+
+  types:
     "! <p class="shorttext">Authorization Field Details</p>
     "! Authorization Field Details
-    BEGIN OF ty_fldtablestruc,
+    begin of ty_fldtablestruc,
       "! <p class="shorttext">Field</p>
       "! Name of Authorization Field
       "! $required
-      field  TYPE xufield,
+      field  type ty_field,
       "! <p class="shorttext">Values</p>
       "! Name of Authorization Field Value
-      values TYPE ty_values,
-    END OF ty_fldtablestruc.
+      values type ty_values,
+    end of ty_fldtablestruc .
 
-  "! <p class="shorttext">Authorization Fields</p>
-  "! Authorization Fields
-  TYPES ty_authorization_fields  TYPE STANDARD TABLE OF ty_fldtablestruc WITH DEFAULT KEY.
+  types:
+    "! <p class="shorttext">Authorization Fields</p>
+    "! Authorization Fields
+    ty_authorization_fields  type standard table of ty_fldtablestruc with default key.
 
-  TYPES:
+  types:
     "! <p class="shorttext">Authorization Objects Details</p>
     "! Authorization Objects Details
-    BEGIN OF ty_objtablestruc,
+    begin of ty_objtablestruc,
       "! <p class="shorttext">Object</p>
       "! Name of Authorization Object
       "! $required
-      object TYPE xuobject,
+      object type c length 10,
       "! <p class="shorttext">Object Description</p>
       "! Authorization Object Description
       "! $showAlways
-      ttext  TYPE xutext,
+      ttext  type zif_aff_types_v1=>ty_description_60,
       "! <p class="shorttext">Maintenance Status</p>
       "! Maintenance Status
+            "! $values {@link zif_aff_sush_v1.data:co_okflag}
+      "! $default {@link zif_aff_sush_v1.data:co_okflag.y_flag}
       "! $showAlways
-      okflag TYPE xuokflag,
+      okflag type ty_okflag,
       "! <p class="shorttext">Fields</p>
       "! Authorization Fields.
       "! $showAlways
-      fields TYPE ty_authorization_fields,
+      fields type ty_authorization_fields,
 
-    END OF ty_objtablestruc.
+    end of ty_objtablestruc .
 
+  types:
   "! <p class="shorttext">Authorization Objects</p>
   "! Authorization Objects
-  TYPES ty_authorization_objects TYPE STANDARD TABLE OF ty_objtablestruc WITH DEFAULT KEY.
+    ty_authorization_objects type standard table of ty_objtablestruc with default key.
 
-  TYPES:
+  types:
     "! <p class="shorttext">SUSH Object Type</p>
     "! Object type SUSH
-    BEGIN OF  ty_main,
+    begin of  ty_main,
       "! $required
-      format_version        TYPE zif_aff_types_v1=>ty_format_version,
+      format_version        type zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header                TYPE zif_aff_types_v1=>ty_header_60_src,
+      header                type zif_aff_types_v1=>ty_header_60_src,
       "! <p class="shorttext">General</p>
       "! General
       "! $required
-      general               TYPE ty_general,
+      general               type ty_general,
       "! <p class="shorttext">Authorization objects</p>
       "! Authorization objects
-      authorization_objects TYPE ty_authorization_objects,
-    END OF ty_main.
+      authorization_objects type ty_authorization_objects,
+    end of ty_main .
 
-ENDINTERFACE.
+endinterface.

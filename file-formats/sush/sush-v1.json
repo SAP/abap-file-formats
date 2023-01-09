@@ -64,47 +64,41 @@
       "description": "General",
       "type": "object",
       "properties": {
-        "objName": {
+        "name": {
           "title": "Application Name",
           "description": "Application Name of Authorization Default Value.",
-          "type": "string"
+          "type": "string",
+          "maxLength": 30
         },
         "type": {
           "title": "Type",
           "description": "Type of Authorization Default Value.",
           "type": "string",
-          "enum": [
-            "transaction",
-            "?",
-            "rfcFunctionModule",
-            "hashValueForTadirObject",
-            "hashValueForExternalService",
-            "collisionHashValue"
-          ],
-          "enumDescriptions": [
-            "Transaction",
-            "?",
-            "RFC Function Module",
-            "Hash Value for TADIR Object",
-            "Hash Value for External Service",
-            "Collision Hash Value"
-          ]
+          "maxLength": 2
         },
         "okflag": {
           "title": "Maintenance Mode",
           "description": "Maintenance Mode.",
           "type": "string",
           "enum": [
-            "manualMaintenance",
-            "automaticMaintenance(allAuthorizationObjects)",
-            "automaticMaintenance(basisAuthorizationObjectsOnly)",
-            "applicationDoesNotRequireDefaultValues",
-            "applicationIsDeprecated",
-            "applicationIsObsolete"
+            "manual",
+            "aFlag",
+            "bFlag",
+            "iFlag",
+            "dFlag",
+            "oFlag"
+          ],
+          "enumTitles": [
+            "Manual Maintenance",
+            "Autom. Maintenance (All Objects)",
+            "Automatic Maintenance (Basis Authorization Objects Only)",
+            "Application Does Not Require Default Values",
+            "Application is Deprecated",
+            "Application Is Obsolete"
           ],
           "enumDescriptions": [
             "Manual Maintenance",
-            "Automatic Maintenance (All Authorization Objects)",
+            "Autom. Maintenance (All Objects)",
             "Automatic Maintenance (Basis Authorization Objects Only)",
             "Application Does Not Require Default Values",
             "Application is Deprecated",
@@ -114,7 +108,7 @@
       },
       "additionalProperties": false,
       "required": [
-        "objName",
+        "name",
         "type",
         "okflag"
       ]
@@ -145,23 +139,30 @@
             "description": "Maintenance Status",
             "type": "string",
             "enum": [
-              "noAuthorizationCheck",
-              "authorizationCheckTakesPlace",
-              "undefined",
-              "authorizationCheckTakesPlace;DefaultValuesInUsobt",
-              "undefined",
-              "authorizationCheckTakesPlace,NoDefaultValues",
-              "inactiveAuthorizationDefault"
+              "xFlag",
+              "yFlag",
+              "vFlag",
+              "iFlag",
+              "uFlag",
+              "nFlag"
+            ],
+            "enumTitles": [
+              "No Default",
+              "Default With Field Values",
+              "Default Without Field Values",
+              "Default Inactive",
+              "Unmaintained Object Status",
+              "Authorization Check Inactive"
             ],
             "enumDescriptions": [
-              "No authorization check",
-              "Authorization check takes place",
-              "Undefined",
-              "Authorization check takes place; default values in USOBT",
-              "Undefined",
-              "Authorization check takes place, no default values",
-              "Inactive Authorization Default"
-            ]
+              "No Default",
+              "Default With Field Values",
+              "Default Without Field Values",
+              "Default Inactive",
+              "Unmaintained Object Status",
+              "Authorization Check Inactive"
+            ],
+            "default": "yFlag"
           },
           "fields": {
             "title": "Fields",
