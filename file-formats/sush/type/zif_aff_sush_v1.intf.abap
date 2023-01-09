@@ -1,4 +1,4 @@
-interface zif_aff_sush_v1
+INTERFACE zif_aff_sush_v1
   public .
 
   types:
