@@ -1,16 +1,16 @@
 {
-    "header": {
-      "abapLanguageVersion": "standard"
-    },
-    "dobjDetails": {
-      "destructionclass": "ZCL_ILM_DESTR_OBJ",
-      "applicationcomponent": "BC-TEST-COMP",
-      "structuredefinition": [
-        {
-          "item": "1",
-          "parentTable": "SPFLI",
-          "dependentTable": "SFLIGHT"
-        }
-      ]
-    }
+  "header": {
+    "abapLanguageVersion": "standard"
+  },
+  "dobjDetails": {
+    "destructionclass": "ZCL_ILM_DESTR_OBJ",
+    "applicationcomponent": "BC-TEST-COMP",
+    "structuredefinition": [
+      {
+        "item": "1",
+        "parentTable": "SPFLI",
+        "dependentTable": "SFLIGHT"
+      }
+    ]
   }
+}
