@@ -33,9 +33,9 @@ JSON files are always validated against the latest update of the JSON Schema of 
 
 The following changes to file formats are considered compatible:
 
-- Values for a field (enum) are added (remark: this might lead to syntax errors in ABAP systems that don't support this value)
 - Descriptions or titles are changed
 - Non-mandatory fields are added
+- Values for a field (enum) that has a specified default value are added. Remark that in this case, if a system doesn't support the new enumeration value (e.g., in lower releases), the file format implementations will change the value to the default value
 
 
 
@@ -57,6 +57,7 @@ The following changes to file formats are considered incompatible:
 - Values of a field (e.g., in enum) are removed
 - Length of a field is shortened
 - Length of a field is extended if some systems cannot store this information
+- Values for a field (enum) that has no specified default value are added.
 
 
 ## Writing JSON Schema with ABAP Types
@@ -187,11 +188,10 @@ Titles and descriptions of the enum values are passed to the JSON Schema in the 
 They are written in the fields `enumTitles` and `enumDescriptions`.
 
 Remark: If an enum is used, it should be checked if one of the following points applies to your type:
-1. The used constant has a component whose value is initial.
-2. The field with enum values is marked as required.
-3. The field with enum values has a specified default value.
+1. The field with enum values is marked as required.
+2. The field with enum values has a specified default value.
 
-It is enough and recommended to fulfill only one of these points.
+In case additional values for the enum should be added compatibly later, a default value must always be specified (see [Format Versions and Compatibility](#format-versions-and-compatibility)). If systems don't support the new enumeration value (e.g., in lower releases), the value will be changed to the default value by the file format implementations.
 
 
 The order of the comments and annotations presented here is important: First, there is the comment for the title followed by the one for the description, in case they are both provided. After these two, the remaining annotations are always located. Between them, the order is irrelevant.
