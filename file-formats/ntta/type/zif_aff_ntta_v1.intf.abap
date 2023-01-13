@@ -19,16 +19,16 @@ INTERFACE zif_aff_ntta_v1
 
     "! <p class="shorttext">Notetype</p>
     "! Notetype
-    BEGIN OF tys_notetype,
+    BEGIN OF ty_notetype_structure,
       "! <p class="shorttext">Notetype</p>
       "! Notetype
       "! $required
       notetype TYPE ty_notetype,
-    END OF tys_notetype,
+    END OF ty_notetype_structure,
 
     "! <p class="shorttext">Notetypes</p>
     "! Notetype
-    tyt_notetypes TYPE SORTED TABLE OF tys_notetype WITH UNIQUE KEY notetype,
+    ty_notetypes TYPE SORTED TABLE OF ty_notetype_structure WITH UNIQUE KEY notetype,
 
     "! <p class="shorttext">Notetype Assignments</p>
     "! Notetype Assignments
@@ -46,7 +46,7 @@ INTERFACE zif_aff_ntta_v1
       general_information TYPE ty_general_information,
       "! <p class="shorttext">Assigned Notetypes</p>
       "! Notetypes assigned to the SAP Object Node Type
-      assigned_notetypes  TYPE tyt_notetypes,
+      assigned_notetypes  TYPE ty_notetypes,
     END OF ty_main.
 
 ENDINTERFACE.
