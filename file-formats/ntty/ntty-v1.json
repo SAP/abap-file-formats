@@ -91,7 +91,7 @@
           "title": "Maximum Length",
           "description": "Maximum length",
           "type": "integer",
-          "minimum": -2147483648,
+          "minimum": 0,
           "maximum": 2147483647
         },
         "profile": {
