@@ -1,5 +1,5 @@
 INTERFACE zif_aff_cdbo_v1
-  PUBLIC .
+  PUBLIC.
   "! <p class="shorttext">Object Type</p>
   "! Object type
   "! $values {@link zif_aff_cdbo_v1.data:co_object_type}
@@ -62,22 +62,22 @@ INTERFACE zif_aff_cdbo_v1
   "! <p class="shorttext">Field Nature</p>
   "! Nature of the field
   "! $values {@link zif_aff_cdbo_v1.data:co_field_nature}
-  TYPES ty_field_nature TYPE C LENGTH 2.
+  TYPES ty_field_nature TYPE c LENGTH 2.
 
   CONSTANTS:
-  "! <p class="shorttext">Field Nature</p>
-  "! Nature of the field
-  BEGIN OF co_field_nature,
-    "! <p class="shorttext">General fields that do not contain sensitive personal info.</p>
-    "! General fields that do not contain sensitive personal info.
-    general TYPE ty_field_nature VALUE 'GE',
-    "! <p class="shorttext">Sensitive personal information fields including key fields</p>
-    "! Sensitive personal information fields including key fields
-    sensitive    TYPE ty_field_nature VALUE 'SP',
-    "! <p class="shorttext">Non Business Information</p>
-    "! Non business information
-    non_bus     TYPE ty_field_nature VALUE 'NB',
-  END OF co_field_nature.
+    "! <p class="shorttext">Field Nature</p>
+    "! Nature of the field
+    BEGIN OF co_field_nature,
+      "! <p class="shorttext">General fields that do not contain sensitive personal info.</p>
+      "! General fields that do not contain sensitive personal info.
+      general TYPE ty_field_nature VALUE 'GE',
+      "! <p class="shorttext">Sensitive personal information fields including key fields</p>
+      "! Sensitive personal information fields including key fields
+      sensitive    TYPE ty_field_nature VALUE 'SP',
+      "! <p class="shorttext">Non Business Information</p>
+      "! Non business information
+      non_bus     TYPE ty_field_nature VALUE 'NB',
+    END OF co_field_nature.
 
 
   TYPES:
@@ -105,23 +105,23 @@ INTERFACE zif_aff_cdbo_v1
     END OF ty_obj_details.
 
   TYPES:
-  "! <p class="shorttext">CDBO Details</p>
-  "! CDBO deatils
-  BEGIN OF ty_obj_fields,
-    "! <p class="shorttext">Field Name</p>
-    "! Field name
-    "! $required
-    field_name TYPE c LENGTH 30,
-    "! <p class="shorttext">Field Nature</p>
-    "! Field nature
-    "! $required
-    field_nature TYPE ty_field_nature,
-  END OF ty_obj_fields.
+    "! <p class="shorttext">CDBO Details</p>
+    "! CDBO deatils
+    BEGIN OF ty_obj_fields,
+      "! <p class="shorttext">Field Name</p>
+      "! Field name
+      "! $required
+      field_name TYPE c LENGTH 30,
+      "! <p class="shorttext">Field Nature</p>
+      "! Field nature
+      "! $required
+      field_nature TYPE ty_field_nature,
+    END OF ty_obj_fields.
 
   TYPES:
-  "! <p class="shorttext">Object Fields</p>
-  "! Object Fields Table
-  ty_obj_fields_table TYPE STANDARD TABLE OF ty_obj_fields WITH DEFAULT KEY.
+    "! <p class="shorttext">Object Fields</p>
+    "! Object Fields Table
+    ty_obj_fields_table TYPE STANDARD TABLE OF ty_obj_fields WITH DEFAULT KEY.
 
   TYPES:
     "! <p class="shorttext">Object Type CDBO</p>
