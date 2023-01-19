@@ -43,21 +43,21 @@ INTERFACE zif_aff_cdbo_v1
 
   "! <p class="shorttext">CDS View Status</p>
   "! CDS view status
-  "! $values {@link zif_aff_cdbo_v1.data:co_cds_status}
-  "! $default {@link zif_aff_cdbo_v1.data:co_cds_status.released}
+  "! $values {@link zif_aff_cdbo_v1.data:co_cds_view_status}
+  "! $default {@link zif_aff_cdbo_v1.data:co_cds_view_status.released}
   TYPES ty_cds_view_status TYPE c LENGTH 60.
 
   CONSTANTS:
     "! <p class="shorttext">CDS View Status</p>
     "! CDS View type
-    BEGIN OF co_cds_status,
+    BEGIN OF co_cds_view_status,
       "! <p class="shorttext">Released</p>
       "! Released
       released TYPE ty_cds_view_status VALUE 'RELEASED',
       "! <p class="shorttext">Not Released</p>
       "! Not Realeased
-      blank    TYPE ty_cds_view_status VALUE ' ',
-    END OF co_cds_status.
+      not_released    TYPE ty_cds_view_status VALUE ' ',
+    END OF co_cds_view_status.
 
   "! <p class="shorttext">Field Nature</p>
   "! Nature of the field
@@ -76,38 +76,38 @@ INTERFACE zif_aff_cdbo_v1
       sensitive    TYPE ty_field_nature VALUE 'SP',
       "! <p class="shorttext">Non Business Information</p>
       "! Non business information
-      non_bus     TYPE ty_field_nature VALUE 'NB',
+      non_business_information TYPE ty_field_nature VALUE 'NB',
     END OF co_field_nature.
 
 
   TYPES:
     "! <p class="shorttext">CDBO Details</p>
     "! CDBO deatils
-    BEGIN OF ty_obj_details,
+    BEGIN OF ty_object_details,
       "! <p class="shorttext">Business Area</p>
       "! Business area to which the object belongs
       "! $required
-      bus_area        TYPE  c LENGTH 60,
+      business_area         TYPE  c LENGTH 60,
       "! <p class="shorttext">Sub Business Area</p>
       "! Sub Business area to which the object belongs
       "! $required
-      sub_bus_area    TYPE  c LENGTH 60,
+      sub_business_area     TYPE  c LENGTH 60,
       "! <p class="shorttext">Application Component</p>
       "! Application component to which object belongs
       "! $required
-      ps_posid        TYPE c LENGTH 24,
+      application_component TYPE c LENGTH 24,
       "! <p class="shorttext">CDS View Type</p>
       "! Type of the CDS View
       cds_view_type   TYPE ty_cds_view_type,
       "! <p class="shorttext">CDS View Status</p>
       "! Status of the CDS View
       cds_view_status TYPE ty_cds_view_status,
-    END OF ty_obj_details.
+    END OF ty_object_details.
 
   TYPES:
     "! <p class="shorttext">CDBO Details</p>
-    "! CDBO deatils
-    BEGIN OF ty_obj_fields,
+    "! CDBO details
+    BEGIN OF ty_field,
       "! <p class="shorttext">Field Name</p>
       "! Field name
       "! $required
@@ -116,12 +116,12 @@ INTERFACE zif_aff_cdbo_v1
       "! Field nature
       "! $required
       field_nature TYPE ty_field_nature,
-    END OF ty_obj_fields.
+    END OF ty_field.
 
   TYPES:
     "! <p class="shorttext">Object Fields</p>
     "! Object Fields Table
-    ty_obj_fields_table TYPE STANDARD TABLE OF ty_obj_fields WITH DEFAULT KEY.
+    ty_fields TYPE STANDARD TABLE OF ty_field WITH DEFAULT KEY.
 
   TYPES:
     "! <p class="shorttext">Object Type CDBO</p>
@@ -136,19 +136,19 @@ INTERFACE zif_aff_cdbo_v1
       "! <p class="shorttext">Object Type</p>
       "! Object type
       "! $required
-      obj_type       TYPE ty_object_type,
+      object_type   TYPE ty_object_type,
       "! <p class="shorttext">Object Name</p>
       "! Object name
       "! $required
-      obj_name       TYPE c LENGTH 40,
+      object_name       TYPE c LENGTH 40,
       "! <p class="shorttext">Object Details</p>
       "! Object details
       "! $required
-      obj_details    TYPE ty_obj_details,
+      object_details    TYPE ty_object_details,
       "! <p class="shorttext">CDBO Fields</p>
       "! CDBO fields
       "! $required
-      obj_fields     TYPE ty_obj_fields_table,
+      object_fields     TYPE ty_fields,
 
     END OF ty_main.
 

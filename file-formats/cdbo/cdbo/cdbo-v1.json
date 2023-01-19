@@ -59,7 +59,7 @@
         "originalLanguage"
       ]
     },
-    "objType": {
+    "objectType": {
       "title": "Object Type",
       "description": "Object type",
       "type": "string",
@@ -76,30 +76,30 @@
         "CDS views"
       ]
     },
-    "objName": {
+    "objectName": {
       "title": "Object Name",
       "description": "Object name",
       "type": "string",
       "maxLength": 40
     },
-    "objDetails": {
+    "objectDetails": {
       "title": "Object Details",
       "description": "Object details",
       "type": "object",
       "properties": {
-        "busArea": {
+        "businessArea": {
           "title": "Business Area",
           "description": "Business area to which the object belongs",
           "type": "string",
           "maxLength": 60
         },
-        "subBusArea": {
+        "subBusinessArea": {
           "title": "Sub Business Area",
           "description": "Sub Business area to which the object belongs",
           "type": "string",
           "maxLength": 60
         },
-        "psPosid": {
+        "applicationComponent": {
           "title": "Application Component",
           "description": "Application component to which object belongs",
           "type": "string",
@@ -135,7 +135,7 @@
           "type": "string",
           "enum": [
             "released",
-            "blank"
+            "notReleased"
           ],
           "enumTitles": [
             "Released",
@@ -150,18 +150,18 @@
       },
       "additionalProperties": false,
       "required": [
-        "busArea",
-        "subBusArea",
-        "psPosid"
+        "businessArea",
+        "subBusinessArea",
+        "applicationComponent"
       ]
     },
-    "objFields": {
+    "objectFields": {
       "title": "CDBO Fields",
       "description": "CDBO fields",
       "type": "array",
       "items": {
         "title": "CDBO Details",
-        "description": "CDBO deatils",
+        "description": "CDBO details",
         "type": "object",
         "properties": {
           "fieldName": {
@@ -177,7 +177,7 @@
             "enum": [
               "general",
               "sensitive",
-              "nonBus"
+              "nonBusinessInformation"
             ],
             "enumTitles": [
               "General fields that do not contain sensitive personal info.",
@@ -203,9 +203,9 @@
   "required": [
     "formatVersion",
     "header",
-    "objType",
-    "objName",
-    "objDetails",
-    "objFields"
+    "objectType",
+    "objectName",
+    "objectDetails",
+    "objectFields"
   ]
 }
