@@ -8,7 +8,6 @@ INTERFACE zif_aff_ntty_v1
     ty_profile TYPE c LENGTH 20,
 
     "! $minimum 0
-    "! $maximum 2147483647
     ty_max_length TYPE i,
 
     "! <p class="shorttext">General Information</p>
@@ -17,14 +16,14 @@ INTERFACE zif_aff_ntty_v1
       "! <p class="shorttext">Language Dependent</p>
       "! Language dependent
       "! $showAlways
-      language_dependency TYPE abap_bool,
+      language_dependent TYPE abap_bool,
       "! <p class="shorttext">Multiple Notes</p>
       "! Multiple notes possible
       "! $showAlways
-      multiple            TYPE abap_bool,
+      multiple_notes            TYPE abap_bool,
       "! <p class="shorttext">Hide Title</p>
       "! Hides the title
-      no_subject          TYPE abap_bool,
+      hide_title          TYPE abap_bool,
     END OF ty_general_information,
 
     "! <p class="shorttext">Content Settings</p>
@@ -32,10 +31,10 @@ INTERFACE zif_aff_ntty_v1
     BEGIN OF ty_content_settings,
       "! <p class="shorttext">Maximum Length</p>
       "! Maximum length
-      max_length TYPE ty_max_length,
+      maximum_length TYPE ty_max_length,
       "! <p class="shorttext">Formatting Profile</p>
       "! Formatting profile
-      profile    TYPE ty_profile,
+      formatting_profile    TYPE ty_profile,
     END OF ty_content_settings,
 
     "! <p class="shorttext">Notetype</p>
@@ -63,8 +62,8 @@ INTERFACE zif_aff_ntty_v1
       "! Plain text content (text/plain)
       text      TYPE ty_profile VALUE 'TEXT',
       "! <p class="shorttext">Simple Formatting</p>
-      "! simple formatted content (text/html)
-      rte_basic TYPE ty_profile VALUE 'RTE_BASIC',
+      "! Simple formatted content (text/html)
+      simple_formatting TYPE ty_profile VALUE 'RTE_BASIC',
     END OF co_profile.
 
 ENDINTERFACE.

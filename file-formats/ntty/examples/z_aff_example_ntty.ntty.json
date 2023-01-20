@@ -1,6 +1,7 @@
 {
   "header": {
-    "abapLanguageVersion": "standard"
+    "description": "Example object",
+    "originalLanguage": "en"
   },
   "generalInformation": {
     "languageDependency": true,
