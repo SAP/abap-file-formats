@@ -57,71 +57,72 @@
       ]
     },
     "attributes": {
-      "title": "Data Destruction Object",
-      "description": "Data destruction object",
+      "title": "Attributes",
+      "description": "Attributes",
       "type": "object",
       "properties": {
         "destructionClass": {
           "title": "Destruction Class",
           "description": "Destruction class",
           "type": "string",
-          "maxLength": 60
+          "maxLength": 30
         },
         "applicationComponent": {
           "title": "Application Component",
           "description": "Application component",
           "type": "string",
-          "maxLength": 30
-        },
-        "structureDefinition": {
-          "title": "Structure Definition",
-          "description": "Structure definition",
-          "type": "array",
-          "uniqueItems": true,
-          "items": {
-            "title": "Structure Definition Details",
-            "description": "Structure definition details",
-            "type": "object",
-            "properties": {
-              "item": {
-                "title": "Item",
-                "description": "Item",
-                "type": "string",
-                "maxLength": 4,
-                "pattern": "^[0-9]+$"
-              },
-              "parentTable": {
-                "title": "Parent Table",
-                "description": "Parent table",
-                "type": "string",
-                "maxLength": 30
-              },
-              "dependentTable": {
-                "title": "Dependent Table",
-                "description": "Dependent table",
-                "type": "string",
-                "maxLength": 30
-              }
-            },
-            "additionalProperties": false,
-            "required": [
-              "item",
-              "parentTable",
-              "dependentTable"
-            ]
-          }
+          "maxLength": 20
         }
       },
       "additionalProperties": false,
       "required": [
         "destructionClass"
       ]
+    },
+    "structureDefinition": {
+      "title": "Structure Definition",
+      "description": "Structure definition",
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "title": "Structure Definition Details",
+        "description": "Structure definition details",
+        "type": "object",
+        "properties": {
+          "item": {
+            "title": "Item",
+            "description": "Item",
+            "type": "string",
+            "maxLength": 4,
+            "pattern": "^[0-9]+$"
+          },
+          "parentTable": {
+            "title": "Parent Table",
+            "description": "Parent table",
+            "type": "string",
+            "maxLength": 30
+          },
+          "dependentTable": {
+            "title": "Dependent Table",
+            "description": "Dependent table",
+            "type": "string",
+            "maxLength": 30
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "item",
+          "parentTable",
+          "dependentTable"
+        ]
+      }
     }
   },
   "additionalProperties": false,
   "required": [
     "formatVersion",
     "header",
-    "attributes"
+    "attributes",
+    "structureDefinition"
   ]
 }

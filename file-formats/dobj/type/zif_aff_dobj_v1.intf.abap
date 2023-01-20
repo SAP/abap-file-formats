@@ -1,6 +1,6 @@
 INTERFACE zif_aff_dobj_v1
   PUBLIC.
-
+  TYPES: ty_application_component TYPE c LENGTH 20.
   TYPES:
     "! <p class="shorttext">Structure Definition Details</p>
     "! Structure definition details
@@ -8,7 +8,7 @@ INTERFACE zif_aff_dobj_v1
       "! <p class="shorttext">Item</p>
       "! Item
       "! $required
-      item      TYPE n LENGTH 4,
+      item            TYPE n LENGTH 4,
       "! <p class="shorttext">Parent Table</p>
       "! Parent table
       "! $required
@@ -30,28 +30,29 @@ INTERFACE zif_aff_dobj_v1
       "! <p class="shorttext">Destruction Class</p>
       "! Destruction class
       "! $required
-      destruction_class    TYPE zif_aff_types_v1=>ty_description_60,
+      destruction_class     TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Application Component</p>
       "! Application component
-      application_component     TYPE zif_aff_types_v1=>ty_object_name_30,
-      "! <p class="shorttext">Structure Definition</p>
-      "! Structure definition
-      structure_definition TYPE ty_structure_definitions,
+      application_component TYPE ty_application_component,
     END OF ty_dobj_details.
   TYPES:
     "! <p class="shorttext">Data Destruction Object</p>
     "! ILM destruction object (DOBJ) v1
     BEGIN OF ty_main,
       "! $required
-      format_version TYPE zif_aff_types_v1=>ty_format_version,
+      format_version       TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header         TYPE zif_aff_types_v1=>ty_header_60_cloud,
-      "! <p class="shorttext">Data Destruction Object</p>
-      "!Data destruction object
+      header               TYPE zif_aff_types_v1=>ty_header_60_cloud,
+      "! <p class="shorttext">Attributes</p>
+      "!Attributes
       "! $required
-      attributes   TYPE ty_dobj_details,
+      attributes  TYPE ty_dobj_details,
+      "! <p class="shorttext">Structure Definition</p>
+      "! Structure definition
+      "! $required
+      structure_definition TYPE ty_structure_definitions,
     END OF ty_main.
 
 ENDINTERFACE.
