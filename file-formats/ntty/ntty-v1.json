@@ -37,17 +37,14 @@
           "type": "string",
           "enum": [
             "standard",
-            "keyUser",
             "cloudDevelopment"
           ],
           "enumTitles": [
             "Standard",
-            "ABAP for Key Users",
             "ABAP Cloud Development"
           ],
           "enumDescriptions": [
             "Standard",
-            "ABAP for key user extensibility",
             "ABAP cloud development"
           ],
           "default": "standard"
@@ -64,17 +61,17 @@
       "description": "General information",
       "type": "object",
       "properties": {
-        "languageDependency": {
+        "languageDependent": {
           "title": "Language Dependent",
           "description": "Language dependent",
           "type": "boolean"
         },
-        "multiple": {
+        "multipleNotes": {
           "title": "Multiple Notes",
           "description": "Multiple notes possible",
           "type": "boolean"
         },
-        "noSubject": {
+        "hideTitle": {
           "title": "Hide Title",
           "description": "Hides the title",
           "type": "boolean"
@@ -87,20 +84,20 @@
       "description": "Content settings",
       "type": "object",
       "properties": {
-        "maxLength": {
+        "maximumLength": {
           "title": "Maximum Length",
           "description": "Maximum length",
           "type": "integer",
           "minimum": 0,
           "maximum": 2147483647
         },
-        "profile": {
+        "formattingProfile": {
           "title": "Formatting Profile",
           "description": "Formatting profile",
           "type": "string",
           "enum": [
             "text",
-            "rteBasic"
+            "simpleFormatting"
           ],
           "enumTitles": [
             "Text Only",
@@ -108,7 +105,7 @@
           ],
           "enumDescriptions": [
             "Plain text content (text/plain)",
-            "simple formatted content (text/html)"
+            "Simple formatted content (text/html)"
           ],
           "default": "text"
         }
