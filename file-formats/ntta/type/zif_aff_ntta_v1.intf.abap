@@ -31,7 +31,7 @@ INTERFACE zif_aff_ntta_v1
     ty_notetypes TYPE SORTED TABLE OF ty_notetype_structure WITH UNIQUE KEY notetype,
 
     "! <p class="shorttext">Notetype Assignments</p>
-    "! Notetype Assignments
+    "! Notetype assignments
     BEGIN OF ty_main,
       "! <p class="shorttext">Format Version</p>
       "! Format version
