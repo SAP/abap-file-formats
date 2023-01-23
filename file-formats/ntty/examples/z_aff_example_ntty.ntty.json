@@ -1,0 +1,15 @@
+{
+  "header": {
+    "description": "Example object",
+    "originalLanguage": "en"
+  },
+  "generalInformation": {
+    "languageDependency": true,
+    "multiple": true,
+    "noSubject": true
+  },
+  "contentSettings": {
+    "maxLength": 1000,
+    "profile": "rteBasic"
+  }
+}
