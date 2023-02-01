@@ -27,16 +27,21 @@ async function run() {
     const filename = "generated" + path.sep + type.toLowerCase() + "-v1.json";
     fs.writeFileSync(filename, result.get());
 
+    let error = false;
     const command = `diff --strip-trailing-cr generated/${type.toLowerCase()}-v1.json ../file-formats/${type.toLowerCase()}/${type.toLowerCase()}-v1.json`;
     const output = child_process.execSync(`${command} || true`);
     if (output.toString().length > 0) {
       console.log(command);
       console.log(output.toString());
+      error = true;
     } else {
       console.log("\tOK\n");
     }
   }
 
+  if (error === true) {
+    exit(1);
+  }
 }
 
 run();
