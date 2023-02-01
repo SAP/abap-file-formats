@@ -37,11 +37,6 @@ async function run() {
     }
   }
 
-  // only run for INTF,
-  /*
-  const result = await abap.Classes["CL_RUN"].run({object_type: new abap.types.String().set("INTF")});
-  fs.writeFileSync("generated" + path.sep + "intf-v1.json", result.get());
-  */
 }
 
 run();
