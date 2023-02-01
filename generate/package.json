@@ -7,8 +7,9 @@
     "pull": "oras-pull ghcr.io/sap/abap-file-formats-tools/abap-file-formats-tools:latest",
     "copy": "cp ../file-formats/*.abap downport && cp ../file-formats/*/type/*.abap downport && cp cl_run.clas.abap downport",
     "transpile": "rm -rf output && abap_transpile abap_transpile.json",
+    "compile": "rm -rf downport && npm run pull && npm run copy && npm run transpile",
     "generate": "rm -rf generated && node aff.mjs",
-    "test": "rm -rf downport && npm run pull && npm run copy && npm run transpile && npm run generate"
+    "test": "npm run compile && npm run generate"
   },
   "repository": {
     "type": "git",

@@ -14,7 +14,8 @@ jobs:
       run: |
         cd generate
         npm ci
+        npm run compile
     - name: Check Schemas
       run: |
         cd generate
-        npm test
+        npm run generate
