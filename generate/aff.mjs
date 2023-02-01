@@ -16,6 +16,7 @@ async function run() {
     }
   }
 
+  let error = false;
   for (const type of types) {
     console.log(type);
     if (type === "ENHO") {
@@ -27,7 +28,6 @@ async function run() {
     const filename = "generated" + path.sep + type.toLowerCase() + "-v1.json";
     fs.writeFileSync(filename, result.get());
 
-    let error = false;
     const command = `diff --strip-trailing-cr generated/${type.toLowerCase()}-v1.json ../file-formats/${type.toLowerCase()}/${type.toLowerCase()}-v1.json`;
     const output = child_process.execSync(`${command} || true`);
     if (output.toString().length > 0) {
