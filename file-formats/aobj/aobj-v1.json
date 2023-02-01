@@ -13,7 +13,7 @@
       "const": "1"
     },
     "header": {
-      "title": "Headerr",
+      "title": "Header",
       "description": "Header",
       "type": "object",
       "properties": {
