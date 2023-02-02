@@ -1,10 +1,10 @@
-name: Generate Schemas
+name: Validate JSON schema
 
 on:
   pull_request:
 
 jobs:
-  generate:
+  validate:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
