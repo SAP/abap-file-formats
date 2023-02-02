@@ -1,4 +1,4 @@
-name: Validate JSON
+name: Validate JSON data
 
 on:
   pull_request:
@@ -9,7 +9,7 @@ permissions:
 jobs:
   build:
     # Name the Job
-    name: Validate JSON with python jsonschema
+    name: Validate data against JSON schema
 
     runs-on: ubuntu-latest
 
