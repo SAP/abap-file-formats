@@ -17,6 +17,7 @@
     "ignoreSyntaxCheck": false,
     "addFilenames": true,
     "addCommonJS": true,
+    "keywords": ["in", "default"],
     "unknownTypes": "runtimeError",
     "extraSetup": "../setup.mjs",
     "skip": []
