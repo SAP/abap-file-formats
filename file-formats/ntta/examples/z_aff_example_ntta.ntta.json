@@ -1,0 +1,18 @@
+{
+    "header": {
+      "description": "Example object",
+      "originalLanguage": "en"
+    },
+    "generalInformation": {
+      "objectNodeType": "TestNodeType",
+      "implementationExit": "CL_TEST_EXIT"
+    },
+    "assignedNotetypes": [
+      {
+        "notetype": "TEST_NOTETYPE_1"
+      },
+      {
+        "notetype": "TEST_NOTETYPE_2"
+      }
+    ]
+}
