@@ -3,7 +3,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/ntta/ntta-v1.json",
   "title": "Notetype Assignments",
-  "description": "Notetype Assignments",
+  "description": "Notetype assignments",
   "type": "object",
   "properties": {
     "formatVersion": {
