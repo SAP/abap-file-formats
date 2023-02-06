@@ -3,17 +3,14 @@
     "abapLanguageVersion": "standard"
   },
   "attributes": {
-    "destructionClass": "CL_SFLIGHT_DESTRUCTION",
-    "applicationComponent": "BC-ILM-IRM"
+    "destructionClass": "CL_SFLIGHT_DESTRUCTION"
   },
   "structureDefinition": [
-    {
-      "item": "1",
-      "parentTable": "",
+    {  
+	"parentTable": "",
       "dependentTable": "SPFLI"
     },
     {
-      "item": "2",
       "parentTable": "SPFLI",
       "dependentTable": "SFLIGHT"
     }

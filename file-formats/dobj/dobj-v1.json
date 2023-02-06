@@ -66,12 +66,6 @@
           "description": "Destruction class",
           "type": "string",
           "maxLength": 30
-        },
-        "applicationComponent": {
-          "title": "Application Component",
-          "description": "Application component",
-          "type": "string",
-          "maxLength": 20
         }
       },
       "additionalProperties": false,
@@ -89,13 +83,6 @@
         "description": "Structure definition details",
         "type": "object",
         "properties": {
-          "item": {
-            "title": "Item",
-            "description": "Item",
-            "type": "string",
-            "maxLength": 4,
-            "pattern": "^[0-9]+$"
-          },
           "parentTable": {
             "title": "Parent Table",
             "description": "Parent table",
@@ -111,7 +98,6 @@
         },
         "additionalProperties": false,
         "required": [
-          "item",
           "parentTable",
           "dependentTable"
         ]
