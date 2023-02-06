@@ -8,7 +8,7 @@ import sys
 import re
 
 msg_errors = list()
-schemas = sorted( glob.glob('./file-formats/*/*.json') )
+schemas = glob.glob('./file-formats/*/*.json')
 instances = sorted( glob.glob('./file-formats/*/examples/*.json', recursive=True) )
 # json_examples = glob.glob('./file-formats/*/examples/*.json', recursive=True)
 # only_instances = set(json_examples) - set(schemas)
