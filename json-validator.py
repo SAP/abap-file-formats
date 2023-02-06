@@ -8,10 +8,11 @@ import sys
 import re
 
 msg_errors = list()
-schemas = glob.glob('./file-formats/*/*.json')
-json_in_repo = glob.glob('./file-formats/*/examples/*.json', recursive=True)
-only_instances = set(json_in_repo) - set(schemas)
-instances = sorted(only_instances)
+schemas = sorted( glob.glob('./file-formats/*/*.json') )
+instances = sorted( glob.glob('./file-formats/*/examples/*.json', recursive=True) )
+# json_examples = glob.glob('./file-formats/*/examples/*.json', recursive=True)
+# only_instances = set(json_examples) - set(schemas)
+# instances = sorted(json_examples)
 instance_without_schema = []
 
 def match_schema_instance( ):
