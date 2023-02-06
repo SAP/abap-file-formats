@@ -21,7 +21,7 @@ def match_schema_instance( ):
         # get ABAP object type
         file_name = os.path.basename(instance)
         try:
-            object_type = re.search('\.(([a-z]{4})+?)\.json', file_name).group(1)
+            object_type = re.search('\.(([a-z0-9]{4})+?)\.json', file_name).group(1)
         except AttributeError:
             continue
         # access formatVersion
