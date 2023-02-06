@@ -35,7 +35,7 @@ def match_schema_instance( ):
             # in case decoding failed
             continue
         # match data with schema
-        schema_name =  object_type + '-v'+ version + '.json'
+        schema_name =  object_type + '-v'+ str(version) + '.json'
         schema = [s for s in schemas if schema_name in s]
         try:
             matches[instance] = schema[0]
