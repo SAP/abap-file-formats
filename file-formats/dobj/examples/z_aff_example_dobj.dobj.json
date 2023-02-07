@@ -1,18 +1,19 @@
 {
   "header": {
-    "abapLanguageVersion": "standard"
+"description": "Example destruction object",
+"originalLanguage": "en"
   },
   "attributes": {
     "destructionClass": "CL_SFLIGHT_DESTRUCTION"
   },
   "structureDefinition": [
     {  
-	"parentTable": "",
-      "dependentTable": "SPFLI"
+	   "parentTable": "",
+         "dependentTable": "SPFLI"
     },
     {
-      "parentTable": "SPFLI",
-      "dependentTable": "SFLIGHT"
+         "parentTable": "SPFLI",
+         "dependentTable": "SFLIGHT"
     }
   ]
 }
