@@ -9,9 +9,10 @@ import re
 
 msg_errors = list()
 schemas = glob.glob('./file-formats/*/*.json')
-json_in_repo = glob.glob('./file-formats/**/*.json', recursive=True)
-only_instances = set(json_in_repo) - set(schemas)
-instances = sorted(only_instances, key = lambda x:x[-9])
+instances = sorted( glob.glob('./file-formats/*/examples/*.json', recursive=True) )
+# json_examples = glob.glob('./file-formats/*/examples/*.json', recursive=True)
+# only_instances = set(json_examples) - set(schemas)
+# instances = sorted(json_examples)
 instance_without_schema = []
 
 def match_schema_instance( ):
@@ -20,7 +21,7 @@ def match_schema_instance( ):
         # get ABAP object type
         file_name = os.path.basename(instance)
         try:
-            object_type = re.search('\.(([a-z]{4})+?)\.json', file_name).group(1)
+            object_type = re.search('\.(([a-z0-9]{4})+?)\.json', file_name).group(1)
         except AttributeError:
             continue
         # access formatVersion
@@ -28,12 +29,13 @@ def match_schema_instance( ):
         try:
             version = json_data["formatVersion"]
         except KeyError:
+            msg_errors.append(f"::error file={instance},line={1},col={1}::JSON data does not provide a formatVersion")
             continue
         except TypeError:
             # in case decoding failed
             continue
         # match data with schema
-        schema_name =  object_type + '-v'+ version + '.json'
+        schema_name =  object_type + '-v'+ str(version) + '.json'
         schema = [s for s in schemas if schema_name in s]
         try:
             matches[instance] = schema[0]
