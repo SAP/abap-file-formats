@@ -29,7 +29,7 @@ def match_schema_instance( ):
         try:
             version = json_data["formatVersion"]
         except KeyError:
-            msg_errors.append(f"::error file={instance},line={1},col={1}::JSON data does not provide a formatVersion")
+            msg_errors.append(f"::error file={instance},line={1},col={1}::JSON example does not specify the field \"formatVersion\"")
             continue
         except TypeError:
             # in case decoding failed
