@@ -62,6 +62,12 @@
       "type": "string",
       "maxLength": 30
     },
+    "programName": {
+      "title": "Executed Program",
+      "description": "Name of the program which is executed within the job",
+      "type": "string",
+      "maxLength": 40
+    },
     "checkExitClass": {
       "title": "Class with Check Exit",
       "description": "Name of the class which contains the check exit",

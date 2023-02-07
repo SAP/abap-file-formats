@@ -1,0 +1,21 @@
+name: Validate JSON schema
+
+on:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+    - name: Build
+      run: |
+        cd generate
+        npm ci
+        npm run compile
+    - name: Check Schemas
+      run: |
+        cd generate
+        npm run generate
