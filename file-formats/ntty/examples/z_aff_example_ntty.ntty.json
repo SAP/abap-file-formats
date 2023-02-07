@@ -1,15 +1,16 @@
 {
+  "formatVersion": "1",
   "header": {
     "description": "Example object",
     "originalLanguage": "en"
   },
   "generalInformation": {
-    "languageDependency": true,
-    "multiple": true,
-    "noSubject": true
+    "languageDependent": true,
+    "multipleNotes": true,
+    "hideTitle": true
   },
   "contentSettings": {
-    "maxLength": 1000,
-    "profile": "rteBasic"
+    "maximumLength": 1000,
+    "formattingProfile": "text"
   }
 }
