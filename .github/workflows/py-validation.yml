@@ -1,4 +1,4 @@
-name: Validate JSON example
+name: Validate JSON examples
 
 on:
   pull_request:
