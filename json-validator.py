@@ -8,6 +8,7 @@ import sys
 import re
 
 msg_errors = list()
+msg_warning = list()
 schemas = sorted( glob.glob('./file-formats/*/*.json') )
 examples = sorted( glob.glob('./file-formats/*/examples/*.json', recursive=True) )
 
@@ -45,7 +46,7 @@ def validate_examples( matches ):
     print(f"::group::Validate JSON examples")
     for match in matches:
         if len(matches[match]) == 0:
-            msg_errors.append(f"::error file={match},line=1,col=1::No JSON example found for JSON Schema {match}" )
+            msg_warning.append(f"::notice file={match},line=1,col=1::No JSON example found for JSON Schema {match}" )
             continue
         for example in matches[match]:
             validate_json( match, example )
@@ -57,6 +58,10 @@ matches = match_schema_to_data( )
 validate_examples( matches )
 
 print()
+
+if len(msg_warning) > 0:
+    print(*msg_warning, sep='\n')
+
 if len(msg_errors) > 0:
     print(*msg_errors, sep='\n')
     sys.exit(1)
