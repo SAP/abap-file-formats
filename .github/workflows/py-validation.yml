@@ -1,4 +1,4 @@
-name: Validate JSON data
+name: Validate JSON examples
 
 on:
   pull_request:
@@ -9,7 +9,7 @@ permissions:
 jobs:
   build:
     # Name the Job
-    name: Validate data against JSON schema
+    name: Validate JSON examples against their schema
 
     runs-on: ubuntu-latest
 
