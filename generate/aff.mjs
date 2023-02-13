@@ -16,6 +16,7 @@ async function run() {
     }
   }
 
+  let error = false;
   for (const type of types) {
     console.log(type);
     if (type === "ENHO") {
@@ -32,16 +33,15 @@ async function run() {
     if (output.toString().length > 0) {
       console.log(command);
       console.log(output.toString());
+      error = true;
     } else {
       console.log("\tOK\n");
     }
   }
 
-  // only run for INTF,
-  /*
-  const result = await abap.Classes["CL_RUN"].run({object_type: new abap.types.String().set("INTF")});
-  fs.writeFileSync("generated" + path.sep + "intf-v1.json", result.get());
-  */
+  if (error === true) {
+    exit(1);
+  }
 }
 
 run();
