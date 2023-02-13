@@ -73,6 +73,9 @@ The JSON Schema is generated based on the fields and their ABAP type specificati
 Fields `format_version` and `header` are mandatory and translate to `formatVersion` and `header` in the JSON Schema.
 The interface [`zif_aff_types_v1`](../file-formats/zif_aff_types_v1.intf.abap) offers a type for the format version and different headers for reuse, but also other often repeated types.
 
+Apart from the mandatory fields mentioned above, it is recommended to add only components to the structure `ty_main` that are either structures as well or tables. 
+A subcomponent consisting of general information about the object should be named `general_information` as far as no better name fits.
+
 To add more information to the JSON Schema than that provided by the ABAP type, ABAP Doc can be used.
 The comments are placed directly above the components of the type `ty_main`, but they are also read over several levels, e.g., in the case of nested structures.
 The different possibilities are summarized in the following.
