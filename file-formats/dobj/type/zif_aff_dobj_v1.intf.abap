@@ -21,12 +21,12 @@ INTERFACE zif_aff_dobj_v1
   TYPES:
     "! <p class="shorttext">Data Destruction Object Details</p>
     "! $required
-    BEGIN OF ty_dobj_details,
+    BEGIN OF ty_attributes,
       "! <p class="shorttext">Destruction Class</p>
       "! Destruction class
       "! $required
       destruction_class     TYPE zif_aff_types_v1=>ty_object_name_30,
-    END OF ty_dobj_details.
+    END OF ty_attributes.
   TYPES:
     "! <p class="shorttext">Data Destruction Object</p>
     "! ILM destruction object (DOBJ) v1
@@ -40,7 +40,7 @@ INTERFACE zif_aff_dobj_v1
       "! <p class="shorttext">Attributes</p>
       "!Attributes
       "! $required
-      attributes  TYPE ty_dobj_details,
+      attributes  TYPE ty_attributes,
       "! <p class="shorttext">Structure Definition</p>
       "! Structure definition
       "! $required
