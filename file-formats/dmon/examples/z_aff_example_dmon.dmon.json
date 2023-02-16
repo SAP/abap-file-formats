@@ -1,0 +1,12 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "AFF ABAP Daemon Application",
+    "originalLanguage": "en"
+  },
+  "className": "CL_AD_EXT_SIMPLE_DAEMON",
+  "callerObject": {
+    "type": "PROG",
+    "name": "RS_ABAP_DAEMON_STARTUP_TEST"
+  }
+}

@@ -8,36 +8,9 @@ import sys
 import re
 
 msg_errors = list()
-schemas = glob.glob('./file-formats/*/*.json')
-json_in_repo = glob.glob('./file-formats/**/*.json', recursive=True)
-only_instances = set(json_in_repo) - set(schemas)
-instances = sorted(only_instances, key = lambda x:x[-9])
-instance_without_schema = []
-
-def match_schema_instance( ):
-    matches = {}
-    for instance in instances:
-        # get ABAP object type
-        file_name = os.path.basename(instance)
-        try:
-            object_type = re.search('\.(([a-z]{4})+?)\.json', file_name).group(1)
-        except AttributeError:
-            continue
-        # access formatVersion
-        json_data = decode_json( instance )
-        try:
-            version = json_data["formatVersion"]
-        except KeyError:
-            continue
-        # match data with schema
-        schema_name =  object_type + '-v'+ version + '.json'
-        schema = [s for s in schemas if schema_name in s]
-        try:
-            matches[instance] = schema[0]
-        except IndexError:
-            matches[instance] = ""
-            instance_without_schema.append(instance)
-    return matches
+msg_warning = list()
+schemas = sorted( glob.glob('./file-formats/*/*.json') )
+examples = sorted( glob.glob('./file-formats/*/examples/*.json', recursive=True) )
 
 def decode_json( file ):
     with open(file, 'r') as json_f:
@@ -61,28 +34,34 @@ def validate_json( schema, instance ):
         #print(f"::set-output name={os.path.basename(instance).ljust(31)} valid instance of schema {os.path.basename(schema)}" )
         print( "valid: " + os.path.basename(schema) + "; " + os.path.basename(instance))
 
+def match_schema_to_data( ):
+    match = {}
+    for schema in schemas:
+        object_type = os.path.basename(schema).split( sep='-' )[0]
+        json_data = [ ex for ex in examples if object_type in os.path.basename(ex).split( sep = '.' )[-2] ]
+        match[schema] = json_data
+    return match
 
-def validate_json_and_example( matches ):
-    print(f"::group::Validate JSON")
+def validate_examples( matches ):
+    print(f"::group::Validate JSON examples")
     for match in matches:
-        # no schema found
-        if matches[match] == "":
+        if len(matches[match]) == 0:
+            msg_warning.append(f"::notice file={match},line=1,col=1::No JSON example found for JSON Schema {match}" )
             continue
-        validate_json( matches[match], match )
+        for example in matches[match]:
+            validate_json( match, example )
     print(f"::endgroup::")
 
 
+matches = match_schema_to_data( )
 
-
-
-matches = match_schema_instance( )
-
-validate_json_and_example( matches )
-print("\nFiles without an associated JSON Schema in repository:")
-for instance in instance_without_schema:
-    print(f"::notice file={instance},line=1,col=1,endColumn=2::File without an associated JSON Schema in repository is {instance}")
+validate_examples( matches )
 
 print()
+
+if len(msg_warning) > 0:
+    print(*msg_warning, sep='\n')
+
 if len(msg_errors) > 0:
     print(*msg_errors, sep='\n')
     sys.exit(1)

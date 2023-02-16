@@ -37,17 +37,14 @@
           "type": "string",
           "enum": [
             "standard",
-            "keyUser",
             "cloudDevelopment"
           ],
           "enumTitles": [
             "Standard",
-            "ABAP for Key Users",
             "ABAP Cloud Development"
           ],
           "enumDescriptions": [
             "Standard",
-            "ABAP for key user extensibility",
             "ABAP cloud development"
           ],
           "default": "standard"
@@ -123,16 +120,16 @@
                         "description": "The sign type of the range",
                         "type": "string",
                         "enum": [
-                          "exclude",
-                          "include"
+                          "include",
+                          "exclude"
                         ],
                         "enumTitles": [
-                          "Exclude",
-                          "Include"
+                          "Include",
+                          "Exclude"
                         ],
                         "enumDescriptions": [
-                          "Exclude",
-                          "Include"
+                          "Include",
+                          "Exclude"
                         ]
                       },
                       "option": {
@@ -147,7 +144,9 @@
                           "notEqual",
                           "notBetween",
                           "notContainsPattern",
-                          "greaterEqual"
+                          "greaterEqual",
+                          "lessThan",
+                          "lessEqual"
                         ],
                         "enumTitles": [
                           "Equals",
@@ -157,7 +156,9 @@
                           "Not Equal",
                           "Not Between",
                           "Not Contains Pattern",
-                          "Greater Equal"
+                          "Greater Equal",
+                          "Less Than",
+                          "Less Equal"
                         ],
                         "enumDescriptions": [
                           "Equals",
@@ -167,7 +168,9 @@
                           "Not equal",
                           "Not between",
                           "Not contains pattern",
-                          "Greater equal"
+                          "Greater equal",
+                          "Less than",
+                          "Less equal"
                         ]
                       },
                       "low": {
@@ -184,9 +187,7 @@
                     "additionalProperties": false,
                     "required": [
                       "sign",
-                      "option",
-                      "low",
-                      "high"
+                      "option"
                     ]
                   }
                 }

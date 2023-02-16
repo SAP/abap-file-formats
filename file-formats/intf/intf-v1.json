@@ -32,8 +32,8 @@
           "pattern": "^[a-z]+$"
         },
         "abapLanguageVersion": {
-          "title": "ABAP Language Version (Source Code Objects)",
-          "description": "ABAP language version for source code objects",
+          "title": "ABAP Language Version",
+          "description": "ABAP language version",
           "type": "string",
           "enum": [
             "standard",

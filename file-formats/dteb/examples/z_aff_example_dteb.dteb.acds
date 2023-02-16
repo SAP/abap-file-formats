@@ -1,0 +1,3 @@
+define view entity buffer on z_aff_example_ddls
+  layer localization
+  type single

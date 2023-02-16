@@ -44,8 +44,7 @@
             {
               "sign": "exclude",
               "option": "equals",
-              "low": "0002470721",
-              "high": ""
+              "low": "0002470721"
             }
           ]
         },
@@ -54,9 +53,8 @@
           "valueRangeList": [
             {
               "sign": "exclude",
-              "option": "equals",
-              "low": "P",
-              "high": ""
+              "option": "lessEqual",
+              "low": "P"
             }
           ]
         }
