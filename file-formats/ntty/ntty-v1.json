@@ -72,7 +72,7 @@
           "type": "boolean"
         },
         "hideTitle": {
-          "title": "Title hidden",
+          "title": "Title Hidden",
           "description": "Title hidden",
           "type": "boolean"
         }

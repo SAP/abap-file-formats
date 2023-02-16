@@ -19,7 +19,7 @@ INTERFACE zif_aff_ntty_v1
       "! <p class="shorttext">Multiple Notes</p>
       "! Multiple notes possible
       multiple_notes            TYPE abap_bool,
-      "! <p class="shorttext">Title hidden</p>
+      "! <p class="shorttext">Title Hidden</p>
       "! Title hidden
       hide_title          TYPE abap_bool,
     END OF ty_general_information,
