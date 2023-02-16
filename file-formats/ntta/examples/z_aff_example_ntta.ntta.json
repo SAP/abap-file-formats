@@ -8,7 +8,7 @@
       "objectNodeType": "TestNodeType",
       "implementationExit": "CL_TEST_EXIT"
     },
-    "notetypes": [
+    "noteTypes": [
       {
         "name": "TEST_NOTETYPE_1"
       },
