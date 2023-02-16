@@ -23,7 +23,7 @@ INTERFACE zif_aff_ntta_v1
       "! <p class="shorttext">Name</p>
       "! Name
       "! $required
-      Name TYPE ty_notetype,
+      name TYPE ty_notetype,
     END OF ty_notetype_structure,
 
     "! <p class="shorttext">Note Types</p>
