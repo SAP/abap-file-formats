@@ -36,7 +36,7 @@ INTERFACE zif_aff_ntty_v1
     END OF ty_content_settings,
 
     "! <p class="shorttext">ABAP file format for Note Type objects</p>
-    "! ABAP file format for Note Type objects
+    "! ABAP file format for note type objects
     BEGIN OF ty_main,
       "! <p class="shorttext">Format Version</p>
       "! Format version

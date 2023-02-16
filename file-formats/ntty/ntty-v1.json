@@ -3,7 +3,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/ntty/ntty-v1.json",
   "title": "ABAP file format for Note Type objects",
-  "description": "ABAP file format for Note Type objects",
+  "description": "ABAP file format for note type objects",
   "type": "object",
   "properties": {
     "formatVersion": {
