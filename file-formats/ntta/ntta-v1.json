@@ -3,7 +3,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/ntta/ntta-v1.json",
   "title": "ABAP file format for Note Type Assignment objects",
-  "description": "ABAP file format for Note Type Assignment objects",
+  "description": "ABAP file format for note type assignment objects",
   "type": "object",
   "properties": {
     "formatVersion": {
@@ -82,12 +82,12 @@
     },
     "noteTypes": {
       "title": "Note Types",
-      "description": "Note Types assigned to the SAP Object Node Type",
+      "description": "Note types assigned to the SAP Object Node Type",
       "type": "array",
       "uniqueItems": true,
       "items": {
         "title": "Note Type",
-        "description": "Note Type",
+        "description": "Note type",
         "type": "object",
         "properties": {
           "name": {

@@ -18,7 +18,7 @@ INTERFACE zif_aff_ntta_v1
     END OF ty_general_information,
 
     "! <p class="shorttext">Note Type</p>
-    "! Note Type
+    "! Note type
     BEGIN OF ty_notetype_structure,
       "! <p class="shorttext">Name</p>
       "! Name
@@ -27,11 +27,11 @@ INTERFACE zif_aff_ntta_v1
     END OF ty_notetype_structure,
 
     "! <p class="shorttext">Note Types</p>
-    "! Note Types
+    "! Note types
     ty_notetypes TYPE SORTED TABLE OF ty_notetype_structure WITH UNIQUE KEY name,
 
     "! <p class="shorttext">ABAP file format for Note Type Assignment objects</p>
-    "! ABAP file format for Note Type Assignment objects
+    "! ABAP file format for note type assignment objects
     BEGIN OF ty_main,
       "! <p class="shorttext">Format Version</p>
       "! Format version
@@ -45,7 +45,7 @@ INTERFACE zif_aff_ntta_v1
       "! General information
       general_information TYPE ty_general_information,
       "! <p class="shorttext">Note Types</p>
-      "! Note Types assigned to the SAP Object Node Type
+      "! Note types assigned to the SAP Object Node Type
       note_types  TYPE ty_notetypes,
     END OF ty_main.
 
