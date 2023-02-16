@@ -3,13 +3,6 @@
 # top-most EditorConfig file
 root = true
 
-# ensure the LF line endings for SKTD markdowns
-[*.sktd.*.md]
-charset = utf-8
-end_of_line = lf
-insert_final_newline = true
-
-
 # ensure the LF line endings
 [*.{abap,md,properties,acds,json,mjs,gitignore}]
 charset = utf-8
@@ -21,3 +14,12 @@ trim_trailing_whitespace = true
 [*.json]
 indent_style = space
 indent_size = 2
+
+
+# ensure the LF line endings for SKTD markdowns
+[*.sktd.*.md]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+
+
