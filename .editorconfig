@@ -3,6 +3,13 @@
 # top-most EditorConfig file
 root = true
 
+# ensure the LF line endings for SKTD markdowns
+[*.sktd.*.md]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+
+
 # ensure the LF line endings
 [*.{abap,md,properties,acds,json,mjs,gitignore}]
 charset = utf-8
