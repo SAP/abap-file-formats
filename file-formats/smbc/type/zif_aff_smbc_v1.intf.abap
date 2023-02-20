@@ -68,7 +68,7 @@ INTERFACE zif_aff_smbc_v1
     BEGIN OF co_row_count_mode,
       "! <p class="shorttext synchronized">Fixed</p>
       "! The table always has as many rows as defined in the visibleRowCount property
-      fixed type string VALUE 'Fixed',
+      fixed TYPE string VALUE 'Fixed',
       "! <p class="shorttext synchronized">Automatic</p>
       "! The visibleRowCount property is changed by the table automatically
       auto TYPE string VALUE 'Auto',
@@ -148,7 +148,7 @@ INTERFACE zif_aff_smbc_v1
       "! $minimum 1
       "! $maximum 1000
       "! $default '5'
-      row_count type i,
+      row_count TYPE i,
       "! <p class="shorttext synchronized">Table Creation Mode</p>
       "! $values {@link zif_aff_smbc_v1.data:co_creation_mode_name}
       "! $default {@link zif_aff_smbc_v1.data:co_creation_mode_name.new_page}
