@@ -176,7 +176,7 @@ INTERFACE zif_aff_smbc_v1
       enable_full_screen     TYPE abap_bool,
       "! <p class="shorttext synchronized">Enable Mass Edit</p>
       "! Mass editing allows users to simultaneously change multiple objects that share the same editable properties
-      enable_Mass_Edit TYPE abap_bool,
+      enable_mass_edit TYPE abap_bool,
     END OF ty_table_setting,
     "! <p class="shorttext synchronized" >Object Page Configurations</p>
     ty_object_pages   TYPE SORTED TABLE OF ty_object_page WITH UNIQUE KEY entity_set,
