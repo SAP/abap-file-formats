@@ -3,6 +3,7 @@ INTERFACE zif_aff_intf_v1 PUBLIC.
   "! <p class="shorttext">Interface Category</p>
   "! Interface category
   "! $values {@link zif_aff_intf_v1.data:co_category}
+  "! $default {@link zif_aff_intf_v1.data:co_category.general}
   TYPES ty_category TYPE n LENGTH 2.
 
   CONSTANTS:
@@ -18,7 +19,7 @@ INTERFACE zif_aff_intf_v1 PUBLIC.
       "! <p class="shorttext">Business (Static Components)</p>
       "! Business interface for static components
       business_static_components   TYPE ty_category VALUE '51',
-      "! <p class="shorttext">Business (Instance-dep. components)</p>
+      "! <p class="shorttext">Business (Instance-Dep. Components)</p>
       "! Business interface for instance-dependent components
       business_instance_components TYPE ty_category VALUE '52',
       "! <p class="shorttext">DB Procedure Proxy</p>
