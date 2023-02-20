@@ -16,19 +16,20 @@ INTERFACE zif_aff_enho_v1
   "! <p class="shorttext">Customizing</p>
   "! Customizing
   "! $values {@link zif_aff_enho_v1.data:co_customizing}
+  "! $default {@link zif_aff_enho_v1.data:co_customizing.not_supported}
   TYPES ty_customizing TYPE c LENGTH 1.
 
   CONSTANTS:
     "! <p class="shorttext">Customizing</p>
     "! Customizing
     BEGIN OF co_customizing,
-      "! <p class="shorttext">Customizing supported</p>
-      "! Customizing is supported
-      supported              TYPE ty_customizing VALUE ' ',
-      "! <p class="shorttext">Customizing not supported</p>
+      "! <p class="shorttext">Customizing Not Supported</p>
       "! Customizing is not supported
       not_supported              TYPE ty_customizing VALUE 'X',
-      "! <p class="shorttext">Customizing supported (no transport)</p>
+      "! <p class="shorttext">Customizing Supported</p>
+      "! Customizing is supported
+      supported              TYPE ty_customizing VALUE ' ',
+      "! <p class="shorttext">Customizing Supported (No Transport)</p>
       "! Customizing is supported (without transport)
       supported_no_transport              TYPE ty_customizing VALUE 'D',
     END OF co_customizing.
