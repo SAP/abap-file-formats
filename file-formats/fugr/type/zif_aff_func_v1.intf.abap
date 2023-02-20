@@ -143,12 +143,16 @@ INTERFACE zif_aff_func_v1
   "! <p class="shorttext">Release State</p>
   "! Release state
   "! $values {@link zif_aff_func_v1.data:co_release_state}
+  "! $default {@link zif_aff_func_v1.data:co_release_state.not_released}
   TYPES ty_release_state TYPE c LENGTH 1.
 
   CONSTANTS:
     "! <p class="shorttext">Release State</p>
     "! Release state
     BEGIN OF co_release_state,
+      "! <p class="shorttext">Not Released</p>
+      "! Function module is not released
+      not_released          TYPE ty_release_state VALUE 'N',
       "! <p class="shorttext">Released</p>
       "! Function module is released
       released              TYPE ty_release_state VALUE 'E',
@@ -161,9 +165,6 @@ INTERFACE zif_aff_func_v1
       "! <p class="shorttext">Planned To Be Released [Obsolete]</p>
       "! Function module is planned to be released [obsolete]
       release_planned       TYPE ty_release_state VALUE 'M',
-      "! <p class="shorttext">Not Released</p>
-      "! Function module is not released
-      not_released          TYPE ty_release_state VALUE 'N',
     END OF co_release_state.
 
   TYPES:

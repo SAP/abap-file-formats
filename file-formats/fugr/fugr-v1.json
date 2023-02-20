@@ -69,26 +69,27 @@
       "description": "Status",
       "type": "string",
       "enum": [
+        "notClassified",
         "sapProgram",
         "customerProgram",
         "systemProgram",
-        "testProgram",
-        "notClassified"
+        "testProgram"
       ],
       "enumTitles": [
+        "Not Classified",
         "SAP Program",
         "Customer Program",
         "System Program",
-        "Test Program",
-        "Not Classified"
+        "Test Program"
       ],
       "enumDescriptions": [
+        "Not classified",
         "SAP program",
         "Customer production program",
         "System program",
-        "Test program",
-        "Not classified"
-      ]
+        "Test program"
+      ],
+      "default": "notClassified"
     }
   },
   "additionalProperties": false,
