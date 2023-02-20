@@ -37,6 +37,9 @@ INTERFACE zif_aff_clas_v1 PUBLIC.
       "! <p class="shorttext">RFC Proxy Class</p>
       "! RFC proxy class
       rfc_proxy_class                TYPE ty_category VALUE '35',
+      "! <p class="shorttext">Communication Connection Class</p>
+      "! Communication connection class
+      communication_connection_class TYPE ty_category VALUE '36',
       "! <p class="shorttext">Exception Class</p>
       "! Exception class
       exception_class                TYPE ty_category VALUE '40',
