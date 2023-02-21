@@ -47,7 +47,8 @@
         "normal",
         "rfc",
         "update"
-      ]
+      ],
+      "default": "normal"
     },
     "rfcProperties": {
       "title": "RFC Specific Fields",
@@ -80,7 +81,8 @@
             "From same system",
             "From any system",
             "Not classified"
-          ]
+          ],
+          "default": "notClassified"
         },
         "rfcVersion": {
           "title": "RFC Version",
@@ -97,7 +99,8 @@
           "enumDescriptions": [
             "Fast serialization required",
             "Any"
-          ]
+          ],
+          "default": "any"
         },
         "abapFromJava": {
           "title": "ABAP From Java",
@@ -151,7 +154,8 @@
             "Start immediately no restart",
             "Collective Run",
             "Unsupported Kind"
-          ]
+          ],
+          "default": "startImmediately"
         }
       },
       "additionalProperties": false,
