@@ -116,8 +116,7 @@ INTERFACE zif_aff_types_v1 PUBLIC.
 
   TYPES:
     "! <p class="shorttext">Header</p>
-    "! The header for an ABAP main object (without source code; without ABAP language version)
-    "! with a description of 60 characters
+    "! The header for an ABAP main object (without source code; without ABAP language version) with a description of 60 characters
     BEGIN OF ty_header_60_no_abap_lv,
       "! $required
       description           TYPE ty_description_60,
@@ -147,6 +146,7 @@ INTERFACE zif_aff_types_v1 PUBLIC.
   "! <p class="shorttext">Option</p>
   "! Option
   "! $values {@link zif_aff_types_v1.data:co_option}
+  "! $default {@link zif_aff_types_v1.data:co_option.equals}
   TYPES ty_option TYPE c LENGTH 2.
 
   CONSTANTS:
@@ -188,6 +188,7 @@ INTERFACE zif_aff_types_v1 PUBLIC.
   "! <p class="shorttext">Sign</p>
   "! Sign
   "! $values {@link zif_aff_types_v1.data:co_sign}
+  "! $default {@link zif_aff_types_v1.data:co_sign.include}
   TYPES ty_sign TYPE c LENGTH 1.
 
   CONSTANTS:
