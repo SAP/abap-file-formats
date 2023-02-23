@@ -4,7 +4,7 @@ INTERFACE zif_aff_uist_v1
   TYPES:
     "! <p class="shorttext">SAP Fiori Page Template</p>
     "! SAP Fiori Page Template
-    BEGIN OF ts_page,
+    BEGIN OF ty_page,
       "! <p class="shorttext">ID</p>
       "! ID
       page_template_id          TYPE /ui2/page_entity_id,
@@ -16,9 +16,9 @@ INTERFACE zif_aff_uist_v1
       "! <p class="shorttext">Description</p>
       "! Description
       page_template_description TYPE /ui2/page_description,
-    END OF ts_page,
+    END OF ty_page,
 
-    tt_page TYPE TABLE OF ts_page WITH KEY page_template_id.
+    ty_pages TYPE TABLE OF ty_page WITH KEY page_template_id.
 
   TYPES:
     "! <p class="shorttext">Fiori Launchpad Space Template</p>
@@ -59,6 +59,6 @@ INTERFACE zif_aff_uist_v1
 
       "! <p class="shorttext">Assigned SAP Fiori Launchpad Page Templates</p>
       "! Assigned SAP Fiori launchpad page templates
-      pages                        TYPE tt_page,
+      pages                        TYPE ty_pages,
     END OF ty_main.
 ENDINTERFACE.
