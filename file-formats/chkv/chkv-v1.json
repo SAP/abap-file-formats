@@ -130,7 +130,8 @@
                         "enumDescriptions": [
                           "Include",
                           "Exclude"
-                        ]
+                        ],
+                        "default": "include"
                       },
                       "option": {
                         "title": "Option",
@@ -171,7 +172,8 @@
                           "Greater equal",
                           "Less than",
                           "Less equal"
-                        ]
+                        ],
+                        "default": "equals"
                       },
                       "low": {
                         "title": "Low",
