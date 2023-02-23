@@ -67,7 +67,7 @@ INTERFACE zif_aff_enhs_v1
   "! <p class="shorttext">Type of the Value Check Object</p>
   "! Type of the value check object
   "! $values {@link zif_aff_enhs_v1.data:co_value_check_object_type}
-  "! $default {@link zif_aff_enhs_v1.data:co_value_check_object_type.domain}
+  "! $default {@link zif_aff_enhs_v1.data:co_value_check_object_type.data_element}
   TYPES ty_value_check_object_type TYPE string.
 
   CONSTANTS:

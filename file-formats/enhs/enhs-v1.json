@@ -255,7 +255,7 @@
                         "Domain",
                         "Data element"
                       ],
-                      "default": "domain"
+                      "default": "dataElement"
                     },
                     "objectName": {
                       "title": "Name of the Value Check Object",
