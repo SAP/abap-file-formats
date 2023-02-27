@@ -4,6 +4,7 @@ INTERFACE zif_aff_enhs_v1
   "! <p class="shorttext">BAdI Enhancement Spot Tool Type</p>
   "! Tool type of the BAdI Enhancement Spot
   "! $values {@link zif_aff_enhs_v1.data:co_tool}
+  "! $default {@link zif_aff_enhs_v1.data:co_tool.badi_definition}
   TYPES ty_tool TYPE c LENGTH 10.
 
   CONSTANTS:
@@ -18,6 +19,7 @@ INTERFACE zif_aff_enhs_v1
   "! <p class="shorttext">Instantiation of the BAdI Definition</p>
   "! Instantiation of the BAdI definition
   "! $values {@link zif_aff_enhs_v1.data:co_instantiation}
+  "! $default {@link zif_aff_enhs_v1.data:co_instantiation.creating_new_instances}
   TYPES ty_instantiation TYPE c LENGTH 1.
 
   CONSTANTS:
@@ -38,6 +40,7 @@ INTERFACE zif_aff_enhs_v1
   "! <p class="shorttext">Filter Type</p>
   "! Type of a badi filter
   "! $values {@link zif_aff_enhs_v1.data:co_filter_type}
+  "! $default {@link zif_aff_enhs_v1.data:co_filter_type.string}
   TYPES ty_filter_type TYPE c LENGTH 1.
 
   CONSTANTS:
@@ -64,6 +67,7 @@ INTERFACE zif_aff_enhs_v1
   "! <p class="shorttext">Type of the Value Check Object</p>
   "! Type of the value check object
   "! $values {@link zif_aff_enhs_v1.data:co_value_check_object_type}
+  "! $default {@link zif_aff_enhs_v1.data:co_value_check_object_type.data_element}
   TYPES ty_value_check_object_type TYPE string.
 
   CONSTANTS:
