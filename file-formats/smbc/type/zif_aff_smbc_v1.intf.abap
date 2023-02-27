@@ -60,10 +60,19 @@ INTERFACE zif_aff_smbc_v1
       "! <p class="shorttext synchronized" >Disabled</p>
       "! Data is never loaded when opening the app without an app state
       disabled TYPE string VALUE 'Disabled',
-      "! <p class="shorttext synchronized" >Auto</p>
+      "! <p class="shorttext synchronized" >Automatic</p>
       "! Data is only loaded, if initial/preset filters are available
       auto     TYPE string VALUE 'Auto',
-    END OF co_initial_load.
+    END OF co_initial_load,
+    "! <p class="shorttext synchronized">Row Count Mode</p>
+    BEGIN OF co_row_count_mode,
+      "! <p class="shorttext synchronized">Fixed</p>
+      "! The table always has as many rows as defined in the visibleRowCount property
+      fixed TYPE string VALUE 'Fixed',
+      "! <p class="shorttext synchronized">Automatic</p>
+      "! The visibleRowCount property is changed by the table automatically
+      auto TYPE string VALUE 'Auto',
+    END OF co_row_count_mode.
 
   TYPES:
     "! <p class="shorttext synchronized" >Personalization</p>
@@ -129,6 +138,17 @@ INTERFACE zif_aff_smbc_v1
       "! $values {@link zif_aff_smbc_v1.data:co_selection_mode}
       "! $default {@link zif_aff_smbc_v1.data:co_selection_mode.auto}
       selection_mode         TYPE string,
+      "! <p class="shorttext synchronized">Row Count Mode</p>
+      "! Defines how the table handles the visible rows in the table
+      "! $values {@link zif_aff_smbc_v1.data:co_row_count_mode}
+      "! $default {@link zif_aff_smbc_v1.data:co_row_count_mode.fixed}
+      row_count_mode TYPE string,
+      "! <p class="shorttext synchronized">Row Count</p>
+      "! Number of visible rows of the table
+      "! $minimum 1
+      "! $maximum 1000
+      "! $default '5'
+      row_count TYPE i,
       "! <p class="shorttext synchronized">Table Creation Mode</p>
       "! $values {@link zif_aff_smbc_v1.data:co_creation_mode_name}
       "! $default {@link zif_aff_smbc_v1.data:co_creation_mode_name.new_page}
@@ -154,6 +174,9 @@ INTERFACE zif_aff_smbc_v1
       "! <p class="shorttext synchronized">Enable Full Screen</p>
       "! If true, a button on the table toolbar allows the user to open the table in fullscreen dialog
       enable_full_screen     TYPE abap_bool,
+      "! <p class="shorttext synchronized">Enable Mass Edit</p>
+      "! Mass editing allows users to simultaneously change multiple objects that share the same editable properties
+      enable_mass_edit TYPE abap_bool,
     END OF ty_table_setting,
     "! <p class="shorttext synchronized" >Object Page Configurations</p>
     ty_object_pages   TYPE SORTED TABLE OF ty_object_page WITH UNIQUE KEY entity_set,
