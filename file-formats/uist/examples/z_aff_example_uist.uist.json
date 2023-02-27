@@ -7,12 +7,12 @@
   "spaceTemplateId": "Z_AFF_EXAMPLE_UIST",
   "spaceTemplateTitle": "Example of UIST Object for ABAP file formats",
   "spaceTemplateDescription": "Example of UIST Object for ABAP file formats",
-  "spaceTemplateSortPriority": 1.1,
+  "spaceTemplateSortPriority": 1.001,
   "baseSpaceTemplateId": "Z_TEST",
   "pages": [
     {
       "pageTemplateId": "Z_PAGE",
-      "pageTemplateTitle": "                                   Page"
+      "pageTemplateTitle": "Page"
     }
   ]
 }
