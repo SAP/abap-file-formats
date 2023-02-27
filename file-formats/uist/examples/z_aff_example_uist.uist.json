@@ -1,0 +1,18 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Example of UIST Object for ABAP file formats",
+    "originalLanguage": "en"
+  },
+  "spaceTemplateId": "Z_AFF_EXAMPLE_UIST",
+  "spaceTemplateTitle": "Example of UIST Object for ABAP file formats",
+  "spaceTemplateDescription": "Example of UIST Object for ABAP file formats",
+  "spaceTemplateSortPriority": 1.1,
+  "baseSpaceTemplateId": "Z_TEST",
+  "pages": [
+    {
+      "pageTemplateId": "Z_PAGE",
+      "pageTemplateTitle": "                                   Page"
+    }
+  ]
+}
