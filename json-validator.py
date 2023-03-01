@@ -36,20 +36,22 @@ def validate_json( schema, instance ):
 
 def match_schema_to_data( ):
     match = {}
-    for schema in schemas:
-        object_type = os.path.basename(schema).split( sep='-' )[0]
-        json_data = [ ex for ex in examples if object_type in os.path.basename(ex).split( sep = '.' )[-2] ]
-        match[schema] = json_data
+
+    for example in examples:
+        example_type = os.path.basename(example).split( sep = '.' )[-2]
+        example_version = decode_json( example )[ 'formatVersion' ]
+        json_schema = [ schema for schema in schemas if example_type in os.path.basename(schema).split( sep = '-' )[0]
+                                                        and example_version in os.path.basename(schema).split( sep='-')[1]]
+        match[example] = json_schema.pop( 0 )
     return match
 
 def validate_examples( matches ):
     print(f"::group::Validate JSON examples")
-    for match in matches:
-        if len(matches[match]) == 0:
-            msg_warning.append(f"::notice file={match},line=1,col=1::No JSON example found for JSON Schema {match}" )
+    for example in matches:
+        if len(matches[example]) == 0:
+            msg_warning.append(f"::notice file={example},line=1,col=1::No JSON Schema found for JSON example {example}" )
             continue
-        for example in matches[match]:
-            validate_json( match, example )
+        validate_json( matches[example], example )
     print(f"::endgroup::")
 
 
