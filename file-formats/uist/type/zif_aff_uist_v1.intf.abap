@@ -60,8 +60,8 @@ INTERFACE zif_aff_uist_v1
       "! Base Space Template ID
       base_space_template_id       TYPE c LENGTH 35,
 
-      "! <p class="shorttext">Assigned SAP Fiori Launchpad Page Templates</p>
+      "! <p class="shorttext">Page Templates</p>
       "! Assigned SAP Fiori launchpad page templates
-      pages                        TYPE ty_pages,
+      page_templates                        TYPE ty_pages,
     END OF ty_main.
 ENDINTERFACE.
