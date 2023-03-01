@@ -54,7 +54,8 @@ INTERFACE zif_aff_cfdf_v2
       "! Field short label
       field_short_label    TYPE c                 LENGTH 10,
     END OF ty_gs_ui_text.
-  TYPES ty_gt_ui_text TYPE STANDARD TABLE OF ty_gs_ui_text WITH KEY language.
+  TYPES ty_gt_ui_text TYPE STANDARD TABLE OF ty_gs_ui_text
+        WITH KEY language.
   TYPES:
     "! <p class="shorttext">Extended Business Context Details</p>
     "! Extended business context details
@@ -68,7 +69,8 @@ INTERFACE zif_aff_cfdf_v2
       "! Deviating field name
       deviating_field_name TYPE ty_field_name,
     END OF ty_gs_extended_bus_context.
-  TYPES ty_gt_extended_bus_context TYPE STANDARD TABLE OF ty_gs_extended_bus_context WITH KEY business_context.
+  TYPES ty_gt_extended_bus_context TYPE STANDARD TABLE OF ty_gs_extended_bus_context
+        WITH KEY business_context.
   TYPES:
     "! <p class="shorttext">Extended CDS View Details</p>
     "! Extended CDS view details
@@ -97,7 +99,8 @@ INTERFACE zif_aff_cfdf_v2
       "! $default {@link zif_aff_cfdf_v2.data:co_field_control_property.optional}
       field_control_property        TYPE ty_field_control_property,
     END OF ty_gs_extended_cds_view.
-  TYPES ty_gt_extended_cds_view TYPE STANDARD TABLE OF ty_gs_extended_cds_view WITH KEY business_context cds_view_name.
+  TYPES ty_gt_extended_cds_view TYPE STANDARD TABLE OF ty_gs_extended_cds_view
+        WITH KEY business_context cds_view_name.
   TYPES:
     "! <p class="shorttext">Extended OData Service Details</p>
     "! Extended OData service details
@@ -117,7 +120,7 @@ INTERFACE zif_aff_cfdf_v2
       is_search_relevant TYPE abap_bool,
     END OF ty_gs_extended_odata_service.
   TYPES ty_gt_extended_odata_service TYPE STANDARD TABLE OF ty_gs_extended_odata_service
-                                               WITH KEY business_context odata_service_key.
+        WITH KEY business_context odata_service_key.
   TYPES:
     "! <p class="shorttext">Extended Business Scenario Details</p>
     "! Extended business scenario details
@@ -132,7 +135,8 @@ INTERFACE zif_aff_cfdf_v2
       "! $required
       data_transfer     TYPE c LENGTH 30,
     END OF ty_gs_extended_bus_scenario.
-  TYPES ty_gt_extended_bus_scenario TYPE STANDARD TABLE OF ty_gs_extended_bus_scenario WITH KEY business_scenario.
+  TYPES ty_gt_extended_bus_scenario TYPE STANDARD TABLE OF ty_gs_extended_bus_scenario
+        WITH KEY business_scenario.
   TYPES:
     "! <p class="shorttext">Extended Dynpro Context Details</p>
     "! Extended dynpro context details
@@ -148,7 +152,7 @@ INTERFACE zif_aff_cfdf_v2
       business_context TYPE ty_business_context,
     END OF ty_gs_extended_dynpro_context.
   TYPES ty_gt_extended_dynpro_context TYPE STANDARD TABLE OF ty_gs_extended_dynpro_context
-                                          WITH KEY dynpro_context business_context.
+        WITH KEY dynpro_context business_context.
   TYPES:
     "! <p class="shorttext">Extended SOAP Service Details</p>
     "! Extended SOAP service details
@@ -190,7 +194,7 @@ INTERFACE zif_aff_cfdf_v2
       external_field_name  TYPE c                       LENGTH 120,
     END OF ty_gs_extended_soap_service.
   TYPES ty_gt_extended_soap_service TYPE STANDARD TABLE OF ty_gs_extended_soap_service
-                              WITH KEY business_context service_interface operation message_direction component_identifier.
+        WITH KEY business_context service_interface operation message_direction component_identifier.
   TYPES:
     "! <p class="shorttext">Code Description</p>
     "! Code description
@@ -210,7 +214,8 @@ INTERFACE zif_aff_cfdf_v2
       "! $required
       description TYPE c LENGTH 60,
     END OF ty_gs_code_list_value_descr.
-  TYPES ty_gt_code_list_value_descr TYPE STANDARD TABLE OF ty_gs_code_list_value_descr WITH KEY language code.
+  TYPES ty_gt_code_list_value_descr TYPE STANDARD TABLE OF ty_gs_code_list_value_descr
+        WITH KEY language code.
   TYPES:
     "! <p class="shorttext">Code Value</p>
     "! Code value
@@ -224,7 +229,8 @@ INTERFACE zif_aff_cfdf_v2
       "! Disabled
       is_disabled TYPE abap_bool,
     END OF ty_gs_code_list_value.
-  TYPES ty_gt_code_list_value TYPE STANDARD TABLE OF ty_gs_code_list_value WITH KEY code.
+  TYPES ty_gt_code_list_value TYPE STANDARD TABLE OF ty_gs_code_list_value
+        WITH KEY code.
   TYPES:
     "! <p class="shorttext">Value Help Key Mapping Details</p>
     "! Value help key mapping details
@@ -242,7 +248,8 @@ INTERFACE zif_aff_cfdf_v2
       "! Dimension view field name
       dimension_view_field_name TYPE ty_field_name,
     END OF ty_gs_value_help_key_mapping.
-  TYPES ty_gt_value_help_key_mapping TYPE STANDARD TABLE OF ty_gs_value_help_key_mapping WITH KEY component_identifier.
+  TYPES ty_gt_value_help_key_mapping TYPE STANDARD TABLE OF ty_gs_value_help_key_mapping
+        WITH KEY component_identifier.
   TYPES:
     "! <p class="shorttext">Value Help Binding Details</p>
     "! Value help binding details
@@ -263,7 +270,7 @@ INTERFACE zif_aff_cfdf_v2
       value_help_field_name        TYPE ty_field_name,
     END OF ty_gs_value_help_binding.
   TYPES ty_gt_value_help_binding TYPE STANDARD TABLE OF ty_gs_value_help_binding
-                                     WITH KEY cds_view_name value_help_field_name.
+        WITH KEY cds_view_name value_help_field_name.
   TYPES:
     "! <p class="shorttext">Data Protection and Privacy</p>
     "! Data protection and privacy
