@@ -24,7 +24,7 @@ INTERFACE zif_aff_uist_v1
     "! <p class="shorttext">Fiori Launchpad Space Template</p>
     "! Fiori Launchpad Space Template
     BEGIN OF ty_main,
-      "! <p class="shorttext">Format version</p>
+      "! <p class="shorttext">Format Version</p>
       "! Format version
       "! $required
       format_version               TYPE zif_aff_types_v1=>ty_format_version,
