@@ -39,8 +39,8 @@ Comments and suggestions for improvements are most welcome.
 
 Do you feel responsible for an ABAP object type?
 We will be more than happy if you contribute your object type to this project.
-Just open a new pull request and create a type like it is specified [here](./docs/json.md#writing-JSON-schema-with-ABAP-types).
-Feel free to hand over the type to us, so we can generate the JSON schema for you.
+Just open a new pull request and create an ABAP type like it is specified [here](./docs/json.md#writing-JSON-schema-with-ABAP-types).
+Feel free to hand over the type to us, so we can generate the JSON Schema for you.
 
 More details are found in [Contributing](./CONTRIBUTING.md).
 
