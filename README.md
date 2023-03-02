@@ -44,6 +44,12 @@ Feel free to hand over the type to us, so we can generate the JSON Schema for yo
 
 More details are found in [Contributing](./CONTRIBUTING.md).
 
+## Tooling
+
+We provide a separate repository with an ABAP report that generates JSON Schema based on ABAP types, see https://github.com/SAP/abap-file-formats-tools.
+
+For validation and annotation of JSON data, there is a visual studio code extension available [here](https://marketplace.visualstudio.com/items?itemName=larshp.vscode-abap-file-formats).
+
 ## Licensing
 
 <!-- markdown-link-check-disable-next-line -->
