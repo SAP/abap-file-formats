@@ -55,7 +55,7 @@ INTERFACE zif_aff_cfdf_v2
       field_short_label    TYPE c                 LENGTH 10,
     END OF ty_gs_ui_text.
   TYPES ty_gt_ui_text TYPE STANDARD TABLE OF ty_gs_ui_text
-        WITH KEY language.
+        WITH KEY language component_kind component_identifier.
   TYPES:
     "! <p class="shorttext">Extended Business Context Details</p>
     "! Extended business context details
