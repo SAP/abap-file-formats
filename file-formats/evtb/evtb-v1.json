@@ -89,7 +89,7 @@
       "title": "Business Object Operation",
       "description": "Business object operation",
       "type": "string",
-      "maxLength": 18
+      "maxLength": 30
     },
     "producerType": {
       "title": "Type",
