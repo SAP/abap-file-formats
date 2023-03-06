@@ -1,10 +1,12 @@
-# CFDF File Format V2
+# CFDF File Format
 
 File | Cardinality | Definition | Schema | Example
 :--- | :---  | :--- | :--- | :---
 `<name>.cfdf.json` | 1 | [`zif_aff_cfdf_v2.intf.abap`](./type/zif_aff_cfdf_v2.intf.abap) | [`cfdf-v2.json`](./cfdf-v2.json) | [`yy1_aff_example_v2.cfdf.json`](./examples/yy1_aff_example_v2.cfdf.json)
 
-# CFDF File Format V1
+## Previous Versions
+
+### v1
 
 File | Cardinality | Definition | Schema | Example
 :--- | :---  | :--- | :--- | :---
