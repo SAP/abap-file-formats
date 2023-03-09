@@ -7,7 +7,7 @@
   "type": "object",
   "properties": {
     "formatVersion": {
-      "title": "Format version",
+      "title": "Format Version",
       "description": "Format version",
       "type": "string",
       "const": "1"
@@ -59,40 +59,40 @@
         "originalLanguage"
       ]
     },
-    "spaceTemplateId": {
+    "id": {
       "title": "ID",
-      "description": "ID",
+      "description": "Space Template ID",
       "type": "string",
       "maxLength": 35
     },
-    "spaceTemplateTitle": {
+    "title": {
       "title": "Title",
-      "description": "Title",
+      "description": "Space Template Title",
       "type": "string",
       "maxLength": 100
     },
-    "spaceTemplateDescription": {
+    "description": {
       "title": "Description",
-      "description": "Description",
+      "description": "Space Template Description",
       "type": "string",
       "maxLength": 100
     },
-    "spaceTemplateSortPriority": {
+    "sortPriority": {
       "title": "Sort Priority",
       "description": "Sort priority",
       "type": "number",
-      "minimum": 0.001,
+      "minimum": -999.999,
       "maximum": 999.999,
       "multipleOf": 0.001
     },
     "baseSpaceTemplateId": {
-      "title": "Base Space ID",
+      "title": "Base Space Template ID",
       "description": "Base Space Template ID",
       "type": "string",
       "maxLength": 35
     },
     "pages": {
-      "title": "Assigned SAP Fiori Launchpad Page Templates",
+      "title": "Page Templates",
       "description": "Assigned SAP Fiori launchpad page templates",
       "type": "array",
       "items": {
@@ -101,8 +101,8 @@
         "type": "object",
         "properties": {
           "pageTemplateId": {
-            "title": "ID",
-            "description": "ID",
+            "title": "Page Template ID",
+            "description": "Page Template ID",
             "type": "string",
             "maxLength": 35
           },
@@ -127,8 +127,8 @@
   "required": [
     "formatVersion",
     "header",
-    "spaceTemplateId",
-    "spaceTemplateTitle",
-    "spaceTemplateDescription"
+    "id",
+    "title",
+    "description"
   ]
 }
