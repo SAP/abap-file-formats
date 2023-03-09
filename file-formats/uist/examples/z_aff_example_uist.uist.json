@@ -7,7 +7,7 @@
   "id": "Z_AFF_EXAMPLE_UIST",
   "title": "Example of UIST Object for ABAP file formats",
   "description": "Example of UIST Object for ABAP file formats",
-  "sortPriority": 1.001,
+  "sortPriority": 1,
   "baseSpaceTemplateId": "Z_TEST",
   "pages": [
     {
