@@ -5,9 +5,9 @@ INTERFACE zif_aff_uist_v1
     "! <p class="shorttext">SAP Fiori Page Template</p>
     "! SAP Fiori Page Template
     BEGIN OF ty_page,
-      "! <p class="shorttext">Page Template ID</p>
-      "! Page Template ID
-      page_template_id          TYPE c LENGTH 35,
+      "! <p class="shorttext">Name</p>
+      "! Page Template name
+      name          TYPE c LENGTH 35,
 
       "! <p class="shorttext">Title</p>
       "! Title
