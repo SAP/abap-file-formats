@@ -4,11 +4,7 @@ INTERFACE zif_aff_uist_v1
   TYPES:
     "! <p class="shorttext">Properties</p>
     "! Properties
-    BEGIN OF ty_properties,
-      "! <p class="shorttext">Name</p>
-      "! Space Template Name
-      "! $required
-      name             TYPE c LENGTH 35,
+    BEGIN OF ty_general_information,
       "! <p class="shorttext">Title</p>
       "! Space Template Title
       "! $required
@@ -21,7 +17,7 @@ INTERFACE zif_aff_uist_v1
       "! <p class="shorttext">Base Space Template Name</p>
       "! Base Space Template Name
       base_space_template_name       TYPE c LENGTH 35,
-    END OF ty_properties.
+    END OF ty_general_information.
 
   TYPES:
     "! <p class="shorttext">SAP Fiori Page Template</p>
@@ -48,10 +44,10 @@ INTERFACE zif_aff_uist_v1
       "! $required
       header          TYPE zif_aff_types_v1=>ty_header_60_cloud,
 
-      "! <p class="shorttext">Properties</p>
-      "! Properties
+      "! <p class="shorttext">General information</p>
+      "! General information
       "! $required
-      properties   TYPE ty_properties,
+     general_information   TYPE ty_general_information,
 
       "! <p class="shorttext">Page Templates</p>
       "! Assigned SAP Fiori launchpad page templates

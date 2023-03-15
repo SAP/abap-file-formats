@@ -37,17 +37,14 @@
           "type": "string",
           "enum": [
             "standard",
-            "keyUser",
             "cloudDevelopment"
           ],
           "enumTitles": [
             "Standard",
-            "ABAP for Key Users",
             "ABAP Cloud Development"
           ],
           "enumDescriptions": [
             "Standard",
-            "ABAP for key user extensibility",
             "ABAP cloud development"
           ],
           "default": "standard"
@@ -59,36 +56,35 @@
         "originalLanguage"
       ]
     },
-    "id": {
-      "title": "ID",
-      "description": "Space Template ID",
-      "type": "string",
-      "maxLength": 35
-    },
-    "title": {
-      "title": "Title",
-      "description": "Space Template Title",
-      "type": "string",
-      "maxLength": 100
-    },
-    "description": {
-      "title": "Description",
-      "description": "Space Template Description",
-      "type": "string",
-      "maxLength": 100
-    },
-    "sortPriority": {
-      "title": "Sort Priority",
-      "description": "Sort priority",
-      "type": "number",
-      "minimum": -999.999,
-      "maximum": 999.999
-    },
-    "baseSpaceTemplateId": {
-      "title": "Base Space Template ID",
-      "description": "Base Space Template ID",
-      "type": "string",
-      "maxLength": 35
+    "generalInformation": {
+      "title": "General information",
+      "description": "General information",
+      "type": "object",
+      "properties": {
+        "title": {
+          "title": "Title",
+          "description": "Space Template Title",
+          "type": "string",
+          "maxLength": 100
+        },
+        "sortPriority": {
+          "title": "Sort Priority",
+          "description": "Sort priority",
+          "type": "number",
+          "minimum": -999.999,
+          "maximum": 999.999
+        },
+        "baseSpaceTemplateName": {
+          "title": "Base Space Template Name",
+          "description": "Base Space Template Name",
+          "type": "string",
+          "maxLength": 35
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "title"
+      ]
     },
     "pages": {
       "title": "Page Templates",
@@ -99,23 +95,11 @@
         "description": "SAP Fiori Page Template",
         "type": "object",
         "properties": {
-          "pageTemplateId": {
-            "title": "Page Template ID",
-            "description": "Page Template ID",
+          "name": {
+            "title": "Name",
+            "description": "Page Template Name",
             "type": "string",
             "maxLength": 35
-          },
-          "pageTemplateTitle": {
-            "title": "Title",
-            "description": "Title",
-            "type": "string",
-            "maxLength": 100
-          },
-          "pageTemplateDescription": {
-            "title": "Description",
-            "description": "Description",
-            "type": "string",
-            "maxLength": 100
           }
         },
         "additionalProperties": false
@@ -126,8 +110,6 @@
   "required": [
     "formatVersion",
     "header",
-    "id",
-    "title",
-    "description"
+    "generalInformation"
   ]
 }
