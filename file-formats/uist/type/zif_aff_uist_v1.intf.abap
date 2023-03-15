@@ -42,9 +42,9 @@ INTERFACE zif_aff_uist_v1
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header          TYPE zif_aff_types_v1=>ty_header_60_cloud,
+      header          TYPE zif_aff_types_v1=>ty_header_100_cloud,
 
-      "! <p class="shorttext">General information</p>
+      "! <p class="shorttext">General Information</p>
       "! General information
       "! $required
      general_information   TYPE ty_general_information,

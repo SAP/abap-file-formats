@@ -57,7 +57,7 @@
       ]
     },
     "generalInformation": {
-      "title": "General information",
+      "title": "General Information",
       "description": "General information",
       "type": "object",
       "properties": {
