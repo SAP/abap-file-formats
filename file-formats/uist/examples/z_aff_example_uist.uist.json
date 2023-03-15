@@ -6,8 +6,8 @@
     "abapLanguageVersion": "standard"
   },
   "generalInformation": {
-    "title": "titel",
-    "sortPriority": 0.5,
+    "title": "Titel",
+    "sortPriority": 1.001,
     "baseSpaceTemplateName": "BASE_SPACE"
   },
   "pages": [
