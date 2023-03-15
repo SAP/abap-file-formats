@@ -2,16 +2,37 @@ INTERFACE zif_aff_uist_v1
   PUBLIC.
 
   TYPES:
+    "! <p class="shorttext">Properties</p>
+    "! Properties
+    BEGIN OF ty_properties,
+      "! <p class="shorttext">Name</p>
+      "! Space Template Name
+      "! $required
+      name             TYPE c LENGTH 35,
+      "! <p class="shorttext">Title</p>
+      "! Space Template Title
+      "! $required
+      title         TYPE zif_aff_types_v1=>ty_description_100,
+      "! <p class="shorttext">Sort Priority</p>
+      "! Sort priority
+      "! $minimum: -999.999
+      "! $maximum: 999.999
+      sort_priority TYPE p LENGTH 7 DECIMALS 3,
+      "! <p class="shorttext">Base Space Template Name</p>
+      "! Base Space Template Name
+      base_space_template_name       TYPE c LENGTH 35,
+    END OF ty_properties.
+
+  TYPES:
     "! <p class="shorttext">SAP Fiori Page Template</p>
     "! SAP Fiori Page Template
     BEGIN OF ty_page,
       "! <p class="shorttext">Name</p>
-      "! Page Template name
+      "! Page Template Name
       name          TYPE c LENGTH 35,
-
     END OF ty_page,
 
-    ty_pages TYPE TABLE OF ty_page WITH KEY page_template_id.
+    ty_pages TYPE TABLE OF ty_page WITH KEY name.
 
   TYPES:
     "! <p class="shorttext">Fiori Launchpad Space Template</p>
@@ -25,32 +46,12 @@ INTERFACE zif_aff_uist_v1
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header          TYPE zif_aff_types_v1=>ty_header_100_cloud,
+      header          TYPE zif_aff_types_v1=>ty_header_60_cloud,
 
-      "! <p class="shorttext">ID</p>
-      "! Space Template ID
+      "! <p class="shorttext">Properties</p>
+      "! Properties
       "! $required
-      id            TYPE c LENGTH 35,
-
-      "! <p class="shorttext">Title</p>
-      "! Space Template Title
-      "! $required
-      title         TYPE zif_aff_types_v1=>ty_description_100,
-
-      "! <p class="shorttext">Description </p>
-      "! Space Template Description
-      "! $required
-      description   TYPE zif_aff_types_v1=>ty_description_100,
-
-      "! <p class="shorttext">Sort Priority</p>
-      "! Sort priority
-      "! $minimum: -999.999
-      "! $maximum: 999.999
-      sort_priority TYPE p LENGTH 7 DECIMALS 3,
-
-      "! <p class="shorttext">Base Space Template Name</p>
-      "! Base Space Template name
-      base_space_template_id       TYPE c LENGTH 35,
+      properties   TYPE ty_properties,
 
       "! <p class="shorttext">Page Templates</p>
       "! Assigned SAP Fiori launchpad page templates
