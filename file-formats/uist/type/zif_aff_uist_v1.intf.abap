@@ -32,7 +32,7 @@ INTERFACE zif_aff_uist_v1
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header          TYPE zif_aff_types_v1=>ty_header_100,
+      header          TYPE zif_aff_types_v1=>ty_header_100_cloud,
 
       "! <p class="shorttext">ID</p>
       "! Space Template ID
