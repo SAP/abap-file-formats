@@ -6,7 +6,7 @@
     "abapLanguageVersion": "standard"
   },
   "generalInformation": {
-    "title": "Titel",
+    "title": "Title of Space Template",
     "sortPriority": 1.001,
     "baseSpaceTemplateName": "BASE_SPACE"
   },
