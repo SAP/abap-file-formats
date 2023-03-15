@@ -9,13 +9,6 @@ INTERFACE zif_aff_uist_v1
       "! Page Template name
       name          TYPE c LENGTH 35,
 
-      "! <p class="shorttext">Title</p>
-      "! Title
-      page_template_title       TYPE zif_aff_types_v1=>ty_description_100,
-
-      "! <p class="shorttext">Description</p>
-      "! Description
-      page_template_description TYPE zif_aff_types_v1=>ty_description_100,
     END OF ty_page,
 
     ty_pages TYPE TABLE OF ty_page WITH KEY page_template_id.
