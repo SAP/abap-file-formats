@@ -55,8 +55,8 @@ INTERFACE zif_aff_uist_v1
       "! $maximum: 999.999
       sort_priority TYPE p LENGTH 7 DECIMALS 3,
 
-      "! <p class="shorttext">Base Space Template ID</p>
-      "! Base Space Template ID
+      "! <p class="shorttext">Base Space Template Name</p>
+      "! Base Space Template name
       base_space_template_id       TYPE c LENGTH 35,
 
       "! <p class="shorttext">Page Templates</p>
