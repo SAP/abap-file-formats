@@ -28,7 +28,7 @@ INTERFACE zif_aff_uist_v1
       name          TYPE c LENGTH 35,
     END OF ty_page,
 
-    ty_pages TYPE TABLE OF ty_page WITH KEY name.
+    ty_pages TYPE STANDARD TABLE OF ty_page WITH KEY name.
 
   TYPES:
     "! <p class="shorttext">Fiori Launchpad Space Template</p>
