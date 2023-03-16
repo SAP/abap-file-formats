@@ -72,7 +72,8 @@
           "description": "Sort priority",
           "type": "number",
           "minimum": -999.999,
-          "maximum": 999.999
+          "maximum": 999.999,
+          "multipleOf": 0.001
         },
         "baseSpaceTemplateName": {
           "title": "Base Space Template Name",

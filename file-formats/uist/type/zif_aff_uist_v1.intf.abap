@@ -6,7 +6,7 @@ INTERFACE zif_aff_uist_v1
     "! General information
     BEGIN OF ty_general_information,
       "! <p class="shorttext">Title</p>
-      "! Space Template Title
+      "! Title of the space template
       "! $required
       title         TYPE zif_aff_types_v1=>ty_description_100,
       "! <p class="shorttext">Sort Priority</p>
@@ -21,7 +21,7 @@ INTERFACE zif_aff_uist_v1
 
   TYPES:
     "! <p class="shorttext">SAP Fiori Page Template</p>
-    "! SAP Fiori Page Template
+    "! SAP Fiori page template
     BEGIN OF ty_page,
       "! <p class="shorttext">Name</p>
       "! Name of the page template
