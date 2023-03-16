@@ -32,7 +32,7 @@ INTERFACE zif_aff_uist_v1
 
   TYPES:
     "! <p class="shorttext">Fiori Launchpad Space Template</p>
-    "! Fiori Launchpad Space Template
+    "! Fiori launchpad space template
     BEGIN OF ty_main,
       "! <p class="shorttext">Format Version</p>
       "! Format version
