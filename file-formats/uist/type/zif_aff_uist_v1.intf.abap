@@ -2,8 +2,8 @@ INTERFACE zif_aff_uist_v1
   PUBLIC.
 
   TYPES:
-    "! <p class="shorttext">Properties</p>
-    "! Properties
+    "! <p class="shorttext">General Information</p>
+    "! General information
     BEGIN OF ty_general_information,
       "! <p class="shorttext">Title</p>
       "! Space Template Title
