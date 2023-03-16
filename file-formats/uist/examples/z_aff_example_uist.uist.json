@@ -2,8 +2,7 @@
   "formatVersion": "1",
   "header": {
     "description": "Example of UIST Object for ABAP file formats",
-    "originalLanguage": "en",
-    "abapLanguageVersion": "standard"
+    "originalLanguage": "en"
   },
   "generalInformation": {
     "title": "Title of Space Template",
