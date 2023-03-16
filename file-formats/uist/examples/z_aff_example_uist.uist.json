@@ -1,11 +1,11 @@
 {
   "formatVersion": "1",
   "header": {
-    "description": "Example of UIST Object for ABAP file formats",
+    "description": "Description example of UIST object for ABAP file format",
     "originalLanguage": "en"
   },
   "generalInformation": {
-    "title": "Title of Space Template",
+    "title": "Title Example Of UIST Object For ABAP File Format",
     "sortPriority": 1.001,
     "baseSpaceTemplateName": "BASE_SPACE"
   },

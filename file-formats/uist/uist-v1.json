@@ -3,7 +3,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/uist/uist-v1.json",
   "title": "Fiori Launchpad Space Template",
-  "description": "Fiori Launchpad Space Template",
+  "description": "Fiori Launchpad space template",
   "type": "object",
   "properties": {
     "formatVersion": {
@@ -63,7 +63,7 @@
       "properties": {
         "title": {
           "title": "Title",
-          "description": "Space Template Title",
+          "description": "Title of the space template",
           "type": "string",
           "maxLength": 100
         },
@@ -72,11 +72,12 @@
           "description": "Sort priority",
           "type": "number",
           "minimum": -999.999,
-          "maximum": 999.999
+          "maximum": 999.999,
+          "multipleOf": 0.001
         },
         "baseSpaceTemplateName": {
           "title": "Base Space Template Name",
-          "description": "Base Space Template Name",
+          "description": "Name of the base space template",
           "type": "string",
           "maxLength": 35
         }
@@ -92,12 +93,12 @@
       "type": "array",
       "items": {
         "title": "SAP Fiori Page Template",
-        "description": "SAP Fiori Page Template",
+        "description": "SAP Fiori page template",
         "type": "object",
         "properties": {
           "name": {
             "title": "Name",
-            "description": "Page Template Name",
+            "description": "Name of the page template",
             "type": "string",
             "maxLength": 35
           }

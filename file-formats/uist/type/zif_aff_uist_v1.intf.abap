@@ -15,7 +15,7 @@ INTERFACE zif_aff_uist_v1
       "! $maximum: 999.999
       sort_priority TYPE p LENGTH 7 DECIMALS 3,
       "! <p class="shorttext">Base Space Template Name</p>
-      "! Base Space Template Name
+      "! Name of the base space template
       base_space_template_name       TYPE c LENGTH 35,
     END OF ty_general_information.
 
@@ -24,7 +24,7 @@ INTERFACE zif_aff_uist_v1
     "! SAP Fiori Page Template
     BEGIN OF ty_page,
       "! <p class="shorttext">Name</p>
-      "! Page Template Name
+      "! Name of the page template
       name          TYPE c LENGTH 35,
     END OF ty_page,
 
@@ -47,7 +47,7 @@ INTERFACE zif_aff_uist_v1
       "! <p class="shorttext">General Information</p>
       "! General information
       "! $required
-     general_information   TYPE ty_general_information,
+      general_information   TYPE ty_general_information,
 
       "! <p class="shorttext">Page Templates</p>
       "! Assigned SAP Fiori launchpad page templates
