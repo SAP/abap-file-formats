@@ -1,0 +1,38 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Beispiel-Interface für ABAP file formats"
+  },
+  "descriptions": {
+    "types": [
+      {
+        "name": "TY_EXAMPLE_TYPE",
+        "description": "Das ist ein Beispiel-Typ"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "CO_EXAMPLE_CONSTANT",
+        "description": "Das ist eine Beispiel-Konstante"
+      }
+    ],
+    "events": [
+      {
+        "name": "EXAMPLE_EVENT",
+        "description": "Das ist ein Beispiel-Event"
+      }
+    ],
+    "methods": [
+      {
+        "name": "EXAMPLE_METHOD",
+        "description": "Das ist eine Beispiel-Methode",
+        "parameters": [
+          {
+            "name": "I_PARAM",
+            "description": "Das ist ein Beispiel-Paramter"
+          }
+        ]
+      }
+    ]
+  }
+}

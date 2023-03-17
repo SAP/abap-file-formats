@@ -1,0 +1,12 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Beispiel CHKO für ABAP file formats"
+  },
+  "parameters": [
+    {
+      "name": "ParameterName",
+      "description": "Parameter Beschreibung"
+    }
+  ]
+}
