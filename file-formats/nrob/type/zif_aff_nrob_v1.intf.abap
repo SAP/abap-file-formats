@@ -19,7 +19,6 @@ INTERFACE zif_aff_nrob_v1
       "! $required
       "! $minimum: 0.1
       "! $maximum: 99.9
-      "! $multipleOf: 0.1
       percent_warning      TYPE p LENGTH 3 DECIMALS 1,
       "! <p class="shorttext">Sub Type</p>
       "! If you want to create subobjects for the elements of a field of the application table, specify
