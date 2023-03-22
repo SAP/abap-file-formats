@@ -135,7 +135,8 @@ The annotation
 ```abap
 "! $multipleOf value
 ```
-ensures that values of a component described by this ABAP Doc comment can only be a multiple of the provided value. Note that it can only be used for integers.
+ensures that values of a component described by this ABAP Doc comment can only be a multiple of the provided value.
+Note that it can only be used for integers.
 
 ### Required Fields
 If a field is to be declared as "required" in the JSON Schema, the annotation
