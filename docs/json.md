@@ -90,7 +90,7 @@ string | string |
 c | string | `"maxLength": <length of character field>`
 i | integer | `"minimum": -2147483648, "maximum": 2147483647`
 n | string | `"maxLength": <length of character field>, "pattern": "^[0-9]+$"`
-p | number | `"minimum": <minimum value>, "maximum": <maximum value>, "multipleOf": <e.g., 0.01 for 2 decimals>`
+p | number | `"minimum": <minimum value>, "maximum": <maximum value>
 abap_bool | boolean |
 sy-langu | string | `"minLength": 2, "maxLength": 2, "pattern": "^[a-z]+$"`
 table | array | if the table has unique keys, `"uniqueItems": true` is added to the schema; hashed tables are not supported
@@ -136,6 +136,7 @@ The annotation
 "! $multipleOf value
 ```
 ensures that values of a component described by this ABAP Doc comment can only be a multiple of the provided value.
+Note that it can only be used for integers.
 
 ### Required Fields
 If a field is to be declared as "required" in the JSON Schema, the annotation
