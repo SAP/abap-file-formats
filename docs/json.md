@@ -88,7 +88,7 @@ ABAP Type | JSON Schema Type | JSON Schema Additions
 :--- | :---  | :---
 string | string |
 c | string | `"maxLength": <length of character field>`
-i | integer | `"minimum": -2147483648, "maximum": 2147483647`, "multipleOf": <e.g., 0.01 for 2 integer>`
+i | integer | `"minimum": -2147483648, "maximum": 2147483647`
 n | string | `"maxLength": <length of character field>, "pattern": "^[0-9]+$"`
 p | number | `"minimum": <minimum value>, "maximum": <maximum value>
 abap_bool | boolean |
