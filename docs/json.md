@@ -197,7 +197,6 @@ Remark: If an enum is used, it should be checked if one of the following points 
 
 In case additional values for the enum should be added compatibly later, a default value must always be specified (see [Format Versions and Compatibility](#format-versions-and-compatibility)). If systems don't support the new enumeration value (e.g., in lower releases), the value will be changed to the default value by the file format implementations.
 
-
 The order of the comments and annotations presented here is important: First, there is the comment for the title followed by the one for the description, in case they are both provided. After these two, the remaining annotations are always located. Between them, the order is irrelevant.
 
 ### Additional Properties
@@ -210,7 +209,22 @@ This means, no additional fields can be added to the JSON files.
 If new fields are added to the ABAP file format, the JSON Schema will be updated with the new field.
 If fields are removed from the ABAP file format, a new JSON Schema will be defined and the `formatVersion` will be increased.
 
+## ABAP Language Version
+
+In the `header` the field `abapLanguageVersion` specifies the ABAP language version of the object.
+The field is optional (e.g., abapGit does not serialize the field `abapLanguageVersion`).
+
+If specified, there are following possible values for the ABAP language version:
+
+Value | Meaning
+:--- | :---
+| `"standard"` | Standard ABAP programming. This is also the default value if ABAP language version is not specified |
+| `"cloudDevelopment"` | This object is follows the rules of [ABAP Cloud](https://blogs.sap.com/2022/12/22/abap-cloud/), i.e., it can run in Cloud offerings. It also can run potentially in on-premise releases |
+| `"keyUser"` | This object is follows the rules of [Key User Extensibility](https://help.sap.com/docs/ABAP_PLATFORM_NEW/b5670aaaa2364a29935f40b16499972d/3ccb50e724b045508fea8b2cf1774b2b.html) |
+
+
 ## Example
+
 Here is the shortened type used to generate the JSON Schema for interfaces. It can be found in the interface [`zif_aff_intf_v1`](../file-formats/intf/type/zif_aff_intf_v1.intf.abap).
 ```abap
   TYPES:
