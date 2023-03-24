@@ -200,6 +200,23 @@ In case additional values for the enum should be added compatibly later, a defau
 
 The order of the comments and annotations presented here is important: First, there is the comment for the title followed by the one for the description, in case they are both provided. After these two, the remaining annotations are always located. Between them, the order is irrelevant.
 
+### Content Media Type
+To specify the content media type of the content of a string field, the annotation 
+```abap
+"! $contentMediaType 'mediaType'
+```
+followed by the media type surrounded by single quotation marks is used. 
+This annotation can only be used for character like ABAP types, i.e., types that are mapped to JSON type `string`.
+
+### Content Encoding
+The encoding used to store the content of a string field can be specifed with the annotation
+```abap
+"! $contentEncoding 'encoding'
+```
+followed by the encoding surrounded by single quotation marks.
+Possible values for the encoding are `7bit`, `8bit`, `binary`, `quoted-printable`, `base16`, `base32` and `base64`.
+This annotation can also only be used for character like ABAP types, i.e., types that are mapped to JSON type `string`.
+
 ### Additional Properties
 
 Adding additional custom fields in any ABAP file formats JSON file is not allowed.
