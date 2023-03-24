@@ -201,11 +201,11 @@ In case additional values for the enum should be added compatibly later, a defau
 The order of the comments and annotations presented here is important: First, there is the comment for the title followed by the one for the description, in case they are both provided. After these two, the remaining annotations are always located. Between them, the order is irrelevant.
 
 ### Content Media Type
-To specify the content media type of the content of a string field, the annotation 
+To specify the content media type of the content of a string field, the annotation
 ```abap
 "! $contentMediaType 'mediaType'
 ```
-followed by the media type surrounded by single quotation marks is used. 
+followed by the media type surrounded by single quotation marks is used.
 This annotation can only be used for character like ABAP types, i.e., types that are mapped to JSON type `string`.
 
 ### Content Encoding
