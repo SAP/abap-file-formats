@@ -1,0 +1,20 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Sample Object for Data Destruction",
+    "originalLanguage": "en"
+  },
+  "attributes": {
+    "destructionClass": "BC_SFLIGHT_DES"
+  },
+  "structureDefinition": [
+    {
+      "parentTable": "",
+      "dependentTable": "SFLIGHT"
+    },
+    {
+      "parentTable": "SFLIGHT",
+      "dependentTable": "SBOOK"
+    }
+  ]
+}
