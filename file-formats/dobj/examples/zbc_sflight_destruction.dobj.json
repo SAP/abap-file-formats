@@ -1,20 +1,17 @@
 {
   "formatVersion": "1",
   "header": {
-    "description": "Sample Object for Data Destruction",
-    "originalLanguage": "en"
+    "description": "Example destruction object",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "standard"
   },
   "attributes": {
-    "destructionClass": "BC_SFLIGHT_DES"
+    "destructionClass": "CL_SFLIGHT_DESTRUCTION"
   },
   "structureDefinition": [
     {
-      "parentTable": "",
+      "parentTable": "SPFLI",
       "dependentTable": "SFLIGHT"
-    },
-    {
-      "parentTable": "SFLIGHT",
-      "dependentTable": "SBOOK"
     }
   ]
 }
