@@ -6,11 +6,9 @@ INTERFACE zif_aff_dobj_v1
     BEGIN OF ty_structure_definition,
       "! <p class="shorttext">Parent Table</p>
       "! Parent table
-      "! $required
       parent_table    TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Dependent Table</p>
       "! Dependent table
-      "! $required
       dependent_table TYPE zif_aff_types_v1=>ty_object_name_30,
     END OF ty_structure_definition,
     "! <p class="shorttext">Structure Definitions</p>
