@@ -96,11 +96,7 @@
             "maxLength": 30
           }
         },
-        "additionalProperties": false,
-        "required": [
-          "parentTable",
-          "dependentTable"
-        ]
+        "additionalProperties": false
       }
     }
   },
