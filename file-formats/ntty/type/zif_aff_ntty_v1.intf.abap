@@ -19,8 +19,8 @@ INTERFACE zif_aff_ntty_v1
       "! <p class="shorttext">Multiple Notes</p>
       "! Multiple notes possible
       multiple_notes            TYPE abap_bool,
-      "! <p class="shorttext">Hide Title</p>
-      "! Hides the title
+      "! <p class="shorttext">Title Hidden</p>
+      "! Title hidden
       hide_title          TYPE abap_bool,
     END OF ty_general_information,
 
@@ -35,8 +35,8 @@ INTERFACE zif_aff_ntty_v1
       formatting_profile    TYPE ty_profile,
     END OF ty_content_settings,
 
-    "! <p class="shorttext">Notetype</p>
-    "! Notetype
+    "! <p class="shorttext">ABAP file format for Note Type objects</p>
+    "! ABAP file format for note type objects
     BEGIN OF ty_main,
       "! <p class="shorttext">Format Version</p>
       "! Format version

@@ -61,6 +61,10 @@
         "description": "Object Page Variant Management"
       },
       {
+        "name": "CO_ROW_COUNT_MODE",
+        "description": "Row Count Mode"
+      },
+      {
         "name": "CO_SECTION_LAYOUT",
         "description": "Section Layout"
       },
