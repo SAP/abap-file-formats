@@ -1,0 +1,18 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: header.description 
+msgid "Example DOMA for ABAP file formats"
+msgstr "Beispiel DOMA für ABAP file formats"
+
+#: fixedValues[ABC]
+msgid "Fixed value ABC"
+msgstr "Festwert ABC"
+
+#: fixedValues[XYZ]
+msgid "Fixed value XYZ"
+msgstr "Festwert XYZ"

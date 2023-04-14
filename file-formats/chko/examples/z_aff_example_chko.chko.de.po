@@ -1,0 +1,14 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: header.description 
+msgid "Example CHKO for ABAP file formats"
+msgstr "Beispiel CHKO für ABAP file formats"
+
+#: parameters[ParameterName]
+msgid "Paramter description"
+msgstr "Parameter Beschreibung"

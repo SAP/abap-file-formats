@@ -1,0 +1,30 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: header.description 
+msgid "Example interface for ABAP file formats"
+msgstr "Beispiel Interface für ABAP file formats"
+
+#: descriptions.types[TY_EXAMPLE_TYPE]
+msgid "This is an example type"
+msgstr "Das ist ein Beispiel-Typ"
+
+#: descriptions.attributes[CO_EXAMPLE_CONSTANT]
+msgid "This is an example constant"
+msgstr "Das ist eine Beispiel-Konstante"
+
+#: descriptions.events[EXAMPLE_EVENT]
+msgid "This is an example event"
+msgstr "Das ist ein Beispiel-Event"
+
+#: descriptions.methods[EXAMPLE_METHOD]
+msgid "This is an example method"
+msgstr "Das ist eine Beispiel-Methode"
+
+#: descriptions.methods[EXAMPLE_METHOD].paramters[I_PARAM]
+msgid "This is an example paramter"
+msgstr "Das ist ein Beispiel-Parameter"

@@ -1,0 +1,10 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: header.description 
+msgid "Example CHKV for ABAP file formats"
+msgstr "Beispiel CHKV für ABAP file formats"

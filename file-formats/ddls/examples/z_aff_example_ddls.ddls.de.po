@@ -1,0 +1,10 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: header.description 
+msgid "Example DDLs for ABAP file formats"
+msgstr "Beispiel DDLs für ABAP file formats"
