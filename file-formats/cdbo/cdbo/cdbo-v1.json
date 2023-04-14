@@ -69,8 +69,8 @@
           "description": "Object type",
           "type": "string",
           "enum": [
-            "tables",
-            "cdsViews"
+            "TABL",
+            "DDLS"
           ],
           "enumTitles": [
             "Tables",
@@ -95,12 +95,12 @@
       ]
     },
     "objectFields": {
-      "title": "Fields and Field Nature",
-      "description": "Fields and Field nature",
+      "title": "Fields",
+      "description": "Fields",
       "type": "array",
       "items": {
-        "title": "CDBO Detail",
-        "description": "CDBO detail",
+        "title": "Field Nature",
+        "description": "Field nature",
         "type": "object",
         "properties": {
           "name": {
@@ -119,12 +119,12 @@
               "nonBusinessInformation"
             ],
             "enumTitles": [
-              "General fields that do not contain sensitive personal info.",
-              "Sensitive personal information fields including key fields",
+              "General Information (No Sensitive Personal Information)",
+              "Sensitive Personal Information",
               "Non Business Information"
             ],
             "enumDescriptions": [
-              "General fields that do not contain sensitive personal info.",
+              "General fields that do not contain sensitive personal information",
               "Sensitive personal information fields including key fields",
               "Non business information"
             ]

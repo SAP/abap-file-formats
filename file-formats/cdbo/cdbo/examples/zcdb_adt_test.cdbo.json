@@ -5,7 +5,7 @@
     "originalLanguage": "en"
   },
   "generalInformation": {
-    "objectType": "tables",
+    "objectType": "TABL",
     "objectName": "zcdb_adt_test"
   },
   "objectFields": [

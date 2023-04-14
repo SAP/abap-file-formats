@@ -11,10 +11,12 @@ INTERFACE zif_aff_cdbo_v1
     BEGIN OF co_object_type,
       "! <p class="shorttext">Tables</p>
       "! Tables
-      tables    TYPE ty_object_type VALUE '01',
+      "! $enumValue 'TABL'
+      tabl    TYPE ty_object_type VALUE '01',
       "! <p class="shorttext">CDS Views</p>
       "! CDS views
-      cds_views TYPE ty_object_type VALUE '02',
+      "! $enumValue 'DDLS'
+      ddls TYPE ty_object_type VALUE '02',
     END OF co_object_type.
 
   "! <p class="shorttext">Field Nature</p>
@@ -26,10 +28,10 @@ INTERFACE zif_aff_cdbo_v1
     "! <p class="shorttext">Field Nature</p>
     "! Nature of the field
     BEGIN OF co_field_nature,
-      "! <p class="shorttext">General fields that do not contain sensitive personal info.</p>
-      "! General fields that do not contain sensitive personal info.
+      "! <p class="shorttext">General Information (No Sensitive Personal Information)</p>
+      "! General fields that do not contain sensitive personal information
       general TYPE ty_field_nature VALUE 'GE',
-      "! <p class="shorttext">Sensitive personal information fields including key fields</p>
+      "! <p class="shorttext">Sensitive Personal Information</p>
       "! Sensitive personal information fields including key fields
       sensitive    TYPE ty_field_nature VALUE 'SP',
       "! <p class="shorttext">Non Business Information</p>
@@ -38,8 +40,8 @@ INTERFACE zif_aff_cdbo_v1
     END OF co_field_nature.
 
   TYPES:
-    "! <p class="shorttext">CDBO Detail</p>
-    "! CDBO detail
+    "! <p class="shorttext">Field Nature</p>
+    "! Field nature
     BEGIN OF ty_field,
       "! <p class="shorttext">Name</p>
       "! Name
@@ -52,8 +54,8 @@ INTERFACE zif_aff_cdbo_v1
     END OF ty_field.
 
   TYPES:
-    "! <p class="shorttext">Object Fields</p>
-    "! Object Fields Table
+    "! <p class="shorttext">Fields Nature</p>
+    "! Fields nature
     ty_fields TYPE STANDARD TABLE OF ty_field WITH DEFAULT KEY.
 
   TYPES:
@@ -86,8 +88,8 @@ INTERFACE zif_aff_cdbo_v1
       "! General information
       "! $required
       general_information TYPE ty_general_information,
-      "! <p class="shorttext">Fields and Field Nature</p>
-      "! Fields and Field nature
+      "! <p class="shorttext">Fields</p>
+      "! Fields
       "! $required
       object_fields     TYPE ty_fields,
     END OF ty_main.
