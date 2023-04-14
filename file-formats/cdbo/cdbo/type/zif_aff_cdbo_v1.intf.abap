@@ -38,17 +38,17 @@ INTERFACE zif_aff_cdbo_v1
     END OF co_field_nature.
 
   TYPES:
-    "! <p class="shorttext">CDBO Details</p>
-    "! CDBO details
+    "! <p class="shorttext">CDBO Detail</p>
+    "! CDBO detail
     BEGIN OF ty_field,
-      "! <p class="shorttext">Field Name</p>
-      "! Field name
+      "! <p class="shorttext">Name</p>
+      "! Name
       "! $required
-      field_name TYPE c LENGTH 30,
-      "! <p class="shorttext">Field Nature</p>
-      "! Field nature
+      name TYPE C LENGTH 30,
+      "! <p class="shorttext">Nature</p>
+      "! Nature
       "! $required
-      field_nature TYPE ty_field_nature,
+      nature TYPE ty_field_nature,
     END OF ty_field.
 
   TYPES:
@@ -57,8 +57,22 @@ INTERFACE zif_aff_cdbo_v1
     ty_fields TYPE STANDARD TABLE OF ty_field WITH DEFAULT KEY.
 
   TYPES:
-    "! <p class="shorttext">General Information</p>
-    "! General Information
+  "! <p class="shorttext">General Information</p>
+  "! General information
+    BEGIN OF ty_general_information,
+      "! <p class="shorttext">Object Type</p>
+      "! Object type
+      "! $required
+      object_type   TYPE ty_object_type,
+      "! <p class="shorttext">Object Name</p>
+      "! Object name
+      "! $required
+      object_name       TYPE C LENGTH 40,
+    END OF ty_general_information.
+
+  TYPES:
+    "! <p class="shorttext">Customer Data Browser Object</p>
+    "! Customer Data Browser Object
     BEGIN OF ty_main,
       "! <p class="shorttext">Format Version</p>
       "! Format version
@@ -68,16 +82,12 @@ INTERFACE zif_aff_cdbo_v1
       "! Header
       "! $required
       header         TYPE zif_aff_types_v1=>ty_header_60,
-      "! <p class="shorttext">Object Type</p>
-      "! Object type
+      "! <p class="shorttext">General Information</p>
+      "! General information
       "! $required
-      object_type   TYPE ty_object_type,
-      "! <p class="shorttext">Object Name</p>
-      "! Object name
-      "! $required
-      object_name       TYPE c LENGTH 40,
-      "! <p class="shorttext">CDBO Fields</p>
-      "! CDBO fields
+      general_information TYPE ty_general_information,
+      "! <p class="shorttext">Fields and Field Nature</p>
+      "! Fields and Field nature
       "! $required
       object_fields     TYPE ty_fields,
     END OF ty_main.

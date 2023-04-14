@@ -1,23 +1,25 @@
 {
-  "formatVersion": "1",
+  "formatVersion": "A",
   "header": {
     "description": "CDBO on ADT Testing",
     "originalLanguage": "en"
   },
-  "objectType": "tables",
-  "objectName": "zcdb_adt_test",
+  "generalInformation": {
+    "objectType": "tables",
+    "objectName": "zcdb_adt_test"
+  },
   "objectFields": [
     {
-      "fieldName": "MANDT",
-      "fieldNature": "general"
+      "name": "MANDT",
+      "nature": "general"
     },
     {
-      "fieldName": "TIME",
-      "fieldNature": "general"
+      "name": "TIME",
+      "nature": "general"
     },
     {
-      "fieldName": "DATUM",
-      "fieldNature": "general"
+      "name": "DATUM",
+      "nature": "general"
     }
   ]
 }
