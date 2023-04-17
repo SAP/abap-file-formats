@@ -1,5 +1,5 @@
 {
-  "formatVersion": "A",
+  "formatVersion": "1",
   "header": {
     "description": "CDBO on ADT Testing",
     "originalLanguage": "en"
@@ -8,7 +8,7 @@
     "objectType": "TABL",
     "objectName": "zcdb_adt_test"
   },
-  "objectFields": [
+  "fields": [
     {
       "name": "MANDT",
       "nature": "general"

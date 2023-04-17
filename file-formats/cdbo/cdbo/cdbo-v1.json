@@ -94,13 +94,13 @@
         "objectName"
       ]
     },
-    "objectFields": {
+    "fields": {
       "title": "Fields",
       "description": "Fields",
       "type": "array",
       "items": {
-        "title": "Field Nature",
-        "description": "Field nature",
+        "title": "Field Details",
+        "description": "Field details",
         "type": "object",
         "properties": {
           "name": {
@@ -143,6 +143,6 @@
     "formatVersion",
     "header",
     "generalInformation",
-    "objectFields"
+    "fields"
   ]
 }

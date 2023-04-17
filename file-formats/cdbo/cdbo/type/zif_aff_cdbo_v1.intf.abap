@@ -40,8 +40,8 @@ INTERFACE zif_aff_cdbo_v1
     END OF co_field_nature.
 
   TYPES:
-    "! <p class="shorttext">Field Nature</p>
-    "! Field nature
+    "! <p class="shorttext">Field Details</p>
+    "! Field details
     BEGIN OF ty_field,
       "! <p class="shorttext">Name</p>
       "! Name
@@ -54,8 +54,8 @@ INTERFACE zif_aff_cdbo_v1
     END OF ty_field.
 
   TYPES:
-    "! <p class="shorttext">Fields Nature</p>
-    "! Fields nature
+    "! <p class="shorttext">Fields Details</p>
+    "! Fields details
     ty_fields TYPE STANDARD TABLE OF ty_field WITH DEFAULT KEY.
 
   TYPES:
@@ -91,7 +91,7 @@ INTERFACE zif_aff_cdbo_v1
       "! <p class="shorttext">Fields</p>
       "! Fields
       "! $required
-      object_fields     TYPE ty_fields,
+      fields     TYPE ty_fields,
     END OF ty_main.
 
 ENDINTERFACE.
