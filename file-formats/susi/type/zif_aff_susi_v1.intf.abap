@@ -1,15 +1,15 @@
 INTERFACE zif_aff_susi_v1
-  PUBLIC .
+  PUBLIC.
 
   TYPES:
     "! <p class="shorttext">Maintenance Mode</p>
     "! Maintenance Mode
-    "! $values {@link if_aff_sush_v1.data:co_maintenance_mode}
+    "! $values {@link if_aff_susi_v1.data:co_maintenance_mode}
     ty_maintenance_mode   TYPE c LENGTH 1,
     "! <p class="shorttext">Maintenance Status</p>
     "! Maintenance Status
-    "! $values {@link if_aff_sush_v1.data:co_maintenance_status}
-    "! $default {@link if_aff_sush_v1.data:co_maintenance_status.y_flag}
+    "! $values {@link if_aff_susi_v1.data:co_maintenance_status}
+    "! $default {@link if_aff_susi_v1.data:co_maintenance_status.y_flag}
     ty_maintenance_status TYPE c LENGTH 1.
 
   CONSTANTS:
@@ -89,10 +89,10 @@ INTERFACE zif_aff_susi_v1
       hash_name        TYPE ty_hash_name,
       "! <p class="shorttext">Maintenance Mode</p>
       "! Maintenance Mode.
-      "! $values {@link if_aff_sush_v1.data:co_maintenance_mode}
+      "! $values {@link if_aff_susi_v1.data:co_maintenance_mode}
       "! $required
       maintenance_mode TYPE ty_maintenance_mode,
-    END OF ty_general .
+    END OF ty_general.
 
   TYPES:
     "! <p class="shorttext">Authorization Value</p>
@@ -120,7 +120,7 @@ INTERFACE zif_aff_susi_v1
       "! To Values
       "! $showAlways
       high  TYPE ty_val,
-    END OF ty_authorization_field .
+    END OF ty_authorization_field.
 
   TYPES:
     "! <p class="shorttext">Authorization Fields</p>
@@ -137,8 +137,8 @@ INTERFACE zif_aff_susi_v1
       object             TYPE c LENGTH 10,
       "! <p class="shorttext">Maintenance Status</p>
       "! Maintenance Status
-      "! $values {@link if_aff_sush_v1.data:co_maintenance_status}
-      "! $default {@link if_aff_sush_v1.data:co_maintenance_status.y_flag}
+      "! $values {@link if_aff_susi_v1.data:co_maintenance_status}
+      "! $default {@link if_aff_susi_v1.data:co_maintenance_status.y_flag}
       "! $showAlways
       maintenance_status TYPE ty_maintenance_status,
       "! <p class="shorttext">Fields</p>
@@ -146,7 +146,7 @@ INTERFACE zif_aff_susi_v1
       "! $showAlways
       fields             TYPE ty_authorization_fields,
 
-    END OF ty_authorization_object .
+    END OF ty_authorization_object.
 
   TYPES:
   "! <p class="shorttext">Authorization Objects</p>
@@ -154,8 +154,8 @@ INTERFACE zif_aff_susi_v1
     ty_authorization_objects TYPE STANDARD TABLE OF ty_authorization_object WITH DEFAULT KEY.
 
   TYPES:
-    "! <p class="shorttext">SUSH Object Type</p>
-    "! Object type SUSH
+    "! <p class="shorttext">SUSI Object Type</p>
+    "! Object type SUSI
     BEGIN OF  ty_main,
       "! $required
       format_version        TYPE zif_aff_types_v1=>ty_format_version,
@@ -170,6 +170,6 @@ INTERFACE zif_aff_susi_v1
       "! <p class="shorttext">Authorization objects</p>
       "! Authorization objects
       authorization_objects TYPE ty_authorization_objects,
-    END OF ty_main .
+    END OF ty_main.
 
 ENDINTERFACE.
