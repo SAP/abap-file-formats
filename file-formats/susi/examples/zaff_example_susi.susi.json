@@ -1,0 +1,44 @@
+{
+    "formatVersion": "1",
+    "header": {
+        "description": "Example SUSI object",
+        "originalLanguage": "en",
+        "abapLanguageVersion": "standard"
+    },
+    "general": {
+        "applName": "Z_FEM3/Z_FEM3_GET_INFO",
+        "type": "WebService",
+        "name": "D2FF3796C3963799AE24F0224FCD96HS",
+        "maintenanceMode": "manual"
+    },
+    "authorizationObjects": [
+        {
+            "object": "S_USER_AGR",
+            "maintenanceStatus": "yFlag",
+            "fields": [
+                {
+                    "field": "ACTVT",
+                    "low": "02"
+                },
+                {
+                    "field": "ACTVT",
+                    "low": "03"
+                }
+            ]
+        },
+        {
+            "object": "S_USER_GRP",
+            "maintenanceStatus": "yFlag",
+            "fields": [
+                {
+                    "field": "ACTVT",
+                    "low": "03"
+                },
+                {
+                    "field": "CLASS",
+                    "low": "TEST"
+                }
+            ]
+        }
+    ]
+}
