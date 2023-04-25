@@ -78,7 +78,8 @@
         "Analytical object",
         "Configuration object",
         "Dependent object"
-      ]
+      ],
+      "default": "businessObject"
     },
     "name": {
       "title": "Name",

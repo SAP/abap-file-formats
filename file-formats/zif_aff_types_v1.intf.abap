@@ -137,6 +137,17 @@ INTERFACE zif_aff_types_v1 PUBLIC.
     END OF ty_header_100.
 
   TYPES:
+    "! <p class="shorttext">Header for Non-Source Code Objects (no key user)</p>
+    "! The header for an ABAP main object (without source code) with a description of 100 characters (no key user)
+    BEGIN OF ty_header_100_cloud,
+      "! $required
+      description           TYPE ty_description_100,
+      "! $required
+      original_language     TYPE ty_original_language,
+      abap_language_version TYPE ty_abap_language_version_cloud,
+    END OF ty_header_100_cloud.
+
+  TYPES:
     "! <p class="shorttext">Header for Subobjects</p>
     "! The header for an ABAP  subobject with a description of 60 characters
     BEGIN OF ty_header_only_description,
@@ -147,6 +158,7 @@ INTERFACE zif_aff_types_v1 PUBLIC.
   "! <p class="shorttext">Option</p>
   "! Option
   "! $values {@link zif_aff_types_v1.data:co_option}
+  "! $default {@link zif_aff_types_v1.data:co_option.equals}
   TYPES ty_option TYPE c LENGTH 2.
 
   CONSTANTS:
@@ -188,6 +200,7 @@ INTERFACE zif_aff_types_v1 PUBLIC.
   "! <p class="shorttext">Sign</p>
   "! Sign
   "! $values {@link zif_aff_types_v1.data:co_sign}
+  "! $default {@link zif_aff_types_v1.data:co_sign.include}
   TYPES ty_sign TYPE c LENGTH 1.
 
   CONSTANTS:

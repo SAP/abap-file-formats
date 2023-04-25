@@ -81,7 +81,8 @@
           ],
           "enumDescriptions": [
             "BAdI definition"
-          ]
+          ],
+          "default": "badiDefinition"
         }
       },
       "additionalProperties": false,
@@ -134,7 +135,8 @@
               "Creating new instances",
               "Reuse instances",
               "Context-specific instances"
-            ]
+            ],
+            "default": "creatingNewInstances"
           },
           "multipleUse": {
             "title": "Single- or Multiple Use BAdI",
@@ -224,7 +226,8 @@
                     "String",
                     "Numeric",
                     "Packed"
-                  ]
+                  ],
+                  "default": "string"
                 },
                 "onlyConstantValues": {
                   "title": "Only constant Filter Values",
@@ -251,7 +254,8 @@
                       "enumDescriptions": [
                         "Domain",
                         "Data element"
-                      ]
+                      ],
+                      "default": "dataElement"
                     },
                     "objectName": {
                       "title": "Name of the Value Check Object",
