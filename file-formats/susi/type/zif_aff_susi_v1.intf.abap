@@ -4,7 +4,7 @@ INTERFACE zif_aff_susi_v1
   TYPES:
     "! <p class="shorttext">Maintenance Mode</p>
     "! Maintenance Mode
-    "! $values {@link if_aff_susi_v1.data:co_maintenance_mode}
+    "! $values {@link zif_aff_susi_v1.data:co_maintenance_mode}
     ty_maintenance_mode   TYPE c LENGTH 1,
     "! <p class="shorttext">Maintenance Status</p>
     "! Maintenance Status
