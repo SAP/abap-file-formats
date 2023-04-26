@@ -2,11 +2,12 @@
   "formatVersion": "1",
   "header": {
     "description": "CDBO on ADT Testing",
-    "originalLanguage": "en"
+    "originalLanguage": "en",
+    "abapLanguageVersion": "keyUser"
   },
   "generalInformation": {
     "objectType": "TABL",
-    "objectName": "ZCDB_ADT_TEST"
+    "objectName": "zcdb_adt_test"
   },
   "fields": [
     {

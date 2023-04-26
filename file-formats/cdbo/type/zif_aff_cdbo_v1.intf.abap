@@ -9,12 +9,12 @@ INTERFACE zif_aff_cdbo_v1
     "! <p class="shorttext">Object Type</p>
     "! Object type
     BEGIN OF co_object_type,
-      "! <p class="shorttext">Tables</p>
-      "! Tables
+      "! <p class="shorttext">Table</p>
+      "! Table
       "! $enumValue 'TABL'
       tabl    TYPE ty_object_type VALUE '01',
-      "! <p class="shorttext">CDS Views</p>
-      "! CDS views
+      "! <p class="shorttext">Data Definition</p>
+      "! CDS data definition
       "! $enumValue 'DDLS'
       ddls TYPE ty_object_type VALUE '02',
     END OF co_object_type.

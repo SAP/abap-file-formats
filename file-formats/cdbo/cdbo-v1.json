@@ -73,12 +73,12 @@
             "DDLS"
           ],
           "enumTitles": [
-            "Tables",
-            "CDS Views"
+            "Table",
+            "Data Definition"
           ],
           "enumDescriptions": [
-            "Tables",
-            "CDS views"
+            "Table",
+            "CDS data definition"
           ]
         },
         "objectName": {
