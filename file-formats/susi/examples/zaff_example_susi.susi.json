@@ -2,8 +2,7 @@
     "formatVersion": "1",
     "header": {
         "description": "Example SUSI object",
-        "originalLanguage": "en",
-        "abapLanguageVersion": "standard"
+        "originalLanguage": "en"
     },
     "general": {
         "applName": "Z_FEM3/Z_FEM3_GET_INFO",
