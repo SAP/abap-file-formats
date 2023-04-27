@@ -4,7 +4,7 @@
         "description": "Example SUSI object",
         "originalLanguage": "en"
     },
-    "general": {
+    "generalInformation": {
         "applName": "Z_FEM3/Z_FEM3_GET_INFO",
         "type": "WebService",
         "hashName": "D2FF3796C3963799AE24F0224FCD96HS",
