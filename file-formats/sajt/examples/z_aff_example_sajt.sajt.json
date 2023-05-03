@@ -4,7 +4,9 @@
     "description": "Example for JCE_APJ_SIMPLE",
     "originalLanguage": "en"
   },
-  "catalogName": "JCE_APJ_SIMPLE",
+  "generalInformation": {
+    "catalogName": "JCE_APJ_SIMPLE"
+  },
   "parameters": {
     "singleValueParameters": [
       {
