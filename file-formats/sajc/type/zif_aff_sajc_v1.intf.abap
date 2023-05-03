@@ -25,27 +25,39 @@ INTERFACE zif_aff_sajc_v1
   TYPES ty_program_name TYPE c LENGTH 40.
 
   TYPES:
+    "! <p class="shorttext">General Information</p>
+    "! General information
+    BEGIN OF ty_general_information,
+      "! <p class="shorttext">Class with Execute Method</p>
+      "! Name of the class which contains the execute-method to run within the job
+      "! $required
+      class_name              TYPE zif_aff_types_v1=>ty_object_name_30,
+      "! <p class="shorttext">Executed Program</p>
+      "! Name of the program which is executed within the job
+      program_name            TYPE ty_program_name,
+      "! <p class="shorttext">Class with Check Exit</p>
+      "! Name of the class which contains the check exit
+      check_exit_class        TYPE zif_aff_types_v1=>ty_object_name_30,
+      "! <p class="shorttext">Class with Value Help Exit</p>
+      "! Name of the class which contains the value help exit
+      value_help_exit_class   TYPE zif_aff_types_v1=>ty_object_name_30,
+      "! <p class="shorttext">Class with Notification Exit</p>
+      "! Name of the class which contains the notification exit
+      notification_exit_class TYPE zif_aff_types_v1=>ty_object_name_30,
+    END OF ty_general_information.
+
+  TYPES:
     "! <p class="shorttext">Application Job Catalog Entry</p>
     "! Attributes of the application job catalog entry
     BEGIN OF ty_main,
       "! $required
-      format_version        TYPE zif_aff_types_v1=>ty_format_version,
+      format_version      TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header                TYPE ty_header,
-      "! <p class="shorttext">Class with Execute Method</p>
-      "! Name of the class which contains the execute-method to run within the job
-      "! $required
-      class_name            TYPE zif_aff_types_v1=>ty_object_name_30,
-      "! <p class="shorttext">Executed Program</p>
-      "! Name of the program which is executed within the job
-      program_name          TYPE ty_program_name,
-      "! <p class="shorttext">Class with Check Exit</p>
-      "! Name of the class which contains the check exit
-      check_exit_class      TYPE zif_aff_types_v1=>ty_object_name_30,
-      "! <p class="shorttext">Class with Value Help Exit</p>
-      "! Name of the class which contains the value help exit
-      value_help_exit_class TYPE zif_aff_types_v1=>ty_object_name_30,
+      header              TYPE ty_header,
+      "! <p class="shorttext">General Information</p>
+      "! General information
+      general_information TYPE ty_general_information,
     END OF ty_main.
 ENDINTERFACE.
