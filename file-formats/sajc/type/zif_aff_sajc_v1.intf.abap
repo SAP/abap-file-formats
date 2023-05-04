@@ -25,25 +25,34 @@ INTERFACE zif_aff_sajc_v1
   TYPES ty_program_name TYPE c LENGTH 40.
 
   TYPES:
+    "! <p class="shorttext">Exit Classes</p>
+    "! Classes which contain the exits of the job scheduling and processing
+    BEGIN OF ty_exit_classes,
+      "! <p class="shorttext">Check</p>
+      "! Name of the class which contains the check exit
+      check        TYPE zif_aff_types_v1=>ty_object_name_30,
+      "! <p class="shorttext">Value Help</p>
+      "! Name of the class which contains the value help exit
+      value_help   TYPE zif_aff_types_v1=>ty_object_name_30,
+      "! <p class="shorttext">Notification</p>
+      "! Name of the class which contains the notification exit
+      notification TYPE zif_aff_types_v1=>ty_object_name_30,
+    END OF ty_exit_classes.
+
+  TYPES:
     "! <p class="shorttext">General Information</p>
     "! General information
     BEGIN OF ty_general_information,
       "! <p class="shorttext">Class with Execute Method</p>
       "! Name of the class which contains the execute-method to run within the job
       "! $required
-      class_name              TYPE zif_aff_types_v1=>ty_object_name_30,
+      class_name   TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Executed Program</p>
       "! Name of the program which is executed within the job
-      program_name            TYPE ty_program_name,
-      "! <p class="shorttext">Class with Check Exit</p>
-      "! Name of the class which contains the check exit
-      check_exit_class        TYPE zif_aff_types_v1=>ty_object_name_30,
-      "! <p class="shorttext">Class with Value Help Exit</p>
-      "! Name of the class which contains the value help exit
-      value_help_exit_class   TYPE zif_aff_types_v1=>ty_object_name_30,
-      "! <p class="shorttext">Class with Notification Exit</p>
-      "! Name of the class which contains the notification exit
-      notification_exit_class TYPE zif_aff_types_v1=>ty_object_name_30,
+      program_name TYPE ty_program_name,
+      "! <p class="shorttext">Exit Classes</p>
+      "! Classes which contain the exits of the job scheduling and processing
+      exit_classes TYPE ty_exit_classes,
     END OF ty_general_information.
 
   TYPES:
@@ -58,6 +67,7 @@ INTERFACE zif_aff_sajc_v1
       header              TYPE ty_header,
       "! <p class="shorttext">General Information</p>
       "! General information
+      "! $required
       general_information TYPE ty_general_information,
     END OF ty_main.
 ENDINTERFACE.
