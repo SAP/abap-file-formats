@@ -56,11 +56,22 @@
         "originalLanguage"
       ]
     },
-    "catalogName": {
-      "title": "Job Catalog Entry",
-      "description": "Name of the application job catalog entry to which the template refers",
-      "type": "string",
-      "maxLength": 40
+    "generalInformation": {
+      "title": "General Information",
+      "description": "General information",
+      "type": "object",
+      "properties": {
+        "catalogName": {
+          "title": "Job Catalog Entry",
+          "description": "Name of the application job catalog entry to which the template refers",
+          "type": "string",
+          "maxLength": 40
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "catalogName"
+      ]
     },
     "parameters": {
       "title": "Parameters",
@@ -216,6 +227,6 @@
   "required": [
     "formatVersion",
     "header",
-    "catalogName"
+    "generalInformation"
   ]
 }

@@ -99,21 +99,31 @@ INTERFACE zif_aff_sajt_v1
     END OF ty_parameters.
 
   TYPES:
+    "! <p class="shorttext">General Information</p>
+    "! General information
+    BEGIN OF ty_general_information,
+      "! <p class="shorttext">Job Catalog Entry</p>
+      "! Name of the application job catalog entry to which the template refers
+      "! $required
+      catalog_name TYPE ty_catalog_name,
+    END OF ty_general_information.
+
+  TYPES:
     "! <p class="shorttext">Application Job Template</p>
     "! Attributes of the application job template
     BEGIN OF ty_main,
       "! $required
-      format_version TYPE zif_aff_types_v1=>ty_format_version,
+      format_version      TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header         TYPE ty_header,
-      "! <p class="shorttext">Job Catalog Entry</p>
-      "! Name of the application job catalog entry to which the template refers
+      header              TYPE ty_header,
+      "! <p class="shorttext">General Information</p>
+      "! General information
       "! $required
-      catalog_name   TYPE ty_catalog_name,
+      general_information TYPE ty_general_information,
       "! <p class="shorttext">Parameters</p>
       "! Parameters of the class which runs within the job
-      parameters     TYPE ty_parameters,
+      parameters          TYPE ty_parameters,
     END OF ty_main.
 ENDINTERFACE.
