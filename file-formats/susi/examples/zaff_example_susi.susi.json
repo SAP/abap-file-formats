@@ -13,11 +13,11 @@
     "authorizationObjects": [
         {
             "object": "S_USER_AGR",
-            "maintenanceStatus": "yFlag"
+            "maintenanceStatus": "defaultWithValues"
         },
         {
             "object": "S_USER_GRP",
-            "maintenanceStatus": "xFlag"
+            "maintenanceStatus": "noDefault"
         }
     ]
 }
