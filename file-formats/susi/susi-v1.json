@@ -64,19 +64,19 @@
       "description": "General",
       "type": "object",
       "properties": {
-        "applName": {
+        "applicationName": {
           "title": "Application Name",
           "description": "Application Name of Authorization Default Value.",
           "type": "string",
           "maxLength": 132
         },
-        "type": {
+        "applicationType": {
           "title": "Application Type",
           "description": "Type of Authorization Default Value.",
           "type": "string",
           "maxLength": 80
         },
-        "hashName": {
+        "hashCode": {
           "title": "Technical Name (Hash Code)",
           "description": "Technical Name (Hash Code).",
           "type": "string",
@@ -88,11 +88,11 @@
           "type": "string",
           "enum": [
             "manual",
-            "aFlag",
-            "bFlag",
-            "iFlag",
-            "dFlag",
-            "oFlag"
+            "allObject",
+            "basicObject",
+            "noDefaultValues",
+            "deprecated",
+            "obsolete"
           ],
           "enumTitles": [
             "Manual Maintenance",
@@ -114,9 +114,9 @@
       },
       "additionalProperties": false,
       "required": [
-        "applName",
-        "type",
-        "hashName",
+        "applicationName",
+        "applicationType",
+        "hashCode",
         "maintenanceMode"
       ]
     },
@@ -140,12 +140,12 @@
             "description": "Maintenance Status",
             "type": "string",
             "enum": [
-              "xFlag",
-              "yFlag",
-              "vFlag",
-              "iFlag",
-              "uFlag",
-              "nFlag"
+              "noDefault",
+              "defaultWithValues",
+              "defaultWithoutValues",
+              "inactiveValues",
+              "unmaintainedValues",
+              "authorizaitonChechInactive"
             ],
             "enumTitles": [
               "No Default",
@@ -163,7 +163,7 @@
               "Unmaintained Object Status",
               "Authorization Check Inactive"
             ],
-            "default": "yFlag"
+            "default": "defaultWithValues"
           },
           "fields": {
             "title": "Fields",
