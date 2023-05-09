@@ -56,7 +56,7 @@ INTERFACE zif_aff_susi_v1
       unmaintained_values TYPE ty_maintenance_status VALUE 'U',
       "! <p class="shorttext">Authorization Check Inactive</p>
       "! Authorization Check Inactive
-      Authorizaiton_chech_inactive TYPE ty_maintenance_status VALUE 'N',
+      authorization_check_inactive TYPE ty_maintenance_status VALUE 'N',
     END OF co_maintenance_status.
 
   TYPES:
