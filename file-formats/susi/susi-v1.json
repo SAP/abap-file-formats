@@ -59,9 +59,9 @@
         "originalLanguage"
       ]
     },
-    "general": {
-      "title": "General",
-      "description": "General",
+    "generalInformation": {
+      "title": "General Information",
+      "description": "General information",
       "type": "object",
       "properties": {
         "applicationName": {
@@ -211,6 +211,6 @@
   "required": [
     "formatVersion",
     "header",
-    "general"
+    "generalInformation"
   ]
 }

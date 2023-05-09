@@ -18,22 +18,22 @@ INTERFACE zif_aff_susi_v1
     BEGIN OF co_maintenance_mode,
       "! <p class="shorttext">Manual Maintenance</p>
       "! Manual Maintenance
-      manual TYPE ty_maintenance_mode VALUE space,
+      manual            TYPE ty_maintenance_mode VALUE space,
       "! <p class="shorttext">Autom. Maintenance (All Objects)</p>
       "! Autom. Maintenance (All Objects)
-      all_object TYPE ty_maintenance_mode VALUE 'A',
+      all_object        TYPE ty_maintenance_mode VALUE 'A',
       "! <p class="shorttext">Automatic Maintenance (Basis Authorization Objects Only)</p>
       "! Automatic Maintenance (Basis Authorization Objects Only)
-      basic_object TYPE ty_maintenance_mode VALUE 'B',
+      basic_object      TYPE ty_maintenance_mode VALUE 'B',
       "! <p class="shorttext">Application Does Not Require Default Values</p>
       "! Application Does Not Require Default Values
       no_default_values TYPE ty_maintenance_mode VALUE 'I',
       "! <p class="shorttext">Application is Deprecated</p>
       "! Application is Deprecated
-      deprecated TYPE ty_maintenance_mode VALUE 'D',
+      deprecated        TYPE ty_maintenance_mode VALUE 'D',
       "! <p class="shorttext">Application Is Obsolete</p>
       "! Application Is Obsolete
-      obsolete TYPE ty_maintenance_mode VALUE 'O',
+      obsolete          TYPE ty_maintenance_mode VALUE 'O',
     END OF co_maintenance_mode,
 
     "! <p class="shorttext">Maintenance Status</p>
@@ -41,19 +41,19 @@ INTERFACE zif_aff_susi_v1
     BEGIN OF co_maintenance_status,
       "! <p class="shorttext">No Default</p>
       "! No Default
-      no_default TYPE ty_maintenance_status VALUE 'X',
+      no_default                   TYPE ty_maintenance_status VALUE 'X',
       "! <p class="shorttext">Default With Field Values</p>
       "! Default With Field Values
-      default_with_values TYPE ty_maintenance_status VALUE 'Y',
+      default_with_values          TYPE ty_maintenance_status VALUE 'Y',
       "! <p class="shorttext">Default Without Field Values</p>
       "! Default Without Field Values
-      default_without_values TYPE ty_maintenance_status VALUE 'V',
+      default_without_values       TYPE ty_maintenance_status VALUE 'V',
       "! <p class="shorttext">Default Inactive</p>
       "! Default Inactive
-      inactive_values TYPE ty_maintenance_status VALUE 'I',
+      inactive_values              TYPE ty_maintenance_status VALUE 'I',
       "! <p class="shorttext">Unmaintained Object Status</p>
       "! Unmaintained Object Status
-      unmaintained_values TYPE ty_maintenance_status VALUE 'U',
+      unmaintained_values          TYPE ty_maintenance_status VALUE 'U',
       "! <p class="shorttext">Authorization Check Inactive</p>
       "! Authorization Check Inactive
       authorization_check_inactive TYPE ty_maintenance_status VALUE 'N',
@@ -71,18 +71,18 @@ INTERFACE zif_aff_susi_v1
     ty_type      TYPE c LENGTH 80.
 
   TYPES:
-    "! <p class="shorttext">General</p>
-    "! General
+    "! <p class="shorttext">General Information</p>
+    "! General information
     "! $required
-    BEGIN OF ty_general,
+    BEGIN OF ty_general_information,
       "! <p class="shorttext">Application Name</p>
       "! Application Name of Authorization Default Value.
       "! $required
-      application_name        TYPE ty_appl_name,
+      application_name TYPE ty_appl_name,
       "! <p class="shorttext">Application Type</p>
       "! Type of Authorization Default Value.
       "! $required
-      application_type             TYPE ty_type,
+      application_type TYPE ty_type,
       "! <p class="shorttext">Technical Name (Hash Code)</p>
       "! Technical Name (Hash Code).
       "! $required
@@ -92,7 +92,7 @@ INTERFACE zif_aff_susi_v1
       "! $values {@link zif_aff_susi_v1.data:co_maintenance_mode}
       "! $required
       maintenance_mode TYPE ty_maintenance_mode,
-    END OF ty_general.
+    END OF ty_general_information.
 
   TYPES:
     "! <p class="shorttext">Authorization Value</p>
@@ -163,10 +163,10 @@ INTERFACE zif_aff_susi_v1
       "! Header
       "! $required
       header                TYPE zif_aff_types_v1=>ty_header_60_src,
-      "! <p class="shorttext">General</p>
-      "! General
+      "! <p class="shorttext">General Information</p>
+      "! General information
       "! $required
-      general               TYPE ty_general,
+      general_information   TYPE ty_general_information,
       "! <p class="shorttext">Authorization objects</p>
       "! Authorization objects
       authorization_objects TYPE ty_authorization_objects,
