@@ -43,11 +43,6 @@ INTERFACE zif_aff_ront_v1
       "! $required
       name             TYPE c LENGTH 30,
 
-      "! <p class="shorttext">Expanded Name</p>
-      "! The expanded name of the SAP Object Type is its unabbreviated name.
-      "! $required
-      expanded_name    TYPE c LENGTH 512,
-
       "! <p class="shorttext">Object Type Code</p>
       "! The object type code uniquely identifies the SAP Object Type.
       object_type_code TYPE c LENGTH 5,
