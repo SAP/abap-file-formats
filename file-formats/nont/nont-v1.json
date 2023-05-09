@@ -60,12 +60,6 @@
       "type": "string",
       "maxLength": 30
     },
-    "expandedName": {
-      "title": "Expanded Name",
-      "description": "The expanded name of the SAP Object Node Type is its unabbreviated name.",
-      "type": "string",
-      "maxLength": 512
-    },
     "sapObjectType": {
       "title": "SAP Object Type",
       "description": "The name of the referenced SAP Object Type.",
@@ -73,7 +67,7 @@
       "maxLength": 30
     },
     "rootNodeFlag": {
-      "title": "Root Node Flag",
+      "title": "Root Node",
       "description": "Indicates that the SAP Object Node Type corresponds to the referenced SAP Object Type.",
       "type": "boolean"
     }
@@ -82,7 +76,6 @@
   "required": [
     "formatVersion",
     "header",
-    "name",
-    "expandedName"
+    "name"
   ]
 }
