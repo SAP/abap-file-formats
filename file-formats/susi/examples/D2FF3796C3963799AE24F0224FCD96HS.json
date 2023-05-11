@@ -7,7 +7,6 @@
     "generalInformation": {
         "applicationName": "Z_FEM3/Z_FEM3_GET_INFO",
         "applicationType": "WebService",
-        "hashCode": "D2FF3796C3963799AE24F0224FCD96HS",
         "maintenanceMode": "manual"
     },
     "authorizationObjects": [
