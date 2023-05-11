@@ -87,7 +87,7 @@
           ],
           "enumTitles": [
             "Manual Maintenance",
-            "Autom. Maintenance (All Objects)",
+            "Automatic Maintenance (All Objects)",
             "Automatic Maintenance (Basis Authorization Objects Only)",
             "Application Does Not Require Default Values",
             "Application is Deprecated",

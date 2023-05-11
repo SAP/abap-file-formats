@@ -19,7 +19,7 @@ INTERFACE zif_aff_susi_v1
       "! <p class="shorttext">Manual Maintenance</p>
       "! Manual maintenance
       manual                  TYPE ty_maintenance_mode VALUE space,
-      "! <p class="shorttext">Autom. Maintenance (All Objects)</p>
+      "! <p class="shorttext">Automatic Maintenance (All Objects)</p>
       "! Automatic maintenance (all objects)
       automatic               TYPE ty_maintenance_mode VALUE 'A',
       "! <p class="shorttext">Automatic Maintenance (Basis Authorization Objects Only)</p>
