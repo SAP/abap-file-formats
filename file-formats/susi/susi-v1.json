@@ -37,17 +37,14 @@
           "type": "string",
           "enum": [
             "standard",
-            "keyUser",
             "cloudDevelopment"
           ],
           "enumTitles": [
             "Standard",
-            "ABAP for Key Users",
             "ABAP Cloud Development"
           ],
           "enumDescriptions": [
             "Standard",
-            "ABAP for key user extensibility",
             "ABAP cloud development"
           ],
           "default": "standard"
@@ -66,30 +63,24 @@
       "properties": {
         "applicationName": {
           "title": "Application Name",
-          "description": "Application Name of Authorization Default Value.",
+          "description": "Application name of authorization default value",
           "type": "string",
           "maxLength": 132
         },
         "applicationType": {
           "title": "Application Type",
-          "description": "Type of Authorization Default Value.",
+          "description": "Type of authorization default value.",
           "type": "string",
           "maxLength": 80
         },
-        "hashCode": {
-          "title": "Technical Name (Hash Code)",
-          "description": "Technical Name (Hash Code).",
-          "type": "string",
-          "maxLength": 32
-        },
         "maintenanceMode": {
           "title": "Maintenance Mode",
-          "description": "Maintenance Mode.",
+          "description": "Maintenance mode.",
           "type": "string",
           "enum": [
             "manual",
-            "allObject",
-            "basicObject",
+            "automatic",
+            "automaticBasisObjects",
             "noDefaultValues",
             "deprecated",
             "obsolete"
@@ -103,12 +94,12 @@
             "Application Is Obsolete"
           ],
           "enumDescriptions": [
-            "Manual Maintenance",
-            "Autom. Maintenance (All Objects)",
-            "Automatic Maintenance (Basis Authorization Objects Only)",
-            "Application Does Not Require Default Values",
-            "Application is Deprecated",
-            "Application Is Obsolete"
+            "Manual maintenance",
+            "Automatic maintenance (all objects)",
+            "Automatic maintenance (basis authorization objects only)",
+            "Application does not require default values",
+            "Application is deprecated",
+            "Application is obsolete"
           ]
         }
       },
@@ -116,7 +107,6 @@
       "required": [
         "applicationName",
         "applicationType",
-        "hashCode",
         "maintenanceMode"
       ]
     },
@@ -126,18 +116,18 @@
       "type": "array",
       "items": {
         "title": "Authorization Objects Details",
-        "description": "Authorization Objects Details",
+        "description": "Authorization objects details",
         "type": "object",
         "properties": {
           "object": {
             "title": "Object",
-            "description": "Name of Authorization Object",
+            "description": "Name of authorization object",
             "type": "string",
             "maxLength": 10
           },
           "maintenanceStatus": {
             "title": "Maintenance Status",
-            "description": "Maintenance Status",
+            "description": "Maintenance status",
             "type": "string",
             "enum": [
               "noDefault",
@@ -156,39 +146,39 @@
               "Authorization Check Inactive"
             ],
             "enumDescriptions": [
-              "No Default",
-              "Default With Field Values",
-              "Default Without Field Values",
-              "Default Inactive",
-              "Unmaintained Object Status",
-              "Authorization Check Inactive"
+              "No default",
+              "Default with field values",
+              "Default without field values",
+              "Default inactive",
+              "Unmaintained object status",
+              "Authorization check inactive"
             ],
             "default": "defaultWithValues"
           },
           "fields": {
             "title": "Fields",
-            "description": "Authorization Fields.",
+            "description": "Authorization fields.",
             "type": "array",
             "items": {
               "title": "Authorization Field Details",
-              "description": "Authorization Field Details",
+              "description": "Authorization field details",
               "type": "object",
               "properties": {
                 "field": {
                   "title": "Field",
-                  "description": "Name of Authorization Field",
+                  "description": "Name of authorization field",
                   "type": "string",
                   "maxLength": 10
                 },
                 "low": {
                   "title": "From",
-                  "description": "From Value",
+                  "description": "From value",
                   "type": "string",
                   "maxLength": 40
                 },
                 "high": {
                   "title": "To",
-                  "description": "To Values",
+                  "description": "To values",
                   "type": "string",
                   "maxLength": 40
                 }
@@ -202,7 +192,8 @@
         },
         "additionalProperties": false,
         "required": [
-          "object"
+          "object",
+          "maintenanceStatus"
         ]
       }
     }
