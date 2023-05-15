@@ -1,42 +1,42 @@
 {
-    "formatVersion": "1",
-    "header": {
-        "description": "SUSI Testobject",
-        "originalLanguage": "en"
-    },
-    "generalInformation": {
-        "applicationName": "Z_FEM3/Z_FEM3_GET_INFO",
-        "applicationType": "WebService",
-        "maintenanceMode": "manual"
-    },
-    "authorizationObjects": [
+  "formatVersion": "1",
+  "header": {
+    "description": "SUSI Testobject",
+    "originalLanguage": "en"
+  },
+  "generalInformation": {
+    "applicationName": "Z_FEM3/Z_FEM3_GET_INFO",
+    "applicationType": "WebService",
+    "maintenanceMode": "manual"
+  },
+  "authorizationObjects": [
+    {
+      "object": "S_USER_AGR",
+      "maintenanceStatus": "defaultWithValues",
+      "fields": [
         {
-            "object": "S_USER_AGR",
-            "maintenanceStatus": "defaultWithValues",
-            "fields": [
-                {
-                    "field": "ACTVT",
-                    "low": "02"
-                },
-                {
-                    "field": "ACTVT",
-                    "low": "03"
-                }
-            ]
+          "field": "ACTVT",
+          "low": "02"
         },
         {
-            "object": "S_USER_GRP",
-            "maintenanceStatus": "noDefault",
-            "fields": [
-                {
-                    "field": "ACTVT",
-                    "low": "03"
-                },
-                {
-                    "field": "CLASS",
-                    "low": "TEST"
-                }
-            ]
+          "field": "ACTVT",
+          "low": "03"
         }
-    ]
+      ]
+    },
+    {
+      "object": "S_USER_GRP",
+      "maintenanceStatus": "noDefault",
+      "fields": [
+        {
+          "field": "ACTVT",
+          "low": "03"
+        },
+        {
+          "field": "CLASS",
+          "low": "TEST"
+        }
+      ]
+    }
+  ]
 }
