@@ -72,38 +72,38 @@
           "description": "Name of the program which is executed within the job",
           "type": "string",
           "maxLength": 40
-        },
-        "exitClasses": {
-          "title": "Exit Classes",
-          "description": "Classes which contain the exits of the job scheduling and processing",
-          "type": "object",
-          "properties": {
-            "check": {
-              "title": "Check",
-              "description": "Name of the class which contains the check exit",
-              "type": "string",
-              "maxLength": 30
-            },
-            "valueHelp": {
-              "title": "Value Help",
-              "description": "Name of the class which contains the value help exit",
-              "type": "string",
-              "maxLength": 30
-            },
-            "notification": {
-              "title": "Notification",
-              "description": "Name of the class which contains the notification exit",
-              "type": "string",
-              "maxLength": 30
-            }
-          },
-          "additionalProperties": false
         }
       },
       "additionalProperties": false,
       "required": [
         "className"
       ]
+    },
+    "exitClasses": {
+      "title": "Exit Classes",
+      "description": "Classes which contain the exits of the job scheduling and processing",
+      "type": "object",
+      "properties": {
+        "check": {
+          "title": "Check",
+          "description": "Name of the class which contains the check exit",
+          "type": "string",
+          "maxLength": 30
+        },
+        "valueHelp": {
+          "title": "Value Help",
+          "description": "Name of the class which contains the value help exit",
+          "type": "string",
+          "maxLength": 30
+        },
+        "notification": {
+          "title": "Notification",
+          "description": "Name of the class which contains the notification exit",
+          "type": "string",
+          "maxLength": 30
+        }
+      },
+      "additionalProperties": false
     }
   },
   "additionalProperties": false,

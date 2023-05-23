@@ -5,11 +5,11 @@
     "originalLanguage": "en"
   },
   "generalInformation": {
-    "className": "CL_APJ_SIMPLE",
-    "exitClasses": {
-      "check": "CL_CHECK_APJ_SIMPLE",
-      "valueHelp": "CL_VALUE_HELP_APJ_SIMPLE",
-      "notification": "CL_APJ_HOME_DEMO_CHECK"
-    }
+    "className": "CL_APJ_SIMPLE"
+  },
+  "exitClasses": {
+    "check": "CL_CHECK_APJ_SIMPLE",
+    "valueHelp": "CL_VALUE_HELP_APJ_SIMPLE",
+    "notification": "CL_APJ_HOME_DEMO_CHECK"
   }
 }

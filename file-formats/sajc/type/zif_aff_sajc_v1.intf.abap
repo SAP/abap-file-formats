@@ -50,9 +50,6 @@ INTERFACE zif_aff_sajc_v1
       "! <p class="shorttext">Executed Program</p>
       "! Name of the program which is executed within the job
       program_name TYPE ty_program_name,
-      "! <p class="shorttext">Exit Classes</p>
-      "! Classes which contain the exits of the job scheduling and processing
-      exit_classes TYPE ty_exit_classes,
     END OF ty_general_information.
 
   TYPES:
@@ -69,5 +66,8 @@ INTERFACE zif_aff_sajc_v1
       "! General information
       "! $required
       general_information TYPE ty_general_information,
+      "! <p class="shorttext">Exit Classes</p>
+      "! Classes which contain the exits of the job scheduling and processing
+      exit_classes        TYPE ty_exit_classes,
     END OF ty_main.
 ENDINTERFACE.
