@@ -23,7 +23,7 @@ INTERFACE zif_aff_nont_v1
 
       "! <p class="shorttext">Root Node</p>
       "! Indicates that the SAP Object Node Type corresponds to the referenced SAP Object Type.
-      root_node_flag  TYPE abap_bool,
+      root_node  TYPE abap_bool,
 
     END OF ty_main.
 
