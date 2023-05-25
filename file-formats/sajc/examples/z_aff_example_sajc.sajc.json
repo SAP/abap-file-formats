@@ -4,7 +4,12 @@
     "description": "Example for CL_APJ_SIMPLE",
     "originalLanguage": "en"
   },
-  "className": "CL_APJ_SIMPLE",
-  "checkExitClass": "CL_CHECK_APJ_SIMPLE",
-  "valueHelpExitClass": "CL_VALUE_HELP_APJ_SIMPLE"
+  "generalInformation": {
+    "className": "CL_APJ_SIMPLE"
+  },
+  "exitClasses": {
+    "check": "CL_CHECK_APJ_SIMPLE",
+    "valueHelp": "CL_VALUE_HELP_APJ_SIMPLE",
+    "notification": "CL_APJ_HOME_DEMO_CHECK"
+  }
 }

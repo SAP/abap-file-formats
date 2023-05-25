@@ -56,35 +56,60 @@
         "originalLanguage"
       ]
     },
-    "className": {
-      "title": "Class with Execute Method",
-      "description": "Name of the class which contains the execute-method to run within the job",
-      "type": "string",
-      "maxLength": 30
+    "generalInformation": {
+      "title": "General Information",
+      "description": "General information",
+      "type": "object",
+      "properties": {
+        "className": {
+          "title": "Class with Execute Method",
+          "description": "Name of the class which contains the execute-method to run within the job",
+          "type": "string",
+          "maxLength": 30
+        },
+        "programName": {
+          "title": "Executed Program",
+          "description": "Name of the program which is executed within the job",
+          "type": "string",
+          "maxLength": 40
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "className"
+      ]
     },
-    "programName": {
-      "title": "Executed Program",
-      "description": "Name of the program which is executed within the job",
-      "type": "string",
-      "maxLength": 40
-    },
-    "checkExitClass": {
-      "title": "Class with Check Exit",
-      "description": "Name of the class which contains the check exit",
-      "type": "string",
-      "maxLength": 30
-    },
-    "valueHelpExitClass": {
-      "title": "Class with Value Help Exit",
-      "description": "Name of the class which contains the value help exit",
-      "type": "string",
-      "maxLength": 30
+    "exitClasses": {
+      "title": "Exit Classes",
+      "description": "Classes which contain the exits of the job scheduling and processing",
+      "type": "object",
+      "properties": {
+        "check": {
+          "title": "Check",
+          "description": "Name of the class which contains the check exit",
+          "type": "string",
+          "maxLength": 30
+        },
+        "valueHelp": {
+          "title": "Value Help",
+          "description": "Name of the class which contains the value help exit",
+          "type": "string",
+          "maxLength": 30
+        },
+        "notification": {
+          "title": "Notification",
+          "description": "Name of the class which contains the notification exit",
+          "type": "string",
+          "maxLength": 30
+        }
+      },
+      "additionalProperties": false
     }
   },
   "additionalProperties": false,
   "required": [
     "formatVersion",
     "header",
-    "className"
+    "generalInformation"
   ]
 }
