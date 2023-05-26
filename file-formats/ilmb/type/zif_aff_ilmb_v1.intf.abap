@@ -1,5 +1,5 @@
 INTERFACE zif_aff_ilmb_v1
-  PUBLIC .
+  PUBLIC.
 
   TYPES:
     "! <p class="shorttext">Condition Fields Direct</p>
@@ -37,25 +37,11 @@ INTERFACE zif_aff_ilmb_v1
       condition_field_description TYPE zif_aff_types_v1=>ty_description_60,
       "! <p class="shorttext">No Intervals</p>
       "! No intervals
-      no_intervals                TYPE xsdboolean,
+      no_intervals                TYPE boole_d,
     END OF ty_available_condition_field,
     "! <p class="shorttext">Available Condition Fields</p>
     "! Available condition fields
     ty_available_condition_fields TYPE SORTED TABLE OF ty_available_condition_field WITH UNIQUE KEY condition_field.
-
-  TYPES:
-    BEGIN OF ty_policy_category,
-      "! <p class="shorttext">Policy Category</p>
-      "! Policy category
-      "! $required
-      policy_category(10) TYPE c,
-      "! <p class="shorttext">Description</p>
-      "! Description
-      description         TYPE zif_aff_types_v1=>ty_description_60,
-    END OF ty_policy_category,
-    "! <p class="shorttext">Policy Category</p>
-    "! Policy category
-    ty_policy_categorys TYPE SORTED TABLE OF ty_policy_category WITH UNIQUE KEY policy_category.
 
   TYPES:
     "! <p class="shorttext">Destruction Object</p>
@@ -101,18 +87,18 @@ INTERFACE zif_aff_ilmb_v1
       "! Header
       "! $required
       header                     TYPE zif_aff_types_v1=>ty_header_60_cloud,
-      "! <p class="shorttext"> Mapping ILM Object To Data Destruction Object</p>
+      "! <p class="shorttext">Mapping ILM Object To Data Destruction Object</p>
       "! Mapping ILM object to data destruction object
       "! $required
       destruction_object         TYPE ty_destruction_objects,
-      "! <p class="shorttext">  Value Determination for Time References</p>
+      "! <p class="shorttext">Value Determination for Time References</p>
       "!  Value determination for time references
       "! $required
       time_references            TYPE ty_time_references,
       "! <p class="shorttext">Available Condition Fields</p>
       "! Available condition fields
       "! $required
-      available_condition_field  TYPE ty_available_condition_fieldS,
+      available_condition_field  TYPE ty_available_condition_fields,
       "! <p class="shorttext">Condition Fields For Direct Value Determination</p>
       "! Condition fields for direct value determination
       "! $required
