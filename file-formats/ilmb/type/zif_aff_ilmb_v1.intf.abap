@@ -37,7 +37,7 @@ INTERFACE zif_aff_ilmb_v1
       condition_field_description TYPE zif_aff_types_v1=>ty_description_60,
       "! <p class="shorttext">No Intervals</p>
       "! No intervals
-      no_intervals                TYPE xsdboolean,
+      no_intervals                TYPE abap_bool,
     END OF ty_available_condition_field,
     "! <p class="shorttext">Available Condition Fields</p>
     "! Available condition fields
