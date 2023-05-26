@@ -37,7 +37,7 @@ INTERFACE zif_aff_ilmb_v1
       condition_field_description TYPE zif_aff_types_v1=>ty_description_60,
       "! <p class="shorttext">No Intervals</p>
       "! No intervals
-      no_intervals                TYPE boole_d,
+      no_intervals                TYPE xsdboolean,
     END OF ty_available_condition_field,
     "! <p class="shorttext">Available Condition Fields</p>
     "! Available condition fields
@@ -77,7 +77,7 @@ INTERFACE zif_aff_ilmb_v1
     ty_time_references TYPE SORTED TABLE OF ty_time_reference WITH UNIQUE KEY constant.
 
 
-  TYPES :
+  TYPES:
     "! <p class="shorttext">ILM Object</p>
     "! ILM object (ILMB) v1
     BEGIN OF ty_main,
