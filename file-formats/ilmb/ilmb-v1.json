@@ -57,46 +57,34 @@
       ]
     },
     "destructionObject": {
-      "title": "Mapping ILM Object To Data Destruction Object",
+      "title": "Destruction Object",
       "description": "Mapping ILM object to data destruction object",
-      "type": "array",
-      "uniqueItems": true,
-      "items": {
-        "title": "Destruction Object",
-        "description": "Destruction object",
-        "type": "object",
-        "properties": {
-          "destructionObject": {
-            "title": "Destruction Object",
-            "description": "Destruction object",
-            "type": "string",
-            "maxLength": 30
-          }
-        },
-        "additionalProperties": false
-      }
+      "type": "object",
+      "properties": {
+        "name": {
+          "title": "Name",
+          "description": "Name",
+          "type": "string",
+          "maxLength": 30
+        }
+      },
+      "additionalProperties": false
     },
     "timeReferences": {
-      "title": "Value Determination for Time References",
+      "title": "Time References",
       "description": "Value determination for time references",
       "type": "array",
       "uniqueItems": true,
       "items": {
-        "title": "Time References",
-        "description": "Time references",
+        "title": "Time Reference",
+        "description": "Time reference",
         "type": "object",
         "properties": {
           "constant": {
-            "title": "IRM Constant",
+            "title": "Constant",
             "description": "IRM constant",
             "type": "string",
             "maxLength": 30
-          },
-          "description": {
-            "title": "Description",
-            "description": "Description",
-            "type": "string",
-            "maxLength": 60
           },
           "sourceTable": {
             "title": "Source Table",
@@ -114,21 +102,27 @@
         "additionalProperties": false
       }
     },
-    "availableConditionField": {
-      "title": "Available Condition Fields",
-      "description": "Available condition fields",
+    "condFieldsDirect": {
+      "title": "Condition Fields Direct",
+      "description": "Condition fields for direct value determination",
       "type": "array",
       "uniqueItems": true,
       "items": {
-        "title": "Available Condition Fields",
-        "description": "Available condition fields",
+        "title": "Condition Field",
+        "description": "Condition field",
         "type": "object",
         "properties": {
-          "conditionField": {
-            "title": "Condition Field",
+          "name": {
+            "title": "Name",
             "description": "Condition field",
             "type": "string",
             "maxLength": 30
+          },
+          "conditionFieldDescription": {
+            "title": "Condition Field Description",
+            "description": "Field name description",
+            "type": "string",
+            "maxLength": 60
           },
           "dataElement": {
             "title": "Data Element",
@@ -136,43 +130,6 @@
             "type": "string",
             "maxLength": 30
           },
-          "dataElementDescription": {
-            "title": "Data Element Description",
-            "description": "Data element description",
-            "type": "string",
-            "maxLength": 60
-          },
-          "conditionFieldDescription": {
-            "title": "Field Name Description",
-            "description": "Field name description",
-            "type": "string",
-            "maxLength": 60
-          },
-          "noIntervals": {
-            "title": "No Intervals",
-            "description": "No intervals",
-            "type": "boolean"
-          }
-        },
-        "additionalProperties": false
-      }
-    },
-    "condFieldsDirect": {
-      "title": "Condition Fields For Direct Value Determination",
-      "description": "Condition fields for direct value determination",
-      "type": "array",
-      "uniqueItems": true,
-      "items": {
-        "title": "Condition Fields Direct",
-        "description": "Condition fields direct",
-        "type": "object",
-        "properties": {
-          "conditionField": {
-            "title": "Condition Field",
-            "description": "Condition field",
-            "type": "string",
-            "maxLength": 30
-          },
           "sourceTable": {
             "title": "Source Table",
             "description": "Source table",
@@ -184,6 +141,11 @@
             "description": "Source field",
             "type": "string",
             "maxLength": 30
+          },
+          "noIntervals": {
+            "title": "No Intervals",
+            "description": "No intervals",
+            "type": "boolean"
           }
         },
         "additionalProperties": false
@@ -196,7 +158,6 @@
     "header",
     "destructionObject",
     "timeReferences",
-    "availableConditionField",
     "condFieldsDirect"
   ]
 }
