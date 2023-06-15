@@ -76,13 +76,13 @@
       "type": "array",
       "uniqueItems": true,
       "items": {
-        "title": "Time Reference",
-        "description": "Time reference",
+        "title": "Time Reference Details",
+        "description": "Time reference details",
         "type": "object",
         "properties": {
-          "constant": {
-            "title": "Constant",
-            "description": "IRM constant",
+          "timeReference": {
+            "title": "Time Reference",
+            "description": "Time reference",
             "type": "string",
             "maxLength": 30
           },
@@ -97,30 +97,40 @@
             "description": "Source field",
             "type": "string",
             "maxLength": 30
+          },
+          "indirectValue": {
+            "title": "Indirect Value Determination",
+            "description": "Indirect Value Determination",
+            "type": "boolean"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "required": [
+          "timeReference",
+          "sourceTable",
+          "sourceField"
+        ]
       }
     },
-    "condFieldsDirect": {
+    "conditionFields": {
       "title": "Condition Fields Direct",
       "description": "Condition fields for direct value determination",
       "type": "array",
       "uniqueItems": true,
       "items": {
-        "title": "Condition Field",
-        "description": "Condition field",
+        "title": "Condition Field Details",
+        "description": "Condition field details",
         "type": "object",
         "properties": {
           "name": {
             "title": "Name",
-            "description": "Condition field",
+            "description": "Name",
             "type": "string",
             "maxLength": 30
           },
-          "conditionFieldDescription": {
-            "title": "Condition Field Description",
-            "description": "Field name description",
+          "description": {
+            "title": "Description",
+            "description": "Condition field",
             "type": "string",
             "maxLength": 60
           },
@@ -142,13 +152,23 @@
             "type": "string",
             "maxLength": 30
           },
+          "indirectValue": {
+            "title": "Indirect Value Determination",
+            "description": "Indirect Value Determination",
+            "type": "boolean"
+          },
           "noIntervals": {
             "title": "No Intervals",
             "description": "No intervals",
             "type": "boolean"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "sourceTable",
+          "sourceField"
+        ]
       }
     }
   },
@@ -158,6 +178,6 @@
     "header",
     "destructionObject",
     "timeReferences",
-    "condFieldsDirect"
+    "conditionFields"
   ]
 }

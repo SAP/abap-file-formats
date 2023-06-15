@@ -2,29 +2,35 @@ INTERFACE zif_aff_ilmb_v1
   PUBLIC.
 
   TYPES:
-    "! <p class="shorttext">Condition Field</p>
-    "! Condition field
+    "! <p class="shorttext">Condition Field Details</p>
+    "! Condition field details
     BEGIN OF ty_cond_field,
       "! <p class="shorttext">Name</p>
+      "! Name
+      "! $required
+      name           TYPE zif_aff_types_v1=>ty_object_name_30,
+      "! <p class="shorttext">Description</p>
       "! Condition field
-      name             TYPE zif_aff_types_v1=>ty_object_name_30,
-      "! <p class="shorttext">Condition Field Description</p>
-      "! Field name description
-      condition_field_description TYPE zif_aff_types_v1=>ty_description_60,
+      description    TYPE zif_aff_types_v1=>ty_description_60,
       "! <p class="shorttext">Data Element</p>
       "! Data element
-      data_element                TYPE zif_aff_types_v1=>ty_object_name_30,
+      data_element   TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Source Table</p>
       "! Source table
-      source_table                TYPE zif_aff_types_v1=>ty_object_name_30,
+      "! $required
+      source_table   TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Source Field</p>
       "! Source field
-      source_field                TYPE zif_aff_types_v1=>ty_object_name_30,
+      "! $required
+      source_field   TYPE zif_aff_types_v1=>ty_object_name_30,
+      "! <p class="shorttext">Indirect Value Determination</p>
+      "! Indirect Value Determination
+      indirect_value TYPE abap_bool,
       "! <p class="shorttext">No Intervals</p>
       "! No intervals
-      no_intervals                TYPE abap_bool,
+      no_intervals   TYPE abap_bool,
     END OF ty_cond_field,
-    "! <p class="shorttext">Condition Fields Details</p>
+    "! <p class="shorttext">Condition Fields</p>
     "!  Condition fields
     ty_cond_fields TYPE SORTED TABLE OF ty_cond_field WITH UNIQUE KEY source_table source_field.
 
@@ -34,26 +40,32 @@ INTERFACE zif_aff_ilmb_v1
     BEGIN OF ty_destruction_object,
       "! <p class="shorttext">Name</p>
       "! Name
-      name TYPE c LENGTH 30,
+      name TYPE zif_aff_types_v1=>ty_object_name_30,
     END OF ty_destruction_object.
 
   TYPES:
-    "! <p class="shorttext">Time Reference</p>
-    "! Time reference
+    "! <p class="shorttext">Time Reference Details</p>
+    "! Time reference details
     BEGIN OF ty_time_reference,
-      "! <p class="shorttext">Constant</p>
-      "! IRM constant
-      constant     TYPE zif_aff_types_v1=>ty_object_name_30,
+      "! <p class="shorttext">Time Reference</p>
+      "! Time reference
+      "! $required
+      time_reference TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Source Table</p>
       "! Source table
-      source_table TYPE zif_aff_types_v1=>ty_object_name_30,
+      "! $required
+      source_table   TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Source Field</p>
       "! Source field
-      source_field TYPE zif_aff_types_v1=>ty_object_name_30,
+      "! $required
+      source_field   TYPE zif_aff_types_v1=>ty_object_name_30,
+      "! <p class="shorttext">Indirect Value Determination</p>
+      "! Indirect Value Determination
+      indirect_value TYPE abap_bool,
     END OF ty_time_reference,
-    "! <p class="shorttext">Time References Details</p>
+    "! <p class="shorttext">Time References</p>
     "! Time references
-    ty_time_references TYPE SORTED TABLE OF ty_time_reference WITH UNIQUE KEY constant.
+    ty_time_references TYPE SORTED TABLE OF ty_time_reference WITH UNIQUE KEY time_reference.
 
 
   TYPES:
@@ -71,13 +83,13 @@ INTERFACE zif_aff_ilmb_v1
       "! $required
       destruction_object TYPE ty_destruction_object,
       "! <p class="shorttext">Time References</p>
-      "!  Value determination for time references
+      "! Value determination for time references
       "! $required
       time_references    TYPE ty_time_references,
       "! <p class="shorttext">Condition Fields Direct</p>
       "! Condition fields for direct value determination
       "! $required
-      cond_fields_direct TYPE ty_cond_fields,
+      condition_fields   TYPE ty_cond_fields,
     END OF ty_main.
 
 ENDINTERFACE.
