@@ -101,9 +101,150 @@
           "description": "Name of the class which contains the notification exit",
           "type": "string",
           "maxLength": 30
+        },
+        "delete": {
+          "title": "Delete",
+          "description": "Name of the class which contains the delete exit",
+          "type": "string",
+          "maxLength": 30
         }
       },
       "additionalProperties": false
+    },
+    "parameters": {
+      "title": "Parameters",
+      "description": "List of parameters",
+      "type": "array",
+      "items": {
+        "title": "Parameter",
+        "description": "Parameter of the class which is executed within the job",
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Name",
+            "description": "Name of the parameter",
+            "type": "string",
+            "maxLength": 38
+          },
+          "group": {
+            "title": "Group",
+            "description": "Name of the parameter group",
+            "type": "string",
+            "maxLength": 10
+          },
+          "indent": {
+            "title": "Indent",
+            "description": "Flag indicating whether the parameter is indented on the selection screen",
+            "type": "boolean"
+          },
+          "mandatory": {
+            "title": "Mandatory",
+            "description": "Flag indicating whether the parameter is mandatory",
+            "type": "boolean"
+          },
+          "hidden": {
+            "title": "Hidden",
+            "description": "Flag indicating whether the parameter is hidden",
+            "type": "boolean"
+          },
+          "readOnly": {
+            "title": "Read Only",
+            "description": "Flag indicating whether the parameter is read only",
+            "type": "boolean"
+          },
+          "enabledByParameter": {
+            "title": "Enabled By Parameter",
+            "description": "Name of the boolean parameter which enables / disables the current parameter",
+            "type": "string",
+            "maxLength": 38
+          },
+          "backendCall": {
+            "title": "Backend Call",
+            "description": "Flag indicating whether a call of the backend system is triggered after a parameter value change to check it",
+            "type": "boolean"
+          },
+          "singleValues": {
+            "title": "Only Single Values",
+            "description": "Flag indicating whether only single values are allowed (no conditions like 'not equal' or 'between')",
+            "type": "boolean"
+          },
+          "textEditorLines": {
+            "title": "Text Lines in Editor",
+            "description": "Number of lines of the text editor (0 means no multiline editor)",
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 20
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "name"
+        ]
+      }
+    },
+    "groups": {
+      "title": "Groups",
+      "description": "List of groups",
+      "type": "array",
+      "items": {
+        "title": "Group",
+        "description": "Group of parameters on the selection screen",
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Name",
+            "description": "Name of the group",
+            "type": "string",
+            "maxLength": 10
+          },
+          "title": {
+            "title": "Title",
+            "description": "Title of the group on the selection screen",
+            "type": "string",
+            "maxLength": 120
+          },
+          "section": {
+            "title": "Section",
+            "description": "Name of the group section",
+            "type": "string",
+            "maxLength": 10
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "title"
+        ]
+      }
+    },
+    "sections": {
+      "title": "Sections",
+      "description": "List of sections",
+      "type": "array",
+      "items": {
+        "title": "Section",
+        "description": "Section of parameter groups on the selection screen",
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Name",
+            "description": "Name of the section",
+            "type": "string",
+            "maxLength": 10
+          },
+          "title": {
+            "title": "Title",
+            "description": "Title of the section on the selection screen",
+            "type": "string",
+            "maxLength": 120
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "title"
+        ]
+      }
     }
   },
   "additionalProperties": false,
