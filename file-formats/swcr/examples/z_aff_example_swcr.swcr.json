@@ -1,0 +1,15 @@
+{
+  "header": {
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "relations": [
+    {
+      "relatedSoftwareComponent": "/PARTNER/APPLICATION",
+      "relationType": "unrestricted"
+    },
+    {
+      "relatedSoftwareComponent": "ZCUSTOM_DEVELOPMENT",
+      "relationType": "keyUserExtensibilityUsage"
+    }
+  ]
+}
