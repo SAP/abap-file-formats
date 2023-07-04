@@ -19,22 +19,22 @@ INTERFACE zif_aff_swcr_v1
     END OF co_relation_type.
 
   TYPES:
-    "! <p class="shorttext">Relation</p>
-    "! Relation
+    "! <p class="shorttext">Related Software Component</p>
+    "! Related Software Component
     BEGIN OF ty_relation,
       "! <p class="shorttext">Related Software Component</p>
       "! Related Software Component
       "! $required
-      related_software_component TYPE c LENGTH 30,
+      software_component TYPE c LENGTH 30,
       "! <p class="shorttext">Relation Type</p>
       "! Relation Type
       "! $required
-      relation_type              TYPE ty_relation_type,
+      type               TYPE ty_relation_type,
     END OF ty_relation.
 
   "! <p class="shorttext">Relations</p>
   "! Relations
-  TYPES ty_relations TYPE SORTED TABLE OF ty_relation WITH UNIQUE KEY related_software_component.
+  TYPES ty_relations TYPE SORTED TABLE OF ty_relation WITH UNIQUE KEY software_component.
 
   TYPES:
     "! <p class="shorttext">Software Component Relations</p>

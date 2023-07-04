@@ -62,17 +62,17 @@
       "type": "array",
       "uniqueItems": true,
       "items": {
-        "title": "Relation",
-        "description": "Relation",
+        "title": "Related Software Component",
+        "description": "Related Software Component",
         "type": "object",
         "properties": {
-          "relatedSoftwareComponent": {
+          "softwareComponent": {
             "title": "Related Software Component",
             "description": "Related Software Component",
             "type": "string",
             "maxLength": 30
           },
-          "relationType": {
+          "type": {
             "title": "Relation Type",
             "description": "Relation Type",
             "type": "string",
@@ -92,8 +92,8 @@
         },
         "additionalProperties": false,
         "required": [
-          "relatedSoftwareComponent",
-          "relationType"
+          "softwareComponent",
+          "type"
         ]
       }
     }
