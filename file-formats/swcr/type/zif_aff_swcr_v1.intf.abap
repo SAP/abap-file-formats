@@ -7,7 +7,7 @@ INTERFACE zif_aff_swcr_v1
     BEGIN OF ty_header,
       "! $required
       original_language     TYPE zif_aff_types_v1=>ty_original_language,
-      abap_language_version TYPE zif_aff_types_v1=>ty_abap_language_version_cloud,
+      abap_language_version TYPE zif_aff_types_v1=>ty_abap_language_version,
     END OF ty_header.
 
   "! <p class="shorttext">Relation Type</p>
