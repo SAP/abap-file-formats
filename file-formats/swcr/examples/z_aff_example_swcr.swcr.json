@@ -6,12 +6,12 @@
   },
   "relations": [
     {
-      "relatedSoftwareComponent": "/PARTNER/APPLICATION",
-      "relationType": "unrestricted"
+      "softwareComponent": "/PARTNER/APPLICATION",
+      "type": "unrestricted"
     },
     {
-      "relatedSoftwareComponent": "ZCUSTOM_DEVELOPMENT",
-      "relationType": "keyUserExtensibilityUsage"
+      "softwareComponent": "ZCUSTOM_DEVELOPMENT",
+      "type": "keyUserExtensibilityUsage"
     }
   ]
 }
