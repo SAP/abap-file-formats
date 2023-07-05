@@ -1,6 +1,15 @@
 INTERFACE zif_aff_swcr_v1
   PUBLIC.
 
+  TYPES:
+    "! <p class="shorttext">Header</p>
+    "! Header
+    BEGIN OF ty_header,
+      "! $required
+      original_language     TYPE zif_aff_types_v1=>ty_original_language,
+      abap_language_version TYPE zif_aff_types_v1=>ty_abap_language_version_cloud,
+    END OF ty_header.
+
   "! <p class="shorttext">Relation Type</p>
   "! Relation Type
   "! $values {@link zif_aff_swcr_v1.data:co_relation_type}
@@ -47,7 +56,7 @@ INTERFACE zif_aff_swcr_v1
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header         TYPE zif_aff_types_v1=>ty_header_60_cloud,
+      header         TYPE ty_header,
       "! <p class="shorttext">Relations</p>
       "! Relations
       "! $required
