@@ -1,11 +1,11 @@
 {
   "formatVersion": "1",
   "header": {
-    "description": "SUSI Testobject",
+    "description": "WS SRT_TEST_WEBI/REQUEST_RESPONSE",
     "originalLanguage": "en"
   },
   "generalInformation": {
-    "applicationName": "WS SRT_TEST_WEBI/REQUEST_RESPONSE",
+    "applicationName": "SRT_TEST_WEBI/REQUEST_RESPONSE",
     "applicationType": "WebService",
     "maintenanceMode": "manual"
   },
