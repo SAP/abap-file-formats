@@ -5,38 +5,42 @@
     "originalLanguage": "en"
   },
   "generalInformation": {
-    "applicationName": "Z_FEM3/Z_FEM3_GET_INFO",
+    "applicationName": "WS SRT_TEST_WEBI/REQUEST_RESPONSE",
     "applicationType": "WebService",
     "maintenanceMode": "manual"
   },
   "authorizationObjects": [
     {
-      "object": "S_USER_AGR",
+      "object": "S_SERVICE",
+      "maintenanceStatus": "noDefault"      
+    },
+    {
+      "object": "S_DATASET",
       "maintenanceStatus": "defaultWithValues",
       "fields": [
         {
           "field": "ACTVT",
-          "low": "02"
+          "low": "33"
         },
         {
           "field": "ACTVT",
-          "low": "03"
-        }
+          "low": "34"
+        },
+        {
+          "field": "PROGRAM",
+          "low": "SAPLSTRF"
+        }        
       ]
-    },
+    },        
     {
-      "object": "S_USER_GRP",
-      "maintenanceStatus": "noDefault",
+      "object": "S_TABU_RFC",
+      "maintenanceStatus": "defaultWithValues",
       "fields": [
         {
           "field": "ACTVT",
           "low": "03"
-        },
-        {
-          "field": "CLASS",
-          "low": "TEST"
-        }
+        }        
       ]
-    }
+    }    
   ]
 }
