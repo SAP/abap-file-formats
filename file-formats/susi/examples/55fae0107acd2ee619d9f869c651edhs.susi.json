@@ -12,7 +12,7 @@
   "authorizationObjects": [
     {
       "object": "S_SERVICE",
-      "maintenanceStatus": "noDefault"      
+      "maintenanceStatus": "noDefault"
     },
     {
       "object": "S_DATASET",
@@ -29,9 +29,9 @@
         {
           "field": "PROGRAM",
           "low": "SAPLSTRF"
-        }        
+        }
       ]
-    },        
+    },
     {
       "object": "S_TABU_RFC",
       "maintenanceStatus": "defaultWithValues",
@@ -39,8 +39,8 @@
         {
           "field": "ACTVT",
           "low": "03"
-        }        
+        }
       ]
-    }    
+    }
   ]
 }
