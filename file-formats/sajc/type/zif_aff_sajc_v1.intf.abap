@@ -79,9 +79,9 @@ INTERFACE zif_aff_sajc_v1
       "! <p class="shorttext">Group</p>
       "! Name of the parameter group
       group                TYPE ty_group_name,
-      "! <p class="shorttext">Indent</p>
+      "! <p class="shorttext">Indented</p>
       "! Flag indicating whether the parameter is indented on the selection screen
-      indent               TYPE abap_bool,
+      indented             TYPE abap_bool,
       "! <p class="shorttext">Mandatory</p>
       "! Flag indicating whether the parameter is mandatory
       mandatory            TYPE abap_bool,
@@ -167,14 +167,14 @@ INTERFACE zif_aff_sajc_v1
       "! <p class="shorttext">Exit Classes</p>
       "! Classes which contain the exits of the job scheduling and processing
       exit_classes        TYPE ty_exit_classes,
-      "! <p class="shorttext">Parameters</p>
-      "! List of parameters
-      parameters          TYPE ty_parameter_table,
-      "! <p class="shorttext">Groups</p>
-      "! List of groups
-      groups              TYPE ty_group_table,
       "! <p class="shorttext">Sections</p>
       "! List of sections
       sections            TYPE ty_section_table,
+      "! <p class="shorttext">Groups</p>
+      "! List of groups
+      groups              TYPE ty_group_table,
+      "! <p class="shorttext">Parameters</p>
+      "! List of parameters
+      parameters          TYPE ty_parameter_table,
     END OF ty_main.
 ENDINTERFACE.

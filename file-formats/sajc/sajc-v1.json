@@ -111,6 +111,70 @@
       },
       "additionalProperties": false
     },
+    "sections": {
+      "title": "Sections",
+      "description": "List of sections",
+      "type": "array",
+      "items": {
+        "title": "Section",
+        "description": "Section of parameter groups on the selection screen",
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Name",
+            "description": "Name of the section",
+            "type": "string",
+            "maxLength": 10
+          },
+          "title": {
+            "title": "Title",
+            "description": "Title of the section on the selection screen",
+            "type": "string",
+            "maxLength": 120
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "title"
+        ]
+      }
+    },
+    "groups": {
+      "title": "Groups",
+      "description": "List of groups",
+      "type": "array",
+      "items": {
+        "title": "Group",
+        "description": "Group of parameters on the selection screen",
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Name",
+            "description": "Name of the group",
+            "type": "string",
+            "maxLength": 10
+          },
+          "title": {
+            "title": "Title",
+            "description": "Title of the group on the selection screen",
+            "type": "string",
+            "maxLength": 120
+          },
+          "section": {
+            "title": "Section",
+            "description": "Name of the group section",
+            "type": "string",
+            "maxLength": 10
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "title"
+        ]
+      }
+    },
     "parameters": {
       "title": "Parameters",
       "description": "List of parameters",
@@ -132,8 +196,8 @@
             "type": "string",
             "maxLength": 10
           },
-          "indent": {
-            "title": "Indent",
+          "indented": {
+            "title": "Indented",
             "description": "Flag indicating whether the parameter is indented on the selection screen",
             "type": "boolean"
           },
@@ -179,70 +243,6 @@
         "additionalProperties": false,
         "required": [
           "name"
-        ]
-      }
-    },
-    "groups": {
-      "title": "Groups",
-      "description": "List of groups",
-      "type": "array",
-      "items": {
-        "title": "Group",
-        "description": "Group of parameters on the selection screen",
-        "type": "object",
-        "properties": {
-          "name": {
-            "title": "Name",
-            "description": "Name of the group",
-            "type": "string",
-            "maxLength": 10
-          },
-          "title": {
-            "title": "Title",
-            "description": "Title of the group on the selection screen",
-            "type": "string",
-            "maxLength": 120
-          },
-          "section": {
-            "title": "Section",
-            "description": "Name of the group section",
-            "type": "string",
-            "maxLength": 10
-          }
-        },
-        "additionalProperties": false,
-        "required": [
-          "name",
-          "title"
-        ]
-      }
-    },
-    "sections": {
-      "title": "Sections",
-      "description": "List of sections",
-      "type": "array",
-      "items": {
-        "title": "Section",
-        "description": "Section of parameter groups on the selection screen",
-        "type": "object",
-        "properties": {
-          "name": {
-            "title": "Name",
-            "description": "Name of the section",
-            "type": "string",
-            "maxLength": 10
-          },
-          "title": {
-            "title": "Title",
-            "description": "Title of the section on the selection screen",
-            "type": "string",
-            "maxLength": 120
-          }
-        },
-        "additionalProperties": false,
-        "required": [
-          "name",
-          "title"
         ]
       }
     }

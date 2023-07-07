@@ -13,6 +13,33 @@
     "notification": "CL_APJ_HOME_DEMO_CHECK",
     "delete": "CL_APJT_RT_JOB_DELETE_EXIT"
   },
+  "sections": [
+    {
+      "name": "1",
+      "title": "Customer Section"
+    },
+    {
+      "name": "2",
+      "title": "General Section"
+    }
+  ],
+  "groups": [
+    {
+      "name": "GRP_BUYER",
+      "title": "Buyer",
+      "section": "1"
+    },
+    {
+      "name": "GRP_SELLER",
+      "title": "Seller",
+      "section": "1"
+    },
+    {
+      "name": "GRP_GEN",
+      "title": "General",
+      "section": "2"
+    }
+  ],
   "parameters": [
     {
       "name": "P_BUY_C",
@@ -21,13 +48,13 @@
     {
       "name": "S_PLANT",
       "group": "GRP_BUYER",
-      "indent": true,
+      "indented": true,
       "enabledByParameter": "P_BUY_C"
     },
     {
       "name": "P_BUY_D",
       "group": "GRP_BUYER",
-      "indent": true,
+      "indented": true,
       "mandatory": true,
       "enabledByParameter": "P_BUY_C"
     },
@@ -38,7 +65,7 @@
     {
       "name": "P_INCR",
       "group": "GRP_SELLER",
-      "indent": true,
+      "indented": true,
       "enabledByParameter": "P_SEL_C",
       "backendCall": true
     },
@@ -75,33 +102,6 @@
     {
       "name": "P_SEV_IN",
       "hidden": true
-    }
-  ],
-  "groups": [
-    {
-      "name": "GRP_BUYER",
-      "title": "Buyer",
-      "section": "1"
-    },
-    {
-      "name": "GRP_SELLER",
-      "title": "Seller",
-      "section": "1"
-    },
-    {
-      "name": "GRP_GEN",
-      "title": "General",
-      "section": "2"
-    }
-  ],
-  "sections": [
-    {
-      "name": "1",
-      "title": "Customer Section"
-    },
-    {
-      "name": "2",
-      "title": "General Section"
     }
   ]
 }
