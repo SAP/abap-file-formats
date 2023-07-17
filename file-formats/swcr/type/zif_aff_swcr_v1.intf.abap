@@ -1,4 +1,4 @@
-INTERFACE zif_aff_swcr_v1
+INTERFACE if_aff_swcr_v1
   PUBLIC.
 
   TYPES:
@@ -6,61 +6,56 @@ INTERFACE zif_aff_swcr_v1
     "! Header
     BEGIN OF ty_header,
       "! $required
-      original_language     TYPE zif_aff_types_v1=>ty_original_language,
-      abap_language_version TYPE zif_aff_types_v1=>ty_abap_language_version,
+      original_language     TYPE if_aff_types_v1=>ty_original_language,
+      abap_language_version TYPE if_aff_types_v1=>ty_abap_language_version,
     END OF ty_header.
 
-  "! <p class="shorttext">Relation Type</p>
-  "! Relation Type
-  "! $values {@link zif_aff_swcr_v1.data:co_relation_type}
-  TYPES ty_relation_type TYPE c LENGTH 1.
-
-  CONSTANTS:
-    "! <p class="shorttext">Relation Type</p>
-    "! Relation Type
-    BEGIN OF co_relation_type,
-      "! <p class="shorttext">Unrestricted Usage</p>
-      "! Unrestricted Usage
-      unrestricted                 TYPE ty_relation_type VALUE '1',
-      "! <p class="shorttext">Key User Extensibility Usage</p>
-      "! Key User Extensibility Usage
-      key_user_extensibility_usage TYPE ty_relation_type VALUE '2',
-    END OF co_relation_type.
-
   TYPES:
-    "! <p class="shorttext">Related Software Component</p>
-    "! Related Software Component
-    BEGIN OF ty_relation,
-      "! <p class="shorttext">Related Software Component</p>
-      "! Related Software Component
+    "! <p class="shorttext">Access Permission</p>
+    "! Access Permission
+    BEGIN OF ty_permission,
+      "! <p class="shorttext">Software Component</p>
+      "! Software Component
       "! $required
       software_component TYPE c LENGTH 30,
-      "! <p class="shorttext">Relation Type</p>
-      "! Relation Type
-      "! $required
-      type               TYPE ty_relation_type,
-    END OF ty_relation.
+    END OF ty_permission.
 
-  "! <p class="shorttext">Relations</p>
-  "! Relations
-  TYPES ty_relations TYPE SORTED TABLE OF ty_relation WITH UNIQUE KEY software_component.
+  "! <p class="shorttext">Access Permissions</p>
+  "! Access Permissions
+  TYPES ty_permissions TYPE STANDARD TABLE OF ty_permission WITH DEFAULT KEY.
+
+  TYPES:
+    "! <p class="shorttext">Dependency</p>
+    "! Dependency
+    BEGIN OF ty_dependency,
+      "! <p class="shorttext">Software Component</p>
+      "! Software Component
+      "! $required
+      software_component TYPE c LENGTH 30,
+    END OF ty_dependency.
+
+  "! <p class="shorttext">Dependencies</p>
+  "! Dependencies
+  TYPES ty_dependencies TYPE STANDARD TABLE OF ty_dependency WITH DEFAULT KEY.
 
   TYPES:
     "! <p class="shorttext">Software Component Relations</p>
     "! Software Component Relations
     BEGIN OF ty_main,
       "! <p class="shorttext">Format Version</p>
-      "! Format version
+      "! Format Version
       "! $required
-      format_version TYPE zif_aff_types_v1=>ty_format_version,
+      format_version TYPE if_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
       header         TYPE ty_header,
-      "! <p class="shorttext">Relations</p>
-      "! Relations
-      "! $required
-      relations      TYPE ty_relations,
+      "! <p class="shorttext">Access Permissions</p>
+      "! The Software Component Grants Access Permission to the Specified Software Components
+      permissions    TYPE ty_permissions,
+      "! <p class="shorttext">Dependencies</p>
+      "! The Software Component Depends on the Specified Software Components
+      dependencies   TYPE ty_dependencies,
     END OF ty_main.
 
 ENDINTERFACE.

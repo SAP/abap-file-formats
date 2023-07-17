@@ -8,7 +8,7 @@
   "properties": {
     "formatVersion": {
       "title": "Format Version",
-      "description": "Format version",
+      "description": "Format Version",
       "type": "string",
       "const": "1"
     },
@@ -52,44 +52,47 @@
         "originalLanguage"
       ]
     },
-    "relations": {
-      "title": "Relations",
-      "description": "Relations",
+    "permissions": {
+      "title": "Access Permissions",
+      "description": "The Software Component Grants Access Permission to the Specified Software Components",
       "type": "array",
-      "uniqueItems": true,
       "items": {
-        "title": "Related Software Component",
-        "description": "Related Software Component",
+        "title": "Access Permission",
+        "description": "Access Permission",
         "type": "object",
         "properties": {
           "softwareComponent": {
-            "title": "Related Software Component",
-            "description": "Related Software Component",
+            "title": "Software Component",
+            "description": "Software Component",
             "type": "string",
             "maxLength": 30
-          },
-          "type": {
-            "title": "Relation Type",
-            "description": "Relation Type",
-            "type": "string",
-            "enum": [
-              "unrestricted",
-              "keyUserExtensibilityUsage"
-            ],
-            "enumTitles": [
-              "Unrestricted Usage",
-              "Key User Extensibility Usage"
-            ],
-            "enumDescriptions": [
-              "Unrestricted Usage",
-              "Key User Extensibility Usage"
-            ]
           }
         },
         "additionalProperties": false,
         "required": [
-          "softwareComponent",
-          "type"
+          "softwareComponent"
+        ]
+      }
+    },
+    "dependencies": {
+      "title": "Dependencies",
+      "description": "The Software Component Depends on the Specified Software Components",
+      "type": "array",
+      "items": {
+        "title": "Dependency",
+        "description": "Dependency",
+        "type": "object",
+        "properties": {
+          "softwareComponent": {
+            "title": "Software Component",
+            "description": "Software Component",
+            "type": "string",
+            "maxLength": 30
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "softwareComponent"
         ]
       }
     }
@@ -97,7 +100,6 @@
   "additionalProperties": false,
   "required": [
     "formatVersion",
-    "header",
-    "relations"
+    "header"
   ]
 }
