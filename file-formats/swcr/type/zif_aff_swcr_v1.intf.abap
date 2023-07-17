@@ -1,4 +1,4 @@
-INTERFACE if_aff_swcr_v1
+INTERFACE zif_aff_swcr_v1
   PUBLIC.
 
   TYPES:
