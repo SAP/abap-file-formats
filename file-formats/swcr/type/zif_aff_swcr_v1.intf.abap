@@ -6,8 +6,8 @@ INTERFACE zif_aff_swcr_v1
     "! Header
     BEGIN OF ty_header,
       "! $required
-      original_language     TYPE if_aff_types_v1=>ty_original_language,
-      abap_language_version TYPE if_aff_types_v1=>ty_abap_language_version,
+      original_language     TYPE zif_aff_types_v1=>ty_original_language,
+      abap_language_version TYPE zif_aff_types_v1=>ty_abap_language_version,
     END OF ty_header.
 
   TYPES:
@@ -45,7 +45,7 @@ INTERFACE zif_aff_swcr_v1
       "! <p class="shorttext">Format Version</p>
       "! Format Version
       "! $required
-      format_version TYPE if_aff_types_v1=>ty_format_version,
+      format_version TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
