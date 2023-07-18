@@ -67,7 +67,7 @@
           "type": "string",
           "enum": [
             "OData",
-            "WebService",
+            "webService",
             "RFC"
           ],
           "enumTitles": [
@@ -119,7 +119,12 @@
           }
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "objectType",
+        "objectName"
+      ]
     }
   },
   "additionalProperties": false,
