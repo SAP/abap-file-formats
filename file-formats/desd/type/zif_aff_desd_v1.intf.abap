@@ -6,7 +6,7 @@ INTERFACE zif_aff_desd_v1
     "! <p class="shorttext">General Information</p>
     "! General information
     BEGIN OF ty_general_information,
-      "! <p class="shorttext">Default Remote Schema Name</p>
+      "! <p class="shorttext">Default Remote Schema</p>
       "! Default remote database schema name when configuring the connection
       "! details of logical external schema.
       default_remote_schema_name TYPE c LENGTH 256,

@@ -62,7 +62,7 @@
       "type": "object",
       "properties": {
         "defaultRemoteSchemaName": {
-          "title": "Default Remote Schema Name",
+          "title": "Default Remote Schema",
           "description": "Default remote database schema name when configuring the connection details of logical external schema.",
           "type": "string",
           "maxLength": 256
