@@ -81,13 +81,13 @@
       "title": "Created On",
       "description": "Created on",
       "type": "string",
-      "format": "date-time"
+      "maxLength": 8
     },
     "createdat": {
       "title": "Creation Date",
       "description": "Creation date",
       "type": "string",
-      "format": "date-time"
+      "maxLength": 6
     },
     "changedby": {
       "title": "Changed By",
@@ -99,13 +99,13 @@
       "title": "Changed On",
       "description": "Changed On",
       "type": "string",
-      "format": "date-time"
+      "maxLength": 8
     },
     "changedat": {
       "title": "Change Date",
       "description": "Change date",
       "type": "string",
-      "format": "date-time"
+      "maxLength": 6
     },
     "multipleAppDest": {
       "title": "Multiple Application Destinations Allowed",
@@ -123,16 +123,7 @@
       "title": "ABAP Language Version",
       "description": "ABAP language version",
       "type": "string",
-      "enum": [
-        "standardAbap",
-        "abapForKeyUsers",
-        "abapForCloudDevelopment"
-      ],
-      "enumDescriptions": [
-        "Standard ABAP",
-        "ABAP for Key Users",
-        "ABAP for Cloud Development"
-      ]
+      "maxLength": 1
     },
     "enforceClasRfc": {
       "title": "Enforce Classic RFC",
@@ -162,9 +153,7 @@
       "title": "Language",
       "description": "Language",
       "type": "string",
-      "minLength": 2,
-      "maxLength": 2,
-      "pattern": "^[a-z]+$"
+      "maxLength": 1
     },
     "shorttext": {
       "title": "Short text",

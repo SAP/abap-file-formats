@@ -24,19 +24,19 @@ INTERFACE zif_aff_cota_v1
       createdby             TYPE c LENGTH 12,
       "! <p class="shorttext">Created On</p>
       "! Created on
-      createdon             TYPE dats,
+      createdon             TYPE c LENGTH 8,
       "! <p class="shorttext">Creation Date</p>
       "! Creation date
-      createdat             TYPE tims,
+      createdat             TYPE c LENGTH 6,
       "! <p class="shorttext">Changed By</p>
       "! Changed By
       changedby             TYPE c LENGTH 12,
       "! <p class="shorttext">Changed On</p>
       "! Changed On
-      changedon             TYPE dats,
+      changedon             TYPE c LENGTH 8,
       "! <p class="shorttext">Change Date</p>
       "! Change date
-      changedat             TYPE tims,
+      changedat             TYPE c LENGTH 6,
       "! <p class="shorttext">Multiple Application Destinations Allowed</p>
       "! Multiple application destinations allowed
       "! $required
@@ -48,7 +48,7 @@ INTERFACE zif_aff_cota_v1
       "! <p class="shorttext">ABAP Language Version</p>
       "! ABAP language version
       "! $required
-      abap_language_version TYPE abap_language_version,
+      abap_language_version TYPE c LENGTH 1,
       "! <p class="shorttext">Enforce Classic RFC</p>
       "! Enforce classic RFC
       "! $required
@@ -67,7 +67,7 @@ INTERFACE zif_aff_cota_v1
       default_compress      TYPE c LENGTH 1,
       "! <p class="shorttext">Language</p>
       "! Language
-      lang                  TYPE lang,
+      lang                  TYPE c LENGTH 1,
       "! <p class="shorttext">Short text</p>
       "! Short text
       "! $required
