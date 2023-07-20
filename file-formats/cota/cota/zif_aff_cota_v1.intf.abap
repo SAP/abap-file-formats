@@ -24,19 +24,19 @@ INTERFACE zif_aff_cota_v1
       createdby             TYPE c LENGTH 12,
       "! <p class="shorttext">Created On</p>
       "! Created on
-      createdon             TYPE as4date,
+      createdon             TYPE dats,
       "! <p class="shorttext">Creation Date</p>
       "! Creation date
-      createdat             TYPE as4time,
+      createdat             TYPE tims,
       "! <p class="shorttext">Changed By</p>
       "! Changed By
-      changedby             TYPE as4user,
+      changedby             TYPE c LENGTH 12,
       "! <p class="shorttext">Changed On</p>
       "! Changed On
-      changedon             TYPE as4date,
+      changedon             TYPE dats,
       "! <p class="shorttext">Change Date</p>
       "! Change date
-      changedat             TYPE as4time,
+      changedat             TYPE tims,
       "! <p class="shorttext">Multiple Application Destinations Allowed</p>
       "! Multiple application destinations allowed
       "! $required
@@ -67,7 +67,7 @@ INTERFACE zif_aff_cota_v1
       default_compress      TYPE c LENGTH 1,
       "! <p class="shorttext">Language</p>
       "! Language
-      lang                  TYPE sprsl,
+      lang                  TYPE lang,
       "! <p class="shorttext">Short text</p>
       "! Short text
       "! $required
