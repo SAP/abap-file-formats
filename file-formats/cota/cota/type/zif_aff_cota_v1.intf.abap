@@ -15,7 +15,7 @@ INTERFACE zif_aff_cota_v1
       header                TYPE zif_aff_types_v1=>ty_header_60,
       "! <p class="shorttext">Connection Target Object ID</p>
       "! Connection target object ID
-      conn_id               TYPE char30,
+      conn_id               TYPE c length 30,
       "! <p class="shorttext">Version</p>
       "! Version
       version               TYPE r3state,
