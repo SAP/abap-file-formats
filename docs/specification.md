@@ -22,6 +22,7 @@ The mapping of objects to file names follows the pattern
 ```
 with the mandatory elements object_name, object_type and file_extension.
 Namespaces are converted into brackets, for instance `/NMSPC/CL_OBJECT` becomes `(nmspc)cl_object`.
+For every objects there is a file `<object_name>.<object_type>.json`, referred to as metadata file with content such as description text, original language and other (non-redundant) metadata.
 
 ### Object Name and Type
 The object name (R3TR) and object type are derived from the object itself, as stored in the ABAP object directory (aka TADIR).
@@ -34,29 +35,29 @@ E.g., for function module FUNCTION_EXISTS in function group SUNI, the file name 
 
 ### Content Type
 If an object needs multiple files which are not represented by transport objects, the content type is used to differentiate between the different file types.
+Examples for classes are the test-classes or text elements:
 ```
 cl_oo_clif_source.clas.abap
 cl_oo_clif_source.clas.testclasses.abap
+cl_oo_clif_source.clas.texts.en.properties
 ```
 
 ### Language
-Files with language-specific content (such as translatable texts) also have an identifier for the language in the filename to distinguish between the different translations.
+The language of the texts is encoded by the element `language`
 ```
 cl_oo_clif_source.clas.texts.en.properties
-cl_oo_clif_source.clas.texts.de.properties
-cl_oo_clif_source.clas.texts.fr.properties
 ```
-For property files, no language is added, even if they contain translatable texts.
-These files are stored in the original language of the object and the original language is specified in the property file itself.
+For the text elements of classes, this language will be the original language (provided by the metadata file).
+
 
 ## File Extensions
 
-ABAP file formats define three file types:
+ABAP file formats define the file types:
 * **`.abap`** stores ABAP source code as plain text
 * **`.acds`** stores source code of ABAP Core Data Services (CDS) as plain text
 * **`.json`** stores content of form-based editors or properties of objects, such as `originalLanguage`, `abapLanguageVersion` and others.
 Details are found in [JSON Files in ABAP File Formats](./json.md)
-* **`.properties`** stores translation relevant text elements as plain text
+* **`.properties`** stores text elements as plain text
 
 
 ## Formatting Conventions
