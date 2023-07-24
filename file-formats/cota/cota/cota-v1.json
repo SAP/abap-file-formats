@@ -59,6 +59,41 @@
         "originalLanguage"
       ]
     },
+    "configuration": {
+      "title": "Configuration",
+      "description": "Configuration",
+      "type": "object",
+      "properties": {
+        "connId": {
+          "title": "Connection Target Name",
+          "description": "Connection target name",
+          "type": "string",
+          "maxLength": 30
+        },
+        "connectionTargetClass": {
+          "title": "Connection Target Class",
+          "description": "Connection target class",
+          "type": "string",
+          "maxLength": 30
+        },
+        "allowMultipleDestinations": {
+          "title": "Multiple Application Destinations Allowed",
+          "description": "Multiple application destinations allowed",
+          "type": "boolean"
+        },
+        "clientDependant": {
+          "title": "Client Dependent Object",
+          "description": "Client dependent object \"!",
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "connId",
+        "connectionTargetClass",
+        "clientDependant"
+      ]
+    },
     "rfcSettings": {
       "title": "RFC Settings",
       "description": "RFC Settings",
@@ -101,49 +136,16 @@
       "additionalProperties": false,
       "required": [
         "enforceClassicRfc",
-        "rfcType",
         "enforceFastSerialization",
         "usageOfDefaultCompression"
-      ]
-    },
-    "configuration": {
-      "title": "Configuration",
-      "description": "Configuration",
-      "type": "object",
-      "properties": {
-        "connId": {
-          "title": "Connection Target Name",
-          "description": "Connection target name",
-          "type": "string",
-          "maxLength": 30
-        },
-        "allowMultipleDestinations": {
-          "title": "Multiple Application Destinations Allowed",
-          "description": "Multiple application destinations allowed",
-          "type": "boolean"
-        },
-        "clientDependant": {
-          "title": "Client Dependent Object",
-          "description": "Client dependent object \"!",
-          "type": "boolean"
-        },
-        "connectionTargetClass": {
-          "title": "Connection Target Class",
-          "description": "Connection target class",
-          "type": "string",
-          "maxLength": 30
-        }
-      },
-      "additionalProperties": false,
-      "required": [
-        "allowMultipleDestinations",
-        "clientDependant"
       ]
     }
   },
   "additionalProperties": false,
   "required": [
     "formatVersion",
-    "header"
+    "header",
+    "configuration",
+    "rfcSettings"
   ]
 }
