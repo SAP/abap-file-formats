@@ -19,28 +19,10 @@ INTERFACE zif_aff_cota_v1
       "! <p class="shorttext">Version</p>
       "! Version
       version               TYPE c LENGTH 1,
-      "! <p class="shorttext">Created By</p>
-      "! Created by
-      createdby             TYPE c LENGTH 12,
-      "! <p class="shorttext">Created On</p>
-      "! Created on
-      createdon             TYPE c LENGTH 8,
-      "! <p class="shorttext">Creation Date</p>
-      "! Creation date
-      createdat             TYPE c LENGTH 6,
-      "! <p class="shorttext">Changed By</p>
-      "! Changed By
-      changedby             TYPE c LENGTH 12,
-      "! <p class="shorttext">Changed On</p>
-      "! Changed On
-      changedon             TYPE c LENGTH 8,
-      "! <p class="shorttext">Change Date</p>
-      "! Change date
-      changedat             TYPE c LENGTH 6,
       "! <p class="shorttext">Multiple Application Destinations Allowed</p>
       "! Multiple application destinations allowed
       "! $required
-      multiple_app_dest     TYPE c LENGTH 1,
+      allow_multiple_destinations     TYPE c LENGTH 1,
       "! <p class="shorttext">Client Dependent Object</p>
       "! Client dependent object
       "! "! $required
@@ -52,7 +34,7 @@ INTERFACE zif_aff_cota_v1
       "! <p class="shorttext">Enforce Classic RFC</p>
       "! Enforce classic RFC
       "! $required
-      enforce_clas_rfc      TYPE c LENGTH 1,
+      enforce_classic_rfc      TYPE c LENGTH 1,
       "! <p class="shorttext">RFC Type</p>
       "! RFC type
       "! $required
@@ -60,11 +42,11 @@ INTERFACE zif_aff_cota_v1
       "! <p class="shorttext">Enforce Fast Serialization</p>
       "! Enforce fast serialization
       "! $required
-      enforce_fast_ser      TYPE c LENGTH 1,
+      enforce_fast_serialization      TYPE c LENGTH 1,
       "! <p class="shorttext">Default Compression Mode</p>
       "! Default compression mode
       "! $required
-      default_compress      TYPE c LENGTH 1,
+      usage_of_default_compression      TYPE c LENGTH 1,
       "! <p class="shorttext">Language</p>
       "! Language
       lang                  TYPE c LENGTH 1,
@@ -74,7 +56,7 @@ INTERFACE zif_aff_cota_v1
       shorttext             TYPE c LENGTH 255,
       "! <p class="shorttext">Connection Target Class</p>
       "! Connection target class
-      connclass             TYPE c LENGTH 30,
+      connection_target_class             TYPE c LENGTH 30,
 
     END OF ty_main.
 ENDINTERFACE.

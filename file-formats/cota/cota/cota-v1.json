@@ -71,43 +71,7 @@
       "type": "string",
       "maxLength": 1
     },
-    "createdby": {
-      "title": "Created By",
-      "description": "Created by",
-      "type": "string",
-      "maxLength": 12
-    },
-    "createdon": {
-      "title": "Created On",
-      "description": "Created on",
-      "type": "string",
-      "maxLength": 8
-    },
-    "createdat": {
-      "title": "Creation Date",
-      "description": "Creation date",
-      "type": "string",
-      "maxLength": 6
-    },
-    "changedby": {
-      "title": "Changed By",
-      "description": "Changed By",
-      "type": "string",
-      "maxLength": 12
-    },
-    "changedon": {
-      "title": "Changed On",
-      "description": "Changed On",
-      "type": "string",
-      "maxLength": 8
-    },
-    "changedat": {
-      "title": "Change Date",
-      "description": "Change date",
-      "type": "string",
-      "maxLength": 6
-    },
-    "multipleAppDest": {
+    "allowMultipleDestinations": {
       "title": "Multiple Application Destinations Allowed",
       "description": "Multiple application destinations allowed",
       "type": "string",
@@ -125,7 +89,7 @@
       "type": "string",
       "maxLength": 1
     },
-    "enforceClasRfc": {
+    "enforceClassicRfc": {
       "title": "Enforce Classic RFC",
       "description": "Enforce classic RFC",
       "type": "string",
@@ -137,13 +101,13 @@
       "type": "string",
       "maxLength": 1
     },
-    "enforceFastSer": {
+    "enforceFastSerialization": {
       "title": "Enforce Fast Serialization",
       "description": "Enforce fast serialization",
       "type": "string",
       "maxLength": 1
     },
-    "defaultCompress": {
+    "usageOfDefaultCompression": {
       "title": "Default Compression Mode",
       "description": "Default compression mode",
       "type": "string",
@@ -161,7 +125,7 @@
       "type": "string",
       "maxLength": 255
     },
-    "connclass": {
+    "connectionTargetClass": {
       "title": "Connection Target Class",
       "description": "Connection target class",
       "type": "string",
@@ -172,13 +136,13 @@
   "required": [
     "formatVersion",
     "header",
-    "multipleAppDest",
+    "allowMultipleDestinations",
     "clientDependant",
     "abapLanguageVersion",
-    "enforceClasRfc",
+    "enforceClassicRfc",
     "rfcType",
-    "enforceFastSer",
-    "defaultCompress",
+    "enforceFastSerialization",
+    "usageOfDefaultCompression",
     "shorttext"
   ]
 }
