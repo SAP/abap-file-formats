@@ -59,90 +59,91 @@
         "originalLanguage"
       ]
     },
-    "connId": {
-      "title": "Connection Target Object ID",
-      "description": "Connection target object ID",
-      "type": "string",
-      "maxLength": 30
+    "rfcSettings": {
+      "title": "RFC Settings",
+      "description": "RFC Settings",
+      "type": "object",
+      "properties": {
+        "enforceClassicRfc": {
+          "title": "Enforce Classic RFC",
+          "description": "Enforce classic RFC",
+          "type": "boolean"
+        },
+        "rfcType": {
+          "title": "RFC Type",
+          "description": "RFC Type",
+          "type": "string",
+          "enum": [
+            "synchronous",
+            "asynchronous"
+          ],
+          "enumTitles": [
+            "Synchronous",
+            "Asynchronous"
+          ],
+          "enumDescriptions": [
+            "Synchronous",
+            "Asynchronous"
+          ],
+          "default": "synchronous"
+        },
+        "enforceFastSerialization": {
+          "title": "Enforce Fast Serialization",
+          "description": "Enforce fast serialization",
+          "type": "boolean"
+        },
+        "usageOfDefaultCompression": {
+          "title": "Default Compression Mode",
+          "description": "Default compression mode",
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "enforceClassicRfc",
+        "rfcType",
+        "enforceFastSerialization",
+        "usageOfDefaultCompression"
+      ]
     },
-    "version": {
-      "title": "Version",
-      "description": "Version",
-      "type": "string",
-      "maxLength": 1
-    },
-    "allowMultipleDestinations": {
-      "title": "Multiple Application Destinations Allowed",
-      "description": "Multiple application destinations allowed",
-      "type": "string",
-      "maxLength": 1
-    },
-    "clientDependant": {
-      "title": "Client Dependent Object",
-      "description": "Client dependent object \"!",
-      "type": "string",
-      "maxLength": 1
-    },
-    "abapLanguageVersion": {
-      "title": "ABAP Language Version",
-      "description": "ABAP language version",
-      "type": "string",
-      "maxLength": 1
-    },
-    "enforceClassicRfc": {
-      "title": "Enforce Classic RFC",
-      "description": "Enforce classic RFC",
-      "type": "string",
-      "maxLength": 1
-    },
-    "rfcType": {
-      "title": "RFC Type",
-      "description": "RFC type",
-      "type": "string",
-      "maxLength": 1
-    },
-    "enforceFastSerialization": {
-      "title": "Enforce Fast Serialization",
-      "description": "Enforce fast serialization",
-      "type": "string",
-      "maxLength": 1
-    },
-    "usageOfDefaultCompression": {
-      "title": "Default Compression Mode",
-      "description": "Default compression mode",
-      "type": "string",
-      "maxLength": 1
-    },
-    "lang": {
-      "title": "Language",
-      "description": "Language",
-      "type": "string",
-      "maxLength": 1
-    },
-    "shorttext": {
-      "title": "Short text",
-      "description": "Short text",
-      "type": "string",
-      "maxLength": 255
-    },
-    "connectionTargetClass": {
-      "title": "Connection Target Class",
-      "description": "Connection target class",
-      "type": "string",
-      "maxLength": 30
+    "configuration": {
+      "title": "Configuration",
+      "description": "Configuration",
+      "type": "object",
+      "properties": {
+        "connId": {
+          "title": "Connection Target Name",
+          "description": "Connection target name",
+          "type": "string",
+          "maxLength": 30
+        },
+        "allowMultipleDestinations": {
+          "title": "Multiple Application Destinations Allowed",
+          "description": "Multiple application destinations allowed",
+          "type": "boolean"
+        },
+        "clientDependant": {
+          "title": "Client Dependent Object",
+          "description": "Client dependent object \"!",
+          "type": "boolean"
+        },
+        "connectionTargetClass": {
+          "title": "Connection Target Class",
+          "description": "Connection target class",
+          "type": "string",
+          "maxLength": 30
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "allowMultipleDestinations",
+        "clientDependant"
+      ]
     }
   },
   "additionalProperties": false,
   "required": [
     "formatVersion",
-    "header",
-    "allowMultipleDestinations",
-    "clientDependant",
-    "abapLanguageVersion",
-    "enforceClassicRfc",
-    "rfcType",
-    "enforceFastSerialization",
-    "usageOfDefaultCompression",
-    "shorttext"
+    "header"
   ]
 }
