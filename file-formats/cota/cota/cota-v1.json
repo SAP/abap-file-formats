@@ -37,17 +37,14 @@
           "type": "string",
           "enum": [
             "standard",
-            "keyUser",
             "cloudDevelopment"
           ],
           "enumTitles": [
             "Standard",
-            "ABAP for Key Users",
             "ABAP Cloud Development"
           ],
           "enumDescriptions": [
             "Standard",
-            "ABAP for key user extensibility",
             "ABAP cloud development"
           ],
           "default": "standard"
@@ -64,34 +61,44 @@
       "description": "Configuration",
       "type": "object",
       "properties": {
-        "connId": {
-          "title": "Connection Target Name",
-          "description": "Connection target name",
+        "communicationType": {
+          "title": "Communication Type",
+          "description": "Communication Type",
           "type": "string",
-          "maxLength": 30
+          "enum": [
+            "rfc",
+            "http"
+          ],
+          "enumTitles": [
+            "RFC",
+            "HTTP"
+          ],
+          "enumDescriptions": [
+            "RFC",
+            "HTTP"
+          ],
+          "default": "http"
         },
         "connectionTargetClass": {
           "title": "Connection Target Class",
-          "description": "Connection target class",
+          "description": "Connection Target class",
           "type": "string",
           "maxLength": 30
         },
         "allowMultipleDestinations": {
-          "title": "Multiple Application Destinations Allowed",
-          "description": "Multiple application destinations allowed",
+          "title": "Allow Multiple Application Destinations",
+          "description": "Allow Multiple Application Destinations",
           "type": "boolean"
         },
         "clientDependant": {
           "title": "Client Dependent Object",
-          "description": "Client dependent object \"!",
+          "description": "Client dependent object",
           "type": "boolean"
         }
       },
       "additionalProperties": false,
       "required": [
-        "connId",
-        "connectionTargetClass",
-        "clientDependant"
+        "connectionTargetClass"
       ]
     },
     "rfcSettings": {
@@ -99,11 +106,6 @@
       "description": "RFC Settings",
       "type": "object",
       "properties": {
-        "enforceClassicRfc": {
-          "title": "Enforce Classic RFC",
-          "description": "Enforce classic RFC",
-          "type": "boolean"
-        },
         "rfcType": {
           "title": "RFC Type",
           "description": "RFC Type",
@@ -122,12 +124,17 @@
           ],
           "default": "synchronous"
         },
+        "enforceClassicRfc": {
+          "title": "Enforce Classic RFC",
+          "description": "Enforce classic RFC",
+          "type": "boolean"
+        },
         "enforceFastSerialization": {
           "title": "Enforce Fast Serialization",
           "description": "Enforce fast serialization",
           "type": "boolean"
         },
-        "usageOfDefaultCompression": {
+        "defaultCompressionMode": {
           "title": "Default Compression Mode",
           "description": "Default compression mode",
           "type": "boolean"
@@ -135,9 +142,7 @@
       },
       "additionalProperties": false,
       "required": [
-        "enforceClassicRfc",
-        "enforceFastSerialization",
-        "usageOfDefaultCompression"
+        "defaultCompressionMode"
       ]
     }
   },
@@ -145,7 +150,6 @@
   "required": [
     "formatVersion",
     "header",
-    "configuration",
-    "rfcSettings"
+    "configuration"
   ]
 }

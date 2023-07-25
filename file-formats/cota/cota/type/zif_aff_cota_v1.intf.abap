@@ -1,29 +1,42 @@
 INTERFACE zif_aff_cota_v1
   PUBLIC.
 
+  "! <p class="shorttext">Communication Type</p>
+  "! $values {@link zif_aff_cota_v1.data:co_comm_type}
+  TYPES ty_comm_type TYPE c LENGTH 1.
+
+  CONSTANTS:
+    "! <p class="shorttext">Communication Type</p>
+    "! Communication Type
+    BEGIN OF co_comm_type,
+      "! <p class="shorttext">RFC</p>
+      "! RFC
+      rfc  TYPE ty_comm_type VALUE 'R',
+      "! <p class="shorttext">HTTP</p>
+      "! HTTP
+      http TYPE ty_comm_type VALUE 'H',
+    END OF co_comm_type.
 
   TYPES:
     "! <p class="shorttext">Configuration</p>
     "! Configuration
     "! $required
     BEGIN OF ty_configuration,
-      "! <p class="shorttext">Connection Target Name</p>
-      "! Connection target name
-      "! $required
-      conn_id                     TYPE c LENGTH 30,
+      "! <p class="shorttext">Communication Type</p>
+      "! Communication Type
+      "! $default {@link zif_aff_cota_v1.data:co_comm_type.http}
+      communication_type          TYPE ty_comm_type,
       "! <p class="shorttext">Connection Target Class</p>
-      "! Connection target class
+      "! Connection Target class
       "! $required
-      connection_target_class     TYPE c LENGTH 30,
-      "! <p class="shorttext">Multiple Application Destinations Allowed</p>
-      "! Multiple application destinations allowed
+      connection_target_class     TYPE zif_aff_types_v1=>ty_object_name_30,
+      "! <p class="shorttext">Allow Multiple Application Destinations</p>
+      "! Allow Multiple Application Destinations
       allow_multiple_destinations TYPE abap_bool,
       "! <p class="shorttext">Client Dependent Object</p>
       "! Client dependent object
-      "! "! $required
       client_dependant            TYPE abap_bool,
     END OF ty_configuration.
-
 
   "! <p class="shorttext">RFY Type</p>
   "! $values {@link zif_aff_cota_v1.data:co_rfctype}
@@ -41,32 +54,26 @@ INTERFACE zif_aff_cota_v1
       asynchronous TYPE ty_rfctype VALUE 'S',
     END OF co_rfctype.
 
-
-
   TYPES:
     "! <p class="shorttext">RFC Settings</p>
     "! RFC Settings
     "! $required
     BEGIN OF ty_rfc_settings,
-      "! <p class="shorttext">Enforce Classic RFC</p>
-      "! Enforce classic RFC
-      "! $required
-      enforce_classic_rfc          TYPE abap_bool,
       "! <p class="shorttext">RFC Type</p>
       "! RFC Type
       "! $default {@link zif_aff_cota_v1.data:co_rfctype.synchronous}
-      rfc_type                     TYPE ty_rfctype,
+      rfc_type                   TYPE ty_rfctype,
+      "! <p class="shorttext">Enforce Classic RFC</p>
+      "! Enforce classic RFC
+      enforce_classic_rfc        TYPE abap_bool,
       "! <p class="shorttext">Enforce Fast Serialization</p>
       "! Enforce fast serialization
-      "! $required
-      enforce_fast_serialization   TYPE abap_bool,
+      enforce_fast_serialization TYPE abap_bool,
       "! <p class="shorttext">Default Compression Mode</p>
       "! Default compression mode
       "! $required
-      usage_of_default_compression TYPE abap_bool,
+      default_compression_mode   TYPE abap_bool,
     END OF ty_rfc_settings.
-
-
 
   TYPES:
     "! <p class="shorttext">Connection Target Object</p>
@@ -79,14 +86,14 @@ INTERFACE zif_aff_cota_v1
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header         TYPE zif_aff_types_v1=>ty_header_60,
+      header         TYPE zif_aff_types_v1=>ty_header_60_cloud,
       "! <p class="shorttext">Configuration</p>
       "! Configuration
       "! $required
       configuration  TYPE ty_configuration,
       "! <p class="shorttext">RFC Settings</p>
       "! RFC Settings
-      "! $required
       rfc_settings   TYPE ty_rfc_settings,
     END OF ty_main.
+
 ENDINTERFACE.
