@@ -63,19 +63,19 @@
       "properties": {
         "applicationName": {
           "title": "Application Name",
-          "description": "Application name of authorization default value",
+          "description": "Application name of authorization defaults",
           "type": "string",
           "maxLength": 132
         },
         "applicationType": {
           "title": "Application Type",
-          "description": "Type of authorization default value.",
+          "description": "Type of authorization defaults",
           "type": "string",
           "maxLength": 80
         },
         "maintenanceMode": {
           "title": "Maintenance Mode",
-          "description": "Maintenance mode.",
+          "description": "Maintenance mode",
           "type": "string",
           "enum": [
             "manual",
@@ -90,7 +90,7 @@
             "Automatic Maintenance (All Objects)",
             "Automatic Maintenance (Basis Authorization Objects Only)",
             "Application Does Not Require Default Values",
-            "Application is Deprecated",
+            "Application Is Deprecated",
             "Application Is Obsolete"
           ],
           "enumDescriptions": [
@@ -100,73 +100,77 @@
             "Application does not require default values",
             "Application is deprecated",
             "Application is obsolete"
-          ]
+          ],
+          "default": "manual"
+        },
+        "description": {
+          "title": "Description",
+          "description": "Description of authorization default values",
+          "type": "string"
         }
       },
       "additionalProperties": false,
       "required": [
         "applicationName",
-        "applicationType",
-        "maintenanceMode"
+        "applicationType"
       ]
     },
     "authorizationObjects": {
-      "title": "Authorization objects",
+      "title": "Authorization Objects",
       "description": "Authorization objects",
       "type": "array",
       "items": {
-        "title": "Authorization Objects Details",
-        "description": "Authorization objects details",
+        "title": "Authorization Object Details",
+        "description": "Details of Authorization object",
         "type": "object",
         "properties": {
           "object": {
             "title": "Object",
-            "description": "Name of authorization object",
+            "description": "Name of Authorization Object",
             "type": "string",
             "maxLength": 10
           },
           "maintenanceStatus": {
             "title": "Maintenance Status",
-            "description": "Maintenance status",
+            "description": "Maintenance Status",
             "type": "string",
             "enum": [
               "noDefault",
               "defaultWithValues",
               "defaultWithoutValues",
-              "inactiveValues",
-              "unmaintainedValues",
-              "authorizationCheckInactive"
+              "inactiveValues"
             ],
             "enumTitles": [
               "No Default",
               "Default With Field Values",
               "Default Without Field Values",
-              "Default Inactive",
-              "Unmaintained Object Status",
-              "Authorization Check Inactive"
+              "Default Inactive"
             ],
             "enumDescriptions": [
               "No default",
               "Default with field values",
               "Default without field values",
-              "Default inactive",
-              "Unmaintained object status",
-              "Authorization check inactive"
+              "Default inactive"
             ],
             "default": "defaultWithValues"
           },
+          "description": {
+            "title": "Description",
+            "description": "Description of authorization defaults of object",
+            "type": "string"
+          },
           "fields": {
-            "title": "Fields",
-            "description": "Authorization fields.",
+            "title": "Authorization Field Values",
+            "description": "Authorization field values",
             "type": "array",
             "items": {
-              "title": "Authorization Field Details",
-              "description": "Authorization field details",
+              "title": "Authorization Field Values",
+              "description": "Authorization field values",
               "type": "object",
               "properties": {
                 "field": {
-                  "title": "Field",
-                  "description": "Name of authorization field",
+                  "title": "Authorization Field",
+                  "description": "Authorization field",
                   "type": "string",
                   "maxLength": 10
                 },
@@ -183,17 +187,13 @@
                   "maxLength": 40
                 }
               },
-              "additionalProperties": false,
-              "required": [
-                "field"
-              ]
+              "additionalProperties": false
             }
           }
         },
         "additionalProperties": false,
         "required": [
-          "object",
-          "maintenanceStatus"
+          "object"
         ]
       }
     }
