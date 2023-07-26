@@ -29,7 +29,10 @@
         {
           "field": "PROGRAM",
           "low": "SAPLSTRF"
-        }
+        },
+        {
+          "field": "FILENAME"
+        }        
       ]
     },
     {
