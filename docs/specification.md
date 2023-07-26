@@ -37,7 +37,6 @@ E.g., for function module FUNCTION_EXISTS in function group SUNI, the file name 
 If an object needs multiple files which are not represented by transport objects, the content type is used to differentiate between the different file types.
 Examples for classes are the test-classes or text elements:
 ```
-cl_oo_clif_source.clas.abap
 cl_oo_clif_source.clas.testclasses.abap
 cl_oo_clif_source.clas.texts.en.properties
 ```
