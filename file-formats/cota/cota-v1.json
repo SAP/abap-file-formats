@@ -63,7 +63,7 @@
       "properties": {
         "communicationType": {
           "title": "Communication Type",
-          "description": "Communication Type",
+          "description": "Communication type",
           "type": "string",
           "enum": [
             "rfc",
@@ -81,13 +81,13 @@
         },
         "connectionTargetClass": {
           "title": "Connection Target Class",
-          "description": "Connection Target class",
+          "description": "Connection target class",
           "type": "string",
           "maxLength": 30
         },
         "allowMultipleDestinations": {
           "title": "Allow Multiple Application Destinations",
-          "description": "Allow Multiple Application Destinations",
+          "description": "Allow multiple application destinations",
           "type": "boolean"
         },
         "clientDependant": {
@@ -103,12 +103,12 @@
     },
     "rfcSettings": {
       "title": "RFC Settings",
-      "description": "RFC Settings",
+      "description": "RFC settings",
       "type": "object",
       "properties": {
         "rfcType": {
           "title": "RFC Type",
-          "description": "RFC Type",
+          "description": "RFC type",
           "type": "string",
           "enum": [
             "synchronous",

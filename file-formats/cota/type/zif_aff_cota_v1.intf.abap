@@ -23,15 +23,15 @@ INTERFACE zif_aff_cota_v1
     "! $required
     BEGIN OF ty_configuration,
       "! <p class="shorttext">Communication Type</p>
-      "! Communication Type
+      "! Communication type
       "! $default {@link zif_aff_cota_v1.data:co_comm_type.http}
       communication_type          TYPE ty_comm_type,
       "! <p class="shorttext">Connection Target Class</p>
-      "! Connection Target class
+      "! Connection target class
       "! $required
       connection_target_class     TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Allow Multiple Application Destinations</p>
-      "! Allow Multiple Application Destinations
+      "! Allow multiple application destinations
       allow_multiple_destinations TYPE abap_bool,
       "! <p class="shorttext">Client Dependent Object</p>
       "! Client dependent object
@@ -60,7 +60,7 @@ INTERFACE zif_aff_cota_v1
     "! $required
     BEGIN OF ty_rfc_settings,
       "! <p class="shorttext">RFC Type</p>
-      "! RFC Type
+      "! RFC type
       "! $default {@link zif_aff_cota_v1.data:co_rfctype.synchronous}
       rfc_type                   TYPE ty_rfctype,
       "! <p class="shorttext">Enforce Classic RFC</p>
@@ -92,7 +92,7 @@ INTERFACE zif_aff_cota_v1
       "! $required
       configuration  TYPE ty_configuration,
       "! <p class="shorttext">RFC Settings</p>
-      "! RFC Settings
+      "! RFC settings
       rfc_settings   TYPE ty_rfc_settings,
     END OF ty_main.
 
