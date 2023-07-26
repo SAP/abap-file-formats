@@ -1,5 +1,5 @@
 INTERFACE zif_aff_susi_v1
-  PUBLIC .
+  PUBLIC.
 
   TYPES:
     "! <p class="shorttext">Maintenance Mode</p>
@@ -60,10 +60,7 @@ INTERFACE zif_aff_susi_v1
     ty_appl_name   TYPE c LENGTH 132,
     "! <p class="shorttext">Application Type</p>
     "! Type of application
-    ty_type        TYPE c LENGTH 80,
-    "! <p class="shorttext">Object description</p>
-    "! Object description
-    ty_description TYPE c LENGTH 60.
+    ty_type        TYPE c LENGTH 80.
 
   TYPES:
     "! <p class="shorttext">General Information</p>
@@ -111,7 +108,7 @@ INTERFACE zif_aff_susi_v1
       "! <p class="shorttext">To</p>
       "! To values
       high   TYPE ty_val,
-    END OF ty_authorization_field .
+    END OF ty_authorization_field.
 
   TYPES:
     "! <p class="shorttext">Authorization Fields</p>
@@ -138,7 +135,7 @@ INTERFACE zif_aff_susi_v1
       "! <p class="shorttext">Authorization Field Values</p>
       "! Authorization field values
       fields             TYPE ty_authorization_fields,
-    END OF ty_authorization_object .
+    END OF ty_authorization_object.
 
   TYPES:
   "! <p class="shorttext">Authorization Objects</p>
@@ -162,6 +159,6 @@ INTERFACE zif_aff_susi_v1
       "! <p class="shorttext">Authorization Objects</p>
       "! Authorization objects
       authorization_objects TYPE ty_authorization_objects,
-    END OF ty_main .
+    END OF ty_main.
 
 ENDINTERFACE.
