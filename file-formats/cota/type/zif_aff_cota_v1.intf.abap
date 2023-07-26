@@ -48,10 +48,7 @@ INTERFACE zif_aff_cota_v1
     BEGIN OF co_rfctype,
       "! <p class="shorttext">Synchronous</p>
       "! Synchronous
-      synchronous  TYPE ty_rfctype VALUE 'X',
-      "! <p class="shorttext">Asynchronous</p>
-      "! Asynchronous
-      asynchronous TYPE ty_rfctype VALUE 'S',
+      synchronous TYPE ty_rfctype VALUE 'X',
     END OF co_rfctype.
 
   TYPES:

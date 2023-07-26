@@ -111,16 +111,13 @@
           "description": "RFC type",
           "type": "string",
           "enum": [
-            "synchronous",
-            "asynchronous"
+            "synchronous"
           ],
           "enumTitles": [
-            "Synchronous",
-            "Asynchronous"
+            "Synchronous"
           ],
           "enumDescriptions": [
-            "Synchronous",
-            "Asynchronous"
+            "Synchronous"
           ],
           "default": "synchronous"
         },
