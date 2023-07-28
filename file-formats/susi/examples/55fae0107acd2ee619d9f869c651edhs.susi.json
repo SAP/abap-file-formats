@@ -31,7 +31,8 @@
           "low": "SAPLSTRF"
         },
         {
-          "field": "FILENAME"
+          "field": "FILENAME",
+          "low": ""          
         }
       ]
     },
