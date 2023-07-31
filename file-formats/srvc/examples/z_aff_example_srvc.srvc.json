@@ -4,10 +4,9 @@
       "description": "Example SRVC for ABAP File Formats",
       "originalLanguage": "en"
     },
-    "consumerInformation": {
-      "consumerType": "odata",
-      "consumerObjectName": "SRVC_ODATA",
-      "consumerObjectType": "SRVD",
-      "connectionProperties": []
+    "consumer": {
+      "type": "OData",
+      "objectType": "SRVD",
+      "objectName": "SRVC_ODATA"
     }
 }
