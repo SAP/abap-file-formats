@@ -59,20 +59,20 @@
         "originalLanguage"
       ]
     },
-    "consumerInformation": {
-      "title": "Consumer information",
-      "description": "Consumer information",
+    "consumer": {
+      "title": "Consumer",
+      "description": "Consumer",
       "type": "object",
       "properties": {
-        "consumerType": {
-          "title": "Consumer type",
-          "description": "Consumer type",
+        "type": {
+          "title": "Type",
+          "description": "Type",
           "type": "string",
           "enum": [
-            "odata",
-            "webService",
-            "rfc",
-            "http"
+            "OData",
+            "WebService",
+            "RFC",
+            "HTTP"
           ],
           "enumTitles": [
             "OData",
@@ -82,30 +82,30 @@
           ],
           "enumDescriptions": [
             "OData",
-            "Web Service",
+            "Web service",
             "RFC",
             "HTTP"
           ]
         },
-        "consumerObjectName": {
-          "title": "Consumer object name",
-          "description": "Consumer object name",
-          "type": "string",
-          "maxLength": 40
-        },
-        "consumerObjectType": {
-          "title": "Consumer object type",
-          "description": "Consumer object type",
+        "objectType": {
+          "title": "Object Type",
+          "description": "Object type",
           "type": "string",
           "maxLength": 4
         },
-        "connectionProperties": {
-          "title": "Connection properties",
-          "description": "Connection properties",
+        "objectName": {
+          "title": "Object Name",
+          "description": "Object name",
+          "type": "string",
+          "maxLength": 40
+        },
+        "properties": {
+          "title": "Properties",
+          "description": "Properties",
           "type": "array",
           "items": {
-            "title": "Consumer Connection Property",
-            "description": "Consumer Connection Property",
+            "title": "Connection Property",
+            "description": "Connection property",
             "type": "object",
             "properties": {
               "id": {
@@ -125,16 +125,13 @@
           }
         }
       },
-      "additionalProperties": false,
-      "required": [
-        "connectionProperties"
-      ]
+      "additionalProperties": false
     }
   },
   "additionalProperties": false,
   "required": [
     "formatVersion",
     "header",
-    "consumerInformation"
+    "consumer"
   ]
 }
