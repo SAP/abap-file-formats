@@ -12,16 +12,16 @@ INTERFACE zif_aff_swcr_v1
 
   TYPES:
     "! <p class="shorttext">Access Permission</p>
-    "! Access Permission
+    "! Access permission
     BEGIN OF ty_permission,
       "! <p class="shorttext">Software Component</p>
-      "! Software Component
+      "! Software component
       "! $required
       software_component TYPE c LENGTH 30,
     END OF ty_permission.
 
   "! <p class="shorttext">Access Permissions</p>
-  "! Access Permissions
+  "! Access permissions
   TYPES ty_permissions TYPE STANDARD TABLE OF ty_permission WITH DEFAULT KEY.
 
   TYPES:
@@ -29,7 +29,7 @@ INTERFACE zif_aff_swcr_v1
     "! Dependency
     BEGIN OF ty_dependency,
       "! <p class="shorttext">Software Component</p>
-      "! Software Component
+      "! Software component
       "! $required
       software_component TYPE c LENGTH 30,
     END OF ty_dependency.
@@ -40,10 +40,10 @@ INTERFACE zif_aff_swcr_v1
 
   TYPES:
     "! <p class="shorttext">Software Component Relations</p>
-    "! Software Component Relations
+    "! Software component relations
     BEGIN OF ty_main,
       "! <p class="shorttext">Format Version</p>
-      "! Format Version
+      "! Format version
       "! $required
       format_version TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
@@ -51,10 +51,10 @@ INTERFACE zif_aff_swcr_v1
       "! $required
       header         TYPE ty_header,
       "! <p class="shorttext">Access Permissions</p>
-      "! The Software Component Grants Access Permission to the Specified Software Components
+      "! The software component grants access permission to the specified software components
       permissions    TYPE ty_permissions,
       "! <p class="shorttext">Dependencies</p>
-      "! The Software Component Depends on the Specified Software Components
+      "! The software component depends on the specified software components
       dependencies   TYPE ty_dependencies,
     END OF ty_main.
 

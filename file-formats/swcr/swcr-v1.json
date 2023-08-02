@@ -3,12 +3,12 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/swcr/swcr-v1.json",
   "title": "Software Component Relations",
-  "description": "Software Component Relations",
+  "description": "Software component relations",
   "type": "object",
   "properties": {
     "formatVersion": {
       "title": "Format Version",
-      "description": "Format Version",
+      "description": "Format version",
       "type": "string",
       "const": "1"
     },
@@ -54,16 +54,16 @@
     },
     "permissions": {
       "title": "Access Permissions",
-      "description": "The Software Component Grants Access Permission to the Specified Software Components",
+      "description": "The software component grants access permission to the specified software components",
       "type": "array",
       "items": {
         "title": "Access Permission",
-        "description": "Access Permission",
+        "description": "Access permission",
         "type": "object",
         "properties": {
           "softwareComponent": {
             "title": "Software Component",
-            "description": "Software Component",
+            "description": "Software component",
             "type": "string",
             "maxLength": 30
           }
@@ -76,7 +76,7 @@
     },
     "dependencies": {
       "title": "Dependencies",
-      "description": "The Software Component Depends on the Specified Software Components",
+      "description": "The software component depends on the specified software components",
       "type": "array",
       "items": {
         "title": "Dependency",
@@ -85,7 +85,7 @@
         "properties": {
           "softwareComponent": {
             "title": "Software Component",
-            "description": "Software Component",
+            "description": "Software component",
             "type": "string",
             "maxLength": 30
           }
