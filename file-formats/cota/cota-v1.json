@@ -90,9 +90,9 @@
           "description": "Allow multiple application destinations",
           "type": "boolean"
         },
-        "clientDependant": {
-          "title": "Client Dependent Object",
-          "description": "Client dependent object",
+        "clientIndependent": {
+          "title": "Allow Client Independent Application Destinations",
+          "description": "Alow client independent application destinations",
           "type": "boolean"
         }
       },
@@ -132,8 +132,8 @@
           "type": "boolean"
         },
         "defaultCompressionMode": {
-          "title": "Default Compression Mode",
-          "description": "Default compression mode",
+          "title": "Use Default Compression Mode",
+          "description": "Use default compression mode",
           "type": "boolean"
         }
       },

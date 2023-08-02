@@ -33,9 +33,9 @@ INTERFACE zif_aff_cota_v1
       "! <p class="shorttext">Allow Multiple Application Destinations</p>
       "! Allow multiple application destinations
       allow_multiple_destinations TYPE abap_bool,
-      "! <p class="shorttext">Client Dependent Object</p>
-      "! Client dependent object
-      client_dependant            TYPE abap_bool,
+      "! <p class="shorttext">Allow Client Independent Application Destinations</p>
+      "! Alow client independent application destinations
+      client_independent          TYPE abap_bool,
     END OF ty_configuration.
 
   "! <p class="shorttext">RFY Type</p>
@@ -66,8 +66,8 @@ INTERFACE zif_aff_cota_v1
       "! <p class="shorttext">Enforce Fast Serialization</p>
       "! Enforce fast serialization
       enforce_fast_serialization TYPE abap_bool,
-      "! <p class="shorttext">Default Compression Mode</p>
-      "! Default compression mode
+      "! <p class="shorttext">Use Default Compression Mode</p>
+      "! Use default compression mode
       "! $required
       default_compression_mode   TYPE abap_bool,
     END OF ty_rfc_settings.
