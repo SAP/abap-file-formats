@@ -7,7 +7,7 @@ INTERFACE zif_aff_cota_v1
 
   CONSTANTS:
     "! <p class="shorttext">Communication Type</p>
-    "! Communication Type
+    "! Communication type
     BEGIN OF co_comm_type,
       "! <p class="shorttext">RFC</p>
       "! RFC
@@ -44,7 +44,7 @@ INTERFACE zif_aff_cota_v1
 
   CONSTANTS:
     "! <p class="shorttext">RFC Type</p>
-    "! RFC Type
+    "! RFC type
     BEGIN OF co_rfctype,
       "! <p class="shorttext">Synchronous</p>
       "! Synchronous
@@ -53,7 +53,7 @@ INTERFACE zif_aff_cota_v1
 
   TYPES:
     "! <p class="shorttext">RFC Settings</p>
-    "! RFC Settings
+    "! RFC settings
     "! $required
     BEGIN OF ty_rfc_settings,
       "! <p class="shorttext">RFC Type</p>
