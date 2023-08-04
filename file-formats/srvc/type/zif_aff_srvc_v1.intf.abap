@@ -19,27 +19,23 @@ INTERFACE zif_aff_srvc_v1
       "! RFC
       "! $enumValue 'RFC'
       rfc         TYPE ty_cons_type VALUE '03',
-      "! <p class="shorttext">HTTP</p>
-      "! HTTP
-      "! $enumValue 'HTTP'
-      http        TYPE ty_cons_type VALUE '04',
     END OF co_cons_type.
 
   TYPES:
-    "! <p class="shorttext">Connection Property</p>
-    "! Connection property
-    BEGIN OF ty_connection_property,
+    "! <p class="shorttext">Consumer Property Details</p>
+    "! Consumer property details
+    BEGIN OF ty_consumer_property,
       "! <p class="shorttext">Id</p>
       "! Id
       id    TYPE c LENGTH 40,
       "! <p class="shorttext">Value</p>
       "! Value
       value TYPE c LENGTH 40,
-    END OF ty_connection_property.
+    END OF ty_consumer_property.
 
-  "! <p class="shorttext">Connection Properties</p>
-  "! Connection properties
-  TYPES ty_connection_properties TYPE TABLE OF ty_connection_property WITH DEFAULT KEY.
+  "! <p class="shorttext">Consumer Properties</p>
+  "! Consumer properties
+  TYPES ty_consumer_properties TYPE TABLE OF ty_consumer_property WITH DEFAULT KEY.
 
   TYPES:
     "! <p class="shorttext">Consumer Information</p>
@@ -56,7 +52,7 @@ INTERFACE zif_aff_srvc_v1
       object_name TYPE c LENGTH 40,
       "! <p class="shorttext">Properties</p>
       "! Properties
-      properties  TYPE ty_connection_properties,
+      properties  TYPE ty_consumer_properties,
     END OF ty_consumer.
 
   TYPES:
@@ -68,7 +64,7 @@ INTERFACE zif_aff_srvc_v1
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header         TYPE zif_aff_types_v1=>ty_header_60,
+      header         TYPE zif_aff_types_v1=>ty_header_60_cloud,
       "! <p class="shorttext">Consumer</p>
       "! Consumer
       "! $required

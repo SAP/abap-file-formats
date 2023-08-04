@@ -37,17 +37,14 @@
           "type": "string",
           "enum": [
             "standard",
-            "keyUser",
             "cloudDevelopment"
           ],
           "enumTitles": [
             "Standard",
-            "ABAP for Key Users",
             "ABAP Cloud Development"
           ],
           "enumDescriptions": [
             "Standard",
-            "ABAP for key user extensibility",
             "ABAP cloud development"
           ],
           "default": "standard"
@@ -71,20 +68,17 @@
           "enum": [
             "OData",
             "WebService",
-            "RFC",
-            "HTTP"
+            "RFC"
           ],
           "enumTitles": [
             "OData",
             "Web Service",
-            "RFC",
-            "HTTP"
+            "RFC"
           ],
           "enumDescriptions": [
             "OData",
             "Web service",
-            "RFC",
-            "HTTP"
+            "RFC"
           ]
         },
         "objectType": {
@@ -104,8 +98,8 @@
           "description": "Properties",
           "type": "array",
           "items": {
-            "title": "Connection Property",
-            "description": "Connection property",
+            "title": "Consumer Property Details",
+            "description": "Consumer property details",
             "type": "object",
             "properties": {
               "id": {
