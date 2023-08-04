@@ -1,0 +1,20 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "permissions": [
+    {
+      "softwareComponent": "/PARTNER_1/SOLUTION_1"
+    },
+    {
+      "softwareComponent": "/PARTNER_1/SOLUTION_2"
+    }
+  ],
+  "dependencies": [
+    {
+      "softwareComponent": "/PARTNER_1/KEY_USER"
+    }
+  ]
+}
