@@ -13,7 +13,6 @@ INTERFACE zif_aff_srvc_v1
       odata       TYPE ty_cons_type VALUE '01',
       "! <p class="shorttext">Web Service</p>
       "! Web service
-      "! $enumValue 'WebService'
       web_service TYPE ty_cons_type VALUE '02',
       "! <p class="shorttext">RFC</p>
       "! RFC
@@ -43,12 +42,15 @@ INTERFACE zif_aff_srvc_v1
     BEGIN OF ty_consumer,
       "! <p class="shorttext">Type</p>
       "! Type
+      "! $required
       type        TYPE ty_cons_type,
       "! <p class="shorttext">Object Type</p>
       "! Object type
+      "! $required
       object_type TYPE c LENGTH 4,
       "! <p class="shorttext">Object Name</p>
       "! Object name
+      "! $required
       object_name TYPE c LENGTH 40,
       "! <p class="shorttext">Properties</p>
       "! Properties
