@@ -1,0 +1,12 @@
+{
+    "formatVersion": "1",
+    "header": {
+      "description": "Example SRVC for ABAP File Formats",
+      "originalLanguage": "en"
+    },
+    "consumer": {
+      "type": "OData",
+      "objectType": "SRVD",
+      "objectName": "SRVC_ODATA"
+    }
+}
