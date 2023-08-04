@@ -19,25 +19,12 @@ INTERFACE zif_aff_srvc_v1
       "! RFC
       "! $enumValue 'RFC'
       rfc         TYPE ty_cons_type VALUE '03',
-<<<<<<< Upstream, based on branch 'feature/srvc' of https://github.com/praveen-skp/abap-file-formats.git
-=======
-      "! <p class="shorttext">HTTP</p>
-      "! HTTP
-      "! $enumValue 'HTTP'
-      http        TYPE ty_cons_type VALUE '04',
->>>>>>> 81ceaed Updated consumer information and consumer type
     END OF co_cons_type.
 
   TYPES:
-<<<<<<< Upstream, based on branch 'feature/srvc' of https://github.com/praveen-skp/abap-file-formats.git
     "! <p class="shorttext">Consumer Property Details</p>
     "! Consumer property details
     BEGIN OF ty_consumer_property,
-=======
-    "! <p class="shorttext">Connection Property</p>
-    "! Connection property
-    BEGIN OF ty_connection_property,
->>>>>>> 81ceaed Updated consumer information and consumer type
       "! <p class="shorttext">Id</p>
       "! Id
       id    TYPE c LENGTH 40,
@@ -46,15 +33,9 @@ INTERFACE zif_aff_srvc_v1
       value TYPE c LENGTH 40,
     END OF ty_consumer_property.
 
-<<<<<<< Upstream, based on branch 'feature/srvc' of https://github.com/praveen-skp/abap-file-formats.git
   "! <p class="shorttext">Consumer Properties</p>
   "! Consumer properties
   TYPES ty_consumer_properties TYPE TABLE OF ty_consumer_property WITH DEFAULT KEY.
-=======
-  "! <p class="shorttext">Connection Properties</p>
-  "! Connection properties
-  TYPES ty_connection_properties TYPE TABLE OF ty_connection_property WITH DEFAULT KEY.
->>>>>>> 81ceaed Updated consumer information and consumer type
 
   TYPES:
     "! <p class="shorttext">Consumer Information</p>
@@ -71,11 +52,7 @@ INTERFACE zif_aff_srvc_v1
       object_name TYPE c LENGTH 40,
       "! <p class="shorttext">Properties</p>
       "! Properties
-<<<<<<< Upstream, based on branch 'feature/srvc' of https://github.com/praveen-skp/abap-file-formats.git
       properties  TYPE ty_consumer_properties,
-=======
-      properties  TYPE ty_connection_properties,
->>>>>>> 81ceaed Updated consumer information and consumer type
     END OF ty_consumer.
 
   TYPES:
@@ -87,11 +64,7 @@ INTERFACE zif_aff_srvc_v1
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-<<<<<<< Upstream, based on branch 'feature/srvc' of https://github.com/praveen-skp/abap-file-formats.git
       header         TYPE zif_aff_types_v1=>ty_header_60_cloud,
-=======
-      header         TYPE zif_aff_types_v1=>ty_header_60,
->>>>>>> 81ceaed Updated consumer information and consumer type
       "! <p class="shorttext">Consumer</p>
       "! Consumer
       "! $required

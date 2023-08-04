@@ -67,14 +67,8 @@
           "type": "string",
           "enum": [
             "OData",
-<<<<<<< Upstream, based on branch 'feature/srvc' of https://github.com/praveen-skp/abap-file-formats.git
             "webService",
             "RFC"
-=======
-            "WebService",
-            "RFC",
-            "HTTP"
->>>>>>> 81ceaed Updated consumer information and consumer type
           ],
           "enumTitles": [
             "OData",
@@ -84,12 +78,7 @@
           "enumDescriptions": [
             "OData",
             "Web service",
-<<<<<<< Upstream, based on branch 'feature/srvc' of https://github.com/praveen-skp/abap-file-formats.git
             "RFC"
-=======
-            "RFC",
-            "HTTP"
->>>>>>> 81ceaed Updated consumer information and consumer type
           ]
         },
         "objectType": {
@@ -109,13 +98,8 @@
           "description": "Properties",
           "type": "array",
           "items": {
-<<<<<<< Upstream, based on branch 'feature/srvc' of https://github.com/praveen-skp/abap-file-formats.git
             "title": "Consumer Property Details",
             "description": "Consumer property details",
-=======
-            "title": "Connection Property",
-            "description": "Connection property",
->>>>>>> 81ceaed Updated consumer information and consumer type
             "type": "object",
             "properties": {
               "id": {
@@ -135,16 +119,12 @@
           }
         }
       },
-<<<<<<< Upstream, based on branch 'feature/srvc' of https://github.com/praveen-skp/abap-file-formats.git
       "additionalProperties": false,
       "required": [
         "type",
         "objectType",
         "objectName"
       ]
-=======
-      "additionalProperties": false
->>>>>>> 81ceaed Updated consumer information and consumer type
     }
   },
   "additionalProperties": false,
