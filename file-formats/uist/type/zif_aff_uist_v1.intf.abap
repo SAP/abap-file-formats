@@ -13,10 +13,10 @@ INTERFACE zif_aff_uist_v1
       "! Sort priority
       "! $minimum: -999.999
       "! $maximum: 999.999
-      sort_priority TYPE p LENGTH 7 DECIMALS 3,
-      "! <p class="shorttext">Base Space Template Name</p>
-      "! Name of the base space template
-      base_space_template_name       TYPE c LENGTH 35,
+      sort_priority TYPE p LENGTH 7 DECIMALS 3,  "Annotation $multipleOf is only possible for integers (2023-07-31)
+      "! <p class="shorttext">Merge ID</p>
+      "! Merge ID
+      merge_id      TYPE c LENGTH 35,
     END OF ty_general_information.
 
   TYPES:
