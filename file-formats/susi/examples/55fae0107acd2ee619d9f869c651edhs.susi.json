@@ -1,0 +1,50 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "WS SRT_TEST_WEBI/REQUEST_RESPONSE",
+    "originalLanguage": "en"
+  },
+  "generalInformation": {
+    "applicationName": "SRT_TEST_WEBI/REQUEST_RESPONSE",
+    "applicationType": "WebService",
+    "maintenanceMode": "manual"
+  },
+  "authorizationObjects": [
+    {
+      "object": "S_SERVICE",
+      "maintenanceStatus": "noDefault"
+    },
+    {
+      "object": "S_DATASET",
+      "maintenanceStatus": "defaultWithValues",
+      "fields": [
+        {
+          "field": "ACTVT",
+          "low": "33"
+        },
+        {
+          "field": "ACTVT",
+          "low": "34"
+        },
+        {
+          "field": "PROGRAM",
+          "low": "SAPLSTRF"
+        },
+        {
+          "field": "FILENAME",
+          "low": ""
+        }
+      ]
+    },
+    {
+      "object": "S_TABU_RFC",
+      "maintenanceStatus": "defaultWithValues",
+      "fields": [
+        {
+          "field": "ACTVT",
+          "low": "03"
+        }
+      ]
+    }
+  ]
+}
