@@ -1,17 +1,18 @@
 {
   "formatVersion": "1",
   "header": {
-    "description": "CDBO on ADT Testing",
-    "originalLanguage": "en"
+    "description": "Testing CDBO  saw2",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
   },
   "generalInformation": {
     "objectType": "TABL",
-    "objectName": "ZCDB_ADT_TEST"
+    "objectName": "CDB_ADT_TEST"
   },
   "fields": [
     {
-      "name": "MANDT",
-      "nature": "general"
+      "name": "CLIENT",
+      "nature": "nonBusinessInformation"
     },
     {
       "name": "TIME",
