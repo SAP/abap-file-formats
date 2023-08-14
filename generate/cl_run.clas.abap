@@ -31,7 +31,7 @@ CLASS cl_run IMPLEMENTATION.
       EXPORTING
         writer = writer.
 
-    string_tab = generator->generate_type( ref->* ).
+    string_tab = generator->zif_aff_generator~generate_type( ref->* ).
 
 * workaround for transpiler/JS keywords
     LOOP AT string_tab ASSIGNING <row>.
