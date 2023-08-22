@@ -16,7 +16,7 @@ INTERFACE zif_aff_cdbo_v1
       "! <p class="shorttext">Data Definition</p>
       "! CDS data definition
       "! $enumValue 'DDLS'
-      ddls TYPE ty_object_type VALUE '03',
+      ddls TYPE ty_object_type VALUE '02',
     END OF co_object_type.
 
   "! <p class="shorttext">Field Nature</p>
