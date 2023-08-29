@@ -51,6 +51,9 @@ INTERFACE zif_aff_smbc_v1
       "! <p class="shorttext synchronized">Creation Row</p>
       "! By clicking on 'Add row' a new line is created but automatic navigation to subpage is not triggered.
       creation_row TYPE string VALUE 'CreationRow',
+      "! <p class="shorttext synchronized">Empty Rows</p>
+      "! In create or edit mode, two new empty rows are added to the table.
+      inline_creation_rows TYPE string VALUE 'InlineCreationRows',
     END OF co_creation_mode_name,
     "! <p class="shorttext synchronized" >Initial Load</p>
     BEGIN OF co_initial_load,
