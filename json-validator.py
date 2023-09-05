@@ -1,6 +1,6 @@
 import json
 import jsonschema
-from jsonschema import Draft7Validator
+from jsonschema import validate
 from jsonschema import exceptions
 import os
 import glob
@@ -25,11 +25,11 @@ def validate_json( schema, instance ):
     json_schema = decode_json( schema )
     json_instance = decode_json( instance )
     try:
-        Draft7Validator(json_schema).validate(json_instance)
     except jsonschema.exceptions.ValidationError as exVal:
         msg_errors.append(f"::error file={instance},line=1,col=1::{exVal.message} in {instance}")
     except jsonschema.exceptions.SchemaError as error_ex:
         msg_errors.print(f"::error file={instance},line=1,col=1::{error_ex.message} in {instance}")
+        validate( instance=json_instance, schema=json_schema)
     else:
         #print(f"::set-output name={os.path.basename(instance).ljust(31)} valid instance of schema {os.path.basename(schema)}" )
         print( "valid: " + os.path.basename(schema) + "; " + os.path.basename(instance))
