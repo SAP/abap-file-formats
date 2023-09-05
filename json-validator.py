@@ -25,11 +25,11 @@ def validate_json( schema, instance ):
     json_schema = decode_json( schema )
     json_instance = decode_json( instance )
     try:
-    except jsonschema.exceptions.ValidationError as exVal:
-        msg_errors.append(f"::error file={instance},line=1,col=1::{exVal.message} in {instance}")
-    except jsonschema.exceptions.SchemaError as error_ex:
-        msg_errors.print(f"::error file={instance},line=1,col=1::{error_ex.message} in {instance}")
         validate( instance=json_instance, schema=json_schema)
+    except jsonschema.exceptions.ValidationError as ex_validation:
+        msg_errors.append(f"::error file={instance},line=1,col=1::{ex_validation.message} in {instance}")
+    except jsonschema.exceptions.SchemaError as ex_schema:
+        msg_errors.print(f"::error file={instance},line=1,col=1::{ex_schema.message} in {instance}")
     else:
         #print(f"::set-output name={os.path.basename(instance).ljust(31)} valid instance of schema {os.path.basename(schema)}" )
         print( "valid: " + os.path.basename(schema) + "; " + os.path.basename(instance))
