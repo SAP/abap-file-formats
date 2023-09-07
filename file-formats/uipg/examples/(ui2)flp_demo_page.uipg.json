@@ -1,0 +1,229 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "UI2 FLP Demo - Test Page",
+    "originalLanguage": "en"
+  },
+  "generalInformation": {
+    "title": "UI2 FLP Demo - Test Page",
+    "description": "This page is used for testing the pages runtime"
+  },
+  "sections": [
+    {
+      "id": "id-1566210576050-45",
+      "title": "Custom & Dynamic Tiles",
+      "items": [
+        {
+          "id": "00O2TIH53H32S6MBXW7CNI5UX",
+          "tileAssignment": {
+            "tileCatalogId": "/UI2/FLP_DEMO_TILE_TYPES",
+            "tileId": "00O2TR99M0M2CG9A3QQQSRILN",
+            "tileDisplayFormat": "",
+            "tmCatalogType": ""
+          }
+        },
+        {
+          "id": "00O2TIH53H32S6MBXW7CNIC6H",
+          "tileAssignment": {
+            "tileCatalogId": "/UI2/FLP_AUTOTEST_CDM_BC_TEST",
+            "tileId": "00O2TIH53H34ATOKOBI78HSAT",
+            "tileDisplayFormat": "",
+            "tmCatalogId": "/UI2/FLP_AUTOTEST_CDM_BC_TEST",
+            "tmId": "00O2TIH53H34ATOKOQK5LN79H"
+          }
+        },
+        {
+          "id": "00O2TIH53H32S6MBXW7CNIII1",
+          "tileAssignment": {
+            "tileCatalogId": "/UI2/FLP_DEMO_TILE_TYPES",
+            "tileId": "00O2TIH53H32KCRLQQ0N2LS33",
+            "tileDisplayFormat": "",
+            "tmCatalogId": "/UI2/FLP_DEMO_SAMPLEAPPS_UI5DK",
+            "tmId": "00O2TR99M0M2CFROG2SBFAVCC"
+          }
+        },
+        {
+          "id": "00O2TIH53H32S6MBXW7CNIOTL",
+          "tileAssignment": {
+            "tileCatalogId": "/UI2/FLP_DEMO_PAGE_COMPOSITION",
+            "tileId": "00O2TIH53H32S2V2L1LMYJKDQ",
+            "tileDisplayFormat": "",
+            "tmCatalogType": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": "id-1566214947284-79",
+      "title": "Navigation",
+      "items": [
+        {
+          "id": "00O2TIH53H32S6MBXW7CNIV55",
+          "tileAssignment": {
+            "tileCatalogId": "/UI2/FLP_AUTOTEST_CDM_BC_TEST",
+            "tileId": "00O2TIH53H34ATOKKYF3GFMV5",
+            "tileDisplayFormat": "",
+            "tmCatalogId": "/UI2/FLP_AUTOTEST_CDM_BC_TEST",
+            "tmId": "00O2TIH53H34ATOKKOFCWT7Y7"
+          }
+        },
+        {
+          "id": "00O2TIH53H32S6MBXW7CNJ1GP",
+          "tileAssignment": {
+            "tileCatalogId": "/UI2/FLP_DEMO_SAMPLEAPPS_UI5DK",
+            "tileId": "00O2TIRMU88BQCQ5RDZWPE3R1",
+            "tileDisplayFormat": "",
+            "tmCatalogId": "/UI2/FLP_DEMO_SAMPLEAPPS_UI5DK",
+            "tmId": "00O2TIRMU88BQCQ5BICIVK9D8"
+          }
+        }
+      ]
+    },
+    {
+      "id": "id-1566215847905-200",
+      "title": "Empty Group 1"
+    },
+    {
+      "id": "id-1566215854800-201",
+      "title": "Empty Group 2"
+    },
+    {
+      "id": "id-1566214976737-80",
+      "title": "Application Dependencies",
+      "items": [
+        {
+          "id": "00O2TIH53H32S6MBXW7CNJ7S9",
+          "tileAssignment": {
+            "tileCatalogId": "/UI2/FLP_DEMO_AppDependencies",
+            "tileId": "00O2TR99M0M2FG8PAVERE5Y6X",
+            "tileDisplayFormat": "",
+            "tmCatalogId": "/UI2/FLP_DEMO_AppDependencies",
+            "tmId": "00O2TR99M0M2FG8OPKFG65MAX"
+          }
+        },
+        {
+          "id": "00O2TIH53H32S6MBXW7CNJE3T",
+          "tileAssignment": {
+            "tileCatalogId": "/UI2/FLP_DEMO_AppDependencies",
+            "tileId": "00O2TR99M0M2FG8PJ7NM5WCX8",
+            "tileDisplayFormat": "",
+            "tmCatalogId": "/UI2/FLP_DEMO_AppDependencies",
+            "tmId": "00O2TR99M0M2FG8OSDFPPKROS"
+          }
+        },
+        {
+          "id": "00O2TIH53H32S6MBXW7CNJKFD",
+          "tileAssignment": {
+            "tileCatalogId": "/UI2/FLP_DEMO_AppDependencies",
+            "tileId": "00O2TR99M0M46KL4UDA5UXC6W",
+            "tileDisplayFormat": "",
+            "tmCatalogId": "/UI2/FLP_DEMO_AppDependencies",
+            "tmId": "00O2TR99M0M46KL4RJ04WN5YQ"
+          }
+        }
+      ]
+    },
+    {
+      "id": "id-1566215082839-82",
+      "title": "App Personalization",
+      "items": [
+        {
+          "id": "00O2TIH53H32S6MBXW7CNJQQX",
+          "tileAssignment": {
+            "tileCatalogId": "/UI2/FLP_DEMO_SAMPLEAPPS_UI5DK",
+            "tileId": "00O2TR99M0M2CFRLX119LRGXY",
+            "tileDisplayFormat": "",
+            "tmCatalogId": "/UI2/FLP_DEMO_SAMPLEAPPS_UI5DK",
+            "tmId": "00O2TR99M0M2CFRNRKRQZL88Y"
+          }
+        },
+        {
+          "id": "00O2TIH53H32S6MBXW7CNJX2H",
+          "tileAssignment": {
+            "tileCatalogId": "/UI2/FLP_DEMO_SAMPLEAPPS_UI5DK",
+            "tileId": "00O2TR99M0M2CFRLX0DBYV1JA",
+            "tileDisplayFormat": "",
+            "tmCatalogId": "/UI2/FLP_DEMO_SAMPLEAPPS_UI5DK",
+            "tmId": "00O2TR99M0M2CFRNTOF27F8JP"
+          }
+        },
+        {
+          "id": "00O2TIH53H32S6MBXW7CNK3E1",
+          "tileAssignment": {
+            "tileCatalogId": "/UI2/FLP_DEMO_SAMPLEAPPS_UI5DK",
+            "tileId": "00O2TR99M0M2CFRMNPODMDLFC",
+            "tileDisplayFormat": "",
+            "tmCatalogId": "/UI2/FLP_DEMO_SAMPLEAPPS_UI5DK",
+            "tmId": "00O2TR99M0M2CFRNVLK5FQ3NS"
+          }
+        }
+      ]
+    },
+    {
+      "id": "id-1566215110400-83",
+      "title": "App State",
+      "items": [
+        {
+          "id": "00O2TIH53H32S6MBXW7CNK9PL",
+          "tileAssignment": {
+            "tileCatalogId": "/UI2/FLP_DEMO_SAMPLEAPPS_UI5DK",
+            "tileId": "00O2TR99M0M2CFRMVU6Y78NGL",
+            "tileDisplayFormat": "",
+            "tmCatalogId": "/UI2/FLP_DEMO_SAMPLEAPPS_UI5DK",
+            "tmId": "00O2TR99M0M2CFROG2SBFAVCC"
+          }
+        }
+      ]
+    },
+    {
+      "id": "id-1566215201774-84",
+      "title": "WDA & WebGUI",
+      "items": [
+        {
+          "id": "00O2TIH53H32S6MBXW7CNKG15",
+          "tileAssignment": {
+            "tileCatalogId": "/UI2/FLP_DEMO_WDA_GUI",
+            "tileId": "00O2TR99M0M42Q9E2AF196A2D",
+            "tileDisplayFormat": "",
+            "tmCatalogId": "/UI2/FLP_DEMO_WDA_GUI",
+            "tmId": "00O2TR99M0M42Q9ELFP30JMOE"
+          }
+        },
+        {
+          "id": "00O2TIH53H32S6MBXW7CNKMCP",
+          "tileAssignment": {
+            "tileCatalogId": "/UI2/FLP_DEMO_WDA_GUI",
+            "tileId": "00O2TR99M0M2CG7HQSW9YW5N1",
+            "tileDisplayFormat": "",
+            "tmCatalogId": "/UI2/FLP_DEMO_WDA_GUI",
+            "tmId": "00O2TR99M0M2CG7HLUUA24E4K"
+          }
+        }
+      ]
+    },
+    {
+      "id": "id-1566215863686-202",
+      "title": "URL Tiles",
+      "items": [
+        {
+          "id": "00O2TIH53H32S6MBXW7CNKSO9",
+          "tileAssignment": {
+            "tileCatalogId": "/UI2/FLP_DEMO_EXT_NAV",
+            "tileId": "00O2TR99M0M2CFA8A0PYWDCK8",
+            "tileDisplayFormat": "",
+            "tmCatalogType": ""
+          }
+        },
+        {
+          "id": "00O2TIH53H32S6MBXW7CNKYZT",
+          "tileAssignment": {
+            "tileCatalogId": "/UI2/FLP_DEMO_DOCUMENTATION",
+            "tileId": "00O2TIH53H32S2V2VHIJ067MZ",
+            "tileDisplayFormat": "",
+            "tmCatalogType": ""
+          }
+        }
+      ]
+    }
+  ]
+}
