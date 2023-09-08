@@ -17,9 +17,8 @@
           "id": "00O2TIH53H32S6MBXW7CNI5UX",
           "tileAssignment": {
             "tileCatalogId": "/UI2/FLP_DEMO_TILE_TYPES",
-            "tileId": "00O2TR99M0M2CG9A3QQQSRILN",
-            "tileDisplayFormat": "",
-            "tmCatalogType": ""
+            "tileCatalogType": "CAT",
+            "tileId": "00O2TR99M0M2CG9A3QQQSRILN"
           }
         },
         {
@@ -27,8 +26,9 @@
           "tileAssignment": {
             "tileCatalogId": "/UI2/FLP_AUTOTEST_CDM_BC_TEST",
             "tileId": "00O2TIH53H34ATOKOBI78HSAT",
-            "tileDisplayFormat": "",
+            "tileCatalogType": "CAT",
             "tmCatalogId": "/UI2/FLP_AUTOTEST_CDM_BC_TEST",
+            "tmCatalogType": "CAT",
             "tmId": "00O2TIH53H34ATOKOQK5LN79H"
           }
         },
@@ -36,9 +36,10 @@
           "id": "00O2TIH53H32S6MBXW7CNIII1",
           "tileAssignment": {
             "tileCatalogId": "/UI2/FLP_DEMO_TILE_TYPES",
+            "tileCatalogType": "CAT",
             "tileId": "00O2TIH53H32KCRLQQ0N2LS33",
-            "tileDisplayFormat": "",
             "tmCatalogId": "/UI2/FLP_DEMO_SAMPLEAPPS_UI5DK",
+            "tmCatalogType": "CAT",
             "tmId": "00O2TR99M0M2CFROG2SBFAVCC"
           }
         },
@@ -46,9 +47,8 @@
           "id": "00O2TIH53H32S6MBXW7CNIOTL",
           "tileAssignment": {
             "tileCatalogId": "/UI2/FLP_DEMO_PAGE_COMPOSITION",
-            "tileId": "00O2TIH53H32S2V2L1LMYJKDQ",
-            "tileDisplayFormat": "",
-            "tmCatalogType": ""
+            "tileCatalogType": "CAT",
+            "tileId": "00O2TIH53H32S2V2L1LMYJKDQ"
           }
         }
       ]
@@ -61,9 +61,10 @@
           "id": "00O2TIH53H32S6MBXW7CNIV55",
           "tileAssignment": {
             "tileCatalogId": "/UI2/FLP_AUTOTEST_CDM_BC_TEST",
+            "tileCatalogType": "CAT",
             "tileId": "00O2TIH53H34ATOKKYF3GFMV5",
-            "tileDisplayFormat": "",
             "tmCatalogId": "/UI2/FLP_AUTOTEST_CDM_BC_TEST",
+            "tmCatalogType": "CAT",
             "tmId": "00O2TIH53H34ATOKKOFCWT7Y7"
           }
         },
@@ -71,9 +72,10 @@
           "id": "00O2TIH53H32S6MBXW7CNJ1GP",
           "tileAssignment": {
             "tileCatalogId": "/UI2/FLP_DEMO_SAMPLEAPPS_UI5DK",
+            "tileCatalogType": "CAT",
             "tileId": "00O2TIRMU88BQCQ5RDZWPE3R1",
-            "tileDisplayFormat": "",
             "tmCatalogId": "/UI2/FLP_DEMO_SAMPLEAPPS_UI5DK",
+            "tmCatalogType": "CAT",
             "tmId": "00O2TIRMU88BQCQ5BICIVK9D8"
           }
         }
@@ -95,9 +97,10 @@
           "id": "00O2TIH53H32S6MBXW7CNJ7S9",
           "tileAssignment": {
             "tileCatalogId": "/UI2/FLP_DEMO_AppDependencies",
+            "tileCatalogType": "CAT",
             "tileId": "00O2TR99M0M2FG8PAVERE5Y6X",
-            "tileDisplayFormat": "",
             "tmCatalogId": "/UI2/FLP_DEMO_AppDependencies",
+            "tmCatalogType": "CAT",
             "tmId": "00O2TR99M0M2FG8OPKFG65MAX"
           }
         },
@@ -105,9 +108,10 @@
           "id": "00O2TIH53H32S6MBXW7CNJE3T",
           "tileAssignment": {
             "tileCatalogId": "/UI2/FLP_DEMO_AppDependencies",
+            "tileCatalogType": "CAT",
             "tileId": "00O2TR99M0M2FG8PJ7NM5WCX8",
-            "tileDisplayFormat": "",
             "tmCatalogId": "/UI2/FLP_DEMO_AppDependencies",
+            "tmCatalogType": "CAT",
             "tmId": "00O2TR99M0M2FG8OSDFPPKROS"
           }
         },
@@ -115,9 +119,10 @@
           "id": "00O2TIH53H32S6MBXW7CNJKFD",
           "tileAssignment": {
             "tileCatalogId": "/UI2/FLP_DEMO_AppDependencies",
+            "tileCatalogType": "CAT",
             "tileId": "00O2TR99M0M46KL4UDA5UXC6W",
-            "tileDisplayFormat": "",
             "tmCatalogId": "/UI2/FLP_DEMO_AppDependencies",
+            "tmCatalogType": "CAT",
             "tmId": "00O2TR99M0M46KL4RJ04WN5YQ"
           }
         }
@@ -131,9 +136,10 @@
           "id": "00O2TIH53H32S6MBXW7CNJQQX",
           "tileAssignment": {
             "tileCatalogId": "/UI2/FLP_DEMO_SAMPLEAPPS_UI5DK",
+            "tileCatalogType": "CAT",
             "tileId": "00O2TR99M0M2CFRLX119LRGXY",
-            "tileDisplayFormat": "",
             "tmCatalogId": "/UI2/FLP_DEMO_SAMPLEAPPS_UI5DK",
+            "tmCatalogType": "CAT",
             "tmId": "00O2TR99M0M2CFRNRKRQZL88Y"
           }
         },
@@ -141,9 +147,10 @@
           "id": "00O2TIH53H32S6MBXW7CNJX2H",
           "tileAssignment": {
             "tileCatalogId": "/UI2/FLP_DEMO_SAMPLEAPPS_UI5DK",
+            "tmCatalogType": "CAT",
             "tileId": "00O2TR99M0M2CFRLX0DBYV1JA",
-            "tileDisplayFormat": "",
             "tmCatalogId": "/UI2/FLP_DEMO_SAMPLEAPPS_UI5DK",
+            "tmCatalogType": "CAT",
             "tmId": "00O2TR99M0M2CFRNTOF27F8JP"
           }
         },
@@ -151,9 +158,10 @@
           "id": "00O2TIH53H32S6MBXW7CNK3E1",
           "tileAssignment": {
             "tileCatalogId": "/UI2/FLP_DEMO_SAMPLEAPPS_UI5DK",
+            "tmCatalogType": "CAT",
             "tileId": "00O2TR99M0M2CFRMNPODMDLFC",
-            "tileDisplayFormat": "",
             "tmCatalogId": "/UI2/FLP_DEMO_SAMPLEAPPS_UI5DK",
+            "tileCatalogType": "CAT",
             "tmId": "00O2TR99M0M2CFRNVLK5FQ3NS"
           }
         }
@@ -167,9 +175,10 @@
           "id": "00O2TIH53H32S6MBXW7CNK9PL",
           "tileAssignment": {
             "tileCatalogId": "/UI2/FLP_DEMO_SAMPLEAPPS_UI5DK",
+            "tileCatalogType": "CAT",
             "tileId": "00O2TR99M0M2CFRMVU6Y78NGL",
-            "tileDisplayFormat": "",
             "tmCatalogId": "/UI2/FLP_DEMO_SAMPLEAPPS_UI5DK",
+            "tmCatalogType": "CAT",
             "tmId": "00O2TR99M0M2CFROG2SBFAVCC"
           }
         }
@@ -183,9 +192,10 @@
           "id": "00O2TIH53H32S6MBXW7CNKG15",
           "tileAssignment": {
             "tileCatalogId": "/UI2/FLP_DEMO_WDA_GUI",
+            "tileCatalogType": "CAT",
             "tileId": "00O2TR99M0M42Q9E2AF196A2D",
-            "tileDisplayFormat": "",
             "tmCatalogId": "/UI2/FLP_DEMO_WDA_GUI",
+            "tmCatalogType": "CAT",
             "tmId": "00O2TR99M0M42Q9ELFP30JMOE"
           }
         },
@@ -193,9 +203,10 @@
           "id": "00O2TIH53H32S6MBXW7CNKMCP",
           "tileAssignment": {
             "tileCatalogId": "/UI2/FLP_DEMO_WDA_GUI",
+            "tileCatalogType": "CAT",
             "tileId": "00O2TR99M0M2CG7HQSW9YW5N1",
-            "tileDisplayFormat": "",
             "tmCatalogId": "/UI2/FLP_DEMO_WDA_GUI",
+            "tmCatalogType": "CAT",
             "tmId": "00O2TR99M0M2CG7HLUUA24E4K"
           }
         }
@@ -209,18 +220,16 @@
           "id": "00O2TIH53H32S6MBXW7CNKSO9",
           "tileAssignment": {
             "tileCatalogId": "/UI2/FLP_DEMO_EXT_NAV",
-            "tileId": "00O2TR99M0M2CFA8A0PYWDCK8",
-            "tileDisplayFormat": "",
-            "tmCatalogType": ""
+            "tileCatalogType": "CAT",
+            "tileId": "00O2TR99M0M2CFA8A0PYWDCK8"
           }
         },
         {
           "id": "00O2TIH53H32S6MBXW7CNKYZT",
           "tileAssignment": {
             "tileCatalogId": "/UI2/FLP_DEMO_DOCUMENTATION",
-            "tileId": "00O2TIH53H32S2V2VHIJ067MZ",
-            "tileDisplayFormat": "",
-            "tmCatalogType": ""
+            "tileCatalogType": "CAT",
+            "tileId": "00O2TIH53H32S2V2VHIJ067MZ"
           }
         }
       ]

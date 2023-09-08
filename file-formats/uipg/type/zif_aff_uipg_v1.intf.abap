@@ -19,8 +19,8 @@ INTERFACE zif_aff_uipg_v1
 
   "! <p class="shorttext">Catalog Type</p>
   "! Catalog type
-  "! $values {@link /ui2/zif_aff_uipg_v1:co_catalog_type}
-  "! $default {@link /ui2/if_afzif_aff_uipg_v1atalog_type.standard}
+  "! $values {@link zif_aff_uipg_v1.data:co_catalog_type}
+  "! $default {@link zif_aff_uipg_v1.data:co_catalog_type.standard}
   TYPES ty_catalog_type TYPE c LENGTH 3.
 
   CONSTANTS:
@@ -35,8 +35,8 @@ INTERFACE zif_aff_uipg_v1
 
   "! <p class="shorttext">Tile Display Format</p>
   "! Tile display format
-  "! $values {@link /ui2/if_aff_uipzif_aff_uipg_v1isplay_format}
-  "! $default {@link /ui2/if_aff_uipg_v1.zif_aff_uipg_v1y_format.standard}
+  "! $values {@link zif_aff_uipg_v1.data:co_tile_display_format}
+  "! $default {@link zif_aff_uipg_v1.data:co_tile_display_format.standard}
   TYPES ty_tile_display_format TYPE c LENGTH 2.
 
   CONSTANTS:
@@ -94,7 +94,9 @@ INTERFACE zif_aff_uipg_v1
 
   "! <p class="shorttext">Item Assignment Type</p>
   "! Item assignment type
-  "! $values {@link /ui2/if_aff_uipg_v1.data:zif_aff_uipg_v1$default {@link /ui2/if_aff_uipg_v1.data:co_itzif_aff_uipg_v1ES ty_item_type TYPE c LENGTH 2.
+  "! $values {@link zif_aff_uipg_v1.data:co_item_type}
+  "! $default {@link zif_aff_uipg_v1.data:co_item_type.tile}
+  TYPES ty_item_type TYPE c LENGTH 2.
 
   CONSTANTS:
     "! <p class="shorttext">Item Assignment Type</p>
