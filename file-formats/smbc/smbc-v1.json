@@ -282,7 +282,7 @@
                   "New Page",
                   "Inline",
                   "Creation Row",
-                  "Empty Rows"
+                  "Empty Row"
                 ],
                 "enumDescriptions": [
                   "Item is created in subpage",
