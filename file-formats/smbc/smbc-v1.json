@@ -288,7 +288,7 @@
                   "Item is created in subpage",
                   "By clicking on 'Create' a new line is created but automatic navigation to subpage is not performed.",
                   "By clicking on 'Add row' a new line is created but automatic navigation to subpage is not performed.",
-                  "In create or edit mode, two new empty rows are added to the table."
+                  "In create or edit mode, one new empty row is added to the table."
                 ],
                 "default": "newPage"
               },
