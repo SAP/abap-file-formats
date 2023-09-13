@@ -28,7 +28,7 @@ INTERFACE zif_aff_cota_v1
       communication_type          TYPE ty_comm_type,
       "! <p class="shorttext">Communication Target Class</p>
       "! Communication target class
-      connection_target_class     TYPE zif_aff_types_v1=>ty_object_name_30,
+      communication_target_class     TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Allow Multiple Application Destinations</p>
       "! Allow multiple application destinations
       allow_multiple_destinations TYPE abap_bool,

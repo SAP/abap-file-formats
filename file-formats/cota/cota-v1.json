@@ -79,7 +79,7 @@
           ],
           "default": "http"
         },
-        "connectionTargetClass": {
+        "communicationTargetClass": {
           "title": "Communication Target Class",
           "description": "Communication target class",
           "type": "string",
