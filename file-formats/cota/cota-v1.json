@@ -117,21 +117,6 @@
       "description": "RFC settings",
       "type": "object",
       "properties": {
-        "rfcType": {
-          "title": "RFC Type",
-          "description": "RFC type",
-          "type": "string",
-          "enum": [
-            "synchronous"
-          ],
-          "enumTitles": [
-            "Synchronous"
-          ],
-          "enumDescriptions": [
-            "Synchronous"
-          ],
-          "default": "synchronous"
-        },
         "enforceSapGuiSupport": {
           "title": "Enforce SAP GUI Support",
           "description": "Enforce SAP GUI support",

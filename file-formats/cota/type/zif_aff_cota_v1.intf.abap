@@ -37,19 +37,6 @@ INTERFACE zif_aff_cota_v1
       client_independent          TYPE abap_bool,
     END OF ty_configuration.
 
-  "! <p class="shorttext">RFC Type</p>
-  "! $values {@link zif_aff_cota_v1.data:co_rfctype}
-  TYPES ty_rfctype TYPE c LENGTH 1.
-
-  CONSTANTS:
-    "! <p class="shorttext">RFC Type</p>
-    "! RFC type
-    BEGIN OF co_rfctype,
-      "! <p class="shorttext">Synchronous</p>
-      "! Synchronous
-      synchronous TYPE ty_rfctype VALUE 'X',
-    END OF co_rfctype.
-
   "! <p class="shorttext">Default Compression Mode</p>
   "! $values {@link zif_aff_cota_v1.data:co_compress_mode}
   TYPES ty_comp_mode TYPE c LENGTH 1.
@@ -71,10 +58,6 @@ INTERFACE zif_aff_cota_v1
     "! RFC settings
     "! $required
     BEGIN OF ty_rfc_settings,
-      "! <p class="shorttext">RFC Type</p>
-      "! RFC type
-      "! $default {@link zif_aff_cota_v1.data:co_rfctype.synchronous}
-      rfc_type                   TYPE ty_rfctype,
       "! <p class="shorttext">Enforce SAP GUI Support</p>
       "! Enforce SAP GUI support
       enforce_sap_gui_support        TYPE abap_bool,
