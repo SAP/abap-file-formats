@@ -66,7 +66,7 @@ INTERFACE zif_aff_uipg_v1
   TYPES:
     "! <p class="shorttext">Catalog Item Reference</p>
     "! Catalog item reference
-    BEGIN OF ts_catalog_item_reference,
+    BEGIN OF ty_catalog_item_reference,
 
       "! <p class="shorttext">Catalog ID</p>
       "! Catalog ID
@@ -83,7 +83,7 @@ INTERFACE zif_aff_uipg_v1
       "! $required
       id           TYPE c LENGTH 50,
 
-    END OF   ts_catalog_item_reference.
+    END OF   ty_catalog_item_reference.
 
 
   TYPES:
@@ -98,11 +98,11 @@ INTERFACE zif_aff_uipg_v1
       "! <p class="shorttext">Tile Reference</p>
       "! Tile reference
       "! $required
-      tile                TYPE ts_catalog_item_reference,
+      tile                TYPE ty_catalog_item_reference,
 
       "! <p class="shorttext">Target Mapping Reference</p>
       "! Target mapping reference
-      target_mapping      TYPE ts_catalog_item_reference,
+      target_mapping      TYPE ty_catalog_item_reference,
 
     END OF ty_tile_assignment.
 
