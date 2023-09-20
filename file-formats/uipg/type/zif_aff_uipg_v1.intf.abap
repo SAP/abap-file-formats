@@ -5,33 +5,28 @@ INTERFACE zif_aff_uipg_v1
     "! <p class="shorttext">General Information</p>
     "! General information
     BEGIN OF ty_general_information,
+
       "! <p class="shorttext">Title</p>
-      "! Title of the page template
+      "! Title visible to the enduser
       "! $required
       title       TYPE zif_aff_types_v1=>ty_description_100,
+
       "! <p class="shorttext">Description</p>
-      "! Additional description
+      "! Description for design-time tools
+      "! $required
       description TYPE zif_aff_types_v1=>ty_description_100,
+
       "! <p class="shorttext">Merge ID</p>
-      "! Merge ID
+      "! Merge ID for merging during run-time
       merge_id    TYPE c LENGTH 35,
+
     END OF ty_general_information.
+
 
   "! <p class="shorttext">Catalog Type</p>
   "! Catalog type
-  "! $values {@link zif_aff_uipg_v1.data:co_catalog_type}
-  "! $default {@link zif_aff_uipg_v1.data:co_catalog_type.standard}
-  TYPES ty_catalog_type TYPE c LENGTH 3.
+  TYPES ty_catalog_type        TYPE c LENGTH 3.
 
-  CONSTANTS:
-    "! <p class="shorttext">Catalog Type</p>
-    "! catalog type
-    BEGIN OF co_catalog_type,
-      "! <p class="shorttext">Standard Catalog</p>
-      "! Standard catalog
-      "! $enumValue 'CAT'
-      standard TYPE ty_catalog_type VALUE 'CAT',
-    END OF co_catalog_type.
 
   "! <p class="shorttext">Tile Display Format</p>
   "! Tile display format
@@ -39,113 +34,149 @@ INTERFACE zif_aff_uipg_v1
   "! $default {@link zif_aff_uipg_v1.data:co_tile_display_format.standard}
   TYPES ty_tile_display_format TYPE c LENGTH 2.
 
+
   CONSTANTS:
     "! <p class="shorttext">Tile Display Format</p>
     "! Tile display format
     BEGIN OF co_tile_display_format,
+
       "! <p class="shorttext">Standard Tile</p>
       "! Standard tile
-      "! $enumValue 'TI'
       standard  TYPE ty_tile_display_format VALUE 'TI',
+
       "! <p class="shorttext">Wide Tile</p>
       "! Wide tile
-      "! $enumValue 'TW'
       wide      TYPE ty_tile_display_format VALUE 'TW',
+
       "! <p class="shorttext">Flat Tile</p>
       "! Flat tile
-      "! $enumValue 'FT'
       flat      TYPE ty_tile_display_format VALUE 'FT',
-      "! <p class="shorttext">Flat Wide</p>
-      "! Flat wide
-      "! $enumValue 'FW'
+
+      "! <p class="shorttext">Flat Wide Tile</p>
+      "! Flat wide tile
       flat_wide TYPE ty_tile_display_format VALUE 'FW',
+
       "! <p class="shorttext">Link</p>
-      "! link
-      "! $enumValue 'LK'
+      "! Link
       link      TYPE ty_tile_display_format VALUE 'LK',
+
     END OF co_tile_display_format.
 
+
   TYPES:
-    "! <p class="shorttext">Page Section</p>
-    "! Page Section
+    "! <p class="shorttext">Catalog Item Reference</p>
+    "! Catalog item reference
+    BEGIN OF ts_catalog_item_reference,
+
+      "! <p class="shorttext">Catalog ID</p>
+      "! Catalog ID
+      "! $required
+      catalog_id   TYPE c LENGTH 35,
+
+      "! <p class="shorttext">Catalog Type</p>
+      "! Catalog type
+      "! $default 'CAT'
+      catalog_type TYPE ty_catalog_type,
+
+      "! <p class="shorttext">Item ID</p>
+      "! Item ID
+      "! $required
+      id           TYPE c LENGTH 50,
+
+    END OF   ts_catalog_item_reference.
+
+
+  TYPES:
+    "! <p class="shorttext">Tile Assignment</p>
+    "! Tile assignment
     BEGIN OF ty_tile_assignment,
-      "! <p class="shorttext">Tile Catalog Id</p>
-      "! Tile catalog id
-      tile_catalog_id     TYPE c LENGTH 35,
-      "! <p class="shorttext">Tile Catalog Type</p>
-      "! Tile catalog type
-      tile_catalog_type   TYPE ty_catalog_type,
-      "! <p class="shorttext">Tile Id</p>
-      "! Tile id
-      tile_id             TYPE c LENGTH 50,
+
       "! <p class="shorttext">Tile Display Format</p>
-      "! tile display format
+      "! Describes how the tile is rendered during run-time
       tile_display_format TYPE ty_tile_display_format,
-      "! <p class="shorttext">Target Mapping Catalog Id</p>
-      "! Target Mapping catalog id
-      tm_catalog_id       TYPE c LENGTH 35,
-      "! <p class="shorttext">Target Mapping Catalog Type</p>
-      "! Target Mapping catalog type
-      tm_catalog_type     TYPE ty_catalog_type,
-      "! <p class="shorttext">Target Mapping Id</p>
-      "! Target Mapping id
-      tm_id               TYPE c LENGTH 50,
+
+      "! <p class="shorttext">Tile Reference</p>
+      "! Tile reference
+      "! $required
+      tile                TYPE ts_catalog_item_reference,
+
+      "! <p class="shorttext">Target Mapping Reference</p>
+      "! Target mapping reference
+      target_mapping      TYPE ts_catalog_item_reference,
+
     END OF ty_tile_assignment.
+
 
   "! <p class="shorttext">Item Assignment Type</p>
   "! Item assignment type
   "! $values {@link zif_aff_uipg_v1.data:co_item_type}
   "! $default {@link zif_aff_uipg_v1.data:co_item_type.tile}
-  TYPES ty_item_type TYPE c LENGTH 2.
+  TYPES ty_item_assignment_type TYPE c LENGTH 2.
+
 
   CONSTANTS:
     "! <p class="shorttext">Item Assignment Type</p>
     "! Item assignment type
     BEGIN OF co_item_type,
-      "! <p class="shorttext">Tile</p>
-      "! Tile
-      "! $enumValue 'TI'
-      tile TYPE ty_item_type VALUE 'TI',
+
+      "! <p class="shorttext">Tile Assignment</p>
+      "! Tile assignment
+      tile TYPE ty_item_assignment_type VALUE 'TI',
+
     END OF co_item_type.
 
+
   TYPES:
-    "! <p class="shorttext">Page Section Item Assignment</p>
-    "! Page Section Item Assignment
+    "! <p class="shorttext">Section Item Assignment</p>
+    "! section item assignment
     BEGIN OF ty_item,
+
       "! <p class="shorttext">ID</p>
-      "! Id of the Assignment
+      "! Item ID
+      "! $required
       id              TYPE c LENGTH 35,
+
       "! <p class="shorttext">Type</p>
-      "! Type of the Assignment
-      type            TYPE ty_item_type,
-      "! <p class="shorttext">ID</p>
-      "! Id of the Page Section
+      "! Item assignment type
+      type            TYPE ty_item_assignment_type,
+
+      "! <p class="shorttext">Tile Assignment Properties</p>
+      "! tile assignment properties
       tile_assignment TYPE ty_tile_assignment,
+
     END OF ty_item,
 
     ty_items TYPE STANDARD TABLE OF ty_item WITH DEFAULT KEY.
 
+
   TYPES:
-    "! <p class="shorttext">Page Section</p>
-    "! Page Section
+    "! <p class="shorttext">Section</p>
+    "! section
     BEGIN OF ty_section,
+
       "! <p class="shorttext">ID</p>
-      "! Id of the Page Section
+      "! Section ID
+      "! $required
       id    TYPE c LENGTH 35,
+
       "! <p class="shorttext">Title</p>
       "! Section title
       title TYPE c LENGTH 100,
+
       "! <p class="shorttext">Items</p>
-      "! Assigned Page Section Items
+      "! Section items
       items TYPE ty_items,
+
     END OF ty_section,
 
     ty_sections TYPE STANDARD TABLE OF ty_section WITH DEFAULT KEY.
+
 
   TYPES:
     "! <p class="shorttext">Fiori Launchpad Page Template</p>
     "! Fiori launchpad page template
     BEGIN OF ty_main,
+
       "! <p class="shorttext">Format Version</p>
       "! Format version
       "! $required
@@ -161,9 +192,10 @@ INTERFACE zif_aff_uipg_v1
       "! $required
       general_information TYPE ty_general_information,
 
-      "! <p class="shorttext">Page Sections</p>
-      "! Sections of the Page Template
+      "! <p class="shorttext">Sections</p>
+      "! sections
       sections            TYPE ty_sections,
+
     END OF ty_main.
 
 ENDINTERFACE.

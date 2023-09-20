@@ -1,0 +1,173 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Example Page Template (DT Tool Text)",
+    "originalLanguage": "en"
+  },
+  "generalInformation": {
+    "title": "Example Page Template (UI Text)",
+    "description": "Example Page Template (DT Tool Text)",
+    "mergeId": "MY_MERGE_ID"
+  },
+  "sections": [
+    {
+      "id": "3WO90XZ1DX19DA1UD5RDXQXWK",
+      "title": "Section with different Visualization Types",
+      "items": [
+        {
+          "id": "3WO90XZ1DX19DA1UD5RDXR484",
+          "tileAssignment": {
+            "tile": {
+              "catalogId": "/UI2/FLP_DEMO_BC1_TEST",
+              "id": "ET091D7N8BTE6UTVXBOTFDTSI"
+            },
+            "targetMapping": {
+              "catalogId": "/UI2/FLP_DEMO_BC1_TEST",
+              "id": "00O2TIH53H32KGY1WZ7S7GIW7"
+            }
+          }
+        },
+        {
+          "id": "3WO90XZ1DX19DA1UD5RDXRAJO",
+          "tileAssignment": {
+            "tileDisplayFormat": "wide",
+            "tile": {
+              "catalogId": "/UI2/FLP_DEMO_BC1_TEST",
+              "id": "ET091D7N8BTE6UTVXN0D4SAAA"
+            },
+            "targetMapping": {
+              "catalogId": "/UI2/FLP_DEMO_BC1_TEST",
+              "id": "00O2TIH53H32KGY1X6LIHYLK7"
+            }
+          }
+        },
+        {
+          "id": "3WO90XZ1DX19DA1UD5RDXRGV8",
+          "tileAssignment": {
+            "tileDisplayFormat": "link",
+            "tile": {
+              "catalogId": "/UI2/FLP_DEMO_BC1_TEST",
+              "id": "ET091D7N8BTE6UTVXXJQ0WUMS"
+            },
+            "targetMapping": {
+              "catalogId": "/UI2/FLP_DEMO_BC1_TEST",
+              "id": "00O2TIH53H32KGY1XM291XX2K"
+            }
+          }
+        },
+        {
+          "id": "3WO90XZ1DX19DA1UD5RDXRN6S",
+          "tileAssignment": {
+            "tileDisplayFormat": "flat",
+            "tile": {
+              "catalogId": "/UI2/FLP_DEMO_BC1_TEST",
+              "id": "00O2TIH53H32KGY1S7ERAGFW4"
+            },
+            "targetMapping": {
+              "catalogId": "/UI2/FLP_DEMO_BC1_TEST",
+              "id": "00O2TIH53H32KGY1YAF7047FX"
+            }
+          }
+        },
+        {
+          "id": "3WO90XZ1DX19DA1UD5RDXRTIC",
+          "tileAssignment": {
+            "tileDisplayFormat": "flatWide",
+            "tile": {
+              "catalogId": "/UI2/FLP_DEMO_BC1_TEST",
+              "id": "00O2TIH53H32KGY1RXJY9FBSE"
+            },
+            "targetMapping": {
+              "catalogId": "/UI2/FLP_DEMO_BC1_TEST",
+              "id": "00O2TIH53H32KGY1Y1PQ8RMI5"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "3WO90XZ1DX19DA1UD5RDXRZTW",
+      "title": "FLP Admin Tools",
+      "items": [
+        {
+          "id": "3WO90XZ1DX19DA1UD5RDXS65G",
+          "tileAssignment": {
+            "tile": {
+              "catalogId": "/UI2/FLP_ADMIN",
+              "id": "00O2TIH53H32GIOMXHVBRBTHD"
+            },
+            "targetMapping": {
+              "catalogId": "/UI2/FLP_ADMIN",
+              "id": "00O2TIH53H346T2QI5EPLELE3"
+            }
+          }
+        },
+        {
+          "id": "3WO90XZ1DX19DA1UD5RDXSCH0",
+          "tileAssignment": {
+            "tile": {
+              "catalogId": "/UI2/FLP_ADMIN",
+              "id": "00O2TIH53H32GIONHWO4YHTH5"
+            },
+            "targetMapping": {
+              "catalogId": "/UI2/FLP_ADMIN",
+              "id": "00O2TIH53H32GIONMZ9XWT1O2"
+            }
+          }
+        },
+        {
+          "id": "3WO90XZ1DX19DA1UD5RDXSISK",
+          "tileAssignment": {
+            "tile": {
+              "catalogId": "/UI2/FLP_ADMIN",
+              "id": "00O2TIH53H32GIOMKX5GMY17I"
+            },
+            "targetMapping": {
+              "catalogId": "/UI2/FLP_ADMIN",
+              "id": "00O2TIH53H32GIOM1H7UJ5NAF"
+            }
+          }
+        },
+        {
+          "id": "3WO90XZ1DX19DA1UD5RDXSP44",
+          "tileAssignment": {
+            "tile": {
+              "catalogId": "/UI2/FLP_ADMIN",
+              "id": "00O2TIH53H32GIOMMI1LGK335"
+            },
+            "targetMapping": {
+              "catalogId": "/UI2/FLP_ADMIN",
+              "id": "00O2TIH53H32GIOMB07TNAE0A"
+            }
+          }
+        },
+        {
+          "id": "3WO90XZ1DX19DA1UD5RDXSVFO",
+          "tileAssignment": {
+            "tile": {
+              "catalogId": "/UI2/FLP_ADMIN",
+              "id": "00O2TIH53H32GIOMVN3GTU4T3"
+            },
+            "targetMapping": {
+              "catalogId": "/UI2/FLP_ADMIN",
+              "id": "00O2TIH53H32GIOLZSJGGN02U"
+            }
+          }
+        },
+        {
+          "id": "3WO90XZ1DX19DA1UD5RDXT1R8",
+          "tileAssignment": {
+            "tile": {
+              "catalogId": "/UI2/FLP_ADMIN",
+              "id": "00O2TIH53H32GIOMEYERS87LB"
+            },
+            "targetMapping": {
+              "catalogId": "/UI2/FLP_ADMIN",
+              "id": "00O2TIH53H346T2QFF5AM9K93"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
