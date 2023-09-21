@@ -97,37 +97,37 @@
         "properties": {
           "id": {
             "title": "ID",
-            "description": "Section ID",
+            "description": "ID",
             "type": "string",
             "maxLength": 35
           },
           "title": {
             "title": "Title",
-            "description": "Section title",
+            "description": "Title",
             "type": "string",
             "maxLength": 100
           },
           "items": {
             "title": "Items",
-            "description": "Section items",
+            "description": "Items",
             "type": "array",
             "items": {
-              "title": "Section Item Assignment",
-              "description": "section item assignment",
+              "title": "Item",
+              "description": "Item",
               "type": "object",
               "properties": {
                 "id": {
                   "title": "ID",
-                  "description": "Item ID",
+                  "description": "ID",
                   "type": "string",
                   "maxLength": 35
                 },
                 "type": {
                   "title": "Type",
-                  "description": "Item assignment type",
+                  "description": "type",
                   "type": "string",
                   "enum": [
-                    "tile"
+                    "tileAssignment"
                   ],
                   "enumTitles": [
                     "Tile Assignment"
@@ -135,13 +135,44 @@
                   "enumDescriptions": [
                     "Tile assignment"
                   ],
-                  "default": "tile"
+                  "default": "tileAssignment"
                 },
                 "tileAssignment": {
-                  "title": "Tile Assignment Properties",
-                  "description": "tile assignment properties",
+                  "title": "Tile Assignment",
+                  "description": "tile assignment",
                   "type": "object",
                   "properties": {
+                    "tileKey": {
+                      "title": "Tile Key",
+                      "description": "Tile key",
+                      "type": "object",
+                      "properties": {
+                        "catalogId": {
+                          "title": "Catalog ID",
+                          "description": "Catalog ID",
+                          "type": "string",
+                          "maxLength": 35
+                        },
+                        "catalogType": {
+                          "title": "Catalog Type",
+                          "description": "Catalog type",
+                          "type": "string",
+                          "maxLength": 3,
+                          "default": "CAT"
+                        },
+                        "id": {
+                          "title": "Catalog Item ID",
+                          "description": "Catalog Item ID",
+                          "type": "string",
+                          "maxLength": 50
+                        }
+                      },
+                      "additionalProperties": false,
+                      "required": [
+                        "catalogId",
+                        "id"
+                      ]
+                    },
                     "tileDisplayFormat": {
                       "title": "Tile Display Format",
                       "description": "Describes how the tile is rendered during run-time",
@@ -169,9 +200,9 @@
                       ],
                       "default": "standard"
                     },
-                    "tile": {
-                      "title": "Tile Reference",
-                      "description": "Tile reference",
+                    "targetMappingKey": {
+                      "title": "Target Mapping Key",
+                      "description": "Target mapping key",
                       "type": "object",
                       "properties": {
                         "catalogId": {
@@ -188,39 +219,8 @@
                           "default": "CAT"
                         },
                         "id": {
-                          "title": "Item ID",
-                          "description": "Item ID",
-                          "type": "string",
-                          "maxLength": 50
-                        }
-                      },
-                      "additionalProperties": false,
-                      "required": [
-                        "catalogId",
-                        "id"
-                      ]
-                    },
-                    "targetMapping": {
-                      "title": "Target Mapping Reference",
-                      "description": "Target mapping reference",
-                      "type": "object",
-                      "properties": {
-                        "catalogId": {
-                          "title": "Catalog ID",
-                          "description": "Catalog ID",
-                          "type": "string",
-                          "maxLength": 35
-                        },
-                        "catalogType": {
-                          "title": "Catalog Type",
-                          "description": "Catalog type",
-                          "type": "string",
-                          "maxLength": 3,
-                          "default": "CAT"
-                        },
-                        "id": {
-                          "title": "Item ID",
-                          "description": "Item ID",
+                          "title": "Catalog Item ID",
+                          "description": "Catalog Item ID",
                           "type": "string",
                           "maxLength": 50
                         }
@@ -234,7 +234,7 @@
                   },
                   "additionalProperties": false,
                   "required": [
-                    "tile"
+                    "tileKey"
                   ]
                 }
               },

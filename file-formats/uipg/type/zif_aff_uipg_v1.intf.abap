@@ -64,9 +64,9 @@ INTERFACE zif_aff_uipg_v1
 
 
   TYPES:
-    "! <p class="shorttext">Catalog Item Reference</p>
-    "! Catalog item reference
-    BEGIN OF ty_catalog_item_reference,
+    "! <p class="shorttext">Catalog Item Key</p>
+    "! Catalog item key
+    BEGIN OF ty_catalog_item_key,
 
       "! <p class="shorttext">Catalog ID</p>
       "! Catalog ID
@@ -78,12 +78,12 @@ INTERFACE zif_aff_uipg_v1
       "! $default 'CAT'
       catalog_type TYPE ty_catalog_type,
 
-      "! <p class="shorttext">Item ID</p>
-      "! Item ID
+      "! <p class="shorttext">Catalog Item ID</p>
+      "! Catalog Item ID
       "! $required
       id           TYPE c LENGTH 50,
 
-    END OF   ty_catalog_item_reference.
+    END OF   ty_catalog_item_key.
 
 
   TYPES:
@@ -91,57 +91,57 @@ INTERFACE zif_aff_uipg_v1
     "! Tile assignment
     BEGIN OF ty_tile_assignment,
 
+      "! <p class="shorttext">Tile Key</p>
+      "! Tile key
+      "! $required
+      tile_key            TYPE ty_catalog_item_key,
+
       "! <p class="shorttext">Tile Display Format</p>
       "! Describes how the tile is rendered during run-time
       tile_display_format TYPE ty_tile_display_format,
 
-      "! <p class="shorttext">Tile Reference</p>
-      "! Tile reference
-      "! $required
-      tile                TYPE ty_catalog_item_reference,
-
-      "! <p class="shorttext">Target Mapping Reference</p>
-      "! Target mapping reference
-      target_mapping      TYPE ty_catalog_item_reference,
+      "! <p class="shorttext">Target Mapping Key</p>
+      "! Target mapping key
+      target_mapping_key  TYPE ty_catalog_item_key,
 
     END OF ty_tile_assignment.
 
 
-  "! <p class="shorttext">Item Assignment Type</p>
-  "! Item assignment type
+  "! <p class="shorttext">Item Type</p>
+  "! Item type
   "! $values {@link zif_aff_uipg_v1.data:co_item_type}
-  "! $default {@link zif_aff_uipg_v1.data:co_item_type.tile}
-  TYPES ty_item_assignment_type TYPE c LENGTH 2.
+  "! $default {@link zif_aff_uipg_v1.data:co_item_type.tile_assignment}
+  TYPES ty_item_type TYPE c LENGTH 2.
 
 
   CONSTANTS:
-    "! <p class="shorttext">Item Assignment Type</p>
-    "! Item assignment type
+    "! <p class="shorttext">Item Type</p>
+    "! Item type
     BEGIN OF co_item_type,
 
       "! <p class="shorttext">Tile Assignment</p>
       "! Tile assignment
-      tile TYPE ty_item_assignment_type VALUE 'TI',
+      tile_assignment TYPE ty_item_type VALUE 'TI',
 
     END OF co_item_type.
 
 
   TYPES:
-    "! <p class="shorttext">Section Item Assignment</p>
-    "! section item assignment
+    "! <p class="shorttext">Item</p>
+    "! Item
     BEGIN OF ty_item,
 
       "! <p class="shorttext">ID</p>
-      "! Item ID
+      "! ID
       "! $required
       id              TYPE c LENGTH 35,
 
       "! <p class="shorttext">Type</p>
-      "! Item assignment type
-      type            TYPE ty_item_assignment_type,
+      "! type
+      type            TYPE ty_item_type,
 
-      "! <p class="shorttext">Tile Assignment Properties</p>
-      "! tile assignment properties
+      "! <p class="shorttext">Tile Assignment</p>
+      "! tile assignment
       tile_assignment TYPE ty_tile_assignment,
 
     END OF ty_item,
@@ -155,16 +155,16 @@ INTERFACE zif_aff_uipg_v1
     BEGIN OF ty_section,
 
       "! <p class="shorttext">ID</p>
-      "! Section ID
+      "! ID
       "! $required
       id    TYPE c LENGTH 35,
 
       "! <p class="shorttext">Title</p>
-      "! Section title
+      "! Title
       title TYPE c LENGTH 100,
 
       "! <p class="shorttext">Items</p>
-      "! Section items
+      "! Items
       items TYPE ty_items,
 
     END OF ty_section,
