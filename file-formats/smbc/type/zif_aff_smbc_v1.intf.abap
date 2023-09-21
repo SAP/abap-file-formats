@@ -46,11 +46,14 @@ INTERFACE zif_aff_smbc_v1
       "! Item is created in subpage
       new_page     TYPE string VALUE 'NewPage',
       "! <p class="shorttext synchronized">Inline</p>
-      "! By clicking on 'Create' a new line is created but automatic navigation to subpage is not triggered.
+      "! By clicking on 'Create' a new line is created but automatic navigation to subpage is not performed.
       inline       TYPE string VALUE 'Inline',
       "! <p class="shorttext synchronized">Creation Row</p>
-      "! By clicking on 'Add row' a new line is created but automatic navigation to subpage is not triggered.
+      "! By clicking on 'Add row' a new line is created but automatic navigation to subpage is not performed.
       creation_row TYPE string VALUE 'CreationRow',
+      "! <p class="shorttext synchronized">Empty Row</p>
+      "! In create or edit mode, one new empty row is added to the table.
+      inline_creation_rows TYPE string VALUE 'InlineCreationRows',
     END OF co_creation_mode_name,
     "! <p class="shorttext synchronized" >Initial Load</p>
     BEGIN OF co_initial_load,
