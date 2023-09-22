@@ -11,11 +11,6 @@ INTERFACE zif_aff_uipg_v1
       "! $required
       title       TYPE zif_aff_types_v1=>ty_description_100,
 
-      "! <p class="shorttext">Description</p>
-      "! Description for design-time tools
-      "! $required
-      description TYPE zif_aff_types_v1=>ty_description_100,
-
       "! <p class="shorttext">Merge ID</p>
       "! Merge ID for merging during run-time
       merge_id    TYPE c LENGTH 35,

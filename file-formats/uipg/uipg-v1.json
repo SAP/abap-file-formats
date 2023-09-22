@@ -67,12 +67,6 @@
           "type": "string",
           "maxLength": 100
         },
-        "description": {
-          "title": "Description",
-          "description": "Description for design-time tools",
-          "type": "string",
-          "maxLength": 100
-        },
         "mergeId": {
           "title": "Merge ID",
           "description": "Merge ID for merging during run-time",
@@ -82,8 +76,7 @@
       },
       "additionalProperties": false,
       "required": [
-        "title",
-        "description"
+        "title"
       ]
     },
     "sections": {
