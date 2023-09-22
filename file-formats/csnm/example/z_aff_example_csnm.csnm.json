@@ -1,10 +1,10 @@
 {
   "formatVersion": "1",
   "header": {
-    "abapLanguageVersion": "standard"  
+    "abapLanguageVersion": "standard"
     "description": "Example CSN model for ABAP file formats",
     "originalLanguage": "en"
-  },  
+  },
   "generalInformation": {
     "csnFileNames": [
       {
