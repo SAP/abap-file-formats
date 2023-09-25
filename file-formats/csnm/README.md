@@ -2,4 +2,4 @@
 
 File | Cardinality | Definition | Schema | Example
 :--- | :--- | :--- | :--- | :---
-`<name>.csnm.json` | 1 | [`zif_aff_csnm_v1.intf.abap`](./type/zif_aff_csnm_v1.intf.abap) | [`csnm-v1.json`](./csnm-v1.json) | [z_aff_example_abcd.csnm.json](./examples/z_aff_example_abcd.csnm.json)
+`<name>.csnm.json` | 1 | [`zif_aff_csnm_v1.intf.abap`](./type/zif_aff_csnm_v1.intf.abap) | [`csnm-v1.json`](./csnm-v1.json) | [z_aff_example_csnm.csnm.json](./examples/z_aff_example_csnm.csnm.json)
