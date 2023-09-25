@@ -113,7 +113,7 @@
       }
     },
     "conditionFields": {
-      "title": "Condition Fields Direct",
+      "title": "Condition Fields",
       "description": "Condition fields for direct value determination",
       "type": "array",
       "uniqueItems": true,
@@ -122,15 +122,15 @@
         "description": "Condition field details",
         "type": "object",
         "properties": {
-          "name": {
-            "title": "Name",
-            "description": "Name",
+          "conditionField": {
+            "title": "Condition Field",
+            "description": "Condition Field",
             "type": "string",
             "maxLength": 30
           },
           "description": {
             "title": "Description",
-            "description": "Condition field",
+            "description": "Description of Condition field",
             "type": "string",
             "maxLength": 60
           },
@@ -165,11 +165,25 @@
         },
         "additionalProperties": false,
         "required": [
-          "name",
+          "conditionField",
           "sourceTable",
           "sourceField"
         ]
       }
+    },
+    "callbackClass": {
+      "title": "Value Determination Callback Class",
+      "description": "Value determination callback class",
+      "type": "object",
+      "properties": {
+        "name": {
+          "title": "Name",
+          "description": "Name",
+          "type": "string",
+          "maxLength": 30
+        }
+      },
+      "additionalProperties": false
     }
   },
   "additionalProperties": false,
@@ -178,6 +192,7 @@
     "header",
     "destructionObject",
     "timeReferences",
-    "conditionFields"
+    "conditionFields",
+    "callbackClass"
   ]
 }
