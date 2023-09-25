@@ -6,11 +6,11 @@ INTERFACE zif_aff_ilmb_v1
     "! Condition field details
     BEGIN OF ty_cond_field,
       "! <p class="shorttext">Condition Field</p>
-      "! Condition Field
+      "! Condition field
       "! $required
       condition_field   TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Description</p>
-      "! Description of Condition field
+      "! Description of condition field
       description    TYPE zif_aff_types_v1=>ty_description_60,
       "! <p class="shorttext">Data Element</p>
       "! Data element
