@@ -124,13 +124,13 @@
         "properties": {
           "conditionField": {
             "title": "Condition Field",
-            "description": "Condition Field",
+            "description": "Condition field",
             "type": "string",
             "maxLength": 30
           },
           "description": {
             "title": "Description",
-            "description": "Description of Condition field",
+            "description": "Description of condition field",
             "type": "string",
             "maxLength": 60
           },
