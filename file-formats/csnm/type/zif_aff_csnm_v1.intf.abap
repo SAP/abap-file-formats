@@ -1,6 +1,4 @@
 "! ABAP File Format for CSN Model Transport Object Generic Editor
-"!
-"! As very first solution, one CSN file could be enough
 INTERFACE zif_aff_csnm_v1
   PUBLIC.
 
