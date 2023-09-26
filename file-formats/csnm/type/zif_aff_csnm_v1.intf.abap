@@ -13,16 +13,7 @@ INTERFACE zif_aff_csnm_v1
 
   "! <p class="shorttext">CSN Files</p>
   "! CSN files
-  TYPES ty_csn_file_names TYPE STANDARD TABLE OF ty_csn_file WITH DEFAULT KEY.
-
-  TYPES:
-    "! <p class="shorttext">General Information</p>
-    "! General information
-    BEGIN OF ty_general_information,
-      "! <p class="shorttext">CSN File Names</p>
-      "! CSN file name
-      csn_file_names TYPE ty_csn_file_names,
-    END OF ty_general_information.
+  TYPES ty_csn_files TYPE STANDARD TABLE OF ty_csn_file WITH DEFAULT KEY.
 
   TYPES:
     "! <p class="shorttext">CSN Model Transport Object</p>
@@ -31,13 +22,13 @@ INTERFACE zif_aff_csnm_v1
       "! <p class="shorttext">Format Version</p>
       "! Format version
       "! $required
-      format_version      TYPE zif_aff_types_v1=>ty_format_version,
+      format_version TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header              TYPE zif_aff_types_v1=>ty_header_60_cloud,
-      "! <p class="shorttext">General Information</p>
-      "! General Information
-      general_information TYPE ty_general_information,
+      header         TYPE zif_aff_types_v1=>ty_header_60_cloud,
+      "! <p class="shorttext">CSN File Names</p>
+      "! CSN file name
+      csn_files      TYPE ty_csn_files,
     END OF ty_main.
 ENDINTERFACE.

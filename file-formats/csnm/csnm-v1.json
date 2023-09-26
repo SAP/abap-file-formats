@@ -56,31 +56,23 @@
         "originalLanguage"
       ]
     },
-    "generalInformation": {
-      "title": "General Information",
-      "description": "General Information",
-      "type": "object",
-      "properties": {
-        "csnFileNames": {
-          "title": "CSN File Names",
-          "description": "CSN file name",
-          "type": "array",
-          "items": {
-            "title": "CSN File",
-            "description": "CSN file",
-            "type": "object",
-            "properties": {
-              "name": {
-                "title": "CSN File Name",
-                "description": "CSN file name",
-                "type": "string"
-              }
-            },
-            "additionalProperties": false
+    "csnFiles": {
+      "title": "CSN File Names",
+      "description": "CSN file name",
+      "type": "array",
+      "items": {
+        "title": "CSN File",
+        "description": "CSN file",
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "CSN File Name",
+            "description": "CSN file name",
+            "type": "string"
           }
-        }
-      },
-      "additionalProperties": false
+        },
+        "additionalProperties": false
+      }
     }
   },
   "additionalProperties": false,
