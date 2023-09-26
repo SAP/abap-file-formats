@@ -57,8 +57,8 @@
       ]
     },
     "csnFiles": {
-      "title": "CSN File Names",
-      "description": "CSN file name",
+      "title": "CSN Files",
+      "description": "CSN files",
       "type": "array",
       "items": {
         "title": "CSN File",
