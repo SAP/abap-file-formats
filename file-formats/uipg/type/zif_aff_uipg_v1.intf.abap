@@ -132,7 +132,7 @@ INTERFACE zif_aff_uipg_v1
       id              TYPE c LENGTH 35,
 
       "! <p class="shorttext">Type</p>
-      "! type
+      "! Type
       type            TYPE ty_item_type,
 
       "! <p class="shorttext">Tile Assignment</p>
