@@ -27,8 +27,8 @@ INTERFACE zif_aff_csnm_v1
       "! Header
       "! $required
       header         TYPE zif_aff_types_v1=>ty_header_60_cloud,
-      "! <p class="shorttext">CSN File Names</p>
-      "! CSN file name
+      "! <p class="shorttext">CSN Files</p>
+      "! CSN files
       csn_files      TYPE ty_csn_files,
     END OF ty_main.
 ENDINTERFACE.
