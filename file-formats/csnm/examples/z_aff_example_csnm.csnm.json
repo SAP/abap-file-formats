@@ -4,14 +4,12 @@
     "description": "Example CSN model for ABAP file formats",
     "originalLanguage": "en"
   },
-  "generalInformation": {
-    "csnFileNames": [
-      {
-        "name": "model_parsed.csn"
-      },
-      {
-        "name": "model_inferred.csn"
-      }
-    ]
-  }
+  "csnFileNames": [
+    {
+      "name": "model_parsed.csn"
+    },
+    {
+      "name": "model_inferred.csn"
+    }
+  ]
 }
