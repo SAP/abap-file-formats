@@ -188,7 +188,7 @@ INTERFACE zif_aff_uipg_v1
       general_information TYPE ty_general_information,
 
       "! <p class="shorttext">Sections</p>
-      "! sections
+      "! Sections
       sections            TYPE ty_sections,
 
     END OF ty_main.
