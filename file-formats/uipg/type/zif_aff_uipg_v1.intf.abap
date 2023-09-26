@@ -136,7 +136,7 @@ INTERFACE zif_aff_uipg_v1
       type            TYPE ty_item_type,
 
       "! <p class="shorttext">Tile Assignment</p>
-      "! tile assignment
+      "! Tile assignment
       tile_assignment TYPE ty_tile_assignment,
 
     END OF ty_item,
