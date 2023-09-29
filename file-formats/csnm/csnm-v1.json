@@ -66,8 +66,8 @@
         "type": "object",
         "properties": {
           "name": {
-            "title": "CSN File Name",
-            "description": "CSN file name",
+            "title": "File",
+            "description": "File",
             "type": "string"
           }
         },
