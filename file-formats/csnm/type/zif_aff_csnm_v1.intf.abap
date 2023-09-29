@@ -7,7 +7,7 @@ INTERFACE zif_aff_csnm_v1
     "! CSN file
     BEGIN OF ty_csn_file,
       "! <p class="shorttext">File</p>
-      "! CSN file name
+      "! File 
       name TYPE string,
     END OF ty_csn_file.
 
