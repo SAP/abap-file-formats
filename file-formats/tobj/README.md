@@ -1,5 +1,5 @@
 # TOBJ File Format
-This AFF is only complete with regard to ABAP Language Version 'ABAP for Cloud Development'.
+This AFF is only complete with regard to ABAP Language Version 'ABAP for Cloud Development'
 
 File | Cardinality | Definition | Schema | Example
 :--- | :--- | :--- | :--- | :---
