@@ -10,6 +10,7 @@ INTERFACE zif_aff_tobj_v1
       "! $required
       table_name    TYPE c LENGTH 30,
       "! <p class="shorttext">Primary Table</p>
+      "! Indicates that this table is the leading processing table.
       "! At least one entry within the list needs to be the primary one.
       primary_table TYPE abap_bool,
     END OF ty_table,
