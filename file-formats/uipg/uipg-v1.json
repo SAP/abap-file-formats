@@ -81,7 +81,7 @@
     },
     "sections": {
       "title": "Sections",
-      "description": "sections",
+      "description": "Sections",
       "type": "array",
       "items": {
         "title": "Section",
@@ -117,7 +117,7 @@
                 },
                 "type": {
                   "title": "Type",
-                  "description": "type",
+                  "description": "Type",
                   "type": "string",
                   "enum": [
                     "tileAssignment"
@@ -132,7 +132,7 @@
                 },
                 "tileAssignment": {
                   "title": "Tile Assignment",
-                  "description": "tile assignment",
+                  "description": "Tile assignment",
                   "type": "object",
                   "properties": {
                     "tileKey": {
