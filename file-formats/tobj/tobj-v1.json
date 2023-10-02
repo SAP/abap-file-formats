@@ -3,6 +3,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/tobj/tobj-v1.json",
   "title": "Transport Object Type",
+  "description": "Transport Object Type",
   "type": "object",
   "properties": {
     "formatVersion": {
@@ -13,7 +14,7 @@
     },
     "header": {
       "title": "Header",
-      "description": "The header for an ABAP main object (without source code) with a description of 60 characters",
+      "description": "Header",
       "type": "object",
       "properties": {
         "description": {
@@ -36,17 +37,14 @@
           "type": "string",
           "enum": [
             "standard",
-            "keyUser",
             "cloudDevelopment"
           ],
           "enumTitles": [
             "Standard",
-            "ABAP for Key Users",
             "ABAP Cloud Development"
           ],
           "enumDescriptions": [
             "Standard",
-            "ABAP for key user extensibility",
             "ABAP cloud development"
           ],
           "default": "standard"
@@ -60,14 +58,17 @@
     },
     "tables": {
       "title": "Tables",
+      "description": "Tables",
       "type": "array",
       "uniqueItems": true,
       "items": {
         "title": "Table",
+        "description": "Table",
         "type": "object",
         "properties": {
           "tableName": {
             "title": "Table Name",
+            "description": "Table Name",
             "type": "string",
             "maxLength": 30
           },
