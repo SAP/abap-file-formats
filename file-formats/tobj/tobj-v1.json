@@ -74,8 +74,8 @@
           },
           "primaryTable": {
             "title": "Primary Table",
-            "description": "Indicates that this table is the leading processing table. At least one entry within the list needs to be the primary one.",  
-            "type": "boolean"  
+            "description": "Indicates that this table is the leading processing table. At least one entry within the list needs to be the primary one.",
+            "type": "boolean"
           }
         },
         "additionalProperties": false,
