@@ -1,0 +1,17 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Maintain Configuration",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "tables": [
+    {
+      "tableName": "ZPW_T1",
+      "primaryTable": true
+    },
+    {
+      "tableName": "ZPW_T1_TXT"
+    }
+  ]
+}
