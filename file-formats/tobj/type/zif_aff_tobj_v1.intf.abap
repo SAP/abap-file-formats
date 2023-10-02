@@ -11,11 +11,11 @@ INTERFACE zif_aff_tobj_v1
       table_name    TYPE c LENGTH 30,
       "! <p class="shorttext">Primary Table</p>
       "! Indicates that this table is the leading processing table.
-      "! At least one entry within the list needs to be the primary one.
+      "! At least one entry in the list must be the primary
       primary_table TYPE abap_bool,
     END OF ty_table,
     "! <p class="shorttext">Tables</p>
-    "! Tables
+    "! The contents of these tables are transported
     ty_tables TYPE SORTED TABLE OF ty_table WITH UNIQUE KEY table_name.
 
   TYPES:

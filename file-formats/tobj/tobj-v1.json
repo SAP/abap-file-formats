@@ -58,7 +58,7 @@
     },
     "tables": {
       "title": "Tables",
-      "description": "Tables",
+      "description": "The contents of these tables are transported",
       "type": "array",
       "uniqueItems": true,
       "items": {
@@ -74,7 +74,7 @@
           },
           "primaryTable": {
             "title": "Primary Table",
-            "description": "Indicates that this table is the leading processing table. At least one entry within the list needs to be the primary one.",
+            "description": "Indicates that this table is the leading processing table. At least one entry in the list must be the primary",
             "type": "boolean"
           }
         },
