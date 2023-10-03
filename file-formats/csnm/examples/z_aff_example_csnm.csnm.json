@@ -6,7 +6,7 @@
   },
   "csnFiles": [
     {
-      "name": "model_inferred.csn"
+      "file": "model_inferred.csn"
     }
   ]
 }
