@@ -1,0 +1,12 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Example CSN model for ABAP file formats",
+    "originalLanguage": "en"
+  },
+  "csnFiles": [
+    {
+      "file": "model_inferred.csn"
+    }
+  ]
+}
