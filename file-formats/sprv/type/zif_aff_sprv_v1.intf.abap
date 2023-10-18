@@ -1,19 +1,23 @@
 INTERFACE zif_aff_sprv_v1
-  PUBLIC.
+PUBLIC.
 
 
   TYPES:
     "! <p class="shorttext">Service Provider</p>
     "! Service provider details
     BEGIN OF ty_servprovider,
-      "! <p class="shorttext">Name</p>
+      "! <p class="shorttext">Provider Name</p>
       "! Name of the service provider
-      "! $required
-      name   TYPE c LENGTH 30,
-      "! <p class="shorttext">Prefix</p>
+      "! $showAlways
+      prvname TYPE c LENGTH 30,
+      "! <p class="shorttext">Namespace</p>
+      "! Namespace of the service provider
+      "! $showAlways
+      prvns TYPE c LENGTH 30,
+      "! <p class="shorttext">Object Name Prefix</p>
       "! Prefix for all generated objects
       "! $showAlways
-      prefix TYPE c LENGTH 10,
+      prefix  TYPE c LENGTH 10,
     END OF ty_servprovider.
   TYPES:
     "! <p class="shorttext">SOAP Web Service Provider Model</p>

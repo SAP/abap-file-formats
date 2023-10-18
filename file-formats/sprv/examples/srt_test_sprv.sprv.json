@@ -1,0 +1,12 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Test SPRV Object for SOAP Runtime",
+    "originalLanguage": "en"
+  },
+  "serviceProvider": {
+    "prvname": "IIW_SRT_TEST_SPRV_PROVIDER",
+    "prvns": "urn:sap-com:sprx:ep:sap:test",
+    "prefix": ""
+  }
+}
