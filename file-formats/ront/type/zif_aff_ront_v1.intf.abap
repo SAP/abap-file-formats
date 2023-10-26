@@ -24,7 +24,8 @@ INTERFACE zif_aff_ront_v1
     END OF co_category.
 
   TYPES:
-
+    "! <p class="shorttext">SAP Object Type</p>
+    "! SAP object type
     BEGIN OF ty_main,
       "! $required
       format_version   TYPE zif_aff_types_v1=>ty_format_version,
