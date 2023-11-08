@@ -61,13 +61,13 @@
       "description": "Service provider details",
       "type": "object",
       "properties": {
-        "prvname": {
+        "providerName": {
           "title": "Provider Name",
           "description": "Name of the service provider",
           "type": "string",
           "maxLength": 30
         },
-        "prvns": {
+        "namespace": {
           "title": "Namespace",
           "description": "Namespace of the service provider",
           "type": "string",
@@ -80,7 +80,11 @@
           "maxLength": 10
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "required": [
+        "providerName",
+        "namespace"
+      ]
     }
   },
   "additionalProperties": false,

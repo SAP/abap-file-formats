@@ -1,5 +1,5 @@
 INTERFACE zif_aff_sprv_v1
-  PUBLIC.
+ PUBLIC.
 
 
   TYPES:
@@ -8,12 +8,12 @@ INTERFACE zif_aff_sprv_v1
     BEGIN OF ty_servprovider,
       "! <p class="shorttext">Provider Name</p>
       "! Name of the service provider
-      "! $showAlways
-      prvname TYPE c LENGTH 30,
+      "! $required
+      provider_name TYPE c LENGTH 30,
       "! <p class="shorttext">Namespace</p>
       "! Namespace of the service provider
-      "! $showAlways
-      prvns TYPE c LENGTH 30,
+      "! $required
+      namespace TYPE c LENGTH 30,
       "! <p class="shorttext">Object Name Prefix</p>
       "! Prefix for all generated objects
       "! $showAlways
@@ -24,11 +24,11 @@ INTERFACE zif_aff_sprv_v1
     "! SOAP web service provider model
     BEGIN OF ty_main,
       "! $required
-      format_version   TYPE zif_aff_types_v1=>ty_format_version,
+      format_version TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header data
       "! $required
-      header           TYPE zif_aff_types_v1=>ty_header_60_cloud,
+      header TYPE zif_aff_types_v1=>ty_header_60_cloud,
       "! <p class="shorttext">Service Provider</p>
       "! Service provider details
       "! $required
