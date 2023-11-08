@@ -18,10 +18,14 @@ INTERFACE zif_aff_ront_v1
       "! <p class="shorttext">Dependent Object</p>
       "! Dependent object
       dependent_object TYPE c LENGTH 2 VALUE `DO`,
+      "! <p class="shorttext">Hierarchy Object</p>
+      "! Hierarchy object
+      hierarchy_object TYPE c LENGTH 2 VALUE `HO`,
     END OF co_category.
 
   TYPES:
-
+    "! <p class="shorttext">SAP Object Type</p>
+    "! SAP object type
     BEGIN OF ty_main,
       "! $required
       format_version   TYPE zif_aff_types_v1=>ty_format_version,
