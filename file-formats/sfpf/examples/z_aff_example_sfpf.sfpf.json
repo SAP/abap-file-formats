@@ -8,6 +8,6 @@
   "name": "TEMPLATE_NAME",
   "description": "Description",
   "dataprovider": "Example_SRV_DEF",
-  "embed": "",
-  "mirroring": ""
+  "embed": "false",
+  "mirroring": "false"
 }
