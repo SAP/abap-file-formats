@@ -15,20 +15,20 @@ INTERFACE zif_aff_sfpf_v1
       "! <p class="shorttext">Name</p>
       "! Name
       "! $required
-      name            TYPE fpname,
+      name            TYPE c LENGTH 30,
       "! <p class="shorttext">Description</p>
       "! Description
       "! $required
-      description     TYPE fptext,
+      description     TYPE c LENGTH 60,
       "! <p class="shorttext">Dataprovider</p>
       "! Dataprovider
       "! $required
-      dataprovider    TYPE fpdpname,
+      dataprovider    TYPE c LENGTH 40,
       "! <p class="shorttext">Font Embed</p>
       "! Font Embed
-      embed           TYPE fpfntemb,
+      embed           TYPE abap_boolean,
       "! <p class="shorttext">Mirror in RTL</p>
       "! Mirror in RTL
-      mirroring       TYPE fpmirroring,
+      mirroring       TYPE abap_boolean,
     END OF ty_main.
 ENDINTERFACE.

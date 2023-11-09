@@ -80,28 +80,12 @@
     "embed": {
       "title": "Font Embed",
       "description": "Font Embed",
-      "type": "string",
-      "enum": [
-        "doNotEmbedFonts",
-        "embedFonts"
-      ],
-      "enumDescriptions": [
-        "Do not embed fonts",
-        "Embed fonts"
-      ]
+      "type": "boolean"
     },
     "mirroring": {
       "title": "Mirror in RTL",
       "description": "Mirror in RTL",
-      "type": "string",
-      "enum": [
-        "noMirroringInRtlLanguages",
-        "mirroringInRtlLanguages"
-      ],
-      "enumDescriptions": [
-        "No mirroring in RTL languages",
-        "Mirroring in RTL languages"
-      ]
+      "type": "boolean"
     }
   },
   "additionalProperties": false,
