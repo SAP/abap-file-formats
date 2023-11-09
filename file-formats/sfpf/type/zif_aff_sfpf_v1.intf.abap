@@ -1,5 +1,5 @@
 INTERFACE zif_aff_sfpf_v1
-  PUBLIC .
+  PUBLIC.
   TYPES:
     "! <p class="shorttext">Object Type SFPF</p>
     "! Object type SFPF
@@ -26,9 +26,9 @@ INTERFACE zif_aff_sfpf_v1
       dataprovider    TYPE c LENGTH 40,
       "! <p class="shorttext">Font Embed</p>
       "! Font Embed
-      embed           TYPE abap_boolean,
+      embed           TYPE ABAP_BOOL,
       "! <p class="shorttext">Mirror in RTL</p>
       "! Mirror in RTL
-      mirroring       TYPE abap_boolean,
+      mirroring       TYPE ABAP_BOOL,
     END OF ty_main.
 ENDINTERFACE.
