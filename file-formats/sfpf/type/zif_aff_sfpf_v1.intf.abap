@@ -26,9 +26,9 @@ INTERFACE zif_aff_sfpf_v1
       dataprovider    TYPE c LENGTH 40,
       "! <p class="shorttext">Font Embed</p>
       "! Font Embed
-      embed           TYPE ABAP_BOOL,
+      embed           TYPE abap_bool,
       "! <p class="shorttext">Mirror in RTL</p>
       "! Mirror in RTL
-      mirroring       TYPE ABAP_BOOL,
+      mirroring       TYPE abap_bool,
     END OF ty_main.
 ENDINTERFACE.
