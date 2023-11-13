@@ -74,9 +74,9 @@
           "minimum": -999.999,
           "maximum": 999.999
         },
-        "baseSpaceTemplateName": {
-          "title": "Base Space Template Name",
-          "description": "Name of the base space template",
+        "mergeId": {
+          "title": "Merge ID",
+          "description": "Merge ID",
           "type": "string",
           "maxLength": 35
         }

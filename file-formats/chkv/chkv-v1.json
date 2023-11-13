@@ -88,8 +88,7 @@
                 "name": {
                   "title": "Parameter Name",
                   "description": "The parameter name",
-                  "type": "string",
-                  "maxLength": 30
+                  "type": "string"
                 },
                 "value": {
                   "title": "Parameter Value",
