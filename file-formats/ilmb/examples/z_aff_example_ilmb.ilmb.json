@@ -4,7 +4,6 @@
     "description": "Sample ILM Object (Flight Model)",
     "originalLanguage": "en"
   },
-  "destructionObject": {},
   "timeReferences": [
     {
       "timeReference": "CREATION_DATE",
@@ -64,6 +63,5 @@
       "sourceField": "CURRENCY",
       "noIntervals": true
     }
-  ],
-  "callbackClass": {}
+  ]
 }
