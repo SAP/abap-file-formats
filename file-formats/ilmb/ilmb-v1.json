@@ -190,9 +190,7 @@
   "required": [
     "formatVersion",
     "header",
-    "destructionObject",
     "timeReferences",
-    "conditionFields",
-    "callbackClass"
+    "conditionFields"
   ]
 }
