@@ -89,7 +89,6 @@ INTERFACE zif_aff_ilmb_v1
       header             TYPE zif_aff_types_v1=>ty_header_60_cloud,
       "! <p class="shorttext">Destruction Object</p>
       "! Mapping ILM object to data destruction object
-      "! $required
       destruction_object TYPE ty_destruction_object,
       "! <p class="shorttext">Time References</p>
       "! Value determination for time references
@@ -101,7 +100,6 @@ INTERFACE zif_aff_ilmb_v1
       condition_fields   TYPE ty_cond_fields,
       "! <p class="shorttext">Value Determination Callback Class</p>
       "! Value determination callback class
-      "! $required
       callback_class     TYPE ty_callback_class,
     END OF ty_main.
 
