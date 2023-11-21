@@ -1,0 +1,67 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Sample ILM Object (Flight Model)",
+    "originalLanguage": "en"
+  },
+  "timeReferences": [
+    {
+      "timeReference": "CREATION_DATE",
+      "sourceTable": "SFLIGHT",
+      "sourceField": "FLDATE"
+    },
+    {
+      "timeReference": "Z_FIXED_DATE",
+      "sourceTable": "SFLIGHT",
+      "sourceField": "FLDATE",
+      "indirectValue": true
+    }
+  ],
+  "conditionFields": [
+    {
+      "conditionField": "CARRID_1",
+      "dataElement": "S_CARRID",
+      "sourceTable": "SFLIGHT",
+      "sourceField": "CARRID",
+      "noIntervals": true
+    },
+    {
+      "conditionField": "CONNID",
+      "dataElement": "CONNID",
+      "sourceTable": "SFLIGHT",
+      "sourceField": "CONNID",
+      "noIntervals": true
+    },
+    {
+      "conditionField": "COUNTRY",
+      "dataElement": "LAND1",
+      "sourceTable": "SFLIGHT",
+      "sourceField": "CARRID",
+      "indirectValue": true,
+      "noIntervals": true
+    },
+    {
+      "conditionField": "COUNTRY",
+      "dataElement": "LAND1",
+      "sourceTable": "SFLIGHT",
+      "sourceField": "CONNID",
+      "indirectValue": true,
+      "noIntervals": true
+    },
+    {
+      "conditionField": "COUNTRY",
+      "dataElement": "LAND1",
+      "sourceTable": "SFLIGHT",
+      "sourceField": "FLDATE",
+      "indirectValue": true,
+      "noIntervals": true
+    },
+    {
+      "conditionField": "CURRENCY",
+      "dataElement": "S_CURRCODE",
+      "sourceTable": "SFLIGHT",
+      "sourceField": "CURRENCY",
+      "noIntervals": true
+    }
+  ]
+}
