@@ -56,8 +56,8 @@
       ]
     },
     "producerNamespace": {
-      "title": "Namespace",
-      "description": "Namespace",
+      "title": "Type Namespace",
+      "description": "Type namespace",
       "type": "string",
       "maxLength": 15
     },
@@ -80,14 +80,14 @@
       "pattern": "^[0-9]+$"
     },
     "boName": {
-      "title": "Business Object",
-      "description": "Business object",
+      "title": "SAP Object Type",
+      "description": "SAP Object Type",
       "type": "string",
       "maxLength": 30
     },
     "boOperation": {
-      "title": "Business Object Operation",
-      "description": "Business object operation",
+      "title": "Operation",
+      "description": "Operation",
       "type": "string",
       "maxLength": 30
     },
@@ -98,36 +98,36 @@
       "maxLength": 83
     },
     "events": {
-      "title": "Events",
+      "title": "Event Versions",
       "type": "array",
       "items": {
         "title": "Event",
         "type": "object",
         "properties": {
           "eventVersion": {
-            "title": "Event Version",
-            "description": "Event version",
+            "title": "Major Version",
+            "description": "Major version",
             "type": "string",
             "maxLength": 4,
             "pattern": "^[0-9]+$"
           },
           "eventMinorVersion": {
-            "title": "Event Minor Version",
-            "description": "Event minor version",
+            "title": "Minor Version",
+            "description": "Minor version",
             "type": "integer",
             "minimum": 0,
             "maximum": 2147483647
           },
           "eventPatchVersion": {
-            "title": "Event Patch Version",
-            "description": "Event patch version",
+            "title": "Patch Version",
+            "description": "Patch version",
             "type": "integer",
             "minimum": 0,
             "maximum": 2147483647
           },
           "entityName": {
-            "title": "Root Entity Name",
-            "description": "Root entity name",
+            "title": "Entity Name",
+            "description": "Entity name",
             "type": "string",
             "maxLength": 30
           },

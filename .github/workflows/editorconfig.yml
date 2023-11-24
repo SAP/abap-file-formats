@@ -27,7 +27,7 @@ jobs:
   lint-editorconfig:
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    name: Lint for editorconfig violations
+    name: Check indentation, EOL, EOF, ...
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v3
