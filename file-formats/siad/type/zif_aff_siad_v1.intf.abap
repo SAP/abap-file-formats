@@ -8,19 +8,19 @@ INTERFACE zif_aff_siad_v1
     BEGIN OF ty_assignment,
 
       "! <p class="shorttext">Business Role Template ID</p>
-      "! Business Role Template ID
+      "! Business role template ID
       "! $required
-      BusinessRoleTemplateID   TYPE aps_iam_brt_id,
+      business_role_template_id   TYPE c LENGTH 30,
 
       "! <p class="shorttext">Launchpad Space Template ID</p>
-      "! Launchpad Space Template ID
+      "! Launchpad space template ID
       "! $required
-      LaunchpadSpaceTemplateID TYPE /ui2/space_entity_id,
+      launchpad_space_template_id TYPE c LENGTH 35,
 
     END OF ty_assignment,
 
     "! <p class="shorttext">Business Role Template Launchpad Space Template Assignment</p>
-    "! Business Role Template Launchpad Space Template Assignment
+    "! Business role template launchpad space template assignment
     BEGIN OF ty_main,
 
       "! <p class="shorttext">Format Version</p>

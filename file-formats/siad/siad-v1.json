@@ -3,7 +3,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/siad/siad-v1.json",
   "title": "Business Role Template Launchpad Space Template Assignment",
-  "description": "Business Role Template Launchpad Space Template Assignment",
+  "description": "Business role template launchpad space template assignment",
   "type": "object",
   "properties": {
     "formatVersion": {
@@ -61,23 +61,23 @@
       "description": "General",
       "type": "object",
       "properties": {
-        "businessroletemplateid": {
+        "businessRoleTemplateId": {
           "title": "Business Role Template ID",
-          "description": "Business Role Template ID",
+          "description": "Business role template ID",
           "type": "string",
           "maxLength": 30
         },
-        "launchpadspacetemplateid": {
+        "launchpadSpaceTemplateId": {
           "title": "Launchpad Space Template ID",
-          "description": "Launchpad Space Template ID",
+          "description": "Launchpad space template ID",
           "type": "string",
           "maxLength": 35
         }
       },
       "additionalProperties": false,
       "required": [
-        "businessroletemplateid",
-        "launchpadspacetemplateid"
+        "businessRoleTemplateId",
+        "launchpadSpaceTemplateId"
       ]
     }
   },

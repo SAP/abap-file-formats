@@ -5,7 +5,7 @@
     "originalLanguage": "en"
   },
   "assignment": {
-    "businessroletemplateid": "BRT",
-    "launchpadspacetemplateid": "LPS"
+    "businessRoleTemplateId": "BRT",
+    "launchpadSpaceTemplateId": "LPS"
   }
 }
