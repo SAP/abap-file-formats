@@ -4,7 +4,7 @@
     "description": "SIAD Example",
     "originalLanguage": "en"
   },
-  "assignment": {
+  "generalInformation": {
     "businessRoleTemplateId": "BRT",
     "launchpadSpaceTemplateId": "LPS"
   }

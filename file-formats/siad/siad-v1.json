@@ -56,9 +56,9 @@
         "originalLanguage"
       ]
     },
-    "assignment": {
-      "title": "General",
-      "description": "General",
+    "generalInformation": {
+      "title": "General Information",
+      "description": "General information",
       "type": "object",
       "properties": {
         "businessRoleTemplateId": {
@@ -85,6 +85,6 @@
   "required": [
     "formatVersion",
     "header",
-    "assignment"
+    "generalInformation"
   ]
 }
