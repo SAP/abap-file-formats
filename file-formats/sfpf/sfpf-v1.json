@@ -54,7 +54,7 @@
         "originalLanguage"
       ]
     },
-    "properties": {
+    "props": {
       "title": "Properties",
       "description": "Form Template Properties",
       "type": "object",
@@ -97,6 +97,6 @@
   "required": [
     "formatVersion",
     "header",
-    "properties"
+    "props"
   ]
 }
