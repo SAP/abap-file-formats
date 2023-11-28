@@ -5,7 +5,7 @@
     "originalLanguage": "en",
     "abapLanguageVersion": "cloudDevelopment"
   },
-  "properties": {
+  "props": {
     "name": "TEMPLATE_NAME",
     "dataprovider": "Example_SRV_DEF",
     "embed": false,
