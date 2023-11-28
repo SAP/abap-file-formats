@@ -1,5 +1,5 @@
 INTERFACE zif_aff_sfpf_v1
-  PUBLIC .
+  PUBLIC.
   TYPES:
     "! <p class="shorttext">Header for SFPF Objects</p>
     BEGIN OF ty_header,
