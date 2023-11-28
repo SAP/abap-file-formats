@@ -23,11 +23,12 @@ INTERFACE zif_aff_sfpf_v1
       "! RAP Service Definition that implements the business context for this form template
       dataprovider    TYPE c LENGTH 40,
       "! <p class="shorttext">Font Embed</p>
-      "! Automatically embed font files into the output. Useful if your output uses fonts that are not delivered by default,
-      !" for asian fonts or to include your own branding.
+      "! Automatically embed font files into the output.
+      "! Useful if your output uses fonts that are not delivered by default,
+      "! for asian fonts or to include your own branding.
       embed           TYPE abap_bool,
-      "! <p class="shorttext">Mirror in RTL</p>
-      "! When your form template is designed in an LTR language and your target output is an RTL language, 
+      "! <p class="shorttext">Mirroring</p>
+      "! When your form template is designed in an LTR language and your target output is an RTL language,
       "! should fields be automatically be mirrord in the output?
       mirroring       TYPE abap_bool,
       "! <p class="shorttext">Optimize</p>
