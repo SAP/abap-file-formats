@@ -29,7 +29,7 @@ INTERFACE zif_aff_sfpf_v1
       embed           TYPE abap_bool,
       "! <p class="shorttext">Mirroring</p>
       "! When your form template is designed in an LTR language and your target output is an RTL language,
-      "! should fields be automatically be mirrord in the output?
+      "! should fields be automatically mirrord in the output?
       mirroring       TYPE abap_bool,
       "! <p class="shorttext">Optimize</p>
       "! Automatically analyze the data binding of the template and only select
