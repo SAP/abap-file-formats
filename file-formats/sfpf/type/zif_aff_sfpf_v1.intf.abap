@@ -52,6 +52,6 @@ INTERFACE zif_aff_sfpf_v1
       "! <p class="shorttext">Properties</p>
       "! Form Template Properties
       "! $required
-      properties      TYPE ty_properties,
+      props      TYPE ty_properties,
     END OF ty_main.
 ENDINTERFACE.
