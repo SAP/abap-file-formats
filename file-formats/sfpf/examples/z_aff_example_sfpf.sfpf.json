@@ -5,11 +5,10 @@
     "originalLanguage": "en",
     "abapLanguageVersion": "cloudDevelopment"
   },
-  "props": {
-    "name": "TEMPLATE_NAME",
+  "generalInformation": {
     "dataprovider": "Example_SRV_DEF",
-    "embed": false,
-    "mirroring": false,
-    "optimize": false
+    "fontEmbed": false,
+    "layoutMirroring": false,
+    "reduceDataVol": false
   }
 }
