@@ -21,4 +21,4 @@ jobs:
         npm run generate
     - name: Output generate JSON Schema
       run: |
-        find generate/generated -name '*.json' -print -exec cat {} \; -exec echo \;
+        find ./generated -name '*.json' -exec echo '::group::{}' \; -exec cat {}  \;
