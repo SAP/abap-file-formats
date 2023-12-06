@@ -77,7 +77,7 @@
           "description": "When activated if your form template is designed in an LTR language and your target output is an RTL language, layout will be automatically mirrored in the output.",
           "type": "boolean"
         },
-        "reduceDataVol": {
+        "reduceDataVolume": {
           "title": "Reduce Data Volume",
           "description": "Reduce data input volume based on the form design",
           "type": "boolean"
