@@ -81,10 +81,10 @@ INTERFACE zif_aff_scp1_v1
     BEGIN OF co_operation_at_activation,
       "! <p class="shorttext">Insert/Update</p>
       "! Data records which are to be inserted/updated at activation are flagged with value ''
-      insert_or_update TYPE ty_operation_at_activation VALUE '',
+      modify TYPE ty_operation_at_activation VALUE '',
       "! <p class="shorttext">Delete</p>
       "! Data records which are to be deleted at activation are flagged with value 'L'
-      delete           TYPE ty_operation_at_activation VALUE 'L',
+      delete TYPE ty_operation_at_activation VALUE 'L',
     END OF co_operation_at_activation.
 
   "! <p class="shorttext">Field Attribute Value</p>
@@ -164,6 +164,7 @@ INTERFACE zif_aff_scp1_v1
       "! <p class="shorttext">Operation at Activation</p>
       "! Data records which are to be deleted at activation are flagged with value 'L'
       "! $values {@link zif_aff_scp1_v1.data:co_operation_at_activation}
+      "! $default {@link zif_aff_scp1_v1.data:co_operation_at_activation.modify}
       operation_at_activation TYPE ty_operation_at_activation,
       "! <p class="shorttext">Data</p>
       "! Complete data record of selected key value

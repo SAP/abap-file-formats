@@ -13,7 +13,7 @@
       "const": "1"
     },
     "header": {
-      "title": "Header for Non-Source Code Objects (no key user)",
+      "title": "Header(no key user)",
       "description": "The header for an ABAP main object (without source code) with a description of 60 characters (no key user)",
       "type": "object",
       "properties": {
@@ -259,7 +259,7 @@
                         "description": "Data records which are to be deleted at activation are flagged with value 'L'",
                         "type": "string",
                         "enum": [
-                          "insertOrUpdate",
+                          "modify",
                           "delete"
                         ],
                         "enumTitles": [
@@ -269,7 +269,8 @@
                         "enumDescriptions": [
                           "Data records which are to be inserted/updated at activation are flagged with value ''",
                           "Data records which are to be deleted at activation are flagged with value 'L'"
-                        ]
+                        ],
+                        "default": "modify"
                       },
                       "data": {
                         "title": "Data",
