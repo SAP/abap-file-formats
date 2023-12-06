@@ -13,8 +13,7 @@
       "const": "1"
     },
     "header": {
-      "title": "Header(no key user)",
-      "description": "The header for an ABAP main object (without source code) with a description of 60 characters (no key user)",
+      "title": "Header (no key user)",
       "type": "object",
       "properties": {
         "description": {

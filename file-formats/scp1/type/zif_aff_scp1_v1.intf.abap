@@ -264,6 +264,7 @@ INTERFACE zif_aff_scp1_v1
     BEGIN OF ty_main,
       "! $required
       format_version      TYPE zif_aff_types_v1=>ty_format_version,
+      "! <p class="shorttext">Header (no key user)</p>
       "! $required
       header              TYPE zif_aff_types_v1=>ty_header_60_cloud,
       "! <p class="shorttext">Attributes</p>
