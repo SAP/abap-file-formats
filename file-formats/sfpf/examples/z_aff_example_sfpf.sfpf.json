@@ -9,6 +9,6 @@
     "dataprovider": "Example_SRV_DEF",
     "fontEmbed": false,
     "layoutMirroring": false,
-    "reduceDataVol": false
+    "reduceDataVolume": false
   }
 }
