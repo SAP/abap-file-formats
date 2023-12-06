@@ -34,8 +34,8 @@ INTERFACE zif_aff_intf_v1 PUBLIC.
     END OF co_category.
 
   TYPES:
-    "! <p class="shorttext">My Interface Properties</p>
-    "! My interface properties
+    "! <p class="shorttext">Interface Properties</p>
+    "! Interface properties
     BEGIN OF ty_main,
       "! $required
       format_version TYPE zif_aff_types_v1=>ty_format_version,
