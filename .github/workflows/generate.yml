@@ -19,7 +19,7 @@ jobs:
       run: |
         cd generate
         npm run generate
-    - name: Output generate JSON Schema
+    - name: Output generated JSON Schema
       run: |
         find generate/generated -name '*.json' -exec bash -c 'echo "::group::$(basename {})"' \; -exec cat {} \;
         
