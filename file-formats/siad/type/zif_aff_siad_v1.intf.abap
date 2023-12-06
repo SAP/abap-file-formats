@@ -7,15 +7,15 @@ INTERFACE zif_aff_siad_v1
     "! General information
     BEGIN OF ty_general_information,
 
-      "! <p class="shorttext">Business Role Template ID</p>
-      "! Business role template ID
+      "! <p class="shorttext">Business Role Template</p>
+      "! Business role template
       "! $required
-      business_role_template_id   TYPE zif_aff_types_v1=>ty_object_name_30,
+      business_role_template   TYPE zif_aff_types_v1=>ty_object_name_30,
 
-      "! <p class="shorttext">Launchpad Space Template ID</p>
-      "! Launchpad space template ID
+      "! <p class="shorttext">Launchpad Space Template</p>
+      "! Launchpad space template
       "! $required
-      launchpad_space_template_id TYPE c LENGTH 35,
+      launchpad_space_template TYPE c LENGTH 35,
 
     END OF ty_general_information,
 

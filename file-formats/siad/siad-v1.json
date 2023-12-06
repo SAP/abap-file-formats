@@ -61,23 +61,23 @@
       "description": "General information",
       "type": "object",
       "properties": {
-        "businessRoleTemplateId": {
-          "title": "Business Role Template ID",
-          "description": "Business role template ID",
+        "businessRoleTemplate": {
+          "title": "Business Role Template",
+          "description": "Business role template",
           "type": "string",
           "maxLength": 30
         },
-        "launchpadSpaceTemplateId": {
-          "title": "Launchpad Space Template ID",
-          "description": "Launchpad space template ID",
+        "launchpadSpaceTemplate": {
+          "title": "Launchpad Space Template",
+          "description": "Launchpad space template",
           "type": "string",
           "maxLength": 35
         }
       },
       "additionalProperties": false,
       "required": [
-        "businessRoleTemplateId",
-        "launchpadSpaceTemplateId"
+        "businessRoleTemplate",
+        "launchpadSpaceTemplate"
       ]
     }
   },

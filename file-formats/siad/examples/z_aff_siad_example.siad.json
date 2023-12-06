@@ -5,7 +5,7 @@
     "originalLanguage": "en"
   },
   "generalInformation": {
-    "businessRoleTemplateId": "BRT",
-    "launchpadSpaceTemplateId": "LPS"
+    "businessRoleTemplate": "BRT",
+    "launchpadSpaceTemplate": "LPST"
   }
 }
