@@ -35,7 +35,7 @@ async function run() {
     const command = `diff --strip-trailing-cr generated/${type.toLowerCase()}-v1.json ../file-formats/${type.toLowerCase()}/${type.toLowerCase()}-v1.json`;
     const output = child_process.execSync(`${command} || true`);
     if (output.toString().length > 0) {
-      core.error("Provided and generated JSON Schema differ")
+      core.setFailed("Provided and generated JSON Schema differ "+type)
       core.info(command);
       core.info(output.toString());
     } else {
