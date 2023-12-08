@@ -31,12 +31,30 @@ async function run() {
     fs.writeFileSync(filename, result.get());
 
 
-    const command = `diff --strip-trailing-cr -u generated/${type.toLowerCase()}-v1.json ../file-formats/${type.toLowerCase()}/${type.toLowerCase()}-v1.json`;
+    const command = `diff -u generated/${type.toLowerCase()}-v1.json ../file-formats/${type.toLowerCase()}/${type.toLowerCase()}-v1.json`;
     const output = child_process.execSync(`${command} || true`);
     if (output.toString().length > 0) {
       core.setFailed(type+": Provided and generated JSON Schema differ")
       core.info(output.toString());
-      core.info("generated JSON Schema for "+type+"\n"+result.get());
+      core.info("generated JSON Schema for " + type + "\n" + result.get());
+
+      let lines = output.toString().split('\n');
+
+      let currentFile;
+      let lineNumber;
+
+      lines.forEach(line => {
+        if (line.startsWith('+++')) { // Considering updated file only
+          currentFile = line.slice(4).split('\t')[0]; // Grab only filename, discard timestamp
+        }
+        else if (line.startsWith('@@')) {
+          lineNumber = parseInt(line.split('-')[1].split(',')[0]);
+        }
+        else if (line.startsWith('+')) {
+          // Create GitHub annotation
+          console.log(`::warning file=${currentFile},line=${lineNumber}::${line.slice(2)}`);
+        }
+      });
     }
 
   }
