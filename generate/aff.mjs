@@ -36,7 +36,6 @@ async function run() {
     const output = child_process.execSync(`${command} || true`);
     if (output.toString().length > 0) {
       core.setFailed("Provided and generated JSON Schema differ "+type)
-      core.info(command);
       core.info(output.toString());
     } else {
       core.notice("Provided and generated JSON Schema match")
