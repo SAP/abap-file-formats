@@ -13,7 +13,7 @@
       "const": "1"
     },
     "header": {
-      "title": "Header (no key user)",
+      "title": "Header",
       "type": "object",
       "properties": {
         "description": {
@@ -262,11 +262,11 @@
                           "delete"
                         ],
                         "enumTitles": [
-                          "Insert/Update",
+                          "Modify",
                           "Delete"
                         ],
                         "enumDescriptions": [
-                          "Data records which are to be inserted/updated at activation are flagged with value ''",
+                          "Data records which are to be modified at activation",
                           "Data records which are to be deleted at activation are flagged with value 'L'"
                         ],
                         "default": "modify"
