@@ -45,7 +45,8 @@ async function run() {
 
       lines.forEach(line => {
         if (line.startsWith('+++')) { // Considering updated file only
-          currentFile = line.slice(4).split('\t')[0]; // Grab only filename, discard timestamp
+          let relativeFile = line.slice(4).split('\t')[0]; // Grab only filename, discard timestamp
+          currentFile = path.resolve(relativeFile);
         }
         else if (line.startsWith('@@')) {
           lineNumber = parseInt(line.split('-')[1].split(',')[0]);
