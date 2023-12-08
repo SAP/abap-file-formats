@@ -21,9 +21,8 @@ async function run() {
 
   let error = false;
   for (const type of types) {
-    core.startGroup(type);
     if (type === "ENHO") {
-      console.log("\tskip, https://github.com/SAP/abap-file-formats/issues/409");
+      core.notice(type+" skipped, https://github.com/SAP/abap-file-formats/issues/409");
       continue;
     }
 
@@ -35,15 +34,10 @@ async function run() {
     const command = `diff --strip-trailing-cr -u generated/${type.toLowerCase()}-v1.json ../file-formats/${type.toLowerCase()}/${type.toLowerCase()}-v1.json`;
     const output = child_process.execSync(`${command} || true`);
     if (output.toString().length > 0) {
-      core.setFailed("Provided and generated JSON Schema differ "+type)
+      core.setFailed(type+": Provided and generated JSON Schema differ")
       core.info(output.toString());
-    } else {
-      core.notice("Provided and generated JSON Schema match")
+      core.info("generated JSON Schema for "+type+"\n"+result.get());
     }
-
-    core.info(result.get());
-
-    core.endGroup()
 
   }
 
