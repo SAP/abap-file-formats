@@ -1,7 +1,7 @@
 {
   "formatVersion": "1",
   "header": {
-    "description": "Example for Job Template",
+    "description": "Template of CL_APJ_DEMO_REPORT",
     "originalLanguage": "en"
   },
   "generalInformation": {
@@ -10,32 +10,64 @@
   "parameters": {
     "singleValueParameters": [
       {
-        "name": "P_COUNT",
-        "value": "200"
+        "name": "P_BUY_C",
+        "value": ""
       },
       {
-        "name": "P_DESCR",
-        "value": "My Default Description"
+        "name": "P_BUY_D",
+        "value": "@STARTDAYPLUSDAY@:03"
       },
       {
-        "name": "P_SIMUL",
+        "name": "P_INCR",
+        "value": ""
+      },
+      {
+        "name": "P_JOB_T",
+        "value": ""
+      },
+      {
+        "name": "P_SEL_C",
+        "value": ""
+      },
+      {
+        "name": "P_SEV_A",
+        "value": ""
+      },
+      {
+        "name": "P_SEV_E",
+        "value": ""
+      },
+      {
+        "name": "P_SEV_I",
         "value": "X"
+      },
+      {
+        "name": "P_SEV_N",
+        "value": ""
+      },
+      {
+        "name": "P_SEV_S",
+        "value": ""
+      },
+      {
+        "name": "P_TEXT",
+        "value": "My application job demo"
       }
     ],
     "valueRangesParameters": [
       {
-        "name": "S_ID",
+        "name": "S_PLANT",
         "valueRanges": [
           {
             "sign": "include",
             "option": "equals",
-            "low": "4711"
+            "low": "WRK1"
           },
           {
             "sign": "include",
             "option": "between",
-            "low": "AAA",
-            "high": "ZZZ"
+            "low": "WRK3",
+            "high": "WRK4"
           }
         ]
       }
