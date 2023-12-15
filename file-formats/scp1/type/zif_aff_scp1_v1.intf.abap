@@ -17,16 +17,6 @@ INTERFACE zif_aff_scp1_v1
       hierarchical TYPE ty_type VALUE 'TMP',
     END OF co_type.
 
-  "! <p class="shorttext">Release</p>
-  TYPES ty_release TYPE c LENGTH 10.
-
-  CONSTANTS:
-    "! <p class="shorttext">Validity</p>
-    BEGIN OF co_validity,
-      "! <p class="shorttext">All Releases</p>
-      all_releases TYPE ty_release VALUE '*',
-    END OF co_validity.
-
   TYPES:
     "! <p class="shorttext">Attribute</p>
     "! Attributes of BC Set
@@ -36,16 +26,6 @@ INTERFACE zif_aff_scp1_v1
       "! $values {@link zif_aff_scp1_v1.data:co_type}
       "! $default {@link zif_aff_scp1_v1.data:co_type.simple}
       type               TYPE ty_type,
-      "! <p class="shorttext">Software Component</p>
-      "! BC Set is assigned to a software component. If the software component is not installed in the system,
-      "! then activation of BC Set is aborted
-      software_component TYPE c LENGTH 30,
-      "! <p class="shorttext">Minimum Release</p>
-      "! To activate the BC Set successfully, installed software component must be at least at this release
-      minimum_release    TYPE ty_release,
-      "! <p class="shorttext">Maximum Release</p>
-      "! To activate the BC Set successfully, installed software component must be within this release
-      maximum_release    TYPE ty_release,
     END OF ty_attributes.
 
   "! <p class="shorttext">Customizing Object Type</p>
