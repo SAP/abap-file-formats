@@ -6,12 +6,6 @@
   "description": "ATC check object properties",
   "type": "object",
   "properties": {
-    "formatVersion": {
-      "title": "ABAP File Format Version",
-      "description": "The ABAP file format version",
-      "type": "string",
-      "const": "1"
-    },
     "header": {
       "title": "Header",
       "description": "Header",
