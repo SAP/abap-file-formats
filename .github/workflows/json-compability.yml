@@ -9,9 +9,11 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
-    - name: Build
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    - uses: actions/setup-node@v4
+    - name: Run script
       run: |
         cd minka-js
         npm ci
