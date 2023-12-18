@@ -18,10 +18,14 @@ INTERFACE zif_aff_ront_v1
       "! <p class="shorttext">Dependent Object</p>
       "! Dependent object
       dependent_object TYPE c LENGTH 2 VALUE `DO`,
+      "! <p class="shorttext">Hierarchy Object</p>
+      "! Hierarchy object
+      hierarchy_object TYPE c LENGTH 2 VALUE `HO`,
     END OF co_category.
 
   TYPES:
-
+    "! <p class="shorttext">SAP Object Type</p>
+    "! SAP object type
     BEGIN OF ty_main,
       "! $required
       format_version   TYPE zif_aff_types_v1=>ty_format_version,
@@ -42,11 +46,6 @@ INTERFACE zif_aff_ront_v1
       "! The name of the SAP Object Type.
       "! $required
       name             TYPE c LENGTH 30,
-
-      "! <p class="shorttext">Expanded Name</p>
-      "! The expanded name of the SAP Object Type is its unabbreviated name.
-      "! $required
-      expanded_name    TYPE c LENGTH 512,
 
       "! <p class="shorttext">Object Type Code</p>
       "! The object type code uniquely identifies the SAP Object Type.

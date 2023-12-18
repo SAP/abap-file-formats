@@ -1,0 +1,12 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "SPRV-Objekt für SOAP-Laufzeit testen",
+    "originalLanguage": "en"
+  },
+  "serviceProvider": {
+    "providerName": "IIW_SRT_TEST_SPRV_PROVIDER",
+    "namespace": "urn:sap-com:sprx:ep:sap:test",
+    "prefix": ""
+  }
+}

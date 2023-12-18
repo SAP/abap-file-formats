@@ -1,0 +1,56 @@
+{
+  "definitions": {
+    "Foo": {
+      "kind": "entity",
+      "elements": {
+        "name": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "vorname": {
+          "key": true,
+          "type": "cds.String"
+        }
+      }
+    },
+    "Bar": {
+      "kind": "entity",
+      "projection": {
+        "from": {
+          "ref": [
+            "Foo"
+          ]
+        },
+        "columns": [
+          {
+            "ref": [
+              "name"
+            ],
+            "as": "Name"
+          },
+          {
+            "ref": [
+              "vorname"
+            ],
+            "as": "Vorname"
+          }
+        ]
+      },
+      "elements": {
+        "Name": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "Vorname": {
+          "key": true,
+          "type": "cds.String"
+        }
+      }
+    }
+  },
+  "meta": {
+    "creator": "CDS Compiler v3.3.2",
+    "flavor": "inferred"
+  },
+  "$version": "2.0"
+}
