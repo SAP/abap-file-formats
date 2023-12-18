@@ -18,8 +18,7 @@ let getChangedFiles = async () => {
     }
   };
 
-  // await exec.exec('git fetch', [], options);
-  await exec.exec('git diff --name-only remotes/origin/main', [], options);
+  await exec.exec('git diff --name-only remotes/origin/main..HEAD', [], options);
 
   const pattern = new RegExp('file-formats/[a-z]{4}/[a-z]+-v[0-9]+\.json$', 'i');
   const lines = stdout.split("\n");
