@@ -31,8 +31,6 @@ INTERFACE zif_aff_chko_v1
     "! <p class="shorttext">ATC Check</p>
     "! ATC check object properties
     BEGIN OF ty_main,
-      "! $required
-      format_version     TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
