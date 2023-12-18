@@ -56,12 +56,6 @@
         "originalLanguage"
       ]
     },
-    "category": {
-      "title": "Category",
-      "description": "The parent category of an ATC check object",
-      "type": "string",
-      "maxLength": 30
-    },
     "implementingClass": {
       "title": "Implementing Class",
       "description": "The implementing class of the ATC check object",
@@ -121,7 +115,6 @@
   "required": [
     "formatVersion",
     "header",
-    "category",
     "implementingClass"
   ]
 }
