@@ -101,12 +101,6 @@
           "description": "Name of the class which contains the notification exit",
           "type": "string",
           "maxLength": 30
-        },
-        "delete": {
-          "title": "Delete",
-          "description": "Name of the class which contains the delete exit",
-          "type": "string",
-          "maxLength": 30
         }
       },
       "additionalProperties": false
@@ -190,6 +184,12 @@
             "type": "string",
             "maxLength": 38
           },
+          "title": {
+            "title": "Title",
+            "description": "Title of the parameter on the selection screen",
+            "type": "string",
+            "maxLength": 255
+          },
           "group": {
             "title": "Group",
             "description": "Name of the parameter group",
@@ -221,6 +221,36 @@
             "description": "Name of the boolean parameter which enables / disables the current parameter",
             "type": "string",
             "maxLength": 38
+          },
+          "screenElement": {
+            "title": "Screen Element",
+            "description": "Display of the parameter as screen element (radio button, checkbox, list box)",
+            "type": "string",
+            "enum": [
+              "none",
+              "checkbox",
+              "radiobutton",
+              "listbox"
+            ],
+            "enumTitles": [
+              "None",
+              "Checkbox",
+              "Radio Button",
+              "List Box"
+            ],
+            "enumDescriptions": [
+              "None",
+              "Checkbox",
+              "Radio button",
+              "List box"
+            ],
+            "default": "none"
+          },
+          "radiobuttonGroup": {
+            "title": "Radio Button Group",
+            "description": "Name of the radio button group if the parameter is a radio button",
+            "type": "string",
+            "maxLength": 4
           },
           "backendCall": {
             "title": "Backend Call",
