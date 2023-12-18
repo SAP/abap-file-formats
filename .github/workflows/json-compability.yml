@@ -26,18 +26,18 @@ jobs:
       uses: actions/github-script@v5
       with:
         script: |
-          # github.issues.createLabel({
-          #   owner: context.repo.owner,
-          #   repo: context.repo.repo,
-          #   name: 'incompatible-changes',
-          #   color: 'FF0000'
-          # }).catch(err => console.log(`Label already exists`))
+          github.issues.createLabel({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            name: 'incompatible-changes',
+            color: 'FF0000'
+          }).catch(err => console.log(`Label already exists`))
 
           github.issues.addLabels({
             issue_number: context.issue.number,
             owner: context.repo.owner,
             repo: context.repo.repo,
-            labels: ['compatible-changes']
+            labels: ['incompatible-changes']
           })
         github-token: ${{secrets.GITHUB_TOKEN}}
 
