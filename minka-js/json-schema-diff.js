@@ -55,8 +55,8 @@ async function run() {
 
   const changedFiles = await getChangedFiles();
 
-  core.notice("Relevant files:");
-  core.notice(changedFiles);
+  core.info("Relevant files:");
+  core.info(changedFiles);
 
 
   processFiles(changedFiles)
