@@ -40,7 +40,7 @@ const processFile = async (file) => {
 
     difftool.validateSchemaCompatibility(schemaOld, schemaNew);
   } catch (error) {
-    core.error(`Error processing file: ${file}`, error);
+    core.setFailed(`Error processing file: ${file}`, error);
   }
 }
 
