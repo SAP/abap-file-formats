@@ -33,7 +33,7 @@ const processFile = async (file) => {
     const dataNew = fs.readFileSync(`../${file}`, 'utf8');
     const schemaNew = JSON.parse(dataNew);
 
-    await exec.exec(`git checkout main -- ../${file}` || true);
+    await exec.exec(`git checkout remotes/origin/main -- ../${file}` || true);
 
     const dataOld = fs.readFileSync(`../${file}`, 'utf8');
     const schemaOld = JSON.parse(dataOld);
