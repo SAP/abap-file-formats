@@ -14,8 +14,31 @@ jobs:
         fetch-depth: 0
     - uses: actions/setup-node@v4
     - name: Run script
+      id: check_incompability
       run: |
         cd minka-js
         npm ci
         npm run check
+        continue-on-error: true  # This ensures the workflow continues even if this step fails.
+
+    - name: Label PR on failure
+      if: failure() && steps.check_incompability.outcome == 'failure' # Only runs if your script failed.
+      uses: actions/github-script@v5
+      with:
+        script: |
+          # github.issues.createLabel({
+          #   owner: context.repo.owner,
+          #   repo: context.repo.repo,
+          #   name: 'incompatible-changes',
+          #   color: 'FF0000'
+          # }).catch(err => console.log(`Label already exists`))
+
+          github.issues.addLabels({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            labels: ['compatible-changes']
+          })
+        github-token: ${{secrets.GITHUB_TOKEN}}
+
 
