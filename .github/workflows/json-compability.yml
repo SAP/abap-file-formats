@@ -1,0 +1,19 @@
+name: Compability Check
+
+on:
+  pull_request:
+
+jobs:
+  compatible:
+    name: Is change incompatible
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+    - name: Build
+      run: |
+        cd minka-js
+        npm ci
+        npm run check
+
