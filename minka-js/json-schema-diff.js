@@ -38,9 +38,10 @@ const processFile = async (file) => {
     const dataOld = fs.readFileSync(`../${file}`, 'utf8');
     const schemaOld = JSON.parse(dataOld);
 
+
     difftool.validateSchemaCompatibility(schemaOld, schemaNew);
   } catch (error) {
-    core.setFailed(`Error processing file: ${file}`, error);
+    core.setFailed(error.toString());
   }
 }
 
@@ -60,8 +61,7 @@ async function run() {
 
 
   processFiles(changedFiles)
-    .then(() => core.info('Processing finished.'))
-    .catch(core.setFailed);
+    .then(() => core.info('Processing finished.'));
 
 }
 
