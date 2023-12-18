@@ -1,0 +1,14 @@
+{
+  "name": "json-schema-compatible",
+  "version": "1.0.0",
+  "description": "checks for incompatible changes in JSON Schema",
+  "main": "json-schema-diff.js",
+  "scripts": {
+    "check": "node json-schema-diff"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "json-schema-diff-validator": "^0.4.1"
+  }
+}
