@@ -15,11 +15,11 @@ jobs:
     - uses: actions/setup-node@v4
     - name: Run script
       id: check_incompability
+      continue-on-error: true  # This ensures the workflow continues even if this step fails.
       run: |
         cd minka-js
         npm ci
         npm run check
-        continue-on-error: true  # This ensures the workflow continues even if this step fails.
 
     - name: Add label PR on failure
       if: failure() && steps.check_incompability.outcome == 'failure' # Only runs if your script failed.
