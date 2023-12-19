@@ -44,22 +44,14 @@ const processFile = async (file) => {
   }
 }
 
-const processFiles = async (changedFiles) => {
-  for (const file of changedFiles) {
-    await processFile(file);
-  }
-}
-
 
 async function run() {
-
-  const changedFiles = await getChangedFiles();
-
-  core.info("Relevant files:");
-  core.info(changedFiles);
-
-
-  processFiles(changedFiles)
+  await getChangedFiles()
+    .then((changedSchema) => {
+      core.info('changed JSON schema');
+      core.info(changedSchema);
+      changedSchema.forEach( schema => processFile(schema));
+    })
     .then(() => core.info('Processing finished.'));
 
 }
