@@ -229,8 +229,8 @@
             "enum": [
               "none",
               "checkbox",
-              "radiobutton",
-              "listbox"
+              "radioButton",
+              "listBox"
             ],
             "enumTitles": [
               "None",
@@ -246,7 +246,7 @@
             ],
             "default": "none"
           },
-          "radiobuttonGroup": {
+          "radioButtonGroup": {
             "title": "Radio Button Group",
             "description": "Name of the radio button group if the parameter is a radio button",
             "type": "string",

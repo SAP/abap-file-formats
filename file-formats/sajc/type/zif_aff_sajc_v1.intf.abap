@@ -69,7 +69,7 @@ INTERFACE zif_aff_sajc_v1
   TYPES ty_title_text TYPE c LENGTH 120.
   "! <p class="shorttext">Radio Button Group</p>
   "! Name of the radio button group
-  TYPES ty_radiobutton_group TYPE c LENGTH 4.
+  TYPES ty_radio_button_group TYPE c LENGTH 4.
   "! <p class="shorttext">Screen Element</p>
   "! Type of the screen element
   "! $values {@link zif_aff_sajc_v1.data:co_screen_element}
@@ -82,16 +82,16 @@ INTERFACE zif_aff_sajc_v1
     BEGIN OF co_screen_element,
       "! <p class="shorttext">None</p>
       "! None
-      none        TYPE ty_screen_element VALUE ' ',
+      none         TYPE ty_screen_element VALUE ' ',
       "! <p class="shorttext">Checkbox</p>
       "! Checkbox
-      checkbox    TYPE ty_screen_element VALUE 'C',
+      checkbox     TYPE ty_screen_element VALUE 'C',
       "! <p class="shorttext">Radio Button</p>
       "! Radio button
-      radiobutton TYPE ty_screen_element VALUE 'R',
+      radio_button TYPE ty_screen_element VALUE 'R',
       "! <p class="shorttext">List Box</p>
       "! List box
-      listbox     TYPE ty_screen_element VALUE 'L',
+      list_box     TYPE ty_screen_element VALUE 'L',
     END OF co_screen_element.
 
   TYPES:
@@ -128,7 +128,7 @@ INTERFACE zif_aff_sajc_v1
       screen_element       TYPE ty_screen_element,
       "! <p class="shorttext">Radio Button Group</p>
       "! Name of the radio button group if the parameter is a radio button
-      radiobutton_group    TYPE ty_radiobutton_group,
+      radio_button_group   TYPE ty_radio_button_group,
       "! <p class="shorttext">Backend Call</p>
       "! Flag indicating whether a call of the backend system is triggered after a parameter value change to check it
       backend_call         TYPE abap_bool,
