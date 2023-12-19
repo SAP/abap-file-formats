@@ -21,7 +21,7 @@ jobs:
         npm run check
         continue-on-error: true  # This ensures the workflow continues even if this step fails.
 
-    - name: Label PR on failure
+    - name: Add label PR on failure
       if: failure() && steps.check_incompability.outcome == 'failure' # Only runs if your script failed.
       uses: actions/github-script@v7
       with:
@@ -41,4 +41,16 @@ jobs:
           })
         github-token: ${{secrets.GITHUB_TOKEN}}
 
+    - name: Remove label PR on success
+      if: steps.check_incompability.outcome == 'success'
+      uses: actions/github-script@v7
+      with:
+        script: |
+          github.rest.issues.removeLabel({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            labels: ['incompatible-changes']
+          })
+        github-token: ${{secrets.GITHUB_TOKEN}}
 
