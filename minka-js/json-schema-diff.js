@@ -1,11 +1,10 @@
 const difftool = require('json-schema-diff-validator')
 const exec = require('@actions/exec');
 const core = require('@actions/core');
-const fs = require('node:fs');
-const path = require('node:path');
+const {readFileSync} = require('node:fs');
 
 
-let getChangedFiles = async () => {
+let getChangedSchema = async () => {
   let stdout = '';
   const options = {
     listeners: {
@@ -29,12 +28,12 @@ let getChangedFiles = async () => {
 
 const processFile = async (file) => {
   try {
-    const dataNew = fs.readFileSync(`../${file}`, 'utf8');
+    const dataNew = readFileSync(`../${file}`, 'utf8');
     const schemaNew = JSON.parse(dataNew);
 
     await exec.exec(`git checkout remotes/origin/main -- ../${file}` || true);
 
-    const dataOld = fs.readFileSync(`../${file}`, 'utf8');
+    const dataOld = readFileSync(`../${file}`, 'utf8');
     const schemaOld = JSON.parse(dataOld);
 
 
@@ -46,13 +45,9 @@ const processFile = async (file) => {
 
 
 async function run() {
-  await getChangedFiles()
-    .then((changedSchema) => {
-      core.info('changed JSON schema');
-      core.info(changedSchema);
-      changedSchema.forEach( schema => processFile(schema));
-    })
-    .then(() => core.info('Processing finished.'));
+
+  const changedSchema = await getChangedSchema();
+  changedSchema.forEach(schema => processFile(schema));
 
 }
 
