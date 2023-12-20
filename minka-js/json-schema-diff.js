@@ -27,15 +27,19 @@ let getChangedSchema = async () => {
 }
 
 const processFile = async (file) => {
+  const dataNew = readFileSync(`../${file}`, 'utf8');
+  const schemaNew = JSON.parse(dataNew);
+
   try {
-    const dataNew = readFileSync(`../${file}`, 'utf8');
-    const schemaNew = JSON.parse(dataNew);
+    await exec.exec(`git checkout remotes/origin/main -- `, [file], { cwd: `../`} );
+  } catch (error) {
+    core.info(`File ${file} is not known to main branch.`);
+    // file is not on main branch, so we continue and compare the file to itself (no harm)
+  }
 
-    await exec.exec(`git checkout remotes/origin/main -- ../${file}` || true);
-
+  try {
     const dataOld = readFileSync(`../${file}`, 'utf8');
     const schemaOld = JSON.parse(dataOld);
-
 
     difftool.validateSchemaCompatibility(schemaOld, schemaNew);
   } catch (error) {
@@ -47,8 +51,9 @@ const processFile = async (file) => {
 async function run() {
 
   const changedSchema = await getChangedSchema();
-  changedSchema.forEach(schema => processFile(schema));
-
+  for (const schema of changedSchema) {
+    await processFile(schema);
+  }
 }
 
 run();
