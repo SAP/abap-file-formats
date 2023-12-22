@@ -91,7 +91,7 @@
                 "title": "Name",
                 "description": "Name of the parameter",
                 "type": "string",
-                "maxLength": 8
+                "maxLength": 38
               },
               "value": {
                 "title": "Value",
@@ -120,7 +120,7 @@
                 "title": "Name",
                 "description": "Name of the parameter",
                 "type": "string",
-                "maxLength": 8
+                "maxLength": 38
               },
               "valueRanges": {
                 "title": "Values",
