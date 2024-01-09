@@ -50,9 +50,6 @@ INTERFACE zif_aff_sajc_v1
       "! <p class="shorttext">Notification</p>
       "! Name of the class which contains the notification exit
       notification TYPE zif_aff_types_v1=>ty_object_name_30,
-      "! <p class="shorttext">Delete</p>
-      "! Name of the class which contains the delete exit
-      delete       TYPE zif_aff_types_v1=>ty_object_name_30,
     END OF ty_exit_classes.
 
   "! <p class="shorttext">Parameter Name</p>
@@ -64,9 +61,38 @@ INTERFACE zif_aff_sajc_v1
   "! <p class="shorttext">Section Name</p>
   "! Name of the section
   TYPES ty_section_name TYPE c LENGTH 10.
+  "! <p class="shorttext">Parameter Title Text</p>
+  "! Text of the parameter title
+  TYPES ty_parameter_title_text TYPE c LENGTH 255.
   "! <p class="shorttext">Title Text</p>
   "! Text of the title
   TYPES ty_title_text TYPE c LENGTH 120.
+  "! <p class="shorttext">Radio Button Group</p>
+  "! Name of the radio button group
+  TYPES ty_radio_button_group TYPE c LENGTH 4.
+  "! <p class="shorttext">Screen Element</p>
+  "! Type of the screen element
+  "! $values {@link zif_aff_sajc_v1.data:co_screen_element}
+  "! $default {@link zif_aff_sajc_v1.data:co_screen_element.none}
+  TYPES ty_screen_element TYPE c LENGTH 1.
+
+  CONSTANTS:
+    "! <p class="shorttext">Screen Element</p>
+    "! Type of the screen element
+    BEGIN OF co_screen_element,
+      "! <p class="shorttext">None</p>
+      "! None
+      none         TYPE ty_screen_element VALUE ' ',
+      "! <p class="shorttext">Checkbox</p>
+      "! Checkbox
+      checkbox     TYPE ty_screen_element VALUE 'C',
+      "! <p class="shorttext">Radio Button</p>
+      "! Radio button
+      radio_button TYPE ty_screen_element VALUE 'R',
+      "! <p class="shorttext">List Box</p>
+      "! List box
+      list_box     TYPE ty_screen_element VALUE 'L',
+    END OF co_screen_element.
 
   TYPES:
     "! <p class="shorttext">Parameter</p>
@@ -76,6 +102,9 @@ INTERFACE zif_aff_sajc_v1
       "! Name of the parameter
       "! $required
       name                 TYPE ty_parameter_name,
+      "! <p class="shorttext">Title</p>
+      "! Title of the parameter on the selection screen
+      title                TYPE ty_parameter_title_text,
       "! <p class="shorttext">Group</p>
       "! Name of the parameter group
       group                TYPE ty_group_name,
@@ -94,6 +123,12 @@ INTERFACE zif_aff_sajc_v1
       "! <p class="shorttext">Enabled By Parameter</p>
       "! Name of the boolean parameter which enables / disables the current parameter
       enabled_by_parameter TYPE ty_parameter_name,
+      "! <p class="shorttext">Screen Element</p>
+      "! Display of the parameter as screen element (radio button, checkbox, list box)
+      screen_element       TYPE ty_screen_element,
+      "! <p class="shorttext">Radio Button Group</p>
+      "! Name of the radio button group if the parameter is a radio button
+      radio_button_group   TYPE ty_radio_button_group,
       "! <p class="shorttext">Backend Call</p>
       "! Flag indicating whether a call of the backend system is triggered after a parameter value change to check it
       backend_call         TYPE abap_bool,
@@ -118,14 +153,14 @@ INTERFACE zif_aff_sajc_v1
       "! <p class="shorttext">Name</p>
       "! Name of the group
       "! $required
-      name     TYPE ty_group_name,
+      name    TYPE ty_group_name,
       "! <p class="shorttext">Title</p>
       "! Title of the group on the selection screen
       "! $required
-      title    TYPE ty_title_text,
+      title   TYPE ty_title_text,
       "! <p class="shorttext">Section</p>
       "! Name of the group section
-      section  TYPE ty_section_name,
+      section TYPE ty_section_name,
     END OF ty_group.
   TYPES:
     "! <p class="shorttext">Groups</p>
@@ -139,11 +174,11 @@ INTERFACE zif_aff_sajc_v1
       "! <p class="shorttext">Name</p>
       "! Name of the section
       "! $required
-      name     TYPE ty_section_name,
+      name  TYPE ty_section_name,
       "! <p class="shorttext">Title</p>
       "! Title of the section on the selection screen
       "! $required
-      title    TYPE ty_title_text,
+      title TYPE ty_title_text,
     END OF ty_section.
   TYPES:
     "! <p class="shorttext">Sections</p>
