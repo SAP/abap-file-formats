@@ -7,9 +7,12 @@ key=value
 ...
 ```
 The `key` refers to the text that is translated (source language), whereas `value` is the actual translated text.
-Translation relevant text, that is stored in a JSON file, is referenced by [JSONPath](https://goessner.net/articles/JsonPath/).
-JSONPath expressions always refer to a JSON structure in the same way as XPath expression are used in combination with an XML document.
+A key follows the convenction of [JSONPath](https://goessner.net/articles/JsonPath/) when refering to data in JSON files.
 
+### File Name
+
+The translation of an ABAP object are stored in file named
+`<object_name>.<object_type>.i18n.<language>.properties`
 
 ### Example
 Assume that the ABAP object is represented by
