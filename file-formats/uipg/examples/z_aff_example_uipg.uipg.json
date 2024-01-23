@@ -1,5 +1,5 @@
 {
-  "formatVersion": "1",
+  "formatVersion": "2",
   "header": {
     "description": "Example Page Template (DT Tool Text)",
     "originalLanguage": "en"
@@ -15,6 +15,7 @@
       "items": [
         {
           "id": "3WO90XZ1DX19DA1UD5RDXR484",
+          "type": "tileAssignment",
           "tileAssignment": {
             "tileKey": {
               "catalogId": "/UI2/FLP_DEMO_BC1_TEST",
@@ -28,12 +29,13 @@
         },
         {
           "id": "3WO90XZ1DX19DA1UD5RDXRAJO",
+          "type": "tileAssignment",
+          "displayFormat": "wide",
           "tileAssignment": {
             "tileKey": {
               "catalogId": "/UI2/FLP_DEMO_BC1_TEST",
               "id": "ET091D7N8BTE6UTVXN0D4SAAA"
             },
-            "tileDisplayFormat": "wide",
             "targetMappingKey": {
               "catalogId": "/UI2/FLP_DEMO_BC1_TEST",
               "id": "00O2TIH53H32KGY1X6LIHYLK7"
@@ -42,12 +44,13 @@
         },
         {
           "id": "3WO90XZ1DX19DA1UD5RDXRGV8",
+          "type": "tileAssignment",
+          "displayFormat": "link",
           "tileAssignment": {
             "tileKey": {
               "catalogId": "/UI2/FLP_DEMO_BC1_TEST",
               "id": "ET091D7N8BTE6UTVXXJQ0WUMS"
             },
-            "tileDisplayFormat": "link",
             "targetMappingKey": {
               "catalogId": "/UI2/FLP_DEMO_BC1_TEST",
               "id": "00O2TIH53H32KGY1XM291XX2K"
@@ -56,12 +59,13 @@
         },
         {
           "id": "3WO90XZ1DX19DA1UD5RDXRN6S",
+          "type": "tileAssignment",
+          "displayFormat": "flat",
           "tileAssignment": {
             "tileKey": {
               "catalogId": "/UI2/FLP_DEMO_BC1_TEST",
               "id": "00O2TIH53H32KGY1S7ERAGFW4"
             },
-            "tileDisplayFormat": "flat",
             "targetMappingKey": {
               "catalogId": "/UI2/FLP_DEMO_BC1_TEST",
               "id": "00O2TIH53H32KGY1YAF7047FX"
@@ -70,12 +74,13 @@
         },
         {
           "id": "3WO90XZ1DX19DA1UD5RDXRTIC",
+          "type": "tileAssignment",
+          "displayFormat": "flatWide",
           "tileAssignment": {
             "tileKey": {
               "catalogId": "/UI2/FLP_DEMO_BC1_TEST",
               "id": "00O2TIH53H32KGY1RXJY9FBSE"
             },
-            "tileDisplayFormat": "flatWide",
             "targetMappingKey": {
               "catalogId": "/UI2/FLP_DEMO_BC1_TEST",
               "id": "00O2TIH53H32KGY1Y1PQ8RMI5"
@@ -90,6 +95,7 @@
       "items": [
         {
           "id": "3WO90XZ1DX19DA1UD5RDXS65G",
+          "type": "tileAssignment",
           "tileAssignment": {
             "tileKey": {
               "catalogId": "/UI2/FLP_ADMIN",
@@ -103,6 +109,7 @@
         },
         {
           "id": "3WO90XZ1DX19DA1UD5RDXSCH0",
+          "type": "tileAssignment",
           "tileAssignment": {
             "tileKey": {
               "catalogId": "/UI2/FLP_ADMIN",
@@ -116,6 +123,7 @@
         },
         {
           "id": "3WO90XZ1DX19DA1UD5RDXSISK",
+          "type": "tileAssignment",
           "tileAssignment": {
             "tileKey": {
               "catalogId": "/UI2/FLP_ADMIN",
@@ -129,6 +137,7 @@
         },
         {
           "id": "3WO90XZ1DX19DA1UD5RDXSP44",
+          "type": "tileAssignment",
           "tileAssignment": {
             "tileKey": {
               "catalogId": "/UI2/FLP_ADMIN",
@@ -142,6 +151,7 @@
         },
         {
           "id": "3WO90XZ1DX19DA1UD5RDXSVFO",
+          "type": "tileAssignment",
           "tileAssignment": {
             "tileKey": {
               "catalogId": "/UI2/FLP_ADMIN",
@@ -155,6 +165,7 @@
         },
         {
           "id": "3WO90XZ1DX19DA1UD5RDXT1R8",
+          "type": "tileAssignment",
           "tileAssignment": {
             "tileKey": {
               "catalogId": "/UI2/FLP_ADMIN",
