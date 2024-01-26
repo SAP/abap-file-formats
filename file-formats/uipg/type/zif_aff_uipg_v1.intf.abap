@@ -9,11 +9,11 @@ INTERFACE zif_aff_uipg_v1
       "! <p class="shorttext">Title</p>
       "! Title visible to the enduser
       "! $required
-      title       TYPE zif_aff_types_v1=>ty_description_100,
+      title    TYPE zif_aff_types_v1=>ty_description_100,
 
       "! <p class="shorttext">Merge ID</p>
-      "! Merge ID for merging during run-time
-      merge_id    TYPE c LENGTH 35,
+      "! At runtime page templates are merged based on the merge ID
+      merge_id TYPE c LENGTH 35,
 
     END OF ty_general_information.
 
@@ -25,8 +25,8 @@ INTERFACE zif_aff_uipg_v1
 
   "! <p class="shorttext">Tile Display Format</p>
   "! Tile display format
-  "! $values {@link zif_aff_uipg_v1.data:co_tile_display_format}
-  "! $default {@link zif_aff_uipg_v1.data:co_tile_display_format.standard}
+  "! $values {@link /ui2/if_aff_uipg_v2.data:co_tile_display_format}
+  "! $default {@link /ui2/if_aff_uipg_v2.data:co_tile_display_format.standard}
   TYPES ty_tile_display_format TYPE c LENGTH 2.
 
 
@@ -91,10 +91,6 @@ INTERFACE zif_aff_uipg_v1
       "! $required
       tile_key            TYPE ty_catalog_item_key,
 
-      "! <p class="shorttext">Tile Display Format</p>
-      "! Describes how the tile is rendered during run-time
-      tile_display_format TYPE ty_tile_display_format,
-
       "! <p class="shorttext">Target Mapping Key</p>
       "! Target mapping key
       target_mapping_key  TYPE ty_catalog_item_key,
@@ -102,10 +98,38 @@ INTERFACE zif_aff_uipg_v1
     END OF ty_tile_assignment.
 
 
+  "! <p class="shorttext">UIAD ID</p>
+  "! Launchpad App Descriptor Item ID
+  TYPES ty_uiad_id      TYPE c LENGTH 32.
+
+
+  "! <p class="shorttext">UIAD Tile ID</p>
+  "! Launchpad App Descriptor Item Tile ID
+  TYPES ty_uiad_tile_id TYPE c LENGTH 50.
+
+
+  TYPES:
+    "! <p class="shorttext">UIAD Assignment</p>
+    "! Assignment of a launchpad app descriptor (UIAD) item
+    BEGIN OF ty_uiad_assignment,
+
+      "! <p class="shorttext">UIAD ID</p>
+      "! ID of a launchpad app descriptor (UIAD) item
+      "! $required
+      uiad_id             TYPE ty_uiad_id,
+
+      "! <p class="shorttext">Tile ID</p>
+      "! Tile ID
+      "! $required
+      tile_id             TYPE ty_uiad_tile_id,
+
+    END OF ty_uiad_assignment.
+
+
   "! <p class="shorttext">Item Type</p>
   "! Item type
-  "! $values {@link zif_aff_uipg_v1.data:co_item_type}
-  "! $default {@link zif_aff_uipg_v1.data:co_item_type.tile_assignment}
+  "! $values {@link /ui2/if_aff_uipg_v2.data:co_item_type}
+  "! $default {@link /ui2/if_aff_uipg_v2.data:co_item_type.uiad_assignment}
   TYPES ty_item_type TYPE c LENGTH 2.
 
 
@@ -114,8 +138,12 @@ INTERFACE zif_aff_uipg_v1
     "! Item type
     BEGIN OF co_item_type,
 
+      "! <p class="shorttext">UIAD Assignment</p>
+      "! Assignment of a launchpad app descriptor (UIAD) item
+      uiad_assignment TYPE ty_item_type VALUE 'AD',
+
       "! <p class="shorttext">Tile Assignment</p>
-      "! Tile assignment
+      "! Assignment of a catalog tile
       tile_assignment TYPE ty_item_type VALUE 'TI',
 
     END OF co_item_type.
@@ -132,12 +160,20 @@ INTERFACE zif_aff_uipg_v1
       id              TYPE c LENGTH 35,
 
       "! <p class="shorttext">Type</p>
-      "! Type
+      "! type
       type            TYPE ty_item_type,
 
+      "! <p class="shorttext">Tile Display Format</p>
+      "! Tile format for UI rendering
+      display_format TYPE ty_tile_display_format,
+
       "! <p class="shorttext">Tile Assignment</p>
-      "! Tile assignment
+      "! Assignment of a catalog tile
       tile_assignment TYPE ty_tile_assignment,
+
+      "! <p class="shorttext">UIAD Assignment</p>
+      "! Assignment of a launchpad app descriptor (UIAD) item
+      uiad_assignment TYPE ty_uiad_assignment,
 
     END OF ty_item,
 
@@ -168,8 +204,8 @@ INTERFACE zif_aff_uipg_v1
 
 
   TYPES:
-    "! <p class="shorttext">Fiori Launchpad Page Template</p>
-    "! Fiori launchpad page template
+    "! <p class="shorttext">Launchpad Page Template</p>
+    "! Launchpad page template
     BEGIN OF ty_main,
 
       "! <p class="shorttext">Format Version</p>
@@ -188,7 +224,7 @@ INTERFACE zif_aff_uipg_v1
       general_information TYPE ty_general_information,
 
       "! <p class="shorttext">Sections</p>
-      "! Sections
+      "! sections
       sections            TYPE ty_sections,
 
     END OF ty_main.

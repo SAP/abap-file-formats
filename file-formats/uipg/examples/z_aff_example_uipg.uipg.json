@@ -1,179 +1,139 @@
 {
-  "formatVersion": "2",
+  "formatVersion": "1",
   "header": {
-    "description": "Example Page Template (DT Tool Text)",
-    "originalLanguage": "en"
+    "originalLanguage": "en",
+    "description": "Example Page Template (DT Tool Test)",
+    "abapLanguageVersion": "standard"
   },
   "generalInformation": {
-    "title": "Example Page Template (UI Text)",
+    "title": "Example Page Template (RT Tool Test)",
     "mergeId": "MY_MERGE_ID"
   },
   "sections": [
     {
-      "id": "3WO90XZ1DX19DA1UD5RDXQXWK",
-      "title": "Section with different Visualization Types",
+      "id": "SECTION_1",
+      "title": "Section with different Visualization Types based on UIAD Assignments",
       "items": [
         {
-          "id": "3WO90XZ1DX19DA1UD5RDXR484",
-          "type": "tileAssignment",
-          "tileAssignment": {
-            "tileKey": {
-              "catalogId": "/UI2/FLP_DEMO_BC1_TEST",
-              "id": "ET091D7N8BTE6UTVXBOTFDTSI"
-            },
-            "targetMappingKey": {
-              "catalogId": "/UI2/FLP_DEMO_BC1_TEST",
-              "id": "00O2TIH53H32KGY1WZ7S7GIW7"
-            }
+          "id": "SECTION_1_ITEM_1",
+          "uiadAssignment": {
+            "uiadId": "Z_UIAD_ID_1",
+            "tileId": "Z_UIAD_ID_1_TILE"
           }
         },
         {
-          "id": "3WO90XZ1DX19DA1UD5RDXRAJO",
-          "type": "tileAssignment",
+          "id": "SECTION_1_ITEM_2",
+          "type": "uiadAssignment",
           "displayFormat": "wide",
-          "tileAssignment": {
-            "tileKey": {
-              "catalogId": "/UI2/FLP_DEMO_BC1_TEST",
-              "id": "ET091D7N8BTE6UTVXN0D4SAAA"
-            },
-            "targetMappingKey": {
-              "catalogId": "/UI2/FLP_DEMO_BC1_TEST",
-              "id": "00O2TIH53H32KGY1X6LIHYLK7"
-            }
+          "uiadAssignment": {
+            "uiadId": "Z_UIAD_ID_2",
+            "tileId": "Z_UIAD_ID_2_TILE"
           }
         },
         {
-          "id": "3WO90XZ1DX19DA1UD5RDXRGV8",
-          "type": "tileAssignment",
+          "id": "SECTION_1_ITEM_3",
+          "type": "uiadAssignment",
           "displayFormat": "link",
-          "tileAssignment": {
-            "tileKey": {
-              "catalogId": "/UI2/FLP_DEMO_BC1_TEST",
-              "id": "ET091D7N8BTE6UTVXXJQ0WUMS"
-            },
-            "targetMappingKey": {
-              "catalogId": "/UI2/FLP_DEMO_BC1_TEST",
-              "id": "00O2TIH53H32KGY1XM291XX2K"
-            }
+          "uiadAssignment": {
+            "uiadId": "Z_UIAD_ID_3",
+            "tileId": "Z_UIAD_ID_3_TILE"
           }
         },
         {
-          "id": "3WO90XZ1DX19DA1UD5RDXRN6S",
-          "type": "tileAssignment",
+          "id": "SECTION_1_ITEM_4",
+          "type": "uiadAssignment",
           "displayFormat": "flat",
-          "tileAssignment": {
-            "tileKey": {
-              "catalogId": "/UI2/FLP_DEMO_BC1_TEST",
-              "id": "00O2TIH53H32KGY1S7ERAGFW4"
-            },
-            "targetMappingKey": {
-              "catalogId": "/UI2/FLP_DEMO_BC1_TEST",
-              "id": "00O2TIH53H32KGY1YAF7047FX"
-            }
+          "uiadAssignment": {
+            "uiadId": "Z_UIAD_ID_4",
+            "tileId": "Z_UIAD_ID_4_TILE"
           }
         },
         {
-          "id": "3WO90XZ1DX19DA1UD5RDXRTIC",
-          "type": "tileAssignment",
+          "id": "SECTION_1_ITEM_5",
+          "type": "uiadAssignment",
           "displayFormat": "flatWide",
-          "tileAssignment": {
-            "tileKey": {
-              "catalogId": "/UI2/FLP_DEMO_BC1_TEST",
-              "id": "00O2TIH53H32KGY1RXJY9FBSE"
-            },
-            "targetMappingKey": {
-              "catalogId": "/UI2/FLP_DEMO_BC1_TEST",
-              "id": "00O2TIH53H32KGY1Y1PQ8RMI5"
-            }
+          "uiadAssignment": {
+            "uiadId": "Z_UIAD_ID_5",
+            "tileId": "Z_UIAD_ID_5_TILE"
           }
         }
       ]
     },
     {
-      "id": "3WO90XZ1DX19DA1UD5RDXRZTW",
-      "title": "FLP Admin Tools",
+      "id": "SECTION_2",
+      "title": "Section with different Visualization Types based on Tile Assignments",
       "items": [
         {
-          "id": "3WO90XZ1DX19DA1UD5RDXS65G",
+          "id": "SECTION_2_ITEM_1",
           "type": "tileAssignment",
           "tileAssignment": {
             "tileKey": {
-              "catalogId": "/UI2/FLP_ADMIN",
-              "id": "00O2TIH53H32GIOMXHVBRBTHD"
+              "catalogId": "Z_CATALOG_ID",
+              "id": "TILE_ID_1"
             },
             "targetMappingKey": {
-              "catalogId": "/UI2/FLP_ADMIN",
-              "id": "00O2TIH53H346T2QI5EPLELE3"
+              "catalogId": "Z_CATALOG_ID",
+              "id": "TM_ID_1"
             }
           }
         },
         {
-          "id": "3WO90XZ1DX19DA1UD5RDXSCH0",
+          "id": "SECTION_2_ITEM_2",
           "type": "tileAssignment",
+          "displayFormat": "wide",
           "tileAssignment": {
             "tileKey": {
-              "catalogId": "/UI2/FLP_ADMIN",
-              "id": "00O2TIH53H32GIONHWO4YHTH5"
+              "catalogId": "Z_CATALOG_ID",
+              "id": "TILE_ID_2"
             },
             "targetMappingKey": {
-              "catalogId": "/UI2/FLP_ADMIN",
-              "id": "00O2TIH53H32GIONMZ9XWT1O2"
+              "catalogId": "Z_CATALOG_ID",
+              "id": "TM_ID_2"
             }
           }
         },
         {
-          "id": "3WO90XZ1DX19DA1UD5RDXSISK",
+          "id": "SECTION_2_ITEM_3",
           "type": "tileAssignment",
+          "displayFormat": "link",
           "tileAssignment": {
             "tileKey": {
-              "catalogId": "/UI2/FLP_ADMIN",
-              "id": "00O2TIH53H32GIOMKX5GMY17I"
+              "catalogId": "Z_CATALOG_ID",
+              "id": "TILE_ID_3"
             },
             "targetMappingKey": {
-              "catalogId": "/UI2/FLP_ADMIN",
-              "id": "00O2TIH53H32GIOM1H7UJ5NAF"
+              "catalogId": "Z_CATALOG_ID",
+              "id": "TM_ID_3"
             }
           }
         },
         {
-          "id": "3WO90XZ1DX19DA1UD5RDXSP44",
+          "id": "SECTION_2_ITEM_4",
           "type": "tileAssignment",
+          "displayFormat": "flat",
           "tileAssignment": {
             "tileKey": {
-              "catalogId": "/UI2/FLP_ADMIN",
-              "id": "00O2TIH53H32GIOMMI1LGK335"
+              "catalogId": "Z_CATALOG_ID",
+              "id": "TILE_ID_4"
             },
             "targetMappingKey": {
-              "catalogId": "/UI2/FLP_ADMIN",
-              "id": "00O2TIH53H32GIOMB07TNAE0A"
+              "catalogId": "Z_CATALOG_ID",
+              "id": "TM_ID_4"
             }
           }
         },
         {
-          "id": "3WO90XZ1DX19DA1UD5RDXSVFO",
+          "id": "SECTION_2_ITEM_5",
           "type": "tileAssignment",
+          "displayFormat": "flatWide",
           "tileAssignment": {
             "tileKey": {
-              "catalogId": "/UI2/FLP_ADMIN",
-              "id": "00O2TIH53H32GIOMVN3GTU4T3"
+              "catalogId": "Z_CATALOG_ID",
+              "id": "TILE_ID_5"
             },
             "targetMappingKey": {
-              "catalogId": "/UI2/FLP_ADMIN",
-              "id": "00O2TIH53H32GIOLZSJGGN02U"
-            }
-          }
-        },
-        {
-          "id": "3WO90XZ1DX19DA1UD5RDXT1R8",
-          "type": "tileAssignment",
-          "tileAssignment": {
-            "tileKey": {
-              "catalogId": "/UI2/FLP_ADMIN",
-              "id": "00O2TIH53H32GIOMEYERS87LB"
-            },
-            "targetMappingKey": {
-              "catalogId": "/UI2/FLP_ADMIN",
-              "id": "00O2TIH53H346T2QFF5AM9K93"
+              "catalogId": "Z_CATALOG_ID",
+              "id": "TM_ID_5"
             }
           }
         }
