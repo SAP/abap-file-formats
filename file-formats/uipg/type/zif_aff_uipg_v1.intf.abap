@@ -25,8 +25,8 @@ INTERFACE zif_aff_uipg_v1
 
   "! <p class="shorttext">Tile Display Format</p>
   "! Tile display format
-  "! $values {@link /ui2/if_aff_uipg_v2.data:co_tile_display_format}
-  "! $default {@link /ui2/if_aff_uipg_v2.data:co_tile_display_format.standard}
+  "! $values {@link /ui2/if_aff_uipg_v1.data:co_tile_display_format}
+  "! $default {@link /ui2/if_aff_uipg_v1.data:co_tile_display_format.standard}
   TYPES ty_tile_display_format TYPE c LENGTH 2.
 
 
@@ -128,8 +128,8 @@ INTERFACE zif_aff_uipg_v1
 
   "! <p class="shorttext">Item Type</p>
   "! Item type
-  "! $values {@link /ui2/if_aff_uipg_v2.data:co_item_type}
-  "! $default {@link /ui2/if_aff_uipg_v2.data:co_item_type.uiad_assignment}
+  "! $values {@link /ui2/if_aff_uipg_v1.data:co_item_type}
+  "! $default {@link /ui2/if_aff_uipg_v1.data:co_item_type.uiad_assignment}
   TYPES ty_item_type TYPE c LENGTH 2.
 
 
