@@ -2,15 +2,6 @@ INTERFACE zif_aff_swcr_v1
   PUBLIC.
 
   TYPES:
-    "! <p class="shorttext">Header</p>
-    "! Header
-    BEGIN OF ty_header,
-      "! $required
-      original_language     TYPE zif_aff_types_v1=>ty_original_language,
-      abap_language_version TYPE zif_aff_types_v1=>ty_abap_language_version,
-    END OF ty_header.
-
-  TYPES:
     "! <p class="shorttext">Access Permission</p>
     "! Access permission
     BEGIN OF ty_permission,
@@ -49,7 +40,7 @@ INTERFACE zif_aff_swcr_v1
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header         TYPE ty_header,
+      header         TYPE zif_aff_types_v1=>ty_header_60,
       "! <p class="shorttext">Access Permissions</p>
       "! The software component grants access permission to the specified software components
       permissions    TYPE ty_permissions,
