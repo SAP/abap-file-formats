@@ -19,7 +19,7 @@ INTERFACE zif_aff_uipg_v1
 
 
   "! <p class="shorttext">Catalog Type</p>
-  "! Catalog type
+  "! Launchpad catalog type
   TYPES ty_catalog_type        TYPE c LENGTH 3.
 
 
@@ -60,7 +60,7 @@ INTERFACE zif_aff_uipg_v1
 
   TYPES:
     "! <p class="shorttext">Catalog Item Key</p>
-    "! Catalog item key
+    "! Launchpad catalog item key
     BEGIN OF ty_catalog_item_key,
 
       "! <p class="shorttext">Catalog ID</p>
@@ -98,52 +98,52 @@ INTERFACE zif_aff_uipg_v1
     END OF ty_tile_assignment.
 
 
-  "! <p class="shorttext">UIAD ID</p>
+  "! <p class="shorttext">LADI ID</p>
   "! Launchpad App Descriptor Item ID
-  TYPES ty_uiad_id      TYPE c LENGTH 32.
+  TYPES ty_ladi_id      TYPE c LENGTH 32.
 
 
-  "! <p class="shorttext">UIAD Tile ID</p>
+  "! <p class="shorttext">LADI Tile ID</p>
   "! Launchpad App Descriptor Item Tile ID
-  TYPES ty_uiad_tile_id TYPE c LENGTH 50.
+  TYPES ty_ladi_tile_id TYPE c LENGTH 50.
 
 
   TYPES:
-    "! <p class="shorttext">UIAD Assignment</p>
-    "! Assignment of a launchpad app descriptor (UIAD) item
-    BEGIN OF ty_uiad_assignment,
+    "! <p class="shorttext">LADI Assignment</p>
+    "! Assignment of a launchpad app descriptor item
+    BEGIN OF ty_ladi_assignment,
 
-      "! <p class="shorttext">UIAD ID</p>
-      "! ID of a launchpad app descriptor (UIAD) item
+      "! <p class="shorttext">LADI ID</p>
+      "! ID of a launchpad app descriptor item
       "! $required
-      uiad_id             TYPE ty_uiad_id,
+      ladi_id             TYPE ty_ladi_id,
 
       "! <p class="shorttext">Tile ID</p>
       "! Tile ID
       "! $required
-      tile_id             TYPE ty_uiad_tile_id,
+      tile_id             TYPE ty_ladi_tile_id,
 
-    END OF ty_uiad_assignment.
+    END OF ty_ladi_assignment.
 
 
   "! <p class="shorttext">Item Type</p>
   "! Item type
   "! $values {@link zif_aff_uipg_v1.data:co_item_type}
-  "! $default {@link zif_aff_uipg_v1.data:co_item_type.uiad_assignment}
+  "! $default {@link zif_aff_uipg_v1.data:co_item_type.ladi_assignment}
   TYPES ty_item_type TYPE c LENGTH 2.
 
 
   CONSTANTS:
     "! <p class="shorttext">Item Type</p>
-    "! Item type
+    "! Type of application assignment
     BEGIN OF co_item_type,
 
-      "! <p class="shorttext">UIAD Assignment</p>
-      "! Assignment of a launchpad app descriptor (UIAD) item
-      uiad_assignment TYPE ty_item_type VALUE 'AD',
+      "! <p class="shorttext">LADI Assignment</p>
+      "! Assignment of a launchpad app descriptor item
+      ladi_assignment TYPE ty_item_type VALUE 'AD',
 
       "! <p class="shorttext">Tile Assignment</p>
-      "! Assignment of a catalog tile
+      "! Assignment of a launchpad catalog tile
       tile_assignment TYPE ty_item_type VALUE 'TI',
 
     END OF co_item_type.
@@ -151,7 +151,7 @@ INTERFACE zif_aff_uipg_v1
 
   TYPES:
     "! <p class="shorttext">Item</p>
-    "! Item
+    "! Items represent applications on the launchpad UI
     BEGIN OF ty_item,
 
       "! <p class="shorttext">ID</p>
@@ -160,20 +160,20 @@ INTERFACE zif_aff_uipg_v1
       id              TYPE c LENGTH 35,
 
       "! <p class="shorttext">Type</p>
-      "! type
+      "! Type of application assignment
       type            TYPE ty_item_type,
 
-      "! <p class="shorttext">Tile Display Format</p>
+      "! <p class="shorttext">Display Format</p>
       "! Tile format for UI rendering
       display_format TYPE ty_tile_display_format,
 
       "! <p class="shorttext">Tile Assignment</p>
-      "! Assignment of a catalog tile
+      "! Assignment of a launchpad catalog tile
       tile_assignment TYPE ty_tile_assignment,
 
-      "! <p class="shorttext">UIAD Assignment</p>
-      "! Assignment of a launchpad app descriptor (UIAD) item
-      uiad_assignment TYPE ty_uiad_assignment,
+      "! <p class="shorttext">LADI Assignment</p>
+      "! Assignment of a launchpad app descriptor item
+      ladi_assignment TYPE ty_ladi_assignment,
 
     END OF ty_item,
 
@@ -182,7 +182,7 @@ INTERFACE zif_aff_uipg_v1
 
   TYPES:
     "! <p class="shorttext">Section</p>
-    "! section
+    "! Sections make up a grouping of applications on the launchpad UI
     BEGIN OF ty_section,
 
       "! <p class="shorttext">ID</p>
@@ -191,11 +191,11 @@ INTERFACE zif_aff_uipg_v1
       id    TYPE c LENGTH 35,
 
       "! <p class="shorttext">Title</p>
-      "! Title
+      "! Section title on the launchpad UI
       title TYPE c LENGTH 100,
 
       "! <p class="shorttext">Items</p>
-      "! Items
+      "! Items represent applications on the launchpad UI
       items TYPE ty_items,
 
     END OF ty_section,
@@ -224,7 +224,7 @@ INTERFACE zif_aff_uipg_v1
       general_information TYPE ty_general_information,
 
       "! <p class="shorttext">Sections</p>
-      "! sections
+      "! Sections make up a grouping of applications on the launchpad UI
       sections            TYPE ty_sections,
 
     END OF ty_main.

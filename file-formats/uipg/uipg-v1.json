@@ -81,11 +81,11 @@
     },
     "sections": {
       "title": "Sections",
-      "description": "sections",
+      "description": "Sections make up a grouping of applications on the launchpad UI",
       "type": "array",
       "items": {
         "title": "Section",
-        "description": "section",
+        "description": "Sections make up a grouping of applications on the launchpad UI",
         "type": "object",
         "properties": {
           "id": {
@@ -96,17 +96,17 @@
           },
           "title": {
             "title": "Title",
-            "description": "Title",
+            "description": "Section title on the launchpad UI",
             "type": "string",
             "maxLength": 100
           },
           "items": {
             "title": "Items",
-            "description": "Items",
+            "description": "Items represent applications on the launchpad UI",
             "type": "array",
             "items": {
               "title": "Item",
-              "description": "Item",
+              "description": "Items represent applications on the launchpad UI",
               "type": "object",
               "properties": {
                 "id": {
@@ -117,24 +117,24 @@
                 },
                 "type": {
                   "title": "Type",
-                  "description": "type",
+                  "description": "Type of application assignment",
                   "type": "string",
                   "enum": [
-                    "uiadAssignment",
+                    "ladiAssignment",
                     "tileAssignment"
                   ],
                   "enumTitles": [
-                    "UIAD Assignment",
+                    "LADI Assignment",
                     "Tile Assignment"
                   ],
                   "enumDescriptions": [
-                    "Assignment of a launchpad app descriptor (UIAD) item",
-                    "Assignment of a catalog tile"
+                    "Assignment of a launchpad app descriptor item",
+                    "Assignment of a launchpad catalog tile"
                   ],
-                  "default": "uiadAssignment"
+                  "default": "ladiAssignment"
                 },
                 "displayFormat": {
-                  "title": "Tile Display Format",
+                  "title": "Display Format",
                   "description": "Tile format for UI rendering",
                   "type": "string",
                   "enum": [
@@ -162,7 +162,7 @@
                 },
                 "tileAssignment": {
                   "title": "Tile Assignment",
-                  "description": "Assignment of a catalog tile",
+                  "description": "Assignment of a launchpad catalog tile",
                   "type": "object",
                   "properties": {
                     "tileKey": {
@@ -233,14 +233,14 @@
                     "tileKey"
                   ]
                 },
-                "uiadAssignment": {
-                  "title": "UIAD Assignment",
-                  "description": "Assignment of a launchpad app descriptor (UIAD) item",
+                "ladiAssignment": {
+                  "title": "LADI Assignment",
+                  "description": "Assignment of a launchpad app descriptor item",
                   "type": "object",
                   "properties": {
-                    "uiadId": {
-                      "title": "UIAD ID",
-                      "description": "ID of a launchpad app descriptor (UIAD) item",
+                    "ladiId": {
+                      "title": "LADI ID",
+                      "description": "ID of a launchpad app descriptor item",
                       "type": "string",
                       "maxLength": 32
                     },
@@ -253,7 +253,7 @@
                   },
                   "additionalProperties": false,
                   "required": [
-                    "uiadId",
+                    "ladiId",
                     "tileId"
                   ]
                 }
