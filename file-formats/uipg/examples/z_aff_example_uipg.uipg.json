@@ -12,49 +12,49 @@
   "sections": [
     {
       "id": "SECTION_1",
-      "title": "Section with different Visualization Types based on UIAD Assignments",
+      "title": "Section with different Visualization Types based on LADI Assignments",
       "items": [
         {
           "id": "SECTION_1_ITEM_1",
-          "uiadAssignment": {
-            "uiadId": "Z_UIAD_ID_1",
-            "tileId": "Z_UIAD_ID_1_TILE"
+          "ladiAssignment": {
+            "ladiId": "Z_LADI_ID_1",
+            "tileId": "Z_LADI_ID_1_TILE"
           }
         },
         {
           "id": "SECTION_1_ITEM_2",
-          "type": "uiadAssignment",
+          "type": "ladiAssignment",
           "displayFormat": "wide",
-          "uiadAssignment": {
-            "uiadId": "Z_UIAD_ID_2",
-            "tileId": "Z_UIAD_ID_2_TILE"
+          "ladiAssignment": {
+            "ladiId": "Z_LADI_ID_2",
+            "tileId": "Z_LADI_ID_2_TILE"
           }
         },
         {
           "id": "SECTION_1_ITEM_3",
-          "type": "uiadAssignment",
+          "type": "ladiAssignment",
           "displayFormat": "link",
-          "uiadAssignment": {
-            "uiadId": "Z_UIAD_ID_3",
-            "tileId": "Z_UIAD_ID_3_TILE"
+          "ladiAssignment": {
+            "ladiId": "Z_LADI_ID_3",
+            "tileId": "Z_LADI_ID_3_TILE"
           }
         },
         {
           "id": "SECTION_1_ITEM_4",
-          "type": "uiadAssignment",
+          "type": "ladiAssignment",
           "displayFormat": "flat",
-          "uiadAssignment": {
-            "uiadId": "Z_UIAD_ID_4",
-            "tileId": "Z_UIAD_ID_4_TILE"
+          "ladiAssignment": {
+            "ladiId": "Z_LADI_ID_4",
+            "tileId": "Z_LADI_ID_4_TILE"
           }
         },
         {
           "id": "SECTION_1_ITEM_5",
-          "type": "uiadAssignment",
+          "type": "ladiAssignment",
           "displayFormat": "flatWide",
-          "uiadAssignment": {
-            "uiadId": "Z_UIAD_ID_5",
-            "tileId": "Z_UIAD_ID_5_TILE"
+          "ladiAssignment": {
+            "ladiId": "Z_LADI_ID_5",
+            "tileId": "Z_LADI_ID_5_TILE"
           }
         }
       ]
