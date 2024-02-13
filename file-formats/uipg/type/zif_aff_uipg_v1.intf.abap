@@ -83,7 +83,7 @@ INTERFACE zif_aff_uipg_v1
 
   TYPES:
     "! <p class="shorttext">Tile Assignment</p>
-    "! Tile assignment
+    "! Reference to a Tile in a classic launchpad Catalog
     BEGIN OF ty_tile_assignment,
 
       "! <p class="shorttext">Tile Key</p>
@@ -98,86 +98,87 @@ INTERFACE zif_aff_uipg_v1
     END OF ty_tile_assignment.
 
 
-  "! <p class="shorttext">LADI ID</p>
+  "! <p class="shorttext">Launchpad App Descriptor Item ID</p>
   "! Launchpad App Descriptor Item ID
   TYPES ty_ladi_id      TYPE c LENGTH 32.
 
 
-  "! <p class="shorttext">LADI Tile ID</p>
+  "! <p class="shorttext">Launchpad App Descriptor Item Tile ID</p>
   "! Launchpad App Descriptor Item Tile ID
   TYPES ty_ladi_tile_id TYPE c LENGTH 50.
 
 
   TYPES:
-    "! <p class="shorttext">LADI Assignment</p>
-    "! Assignment of a launchpad app descriptor item
+    "! <p class="shorttext">Launchpad App Descriptor Item Assignment</p>
+    "! Reference to a Tile in a Launchpad App Descriptor Item
     BEGIN OF ty_ladi_assignment,
 
-      "! <p class="shorttext">LADI ID</p>
+      "! <p class="shorttext">Launchpad App Descriptor Item ID</p>
       "! ID of a launchpad app descriptor item
       "! $required
       ladi_id             TYPE ty_ladi_id,
 
       "! <p class="shorttext">Tile ID</p>
-      "! Tile ID
+      "! ID of a tile in the the referenced Launchpad App Descriptor Item
       "! $required
       tile_id             TYPE ty_ladi_tile_id,
 
     END OF ty_ladi_assignment.
 
 
-  "! <p class="shorttext">Item Type</p>
-  "! Item type
-  "! $values {@link zif_aff_uipg_v1.data:co_item_type}
-  "! $default {@link zif_aff_uipg_v1.data:co_item_type.ladi_assignment}
-  TYPES ty_item_type TYPE c LENGTH 2.
+  "! <p class="shorttext">Visualization Type</p>
+  "! Visualization type
+  "! $values {@link zif_aff_uipg_v1.data:co_visualization_type}
+  "! $default {@link zif_aff_uipg_v1.data:co_visualization_type.ladi_assignment}
+  TYPES ty_visualization_type TYPE c LENGTH 2.
 
 
   CONSTANTS:
-    "! <p class="shorttext">Item Type</p>
-    "! Type of application assignment
-    BEGIN OF co_item_type,
+    "! <p class="shorttext">Visualization Type</p>
+    "! Describes how the visualization is referenzed
+    BEGIN OF co_visualization_type,
 
-      "! <p class="shorttext">LADI Assignment</p>
+      "! <p class="shorttext">Launchpad App Descriptor Item Assignment</p>
       "! Assignment of a launchpad app descriptor item
-      ladi_assignment TYPE ty_item_type VALUE 'AD',
+      ladi_assignment TYPE ty_visualization_type VALUE 'AD',
 
       "! <p class="shorttext">Tile Assignment</p>
       "! Assignment of a launchpad catalog tile
-      tile_assignment TYPE ty_item_type VALUE 'TI',
+      tile_assignment TYPE ty_visualization_type VALUE 'TI',
 
-    END OF co_item_type.
+    END OF co_visualization_type.
 
 
   TYPES:
-    "! <p class="shorttext">Item</p>
-    "! Items represent applications on the launchpad UI
-    BEGIN OF ty_item,
+    "! <p class="shorttext">Visualization</p>
+    "! Visualizations represent applications on the launchpad UI
+    BEGIN OF ty_visualization,
 
       "! <p class="shorttext">ID</p>
-      "! ID
+      "! Technical Id of the visualization. The personalization of the launchpad is based on this ID.
       "! $required
       id              TYPE c LENGTH 35,
 
       "! <p class="shorttext">Type</p>
-      "! Type of application assignment
-      type            TYPE ty_item_type,
+      "! Type of application/visualization assignment
+      type            TYPE ty_visualization_type,
 
       "! <p class="shorttext">Display Format</p>
-      "! Tile format for UI rendering
+      "! Tile format for UI rendering. May not be applicable for all kinds of visualization.
       display_format TYPE ty_tile_display_format,
 
       "! <p class="shorttext">Tile Assignment</p>
       "! Assignment of a launchpad catalog tile
       tile_assignment TYPE ty_tile_assignment,
 
-      "! <p class="shorttext">LADI Assignment</p>
+      "! <p class="shorttext">Launchpad App Descriptor Item Assignment</p>
       "! Assignment of a launchpad app descriptor item
       ladi_assignment TYPE ty_ladi_assignment,
 
-    END OF ty_item,
+    END OF ty_visualization,
 
-    ty_items TYPE STANDARD TABLE OF ty_item WITH DEFAULT KEY.
+
+    ty_visualizations TYPE STANDARD TABLE OF ty_visualization WITH DEFAULT KEY.
 
 
   TYPES:
@@ -186,7 +187,7 @@ INTERFACE zif_aff_uipg_v1
     BEGIN OF ty_section,
 
       "! <p class="shorttext">ID</p>
-      "! ID
+      "! Technical ID of the section. The personalization of the launchpad is based on this ID.
       "! $required
       id    TYPE c LENGTH 35,
 
@@ -194,9 +195,9 @@ INTERFACE zif_aff_uipg_v1
       "! Section title on the launchpad UI
       title TYPE c LENGTH 100,
 
-      "! <p class="shorttext">Items</p>
-      "! Items represent applications on the launchpad UI
-      items TYPE ty_items,
+      "! <p class="shorttext">Visualizations</p>
+      "! Visualizations represent applications on the launchpad UI
+      visualizations TYPE ty_visualizations,
 
     END OF ty_section,
 

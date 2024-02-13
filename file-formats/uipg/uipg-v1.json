@@ -90,7 +90,7 @@
         "properties": {
           "id": {
             "title": "ID",
-            "description": "ID",
+            "description": "Technical ID of the section. The personalization of the launchpad is based on this ID.",
             "type": "string",
             "maxLength": 35
           },
@@ -100,31 +100,31 @@
             "type": "string",
             "maxLength": 100
           },
-          "items": {
-            "title": "Items",
-            "description": "Items represent applications on the launchpad UI",
+          "visualizations": {
+            "title": "Visualizations",
+            "description": "Visualizations represent applications on the launchpad UI",
             "type": "array",
             "items": {
-              "title": "Item",
-              "description": "Items represent applications on the launchpad UI",
+              "title": "Visualization",
+              "description": "Visualizations represent applications on the launchpad UI",
               "type": "object",
               "properties": {
                 "id": {
                   "title": "ID",
-                  "description": "ID",
+                  "description": "Technical Id of the visualization. The personalization of the launchpad is based on this ID.",
                   "type": "string",
                   "maxLength": 35
                 },
                 "type": {
                   "title": "Type",
-                  "description": "Type of application assignment",
+                  "description": "Type of application/visualization assignment",
                   "type": "string",
                   "enum": [
                     "ladiAssignment",
                     "tileAssignment"
                   ],
                   "enumTitles": [
-                    "LADI Assignment",
+                    "Launchpad App Descriptor Item Assignment",
                     "Tile Assignment"
                   ],
                   "enumDescriptions": [
@@ -135,7 +135,7 @@
                 },
                 "displayFormat": {
                   "title": "Display Format",
-                  "description": "Tile format for UI rendering",
+                  "description": "Tile format for UI rendering. May not be applicable for all kinds of visualization.",
                   "type": "string",
                   "enum": [
                     "standard",
@@ -234,19 +234,19 @@
                   ]
                 },
                 "ladiAssignment": {
-                  "title": "LADI Assignment",
+                  "title": "Launchpad App Descriptor Item Assignment",
                   "description": "Assignment of a launchpad app descriptor item",
                   "type": "object",
                   "properties": {
                     "ladiId": {
-                      "title": "LADI ID",
+                      "title": "Launchpad App Descriptor Item ID",
                       "description": "ID of a launchpad app descriptor item",
                       "type": "string",
                       "maxLength": 32
                     },
                     "tileId": {
                       "title": "Tile ID",
-                      "description": "Tile ID",
+                      "description": "ID of a tile in the the referenced Launchpad App Descriptor Item",
                       "type": "string",
                       "maxLength": 50
                     }

@@ -13,7 +13,7 @@
     {
       "id": "SECTION_1",
       "title": "Section with different Visualization Types based on LADI Assignments",
-      "items": [
+      "visualizations": [
         {
           "id": "SECTION_1_ITEM_1",
           "ladiAssignment": {
@@ -62,7 +62,7 @@
     {
       "id": "SECTION_2",
       "title": "Section with different Visualization Types based on Tile Assignments",
-      "items": [
+      "visualizations": [
         {
           "id": "SECTION_2_ITEM_1",
           "type": "tileAssignment",
