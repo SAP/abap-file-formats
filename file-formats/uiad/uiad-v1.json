@@ -68,26 +68,26 @@
           "maxLength": 255
         },
         "catalogId": {
-          "title": "Catalog Id",
-          "description": "Catalog id",
+          "title": "Catalog ID",
+          "description": "Catalog ID",
           "type": "string",
           "maxLength": 40
         },
-        "tcode": {
-          "title": "Tcode",
-          "description": "Tcode",
+        "transaction": {
+          "title": "Transaction",
+          "description": "Transaction",
           "type": "string",
           "maxLength": 20
         },
         "fioriId": {
-          "title": "Fiori Id",
-          "description": "Fiori id",
+          "title": "Fiori ID",
+          "description": "Fiori ID",
           "type": "string",
           "maxLength": 20
         },
-        "achComponent": {
-          "title": "ACH Component",
-          "description": "ACH component",
+        "supportComponent": {
+          "title": "Support Component",
+          "description": "Support component",
           "type": "string",
           "maxLength": 24
         },
@@ -112,7 +112,7 @@
         },
         "successor": {
           "title": "Successor",
-          "description": "LADI id of the successor app",
+          "description": "LADI ID of the successor app",
           "type": "string",
           "maxLength": 32
         }
@@ -130,8 +130,8 @@
           "type": "string",
           "enum": [
             "transaction",
-            "wda",
-            "wcf",
+            "webDynpro",
+            "webClient",
             "ui5",
             "legacyUi5",
             "url",
@@ -141,22 +141,22 @@
           "enumTitles": [
             "Transaction",
             "Web Dynpro Application",
-            "WebClient UI Application",
-            "ui5",
+            "Web Client UI Application",
+            "UI5",
             "SAPUI5 Fiori App on SAP BTP",
             "URL App",
             "Tile Only",
-            "UrlTemplate"
+            "Url Template"
           ],
           "enumDescriptions": [
             "Transaction",
-            "Web Dynpro Application",
-            "WebClient UI Application",
-            "SAPUI5 Fiori App",
-            "SAPUI5 Fiori App on SAP BTP (Deprecated)",
-            "URL App",
-            "Tile Only",
-            "UrlTemplate"
+            "Web Dynpro application",
+            "Web Client UI application",
+            "SAPUI5 Fiori app",
+            "SAPUI5 Fiori app on SAP BTP (Deprecated)",
+            "URL app",
+            "Tile only",
+            "Url Template"
           ]
         },
         "systemAlias": {
@@ -171,8 +171,8 @@
           "type": "object",
           "properties": {
             "appId": {
-              "title": "App Id",
-              "description": "SAP UI5 component id",
+              "title": "App ID",
+              "description": "SAP UI5 component ID",
               "type": "string",
               "maxLength": 70
             },
@@ -187,26 +187,26 @@
             "appId"
           ]
         },
-        "wda": {
+        "webDynpro": {
           "title": "WDA App Details",
           "description": "Web Dynpro specific app details",
           "type": "object",
           "properties": {
             "appId": {
-              "title": "App Id",
-              "description": "App id",
+              "title": "App ID",
+              "description": "App ID",
               "type": "string",
               "maxLength": 30
             },
             "configId": {
-              "title": "Config Id",
-              "description": "Config id",
+              "title": "Config ID",
+              "description": "Config ID",
               "type": "string",
               "maxLength": 32
             },
             "flavorId": {
-              "title": "Flavor Id",
-              "description": "Flavor id",
+              "title": "Flavor ID",
+              "description": "Flavor ID",
               "type": "string",
               "maxLength": 32
             },
@@ -225,7 +225,7 @@
                 "Compatible"
               ],
               "enumDescriptions": [
-                "System Default",
+                "System default",
                 "Direct",
                 "Compatible"
               ],
@@ -242,14 +242,14 @@
             "appId"
           ]
         },
-        "wcf": {
-          "title": "WCF App Details",
+        "webClient": {
+          "title": "Web Client App Details",
           "description": "Web Client specific app details",
           "type": "object",
           "properties": {
             "targetId": {
-              "title": "Target Id",
-              "description": "Target id",
+              "title": "Target ID",
+              "description": "Target ID",
               "type": "string",
               "maxLength": 10
             }
@@ -260,23 +260,23 @@
           ]
         },
         "urlTemplate": {
-          "title": "UrlTemplate App Details",
-          "description": "UrlTemplate specific app details",
+          "title": "Url Template App Details",
+          "description": "Url Template specific app details",
           "type": "object",
           "properties": {
             "templateId": {
-              "title": "Template Id",
-              "description": "UrlTemplate id",
+              "title": "Template ID",
+              "description": "Url Template ID",
               "type": "string",
               "maxLength": 32
             },
             "parameters": {
               "title": "Parameters",
-              "description": "UrlTemplate parameters",
+              "description": "Url Template parameters",
               "type": "array",
               "items": {
-                "title": "UrlTemplate Parameter",
-                "description": "UrlTemplate parameter",
+                "title": "Url Template Parameter",
+                "description": "Url Template parameter",
                 "type": "object",
                 "properties": {
                   "name": {
@@ -310,15 +310,15 @@
       "description": "Navigation details",
       "type": "object",
       "properties": {
-        "id": {
-          "title": "Id",
-          "description": "TargetMapping id",
+        "targetMappingId": {
+          "title": "Target Mapping ID",
+          "description": "Target mapping ID",
           "type": "string",
           "maxLength": 50
         },
         "targetUrl": {
           "title": "Target Url",
-          "description": "Target url used for 'Tile Only' and 'Url App' apps",
+          "description": "Target url used for 'Tile only' and 'Url app' apps",
           "type": "string"
         },
         "supportedDeviceTypes": {
@@ -351,19 +351,19 @@
         },
         "semanticObject": {
           "title": "Semantic Object",
-          "description": "Semantic object of the targetMapping",
+          "description": "Semantic object of the target mapping",
           "type": "string",
           "maxLength": 30
         },
         "action": {
           "title": "Action",
-          "description": "Action of the targetMapping",
+          "description": "Action of the target mapping",
           "type": "string",
           "maxLength": 60
         },
         "signature": {
           "title": "Signature Items",
-          "description": "Signature describing the parameters of the targetMapping",
+          "description": "Signature describing the parameters of the target mapping",
           "type": "array",
           "items": {
             "title": "Signature Item",
@@ -386,12 +386,12 @@
                 "type": "string"
               },
               "filterValue": {
-                "title": "Filter value",
+                "title": "Filter Value",
                 "description": "Filter value",
                 "type": "string"
               },
               "filterValueType": {
-                "title": "Filter value Type",
+                "title": "Filter Value Type",
                 "description": "Filter value type",
                 "type": "string",
                 "enum": [
@@ -418,7 +418,7 @@
           }
         },
         "additionalParameterHandling": {
-          "title": "Additional Parameters Allowed",
+          "title": "Additional Param Handling",
           "description": "How additional parameters are handled",
           "type": "string",
           "enum": [
@@ -454,8 +454,8 @@
         "type": "object",
         "properties": {
           "id": {
-            "title": "Id",
-            "description": "Tile id",
+            "title": "ID",
+            "description": "Tile ID",
             "type": "string",
             "maxLength": 50
           },
@@ -555,7 +555,7 @@
                 "type": "object",
                 "properties": {
                   "parameters": {
-                    "title": "parameters",
+                    "title": "Parameters",
                     "description": "Parameters of the tile intent",
                     "type": "array",
                     "items": {
@@ -589,8 +589,8 @@
             "type": "object",
             "properties": {
               "baseChipId": {
-                "title": "Base CHIP Id",
-                "description": "Base CHIP id",
+                "title": "Base CHIP ID",
+                "description": "Base CHIP ID",
                 "type": "string",
                 "maxLength": 255
               },
@@ -609,8 +609,8 @@
                   "type": "object",
                   "properties": {
                     "id": {
-                      "title": "Id",
-                      "description": "Bag id",
+                      "title": "ID",
+                      "description": "Bag ID",
                       "type": "string",
                       "maxLength": 100
                     },

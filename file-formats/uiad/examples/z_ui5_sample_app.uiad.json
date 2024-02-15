@@ -7,9 +7,9 @@
     "generalInformation": {
       "information": "UIAD Information",
       "catalogId": "/UI2/FLP_DEMO_BC1_TEST",
-      "tcode": "F1234",
+      "transaction": "F1234",
       "fioriId": "F1234",
-      "achComponent": "CA-FLP-FE-UI",
+      "supportComponent": "CA-FLP-FE-UI",
       "defaultTile": "3WO90XZ1DX19DA1UD5RDXQXWK"
     },
     "appDetails": {
@@ -20,7 +20,7 @@
       }
     },
     "navigation": {
-      "id": "3WO90XZ1DX1AO4ON8E556YJ10",
+      "targetMappingId": "3WO90XZ1DX1AO4ON8E556YJ10",
       "supportedDeviceTypes": {
         "desktop": true,
         "tablet": true,

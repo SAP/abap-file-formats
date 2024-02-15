@@ -8,27 +8,27 @@ INTERFACE zif_aff_uiad_v1
 
       "! <p class="shorttext">Information</p>
       "! LADI information text
-      information   TYPE c LENGTH 255,
+      information       TYPE c LENGTH 255,
 
-      "! <p class="shorttext">Catalog Id</p>
-      "! Catalog id
-      catalog_id    TYPE c LENGTH 40,
+      "! <p class="shorttext">Catalog ID</p>
+      "! Catalog ID
+      catalog_id        TYPE c LENGTH 40,
 
-      "! <p class="shorttext">Tcode</p>
-      "! Tcode
-      tcode         TYPE c LENGTH 20,
+      "! <p class="shorttext">Transaction</p>
+      "! Transaction
+      transaction       TYPE c LENGTH 20,
 
-      "! <p class="shorttext">Fiori Id</p>
-      "! Fiori id
-      fiori_id      TYPE c LENGTH 20,
+      "! <p class="shorttext">Fiori ID</p>
+      "! Fiori ID
+      fiori_id          TYPE c LENGTH 20,
 
-      "! <p class="shorttext">ACH Component</p>
-      "! ACH component
-      ach_component TYPE c LENGTH 24,
+      "! <p class="shorttext">Support Component</p>
+      "! Support component
+      support_component TYPE c LENGTH 24,
 
       "! <p class="shorttext">Default Tile</p>
       "! Default tile
-      default_tile        TYPE c LENGTH 30,
+      default_tile      TYPE c LENGTH 30,
 
     END OF ty_general_information.
 
@@ -42,7 +42,7 @@ INTERFACE zif_aff_uiad_v1
       deprecated TYPE abap_bool,
 
       "! <p class="shorttext">Successor</p>
-      "! LADI id of the successor app
+      "! LADI ID of the successor app
       successor  TYPE c LENGTH 32,
 
     END OF ty_lifecycle.
@@ -52,8 +52,8 @@ INTERFACE zif_aff_uiad_v1
     "! UI5 specific app details
     BEGIN OF ty_app_details_ui5,
 
-      "! <p class="shorttext">App Id</p>
-      "! SAP UI5 component id
+      "! <p class="shorttext">App ID</p>
+      "! SAP UI5 component ID
       "! $required
       app_id   TYPE c LENGTH 70,
 
@@ -63,73 +63,73 @@ INTERFACE zif_aff_uiad_v1
 
     END OF ty_app_details_ui5.
 
-  "! WDA integration mode
-  "! $values {@link zif_aff_uiad_v1.data:co_wda_integration_mode}
-  "! $default {@link zif_aff_uiad_v1.data:co_wda_integration_mode.system_default}
-  TYPES ty_wda_integration_mode TYPE c LENGTH 1.
+  "! Web Dynpro integration mode
+  "! $values {@link zif_aff_uiad_v1.data:co_web_dynpro_integration_mode}
+  "! $default {@link zif_aff_uiad_v1.data:co_web_dynpro_integration_mode.system_default}
+  TYPES ty_web_dynpro_integration_mode TYPE c LENGTH 1.
 
   CONSTANTS:
     "! <p class="shorttext">Integration Mode</p>
-    "! WDA integration mode
-    BEGIN OF co_wda_integration_mode,
+    "! Web Dynpro integration mode
+    BEGIN OF co_web_dynpro_integration_mode,
 
       "! <p class="shorttext">System Default</p>
-      "! System Default
-      system_default TYPE ty_wda_integration_mode VALUE ' ',
+      "! System default
+      system_default TYPE ty_web_dynpro_integration_mode VALUE ' ',
 
       "! <p class="shorttext">Direct</p>
       "! Direct
-      direct         TYPE ty_wda_integration_mode VALUE 'D',
+      direct         TYPE ty_web_dynpro_integration_mode VALUE 'D',
 
       "! <p class="shorttext">Compatible</p>
       "! Compatible
-      compatible     TYPE ty_wda_integration_mode VALUE 'C',
+      compatible     TYPE ty_web_dynpro_integration_mode VALUE 'C',
 
-    END OF co_wda_integration_mode.
+    END OF co_web_dynpro_integration_mode.
 
   TYPES:
-    "! <p class="shorttext">WDA App Details</p>
+    "! <p class="shorttext">Web Dynpro App Details</p>
     "! Web Dynpro specific app details
-    BEGIN OF ty_app_details_wda,
+    BEGIN OF ty_app_details_web_dynpro,
 
-      "! <p class="shorttext">App Id</p>
-      "! App id
+      "! <p class="shorttext">App ID</p>
+      "! App ID
       "! $required
       app_id             TYPE c LENGTH 30,
 
-      "! <p class="shorttext">Config Id</p>
-      "! Config id
+      "! <p class="shorttext">Config ID</p>
+      "! Config ID
       config_id          TYPE c LENGTH 32,
 
-      "! <p class="shorttext">Flavor Id</p>
-      "! Flavor id
+      "! <p class="shorttext">Flavor ID</p>
+      "! Flavor ID
       flavor_id          TYPE c LENGTH 32,
 
       "! <p class="shorttext">Integration Mode</p>
       "! Integration mode
-      integration_mode   TYPE ty_wda_integration_mode,
+      integration_mode   TYPE ty_web_dynpro_integration_mode,
 
       "! <p class="shorttext">Compatibility Mode</p>
       "! Compatibility mode
       compatibility_mode TYPE abap_bool,
 
-    END OF ty_app_details_wda.
+    END OF ty_app_details_web_dynpro.
 
   TYPES:
     "! <p class="shorttext">WCF App Details</p>
     "! Web Client specific app details
-    BEGIN OF ty_app_details_wcf,
+    BEGIN OF ty_app_details_web_client,
 
-      "! <p class="shorttext">Target Id</p>
-      "! Target id
+      "! <p class="shorttext">Target ID</p>
+      "! Target ID
       "! $required
       target_id TYPE c LENGTH 10,
 
-    END OF ty_app_details_wcf.
+    END OF ty_app_details_web_client.
 
   TYPES:
-    "! <p class="shorttext">UrlTemplate Parameter</p>
-    "! UrlTemplate parameter
+    "! <p class="shorttext">Url Template Parameter</p>
+    "! Url Template parameter
     BEGIN OF ty_url_template_parameter,
 
       "! <p class="shorttext">Name</p>
@@ -145,17 +145,17 @@ INTERFACE zif_aff_uiad_v1
     ty_url_template_parameters TYPE STANDARD TABLE OF ty_url_template_parameter WITH DEFAULT KEY.
 
   TYPES:
-    "! <p class="shorttext">UrlTemplate App Details</p>
-    "! UrlTemplate specific app details
+    "! <p class="shorttext">Url Template App Details</p>
+    "! Url Template specific app details
     BEGIN OF ty_app_details_url_template,
 
-      "! <p class="shorttext">Template Id</p>
-      "! UrlTemplate id
+      "! <p class="shorttext">Template ID</p>
+      "! Url Template ID
       "! $required
       template_id TYPE c LENGTH 32,
 
       "! <p class="shorttext">Parameters</p>
-      "! UrlTemplate parameters
+      "! Url Template parameters
       parameters  TYPE ty_url_template_parameters,
 
     END OF ty_app_details_url_template.
@@ -175,31 +175,31 @@ INTERFACE zif_aff_uiad_v1
       transaction  TYPE ty_app_type VALUE 'T',
 
       "! <p class="shorttext">Web Dynpro Application</p>
-      "! Web Dynpro Application
-      wda          TYPE ty_app_type VALUE 'W',
+      "! Web Dynpro application
+      web_dynpro   TYPE ty_app_type VALUE 'W',
 
-      "! <p class="shorttext">WebClient UI Application</p>
-      "! WebClient UI Application
-      wcf          TYPE ty_app_type VALUE 'C',
+      "! <p class="shorttext">Web Client UI Application</p>
+      "! Web Client UI application
+      web_client   TYPE ty_app_type VALUE 'C',
 
-      "! <p class="shorttext">ui5</p>
-      "! SAPUI5 Fiori App
+      "! <p class="shorttext">UI5</p>
+      "! SAPUI5 Fiori app
       ui5          TYPE ty_app_type VALUE 'U',
 
       "! <p class="shorttext">SAPUI5 Fiori App on SAP BTP</p>
-      "! SAPUI5 Fiori App on SAP BTP (Deprecated)
+      "! SAPUI5 Fiori app on SAP BTP (Deprecated)
       legacy_ui5   TYPE ty_app_type VALUE 'S',
 
       "! <p class="shorttext">URL App</p>
-      "! URL App
+      "! URL app
       url          TYPE ty_app_type VALUE 'R',
 
       "! <p class="shorttext">Tile Only</p>
-      "! Tile Only
+      "! Tile only
       tile         TYPE ty_app_type VALUE 'O',
 
-      "! <p class="shorttext">UrlTemplate</p>
-      "! UrlTemplate
+      "! <p class="shorttext">Url Template</p>
+      "! Url Template
       url_template TYPE ty_app_type VALUE 'G',
 
     END OF co_app_type.
@@ -224,14 +224,14 @@ INTERFACE zif_aff_uiad_v1
 
       "! <p class="shorttext">WDA App Details</p>
       "! Web Dynpro specific app details
-      wda          TYPE ty_app_details_wda,
+      web_dynpro   TYPE ty_app_details_web_dynpro,
 
-      "! <p class="shorttext">WCF App Details</p>
+      "! <p class="shorttext">Web Client App Details</p>
       "! Web Client specific app details
-      wcf          TYPE ty_app_details_wcf,
+      web_client   TYPE ty_app_details_web_client,
 
-      "! <p class="shorttext">UrlTemplate App Details</p>
-      "! UrlTemplate specific app details
+      "! <p class="shorttext">Url Template App Details</p>
+      "! Url Template specific app details
       url_template TYPE ty_app_details_url_template,
 
     END OF ty_app_details.
@@ -296,11 +296,11 @@ INTERFACE zif_aff_uiad_v1
       "! Default value
       default_value       TYPE string,
 
-      "! <p class="shorttext">Filter value</p>
+      "! <p class="shorttext">Filter Value</p>
       "! Filter value
       filter_value        TYPE string,
 
-      "! <p class="shorttext">Filter value Type</p>
+      "! <p class="shorttext">Filter Value Type</p>
       "! Filter value type
       filter_value_type   TYPE ty_filter_value_type,
 
@@ -342,12 +342,12 @@ INTERFACE zif_aff_uiad_v1
     "! Navigation details
     BEGIN OF ty_navigation,
 
-      "! <p class="shorttext">Id</p>
-      "! TargetMapping id
-      id                            TYPE c LENGTH 50,
+      "! <p class="shorttext">Target Mapping ID</p>
+      "! Target mapping ID
+      target_mapping_id             TYPE c LENGTH 50,
 
       "! <p class="shorttext">Target Url</p>
-      "! Target url used for 'Tile Only' and 'Url App' apps
+      "! Target url used for 'Tile only' and 'Url app' apps
       target_url                    TYPE string,
 
       "! <p class="shorttext">Supported Device Types</p>
@@ -356,18 +356,18 @@ INTERFACE zif_aff_uiad_v1
       supported_device_types        TYPE ty_device_types,
 
       "! <p class="shorttext">Semantic Object</p>
-      "! Semantic object of the targetMapping
+      "! Semantic object of the target mapping
       semantic_object               TYPE c LENGTH 30,
 
       "! <p class="shorttext">Action</p>
-      "! Action of the targetMapping
+      "! Action of the target mapping
       action                        TYPE c LENGTH 60,
 
       "! <p class="shorttext">Signature Items</p>
-      "! Signature describing the parameters of the targetMapping
+      "! Signature describing the parameters of the target mapping
       signature                     TYPE ty_signature_items,
 
-      "! <p class="shorttext">Additional Parameters Allowed</p>
+      "! <p class="shorttext">Additional Param Handling</p>
       "! How additional parameters are handled
       additional_parameter_handling TYPE ty_additional_param_handling,
 
@@ -443,7 +443,7 @@ INTERFACE zif_aff_uiad_v1
     "! Navigation details of the tile
     BEGIN OF ty_tile_navigation,
 
-      "! <p class="shorttext">parameters</p>
+      "! <p class="shorttext">Parameters</p>
       "! Parameters of the tile intent
       parameters TYPE ty_tile_parameters,
 
@@ -514,8 +514,8 @@ INTERFACE zif_aff_uiad_v1
     "! CHIP bag
     BEGIN OF ty_chip_bag,
 
-      "! <p class="shorttext">Id</p>
-      "! Bag id
+      "! <p class="shorttext">ID</p>
+      "! Bag ID
       id         TYPE c LENGTH 100,
 
       "! <p class="shorttext">Properties</p>
@@ -531,8 +531,8 @@ INTERFACE zif_aff_uiad_v1
     "! Custom tile specific details
     BEGIN OF ty_custom_tile_details,
 
-      "! <p class="shorttext">Base CHIP Id</p>
-      "! Base CHIP id
+      "! <p class="shorttext">Base CHIP ID</p>
+      "! Base CHIP ID
       base_chip_id  TYPE c LENGTH 255,
 
       "! <p class="shorttext">Configuration</p>
@@ -550,8 +550,8 @@ INTERFACE zif_aff_uiad_v1
     "! Details of a tile
     BEGIN OF ty_tile,
 
-      "! <p class="shorttext">Id</p>
-      "! Tile id
+      "! <p class="shorttext">ID</p>
+      "! Tile ID
       "! $required
       id        TYPE c LENGTH 50,
 
