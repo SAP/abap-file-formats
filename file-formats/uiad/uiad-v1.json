@@ -188,7 +188,7 @@
           ]
         },
         "webDynpro": {
-          "title": "WDA App Details",
+          "title": "Web Dynpro App Details",
           "description": "Web Dynpro specific app details",
           "type": "object",
           "properties": {

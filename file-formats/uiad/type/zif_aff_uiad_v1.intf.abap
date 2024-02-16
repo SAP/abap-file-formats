@@ -116,7 +116,7 @@ INTERFACE zif_aff_uiad_v1
     END OF ty_app_details_web_dynpro.
 
   TYPES:
-    "! <p class="shorttext">WCF App Details</p>
+    "! <p class="shorttext">Web Client App Details</p>
     "! Web Client specific app details
     BEGIN OF ty_app_details_web_client,
 
@@ -222,7 +222,7 @@ INTERFACE zif_aff_uiad_v1
       "! UI5 specific app details
       ui5          TYPE ty_app_details_ui5,
 
-      "! <p class="shorttext">WDA App Details</p>
+      "! <p class="shorttext">Web Dynpro App Details</p>
       "! Web Dynpro specific app details
       web_dynpro   TYPE ty_app_details_web_dynpro,
 
