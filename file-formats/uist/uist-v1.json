@@ -62,8 +62,8 @@
       "type": "object",
       "properties": {
         "title": {
-          "title": "Title",
-          "description": "Title of the space template",
+          "title": "Title on Launchpad",
+          "description": "Title on SAP Fiori launchpad",
           "type": "string",
           "maxLength": 100
         },
