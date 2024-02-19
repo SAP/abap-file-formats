@@ -8,7 +8,7 @@ INTERFACE zif_aff_uiad_v1
       "! <p class="shorttext">Description</p>
       "! Description of the ABAP object
       "! $required
-      description           TYPE c length 255,
+      description           TYPE c LENGTH 255,
 
       "! $required
       original_language     TYPE zif_aff_types_v1=>ty_original_language,
