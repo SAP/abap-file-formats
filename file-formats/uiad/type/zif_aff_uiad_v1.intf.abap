@@ -2,6 +2,21 @@ INTERFACE zif_aff_uiad_v1
   PUBLIC.
 
   TYPES:
+    "! <p class="shorttext">Header</p>
+    "! The header for an ABAP main object (without source code) with a description of 255 characters
+    BEGIN OF ty_header,
+      "! <p class="shorttext">Description</p>
+      "! Description of the ABAP object
+      "! $required
+      description           TYPE c length 255,
+
+      "! $required
+      original_language     TYPE zif_aff_types_v1=>ty_original_language,
+
+      abap_language_version TYPE zif_aff_types_v1=>ty_abap_language_version,
+    END OF ty_header.
+
+  TYPES:
     "! <p class="shorttext">General Information</p>
     "! General information
     BEGIN OF ty_general_information,
@@ -28,7 +43,11 @@ INTERFACE zif_aff_uiad_v1
 
       "! <p class="shorttext">Default Tile</p>
       "! Default tile
-      default_tile      TYPE c LENGTH 30,
+      default_tile      TYPE c LENGTH 50,
+
+      "! <p class="shorttext">Suppress Tiles</p>
+      "! Suppress tiles
+      suppress_tiles    TYPE abap_bool,
 
     END OF ty_general_information.
 
@@ -131,6 +150,10 @@ INTERFACE zif_aff_uiad_v1
     "! <p class="shorttext">Url Template Parameter</p>
     "! Url Template parameter
     BEGIN OF ty_url_template_parameter,
+
+      "! <p class="shorttext">ID</p>
+      "! ID
+      id  TYPE string,
 
       "! <p class="shorttext">Name</p>
       "! Parameter name
@@ -585,7 +608,7 @@ INTERFACE zif_aff_uiad_v1
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header              TYPE zif_aff_types_v1=>ty_header_100_cloud,
+      header              TYPE ty_header, "TYPE zif_aff_types_v1=>ty_header_100_cloud,
 
       "! <p class="shorttext">General Information</p>
       "! General information

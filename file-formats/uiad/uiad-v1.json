@@ -21,7 +21,7 @@
           "title": "Description",
           "description": "Description of the ABAP object",
           "type": "string",
-          "maxLength": 100
+          "maxLength": 255
         },
         "originalLanguage": {
           "title": "Original Language",
@@ -37,14 +37,17 @@
           "type": "string",
           "enum": [
             "standard",
+            "keyUser",
             "cloudDevelopment"
           ],
           "enumTitles": [
             "Standard",
+            "ABAP for Key Users",
             "ABAP Cloud Development"
           ],
           "enumDescriptions": [
             "Standard",
+            "ABAP for key user extensibility",
             "ABAP cloud development"
           ],
           "default": "standard"
@@ -95,7 +98,12 @@
           "title": "Default Tile",
           "description": "Default tile",
           "type": "string",
-          "maxLength": 30
+          "maxLength": 50
+        },
+        "suppressTiles": {
+          "title": "Suppress Tiles",
+          "description": "Suppress tiles",
+          "type": "boolean"
         }
       },
       "additionalProperties": false
@@ -279,6 +287,11 @@
                 "description": "Url Template parameter",
                 "type": "object",
                 "properties": {
+                  "id": {
+                    "title": "ID",
+                    "description": "ID",
+                    "type": "string"
+                  },
                   "name": {
                     "title": "Name",
                     "description": "Parameter name",
