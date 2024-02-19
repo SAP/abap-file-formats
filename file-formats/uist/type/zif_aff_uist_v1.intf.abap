@@ -25,6 +25,7 @@ INTERFACE zif_aff_uist_v1
     BEGIN OF ty_page,
       "! <p class="shorttext">Name</p>
       "! Name of the page template
+      "! $required
       name          TYPE c LENGTH 35,
     END OF ty_page,
 
