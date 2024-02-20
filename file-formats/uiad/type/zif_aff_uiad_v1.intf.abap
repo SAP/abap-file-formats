@@ -153,7 +153,7 @@ INTERFACE zif_aff_uiad_v1
 
       "! <p class="shorttext">ID</p>
       "! ID
-      id  TYPE string,
+      id    TYPE string,
 
       "! <p class="shorttext">Name</p>
       "! Parameter name
@@ -608,7 +608,7 @@ INTERFACE zif_aff_uiad_v1
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header              TYPE ty_header, "TYPE zif_aff_types_v1=>ty_header_100_cloud,
+      header              TYPE ty_header,
 
       "! <p class="shorttext">General Information</p>
       "! General information
