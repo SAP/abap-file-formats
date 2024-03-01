@@ -6,5 +6,7 @@
   },
   "typeCategory": "businessObject",
   "name": "Z_Aff_Example_Ront",
-  "objectTypeCode": "4789"
+  "objectTypeCode": "4789",
+  "interfaceBehaviorDefinition": "I_EXAMPLE_INTERFACE_BEH_DEF_TP",
+  "odmEntityName": "ExampleODMEntity"
 }
