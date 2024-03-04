@@ -151,10 +151,6 @@ INTERFACE zif_aff_uiad_v1
     "! Url Template parameter
     BEGIN OF ty_url_template_parameter,
 
-      "! <p class="shorttext">ID</p>
-      "! ID
-      id    TYPE string,
-
       "! <p class="shorttext">Name</p>
       "! Parameter name
       name  TYPE string,
@@ -633,6 +629,11 @@ INTERFACE zif_aff_uiad_v1
       "! Tiles related to the LADI
       "! $required
       tiles               TYPE ty_tiles,
+
+      "! <p class="shorttext">Defaulted Tile</p>
+      "! Defaulted (legacy) tile
+      "! $required
+      defaulted_tile      TYPE ty_tile,
 
     END OF ty_main.
 

@@ -287,11 +287,6 @@
                 "description": "Url Template parameter",
                 "type": "object",
                 "properties": {
-                  "id": {
-                    "title": "ID",
-                    "description": "ID",
-                    "type": "string"
-                  },
                   "name": {
                     "title": "Name",
                     "description": "Parameter name",
@@ -670,6 +665,215 @@
           "tileType"
         ]
       }
+    },
+    "defaultedTile": {
+      "title": "Defaulted Tile",
+      "description": "Defaulted (legacy) tile",
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "description": "Tile ID",
+          "type": "string",
+          "maxLength": 50
+        },
+        "tileType": {
+          "title": "Tile Type",
+          "description": "Tile type",
+          "type": "string",
+          "enum": [
+            "static",
+            "dynamic",
+            "custom"
+          ],
+          "enumTitles": [
+            "Static",
+            "Dynamic",
+            "Custom"
+          ],
+          "enumDescriptions": [
+            "Static Tile",
+            "Dynamic Tile",
+            "Custom Tile"
+          ],
+          "default": "static"
+        },
+        "standard": {
+          "title": "Standard Tile Details",
+          "description": "Standard tile specific details",
+          "type": "object",
+          "properties": {
+            "reuseTextFromApp": {
+              "title": "Reuse Text From App",
+              "description": "Reuse text defined as part of the app",
+              "type": "boolean"
+            },
+            "title": {
+              "title": "Title",
+              "description": "Tile title",
+              "type": "string",
+              "maxLength": 255
+            },
+            "subtitle": {
+              "title": "Subtitle",
+              "description": "Tile subtitle",
+              "type": "string",
+              "maxLength": 255
+            },
+            "information": {
+              "title": "Information",
+              "description": "Tile information",
+              "type": "string",
+              "maxLength": 255
+            },
+            "keywords": {
+              "title": "Keywords",
+              "description": "Tile keywords",
+              "type": "string",
+              "maxLength": 255
+            },
+            "icon": {
+              "title": "Icon",
+              "description": "Tile icon",
+              "type": "string"
+            },
+            "dynamic": {
+              "title": "Dynamic Tile Details",
+              "description": "Dynamic tile specific details",
+              "type": "object",
+              "properties": {
+                "serviceBaseUrl": {
+                  "title": "Service Base Url",
+                  "description": "Service base url",
+                  "type": "string"
+                },
+                "servicePath": {
+                  "title": "Service Path",
+                  "description": "Service path",
+                  "type": "string"
+                },
+                "refreshInterval": {
+                  "title": "Refresh Interval",
+                  "description": "Timeout until the tile is refreshed",
+                  "type": "integer",
+                  "minimum": -2147483648,
+                  "maximum": 2147483647
+                },
+                "numberUnit": {
+                  "title": "Number Unit",
+                  "description": "Number unit",
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            },
+            "navigation": {
+              "title": "Tile Navigation",
+              "description": "Navigation details of the tile",
+              "type": "object",
+              "properties": {
+                "parameters": {
+                  "title": "Parameters",
+                  "description": "Parameters of the tile intent",
+                  "type": "array",
+                  "items": {
+                    "title": "Tile Parameter",
+                    "description": "Tile parameter",
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "title": "Name",
+                        "description": "Parameter name",
+                        "type": "string"
+                      },
+                      "value": {
+                        "title": "Value",
+                        "description": "Parameter value",
+                        "type": "string"
+                      }
+                    },
+                    "additionalProperties": false
+                  }
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "additionalProperties": false
+        },
+        "custom": {
+          "title": "Custom Tile Details",
+          "description": "Custom tile specific details",
+          "type": "object",
+          "properties": {
+            "baseChipId": {
+              "title": "Base CHIP ID",
+              "description": "Base CHIP ID",
+              "type": "string",
+              "maxLength": 255
+            },
+            "configuration": {
+              "title": "Configuration",
+              "description": "Configuration string of the CHIP",
+              "type": "string"
+            },
+            "bags": {
+              "title": "Bags",
+              "description": "CHIP bags",
+              "type": "array",
+              "items": {
+                "title": "Bag",
+                "description": "CHIP bag",
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "title": "ID",
+                    "description": "Bag ID",
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "properties": {
+                    "title": "Properties",
+                    "description": "CHIP bag properties",
+                    "type": "array",
+                    "items": {
+                      "title": "CHIP Bag Property",
+                      "description": "Property of a CHIP bag",
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "title": "Name",
+                          "description": "Property name",
+                          "type": "string",
+                          "maxLength": 100
+                        },
+                        "value": {
+                          "title": "Value",
+                          "description": "Property value",
+                          "type": "string"
+                        },
+                        "translatable": {
+                          "title": "Translatable",
+                          "description": "Whether the property is translatable",
+                          "type": "boolean"
+                        }
+                      },
+                      "additionalProperties": false
+                    }
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "tileType"
+      ]
     }
   },
   "additionalProperties": false,
@@ -679,6 +883,7 @@
     "generalInformation",
     "appDetails",
     "navigation",
-    "tiles"
+    "tiles",
+    "defaultedTile"
   ]
 }
