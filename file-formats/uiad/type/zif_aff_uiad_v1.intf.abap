@@ -632,7 +632,6 @@ INTERFACE zif_aff_uiad_v1
 
       "! <p class="shorttext">Defaulted Tile</p>
       "! Defaulted (legacy) tile
-      "! $required
       defaulted_tile      TYPE ty_tile,
 
     END OF ty_main.

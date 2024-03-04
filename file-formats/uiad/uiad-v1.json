@@ -883,7 +883,6 @@
     "generalInformation",
     "appDetails",
     "navigation",
-    "tiles",
-    "defaultedTile"
+    "tiles"
   ]
 }
