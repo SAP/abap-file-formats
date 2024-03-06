@@ -70,7 +70,6 @@ INTERFACE zif_aff_cota_v1
   TYPES:
     "! <p class="shorttext">RFC Settings</p>
     "! RFC settings
-    "! $required
     BEGIN OF ty_rfc_settings,
       "! <p class="shorttext">Enforce SAP GUI Support</p>
       "! Enforce SAP GUI support
@@ -87,7 +86,6 @@ INTERFACE zif_aff_cota_v1
   TYPES:
     "! <p class="shorttext">HTTP Settings</p>
     "! HTTP settings
-    "! $required
     BEGIN OF ty_http_settings,
       "! <p class="shorttext">Path Prefix</p>
       "! Path prefix
