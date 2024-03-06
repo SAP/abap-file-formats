@@ -10,8 +10,7 @@
   "exitClasses": {
     "check": "CL_APJ_HOME_DEMO_CHECK",
     "valueHelp": "CL_VALUE_HELP_APJ_SIMPLE",
-    "notification": "CL_APJ_HOME_DEMO_CHECK",
-    "delete": "CL_APJT_RT_JOB_DELETE_EXIT"
+    "notification": "CL_APJ_HOME_DEMO_CHECK"
   },
   "sections": [
     {

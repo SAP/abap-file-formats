@@ -1,10 +1,11 @@
-name: Validate JSON schema
+name: Generate JSON Schema
 
 on:
   pull_request:
 
 jobs:
   validate:
+    name: Compare generated against provided
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -19,3 +20,11 @@ jobs:
       run: |
         cd generate
         npm run generate
+    - name: Upload generated schemas
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: schemas
+        path: |
+          generate/generated/*.json
+
