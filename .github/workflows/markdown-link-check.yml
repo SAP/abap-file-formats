@@ -1,4 +1,4 @@
-name: Check Markdown links
+name: Check Markdown Links
 
 on:
   pull_request:
@@ -7,7 +7,8 @@ permissions:
   contents: read
 
 jobs:
-  markdown-link-check:
+  check-links:
+    name: Check links
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
