@@ -45,7 +45,7 @@ INTERFACE zif_aff_cota_v1
       "! <p class="shorttext">Allow Multiple Application Destinations</p>
       "! Allow multiple application destinations
       allow_multiple_destinations TYPE abap_bool,
-      "! <p class="shorttext">Multitenacy Mode</p>
+      "! <p class="shorttext">Multitenancy Mode</p>
       "! Multitenancy mode
       "! $default {@link zif_aff_cota_v1.data:co_multimode_type.client_dependent}
       multitenancy_mode           TYPE ty_multi_type,
