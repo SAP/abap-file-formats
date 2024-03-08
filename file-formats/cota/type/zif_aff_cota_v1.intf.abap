@@ -26,8 +26,8 @@ INTERFACE zif_aff_cota_v1
       "! Cross client
       cross_client       TYPE ty_multi_type VALUE 'C',
       "! <p class="shorttext">Client Specific</p>
-      "! Client dependent
-      client_dependent TYPE ty_multi_type VALUE 'D',
+      "! Client specific
+      client_specific TYPE ty_multi_type VALUE 'D',
     END OF co_multimode_type.
 
   TYPES:
@@ -47,7 +47,7 @@ INTERFACE zif_aff_cota_v1
       allow_multiple_destinations TYPE abap_bool,
       "! <p class="shorttext">Multitenancy Mode</p>
       "! Multitenancy mode
-      "! $default {@link zif_aff_cota_v1.data:co_multimode_type.client_dependent}
+      "! $default {@link zif_aff_cota_v1.data:co_multimode_type.client_specific}
       multitenancy_mode           TYPE ty_multi_type,
     END OF ty_configuration.
 

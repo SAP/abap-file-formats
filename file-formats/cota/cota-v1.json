@@ -93,7 +93,7 @@
           "type": "string",
           "enum": [
             "crossClient",
-            "clientDependent"
+            "clientSpecific"
           ],
           "enumTitles": [
             "Cross Client",
@@ -101,9 +101,9 @@
           ],
           "enumDescriptions": [
             "Cross client",
-            "Client dependent"
+            "Client specific"
           ],
-          "default": "clientDependent"
+          "default": "clientSpecific"
         }
       },
       "additionalProperties": false
