@@ -94,44 +94,11 @@
           "type": "string",
           "maxLength": 24
         },
-        "defaultTile": {
-          "title": "Default Tile",
-          "description": "Default tile",
-          "type": "string",
-          "maxLength": 50
-        },
         "suppressTiles": {
           "title": "Suppress Tiles",
           "description": "Suppress tiles",
           "type": "boolean"
-        }
-      },
-      "additionalProperties": false
-    },
-    "lifecycle": {
-      "title": "Lifecycle",
-      "description": "Lifecycle state of the app",
-      "type": "object",
-      "properties": {
-        "deprecated": {
-          "title": "Deprecated",
-          "description": "Whether the app is deprecated",
-          "type": "boolean"
         },
-        "successor": {
-          "title": "Successor",
-          "description": "LADI ID of the successor app",
-          "type": "string",
-          "maxLength": 32
-        }
-      },
-      "additionalProperties": false
-    },
-    "appDetails": {
-      "title": "App Details",
-      "description": "Details about the technology of the app",
-      "type": "object",
-      "properties": {
         "appType": {
           "title": "App Type",
           "description": "LADI app type",
@@ -172,145 +139,145 @@
           "description": "System alias",
           "type": "string",
           "maxLength": 32
-        },
-        "ui5": {
-          "title": "UI5 App Details",
-          "description": "UI5 specific app details",
-          "type": "object",
-          "properties": {
-            "appId": {
-              "title": "App ID",
-              "description": "SAP UI5 component ID",
-              "type": "string",
-              "maxLength": 70
-            },
-            "icfPath": {
-              "title": "ICF Path",
-              "description": "ICF path",
-              "type": "string"
-            }
-          },
-          "additionalProperties": false,
-          "required": [
-            "appId"
-          ]
-        },
-        "webDynpro": {
-          "title": "Web Dynpro App Details",
-          "description": "Web Dynpro specific app details",
-          "type": "object",
-          "properties": {
-            "appId": {
-              "title": "App ID",
-              "description": "App ID",
-              "type": "string",
-              "maxLength": 30
-            },
-            "configId": {
-              "title": "Config ID",
-              "description": "Config ID",
-              "type": "string",
-              "maxLength": 32
-            },
-            "flavorId": {
-              "title": "Flavor ID",
-              "description": "Flavor ID",
-              "type": "string",
-              "maxLength": 32
-            },
-            "integrationMode": {
-              "title": "Integration Mode",
-              "description": "Integration mode",
-              "type": "string",
-              "enum": [
-                "systemDefault",
-                "direct",
-                "compatible"
-              ],
-              "enumTitles": [
-                "System Default",
-                "Direct",
-                "Compatible"
-              ],
-              "enumDescriptions": [
-                "System default",
-                "Direct",
-                "Compatible"
-              ],
-              "default": "systemDefault"
-            },
-            "compatibilityMode": {
-              "title": "Compatibility Mode",
-              "description": "Compatibility mode",
-              "type": "boolean"
-            }
-          },
-          "additionalProperties": false,
-          "required": [
-            "appId"
-          ]
-        },
-        "webClient": {
-          "title": "Web Client App Details",
-          "description": "Web Client specific app details",
-          "type": "object",
-          "properties": {
-            "targetId": {
-              "title": "Target ID",
-              "description": "Target ID",
-              "type": "string",
-              "maxLength": 10
-            }
-          },
-          "additionalProperties": false,
-          "required": [
-            "targetId"
-          ]
-        },
-        "urlTemplate": {
-          "title": "Url Template App Details",
-          "description": "Url Template specific app details",
-          "type": "object",
-          "properties": {
-            "templateId": {
-              "title": "Template ID",
-              "description": "Url Template ID",
-              "type": "string",
-              "maxLength": 32
-            },
-            "parameters": {
-              "title": "Parameters",
-              "description": "Url Template parameters",
-              "type": "array",
-              "items": {
-                "title": "Url Template Parameter",
-                "description": "Url Template parameter",
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "title": "Name",
-                    "description": "Parameter name",
-                    "type": "string"
-                  },
-                  "value": {
-                    "title": "Value",
-                    "description": "Parameter value",
-                    "type": "string"
-                  }
-                },
-                "additionalProperties": false
-              }
-            }
-          },
-          "additionalProperties": false,
-          "required": [
-            "templateId"
-          ]
         }
       },
       "additionalProperties": false,
       "required": [
         "appType"
+      ]
+    },
+    "appDetailsUi5": {
+      "title": "UI5 App Details",
+      "description": "UI5 specific app details",
+      "type": "object",
+      "properties": {
+        "appId": {
+          "title": "App ID",
+          "description": "SAP UI5 component ID",
+          "type": "string",
+          "maxLength": 70
+        },
+        "icfPath": {
+          "title": "ICF Path",
+          "description": "ICF path",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "appId"
+      ]
+    },
+    "appDetailsWebDynpro": {
+      "title": "Web Dynpro App Details",
+      "description": "Web Dynpro specific app details",
+      "type": "object",
+      "properties": {
+        "appId": {
+          "title": "App ID",
+          "description": "App ID",
+          "type": "string",
+          "maxLength": 30
+        },
+        "configId": {
+          "title": "Config ID",
+          "description": "Config ID",
+          "type": "string",
+          "maxLength": 32
+        },
+        "flavorId": {
+          "title": "Flavor ID",
+          "description": "Flavor ID",
+          "type": "string",
+          "maxLength": 32
+        },
+        "integrationMode": {
+          "title": "Integration Mode",
+          "description": "Integration mode",
+          "type": "string",
+          "enum": [
+            "systemDefault",
+            "direct",
+            "compatible"
+          ],
+          "enumTitles": [
+            "System Default",
+            "Direct",
+            "Compatible"
+          ],
+          "enumDescriptions": [
+            "System default",
+            "Direct",
+            "Compatible"
+          ],
+          "default": "systemDefault"
+        },
+        "compatibilityMode": {
+          "title": "Compatibility Mode",
+          "description": "Compatibility mode",
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "appId"
+      ]
+    },
+    "appDetailsWebClient": {
+      "title": "Web Client App Details",
+      "description": "Web Client specific app details",
+      "type": "object",
+      "properties": {
+        "targetId": {
+          "title": "Target ID",
+          "description": "Target ID",
+          "type": "string",
+          "maxLength": 10
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "targetId"
+      ]
+    },
+    "appDetailsUrlTemplate": {
+      "title": "Url Template App Details",
+      "description": "Url Template specific app details",
+      "type": "object",
+      "properties": {
+        "templateId": {
+          "title": "Template ID",
+          "description": "Url Template ID",
+          "type": "string",
+          "maxLength": 32
+        },
+        "parameters": {
+          "title": "Parameters",
+          "description": "Url Template parameters",
+          "type": "array",
+          "items": {
+            "title": "Url Template Parameter",
+            "description": "Url Template parameter",
+            "type": "object",
+            "properties": {
+              "name": {
+                "title": "Name",
+                "description": "Parameter name",
+                "type": "string"
+              },
+              "value": {
+                "title": "Value",
+                "description": "Parameter value",
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "templateId"
       ]
     },
     "navigation": {
@@ -329,33 +296,20 @@
           "description": "Target url used for 'Tile only' and 'Url app' apps",
           "type": "string"
         },
-        "supportedDeviceTypes": {
-          "title": "Supported Device Types",
-          "description": "Supported device types",
-          "type": "object",
-          "properties": {
-            "desktop": {
-              "title": "Desktop",
-              "description": "Support for desktop",
-              "type": "boolean"
-            },
-            "tablet": {
-              "title": "Tablet",
-              "description": "Support for tablet",
-              "type": "boolean"
-            },
-            "phone": {
-              "title": "Phone",
-              "description": "Support for phone",
-              "type": "boolean"
-            }
-          },
-          "additionalProperties": false,
-          "required": [
-            "desktop",
-            "tablet",
-            "phone"
-          ]
+        "desktop": {
+          "title": "Desktop",
+          "description": "Desktop is supported as device type",
+          "type": "boolean"
+        },
+        "tablet": {
+          "title": "Tablet",
+          "description": "Tablet is supported as device type",
+          "type": "boolean"
+        },
+        "phone": {
+          "title": "Phone",
+          "description": "Phone is supported as device type",
+          "type": "boolean"
         },
         "semanticObject": {
           "title": "Semantic Object",
@@ -449,7 +403,9 @@
       },
       "additionalProperties": false,
       "required": [
-        "supportedDeviceTypes"
+        "desktop",
+        "tablet",
+        "phone"
       ]
     },
     "tiles": {
@@ -466,6 +422,16 @@
             "description": "Tile ID",
             "type": "string",
             "maxLength": 50
+          },
+          "default": {
+            "title": "default",
+            "description": "Whether the tile is chosen by default",
+            "type": "boolean"
+          },
+          "legacy": {
+            "title": "legacy",
+            "description": "Whether the tile is stored as legacy tile",
+            "type": "boolean"
           },
           "tileType": {
             "title": "Tile Type",
@@ -557,36 +523,28 @@
                 },
                 "additionalProperties": false
               },
-              "navigation": {
-                "title": "Tile Navigation",
-                "description": "Navigation details of the tile",
-                "type": "object",
-                "properties": {
-                  "parameters": {
-                    "title": "Parameters",
-                    "description": "Parameters of the tile intent",
-                    "type": "array",
-                    "items": {
-                      "title": "Tile Parameter",
-                      "description": "Tile parameter",
-                      "type": "object",
-                      "properties": {
-                        "name": {
-                          "title": "Name",
-                          "description": "Parameter name",
-                          "type": "string"
-                        },
-                        "value": {
-                          "title": "Value",
-                          "description": "Parameter value",
-                          "type": "string"
-                        }
-                      },
-                      "additionalProperties": false
+              "tileNavigationParameters": {
+                "title": "Tile Navigation Parameters",
+                "description": "Tile navigation parameters of the tile intent",
+                "type": "array",
+                "items": {
+                  "title": "Tile Parameter",
+                  "description": "Tile parameter",
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "title": "Name",
+                      "description": "Parameter name",
+                      "type": "string"
+                    },
+                    "value": {
+                      "title": "Value",
+                      "description": "Parameter value",
+                      "type": "string"
                     }
-                  }
-                },
-                "additionalProperties": false
+                  },
+                  "additionalProperties": false
+                }
               }
             },
             "additionalProperties": false
@@ -662,218 +620,30 @@
         "additionalProperties": false,
         "required": [
           "id",
+          "default",
+          "legacy",
           "tileType"
         ]
       }
     },
-    "defaultedTile": {
-      "title": "Defaulted Tile",
-      "description": "Defaulted (legacy) tile",
+    "lifecycle": {
+      "title": "Lifecycle",
+      "description": "Lifecycle state of the app",
       "type": "object",
       "properties": {
-        "id": {
-          "title": "ID",
-          "description": "Tile ID",
+        "deprecated": {
+          "title": "Deprecated",
+          "description": "Whether the app is deprecated",
+          "type": "boolean"
+        },
+        "successor": {
+          "title": "Successor",
+          "description": "LADI ID of the successor app",
           "type": "string",
-          "maxLength": 50
-        },
-        "tileType": {
-          "title": "Tile Type",
-          "description": "Tile type",
-          "type": "string",
-          "enum": [
-            "static",
-            "dynamic",
-            "custom"
-          ],
-          "enumTitles": [
-            "Static",
-            "Dynamic",
-            "Custom"
-          ],
-          "enumDescriptions": [
-            "Static Tile",
-            "Dynamic Tile",
-            "Custom Tile"
-          ],
-          "default": "static"
-        },
-        "standard": {
-          "title": "Standard Tile Details",
-          "description": "Standard tile specific details",
-          "type": "object",
-          "properties": {
-            "reuseTextFromApp": {
-              "title": "Reuse Text From App",
-              "description": "Reuse text defined as part of the app",
-              "type": "boolean"
-            },
-            "title": {
-              "title": "Title",
-              "description": "Tile title",
-              "type": "string",
-              "maxLength": 255
-            },
-            "subtitle": {
-              "title": "Subtitle",
-              "description": "Tile subtitle",
-              "type": "string",
-              "maxLength": 255
-            },
-            "information": {
-              "title": "Information",
-              "description": "Tile information",
-              "type": "string",
-              "maxLength": 255
-            },
-            "keywords": {
-              "title": "Keywords",
-              "description": "Tile keywords",
-              "type": "string",
-              "maxLength": 255
-            },
-            "icon": {
-              "title": "Icon",
-              "description": "Tile icon",
-              "type": "string"
-            },
-            "dynamic": {
-              "title": "Dynamic Tile Details",
-              "description": "Dynamic tile specific details",
-              "type": "object",
-              "properties": {
-                "serviceBaseUrl": {
-                  "title": "Service Base Url",
-                  "description": "Service base url",
-                  "type": "string"
-                },
-                "servicePath": {
-                  "title": "Service Path",
-                  "description": "Service path",
-                  "type": "string"
-                },
-                "refreshInterval": {
-                  "title": "Refresh Interval",
-                  "description": "Timeout until the tile is refreshed",
-                  "type": "integer",
-                  "minimum": -2147483648,
-                  "maximum": 2147483647
-                },
-                "numberUnit": {
-                  "title": "Number Unit",
-                  "description": "Number unit",
-                  "type": "string"
-                }
-              },
-              "additionalProperties": false
-            },
-            "navigation": {
-              "title": "Tile Navigation",
-              "description": "Navigation details of the tile",
-              "type": "object",
-              "properties": {
-                "parameters": {
-                  "title": "Parameters",
-                  "description": "Parameters of the tile intent",
-                  "type": "array",
-                  "items": {
-                    "title": "Tile Parameter",
-                    "description": "Tile parameter",
-                    "type": "object",
-                    "properties": {
-                      "name": {
-                        "title": "Name",
-                        "description": "Parameter name",
-                        "type": "string"
-                      },
-                      "value": {
-                        "title": "Value",
-                        "description": "Parameter value",
-                        "type": "string"
-                      }
-                    },
-                    "additionalProperties": false
-                  }
-                }
-              },
-              "additionalProperties": false
-            }
-          },
-          "additionalProperties": false
-        },
-        "custom": {
-          "title": "Custom Tile Details",
-          "description": "Custom tile specific details",
-          "type": "object",
-          "properties": {
-            "baseChipId": {
-              "title": "Base CHIP ID",
-              "description": "Base CHIP ID",
-              "type": "string",
-              "maxLength": 255
-            },
-            "configuration": {
-              "title": "Configuration",
-              "description": "Configuration string of the CHIP",
-              "type": "string"
-            },
-            "bags": {
-              "title": "Bags",
-              "description": "CHIP bags",
-              "type": "array",
-              "items": {
-                "title": "Bag",
-                "description": "CHIP bag",
-                "type": "object",
-                "properties": {
-                  "id": {
-                    "title": "ID",
-                    "description": "Bag ID",
-                    "type": "string",
-                    "maxLength": 100
-                  },
-                  "properties": {
-                    "title": "Properties",
-                    "description": "CHIP bag properties",
-                    "type": "array",
-                    "items": {
-                      "title": "CHIP Bag Property",
-                      "description": "Property of a CHIP bag",
-                      "type": "object",
-                      "properties": {
-                        "name": {
-                          "title": "Name",
-                          "description": "Property name",
-                          "type": "string",
-                          "maxLength": 100
-                        },
-                        "value": {
-                          "title": "Value",
-                          "description": "Property value",
-                          "type": "string"
-                        },
-                        "translatable": {
-                          "title": "Translatable",
-                          "description": "Whether the property is translatable",
-                          "type": "boolean"
-                        }
-                      },
-                      "additionalProperties": false
-                    }
-                  }
-                },
-                "additionalProperties": false
-              }
-            }
-          },
-          "additionalProperties": false
+          "maxLength": 32
         }
       },
-      "additionalProperties": false,
-      "required": [
-        "id",
-        "tileType"
-      ]
+      "additionalProperties": false
     }
   },
   "additionalProperties": false,
@@ -881,7 +651,6 @@
     "formatVersion",
     "header",
     "generalInformation",
-    "appDetails",
     "navigation",
     "tiles"
   ]
