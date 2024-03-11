@@ -507,30 +507,30 @@ INTERFACE zif_aff_uiad_v1
       "! <p class="shorttext">ID</p>
       "! Tile ID
       "! $required
-      id        TYPE c LENGTH 50,
+      id         TYPE c LENGTH 50,
 
       "! <p class="shorttext">default</p>
       "! Whether the tile is chosen by default
       "! $required
-      default   TYPE abap_bool,
+      is_default TYPE abap_bool,
 
       "! <p class="shorttext">legacy</p>
       "! Whether the tile is stored as legacy tile
       "! $required
-      legacy    TYPE abap_bool,
+      is_legacy  TYPE abap_bool,
 
       "! <p class="shorttext">Tile Type</p>
       "! Tile type
       "! $required
-      tile_type TYPE ty_tile_type,
+      tile_type  TYPE ty_tile_type,
 
       "! <p class="shorttext">Standard Tile Details</p>
       "! Standard tile specific details
-      standard  TYPE ty_standard_tile_details,
+      standard   TYPE ty_standard_tile_details,
 
       "! <p class="shorttext">Custom Tile Details</p>
       "! Custom tile specific details
-      custom    TYPE ty_custom_tile_details,
+      custom     TYPE ty_custom_tile_details,
 
     END OF ty_tile,
 
@@ -573,19 +573,19 @@ INTERFACE zif_aff_uiad_v1
 
       "! <p class="shorttext">UI5 App Details</p>
       "! UI5 specific app details
-      app_details_ui5          TYPE ty_app_details_ui5,
+      ui5_app_details          TYPE ty_app_details_ui5,
 
       "! <p class="shorttext">Web Dynpro App Details</p>
       "! Web Dynpro specific app details
-      app_details_web_dynpro   TYPE ty_app_details_web_dynpro,
+      web_dynpro_app_details   TYPE ty_app_details_web_dynpro,
 
       "! <p class="shorttext">Web Client App Details</p>
       "! Web Client specific app details
-      app_details_web_client   TYPE ty_app_details_web_client,
+      web_client_app_details   TYPE ty_app_details_web_client,
 
       "! <p class="shorttext">Url Template App Details</p>
       "! Url Template specific app details
-      app_details_url_template TYPE ty_app_details_url_template,
+      url_template_app_details TYPE ty_app_details_url_template,
 
       "! <p class="shorttext">Navigation Details</p>
       "! Navigation details

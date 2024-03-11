@@ -27,7 +27,7 @@
   "tiles": [
     {
       "id": "3WO90XZ1DX19DA1UD5RDXQXWK",
-      "default": true,
+      "isDefault": true,
       "tileType": "static",
       "standard": {
         "title": "Tile Title",

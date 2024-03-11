@@ -146,7 +146,7 @@
         "appType"
       ]
     },
-    "appDetailsUi5": {
+    "ui5AppDetails": {
       "title": "UI5 App Details",
       "description": "UI5 specific app details",
       "type": "object",
@@ -168,7 +168,7 @@
         "appId"
       ]
     },
-    "appDetailsWebDynpro": {
+    "webDynproAppDetails": {
       "title": "Web Dynpro App Details",
       "description": "Web Dynpro specific app details",
       "type": "object",
@@ -223,7 +223,7 @@
         "appId"
       ]
     },
-    "appDetailsWebClient": {
+    "webClientAppDetails": {
       "title": "Web Client App Details",
       "description": "Web Client specific app details",
       "type": "object",
@@ -240,7 +240,7 @@
         "targetId"
       ]
     },
-    "appDetailsUrlTemplate": {
+    "urlTemplateAppDetails": {
       "title": "Url Template App Details",
       "description": "Url Template specific app details",
       "type": "object",
@@ -423,12 +423,12 @@
             "type": "string",
             "maxLength": 50
           },
-          "default": {
+          "isDefault": {
             "title": "default",
             "description": "Whether the tile is chosen by default",
             "type": "boolean"
           },
-          "legacy": {
+          "isLegacy": {
             "title": "legacy",
             "description": "Whether the tile is stored as legacy tile",
             "type": "boolean"
@@ -620,8 +620,8 @@
         "additionalProperties": false,
         "required": [
           "id",
-          "default",
-          "legacy",
+          "isDefault",
+          "isLegacy",
           "tileType"
         ]
       }
