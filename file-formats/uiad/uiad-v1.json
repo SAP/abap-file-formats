@@ -621,7 +621,6 @@
         "required": [
           "id",
           "isDefault",
-          "isLegacy",
           "tileType"
         ]
       }

@@ -516,7 +516,6 @@ INTERFACE zif_aff_uiad_v1
 
       "! <p class="shorttext">legacy</p>
       "! Whether the tile is stored as legacy tile
-      "! $required
       is_legacy  TYPE abap_bool,
 
       "! <p class="shorttext">Tile Type</p>
