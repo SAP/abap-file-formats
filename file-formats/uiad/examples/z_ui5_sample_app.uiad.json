@@ -10,28 +10,24 @@
     "transaction": "F1234",
     "fioriId": "F1234",
     "supportComponent": "CA-FLP-FE-UI",
-    "defaultTile": "3WO90XZ1DX19DA1UD5RDXQXWK"
+    "appType": "ui5"
   },
-  "appDetails": {
-    "appType": "ui5",
-    "ui5": {
-      "appId": "sap.ushell.demo.NavigationSample",
-      "icfPath": "/sap/bc/ui5_ui5/ui2/navigationsample"
-    }
+  "ui5AppDetails": {
+    "appId": "sap.ushell.demo.NavigationSample",
+    "icfPath": "/sap/bc/ui5_ui5/ui2/navigationsample"
   },
   "navigation": {
     "targetMappingId": "3WO90XZ1DX1AO4ON8E556YJ10",
-    "supportedDeviceTypes": {
-      "desktop": true,
-      "tablet": true,
-      "phone": true
-    },
+    "desktop": true,
+    "tablet": true,
+    "phone": true,
     "semanticObject": "BusinessPartner",
     "action": "manage"
   },
   "tiles": [
     {
       "id": "3WO90XZ1DX19DA1UD5RDXQXWK",
+      "default": true,
       "tileType": "static",
       "standard": {
         "title": "Tile Title",
