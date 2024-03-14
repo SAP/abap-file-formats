@@ -2,7 +2,8 @@ INTERFACE zif_aff_nont_v1
   PUBLIC.
 
   TYPES:
-
+    "! <p class="shorttext">SAP Object Node Type</p>
+    "! SAP object node type
     BEGIN OF ty_main,
       "! $required
       format_version  TYPE zif_aff_types_v1=>ty_format_version,
@@ -23,7 +24,7 @@ INTERFACE zif_aff_nont_v1
 
       "! <p class="shorttext">Root Node</p>
       "! Indicates that the SAP Object Node Type corresponds to the referenced SAP Object Type.
-      root_node_flag  TYPE abap_bool,
+      root_node  TYPE abap_bool,
 
     END OF ty_main.
 

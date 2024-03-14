@@ -1,0 +1,143 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "originalLanguage": "en",
+    "description": "Example Page Template (DT Tool Test)",
+    "abapLanguageVersion": "standard"
+  },
+  "generalInformation": {
+    "title": "Example Page Template (RT Tool Test)",
+    "mergeId": "MY_MERGE_ID"
+  },
+  "sections": [
+    {
+      "id": "SECTION_1",
+      "title": "Section with different Visualization Types based on LADI Assignments",
+      "visualizations": [
+        {
+          "id": "SECTION_1_ITEM_1",
+          "ladiAssignment": {
+            "ladiId": "Z_LADI_ID_1",
+            "tileId": "Z_LADI_ID_1_TILE"
+          }
+        },
+        {
+          "id": "SECTION_1_ITEM_2",
+          "type": "ladiAssignment",
+          "displayFormat": "wide",
+          "ladiAssignment": {
+            "ladiId": "Z_LADI_ID_2",
+            "tileId": "Z_LADI_ID_2_TILE"
+          }
+        },
+        {
+          "id": "SECTION_1_ITEM_3",
+          "type": "ladiAssignment",
+          "displayFormat": "link",
+          "ladiAssignment": {
+            "ladiId": "Z_LADI_ID_3",
+            "tileId": "Z_LADI_ID_3_TILE"
+          }
+        },
+        {
+          "id": "SECTION_1_ITEM_4",
+          "type": "ladiAssignment",
+          "displayFormat": "flat",
+          "ladiAssignment": {
+            "ladiId": "Z_LADI_ID_4",
+            "tileId": "Z_LADI_ID_4_TILE"
+          }
+        },
+        {
+          "id": "SECTION_1_ITEM_5",
+          "type": "ladiAssignment",
+          "displayFormat": "flatWide",
+          "ladiAssignment": {
+            "ladiId": "Z_LADI_ID_5",
+            "tileId": "Z_LADI_ID_5_TILE"
+          }
+        }
+      ]
+    },
+    {
+      "id": "SECTION_2",
+      "title": "Section with different Visualization Types based on Tile Assignments",
+      "visualizations": [
+        {
+          "id": "SECTION_2_ITEM_1",
+          "type": "tileAssignment",
+          "tileAssignment": {
+            "tileKey": {
+              "catalogId": "Z_CATALOG_ID",
+              "id": "TILE_ID_1"
+            },
+            "targetMappingKey": {
+              "catalogId": "Z_CATALOG_ID",
+              "id": "TM_ID_1"
+            }
+          }
+        },
+        {
+          "id": "SECTION_2_ITEM_2",
+          "type": "tileAssignment",
+          "displayFormat": "wide",
+          "tileAssignment": {
+            "tileKey": {
+              "catalogId": "Z_CATALOG_ID",
+              "id": "TILE_ID_2"
+            },
+            "targetMappingKey": {
+              "catalogId": "Z_CATALOG_ID",
+              "id": "TM_ID_2"
+            }
+          }
+        },
+        {
+          "id": "SECTION_2_ITEM_3",
+          "type": "tileAssignment",
+          "displayFormat": "link",
+          "tileAssignment": {
+            "tileKey": {
+              "catalogId": "Z_CATALOG_ID",
+              "id": "TILE_ID_3"
+            },
+            "targetMappingKey": {
+              "catalogId": "Z_CATALOG_ID",
+              "id": "TM_ID_3"
+            }
+          }
+        },
+        {
+          "id": "SECTION_2_ITEM_4",
+          "type": "tileAssignment",
+          "displayFormat": "flat",
+          "tileAssignment": {
+            "tileKey": {
+              "catalogId": "Z_CATALOG_ID",
+              "id": "TILE_ID_4"
+            },
+            "targetMappingKey": {
+              "catalogId": "Z_CATALOG_ID",
+              "id": "TM_ID_4"
+            }
+          }
+        },
+        {
+          "id": "SECTION_2_ITEM_5",
+          "type": "tileAssignment",
+          "displayFormat": "flatWide",
+          "tileAssignment": {
+            "tileKey": {
+              "catalogId": "Z_CATALOG_ID",
+              "id": "TILE_ID_5"
+            },
+            "targetMappingKey": {
+              "catalogId": "Z_CATALOG_ID",
+              "id": "TM_ID_5"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
