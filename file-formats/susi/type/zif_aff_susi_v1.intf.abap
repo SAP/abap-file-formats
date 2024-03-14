@@ -82,8 +82,8 @@ INTERFACE zif_aff_susi_v1
       "! $showAlways
       maintenance_mode TYPE ty_maintenance_mode,
       "! <p class="shorttext">Documentation</p>
-      "! Authorization Default Documentation for Application
-      description      TYPE string,
+      "! Authorization default documentation for application
+      documentation    TYPE string,
     END OF ty_general_information.
 
   TYPES:
@@ -130,8 +130,8 @@ INTERFACE zif_aff_susi_v1
       "! $showAlways
       maintenance_status TYPE ty_maintenance_status,
       "! <p class="shorttext">Documentation</p>
-      "! Authorization Default Documentation for Object
-      description        TYPE string,
+      "! Authorization default documentation for object
+      documentation      TYPE string,
       "! <p class="shorttext">Authorization Field Values</p>
       "! Authorization field values
       fields             TYPE ty_authorization_fields,
