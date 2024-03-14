@@ -7,7 +7,7 @@
   "generalInformation": {
     "title": "Title Example of UIST Object for ABAP File Format",
     "sortPriority": 1.001,
-    "baseSpaceTemplateName": "BASE_SPACE"
+    "mergeId": "Z_MERGE_1"
   },
   "pages": [
     {
