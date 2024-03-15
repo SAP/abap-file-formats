@@ -1,3 +1,4 @@
+@AbapCatalog.entityBuffer.definitionAllowed: true
 define view entity z_aff_example_ddls
   as select from spfli
 {

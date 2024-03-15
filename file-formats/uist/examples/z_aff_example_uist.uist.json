@@ -1,0 +1,17 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Description example of UIST object for ABAP file format",
+    "originalLanguage": "en"
+  },
+  "generalInformation": {
+    "title": "Title Example of UIST Object for ABAP File Format",
+    "sortPriority": 1.001,
+    "mergeId": "Z_MERGE_1"
+  },
+  "pages": [
+    {
+      "name": "Z_PAGE"
+    }
+  ]
+}

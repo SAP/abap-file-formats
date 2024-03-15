@@ -1,0 +1,16 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Example object",
+    "originalLanguage": "en"
+  },
+  "generalInformation": {
+    "languageDependent": true,
+    "multipleNotes": true,
+    "hideTitle": true
+  },
+  "contentSettings": {
+    "maximumLength": 1000,
+    "formattingProfile": "text"
+  }
+}

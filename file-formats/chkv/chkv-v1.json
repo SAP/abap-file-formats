@@ -88,8 +88,7 @@
                 "name": {
                   "title": "Parameter Name",
                   "description": "The parameter name",
-                  "type": "string",
-                  "maxLength": 30
+                  "type": "string"
                 },
                 "value": {
                   "title": "Parameter Value",
@@ -130,7 +129,8 @@
                         "enumDescriptions": [
                           "Include",
                           "Exclude"
-                        ]
+                        ],
+                        "default": "include"
                       },
                       "option": {
                         "title": "Option",
@@ -171,7 +171,8 @@
                           "Greater equal",
                           "Less than",
                           "Less equal"
-                        ]
+                        ],
+                        "default": "equals"
                       },
                       "low": {
                         "title": "Low",

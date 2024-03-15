@@ -128,7 +128,7 @@
               "enumTitles": [
                 "Enabled",
                 "Disabled",
-                "Auto"
+                "Automatic"
               ],
               "enumDescriptions": [
                 "Data is always loaded when opening the app",
@@ -243,23 +243,52 @@
                 ],
                 "default": "auto"
               },
+              "rowCountMode": {
+                "title": "Row Count Mode",
+                "description": "Defines how the table handles the visible rows in the table",
+                "type": "string",
+                "enum": [
+                  "fixed",
+                  "auto"
+                ],
+                "enumTitles": [
+                  "Fixed",
+                  "Automatic"
+                ],
+                "enumDescriptions": [
+                  "The table always has as many rows as defined in the visibleRowCount property",
+                  "The visibleRowCount property is changed by the table automatically"
+                ],
+                "default": "fixed"
+              },
+              "rowCount": {
+                "title": "Row Count",
+                "description": "Number of visible rows of the table",
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 1000,
+                "default": 5
+              },
               "creationModeName": {
                 "title": "Table Creation Mode",
                 "type": "string",
                 "enum": [
                   "newPage",
                   "inline",
-                  "creationRow"
+                  "creationRow",
+                  "inlineCreationRows"
                 ],
                 "enumTitles": [
                   "New Page",
                   "Inline",
-                  "Creation Row"
+                  "Creation Row",
+                  "Empty Row"
                 ],
                 "enumDescriptions": [
                   "Item is created in subpage",
-                  "By clicking on 'Create' a new line is created but automatic navigation to subpage is not triggered.",
-                  "By clicking on 'Add row' a new line is created but automatic navigation to subpage is not triggered."
+                  "By clicking on 'Create' a new line is created but automatic navigation to subpage is not performed.",
+                  "By clicking on 'Add row' a new line is created but automatic navigation to subpage is not performed.",
+                  "In create or edit mode, one new empty row is added to the table."
                 ],
                 "default": "newPage"
               },
@@ -296,6 +325,11 @@
               "enableFullScreen": {
                 "title": "Enable Full Screen",
                 "description": "If true, a button on the table toolbar allows the user to open the table in fullscreen dialog",
+                "type": "boolean"
+              },
+              "enableMassEdit": {
+                "title": "Enable Mass Edit",
+                "description": "Mass editing allows users to simultaneously change multiple objects that share the same editable properties",
                 "type": "boolean"
               }
             },

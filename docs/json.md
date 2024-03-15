@@ -33,9 +33,9 @@ JSON files are always validated against the latest update of the JSON Schema of 
 
 The following changes to file formats are considered compatible:
 
-- Values for a field (enum) are added (remark: this might lead to syntax errors in ABAP systems that don't support this value)
 - Descriptions or titles are changed
 - Non-mandatory fields are added
+- Values for a field (enum) that has a specified default value are added. Remark that in this case, if a system doesn't support the new enumeration value (e.g., in lower releases), the file format implementations will change the value to the default value
 
 
 
@@ -57,6 +57,7 @@ The following changes to file formats are considered incompatible:
 - Values of a field (e.g., in enum) are removed
 - Length of a field is shortened
 - Length of a field is extended if some systems cannot store this information
+- Values for a field (enum) that has no specified default value are added.
 
 
 ## Writing JSON Schema with ABAP Types
@@ -72,6 +73,9 @@ The JSON Schema is generated based on the fields and their ABAP type specificati
 Fields `format_version` and `header` are mandatory and translate to `formatVersion` and `header` in the JSON Schema.
 The interface [`zif_aff_types_v1`](../file-formats/zif_aff_types_v1.intf.abap) offers a type for the format version and different headers for reuse, but also other often repeated types.
 
+Apart from the mandatory fields mentioned above, it is recommended to add only components to the structure `ty_main` that are either structures as well or tables.
+Top level fields shall be collected in one sub structure (ideally with a specific name) or within the structure `general_information`.
+
 To add more information to the JSON Schema than that provided by the ABAP type, ABAP Doc can be used.
 The comments are placed directly above the components of the type `ty_main`, but they are also read over several levels, e.g., in the case of nested structures.
 The different possibilities are summarized in the following.
@@ -86,7 +90,7 @@ string | string |
 c | string | `"maxLength": <length of character field>`
 i | integer | `"minimum": -2147483648, "maximum": 2147483647`
 n | string | `"maxLength": <length of character field>, "pattern": "^[0-9]+$"`
-p | number | `"minimum": <minimum value>, "maximum": <maximum value>, "multipleOf": <e.g., 0.01 for 2 decimals>`
+p | number | `"minimum": <minimum value>, "maximum": <maximum value>
 abap_bool | boolean |
 sy-langu | string | `"minLength": 2, "maxLength": 2, "pattern": "^[a-z]+$"`
 table | array | if the table has unique keys, `"uniqueItems": true` is added to the schema; hashed tables are not supported
@@ -132,6 +136,7 @@ The annotation
 "! $multipleOf value
 ```
 ensures that values of a component described by this ABAP Doc comment can only be a multiple of the provided value.
+Note that it can only be used for integers.
 
 ### Required Fields
 If a field is to be declared as "required" in the JSON Schema, the annotation
@@ -187,11 +192,10 @@ Titles and descriptions of the enum values are passed to the JSON Schema in the 
 They are written in the fields `enumTitles` and `enumDescriptions`.
 
 Remark: If an enum is used, it should be checked if one of the following points applies to your type:
-1. The used constant has a component whose value is initial.
-2. The field with enum values is marked as required.
-3. The field with enum values has a specified default value.
+1. The field with enum values is marked as required.
+2. The field with enum values has a specified default value.
 
-It is enough and recommended to fulfill only one of these points.
+In case additional values for the enum should be added compatibly later, a default value must always be specified (see [Format Versions and Compatibility](#format-versions-and-compatibility)). If systems don't support the new enumeration value (e.g., in lower releases), the value will be changed to the default value by the file format implementations.
 
 
 The order of the comments and annotations presented here is important: First, there is the comment for the title followed by the one for the description, in case they are both provided. After these two, the remaining annotations are always located. Between them, the order is irrelevant.

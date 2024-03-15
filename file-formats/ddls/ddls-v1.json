@@ -97,7 +97,7 @@
         "Custom fields",
         "Extensions for data sources",
         "Custom search modeler",
-        "Service consumption model"
+        "Service Consumption Model"
       ]
     },
     "sourceType": {
@@ -117,7 +117,7 @@
         "projectionView"
       ],
       "enumTitles": [
-        "DDIC-Based Views",
+        "DDIC-Based View",
         "View Entity",
         "View Extend",
         "View Entity Extend",
@@ -129,7 +129,7 @@
         "Projection View"
       ],
       "enumDescriptions": [
-        "DDIC-based views",
+        "DDIC-based view",
         "View entity",
         "View extend",
         "View entity extend",

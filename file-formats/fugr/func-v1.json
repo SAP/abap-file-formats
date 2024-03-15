@@ -47,7 +47,8 @@
         "normal",
         "rfc",
         "update"
-      ]
+      ],
+      "default": "normal"
     },
     "rfcProperties": {
       "title": "RFC Specific Fields",
@@ -80,7 +81,8 @@
             "From same system",
             "From any system",
             "Not classified"
-          ]
+          ],
+          "default": "notClassified"
         },
         "rfcVersion": {
           "title": "RFC Version",
@@ -97,7 +99,8 @@
           "enumDescriptions": [
             "Fast serialization required",
             "Any"
-          ]
+          ],
+          "default": "any"
         },
         "abapFromJava": {
           "title": "ABAP From Java",
@@ -151,7 +154,8 @@
             "Start immediately no restart",
             "Collective Run",
             "Unsupported Kind"
-          ]
+          ],
+          "default": "startImmediately"
         }
       },
       "additionalProperties": false,
@@ -164,26 +168,27 @@
       "description": "Release state",
       "type": "string",
       "enum": [
+        "notReleased",
         "released",
         "releasedSapInternal",
         "obsolete",
-        "releasePlanned",
-        "notReleased"
+        "releasePlanned"
       ],
       "enumTitles": [
+        "Not Released",
         "Released",
         "Released SAP-Internally",
         "Obsolete/Deprecated",
-        "Planned To Be Released [Obsolete]",
-        "Not Released"
+        "Planned To Be Released [Obsolete]"
       ],
       "enumDescriptions": [
+        "Function module is not released",
         "Function module is released",
         "Function module is released SAP-internally",
         "Function module is obsolete/deprecated",
-        "Function module is planned to be released [obsolete]",
-        "Function module is not released"
-      ]
+        "Function module is planned to be released [obsolete]"
+      ],
+      "default": "notReleased"
     },
     "releaseDate": {
       "title": "Release Date",
