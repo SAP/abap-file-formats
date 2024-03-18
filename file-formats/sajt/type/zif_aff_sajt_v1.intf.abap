@@ -57,7 +57,7 @@ INTERFACE zif_aff_sajt_v1
       "! <p class="shorttext">Name</p>
       "! Name of the parameter
       "! $required
-      name  TYPE  c LENGTH 8,
+      name  TYPE  c LENGTH 38,
       "! <p class="shorttext">Value</p>
       "! Value of the parameter
       "! $required
@@ -75,7 +75,7 @@ INTERFACE zif_aff_sajt_v1
       "! <p class="shorttext">Name</p>
       "! Name of the parameter
       "! $required
-      name         TYPE  c LENGTH 8,
+      name         TYPE  c LENGTH 38,
       "! <p class="shorttext">Values</p>
       "! Values of the parameter as ranges table
       "! $required
