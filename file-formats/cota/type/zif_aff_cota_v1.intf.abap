@@ -15,20 +15,20 @@ INTERFACE zif_aff_cota_v1
     END OF co_comm_type.
 
   "! <p class="shorttext">Multitenancy Mode</p>
-  "! $values {@link zif_aff_cota_v1.data:co_multimode_type}
+  "! $values {@link zif_aff_cota_v1.data:co_multi_type}
   TYPES ty_multi_type TYPE c LENGTH 30.
 
   CONSTANTS:
     "! <p class="shorttext">Multitenancy Mode</p>
     "! Multitenancy mode
-    BEGIN OF co_multimode_type,
+    BEGIN OF co_multi_type,
       "! <p class="shorttext">Cross Client</p>
       "! Cross client
       cross_client       TYPE ty_multi_type VALUE 'C',
       "! <p class="shorttext">Client Specific</p>
       "! Client specific
       client_specific TYPE ty_multi_type VALUE 'D',
-    END OF co_multimode_type.
+    END OF co_multi_type.
 
   TYPES:
     "! <p class="shorttext">Configuration</p>
@@ -42,13 +42,13 @@ INTERFACE zif_aff_cota_v1
       "! <p class="shorttext">Communication Target Class</p>
       "! Communication target class
       communication_target_class  TYPE zif_aff_types_v1=>ty_object_name_30,
+      "! <p class="shorttext">Multitenancy Mode</p>
+      "! Multitenancy mode
+      "! $default {@link zif_aff_cota_v1.data:co_multi_type.client_specific}
+      multitenancy_mode           TYPE ty_multi_type,
       "! <p class="shorttext">Allow Multiple Application Destinations</p>
       "! Allow multiple application destinations
       allow_multiple_destinations TYPE abap_bool,
-      "! <p class="shorttext">Multitenancy Mode</p>
-      "! Multitenancy mode
-      "! $default {@link zif_aff_cota_v1.data:co_multimode_type.client_specific}
-      multitenancy_mode           TYPE ty_multi_type,
     END OF ty_configuration.
 
   "! <p class="shorttext">Default Compression Mode</p>

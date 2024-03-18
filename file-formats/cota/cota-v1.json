@@ -82,11 +82,6 @@
           "type": "string",
           "maxLength": 30
         },
-        "allowMultipleDestinations": {
-          "title": "Allow Multiple Application Destinations",
-          "description": "Allow multiple application destinations",
-          "type": "boolean"
-        },
         "multitenancyMode": {
           "title": "Multitenancy Mode",
           "description": "Multitenancy mode",
@@ -104,6 +99,11 @@
             "Client specific"
           ],
           "default": "clientSpecific"
+        },
+        "allowMultipleDestinations": {
+          "title": "Allow Multiple Application Destinations",
+          "description": "Allow multiple application destinations",
+          "type": "boolean"
         }
       },
       "additionalProperties": false
