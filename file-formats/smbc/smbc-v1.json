@@ -199,7 +199,7 @@
               },
               "showTransportSelectionStrip": {
                 "title": "Show Transport Selection Strip",
-                "description": "If true, the selected transport request and transport request select action are displayed in a message strip. The entity must have a field TransportRequestID and an action SelectCustomizingTransptReq, with which a transport request can be selected",
+                "description": "If true, the selected transport request and transport request select action are displayed in a message strip.",
                 "type": "boolean"
               }
             },
