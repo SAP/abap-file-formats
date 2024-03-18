@@ -131,6 +131,11 @@ INTERFACE zif_aff_smbc_v1
       "! <p class="shorttext synchronized">Editable Header Content</p>
       "! If true, the header content is changeable in edit mode
       editable_header_content TYPE abap_bool,
+      "! <p class="shorttext synchronized">Enable Transport Selection Strip</p>
+      "! If true, the selected transport and transport action are displayed in a message bar
+      "! The entity must have a field TransportRequestID
+      "! and an action SelectCustomizingTransptReq, with which a transport request can be selected
+      show_transport_selection_strip TYPE abap_bool,
     END OF ty_object_page,
     "! <p class="shorttext synchronized">Table Settings</p>
     BEGIN OF ty_table_setting,
@@ -152,6 +157,12 @@ INTERFACE zif_aff_smbc_v1
       "! $maximum 1000
       "! $default '5'
       row_count TYPE i,
+      "! <p class="shorttext synchronized">Frozen Column Count</p>
+      "! You can freeze the first columns of a table so that they always remain visible when scrolling the table horizontally
+      "! $minimum 0
+      "! $maximum 30
+      "! $default '0'
+      frozen_column_count TYPE i,
       "! <p class="shorttext synchronized">Table Creation Mode</p>
       "! $values {@link zif_aff_smbc_v1.data:co_creation_mode_name}
       "! $default {@link zif_aff_smbc_v1.data:co_creation_mode_name.new_page}
@@ -171,6 +182,9 @@ INTERFACE zif_aff_smbc_v1
       "! <p class="shorttext synchronized">Condensed Table Layout</p>
       "! If true, display rows in a condensed way. Only applicaple to Table Type 'GridTable'.
       condensed_table_layout TYPE abap_bool,
+      "! <p class="shorttext synchronized">Include column headers in width calculation</p>
+      "! By default, the column width is calculated based on the type of the content
+      width_including_column_header TYPE abap_bool,
       "! <p class="shorttext synchronized">Disable Paste</p>
       "! If true, disable the possibility to add several items by copying and pasting data from an excel file
       disable_paste          TYPE abap_bool,

@@ -196,6 +196,11 @@
                 "title": "Editable Header Content",
                 "description": "If true, the header content is changeable in edit mode",
                 "type": "boolean"
+              },
+              "showTransportSelectionStrip": {
+                "title": "Enable Transport Selection Strip",
+                "description": "If true, the selected transport and transport action are displayed in a message bar The entity must have a field TransportRequestID and an action SelectCustomizingTransptReq, with which a transport request can be selected",
+                "type": "boolean"
               }
             },
             "additionalProperties": false
@@ -269,6 +274,14 @@
                 "maximum": 1000,
                 "default": 5
               },
+              "frozenColumnCount": {
+                "title": "Frozen Column Count",
+                "description": "You can freeze the first columns of a table so that they always remain visible when scrolling the table horizontally",
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 30,
+                "default": 0
+              },
               "creationModeName": {
                 "title": "Table Creation Mode",
                 "type": "string",
@@ -315,6 +328,11 @@
               "condensedTableLayout": {
                 "title": "Condensed Table Layout",
                 "description": "If true, display rows in a condensed way. Only applicaple to Table Type 'GridTable'.",
+                "type": "boolean"
+              },
+              "widthIncludingColumnHeader": {
+                "title": "Include column headers in width calculation",
+                "description": "By default, the column width is calculated based on the type of the content",
                 "type": "boolean"
               },
               "disablePaste": {
