@@ -131,8 +131,8 @@ INTERFACE zif_aff_smbc_v1
       "! <p class="shorttext synchronized">Editable Header Content</p>
       "! If true, the header content is changeable in edit mode
       editable_header_content TYPE abap_bool,
-      "! <p class="shorttext synchronized">Enable Transport Selection Strip</p>
-      "! If true, the selected transport and transport action are displayed in a message bar
+      "! <p class="shorttext synchronized">Show Transport Selection Strip</p>
+      "! If true, the selected transport request and transport request select action are displayed in a message strip.
       "! The entity must have a field TransportRequestID
       "! and an action SelectCustomizingTransptReq, with which a transport request can be selected
       show_transport_selection_strip TYPE abap_bool,
@@ -183,7 +183,7 @@ INTERFACE zif_aff_smbc_v1
       "! If true, display rows in a condensed way. Only applicaple to Table Type 'GridTable'.
       condensed_table_layout TYPE abap_bool,
       "! <p class="shorttext synchronized">Include column headers in width calculation</p>
-      "! By default, the column width is calculated based on the type of the content
+      "! If true, include the column labels while calculating the default column width.. By default, the column width is calculated based on the type of the content
       width_including_column_header TYPE abap_bool,
       "! <p class="shorttext synchronized">Disable Paste</p>
       "! If true, disable the possibility to add several items by copying and pasting data from an excel file
