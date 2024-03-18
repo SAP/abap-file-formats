@@ -332,7 +332,7 @@
               },
               "widthIncludingColumnHeader": {
                 "title": "Include column headers in width calculation",
-                "description": "If true, include the column labels while calculating the default column width.. By default, the column width is calculated based on the type of the content",
+                "description": "If true, include the column labels while calculating the default column width. By default, the column width is calculated based on the type of the content",
                 "type": "boolean"
               },
               "disablePaste": {

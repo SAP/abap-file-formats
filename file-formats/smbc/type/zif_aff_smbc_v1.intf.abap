@@ -183,7 +183,7 @@ INTERFACE zif_aff_smbc_v1
       "! If true, display rows in a condensed way. Only applicaple to Table Type 'GridTable'.
       condensed_table_layout TYPE abap_bool,
       "! <p class="shorttext synchronized">Include column headers in width calculation</p>
-      "! If true, include the column labels while calculating the default column width.. By default, the column width is calculated based on the type of the content
+      "! If true, include the column labels while calculating the default column width. By default, the column width is calculated based on the type of the content
       width_including_column_header TYPE abap_bool,
       "! <p class="shorttext synchronized">Disable Paste</p>
       "! If true, disable the possibility to add several items by copying and pasting data from an excel file
