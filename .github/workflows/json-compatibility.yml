@@ -60,6 +60,5 @@ jobs:
           }).catch((error) => {
             console.error('An error occurred while removing the label:', error);
           })
-
         github-token: ${{secrets.GITHUB_TOKEN}}
 
