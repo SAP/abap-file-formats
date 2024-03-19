@@ -1,4 +1,4 @@
-name: Compatibility Check
+name: [Experimental] Compatibility Check
 
 on:
   pull_request:
