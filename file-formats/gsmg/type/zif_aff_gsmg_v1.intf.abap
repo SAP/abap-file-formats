@@ -1,12 +1,12 @@
-INTERFACE if_aff_gsmg_v1
+INTERFACE zif_aff_gsmg_v1
   PUBLIC.
 
   TYPES:
 
     "! <p class="shorttext">Category</p>
     "! Category
-    "! $values {@link if_aff_gsmg_v1.data:co_category}
-    "! $default {@link if_aff_gsmg_v1.data:co_category.usage}
+    "! $values {@link zif_aff_gsmg_v1.data:co_category}
+    "! $default {@link zif_aff_gsmg_v1.data:co_category.usage}
     ty_category             TYPE c LENGTH 10,
 
     "! <p class="shorttext">Detailed Description</p>
@@ -82,12 +82,12 @@ INTERFACE if_aff_gsmg_v1
     BEGIN OF ty_main,
 
       "! $required
-      format_version      TYPE if_aff_types_v1=>ty_format_version,
+      format_version      TYPE zif_aff_types_v1=>ty_format_version,
 
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header              TYPE if_aff_types_v1=>ty_header_60_cloud,
+      header              TYPE zif_aff_types_v1=>ty_header_60_cloud,
 
       "! <p class="shorttext">General Information</p>
       "! General information
