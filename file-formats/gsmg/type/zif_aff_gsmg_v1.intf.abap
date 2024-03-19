@@ -17,8 +17,8 @@ INTERFACE zif_aff_gsmg_v1
     "! <p class="shorttext">General Information</p>
     "! General information
     BEGIN OF ty_general_information,
-      "! <p class="shorttext">Category</p>
-      "! Category
+      "! <p class="shorttext">Type</p>
+      "! Type
       "! $required
       type                 TYPE ty_category,
 
