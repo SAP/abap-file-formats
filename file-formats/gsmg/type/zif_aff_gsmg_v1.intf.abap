@@ -38,37 +38,30 @@ INTERFACE zif_aff_gsmg_v1
 
       "! <p class="shorttext">Availability</p>
       "! Availability
-      "! $enumValue 'AVAIL'
       availability    TYPE ty_category VALUE 'AVAIL',
 
       "! <p class="shorttext">Performance</p>
       "! Performance
-      "! $enumValue 'PERFORM'
       performance     TYPE ty_category VALUE 'PERFORM',
 
       "! <p class="shorttext">Exceptions</p>
       "! Exceptions
-      "! $enumValue 'EXCEPTION'
       exceptions      TYPE ty_category VALUE 'EXCEPTION',
 
       "! <p class="shorttext">Configuration</p>
       "! Configuration
-      "! $enumValue 'CONFIGURE'
       configuration   TYPE ty_category VALUE 'CONFIGURE',
 
       "! <p class="shorttext">Usage</p>
       "! Usage
-      "! $enumValue 'USAGE'
       usage           TYPE ty_category VALUE 'USAGE',
 
       "! <p class="shorttext">Self Monitoring</p>
       "! Self monitoring
-      "! $enumValue 'SELFMON'
       self_monitoring TYPE ty_category VALUE 'SELFMON',
 
       "! <p class="shorttext">Metering</p>
       "! Metering
-      "! $enumValue 'METERING'
       metering        TYPE ty_category VALUE 'METERING',
 
     END OF co_category.
