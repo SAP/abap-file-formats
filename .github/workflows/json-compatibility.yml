@@ -1,4 +1,4 @@
-name: Compability Check
+name: Compatibility Check
 
 on:
   pull_request:
@@ -14,14 +14,14 @@ jobs:
         fetch-depth: 0
     - uses: actions/setup-node@v4
     - name: Run script
-      id: check_incompability
+      id: check_incompatibility
       run: |
-        cd minka-js
+        cd .github/compatibility
         npm ci
         npm run check
 
     - name: Add label PR on failure
-      if: failure() && steps.check_incompability.outcome == 'failure' # Only runs if your script failed.
+      if: failure() && steps.check_incompatibility.outcome == 'failure' # Only runs if your script failed.
       uses: actions/github-script@v7
       with:
         script: |
@@ -41,7 +41,7 @@ jobs:
         github-token: ${{secrets.GITHUB_TOKEN}}
 
     - name: Remove label PR on success
-      if: steps.check_incompability.outcome == 'success'
+      if: steps.check_incompatibility.outcome == 'success'
       uses: actions/github-script@v7
       with:
         script: |
