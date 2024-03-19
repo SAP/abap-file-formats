@@ -46,6 +46,8 @@ jobs:
       uses: actions/github-script@v7
       with:
         script: |
+          console.log(github.context.payload.issue.number);
+          console.log(github.context.issue.number);
 
           github.rest.issues.createLabel({
             owner: context.repo.owner,
