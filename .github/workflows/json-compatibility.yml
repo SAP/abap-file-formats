@@ -3,6 +3,9 @@ name: Experimental Compatibility Check
 on:
   pull_request:
 
+permissions:
+  issues: write
+
 jobs:
   compatible:
     name: Is change compatible
