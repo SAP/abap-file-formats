@@ -45,10 +45,30 @@ jobs:
       uses: actions/github-script@v7
       with:
         script: |
+          const labelName = "incompatible-changes"; // replace with your label name
+
+          try {
+            // Try to remove the label
+            await github.issues.removeLabel({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              name: labelName,
+            });
+            console.log(`Label '${labelName}' has been removed`);
+          } catch (error) {
+            // If the label does not exist, do nothing and log a message
+            if (error.status === 404) {
+              console.log(`Label '${labelName}' does not exist, nothing to do`);
+            } else {
+              // If it's another type of error, re-throw to see the error details in the workflow log
+              throw error;
+            }
+          }
           github.rest.issues.createLabel({
             owner: context.repo.owner,
             repo: context.repo.repo,
-            name: 'incompatible-changes',
+            name: labelName,
             color: 'FF0000'
           }).catch(err => console.log(`Label already exists`))
 
@@ -56,7 +76,7 @@ jobs:
             issue_number: context.issue.number,
             owner: context.repo.owner,
             repo: context.repo.repo,
-            name: 'incompatible-changes'
+            name: labelName
           })
         github-token: ${{secrets.GITHUB_TOKEN}}
 
