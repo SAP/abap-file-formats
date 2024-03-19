@@ -5,7 +5,7 @@ on:
 
 jobs:
   compatible:
-    name: Is change incompatible
+    name: Is change compatible
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
