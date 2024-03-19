@@ -47,6 +47,13 @@ jobs:
         script: |
           const labelName = "incompatible-changes"; // replace with your label name
 
+          github.rest.issues.createLabel({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            name: labelName,
+            color: 'FF0000'
+          }).catch(err => console.log(`Label already exists`))
+
           try {
             // Try to remove the label
             await github.issues.removeLabel({
@@ -65,18 +72,6 @@ jobs:
               throw error;
             }
           }
-          github.rest.issues.createLabel({
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            name: labelName,
-            color: 'FF0000'
-          }).catch(err => console.log(`Label already exists`))
 
-          github.rest.issues.removeLabel({
-            issue_number: context.issue.number,
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            name: labelName
-          })
         github-token: ${{secrets.GITHUB_TOKEN}}
 
