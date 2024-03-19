@@ -6,7 +6,7 @@
     "abapLanguageVersion": "standard"
   },
   "generalInformation": {
-    "category": "USAGE",
+    "category": "usage",
     "detailedDescription": "This Metric Group is for testing"
   }
 }
