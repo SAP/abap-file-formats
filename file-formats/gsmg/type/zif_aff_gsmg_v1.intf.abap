@@ -62,7 +62,7 @@ INTERFACE zif_aff_gsmg_v1
       usage           TYPE ty_category VALUE 'USAGE',
 
       "! <p class="shorttext">Self Monitoring</p>
-      "! Self Monitoring
+      "! Self monitoring
       "! $enumValue 'SELFMON'
       self_monitoring TYPE ty_category VALUE 'SELFMON',
 
