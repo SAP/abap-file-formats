@@ -14,7 +14,7 @@ INTERFACE zif_aff_gsmg_v1
     ty_detailed_description TYPE c LENGTH 255,
 
 
-    "! <p class="shorttext">General information</p>
+    "! <p class="shorttext">General Information</p>
     "! General information
     BEGIN OF ty_general_information,
       "! <p class="shorttext">Category</p>
