@@ -22,7 +22,7 @@ INTERFACE zif_aff_gsmg_v1
       "! $required
       type                 TYPE ty_category,
 
-      "! <p class="shorttext">Detailed description</p>
+      "! <p class="shorttext">Detailed Description</p>
       "! Detailed description
       "! $required
       detailed_description TYPE ty_detailed_description,
