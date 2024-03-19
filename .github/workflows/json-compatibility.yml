@@ -1,11 +1,11 @@
-name: Compatibility Check
+name: Experimental Compatibility Check
 
 on:
   pull_request:
 
 jobs:
   compatible:
-    name: Is change incompatible
+    name: Is change compatible
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -25,12 +25,6 @@ jobs:
       uses: actions/github-script@v7
       with:
         script: |
-          github.rest.issues.createLabel({
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            name: 'incompatible-changes',
-            color: 'FF0000'
-          }).catch(err => console.log(`Label already exists`))
           github.rest.issues.addLabels({
             issue_number: context.issue.number,
             owner: context.repo.owner,
