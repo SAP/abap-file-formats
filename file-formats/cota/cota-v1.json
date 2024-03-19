@@ -66,15 +66,12 @@
           "description": "Communication type",
           "type": "string",
           "enum": [
-            "rfc",
             "http"
           ],
           "enumTitles": [
-            "RFC",
             "HTTP"
           ],
           "enumDescriptions": [
-            "RFC",
             "HTTP"
           ],
           "default": "http"
@@ -85,14 +82,27 @@
           "type": "string",
           "maxLength": 30
         },
+        "multitenancyMode": {
+          "title": "Multitenancy Mode",
+          "description": "Multitenancy mode",
+          "type": "string",
+          "enum": [
+            "crossClient",
+            "clientSpecific"
+          ],
+          "enumTitles": [
+            "Cross Client",
+            "Client Specific"
+          ],
+          "enumDescriptions": [
+            "Cross client",
+            "Client specific"
+          ],
+          "default": "clientSpecific"
+        },
         "allowMultipleDestinations": {
           "title": "Allow Multiple Application Destinations",
           "description": "Allow multiple application destinations",
-          "type": "boolean"
-        },
-        "clientIndependent": {
-          "title": "Allow Client Independent Application Destinations",
-          "description": "Allow client independent application destinations",
           "type": "boolean"
         }
       },
