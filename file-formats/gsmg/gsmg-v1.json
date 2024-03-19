@@ -57,11 +57,11 @@
       ]
     },
     "generalInformation": {
-      "title": "General information",
+      "title": "General Information",
       "description": "General information",
       "type": "object",
       "properties": {
-        "type": {
+        "category": {
           "title": "Category",
           "description": "Category",
           "type": "string",
@@ -89,13 +89,13 @@
             "Exceptions",
             "Configuration",
             "Usage",
-            "Self Monitoring",
+            "Self monitoring",
             "Metering"
           ],
           "default": "USAGE"
         },
         "detailedDescription": {
-          "title": "Detailed description",
+          "title": "Detailed Description",
           "description": "Detailed description",
           "type": "string",
           "maxLength": 255
@@ -103,7 +103,7 @@
       },
       "additionalProperties": false,
       "required": [
-        "type",
+        "category",
         "detailedDescription"
       ]
     }
