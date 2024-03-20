@@ -1,12 +1,12 @@
 {
   "formatVersion": "1",
   "header": {
-    "description": "For testing",
+    "description": "For testing.",
     "originalLanguage": "en",
     "abapLanguageVersion": "standard"
   },
   "generalInformation": {
     "category": "usage",
-    "detailedDescription": "This Metric Group is for testing"
+    "detailedDescription": "This Metric Group is for testing."
   }
 }
