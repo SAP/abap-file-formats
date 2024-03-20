@@ -1,12 +1,12 @@
 {
   "formatVersion": "1",
   "header": {
-    "description": "For testing",
-    "originalLanguage": "en",
-    "abapLanguageVersion": "standard"
+    "description": "Example CSN model for ABAP file formats",
+    "originalLanguage": "en"
   },
-  "generalInformation": {
-    "category": "usage",
-    "detailedDescription": "This Metric Group is for testing"
-  }
+  "csnFiles": [
+    {
+      "file": "model_inferred.csn"
+    }
+  ]
 }
