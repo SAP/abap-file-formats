@@ -41,6 +41,13 @@ jobs:
       uses: actions/github-script@v7
       with:
         script: |
+          github.rest.issues.createLabel({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            name: 'incompatible-changes',
+            color: 'FF0000'
+          }).catch(err => console.log(`Label already exists`))
+
           github.rest.issues.removeLabel({
             owner: context.repo.owner,
             repo: context.repo.repo,
