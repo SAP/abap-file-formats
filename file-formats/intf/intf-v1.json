@@ -76,7 +76,7 @@
         "General",
         "Classic BAdI",
         "Business (Static Components)",
-        "Business (Instance-dep. components)",
+        "Business (Instance-Dep. Components)",
         "DB Procedure Proxy",
         "Web Dynpro Runtime",
         "Enterprise Services"
@@ -89,7 +89,8 @@
         "Generated interface of a database procedure proxy",
         "Web Dynpro runtime interface",
         "Generated interface of enterprise services"
-      ]
+      ],
+      "default": "general"
     },
     "proxy": {
       "title": "Proxy Interface",

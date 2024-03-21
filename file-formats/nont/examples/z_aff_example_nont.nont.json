@@ -1,0 +1,9 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Example SAP Object Node Type.",
+    "originalLanguage": "en"
+  },
+  "name": "Z_AFF_EXAMPLE_NONT",
+  "sapObjectType": "Z_Aff_Example_Ront"
+}

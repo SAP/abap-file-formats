@@ -1,16 +1,18 @@
-name: Check Markdown links
+name: Check Markdown Links
 
 on:
-  push:
-    branches-ignore: [main]
   pull_request:
-    branches: [main]
+
+permissions:
+  contents: read
 
 jobs:
-  markdown-link-check:
+  check-links:
+    name: Check links
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
     - uses: actions/checkout@main
     - uses: gaurav-nelson/github-action-markdown-link-check@v1
       with:
-              base-branch: 'main'
+        base-branch: 'main'

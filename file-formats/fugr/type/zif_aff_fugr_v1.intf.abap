@@ -4,12 +4,16 @@ INTERFACE zif_aff_fugr_v1
   "! <p class="shorttext">Status</p>
   "! Status
   "! $values {@link zif_aff_fugr_v1.data:co_status}
+  "! $default {@link zif_aff_fugr_v1.data:co_status.not_classified}
   TYPES ty_status TYPE c LENGTH 1.
 
   CONSTANTS:
     "! <p class="shorttext">Status</p>
     "! status
     BEGIN OF co_status,
+      "! <p class="shorttext">Not Classified</p>
+      "! Not classified
+      not_classified   TYPE ty_status VALUE space,
       "! <p class="shorttext">SAP Program</p>
       "! SAP program
       sap_program      TYPE ty_status VALUE 'P',
@@ -22,9 +26,6 @@ INTERFACE zif_aff_fugr_v1
       "! <p class="shorttext">Test Program</p>
       "! Test program
       test_program     TYPE ty_status VALUE 'T',
-      "! <p class="shorttext">Not Classified</p>
-      "! Not classified
-      not_classified   TYPE ty_status VALUE space,
     END OF co_status.
 
   TYPES:

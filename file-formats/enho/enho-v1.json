@@ -118,20 +118,21 @@
             "description": "Does the BAdI implementation support customizing",
             "type": "string",
             "enum": [
-              "supported",
               "notSupported",
+              "supported",
               "supportedNoTransport"
             ],
             "enumTitles": [
-              "Customizing supported",
-              "Customizing not supported",
-              "Customizing supported (no transport)"
+              "Customizing Not Supported",
+              "Customizing Supported",
+              "Customizing Supported (No Transport)"
             ],
             "enumDescriptions": [
-              "Customizing is supported",
               "Customizing is not supported",
+              "Customizing is supported",
               "Customizing is supported (without transport)"
-            ]
+            ],
+            "default": "notSupported"
           },
           "filterValues": {
             "title": "Filter Values",

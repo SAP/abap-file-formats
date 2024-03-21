@@ -61,14 +61,20 @@
       "description": "Service provider details",
       "type": "object",
       "properties": {
-        "name": {
-          "title": "Name",
+        "providerName": {
+          "title": "Provider Name",
           "description": "Name of the service provider",
           "type": "string",
           "maxLength": 30
         },
+        "namespace": {
+          "title": "Namespace",
+          "description": "Namespace of the service provider",
+          "type": "string",
+          "maxLength": 255
+        },
         "prefix": {
-          "title": "Prefix",
+          "title": "Object Name Prefix",
           "description": "Prefix for all generated objects",
           "type": "string",
           "maxLength": 10
@@ -76,7 +82,8 @@
       },
       "additionalProperties": false,
       "required": [
-        "name"
+        "providerName",
+        "namespace"
       ]
     }
   },
