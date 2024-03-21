@@ -6,7 +6,7 @@
   "description": "Interface properties",
   "type": "object",
   "properties": {
-    "formatVersion": {
+    "formatVeersion": {
       "title": "ABAP File Format Version",
       "description": "The ABAP file format version",
       "type": "string",
@@ -318,7 +318,7 @@
   },
   "additionalProperties": false,
   "required": [
-    "formatVersion",
+    "formatVeersion",
     "header"
   ]
 }
