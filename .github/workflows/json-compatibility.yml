@@ -1,7 +1,7 @@
 name: Experimental Compatibility Check
 
 on:
-  pull_request:
+  pull_request_target:
 
 permissions:
   issues: write
