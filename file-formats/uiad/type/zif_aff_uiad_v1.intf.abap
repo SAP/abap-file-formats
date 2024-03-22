@@ -42,7 +42,7 @@ INTERFACE zif_aff_uiad_v1
       "! SAPUI5 Fiori app
       ui5          TYPE ty_app_type VALUE 'U',
 
-      "! <p class="shorttext">SAPUI5 Fiori App on SAP BTP</p>
+      "! <p class="shorttext">SAPUI5 Fiori App on SAP BTP (Deprecated)</p>
       "! SAPUI5 Fiori app on SAP BTP (Deprecated)
       legacy_ui5   TYPE ty_app_type VALUE 'S',
 
@@ -52,7 +52,7 @@ INTERFACE zif_aff_uiad_v1
 
       "! <p class="shorttext">Tile Only</p>
       "! Tile only
-      tile         TYPE ty_app_type VALUE 'O',
+      tile_only    TYPE ty_app_type VALUE 'O',
 
       "! <p class="shorttext">Url Template</p>
       "! Url Template
@@ -181,8 +181,8 @@ INTERFACE zif_aff_uiad_v1
     END OF ty_app_details_web_client.
 
   TYPES:
-    "! <p class="shorttext">Url Template Parameter</p>
-    "! Url Template parameter
+    "! <p class="shorttext">Url Template Parameter Details</p>
+    "! Url Template parameter details
     BEGIN OF ty_url_template_parameter,
 
       "! <p class="shorttext">Name</p>
@@ -207,8 +207,8 @@ INTERFACE zif_aff_uiad_v1
       "! $required
       template_id TYPE c LENGTH 32,
 
-      "! <p class="shorttext">Parameters</p>
-      "! Url Template parameters
+      "! <p class="shorttext">Url Template Parameters Details</p>
+      "! Url Template parameters details
       parameters  TYPE ty_url_template_parameters,
 
     END OF ty_app_details_url_template.
@@ -235,8 +235,8 @@ INTERFACE zif_aff_uiad_v1
     END OF co_filter_value_type.
 
   TYPES:
-    "! <p class="shorttext">Signature Item</p>
-    "! Signature item
+    "! <p class="shorttext">Signature Item Details</p>
+    "! Signature item details
     BEGIN OF ty_signature_item,
 
       "! <p class="shorttext">Parameter Name</p>
@@ -267,14 +267,14 @@ INTERFACE zif_aff_uiad_v1
 
     ty_signature_items TYPE STANDARD TABLE OF ty_signature_item WITH DEFAULT KEY.
 
-  "! <p class="shorttext">Additional Param Handling</p>
+  "! <p class="shorttext">Additional Parameter Handling</p>
   "! How additional parameters are handled
   "! $values {@link zif_aff_uiad_v1.data:co_additional_param_handling}
   "! $default {@link zif_aff_uiad_v1.data:co_additional_param_handling.allowed}
   TYPES ty_additional_param_handling TYPE c LENGTH 1.
 
   CONSTANTS:
-    "! <p class="shorttext">Additional Param Handling</p>
+    "! <p class="shorttext">Additional Parameter Handling</p>
     "! How additional parameters are handled
     BEGIN OF co_additional_param_handling,
 
@@ -332,7 +332,7 @@ INTERFACE zif_aff_uiad_v1
       "! Signature describing the parameters of the target mapping
       signature                     TYPE ty_signature_items,
 
-      "! <p class="shorttext">Additional Param Handling</p>
+      "! <p class="shorttext">Additional Parameter Handling</p>
       "! How additional parameters are handled
       additional_parameter_handling TYPE ty_additional_param_handling,
 
@@ -500,7 +500,7 @@ INTERFACE zif_aff_uiad_v1
     END OF ty_custom_tile_details.
 
   TYPES:
-    "! <p class="shorttext">Tile</p>
+    "! <p class="shorttext">Tile Details</p>
     "! Details of a tile
     BEGIN OF ty_tile,
 
@@ -509,12 +509,11 @@ INTERFACE zif_aff_uiad_v1
       "! $required
       id         TYPE c LENGTH 50,
 
-      "! <p class="shorttext">default</p>
+      "! <p class="shorttext">Is Default Tile</p>
       "! Whether the tile is chosen by default
-      "! $required
       is_default TYPE abap_bool,
 
-      "! <p class="shorttext">legacy</p>
+      "! <p class="shorttext">Is Legacy Tile</p>
       "! Whether the tile is stored as legacy tile
       is_legacy  TYPE abap_bool,
 
@@ -523,11 +522,11 @@ INTERFACE zif_aff_uiad_v1
       "! $required
       tile_type  TYPE ty_tile_type,
 
-      "! <p class="shorttext">Standard Tile Details</p>
+      "! <p class="shorttext">Standard Details</p>
       "! Standard tile specific details
       standard   TYPE ty_standard_tile_details,
 
-      "! <p class="shorttext">Custom Tile Details</p>
+      "! <p class="shorttext">Custom Details</p>
       "! Custom tile specific details
       custom     TYPE ty_custom_tile_details,
 

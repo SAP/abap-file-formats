@@ -110,7 +110,7 @@
             "ui5",
             "legacyUi5",
             "url",
-            "tile",
+            "tileOnly",
             "urlTemplate"
           ],
           "enumTitles": [
@@ -118,7 +118,7 @@
             "Web Dynpro Application",
             "Web Client UI Application",
             "UI5",
-            "SAPUI5 Fiori App on SAP BTP",
+            "SAPUI5 Fiori App on SAP BTP (Deprecated)",
             "URL App",
             "Tile Only",
             "Url Template"
@@ -252,12 +252,12 @@
           "maxLength": 32
         },
         "parameters": {
-          "title": "Parameters",
-          "description": "Url Template parameters",
+          "title": "Url Template Parameters Details",
+          "description": "Url Template parameters details",
           "type": "array",
           "items": {
-            "title": "Url Template Parameter",
-            "description": "Url Template parameter",
+            "title": "Url Template Parameter Details",
+            "description": "Url Template parameter details",
             "type": "object",
             "properties": {
               "name": {
@@ -328,8 +328,8 @@
           "description": "Signature describing the parameters of the target mapping",
           "type": "array",
           "items": {
-            "title": "Signature Item",
-            "description": "Signature item",
+            "title": "Signature Item Details",
+            "description": "Signature item details",
             "type": "object",
             "properties": {
               "parameterName": {
@@ -380,7 +380,7 @@
           }
         },
         "additionalParameterHandling": {
-          "title": "Additional Param Handling",
+          "title": "Additional Parameter Handling",
           "description": "How additional parameters are handled",
           "type": "string",
           "enum": [
@@ -413,7 +413,7 @@
       "description": "Tiles related to the LADI",
       "type": "array",
       "items": {
-        "title": "Tile",
+        "title": "Tile Details",
         "description": "Details of a tile",
         "type": "object",
         "properties": {
@@ -424,12 +424,12 @@
             "maxLength": 50
           },
           "isDefault": {
-            "title": "default",
+            "title": "Is Default Tile",
             "description": "Whether the tile is chosen by default",
             "type": "boolean"
           },
           "isLegacy": {
-            "title": "legacy",
+            "title": "Is Legacy Tile",
             "description": "Whether the tile is stored as legacy tile",
             "type": "boolean"
           },
@@ -455,7 +455,7 @@
             "default": "static"
           },
           "standard": {
-            "title": "Standard Tile Details",
+            "title": "Standard Details",
             "description": "Standard tile specific details",
             "type": "object",
             "properties": {
@@ -550,7 +550,7 @@
             "additionalProperties": false
           },
           "custom": {
-            "title": "Custom Tile Details",
+            "title": "Custom Details",
             "description": "Custom tile specific details",
             "type": "object",
             "properties": {
@@ -620,7 +620,6 @@
         "additionalProperties": false,
         "required": [
           "id",
-          "isDefault",
           "tileType"
         ]
       }
