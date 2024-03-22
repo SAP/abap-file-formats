@@ -16,6 +16,6 @@ jobs:
     - name: Run script
       id: check_incompability
       run: |
-        cd minka-js
+        cd compatibility-check
         npm ci
         npm run check
