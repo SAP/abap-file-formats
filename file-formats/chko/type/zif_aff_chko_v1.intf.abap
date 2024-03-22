@@ -37,10 +37,6 @@ INTERFACE zif_aff_chko_v1
       "! Header
       "! $required
       header             TYPE zif_aff_types_v1=>ty_header_60_cloud,
-      "! <p class="shorttext">Category</p>
-      "! The parent category of an ATC check object
-      "! $required
-      category           TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Implementing Class</p>
       "! The implementing class of the ATC check object
       "! $required
