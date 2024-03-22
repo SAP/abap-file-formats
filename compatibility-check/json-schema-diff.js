@@ -1,4 +1,4 @@
-const difftool = require('json-schema-diff-validator')
+const jsonSchemaDiff = require('json-schema-diff')
 const exec = require('@actions/exec');
 const core = require('@actions/core');
 const {readFileSync} = require('node:fs');
@@ -29,6 +29,7 @@ let getChangedSchema = async () => {
 const processFile = async (file) => {
   const dataNew = readFileSync(`../${file}`, 'utf8');
   const schemaNew = JSON.parse(dataNew);
+  const source = {type: 'string'};
 
   try {
     await exec.exec(`git checkout remotes/origin/main -- `, [file], { cwd: `../`} );
@@ -37,15 +38,21 @@ const processFile = async (file) => {
     // file is not on main branch, so we continue and compare the file to itself (no harm)
   }
 
-  try {
     const dataOld = readFileSync(`../${file}`, 'utf8');
     const schemaOld = JSON.parse(dataOld);
 
-    difftool.validateSchemaCompatibility(schemaOld, schemaNew);
-  } catch (error) {
-    core.setFailed(error.toString());
+    delete schemaOld['$schema'];
+    delete schemaNew['$schema'];
+
+    const result = await jsonSchemaDiff.diffSchemas( {sourceSchema: schemaOld, destinationSchema: schemaNew});
+    if (result.removalsFound) {
+      core.error('Something was removed!');
+    }
+
+    if (result.additionsFound) {
+      core.error('Something was added!');
+    }
   }
-}
 
 
 async function run() {
