@@ -71,7 +71,7 @@
           "title": "Namespace",
           "description": "Namespace of the service provider",
           "type": "string",
-          "maxLength": 30
+          "maxLength": 255
         },
         "prefix": {
           "title": "Object Name Prefix",
