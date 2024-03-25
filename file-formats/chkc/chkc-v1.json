@@ -65,7 +65,7 @@
   },
   "additionalProperties": false,
   "required": [
-    "formatVeersion",
+    "formatVersion",
     "header"
   ]
 }
