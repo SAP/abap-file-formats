@@ -31,7 +31,8 @@ async function run() {
 
 
   const types = [];
-  for (const f of fs.readdirSync("../file-formats/")) {
+  const directory = '../file-formats/'; // Replace with your directory
+  for (const f of fs.readdirSync(directory)) {
     if (f.length === 4) {
       types.push(f.toUpperCase());
     }
@@ -46,22 +47,49 @@ async function run() {
       continue;
     }
 
-    const result = await abap.Classes["CL_RUN"].run({ object_type: new abap.types.String().set(type) });
-    const filename = "generated" + path.sep + type.toLowerCase() + "-v1.json";
-    const filename_aff = `../file-formats/${type.toLowerCase()}/${type.toLowerCase()}-v1.json`;
-    fs.writeFileSync(filename, result.get());
+    const files = fs.readdirSync(directory+path.sep+type);
+    const jsonFiles = files.filter(file => path.extname(file) === '.json');
+    let objTypeVersNumb = jsonFiles.map((file) => {
+      // Extract the characters before '-v' as namePart and the number after '-v' as versionNumber using regex
+      let match = file.match(/(.*)(?:-v)(\d+)(?=\.json)/);
+
+      if (match) {
+        // Create and return an object with properties 'namePart' and 'versionNumber'
+        let [_, object_type, format_version] = match;
+
+        return {object_type, format_version};
+      }
+
+      return null;
+    });
+
+    for (let aff of objTypeVersNumb) {
+      if(aff) {
+          console.log(`FileName: ${aff.object_type}, VersionNumber: ${aff.format_version}`);
+
+          const format_version = aff.format_version;
+
+          const result = await abap.Classes["CL_RUN"].run({ object_type: new abap.types.String().set(aff.object_type), format_version: format_version });
+          const filename = `generated` + path.sep + aff.object_type.toLowerCase() + `-v`+format_version+`.json`;
+          const filename_aff = `../file-formats/${aff.object_type.toLowerCase()}/${aff.object_type.toLowerCase()}-v`+format_version+`.json`;
+          fs.writeFileSync(filename, result.get());
 
 
-    const command = `diff ${filename_aff} ${filename}`;
-    const output = child_process.execSync(`${command} || true`);
-    if (output.toString().length > 0) {
-      core.setFailed(type + ": Provided and generated JSON Schema differ")
-      createAnnotations(output.toString(), path.resolve(filename_aff));
-      //core.info(command);
-      //core.info(output.toString());
-    } else {
-      core.notice(type + " success");
-    }
+          const command = `diff ${filename_aff} ${filename}`;
+          const output = child_process.execSync(`${command} || true`);
+          if (output.toString().length > 0) {
+            core.setFailed(aff.object_type + ": Provided and generated JSON Schema differ")
+            createAnnotations(output.toString(), path.resolve(filename_aff));
+            //core.info(command);
+            //core.info(output.toString());
+          } else {
+            core.notice(aff.object_type + " success");
+          }
+
+      }
+   }
+
+
 
   }
 
