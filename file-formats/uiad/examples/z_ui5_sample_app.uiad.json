@@ -1,0 +1,41 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "UIAD Title",
+    "originalLanguage": "en"
+  },
+  "generalInformation": {
+    "information": "UIAD Information",
+    "catalogId": "/UI2/FLP_DEMO_BC1_TEST",
+    "transaction": "F1234",
+    "fioriId": "F1234",
+    "supportComponent": "CA-FLP-FE-UI",
+    "appType": "ui5"
+  },
+  "ui5AppDetails": {
+    "appId": "sap.ushell.demo.NavigationSample",
+    "icfPath": "/sap/bc/ui5_ui5/ui2/navigationsample"
+  },
+  "navigation": {
+    "targetMappingId": "3WO90XZ1DX1AO4ON8E556YJ10",
+    "desktop": true,
+    "tablet": true,
+    "phone": true,
+    "semanticObject": "BusinessPartner",
+    "action": "manage"
+  },
+  "tiles": [
+    {
+      "id": "3WO90XZ1DX19DA1UD5RDXQXWK",
+      "isDefault": true,
+      "tileType": "static",
+      "standard": {
+        "title": "Tile Title",
+        "subtitle": "Tile Subtitle",
+        "information": "Tile Information",
+        "keywords": "Tile Keywords",
+        "icon": "sap-icon://ai"
+      }
+    }
+  ]
+}
