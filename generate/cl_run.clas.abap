@@ -26,7 +26,8 @@ CLASS cl_run IMPLEMENTATION.
 
     CREATE OBJECT writer
       EXPORTING
-        schema_id = schema_id.
+        schema_id      = schema_id
+        format_version = format_version.
 
     CREATE OBJECT generator
       EXPORTING
