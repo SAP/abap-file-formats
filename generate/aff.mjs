@@ -31,7 +31,7 @@ async function run() {
 
 
   const types = [];
-  const directory = '../file-formats/'; // Replace with your directory
+  const directory = '../file-formats'; // Replace with your directory
   for (const f of fs.readdirSync(directory)) {
     if (f.length === 4) {
       types.push(f.toUpperCase());
