@@ -34,7 +34,7 @@ async function run() {
   const directory = '../file-formats'; // Replace with your directory
   for (const f of fs.readdirSync(directory)) {
     if (f.length === 4) {
-      types.push(f.toUpperCase());
+      types.push(f.toLowerCase());
     }
   }
   types.sort();
@@ -42,8 +42,8 @@ async function run() {
 
   let error = false;
   for (const type of types) {
-    if (type === "ENHO") {
-      core.notice(type + " skipped, https://github.com/SAP/abap-file-formats/issues/409");
+    if (type.toUpperCase() === "ENHO") {
+      core.notice(type.toUpperCase() + " skipped, https://github.com/SAP/abap-file-formats/issues/409");
       continue;
     }
 
@@ -68,8 +68,8 @@ async function run() {
           //core.info(`AFF type: ${aff.object_type}-v${aff.format_version}`);
 
           const result = await abap.Classes["CL_RUN"].run({ object_type: new abap.types.String().set(aff.object_type), format_version: aff.format_version });
-          const filename = `generated` + path.sep + aff.object_type.toLowerCase() + `-v`+aff.format_version+`.json`;
-          const filename_aff = `../file-formats/${aff.object_type.toLowerCase()}/${aff.object_type.toLowerCase()}-v`+aff.format_version+`.json`;
+          const filename = `generated` + path.sep + aff.object_type + `-v`+aff.format_version+`.json`;
+          const filename_aff = `../file-formats/${aff.object_type}/${aff.object_type}-v`+aff.format_version+`.json`;
           fs.writeFileSync(filename, result.get());
 
 
