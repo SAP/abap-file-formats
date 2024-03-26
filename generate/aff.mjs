@@ -65,25 +65,23 @@ async function run() {
 
     for (let aff of objTypeVersNumb) {
       if(aff) {
-          console.log(`FileName: ${aff.object_type}, VersionNumber: ${aff.format_version}`);
+          //core.info(`AFF type: ${aff.object_type}-v${aff.format_version}`);
 
-          const format_version = aff.format_version;
-
-          const result = await abap.Classes["CL_RUN"].run({ object_type: new abap.types.String().set(aff.object_type), format_version: format_version });
-          const filename = `generated` + path.sep + aff.object_type.toLowerCase() + `-v`+format_version+`.json`;
-          const filename_aff = `../file-formats/${aff.object_type.toLowerCase()}/${aff.object_type.toLowerCase()}-v`+format_version+`.json`;
+          const result = await abap.Classes["CL_RUN"].run({ object_type: new abap.types.String().set(aff.object_type), format_version: aff.format_version });
+          const filename = `generated` + path.sep + aff.object_type.toLowerCase() + `-v`+aff.format_version+`.json`;
+          const filename_aff = `../file-formats/${aff.object_type.toLowerCase()}/${aff.object_type.toLowerCase()}-v`+aff.format_version+`.json`;
           fs.writeFileSync(filename, result.get());
 
 
           const command = `diff ${filename_aff} ${filename}`;
           const output = child_process.execSync(`${command} || true`);
           if (output.toString().length > 0) {
-            core.setFailed(aff.object_type + ": Provided and generated JSON Schema differ")
+            core.setFailed(aff.object_type+"-v"+aff.format_version + ": Provided and generated JSON Schema differ")
             createAnnotations(output.toString(), path.resolve(filename_aff));
             //core.info(command);
             //core.info(output.toString());
           } else {
-            core.notice(aff.object_type + " success");
+            core.notice(aff.object_type+"-v"+aff.format_version +" generated successfully");
           }
 
       }
