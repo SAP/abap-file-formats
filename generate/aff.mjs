@@ -73,6 +73,11 @@ async function run() {
           fs.writeFileSync(filename, result.get());
 
 
+          if (!fs.existsSync(filename_aff)){
+            core.warning('Failed to access file: '+filename_aff);
+            continue;
+          }
+
           const command = `diff ${filename_aff} ${filename}`;
           const output = child_process.execSync(`${command} || true`);
           if (output.toString().length > 0) {
