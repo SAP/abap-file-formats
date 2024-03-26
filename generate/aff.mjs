@@ -47,7 +47,7 @@ async function run() {
       continue;
     }
 
-    const files = fs.readdirSync(directory+path.sep+type);
+    const files = fs.readdirSync(directory + path.sep + type);
     const jsonFiles = files.filter(file => path.extname(file) === '.json');
     let objTypeVersNumb = jsonFiles.map((file) => {
       // Extract the characters before '-v' as namePart and the number after '-v' as versionNumber using regex
@@ -57,41 +57,41 @@ async function run() {
         // Create and return an object with properties 'namePart' and 'versionNumber'
         let [_, object_type, format_version] = match;
 
-        return {object_type, format_version};
+        return { object_type, format_version };
       }
 
       return null;
     });
 
     for (let aff of objTypeVersNumb) {
-      if(aff) {
-          //core.info(`AFF type: ${aff.object_type}-v${aff.format_version}`);
-          let main_object_type = new abap.types.String().set(type);
-          let sub_object_type = new abap.types.String().set(aff.object_type);
-          const result = await abap.Classes["CL_RUN"].run({ main_object_type, sub_object_type, format_version: aff.format_version });
-          const filename = `generated` + path.sep + aff.object_type + `-v`+aff.format_version+`.json`;
-          const filename_aff = `../file-formats/${type}/${aff.object_type}-v`+aff.format_version+`.json`;
-          fs.writeFileSync(filename, result.get());
+      if (aff) {
+        //core.info(`AFF type: ${aff.object_type}-v${aff.format_version}`);
+        let main_object_type = new abap.types.String().set(type);
+        let sub_object_type = new abap.types.String().set(aff.object_type);
+        const result = await abap.Classes["CL_RUN"].run({ main_object_type, sub_object_type, format_version: aff.format_version });
+        const filename = `generated` + path.sep + aff.object_type + `-v` + aff.format_version + `.json`;
+        const filename_aff = `../file-formats/${type}/${aff.object_type}-v` + aff.format_version + `.json`;
+        fs.writeFileSync(filename, result.get());
 
 
-          if (!fs.existsSync(filename_aff)){
-            core.warning('Failed to access file: '+filename_aff);
-            continue;
-          }
+        if (!fs.existsSync(filename_aff)) {
+          core.warning('Failed to access file: ' + filename_aff);
+          continue;
+        }
 
-          const command = `diff ${filename_aff} ${filename}`;
-          const output = child_process.execSync(`${command} || true`);
-          if (output.toString().length > 0) {
-            core.setFailed(aff.object_type+"-v"+aff.format_version + ": Provided and generated JSON Schema differ")
-            createAnnotations(output.toString(), path.resolve(filename_aff));
-            //core.info(command);
-            //core.info(output.toString());
-          } else {
-            core.notice(aff.object_type+"-v"+aff.format_version +" generated successfully");
-          }
+        const command = `diff ${filename_aff} ${filename}`;
+        const output = child_process.execSync(`${command} || true`);
+        if (output.toString().length > 0) {
+          core.setFailed(aff.object_type + "-v" + aff.format_version + ": Provided and generated JSON Schema differ")
+          createAnnotations(output.toString(), path.resolve(filename_aff));
+          //core.info(command);
+          //core.info(output.toString());
+        } else {
+          core.notice(aff.object_type + "-v" + aff.format_version + " generated successfully");
+        }
 
       }
-   }
+    }
 
 
 
