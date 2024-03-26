@@ -2,7 +2,8 @@ CLASS cl_run DEFINITION PUBLIC FINAL CREATE PUBLIC.
   PUBLIC SECTION.
     CLASS-METHODS run
       IMPORTING
-        object_type   TYPE string
+        main_object_type   TYPE string
+        sub_object_type   TYPE string
         format_version TYPE string
       RETURNING
         VALUE(result) TYPE string.
@@ -19,8 +20,8 @@ CLASS cl_run IMPLEMENTATION.
     DATA ref        TYPE REF TO data.
     FIELD-SYMBOLS <row> LIKE LINE OF string_tab.
 
-    schema_id = |https://github.com/SAP/abap-file-formats/blob/main/file-formats/{ to_lower( object_type ) }/{ to_lower( object_type ) }-v{ format_version }.json|.
-    type_name = to_upper( |ZIF_AFF_{ object_type }_V{ format_version }=>TY_MAIN| ).
+    schema_id = |https://github.com/SAP/abap-file-formats/blob/main/file-formats/{ to_lower( main_object_type ) }/{ to_lower( sub_object_type ) }-v{ format_version }.json|.
+    type_name = to_upper( |ZIF_AFF_{ sub_object_type }_V{ format_version }=>TY_MAIN| ).
 
     CREATE DATA ref TYPE (type_name).
 

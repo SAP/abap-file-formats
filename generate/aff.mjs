@@ -66,8 +66,9 @@ async function run() {
     for (let aff of objTypeVersNumb) {
       if(aff) {
           //core.info(`AFF type: ${aff.object_type}-v${aff.format_version}`);
-
-          const result = await abap.Classes["CL_RUN"].run({ object_type: new abap.types.String().set(aff.object_type), format_version: aff.format_version });
+          let main_object_type = new abap.types.String().set(type);
+          let sub_object_type = new abap.types.String().set(aff.object_type);
+          const result = await abap.Classes["CL_RUN"].run({ main_object_type, sub_object_type, format_version: aff.format_version });
           const filename = `generated` + path.sep + aff.object_type + `-v`+aff.format_version+`.json`;
           const filename_aff = `../file-formats/${type}/${aff.object_type}-v`+aff.format_version+`.json`;
           fs.writeFileSync(filename, result.get());
