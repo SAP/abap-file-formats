@@ -69,7 +69,7 @@ async function run() {
 
           const result = await abap.Classes["CL_RUN"].run({ object_type: new abap.types.String().set(aff.object_type), format_version: aff.format_version });
           const filename = `generated` + path.sep + aff.object_type + `-v`+aff.format_version+`.json`;
-          const filename_aff = `../file-formats/${aff.object_type}/${aff.object_type}-v`+aff.format_version+`.json`;
+          const filename_aff = `../file-formats/${type}/${aff.object_type}-v`+aff.format_version+`.json`;
           fs.writeFileSync(filename, result.get());
 
 
