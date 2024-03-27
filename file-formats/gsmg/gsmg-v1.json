@@ -68,7 +68,7 @@
           "enum": [
             "availability",
             "performance",
-            "exceptions",
+            "exception",
             "configuration",
             "usage",
             "selfMonitoring",
@@ -77,7 +77,7 @@
           "enumTitles": [
             "Availability",
             "Performance",
-            "Exceptions",
+            "Exception",
             "Configuration",
             "Usage",
             "Self Monitoring",
@@ -86,7 +86,7 @@
           "enumDescriptions": [
             "Availability",
             "Performance",
-            "Exceptions",
+            "Exception",
             "Configuration",
             "Usage",
             "Self monitoring",

@@ -44,9 +44,9 @@ INTERFACE zif_aff_gsmg_v1
       "! Performance
       performance     TYPE ty_category VALUE 'PERFORM',
 
-      "! <p class="shorttext">Exceptions</p>
-      "! Exceptions
-      exceptions      TYPE ty_category VALUE 'EXCEPTION',
+      "! <p class="shorttext">Exception</p>
+      "! Exception
+      exception       TYPE ty_category VALUE 'EXCEPTION',
 
       "! <p class="shorttext">Configuration</p>
       "! Configuration
