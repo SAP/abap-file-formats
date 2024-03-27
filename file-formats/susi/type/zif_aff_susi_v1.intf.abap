@@ -81,9 +81,9 @@ INTERFACE zif_aff_susi_v1
       "! $default {@link zif_aff_susi_v1.data:co_maintenance_mode.manual}
       "! $showAlways
       maintenance_mode TYPE ty_maintenance_mode,
-      "! <p class="shorttext">Description</p>
-      "! Description of authorization default values
-      description      TYPE string,
+      "! <p class="shorttext">Documentation</p>
+      "! Authorization default documentation for application
+      documentation    TYPE string,
     END OF ty_general_information.
 
   TYPES:
@@ -129,9 +129,9 @@ INTERFACE zif_aff_susi_v1
       "! $default {@link zif_aff_susi_v1.data:co_maintenance_status.default_with_values}
       "! $showAlways
       maintenance_status TYPE ty_maintenance_status,
-      "! <p class="shorttext">Description</p>
-      "! Description of authorization defaults of object
-      description        TYPE string,
+      "! <p class="shorttext">Documentation</p>
+      "! Authorization default documentation for object
+      documentation      TYPE string,
       "! <p class="shorttext">Authorization Field Values</p>
       "! Authorization field values
       fields             TYPE ty_authorization_fields,
