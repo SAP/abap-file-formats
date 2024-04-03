@@ -1,8 +1,8 @@
-INTERFACE zif_aff_sito_v2
+INTERFACE zif_aff_sito_v1
   PUBLIC.
 
   "! SIT2_DO_SCOPE
-  "! $values {@link zif_aff_sito_v2.data:co_sit2_do_scope}
+  "! $values {@link zif_aff_sito_v1.data:co_sit2_do_scope}
   TYPES ty_sit2_do_scope TYPE n LENGTH 2.
 
   CONSTANTS:
@@ -18,7 +18,7 @@ INTERFACE zif_aff_sito_v2
     END OF co_sit2_do_scope.
 
   "! SIT2_DO_OBJ_STRUC_TYPE
-  "! $values {@link zif_aff_sito_v2.data:co_sit2_do_obj_struc_type}
+  "! $values {@link zif_aff_sito_v1.data:co_sit2_do_obj_struc_type}
   TYPES ty_sit2_do_obj_struc_type TYPE n LENGTH 2.
 
   CONSTANTS:
@@ -33,26 +33,8 @@ INTERFACE zif_aff_sito_v2
       in_memory TYPE ty_sit2_do_obj_struc_type VALUE '02',
     END OF co_sit2_do_obj_struc_type.
 
-  "! SIT2_DO_OBJ_STR_P_DTA_LVL
-  "! $values {@link zif_aff_sito_v2.data:co_sit2_do_obj_str_p_dta_lvl}
-  TYPES ty_sit2_do_obj_str_p_dta_lvl TYPE n LENGTH 2.
-
-  CONSTANTS:
-    "! SIT2_DO_OBJ_STR_P_DTA_LVL
-    BEGIN OF co_sit2_do_obj_str_p_dta_lvl,
-      "! <p class="shorttext">No Fields</p>
-      "! No fields
-      no_fields   TYPE ty_sit2_do_obj_str_p_dta_lvl VALUE '01',
-      "! <p class="shorttext">Some Fields</p>
-      "! Some fields
-      some_fields TYPE ty_sit2_do_obj_str_p_dta_lvl VALUE '02',
-      "! <p class="shorttext">All Fields</p>
-      "! All fields
-      all_fields  TYPE ty_sit2_do_obj_str_p_dta_lvl VALUE '03',
-    END OF co_sit2_do_obj_str_p_dta_lvl.
-
   "! SWFECLSTYP
-  "! $values {@link zif_aff_sito_v2.data:co_swfeclstyp}
+  "! $values {@link zif_aff_sito_v1.data:co_swfeclstyp}
   TYPES ty_swfeclstyp TYPE c LENGTH 2.
 
   CONSTANTS:
@@ -76,7 +58,7 @@ INTERFACE zif_aff_sito_v2
     END OF co_swfeclstyp.
 
   "! SIT2_DO_ACTION_TYPE
-  "! $values {@link zif_aff_sito_v2.data:co_sit2_do_action_type}
+  "! $values {@link zif_aff_sito_v1.data:co_sit2_do_action_type}
   TYPES ty_sit2_do_action_type TYPE n LENGTH 2.
 
   CONSTANTS:
@@ -91,7 +73,7 @@ INTERFACE zif_aff_sito_v2
     END OF co_sit2_do_action_type.
 
   "! SIT2_DO_VH_SRV_PROTOCOL_VER
-  "! $values {@link zif_aff_sito_v2.data:co_sit2_do_vh_srv_protocol_ver}
+  "! $values {@link zif_aff_sito_v1.data:co_sit2_do_vh_srv_protocol_ver}
   TYPES ty_sit2_do_vh_srv_protocol_ver TYPE n LENGTH 2.
 
   CONSTANTS:
@@ -108,7 +90,7 @@ INTERFACE zif_aff_sito_v2
     END OF co_sit2_do_vh_srv_protocol_ver.
 
   "! SIT2_DO_VH_SRV_PATH_TYPE
-  "! $values {@link zif_aff_sito_v2.data:co_sit2_do_vh_srv_path_type}
+  "! $values {@link zif_aff_sito_v1.data:co_sit2_do_vh_srv_path_type}
   TYPES ty_sit2_do_vh_srv_path_type TYPE n LENGTH 2.
 
   CONSTANTS:
@@ -123,7 +105,7 @@ INTERFACE zif_aff_sito_v2
     END OF co_sit2_do_vh_srv_path_type.
 
   "! SIT2_DO_VH_APP_TYPE
-  "! $values {@link zif_aff_sito_v2.data:co_sit2_do_vh_app_type}
+  "! $values {@link zif_aff_sito_v1.data:co_sit2_do_vh_app_type}
   TYPES ty_sit2_do_vh_app_type TYPE n LENGTH 2.
 
   CONSTANTS:
@@ -135,7 +117,7 @@ INTERFACE zif_aff_sito_v2
     END OF co_sit2_do_vh_app_type.
 
   "! SIT2_DO_VH_TYPE
-  "! $values {@link zif_aff_sito_v2.data:co_sit2_do_vh_type}
+  "! $values {@link zif_aff_sito_v1.data:co_sit2_do_vh_type}
   TYPES ty_sit2_do_vh_type TYPE n LENGTH 2.
 
   CONSTANTS:
@@ -227,19 +209,6 @@ INTERFACE zif_aff_sito_v2
     "! Value help mapping for situation object structure - services
     ty_sit2_os_vh_map_s_list TYPE STANDARD TABLE OF ty_sit2_os_vh_map_s WITH DEFAULT KEY,
 
-    "! <p class="shorttext">Personal Data Field Details</p>
-    "! Personal data field of an object structure
-    BEGIN OF ty_sit2_obj_str_pdf,
-      "! <p class="shorttext">Field Name</p>
-      "! Field name
-      "! $required
-      field_name TYPE c LENGTH 30,
-    END OF ty_sit2_obj_str_pdf,
-
-    "! <p class="shorttext">Personal Data Fields</p>
-    "! Personal data fields of an object structure
-    ty_sit2_obj_str_pdf_list TYPE STANDARD TABLE OF ty_sit2_obj_str_pdf WITH DEFAULT KEY,
-
     "! <p class="shorttext">Text</p>
     "! Text for situation object event
     BEGIN OF ty_sit2_obj_event_t,
@@ -311,16 +280,16 @@ INTERFACE zif_aff_sito_v2
     ty_sit2_obj_vh_s_p_list TYPE STANDARD TABLE OF ty_sit2_obj_vh_s_p WITH DEFAULT KEY,
 
     "! <p class="shorttext">Text</p>
-    "! Text for situation object
+    "! Text for ituation object
     BEGIN OF ty_sit2_object_t,
       "! <p class="shorttext">Name</p>
       "! Situation object name
       "! $required
-      name            TYPE c LENGTH 40,
-      "! <p class="shorttext">Long Description</p>
-      "! Long description
+      name        TYPE c LENGTH 40,
+      "! <p class="shorttext">Description</p>
+      "! Description
       "! $required
-      longdescription TYPE c LENGTH 255,
+      description TYPE c LENGTH 255,
     END OF ty_sit2_object_t,
 
     "! <p class="shorttext">Structure Details</p>
@@ -350,16 +319,11 @@ INTERFACE zif_aff_sito_v2
       "! SAP object node type
       "! $required
       sap_object_node_type TYPE c LENGTH 30,
-      "! <p class="shorttext">Personal Data</p>
-      "! Personal data
-      "! $required
-      personal_data        TYPE ty_sit2_do_obj_str_p_dta_lvl,
       "! $required
       text                 TYPE ty_sit2_obj_struc_t,
       semantic_keys        TYPE ty_sit2_obj_str_sk_list,
       value_help_mappings  TYPE ty_sit2_os_vh_map_list,
       services             TYPE ty_sit2_os_vh_map_s_list,
-      personal_data_fields TYPE ty_sit2_obj_str_pdf_list,
     END OF ty_sit2_obj_struc,
 
     "! <p class="shorttext">Structures</p>
@@ -411,21 +375,21 @@ INTERFACE zif_aff_sito_v2
       "! <p class="shorttext">ID</p>
       "! Action id
       "! $required
-      id         TYPE c LENGTH 32,
+      id          TYPE c LENGTH 32,
       "! <p class="shorttext">Type</p>
       "! Action type of situation
       "! $required
-      type       TYPE ty_sit2_do_action_type,
+      type        TYPE ty_sit2_do_action_type,
       "! <p class="shorttext">Reusable</p>
       "! Object reusable
       "! $required
-      reusable   TYPE abap_bool,
+      reusable    TYPE abap_bool,
       "! <p class="shorttext">Scope</p>
       "! Scope
       "! $required
-      scope      TYPE ty_sit2_do_scope,
+      scope       TYPE ty_sit2_do_scope,
       "! $required
-      text       TYPE ty_sit2_obj_act_t,
+      text        TYPE ty_sit2_obj_act_t,
       navigation TYPE ty_sit2_obj_act_nav,
       callback   TYPE ty_sit2_obj_act_cb,
     END OF ty_sit2_obj_act,
