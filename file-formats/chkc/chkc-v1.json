@@ -6,7 +6,7 @@
   "description": "ATC check category properties",
   "type": "object",
   "properties": {
-    "formatVeersion": {
+    "formatVersion": {
       "title": "ABAP File Format Version",
       "description": "The ABAP file format version",
       "type": "string",
