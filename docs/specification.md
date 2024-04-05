@@ -12,8 +12,12 @@
 
 ## File Names
 
-The ABAP file formats specify file content and unique file names for ABAP repository objects or simply objects.
-The mapping of objects to file names follows the pattern
+The ABAP file formats specify file content and unique file names for ABAP repository objects.
+ABAP repository objects are development objects which are stored in an ABAP system's database and are defined by a transport object.
+Each repository object has an object catalog (aka TADIR) entry.
+It can be specified with an object type and name.
+
+The mapping repository of objects to file names follows the pattern
 ```
 <object_name>.<object_type>.
   [<sub_object_name>.<sub_object_type>.]
