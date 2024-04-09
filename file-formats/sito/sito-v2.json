@@ -102,23 +102,16 @@
           "description": "Text for situation object",
           "type": "object",
           "properties": {
-            "name": {
-              "title": "Name",
-              "description": "Situation object name",
-              "type": "string",
-              "maxLength": 40
-            },
-            "longdescription": {
-              "title": "Long Description",
-              "description": "Long description",
+            "description": {
+              "title": "Description",
+              "description": "Description of object",
               "type": "string",
               "maxLength": 255
             }
           },
           "additionalProperties": false,
           "required": [
-            "name",
-            "longdescription"
+            "description"
           ]
         },
         "structures": {

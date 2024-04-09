@@ -313,14 +313,10 @@ INTERFACE zif_aff_sito_v2
     "! <p class="shorttext">Text</p>
     "! Text for situation object
     BEGIN OF ty_sit2_object_t,
-      "! <p class="shorttext">Name</p>
-      "! Situation object name
+      "! <p class="shorttext">Description</p>
+      "! Description of object
       "! $required
-      name            TYPE c LENGTH 40,
-      "! <p class="shorttext">Long Description</p>
-      "! Long description
-      "! $required
-      longdescription TYPE c LENGTH 255,
+      description TYPE c LENGTH 255,
     END OF ty_sit2_object_t,
 
     "! <p class="shorttext">Structure Details</p>
