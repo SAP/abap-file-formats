@@ -27,9 +27,7 @@
           "title": "Original Language",
           "description": "Original language of the ABAP object",
           "type": "string",
-          "minLength": 2,
-          "maxLength": 2,
-          "pattern": "^[a-z]+$"
+          "minLength": 2
         }
       },
       "additionalProperties": false,
@@ -291,9 +289,7 @@
             "title": "Translation Language",
             "description": "Translation language",
             "type": "string",
-            "minLength": 2,
-            "maxLength": 2,
-            "pattern": "^[a-z]+$"
+            "minLength": 2
           },
           "fieldLabel": {
             "title": "Field Label",
@@ -356,9 +352,7 @@
             "title": "Language",
             "description": "Language",
             "type": "string",
-            "minLength": 2,
-            "maxLength": 2,
-            "pattern": "^[a-z]+$"
+            "minLength": 2
           },
           "code": {
             "title": "Code",
