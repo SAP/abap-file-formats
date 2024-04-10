@@ -1,0 +1,368 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Booking (Demo Object)",
+    "originalLanguage": "en"
+  },
+  "situationObject": {
+    "reusable": false,
+    "scope": "SAP",
+    "sapObjectType": "BusinessSituationDemoBooking",
+    "extensible": false,
+    "text": {
+      "name": "Booking (Demo Object)",
+      "longdescription": "The booking object is used in the demo scenario Flight Profitability (SITDEMO_FLIGHT_PROFITABILITY)."
+    },
+    "structures": [
+      {
+        "id": "SITDEMO_CDS_BOOKING",
+        "name": "I_SITN2DEMOBOOKING",
+        "type": "CDS",
+        "reusable": false,
+        "scope": "SAP",
+        "sapObjectNodeType": "BusinessSituationDemoBooking",
+        "text": {
+          "description": "CDS view of booking (demo object)"
+        },
+        "semanticKeys": [
+          {
+            "field": "SITNDEMOCARRIERID",
+            "fieldOrder": "01"
+          },
+          {
+            "field": "SITNDEMOCONNECTIONID",
+            "fieldOrder": "02"
+          },
+          {
+            "field": "SITNDEMOFLIGHTDATE",
+            "fieldOrder": "03"
+          },
+          {
+            "field": "SITNDEMOBOOKINGID",
+            "fieldOrder": "04"
+          }
+        ],
+        "valueHelpMappings": [
+          {
+            "fieldName": "SITNDEMOAGENCYID",
+            "appType": "allApps",
+            "type": "service",
+            "scope": "SAP"
+          },
+          {
+            "fieldName": "SITNDEMOAGENCYREGION",
+            "appType": "allApps",
+            "type": "service",
+            "scope": "SAP"
+          },
+          {
+            "fieldName": "SITNDEMOBOOKINGCLASS",
+            "appType": "allApps",
+            "type": "service",
+            "scope": "SAP"
+          },
+          {
+            "fieldName": "SITNDEMOBOOKINGID",
+            "appType": "allApps",
+            "type": "service",
+            "scope": "SAP"
+          },
+          {
+            "fieldName": "SITNDEMOCARRIERID",
+            "appType": "allApps",
+            "type": "service",
+            "scope": "SAP"
+          },
+          {
+            "fieldName": "SITNDEMOCARRIERREGION",
+            "appType": "allApps",
+            "type": "service",
+            "scope": "SAP"
+          },
+          {
+            "fieldName": "SITNDEMOCONNECTIONID",
+            "appType": "allApps",
+            "type": "service",
+            "scope": "SAP"
+          }
+        ],
+        "services": [
+          {
+            "id": "SITDEMO_VH",
+            "fieldName": "SITNDEMOAGENCYID",
+            "type": "allApps",
+            "entitySet": "C_Sitn2DemoFlightVH",
+            "property": "SitnDemoAgencyID"
+          },
+          {
+            "id": "SITDEMO_VH",
+            "fieldName": "SITNDEMOAGENCYREGION",
+            "type": "allApps",
+            "entitySet": "C_Sitn2DemoFlightVH",
+            "property": "SitnDemoRegionCode"
+          },
+          {
+            "id": "SITDEMO_VH",
+            "fieldName": "SITNDEMOBOOKINGCLASS",
+            "type": "allApps",
+            "entitySet": "C_Sitn2DemoFlightVH",
+            "property": "SitnDemoBookingClass"
+          },
+          {
+            "id": "SITDEMO_VH",
+            "fieldName": "SITNDEMOBOOKINGID",
+            "type": "allApps",
+            "entitySet": "C_Sitn2DemoFlightVH",
+            "property": "SitnDemoBookingID"
+          },
+          {
+            "id": "SITDEMO_VH",
+            "fieldName": "SITNDEMOCARRIERID",
+            "type": "allApps",
+            "entitySet": "C_Sitn2DemoFlightVH",
+            "property": "SitnDemoCarrierID"
+          },
+          {
+            "id": "SITDEMO_VH",
+            "fieldName": "SITNDEMOCARRIERREGION",
+            "type": "allApps",
+            "entitySet": "C_Sitn2DemoFlightVH",
+            "property": "SitnDemoRegionCode"
+          },
+          {
+            "id": "SITDEMO_VH",
+            "fieldName": "SITNDEMOCONNECTIONID",
+            "type": "allApps",
+            "entitySet": "C_Sitn2DemoFlightVH",
+            "property": "SitnDemoConnectionID"
+          }
+        ]
+      }
+    ],
+    "events": [
+      {
+        "id": "SITDEMO_EV_BOOKING_CONFIRMED",
+        "object": "CL_SIT2_DEMO_BOOKING",
+        "type": "CONFIRMED",
+        "reusable": false,
+        "scope": "SAP",
+        "category": "abapClass",
+        "parameterStructureId": "",
+        "text": {
+          "description": "Event triggered by confirmed booking (demo event)"
+        }
+      },
+      {
+        "id": "SITDEMO_EV_BOOKING_CREATED",
+        "object": "CL_SIT2_DEMO_BOOKING",
+        "type": "CREATED",
+        "reusable": false,
+        "scope": "SAP",
+        "category": "abapClass",
+        "parameterStructureId": "",
+        "text": {
+          "description": "Event triggered by created booking (demo event)"
+        }
+      },
+      {
+        "id": "SITDEMO_EV_BOOKING_DELETED",
+        "object": "CL_SIT2_DEMO_BOOKING",
+        "type": "DELETED",
+        "reusable": false,
+        "scope": "SAP",
+        "category": "abapClass",
+        "parameterStructureId": "",
+        "text": {
+          "description": "Event triggered by deleted booking (demo event)"
+        }
+      },
+      {
+        "id": "SITDEMO_EV_BOOKING_UNCONFIRMED",
+        "object": "CL_SIT2_DEMO_BOOKING",
+        "type": "UNCONFIRMED",
+        "reusable": false,
+        "scope": "SAP",
+        "category": "abapClass",
+        "parameterStructureId": "",
+        "text": {
+          "description": "Event triggered by unconfirmed booking (demo event)"
+        }
+      }
+    ],
+    "endUserActions": [
+      {
+        "id": "SITDEMO_ACT_DELETE_BOOKING",
+        "type": "callbackAction",
+        "reusable": false,
+        "scope": "SAP",
+        "text": {
+          "name": "Cancel Bookings",
+          "description": "Delete the bookings from the flight"
+        },
+        "callback": {
+          "id": "SITDEMO_CB_DELETE_BOOKING"
+        }
+      },
+      {
+        "id": "SITDEMO_ACT_MANAGE_FLIGHT",
+        "type": "navigationAction",
+        "reusable": false,
+        "scope": "SAP",
+        "text": {
+          "name": "Manage Flight Bookings",
+          "description": "Maintain booking details of the flight"
+        },
+        "navigation": {
+          "id": "SITDEMO_NAV_MANAGE_FLIGHT"
+        }
+      },
+      {
+        "id": "SITDEMO_ACT_REBOOK_BOOKING",
+        "type": "callbackAction",
+        "reusable": false,
+        "scope": "SAP",
+        "text": {
+          "name": "Rebook Passengers",
+          "description": "Change bookings to the next flight with the same airline and connection ID"
+        },
+        "callback": {
+          "id": "SITDEMO_CB_REBOOK_BOOKING"
+        }
+      },
+      {
+        "id": "SITDEMO_ACT_UPGRADE_BOOKING",
+        "type": "callbackAction",
+        "reusable": false,
+        "scope": "SAP",
+        "text": {
+          "name": "Upgrade Passengers",
+          "description": "Upgrade economy passengers to business class"
+        },
+        "callback": {
+          "id": "SITDEMO_CB_UPGRADE_BOOKING"
+        }
+      }
+    ],
+    "navigations": [
+      {
+        "id": "SITDEMO_NAV_MANAGE_FLIGHT",
+        "reusable": false,
+        "scope": "SAP",
+        "semanticObject": "SituationDemoFlight",
+        "semanticObjectAction": "maintain",
+        "parameters": [
+          {
+            "name": "SitnDemoCarrierID"
+          },
+          {
+            "name": "SitnDemoConnectionID"
+          },
+          {
+            "name": "SitnDemoFlightDate"
+          }
+        ]
+      }
+    ],
+    "callbacks": [
+      {
+        "id": "SITDEMO_CB_DELETE_BOOKING",
+        "reusable": false,
+        "scope": "SAP",
+        "className": "CL_SIT2_DEMO_CB_CANCEL_BOOKING",
+        "parameters": [
+          {
+            "name": "BOOKID"
+          },
+          {
+            "name": "CARRID"
+          },
+          {
+            "name": "CONNID"
+          },
+          {
+            "name": "FLDATE"
+          }
+        ]
+      },
+      {
+        "id": "SITDEMO_CB_REBOOK_BOOKING",
+        "reusable": false,
+        "scope": "SAP",
+        "className": "CL_SIT2_DEMO_CB_REBOOK_BOOKING",
+        "parameters": [
+          {
+            "name": "BOOKID"
+          },
+          {
+            "name": "CARRID"
+          },
+          {
+            "name": "CONNID"
+          },
+          {
+            "name": "FLDATE"
+          }
+        ]
+      },
+      {
+        "id": "SITDEMO_CB_UPGRADE_BOOKING",
+        "reusable": false,
+        "scope": "SAP",
+        "className": "CL_SIT2_DEMO_CB_UPGR_BOOKING",
+        "parameters": [
+          {
+            "name": "BOOKID"
+          },
+          {
+            "name": "CARRID"
+          },
+          {
+            "name": "CONNID"
+          },
+          {
+            "name": "FLDATE"
+          }
+        ]
+      }
+    ],
+    "valueHelpServices": [
+      {
+        "id": "SITDEMO_VH",
+        "reusable": false,
+        "scope": "SAP",
+        "protocolVersion": "V2",
+        "pathType": "standard",
+        "customPath": "",
+        "binding": "C_SITN2DEMOFLIGHTVH_CDS",
+        "definition": "",
+        "version": "0001",
+        "valueHelpServiceProviders": [
+          {
+            "entitySet": "C_Sitn2DemoFlightVH",
+            "property": "SitnDemoAgencyID"
+          },
+          {
+            "entitySet": "C_Sitn2DemoFlightVH",
+            "property": "SitnDemoBookingClass"
+          },
+          {
+            "entitySet": "C_Sitn2DemoFlightVH",
+            "property": "SitnDemoBookingID"
+          },
+          {
+            "entitySet": "C_Sitn2DemoFlightVH",
+            "property": "SitnDemoCarrierID"
+          },
+          {
+            "entitySet": "C_Sitn2DemoFlightVH",
+            "property": "SitnDemoConnectionID"
+          },
+          {
+            "entitySet": "C_Sitn2DemoFlightVH",
+            "property": "SitnDemoRegionCode"
+          }
+        ]
+      }
+    ]
+  }
+}
