@@ -38,7 +38,7 @@ async function run() {
       await exec.exec(`git checkout remotes/origin/main -- `, [schema], { cwd: `../`} );
     } catch (error) {
       core.info(`File ${schema} is not known to main branch.`);
-      // file is not on main branch, so we continue and compare the file to itself (no harm)
+      continue;
     }
 
     const dataOld = readFileSync(`../${schema}`, 'utf8');
