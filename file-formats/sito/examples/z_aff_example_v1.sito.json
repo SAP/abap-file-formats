@@ -11,7 +11,7 @@
     "extensible": false,
     "text": {
       "name": "Booking (Demo Object)",
-      "longdescription": "The booking object is used in the demo scenario Flight Profitability (SITDEMO_FLIGHT_PROFITABILITY)."
+      "description": "The booking object is used in the demo scenario Flight Profitability (SITDEMO_FLIGHT_PROFITABILITY)."
     },
     "structures": [
       {
