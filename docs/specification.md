@@ -15,7 +15,7 @@
 The ABAP file formats specify file content and unique file names for [ABAP repository objects][1].
 
 
-The mapping repository of objects to file names follows the pattern
+The mapping of repository objects to file names follows the pattern
 ```
 <object_name>.<object_type>.
   [<sub_object_name>.<sub_object_type>.]
