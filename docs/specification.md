@@ -12,8 +12,10 @@
 
 ## File Names
 
-The ABAP file formats specify file content and unique file names for ABAP repository objects or simply objects.
-The mapping of objects to file names follows the pattern
+The ABAP file formats specify file content and unique file names for [ABAP repository objects][1].
+
+
+The mapping of repository objects to file names follows the pattern
 ```
 <object_name>.<object_type>.
   [<sub_object_name>.<sub_object_type>.]
@@ -72,3 +74,5 @@ The JSON files additionally follow
 We provide an [EditorConfig](https://editorconfig.org)-based formatting configuration file [here](../.editorconfig) where the above convention is reflected.
 A GitHub action runs validations based on this configuration file, to ensure the repository follows the formatting convention.
 Developers might choose one of the many compatible text editors for the sake of convenience.
+
+[1]: ./glossary.md#abap-repository-object
