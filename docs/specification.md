@@ -12,10 +12,8 @@
 
 ## File Names
 
-The ABAP file formats specify file content and unique file names for ABAP repository objects.
-ABAP repository objects are development objects which are stored in an ABAP system's database and are defined by a transport object.
-Each repository object has an object catalog (aka TADIR) entry.
-It can be specified with an object type and name.
+The ABAP file formats specify file content and unique file names for [ABAP repository objects][1].
+
 
 The mapping repository of objects to file names follows the pattern
 ```
@@ -76,3 +74,5 @@ The JSON files additionally follow
 We provide an [EditorConfig](https://editorconfig.org)-based formatting configuration file [here](../.editorconfig) where the above convention is reflected.
 A GitHub action runs validations based on this configuration file, to ensure the repository follows the formatting convention.
 Developers might choose one of the many compatible text editors for the sake of convenience.
+
+[1]: ./glossary.md#abap-repository-object
