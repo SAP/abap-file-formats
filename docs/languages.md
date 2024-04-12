@@ -1,6 +1,6 @@
 ## Supported languages for the Original Language field
 
-The following table shows all currently supported languages (BCP47 format) for the `originalLanguage` field and their corresponding SAP2 language code.
+The following table shows all currently supported languages (BCP47 format) for language fields (like the field `originalLanguage` in the header) and their corresponding SAP2 language code.
 The list of supported languages is based on [SAP Note 73606 - Supported Languages and Code Pages](https://launchpad.support.sap.com/#/notes/73606).
 
 | Language                    | BCP47   | SAP2 |
