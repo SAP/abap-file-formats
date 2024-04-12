@@ -44,7 +44,7 @@ cl_oo_clif_source.clas.texts.en.properties
 ```
 
 ### Language
-The language of the texts is encoded by the element `language` following [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)
+The language of the texts is encoded by the element `language` following [BCP47](https://en.wikipedia.org/wiki/IETF_language_tag).
 ```
 cl_oo_clif_source.clas.texts.en.properties
 ```
