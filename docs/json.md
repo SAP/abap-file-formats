@@ -368,7 +368,7 @@ The field `description` contains the description of the object.
 The field `originalLanguage` stores the information about the original language of the object.
 
 The original language is specified with [BCP47](https://en.wikipedia.org/wiki/IETF_language_tag) language tags, which combine [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language codes with subtags for language variations.
-A full list of SAP supported BCP47 language tags can be found [here](./docs/languages.md).
+A full list of SAP supported BCP47 language tags can be found [here](./languages.md).
 
 All translatable texts in the object shall be maintained in their original language.
 Translations of the texts shall be stored in separate files.
