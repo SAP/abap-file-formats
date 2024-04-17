@@ -5,7 +5,6 @@
     "originalLanguage": "en"
   },
   "generalInformation": {
-    "category": "usage",
-    "detailedDescription": "This Metric Group is for testing."
+    "category": "usage"
   }
 }

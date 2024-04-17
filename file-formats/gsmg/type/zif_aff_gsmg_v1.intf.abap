@@ -9,10 +9,6 @@ INTERFACE zif_aff_gsmg_v1
     "! $default {@link zif_aff_gsmg_v1.data:co_category.usage}
     ty_category             TYPE c LENGTH 10,
 
-    "! <p class="shorttext">Detailed Description</p>
-    "! Detailed description
-    ty_detailed_description TYPE c LENGTH 255,
-
 
     "! <p class="shorttext">General Information</p>
     "! General information
@@ -21,11 +17,6 @@ INTERFACE zif_aff_gsmg_v1
       "! Category
       "! $required
       category             TYPE ty_category,
-
-      "! <p class="shorttext">Detailed Description</p>
-      "! Detailed description
-      "! $required
-      detailed_description TYPE ty_detailed_description,
 
     END OF ty_general_information.
 

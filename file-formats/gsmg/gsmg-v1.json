@@ -27,7 +27,9 @@
           "title": "Original Language",
           "description": "Original language of the ABAP object",
           "type": "string",
-          "minLength": 2
+          "minLength": 2,
+          "maxLength": 2,
+          "pattern": "^[a-z]+$"
         },
         "abapLanguageVersion": {
           "title": "ABAP Language Version",
@@ -91,18 +93,11 @@
             "Metering"
           ],
           "default": "usage"
-        },
-        "detailedDescription": {
-          "title": "Detailed Description",
-          "description": "Detailed description",
-          "type": "string",
-          "maxLength": 255
         }
       },
       "additionalProperties": false,
       "required": [
-        "category",
-        "detailedDescription"
+        "category"
       ]
     }
   },
