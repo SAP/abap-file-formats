@@ -1,5 +1,5 @@
 INTERFACE zif_aff_aifd_v1
-  PUBLIC .
+  PUBLIC.
   TYPES:
     "! <p class="shorttext">AIF Interfaces</p>
     "! AIF interfaces
@@ -8,16 +8,16 @@ INTERFACE zif_aff_aifd_v1
       "! <p class="shorttext">Interface Object Name</p>
       "! Interface Object Name
       "! $required
-      object_name       TYPE c                                  LENGTH 40,
+      object_name       TYPE c LENGTH 40,
       "! <p class="shorttext">Namespace</p>
       "! Namespace
-      namespace         TYPE c                                  LENGTH 6,
+      namespace         TYPE c LENGTH 6,
       "! <p class="shorttext">Interface Name</p>
       "! Interface Name
-      interface_name    TYPE c                                  LENGTH 10,
+      interface_name    TYPE c LENGTH 10,
       "! <p class="shorttext">Interface Version</p>
       "! Interface Version
-      interface_version TYPE c                                  LENGTH 5,
+      interface_version TYPE c LENGTH 5,
     END OF ty_aif_interfaces,
 
     "! <p class="shorttext">AIFD Object Type</p>
