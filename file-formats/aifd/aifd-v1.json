@@ -60,43 +60,49 @@
     "aifInterfaces": {
       "title": "General",
       "description": "AIF interfaces",
-      "type": "object",
-      "properties": {
-        "objectName": {
-          "title": "Interface Object Name",
-          "description": "Interface Object Name",
-          "type": "string",
-          "maxLength": 40
+      "type": "array",
+      "items": {
+        "title": "AIF Interface",
+        "description": "AIF interface",
+        "type": "object",
+        "properties": {
+          "objectName": {
+            "title": "Interface Object Name",
+            "description": "Interface Object Name",
+            "type": "string",
+            "maxLength": 40
+          },
+          "namespace": {
+            "title": "Namespace",
+            "description": "Namespace",
+            "type": "string",
+            "maxLength": 6
+          },
+          "interfaceName": {
+            "title": "Interface Name",
+            "description": "Interface Name",
+            "type": "string",
+            "maxLength": 10
+          },
+          "interfaceVersion": {
+            "title": "Interface Version",
+            "description": "Interface Version",
+            "type": "string",
+            "maxLength": 5
+          }
         },
-        "namespace": {
-          "title": "Namespace",
-          "description": "Namespace",
-          "type": "string",
-          "maxLength": 6
-        },
-        "interfaceName": {
-          "title": "Interface Name",
-          "description": "Interface Name",
-          "type": "string",
-          "maxLength": 10
-        },
-        "interfaceVersion": {
-          "title": "Interface Version",
-          "description": "Interface Version",
-          "type": "string",
-          "maxLength": 5
-        }
-      },
-      "additionalProperties": false,
-      "required": [
-        "objectName"
-      ]
+        "additionalProperties": false,
+        "required": [
+          "objectName"
+        ]
+      }
     }
   },
   "additionalProperties": false,
   "required": [
     "formatVersion",
     "header",
-    "aifInterfaces"
+    "aifInterfaces",
+    "tyAifInterface"
   ]
 }

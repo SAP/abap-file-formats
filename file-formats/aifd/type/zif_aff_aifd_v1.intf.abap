@@ -1,10 +1,10 @@
 INTERFACE zif_aff_aifd_v1
   PUBLIC.
   TYPES:
-    "! <p class="shorttext">AIF Interfaces</p>
-    "! AIF interfaces
+    "! <p class="shorttext">AIF Interface</p>
+    "! AIF interface
     "! $required
-    BEGIN OF ty_aif_interfaces,
+    BEGIN OF ty_aif_interface,
       "! <p class="shorttext">Interface Object Name</p>
       "! Interface Object Name
       "! $required
@@ -18,7 +18,11 @@ INTERFACE zif_aff_aifd_v1
       "! <p class="shorttext">Interface Version</p>
       "! Interface Version
       interface_version TYPE c LENGTH 5,
-    END OF ty_aif_interfaces,
+    END OF ty_aif_interface,
+
+    "! <p class="shorttext">AIF Interfaces</p>
+    "! AIF Interfaces
+    ty_aif_interfaces TYPE STANDARD TABLE OF ty_aif_interface WITH DEFAULT KEY,
 
     "! <p class="shorttext">AIFD Object Type</p>
     "! Object type AIFD
