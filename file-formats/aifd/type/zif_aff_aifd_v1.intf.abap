@@ -24,7 +24,7 @@ INTERFACE zif_aff_aifd_v1
     "! AIF Interfaces
     ty_aif_interfaces TYPE STANDARD TABLE OF ty_aif_interface WITH DEFAULT KEY,
 
-    "! <p class="shorttext">AIFD Object Type</p>
+    "! <p class="shorttext">Deployment Scenario</p>
     "! Object type AIFD
     BEGIN OF ty_main,
       "! $required
@@ -32,8 +32,8 @@ INTERFACE zif_aff_aifd_v1
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header         TYPE zif_aff_types_v1=>ty_header_60_src,
-      "! <p class="shorttext">General</p>
+      header         TYPE zif_aff_types_v1=>ty_header_60,
+      "! <p class="shorttext">AIF interfaces</p>
       "! AIF interfaces
       "! $required
       aif_interfaces TYPE ty_aif_interfaces,
