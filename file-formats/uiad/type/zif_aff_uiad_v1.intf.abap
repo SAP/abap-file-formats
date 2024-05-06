@@ -16,14 +16,15 @@ INTERFACE zif_aff_uiad_v1
       abap_language_version TYPE zif_aff_types_v1=>ty_abap_language_version,
     END OF ty_header.
 
-  "! <p class="shorttext">App Type</p>
-  "! LADI app type
+  "! <p class="shorttext">Application Type</p>
+  "! LADI application type
   "! $values {@link zif_aff_uiad_v1.data:co_app_type}
+  "! $default {@link zif_aff_uiad_v1.data:co_app_type.ui5}
   TYPES ty_app_type TYPE c LENGTH 1.
 
   CONSTANTS:
-    "! <p class="shorttext">App Type</p>
-    "! LADI app type
+    "! <p class="shorttext">Application Type</p>
+    "! LADI application type
     BEGIN OF co_app_type,
 
       "! <p class="shorttext">Transaction</p>
@@ -38,24 +39,24 @@ INTERFACE zif_aff_uiad_v1
       "! Web Client UI application
       web_client   TYPE ty_app_type VALUE 'C',
 
-      "! <p class="shorttext">UI5</p>
-      "! SAPUI5 Fiori app
+      "! <p class="shorttext">SAPUI5 Fiori Application</p>
+      "! SAPUI5 Fiori application
       ui5          TYPE ty_app_type VALUE 'U',
 
-      "! <p class="shorttext">SAPUI5 Fiori App on SAP BTP (Deprecated)</p>
-      "! SAPUI5 Fiori app on SAP BTP (Deprecated)
+      "! <p class="shorttext">SAPUI5 Fiori Application on SAP BTP (Deprecated)</p>
+      "! SAPUI5 Fiori application on SAP BTP (deprecated)
       legacy_ui5   TYPE ty_app_type VALUE 'S',
 
-      "! <p class="shorttext">URL App</p>
-      "! URL app
+      "! <p class="shorttext">URL Application</p>
+      "! URL application
       url          TYPE ty_app_type VALUE 'R',
 
       "! <p class="shorttext">Tile Only</p>
       "! Tile only
       tile_only    TYPE ty_app_type VALUE 'O',
 
-      "! <p class="shorttext">Url Template</p>
-      "! Url Template
+      "! <p class="shorttext">URL Template</p>
+      "! URL template
       url_template TYPE ty_app_type VALUE 'G',
 
     END OF co_app_type.
@@ -65,48 +66,45 @@ INTERFACE zif_aff_uiad_v1
     "! General information
     BEGIN OF ty_general_information,
 
-      "! <p class="shorttext">Information</p>
-      "! LADI information text
-      information       TYPE c LENGTH 255,
+      "! <p class="shorttext">Application Type</p>
+      "! Application type
+      "! $required
+      app_type          TYPE ty_app_type,
 
-      "! <p class="shorttext">Catalog ID</p>
-      "! Catalog ID
+      "! <p class="shorttext">Technical Catalog</p>
+      "! Technical catalog
+      "! $required
       catalog_id        TYPE c LENGTH 40,
 
-      "! <p class="shorttext">Transaction</p>
-      "! Transaction
-      transaction       TYPE c LENGTH 20,
-
-      "! <p class="shorttext">Fiori ID</p>
-      "! Fiori ID
+      "! <p class="shorttext">SAP Fiori ID</p>
+      "! SAP Fiori ID
       fiori_id          TYPE c LENGTH 20,
 
-      "! <p class="shorttext">Support Component</p>
-      "! Support component
+      "! <p class="shorttext">Transaction Code</p>
+      "! Transaction code
+      transaction       TYPE c LENGTH 20,
+
+      "! <p class="shorttext">Target Mapping Information</p>
+      "! Target mapping information
+      information       TYPE c LENGTH 255,
+
+      "! <p class="shorttext">Application Component</p>
+      "! Application component
       support_component TYPE c LENGTH 24,
 
       "! <p class="shorttext">Suppress Tiles</p>
       "! Suppress tiles
       suppress_tiles    TYPE abap_bool,
 
-      "! <p class="shorttext">App Type</p>
-      "! LADI app type
-      "! $required
-      app_type          TYPE ty_app_type,
-
-      "! <p class="shorttext">System Alias</p>
-      "! System alias
-      system_alias      TYPE c LENGTH 32,
-
     END OF ty_general_information.
 
   TYPES:
-    "! <p class="shorttext">UI5 App Details</p>
-    "! UI5 specific app details
+    "! <p class="shorttext">SAPUI5 Fiori Application Information</p>
+    "! SAPUI5 Fiori application information
     BEGIN OF ty_app_details_ui5,
 
-      "! <p class="shorttext">App ID</p>
-      "! SAP UI5 component ID
+      "! <p class="shorttext">SAPUI5 Component</p>
+      "! SAPUI5 Component
       "! $required
       app_id   TYPE c LENGTH 70,
 
@@ -122,7 +120,7 @@ INTERFACE zif_aff_uiad_v1
   TYPES ty_web_dynpro_integration_mode TYPE c LENGTH 1.
 
   CONSTANTS:
-    "! <p class="shorttext">Integration Mode</p>
+    "! <p class="shorttext">Web Dynpro Integration Mode</p>
     "! Web Dynpro integration mode
     BEGIN OF co_web_dynpro_integration_mode,
 
@@ -141,36 +139,36 @@ INTERFACE zif_aff_uiad_v1
     END OF co_web_dynpro_integration_mode.
 
   TYPES:
-    "! <p class="shorttext">Web Dynpro App Details</p>
-    "! Web Dynpro specific app details
+    "! <p class="shorttext">Web Dynpro Application Inforation</p>
+    "! Web Dynpro application information
     BEGIN OF ty_app_details_web_dynpro,
 
-      "! <p class="shorttext">App ID</p>
-      "! App ID
+      "! <p class="shorttext">Web Dynpro Application</p>
+      "! Web Dynpro application
       "! $required
       app_id             TYPE c LENGTH 30,
 
-      "! <p class="shorttext">Config ID</p>
-      "! Config ID
+      "! <p class="shorttext">Application Configuration</p>
+      "! Application configuration
       config_id          TYPE c LENGTH 32,
 
       "! <p class="shorttext">Flavor ID</p>
-      "! Flavor ID
+      "! Flavor ID (deprecated)
       flavor_id          TYPE c LENGTH 32,
 
       "! <p class="shorttext">Integration Mode</p>
-      "! Integration mode
+      "! Integration mode (deprecated)
       integration_mode   TYPE ty_web_dynpro_integration_mode,
 
       "! <p class="shorttext">Compatibility Mode</p>
-      "! Compatibility mode
+      "! Compatibility mode (deprecated)
       compatibility_mode TYPE abap_bool,
 
     END OF ty_app_details_web_dynpro.
 
   TYPES:
-    "! <p class="shorttext">Web Client App Details</p>
-    "! Web Client specific app details
+    "! <p class="shorttext">Web Client Application Information</p>
+    "! Web Client application information
     BEGIN OF ty_app_details_web_client,
 
       "! <p class="shorttext">Target ID</p>
@@ -181,12 +179,13 @@ INTERFACE zif_aff_uiad_v1
     END OF ty_app_details_web_client.
 
   TYPES:
-    "! <p class="shorttext">Url Template Parameter Details</p>
-    "! Url Template parameter details
+    "! <p class="shorttext">URL Template Parameter</p>
+    "! URL template parameter
     BEGIN OF ty_url_template_parameter,
 
       "! <p class="shorttext">Name</p>
       "! Parameter name
+      "! $required
       name  TYPE string,
 
       "! <p class="shorttext">Value</p>
@@ -198,17 +197,17 @@ INTERFACE zif_aff_uiad_v1
     ty_url_template_parameters TYPE STANDARD TABLE OF ty_url_template_parameter WITH DEFAULT KEY.
 
   TYPES:
-    "! <p class="shorttext">Url Template App Details</p>
-    "! Url Template specific app details
+    "! <p class="shorttext">URL Template Application Information</p>
+    "! URL template application information
     BEGIN OF ty_app_details_url_template,
 
-      "! <p class="shorttext">Template ID</p>
-      "! Url Template ID
+      "! <p class="shorttext">URL Template</p>
+      "! URL template
       "! $required
       template_id TYPE c LENGTH 32,
 
-      "! <p class="shorttext">Url Template Parameters Details</p>
-      "! Url Template parameters details
+      "! <p class="shorttext">URL Template Parameters</p>
+      "! URL template parameters
       parameters  TYPE ty_url_template_parameters,
 
     END OF ty_app_details_url_template.
@@ -229,18 +228,19 @@ INTERFACE zif_aff_uiad_v1
       plain TYPE ty_filter_value_type VALUE ' ',
 
       "! <p class="shorttext">Regex</p>
-      "! The filter value is used as a regex
+      "! The filter value is used as a regular expression
       regex TYPE ty_filter_value_type VALUE 'R',
 
     END OF co_filter_value_type.
 
   TYPES:
-    "! <p class="shorttext">Signature Item Details</p>
-    "! Signature item details
+    "! <p class="shorttext">Signature Item</p>
+    "! Signature item
     BEGIN OF ty_signature_item,
 
       "! <p class="shorttext">Parameter Name</p>
       "! Parameter name
+      "! $required
       parameter_name      TYPE string,
 
       "! <p class="shorttext">Rename Parameter To</p>
@@ -279,57 +279,62 @@ INTERFACE zif_aff_uiad_v1
     BEGIN OF co_additional_param_handling,
 
       "! <p class="shorttext">Allowed</p>
-      "! Additional parameters are allowed.
+      "! Additional parameters are allowed
       allowed     TYPE ty_additional_param_handling VALUE 'A',
 
       "! <p class="shorttext">Ignored</p>
-      "! Additional parameters are ignored.
+      "! Additional parameters are ignored
       ignored     TYPE ty_additional_param_handling VALUE 'I',
 
       "! <p class="shorttext">Not Allowed</p>
-      "! Additional parameters are not allowed.
+      "! Additional parameters are not allowed
       not_allowed TYPE ty_additional_param_handling VALUE 'N',
 
     END OF co_additional_param_handling.
 
   TYPES:
-    "! <p class="shorttext">Navigation Details</p>
-    "! Navigation details
+    "! <p class="shorttext">Navigation Information</p>
+    "! Navigation information
     BEGIN OF ty_navigation,
 
-      "! <p class="shorttext">Target Mapping ID</p>
-      "! Target mapping ID
+      "! <p class="shorttext">Target Mapping</p>
+      "! Target mapping
+      "! $required
       target_mapping_id             TYPE c LENGTH 50,
-
-      "! <p class="shorttext">Target Url</p>
-      "! Target url used for 'Tile only' and 'Url app' apps
-      target_url                    TYPE string,
-
-      "! <p class="shorttext">Desktop</p>
-      "! Desktop is supported as device type
-      "! $required
-      desktop                       TYPE abap_bool,
-
-      "! <p class="shorttext">Tablet</p>
-      "! Tablet is supported as device type
-      "! $required
-      tablet                        TYPE abap_bool,
-
-      "! <p class="shorttext">Phone</p>
-      "! Phone is supported as device type
-      "! $required
-      phone                         TYPE abap_bool,
 
       "! <p class="shorttext">Semantic Object</p>
       "! Semantic object of the target mapping
+      "! $required
       semantic_object               TYPE c LENGTH 30,
 
       "! <p class="shorttext">Action</p>
       "! Action of the target mapping
+      "! $required
       action                        TYPE c LENGTH 60,
 
+      "! <p class="shorttext">Target URL</p>
+      "! Target URL used for apps of type 'Tile Only' and 'URL Application'
+      target_url                    TYPE string,
+
+      "! <p class="shorttext">System Alias</p>
+      "! System alias
+      system_alias      TYPE c LENGTH 32,
+
+      "! <p class="shorttext">Desktop</p>
+      "! Desktop is supported as device type
+      "! $default 'X'
+      desktop                       TYPE abap_bool,
+
+      "! <p class="shorttext">Tablet</p>
+      "! Tablet is supported as device type
+      tablet                        TYPE abap_bool,
+
+      "! <p class="shorttext">Phone</p>
+      "! Phone is supported as device type
+      phone                         TYPE abap_bool,
+
       "! <p class="shorttext">Signature Items</p>
-      "! Signature describing the parameters of the target mapping
+      "! Signature parameters of the target mapping
       signature                     TYPE ty_signature_items,
 
       "! <p class="shorttext">Additional Parameter Handling</p>
@@ -350,26 +355,26 @@ INTERFACE zif_aff_uiad_v1
     BEGIN OF co_tile_type,
 
       "! <p class="shorttext">Static</p>
-      "! Static Tile
+      "! Static tile
       static  TYPE ty_tile_type VALUE 'S',
 
       "! <p class="shorttext">Dynamic</p>
-      "! Dynamic Tile
+      "! Dynamic tile
       dynamic TYPE ty_tile_type VALUE 'D',
 
       "! <p class="shorttext">Custom</p>
-      "! Custom Tile
+      "! Custom tile
       custom  TYPE ty_tile_type VALUE 'C',
 
     END OF co_tile_type.
 
   TYPES:
     "! <p class="shorttext">Dynamic Tile Details</p>
-    "! Dynamic tile specific details
+    "! Dynamic tile details
     BEGIN OF ty_dynamic_tile_details,
 
-      "! <p class="shorttext">Service Base Url</p>
-      "! Service base url
+      "! <p class="shorttext">Service Base URL</p>
+      "! Service base URL
       service_base_url TYPE string,
 
       "! <p class="shorttext">Service Path</p>
@@ -377,7 +382,7 @@ INTERFACE zif_aff_uiad_v1
       service_path     TYPE string,
 
       "! <p class="shorttext">Refresh Interval</p>
-      "! Timeout until the tile is refreshed
+      "! Duration until the tile is refreshed
       refresh_interval TYPE i,
 
       "! <p class="shorttext">Number Unit</p>
@@ -387,12 +392,13 @@ INTERFACE zif_aff_uiad_v1
     END OF ty_dynamic_tile_details.
 
   TYPES:
-    "! <p class="shorttext">Tile Parameter</p>
-    "! Tile parameter
+    "! <p class="shorttext">Tile Navigation Parameter</p>
+    "! Tile navigation parameter
     BEGIN OF ty_tile_navigation_parameter,
 
       "! <p class="shorttext">Name</p>
       "! Parameter name
+      "! $required
       name  TYPE string,
 
       "! <p class="shorttext">Value</p>
@@ -405,7 +411,7 @@ INTERFACE zif_aff_uiad_v1
 
   TYPES:
     "! <p class="shorttext">Standard Tile Details</p>
-    "! Standard tile specific details
+    "! Standard tile details
     BEGIN OF ty_standard_tile_details,
 
       "! <p class="shorttext">Reuse Text From App</p>
@@ -414,6 +420,7 @@ INTERFACE zif_aff_uiad_v1
 
       "! <p class="shorttext">Title</p>
       "! Tile title
+      "! $required
       title                      TYPE c LENGTH 255,
 
       "! <p class="shorttext">Subtitle</p>
@@ -433,11 +440,11 @@ INTERFACE zif_aff_uiad_v1
       icon                       TYPE string,
 
       "! <p class="shorttext">Dynamic Tile Details</p>
-      "! Dynamic tile specific details
+      "! Dynamic tile details
       dynamic                    TYPE ty_dynamic_tile_details,
 
       "! <p class="shorttext">Tile Navigation Parameters</p>
-      "! Tile navigation parameters of the tile intent
+      "! Tile navigation parameters
       tile_navigation_parameters TYPE ty_tile_navigation_parameters,
 
     END OF ty_standard_tile_details.
@@ -449,6 +456,7 @@ INTERFACE zif_aff_uiad_v1
 
       "! <p class="shorttext">Name</p>
       "! Property name
+      "! $required
       name         TYPE c LENGTH 100,
 
       "! <p class="shorttext">Value</p>
@@ -456,7 +464,7 @@ INTERFACE zif_aff_uiad_v1
       value        TYPE string,
 
       "! <p class="shorttext">Translatable</p>
-      "! Whether the property is translatable
+      "! Property is translatable
       translatable TYPE abap_bool,
 
     END OF ty_chip_bag_property,
@@ -464,16 +472,17 @@ INTERFACE zif_aff_uiad_v1
     ty_chip_bag_properties TYPE STANDARD TABLE OF ty_chip_bag_property WITH DEFAULT KEY.
 
   TYPES:
-    "! <p class="shorttext">Bag</p>
-    "! CHIP bag
+    "! <p class="shorttext">Property Bag</p>
+    "! Property bag
     BEGIN OF ty_chip_bag,
 
-      "! <p class="shorttext">ID</p>
+      "! <p class="shorttext">Bag ID</p>
       "! Bag ID
+      "! $required
       id         TYPE c LENGTH 100,
 
       "! <p class="shorttext">Properties</p>
-      "! CHIP bag properties
+      "! Properties
       properties TYPE ty_chip_bag_properties,
 
     END OF ty_chip_bag,
@@ -482,19 +491,19 @@ INTERFACE zif_aff_uiad_v1
 
   TYPES:
     "! <p class="shorttext">Custom Tile Details</p>
-    "! Custom tile specific details
+    "! Custom tile details
     BEGIN OF ty_custom_tile_details,
 
-      "! <p class="shorttext">Base CHIP ID</p>
-      "! Base CHIP ID
+      "! <p class="shorttext">Base CHIP</p>
+      "! Base CHIP
       base_chip_id  TYPE c LENGTH 255,
 
       "! <p class="shorttext">Configuration</p>
       "! Configuration string of the CHIP
       configuration TYPE string,
 
-      "! <p class="shorttext">Bags</p>
-      "! CHIP bags
+      "! <p class="shorttext">Property Bags</p>
+      "! Property bags
       bags          TYPE ty_chip_bags,
 
     END OF ty_custom_tile_details.
@@ -509,25 +518,25 @@ INTERFACE zif_aff_uiad_v1
       "! $required
       id         TYPE c LENGTH 50,
 
-      "! <p class="shorttext">Is Default Tile</p>
-      "! Whether the tile is chosen by default
-      is_default TYPE abap_bool,
-
-      "! <p class="shorttext">Is Legacy Tile</p>
-      "! Whether the tile is stored as legacy tile
-      is_legacy  TYPE abap_bool,
-
       "! <p class="shorttext">Tile Type</p>
       "! Tile type
       "! $required
       tile_type  TYPE ty_tile_type,
 
+      "! <p class="shorttext">Is Default Tile</p>
+      "! Tile is chosen by default
+      is_default TYPE abap_bool,
+
+      "! <p class="shorttext">Is Legacy Tile</p>
+      "! Tile is stored as legacy tile
+      is_legacy  TYPE abap_bool,
+
       "! <p class="shorttext">Standard Details</p>
-      "! Standard tile specific details
+      "! Standard tile details
       standard   TYPE ty_standard_tile_details,
 
       "! <p class="shorttext">Custom Details</p>
-      "! Custom tile specific details
+      "! Custom tile details
       custom     TYPE ty_custom_tile_details,
 
     END OF ty_tile,
@@ -536,22 +545,22 @@ INTERFACE zif_aff_uiad_v1
 
   TYPES:
     "! <p class="shorttext">Lifecycle</p>
-    "! Lifecycle state of the app
+    "! Lifecycle state
     BEGIN OF ty_lifecycle,
 
       "! <p class="shorttext">Deprecated</p>
-      "! Whether the app is deprecated
+      "! Application is deprecated
       deprecated TYPE abap_bool,
 
       "! <p class="shorttext">Successor</p>
-      "! LADI ID of the successor app
+      "! LADI of the successor application
       successor  TYPE c LENGTH 32,
 
     END OF ty_lifecycle.
 
   TYPES:
     "! <p class="shorttext">LADI</p>
-    "! Launchpad app descriptor item
+    "! Launchpad application descriptor item (LADI)
     BEGIN OF ty_main,
 
       "! <p class="shorttext">Format Version</p>
@@ -569,34 +578,34 @@ INTERFACE zif_aff_uiad_v1
       "! $required
       general_information      TYPE ty_general_information,
 
-      "! <p class="shorttext">UI5 App Details</p>
-      "! UI5 specific app details
+      "! <p class="shorttext">SAPUI5 Application Information</p>
+      "! SAPUI5 application information
       ui5_app_details          TYPE ty_app_details_ui5,
 
-      "! <p class="shorttext">Web Dynpro App Details</p>
-      "! Web Dynpro specific app details
+      "! <p class="shorttext">Web Dynpro Application Information</p>
+      "! Web Dynpro application information
       web_dynpro_app_details   TYPE ty_app_details_web_dynpro,
 
-      "! <p class="shorttext">Web Client App Details</p>
-      "! Web Client specific app details
+      "! <p class="shorttext">Web Client Application Information</p>
+      "! Web Client application information
       web_client_app_details   TYPE ty_app_details_web_client,
 
-      "! <p class="shorttext">Url Template App Details</p>
-      "! Url Template specific app details
+      "! <p class="shorttext">URL Template Application Information</p>
+      "! URL Template application information
       url_template_app_details TYPE ty_app_details_url_template,
 
-      "! <p class="shorttext">Navigation Details</p>
-      "! Navigation details
+      "! <p class="shorttext">Navigation Information</p>
+      "! Navigation information
       "! $required
       navigation               TYPE ty_navigation,
 
       "! <p class="shorttext">Tiles</p>
-      "! Tiles related to the LADI
+      "! Tiles
       "! $required
       tiles                    TYPE ty_tiles,
 
       "! <p class="shorttext">Lifecycle</p>
-      "! Lifecycle state of the app
+      "! Lifecycle state
       lifecycle                TYPE ty_lifecycle,
 
     END OF ty_main.

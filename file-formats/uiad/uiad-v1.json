@@ -3,7 +3,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/uiad/uiad-v1.json",
   "title": "LADI",
-  "description": "Launchpad app descriptor item",
+  "description": "Launchpad application descriptor item (LADI)",
   "type": "object",
   "properties": {
     "formatVersion": {
@@ -62,44 +62,9 @@
       "description": "General information",
       "type": "object",
       "properties": {
-        "information": {
-          "title": "Information",
-          "description": "LADI information text",
-          "type": "string",
-          "maxLength": 255
-        },
-        "catalogId": {
-          "title": "Catalog ID",
-          "description": "Catalog ID",
-          "type": "string",
-          "maxLength": 40
-        },
-        "transaction": {
-          "title": "Transaction",
-          "description": "Transaction",
-          "type": "string",
-          "maxLength": 20
-        },
-        "fioriId": {
-          "title": "Fiori ID",
-          "description": "Fiori ID",
-          "type": "string",
-          "maxLength": 20
-        },
-        "supportComponent": {
-          "title": "Support Component",
-          "description": "Support component",
-          "type": "string",
-          "maxLength": 24
-        },
-        "suppressTiles": {
-          "title": "Suppress Tiles",
-          "description": "Suppress tiles",
-          "type": "boolean"
-        },
         "appType": {
-          "title": "App Type",
-          "description": "LADI app type",
+          "title": "Application Type",
+          "description": "Application type",
           "type": "string",
           "enum": [
             "transaction",
@@ -115,43 +80,74 @@
             "Transaction",
             "Web Dynpro Application",
             "Web Client UI Application",
-            "UI5",
-            "SAPUI5 Fiori App on SAP BTP (Deprecated)",
-            "URL App",
+            "SAPUI5 Fiori Application",
+            "SAPUI5 Fiori Application on SAP BTP (Deprecated)",
+            "URL Application",
             "Tile Only",
-            "Url Template"
+            "URL Template"
           ],
           "enumDescriptions": [
             "Transaction",
             "Web Dynpro application",
             "Web Client UI application",
-            "SAPUI5 Fiori app",
-            "SAPUI5 Fiori app on SAP BTP (Deprecated)",
-            "URL app",
+            "SAPUI5 Fiori application",
+            "SAPUI5 Fiori application on SAP BTP (deprecated)",
+            "URL application",
             "Tile only",
-            "Url Template"
-          ]
+            "URL template"
+          ],
+          "default": "ui5"
         },
-        "systemAlias": {
-          "title": "System Alias",
-          "description": "System alias",
+        "catalogId": {
+          "title": "Technical Catalog",
+          "description": "Technical catalog",
           "type": "string",
-          "maxLength": 32
+          "maxLength": 40
+        },
+        "fioriId": {
+          "title": "SAP Fiori ID",
+          "description": "SAP Fiori ID",
+          "type": "string",
+          "maxLength": 20
+        },
+        "transaction": {
+          "title": "Transaction Code",
+          "description": "Transaction code",
+          "type": "string",
+          "maxLength": 20
+        },
+        "information": {
+          "title": "Target Mapping Information",
+          "description": "Target mapping information",
+          "type": "string",
+          "maxLength": 255
+        },
+        "supportComponent": {
+          "title": "Application Component",
+          "description": "Application component",
+          "type": "string",
+          "maxLength": 24
+        },
+        "suppressTiles": {
+          "title": "Suppress Tiles",
+          "description": "Suppress tiles",
+          "type": "boolean"
         }
       },
       "additionalProperties": false,
       "required": [
-        "appType"
+        "appType",
+        "catalogId"
       ]
     },
     "ui5AppDetails": {
-      "title": "UI5 App Details",
-      "description": "UI5 specific app details",
+      "title": "SAPUI5 Application Information",
+      "description": "SAPUI5 application information",
       "type": "object",
       "properties": {
         "appId": {
-          "title": "App ID",
-          "description": "SAP UI5 component ID",
+          "title": "SAPUI5 Component",
+          "description": "SAPUI5 Component",
           "type": "string",
           "maxLength": 70
         },
@@ -167,31 +163,31 @@
       ]
     },
     "webDynproAppDetails": {
-      "title": "Web Dynpro App Details",
-      "description": "Web Dynpro specific app details",
+      "title": "Web Dynpro Application Information",
+      "description": "Web Dynpro application information",
       "type": "object",
       "properties": {
         "appId": {
-          "title": "App ID",
-          "description": "App ID",
+          "title": "Web Dynpro Application",
+          "description": "Web Dynpro application",
           "type": "string",
           "maxLength": 30
         },
         "configId": {
-          "title": "Config ID",
-          "description": "Config ID",
+          "title": "Application Configuration",
+          "description": "Application configuration",
           "type": "string",
           "maxLength": 32
         },
         "flavorId": {
           "title": "Flavor ID",
-          "description": "Flavor ID",
+          "description": "Flavor ID (deprecated)",
           "type": "string",
           "maxLength": 32
         },
         "integrationMode": {
           "title": "Integration Mode",
-          "description": "Integration mode",
+          "description": "Integration mode (deprecated)",
           "type": "string",
           "enum": [
             "systemDefault",
@@ -212,7 +208,7 @@
         },
         "compatibilityMode": {
           "title": "Compatibility Mode",
-          "description": "Compatibility mode",
+          "description": "Compatibility mode (deprecated)",
           "type": "boolean"
         }
       },
@@ -222,8 +218,8 @@
       ]
     },
     "webClientAppDetails": {
-      "title": "Web Client App Details",
-      "description": "Web Client specific app details",
+      "title": "Web Client Application Information",
+      "description": "Web Client application information",
       "type": "object",
       "properties": {
         "targetId": {
@@ -239,23 +235,23 @@
       ]
     },
     "urlTemplateAppDetails": {
-      "title": "Url Template App Details",
-      "description": "Url Template specific app details",
+      "title": "URL Template Application Information",
+      "description": "URL Template application information",
       "type": "object",
       "properties": {
         "templateId": {
-          "title": "Template ID",
-          "description": "Url Template ID",
+          "title": "URL Template",
+          "description": "URL template",
           "type": "string",
           "maxLength": 32
         },
         "parameters": {
-          "title": "Url Template Parameters Details",
-          "description": "Url Template parameters details",
+          "title": "URL Template Parameters",
+          "description": "URL template parameters",
           "type": "array",
           "items": {
-            "title": "Url Template Parameter Details",
-            "description": "Url Template parameter details",
+            "title": "URL Template Parameter",
+            "description": "URL template parameter",
             "type": "object",
             "properties": {
               "name": {
@@ -269,7 +265,10 @@
                 "type": "string"
               }
             },
-            "additionalProperties": false
+            "additionalProperties": false,
+            "required": [
+              "name"
+            ]
           }
         }
       },
@@ -279,35 +278,15 @@
       ]
     },
     "navigation": {
-      "title": "Navigation Details",
-      "description": "Navigation details",
+      "title": "Navigation Information",
+      "description": "Navigation information",
       "type": "object",
       "properties": {
         "targetMappingId": {
-          "title": "Target Mapping ID",
-          "description": "Target mapping ID",
+          "title": "Target Mapping",
+          "description": "Target mapping",
           "type": "string",
           "maxLength": 50
-        },
-        "targetUrl": {
-          "title": "Target Url",
-          "description": "Target url used for 'Tile only' and 'Url app' apps",
-          "type": "string"
-        },
-        "desktop": {
-          "title": "Desktop",
-          "description": "Desktop is supported as device type",
-          "type": "boolean"
-        },
-        "tablet": {
-          "title": "Tablet",
-          "description": "Tablet is supported as device type",
-          "type": "boolean"
-        },
-        "phone": {
-          "title": "Phone",
-          "description": "Phone is supported as device type",
-          "type": "boolean"
         },
         "semanticObject": {
           "title": "Semantic Object",
@@ -321,13 +300,40 @@
           "type": "string",
           "maxLength": 60
         },
+        "targetUrl": {
+          "title": "Target URL",
+          "description": "Target URL used for apps of type 'Tile Only' and 'URL Application'",
+          "type": "string"
+        },
+        "systemAlias": {
+          "title": "System Alias",
+          "description": "System alias",
+          "type": "string",
+          "maxLength": 32
+        },
+        "desktop": {
+          "title": "Desktop",
+          "description": "Desktop is supported as device type",
+          "type": "boolean",
+          "default": true
+        },
+        "tablet": {
+          "title": "Tablet",
+          "description": "Tablet is supported as device type",
+          "type": "boolean"
+        },
+        "phone": {
+          "title": "Phone",
+          "description": "Phone is supported as device type",
+          "type": "boolean"
+        },
         "signature": {
           "title": "Signature Items",
-          "description": "Signature describing the parameters of the target mapping",
+          "description": "Signature parameters of the target mapping",
           "type": "array",
           "items": {
-            "title": "Signature Item Details",
-            "description": "Signature item details",
+            "title": "Signature Item",
+            "description": "Signature item",
             "type": "object",
             "properties": {
               "parameterName": {
@@ -364,7 +370,7 @@
                 ],
                 "enumDescriptions": [
                   "The filter value is used as is",
-                  "The filter value is used as a regex"
+                  "The filter value is used as a regular expression"
                 ],
                 "default": "plain"
               },
@@ -374,7 +380,10 @@
                 "type": "boolean"
               }
             },
-            "additionalProperties": false
+            "additionalProperties": false,
+            "required": [
+              "parameterName"
+            ]
           }
         },
         "additionalParameterHandling": {
@@ -392,23 +401,23 @@
             "Not Allowed"
           ],
           "enumDescriptions": [
-            "Additional parameters are allowed.",
-            "Additional parameters are ignored.",
-            "Additional parameters are not allowed."
+            "Additional parameters are allowed",
+            "Additional parameters are ignored",
+            "Additional parameters are not allowed"
           ],
           "default": "allowed"
         }
       },
       "additionalProperties": false,
       "required": [
-        "desktop",
-        "tablet",
-        "phone"
+        "targetMappingId",
+        "semanticObject",
+        "action"
       ]
     },
     "tiles": {
       "title": "Tiles",
-      "description": "Tiles related to the LADI",
+      "description": "Tiles",
       "type": "array",
       "items": {
         "title": "Tile Details",
@@ -420,16 +429,6 @@
             "description": "Tile ID",
             "type": "string",
             "maxLength": 50
-          },
-          "isDefault": {
-            "title": "Is Default Tile",
-            "description": "Whether the tile is chosen by default",
-            "type": "boolean"
-          },
-          "isLegacy": {
-            "title": "Is Legacy Tile",
-            "description": "Whether the tile is stored as legacy tile",
-            "type": "boolean"
           },
           "tileType": {
             "title": "Tile Type",
@@ -446,15 +445,25 @@
               "Custom"
             ],
             "enumDescriptions": [
-              "Static Tile",
-              "Dynamic Tile",
-              "Custom Tile"
+              "Static tile",
+              "Dynamic tile",
+              "Custom tile"
             ],
             "default": "static"
           },
+          "isDefault": {
+            "title": "Is Default Tile",
+            "description": "Tile is chosen by default",
+            "type": "boolean"
+          },
+          "isLegacy": {
+            "title": "Is Legacy Tile",
+            "description": "Tile is stored as legacy tile",
+            "type": "boolean"
+          },
           "standard": {
             "title": "Standard Details",
-            "description": "Standard tile specific details",
+            "description": "Standard tile details",
             "type": "object",
             "properties": {
               "reuseTextFromApp": {
@@ -493,12 +502,12 @@
               },
               "dynamic": {
                 "title": "Dynamic Tile Details",
-                "description": "Dynamic tile specific details",
+                "description": "Dynamic tile details",
                 "type": "object",
                 "properties": {
                   "serviceBaseUrl": {
-                    "title": "Service Base Url",
-                    "description": "Service base url",
+                    "title": "Service Base URL",
+                    "description": "Service base URL",
                     "type": "string"
                   },
                   "servicePath": {
@@ -508,7 +517,7 @@
                   },
                   "refreshInterval": {
                     "title": "Refresh Interval",
-                    "description": "Timeout until the tile is refreshed",
+                    "description": "Duration until the tile is refreshed",
                     "type": "integer",
                     "minimum": -2147483648,
                     "maximum": 2147483647
@@ -523,11 +532,11 @@
               },
               "tileNavigationParameters": {
                 "title": "Tile Navigation Parameters",
-                "description": "Tile navigation parameters of the tile intent",
+                "description": "Tile navigation parameters",
                 "type": "array",
                 "items": {
-                  "title": "Tile Parameter",
-                  "description": "Tile parameter",
+                  "title": "Tile Navigation Parameter",
+                  "description": "Tile navigation parameter",
                   "type": "object",
                   "properties": {
                     "name": {
@@ -541,20 +550,26 @@
                       "type": "string"
                     }
                   },
-                  "additionalProperties": false
+                  "additionalProperties": false,
+                  "required": [
+                    "name"
+                  ]
                 }
               }
             },
-            "additionalProperties": false
+            "additionalProperties": false,
+            "required": [
+              "title"
+            ]
           },
           "custom": {
             "title": "Custom Details",
-            "description": "Custom tile specific details",
+            "description": "Custom tile details",
             "type": "object",
             "properties": {
               "baseChipId": {
-                "title": "Base CHIP ID",
-                "description": "Base CHIP ID",
+                "title": "Base CHIP",
+                "description": "Base CHIP",
                 "type": "string",
                 "maxLength": 255
               },
@@ -564,23 +579,23 @@
                 "type": "string"
               },
               "bags": {
-                "title": "Bags",
-                "description": "CHIP bags",
+                "title": "Property Bags",
+                "description": "Property bags",
                 "type": "array",
                 "items": {
-                  "title": "Bag",
-                  "description": "CHIP bag",
+                  "title": "Property Bag",
+                  "description": "Property bag",
                   "type": "object",
                   "properties": {
                     "id": {
-                      "title": "ID",
+                      "title": "Bag ID",
                       "description": "Bag ID",
                       "type": "string",
                       "maxLength": 100
                     },
                     "properties": {
                       "title": "Properties",
-                      "description": "CHIP bag properties",
+                      "description": "Properties",
                       "type": "array",
                       "items": {
                         "title": "CHIP Bag Property",
@@ -600,15 +615,21 @@
                           },
                           "translatable": {
                             "title": "Translatable",
-                            "description": "Whether the property is translatable",
+                            "description": "Property is translatable",
                             "type": "boolean"
                           }
                         },
-                        "additionalProperties": false
+                        "additionalProperties": false,
+                        "required": [
+                          "name"
+                        ]
                       }
                     }
                   },
-                  "additionalProperties": false
+                  "additionalProperties": false,
+                  "required": [
+                    "id"
+                  ]
                 }
               }
             },
@@ -624,17 +645,17 @@
     },
     "lifecycle": {
       "title": "Lifecycle",
-      "description": "Lifecycle state of the app",
+      "description": "Lifecycle state",
       "type": "object",
       "properties": {
         "deprecated": {
           "title": "Deprecated",
-          "description": "Whether the app is deprecated",
+          "description": "Application is deprecated",
           "type": "boolean"
         },
         "successor": {
           "title": "Successor",
-          "description": "LADI ID of the successor app",
+          "description": "LADI of the successor application",
           "type": "string",
           "maxLength": 32
         }

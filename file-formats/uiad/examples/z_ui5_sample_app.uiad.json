@@ -1,40 +1,69 @@
 {
   "formatVersion": "1",
   "header": {
-    "description": "UIAD Title",
+    "description": "Example of UIAD AFF Format",
     "originalLanguage": "en"
   },
   "generalInformation": {
-    "information": "UIAD Information",
-    "catalogId": "/UI2/FLP_DEMO_BC1_TEST",
-    "transaction": "F1234",
-    "fioriId": "F1234",
-    "supportComponent": "CA-FLP-FE-UI",
-    "appType": "ui5"
+    "appType": "ui5",
+    "catalogId": "ZLOCAL_TEST",
+    "information": "Not translated info text",
+    "supportComponent": "CA-FLP-ABA"
   },
   "ui5AppDetails": {
-    "appId": "sap.ushell.demo.NavigationSample",
-    "icfPath": "/sap/bc/ui5_ui5/ui2/navigationsample"
+    "appId": "sap.ushell.demo.AppNavSample",
+    "icfPath": "/sap/bc/ui5_ui5/ui2/appnavsample"
   },
   "navigation": {
-    "targetMappingId": "3WO90XZ1DX1AO4ON8E556YJ10",
-    "desktop": true,
+    "targetMappingId": "Z_AFF_EXAMPLE_TM",
+    "semanticObject": "NavSample",
+    "action": "display",
     "tablet": true,
     "phone": true,
-    "semanticObject": "BusinessPartner",
-    "action": "manage"
+    "signature": [
+      {
+        "parameterName": "tmParamName",
+        "defaultValue": "Hello World!"
+      }
+    ]
   },
   "tiles": [
     {
-      "id": "3WO90XZ1DX19DA1UD5RDXQXWK",
-      "isDefault": true,
+      "id": "Z_AFF_EXAMPLE_TILE_STATIC",
       "tileType": "static",
+      "isDefault": true,
       "standard": {
         "title": "Tile Title",
         "subtitle": "Tile Subtitle",
-        "information": "Tile Information",
-        "keywords": "Tile Keywords",
-        "icon": "sap-icon://ai"
+        "information": "Tile Information Text",
+        "keywords": "Test Example AFF",
+        "icon": "sap-icon://action-settings",
+        "tileNavigationParameters": [
+          {
+            "name": "ParamName",
+            "value": "ParamValue"
+          }
+        ]
+      }
+    },
+    {
+      "id": "Z_AFF_EXAMPLE_TILE_DYNAMIC",
+      "tileType": "dynamic",
+      "standard": {
+        "title": "Dynamic Tile Title",
+        "subtitle": "Demo Subtitle",
+        "icon": "sap-icon://action-settings",
+        "dynamic": {
+          "serviceBaseUrl": "/sap/opu/odata/UI2/PAGE_BUILDER_PERS/Catalogs/$count",
+          "refreshInterval": 10,
+          "numberUnit": "Ctas"
+        },
+        "tileNavigationParameters": [
+          {
+            "name": "paramName",
+            "value": "paramValue"
+          }
+        ]
       }
     }
   ]
