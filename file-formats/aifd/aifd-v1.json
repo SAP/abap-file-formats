@@ -102,7 +102,6 @@
   "required": [
     "formatVersion",
     "header",
-    "aifInterfaces",
-    "tyAifInterface"
+    "aifInterfaces"
   ]
 }
