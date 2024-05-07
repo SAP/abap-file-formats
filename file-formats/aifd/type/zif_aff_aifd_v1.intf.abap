@@ -3,7 +3,6 @@ INTERFACE zif_aff_aifd_v1
   TYPES:
     "! <p class="shorttext">AIF Interface</p>
     "! AIF interface
-    "! $required
     BEGIN OF ty_aif_interface,
       "! <p class="shorttext">Interface Object Name</p>
       "! Interface Object Name
