@@ -88,8 +88,8 @@ INTERFACE zif_aff_uiad_v1
       "! Target mapping information
       information       TYPE c LENGTH 255,
 
-      "! <p class="shorttext">Application Component</p>
-      "! Application component
+      "! <p class="shorttext">Application Component (ACH)</p>
+      "! Application component (ACH)
       support_component TYPE c LENGTH 24,
 
       "! <p class="shorttext">Suppress Tiles</p>
@@ -103,8 +103,8 @@ INTERFACE zif_aff_uiad_v1
     "! SAPUI5 Fiori application information
     BEGIN OF ty_app_details_ui5,
 
-      "! <p class="shorttext">SAPUI5 Component</p>
-      "! SAPUI5 Component
+      "! <p class="shorttext">SAPUI5 Component ID</p>
+      "! SAPUI5 Component ID
       "! $required
       app_id   TYPE c LENGTH 70,
 
@@ -212,14 +212,14 @@ INTERFACE zif_aff_uiad_v1
 
     END OF ty_app_details_url_template.
 
-  "! <p class="shorttext">Filter Value Type</p>
+  "! <p class="shorttext">Filter Type</p>
   "! Type of the filter value
   "! $values {@link zif_aff_uiad_v1.data:co_filter_value_type}
   "! $default {@link zif_aff_uiad_v1.data:co_filter_value_type.plain}
   TYPES ty_filter_value_type TYPE c LENGTH 1.
 
   CONSTANTS:
-    "! <p class="shorttext">Filter Value Type</p>
+    "! <p class="shorttext">Filter Type</p>
     "! Type of the filter value
     BEGIN OF co_filter_value_type,
 
@@ -234,8 +234,8 @@ INTERFACE zif_aff_uiad_v1
     END OF co_filter_value_type.
 
   TYPES:
-    "! <p class="shorttext">Signature Item</p>
-    "! Signature item
+    "! <p class="shorttext">Navigation Parameter</p>
+    "! Navigation parameter
     BEGIN OF ty_signature_item,
 
       "! <p class="shorttext">Parameter Name</p>
@@ -243,8 +243,8 @@ INTERFACE zif_aff_uiad_v1
       "! $required
       parameter_name      TYPE string,
 
-      "! <p class="shorttext">Rename Parameter To</p>
-      "! Rename parameter to
+      "! <p class="shorttext">Parameter in Target Application</p>
+      "! Parameter in target application
       rename_parameter_to TYPE string,
 
       "! <p class="shorttext">Default Value</p>
@@ -255,8 +255,8 @@ INTERFACE zif_aff_uiad_v1
       "! Filter value
       filter_value        TYPE string,
 
-      "! <p class="shorttext">Filter Value Type</p>
-      "! Filter value type
+      "! <p class="shorttext">Filter Type</p>
+      "! Filter type
       filter_value_type   TYPE ty_filter_value_type,
 
       "! <p class="shorttext">Required</p>
@@ -297,8 +297,8 @@ INTERFACE zif_aff_uiad_v1
     "! Navigation information
     BEGIN OF ty_navigation,
 
-      "! <p class="shorttext">Target Mapping</p>
-      "! Target mapping
+      "! <p class="shorttext">Target Mapping ID</p>
+      "! Target mapping ID
       "! $required
       target_mapping_id             TYPE c LENGTH 50,
 
@@ -322,7 +322,6 @@ INTERFACE zif_aff_uiad_v1
 
       "! <p class="shorttext">Desktop</p>
       "! Desktop is supported as device type
-      "! $default 'X'
       desktop                       TYPE abap_bool,
 
       "! <p class="shorttext">Tablet</p>
@@ -333,8 +332,8 @@ INTERFACE zif_aff_uiad_v1
       "! Phone is supported as device type
       phone                         TYPE abap_bool,
 
-      "! <p class="shorttext">Signature Items</p>
-      "! Signature parameters of the target mapping
+      "! <p class="shorttext">Navigation Parameters</p>
+      "! Navigation parameters of the target mapping
       signature                     TYPE ty_signature_items,
 
       "! <p class="shorttext">Additional Parameter Handling</p>
@@ -373,8 +372,8 @@ INTERFACE zif_aff_uiad_v1
     "! Dynamic tile details
     BEGIN OF ty_dynamic_tile_details,
 
-      "! <p class="shorttext">Service Base URL</p>
-      "! Service base URL
+      "! <p class="shorttext">Service URL</p>
+      "! Service URL
       service_base_url TYPE string,
 
       "! <p class="shorttext">Service Path</p>
@@ -414,7 +413,7 @@ INTERFACE zif_aff_uiad_v1
     "! Standard tile details
     BEGIN OF ty_standard_tile_details,
 
-      "! <p class="shorttext">Reuse Text From App</p>
+      "! <p class="shorttext">Reuse Text From Application</p>
       "! Reuse text defined as part of the app
       reuse_text_from_app        TYPE abap_bool,
 

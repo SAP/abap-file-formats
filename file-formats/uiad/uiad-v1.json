@@ -123,8 +123,8 @@
           "maxLength": 255
         },
         "supportComponent": {
-          "title": "Application Component",
-          "description": "Application component",
+          "title": "Application Component (ACH)",
+          "description": "Application component (ACH)",
           "type": "string",
           "maxLength": 24
         },
@@ -146,8 +146,8 @@
       "type": "object",
       "properties": {
         "appId": {
-          "title": "SAPUI5 Component",
-          "description": "SAPUI5 Component",
+          "title": "SAPUI5 Component ID",
+          "description": "SAPUI5 Component ID",
           "type": "string",
           "maxLength": 70
         },
@@ -283,8 +283,8 @@
       "type": "object",
       "properties": {
         "targetMappingId": {
-          "title": "Target Mapping",
-          "description": "Target mapping",
+          "title": "Target Mapping ID",
+          "description": "Target mapping ID",
           "type": "string",
           "maxLength": 50
         },
@@ -314,8 +314,7 @@
         "desktop": {
           "title": "Desktop",
           "description": "Desktop is supported as device type",
-          "type": "boolean",
-          "default": true
+          "type": "boolean"
         },
         "tablet": {
           "title": "Tablet",
@@ -328,12 +327,12 @@
           "type": "boolean"
         },
         "signature": {
-          "title": "Signature Items",
-          "description": "Signature parameters of the target mapping",
+          "title": "Navigation Parameters",
+          "description": "Navigation parameters of the target mapping",
           "type": "array",
           "items": {
-            "title": "Signature Item",
-            "description": "Signature item",
+            "title": "Navigation Parameter",
+            "description": "Navigation parameter",
             "type": "object",
             "properties": {
               "parameterName": {
@@ -342,8 +341,8 @@
                 "type": "string"
               },
               "renameParameterTo": {
-                "title": "Rename Parameter To",
-                "description": "Rename parameter to",
+                "title": "Parameter in Target Application",
+                "description": "Parameter in target application",
                 "type": "string"
               },
               "defaultValue": {
@@ -357,8 +356,8 @@
                 "type": "string"
               },
               "filterValueType": {
-                "title": "Filter Value Type",
-                "description": "Filter value type",
+                "title": "Filter Type",
+                "description": "Filter type",
                 "type": "string",
                 "enum": [
                   "plain",
@@ -467,7 +466,7 @@
             "type": "object",
             "properties": {
               "reuseTextFromApp": {
-                "title": "Reuse Text From App",
+                "title": "Reuse Text From Application",
                 "description": "Reuse text defined as part of the app",
                 "type": "boolean"
               },
@@ -506,8 +505,8 @@
                 "type": "object",
                 "properties": {
                   "serviceBaseUrl": {
-                    "title": "Service Base URL",
-                    "description": "Service base URL",
+                    "title": "Service URL",
+                    "description": "Service URL",
                     "type": "string"
                   },
                   "servicePath": {
