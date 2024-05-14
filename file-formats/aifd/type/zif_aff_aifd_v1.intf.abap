@@ -5,26 +5,26 @@ INTERFACE zif_aff_aifd_v1
     "! AIF interface
     BEGIN OF ty_aif_interface,
       "! <p class="shorttext">Interface Object Name</p>
-      "! Interface Object Name
+      "! Interface object name
       "! $required
-      object_name       TYPE c LENGTH 40,
+      interface_object_name       TYPE c LENGTH 40,
       "! <p class="shorttext">Namespace</p>
       "! Namespace
       namespace         TYPE c LENGTH 6,
       "! <p class="shorttext">Interface Name</p>
-      "! Interface Name
+      "! Interface name
       interface_name    TYPE c LENGTH 10,
       "! <p class="shorttext">Interface Version</p>
-      "! Interface Version
+      "! Interface version
       interface_version TYPE c LENGTH 5,
     END OF ty_aif_interface,
 
     "! <p class="shorttext">AIF Interfaces</p>
-    "! AIF Interfaces
+    "! AIF interfaces
     ty_aif_interfaces TYPE STANDARD TABLE OF ty_aif_interface WITH DEFAULT KEY,
 
     "! <p class="shorttext">Deployment Scenario</p>
-    "! Object type AIFD
+    "! Deployment scenario
     BEGIN OF ty_main,
       "! $required
       format_version TYPE zif_aff_types_v1=>ty_format_version,

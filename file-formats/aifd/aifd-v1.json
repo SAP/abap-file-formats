@@ -3,7 +3,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/aifd/aifd-v1.json",
   "title": "Deployment Scenario",
-  "description": "Object type AIFD",
+  "description": "Deployment scenario",
   "type": "object",
   "properties": {
     "formatVersion": {
@@ -63,9 +63,9 @@
         "description": "AIF interface",
         "type": "object",
         "properties": {
-          "objectName": {
+          "interfaceObjectName": {
             "title": "Interface Object Name",
-            "description": "Interface Object Name",
+            "description": "Interface object name",
             "type": "string",
             "maxLength": 40
           },
@@ -77,20 +77,20 @@
           },
           "interfaceName": {
             "title": "Interface Name",
-            "description": "Interface Name",
+            "description": "Interface name",
             "type": "string",
             "maxLength": 10
           },
           "interfaceVersion": {
             "title": "Interface Version",
-            "description": "Interface Version",
+            "description": "Interface version",
             "type": "string",
             "maxLength": 5
           }
         },
         "additionalProperties": false,
         "required": [
-          "objectName"
+          "interfaceObjectName"
         ]
       }
     }

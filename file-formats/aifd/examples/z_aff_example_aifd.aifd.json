@@ -7,13 +7,13 @@
   },
   "aifInterfaces":[
     {
-      "objectName":"/AIFTCUST_WS_I00001",
+      "interfaceObjectName":"/AIFTCUST_WS_I00001",
       "namespace":"/AIFT",
       "interfaceName":"CUST_WS_I",
       "interfaceVersion":"00001"
     },
     {
-      "objectName":"/AIFTCUST_WS_O00001",
+      "interfaceObjectName":"/AIFTCUST_WS_O00001",
       "namespace":"/AIFT",
       "interfaceName":"CUST_WS_O",
       "interfaceVersion":"00001"
