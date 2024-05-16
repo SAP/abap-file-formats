@@ -1,0 +1,19 @@
+{
+    "formatVersion": "1",
+    "header": {
+        "description": "Example Application object",
+        "originalLanguage": "en"
+    },
+    "aoName": "ZTEST_APP_OBJ",
+    "aoKeyStruct": "ZKEY_STRUCT",
+    "sapObjectType": "ZOBJECT",
+    "categName": "ZCATEGORY",
+    "ilmObject": "ZILM",
+    "applicationObjectDescription": [
+        {
+            "lang": "E",
+            "aoName": "ZTEST_APP_OBJ",
+            "aoDesc": "test"
+        }
+    ]
+}
