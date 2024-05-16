@@ -44,7 +44,7 @@ INTERFACE zif_aff_apob_v1
       ao_key_struct                  TYPE c LENGTH 30,
       "! <p class="shorttext">SAP Object</p>
       "! SAP Object
-      sap_object_type                TYPE sap_object_type,
+      sap_object_type                TYPE c LENGTH 30,
       "! <p class="shorttext">Data Category</p>
       "! Data Category
       categ_name                     TYPE c LENGTH 30,
