@@ -7,6 +7,12 @@
   },
   "aifInterfaces":[
     {
+      "interfaceObjectName":"INT_OBJ_1",
+      "namespace":"/AIF",
+      "interfaceName":"BUPA_IN",
+      "interfaceVersion":"1"
+    },
+    {
       "interfaceObjectName":"/AIFTCUST_WS_I00001",
       "namespace":"/AIFT",
       "interfaceName":"CUST_WS_I",
