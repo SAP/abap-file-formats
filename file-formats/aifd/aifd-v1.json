@@ -68,24 +68,6 @@
             "description": "Interface object name",
             "type": "string",
             "maxLength": 40
-          },
-          "namespace": {
-            "title": "Namespace",
-            "description": "Namespace",
-            "type": "string",
-            "maxLength": 6
-          },
-          "interfaceName": {
-            "title": "Interface Name",
-            "description": "Interface name",
-            "type": "string",
-            "maxLength": 10
-          },
-          "interfaceVersion": {
-            "title": "Interface Version",
-            "description": "Interface version",
-            "type": "string",
-            "maxLength": 5
           }
         },
         "additionalProperties": false,

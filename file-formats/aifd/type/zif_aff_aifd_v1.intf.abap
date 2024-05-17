@@ -8,15 +8,6 @@ INTERFACE zif_aff_aifd_v1
       "! Interface object name
       "! $required
       interface_object_name       TYPE c LENGTH 40,
-      "! <p class="shorttext">Namespace</p>
-      "! Namespace
-      namespace         TYPE c LENGTH 6,
-      "! <p class="shorttext">Interface Name</p>
-      "! Interface name
-      interface_name    TYPE c LENGTH 10,
-      "! <p class="shorttext">Interface Version</p>
-      "! Interface version
-      interface_version TYPE c LENGTH 5,
     END OF ty_aif_interface,
 
     "! <p class="shorttext">AIF Interfaces</p>
