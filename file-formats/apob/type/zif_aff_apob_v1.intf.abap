@@ -51,10 +51,6 @@ INTERFACE zif_aff_apob_v1
       "! <p class="shorttext">ILM Object</p>
       "! ILM Object
       ilm_object                     TYPE c LENGTH 30,
-      "! <p class="shorttext">ABAP Language Version</p>
-      "! ABAP Language Version
-      "! $required
-      abap_language_version          TYPE zif_aff_types_v1=>ty_abap_language_version,
       "! <p class="shorttext">Application Object Description</p>
       "! Table of all Application Object Description (may be empty)
       "! $required

@@ -87,27 +87,6 @@
       "type": "string",
       "maxLength": 30
     },
-    "abapLanguageVersion": {
-      "title": "ABAP Language Version",
-      "description": "ABAP Language Version",
-      "type": "string",
-      "enum": [
-        "standard",
-        "keyUser",
-        "cloudDevelopment"
-      ],
-      "enumTitles": [
-        "Standard",
-        "ABAP for Key Users",
-        "ABAP Cloud Development"
-      ],
-      "enumDescriptions": [
-        "Standard",
-        "ABAP for key user extensibility",
-        "ABAP cloud development"
-      ],
-      "default": "standard"
-    },
     "applicationObjectDescription": {
       "title": "Application Object Description",
       "description": "Table of all Application Object Description (may be empty)",
@@ -150,7 +129,6 @@
     "formatVersion",
     "header",
     "aoName",
-    "abapLanguageVersion",
     "applicationObjectDescription"
   ]
 }
