@@ -1,5 +1,5 @@
 INTERFACE zif_aff_apob_v1
-  PUBLIC .
+  PUBLIC.
   TYPES:
     "! <p class="shorttext">Application Object description type</p>
     "! Attributes of Application Object description type
