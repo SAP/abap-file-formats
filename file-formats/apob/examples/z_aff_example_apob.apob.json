@@ -4,16 +4,14 @@
         "description": "Example Application object",
         "originalLanguage": "en"
     },
-    "aoName": "ZTEST_APP_OBJ",
-    "aoKeyStruct": "ZKEY_STRUCT",
+    "aoKeyStructure": "ZKEY_STRUCT",
     "sapObjectType": "ZOBJECT",
-    "categName": "ZCATEGORY",
+    "dataCategoryName": "ZCATEGORY",
     "ilmObject": "ZILM",
     "applicationObjectDescription": [
         {
-            "lang": "E",
-            "aoName": "ZTEST_APP_OBJ",
-            "aoDesc": "test"
+            "languageCode": "E",
+            "description": "test"
         }
     ]
 }

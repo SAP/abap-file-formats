@@ -57,13 +57,7 @@
         "originalLanguage"
       ]
     },
-    "aoName": {
-      "title": "Application Object",
-      "description": "Application Object Name",
-      "type": "string",
-      "maxLength": 30
-    },
-    "aoKeyStruct": {
+    "aoKeyStructure": {
       "title": "Key Table / Structure",
       "description": "Key Table / Structure For Application Object",
       "type": "string",
@@ -75,7 +69,7 @@
       "type": "string",
       "maxLength": 30
     },
-    "categName": {
+    "dataCategoryName": {
       "title": "Data Category",
       "description": "Data Category",
       "type": "string",
@@ -88,38 +82,31 @@
       "maxLength": 30
     },
     "applicationObjectDescription": {
-      "title": "Application Object Description",
-      "description": "Table of all Application Object Description (may be empty)",
+      "title": "Application Object description",
+      "description": "Table of all Application Object description (may be empty)",
       "type": "array",
       "uniqueItems": true,
       "items": {
-        "title": "Application Object Description Type",
-        "description": "Attributes of Application Object Description Type",
+        "title": "Application Object description type",
+        "description": "Attributes of Application Object description type",
         "type": "object",
         "properties": {
-          "lang": {
+          "languageCode": {
             "title": "Language Code",
             "description": "Language Code",
             "type": "string",
             "maxLength": 1
           },
-          "aoName": {
-            "title": "Application Object",
-            "description": "Application Object Name",
-            "type": "string",
-            "maxLength": 30
-          },
-          "aoDesc": {
-            "title": "Application Object Description",
-            "description": "Application Object Description",
+          "description": {
+            "title": "Application Object description",
+            "description": "Application Object description",
             "type": "string",
             "maxLength": 80
           }
         },
         "additionalProperties": false,
         "required": [
-          "lang",
-          "aoName"
+          "languageCode"
         ]
       }
     }
@@ -128,7 +115,6 @@
   "required": [
     "formatVersion",
     "header",
-    "aoName",
     "applicationObjectDescription"
   ]
 }
