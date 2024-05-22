@@ -1,7 +1,7 @@
 {
     "formatVersion": "1",
     "header": {
-        "description": "Example application object",
+        "description": "Example Application object",
         "originalLanguage": "en"
     },
     "aoKeyStructure": "ZKEY_STRUCT",
