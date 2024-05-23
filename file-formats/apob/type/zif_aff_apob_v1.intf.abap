@@ -4,24 +4,24 @@ INTERFACE zif_aff_apob_v1
     "! <p class="shorttext">Application object description type</p>
     "! Attributes of Application object description type
     BEGIN OF ty_apob_text,
-      "! <p class="shorttext">Language Code</p>
-      "! Language Code
+      "! <p class="shorttext">Language code</p>
+      "! Name of language code
       "! $required
       language_code TYPE c LENGTH 1,
       "! <p class="shorttext">Application object description</p>
-      "! Application object description
+      "! Description of application object
       description   TYPE c LENGTH 80,
     END OF ty_apob_text,
 
     "! <p class="shorttext">Application object description table type</p>
-    "! Table of all Application object description (may be empty)
+    "! Table of all application object description (may be empty)
     ty_app_object_description TYPE SORTED TABLE OF ty_apob_text WITH UNIQUE KEY language_code.
 
 
 
   TYPES:
     "! <p class="shorttext">Application object</p>
-    "! Application object
+    "! Type of application object
     BEGIN OF ty_main,
       "! <p class="shorttext">Format Version</p>
       "! Format version
@@ -31,21 +31,20 @@ INTERFACE zif_aff_apob_v1
       "! Header
       "! $required
       header                         TYPE zif_aff_types_v1=>ty_header_60,
-      "! <p class="shorttext">Key Table / Structure</p>
-      "! Key Table / Structure For Application object
+      "! <p class="shorttext">Key table / structure</p>
+      "! Name of key table or structure for application object
       ao_key_structure               TYPE c LENGTH 30,
-      "! <p class="shorttext">SAP Object</p>
-      "! SAP Object
+      "! <p class="shorttext">SAP object</p>
+      "! Name of SAP object
       sap_object_type                TYPE c LENGTH 30,
-      "! <p class="shorttext">Data Category</p>
-      "! Data Category
-      data_category_name                  TYPE c LENGTH 30,
-      "! <p class="shorttext">ILM Object</p>
-      "! ILM Object
+      "! <p class="shorttext">Data category</p>
+      "! Name of data category
+      data_category_name             TYPE c LENGTH 30,
+      "! <p class="shorttext">ILM object</p>
+      "! Name of ILM object
       ilm_object                     TYPE c LENGTH 30,
       "! <p class="shorttext">Application object description</p>
-      "! Table of all Application object description (may be empty)
-      "! $required
+      "! Table of all application object description (may be empty)
       application_object_description TYPE ty_app_object_description,
     END OF ty_main.
 

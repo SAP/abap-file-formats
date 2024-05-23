@@ -3,7 +3,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/apob/apob-v1.json",
   "title": "Application object",
-  "description": "Application object",
+  "description": "Type of application object",
   "type": "object",
   "properties": {
     "formatVersion": {
@@ -58,32 +58,32 @@
       ]
     },
     "aoKeyStructure": {
-      "title": "Key Table / Structure",
-      "description": "Key Table / Structure For Application object",
+      "title": "Key table / structure",
+      "description": "Name of key table or structure for application object",
       "type": "string",
       "maxLength": 30
     },
     "sapObjectType": {
-      "title": "SAP Object",
-      "description": "SAP Object",
+      "title": "SAP object",
+      "description": "Name of SAP object",
       "type": "string",
       "maxLength": 30
     },
     "dataCategoryName": {
-      "title": "Data Category",
-      "description": "Data Category",
+      "title": "Data category",
+      "description": "Name of data category",
       "type": "string",
       "maxLength": 30
     },
     "ilmObject": {
-      "title": "ILM Object",
-      "description": "ILM Object",
+      "title": "ILM object",
+      "description": "Name of ILM object",
       "type": "string",
       "maxLength": 30
     },
     "applicationObjectDescription": {
       "title": "Application object description",
-      "description": "Table of all Application object description (may be empty)",
+      "description": "Table of all application object description (may be empty)",
       "type": "array",
       "uniqueItems": true,
       "items": {
@@ -92,14 +92,14 @@
         "type": "object",
         "properties": {
           "languageCode": {
-            "title": "Language Code",
-            "description": "Language Code",
+            "title": "Language code",
+            "description": "Name of language code",
             "type": "string",
             "maxLength": 1
           },
           "description": {
             "title": "Application object description",
-            "description": "Application object description",
+            "description": "Description of application object",
             "type": "string",
             "maxLength": 80
           }
@@ -114,7 +114,6 @@
   "additionalProperties": false,
   "required": [
     "formatVersion",
-    "header",
-    "applicationObjectDescription"
+    "header"
   ]
 }

@@ -1,8 +1,9 @@
 {
     "formatVersion": "1",
     "header": {
-        "description": "Example Application object",
-        "originalLanguage": "en"
+        "description": "Example application object",
+        "originalLanguage": "en",
+        "abapLanguageVersion": "standard"
     },
     "aoKeyStructure": "ZKEY_STRUCT",
     "sapObjectType": "ZOBJECT",
@@ -11,7 +12,7 @@
     "applicationObjectDescription": [
         {
             "languageCode": "E",
-            "description": "test"
+            "description": "Example application object"
         }
     ]
 }
