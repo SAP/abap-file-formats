@@ -5,14 +5,16 @@
         "originalLanguage": "en",
         "abapLanguageVersion": "standard"
     },
-    "aoKeyStructure": "ZKEY_STRUCT",
-    "sapObjectType": "ZOBJECT",
-    "dataCategoryName": "ZCATEGORY",
-    "ilmObject": "ZILM",
-    "applicationObjectDescription": [
-        {
-            "languageCode": "E",
-            "description": "Example application object"
-        }
-    ]
+    "attributes": {
+        "aoKeyStructure": "ZKEY_STRUCT",
+        "sapObjectType": "ZOBJECT",
+        "dataCategoryName": "ZCATEGORY",
+        "ilmObject": "ZILM",
+        "applicationObjectDescription": [
+            {
+                "languageCode": "E",
+                "description": "Example application object"
+            }
+        ]
+    }
 }
