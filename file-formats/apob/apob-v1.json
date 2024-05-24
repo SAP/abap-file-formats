@@ -74,7 +74,7 @@
           "type": "string",
           "maxLength": 30
         },
-        "dataCategoryName": {
+        "dataCategory": {
           "title": "Data Category",
           "description": "Name of the data category",
           "type": "string",
