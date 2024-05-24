@@ -29,7 +29,7 @@ INTERFACE zif_aff_apob_v1
       sap_object_type                TYPE c LENGTH 30,
       "! <p class="shorttext">Data Category</p>
       "! Name of the data category
-      data_category_name             TYPE c LENGTH 30,
+      data_category                  TYPE c LENGTH 30,
       "! <p class="shorttext">ILM Object</p>
       "! Name of the ILM object
       ilm_object                     TYPE c LENGTH 30,
