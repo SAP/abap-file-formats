@@ -6,7 +6,7 @@
         "abapLanguageVersion": "standard"
     },
     "attributes": {
-        "sensitivityLevel": "ZS_LEVEL",
+        "sensitivityLevel": "B",
         "dataCategoryDescription": [
             {
                 "languageCode": "E",
