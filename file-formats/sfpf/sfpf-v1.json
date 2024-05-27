@@ -59,8 +59,8 @@
       "description": "General Information",
       "type": "object",
       "properties": {
-        "dataprovider": {
-          "title": "Dataprovider",
+        "dataProvider": {
+          "title": "Data Provider",
           "description": "RAP Service Definition that implements the business context for this form template",
           "type": "string",
           "maxLength": 40

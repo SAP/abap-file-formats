@@ -6,7 +6,7 @@
     "abapLanguageVersion": "cloudDevelopment"
   },
   "generalInformation": {
-    "dataprovider": "Example_SRV_DEF",
+    "dataProvider": "Example_SRV_DEF",
     "fontEmbed": false,
     "layoutMirroring": false,
     "reduceDataVolume": false
