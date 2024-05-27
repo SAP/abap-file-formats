@@ -2,9 +2,9 @@ INTERFACE zif_aff_sfpf_v1
   PUBLIC.
   TYPES:
     BEGIN OF ty_general_information,
-      "! <p class="shorttext">Dataprovider</p>
+      "! <p class="shorttext">Data Provider</p>
       "! RAP Service Definition that implements the business context for this form template
-      dataprovider          TYPE c LENGTH 40,
+      data_provider          TYPE c LENGTH 40,
       "! <p class="shorttext">Font Embed</p>
       "! Automatically embed font files into the output.
       "! Useful if your output uses fonts that are not delivered by default,
