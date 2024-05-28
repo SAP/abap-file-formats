@@ -55,7 +55,7 @@
       ]
     },
     "aifInterfaces": {
-      "title": "AIF interfaces",
+      "title": "AIF Interfaces",
       "description": "AIF interfaces",
       "type": "array",
       "items": {

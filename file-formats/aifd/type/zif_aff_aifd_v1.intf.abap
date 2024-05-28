@@ -23,7 +23,7 @@ INTERFACE zif_aff_aifd_v1
       "! Header
       "! $required
       header         TYPE zif_aff_types_v1=>ty_header_60_cloud,
-      "! <p class="shorttext">AIF interfaces</p>
+      "! <p class="shorttext">AIF Interfaces</p>
       "! AIF interfaces
       "! $required
       aif_interfaces TYPE ty_aif_interfaces,
