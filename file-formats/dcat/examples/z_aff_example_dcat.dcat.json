@@ -2,8 +2,7 @@
     "formatVersion": "1",
     "header": {
         "description": "Example data category",
-        "originalLanguage": "en",
-        "abapLanguageVersion": "standard"
+        "originalLanguage": "en"
     },
     "attributes": {
         "sensitivityLevel": "B",
