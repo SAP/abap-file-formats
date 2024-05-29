@@ -1,0 +1,14 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Example SFPF for ABAP file formats",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "dataProvider": "Example_SRV_DEF",
+    "fontEmbed": false,
+    "layoutMirroring": false,
+    "reduceDataVolume": false
+  }
+}
