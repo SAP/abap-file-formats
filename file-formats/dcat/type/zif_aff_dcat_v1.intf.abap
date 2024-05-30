@@ -1,5 +1,17 @@
 INTERFACE zif_aff_dcat_v1
   PUBLIC.
+  CONSTANTS:
+    "! <p class="shorttext">Sensitivity Level</p>
+    "! Data category sensitivity Level
+    BEGIN OF co_categ_senst_lvl,
+      "! <p class="shorttext">Sensitive Personal Data</p>
+      "! Sensitive Personal Data
+      sensitive_personal_data TYPE c LENGTH 1 VALUE 'S',
+      "! <p class="shorttext">Business Secret</p>
+      "! Business Secret
+      business_secret TYPE c LENGTH 1 VALUE 'B',
+    END OF co_categ_senst_lvl.
+
   TYPES:
     "! <p class="shorttext">Data Category Description Type</p>
     "! Attributes of data category description type
@@ -23,6 +35,7 @@ INTERFACE zif_aff_dcat_v1
     BEGIN OF ty_attributes,
       "! <p class="shorttext">Sensitivity Level</p>
       "! Sensitivity level for data category
+      "! $values {@link zif_aff_dcat_v1.data:co_categ_senst_lvl}
       sensitivity_level         TYPE c LENGTH 1,
       "! <p class="shorttext">Data Category Description</p>
       "! Table of all data category description

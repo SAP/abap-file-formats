@@ -66,7 +66,18 @@
           "title": "Sensitivity Level",
           "description": "Sensitivity level for data category",
           "type": "string",
-          "maxLength": 1
+          "enum": [
+            "sensitivePersonalData",
+            "businessSecret"
+          ],
+          "enumTitles": [
+            "Sensitive Personal Data",
+            "Business Secret"
+          ],
+          "enumDescriptions": [
+            "Sensitive Personal Data",
+            "Business Secret"
+          ]
         },
         "dataCategoryDescription": {
           "title": "Data Category Description",
