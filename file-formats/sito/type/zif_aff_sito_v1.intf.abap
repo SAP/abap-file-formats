@@ -375,21 +375,21 @@ INTERFACE zif_aff_sito_v1
       "! <p class="shorttext">ID</p>
       "! Action id
       "! $required
-      id          TYPE c LENGTH 32,
+      id         TYPE c LENGTH 32,
       "! <p class="shorttext">Type</p>
       "! Action type of situation
       "! $required
-      type        TYPE ty_sit2_do_action_type,
+      type       TYPE ty_sit2_do_action_type,
       "! <p class="shorttext">Reusable</p>
       "! Object reusable
       "! $required
-      reusable    TYPE abap_bool,
+      reusable   TYPE abap_bool,
       "! <p class="shorttext">Scope</p>
       "! Scope
       "! $required
-      scope       TYPE ty_sit2_do_scope,
+      scope      TYPE ty_sit2_do_scope,
       "! $required
-      text        TYPE ty_sit2_obj_act_t,
+      text       TYPE ty_sit2_obj_act_t,
       navigation TYPE ty_sit2_obj_act_nav,
       callback   TYPE ty_sit2_obj_act_cb,
     END OF ty_sit2_obj_act,
