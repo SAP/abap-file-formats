@@ -2,13 +2,13 @@ INTERFACE zif_aff_dcat_v1
   PUBLIC.
   CONSTANTS:
     "! <p class="shorttext">Sensitivity Level</p>
-    "! Data category sensitivity Level
+    "! Data category sensitivity level
     BEGIN OF co_categ_senst_lvl,
       "! <p class="shorttext">Sensitive Personal Data</p>
-      "! Sensitive Personal Data
+      "! Sensitive personal data
       sensitive_personal_data TYPE c LENGTH 1 VALUE 'S',
       "! <p class="shorttext">Business Secret</p>
-      "! Business Secret
+      "! Business secret
       business_secret TYPE c LENGTH 1 VALUE 'B',
     END OF co_categ_senst_lvl.
 
@@ -21,12 +21,12 @@ INTERFACE zif_aff_dcat_v1
       "! $required
       language_code TYPE c LENGTH 1,
       "! <p class="shorttext">Data Category Description</p>
-      "! Description of the Data category in selected language
+      "! Description of the data category in selected language
       description   TYPE c LENGTH 80,
     END OF ty_dcat_text,
 
     "! <p class="shorttext">Data Category Description</p>
-    "! Table of all Data Category description
+    "! Table of all data category description
     ty_dcat_description TYPE SORTED TABLE OF ty_dcat_text WITH UNIQUE KEY language_code.
 
   TYPES:

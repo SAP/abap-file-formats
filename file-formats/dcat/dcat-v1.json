@@ -75,8 +75,8 @@
             "Business Secret"
           ],
           "enumDescriptions": [
-            "Sensitive Personal Data",
-            "Business Secret"
+            "Sensitive personal data",
+            "Business secret"
           ]
         },
         "dataCategoryDescription": {
@@ -97,7 +97,7 @@
               },
               "description": {
                 "title": "Data Category Description",
-                "description": "Description of the Data category in selected language",
+                "description": "Description of the data category in selected language",
                 "type": "string",
                 "maxLength": 80
               }
