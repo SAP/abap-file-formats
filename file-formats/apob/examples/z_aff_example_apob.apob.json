@@ -1,19 +1,19 @@
 {
-    "formatVersion": "1",
-    "header": {
-        "description": "Example application object",
-        "originalLanguage": "en"
-    },
-    "attributes": {
-        "aoKeyStructure": "ZKEY_STRUCT",
-        "sapObjectType": "ZOBJECT",
-        "dataCategory": "ZCATEGORY",
-        "ilmObject": "ZILM",
-        "applicationObjectDescription": [
-            {
-                "languageCode": "E",
-                "description": "Example application object"
-            }
-        ]
-    }
+  "formatVersion": "1",
+  "header": {
+    "description": "Example application object",
+    "originalLanguage": "en"
+  },
+  "attributes": {
+    "aoKeyStructure": "ZKEY_STRUCT",
+    "sapObjectType": "ZOBJECT",
+    "dataCategory": "ZCATEGORY",
+    "ilmObject": "ZILM",
+    "applicationObjectDescription": [
+      {
+        "languageCode": "E",
+        "description": "Example application object"
+      }
+    ]
+  }
 }
