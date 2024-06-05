@@ -13,8 +13,7 @@
       "const": "1"
     },
     "header": {
-      "title": "Header for Non-Source Code Objects (no key user)",
-      "description": "The header for an ABAP main object (without source code) with a description of 60 characters (no key user)",
+      "title": "Header",
       "type": "object",
       "properties": {
         "description": {
@@ -27,9 +26,7 @@
           "title": "Original Language",
           "description": "Original language of the ABAP object",
           "type": "string",
-          "minLength": 2,
-          "maxLength": 2,
-          "pattern": "^[a-z]+$"
+          "minLength": 2
         },
         "abapLanguageVersion": {
           "title": "ABAP Language Version",
@@ -259,17 +256,18 @@
                         "description": "Data records which are to be deleted at activation are flagged with value 'L'",
                         "type": "string",
                         "enum": [
-                          "insertOrUpdate",
+                          "modify",
                           "delete"
                         ],
                         "enumTitles": [
-                          "Insert/Update",
+                          "Modify",
                           "Delete"
                         ],
                         "enumDescriptions": [
-                          "Data records which are to be inserted/updated at activation are flagged with value ''",
+                          "Data records which are to be modified at activation",
                           "Data records which are to be deleted at activation are flagged with value 'L'"
-                        ]
+                        ],
+                        "default": "modify"
                       },
                       "data": {
                         "title": "Data",
@@ -313,9 +311,7 @@
                               "title": "Language",
                               "description": "Language in which the data record is translated",
                               "type": "string",
-                              "minLength": 2,
-                              "maxLength": 2,
-                              "pattern": "^[a-z]+$"
+                              "minLength": 2
                             },
                             "fieldName": {
                               "title": "Field Name",

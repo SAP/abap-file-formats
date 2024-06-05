@@ -25,9 +25,7 @@
           "title": "Original Language",
           "description": "Original language of the development object. Attributes Name and Description must be maintained in this language",
           "type": "string",
-          "minLength": 2,
-          "maxLength": 2,
-          "pattern": "^[a-z]+$"
+          "minLength": 2
         },
         "abapLanguageVersion": {
           "title": "ABAP Language Version",
@@ -275,17 +273,20 @@
                 "enum": [
                   "newPage",
                   "inline",
-                  "creationRow"
+                  "creationRow",
+                  "inlineCreationRows"
                 ],
                 "enumTitles": [
                   "New Page",
                   "Inline",
-                  "Creation Row"
+                  "Creation Row",
+                  "Empty Row"
                 ],
                 "enumDescriptions": [
                   "Item is created in subpage",
-                  "By clicking on 'Create' a new line is created but automatic navigation to subpage is not triggered.",
-                  "By clicking on 'Add row' a new line is created but automatic navigation to subpage is not triggered."
+                  "By clicking on 'Create' a new line is created but automatic navigation to subpage is not performed.",
+                  "By clicking on 'Add row' a new line is created but automatic navigation to subpage is not performed.",
+                  "In create or edit mode, one new empty row is added to the table."
                 ],
                 "default": "newPage"
               },

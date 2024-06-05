@@ -27,9 +27,7 @@
           "title": "Original Language",
           "description": "Original language of the application job template",
           "type": "string",
-          "minLength": 2,
-          "maxLength": 2,
-          "pattern": "^[a-z]+$"
+          "minLength": 2
         },
         "abapLanguageVersion": {
           "title": "ABAP Language Version",
@@ -91,7 +89,7 @@
                 "title": "Name",
                 "description": "Name of the parameter",
                 "type": "string",
-                "maxLength": 8
+                "maxLength": 38
               },
               "value": {
                 "title": "Value",
@@ -120,7 +118,7 @@
                 "title": "Name",
                 "description": "Name of the parameter",
                 "type": "string",
-                "maxLength": 8
+                "maxLength": 38
               },
               "valueRanges": {
                 "title": "Values",

@@ -92,7 +92,7 @@ i | integer | `"minimum": -2147483648, "maximum": 2147483647`
 n | string | `"maxLength": <length of character field>, "pattern": "^[0-9]+$"`
 p | number | `"minimum": <minimum value>, "maximum": <maximum value>
 abap_bool | boolean |
-sy-langu | string | `"minLength": 2, "maxLength": 2, "pattern": "^[a-z]+$"`
+sy-langu | string | `"minLength": 2`
 table | array | if the table has unique keys, `"uniqueItems": true` is added to the schema; hashed tables are not supported
 
 ### Title
@@ -306,9 +306,7 @@ This leads to the following generated JSON schema:
           "title": "Original Language",
           "description": "Original language of the ABAP object",
           "type": "string",
-          "minLength": 2,
-          "maxLength": 2,
-          "pattern": "^[a-z]+$"
+          "minLength": 2
         },
         "abapLanguageVersion": {
           "title": "ABAP Language Version (source code object)",
@@ -369,7 +367,8 @@ The field `description` contains the description of the object.
 
 The field `originalLanguage` stores the information about the original language of the object.
 
-The original language is specified with [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language codes.
+The original language is specified with [BCP47](https://en.wikipedia.org/wiki/IETF_language_tag) language tags, which combine [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language codes with subtags for language variations.
+A full list of SAP supported BCP47 language tags can be found [here](./languages.md).
 
 All translatable texts in the object shall be maintained in their original language.
 Translations of the texts shall be stored in separate files.

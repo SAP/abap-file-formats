@@ -2,7 +2,8 @@ INTERFACE zif_aff_nont_v1
   PUBLIC.
 
   TYPES:
-
+    "! <p class="shorttext">SAP Object Node Type</p>
+    "! SAP object node type
     BEGIN OF ty_main,
       "! $required
       format_version  TYPE zif_aff_types_v1=>ty_format_version,

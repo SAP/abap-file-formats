@@ -78,7 +78,8 @@ INTERFACE zif_aff_dmon_v1
     END OF co_daemon_type.
 
   TYPES:
-
+    "! <p class="shorttext">ABAP Daemon</p>
+    "! ABAP daemon
     BEGIN OF ty_main,
       "! $required
       format_version TYPE zif_aff_types_v1=>ty_format_version,
