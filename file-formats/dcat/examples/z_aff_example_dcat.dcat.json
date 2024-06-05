@@ -1,16 +1,16 @@
 {
-    "formatVersion": "1",
-    "header": {
-        "description": "Example data category",
-        "originalLanguage": "en"
-    },
-    "attributes": {
-        "sensitivityLevel": "B",
-        "dataCategoryDescription": [
-            {
-                "languageCode": "E",
-                "description": "Example data category"
-            }
-        ]
-    }
+  "formatVersion": "1",
+  "header": {
+    "description": "Example data category",
+    "originalLanguage": "en"
+  },
+  "attributes": {
+    "sensitivityLevel": "businessSecret",
+    "dataCategoryDescription": [
+      {
+        "languageCode": "E",
+        "description": "Example data category"
+      }
+    ]
+  }
 }
