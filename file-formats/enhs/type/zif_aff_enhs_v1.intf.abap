@@ -155,45 +155,45 @@ INTERFACE zif_aff_enhs_v1
       "! <p class="shorttext">Name of the BAdI Definition</p>
       "! Name of the BAdI definition
       "! $required
-      name               TYPE zif_aff_types_v1=>ty_object_name_30,
+      name              TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Description of the BAdI Definition</p>
       "! Description of the BAdI definition
       "! $required
-      description        TYPE c LENGTH 255,
+      description       TYPE c LENGTH 255,
       "! <p class="shorttext">Interface of the BAdI Definition</p>
       "! Interface of the BAdI definition
       "! $required
-      interface          TYPE zif_aff_types_v1=>ty_object_name_30,
+      interface         TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Instantiation of the BAdI Definition</p>
       "! Instantiation of the BAdI definition
       "! $required
-      instantiation      TYPE ty_instantiation,
+      instantiation     TYPE ty_instantiation,
       "! <p class="shorttext">Single- or Multiple Use BAdI</p>
       "! Indicator whether the BAdI definition is single- or multiple usable
       "! $showAlways
-      multiple_use       TYPE abap_bool,
+      multiple_use      TYPE abap_bool,
       "! <p class="shorttext">SAP Internal</p>
       "! SAP internal
-      sap_internal       TYPE abap_bool,
+      sap_internal      TYPE abap_bool,
       "! <p class="shorttext">Example Classes of the BAdI Definition</p>
       "! Example classes of the BAdI definition
-      example_classes    TYPE ty_example_classes,
+      example_classes   TYPE ty_example_classes,
       "! <p class="shorttext">Name of the Default/Fallback Class</p>
       "! Name of the default/fallback class.
       "! The fallback class is executed if no BAdI implementation exists.
-      fallback_class     TYPE zif_aff_types_v1=>ty_object_name_30,
+      fallback_class    TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Limited Filter Use</p>
       "! Limited filter use
-      filter_limitation  TYPE abap_bool,
+      filter_limitation TYPE abap_bool,
       "! <p class="shorttext">Documentation Id</p>
       "! Documentation Id
-      documentation_id   TYPE c LENGTH 60,
+      documentation_id  TYPE c LENGTH 60,
       "! <p class="shorttext">Amdp BAdI</p>
       "! BADI is an AMDP BAdI
-      amdp               TYPE abap_bool,
+      amdp              TYPE abap_bool,
       "! <p class="shorttext">Filters of the BAdI Definition</p>
       "! Filters of the BAdI definition
-      filters            TYPE ty_badi_def_filters,
+      filters           TYPE ty_badi_def_filters,
     END OF ty_badi_def.
 
   TYPES ty_badi_defs TYPE STANDARD TABLE OF ty_badi_def WITH DEFAULT KEY.
