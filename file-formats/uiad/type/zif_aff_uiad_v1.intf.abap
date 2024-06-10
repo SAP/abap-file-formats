@@ -261,7 +261,7 @@ INTERFACE zif_aff_uiad_v1
 
       "! <p class="shorttext">Required</p>
       "! Whether the parameter is required
-      required            TYPE abap_bool,
+      required      TYPE abap_bool,
 
     END OF ty_parameter_item,
 
