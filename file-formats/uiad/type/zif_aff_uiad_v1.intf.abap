@@ -241,7 +241,7 @@ INTERFACE zif_aff_uiad_v1
       "! <p class="shorttext">Parameter Name</p>
       "! Parameter name
       "! $required
-      name                TYPE string,
+      name          TYPE string,
 
       "! <p class="shorttext">Parameter in Target Application</p>
       "! Parameter in target application
