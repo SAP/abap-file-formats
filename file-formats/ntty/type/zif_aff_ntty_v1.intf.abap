@@ -18,10 +18,10 @@ INTERFACE zif_aff_ntty_v1
       language_dependent TYPE abap_bool,
       "! <p class="shorttext">Multiple Notes</p>
       "! Multiple notes possible
-      multiple_notes            TYPE abap_bool,
+      multiple_notes     TYPE abap_bool,
       "! <p class="shorttext">Title Hidden</p>
       "! Title hidden
-      hide_title          TYPE abap_bool,
+      hide_title         TYPE abap_bool,
     END OF ty_general_information,
 
     "! <p class="shorttext">Content Settings</p>
@@ -29,10 +29,10 @@ INTERFACE zif_aff_ntty_v1
     BEGIN OF ty_content_settings,
       "! <p class="shorttext">Maximum Length</p>
       "! Maximum length
-      maximum_length TYPE ty_max_length,
+      maximum_length     TYPE ty_max_length,
       "! <p class="shorttext">Formatting Profile</p>
       "! Formatting profile
-      formatting_profile    TYPE ty_profile,
+      formatting_profile TYPE ty_profile,
     END OF ty_content_settings,
 
     "! <p class="shorttext">ABAP file format for Note Type objects</p>
