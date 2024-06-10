@@ -214,38 +214,38 @@ INTERFACE zif_aff_uiad_v1
 
   "! <p class="shorttext">Filter Type</p>
   "! Type of the filter value
-  "! $values {@link zif_aff_uiad_v1.data:co_filter_value_type}
-  "! $default {@link zif_aff_uiad_v1.data:co_filter_value_type.plain}
-  TYPES ty_filter_value_type TYPE c LENGTH 1.
+  "! $values {@link zif_aff_uiad_v1.data:co_filter_type}
+  "! $default {@link zif_aff_uiad_v1.data:co_filter_type.plain}
+  TYPES ty_filter_type TYPE c LENGTH 1.
 
   CONSTANTS:
     "! <p class="shorttext">Filter Type</p>
     "! Type of the filter value
-    BEGIN OF co_filter_value_type,
+    BEGIN OF co_filter_type,
 
       "! <p class="shorttext">Plain</p>
       "! The filter value is used as is
-      plain TYPE ty_filter_value_type VALUE ' ',
+      plain TYPE ty_filter_type VALUE ' ',
 
       "! <p class="shorttext">Regex</p>
       "! The filter value is used as a regular expression
-      regex TYPE ty_filter_value_type VALUE 'R',
+      regex TYPE ty_filter_type VALUE 'R',
 
-    END OF co_filter_value_type.
+    END OF co_filter_type.
 
   TYPES:
     "! <p class="shorttext">Navigation Parameter</p>
     "! Navigation parameter
-    BEGIN OF ty_signature_item,
+    BEGIN OF ty_parameter_item,
 
       "! <p class="shorttext">Parameter Name</p>
       "! Parameter name
       "! $required
-      parameter_name      TYPE string,
+      name                TYPE string,
 
       "! <p class="shorttext">Parameter in Target Application</p>
       "! Parameter in target application
-      rename_parameter_to TYPE string,
+      rename_to TYPE string,
 
       "! <p class="shorttext">Default Value</p>
       "! Default value
@@ -257,15 +257,15 @@ INTERFACE zif_aff_uiad_v1
 
       "! <p class="shorttext">Filter Type</p>
       "! Filter type
-      filter_value_type   TYPE ty_filter_value_type,
+      filter_type   TYPE ty_filter_type,
 
       "! <p class="shorttext">Required</p>
       "! Whether the parameter is required
       required            TYPE abap_bool,
 
-    END OF ty_signature_item,
+    END OF ty_parameter_item,
 
-    ty_signature_items TYPE STANDARD TABLE OF ty_signature_item WITH DEFAULT KEY.
+    ty_parameter_items TYPE STANDARD TABLE OF ty_parameter_item WITH DEFAULT KEY.
 
   "! <p class="shorttext">Additional Parameter Handling</p>
   "! How additional parameters are handled
@@ -318,7 +318,7 @@ INTERFACE zif_aff_uiad_v1
 
       "! <p class="shorttext">System Alias</p>
       "! System alias
-      system_alias      TYPE c LENGTH 32,
+      system_alias                  TYPE c LENGTH 32,
 
       "! <p class="shorttext">Desktop</p>
       "! Desktop is supported as device type
@@ -334,7 +334,7 @@ INTERFACE zif_aff_uiad_v1
 
       "! <p class="shorttext">Navigation Parameters</p>
       "! Navigation parameters of the target mapping
-      signature                     TYPE ty_signature_items,
+      parameters                    TYPE ty_parameter_items,
 
       "! <p class="shorttext">Additional Parameter Handling</p>
       "! How additional parameters are handled

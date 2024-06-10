@@ -21,7 +21,7 @@
     "desktop": true,
     "tablet": true,
     "phone": true,
-    "signature": [
+    "parameters": [
       {
         "parameterName": "tmParamName",
         "defaultValue": "Hello World!"

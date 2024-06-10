@@ -326,7 +326,7 @@
           "description": "Phone is supported as device type",
           "type": "boolean"
         },
-        "signature": {
+        "parameters": {
           "title": "Navigation Parameters",
           "description": "Navigation parameters of the target mapping",
           "type": "array",
@@ -340,7 +340,7 @@
                 "description": "Parameter name",
                 "type": "string"
               },
-              "renameParameterTo": {
+              "renameTo": {
                 "title": "Parameter in Target Application",
                 "description": "Parameter in target application",
                 "type": "string"
@@ -355,7 +355,7 @@
                 "description": "Filter value",
                 "type": "string"
               },
-              "filterValueType": {
+              "filterType": {
                 "title": "Filter Type",
                 "description": "Filter type",
                 "type": "string",
