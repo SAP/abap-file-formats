@@ -3,7 +3,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/saia/saia-v1.json",
   "title": "ADT IDE Action",
-  "description": "ADT IDE Action (SAIA) v1",
+  "description": "ADT IDE action (SAIA) v1",
   "type": "object",
   "properties": {
     "formatVersion": {
@@ -57,34 +57,41 @@
         "originalLanguage"
       ]
     },
-    "adtIdeAction": {
-      "title": "ADT IDE Action",
-      "description": "ADT IDE Action",
+    "generalInformation": {
+      "title": "General Information",
+      "description": "General information",
       "type": "object",
       "properties": {
         "actionId": {
-          "title": "Unique Id of the Action",
-          "description": "Unique action id - it should be human readable and reveal the intention of the action Action id is case insensitive TODO: length restriction, check how long it should be, su22 variant restrictions???",
+          "title": "Action ID",
+          "description": "Unique action id - it should be human readable and reveal the intention of the action Action id is case insensitive",
+          "type": "string",
+          "maxLength": 20
+        },
+        "baseUri": {
+          "title": "Base URI",
+          "description": "Base uri",
           "type": "string"
         },
         "title": {
-          "title": "Action Title",
-          "description": "Action title for the action",
-          "type": "string"
+          "title": "Title",
+          "description": "Title",
+          "type": "string",
+          "maxLength": 30
         },
         "description": {
-          "title": "Action Description",
+          "title": "Description",
           "description": "What is the action doing and how can it be used",
           "type": "string"
         },
         "filters": {
-          "title": "Action Filter(In development)",
-          "description": "Filter for application of action according to specific object type or object type groups TODO: new filter mechanis currently under development -> all filters stored in a string on database",
+          "title": "Action Filters",
+          "description": "Filters for application of action according to specific object type or object type groups",
           "type": "object",
           "properties": {
             "numberOfFocusedResources": {
               "title": "Number of Focused Resources",
-              "description": "Number of Focused Resources",
+              "description": "Number of focused resources",
               "type": "string"
             },
             "supportedDevObjectTypes": {
@@ -93,19 +100,19 @@
               "type": "array",
               "uniqueItems": true,
               "items": {
-                "title": "Global Workbench Object Type",
-                "description": "Global Workbench Object Type",
+                "title": "Workbench Object Type",
+                "description": "Workbench object type",
                 "type": "object",
                 "properties": {
-                  "objtypeTr": {
-                    "title": "Object Type in Object Directory",
-                    "description": "Object Type in Object Directory",
+                  "transportObjectType": {
+                    "title": "Transport Object Type",
+                    "description": "Transport object type",
                     "type": "string",
                     "maxLength": 4
                   },
-                  "subtypeWb": {
-                    "title": "WB Request: (Internal) Type of an ABAP Workbench Object",
-                    "description": "WB Request: (Internal) Type of an ABAP Workbench Object",
+                  "transportObjectSubtypeWb": {
+                    "title": "Transport Object Sub-Type",
+                    "description": "Transport object sub-type",
                     "type": "string",
                     "maxLength": 3
                   }
@@ -141,19 +148,19 @@
           "additionalProperties": false
         },
         "implementationClass": {
-          "title": "Action Handler Class",
+          "title": "Implementation Class",
           "description": "Implementation class for handling the action input. Needs to implement interface {@link if_aia_action }.",
           "type": "string",
           "maxLength": 30
         },
         "inputUiConfigurationClass": {
-          "title": "Action Input UI Class",
-          "description": "The ABAP class implementing the server-driven UI input configuration. Needs to implement interface {@link IF_AIA_SD_ACTION_INPUT }.",
+          "title": "Input UI Configuration Class",
+          "description": "Input UI configuration class for implementing the server-driven UI input configuration. Needs to implement interface {@link IF_AIA_SD_ACTION_INPUT }.",
           "type": "string",
           "maxLength": 30
         },
         "dontShowInRunActionDialog": {
-          "title": "Run Action Dialog Visibility",
+          "title": "Don't Show in Run Action Dialog",
           "description": "Flag to indicate that the action shouldn't be shown in the action selection dialog where all available actions are listed. TODO: put in a structure: options -> all options stored in a string in database",
           "type": "boolean"
         }
@@ -161,6 +168,7 @@
       "additionalProperties": false,
       "required": [
         "actionId",
+        "baseUri",
         "title",
         "description",
         "filters",
@@ -174,6 +182,6 @@
   "required": [
     "formatVersion",
     "header",
-    "adtIdeAction"
+    "generalInformation"
   ]
 }
