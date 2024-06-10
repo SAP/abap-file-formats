@@ -249,7 +249,7 @@ INTERFACE zif_aff_uiad_v1
 
       "! <p class="shorttext">Default Value</p>
       "! Default value
-      default_value       TYPE string,
+      default_value TYPE string,
 
       "! <p class="shorttext">Filter Value</p>
       "! Filter value
