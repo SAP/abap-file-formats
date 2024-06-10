@@ -23,7 +23,7 @@
     "phone": true,
     "parameters": [
       {
-        "parameterName": "tmParamName",
+        "name": "tmParamName",
         "defaultValue": "Hello World!"
       }
     ]

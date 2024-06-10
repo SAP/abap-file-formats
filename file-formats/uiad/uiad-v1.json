@@ -335,7 +335,7 @@
             "description": "Navigation parameter",
             "type": "object",
             "properties": {
-              "parameterName": {
+              "name": {
                 "title": "Parameter Name",
                 "description": "Parameter name",
                 "type": "string"
@@ -381,7 +381,7 @@
             },
             "additionalProperties": false,
             "required": [
-              "parameterName"
+              "name"
             ]
           }
         },
