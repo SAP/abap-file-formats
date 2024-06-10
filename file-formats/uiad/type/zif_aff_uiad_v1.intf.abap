@@ -245,7 +245,7 @@ INTERFACE zif_aff_uiad_v1
 
       "! <p class="shorttext">Parameter in Target Application</p>
       "! Parameter in target application
-      rename_to TYPE string,
+      rename_to     TYPE string,
 
       "! <p class="shorttext">Default Value</p>
       "! Default value
