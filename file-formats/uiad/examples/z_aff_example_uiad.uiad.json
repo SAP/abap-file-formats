@@ -1,0 +1,71 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Example of UIAD AFF Format",
+    "originalLanguage": "en"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "ZLOCAL_TEST",
+    "information": "Not translated info text",
+    "supportComponent": "CA-FLP-ABA"
+  },
+  "ui5AppDetails": {
+    "appId": "sap.ushell.demo.AppNavSample",
+    "icfPath": "/sap/bc/ui5_ui5/ui2/appnavsample"
+  },
+  "navigation": {
+    "targetMappingId": "Z_AFF_EXAMPLE_TM",
+    "semanticObject": "NavSample",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true,
+    "parameters": [
+      {
+        "name": "tmParamName",
+        "defaultValue": "Hello World!"
+      }
+    ]
+  },
+  "tiles": [
+    {
+      "id": "Z_AFF_EXAMPLE_TILE_STATIC",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Tile Title",
+        "subtitle": "Tile Subtitle",
+        "information": "Tile Information Text",
+        "keywords": "Test Example AFF",
+        "icon": "sap-icon://action-settings",
+        "tileNavigationParameters": [
+          {
+            "name": "ParamName",
+            "value": "ParamValue"
+          }
+        ]
+      }
+    },
+    {
+      "id": "Z_AFF_EXAMPLE_TILE_DYNAMIC",
+      "tileType": "dynamic",
+      "standard": {
+        "title": "Dynamic Tile Title",
+        "subtitle": "Demo Subtitle",
+        "icon": "sap-icon://action-settings",
+        "dynamic": {
+          "serviceBaseUrl": "/sap/opu/odata/UI2/PAGE_BUILDER_PERS/Catalogs/$count",
+          "refreshInterval": 10,
+          "numberUnit": "Ctas"
+        },
+        "tileNavigationParameters": [
+          {
+            "name": "paramName",
+            "value": "paramValue"
+          }
+        ]
+      }
+    }
+  ]
+}
