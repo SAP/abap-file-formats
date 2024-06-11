@@ -50,22 +50,22 @@ INTERFACE zif_aff_gsmp_v1
       "! <p class="shorttext">Mode</p>
       "! Mode
       "! $required
-      mode TYPE ty_execution_mode,
+      mode            TYPE ty_execution_mode,
 
       "! <p class="shorttext">Priority</p>
       "! Priority
       "! $required
-      priority   TYPE ty_priority,
+      priority        TYPE ty_priority,
 
       "! <p class="shorttext">Instantiation</p>
       "! Instantiation
       "! $showAlways
-      instantiation TYPE ty_instantiation,
+      instantiation   TYPE ty_instantiation,
 
       "! <p class="shorttext">Scope Dependent</p>
       "! Scope dependent
       "! $required
-      scope_dependent       TYPE abap_bool,
+      scope_dependent TYPE abap_bool,
 
     END OF ty_provider_execution,
 
@@ -75,7 +75,7 @@ INTERFACE zif_aff_gsmp_v1
 
       "! <p class="shorttext">JSON Data</p>
       "! JSON data
-      data     TYPE string,
+      data TYPE string,
 
     END OF ty_model.
 
@@ -176,11 +176,11 @@ INTERFACE zif_aff_gsmp_v1
       "! <p class="shorttext">Execution</p>
       "! Execution
       "! $required
-      execution TYPE ty_provider_execution,
+      execution      TYPE ty_provider_execution,
 
       "! <p class="shorttext">Model</p>
       "! Model
-      model     TYPE ty_model,
+      model          TYPE ty_model,
 
     END OF ty_main.
 

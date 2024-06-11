@@ -256,7 +256,7 @@ INTERFACE zif_aff_enho_v1
       "! <p class="shorttext">BAdI Implementation Customizing</p>
       "! Does the BAdI implementation support customizing
       "! $showAlways
-      customizing  TYPE ty_customizing,
+      customizing               TYPE ty_customizing,
       "! <p class="shorttext">Filter Values</p>
       "! Filter values for this BAdI implementation
       "! $callbackClass {@link cl_seef_aff_enho_filter_st}

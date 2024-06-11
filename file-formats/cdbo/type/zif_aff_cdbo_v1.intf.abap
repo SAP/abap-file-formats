@@ -46,7 +46,7 @@ INTERFACE zif_aff_cdbo_v1
       "! <p class="shorttext">Name</p>
       "! Name
       "! $required
-      name TYPE c LENGTH 30,
+      name   TYPE c LENGTH 30,
       "! <p class="shorttext">Nature</p>
       "! Nature
       "! $required
@@ -65,11 +65,11 @@ INTERFACE zif_aff_cdbo_v1
       "! <p class="shorttext">Object Type</p>
       "! Object type
       "! $required
-      object_type   TYPE ty_object_type,
+      object_type TYPE ty_object_type,
       "! <p class="shorttext">Object Name</p>
       "! Object name
       "! $required
-      object_name  TYPE c LENGTH 40,
+      object_name TYPE c LENGTH 40,
     END OF ty_general_information.
 
   TYPES:
@@ -79,11 +79,11 @@ INTERFACE zif_aff_cdbo_v1
       "! <p class="shorttext">Format Version</p>
       "! Format version
       "! $required
-      format_version TYPE zif_aff_types_v1=>ty_format_version,
+      format_version      TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header         TYPE zif_aff_types_v1=>ty_header_60,
+      header              TYPE zif_aff_types_v1=>ty_header_60,
       "! <p class="shorttext">General Information</p>
       "! General information
       "! $required
@@ -91,7 +91,7 @@ INTERFACE zif_aff_cdbo_v1
       "! <p class="shorttext">Fields</p>
       "! Fields
       "! $required
-      fields     TYPE ty_fields,
+      fields              TYPE ty_fields,
     END OF ty_main.
 
 ENDINTERFACE.
