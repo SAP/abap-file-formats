@@ -7,16 +7,16 @@ INTERFACE zif_aff_apob_v1
     BEGIN OF ty_attributes,
       "! <p class="shorttext">Key Table / Structure</p>
       "! Name of key table or structure for application object
-      ao_key_structure               TYPE c LENGTH 30,
+      ao_key_structure TYPE c LENGTH 30,
       "! <p class="shorttext">SAP Object</p>
       "! Name of the SAP object
-      sap_object_type                TYPE c LENGTH 30,
+      sap_object_type  TYPE c LENGTH 30,
       "! <p class="shorttext">Data Category</p>
       "! Name of the data category
-      data_category                  TYPE c LENGTH 30,
+      data_category    TYPE c LENGTH 30,
       "! <p class="shorttext">ILM Object</p>
       "! Name of the ILM object
-      ilm_object                     TYPE c LENGTH 30,
+      ilm_object       TYPE c LENGTH 30,
     END OF ty_attributes.
 
   TYPES:
