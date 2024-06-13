@@ -9,7 +9,7 @@ INTERFACE zif_aff_dcat_v1
       sensitive_personal_data TYPE c LENGTH 1 VALUE 'S',
       "! <p class="shorttext">Business Secret</p>
       "! Business secret
-      business_secret TYPE c LENGTH 1 VALUE 'B',
+      business_secret         TYPE c LENGTH 1 VALUE 'B',
     END OF co_categ_senst_lvl.
 
   TYPES:
@@ -19,7 +19,7 @@ INTERFACE zif_aff_dcat_v1
       "! <p class="shorttext">Sensitivity Level</p>
       "! Sensitivity level for data category
       "! $values {@link zif_aff_dcat_v1.data:co_categ_senst_lvl}
-      sensitivity_level         TYPE c LENGTH 1,
+      sensitivity_level TYPE c LENGTH 1,
     END OF ty_attributes.
 
   TYPES:
