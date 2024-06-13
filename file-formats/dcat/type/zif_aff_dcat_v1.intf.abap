@@ -13,23 +13,6 @@ INTERFACE zif_aff_dcat_v1
     END OF co_categ_senst_lvl.
 
   TYPES:
-    "! <p class="shorttext">Data Category Description Type</p>
-    "! Attributes of data category description type
-    BEGIN OF ty_dcat_text,
-      "! <p class="shorttext">Language Code</p>
-      "! Language code
-      "! $required
-      language_code TYPE c LENGTH 1,
-      "! <p class="shorttext">Data Category Description</p>
-      "! Description of the data category in selected language
-      description   TYPE c LENGTH 80,
-    END OF ty_dcat_text,
-
-    "! <p class="shorttext">Data Category Description</p>
-    "! Table of all data category description
-    ty_dcat_description TYPE SORTED TABLE OF ty_dcat_text WITH UNIQUE KEY language_code.
-
-  TYPES:
     "! <p class="shorttext">Data Category Type</p>
     "! $required
     BEGIN OF ty_attributes,
@@ -37,9 +20,6 @@ INTERFACE zif_aff_dcat_v1
       "! Sensitivity level for data category
       "! $values {@link zif_aff_dcat_v1.data:co_categ_senst_lvl}
       sensitivity_level         TYPE c LENGTH 1,
-      "! <p class="shorttext">Data Category Description</p>
-      "! Table of all data category description
-      data_category_description TYPE ty_dcat_description,
     END OF ty_attributes.
 
   TYPES:

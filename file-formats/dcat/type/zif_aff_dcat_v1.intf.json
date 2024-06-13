@@ -1,7 +1,7 @@
 {
   "formatVersion": "1",
   "header": {
-    "description": "data category interface",
+    "description": "Interface with the DCAT AFF Type",
     "originalLanguage": "en"
   }
 }

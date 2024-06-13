@@ -78,35 +78,6 @@
             "Sensitive personal data",
             "Business secret"
           ]
-        },
-        "dataCategoryDescription": {
-          "title": "Data Category Description",
-          "description": "Table of all data category description",
-          "type": "array",
-          "uniqueItems": true,
-          "items": {
-            "title": "Data Category Description Type",
-            "description": "Attributes of data category description type",
-            "type": "object",
-            "properties": {
-              "languageCode": {
-                "title": "Language Code",
-                "description": "Language code",
-                "type": "string",
-                "maxLength": 1
-              },
-              "description": {
-                "title": "Data Category Description",
-                "description": "Description of the data category in selected language",
-                "type": "string",
-                "maxLength": 80
-              }
-            },
-            "additionalProperties": false,
-            "required": [
-              "languageCode"
-            ]
-          }
         }
       },
       "additionalProperties": false
