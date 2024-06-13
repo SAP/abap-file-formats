@@ -85,35 +85,6 @@
           "description": "Name of the ILM object",
           "type": "string",
           "maxLength": 30
-        },
-        "applicationObjectDescription": {
-          "title": "Application Object Description",
-          "description": "Table of all application object description",
-          "type": "array",
-          "uniqueItems": true,
-          "items": {
-            "title": "Application Object Description Type",
-            "description": "Attributes of application object description type",
-            "type": "object",
-            "properties": {
-              "languageCode": {
-                "title": "Language Code",
-                "description": "Name of the language code",
-                "type": "string",
-                "maxLength": 1
-              },
-              "description": {
-                "title": "Application Object Description",
-                "description": "Description of the application object in selected language.",
-                "type": "string",
-                "maxLength": 80
-              }
-            },
-            "additionalProperties": false,
-            "required": [
-              "languageCode"
-            ]
-          }
         }
       },
       "additionalProperties": false

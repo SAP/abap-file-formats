@@ -8,12 +8,6 @@
     "aoKeyStructure": "ZKEY_STRUCT",
     "sapObjectType": "ZOBJECT",
     "dataCategory": "ZCATEGORY",
-    "ilmObject": "ZILM",
-    "applicationObjectDescription": [
-      {
-        "languageCode": "E",
-        "description": "Example application object"
-      }
-    ]
+    "ilmObject": "ZILM"
   }
 }
