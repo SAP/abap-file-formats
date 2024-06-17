@@ -13,7 +13,7 @@ interface zif_aff_sprv_v2
       "! <p class="shorttext">Namespace</p>
       "! Namespace of the service provider
       "! $required
-      namespace TYPE c LENGTH 255,
+      namespace          TYPE c LENGTH 255,
       "! <p class="shorttext">Object Name Prefix</p>
       "! Prefix for all generated objects
       "! $showAlways
