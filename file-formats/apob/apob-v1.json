@@ -63,12 +63,12 @@
       "type": "object",
       "properties": {
         "aoKeyStructure": {
-          "title": "Key Table / Structure",
+          "title": "Key Table or Structure",
           "description": "Name of key table or structure for application object",
           "type": "string",
           "maxLength": 30
         },
-        "sapObjectType": {
+        "sapObject": {
           "title": "SAP Object",
           "description": "Name of the SAP object",
           "type": "string",
