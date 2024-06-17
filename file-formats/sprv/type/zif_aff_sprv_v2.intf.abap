@@ -32,7 +32,7 @@ interface zif_aff_sprv_v2
       "! <p class="shorttext">Header</p>
       "! Header data
       "! $required
-      header TYPE zif_aff_types_v1=>ty_header_60_cloud,
+      header           TYPE zif_aff_types_v1=>ty_header_60_cloud,
       "! <p class="shorttext">Service Provider</p>
       "! Service provider details
       "! $required
