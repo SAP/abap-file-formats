@@ -577,57 +577,42 @@
                 "description": "Configuration string of the CHIP",
                 "type": "string"
               },
-              "bags": {
-                "title": "Property Bags",
-                "description": "Property bags",
+              "bagProperties": {
+                "title": "Bag Properties",
+                "description": "These Bags are available in the Javascript Frontend via the CHIP API \"bag\" Contract",
                 "type": "array",
                 "items": {
-                  "title": "Property Bag",
-                  "description": "Property bag",
+                  "title": "CHIP Bag Property",
+                  "description": "Property of a CHIP bag",
                   "type": "object",
                   "properties": {
-                    "id": {
+                    "bagId": {
                       "title": "Bag ID",
                       "description": "Bag ID",
                       "type": "string",
                       "maxLength": 100
                     },
-                    "properties": {
-                      "title": "Properties",
-                      "description": "Properties",
-                      "type": "array",
-                      "items": {
-                        "title": "CHIP Bag Property",
-                        "description": "Property of a CHIP bag",
-                        "type": "object",
-                        "properties": {
-                          "name": {
-                            "title": "Name",
-                            "description": "Property name",
-                            "type": "string",
-                            "maxLength": 100
-                          },
-                          "value": {
-                            "title": "Value",
-                            "description": "Property value",
-                            "type": "string"
-                          },
-                          "translatable": {
-                            "title": "Translatable",
-                            "description": "Property is translatable",
-                            "type": "boolean"
-                          }
-                        },
-                        "additionalProperties": false,
-                        "required": [
-                          "name"
-                        ]
-                      }
+                    "name": {
+                      "title": "Name",
+                      "description": "Property name",
+                      "type": "string",
+                      "maxLength": 100
+                    },
+                    "value": {
+                      "title": "Value",
+                      "description": "Property value",
+                      "type": "string"
+                    },
+                    "translatable": {
+                      "title": "Translatable",
+                      "description": "Property is translatable",
+                      "type": "boolean"
                     }
                   },
                   "additionalProperties": false,
                   "required": [
-                    "id"
+                    "bagId",
+                    "name"
                   ]
                 }
               }

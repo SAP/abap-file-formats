@@ -26,7 +26,8 @@
         "name": "tmParamName",
         "defaultValue": "Hello World!"
       }
-    ]
+    ],
+    "additionalParameterHandling": "ignored"
   },
   "tiles": [
     {
