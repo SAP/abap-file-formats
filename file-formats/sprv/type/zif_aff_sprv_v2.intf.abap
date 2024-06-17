@@ -17,7 +17,7 @@ interface zif_aff_sprv_v2
       "! <p class="shorttext">Object Name Prefix</p>
       "! Prefix for all generated objects
       "! $showAlways
-      prefix TYPE c LENGTH 10,
+      prefix             TYPE c LENGTH 10,
       "! <p class="shorttext">Implementing Class</p>
       "! Implementing Class of Service Provider
       "! $showAlways
