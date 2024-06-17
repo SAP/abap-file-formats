@@ -2,7 +2,7 @@ INTERFACE zif_aff_sprv_v2
   PUBLIC .
 
 
-  types:
+  TYPES:
     "! <p class="shorttext">Service Provider</p>
     "! Service provider details
     BEGIN OF ty_servprovider,
