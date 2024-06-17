@@ -9,7 +9,7 @@ interface zif_aff_sprv_v2
       "! <p class="shorttext">Provider Name</p>
       "! Name of the service provider
       "! $required
-      provider_name TYPE c LENGTH 30,
+      provider_name      TYPE c LENGTH 30,
       "! <p class="shorttext">Namespace</p>
       "! Namespace of the service provider
       "! $required
