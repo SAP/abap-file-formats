@@ -38,4 +38,4 @@ INTERFACE zif_aff_sprv_v2
       "! $required
       service_provider TYPE ty_servprovider,
     END OF ty_main .
-endinterface.
+ENDINTERFACE.
