@@ -22,7 +22,7 @@ INTERFACE zif_aff_sprv_v2
       "! Implementing Class of Service Provider
       "! $showAlways
       implementing_class TYPE c LENGTH 30,
-    END OF ty_servprovider .
+    END OF ty_servprovider.
   TYPES:
     "! <p class="shorttext">SOAP Web Service Provider Model</p>
     "! SOAP web service provider model
