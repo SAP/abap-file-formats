@@ -1,5 +1,5 @@
-interface zif_aff_sprv_v2
-  public .
+INTERFACE zif_aff_sprv_v2
+  PUBLIC .
 
 
   types:
