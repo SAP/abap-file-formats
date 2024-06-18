@@ -1,0 +1,8 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Example CDS scalar function",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "standard"
+  }
+}
