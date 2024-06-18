@@ -19,7 +19,7 @@ INTERFACE zif_aff_sprv_v2
       "! $showAlways
       prefix             TYPE c LENGTH 10,
       "! <p class="shorttext">Implementing Class</p>
-      "! Implementing Class of Service Provider
+      "! Implementing class of service provider
       "! $showAlways
       implementing_class TYPE c LENGTH 30,
     END OF ty_servprovider.
