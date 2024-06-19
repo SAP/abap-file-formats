@@ -2,7 +2,6 @@
   "formatVersion": "1",
   "header": {
     "description": "Example CDS Aspect",
-    "originalLanguage": "en",
-    "abapLanguageVersion": "standard"
+    "originalLanguage": "en"
   }
 }
