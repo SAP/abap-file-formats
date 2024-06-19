@@ -1,5 +1,5 @@
 INTERFACE zif_aff_dsfi_v1
-  PUBLIC .
+  PUBLIC.
 
 
   "! <p class="shorttext">Engine</p>
