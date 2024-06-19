@@ -36,9 +36,10 @@ INTERFACE zif_aff_dsfi_v1
       "! <p class="shorttext">AMDP Reference</p>
       "! The name of the AMDP Implementation Reference
       "! $required
-      amdp_name            TYPE ddamdpname,
+      amdp_name            TYPE c LENGTH 100,
       "! <p class="shorttext">Automatically exposed in SQL Service</p>
-      "! Flag whether or not the SQL impementation of the CDS SCalar Function will be automatically exposed in all SQL Services
+      "! Flag whether or not the SQL impementation of the
+      "! CDS SCalar Function will be automatically exposed in all SQL Services
       "! $required
       auto_exposure_flag   TYPE abap_bool,
     END OF ty_main.
