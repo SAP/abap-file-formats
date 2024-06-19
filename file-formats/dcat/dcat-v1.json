@@ -68,15 +68,15 @@
           "type": "string",
           "enum": [
             "sensitivePersonalData",
-            "businessSecret"
+            "personalData"
           ],
           "enumTitles": [
             "Sensitive Personal Data",
-            "Business Secret"
+            "Personal Data"
           ],
           "enumDescriptions": [
             "Sensitive personal data",
-            "Business secret"
+            "Personal data"
           ]
         }
       },

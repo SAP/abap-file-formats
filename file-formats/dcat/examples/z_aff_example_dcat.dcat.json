@@ -5,6 +5,6 @@
     "originalLanguage": "en"
   },
   "attributes": {
-    "sensitivityLevel": "businessSecret"
+    "sensitivityLevel": "personalData"
   }
 }
