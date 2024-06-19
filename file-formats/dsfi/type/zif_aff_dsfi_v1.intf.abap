@@ -25,7 +25,7 @@ INTERFACE zif_aff_dsfi_v1
       "! $required
       format_version       TYPE zif_aff_types_v1=>ty_format_version,
       "! $required
-      header         TYPE zif_aff_types_v1=>ty_header_60_src,
+      header               TYPE zif_aff_types_v1=>ty_header_60_src,
       "! <p class="shorttext">Scalar Function Name</p>
       "! The name of the scalar function
       "! $required
