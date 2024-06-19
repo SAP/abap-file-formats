@@ -23,7 +23,7 @@ INTERFACE zif_aff_dsfi_v1
     "! CDS scalar function implementation
     BEGIN OF ty_main,
       "! $required
-      format_version TYPE zif_aff_types_v1=>ty_format_version,
+      format_version       TYPE zif_aff_types_v1=>ty_format_version,
       "! $required
       header         TYPE zif_aff_types_v1=>ty_header_60_src,
       "! <p class="shorttext">Scalar Function Name</p>
