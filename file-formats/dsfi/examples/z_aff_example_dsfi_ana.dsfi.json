@@ -1,9 +1,0 @@
-{
-  "formatVersion": "1",
-  "header": {
-    "description": "Example scalar function implementation",
-    "originalLanguage": "en"
-  },
-  "scalarFunctionName": "z_aff_example_dsfi",
-  "engine": "analyticalEngine"
-}

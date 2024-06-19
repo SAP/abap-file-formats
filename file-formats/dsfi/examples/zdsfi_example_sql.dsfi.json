@@ -1,0 +1,12 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Example CDS scalar function",
+    "originalLanguage": "en",
+    "abapLanguageVersion": ""
+  },
+  "scalarFunctionName": "ZDSFI_EXAMPLE",
+  "engine": "sqlEngine",
+  "amdpName": "ZCL_DSFI_EXAMPLE=>EXECUTE",
+  "autoExposureFlag": true
+}
