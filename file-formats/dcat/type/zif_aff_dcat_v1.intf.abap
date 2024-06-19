@@ -1,5 +1,5 @@
 INTERFACE zif_aff_dcat_v1
-PUBLIC.
+  PUBLIC.
   CONSTANTS:
   "! <p class="shorttext">Sensitivity Level</p>
   "! Data category sensitivity level
