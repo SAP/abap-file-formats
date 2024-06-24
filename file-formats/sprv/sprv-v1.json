@@ -76,6 +76,12 @@
           "description": "Prefix for all generated objects",
           "type": "string",
           "maxLength": 10
+        },
+        "implementingClass": {
+          "title": "Implementing Class",
+          "description": "Implementing class of service provider",
+          "type": "string",
+          "maxLength": 30
         }
       },
       "additionalProperties": false,
