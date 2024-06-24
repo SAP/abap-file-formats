@@ -197,6 +197,13 @@ Remark: If an enum is used, it should be checked if one of the following points 
 
 In case additional values for the enum should be added compatibly later, a default value must always be specified (see [Format Versions and Compatibility](#format-versions-and-compatibility)). If systems don't support the new enumeration value (e.g., in lower releases), the value will be changed to the default value by the file format implementations.
 
+### Regular Expressions
+
+In order to express constraints to the values of a field, it is possible to pass [regualr expressions](https://json-schema.org/understanding-json-schema/reference/regular_expressions) enclosed in single quotes:
+
+```abap
+"! $pattern '<regex pattern, i.e. [a-Z]*>'
+```
 
 The order of the comments and annotations presented here is important: First, there is the comment for the title followed by the one for the description, in case they are both provided. After these two, the remaining annotations are always located. Between them, the order is irrelevant.
 
