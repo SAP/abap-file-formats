@@ -453,6 +453,11 @@ INTERFACE zif_aff_uiad_v1
     "! Property of a CHIP bag
     BEGIN OF ty_chip_bag_property,
 
+      "! <p class="shorttext">Bag ID</p>
+      "! Bag ID
+      "! $required
+      bag_id       TYPE c LENGTH 100,
+
       "! <p class="shorttext">Name</p>
       "! Property name
       "! $required
@@ -471,39 +476,21 @@ INTERFACE zif_aff_uiad_v1
     ty_chip_bag_properties TYPE STANDARD TABLE OF ty_chip_bag_property WITH DEFAULT KEY.
 
   TYPES:
-    "! <p class="shorttext">Property Bag</p>
-    "! Property bag
-    BEGIN OF ty_chip_bag,
-
-      "! <p class="shorttext">Bag ID</p>
-      "! Bag ID
-      "! $required
-      id         TYPE c LENGTH 100,
-
-      "! <p class="shorttext">Properties</p>
-      "! Properties
-      properties TYPE ty_chip_bag_properties,
-
-    END OF ty_chip_bag,
-
-    ty_chip_bags TYPE STANDARD TABLE OF ty_chip_bag WITH DEFAULT KEY.
-
-  TYPES:
     "! <p class="shorttext">Custom Tile Details</p>
-    "! Custom tile details
+    "! CHIP based Custom tile details
     BEGIN OF ty_custom_tile_details,
 
       "! <p class="shorttext">Base CHIP</p>
       "! Base CHIP
-      base_chip_id  TYPE c LENGTH 255,
+      base_chip_id   TYPE c LENGTH 255,
 
       "! <p class="shorttext">Configuration</p>
       "! Configuration string of the CHIP
-      configuration TYPE string,
+      configuration  TYPE string,
 
-      "! <p class="shorttext">Property Bags</p>
-      "! Property bags
-      bags          TYPE ty_chip_bags,
+      "! <p class="shorttext">Bag Properties</p>
+      "! These Bags are available in the Javascript Frontend via the CHIP API "bag" Contract
+      bag_properties TYPE ty_chip_bag_properties,
 
     END OF ty_custom_tile_details.
 
