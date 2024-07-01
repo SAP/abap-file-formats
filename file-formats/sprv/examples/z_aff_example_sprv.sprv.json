@@ -5,8 +5,9 @@
     "originalLanguage": "en"
   },
   "serviceProvider": {
-    "providerName": "IIW_SRT_TEST_SPRV_PROVIDER",
+    "providerName": "IIW_SRT_TEST_WEBI2",
     "namespace": "urn:sap-com:sprx:ep:sap:test",
-    "prefix": ""
+    "prefix": "",
+    "implementingClass": "CL_IIW_SRT_TEST_WEBI2"
   }
 }
