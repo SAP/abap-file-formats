@@ -17,6 +17,7 @@
   },
   "rules": {
     "align_parameters": true,
+    "align_type_expressions": true,
     "cds_comment_style": true,
     "cds_legacy_view": true,
     "cds_parser_error": true,

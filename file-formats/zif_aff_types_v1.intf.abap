@@ -120,9 +120,9 @@ INTERFACE zif_aff_types_v1 PUBLIC.
     "! with a description of 60 characters
     BEGIN OF ty_header_60_no_abap_lv,
       "! $required
-      description           TYPE ty_description_60,
+      description       TYPE ty_description_60,
       "! $required
-      original_language     TYPE ty_original_language,
+      original_language TYPE ty_original_language,
     END OF ty_header_60_no_abap_lv.
 
   TYPES:
