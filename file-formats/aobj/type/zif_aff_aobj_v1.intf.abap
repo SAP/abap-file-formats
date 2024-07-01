@@ -6,14 +6,14 @@ INTERFACE zif_aff_aobj_v1
       "! <p class="shorttext">Write Class</p>
       "! Name of executable class or program which writes the data to the archive
       "! $required
-      write_class  TYPE zif_aff_types_v1=>ty_object_name_30,
+      write_class   TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Delete Class</p>
       "! Name of executable class or program which deletes the data from the tables
       "! $required
-      delete_class TYPE zif_aff_types_v1=>ty_object_name_30,
+      delete_class  TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Reload Class</p>
       "! Name of executable class or program which reloads the data to the tables (may be empty)
-      reload_class TYPE zif_aff_types_v1=>ty_object_name_30,
+      reload_class  TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Storage Class</p>
       "! Name of class which stores and retrieves archived data. The class needs to implement
       "! the interface IF_ARCH_STORAGE_MANAGER.

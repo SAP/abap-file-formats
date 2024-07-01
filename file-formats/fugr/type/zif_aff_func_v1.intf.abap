@@ -100,12 +100,12 @@ INTERFACE zif_aff_func_v1
       "! Indicates the scope of function module calls. Modules whose call scope is not defined explicitly
       "! can be called from anywhere
       "! $required
-      rfc_scope       TYPE ty_rfc_scope,
+      rfc_scope      TYPE ty_rfc_scope,
       "! <p class="shorttext">RFC Version</p>
       "! Indicates which serializations are permitted for the function module.
       "! Among other things, the selected serializations determine where the function module can be enhanced
       "! $required
-      rfc_version        TYPE ty_rfc_version,
+      rfc_version    TYPE ty_rfc_version,
       "! <p class="shorttext">ABAP From Java</p>
       "! ABAP from Java
       abap_from_java TYPE abap_bool,
