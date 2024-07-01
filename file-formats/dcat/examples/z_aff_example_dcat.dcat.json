@@ -1,0 +1,10 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Example data category",
+    "originalLanguage": "en"
+  },
+  "attributes": {
+    "sensitivityLevel": "personalData"
+  }
+}
