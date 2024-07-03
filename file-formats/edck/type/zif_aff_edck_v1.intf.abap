@@ -1,5 +1,6 @@
 INTERFACE zif_aff_edck_v1
-  PUBLIC .
+ PUBLIC.
+
   TYPES ty_check_classification TYPE c LENGTH 1.
   TYPES ty_check_category TYPE c LENGTH 6.
 
@@ -10,20 +11,20 @@ INTERFACE zif_aff_edck_v1
       "! $values {@link zif_aff_edck_v1.data:co_check_category}
       "! $default {@link if_aff_edck_v1.data:co_check_category.exist}
       "! $required
-      CheckCategory             TYPE ty_check_category,
+      checkcategory             TYPE ty_check_category,
       "! <p class="shorttext">Check Classification</p>
       "! Consistency Check ID Classification
       "! $values {@link zif_aff_edck_v1.data:co_check_classification}
       "! $default {@link if_aff_edck_v1.data:co_check_classification.core}
       "! $required
-      CheckIdClassification     TYPE ty_check_classification,
+      checkidclassification     TYPE ty_check_classification,
       "! <p class="shorttext">Additional Check Class</p>
       "! Consistency Check Class
-      CheckClass                TYPE zif_aff_types_v1=>ty_object_name_30,
+      checkclass                TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Result Derivation Indicator</p>
       "! Result Process Derived by BAdI
-      ResultDerivationIndicator TYPE abap_bool,
-    END OF ty_Attributes.
+      resultderivationindicator TYPE abap_bool,
+    END OF ty_attributes.
 
   TYPES:
     "! <p class="shorttext">Consistency Check ID</p>
@@ -50,7 +51,7 @@ INTERFACE zif_aff_edck_v1
       core       TYPE ty_check_classification VALUE 'C',
       "! <p class="shorttext">Additionally (Extended) implemented checks</p>
       "! Additionally (Extended) implemented checks
-      Additional TYPE ty_check_classification VALUE 'A',
+      additional TYPE ty_check_classification VALUE 'A',
     END OF co_check_classification.
 
   CONSTANTS:
@@ -59,7 +60,7 @@ INTERFACE zif_aff_edck_v1
     BEGIN OF co_check_category,
       "! <p class="shorttext">Existence Check</p>
       "! Existence Check
-      Exist  TYPE ty_check_category VALUE 'EXIST',
+      exist  TYPE ty_check_category VALUE 'EXIST',
       "! <p class="shorttext">Status Check</p>
       "! Status Check
       status TYPE ty_check_category VALUE 'STATUS',
