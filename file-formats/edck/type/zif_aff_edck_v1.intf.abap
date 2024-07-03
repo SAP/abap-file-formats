@@ -1,5 +1,5 @@
 INTERFACE zif_aff_edck_v1
- PUBLIC.
+  PUBLIC.
 
   TYPES ty_check_classification TYPE c LENGTH 1.
   TYPES ty_check_category TYPE c LENGTH 6.
