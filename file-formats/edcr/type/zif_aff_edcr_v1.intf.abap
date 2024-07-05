@@ -1,4 +1,4 @@
-INTERFACE ZIF_AFF_EDCR_V1
+INTERFACE zif_aff_edcr_v1
   PUBLIC.
 
   TYPES:
