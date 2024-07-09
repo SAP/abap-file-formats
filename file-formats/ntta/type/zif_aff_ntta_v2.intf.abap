@@ -42,7 +42,7 @@ INTERFACE zif_aff_ntta_v2
       general_information TYPE ty_general_information,
       "! <p class="shorttext">Note Types</p>
       "! Note types assigned to the SAP Object Node Type
-      note_types  TYPE ty_notetypes,
+      note_types          TYPE ty_notetypes,
     END OF ty_main.
 
 ENDINTERFACE.
