@@ -5,8 +5,7 @@
       "originalLanguage": "en"
     },
     "generalInformation": {
-      "objectNodeType": "TestNodeType",
-      "implementationExit": "CL_TEST_EXIT"
+      "objectNodeType": "TestNodeType"
     },
     "noteTypes": [
       {
