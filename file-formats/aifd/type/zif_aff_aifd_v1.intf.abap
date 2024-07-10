@@ -7,7 +7,7 @@ INTERFACE zif_aff_aifd_v1
       "! <p class="shorttext">Interface Object Name</p>
       "! Interface object name
       "! $required
-      interface_object_name       TYPE c LENGTH 40,
+      interface_object_name TYPE c LENGTH 40,
     END OF ty_aif_interface,
 
     "! <p class="shorttext">Interfaces</p>
