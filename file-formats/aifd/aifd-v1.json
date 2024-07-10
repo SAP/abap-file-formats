@@ -55,12 +55,12 @@
       ]
     },
     "aifInterfaces": {
-      "title": "AIF Interfaces",
-      "description": "AIF interfaces",
+      "title": "Interfaces",
+      "description": "Interfaces",
       "type": "array",
       "items": {
-        "title": "AIF Interface",
-        "description": "AIF interface",
+        "title": "Interface",
+        "description": "Interface",
         "type": "object",
         "properties": {
           "interfaceObjectName": {

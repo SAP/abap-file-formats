@@ -1,17 +1,17 @@
 INTERFACE zif_aff_aifd_v1
   PUBLIC.
   TYPES:
-    "! <p class="shorttext">AIF Interface</p>
-    "! AIF interface
+    "! <p class="shorttext">Interface</p>
+    "! Interface
     BEGIN OF ty_aif_interface,
       "! <p class="shorttext">Interface Object Name</p>
       "! Interface object name
       "! $required
-      interface_object_name TYPE c LENGTH 40,
+      interface_object_name       TYPE c LENGTH 40,
     END OF ty_aif_interface,
 
-    "! <p class="shorttext">AIF Interfaces</p>
-    "! AIF interfaces
+    "! <p class="shorttext">Interfaces</p>
+    "! Interfaces
     ty_aif_interfaces TYPE STANDARD TABLE OF ty_aif_interface WITH DEFAULT KEY,
 
     "! <p class="shorttext">Deployment Scenario</p>
@@ -23,8 +23,8 @@ INTERFACE zif_aff_aifd_v1
       "! Header
       "! $required
       header         TYPE zif_aff_types_v1=>ty_header_60_cloud,
-      "! <p class="shorttext">AIF Interfaces</p>
-      "! AIF interfaces
+      "! <p class="shorttext">Interfaces</p>
+      "! Interfaces
       "! $required
       aif_interfaces TYPE ty_aif_interfaces,
     END OF ty_main.
