@@ -89,7 +89,7 @@ interface zob_aff_smtg_v1
 
   "! <p class="shorttext">Languages</p>
   "! List of available languages
-  types ty_temp_languages type standard table of ty_template_language with empty key.
+  types ty_temp_languages type standard table of ty_template_language with default key.
 
   types:
     "! <p class="shorttext">Input Field</p>
