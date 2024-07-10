@@ -2,11 +2,11 @@
   "formatVersion": "1",
     "header": {
       "description": "Example object",
-      "originalLanguage": "en",
-      "implementationExit": ""
+      "originalLanguage": "en"
     },
     "generalInformation": {
-      "objectNodeType": "TestNodeType"
+      "objectNodeType": "TestNodeType",
+      "implementationExit": "CL_TEST_EXIT"
     },
     "noteTypes": [
       {
