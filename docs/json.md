@@ -132,7 +132,7 @@ followed by a space and the desired value are used.
 
 ### Regular Expressions
 
-In order to express constraints to the values of a field, it is possible to pass regular expresions enclosed in single quotes:
+In order to express constraints to the values of a field, it is possible to pass regular expressions enclosed in single quotes:
 
 ```abap
 "! $pattern '<regex pattern, i.e. [a-Z]*>'
