@@ -132,11 +132,12 @@ followed by a space and the desired value are used.
 
 ### Regular Expressions
 
-In order to express constraints to the values of a field, it is possible to pass [regular expressions](https://json-schema.org/understanding-json-schema/reference/regular_expressions) enclosed in single quotes:
+In order to express constraints to the values of a field, it is possible to pass regular expresions enclosed in single quotes:
 
 ```abap
 "! $pattern '<regex pattern, i.e. [a-Z]*>'
 ```
+The complete syntax of regular expressions is not widely supported, therefore it is recommended to stick on the subset described [here](https://json-schema.org/understanding-json-schema/reference/regular_expressions).
 
 ### Multiple Of
 The annotation
