@@ -1,0 +1,18 @@
+{
+  "formatVersion": "2",
+    "header": {
+      "description": "Example object",
+      "originalLanguage": "en"
+    },
+    "generalInformation": {
+      "objectNodeType": "TestNodeType"
+    },
+    "noteTypes": [
+      {
+        "name": "TEST_NOTETYPE_1"
+      },
+      {
+        "name": "TEST_NOTETYPE_2"
+      }
+    ]
+}
