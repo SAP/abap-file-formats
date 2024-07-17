@@ -6,6 +6,6 @@
     "abapLanguageVersion": "cloudDevelopment"
   },
   "recipient":{
-      "nsObjName": "AIFNS"
+      "namespaceObjectName": "AIFNS"
   }
 }

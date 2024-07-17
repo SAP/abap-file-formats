@@ -7,7 +7,7 @@ INTERFACE zif_aff_aifr_v1
       "! <p class="shorttext">Namespace Object Name</p>
       "! Namespace object name of the recipient
       "! $required
-      ns_obj_name TYPE c LENGTH 15,
+      namespace_object_name TYPE c LENGTH 15,
     END OF ty_recipient,
 
     "! <p class="shorttext">Recipient</p>

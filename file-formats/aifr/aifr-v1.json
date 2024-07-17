@@ -59,7 +59,7 @@
       "description": "Recipient details",
       "type": "object",
       "properties": {
-        "nsObjName": {
+        "namespaceObjectName": {
           "title": "Namespace Object Name",
           "description": "Namespace object name of the recipient",
           "type": "string",
@@ -68,7 +68,7 @@
       },
       "additionalProperties": false,
       "required": [
-        "nsObjName"
+        "namespaceObjectName"
       ]
     }
   },
