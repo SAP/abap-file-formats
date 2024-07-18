@@ -14,7 +14,7 @@ INTERFACE zif_aff_aifr_v1
     "! Recipient
     BEGIN OF ty_main,
       "! $required
-      format_version  TYPE zif_aff_types_v1=>ty_format_version,
+      format_version    TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
