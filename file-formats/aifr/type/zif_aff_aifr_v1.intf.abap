@@ -3,12 +3,12 @@ INTERFACE zif_aff_aifr_v1
   TYPES:
     "! <p class="shorttext">Recipient Details</p>
     "! Recipient details
-    BEGIN OF ty_recipient,
+    BEGIN OF ty_recipient_details,
       "! <p class="shorttext">Namespace Object Name</p>
       "! Namespace object name of the recipient
       "! $required
       namespace_object_name TYPE c LENGTH 15,
-    END OF ty_recipient,
+    END OF ty_recipient_details,
 
     "! <p class="shorttext">Recipient</p>
     "! Recipient
@@ -22,6 +22,6 @@ INTERFACE zif_aff_aifr_v1
       "! <p class="shorttext">Recipient Details</p>
       "! Recipient details
       "! $required
-      recipient      TYPE ty_recipient,
+      recipient_details TYPE ty_recipient_details,
     END OF ty_main.
 ENDINTERFACE.

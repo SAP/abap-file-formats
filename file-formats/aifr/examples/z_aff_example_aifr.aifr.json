@@ -5,7 +5,7 @@
     "originalLanguage": "en",
     "abapLanguageVersion": "cloudDevelopment"
   },
-  "recipient":{
+  "recipientDetails":{
       "namespaceObjectName": "AIFNS"
   }
 }

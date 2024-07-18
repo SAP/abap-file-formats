@@ -54,7 +54,7 @@
         "originalLanguage"
       ]
     },
-    "recipient": {
+    "recipientDetails": {
       "title": "Recipient Details",
       "description": "Recipient details",
       "type": "object",
@@ -76,6 +76,6 @@
   "required": [
     "formatVersion",
     "header",
-    "recipient"
+    "recipientDetails"
   ]
 }
