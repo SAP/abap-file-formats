@@ -25,7 +25,6 @@ jobs:
       env:
         ALL_DELETED_FILES: ${{ steps.changed-files.outputs.deleted_files }}
       run: |
-        set +e
         for file in ${ALL_DELETED_FILES}; do
           echo "$file was deleted"
           exit 1
