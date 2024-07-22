@@ -28,3 +28,10 @@ jobs:
         for file in ${ALL_DELETED_FILES}; do
           echo "$file was deleted"
         done
+
+    - name: Fail if there are deleted files
+      run: |
+          if [[ -n "${{ env.ALL_DELETED_FILES }}" ]]; then
+              echo "There are deleted files"
+              exit 1
+          fi
