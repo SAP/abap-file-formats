@@ -26,6 +26,6 @@ jobs:
         ALL_DELETED_FILES: ${{ steps.changed-files.outputs.deleted_files }}
       run: |
         for file in ${ALL_DELETED_FILES}; do
-          echo "$file was deleted"
+          echo "::error file={$file}, line={1}, endLine={1}, title={Example has been deleted}::{Some more text}"
           exit 1
         done
