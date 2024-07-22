@@ -104,10 +104,10 @@ INTERFACE zif_aff_susi_v1
       "! <p class="shorttext">From</p>
       "! From value
       "! $showAlways
-      low    TYPE ty_val,
+      low   TYPE ty_val,
       "! <p class="shorttext">To</p>
       "! To values
-      high   TYPE ty_val,
+      high  TYPE ty_val,
     END OF ty_authorization_field.
 
   TYPES:

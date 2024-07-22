@@ -130,6 +130,15 @@ Choosing an ABAP data type with length specification results in the field `maxLe
 ```
 followed by a space and the desired value are used.
 
+### Regular Expressions
+
+In order to express constraints to the values of a field, it is possible to pass regular expressions enclosed in single quotes:
+
+```abap
+"! $pattern '<regex pattern, i.e. [a-Z]*>'
+```
+The complete syntax of regular expressions is not widely supported, therefore it is recommended to stick on the subset described [here](https://json-schema.org/understanding-json-schema/reference/regular_expressions).
+
 ### Multiple Of
 The annotation
 ```abap
@@ -196,7 +205,6 @@ Remark: If an enum is used, it should be checked if one of the following points 
 2. The field with enum values has a specified default value.
 
 In case additional values for the enum should be added compatibly later, a default value must always be specified (see [Format Versions and Compatibility](#format-versions-and-compatibility)). If systems don't support the new enumeration value (e.g., in lower releases), the value will be changed to the default value by the file format implementations.
-
 
 The order of the comments and annotations presented here is important: First, there is the comment for the title followed by the one for the description, in case they are both provided. After these two, the remaining annotations are always located. Between them, the order is irrelevant.
 
