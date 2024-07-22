@@ -20,6 +20,8 @@ jobs:
     - name: Get deleted files
       id: changed-files
       uses: tj-actions/changed-files@v44
+      with:
+        path: file-formats/*/examples
 
     - name: List all deleted files
       env:
