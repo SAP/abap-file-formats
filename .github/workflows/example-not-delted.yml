@@ -9,7 +9,7 @@ permissions:
 jobs:
   build:
     # Name the Job
-    name: Don't delete examples, when increasing format version
+    name: Don't delete examples
 
     runs-on: ubuntu-latest
 
@@ -26,6 +26,6 @@ jobs:
         ALL_DELETED_FILES: ${{ steps.changed-files.outputs.deleted_files }}
       run: |
         for file in ${ALL_DELETED_FILES}; do
-          echo "::error file={$file}, line={1}, endLine={1}, title={Example has been deleted}::{Some more text}"
+          echo "::error file={$file}, line={1}, endLine={1}, title={Example has been deleted}::{Example has been deleted}"
           exit 1
         done
