@@ -31,7 +31,8 @@ jobs:
 
     - name: Fail if there are deleted files
       run: |
-          if [[ -n "${{ env.ALL_DELETED_FILES }}" ]]; then
-              echo "There are deleted files"
-              exit 1
-          fi
+        set +e
+        if [[ -n "${{ env.ALL_DELETED_FILES }}" ]]; then
+            echo "There are deleted files"
+            exit 1
+        fi
