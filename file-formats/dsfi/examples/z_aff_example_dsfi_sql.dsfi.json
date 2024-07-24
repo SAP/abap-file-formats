@@ -4,7 +4,7 @@
     "description": "Example CDS scalar function",
     "originalLanguage": "en"
   },
-  "scalarFunctionName": "ZDSFI_EXAMPLE",
+  "scalarFunctionName": "Z_AFF_EXAMPLE_DSFI",
   "engine": "sqlEngine",
   "amdpName": "ZCL_DSFI_EXAMPLE=>EXECUTE",
   "autoExposureFlag": true
