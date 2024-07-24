@@ -10,7 +10,7 @@ INTERFACE zif_aff_dsfi_v1
     ty_engine TYPE zif_aff_types_v1=>ty_object_name_30.
 
   CONSTANTS:
-    BEGIN OF co_engine,   
+    BEGIN OF co_engine,
       "! <p class="shorttext">Analytical Engine</p>
       "! Analytical engine
       analytical_engine TYPE ty_engine VALUE 'ANA',
