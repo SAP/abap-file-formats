@@ -26,7 +26,7 @@ INTERFACE zif_aff_uist_v1
       "! <p class="shorttext">Name</p>
       "! Name of the page template
       "! $required
-      name          TYPE c LENGTH 35,
+      name TYPE c LENGTH 35,
     END OF ty_page,
 
     ty_pages TYPE STANDARD TABLE OF ty_page WITH KEY name.
@@ -38,20 +38,20 @@ INTERFACE zif_aff_uist_v1
       "! <p class="shorttext">Format Version</p>
       "! Format version
       "! $required
-      format_version  TYPE zif_aff_types_v1=>ty_format_version,
+      format_version      TYPE zif_aff_types_v1=>ty_format_version,
 
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header          TYPE zif_aff_types_v1=>ty_header_100_cloud,
+      header              TYPE zif_aff_types_v1=>ty_header_100_cloud,
 
       "! <p class="shorttext">General Information</p>
       "! General information
       "! $required
-      general_information   TYPE ty_general_information,
+      general_information TYPE ty_general_information,
 
       "! <p class="shorttext">Launchpad Page Templates</p>
       "! Assigned launchpad page templates
-      pages                        TYPE ty_pages,
+      pages               TYPE ty_pages,
     END OF ty_main.
 ENDINTERFACE.
