@@ -78,7 +78,8 @@
             "Sensitive personal data",
             "Personal data"
           ]
-        }
+        },
+        "default": "personalData"
       },
       "additionalProperties": false
     }
