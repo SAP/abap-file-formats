@@ -77,9 +77,9 @@
           "enumDescriptions": [
             "Sensitive personal data",
             "Personal data"
-          ]
-        },
-        "default": "personalData"
+          ],
+          "default": "personalData"
+        }        
       },
       "additionalProperties": false
     }
