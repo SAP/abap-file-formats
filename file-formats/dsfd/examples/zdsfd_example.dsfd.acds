@@ -1,0 +1,5 @@
+define scalar function ZDSFD_EXAMPLE
+  with parameters
+    p1  : abap.int1,
+    p2  : abap.int2
+  returns abap.int4

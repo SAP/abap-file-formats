@@ -10,11 +10,7 @@ INTERFACE zif_aff_ntta_v1
       "! <p class="shorttext">SAP Object Node Type</p>
       "! SAP Object Node Type
       "! $required
-      object_node_type    TYPE zif_aff_types_v1=>ty_object_name_30,
-      "! <p class="shorttext">Implementation Exit Class</p>
-      "! Class implementing the exits for authorization and feature control
-      "! $required
-      implementation_exit TYPE zif_aff_types_v1=>ty_object_name_30,
+      object_node_type TYPE zif_aff_types_v1=>ty_object_name_30,
     END OF ty_general_information,
 
     "! <p class="shorttext">Note Type</p>
