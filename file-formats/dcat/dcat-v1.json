@@ -79,7 +79,7 @@
             "Personal data"
           ],
           "default": "personalData"
-        }        
+        }
       },
       "additionalProperties": false
     }
