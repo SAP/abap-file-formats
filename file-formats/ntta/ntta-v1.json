@@ -64,18 +64,11 @@
           "description": "SAP Object Node Type",
           "type": "string",
           "maxLength": 30
-        },
-        "implementationExit": {
-          "title": "Implementation Exit Class",
-          "description": "Class implementing the exits for authorization and feature control",
-          "type": "string",
-          "maxLength": 30
         }
       },
       "additionalProperties": false,
       "required": [
-        "objectNodeType",
-        "implementationExit"
+        "objectNodeType"
       ]
     },
     "noteTypes": {
