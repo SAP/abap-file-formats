@@ -20,6 +20,7 @@ INTERFACE zif_aff_dcat_v1
       "! <p class="shorttext">Sensitivity Level</p>
       "! Sensitivity level for data category
       "! $values {@link zif_aff_dcat_v1.data:co_categ_senst_lvl}
+      "! $default {@link zif_aff_dcat_v1.data:co_categ_senst_lvl.personal_data}
       sensitivity_level TYPE c LENGTH 1,
     END OF ty_attributes.
 
