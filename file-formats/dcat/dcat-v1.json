@@ -67,17 +67,18 @@
           "description": "Sensitivity level for data category",
           "type": "string",
           "enum": [
-            "sensitivePersonalData",
-            "personalData"
+            "personalData",
+            "sensitivePersonalData"
           ],
           "enumTitles": [
-            "Sensitive Personal Data",
-            "Personal Data"
+            "Personal Data",
+            "Sensitive Personal Data"
           ],
           "enumDescriptions": [
-            "Sensitive personal data",
-            "Personal data"
-          ]
+            "Personal data",
+            "Sensitive personal data"
+          ],
+          "default": "personalData"
         }
       },
       "additionalProperties": false
