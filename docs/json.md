@@ -154,8 +154,8 @@ If a field is to be declared as "required" in the JSON Schema, the annotation
 ```
 is used.
 
-Please note, we do not recommend using the `$required` flag for boolean fields, as not setting it is equivalent to `false`.
-If you want the field to always be visible in the JSON, you can use the annotation `$showAlways`.
+Please note, we do not recommend using the `$required` annotation for boolean fields, as not setting it is equivalent to `false`.
+If the field is crucial to be serialized (even if the value is `false`), you can use the annotation `$showAlways`.
 
 ### Always Shown Fields
 Normally, if an ABAP object is serialized, only the components of the corresponding type with a non-initial value are written to the JSON data file. If a component shall be shown regardless to its value, the annotation
