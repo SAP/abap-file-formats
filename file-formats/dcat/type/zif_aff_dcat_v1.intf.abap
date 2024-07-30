@@ -5,12 +5,12 @@ INTERFACE zif_aff_dcat_v1
     "! <p class="shorttext">Sensitivity Level</p>
     "! Data category sensitivity level
     BEGIN OF co_categ_senst_lvl,
-      "! <p class="shorttext">Sensitive Personal Data</p>
-      "! Sensitive personal data
-      sensitive_personal_data TYPE c LENGTH 1 VALUE 'S',
       "! <p class="shorttext">Personal Data</p>
       "! Personal data
       personal_data           TYPE c LENGTH 1 VALUE '',
+      "! <p class="shorttext">Sensitive Personal Data</p>
+      "! Sensitive personal data
+      sensitive_personal_data TYPE c LENGTH 1 VALUE 'S',
     END OF co_categ_senst_lvl.
 
   TYPES:
@@ -19,7 +19,8 @@ INTERFACE zif_aff_dcat_v1
     BEGIN OF ty_attributes,
       "! <p class="shorttext">Sensitivity Level</p>
       "! Sensitivity level for data category
-      "! $values {@link zif_aff_dcat_v1.data:co_categ_senst_lvl}
+      "! $values { @link zif_aff_dcat_v1.data:co_categ_senst_lvl }
+      "! $default { @link zif_aff_dcat_v1.data:co_categ_senst_lvl.personal_data }
       sensitivity_level TYPE c LENGTH 1,
     END OF ty_attributes.
 
@@ -40,5 +41,6 @@ INTERFACE zif_aff_dcat_v1
       "! $required
       attributes     TYPE ty_attributes,
     END OF ty_main.
+
 
 ENDINTERFACE.
