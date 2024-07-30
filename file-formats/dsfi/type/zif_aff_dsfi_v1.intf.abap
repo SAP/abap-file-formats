@@ -28,7 +28,6 @@ INTERFACE zif_aff_dsfi_v1
       "! <p class="shorttext">Auto Exposure</p>
       "! Flag whether or not the SQL implementation of the
       "! CDS scalar function will be automatically exposed in all SQL services
-      "! $required
       auto_exposure_flag TYPE abap_bool,
     END OF ty_sql_properties.
 
