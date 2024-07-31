@@ -85,13 +85,13 @@
       "description": "SQL Properties",
       "type": "object",
       "properties": {
-        "amdpName": {
+        "amdpReference": {
           "title": "AMDP Reference",
           "description": "The name of the AMDP implementation reference",
           "type": "string",
           "maxLength": 100
         },
-        "autoExposureFlag": {
+        "autoExposure": {
           "title": "Auto Exposure",
           "description": "Flag whether or not the SQL implementation of the CDS scalar function will be automatically exposed in all SQL services",
           "type": "boolean"
@@ -99,7 +99,7 @@
       },
       "additionalProperties": false,
       "required": [
-        "amdpName"
+        "amdpReference"
       ]
     }
   },
