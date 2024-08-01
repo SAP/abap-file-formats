@@ -47,6 +47,7 @@ cl_oo_clif_source.clas.texts.en.properties
 The language of the texts is encoded by the element `language` following [BCP47](https://en.wikipedia.org/wiki/IETF_language_tag).
 ```
 cl_oo_clif_source.clas.texts.en.properties
+cl_oo_clif_source.clas.texts.en-GB.properties
 ```
 For the text elements of classes, this language will be the original language (provided by the metadata file).
 
