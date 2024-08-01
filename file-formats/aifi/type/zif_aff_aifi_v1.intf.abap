@@ -1,5 +1,5 @@
 INTERFACE zif_aff_aifi_v1
-  PUBLIC .
+  PUBLIC.
 
   "! $values { @link zif_aff_aifi_v1.data:co_integration_type }
   "! $default { @link zif_aff_aifi_v1.data:co_integration_type.soap }
@@ -28,14 +28,50 @@ INTERFACE zif_aff_aifi_v1
       "! Integration Type
       "! $required
       integration_type         TYPE ty_integration_type,
-      "! <p class="shorttext">Monitored Object</p>
-      "! Monitored Object
+      "! <p class="shorttext">SOAP Class</p>
+      "! SOAP Class
       "! $required
-      monitored_object         TYPE c LENGTH 40,
-      "! <p class="shorttext">AIF Namespace</p>
-      "! AIF Namespace
+      soap_class               TYPE /aif/proxy_outbound, " SOAP / web service class is stored in /AIF/T_FINF-PROXYCLASSNAMECL
+      "! <p class="shorttext">SOAP Method</p>
+      "! SOAP Method
       "! $required
-      namespace                TYPE /aif/ns,
+      soap_method              TYPE /aif/proxy_method, " SOAP / web service method is stored in /AIF/T_FINF-PRX_METHOD
+      "! <p class="shorttext">SOAP Record Type</p>
+      "! SOAP Record Type
+      "! $required
+      soap_record_type         TYPE /aif/rectyperaw, " SOAP / web service record type is stored in /AIF/T_FINF-RECTYPERAW
+      "! <p class="shorttext">Repository ID</p>
+      "! Repository ID
+      "! $required
+      repository_id            TYPE /iwxbe/reg_repository_id, " EEE
+      "! <p class="shorttext">Registration ID</p>
+      "! Registration ID
+      "! $required
+      registration_id          TYPE /iwxbe/reg_id, " EEE
+      "! <p class="shorttext">Registration Version</p>
+      "! Registration Version
+      "! $required
+      registration_version     TYPE /iwxbe/reg_version, " EEE
+      "! <p class="shorttext">Topic</p>
+      "! Topic
+      "! $required
+      topic                    TYPE /iwxbe/descr_topic, " EEE
+      "! <p class="shorttext">Operation ID</p>
+      "! Operation ID
+      "! $required
+      operation_id             TYPE /aif/bgp_opid_e,      " bgPF
+      "! <p class="shorttext">Operation Variant ID</p>
+      "! Operation Variant ID
+      "! $required
+      operation_variant_id     TYPE /aif/bgp_variant_id_e, " bgPF
+      "! <p class="shorttext">Operation Variant</p>
+      "! Operation Variant
+      "! $required
+      operation_varaint        TYPE /aif/bgp_variant_e, " bgPF
+      "! <p class="shorttext">Namespace Object</p>
+      "! Namespace Object
+      "! $required
+      namespace_object         TYPE /aif/ns_obj_name,
       "! <p class="shorttext">AIF Interface Name</p>
       "! AIF Interface Name
       "! $required
@@ -55,52 +91,40 @@ INTERFACE zif_aff_aifi_v1
       "! Application Log Lifetime
       "! $default '90'
       app_log_lifetime         TYPE /aif/msg_lifetime,
-      "! <p class="shorttext">Preprocessing</p>
-      "! Preprocessing
-      preprocessing            TYPE boolean, " /aif/pre_processing,
-      "! <p class="shorttext">Proxy XML Transformation</p>
-      "! Use Proxy XML Transformation
-      proxy_xml_transformation TYPE boolean, " /aif/proxy_xml_transformation,
-      "! <p class="shorttext">Extend XML Handling</p>
-      "! Extend XML Handling
-      extend_xml_handling      TYPE boolean, " /aif/prx_xxml,
-      "! <p class="shorttext">Postprocessing</p>
-      "! Postprocessing
-      postprocesssing          TYPE boolean,
-      "! <p class="shorttext">RAW Structure</p>
-      "! RAW Structure
-      raw_structure            TYPE /aif/if_ddic_struct_raw,
-      "! <p class="shorttext">SAP Structure</p>
-      "! SAP Structure
-      sap_structure            TYPE /aif/if_ddic_struct,
       "! <p class="shorttext">Direction</p>
       "! Direction
       direction                TYPE /aif/ifdirection,
-    END OF ty_aif_interface .
+      "! <p class="shorttext">Preprocessing</p>
+      "! Preprocessing
+      preprocessing            TYPE boolean,                 " /aif/pre_processing,
+      "! <p class="shorttext">Proxy XML Transformation</p>
+      "! Use Proxy XML Transformation
+      proxy_xml_transformation TYPE boolean,                 " /aif/proxy_xml_transformation,
+      "! <p class="shorttext">Extend XML Handling</p>
+      "! Extend XML Handling
+      extend_xml_handling      TYPE boolean,                 " /aif/prx_xxml,
+      "! <p class="shorttext">Postprocessing</p>
+      "! Postprocessing
+      postprocesssing          TYPE boolean,
+    END OF ty_aif_interface.
 
-  TYPES:
-    "! <p class="shorttext">Application Interfaces</p>
-    "! Application interfaces
-    ty_aif_interfaces TYPE STANDARD TABLE OF ty_aif_interface WITH DEFAULT KEY .
+  "! <p class="shorttext">Application Interfaces</p>
+  "! Application interfaces
+  TYPES ty_aif_interfaces TYPE STANDARD TABLE OF ty_aif_interface WITH DEFAULT KEY.
 
   TYPES:
     "! <p class="shorttext">Recipient</p>
     "! Recipient
     BEGIN OF ty_recipient,
-      "! <p class="shorttext">Namespace</p>
-      "! Namespace
-      "! $required
-      namespace TYPE /aif/ns_recipient,
       "! <p class="shorttext">Alert Recipient</p>
       "! Alert Recipient
       "! $required
-      recipient TYPE /aif/alrt_rec,
-    END OF ty_recipient .
+      recipient TYPE /aif/recipient_object_name,
+    END OF ty_recipient.
 
-  TYPES:
-    "! <p class="shorttext">Recipients</p>
-    "! Recipients
-    ty_recipients TYPE STANDARD TABLE OF ty_recipient WITH DEFAULT KEY .
+  "! <p class="shorttext">Recipients</p>
+  "! Recipients
+  TYPES ty_recipients TYPE STANDARD TABLE OF ty_recipient WITH DEFAULT KEY.
 
   TYPES:
     "! <p class="shorttext">Key Field Rule Field</p>
@@ -111,10 +135,9 @@ INTERFACE zif_aff_aifi_v1
       key_field_rule_field TYPE /aif/key_fieldname_enh,
     END OF ty_key_field_rules_field.
 
-  TYPES:
-    "! <p class="shorttext">Key Field Rule Fields</p>
-    "! Key Field Rule Fields
-    ty_key_field_rules_fields TYPE STANDARD TABLE OF ty_key_field_rules_field WITH DEFAULT KEY .
+  "! <p class="shorttext">Key Field Rule Fields</p>
+  "! Key Field Rule Fields
+  TYPES ty_key_field_rules_fields TYPE STANDARD TABLE OF ty_key_field_rules_field WITH DEFAULT KEY.
 
   TYPES:
     "! <p class="shorttext">Key Field</p>
@@ -133,11 +156,11 @@ INTERFACE zif_aff_aifi_v1
       selopt_name              TYPE /aif/stexti,
       "! <p class="shorttext">Select-Option</p>
       "! Is Select-Option?
-      is_selopt                TYPE boolean, " /aif/fld_is_select_opt,
+      is_selopt                TYPE boolean,                   " /aif/fld_is_select_opt,
       "! <p class="shorttext">Display as Column</p>
       "! Display as Column
       "! $default 'X'
-      column_display           TYPE boolean, " /aif/is_col,
+      column_display           TYPE boolean,                   " /aif/is_col,
       "! <p class="shorttext">Field Name</p>
       "! Field Name in Define Key Fields
       field_name               TYPE /aif/lfieldname_kflds,
@@ -146,13 +169,25 @@ INTERFACE zif_aff_aifi_v1
       sap_raw_structure        TYPE /aif/raw_or_sap_kflds,
       "! <p class="shorttext">Enable Key Field Qualifier</p>
       "! Is SAP or RAW Structure?
-      enable_qualifier         TYPE boolean, " /aif/enable_qualifier,
+      enable_qualifier         TYPE boolean,                   " /aif/enable_qualifier,
+      "! <p class="shorttext">Qualifier Field Name</p>
+      "! Qualifier Field Name
+      qualifier_field_name     TYPE /aif/qualifier_fld_name_kfld,
+      "! <p class="shorttext">Qualifier Operator</p>
+      "! Qualifier Operator
+      qualifier_operator       TYPE /aif/qualifier_operator,
+      "! <p class="shorttext">Qualifier Value</p>
+      "! Qualifier Value
+      qualifier_value          TYPE /aif/qualifier_value_kfld,
       "! <p class="shorttext">Mulitple Selection Type</p>
       "! Mulitple Selection Type
       multi_selection_type     TYPE /aif/multi_sel_type,
+      "! <p class="shorttext">Message Index Table</p>
+      "! Message Index Table
+      idx_table                TYPE /aif/msg_tbl,
       "! <p class="shorttext">Show Tree Node in View 1 Tree</p>
       "! Show Tree Node in View 1 Tree
-      show_tree_node           TYPE boolean, " /aif/is_hidden, " swap to positive stature
+      show_tree_node           TYPE boolean,                   " /aif/is_hidden, " swap to positive stature
       "! <p class="shorttext">Parent Field Sequence Number</p>
       "! Parent Field Sequence Number
       parent_field_sequence    TYPE /aif/field_number_parent,
@@ -180,26 +215,25 @@ INTERFACE zif_aff_aifi_v1
       "! <p class="shorttext">Value Mapping</p>
       "! Value Mapping
       value_mapping            TYPE /aif/vmapname,
-      "! <p class="shorttext">Display in Message Monitoring</p>
-      "! Display in Message Monitoring
-      "! $default 'X'
-      message_monitor_show     TYPE boolean, " /aif/not_show_field,
-      "! <p class="shorttext">Display in Message Monitoring by Default</p>
-      "! Display in Message Monitoring by Default
-      message_monitor_default  TYPE boolean, " /aif/is_default_field,
       "! <p class="shorttext">Semantic Object</p>
       "! Semantic Object
       semantic_object          TYPE /aif/semantic_object,
       "! <p class="shorttext">Semantic Action</p>
       "! Semantic Action
       semantic_action          TYPE /aif/semantic_action,
-    END OF ty_key_field .
+      "! <p class="shorttext">Display in Message Monitoring</p>
+      "! Display in Message Monitoring
+      "! $default 'X'
+      message_monitor_show     TYPE boolean,                   " /aif/not_show_field,
+      "! <p class="shorttext">Display in Message Monitoring by Default</p>
+      "! Display in Message Monitoring by Default
+      message_monitor_default  TYPE boolean,                   " /aif/is_default_field,
+    END OF ty_key_field.
 
-  TYPES:
-    "! <p class="shorttext">Key Fields</p>
-    "! Key Fields
-    "! $required
-    ty_key_fields TYPE STANDARD TABLE OF ty_key_field WITH DEFAULT KEY .
+  "! <p class="shorttext">Key Fields</p>
+  "! Key Fields
+  "! $required
+  TYPES ty_key_fields TYPE STANDARD TABLE OF ty_key_field WITH DEFAULT KEY.
 
   TYPES:
     "! <p class="shorttext">Key Fields</p>
@@ -209,7 +243,7 @@ INTERFACE zif_aff_aifi_v1
       "! Key Fields
       "! $required
       key_fields_table TYPE ty_key_fields,
-    END OF ty_o_key_fields .
+    END OF ty_o_key_fields.
 
   TYPES:
     "! <p class="shorttext">Structure Setting</p>
@@ -231,6 +265,7 @@ INTERFACE zif_aff_aifi_v1
       hidden      TYPE boolean,
       "! <p class="shorttext">Use DDIC</p>
       "! Use DDIC
+      "! $default 'X'
       use_ddic    TYPE boolean, " /aif/use_ddic,
       "! <p class="shorttext">Description</p>
       "! Description
@@ -244,16 +279,15 @@ INTERFACE zif_aff_aifi_v1
       "! <p class="shorttext">Long Text</p>
       "! Long Text
       long_text   TYPE /aif/err_lb_long,
-    END OF ty_structure_setting .
+    END OF ty_structure_setting.
+
+  "! <p class="shorttext">Structure Settings</p>
+  "! Structure Settings
+  TYPES ty_structure_settings TYPE STANDARD TABLE OF ty_structure_setting WITH DEFAULT KEY.
 
   TYPES:
-    "! <p class="shorttext">Stucture Settings</p>
-    "! Structure Settings
-    ty_structure_settings TYPE STANDARD TABLE OF ty_structure_setting WITH DEFAULT KEY .
-
-  TYPES:
-    "! <p class="shorttext">Engines</p>
-    "! Engines
+    "! <p class="shorttext">Engines and Structures</p>
+    "! Engines and Structures
     BEGIN OF ty_engines,
       "! <p class="shorttext">Application Engine</p>
       "! Application Engine
@@ -267,7 +301,13 @@ INTERFACE zif_aff_aifi_v1
       "! <p class="shorttext">Logging Engine</p>
       "! Logging Engine
       logging_engine     TYPE /aif/logging_engine_id,
-    END OF ty_engines .
+      "! <p class="shorttext">RAW Structure</p>
+      "! RAW Structure
+      raw_structure      TYPE /aif/if_ddic_struct_raw,
+      "! <p class="shorttext">SAP Structure</p>
+      "! SAP Structure
+      sap_structure      TYPE /aif/if_ddic_struct,
+    END OF ty_engines.
 
   TYPES:
     "! <p class="shorttext">Application Interface</p>
@@ -279,8 +319,8 @@ INTERFACE zif_aff_aifi_v1
       "! Header
       "! $required
       header               TYPE zif_aff_types_v1=>ty_header_60_cloud,
-      "! <p class="shorttext">Application Interface</p>
-      "! Application interface
+      "! <p class="shorttext">General Information</p>
+      "! General Information
       "! $required
       aif_interface        TYPE ty_aif_interface,
       "! <p class="shorttext">Recipient Assignment</p>
@@ -291,14 +331,14 @@ INTERFACE zif_aff_aifi_v1
       "! Structure Settings
       "! $required
       structure_settings   TYPE ty_structure_settings,
-      "! <p class="shorttext">Engines</p>
-      "! Engines
+      "! <p class="shorttext">Engines and Structures</p>
+      "! Engines and Structures
       "! $required
       engines              TYPE ty_engines,
       "! <p class="shorttext">Key Fields</p>
       "! Key Fields
       "! $required
       o_key_fields         TYPE ty_o_key_fields,
-    END OF ty_main .
+    END OF ty_main.
 
 ENDINTERFACE.

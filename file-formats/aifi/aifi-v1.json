@@ -55,8 +55,8 @@
       ]
     },
     "aifInterface": {
-      "title": "Application Interface",
-      "description": "Application interface",
+      "title": "General Information",
+      "description": "General Information",
       "type": "object",
       "properties": {
         "integrationType": {
@@ -83,17 +83,72 @@
           ],
           "default": "soap"
         },
-        "monitoredObject": {
-          "title": "Monitored Object",
-          "description": "Monitored Object",
+        "soapClass": {
+          "title": "SOAP Class",
+          "description": "SOAP Class",
           "type": "string",
-          "maxLength": 40
+          "maxLength": 30
         },
-        "namespace": {
-          "title": "AIF Namespace",
-          "description": "AIF Namespace",
+        "soapMethod": {
+          "title": "SOAP Method",
+          "description": "SOAP Method",
           "type": "string",
-          "maxLength": 6
+          "maxLength": 30
+        },
+        "soapRecordType": {
+          "title": "SOAP Record Type",
+          "description": "SOAP Record Type",
+          "type": "string",
+          "maxLength": 45
+        },
+        "repositoryId": {
+          "title": "Repository ID",
+          "description": "Repository ID",
+          "type": "string",
+          "maxLength": 10
+        },
+        "registrationId": {
+          "title": "Registration ID",
+          "description": "Registration ID",
+          "type": "string",
+          "maxLength": 36
+        },
+        "registrationVersion": {
+          "title": "Registration Version",
+          "description": "Registration Version",
+          "type": "string",
+          "maxLength": 4,
+          "pattern": "^[0-9]+$"
+        },
+        "topic": {
+          "title": "Topic",
+          "description": "Topic",
+          "type": "string",
+          "maxLength": 255
+        },
+        "operationId": {
+          "title": "Operation ID",
+          "description": "Operation ID",
+          "type": "string",
+          "maxLength": 30
+        },
+        "operationVariantId": {
+          "title": "Operation Variant ID",
+          "description": "Operation Variant ID",
+          "type": "string",
+          "maxLength": 10,
+          "pattern": "^[0-9]+$"
+        },
+        "operationVaraint": {
+          "title": "Operation Variant",
+          "description": "Operation Variant",
+          "type": "string"
+        },
+        "namespaceObject": {
+          "title": "Namespace Object",
+          "description": "Namespace Object",
+          "type": "string",
+          "maxLength": 15
         },
         "interfaceName": {
           "title": "AIF Interface Name",
@@ -128,6 +183,21 @@
           "pattern": "^[0-9]+$",
           "default": "90"
         },
+        "direction": {
+          "title": "Direction",
+          "description": "Direction",
+          "type": "string",
+          "enum": [
+            "inbound",
+            "outbound",
+            "both"
+          ],
+          "enumDescriptions": [
+            "Inbound",
+            "Outbound",
+            "Both"
+          ]
+        },
         "preprocessing": {
           "title": "Preprocessing",
           "description": "Preprocessing",
@@ -147,40 +217,22 @@
           "title": "Postprocessing",
           "description": "Postprocessing",
           "type": "boolean"
-        },
-        "rawStructure": {
-          "title": "RAW Structure",
-          "description": "RAW Structure",
-          "type": "string",
-          "maxLength": 30
-        },
-        "sapStructure": {
-          "title": "SAP Structure",
-          "description": "SAP Structure",
-          "type": "string",
-          "maxLength": 30
-        },
-        "direction": {
-          "title": "Direction",
-          "description": "Direction",
-          "type": "string",
-          "enum": [
-            "inbound",
-            "outbound",
-            "both"
-          ],
-          "enumDescriptions": [
-            "Inbound",
-            "Outbound",
-            "Both"
-          ]
         }
       },
       "additionalProperties": false,
       "required": [
         "integrationType",
-        "monitoredObject",
-        "namespace",
+        "soapClass",
+        "soapMethod",
+        "soapRecordType",
+        "repositoryId",
+        "registrationId",
+        "registrationVersion",
+        "topic",
+        "operationId",
+        "operationVariantId",
+        "operationVaraint",
+        "namespaceObject",
         "interfaceName",
         "interfaceVersion"
       ]
@@ -194,22 +246,15 @@
         "description": "Recipient",
         "type": "object",
         "properties": {
-          "namespace": {
-            "title": "Namespace",
-            "description": "Namespace",
-            "type": "string",
-            "maxLength": 6
-          },
           "recipient": {
             "title": "Alert Recipient",
             "description": "Alert Recipient",
             "type": "string",
-            "maxLength": 30
+            "maxLength": 40
           }
         },
         "additionalProperties": false,
         "required": [
-          "namespace",
           "recipient"
         ]
       }
@@ -249,7 +294,8 @@
           "useDdic": {
             "title": "Use DDIC",
             "description": "Use DDIC",
-            "type": "boolean"
+            "type": "boolean",
+            "default": true
           },
           "description": {
             "title": "Description",
@@ -284,8 +330,8 @@
       }
     },
     "engines": {
-      "title": "Engines",
-      "description": "Engines",
+      "title": "Engines and Structures",
+      "description": "Engines and Structures",
       "type": "object",
       "properties": {
         "applicationEngine": {
@@ -315,6 +361,18 @@
           "type": "string",
           "maxLength": 3,
           "pattern": "^[0-9]+$"
+        },
+        "rawStructure": {
+          "title": "RAW Structure",
+          "description": "RAW Structure",
+          "type": "string",
+          "maxLength": 30
+        },
+        "sapStructure": {
+          "title": "SAP Structure",
+          "description": "SAP Structure",
+          "type": "string",
+          "maxLength": 30
         }
       },
       "additionalProperties": false
@@ -386,6 +444,43 @@
                 "description": "Is SAP or RAW Structure?",
                 "type": "boolean"
               },
+              "qualifierFieldName": {
+                "title": "Qualifier Field Name",
+                "description": "Qualifier Field Name",
+                "type": "string",
+                "maxLength": 120
+              },
+              "qualifierOperator": {
+                "title": "Qualifier Operator",
+                "description": "Qualifier Operator",
+                "type": "string",
+                "enum": [
+                  "",
+                  "equal",
+                  "notEqual",
+                  "containsPattern",
+                  "noPattern",
+                  "containsAnyCharacter",
+                  "notContainsAnyCharacter",
+                  "matches(regularExpression)"
+                ],
+                "enumDescriptions": [
+                  "",
+                  "Equal",
+                  "Not Equal",
+                  "Contains Pattern",
+                  "No Pattern",
+                  "Contains Any Character",
+                  "Not Contains Any Character",
+                  "Matches (regular expression)"
+                ]
+              },
+              "qualifierValue": {
+                "title": "Qualifier Value",
+                "description": "Qualifier Value",
+                "type": "string",
+                "maxLength": 45
+              },
               "multiSelectionType": {
                 "title": "Mulitple Selection Type",
                 "description": "Mulitple Selection Type",
@@ -400,6 +495,12 @@
                   "Multiple selection",
                   "Document ID selection"
                 ]
+              },
+              "idxTable": {
+                "title": "Message Index Table",
+                "description": "Message Index Table",
+                "type": "string",
+                "maxLength": 30
               },
               "showTreeNode": {
                 "title": "Show Tree Node in View 1 Tree",
@@ -481,17 +582,6 @@
                 "type": "string",
                 "maxLength": 20
               },
-              "messageMonitorShow": {
-                "title": "Display in Message Monitoring",
-                "description": "Display in Message Monitoring",
-                "type": "boolean",
-                "default": true
-              },
-              "messageMonitorDefault": {
-                "title": "Display in Message Monitoring by Default",
-                "description": "Display in Message Monitoring by Default",
-                "type": "boolean"
-              },
               "semanticObject": {
                 "title": "Semantic Object",
                 "description": "Semantic Object",
@@ -503,6 +593,17 @@
                 "description": "Semantic Action",
                 "type": "string",
                 "maxLength": 60
+              },
+              "messageMonitorShow": {
+                "title": "Display in Message Monitoring",
+                "description": "Display in Message Monitoring",
+                "type": "boolean",
+                "default": true
+              },
+              "messageMonitorDefault": {
+                "title": "Display in Message Monitoring by Default",
+                "description": "Display in Message Monitoring by Default",
+                "type": "boolean"
               }
             },
             "additionalProperties": false,
