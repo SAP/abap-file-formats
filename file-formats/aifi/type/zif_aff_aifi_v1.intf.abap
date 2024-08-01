@@ -31,43 +31,53 @@ INTERFACE zif_aff_aifi_v1
       "! <p class="shorttext">SOAP Class</p>
       "! SOAP Class
       "! $required
-      soap_class               TYPE /aif/proxy_outbound, " SOAP / web service class is stored in /AIF/T_FINF-PROXYCLASSNAMECL
+      " SOAP / web service class is stored in /AIF/T_FINF-PROXYCLASSNAMECL
+      soap_class               TYPE /aif/proxy_outbound,
       "! <p class="shorttext">SOAP Method</p>
       "! SOAP Method
       "! $required
-      soap_method              TYPE /aif/proxy_method, " SOAP / web service method is stored in /AIF/T_FINF-PRX_METHOD
+      " SOAP / web service method is stored in /AIF/T_FINF-PRX_METHOD
+      soap_method              TYPE /aif/proxy_method,
       "! <p class="shorttext">SOAP Record Type</p>
       "! SOAP Record Type
       "! $required
-      soap_record_type         TYPE /aif/rectyperaw, " SOAP / web service record type is stored in /AIF/T_FINF-RECTYPERAW
+      " SOAP / web service record type is stored in /AIF/T_FINF-RECTYPERAW
+      soap_record_type         TYPE /aif/rectyperaw,
       "! <p class="shorttext">Repository ID</p>
       "! Repository ID
       "! $required
-      repository_id            TYPE /iwxbe/reg_repository_id, " EEE
+      " EEE - Enterprise Event Engine
+      repository_id            TYPE /iwxbe/reg_repository_id,
       "! <p class="shorttext">Registration ID</p>
       "! Registration ID
       "! $required
-      registration_id          TYPE /iwxbe/reg_id, " EEE
+      " EEE - Enterprise Event Engine
+      registration_id          TYPE /iwxbe/reg_id,
       "! <p class="shorttext">Registration Version</p>
       "! Registration Version
       "! $required
-      registration_version     TYPE /iwxbe/reg_version, " EEE
+      " EEE - Enterprise Event Engine
+      registration_version     TYPE /iwxbe/reg_version,
       "! <p class="shorttext">Topic</p>
       "! Topic
       "! $required
-      topic                    TYPE /iwxbe/descr_topic, " EEE
+      " EEE - Enterprise Event Engine
+      topic                    TYPE /iwxbe/descr_topic,
       "! <p class="shorttext">Operation ID</p>
       "! Operation ID
       "! $required
-      operation_id             TYPE /aif/bgp_opid_e,      " bgPF
+      " bgPF
+      operation_id             TYPE /aif/bgp_opid_e,
       "! <p class="shorttext">Operation Variant ID</p>
       "! Operation Variant ID
       "! $required
-      operation_variant_id     TYPE /aif/bgp_variant_id_e, " bgPF
+      " bgPF
+      operation_variant_id     TYPE /aif/bgp_variant_id_e,
       "! <p class="shorttext">Operation Variant</p>
       "! Operation Variant
       "! $required
-      operation_varaint        TYPE /aif/bgp_variant_e, " bgPF
+      " bgPF
+      operation_varaint        TYPE /aif/bgp_variant_e,
       "! <p class="shorttext">Namespace Object</p>
       "! Namespace Object
       "! $required
@@ -96,21 +106,20 @@ INTERFACE zif_aff_aifi_v1
       direction                TYPE /aif/ifdirection,
       "! <p class="shorttext">Preprocessing</p>
       "! Preprocessing
-      preprocessing            TYPE boolean,                 " /aif/pre_processing,
+      " /AIF/PRE_PROCESSING
+      preprocessing            TYPE boolean,
       "! <p class="shorttext">Proxy XML Transformation</p>
       "! Use Proxy XML Transformation
-      proxy_xml_transformation TYPE boolean,                 " /aif/proxy_xml_transformation,
+      " /AIF/PROXY_XML_TRANSFORMATION
+      proxy_xml_transformation TYPE boolean,
       "! <p class="shorttext">Extend XML Handling</p>
       "! Extend XML Handling
-      extend_xml_handling      TYPE boolean,                 " /aif/prx_xxml,
+      " /AIF/PRX_XXML
+      extend_xml_handling      TYPE boolean,
       "! <p class="shorttext">Postprocessing</p>
       "! Postprocessing
       postprocesssing          TYPE boolean,
     END OF ty_aif_interface.
-
-  "! <p class="shorttext">Application Interfaces</p>
-  "! Application interfaces
-  TYPES ty_aif_interfaces TYPE STANDARD TABLE OF ty_aif_interface WITH DEFAULT KEY.
 
   TYPES:
     "! <p class="shorttext">Recipient</p>
@@ -156,11 +165,13 @@ INTERFACE zif_aff_aifi_v1
       selopt_name              TYPE /aif/stexti,
       "! <p class="shorttext">Select-Option</p>
       "! Is Select-Option?
-      is_selopt                TYPE boolean,                   " /aif/fld_is_select_opt,
+      " /AIF/FLD_IS_SELECT_OPT
+      is_selopt                TYPE boolean,
       "! <p class="shorttext">Display as Column</p>
       "! Display as Column
       "! $default 'X'
-      column_display           TYPE boolean,                   " /aif/is_col,
+      " /AIF/IS_COL
+      column_display           TYPE boolean,
       "! <p class="shorttext">Field Name</p>
       "! Field Name in Define Key Fields
       field_name               TYPE /aif/lfieldname_kflds,
@@ -169,7 +180,8 @@ INTERFACE zif_aff_aifi_v1
       sap_raw_structure        TYPE /aif/raw_or_sap_kflds,
       "! <p class="shorttext">Enable Key Field Qualifier</p>
       "! Is SAP or RAW Structure?
-      enable_qualifier         TYPE boolean,                   " /aif/enable_qualifier,
+      " /AIF/ENABLE_QUALIFIER
+      enable_qualifier         TYPE boolean,
       "! <p class="shorttext">Qualifier Field Name</p>
       "! Qualifier Field Name
       qualifier_field_name     TYPE /aif/qualifier_fld_name_kfld,
@@ -187,7 +199,8 @@ INTERFACE zif_aff_aifi_v1
       idx_table                TYPE /aif/msg_tbl,
       "! <p class="shorttext">Show Tree Node in View 1 Tree</p>
       "! Show Tree Node in View 1 Tree
-      show_tree_node           TYPE boolean,                   " /aif/is_hidden, " swap to positive stature
+      " /AIF/IS_HIDDEN, swap to positive stature
+      show_tree_node           TYPE boolean,
       "! <p class="shorttext">Parent Field Sequence Number</p>
       "! Parent Field Sequence Number
       parent_field_sequence    TYPE /aif/field_number_parent,
@@ -224,10 +237,12 @@ INTERFACE zif_aff_aifi_v1
       "! <p class="shorttext">Display in Message Monitoring</p>
       "! Display in Message Monitoring
       "! $default 'X'
-      message_monitor_show     TYPE boolean,                   " /aif/not_show_field,
+      " /AIF/NOT_SHOW_FIELD
+      message_monitor_show     TYPE boolean,
       "! <p class="shorttext">Display in Message Monitoring by Default</p>
       "! Display in Message Monitoring by Default
-      message_monitor_default  TYPE boolean,                   " /aif/is_default_field,
+      " /AIF/IS_DEFAULT_FIELD
+      message_monitor_default  TYPE boolean,
     END OF ty_key_field.
 
   "! <p class="shorttext">Key Fields</p>
