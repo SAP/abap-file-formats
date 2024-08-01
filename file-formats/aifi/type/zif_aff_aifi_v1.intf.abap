@@ -110,7 +110,6 @@ INTERFACE zif_aff_aifi_v1
 
   "! <p class="shorttext">Application Interfaces</p>
   "! Application interfaces
-  TYPES ty_aif_interfaces TYPE STANDARD TABLE OF ty_aif_interface WITH DEFAULT KEY.
 
   TYPES:
     "! <p class="shorttext">Recipient</p>
