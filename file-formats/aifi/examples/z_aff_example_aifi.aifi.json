@@ -1,0 +1,82 @@
+{
+    "header": {
+      "abapLanguageVersion": "standard"
+    },
+    "aifInterface": {
+      "integrationType": "soap",
+      "indexTable": "/AIF/STD_IDX_TBL",
+      "appLogLifetime": "90",
+      "preprocessing": false,
+      "proxyXmlTransformation": false,
+      "extendXmlHandling": false,
+      "postprocesssing": false,
+      "direction": "inbound"
+    },
+    "recipientAssignment": [],
+    "structureSettings": [],
+    "engines": {},
+    "oKeyFields": {
+      "keyFieldsTable": [
+        {
+          "keyFieldName": "/AIF/TEST1",
+          "dataElement": "string",
+          "isSelopt": false,
+          "columnDisplay": true,
+          "sapRawStructure": "sourceStructure(rawForInbound,SapForOutbound)",
+          "enableQualifier": false,
+          "multiSelectionType": "singleSelection",
+          "showTreeNode": false,
+          "alertRecipientRelevant": "notRelevantForAlertRecipientDetermination",
+          "keyFieldRulesFields": [
+            {
+              "keyFieldRuleField": "TEST_FIELD1"
+            }
+          ],
+          "messageMonitorShow": true,
+          "messageMonitorDefault": false
+        },
+        {
+          "keyFieldName": "/AIF/TEST2",
+          "dataElement": "string",
+          "isSelopt": false,
+          "columnDisplay": true,
+          "sapRawStructure": "sourceStructure(rawForInbound,SapForOutbound)",
+          "enableQualifier": false,
+          "multiSelectionType": "singleSelection",
+          "showTreeNode": false,
+          "alertRecipientRelevant": "notRelevantForAlertRecipientDetermination",
+          "keyFieldRulesFields": [
+            {
+              "keyFieldRuleField": "TEST_FIELD2"
+            }
+          ],
+          "messageMonitorShow": true,
+          "messageMonitorDefault": false
+        },
+        {
+          "keyFieldName": "AIF_TEST3",
+          "dataElement": "boolean",
+          "isSelopt": false,
+          "columnDisplay": true,
+          "sapRawStructure": "sourceStructure(rawForInbound,SapForOutbound)",
+          "enableQualifier": false,
+          "multiSelectionType": "singleSelection",
+          "showTreeNode": false,
+          "alertRecipientRelevant": "notRelevantForAlertRecipientDetermination",
+          "keyFieldRulesFields": [
+            {
+              "keyFieldRuleField": "NON"
+            },
+            {
+              "keyFieldRuleField": "SENSE"
+            },
+            {
+              "keyFieldRuleField": "7"
+            }
+          ],
+          "messageMonitorShow": true,
+          "messageMonitorDefault": false
+        }
+      ]
+    }
+  }
