@@ -529,14 +529,40 @@ INTERFACE zif_aff_uiad_v1
 
     ty_tiles TYPE STANDARD TABLE OF ty_tile WITH DEFAULT KEY.
 
-  TYPES:
-    "! <p class="shorttext">Lifecycle</p>
-    "! Lifecycle state
-    BEGIN OF ty_lifecycle,
+  "! <p class="shorttext">Life Cycle Deprecation Status</p>
+  "! Life Cycle deprecation status
+  "! $values {@link zif_aff_uiad_v1.data:co_deprecate_status}
+  "! $default {@link zif_aff_uiad_v1.data:co_deprecate_status.active}
+  TYPES ty_deprecate_status TYPE c LENGTH 1.
+
+  CONSTANTS:
+    "! <p class="shorttext">Life Cycle Deprecation Status</p>
+    "! Life Cycle deprecation sStatus
+    BEGIN OF co_deprecate_status,
+
+      "! <p class="shorttext">Active</p>
+      "! LADI is active
+      active     TYPE ty_tile_type VALUE ' ',
 
       "! <p class="shorttext">Deprecated</p>
-      "! Application is deprecated
-      deprecated TYPE abap_bool,
+      "! LADI is deprecated
+      deprecated TYPE ty_tile_type VALUE 'D',
+
+      "! <p class="shorttext">Obsolete</p>
+      "! LADI is obsolete
+      obsolete   TYPE ty_tile_type VALUE 'O',
+
+    END OF co_deprecate_status.
+
+
+  TYPES:
+    "! <p class="shorttext">Life Cycle Deprecation</p>
+    "! Life cycle deprecation
+    BEGIN OF ty_lifecycle,
+
+      "! <p class="shorttext">Status</p>
+      "! Deprecation status
+      deprecated TYPE ty_deprecate_status,
 
       "! <p class="shorttext">Successor</p>
       "! LADI of the successor application
@@ -590,8 +616,8 @@ INTERFACE zif_aff_uiad_v1
       "! $required
       tiles                    TYPE ty_tiles,
 
-      "! <p class="shorttext">Lifecycle</p>
-      "! Lifecycle state
+      "! <p class="shorttext">Life Cycle</p>
+      "! Life cycle
       lifecycle                TYPE ty_lifecycle,
 
     END OF ty_main.
