@@ -306,24 +306,24 @@ INTERFACE zif_aff_cfdf_v2
     "! Custom field
     BEGIN OF ty_main,
       "! $required
-      format_version               TYPE zif_aff_types_v1=>ty_format_version,
+      format_version              TYPE zif_aff_types_v1=>ty_format_version,
 
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header                       TYPE zif_aff_types_v1=>ty_header_60_no_abap_lv,
+      header                      TYPE zif_aff_types_v1=>ty_header_60_no_abap_lv,
 
       "! <p class="shorttext">External Name</p>
       "! External name
       "! $required
-      external_name                TYPE ty_field_name,
+      external_name               TYPE ty_field_name,
 
       "! <p class="shorttext">Type</p>
       "! Type
       "! $required
       "! $values {@link zif_aff_cfdf_v2.data:co_type}
       "! $default {@link zif_aff_cfdf_v2.data:co_type.text}
-      type                         TYPE ty_type,
+      type                        TYPE ty_type,
 
       "! <p class="shorttext">Type Details</p>
       "! Type details
@@ -363,55 +363,55 @@ INTERFACE zif_aff_cfdf_v2
 
       "! <p class="shorttext">Data Protection and Privacy</p>
       "! Data protection and privacy
-      data_protection_and_privacy  TYPE ty_gs_dpp_properties,
+      data_protection_and_privacy TYPE ty_gs_dpp_properties,
 
       "! <p class="shorttext">Reference to Characteristic</p>
       "! Reference to characteristic
-      characteristic_reference     TYPE ty_gs_characteristic_reference,
+      characteristic_reference    TYPE ty_gs_characteristic_reference,
 
       "! <p class="shorttext">Labels and Tooltips</p>
       "! Labels and tooltips
-      ui_texts                     TYPE ty_gt_ui_text,
+      ui_texts                    TYPE ty_gt_ui_text,
 
       "! <p class="shorttext">Code List Values</p>
       "! Code list values
-      code_list_values             TYPE ty_gt_code_list_value,
+      code_list_values            TYPE ty_gt_code_list_value,
 
       "! <p class="shorttext">Code List Descriptions</p>
       "! Code list descriptions
-      code_list_descriptions       TYPE ty_gt_code_list_value_descr,
+      code_list_descriptions      TYPE ty_gt_code_list_value_descr,
 
       "! <p class="shorttext">Extended Business Context Details</p>
       "! Extended business context details
-      extended_business_contexts   TYPE ty_gt_extended_bus_context,
+      extended_business_contexts  TYPE ty_gt_extended_bus_context,
 
       "! <p class="shorttext">Extended CDS View Details</p>
       "! Extended CDS view details
-      extended_cds_views           TYPE ty_gt_extended_cds_view,
+      extended_cds_views          TYPE ty_gt_extended_cds_view,
 
       "! <p class="shorttext">Extended OData Service Details</p>
       "! Extended OData service details
-      extended_odata_services      TYPE ty_gt_extended_odata_service,
+      extended_odata_services     TYPE ty_gt_extended_odata_service,
 
       "! <p class="shorttext">Extended Business Scenario Details</p>
       "! Extended business scenario details
-      extended_business_scenarios  TYPE ty_gt_extended_bus_scenario,
+      extended_business_scenarios TYPE ty_gt_extended_bus_scenario,
 
       "! <p class="shorttext">Extended Dynpro Context Details</p>
       "! Extended dynpro context details
-      extended_dynpro_contexts     TYPE ty_gt_extended_dynpro_context,
+      extended_dynpro_contexts    TYPE ty_gt_extended_dynpro_context,
 
       "! <p class="shorttext">Extended SOAP Service Details</p>
       "! Extended SOAP service details
-      extended_soap_services       TYPE ty_gt_extended_soap_service,
+      extended_soap_services      TYPE ty_gt_extended_soap_service,
 
       "! <p class="shorttext">Value Help Key Mapping Details</p>
       "! Value help key mapping details
-      value_help_key_mappings      TYPE ty_gt_value_help_key_mapping,
+      value_help_key_mappings     TYPE ty_gt_value_help_key_mapping,
 
       "! <p class="shorttext">Value Help Binding Details</p>
       "! Value help binding details
-      value_help_bindings          TYPE ty_gt_value_help_binding,
+      value_help_bindings         TYPE ty_gt_value_help_binding,
     END OF ty_main.
 
   CONSTANTS:

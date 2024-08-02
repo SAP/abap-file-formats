@@ -1,0 +1,20 @@
+name: Compatability Check
+
+on:
+  pull_request:
+
+jobs:
+  compatible:
+    name: Is change compatible
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    - uses: actions/setup-node@v4
+    - name: Run script
+      run: |
+        cd compatibility-check
+        npm ci
+        npm run check

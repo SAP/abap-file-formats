@@ -4,7 +4,7 @@
 
 ## Description
 
-This project provides file format definitions of ABAP repository objects.
+This project provides file format definitions of [ABAP repository objects][1].
 
 The project is still in an early phase. We plan to modify and extend this document as our understanding improves. Since the ABAP file formats can still change in the future, we do not recommend using them in a productive environment, yet.
 
@@ -54,3 +54,5 @@ For validation and annotation of JSON data, there is a visual studio code extens
 
 <!-- markdown-link-check-disable-next-line -->
 Please see our [LICENSE](LICENSE) for copyright and license information. Detailed information including third-party components and their licensing/copyright information is available via the [REUSE tool](https://api.reuse.software/info/github.com/SAP/abap-file-formats).
+
+[1]: ./docs/glossary.md#abap-repository-object

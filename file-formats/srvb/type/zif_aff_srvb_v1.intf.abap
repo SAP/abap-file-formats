@@ -21,14 +21,14 @@ INTERFACE zif_aff_srvb_v1
       "! <p class="shorttext">Service Version</p>
       "! Service version
       "! $required
-      service_version         TYPE c LENGTH 24,
+      service_version       TYPE c LENGTH 24,
       "! <p class="shorttext">Service Build Version</p>
       "! Service build version
-      service_build_version   TYPE n LENGTH 10,
+      service_build_version TYPE n LENGTH 10,
       "! <p class="shorttext">Service Definition</p>
       "! Service definition
       "! $required
-      service_definition TYPE c LENGTH 30,
+      service_definition    TYPE c LENGTH 30,
     END OF ty_service_content.
   TYPES: ty_service_contents TYPE TABLE OF ty_service_content WITH DEFAULT KEY.
   TYPES:
@@ -50,11 +50,11 @@ INTERFACE zif_aff_srvb_v1
     "! Service Binding properties
     BEGIN OF ty_main,
       "! $required
-      format_version     TYPE zif_aff_types_v1=>ty_format_version,
+      format_version        TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header             TYPE zif_aff_types_v1=>ty_header_60,
+      header                TYPE zif_aff_types_v1=>ty_header_60,
       "! <p class="shorttext">Binding Type</p>
       "! Service Binding type
       "! $required
@@ -66,7 +66,7 @@ INTERFACE zif_aff_srvb_v1
       "! <p class="shorttext">Services</p>
       "! Services
       "! $required
-      services           TYPE ty_services,
+      services              TYPE ty_services,
     END OF ty_main.
 
 ENDINTERFACE.

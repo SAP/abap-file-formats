@@ -17,13 +17,17 @@
       "description": "Header",
       "type": "object",
       "properties": {
+        "description": {
+          "title": "Description",
+          "description": "Description of the ABAP object",
+          "type": "string",
+          "maxLength": 60
+        },
         "originalLanguage": {
           "title": "Original Language",
           "description": "Original language of the ABAP object",
           "type": "string",
-          "minLength": 2,
-          "maxLength": 2,
-          "pattern": "^[a-z]+$"
+          "minLength": 2
         },
         "abapLanguageVersion": {
           "title": "ABAP Language Version",
@@ -49,6 +53,7 @@
       },
       "additionalProperties": false,
       "required": [
+        "description",
         "originalLanguage"
       ]
     },

@@ -12,7 +12,7 @@ INTERFACE zif_aff_eeec_v1
       "! <p class="shorttext synchronized" lang="en">Type</p>
       "! Type
       "! $required
-      type  TYPE ty_type,
+      type        TYPE ty_type,
       "! <p class="shorttext synchronized" lang="en">Entity Name</p>
       "! Entity name
       "! $required
@@ -24,7 +24,7 @@ INTERFACE zif_aff_eeec_v1
     "! <p class="shorttext">Event Consumption Model</p>
     BEGIN OF ty_main,
       "! $required
-      format_version TYPE zif_aff_types_v1=>ty_format_version,
+      format_version   TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
@@ -38,7 +38,7 @@ INTERFACE zif_aff_eeec_v1
       "! $required
       descriptor_class TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext synchronized" lang="en">Event Types</p>
-      event_types       TYPE ty_t_event_type,
+      event_types      TYPE ty_t_event_type,
     END OF ty_main.
 
 ENDINTERFACE.
