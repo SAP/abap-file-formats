@@ -8,6 +8,6 @@
   "engine": "sqlEngine",
   "sqlProperties": {
     "amdpReference": "ZCL_DSFI_EXAMPLE=>EXECUTE",
-    "autoExposure": true
+    "autoExposedInSqlServices": true
   }
 }
