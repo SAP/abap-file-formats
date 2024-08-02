@@ -92,7 +92,7 @@
           "maxLength": 100
         },
         "autoExposedInSqlServices": {
-          "title": "Auto Exposed in SQL Services",
+          "title": "Automatically Exposed in SQL Services",
           "description": "Flag whether or not the SQL implementation of the CDS scalar function will be automatically exposed in all SQL services",
           "type": "boolean"
         }
