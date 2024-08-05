@@ -13,7 +13,7 @@ INTERFACE zif_aff_uist_v1
       "! Sort priority
       "! $minimum: -9999.99999
       "! $maximum: 9999.99999
-      sort_priority TYPE p LENGTH 9 DECIMALS 5,
+      sort_priority TYPE p LENGTH 5 DECIMALS 5,
       "! <p class="shorttext">Merge ID</p>
       "! Merge ID
       merge_id      TYPE c LENGTH 35,
