@@ -627,7 +627,7 @@
         ]
       }
     },
-    "lifecycle": {
+    "lifeCycle": {
       "title": "Life Cycle",
       "description": "Life cycle",
       "type": "object",
