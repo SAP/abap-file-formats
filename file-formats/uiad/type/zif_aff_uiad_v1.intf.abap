@@ -530,14 +530,14 @@ INTERFACE zif_aff_uiad_v1
     ty_tiles TYPE STANDARD TABLE OF ty_tile WITH DEFAULT KEY.
 
   "! <p class="shorttext">Life Cycle Deprecation Status</p>
-  "! Life Cycle deprecation status
+  "! Life cycle deprecation status
   "! $values {@link zif_aff_uiad_v1.data:co_deprecate_status}
   "! $default {@link zif_aff_uiad_v1.data:co_deprecate_status.active}
   TYPES ty_deprecate_status TYPE c LENGTH 1.
 
   CONSTANTS:
     "! <p class="shorttext">Life Cycle Deprecation Status</p>
-    "! Life Cycle deprecation sStatus
+    "! Life cycle deprecation status
     BEGIN OF co_deprecate_status,
 
       "! <p class="shorttext">Active</p>
@@ -558,7 +558,7 @@ INTERFACE zif_aff_uiad_v1
   TYPES:
     "! <p class="shorttext">Life Cycle Deprecation</p>
     "! Life cycle deprecation
-    BEGIN OF ty_lifecycle,
+    BEGIN OF ty_life_cycle,
 
       "! <p class="shorttext">Status</p>
       "! Deprecation status
@@ -568,7 +568,7 @@ INTERFACE zif_aff_uiad_v1
       "! LADI of the successor application
       successor  TYPE c LENGTH 32,
 
-    END OF ty_lifecycle.
+    END OF ty_life_cycle.
 
   TYPES:
     "! <p class="shorttext">LADI</p>
@@ -618,7 +618,7 @@ INTERFACE zif_aff_uiad_v1
 
       "! <p class="shorttext">Life Cycle</p>
       "! Life cycle
-      lifecycle                TYPE ty_lifecycle,
+      life_cycle               TYPE ty_life_cycle,
 
     END OF ty_main.
 
