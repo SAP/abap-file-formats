@@ -6,9 +6,9 @@
 ---
 
 ## Table of Contents
-* [File Names](#File-Names)
-* [File Extensions](#File-Extensions)
-* [Formatting Conventions](#Formatting-Conventions)
+* [File Names](#file-names)
+* [File Extensions](#file-extensions)
+* [Formatting Conventions](#formatting-conventions)
 
 ## File Names
 
