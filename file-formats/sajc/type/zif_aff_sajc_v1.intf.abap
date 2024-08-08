@@ -94,6 +94,27 @@ INTERFACE zif_aff_sajc_v1
       list_box     TYPE ty_screen_element VALUE 'L',
     END OF co_screen_element.
 
+  "! <p class="shorttext">Value Help Type</p>
+  "! Type of the value help
+  "! $values {@link zif_aff_sajc_v1.data:co_value_help_type}
+  "! $default {@link zif_aff_sajc_v1.data:co_value_help_type.none}
+  TYPES ty_value_help_type TYPE c LENGTH 1.
+
+  CONSTANTS:
+    "! <p class="shorttext">Value Help Type</p>
+    "! Type of the value help
+    BEGIN OF co_value_help_type,
+      "! <p class="shorttext">None</p>
+      "! No or unsupported value help type
+      none     TYPE ty_value_help_type VALUE ' ',
+      "! <p class="shorttext">CDS view</p>
+      "! Value help based on a CDS view
+      cds_view TYPE ty_value_help_type VALUE 'V',
+      "! <p class="shorttext">Domain</p>
+      "! Value help based on the 'Fixed values' list of a dictionary domain
+      domain   TYPE ty_value_help_type VALUE 'O',
+    END OF co_value_help_type.
+
   TYPES:
     "! <p class="shorttext">Parameter</p>
     "! Parameter of the class which is executed within the job
@@ -129,6 +150,14 @@ INTERFACE zif_aff_sajc_v1
       "! <p class="shorttext">Radio Button Group</p>
       "! Name of the radio button group if the parameter is a radio button
       radio_button_group   TYPE ty_radio_button_group,
+      "! <p class="shorttext">Value Help</p>
+      "! Name of the object on which the value help is based:
+      "! for value helps based on a CDS view: name of the data definition;
+      "! for value helps based on a domain: name of the domain
+      value_help           TYPE zif_aff_types_v1=>ty_object_name_30,
+      "! <p class="shorttext">Value Help Type</p>
+      "! Type of the value help (based on a CDS view, or based on the 'Fixed values' list of a dictionary domain)
+      value_help_type      TYPE ty_value_help_type,
       "! <p class="shorttext">Backend Call</p>
       "! Flag indicating whether a call of the backend system is triggered after a parameter value change to check it
       backend_call         TYPE abap_bool,

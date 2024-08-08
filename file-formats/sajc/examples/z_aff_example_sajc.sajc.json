@@ -1,11 +1,11 @@
 {
   "formatVersion": "1",
   "header": {
-    "description": "Catalog Entry of CL_APJ_DEMO_REPORT",
+    "description": "Catalog Entry of CL_APJ_DEMO_CLASS",
     "originalLanguage": "en"
   },
   "generalInformation": {
-    "className": "CL_APJ_DEMO_REPORT"
+    "className": "CL_APJ_DEMO_CLASS"
   },
   "exitClasses": {
     "check": "CL_APJ_HOME_DEMO_CHECK",
@@ -41,65 +41,93 @@
   ],
   "parameters": [
     {
-      "name": "P_BUY_C",
-      "group": "GRP_BUYER"
+      "name": "PROCESS_BUYERS",
+      "title": "Process Buyers",
+      "group": "GRP_BUYER",
+      "screenElement": "checkbox"
     },
     {
-      "name": "S_PLANT",
+      "name": "PLANT",
+      "title": "Plant",
       "group": "GRP_BUYER",
       "indented": true,
-      "enabledByParameter": "P_BUY_C"
+      "enabledByParameter": "PROCESS_BUYERS"
     },
     {
-      "name": "P_BUY_D",
+      "name": "BUYERS_DATE",
+      "title": "Date",
       "group": "GRP_BUYER",
       "indented": true,
       "mandatory": true,
-      "enabledByParameter": "P_BUY_C"
+      "enabledByParameter": "PROCESS_BUYERS"
     },
     {
-      "name": "P_SEL_C",
-      "group": "GRP_SELLER"
+      "name": "PROCESS_SELLERS",
+      "title": "Process Sellers",
+      "group": "GRP_SELLER",
+      "screenElement": "checkbox"
     },
     {
-      "name": "P_INCR",
+      "name": "INCREASE",
+      "title": "Increase",
       "group": "GRP_SELLER",
       "indented": true,
-      "enabledByParameter": "P_SEL_C",
+      "enabledByParameter": "PROCESS_SELLERS",
       "backendCall": true
     },
     {
-      "name": "P_SEV_N",
-      "group": "GRP_GEN"
+      "name": "SEVERITY_NONE",
+      "title": "No log",
+      "group": "GRP_GEN",
+      "screenElement": "radioButton",
+      "radioButtonGroup": "SEV"
     },
     {
-      "name": "P_SEV_S",
-      "group": "GRP_GEN"
+      "name": "SEVERITY_SUCCESS",
+      "title": "Log severity 'success'",
+      "group": "GRP_GEN",
+      "screenElement": "radioButton",
+      "radioButtonGroup": "SEV"
     },
     {
-      "name": "P_SEV_I",
-      "group": "GRP_GEN"
+      "name": "SEVERITY_INFORMATION",
+      "title": "Log severity 'info'",
+      "group": "GRP_GEN",
+      "screenElement": "radioButton",
+      "radioButtonGroup": "SEV"
     },
     {
-      "name": "P_SEV_E",
-      "group": "GRP_GEN"
+      "name": "SEVERITY_ERROR",
+      "title": "Log severity 'error'",
+      "group": "GRP_GEN",
+      "screenElement": "radioButton",
+      "radioButtonGroup": "SEV"
     },
     {
-      "name": "P_SEV_A",
-      "group": "GRP_GEN"
+      "name": "SEVERITY_ABORT",
+      "title": "Log severity 'abort'",
+      "group": "GRP_GEN",
+      "screenElement": "radioButton",
+      "radioButtonGroup": "SEV"
     },
     {
-      "name": "P_TEXT",
+      "name": "TEXT",
+      "title": "Job text",
       "group": "GRP_GEN",
       "mandatory": true,
       "textEditorLines": 4
     },
     {
-      "name": "P_JOB_T",
-      "group": "GRP_GEN"
+      "name": "JOB_TYPE",
+      "title": "Job type",
+      "group": "GRP_GEN",
+      "screenElement": "listBox",
+      "valueHelp": "APJ_JOB_TYPE_C",
+      "valueHelpType": "domain"
     },
     {
-      "name": "P_SEV_IN",
+      "name": "SEVERITY_AS_INTEGER",
+      "title": "Severity as integer",
       "hidden": true
     }
   ]
