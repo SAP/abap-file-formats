@@ -1,7 +1,7 @@
 {
   "formatVersion": "1",
   "header": {
-    "description": "Example for Job Template",
+    "description": "Template of CL_APJ_DEMO_CLASS",
     "originalLanguage": "en"
   },
   "generalInformation": {
@@ -10,53 +10,53 @@
   "parameters": {
     "singleValueParameters": [
       {
-        "name": "P_BUY_C",
-        "value": ""
-      },
-      {
-        "name": "P_BUY_D",
+        "name": "BUYERS_DATE",
         "value": "@STARTDAYPLUSDAY@:03"
       },
       {
-        "name": "P_INCR",
+        "name": "INCREASE",
         "value": ""
       },
       {
-        "name": "P_JOB_T",
-        "value": ""
+        "name": "JOB_TYPE",
+        "value": "A"
       },
       {
-        "name": "P_SEL_C",
-        "value": ""
-      },
-      {
-        "name": "P_SEV_A",
-        "value": ""
-      },
-      {
-        "name": "P_SEV_E",
-        "value": ""
-      },
-      {
-        "name": "P_SEV_I",
+        "name": "PROCESS_BUYERS",
         "value": "X"
       },
       {
-        "name": "P_SEV_N",
+        "name": "PROCESS_SELLERS",
+        "value": "X"
+      },
+      {
+        "name": "SEVERITY_ABORT",
         "value": ""
       },
       {
-        "name": "P_SEV_S",
+        "name": "SEVERITY_ERROR",
+        "value": "X"
+      },
+      {
+        "name": "SEVERITY_INFORMATION",
+        "value": "X"
+      },
+      {
+        "name": "SEVERITY_NONE",
         "value": ""
       },
       {
-        "name": "P_TEXT",
+        "name": "SEVERITY_SUCCESS",
+        "value": ""
+      },
+      {
+        "name": "TEXT",
         "value": "My application job demo"
       }
     ],
     "valueRangesParameters": [
       {
-        "name": "S_PLANT",
+        "name": "PLANT",
         "valueRanges": [
           {
             "sign": "include",
@@ -64,7 +64,7 @@
             "low": "WRK1"
           },
           {
-            "sign": "include",
+            "sign": "exclude",
             "option": "between",
             "low": "WRK3",
             "high": "WRK4"
