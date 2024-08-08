@@ -2,6 +2,7 @@
   "formatVersion": "1",
   "header": {
     "originalLanguage": "en",
+    "description": "Software Component Relations example object",
     "abapLanguageVersion": "cloudDevelopment"
   },
   "permissions": [

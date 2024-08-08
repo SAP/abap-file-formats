@@ -92,7 +92,7 @@ i | integer | `"minimum": -2147483648, "maximum": 2147483647`
 n | string | `"maxLength": <length of character field>, "pattern": "^[0-9]+$"`
 p | number | `"minimum": <minimum value>, "maximum": <maximum value>
 abap_bool | boolean |
-sy-langu | string | `"minLength": 2, "maxLength": 2, "pattern": "^[a-z]+$"`
+sy-langu | string | `"minLength": 2`
 table | array | if the table has unique keys, `"uniqueItems": true` is added to the schema; hashed tables are not supported
 
 ### Title
@@ -130,6 +130,15 @@ Choosing an ABAP data type with length specification results in the field `maxLe
 ```
 followed by a space and the desired value are used.
 
+### Regular Expressions
+
+In order to express constraints to the values of a field, it is possible to pass regular expressions enclosed in single quotes:
+
+```abap
+"! $pattern '<regex pattern, i.e. [a-z]*>'
+```
+The complete syntax of regular expressions is not widely supported, therefore it is recommended to stick on the subset described [here](https://json-schema.org/understanding-json-schema/reference/regular_expressions).
+
 ### Multiple Of
 The annotation
 ```abap
@@ -144,6 +153,9 @@ If a field is to be declared as "required" in the JSON Schema, the annotation
 "! $required
 ```
 is used.
+
+Please note, we do not recommend using the `$required` annotation for boolean fields, as omitting such a field in the JSON file is equivalent to setting its value to `false`.
+If the field is crucial to be serialized (even if the value is `false`), you can use the annotation `$showAlways`.
 
 ### Always Shown Fields
 Normally, if an ABAP object is serialized, only the components of the corresponding type with a non-initial value are written to the JSON data file. If a component shall be shown regardless to its value, the annotation
@@ -196,7 +208,6 @@ Remark: If an enum is used, it should be checked if one of the following points 
 2. The field with enum values has a specified default value.
 
 In case additional values for the enum should be added compatibly later, a default value must always be specified (see [Format Versions and Compatibility](#format-versions-and-compatibility)). If systems don't support the new enumeration value (e.g., in lower releases), the value will be changed to the default value by the file format implementations.
-
 
 The order of the comments and annotations presented here is important: First, there is the comment for the title followed by the one for the description, in case they are both provided. After these two, the remaining annotations are always located. Between them, the order is irrelevant.
 
@@ -306,9 +317,7 @@ This leads to the following generated JSON schema:
           "title": "Original Language",
           "description": "Original language of the ABAP object",
           "type": "string",
-          "minLength": 2,
-          "maxLength": 2,
-          "pattern": "^[a-z]+$"
+          "minLength": 2
         },
         "abapLanguageVersion": {
           "title": "ABAP Language Version (source code object)",
@@ -369,7 +378,8 @@ The field `description` contains the description of the object.
 
 The field `originalLanguage` stores the information about the original language of the object.
 
-The original language is specified with [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language codes.
+The original language is specified with [BCP47](https://en.wikipedia.org/wiki/IETF_language_tag) language tags, which combine [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language codes with subtags for language variations.
+A full list of SAP supported BCP47 language tags can be found [here](./languages.md).
 
 All translatable texts in the object shall be maintained in their original language.
 Translations of the texts shall be stored in separate files.

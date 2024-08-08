@@ -27,9 +27,7 @@
           "title": "Original Language",
           "description": "Original language of the ABAP object",
           "type": "string",
-          "minLength": 2,
-          "maxLength": 2,
-          "pattern": "^[a-z]+$"
+          "minLength": 2
         },
         "abapLanguageVersion": {
           "title": "ABAP Language Version",
@@ -103,9 +101,9 @@
           ],
           "default": "manual"
         },
-        "description": {
-          "title": "Description",
-          "description": "Description of authorization default values",
+        "documentation": {
+          "title": "Documentation",
+          "description": "Authorization default documentation for application",
           "type": "string"
         }
       },
@@ -154,9 +152,9 @@
             ],
             "default": "defaultWithValues"
           },
-          "description": {
-            "title": "Description",
-            "description": "Description of authorization defaults of object",
+          "documentation": {
+            "title": "Documentation",
+            "description": "Authorization default documentation for object",
             "type": "string"
           },
           "fields": {

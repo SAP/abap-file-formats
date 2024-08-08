@@ -8,27 +8,27 @@ INTERFACE zif_aff_ilmb_v1
       "! <p class="shorttext">Condition Field</p>
       "! Condition field
       "! $required
-      condition_field   TYPE zif_aff_types_v1=>ty_object_name_30,
+      condition_field TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Description</p>
       "! Description of condition field
-      description    TYPE zif_aff_types_v1=>ty_description_60,
+      description     TYPE zif_aff_types_v1=>ty_description_60,
       "! <p class="shorttext">Data Element</p>
       "! Data element
-      data_element   TYPE zif_aff_types_v1=>ty_object_name_30,
+      data_element    TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Source Table</p>
       "! Source table
       "! $required
-      source_table   TYPE zif_aff_types_v1=>ty_object_name_30,
+      source_table    TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Source Field</p>
       "! Source field
       "! $required
-      source_field   TYPE zif_aff_types_v1=>ty_object_name_30,
+      source_field    TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Indirect Value Determination</p>
       "! Indirect Value Determination
-      indirect_value TYPE abap_bool,
+      indirect_value  TYPE abap_bool,
       "! <p class="shorttext">No Intervals</p>
       "! No intervals
-      no_intervals   TYPE abap_bool,
+      no_intervals    TYPE abap_bool,
     END OF ty_cond_field,
     "! <p class="shorttext">Condition Fields</p>
     "!  Condition fields

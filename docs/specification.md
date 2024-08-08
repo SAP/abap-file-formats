@@ -12,8 +12,10 @@
 
 ## File Names
 
-The ABAP file formats specify file content and unique file names for ABAP repository objects or simply objects.
-The mapping of objects to file names follows the pattern
+The ABAP file formats specify file content and unique file names for [ABAP repository objects][1].
+
+
+The mapping of repository objects to file names follows the pattern
 ```
 <object_name>.<object_type>.
   [<sub_object_name>.<sub_object_type>.]
@@ -42,9 +44,10 @@ cl_oo_clif_source.clas.texts.en.properties
 ```
 
 ### Language
-The language of the texts is encoded by the element `language` following [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)
+The language of the texts is encoded by the element `language` following [BCP47](https://en.wikipedia.org/wiki/IETF_language_tag).
 ```
 cl_oo_clif_source.clas.texts.en.properties
+cl_oo_clif_source.clas.texts.en-GB.properties
 ```
 For the text elements of classes, this language will be the original language (provided by the metadata file).
 
@@ -56,7 +59,7 @@ ABAP file formats define the file types:
 * **`.acds`** stores source code of ABAP Core Data Services (CDS) as plain text
 * **`.json`** stores content of form-based editors or properties of objects, such as `originalLanguage`, `abapLanguageVersion` and others.
 Details are found in [JSON Files in ABAP File Formats](./json.md)
-* **`.properties`** stores text elements as plain text
+* **`.properties`** stores text elements as plain text and [translation texts](properties.md)
 
 
 ## Formatting Conventions
@@ -72,3 +75,5 @@ The JSON files additionally follow
 We provide an [EditorConfig](https://editorconfig.org)-based formatting configuration file [here](../.editorconfig) where the above convention is reflected.
 A GitHub action runs validations based on this configuration file, to ensure the repository follows the formatting convention.
 Developers might choose one of the many compatible text editors for the sake of convenience.
+
+[1]: ./glossary.md#abap-repository-object

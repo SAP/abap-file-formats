@@ -27,9 +27,7 @@
           "title": "Original Language",
           "description": "Original language of the ABAP object",
           "type": "string",
-          "minLength": 2,
-          "maxLength": 2,
-          "pattern": "^[a-z]+$"
+          "minLength": 2
         },
         "abapLanguageVersion": {
           "title": "ABAP Language Version",
@@ -97,6 +95,18 @@
       "description": "The object type code uniquely identifies the SAP Object Type.",
       "type": "string",
       "maxLength": 5
+    },
+    "interfaceBehaviorDefinition": {
+      "title": "Interface Behavior Definition",
+      "description": "The interface behavior definition related to the SAP Object Type.",
+      "type": "string",
+      "maxLength": 30
+    },
+    "odmEntityName": {
+      "title": "ODM Entity Name",
+      "description": "The One Domain Model entity related to the SAP Object Type.",
+      "type": "string",
+      "maxLength": 255
     }
   },
   "additionalProperties": false,

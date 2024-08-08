@@ -73,17 +73,17 @@ INTERFACE zif_aff_chkv_v1
     "! ATC check variant properties
     BEGIN OF ty_main,
       "! $required
-      format_version     TYPE zif_aff_types_v1=>ty_format_version,
+      format_version  TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header             TYPE zif_aff_types_v1=>ty_header_60_cloud,
+      header          TYPE zif_aff_types_v1=>ty_header_60_cloud,
       "! <p class="shorttext">Remote-Enabled</p>
       "! The ATC check variant is remote-enabled
-      remote_enabled     TYPE abap_bool,
+      remote_enabled  TYPE abap_bool,
       "! <p class="shorttext">Selected Checks</p>
       "! The checks selected in the ATC check variant
-      selected_checks    TYPE ty_checks,
+      selected_checks TYPE ty_checks,
     END OF ty_main.
 
 ENDINTERFACE.

@@ -109,7 +109,7 @@ INTERFACE zif_aff_smbc_v1
       "! Defines whether data in the List Report is automatically loaded on first app start.
       "! $values {@link zif_aff_smbc_v1.data:co_initial_load}
       "! $default {@link zif_aff_smbc_v1.data:co_initial_load.enabled}
-      initial_load TYPE string,
+      initial_load       TYPE string,
       "! <p class="shorttext synchronized">Variant Management</p>
       "! $values {@link zif_aff_smbc_v1.data:co_list_variant_management}
       "! $default {@link zif_aff_smbc_v1.data:co_list_variant_management.page}
@@ -127,7 +127,7 @@ INTERFACE zif_aff_smbc_v1
       "! <p class="shorttext synchronized">Variant Management</p>
       "! $values {@link zif_aff_smbc_v1.data:co_page_variant_management}
       "! $default {@link zif_aff_smbc_v1.data:co_page_variant_management.none}
-      variant_management TYPE string,
+      variant_management      TYPE string,
       "! <p class="shorttext synchronized">Editable Header Content</p>
       "! If true, the header content is changeable in edit mode
       editable_header_content TYPE abap_bool,
@@ -145,13 +145,13 @@ INTERFACE zif_aff_smbc_v1
       "! Defines how the table handles the visible rows in the table
       "! $values {@link zif_aff_smbc_v1.data:co_row_count_mode}
       "! $default {@link zif_aff_smbc_v1.data:co_row_count_mode.fixed}
-      row_count_mode TYPE string,
+      row_count_mode         TYPE string,
       "! <p class="shorttext synchronized">Row Count</p>
       "! Number of visible rows of the table
       "! $minimum 1
       "! $maximum 1000
       "! $default '5'
-      row_count TYPE i,
+      row_count              TYPE i,
       "! <p class="shorttext synchronized">Table Creation Mode</p>
       "! $values {@link zif_aff_smbc_v1.data:co_creation_mode_name}
       "! $default {@link zif_aff_smbc_v1.data:co_creation_mode_name.new_page}
@@ -179,7 +179,7 @@ INTERFACE zif_aff_smbc_v1
       enable_full_screen     TYPE abap_bool,
       "! <p class="shorttext synchronized">Enable Mass Edit</p>
       "! Mass editing allows users to simultaneously change multiple objects that share the same editable properties
-      enable_mass_edit TYPE abap_bool,
+      enable_mass_edit       TYPE abap_bool,
     END OF ty_table_setting,
     "! <p class="shorttext synchronized" >Object Page Configurations</p>
     ty_object_pages   TYPE SORTED TABLE OF ty_object_page WITH UNIQUE KEY entity_set,
@@ -197,29 +197,29 @@ INTERFACE zif_aff_smbc_v1
       "! <p class="shorttext">Service Binding</p>
       "! Service Binding used for business configuration maintenance
       "! $required
-      service_binding  TYPE c LENGTH 40,
+      service_binding     TYPE c LENGTH 40,
       "! <p class="shorttext">Service Name</p>
       "! $required
-      service_name     TYPE c LENGTH 40,
+      service_name        TYPE c LENGTH 40,
       "! <p class="shorttext">Service Version</p>
       "! The major version number of the service to be used (as defined in the Service Binding)
       "! $required
-      service_version  TYPE n LENGTH 4,
+      service_version     TYPE n LENGTH 4,
       "! <p class="shorttext">Root Entity Set</p>
       "! Root Entity Set exposed by the Service Definition
       "! $required
-      root_entity_set  TYPE c LENGTH 30,
+      root_entity_set     TYPE c LENGTH 30,
       "! <p class="shorttext">Name</p>
       "! Name of the Business Configuration
       "! $required
-      name             TYPE c LENGTH 50,
+      name                TYPE c LENGTH 50,
       "! <p class="shorttext">Configuration Group</p>
       "! $showAlways
       configuration_group TYPE c LENGTH 30,
       "! <p class="shorttext">Skip Root Entity List Report</p>
       "! If true, the UI automatically navigates to the Object Page of the root entity
       "! $showAlways
-      skip_root_entity TYPE abap_bool,
+      skip_root_entity    TYPE abap_bool,
     END OF ty_service_configuration.
 
   TYPES:
