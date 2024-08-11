@@ -7,28 +7,28 @@ INTERFACE zif_aff_edck_v1
   TYPES:
     BEGIN OF ty_attributes,
       "! <p class="shorttext">Check Category</p>
-      "! Consistency Check Category
+      "! Consistency check category
       "! $values {@link zif_aff_edck_v1.data:co_check_category}
       "! $default {@link if_aff_edck_v1.data:co_check_category.exist}
       "! $required
-      checkcategory             TYPE ty_check_category,
+      check_category             TYPE ty_check_category,
       "! <p class="shorttext">Check Classification</p>
-      "! Consistency Check ID Classification
+      "! Consistency check ID classification
       "! $values {@link zif_aff_edck_v1.data:co_check_classification}
       "! $default {@link if_aff_edck_v1.data:co_check_classification.core}
       "! $required
-      checkidclassification     TYPE ty_check_classification,
+      check_id_classification     TYPE ty_check_classification,
       "! <p class="shorttext">Additional Check Class</p>
-      "! Consistency Check Class
-      checkclass                TYPE zif_aff_types_v1=>ty_object_name_30,
+      "! Consistency check class
+      check_class                TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Result Derivation Indicator</p>
-      "! Result Process Derived by BAdI
-      resultderivationindicator TYPE abap_bool,
+      "! Result process derived by BAdI
+      result_derivation_indicator TYPE abap_bool,
     END OF ty_attributes.
 
   TYPES:
     "! <p class="shorttext">Consistency Check ID</p>
-    "! Check ID (EDCK) v1
+    "! Consistency check ID (EDCK) v1
     BEGIN OF ty_main,
       "! $required
       format_version TYPE zif_aff_types_v1=>ty_format_version,
@@ -36,15 +36,15 @@ INTERFACE zif_aff_edck_v1
       "! Header
       "! $required
       header         TYPE zif_aff_types_v1=>ty_header_60_cloud,
-      "! <p class="shorttext">Check ID Definition</p>
-      "! Attributes of a Consistency Check
+      "! <p class="shorttext">Consistency Check ID Definition</p>
+      "! Attributes of a consistency check ID
       "! $required
       attributes     TYPE ty_attributes,
     END OF ty_main.
 
   CONSTANTS:
     "! <p class="shorttext">Check Classification</p>
-    "! Check Classification
+    "! Check classification
     BEGIN OF co_check_classification,
       "! <p class="shorttext">Core delivered checks</p>
       "! Core delivered checks
@@ -56,19 +56,19 @@ INTERFACE zif_aff_edck_v1
 
   CONSTANTS:
     "! <p class="shorttext">Check Category</p>
-    "! Check Category
+    "! Check category
     BEGIN OF co_check_category,
       "! <p class="shorttext">Existence Check</p>
-      "! Existence Check
-      exist  TYPE ty_check_category VALUE 'EXIST',
+      "! Existence check
+      existence_check  TYPE ty_check_category VALUE 'EXIST',
       "! <p class="shorttext">Status Check</p>
-      "! Status Check
-      status TYPE ty_check_category VALUE 'STATUS',
+      "! Status check
+      status_check TYPE ty_check_category VALUE 'STATUS',
       "! <p class="shorttext">Edocument Existence Check</p>
-      "! Edocument Existence Check
-      edochk TYPE ty_check_category VALUE 'EDOCHK',
-      "! <p class="shorttext"> Content Mismatch</p>
-      "!  Content Mismatch
-      conmis TYPE ty_check_category VALUE 'CONMIS',
+      "! Edocument existence check
+      edocument_existence_check TYPE ty_check_category VALUE 'EDOCHK',
+      "! <p class="shorttext">Content Mismatch Check</p>
+      "!  Content mismatch check
+      content_mismatch_check TYPE ty_check_category VALUE 'CONMIS',
     END OF co_check_category.
 ENDINTERFACE.

@@ -3,7 +3,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/edck/edck-v1.json",
   "title": "Consistency Check ID",
-  "description": "Check ID (EDCK) v1",
+  "description": "Consistency check ID (EDCK) v1",
   "type": "object",
   "properties": {
     "formatVersion": {
@@ -55,36 +55,36 @@
       ]
     },
     "attributes": {
-      "title": "Check ID Definition",
-      "description": "Attributes of a Consistency Check",
+      "title": "Consistency Check ID Definition",
+      "description": "Attributes of a consistency check ID",
       "type": "object",
       "properties": {
-        "checkcategory": {
+        "checkCategory": {
           "title": "Check Category",
-          "description": "Consistency Check Category",
+          "description": "Consistency check category",
           "type": "string",
           "enum": [
-            "exist",
-            "status",
-            "edochk",
-            "conmis"
+            "existenceCheck",
+            "statusCheck",
+            "edocumentExistenceCheck",
+            "contentMismatchCheck"
           ],
           "enumTitles": [
             "Existence Check",
             "Status Check",
             "Edocument Existence Check",
-            "Content Mismatch"
+            "Content Mismatch Check"
           ],
           "enumDescriptions": [
-            "Existence Check",
-            "Status Check",
-            "Edocument Existence Check",
-            "Content Mismatch"
+            "Existence check",
+            "Status check",
+            "Edocument existence check",
+            "Content mismatch check"
           ]
         },
-        "checkidclassification": {
+        "checkIdClassification": {
           "title": "Check Classification",
-          "description": "Consistency Check ID Classification",
+          "description": "Consistency check ID classification",
           "type": "string",
           "enum": [
             "core",
@@ -99,22 +99,22 @@
             "Additionally (Extended) implemented checks"
           ]
         },
-        "checkclass": {
+        "checkClass": {
           "title": "Additional Check Class",
-          "description": "Consistency Check Class",
+          "description": "Consistency check class",
           "type": "string",
           "maxLength": 30
         },
-        "resultderivationindicator": {
+        "resultDerivationIndicator": {
           "title": "Result Derivation Indicator",
-          "description": "Result Process Derived by BAdI",
+          "description": "Result process derived by BAdI",
           "type": "boolean"
         }
       },
       "additionalProperties": false,
       "required": [
-        "checkcategory",
-        "checkidclassification"
+        "checkCategory",
+        "checkIdClassification"
       ]
     }
   },
