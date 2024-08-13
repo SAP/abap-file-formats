@@ -566,7 +566,7 @@ INTERFACE zif_aff_uiad_v1
 
       "! <p class="shorttext">Successor</p>
       "! LADI of the successor application
-      successor  TYPE c LENGTH 32,
+      successor TYPE c LENGTH 32,
 
     END OF ty_life_cycle.
 
