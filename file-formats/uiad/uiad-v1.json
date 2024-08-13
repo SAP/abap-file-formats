@@ -629,7 +629,7 @@
     },
     "lifeCycle": {
       "title": "Life Cycle",
-      "description": "Life cycle",
+      "description": "Life cycle2",
       "type": "object",
       "properties": {
         "deprecated": {
