@@ -1,11 +1,11 @@
 ## JSON Files in ABAP File Formats
 JSON files are central since every ABAP object specifies at least a JSON file.
-Depending on the object, there might be additional files containing source code or other information, but there is always a JSON file with the pattern `<object_name>.<object_type>.json`, see [`File Names`](./specification.md#File-Names).
+Depending on the object, there might be additional files containing source code or other information, but there is always a JSON file with the pattern `<object_name>.<object_type>.json`, see [`File Names`](./specification.md#file-names).
 For its annotation and validation, the ABAP file formats provide JSON Schemas.
 
 ## Table of Contents
 * [Format Versions and Compatibility](#format-versions-and-compatibility)
-* [Writing JSON Schema with ABAP Types](#writing-JSON-schema-with-ABAP-types)
+* [Writing JSON Schema with ABAP Types](#writing-json-schema-with-abap-types)
 * [Example](#example)
 * [Reusable Fields in JSON Files](#reusable-fields-in-json-files)
 
