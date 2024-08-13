@@ -562,7 +562,7 @@ INTERFACE zif_aff_uiad_v1
 
       "! <p class="shorttext">Status</p>
       "! Life cycle status
-      status TYPE ty_life_cycle_status,
+      status    TYPE ty_life_cycle_status,
 
       "! <p class="shorttext">Successor</p>
       "! LADI of the successor application
