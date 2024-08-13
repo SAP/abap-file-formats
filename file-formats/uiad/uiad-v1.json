@@ -627,15 +627,31 @@
         ]
       }
     },
-    "lifecycle": {
-      "title": "Lifecycle",
-      "description": "Lifecycle state",
+    "lifeCycle": {
+      "title": "Life Cycle",
+      "description": "Life cycle",
       "type": "object",
       "properties": {
-        "deprecated": {
-          "title": "Deprecated",
-          "description": "Application is deprecated",
-          "type": "boolean"
+        "status": {
+          "title": "Status",
+          "description": "Life cycle status",
+          "type": "string",
+          "enum": [
+            "active",
+            "deprecated",
+            "obsolete"
+          ],
+          "enumTitles": [
+            "Active",
+            "Deprecated",
+            "Obsolete"
+          ],
+          "enumDescriptions": [
+            "LADI is active",
+            "LADI is deprecated and should no longer be used",
+            "LADI is obsolete and must no longer be used"
+          ],
+          "default": "active"
         },
         "successor": {
           "title": "Successor",
