@@ -531,38 +531,38 @@ INTERFACE zif_aff_uiad_v1
 
   "! <p class="shorttext">Life Cycle Deprecation Status</p>
   "! Life cycle deprecation status
-  "! $values {@link zif_aff_uiad_v1.data:co_deprecate_status}
-  "! $default {@link zif_aff_uiad_v1.data:co_deprecate_status.active}
-  TYPES ty_deprecate_status TYPE c LENGTH 1.
+  "! $values {@link zif_aff_uiad_v1.data:co_life_cycle_status}
+  "! $default {@link zif_aff_uiad_v1.data:co_life_cycle_status.active}
+  TYPES ty_life_cycle_status TYPE c LENGTH 1.
 
   CONSTANTS:
-    "! <p class="shorttext">Life Cycle Deprecation Status</p>
+    "! <p class="shorttext">Life Cycle Status</p>
     "! Life cycle deprecation status
-    BEGIN OF co_deprecate_status,
+    BEGIN OF co_life_cycle_status,
 
       "! <p class="shorttext">Active</p>
       "! LADI is active
-      active     TYPE ty_tile_type VALUE ' ',
+      active     TYPE ty_life_cycle_status VALUE ' ',
 
       "! <p class="shorttext">Deprecated</p>
-      "! LADI is deprecated
-      deprecated TYPE ty_tile_type VALUE 'D',
+      "! LADI is deprecated and should no longer be used
+      deprecated TYPE ty_life_cycle_status VALUE 'D',
 
       "! <p class="shorttext">Obsolete</p>
-      "! LADI is obsolete
-      obsolete   TYPE ty_tile_type VALUE 'O',
+      "! LADI is obsolete and must no longer be used
+      obsolete   TYPE ty_life_cycle_status VALUE 'O',
 
-    END OF co_deprecate_status.
+    END OF co_life_cycle_status.
 
 
   TYPES:
-    "! <p class="shorttext">Life Cycle Deprecation</p>
-    "! Life cycle deprecation
+    "! <p class="shorttext">Life Cycle</p>
+    "! Life cycle
     BEGIN OF ty_life_cycle,
 
       "! <p class="shorttext">Status</p>
-      "! Deprecation status
-      deprecated TYPE ty_deprecate_status,
+      "! Life cycle status
+      status TYPE ty_life_cycle_status,
 
       "! <p class="shorttext">Successor</p>
       "! LADI of the successor application

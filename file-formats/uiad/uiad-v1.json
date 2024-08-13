@@ -632,9 +632,9 @@
       "description": "Life cycle",
       "type": "object",
       "properties": {
-        "deprecated": {
+        "status": {
           "title": "Status",
-          "description": "Deprecation status",
+          "description": "Life cycle status",
           "type": "string",
           "enum": [
             "active",
@@ -648,8 +648,8 @@
           ],
           "enumDescriptions": [
             "LADI is active",
-            "LADI is deprecated",
-            "LADI is obsolete"
+            "LADI is deprecated and should no longer be used",
+            "LADI is obsolete and must no longer be used"
           ],
           "default": "active"
         },
