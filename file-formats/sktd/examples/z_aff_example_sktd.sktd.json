@@ -1,0 +1,11 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Documentation for Z_AFF_EXAMPLE_SKTD",
+    "originalLanguage": "EN"
+  },
+  "documentedObject": {
+    "type": "BDEF",
+    "name": "Z_AFF_EXAMPLE_SKTD"
+  }
+}
