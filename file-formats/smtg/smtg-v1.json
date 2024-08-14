@@ -62,165 +62,58 @@
       "description": "General information",
       "type": "object",
       "properties": {
-        "templateHeader": {
-          "title": "Template Header",
-          "description": "Contains basic template identifiers and description",
-          "type": "object",
-          "properties": {
-            "templateId": {
-              "title": "Template Name",
-              "description": "Unique identifier for the template",
-              "type": "string",
-              "maxLength": 60
-            },
-            "cdsView": {
-              "title": "CDS View",
-              "description": "The corresponding CDS view name for the template",
-              "type": "string",
-              "maxLength": 30
-            },
-            "description": {
-              "title": "Description",
-              "description": "Brief description of the template",
-              "type": "string",
-              "maxLength": 255
-            },
-            "predelivered": {
-              "title": "Predelivered",
-              "description": "Indicator if the template is pre-delivered",
-              "type": "boolean"
-            }
-          },
-          "additionalProperties": false,
-          "required": [
-            "templateId",
-            "cdsView"
-          ]
+        "templateId": {
+          "title": "Template ID",
+          "description": "Unique identifier for the template",
+          "type": "string",
+          "maxLength": 60
         },
-        "administrativeData": {
-          "title": "Administrative Data",
-          "description": "Contains info about template creation and modification",
-          "type": "object",
-          "properties": {
-            "createdBy": {
-              "title": "Created By",
-              "description": "Created by",
-              "type": "string"
-            },
-            "lastChangedBy": {
-              "title": "Last Changed By",
-              "description": "last changed by",
-              "type": "string"
-            }
-          },
-          "additionalProperties": false
+        "templateName": {
+          "title": "Template Name",
+          "description": "Name of an Email Template",
+          "type": "string",
+          "maxLength": 60
+        },
+        "templateDescription": {
+          "title": "Template Description",
+          "description": "Description of an Email Template",
+          "type": "string",
+          "maxLength": 255
+        },
+        "cdsView": {
+          "title": "CDS View",
+          "description": "The corresponding CDS view name for the template",
+          "type": "string",
+          "maxLength": 30
+        },
+        "isPredelivered": {
+          "title": "Predelivered",
+          "description": "Indicator if the template is pre-delivered",
+          "type": "boolean"
+        },
+        "emailSubject": {
+          "title": "Subject",
+          "description": "The subject of the email template",
+          "type": "string",
+          "maxLength": 1024
+        },
+        "autogenerate": {
+          "title": "Automatic Text Generation",
+          "description": "Indicator if the template text body is generated automatically from html body",
+          "type": "boolean"
         }
       },
       "additionalProperties": false,
       "required": [
-        "templateHeader",
-        "administrativeData"
+        "templateId",
+        "cdsView"
       ]
-    },
-    "templateOptions": {
-      "title": "Options",
-      "description": "Options",
-      "type": "object",
-      "properties": {
-        "languages": {
-          "title": "Languages",
-          "description": "Available languages for the template",
-          "type": "array",
-          "items": {
-            "title": "Template Language",
-            "description": "Language options for the template",
-            "type": "object",
-            "properties": {
-              "country": {
-                "title": "Language",
-                "description": "Language code",
-                "type": "string"
-              },
-              "html": {
-                "title": "HTML",
-                "description": "Indicates if HTML format is available",
-                "type": "boolean"
-              },
-              "plain": {
-                "title": "Plain",
-                "description": "Indicates if plain text is available",
-                "type": "boolean"
-              },
-              "auto": {
-                "title": "Auto",
-                "description": "Indicates if automatic plain text update is enabled",
-                "type": "boolean"
-              }
-            },
-            "additionalProperties": false,
-            "required": [
-              "country"
-            ]
-          }
-        },
-        "inputFields": {
-          "title": "Input Fields",
-          "description": "Input fields for the template from corresponding CDS view",
-          "type": "array",
-          "items": {
-            "title": "Input Field",
-            "description": "Input field",
-            "type": "object",
-            "properties": {
-              "name": {
-                "title": "Name",
-                "description": "Name of the input field",
-                "type": "string"
-              },
-              "text": {
-                "title": "Text",
-                "description": "Text asscociated with the input field",
-                "type": "string"
-              }
-            },
-            "additionalProperties": false,
-            "required": [
-              "name",
-              "text"
-            ]
-          }
-        }
-      },
-      "additionalProperties": false,
-      "required": [
-        "languages"
-      ]
-    },
-    "templateContent": {
-      "title": "Text",
-      "description": "Text",
-      "type": "object",
-      "properties": {
-        "bodyHtml": {
-          "title": "Body HTML",
-          "description": "The HTML body content of the email template",
-          "type": "string"
-        },
-        "bodyPlainText": {
-          "title": "Body Plain Text",
-          "description": "The plain text body content of the email template",
-          "type": "string"
-        }
-      },
-      "additionalProperties": false
     }
   },
   "additionalProperties": false,
   "required": [
     "formatVersion",
     "header",
-    "generalInformation",
-    "templateOptions",
-    "templateContent"
+    "generalInformation"
   ]
 }
