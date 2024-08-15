@@ -8,32 +8,32 @@ INTERFACE zif_aff_smtg_v1
       "! <p class="shorttext">Template ID</p>
       "! Unique identifier for the template
       "! $required
-      template_id          TYPE c LENGTH 60,
+      template_id                 TYPE c LENGTH 60,
       "! <p class="shorttext">Template Name</p>
-      "! Name of an Email Template
-      template_name        TYPE c LENGTH 60,
+      "! Name of an email Template
+      template_name               TYPE c LENGTH 60,
       "! <p class="shorttext">Template Description</p>
-      "! Description of an Email Template
-      template_description TYPE c LENGTH 255,
+      "! Description of an email Template
+      template_description        TYPE c LENGTH 255,
       "! <p class="shorttext">CDS View</p>
       "! The corresponding CDS view name for the template
       "! $required
-      cds_view             TYPE c LENGTH 30,
+      cds_view                    TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Predelivered</p>
       "! Indicator if the template is pre-delivered
-      is_predelivered      TYPE abap_bool,
+      is_predelivered             TYPE abap_bool,
       "! <p class="shorttext">Subject</p>
       "! The subject of the email template
-      email_subject        TYPE c LENGTH 1024,
+      email_subject               TYPE c LENGTH 1024,
       "! <p class="shorttext">Automatic Text Generation</p>
       "! Indicator if the template text body is generated automatically from html body
-      autogenerate                 TYPE abap_bool,
+      is_plaintext_auto_generated TYPE abap_bool,
     END OF ty_general_information.
 
 
   TYPES:
-    "! <p class="shorttext">Demo Object Type SMTG</p>
-    "! Demo object type SMTG
+    "! <p class="shorttext">Email Template</p>
+    "! Email Template
     BEGIN OF ty_main,
       "! <p class="shorttext">Format Version</p>
       "! Format version
