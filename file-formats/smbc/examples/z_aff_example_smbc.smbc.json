@@ -27,6 +27,7 @@
       {
         "entitySet": "Customer",
         "tableType": "gridTable",
+        "selectionMode": "auto",
         "enableFullScreen": true
       }
     ]
