@@ -61,7 +61,7 @@ ABAP file formats use the file types:
 Details are found in [JSON Files in ABAP File Formats](./json.md)
 * **`.properties`** stores text elements as plain text and [translation texts](properties.md)
 * **`.xdp`** stands for XML Data Packaging and is part of Form Objects (SFPF)
-* **`.csn`** is a notation for compact representations of CDS models
+* **`.csn`** is a notation for compact representations of CDS models and is part of CSN Models (CSNM)
 
 
 ## Formatting Conventions
