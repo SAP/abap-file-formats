@@ -1,6 +1,8 @@
 {
-  "formatVersion": "1",  
+  "formatVersion": "1",
   "header": {
+    "description": "Example AIFD for ABAP File Format",
+    "originalLanguage": "en",
     "abapLanguageVersion": "standard"
   },
   "aifInterface": {
