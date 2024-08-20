@@ -110,22 +110,22 @@ INTERFACE zif_aff_aifi_v1
       "! <p class="shorttext">Direction</p>
       "! Direction
       " (type /aif/ifdirection)
-      direction                TYPE boolean,
+      direction                TYPE c LENGTH 1,
       "! <p class="shorttext">Preprocessing</p>
       "! Preprocessing
       " /AIF/PRE_PROCESSING
-      preprocessing            TYPE boolean,
+      preprocessing            TYPE c LENGTH 1,
       "! <p class="shorttext">Proxy XML Transformation</p>
       "! Use proxy xml transformation
       " /AIF/PROXY_XML_TRANSFORMATION
-      proxy_xml_transformation TYPE boolean,
+      proxy_xml_transformation TYPE c LENGTH 1,
       "! <p class="shorttext">Extend XML Handling</p>
       "! Extend xml handling
       " /AIF/PRX_XXML
-      extend_xml_handling      TYPE boolean,
+      extend_xml_handling      TYPE c LENGTH 1,
       "! <p class="shorttext">Postprocessing</p>
       "! Postprocessing
-      postprocesssing          TYPE boolean,
+      postprocesssing          TYPE c LENGTH 1,
     END OF ty_aif_interface.
 
   TYPES:
@@ -169,7 +169,8 @@ INTERFACE zif_aff_aifi_v1
       "! <p class="shorttext">Data Element</p>
       "! Data element
       "! $required
-      data_element             TYPE rollname,
+      " (type rollname)
+      data_element             TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Name of Select-Option/Parameter</p>
       "! Name of select-option/parameter
       " (type /aif/stexti)
@@ -177,12 +178,12 @@ INTERFACE zif_aff_aifi_v1
       "! <p class="shorttext">Select-Option</p>
       "! Is select-option?
       " /AIF/FLD_IS_SELECT_OPT
-      is_selopt                TYPE boolean,
+      is_selopt                TYPE c LENGTH 1,
       "! <p class="shorttext">Display as Column</p>
       "! Display as column
       "! $default 'X'
       " /AIF/IS_COL
-      column_display           TYPE boolean,
+      column_display           TYPE c LENGTH 1,
       "! <p class="shorttext">Field Name</p>
       "! Field name in define key fields
       " (type /aif/lfieldname_kflds)
@@ -190,11 +191,11 @@ INTERFACE zif_aff_aifi_v1
       "! <p class="shorttext">SAP or RAW Structure</p>
       "! Is sap or raw structure?
       " (type /aif/raw_or_sap_kflds)
-      sap_raw_structure        TYPE boolean,
+      sap_raw_structure        TYPE c LENGTH 1,
       "! <p class="shorttext">Enable Key Field Qualifier</p>
       "! Enable key field qualifier?
       " /AIF/ENABLE_QUALIFIER
-      enable_qualifier         TYPE boolean,
+      enable_qualifier         TYPE c LENGTH 1,
       "! <p class="shorttext">Qualifier Field Name</p>
       "! Qualifier field name
       " (type /aif/qualifier_fld_name_kfld)
@@ -210,7 +211,7 @@ INTERFACE zif_aff_aifi_v1
       "! <p class="shorttext">Mulitple Selection Type</p>
       "! Mulitple selection type
       " (type /aif/multi_sel_type)
-      multi_selection_type     TYPE boolean,
+      multi_selection_type     TYPE c LENGTH 1,
       "! <p class="shorttext">Message Index Table</p>
       "! Message index table
       " (type /aif/msg_tbl)
@@ -218,7 +219,7 @@ INTERFACE zif_aff_aifi_v1
       "! <p class="shorttext">Show Tree Node in View 1 Tree</p>
       "! Show tree node in view 1 tree
       " /AIF/IS_HIDDEN, swap to positive stature
-      show_tree_node           TYPE boolean,
+      show_tree_node           TYPE c LENGTH 1,
       "! <p class="shorttext">Parent Field Sequence Number</p>
       "! Parent field sequence number
       " (type /aif/field_number_parent)
@@ -238,7 +239,7 @@ INTERFACE zif_aff_aifi_v1
       "! <p class="shorttext">Relevant for Alert Recipient Determination</p>
       "! Relevant for alert recipient determination
       " (type /aif/alertrelevant)
-      alert_recipient_relevant TYPE boolean,
+      alert_recipient_relevant TYPE c LENGTH 1,
       "! <p class="shorttext">Category Field Name</p>
       "! Category field name
       " (type /aif/alrt_catfn)
@@ -266,11 +267,11 @@ INTERFACE zif_aff_aifi_v1
       "! Display in message monitoring
       "! $default 'X'
       " /AIF/NOT_SHOW_FIELD
-      message_monitor_show     TYPE boolean,
+      message_monitor_show     TYPE c LENGTH 1,
       "! <p class="shorttext">Display in Message Monitoring by Default</p>
       "! Display in message monitoring by default
       " /AIF/IS_DEFAULT_FIELD
-      message_monitor_default  TYPE boolean,
+      message_monitor_default  TYPE c LENGTH 1,
     END OF ty_key_field.
 
   "! <p class="shorttext">Key Fields</p>
@@ -304,15 +305,15 @@ INTERFACE zif_aff_aifi_v1
       component   TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Changeable</p>
       "! Changeable
-      changeable  TYPE boolean,
+      changeable  TYPE c LENGTH 1,
       "! <p class="shorttext">Hidden</p>
       "! Hidden
-      hidden      TYPE boolean,
+      hidden      TYPE c LENGTH 1,
       "! <p class="shorttext">Use DDIC</p>
       "! Use ddic description?
       "! $default 'X'
       " (type /aif/use_ddic)
-      use_ddic    TYPE boolean,
+      use_ddic    TYPE c LENGTH 1,
       "! <p class="shorttext">Description</p>
       "! Description
       " (type /aif/err_lb_description)

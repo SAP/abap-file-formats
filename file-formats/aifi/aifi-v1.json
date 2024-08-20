@@ -186,27 +186,32 @@
         "direction": {
           "title": "Direction",
           "description": "Direction",
-          "type": "boolean"
+          "type": "string",
+          "maxLength": 1
         },
         "preprocessing": {
           "title": "Preprocessing",
           "description": "Preprocessing",
-          "type": "boolean"
+          "type": "string",
+          "maxLength": 1
         },
         "proxyXmlTransformation": {
           "title": "Proxy XML Transformation",
           "description": "Use proxy xml transformation",
-          "type": "boolean"
+          "type": "string",
+          "maxLength": 1
         },
         "extendXmlHandling": {
           "title": "Extend XML Handling",
           "description": "Extend xml handling",
-          "type": "boolean"
+          "type": "string",
+          "maxLength": 1
         },
         "postprocesssing": {
           "title": "Postprocessing",
           "description": "Postprocessing",
-          "type": "boolean"
+          "type": "string",
+          "maxLength": 1
         }
       },
       "additionalProperties": false,
@@ -274,18 +279,21 @@
           "changeable": {
             "title": "Changeable",
             "description": "Changeable",
-            "type": "boolean"
+            "type": "string",
+            "maxLength": 1
           },
           "hidden": {
             "title": "Hidden",
             "description": "Hidden",
-            "type": "boolean"
+            "type": "string",
+            "maxLength": 1
           },
           "useDdic": {
             "title": "Use DDIC",
             "description": "Use ddic description?",
-            "type": "boolean",
-            "default": true
+            "type": "string",
+            "maxLength": 1,
+            "default": "X"
           },
           "description": {
             "title": "Description",
@@ -402,13 +410,15 @@
               "isSelopt": {
                 "title": "Select-Option",
                 "description": "Is select-option?",
-                "type": "boolean"
+                "type": "string",
+                "maxLength": 1
               },
               "columnDisplay": {
                 "title": "Display as Column",
                 "description": "Display as column",
-                "type": "boolean",
-                "default": true
+                "type": "string",
+                "maxLength": 1,
+                "default": "X"
               },
               "fieldName": {
                 "title": "Field Name",
@@ -419,12 +429,14 @@
               "sapRawStructure": {
                 "title": "SAP or RAW Structure",
                 "description": "Is sap or raw structure?",
-                "type": "boolean"
+                "type": "string",
+                "maxLength": 1
               },
               "enableQualifier": {
                 "title": "Enable Key Field Qualifier",
                 "description": "Enable key field qualifier?",
-                "type": "boolean"
+                "type": "string",
+                "maxLength": 1
               },
               "qualifierFieldName": {
                 "title": "Qualifier Field Name",
@@ -483,7 +495,8 @@
               "multiSelectionType": {
                 "title": "Mulitple Selection Type",
                 "description": "Mulitple selection type",
-                "type": "boolean"
+                "type": "string",
+                "maxLength": 1
               },
               "idxTable": {
                 "title": "Message Index Table",
@@ -494,7 +507,8 @@
               "showTreeNode": {
                 "title": "Show Tree Node in View 1 Tree",
                 "description": "Show tree node in view 1 tree",
-                "type": "boolean"
+                "type": "string",
+                "maxLength": 1
               },
               "parentFieldSequence": {
                 "title": "Parent Field Sequence Number",
@@ -524,7 +538,8 @@
               "alertRecipientRelevant": {
                 "title": "Relevant for Alert Recipient Determination",
                 "description": "Relevant for alert recipient determination",
-                "type": "boolean"
+                "type": "string",
+                "maxLength": 1
               },
               "catFieldname": {
                 "title": "Category Field Name",
@@ -578,13 +593,15 @@
               "messageMonitorShow": {
                 "title": "Display in Message Monitoring",
                 "description": "Display in message monitoring",
-                "type": "boolean",
-                "default": true
+                "type": "string",
+                "maxLength": 1,
+                "default": "X"
               },
               "messageMonitorDefault": {
                 "title": "Display in Message Monitoring by Default",
                 "description": "Display in message monitoring by default",
-                "type": "boolean"
+                "type": "string",
+                "maxLength": 1
               }
             },
             "additionalProperties": false,
