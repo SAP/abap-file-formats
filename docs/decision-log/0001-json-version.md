@@ -1,7 +1,7 @@
 # JSON Versioning
 
 * Status: [accepted] <!-- optional -->
-* Deciders: [https://github.com/orgs/SAP/teams/abap-file-formats-team] <!-- optional -->
+* Deciders: [[https://github.com/orgs/SAP/teams/abap-file-formats-team]](https://github.com/orgs/SAP/teams/abap-file-formats-team) <!-- optional -->
 * Date: [2021-09] <!-- optional -->
 
 Technical Story:
