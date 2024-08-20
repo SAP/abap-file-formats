@@ -114,7 +114,7 @@ INTERFACE zif_aff_aifi_v1
       "! <p class="shorttext">Preprocessing</p>
       "! Preprocessing
       " /AIF/PRE_PROCESSING
-      preprocessing            TYPE c LENGTH 1,
+      preprocessing            TYPE abap_bool,
       "! <p class="shorttext">Proxy XML Transformation</p>
       "! Use proxy xml transformation
       " /AIF/PROXY_XML_TRANSFORMATION

@@ -192,8 +192,7 @@
         "preprocessing": {
           "title": "Preprocessing",
           "description": "Preprocessing",
-          "type": "string",
-          "maxLength": 1
+          "type": "boolean"
         },
         "proxyXmlTransformation": {
           "title": "Proxy XML Transformation",
