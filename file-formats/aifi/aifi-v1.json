@@ -3,7 +3,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/aifi/aifi-v1.json",
   "title": "Application Interface",
-  "description": "Application Interface",
+  "description": "Application interface",
   "type": "object",
   "properties": {
     "formatVersion": {
@@ -56,12 +56,12 @@
     },
     "aifInterface": {
       "title": "General Information",
-      "description": "General Information",
+      "description": "General information",
       "type": "object",
       "properties": {
         "integrationType": {
           "title": "Integration Type",
-          "description": "Integration Type",
+          "description": "Integration type",
           "type": "string",
           "enum": [
             "soap",
@@ -77,7 +77,7 @@
           ],
           "enumDescriptions": [
             "SOAP",
-            "Sync Log",
+            "Sync log",
             "pfPF",
             "Eventing"
           ],
@@ -85,37 +85,37 @@
         },
         "soapClass": {
           "title": "SOAP Class",
-          "description": "SOAP Class",
+          "description": "SOAP class",
           "type": "string",
           "maxLength": 30
         },
         "soapMethod": {
           "title": "SOAP Method",
-          "description": "SOAP Method",
+          "description": "SOAP method",
           "type": "string",
           "maxLength": 30
         },
         "soapRecordType": {
           "title": "SOAP Record Type",
-          "description": "SOAP Record Type",
+          "description": "SOAP record type",
           "type": "string",
           "maxLength": 45
         },
         "repositoryId": {
           "title": "Repository ID",
-          "description": "Repository ID",
+          "description": "Repository id",
           "type": "string",
           "maxLength": 10
         },
         "registrationId": {
           "title": "Registration ID",
-          "description": "Registration ID",
+          "description": "Registration id",
           "type": "string",
           "maxLength": 36
         },
         "registrationVersion": {
           "title": "Registration Version",
-          "description": "Registration Version",
+          "description": "Registration version",
           "type": "string",
           "maxLength": 4,
           "pattern": "^[0-9]+$"
@@ -128,56 +128,56 @@
         },
         "operationId": {
           "title": "Operation ID",
-          "description": "Operation ID",
+          "description": "Operation id",
           "type": "string",
           "maxLength": 30
         },
         "operationVariantId": {
           "title": "Operation Variant ID",
-          "description": "Operation Variant ID",
+          "description": "Operation variant id",
           "type": "string",
           "maxLength": 10,
           "pattern": "^[0-9]+$"
         },
         "operationVaraint": {
           "title": "Operation Variant",
-          "description": "Operation Variant",
+          "description": "Operation variant",
           "type": "string"
         },
-        "namespaceObject": {
-          "title": "Namespace Object",
-          "description": "Namespace Object",
+        "namespace": {
+          "title": "Namespace",
+          "description": "Namespace",
           "type": "string",
           "maxLength": 15
         },
         "interfaceName": {
           "title": "AIF Interface Name",
-          "description": "AIF Interface Name",
+          "description": "AIF interface name",
           "type": "string",
           "maxLength": 10
         },
         "interfaceVersion": {
           "title": "AIF Interface Version",
-          "description": "AIF Interface Version",
+          "description": "AIF interface version",
           "type": "string",
           "maxLength": 5
         },
         "indexTable": {
           "title": "Index Table",
-          "description": "Index Table",
+          "description": "Index table",
           "type": "string",
           "maxLength": 30,
           "default": "/AIF/STD_IDX_TBL"
         },
         "displayName": {
           "title": "Interface Display Name",
-          "description": "Interface Display Name",
+          "description": "Interface display name",
           "type": "string",
           "maxLength": 120
         },
         "appLogLifetime": {
           "title": "Application Log Lifetime",
-          "description": "Application Log Lifetime",
+          "description": "Application log lifetime",
           "type": "string",
           "maxLength": 10,
           "pattern": "^[0-9]+$",
@@ -195,12 +195,12 @@
         },
         "proxyXmlTransformation": {
           "title": "Proxy XML Transformation",
-          "description": "Use Proxy XML Transformation",
+          "description": "Use proxy xml transformation",
           "type": "boolean"
         },
         "extendXmlHandling": {
           "title": "Extend XML Handling",
-          "description": "Extend XML Handling",
+          "description": "Extend xml handling",
           "type": "boolean"
         },
         "postprocesssing": {
@@ -222,14 +222,14 @@
         "operationId",
         "operationVariantId",
         "operationVaraint",
-        "namespaceObject",
+        "namespace",
         "interfaceName",
         "interfaceVersion"
       ]
     },
     "recipientAssignment": {
       "title": "Recipient Assignment",
-      "description": "Recipient Assignment",
+      "description": "Recipient assignment",
       "type": "array",
       "items": {
         "title": "Recipient",
@@ -238,7 +238,7 @@
         "properties": {
           "recipient": {
             "title": "Alert Recipient",
-            "description": "Alert Recipient",
+            "description": "Alert recipient",
             "type": "string",
             "maxLength": 40
           }
@@ -251,11 +251,11 @@
     },
     "structureSettings": {
       "title": "Structure Settings",
-      "description": "Structure Settings",
+      "description": "Structure settings",
       "type": "array",
       "items": {
         "title": "Structure Setting",
-        "description": "Structure Setting",
+        "description": "Structure setting",
         "type": "object",
         "properties": {
           "sequence": {
@@ -283,7 +283,7 @@
           },
           "useDdic": {
             "title": "Use DDIC",
-            "description": "Use DDIC",
+            "description": "Use ddic description?",
             "type": "boolean",
             "default": true
           },
@@ -295,19 +295,19 @@
           },
           "shortText": {
             "title": "Short Text",
-            "description": "Short Text",
+            "description": "Short text",
             "type": "string",
             "maxLength": 10
           },
           "mediumText": {
             "title": "Medium Text",
-            "description": "Medium Text",
+            "description": "Medium text",
             "type": "string",
             "maxLength": 20
           },
           "longText": {
             "title": "Long Text",
-            "description": "Long Text",
+            "description": "Long text",
             "type": "string",
             "maxLength": 40
           }
@@ -321,46 +321,46 @@
     },
     "engines": {
       "title": "Engines and Structures",
-      "description": "Engines and Structures",
+      "description": "Engines and structures",
       "type": "object",
       "properties": {
         "applicationEngine": {
           "title": "Application Engine",
-          "description": "Application Engine",
+          "description": "Application engine",
           "type": "string",
           "maxLength": 3,
           "pattern": "^[0-9]+$"
         },
         "persistencyEngine": {
           "title": "Persistency Engine",
-          "description": "Persistency Engine",
+          "description": "Persistency engine",
           "type": "string",
           "maxLength": 3,
           "pattern": "^[0-9]+$"
         },
         "selectionEngine": {
           "title": "Selection Engine",
-          "description": "Selection Engine",
+          "description": "Selection engine",
           "type": "string",
           "maxLength": 3,
           "pattern": "^[0-9]+$"
         },
         "loggingEngine": {
           "title": "Logging Engine",
-          "description": "Logging Engine",
+          "description": "Logging engine",
           "type": "string",
           "maxLength": 3,
           "pattern": "^[0-9]+$"
         },
         "rawStructure": {
           "title": "RAW Structure",
-          "description": "RAW Structure",
+          "description": "RAW structure",
           "type": "string",
           "maxLength": 30
         },
         "sapStructure": {
           "title": "SAP Structure",
-          "description": "SAP Structure",
+          "description": "SAP structure",
           "type": "string",
           "maxLength": 30
         }
@@ -369,72 +369,72 @@
     },
     "oKeyFields": {
       "title": "Key Fields",
-      "description": "Key Fields",
+      "description": "Key fields",
       "type": "object",
       "properties": {
         "keyFieldsTable": {
           "title": "Key Fields",
-          "description": "Key Fields",
+          "description": "Key fields",
           "type": "array",
           "items": {
             "title": "Key Field",
-            "description": "Key Field",
+            "description": "Key field",
             "type": "object",
             "properties": {
               "keyFieldName": {
                 "title": "Key Field Name",
-                "description": "Key Field Name",
+                "description": "Key field name",
                 "type": "string",
                 "maxLength": 30
               },
               "dataElement": {
                 "title": "Data Element",
-                "description": "Data Element",
+                "description": "Data element",
                 "type": "string",
                 "maxLength": 30
               },
               "seloptName": {
                 "title": "Name of Select-Option/Parameter",
-                "description": "Name of Select-Option/Parameter",
+                "description": "Name of select-option/parameter",
                 "type": "string",
                 "maxLength": 8
               },
               "isSelopt": {
                 "title": "Select-Option",
-                "description": "Is Select-Option?",
+                "description": "Is select-option?",
                 "type": "boolean"
               },
               "columnDisplay": {
                 "title": "Display as Column",
-                "description": "Display as Column",
+                "description": "Display as column",
                 "type": "boolean",
                 "default": true
               },
               "fieldName": {
                 "title": "Field Name",
-                "description": "Field Name in Define Key Fields",
+                "description": "Field name in define key fields",
                 "type": "string",
                 "maxLength": 120
               },
               "sapRawStructure": {
                 "title": "SAP or RAW Structure",
-                "description": "Is SAP or RAW Structure?",
+                "description": "Is sap or raw structure?",
                 "type": "boolean"
               },
               "enableQualifier": {
                 "title": "Enable Key Field Qualifier",
-                "description": "Is SAP or RAW Structure?",
+                "description": "Enable key field qualifier?",
                 "type": "boolean"
               },
               "qualifierFieldName": {
                 "title": "Qualifier Field Name",
-                "description": "Qualifier Field Name",
+                "description": "Qualifier field name",
                 "type": "string",
                 "maxLength": 120
               },
               "qualifierOperator": {
                 "title": "Qualifier Operator",
-                "description": "Qualifier Operator",
+                "description": "Qualifier operator",
                 "type": "string",
                 "enum": [
                   "equals",
@@ -476,29 +476,29 @@
               },
               "qualifierValue": {
                 "title": "Qualifier Value",
-                "description": "Qualifier Value",
+                "description": "Qualifier value",
                 "type": "string",
                 "maxLength": 45
               },
               "multiSelectionType": {
                 "title": "Mulitple Selection Type",
-                "description": "Mulitple Selection Type",
+                "description": "Mulitple selection type",
                 "type": "boolean"
               },
               "idxTable": {
                 "title": "Message Index Table",
-                "description": "Message Index Table",
+                "description": "Message index table",
                 "type": "string",
                 "maxLength": 30
               },
               "showTreeNode": {
                 "title": "Show Tree Node in View 1 Tree",
-                "description": "Show Tree Node in View 1 Tree",
+                "description": "Show tree node in view 1 tree",
                 "type": "boolean"
               },
               "parentFieldSequence": {
                 "title": "Parent Field Sequence Number",
-                "description": "Parent Field Sequence Number",
+                "description": "Parent field sequence number",
                 "type": "string",
                 "maxLength": 3,
                 "pattern": "^[0-9]+$"
@@ -511,39 +511,39 @@
               },
               "iconTooltip": {
                 "title": "Icon Tooltip",
-                "description": "Icon Tooltip",
+                "description": "Icon tooltip",
                 "type": "string",
                 "maxLength": 40
               },
               "alertFieldName": {
                 "title": "Field Name in Alert Recipient Assignment Table",
-                "description": "Field Name in Alert Recipient Assignment Table",
+                "description": "Field name in alert recipient assignment table",
                 "type": "string",
                 "maxLength": 45
               },
               "alertRecipientRelevant": {
                 "title": "Relevant for Alert Recipient Determination",
-                "description": "Relevant for Alert Recipient Determination",
+                "description": "Relevant for alert recipient determination",
                 "type": "boolean"
               },
               "catFieldname": {
                 "title": "Category Field Name",
-                "description": "Category Field Name",
+                "description": "Category field name",
                 "type": "string",
                 "maxLength": 32
               },
               "keyFieldRulesFields": {
                 "title": "Key Field Rule Fields",
-                "description": "Key Field Rule Fields",
+                "description": "Key field rule fields",
                 "type": "array",
                 "items": {
                   "title": "Key Field Rule Field",
-                  "description": "Key Field Rule Field",
+                  "description": "Key field rule field",
                   "type": "object",
                   "properties": {
                     "keyFieldRuleField": {
                       "title": "Key Field Rule Field",
-                      "description": "Key Field Rule Field",
+                      "description": "Key field rule field",
                       "type": "string",
                       "maxLength": 30
                     }
@@ -559,31 +559,31 @@
               },
               "valueMapping": {
                 "title": "Value Mapping",
-                "description": "Value Mapping",
+                "description": "Value mapping",
                 "type": "string",
                 "maxLength": 20
               },
               "semanticObject": {
                 "title": "Semantic Object",
-                "description": "Semantic Object",
+                "description": "Semantic object",
                 "type": "string",
                 "maxLength": 30
               },
               "semanticAction": {
                 "title": "Semantic Action",
-                "description": "Semantic Action",
+                "description": "Semantic action",
                 "type": "string",
                 "maxLength": 60
               },
               "messageMonitorShow": {
                 "title": "Display in Message Monitoring",
-                "description": "Display in Message Monitoring",
+                "description": "Display in message monitoring",
                 "type": "boolean",
                 "default": true
               },
               "messageMonitorDefault": {
                 "title": "Display in Message Monitoring by Default",
-                "description": "Display in Message Monitoring by Default",
+                "description": "Display in message monitoring by default",
                 "type": "boolean"
               }
             },
