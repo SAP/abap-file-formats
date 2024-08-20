@@ -186,17 +186,7 @@
         "direction": {
           "title": "Direction",
           "description": "Direction",
-          "type": "string",
-          "enum": [
-            "inbound",
-            "outbound",
-            "both"
-          ],
-          "enumDescriptions": [
-            "Inbound",
-            "Outbound",
-            "Both"
-          ]
+          "type": "boolean"
         },
         "preprocessing": {
           "title": "Preprocessing",
@@ -429,15 +419,7 @@
               "sapRawStructure": {
                 "title": "SAP or RAW Structure",
                 "description": "Is SAP or RAW Structure?",
-                "type": "string",
-                "enum": [
-                  "sourceStructure(rawForInbound,SapForOutbound)",
-                  "dest.Structure(sapForInbound,RawForOutbound)"
-                ],
-                "enumDescriptions": [
-                  "Source structure (raw for inbound, SAP for outbound)",
-                  "Dest. structure (SAP for inbound, raw for outbound)"
-                ]
+                "type": "boolean"
               },
               "enableQualifier": {
                 "title": "Enable Key Field Qualifier",
@@ -455,25 +437,42 @@
                 "description": "Qualifier Operator",
                 "type": "string",
                 "enum": [
-                  "",
-                  "equal",
-                  "notEqual",
+                  "equals",
+                  "between",
+                  "greaterThan",
                   "containsPattern",
-                  "noPattern",
-                  "containsAnyCharacter",
-                  "notContainsAnyCharacter",
-                  "matches(regularExpression)"
+                  "notEqual",
+                  "notBetween",
+                  "notContainsPattern",
+                  "greaterEqual",
+                  "lessThan",
+                  "lessEqual"
+                ],
+                "enumTitles": [
+                  "Equals",
+                  "Between",
+                  "Greater Than",
+                  "Contains Pattern",
+                  "Not Equal",
+                  "Not Between",
+                  "Not Contains Pattern",
+                  "Greater Equal",
+                  "Less Than",
+                  "Less Equal"
                 ],
                 "enumDescriptions": [
-                  "",
-                  "Equal",
-                  "Not Equal",
-                  "Contains Pattern",
-                  "No Pattern",
-                  "Contains Any Character",
-                  "Not Contains Any Character",
-                  "Matches (regular expression)"
-                ]
+                  "Equals",
+                  "Between",
+                  "Greater than",
+                  "Contains pattern",
+                  "Not equal",
+                  "Not between",
+                  "Not contains pattern",
+                  "Greater equal",
+                  "Less than",
+                  "Less equal"
+                ],
+                "default": "equals"
               },
               "qualifierValue": {
                 "title": "Qualifier Value",
@@ -484,17 +483,7 @@
               "multiSelectionType": {
                 "title": "Mulitple Selection Type",
                 "description": "Mulitple Selection Type",
-                "type": "string",
-                "enum": [
-                  "singleSelection",
-                  "multipleSelection",
-                  "documentIdSelection"
-                ],
-                "enumDescriptions": [
-                  "Single selection",
-                  "Multiple selection",
-                  "Document ID selection"
-                ]
+                "type": "boolean"
               },
               "idxTable": {
                 "title": "Message Index Table",
@@ -535,15 +524,7 @@
               "alertRecipientRelevant": {
                 "title": "Relevant for Alert Recipient Determination",
                 "description": "Relevant for Alert Recipient Determination",
-                "type": "string",
-                "enum": [
-                  "notRelevantForAlertRecipientDetermination",
-                  "relevantForAlertRecipientDetermination"
-                ],
-                "enumDescriptions": [
-                  "Not relevant for alert recipient determination",
-                  "Relevant for alert recipient determination"
-                ]
+                "type": "boolean"
               },
               "catFieldname": {
                 "title": "Category Field Name",
