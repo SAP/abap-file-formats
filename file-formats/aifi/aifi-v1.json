@@ -197,20 +197,17 @@
         "proxyXmlTransformation": {
           "title": "Proxy XML Transformation",
           "description": "Use proxy xml transformation",
-          "type": "string",
-          "maxLength": 1
+          "type": "boolean"
         },
         "extendXmlHandling": {
           "title": "Extend XML Handling",
           "description": "Extend xml handling",
-          "type": "string",
-          "maxLength": 1
+          "type": "boolean"
         },
         "postprocesssing": {
           "title": "Postprocessing",
           "description": "Postprocessing",
-          "type": "string",
-          "maxLength": 1
+          "type": "boolean"
         }
       },
       "additionalProperties": false,
@@ -278,21 +275,18 @@
           "changeable": {
             "title": "Changeable",
             "description": "Changeable",
-            "type": "string",
-            "maxLength": 1
+            "type": "boolean"
           },
           "hidden": {
             "title": "Hidden",
             "description": "Hidden",
-            "type": "string",
-            "maxLength": 1
+            "type": "boolean"
           },
           "useDdic": {
             "title": "Use DDIC",
             "description": "Use ddic description?",
-            "type": "string",
-            "maxLength": 1,
-            "default": "X"
+            "type": "boolean",
+            "default": true
           },
           "description": {
             "title": "Description",
@@ -409,15 +403,13 @@
               "isSelopt": {
                 "title": "Select-Option",
                 "description": "Is select-option?",
-                "type": "string",
-                "maxLength": 1
+                "type": "boolean"
               },
               "columnDisplay": {
                 "title": "Display as Column",
                 "description": "Display as column",
-                "type": "string",
-                "maxLength": 1,
-                "default": "X"
+                "type": "boolean",
+                "default": true
               },
               "fieldName": {
                 "title": "Field Name",
@@ -434,8 +426,7 @@
               "enableQualifier": {
                 "title": "Enable Key Field Qualifier",
                 "description": "Enable key field qualifier?",
-                "type": "string",
-                "maxLength": 1
+                "type": "boolean"
               },
               "qualifierFieldName": {
                 "title": "Qualifier Field Name",
@@ -506,8 +497,7 @@
               "showTreeNode": {
                 "title": "Show Tree Node in View 1 Tree",
                 "description": "Show tree node in view 1 tree",
-                "type": "string",
-                "maxLength": 1
+                "type": "boolean"
               },
               "parentFieldSequence": {
                 "title": "Parent Field Sequence Number",
@@ -537,8 +527,7 @@
               "alertRecipientRelevant": {
                 "title": "Relevant for Alert Recipient Determination",
                 "description": "Relevant for alert recipient determination",
-                "type": "string",
-                "maxLength": 1
+                "type": "boolean"
               },
               "catFieldname": {
                 "title": "Category Field Name",
@@ -592,15 +581,13 @@
               "messageMonitorShow": {
                 "title": "Display in Message Monitoring",
                 "description": "Display in message monitoring",
-                "type": "string",
-                "maxLength": 1,
-                "default": "X"
+                "type": "boolean",
+                "default": true
               },
               "messageMonitorDefault": {
                 "title": "Display in Message Monitoring by Default",
                 "description": "Display in message monitoring by default",
-                "type": "string",
-                "maxLength": 1
+                "type": "boolean"
               }
             },
             "additionalProperties": false,
