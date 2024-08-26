@@ -6,9 +6,9 @@
 ---
 
 ## Table of Contents
-* [File Names](#File-Names)
-* [File Extensions](#File-Extensions)
-* [Formatting Conventions](#Formatting-Conventions)
+* [File Names](#file-names)
+* [File Extensions](#file-extensions)
+* [Formatting Conventions](#formatting-conventions)
 
 ## File Names
 
@@ -54,12 +54,14 @@ For the text elements of classes, this language will be the original language (p
 
 ## File Extensions
 
-ABAP file formats define the file types:
+ABAP file formats use the file types:
 * **`.abap`** stores ABAP source code as plain text
 * **`.acds`** stores source code of ABAP Core Data Services (CDS) as plain text
 * **`.json`** stores content of form-based editors or properties of objects, such as `originalLanguage`, `abapLanguageVersion` and others.
 Details are found in [JSON Files in ABAP File Formats](./json.md)
 * **`.properties`** stores text elements as plain text and [translation texts](properties.md)
+* **`.xdp`** stands for XML Data Packaging and is part of Form Objects (SFPF)
+* **`.csn`** is a notation for compact representations of CDS models and is part of CSN Models (CSNM)
 
 
 ## Formatting Conventions
