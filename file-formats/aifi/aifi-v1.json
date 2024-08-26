@@ -162,6 +162,18 @@
           "type": "string",
           "maxLength": 5
         },
+        "rawStructure": {
+          "title": "RAW Structure",
+          "description": "RAW structure",
+          "type": "string",
+          "maxLength": 30
+        },
+        "sapStructure": {
+          "title": "SAP Structure",
+          "description": "SAP structure",
+          "type": "string",
+          "maxLength": 30
+        },
         "indexTable": {
           "title": "Index Table",
           "description": "Index table",
@@ -187,7 +199,22 @@
           "title": "Direction",
           "description": "Direction",
           "type": "string",
-          "maxLength": 1
+          "enum": [
+            "inbound",
+            "outbound",
+            "both"
+          ],
+          "enumTitles": [
+            "Inbound",
+            "Outbound",
+            "Both"
+          ],
+          "enumDescriptions": [
+            "Inbound",
+            "Outbound",
+            "Both"
+          ],
+          "default": "both"
         },
         "preprocessing": {
           "title": "Preprocessing",
@@ -212,17 +239,6 @@
       },
       "additionalProperties": false,
       "required": [
-        "integrationType",
-        "soapClass",
-        "soapMethod",
-        "soapRecordType",
-        "repositoryId",
-        "registrationId",
-        "registrationVersion",
-        "topic",
-        "operationId",
-        "operationVariantId",
-        "operationVaraint",
         "namespace",
         "interfaceName",
         "interfaceVersion"
@@ -321,8 +337,8 @@
       }
     },
     "engines": {
-      "title": "Engines and Structures",
-      "description": "Engines and structures",
+      "title": "Engines",
+      "description": "Engines",
       "type": "object",
       "properties": {
         "applicationEngine": {
@@ -352,18 +368,6 @@
           "type": "string",
           "maxLength": 3,
           "pattern": "^[0-9]+$"
-        },
-        "rawStructure": {
-          "title": "RAW Structure",
-          "description": "RAW structure",
-          "type": "string",
-          "maxLength": 30
-        },
-        "sapStructure": {
-          "title": "SAP Structure",
-          "description": "SAP structure",
-          "type": "string",
-          "maxLength": 30
         }
       },
       "additionalProperties": false
@@ -421,7 +425,19 @@
                 "title": "SAP or RAW Structure",
                 "description": "Is sap or raw structure?",
                 "type": "string",
-                "maxLength": 1
+                "enum": [
+                  "raw",
+                  "sap"
+                ],
+                "enumTitles": [
+                  "Source Structure (raw for inbound, SAP for outbound)",
+                  "Destination Structure (SAP for inbound, raw for outbound)"
+                ],
+                "enumDescriptions": [
+                  "Source structure (raw for inbound, SAP for outbound)",
+                  "Destination structure (SAP for inbound, raw for outbound)"
+                ],
+                "default": "raw"
               },
               "enableQualifier": {
                 "title": "Enable Key Field Qualifier",
@@ -482,11 +498,26 @@
                 "type": "string",
                 "maxLength": 45
               },
-              "multiSelectionType": {
-                "title": "Mulitple Selection Type",
-                "description": "Mulitple selection type",
+              "selectionType": {
+                "title": "Selection Type",
+                "description": "Selection type",
                 "type": "string",
-                "maxLength": 1
+                "enum": [
+                  "single",
+                  "multiple",
+                  "document"
+                ],
+                "enumTitles": [
+                  "Single Selection",
+                  "Multiple Selection",
+                  "Document ID Selection"
+                ],
+                "enumDescriptions": [
+                  "Single selection",
+                  "Multiple selection",
+                  "Document ID selection"
+                ],
+                "default": "single"
               },
               "idxTable": {
                 "title": "Message Index Table",
@@ -495,7 +526,7 @@
                 "maxLength": 30
               },
               "showTreeNode": {
-                "title": "Show Tree Node in View 1 Tree",
+                "title": "Show Tree Node",
                 "description": "Show tree node in view 1 tree",
                 "type": "boolean"
               },
@@ -553,18 +584,6 @@
                   },
                   "additionalProperties": false
                 }
-              },
-              "valmapNamespace": {
-                "title": "Namespace",
-                "description": "Namespace",
-                "type": "string",
-                "maxLength": 6
-              },
-              "valueMapping": {
-                "title": "Value Mapping",
-                "description": "Value mapping",
-                "type": "string",
-                "maxLength": 20
               },
               "semanticObject": {
                 "title": "Semantic Object",
