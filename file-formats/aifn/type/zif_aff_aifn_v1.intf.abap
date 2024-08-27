@@ -1,5 +1,5 @@
-interface zif_aff_aifn_v1
-  public .
+INTERFACE zif_aff_aifn_v1
+  PUBLIC.
   TYPES:
     "! <p class="shorttext">Namespace Details</p>
     "! Namespace details
@@ -24,4 +24,4 @@ interface zif_aff_aifn_v1
       "! $required
       namespace_details TYPE ty_namespace_details,
     END OF ty_main.
-endinterface.
+ENDINTERFACE.
