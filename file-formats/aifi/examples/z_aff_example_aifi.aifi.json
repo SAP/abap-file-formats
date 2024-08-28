@@ -7,96 +7,143 @@
   },
   "aifInterface": {
     "integrationType": "soap",
-    "soapClass": "CL_AIF_SOAP_TEST",
-    "soapMethod": "RUN",
-    "soapRecordType": "/AIF/T100_SAP_FLIGHT",
-    "repositoryId": "AIF_REPO_1",
-    "registrationId": "REGISTRATION_ID_EVT_GEN_1",
-    "registrationVersion": "5",
-    "topic": "Topic_0005",
-    "operationId": "CL_AIF_TEST_BGPF_OPERATION",
-    "operationVariantId": "0000000001",
-    "operationVaraint": "OP2023",
+    "soapSettings": {
+      "soapClass": "CL_SOAP_RFC_PROXY_TEST",
+      "soapMethod": "EXECUTE",
+      "soapRecordType": "/AIF/T100_SAP_FLIGHT"
+    },
+    "eventSettings": {
+      "repositoryId": "AIF_REPO_1",
+      "registrationId": "REGISTRATION_ID_EVT_GEN_1",
+      "registrationVersion": "5",
+      "topic": "Topic_0005"
+    },
+    "bgpfSettings": {
+      "operationId": "CL_AIF_TEST_BGPF_OPERATION",
+      "operationVariantId": "0000000001",
+      "operationVaraint": "OP2023"
+    },
     "namespace": "/AIF/",
     "interfaceName": "IFTEST",
     "interfaceVersion": "1",
-    "rawStructure": "/AIF/T100_SAP_FLIGHT",
+    "rawStructure": "/AIF/T100_RAW_FLIGHT",
     "sapStructure": "/AIF/T100_SAP_FLIGHT",
     "indexTable": "/AIF/STD_IDX_TBL",
     "appLogLifetime": "90",
-    "direction": "inbound",
+    "direction": "both",
     "preprocessing": false,
     "proxyXmlTransformation": false,
     "extendXmlHandling": false,
     "postprocesssing": false
   },
   "recipientAssignment": [],
-  "structureSettings": [],
+  "structureSettings": [
+    {
+      "sequence": "010",
+      "component": "TEST",
+      "changeable": true,
+      "hidden": false,
+      "useDdic": false,
+      "description": "Test",
+      "shortText": "Test1",
+      "mediumText": "Test12",
+      "longText": "Test123"
+    }
+  ],
   "engines": {},
   "oKeyFields": {
     "keyFieldsTable": [
       {
-        "keyFieldName": "/AIF/TEST1",
-        "dataElement": "STRING",
-        "isSelopt": false,
-        "columnDisplay": true,
-        "sapRawStructure": "raw",
-        "enableQualifier": false,
-        "qualifierOperator": "equals",
-        "selectionType": "single",
-        "showTreeNode": false,
-        "alertRecipientRelevant": false,
+        "keyFieldSettings": {
+          "keyFieldName": "/AIF/TEST1",
+          "dataElement": "STRING",
+          "sapRawStructure": "raw",
+          "isSelopt": false,
+          "columnDisplay": true
+        },
+        "keyfieldQualifier": {
+          "enableQualifier": false,
+          "qualifierOperator": "equals"
+        },
+        "keyfieldSelection": {
+          "selectionType": "single",
+          "showTreeNode": true,
+          "alertRecipientRelevant": false
+        },
         "keyFieldRulesFields": [
           {
-            "keyFieldRuleField": "TEST_FIELD1"
+            "keyFieldRuleField": "TEST_FIELD1",
+            "fieldSequnceNumber": "010"
           }
         ],
-        "messageMonitorShow": true,
-        "messageMonitorDefault": false
+        "fioriFeatures": {
+          "messageMonitorShow": true,
+          "messageMonitorDefault": false
+        }
       },
       {
-        "keyFieldName": "/AIF/TEST2",
-        "dataElement": "STRING",
-        "isSelopt": false,
-        "columnDisplay": true,
-        "sapRawStructure": "raw",
-        "enableQualifier": false,
-        "qualifierOperator": "equals",
-        "selectionType": "single",
-        "showTreeNode": false,
-        "alertRecipientRelevant": false,
+        "keyFieldSettings": {
+          "keyFieldName": "/AIF/TEST2",
+          "dataElement": "STRING",
+          "sapRawStructure": "raw",
+          "isSelopt": false,
+          "columnDisplay": true
+        },
+        "keyfieldQualifier": {
+          "enableQualifier": false,
+          "qualifierOperator": "equals"
+        },
+        "keyfieldSelection": {
+          "selectionType": "single",
+          "showTreeNode": true,
+          "alertRecipientRelevant": false
+        },
         "keyFieldRulesFields": [
           {
-            "keyFieldRuleField": "TEST_FIELD2"
+            "keyFieldRuleField": "TEST_FIELD2",
+            "fieldSequnceNumber": "010"
           }
         ],
-        "messageMonitorShow": true,
-        "messageMonitorDefault": false
+        "fioriFeatures": {
+          "messageMonitorShow": true,
+          "messageMonitorDefault": false
+        }
       },
       {
-        "keyFieldName": "AIF_TEST3",
-        "dataElement": "BOOLEAN",
-        "isSelopt": false,
-        "columnDisplay": true,
-        "sapRawStructure": "raw",
-        "enableQualifier": false,
-        "qualifierOperator": "equals",
-        "selectionType": "single",
-        "showTreeNode": false,
-        "alertRecipientRelevant": false,
+        "keyFieldSettings": {
+          "keyFieldName": "AIF_TEST3",
+          "dataElement": "BOOLEAN",
+          "sapRawStructure": "raw",
+          "isSelopt": false,
+          "columnDisplay": true
+        },
+        "keyfieldQualifier": {
+          "enableQualifier": false,
+          "qualifierOperator": "equals"
+        },
+        "keyfieldSelection": {
+          "selectionType": "single",
+          "showTreeNode": true,
+          "alertRecipientRelevant": false
+        },
         "keyFieldRulesFields": [
           {
-            "keyFieldRuleField": "NON"
+            "keyFieldRuleField": "NON",
+            "fieldSequnceNumber": "010"
           },
           {
-            "keyFieldRuleField": "SENSE"
+            "keyFieldRuleField": "SENSE",
+            "fieldSequnceNumber": "020"
           },
           {
-            "keyFieldRuleField": "?"
+            "keyFieldRuleField": "?",
+            "fieldSequnceNumber": "030"
           }
         ],
-        "messageMonitorShow": true,
-        "messageMonitorDefault": false
+        "fioriFeatures": {
+          "messageMonitorShow": true,
+          "messageMonitorDefault": false
+        }
       }
     ]
   }

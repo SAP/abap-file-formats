@@ -66,52 +66,89 @@ INTERFACE zif_aff_aifi_v1
     END OF co_integration_type.
 
   TYPES:
+    "! <p class="shorttext">SOAP Settings</p>
+    "! SOAP settings
+    BEGIN OF ty_soap_settings,
+      "! <p class="shorttext">SOAP Class</p>
+      "! SOAP class
+      "! $required
+      " SOAP / web service class is stored in /AIF/T_FINF-PROXYCLASSNAMECL type /aif/proxy_outbound
+      soap_class       TYPE zif_aff_types_v1=>ty_object_name_30,
+      "! <p class="shorttext">SOAP Method</p>
+      "! SOAP method
+      "! $required
+      " SOAP / web service method is stored in /AIF/T_FINF-PRX_METHOD type /aif/proxy_method
+      soap_method      TYPE zif_aff_types_v1=>ty_object_name_30,
+      "! <p class="shorttext">SOAP Record Type</p>
+      "! SOAP record type
+      "! $required
+      " SOAP / web service record type is stored in /AIF/T_FINF-RECTYPERAW type /aif/rectyperaw
+      soap_record_type TYPE c LENGTH 45,
+    END OF ty_soap_settings.
+
+  TYPES:
+    "! <p class="shorttext">Event Settings</p>
+    "! Event settings
+    BEGIN OF ty_event_settings,
+      "! <p class="shorttext">Repository ID</p>
+      "! Repository id
+      "! $required
+      " EEE - Enterprise Event Engine (type /iwxbe/reg_repository_id)
+      repository_id        TYPE c LENGTH 10,
+      "! <p class="shorttext">Registration ID</p>
+      "! Registration id
+      "! $required
+      " EEE - Enterprise Event Engine (type /iwxbe/reg_id)
+      registration_id      TYPE c LENGTH 36,
+      "! <p class="shorttext">Registration Version</p>
+      "! Registration version
+      "! $required
+      " EEE - Enterprise Event Engine (type /iwxbe/reg_version)
+      registration_version TYPE n LENGTH 4,
+      "! <p class="shorttext">Topic</p>
+      "! Topic
+      "! $required
+      " EEE - Enterprise Event Engine (type  /iwxbe/descr_topic)
+      topic                TYPE c LENGTH 255,
+    END OF ty_event_settings.
+
+  TYPES:
+    "! <p class="shorttext">BgPF Settings</p>
+    "! BgPf settings
+    BEGIN OF ty_bgpf_settings,
+      "! <p class="shorttext">Operation ID</p>
+      "! Operation id
+      "! $required
+      " bgPF (type /aif/bgp_opid_e)
+      operation_id         TYPE zif_aff_types_v1=>ty_object_name_30,
+      "! <p class="shorttext">Operation Variant ID</p>
+      "! Operation variant id
+      "! $required
+      " bgPF (type /aif/bgp_variant_id_e)
+      operation_variant_id TYPE n LENGTH 10,
+      "! <p class="shorttext">Operation Variant</p>
+      "! Operation variant
+      "! $required
+      " bgPF (type /aif/bgp_variant_e)
+      operation_varaint    TYPE string,
+    END OF ty_bgpf_settings.
+
+  TYPES:
     "! <p class="shorttext">Application Interface</p>
     "! Application interface
     BEGIN OF ty_aif_interface,
       "! <p class="shorttext">Integration Type</p>
       "! Integration type
       integration_type         TYPE ty_integration_type,
-      "! <p class="shorttext">SOAP Class</p>
-      "! SOAP class
-      " SOAP / web service class is stored in /AIF/T_FINF-PROXYCLASSNAMECL type /aif/proxy_outbound
-      soap_class               TYPE zif_aff_types_v1=>ty_object_name_30,
-      "! <p class="shorttext">SOAP Method</p>
-      "! SOAP method
-      " SOAP / web service method is stored in /AIF/T_FINF-PRX_METHOD type /aif/proxy_method
-      soap_method              TYPE zif_aff_types_v1=>ty_object_name_30,
-      "! <p class="shorttext">SOAP Record Type</p>
-      "! SOAP record type
-      " SOAP / web service record type is stored in /AIF/T_FINF-RECTYPERAW type /aif/rectyperaw
-      soap_record_type         TYPE c LENGTH 45,
-      "! <p class="shorttext">Repository ID</p>
-      "! Repository id
-      " EEE - Enterprise Event Engine (type /iwxbe/reg_repository_id)
-      repository_id            TYPE c LENGTH 10,
-      "! <p class="shorttext">Registration ID</p>
-      "! Registration id
-      " EEE - Enterprise Event Engine (type /iwxbe/reg_id)
-      registration_id          TYPE c LENGTH 36,
-      "! <p class="shorttext">Registration Version</p>
-      "! Registration version
-      " EEE - Enterprise Event Engine (type /iwxbe/reg_version)
-      registration_version     TYPE n LENGTH 4,
-      "! <p class="shorttext">Topic</p>
-      "! Topic
-      " EEE - Enterprise Event Engine (type  /iwxbe/descr_topic)
-      topic                    TYPE c LENGTH 255,
-      "! <p class="shorttext">Operation ID</p>
-      "! Operation id
-      " bgPF (type /aif/bgp_opid_e)
-      operation_id             TYPE zif_aff_types_v1=>ty_object_name_30,
-      "! <p class="shorttext">Operation Variant ID</p>
-      "! Operation variant id
-      " bgPF (type /aif/bgp_variant_id_e)
-      operation_variant_id     TYPE n LENGTH 10,
-      "! <p class="shorttext">Operation Variant</p>
-      "! Operation variant
-      " bgPF (type /aif/bgp_variant_e)
-      operation_varaint        TYPE string,
+      "! <p class="shorttext">SOAP Settings</p>
+      "! SOAP settings
+      soap_settings            TYPE ty_soap_settings,
+      "! <p class="shorttext">Event Settings</p>
+      "! Event settings
+      event_settings           TYPE ty_event_settings,
+      "! <p class="shorttext">BgPF Settings</p>
+      "! BgPF settings
+      bgpf_settings            TYPE ty_bgpf_settings,
       "! <p class="shorttext">Namespace</p>
       "! Namespace
       "! $required
@@ -186,70 +223,68 @@ INTERFACE zif_aff_aifi_v1
   TYPES ty_recipients TYPE STANDARD TABLE OF ty_recipient WITH DEFAULT KEY.
 
   TYPES:
-    "! <p class="shorttext">Key Field Rule Field</p>
-    "! Key field rule field
-    BEGIN OF ty_key_field_rules_field,
-      "! <p class="shorttext">Key Field Rule Field</p>
-      "! Key field rule field
-      " (type  /aif/key_fieldname_enh)
-      key_field_rule_field TYPE zif_aff_types_v1=>ty_object_name_30,
-    END OF ty_key_field_rules_field.
-
-  "! <p class="shorttext">Key Field Rule Fields</p>
-  "! Key field rule fields
-  TYPES ty_key_field_rules_fields TYPE STANDARD TABLE OF ty_key_field_rules_field WITH DEFAULT KEY.
-
-  TYPES:
-    "! <p class="shorttext">Key Field</p>
-    "! Key field
-    BEGIN OF ty_key_field,
+    "! <p class="shorttext">General</p>
+    "! General key field settings
+    BEGIN OF ty_keyfield_settings,
       "! <p class="shorttext">Key Field Name</p>
       "! Key field name
       "! $required
       " (type /aif/key_fieldname, field of index table)
-      key_field_name           TYPE zif_aff_types_v1=>ty_object_name_30,
+      key_field_name    TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Data Element</p>
       "! Data element
       "! $required
       " (type rollname)
-      data_element             TYPE zif_aff_types_v1=>ty_object_name_30,
+      data_element      TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Name of Select-Option/Parameter</p>
       "! Name of select-option/parameter
       " (type /aif/stexti)
-      selopt_name              TYPE c LENGTH 8,
+      selopt_name       TYPE c LENGTH 8,
+      "! <p class="shorttext">Field Name</p>
+      "! Field name in define key fields
+      " (type /aif/lfieldname_kflds, field of sap/raw structure)
+      field_name        TYPE c LENGTH 120,
+      "! <p class="shorttext">SAP or RAW Structure</p>
+      "! Is sap or raw structure?
+      " (type /aif/raw_or_sap_kflds)
+      sap_raw_structure TYPE ty_sap_raw_structure_type,
       "! <p class="shorttext">Select-Option</p>
       "! Is select-option?
       " /AIF/FLD_IS_SELECT_OPT
-      is_selopt                TYPE abap_bool,
+      is_selopt         TYPE abap_bool,
       "! <p class="shorttext">Display as Column</p>
       "! Display as column
       "! $default 'X'
       " /AIF/IS_COL
-      column_display           TYPE abap_bool,
-      "! <p class="shorttext">Field Name</p>
-      "! Field name in define key fields
-      " (type /aif/lfieldname_kflds, field of sap/raw structure)
-      field_name               TYPE c LENGTH 120,
-      "! <p class="shorttext">SAP or RAW Structure</p>
-      "! Is sap or raw structure?
-      " (type /aif/raw_or_sap_kflds)
-      sap_raw_structure        TYPE ty_sap_raw_structure_type,
+      column_display    TYPE abap_bool,
+    END OF ty_keyfield_settings.
+
+  TYPES:
+    "! <p class="shorttext">Key Field Determination by Qualifier</p>
+    "! Key field determination by qualifier
+    BEGIN OF ty_keyfield_qualifier,
       "! <p class="shorttext">Enable Key Field Qualifier</p>
       "! Enable key field qualifier?
       " /AIF/ENABLE_QUALIFIER
-      enable_qualifier         TYPE abap_bool,
+      enable_qualifier     TYPE abap_bool,
       "! <p class="shorttext">Qualifier Field Name</p>
       "! Qualifier field name
       " (type /aif/qualifier_fld_name_kfld)
-      qualifier_field_name     TYPE c LENGTH 120,
+      qualifier_field_name TYPE c LENGTH 120,
       "! <p class="shorttext">Qualifier Operator</p>
       "! Qualifier operator
       " (type /aif/qualifier_operator)
-      qualifier_operator       TYPE zif_aff_types_v1=>ty_option,
+      qualifier_operator   TYPE zif_aff_types_v1=>ty_option,
       "! <p class="shorttext">Qualifier Value</p>
       "! Qualifier value
       " (type /aif/qualifier_value_kfld)
-      qualifier_value          TYPE c LENGTH 45,
+      qualifier_value      TYPE c LENGTH 45,
+    END OF ty_keyfield_qualifier.
+
+  TYPES:
+    "! <p class="shorttext">Key Field Selection</p>
+    "! Key field selection type and settings
+    BEGIN OF ty_keyfield_selection,
       "! <p class="shorttext">Selection Type</p>
       "! Selection type
       " (type /aif/multi_sel_type)
@@ -258,10 +293,6 @@ INTERFACE zif_aff_aifi_v1
       "! Message index table
       " (type /aif/msg_tbl)
       idx_table                TYPE zif_aff_types_v1=>ty_object_name_30,
-      "! <p class="shorttext">Show Tree Node</p>
-      "! Show tree node in view 1 tree
-      " /AIF/IS_HIDDEN, swap to positive stature
-      show_tree_node           TYPE abap_bool,
       "! <p class="shorttext">Parent Field Sequence Number</p>
       "! Parent field sequence number
       " (type /aif/field_number_parent)
@@ -274,38 +305,86 @@ INTERFACE zif_aff_aifi_v1
       "! Icon tooltip
       " (type /aif/tooltip)
       icon_tooltip             TYPE c LENGTH 40,
-      "! <p class="shorttext">Field Name in Alert Recipient Assignment Table</p>
+      "! <p class="shorttext">Alert Recipient Field Name</p>
       "! Field name in alert recipient assignment table
       " (type /aif/alertfieldname)
       alert_field_name         TYPE c LENGTH 45,
-      "! <p class="shorttext">Relevant for Alert Recipient Determination</p>
-      "! Relevant for alert recipient determination
-      " (type /aif/alertrelevant)
-      alert_recipient_relevant TYPE abap_bool,
       "! <p class="shorttext">Category Field Name</p>
       "! Category field name
       " (type /aif/alrt_catfn)
       cat_fieldname            TYPE c LENGTH 32,
-      "! <p class="shorttext">Key Field Rule Fields</p>
-      "! Key field rule fields
-      key_field_rules_fields   TYPE ty_key_field_rules_fields,
+      "! <p class="shorttext">Show Tree Node</p>
+      "! Show tree node in view 1 tree
+      "! $default 'X'
+      " /AIF/IS_HIDDEN, swap to positive stature
+      show_tree_node           TYPE abap_bool,
+      "! <p class="shorttext">Relevant for Alert Recipient Determination</p>
+      "! Relevant for alert recipient determination
+      " (type /aif/alertrelevant)
+      alert_recipient_relevant TYPE abap_bool,
+    END OF ty_keyfield_selection.
+
+  TYPES:
+    "! <p class="shorttext">SAP Fiori Features</p>
+    "! SAP Fiori specific features
+    BEGIN OF ty_fiori_features,
       "! <p class="shorttext">Semantic Object</p>
       "! Semantic object
       " (type /aif/semantic_object)
-      semantic_object          TYPE zif_aff_types_v1=>ty_object_name_30,
+      semantic_object         TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Semantic Action</p>
       "! Semantic action
       " (type /aif/semantic_action)
-      semantic_action          TYPE zif_aff_types_v1=>ty_description_60,
+      semantic_action         TYPE zif_aff_types_v1=>ty_description_60,
       "! <p class="shorttext">Display in Message Monitoring</p>
       "! Display in message monitoring
       "! $default 'X'
       " /AIF/NOT_SHOW_FIELD
-      message_monitor_show     TYPE abap_bool,
+      message_monitor_show    TYPE abap_bool,
       "! <p class="shorttext">Display in Message Monitoring by Default</p>
       "! Display in message monitoring by default
       " /AIF/IS_DEFAULT_FIELD
-      message_monitor_default  TYPE abap_bool,
+      message_monitor_default TYPE abap_bool,
+    END OF ty_fiori_features.
+
+  TYPES:
+    "! <p class="shorttext">Key Field Rule Fields</p>
+    "! Key field rule fields
+    " Related key fields used by key field rules
+    BEGIN OF ty_key_field_rules_field,
+      "! <p class="shorttext">Key Field Name</p>
+      "! Key field name
+      " (type /aif/key_fieldname_enh)
+      key_field_rule_field TYPE zif_aff_types_v1=>ty_object_name_30,
+      "! <p class="shorttext">Field Sequence Number</p>
+      "! Field sequence number
+      " (type /aif/field_number_enh)
+      field_sequnce_number TYPE c LENGTH 3,
+    END OF ty_key_field_rules_field.
+
+  "! <p class="shorttext">Key Field Rules</p>
+  "! Key field rules
+  TYPES ty_key_field_rules_fields TYPE STANDARD TABLE OF ty_key_field_rules_field WITH DEFAULT KEY.
+
+  TYPES:
+    "! <p class="shorttext">Key Field</p>
+    "! Key field
+    BEGIN OF ty_key_field,
+      "! <p class="shorttext">General</p>
+      "! General key field settings
+      key_field_settings     TYPE ty_keyfield_settings,
+      "! <p class="shorttext">Key Field Determination by Qualifier</p>
+      "! Key field determination by qualifier
+      keyfield_qualifier     TYPE ty_keyfield_qualifier,
+      "! <p class="shorttext">Key Field Selection</p>
+      "! Key field selection type and settings
+      keyfield_selection     TYPE ty_keyfield_selection,
+      "! <p class="shorttext">Enable Key Field Rules</p>
+      "! Enable key field rules
+      key_field_rules_fields TYPE ty_key_field_rules_fields,
+      "! <p class="shorttext">SAP Fiori Features</p>
+      "! SAP Fiori specific features
+      fiori_features         TYPE ty_fiori_features,
     END OF ty_key_field.
 
   "! <p class="shorttext">Key Fields</p>
