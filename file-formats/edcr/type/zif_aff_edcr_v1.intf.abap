@@ -3,7 +3,7 @@ INTERFACE zif_aff_edcr_v1
 
   TYPES:
     "! <p class="shorttext">Representation Type</p>
-    "! Representation Type (EDCR) v1
+    "! Representation type
     BEGIN OF ty_main,
       "! $required
       format_version TYPE zif_aff_types_v1=>ty_format_version,
