@@ -490,7 +490,7 @@ INTERFACE zif_aff_aifi_v1
       "! <p class="shorttext">Key Fields</p>
       "! Key fields
       "! $required
-      key_fields_table TYPE ty_key_fields,
+      key_fields_table     TYPE ty_key_fields,
     END OF ty_main.
 
 ENDINTERFACE.
