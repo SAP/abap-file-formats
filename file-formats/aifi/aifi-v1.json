@@ -54,7 +54,7 @@
         "originalLanguage"
       ]
     },
-    "aifInterface": {
+    "generalInformation": {
       "title": "General Information",
       "description": "General information",
       "type": "object",
@@ -66,19 +66,19 @@
           "enum": [
             "soap",
             "syncLog",
-            "pgPf",
+            "bgPf",
             "eventing"
           ],
           "enumTitles": [
             "SOAP",
             "Sync Log",
-            "pgPF",
+            "bgPF",
             "Eventing"
           ],
           "enumDescriptions": [
             "SOAP",
             "Sync log",
-            "pfPF",
+            "Background processing framework",
             "Eventing"
           ],
           "default": "soap"
@@ -155,7 +155,7 @@
         },
         "bgpfSettings": {
           "title": "BgPF Settings",
-          "description": "BgPF settings",
+          "description": "Background processing framework settings",
           "type": "object",
           "properties": {
             "operationId": {
@@ -171,7 +171,7 @@
               "maxLength": 10,
               "pattern": "^[0-9]+$"
             },
-            "operationVaraint": {
+            "operationVariant": {
               "title": "Operation Variant",
               "description": "Operation variant",
               "type": "string"
@@ -181,7 +181,7 @@
           "required": [
             "operationId",
             "operationVariantId",
-            "operationVaraint"
+            "operationVariant"
           ]
         },
         "namespace": {
@@ -256,22 +256,22 @@
           ],
           "default": "both"
         },
-        "preprocessing": {
+        "usesPreprocessing": {
           "title": "Preprocessing",
           "description": "Preprocessing",
           "type": "boolean"
         },
-        "proxyXmlTransformation": {
+        "usesProxyXmlTransformation": {
           "title": "Proxy XML Transformation",
           "description": "Use proxy xml transformation",
           "type": "boolean"
         },
-        "extendXmlHandling": {
+        "usesExtendedXmlHandling": {
           "title": "Extend XML Handling",
           "description": "Extend xml handling",
           "type": "boolean"
         },
-        "postprocesssing": {
+        "usesPostprocesssing": {
           "title": "Postprocessing",
           "description": "Postprocessing",
           "type": "boolean"
@@ -328,17 +328,17 @@
             "type": "string",
             "maxLength": 30
           },
-          "changeable": {
+          "isChangeable": {
             "title": "Changeable",
             "description": "Changeable",
             "type": "boolean"
           },
-          "hidden": {
+          "isHidden": {
             "title": "Hidden",
             "description": "Hidden",
             "type": "boolean"
           },
-          "useDdic": {
+          "usesDdic": {
             "title": "Use DDIC",
             "description": "Use ddic description?",
             "type": "boolean",
@@ -412,304 +412,293 @@
       },
       "additionalProperties": false
     },
-    "oKeyFields": {
+    "keyFieldsTable": {
       "title": "Key Fields",
       "description": "Key fields",
-      "type": "object",
-      "properties": {
-        "keyFieldsTable": {
-          "title": "Key Fields",
-          "description": "Key fields",
-          "type": "array",
-          "items": {
-            "title": "Key Field",
-            "description": "Key field",
+      "type": "array",
+      "items": {
+        "title": "Key Field",
+        "description": "Key field",
+        "type": "object",
+        "properties": {
+          "keyFieldSettings": {
+            "title": "General",
+            "description": "General key field settings",
             "type": "object",
             "properties": {
-              "keyFieldSettings": {
-                "title": "General",
-                "description": "General key field settings",
-                "type": "object",
-                "properties": {
-                  "keyFieldName": {
-                    "title": "Key Field Name",
-                    "description": "Key field name",
-                    "type": "string",
-                    "maxLength": 30
-                  },
-                  "dataElement": {
-                    "title": "Data Element",
-                    "description": "Data element",
-                    "type": "string",
-                    "maxLength": 30
-                  },
-                  "seloptName": {
-                    "title": "Name of Select-Option/Parameter",
-                    "description": "Name of select-option/parameter",
-                    "type": "string",
-                    "maxLength": 8
-                  },
-                  "fieldName": {
-                    "title": "Field Name",
-                    "description": "Field name in define key fields",
-                    "type": "string",
-                    "maxLength": 120
-                  },
-                  "sapRawStructure": {
-                    "title": "SAP or RAW Structure",
-                    "description": "Is sap or raw structure?",
-                    "type": "string",
-                    "enum": [
-                      "raw",
-                      "sap"
-                    ],
-                    "enumTitles": [
-                      "Source Structure (raw for inbound, SAP for outbound)",
-                      "Destination Structure (SAP for inbound, raw for outbound)"
-                    ],
-                    "enumDescriptions": [
-                      "Source structure (raw for inbound, SAP for outbound)",
-                      "Destination structure (SAP for inbound, raw for outbound)"
-                    ],
-                    "default": "raw"
-                  },
-                  "isSelopt": {
-                    "title": "Select-Option",
-                    "description": "Is select-option?",
-                    "type": "boolean"
-                  },
-                  "columnDisplay": {
-                    "title": "Display as Column",
-                    "description": "Display as column",
-                    "type": "boolean",
-                    "default": true
-                  }
-                },
-                "additionalProperties": false,
-                "required": [
-                  "keyFieldName",
-                  "dataElement"
-                ]
+              "keyFieldName": {
+                "title": "Key Field Name",
+                "description": "Key field name",
+                "type": "string",
+                "maxLength": 30
               },
-              "keyfieldQualifier": {
-                "title": "Key Field Determination by Qualifier",
-                "description": "Key field determination by qualifier",
-                "type": "object",
-                "properties": {
-                  "enableQualifier": {
-                    "title": "Enable Key Field Qualifier",
-                    "description": "Enable key field qualifier?",
-                    "type": "boolean"
-                  },
-                  "qualifierFieldName": {
-                    "title": "Qualifier Field Name",
-                    "description": "Qualifier field name",
-                    "type": "string",
-                    "maxLength": 120
-                  },
-                  "qualifierOperator": {
-                    "title": "Qualifier Operator",
-                    "description": "Qualifier operator",
-                    "type": "string",
-                    "enum": [
-                      "equals",
-                      "between",
-                      "greaterThan",
-                      "containsPattern",
-                      "notEqual",
-                      "notBetween",
-                      "notContainsPattern",
-                      "greaterEqual",
-                      "lessThan",
-                      "lessEqual"
-                    ],
-                    "enumTitles": [
-                      "Equals",
-                      "Between",
-                      "Greater Than",
-                      "Contains Pattern",
-                      "Not Equal",
-                      "Not Between",
-                      "Not Contains Pattern",
-                      "Greater Equal",
-                      "Less Than",
-                      "Less Equal"
-                    ],
-                    "enumDescriptions": [
-                      "Equals",
-                      "Between",
-                      "Greater than",
-                      "Contains pattern",
-                      "Not equal",
-                      "Not between",
-                      "Not contains pattern",
-                      "Greater equal",
-                      "Less than",
-                      "Less equal"
-                    ],
-                    "default": "equals"
-                  },
-                  "qualifierValue": {
-                    "title": "Qualifier Value",
-                    "description": "Qualifier value",
-                    "type": "string",
-                    "maxLength": 45
-                  }
-                },
-                "additionalProperties": false
+              "dataElement": {
+                "title": "Data Element",
+                "description": "Data element",
+                "type": "string",
+                "maxLength": 30
               },
-              "keyfieldSelection": {
-                "title": "Key Field Selection",
-                "description": "Key field selection type and settings",
-                "type": "object",
-                "properties": {
-                  "selectionType": {
-                    "title": "Selection Type",
-                    "description": "Selection type",
-                    "type": "string",
-                    "enum": [
-                      "single",
-                      "multiple",
-                      "document"
-                    ],
-                    "enumTitles": [
-                      "Single Selection",
-                      "Multiple Selection",
-                      "Document ID Selection"
-                    ],
-                    "enumDescriptions": [
-                      "Single selection",
-                      "Multiple selection",
-                      "Document ID selection"
-                    ],
-                    "default": "single"
-                  },
-                  "idxTable": {
-                    "title": "Message Index Table",
-                    "description": "Message index table",
-                    "type": "string",
-                    "maxLength": 30
-                  },
-                  "parentFieldSequence": {
-                    "title": "Parent Field Sequence Number",
-                    "description": "Parent field sequence number",
-                    "type": "string",
-                    "maxLength": 3,
-                    "pattern": "^[0-9]+$"
-                  },
-                  "icon": {
-                    "title": "Icon",
-                    "description": "Icon",
-                    "type": "string",
-                    "maxLength": 4
-                  },
-                  "iconTooltip": {
-                    "title": "Icon Tooltip",
-                    "description": "Icon tooltip",
-                    "type": "string",
-                    "maxLength": 40
-                  },
-                  "alertFieldName": {
-                    "title": "Alert Recipient Field Name",
-                    "description": "Field name in alert recipient assignment table",
-                    "type": "string",
-                    "maxLength": 45
-                  },
-                  "catFieldname": {
-                    "title": "Category Field Name",
-                    "description": "Category field name",
-                    "type": "string",
-                    "maxLength": 32
-                  },
-                  "showTreeNode": {
-                    "title": "Show Tree Node",
-                    "description": "Show tree node in view 1 tree",
-                    "type": "boolean",
-                    "default": true
-                  },
-                  "alertRecipientRelevant": {
-                    "title": "Relevant for Alert Recipient Determination",
-                    "description": "Relevant for alert recipient determination",
-                    "type": "boolean"
-                  }
-                },
-                "additionalProperties": false
+              "selectOptionName": {
+                "title": "Name of Select-Option/Parameter",
+                "description": "Name of select-option/parameter",
+                "type": "string",
+                "maxLength": 8
               },
-              "keyFieldRulesFields": {
-                "title": "Enable Key Field Rules",
-                "description": "Enable key field rules",
-                "type": "array",
-                "items": {
-                  "title": "Key Field Rule Fields",
-                  "description": "Key field rule fields",
-                  "type": "object",
-                  "properties": {
-                    "keyFieldRuleField": {
-                      "title": "Key Field Name",
-                      "description": "Key field name",
-                      "type": "string",
-                      "maxLength": 30
-                    },
-                    "fieldSequnceNumber": {
-                      "title": "Field Sequence Number",
-                      "description": "Field sequence number",
-                      "type": "string",
-                      "maxLength": 3
-                    }
-                  },
-                  "additionalProperties": false
+              "fieldName": {
+                "title": "Field Name",
+                "description": "Field name in define key fields",
+                "type": "string",
+                "maxLength": 120
+              },
+              "sapRawStructure": {
+                "title": "SAP or RAW Structure",
+                "description": "Is sap or raw structure?",
+                "type": "string",
+                "enum": [
+                  "raw",
+                  "sap"
+                ],
+                "enumTitles": [
+                  "Source Structure (raw for inbound, SAP for outbound)",
+                  "Destination Structure (SAP for inbound, raw for outbound)"
+                ],
+                "enumDescriptions": [
+                  "Source structure (raw for inbound, SAP for outbound)",
+                  "Destination structure (SAP for inbound, raw for outbound)"
+                ],
+                "default": "raw"
+              },
+              "isSelectOption": {
+                "title": "Select-Option",
+                "description": "Is select-option?",
+                "type": "boolean"
+              },
+              "isColumnDisplay": {
+                "title": "Display as Column",
+                "description": "Display as column",
+                "type": "boolean",
+                "default": true
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "keyFieldName",
+              "dataElement"
+            ]
+          },
+          "keyFieldQualifier": {
+            "title": "Key Field Determination by Qualifier",
+            "description": "Key field determination by qualifier",
+            "type": "object",
+            "properties": {
+              "usesQualifier": {
+                "title": "Enable Key Field Qualifier",
+                "description": "Enable key field qualifier?",
+                "type": "boolean"
+              },
+              "qualifierFieldName": {
+                "title": "Qualifier Field Name",
+                "description": "Qualifier field name",
+                "type": "string",
+                "maxLength": 120
+              },
+              "qualifierOperator": {
+                "title": "Qualifier Operator",
+                "description": "Qualifier operator",
+                "type": "string",
+                "enum": [
+                  "equals",
+                  "between",
+                  "greaterThan",
+                  "containsPattern",
+                  "notEqual",
+                  "notBetween",
+                  "notContainsPattern",
+                  "greaterEqual",
+                  "lessThan",
+                  "lessEqual"
+                ],
+                "enumTitles": [
+                  "Equals",
+                  "Between",
+                  "Greater Than",
+                  "Contains Pattern",
+                  "Not Equal",
+                  "Not Between",
+                  "Not Contains Pattern",
+                  "Greater Equal",
+                  "Less Than",
+                  "Less Equal"
+                ],
+                "enumDescriptions": [
+                  "Equals",
+                  "Between",
+                  "Greater than",
+                  "Contains pattern",
+                  "Not equal",
+                  "Not between",
+                  "Not contains pattern",
+                  "Greater equal",
+                  "Less than",
+                  "Less equal"
+                ],
+                "default": "equals"
+              },
+              "qualifierValue": {
+                "title": "Qualifier Value",
+                "description": "Qualifier value",
+                "type": "string",
+                "maxLength": 45
+              }
+            },
+            "additionalProperties": false
+          },
+          "keyFieldSelection": {
+            "title": "Key Field Selection",
+            "description": "Key field selection type and settings",
+            "type": "object",
+            "properties": {
+              "selectionType": {
+                "title": "Selection Type",
+                "description": "Selection type",
+                "type": "string",
+                "enum": [
+                  "single",
+                  "multiple",
+                  "document"
+                ],
+                "enumTitles": [
+                  "Single Selection",
+                  "Multiple Selection",
+                  "Document ID Selection"
+                ],
+                "enumDescriptions": [
+                  "Single selection",
+                  "Multiple selection",
+                  "Document ID selection"
+                ],
+                "default": "single"
+              },
+              "messageIndexTable": {
+                "title": "Message Index Table",
+                "description": "Message index table",
+                "type": "string",
+                "maxLength": 30
+              },
+              "parentFieldSequence": {
+                "title": "Parent Field Sequence Number",
+                "description": "Parent field sequence number",
+                "type": "string",
+                "maxLength": 3,
+                "pattern": "^[0-9]+$"
+              },
+              "icon": {
+                "title": "Icon",
+                "description": "Icon",
+                "type": "string",
+                "maxLength": 4
+              },
+              "iconTooltip": {
+                "title": "Icon Tooltip",
+                "description": "Icon tooltip",
+                "type": "string",
+                "maxLength": 40
+              },
+              "alertFieldName": {
+                "title": "Alert Recipient Field Name",
+                "description": "Field name in alert recipient assignment table",
+                "type": "string",
+                "maxLength": 45
+              },
+              "categoryFieldname": {
+                "title": "Category Field Name",
+                "description": "Category field name",
+                "type": "string",
+                "maxLength": 32
+              },
+              "isShowTreeNode": {
+                "title": "Show Tree Node",
+                "description": "Show tree node in view 1 tree",
+                "type": "boolean",
+                "default": true
+              },
+              "isAlertRecipientRelevant": {
+                "title": "Relevant for Alert Recipient Determination",
+                "description": "Relevant for alert recipient determination",
+                "type": "boolean"
+              }
+            },
+            "additionalProperties": false
+          },
+          "ruleKeyFieldNames": {
+            "title": "Enable Key Field Rules",
+            "description": "Enable key field rules",
+            "type": "array",
+            "items": {
+              "title": "Rule Key Field Name",
+              "description": "Rule key field name",
+              "type": "object",
+              "properties": {
+                "ruleKeyFieldName": {
+                  "title": "Key Field Name",
+                  "description": "Key field name",
+                  "type": "string",
+                  "maxLength": 30
+                },
+                "fieldSequnceNumber": {
+                  "title": "Field Sequence Number",
+                  "description": "Field sequence number",
+                  "type": "string",
+                  "maxLength": 3
                 }
               },
-              "fioriFeatures": {
-                "title": "SAP Fiori Features",
-                "description": "SAP Fiori specific features",
-                "type": "object",
-                "properties": {
-                  "semanticObject": {
-                    "title": "Semantic Object",
-                    "description": "Semantic object",
-                    "type": "string",
-                    "maxLength": 30
-                  },
-                  "semanticAction": {
-                    "title": "Semantic Action",
-                    "description": "Semantic action",
-                    "type": "string",
-                    "maxLength": 60
-                  },
-                  "messageMonitorShow": {
-                    "title": "Display in Message Monitoring",
-                    "description": "Display in message monitoring",
-                    "type": "boolean",
-                    "default": true
-                  },
-                  "messageMonitorDefault": {
-                    "title": "Display in Message Monitoring by Default",
-                    "description": "Display in message monitoring by default",
-                    "type": "boolean"
-                  }
-                },
-                "additionalProperties": false
+              "additionalProperties": false
+            }
+          },
+          "fioriFeatures": {
+            "title": "SAP Fiori Features",
+            "description": "SAP Fiori specific features",
+            "type": "object",
+            "properties": {
+              "semanticObject": {
+                "title": "Semantic Object",
+                "description": "Semantic object",
+                "type": "string",
+                "maxLength": 30
+              },
+              "semanticAction": {
+                "title": "Semantic Action",
+                "description": "Semantic action",
+                "type": "string",
+                "maxLength": 60
+              },
+              "isMessageMonitorShow": {
+                "title": "Display in Message Monitoring",
+                "description": "Display in message monitoring",
+                "type": "boolean",
+                "default": true
+              },
+              "isMessageMonitorDefault": {
+                "title": "Display in Message Monitoring by Default",
+                "description": "Display in message monitoring by default",
+                "type": "boolean"
               }
             },
             "additionalProperties": false
           }
-        }
-      },
-      "additionalProperties": false,
-      "required": [
-        "keyFieldsTable"
-      ]
+        },
+        "additionalProperties": false
+      }
     }
   },
   "additionalProperties": false,
   "required": [
     "formatVersion",
     "header",
-    "aifInterface",
+    "generalInformation",
     "recipientAssignment",
     "structureSettings",
     "engines",
-    "oKeyFields"
+    "keyFieldsTable"
   ]
 }
