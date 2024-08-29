@@ -484,7 +484,7 @@ INTERFACE zif_aff_aifi_v1
       "! <p class="shorttext">General Information</p>
       "! General information
       "! $required
-      aif_interface        TYPE ty_aif_interface,
+      general_information  TYPE ty_general_information,
       "! <p class="shorttext">Recipient Assignment</p>
       "! Recipient assignment
       "! $required
