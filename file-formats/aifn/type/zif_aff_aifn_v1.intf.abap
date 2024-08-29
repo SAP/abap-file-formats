@@ -5,13 +5,13 @@ INTERFACE zif_aff_aifn_v1
     "! Namespace details
     BEGIN OF ty_namespace_details,
       "! <p class="shorttext">AIF Namespace</p>
-      "! AIF Namespace
+      "! AIF namespace
       "! $required
       aif_namespace TYPE c LENGTH 6,
     END OF ty_namespace_details,
 
-    "! <p class="shorttext">Recipient</p>
-    "! Recipient
+    "! <p class="shorttext">Namespace</p>
+    "! Namespace
     BEGIN OF ty_main,
       "! $required
       format_version    TYPE zif_aff_types_v1=>ty_format_version,
