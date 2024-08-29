@@ -11,9 +11,9 @@ INTERFACE zif_aff_uist_v1
       title         TYPE zif_aff_types_v1=>ty_description_100,
       "! <p class="shorttext">Sort Priority</p>
       "! Sort priority
-      "! $minimum: -9999.999
-      "! $maximum: 9999.999
-      sort_priority TYPE p LENGTH 7 DECIMALS 3,
+      "! $minimum: -9999.99999
+      "! $maximum: 9999.99999
+      sort_priority TYPE p LENGTH 5 DECIMALS 5,
       "! <p class="shorttext">Merge ID</p>
       "! Merge ID
       merge_id      TYPE c LENGTH 35,
