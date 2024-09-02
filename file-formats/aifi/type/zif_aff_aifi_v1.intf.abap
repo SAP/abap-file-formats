@@ -53,16 +53,16 @@ INTERFACE zif_aff_aifi_v1
     BEGIN OF co_integration_type,
       "! <p class="shorttext">SOAP</p>
       "! SOAP
-      soap     TYPE ty_integration_type VALUE 'SOAP',
+      soap     TYPE ty_integration_type VALUE 'SOAP' ##NO_TEXT,
       "! <p class="shorttext">Sync Log</p>
       "! Sync log
-      sync_log TYPE ty_integration_type VALUE 'Sync Log',
+      sync_log TYPE ty_integration_type VALUE 'Sync Log' ##NO_TEXT,
       "! <p class="shorttext">bgPF</p>
       "! Background processing framework
-      bg_pf    TYPE ty_integration_type VALUE 'bgPF',
+      bg_pf    TYPE ty_integration_type VALUE 'bgPF' ##NO_TEXT,
       "! <p class="shorttext">Eventing</p>
       "! Eventing
-      eventing TYPE ty_integration_type VALUE 'Eventing',
+      eventing TYPE ty_integration_type VALUE 'Eventing' ##NO_TEXT,
     END OF co_integration_type.
 
   TYPES:
