@@ -610,7 +610,7 @@
                 "type": "string",
                 "maxLength": 45
               },
-              "categoryFieldname": {
+              "categoryFieldName": {
                 "title": "Category Field Name",
                 "description": "Category field name",
                 "type": "string",
@@ -631,8 +631,8 @@
             "additionalProperties": false
           },
           "ruleKeyFieldNames": {
-            "title": "Enable Key Field Rules",
-            "description": "Enable key field rules",
+            "title": "Key Field Rules",
+            "description": "Key field rules",
             "type": "array",
             "items": {
               "title": "Rule Key Field Name",
@@ -672,13 +672,13 @@
                 "type": "string",
                 "maxLength": 60
               },
-              "isMessageMonitorShow": {
+              "isShowInMessageMonitor": {
                 "title": "Display in Message Monitoring",
                 "description": "Display in message monitoring",
                 "type": "boolean",
                 "default": true
               },
-              "isMessageMonitorDefault": {
+              "isShownByDefault": {
                 "title": "Display in Message Monitoring by Default",
                 "description": "Display in message monitoring by default",
                 "type": "boolean"

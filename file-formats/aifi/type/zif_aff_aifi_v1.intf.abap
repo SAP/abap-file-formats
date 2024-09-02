@@ -312,7 +312,7 @@ INTERFACE zif_aff_aifi_v1
       " (type /aif/alrt_catfn)
       "! <p class="shorttext">Category Field Name</p>
       "! Category field name
-      category_fieldname          TYPE c LENGTH 32,
+      category_field_name         TYPE c LENGTH 32,
       " /AIF/IS_HIDDEN, swap to positive stature
       "! <p class="shorttext">Show Tree Node</p>
       "! Show tree node in view 1 tree
@@ -340,11 +340,11 @@ INTERFACE zif_aff_aifi_v1
       "! <p class="shorttext">Display in Message Monitoring</p>
       "! Display in message monitoring
       "! $default 'X'
-      is_message_monitor_show    TYPE abap_bool,
+      is_show_in_message_monitor TYPE abap_bool,
       " /AIF/IS_DEFAULT_FIELD
       "! <p class="shorttext">Display in Message Monitoring by Default</p>
       "! Display in message monitoring by default
-      is_message_monitor_default TYPE abap_bool,
+      is_shown_by_default        TYPE abap_bool,
     END OF ty_fiori_features.
 
   TYPES:
@@ -379,8 +379,8 @@ INTERFACE zif_aff_aifi_v1
       "! <p class="shorttext">Key Field Selection</p>
       "! Key field selection type and settings
       key_field_selection  TYPE ty_key_field_selection,
-      "! <p class="shorttext">Enable Key Field Rules</p>
-      "! Enable key field rules
+      "! <p class="shorttext">Key Field Rules</p>
+      "! Key field rules
       rule_key_field_names TYPE ty_rule_key_field_names,
       "! <p class="shorttext">SAP Fiori Features</p>
       "! SAP Fiori specific features

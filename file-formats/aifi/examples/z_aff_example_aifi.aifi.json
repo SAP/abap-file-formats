@@ -81,8 +81,8 @@
         }
       ],
       "fioriFeatures": {
-        "isMessageMonitorShow": true,
-        "isMessageMonitorDefault": false
+        "isShowInMessageMonitor": true,
+        "isShownByDefault": false
       }
     },
     {
@@ -109,8 +109,8 @@
         }
       ],
       "fioriFeatures": {
-        "isMessageMonitorShow": true,
-        "isMessageMonitorDefault": false
+        "isShowInMessageMonitor": true,
+        "isShownByDefault": false
       }
     },
     {
@@ -145,8 +145,8 @@
         }
       ],
       "fioriFeatures": {
-        "isMessageMonitorShow": true,
-        "isMessageMonitorDefault": false
+        "isShowInMessageMonitor": true,
+        "isShownByDefault": false
       }
     }
   ]
