@@ -4,10 +4,10 @@
     "description": "Example Check ID",
     "originalLanguage": "en",
     "abapLanguageVersion": "cloudDevelopment"
-  },
+  }, 
   "generalInformation": {
     "checkCategory": "existenceCheck",
     "checkIdClassification": "core",
     "resultDerivationIndicator": false
-  }
+  } 
 }
