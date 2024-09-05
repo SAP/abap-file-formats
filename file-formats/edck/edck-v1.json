@@ -3,7 +3,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/edck/edck-v1.json",
   "title": "Consistency Check ID",
-  "description": "Consistency check ID (EDCK) v1",
+  "description": "Consistency check ID",
   "type": "object",
   "properties": {
     "formatVersion": {
@@ -54,9 +54,9 @@
         "originalLanguage"
       ]
     },
-    "attributes": {
-      "title": "Consistency Check ID Definition",
-      "description": "Attributes of a consistency check ID",
+    "generalInformation": {
+      "title": "General Information",
+      "description": "General information of consistency check ID",
       "type": "object",
       "properties": {
         "checkCategory": {
@@ -97,7 +97,8 @@
           "enumDescriptions": [
             "Core delivered checks",
             "Additionally (Extended) implemented checks"
-          ]
+          ],
+          "default": "core"
         },
         "checkClass": {
           "title": "Additional Check Class",
@@ -111,17 +112,13 @@
           "type": "boolean"
         }
       },
-      "additionalProperties": false,
-      "required": [
-        "checkCategory",
-        "checkIdClassification"
-      ]
+      "additionalProperties": false
     }
   },
   "additionalProperties": false,
   "required": [
     "formatVersion",
     "header",
-    "attributes"
+    "generalInformation"
   ]
 }

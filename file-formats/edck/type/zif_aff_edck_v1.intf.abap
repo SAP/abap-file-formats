@@ -10,13 +10,11 @@ INTERFACE zif_aff_edck_v1
       "! Consistency check category
       "! $values {@link zif_aff_edck_v1.data:co_check_category}
       "! $default {@link if_aff_edck_v1.data:co_check_category.exist}
-      "! $required
       check_category              TYPE ty_check_category,
       "! <p class="shorttext">Check Classification</p>
       "! Consistency check ID classification
       "! $values {@link zif_aff_edck_v1.data:co_check_classification}
       "! $default {@link if_aff_edck_v1.data:co_check_classification.core}
-      "! $required
       check_id_classification     TYPE ty_check_classification,
       "! <p class="shorttext">Additional Check Class</p>
       "! Consistency check class
@@ -28,7 +26,7 @@ INTERFACE zif_aff_edck_v1
 
   TYPES:
     "! <p class="shorttext">Consistency Check ID</p>
-    "! Consistency check ID (EDCK) v1
+    "! Consistency check ID
     BEGIN OF ty_main,
       "! $required
       format_version TYPE zif_aff_types_v1=>ty_format_version,
@@ -36,10 +34,10 @@ INTERFACE zif_aff_edck_v1
       "! Header
       "! $required
       header         TYPE zif_aff_types_v1=>ty_header_60_cloud,
-      "! <p class="shorttext">Consistency Check ID Definition</p>
-      "! Attributes of a consistency check ID
+      "! <p class="shorttext">General Information</p>
+      "! General information of consistency check ID
       "! $required
-      attributes     TYPE ty_attributes,
+      general_information     TYPE ty_attributes,
     END OF ty_main.
 
   CONSTANTS:
