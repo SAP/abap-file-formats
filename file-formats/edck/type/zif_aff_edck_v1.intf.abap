@@ -29,11 +29,11 @@ INTERFACE zif_aff_edck_v1
     "! Consistency check ID
     BEGIN OF ty_main,
       "! $required
-      format_version TYPE zif_aff_types_v1=>ty_format_version,
+      format_version      TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header TYPE zif_aff_types_v1=>ty_header_60_cloud,
+      header              TYPE zif_aff_types_v1=>ty_header_60_cloud,
       "! <p class="shorttext">General Information</p>
       "! General information of consistency check ID
       "! $required
