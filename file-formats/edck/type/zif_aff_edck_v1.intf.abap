@@ -33,11 +33,11 @@ INTERFACE zif_aff_edck_v1
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header         TYPE zif_aff_types_v1=>ty_header_60_cloud,
+      header TYPE zif_aff_types_v1=>ty_header_60_cloud,
       "! <p class="shorttext">General Information</p>
       "! General information of consistency check ID
       "! $required
-      general_information     TYPE ty_attributes,
+      general_information TYPE ty_attributes,
     END OF ty_main.
 
   CONSTANTS:
@@ -46,7 +46,7 @@ INTERFACE zif_aff_edck_v1
     BEGIN OF co_check_classification,
       "! <p class="shorttext">Core delivered checks</p>
       "! Core delivered checks
-      core       TYPE ty_check_classification VALUE 'C',
+      core TYPE ty_check_classification VALUE 'C',
       "! <p class="shorttext">Additionally (Extended) implemented checks</p>
       "! Additionally (Extended) implemented checks
       additional TYPE ty_check_classification VALUE 'A',
@@ -58,15 +58,15 @@ INTERFACE zif_aff_edck_v1
     BEGIN OF co_check_category,
       "! <p class="shorttext">Existence Check</p>
       "! Existence check
-      existence_check           TYPE ty_check_category VALUE 'EXIST',
+      existence_check TYPE ty_check_category VALUE 'EXIST',
       "! <p class="shorttext">Status Check</p>
       "! Status check
-      status_check              TYPE ty_check_category VALUE 'STATUS',
+      status_check TYPE ty_check_category VALUE 'STATUS',
       "! <p class="shorttext">Edocument Existence Check</p>
       "! Edocument existence check
       edocument_existence_check TYPE ty_check_category VALUE 'EDOCHK',
       "! <p class="shorttext">Content Mismatch Check</p>
       "!  Content mismatch check
-      content_mismatch_check    TYPE ty_check_category VALUE 'CONMIS',
+      content_mismatch_check TYPE ty_check_category VALUE 'CONMIS',
     END OF co_check_category.
 ENDINTERFACE.
