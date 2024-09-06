@@ -9,12 +9,12 @@ INTERFACE zif_aff_edck_v1
       "! <p class="shorttext">Check Category</p>
       "! Consistency check category
       "! $values {@link zif_aff_edck_v1.data:co_check_category}
-      "! $default {@link if_aff_edck_v1.data:co_check_category.exist}
+      "! $default {@link zif_aff_edck_v1.data:co_check_category.exist}
       check_category              TYPE ty_check_category,
       "! <p class="shorttext">Check Classification</p>
       "! Consistency check ID classification
       "! $values {@link zif_aff_edck_v1.data:co_check_classification}
-      "! $default {@link if_aff_edck_v1.data:co_check_classification.core}
+      "! $default {@link zif_aff_edck_v1.data:co_check_classification.core}
       check_id_classification     TYPE ty_check_classification,
       "! <p class="shorttext">Additional Check Class</p>
       "! Consistency check class
@@ -44,10 +44,10 @@ INTERFACE zif_aff_edck_v1
     "! <p class="shorttext">Check Classification</p>
     "! Check classification
     BEGIN OF co_check_classification,
-      "! <p class="shorttext">Core delivered checks</p>
+      "! <p class="shorttext">Core Delivered Checks</p>
       "! Core delivered checks
       core TYPE ty_check_classification VALUE 'C',
-      "! <p class="shorttext">Additionally (Extended) implemented checks</p>
+      "! <p class="shorttext">Additionally (Extended) Implemented Checks</p>
       "! Additionally (Extended) implemented checks
       additional TYPE ty_check_classification VALUE 'A',
     END OF co_check_classification.
