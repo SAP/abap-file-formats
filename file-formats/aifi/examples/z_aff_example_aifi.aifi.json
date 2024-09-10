@@ -56,7 +56,7 @@
     "selectionEngine": "001",
     "loggingEngine": "001"
   },
-  "keyFieldsTable": [
+  "keyFields": [
     {
       "keyFieldSettings": {
         "keyFieldName": "/AIF/TEST1",
@@ -71,7 +71,7 @@
       },
       "keyFieldSelection": {
         "selectionType": "single",
-        "isShowTreeNode": true,
+        "isTreeNodeVisible": true,
         "isAlertRecipientRelevant": false
       },
       "ruleKeyFieldNames": [
@@ -81,7 +81,7 @@
         }
       ],
       "fioriFeatures": {
-        "isShowInMessageMonitor": true,
+        "isShownInMessageMonitor": true,
         "isShownByDefault": false
       }
     },
@@ -99,7 +99,7 @@
       },
       "keyFieldSelection": {
         "selectionType": "single",
-        "isShowTreeNode": true,
+        "isTreeNodeVisible": true,
         "isAlertRecipientRelevant": false
       },
       "ruleKeyFieldNames": [
@@ -109,7 +109,7 @@
         }
       ],
       "fioriFeatures": {
-        "isShowInMessageMonitor": true,
+        "isShownInMessageMonitor": true,
         "isShownByDefault": false
       }
     },
@@ -127,7 +127,7 @@
       },
       "keyFieldSelection": {
         "selectionType": "single",
-        "isShowTreeNode": true,
+        "isTreeNodeVisible": true,
         "isAlertRecipientRelevant": false
       },
       "ruleKeyFieldNames": [
@@ -145,7 +145,7 @@
         }
       ],
       "fioriFeatures": {
-        "isShowInMessageMonitor": true,
+        "isShownInMessageMonitor": true,
         "isShownByDefault": false
       }
     }

@@ -294,8 +294,8 @@
         "type": "object",
         "properties": {
           "recipient": {
-            "title": "Alert Recipient",
-            "description": "Alert recipient",
+            "title": "Recipient",
+            "description": "Recipient",
             "type": "string",
             "maxLength": 40
           }
@@ -412,7 +412,7 @@
       },
       "additionalProperties": false
     },
-    "keyFieldsTable": {
+    "keyFields": {
       "title": "Key Fields",
       "description": "Key fields",
       "type": "array",
@@ -474,8 +474,8 @@
                 "type": "boolean"
               },
               "isColumnDisplay": {
-                "title": "Display as Column",
-                "description": "Display as column",
+                "title": "Display Column",
+                "description": "Display the column",
                 "type": "boolean",
                 "default": true
               }
@@ -616,7 +616,7 @@
                 "type": "string",
                 "maxLength": 32
               },
-              "isShowTreeNode": {
+              "isTreeNodeVisible": {
                 "title": "Show Tree Node",
                 "description": "Show tree node in view 1 tree",
                 "type": "boolean",
@@ -672,7 +672,7 @@
                 "type": "string",
                 "maxLength": 60
               },
-              "isShowInMessageMonitor": {
+              "isShownInMessageMonitor": {
                 "title": "Display in Message Monitoring",
                 "description": "Display in message monitoring",
                 "type": "boolean",
@@ -699,6 +699,6 @@
     "recipientAssignment",
     "structureSettings",
     "engines",
-    "keyFieldsTable"
+    "keyFields"
   ]
 }

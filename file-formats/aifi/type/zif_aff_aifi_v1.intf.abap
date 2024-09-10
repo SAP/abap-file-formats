@@ -212,8 +212,8 @@ INTERFACE zif_aff_aifi_v1
     "! Recipient
     BEGIN OF ty_recipient,
       " (type /aif/recipient_object_name)
-      "! <p class="shorttext">Alert Recipient</p>
-      "! Alert recipient
+      "! <p class="shorttext">Recipient</p>
+      "! Recipient
       "! $required
       recipient TYPE c LENGTH 40,
     END OF ty_recipient.
@@ -253,8 +253,8 @@ INTERFACE zif_aff_aifi_v1
       "! Is select-option?
       is_select_option   TYPE abap_bool,
       " /AIF/IS_COL
-      "! <p class="shorttext">Display as Column</p>
-      "! Display as column
+      "! <p class="shorttext">Display Column</p>
+      "! Display the column
       "! $default 'X'
       is_column_display  TYPE abap_bool,
     END OF ty_key_field_settings.
@@ -317,7 +317,7 @@ INTERFACE zif_aff_aifi_v1
       "! <p class="shorttext">Show Tree Node</p>
       "! Show tree node in view 1 tree
       "! $default 'X'
-      is_show_tree_node           TYPE abap_bool,
+      is_tree_node_visible        TYPE abap_bool,
       " (type /aif/alertrelevant)
       "! <p class="shorttext">Relevant for Alert Recipient Determination</p>
       "! Relevant for alert recipient determination
@@ -331,20 +331,20 @@ INTERFACE zif_aff_aifi_v1
       " (type /aif/semantic_object)
       "! <p class="shorttext">Semantic Object</p>
       "! Semantic object
-      semantic_object            TYPE zif_aff_types_v1=>ty_object_name_30,
+      semantic_object             TYPE zif_aff_types_v1=>ty_object_name_30,
       " (type /aif/semantic_action)
       "! <p class="shorttext">Semantic Action</p>
       "! Semantic action
-      semantic_action            TYPE zif_aff_types_v1=>ty_description_60,
+      semantic_action             TYPE zif_aff_types_v1=>ty_description_60,
       " /AIF/NOT_SHOW_FIELD
       "! <p class="shorttext">Display in Message Monitoring</p>
       "! Display in message monitoring
       "! $default 'X'
-      is_show_in_message_monitor TYPE abap_bool,
+      is_shown_in_message_monitor TYPE abap_bool,
       " /AIF/IS_DEFAULT_FIELD
       "! <p class="shorttext">Display in Message Monitoring by Default</p>
       "! Display in message monitoring by default
-      is_shown_by_default        TYPE abap_bool,
+      is_shown_by_default         TYPE abap_bool,
     END OF ty_fiori_features.
 
   TYPES:
@@ -490,7 +490,7 @@ INTERFACE zif_aff_aifi_v1
       "! <p class="shorttext">Key Fields</p>
       "! Key fields
       "! $required
-      key_fields_table     TYPE ty_key_fields,
+      key_fields           TYPE ty_key_fields,
     END OF ty_main.
 
 ENDINTERFACE.
