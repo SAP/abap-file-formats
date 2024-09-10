@@ -89,11 +89,11 @@ INTERFACE zif_aff_uipg_v1
       "! <p class="shorttext">Tile Key</p>
       "! Tile key
       "! $required
-      tile_key            TYPE ty_catalog_item_key,
+      tile_key           TYPE ty_catalog_item_key,
 
       "! <p class="shorttext">Target Mapping Key</p>
       "! Target mapping key
-      target_mapping_key  TYPE ty_catalog_item_key,
+      target_mapping_key TYPE ty_catalog_item_key,
 
     END OF ty_tile_assignment.
 
@@ -116,12 +116,12 @@ INTERFACE zif_aff_uipg_v1
       "! <p class="shorttext">Launchpad App Descriptor Item ID</p>
       "! ID of a launchpad app descriptor item
       "! $required
-      ladi_id             TYPE ty_ladi_id,
+      ladi_id TYPE ty_ladi_id,
 
       "! <p class="shorttext">Tile ID</p>
       "! ID of a tile in the the referenced Launchpad App Descriptor Item
       "! $required
-      tile_id             TYPE ty_ladi_tile_id,
+      tile_id TYPE ty_ladi_tile_id,
 
     END OF ty_ladi_assignment.
 
@@ -165,7 +165,7 @@ INTERFACE zif_aff_uipg_v1
 
       "! <p class="shorttext">Display Format</p>
       "! Tile format for UI rendering. May not be applicable for all kinds of visualization.
-      display_format TYPE ty_tile_display_format,
+      display_format  TYPE ty_tile_display_format,
 
       "! <p class="shorttext">Tile Assignment</p>
       "! Assignment of a launchpad catalog tile
@@ -189,11 +189,11 @@ INTERFACE zif_aff_uipg_v1
       "! <p class="shorttext">ID</p>
       "! Technical ID of the section. The personalization of the launchpad is based on this ID.
       "! $required
-      id    TYPE c LENGTH 35,
+      id             TYPE c LENGTH 35,
 
       "! <p class="shorttext">Title</p>
       "! Section title on the launchpad UI
-      title TYPE c LENGTH 100,
+      title          TYPE c LENGTH 100,
 
       "! <p class="shorttext">Visualizations</p>
       "! Visualizations represent applications on the launchpad UI
