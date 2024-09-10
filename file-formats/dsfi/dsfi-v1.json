@@ -67,13 +67,39 @@
       "description": "Engine",
       "type": "string",
       "enum": [
-        "analyticalEngine"
+        "analyticalEngine",
+        "sqlEngine"
       ],
       "enumTitles": [
-        "Analytical Engine"
+        "Analytical Engine",
+        "SQL Engine"
       ],
       "enumDescriptions": [
-        "Analytical engine"
+        "Analytical engine",
+        "SQL engine"
+      ],
+      "default": "analyticalEngine"
+    },
+    "sqlProperties": {
+      "title": "SQL Properties",
+      "description": "SQL Properties",
+      "type": "object",
+      "properties": {
+        "amdpReference": {
+          "title": "AMDP Reference",
+          "description": "The name of the AMDP implementation reference",
+          "type": "string",
+          "maxLength": 100
+        },
+        "autoExposedInSqlServices": {
+          "title": "Automatically Exposed in SQL Services",
+          "description": "Flag whether or not the SQL implementation of the CDS scalar function will be automatically exposed in all SQL services",
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "amdpReference"
       ]
     }
   },
