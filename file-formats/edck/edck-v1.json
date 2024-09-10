@@ -80,7 +80,8 @@
             "Status check",
             "Edocument existence check",
             "Content mismatch check"
-          ]
+          ],
+          "default": "existenceCheck"
         },
         "checkIdClassification": {
           "title": "Check Classification",

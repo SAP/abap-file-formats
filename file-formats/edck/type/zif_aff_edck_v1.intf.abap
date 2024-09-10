@@ -9,7 +9,7 @@ INTERFACE zif_aff_edck_v1
       "! <p class="shorttext">Check Category</p>
       "! Consistency check category
       "! $values {@link zif_aff_edck_v1.data:co_check_category}
-      "! $default {@link zif_aff_edck_v1.data:co_check_category.exist}
+      "! $default {@link zif_aff_edck_v1.data:co_check_category.existence_check}
       check_category              TYPE ty_check_category,
       "! <p class="shorttext">Check Classification</p>
       "! Consistency check ID classification
