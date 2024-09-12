@@ -325,8 +325,7 @@
           "component": {
             "title": "Component",
             "description": "Component",
-            "type": "string",
-            "maxLength": 30
+            "type": "string"
           },
           "isChangeable": {
             "title": "Changeable",
@@ -385,29 +384,25 @@
           "title": "Application Engine",
           "description": "Application engine",
           "type": "string",
-          "maxLength": 3,
-          "pattern": "^[0-9]+$"
+          "maxLength": 3
         },
         "persistencyEngine": {
           "title": "Persistency Engine",
           "description": "Persistency engine",
           "type": "string",
-          "maxLength": 3,
-          "pattern": "^[0-9]+$"
+          "maxLength": 3
         },
         "selectionEngine": {
           "title": "Selection Engine",
           "description": "Selection engine",
           "type": "string",
-          "maxLength": 3,
-          "pattern": "^[0-9]+$"
+          "maxLength": 3
         },
         "loggingEngine": {
           "title": "Logging Engine",
           "description": "Logging engine",
           "type": "string",
-          "maxLength": 3,
-          "pattern": "^[0-9]+$"
+          "maxLength": 3
         }
       },
       "additionalProperties": false

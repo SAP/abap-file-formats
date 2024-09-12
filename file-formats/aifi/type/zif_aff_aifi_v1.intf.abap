@@ -401,11 +401,11 @@ INTERFACE zif_aff_aifi_v1
       "! Sequence
       "! $required
       sequence      TYPE n LENGTH 3,
-      " (type /aif/datatype)
+      " (type /aif/field_path)
       "! <p class="shorttext">Component</p>
       "! Component
       "! $required
-      component     TYPE zif_aff_types_v1=>ty_object_name_30,
+      component     TYPE string,
       "! <p class="shorttext">Changeable</p>
       "! Changeable
       is_changeable TYPE abap_bool,
@@ -444,21 +444,22 @@ INTERFACE zif_aff_aifi_v1
     "! Engines
     BEGIN OF ty_engines,
       " (type /aif/appl_engine_id)
+      " use type c instead of n, so value '000' will be displayed
       "! <p class="shorttext">Application Engine</p>
       "! Application engine
-      application_engine TYPE n LENGTH 3,
+      application_engine TYPE c LENGTH 3,
       " (type /aif/persistency_engine_id)
       "! <p class="shorttext">Persistency Engine</p>
       "! Persistency engine
-      persistency_engine TYPE n LENGTH 3,
+      persistency_engine TYPE c LENGTH 3,
       " (type /aif/selection_engine_id)
       "! <p class="shorttext">Selection Engine</p>
       "! Selection engine
-      selection_engine   TYPE n LENGTH 3,
+      selection_engine   TYPE c LENGTH 3,
       " (type /aif/logging_engine_id)
       "! <p class="shorttext">Logging Engine</p>
       "! Logging engine
-      logging_engine     TYPE n LENGTH 3,
+      logging_engine     TYPE c LENGTH 3,
     END OF ty_engines.
 
   TYPES:
