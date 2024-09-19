@@ -63,25 +63,7 @@
           "title": "Integration Type",
           "description": "Integration type",
           "type": "string",
-          "enum": [
-            "soap",
-            "syncLog",
-            "bgPf",
-            "eventing"
-          ],
-          "enumTitles": [
-            "SOAP",
-            "Sync Log",
-            "bgPF",
-            "Eventing"
-          ],
-          "enumDescriptions": [
-            "SOAP",
-            "Sync log",
-            "Background processing framework",
-            "Eventing"
-          ],
-          "default": "soap"
+          "maxLength": 40
         },
         "soapSettings": {
           "title": "SOAP Settings",

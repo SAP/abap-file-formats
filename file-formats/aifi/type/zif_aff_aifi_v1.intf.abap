@@ -46,25 +46,6 @@ INTERFACE zif_aff_aifi_v1
       both     TYPE ty_direction_type VALUE ' ',
     END OF co_direction_type.
 
-  "! $values { @link zif_aff_aifi_v1.data:co_integration_type }
-  "! $default { @link zif_aff_aifi_v1.data:co_integration_type.soap }
-  TYPES ty_integration_type TYPE c LENGTH 40.
-  CONSTANTS:
-    BEGIN OF co_integration_type,
-      "! <p class="shorttext">SOAP</p>
-      "! SOAP
-      soap     TYPE ty_integration_type VALUE 'SOAP' ##NO_TEXT,
-      "! <p class="shorttext">Sync Log</p>
-      "! Sync log
-      sync_log TYPE ty_integration_type VALUE 'Sync Log' ##NO_TEXT,
-      "! <p class="shorttext">bgPF</p>
-      "! Background processing framework
-      bg_pf    TYPE ty_integration_type VALUE 'bgPF' ##NO_TEXT,
-      "! <p class="shorttext">Eventing</p>
-      "! Eventing
-      eventing TYPE ty_integration_type VALUE 'Eventing' ##NO_TEXT,
-    END OF co_integration_type.
-
   TYPES:
     "! <p class="shorttext">SOAP Settings</p>
     "! SOAP settings
@@ -139,7 +120,7 @@ INTERFACE zif_aff_aifi_v1
     BEGIN OF ty_general_information,
       "! <p class="shorttext">Integration Type</p>
       "! Integration type
-      integration_type              TYPE ty_integration_type,
+      integration_type              TYPE c LENGTH 40,
       "! <p class="shorttext">SOAP Settings</p>
       "! SOAP settings
       soap_settings                 TYPE ty_soap_settings,
