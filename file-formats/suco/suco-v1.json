@@ -69,7 +69,7 @@
           "title": "Language Key for Short Text",
           "description": "Language key for short text",
           "type": "string",
-          "maxLength": 1
+          "maxLength": 2
         },
         "variantText": {
           "title": "Short Text",
