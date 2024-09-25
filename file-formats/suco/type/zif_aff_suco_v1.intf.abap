@@ -7,7 +7,7 @@ INTERFACE zif_aff_suco_v1
 
   "! <p class="shorttext">Language Key</p>
   "! Language key
-  TYPES ty_language TYPE c LENGTH 1.
+  TYPES ty_language TYPE c LENGTH 2.
 
   "! <p class="shorttext">Short Text</p>
   "! Short text of the authorization default variant

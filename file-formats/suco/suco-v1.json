@@ -65,6 +65,12 @@
           "type": "string",
           "maxLength": 40
         },
+        "languageKey": {
+          "title": "Language Key for Short Text",
+          "description": "Language key for short text",
+          "type": "string",
+          "maxLength": 1
+        },
         "variantText": {
           "title": "Short Text",
           "description": "Short text of the authorization default variant",
