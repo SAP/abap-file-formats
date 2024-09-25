@@ -41,6 +41,9 @@ INTERFACE zif_aff_suco_v1
       "! <p class="shorttext">Application Default Variant Name</p>
       "! Name of the authorization default variant
       variant_name TYPE ty_var_name,
+      "! <p class="shorttext">Language Key for Short Text</p>
+      "! Language key for short text
+      language_key TYPE ty_language,
       "! <p class="shorttext">Short Text</p>
       "! Short text of the authorization default variant
       variant_text TYPE ty_text,
