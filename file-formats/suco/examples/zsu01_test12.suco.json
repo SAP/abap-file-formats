@@ -1,0 +1,15 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "",
+    "originalLanguage": "en"
+  },
+  "generalInformation": {
+    "variantName": "ZSU01_TEST12"
+  },
+  "leadingApplication": {
+    "referredObjectProgramId": "R3TR",
+    "referredObjectType": "TRAN",
+    "referredObjectName": "SU01"
+  }
+}
