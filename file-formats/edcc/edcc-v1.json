@@ -687,16 +687,22 @@
     "relationshipAttribute": {
       "title": "Representation Types",
       "description": "Assign representation types associated with comsistency scenario",
-      "type": "object",
-      "properties": {
-        "representationType": {
-          "title": "Representation Type",
-          "description": "Representation type",
-          "type": "string",
-          "maxLength": 30
-        }
-      },
-      "additionalProperties": false
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "title": "Representation Type",
+        "description": "Assign representation type associated with comsistency scenario",
+        "type": "object",
+        "properties": {
+          "representationType": {
+            "title": "Representation Type",
+            "description": "Representation type",
+            "type": "string",
+            "maxLength": 30
+          }
+        },
+        "additionalProperties": false
+      }
     },
     "edocumentType": {
       "title": "eDocument Type Assignment",

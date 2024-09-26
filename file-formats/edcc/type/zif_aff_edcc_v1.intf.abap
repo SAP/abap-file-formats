@@ -1,10 +1,10 @@
 INTERFACE zif_aff_edcc_v1
-  PUBLIC .
+  PUBLIC.
   "! <p class="shorttext">Country</p>
   "! Country
   TYPES ty_country TYPE c LENGTH 3.
 
-  TYPES  ty_short_description TYPE c LENGTH 30.
+  TYPES ty_short_description TYPE c LENGTH 30.
 
   TYPES:
     "! <p class="shorttext">Tax Authority Message Type</p>
@@ -572,7 +572,7 @@ INTERFACE zif_aff_edcc_v1
       events                   TYPE ty_events,
       "! <p class="shorttext">Representation Types</p>
       "! Assign representation types associated with comsistency scenario
-      relationship_attribute   TYPE ty_relationship_attribute,
+      relationship_attribute   TYPE ty_relationship_attributes,
       "! <p class="shorttext">eDocument Type Assignment</p>
       "! Assign eDocument types associated with comsistency scenario
       edocument_type           TYPE ty_edoc_types,
