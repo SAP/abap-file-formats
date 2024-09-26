@@ -9,7 +9,7 @@ INTERFACE zif_aff_edcc_v1
   TYPES:
     "! <p class="shorttext">Tax Authority Message Type</p>
     "! Tax Authority Message type
-    BEGIN OF ty_messages,
+    BEGIN OF ty_message,
       "! <p class="shorttext">Message Type</p>
       "! Message type
       message_type             TYPE c LENGTH 20,
@@ -20,10 +20,10 @@ INTERFACE zif_aff_edcc_v1
       "! Tax authority document type
       taxauth_documenttype     TYPE c LENGTH 20,
       original_language        TYPE zif_aff_types_v1=>ty_original_language,
-    END OF ty_messages,
+    END OF ty_message,
     "! <p class="shorttext">Tax Authority Message Types</p>
     "! Tax Authority Message types
-    tt_messages TYPE SORTED TABLE OF ty_messages WITH UNIQUE KEY message_type.
+    ty_messages TYPE SORTED TABLE OF ty_message WITH UNIQUE KEY message_type.
 
   TYPES:
     "! <p class="shorttext">Additional Tax Authority Table</p>
@@ -35,7 +35,7 @@ INTERFACE zif_aff_edcc_v1
     END OF ty_taxauth_table,
     "! <p class="shorttext">Additional Tax Authority Tables</p>
     "! Additional tax authority tables
-    tt_taxauth_table TYPE SORTED TABLE OF ty_taxauth_table WITH UNIQUE KEY table_name.
+    ty_taxauth_tables TYPE SORTED TABLE OF ty_taxauth_table WITH UNIQUE KEY table_name.
 
   TYPES:
     "! <p class="shorttext">Position Number</p>
@@ -414,6 +414,138 @@ INTERFACE zif_aff_edcc_v1
     ty_comparison_types TYPE SORTED TABLE OF ty_comparison_type WITH UNIQUE KEY comparison_type.
 
   TYPES:
+    "! <p class="shorttext">Relevance</p>
+    "! Relevance
+    "! $values {@link zif_aff_edcc_v1.data:co_relevance}
+    "! $default {@link zif_aff_edcc_v1.data:co_relevance.unchanged}
+    ty_relevance  TYPE c LENGTH 1,
+    "! <p class="shorttext">Event Name</p>
+    "! Event name
+    ty_event_name TYPE c LENGTH 25,
+    "! <p class="shorttext">Assigned Comparison</p>
+    "! Assigned comparison
+    BEGIN OF ty_assigned_comparison,
+      "! <p class="shorttext">Comparison Type</p>
+      "! Comparison type
+      comparison_type TYPE zif_aff_types_v1=>ty_object_name_30,
+      "! <p class="shorttext">Check Id</p>
+      "! Check id
+      check_id        TYPE zif_aff_types_v1=>ty_object_name_30,
+    END OF ty_assigned_comparison,
+    "! <p class="shorttext">Assign Checks and Comparison Type</p>
+    "! Assign Checks and Comparison Type
+    ty_assigned_comparisons TYPE SORTED TABLE OF ty_assigned_comparison WITH UNIQUE KEY
+    comparison_type check_id,
+    "! <p class="shorttext">Check Relevance</p>
+    "! Define relevance of check
+    BEGIN OF ty_check_relevance,
+      "! <p class="shorttext">Comparison Type</p>
+      "! Comparison type
+      "! $required
+      comparison_type TYPE zif_aff_types_v1=>ty_object_name_30,
+      "! <p class="shorttext">Check Id</p>
+      "! Check id
+      "! $required
+      check_id        TYPE zif_aff_types_v1=>ty_object_name_30,
+      "! <p class="shorttext">Relevance</p>
+      "! Relevance
+      relevance       TYPE ty_relevance,
+    END OF ty_check_relevance,
+    "! <p class="shorttext">Check Relevance</p>
+    "! Define relevance of checks
+    ty_check_relevances TYPE SORTED TABLE OF ty_check_relevance WITH UNIQUE KEY
+                          comparison_type check_id.
+
+  CONSTANTS:
+    "! <p class="shorttext">Relevance</p>
+    "! Relevance
+    BEGIN OF co_relevance,
+      "! <p class="shorttext">Relevant</p>
+      "! Relevant
+      relevant     TYPE ty_relevance VALUE 'R',
+      "! <p class="shorttext">Not Relevant</p>
+      "! Not relevant
+      not_relevant TYPE ty_relevance VALUE 'N',
+      "! <p class="shorttext">Unchanged</p>
+      "! Unchanged
+      unchanged    TYPE ty_relevance VALUE 'U',
+    END OF co_relevance.
+
+  TYPES:
+    "! <p class="shorttext">Assign Event</p>
+    "! Assign event to consistency scenario
+    BEGIN OF ty_event,
+      "! <p class="shorttext">Event Name</p>
+      "! Event name
+      event               TYPE ty_event_name,
+      "! <p class="shorttext">Description</p>
+      "! Description
+      description         TYPE zif_aff_types_v1=>ty_description_100,
+      "! <p class="shorttext">Assign Checks and Comparison Type</p>
+      "! Assign Checks and Comparison Type
+      assigned_comparison TYPE ty_assigned_comparisons,
+      "! <p class="shorttext">Check Relevance</p>
+      "! Define relevance of checks
+      check_relevance     TYPE ty_check_relevances,
+    END OF ty_event,
+    "! <p class="shorttext">Assign Events</p>
+    "! Assign events to consistency scenario
+    ty_events TYPE SORTED TABLE OF ty_event WITH UNIQUE KEY event.
+
+  TYPES:
+    "! <p class="shorttext">Representation Type</p>
+    "! Assign representation type associated with comsistency scenario
+    BEGIN OF ty_relationship_attribute,
+      "! <p class="shorttext">Representation Type</p>
+      "! Representation type
+      representation_type TYPE zif_aff_types_v1=>ty_object_name_30,
+    END OF ty_relationship_attribute,
+    "! <p class="shorttext">Representation Types</p>
+    "! Assign representation types associated with comsistency scenario
+    ty_relationship_attributes TYPE SORTED TABLE OF ty_relationship_attribute WITH UNIQUE KEY
+    representation_type,
+    "! <p class="shorttext">eDocument Type Assignment</p>
+    "! Assign eDocument types associated with comsistency scenario
+    BEGIN OF ty_edoc_type,
+      "! <p class="shorttext">eDocument Type</p>
+      "! eDocument Type
+      edoc_type TYPE c LENGTH 10,
+    END OF ty_edoc_type,
+    "! <p class="shorttext">eDocument Type Assignment</p>
+    "! Assign eDocument types associated with comsistency scenario
+    ty_edoc_types TYPE SORTED TABLE OF ty_edoc_type WITH UNIQUE KEY edoc_type.
+
+  TYPES:
+    "! <p class="shorttext">Inconsistency Category</p>
+    "! Inconsistency category
+    ty_resultgroup TYPE c LENGTH 20,
+
+    "! <p class="shorttext">Result Process</p>
+    "! Assign result process to the UI group
+    BEGIN OF ty_results_process,
+      result_process TYPE ty_result_process,
+    END OF ty_results_process,
+    "! <p class="shorttext">Result Processes</p>
+    "! Assign result process to the UI group
+    ty_result_processes TYPE SORTED TABLE OF ty_results_process WITH UNIQUE KEY result_process,
+    "! <p class="shorttext">Inconsistency Category</p>
+    "! Inconsistency category
+    BEGIN OF ty_inconsistency_category,
+      "! <p class="shorttext">Inconsistency Category</p>
+      "! Inconsistency category
+      result_ui_group  TYPE ty_resultgroup,
+      "! <p class="shorttext">Country View Extension</p>
+      "! Country view extension
+      country_xtension TYPE zif_aff_types_v1=>ty_object_name_30,
+      "! <p class="shorttext">Result Processes</p>
+      "! Assign result process to the UI group
+      result_process   TYPE ty_result_processes,
+    END OF ty_inconsistency_category,
+    "! <p class="shorttext">Inconsistency Categories</p>
+    "! Inconsistency categories
+    ty_inconsistency_categories TYPE SORTED TABLE OF ty_inconsistency_category WITH UNIQUE KEY
+                                  result_ui_group.
+  TYPES:
     "! <p class="shorttext">Consistency Scenario</p>
     "! Consistency scenario
     BEGIN OF ty_main,
@@ -428,16 +560,26 @@ INTERFACE zif_aff_edcc_v1
       country                  TYPE ty_country,
       "! <p class="shorttext">Tax Authority Message Types</p>
       "! Tax authority message types
-      taxauth_messages         TYPE tt_messages,
+      taxauth_messages         TYPE ty_messages,
       "! <p class="shorttext">Additional Tax Authority Tables</p>
       "! Additional tax authority tables
-      taxauth_tables           TYPE tt_taxauth_table,
+      taxauth_tables           TYPE ty_taxauth_tables,
       "! <p class="shorttext">Comparison Types</p>
       "! Define comparison types
       comparison_types         TYPE ty_comparison_types,
-
-
-    END OF ty_main .
+      "! <p class="shorttext">Events Assignment</p>
+      "! Assign events to consistency scenario
+      events                   TYPE ty_events,
+      "! <p class="shorttext">Representation Types</p>
+      "! Assign representation types associated with comsistency scenario
+      relationship_attribute   TYPE ty_relationship_attribute,
+      "! <p class="shorttext">eDocument Type Assignment</p>
+      "! Assign eDocument types associated with comsistency scenario
+      edocument_type           TYPE ty_edoc_types,
+      "! <p class="shorttext">Inconsistency Categories</p>
+      "! Inconsistency categories
+      inconsistency_categories TYPE ty_inconsistency_categories,
+    END OF ty_main.
 
 
 ENDINTERFACE.

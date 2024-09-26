@@ -580,6 +580,189 @@
           "representationTypes"
         ]
       }
+    },
+    "events": {
+      "title": "Events Assignment",
+      "description": "Assign events to consistency scenario",
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "title": "Assign Event",
+        "description": "Assign event to consistency scenario",
+        "type": "object",
+        "properties": {
+          "event": {
+            "title": "Event Name",
+            "description": "Event name",
+            "type": "string",
+            "maxLength": 25
+          },
+          "description": {
+            "title": "Description",
+            "description": "Description",
+            "type": "string",
+            "maxLength": 100
+          },
+          "assignedComparison": {
+            "title": "Assign Checks and Comparison Type",
+            "description": "Assign Checks and Comparison Type",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Assigned Comparison",
+              "description": "Assigned comparison",
+              "type": "object",
+              "properties": {
+                "comparisonType": {
+                  "title": "Comparison Type",
+                  "description": "Comparison type",
+                  "type": "string",
+                  "maxLength": 30
+                },
+                "checkId": {
+                  "title": "Check Id",
+                  "description": "Check id",
+                  "type": "string",
+                  "maxLength": 30
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "checkRelevance": {
+            "title": "Check Relevance",
+            "description": "Define relevance of checks",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Check Relevance",
+              "description": "Define relevance of check",
+              "type": "object",
+              "properties": {
+                "comparisonType": {
+                  "title": "Comparison Type",
+                  "description": "Comparison type",
+                  "type": "string",
+                  "maxLength": 30
+                },
+                "checkId": {
+                  "title": "Check Id",
+                  "description": "Check id",
+                  "type": "string",
+                  "maxLength": 30
+                },
+                "relevance": {
+                  "title": "Relevance",
+                  "description": "Relevance",
+                  "type": "string",
+                  "enum": [
+                    "relevant",
+                    "notRelevant",
+                    "unchanged"
+                  ],
+                  "enumTitles": [
+                    "Relevant",
+                    "Not Relevant",
+                    "Unchanged"
+                  ],
+                  "enumDescriptions": [
+                    "Relevant",
+                    "Not relevant",
+                    "Unchanged"
+                  ],
+                  "default": "unchanged"
+                }
+              },
+              "additionalProperties": false,
+              "required": [
+                "comparisonType",
+                "checkId"
+              ]
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "relationshipAttribute": {
+      "title": "Representation Types",
+      "description": "Assign representation types associated with comsistency scenario",
+      "type": "object",
+      "properties": {
+        "representationType": {
+          "title": "Representation Type",
+          "description": "Representation type",
+          "type": "string",
+          "maxLength": 30
+        }
+      },
+      "additionalProperties": false
+    },
+    "edocumentType": {
+      "title": "eDocument Type Assignment",
+      "description": "Assign eDocument types associated with comsistency scenario",
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "title": "eDocument Type Assignment",
+        "description": "Assign eDocument types associated with comsistency scenario",
+        "type": "object",
+        "properties": {
+          "edocType": {
+            "title": "eDocument Type",
+            "description": "eDocument Type",
+            "type": "string",
+            "maxLength": 10
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "inconsistencyCategories": {
+      "title": "Inconsistency Categories",
+      "description": "Inconsistency categories",
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "title": "Inconsistency Category",
+        "description": "Inconsistency category",
+        "type": "object",
+        "properties": {
+          "resultUiGroup": {
+            "title": "Inconsistency Category",
+            "description": "Inconsistency category",
+            "type": "string",
+            "maxLength": 20
+          },
+          "countryXtension": {
+            "title": "Country View Extension",
+            "description": "Country view extension",
+            "type": "string",
+            "maxLength": 30
+          },
+          "resultProcess": {
+            "title": "Result Processes",
+            "description": "Assign result process to the UI group",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "Result Process",
+              "description": "Assign result process to the UI group",
+              "type": "object",
+              "properties": {
+                "resultProcess": {
+                  "title": "Result Process",
+                  "description": "Result process",
+                  "type": "string",
+                  "maxLength": 10
+                }
+              },
+              "additionalProperties": false
+            }
+          }
+        },
+        "additionalProperties": false
+      }
     }
   },
   "additionalProperties": false,
