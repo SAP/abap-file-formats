@@ -3,17 +3,13 @@ INTERFACE zif_aff_suco_v1
 
   "! <p class="shorttext">Application Default Variant Name</p>
   "! Name of authorization default variant
-  TYPES ty_var_name TYPE c LENGTH 40.
+  TYPES ty_var_name     TYPE c LENGTH 40.
 
   "! <p class="shorttext">Language Key</p>
   "! Language key
-  TYPES ty_language TYPE c LENGTH 2.
+  TYPES ty_language     TYPE c LENGTH 2.
 
-  "! <p class="shorttext">Short Text</p>
-  "! Short text of the authorization default variant
-  TYPES ty_text     TYPE c LENGTH 80.
-
-    "! <p class="shorttext">Program ID of the referenced Object</p>
+  "! <p class="shorttext">Program ID of the referenced Object</p>
   "! Program ID of the referenced object
   TYPES ty_refpgm_id    TYPE c LENGTH 4.
 
@@ -44,9 +40,6 @@ INTERFACE zif_aff_suco_v1
       "! <p class="shorttext">Language Key for Short Text</p>
       "! Language key for short text
       language_key TYPE ty_language,
-      "! <p class="shorttext">Short Text</p>
-      "! Short text of the authorization default variant
-      variant_text TYPE ty_text,
     END OF ty_general_information.
 
   TYPES:
@@ -82,7 +75,7 @@ INTERFACE zif_aff_suco_v1
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header              TYPE zif_aff_types_v1=>ty_header_60_cloud,
+      header              TYPE zif_aff_types_v1=>ty_header_80,
       "! <p class="shorttext">General Information</p>
       "! General information
       "! $required

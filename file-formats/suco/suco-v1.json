@@ -21,7 +21,7 @@
           "title": "Description",
           "description": "Description of the ABAP object",
           "type": "string",
-          "maxLength": 60
+          "maxLength": 80
         },
         "originalLanguage": {
           "title": "Original Language",
@@ -35,14 +35,17 @@
           "type": "string",
           "enum": [
             "standard",
+            "keyUser",
             "cloudDevelopment"
           ],
           "enumTitles": [
             "Standard",
+            "ABAP for Key Users",
             "ABAP Cloud Development"
           ],
           "enumDescriptions": [
             "Standard",
+            "ABAP for key user extensibility",
             "ABAP cloud development"
           ],
           "default": "standard"
@@ -70,12 +73,6 @@
           "description": "Language key for short text",
           "type": "string",
           "maxLength": 2
-        },
-        "variantText": {
-          "title": "Short Text",
-          "description": "Short text of the authorization default variant",
-          "type": "string",
-          "maxLength": 80
         }
       },
       "additionalProperties": false
