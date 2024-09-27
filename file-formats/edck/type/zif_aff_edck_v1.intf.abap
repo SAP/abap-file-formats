@@ -10,18 +10,18 @@ INTERFACE zif_aff_edck_v1
       "! Consistency check category
       "! $values {@link zif_aff_edck_v1.data:co_check_category}
       "! $default {@link zif_aff_edck_v1.data:co_check_category.existence_check}
-      check_category              TYPE ty_check_category,
+      check_category         TYPE ty_check_category,
       "! <p class="shorttext">Check Classification</p>
       "! Consistency check ID classification
       "! $values {@link zif_aff_edck_v1.data:co_check_classification}
-      "! $default {@link zif_aff_edck_v1.data:co_check_classification.core}
-      check_id_classification     TYPE ty_check_classification,
+      "! $default {@link zif_aff_edck_v1.data:co_check_classification.core_delivered_checks}
+      check_classification   TYPE ty_check_classification,
       "! <p class="shorttext">Additional Check Class</p>
       "! Consistency check class
-      check_class                 TYPE zif_aff_types_v1=>ty_object_name_30,
-      "! <p class="shorttext">Result Derivation Indicator</p>
-      "! Result process derived by BAdI
-      result_derivation_indicator TYPE abap_bool,
+      additional_check_class TYPE zif_aff_types_v1=>ty_object_name_30,
+      "! <p class="shorttext">Is Result Process Derived</p>
+      "! Result process derived
+      result_process_derived TYPE abap_bool,
     END OF ty_attributes.
 
   TYPES:
@@ -46,10 +46,10 @@ INTERFACE zif_aff_edck_v1
     BEGIN OF co_check_classification,
       "! <p class="shorttext">Core Delivered Checks</p>
       "! Core delivered checks
-      core TYPE ty_check_classification VALUE 'C',
+      core_delivered_checks         TYPE ty_check_classification VALUE 'C',
       "! <p class="shorttext">Additionally (Extended) Implemented Checks</p>
       "! Additionally (Extended) implemented checks
-      additional TYPE ty_check_classification VALUE 'A',
+      additional_implemented_checks TYPE ty_check_classification VALUE 'A',
     END OF co_check_classification.
 
   CONSTANTS:
@@ -58,15 +58,15 @@ INTERFACE zif_aff_edck_v1
     BEGIN OF co_check_category,
       "! <p class="shorttext">Existence Check</p>
       "! Existence check
-      existence_check TYPE ty_check_category VALUE 'EXIST',
+      existence_check           TYPE ty_check_category VALUE 'EXIST',
       "! <p class="shorttext">Status Check</p>
       "! Status check
-      status_check TYPE ty_check_category VALUE 'STATUS',
+      status_check              TYPE ty_check_category VALUE 'STATUS',
       "! <p class="shorttext">Edocument Existence Check</p>
       "! Edocument existence check
       edocument_existence_check TYPE ty_check_category VALUE 'EDOCHK',
       "! <p class="shorttext">Content Mismatch Check</p>
       "!  Content mismatch check
-      content_mismatch_check TYPE ty_check_category VALUE 'CONMIS',
+      content_mismatch_check    TYPE ty_check_category VALUE 'CONMIS',
     END OF co_check_category.
 ENDINTERFACE.

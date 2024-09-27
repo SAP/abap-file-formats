@@ -1,13 +1,13 @@
 {
   "formatVersion": "1",
   "header": {
-      "description": "Example Check ID",
-      "originalLanguage": "en",
-      "abapLanguageVersion": "cloudDevelopment"
+    "description": "Example Check ID",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
   },
   "generalInformation": {
-      "checkCategory": "existenceCheck",
-      "checkIdClassification": "core",
-      "resultDerivationIndicator": false
+    "checkCategory": "existenceCheck",
+    "checkClassification": "coreDeliveredChecks",
+    "resultProcessDerived": false
   }
 }

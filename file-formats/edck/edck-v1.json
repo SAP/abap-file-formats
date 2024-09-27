@@ -83,13 +83,13 @@
           ],
           "default": "existenceCheck"
         },
-        "checkIdClassification": {
+        "checkClassification": {
           "title": "Check Classification",
           "description": "Consistency check ID classification",
           "type": "string",
           "enum": [
-            "core",
-            "additional"
+            "coreDeliveredChecks",
+            "additionalImplementedChecks"
           ],
           "enumTitles": [
             "Core Delivered Checks",
@@ -99,17 +99,17 @@
             "Core delivered checks",
             "Additionally (Extended) implemented checks"
           ],
-          "default": "core"
+          "default": "coreDeliveredChecks"
         },
-        "checkClass": {
+        "additionalCheckClass": {
           "title": "Additional Check Class",
           "description": "Consistency check class",
           "type": "string",
           "maxLength": 30
         },
-        "resultDerivationIndicator": {
-          "title": "Result Derivation Indicator",
-          "description": "Result process derived by BAdI",
+        "resultProcessDerived": {
+          "title": "Is Result Process Derived",
+          "description": "Result process derived",
           "type": "boolean"
         }
       },
