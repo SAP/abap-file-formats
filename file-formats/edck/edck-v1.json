@@ -108,7 +108,7 @@
           "maxLength": 30
         },
         "resultProcessDerived": {
-          "title": "Is Result Process Derived",
+          "title": "Result Process Derived",
           "description": "Result process derived",
           "type": "boolean"
         }

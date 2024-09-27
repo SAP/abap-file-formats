@@ -19,7 +19,7 @@ INTERFACE zif_aff_edck_v1
       "! <p class="shorttext">Additional Check Class</p>
       "! Consistency check class
       additional_check_class TYPE zif_aff_types_v1=>ty_object_name_30,
-      "! <p class="shorttext">Is Result Process Derived</p>
+      "! <p class="shorttext">Result Process Derived</p>
       "! Result process derived
       result_process_derived TYPE abap_bool,
     END OF ty_attributes.
