@@ -12,7 +12,7 @@
       "const": "1"
     },
     "header": {
-      "title": "Header for Source Code Objects",
+      "title": "Header",
       "description": "The header for an ABAP main object (with source code) with a description of 60 characters",
       "type": "object",
       "properties": {
