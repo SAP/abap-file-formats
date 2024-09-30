@@ -1,5 +1,5 @@
 INTERFACE zif_aff_aifn_v1
-  PUBLIC .
+  PUBLIC.
   TYPES:
     "! <p class="shorttext">Namespace Details</p>
     "! Namespace details
