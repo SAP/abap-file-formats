@@ -1,5 +1,5 @@
-INTERFACE if_aff_aifn_v1
-  PUBLIC.
+INTERFACE zif_aff_aifn_v1
+  PUBLIC .
   TYPES:
     "! <p class="shorttext">Namespace Details</p>
     "! Namespace details
@@ -13,11 +13,11 @@ INTERFACE if_aff_aifn_v1
     "! Namespace
     BEGIN OF ty_main,
       "! $required
-      format_version      TYPE if_aff_types_v1=>ty_format_version,
+      format_version      TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header              TYPE if_aff_types_v1=>ty_header_60_cloud,
+      header              TYPE zif_aff_types_v1=>ty_header_60_cloud,
       "! <p class="shorttext">General Information</p>
       "! General information
       "! $required
