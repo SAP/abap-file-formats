@@ -1,51 +1,35 @@
 INTERFACE zif_aff_saia_v1
   PUBLIC.
 
-  TYPES:
-    "! <p class="shorttext">Resource Type</p>
-    "! Resource type
-    BEGIN OF ty_resource_type,
-      "! <p class="shorttext">Category Scheme</p>
-      "! Category scheme
-      category_scheme TYPE string,
-      "! <p class="shorttext">Category Term</p>
-      "! Category term
-      category_term   TYPE string,
-    END OF ty_resource_type.
-
-  "! <p class="shorttext">Transport Object Type</p>
-  "! Transport object type
-  TYPES ty_transport_object_type     TYPE c LENGTH 4.
-  "! <p class="shorttext">Transport Object Sub-Type</p>
-  "! Transport object sub-type
-  TYPES ty_transport_object_sub_type TYPE c LENGTH 3.
+  "! <p class="shorttext">Workbench Object Type</p>
+  "! Workbench object type
+  TYPES ty_wb_object_type     TYPE c LENGTH 4.
+  "! <p class="shorttext">Workbench Object Sub-Type</p>
+  "! Workbench object sub-type
+  TYPES ty_wb_object_sub_type TYPE c LENGTH 3.
 
   TYPES:
     "! <p class="shorttext">Workbench Object Type</p>
     "! Workbench object type
     BEGIN OF ty_workbench_object_type,
-      "! <p class="shorttext">Transport Object Type</p>
-      "! Transport object type
-      transport_object_type       TYPE ty_transport_object_type,
-      "! <p class="shorttext">Transport Object Sub-Type</p>
-      "! Transport object sub-type
-      transport_object_subtype_wb TYPE ty_transport_object_sub_type,
+      "! <p class="shorttext">Workbench Object Type</p>
+      "! Workbench object type
+      workbench_object_type       TYPE ty_wb_object_type,
+      "! <p class="shorttext">Workbench Object Sub-Type</p>
+      "! Workbench object sub-type
+      workbench_object_subtype_wb TYPE ty_wb_object_sub_type,
     END OF ty_workbench_object_type.
 
-  "! <p class="shorttext">Development Object Types</p>
-  "! Development object types
-  TYPES ty_development_object_types    TYPE SORTED TABLE OF ty_workbench_object_type WITH UNIQUE DEFAULT KEY.
+  "! <p class="shorttext">Workbench Object Types</p>
+  "! Workbench object types
+  TYPES ty_workbench_object_types      TYPE SORTED TABLE OF ty_workbench_object_type WITH UNIQUE DEFAULT KEY.
 
-  "! <p class="shorttext">Resource Types</p>
-  "! Resource types
-  TYPES ty_resource_types              TYPE SORTED TABLE OF ty_resource_type WITH UNIQUE DEFAULT KEY.
-
-  "! <p class="shorttext">Number of Focused Resources</p>
-  "! Number of focused resources
+  "! $values { @link zif_aff_saia_v1.data:co_number_of_focused_resources }
+  "! $default { @link zif_aff_saia_v1.data:co_number_of_focused_resources.any }
   TYPES ty_number_of_focused_resources TYPE string.
 
   CONSTANTS:
-    "! <p class="shorttext">Number of Focuses Resources</p>
+    "! <p class="shorttext">Number of Focused Resources</p>
     "! Number of focused resources
     BEGIN OF co_number_of_focused_resources,
       "! <p class="shorttext">Any</p>
@@ -71,17 +55,10 @@ INTERFACE zif_aff_saia_v1
       "! <p class="shorttext">Number of Focused Resources</p>
       "! Number of focused resources
       number_of_focused_resources TYPE ty_number_of_focused_resources,
-      "! <p class="shorttext">Supported Development Object Types</p>
-      "! Supported development object types
-      supported_dev_object_types  TYPE ty_development_object_types,
-      "! <p class="shorttext">Supported Resource Types</p>
-      "! Supported resource types
-      supported_resource_types    TYPE ty_resource_types,
+      "! <p class="shorttext">Supported Workbench Object Types</p>
+      "! Supported workbench object types
+      supported_dev_object_types  TYPE ty_workbench_object_types,
     END OF ty_filters.
-
-  "! <p class="shorttext">Action ID</p>
-  "! Action id
-  TYPES ty_action_id    TYPE c LENGTH 20.
 
   "! <p class="shorttext">Action Title</p>
   "! Action title
@@ -92,42 +69,21 @@ INTERFACE zif_aff_saia_v1
     "! ADT IDE action
     "! $required
     BEGIN OF ty_adt_saia_object,
-      "! <p class="shorttext">Action ID</p>
-      "! Unique action id - it should be human readable and reveal the intention of the action
-      "! Action id is case insensitive
-      "! $required
-      action_id                      TYPE ty_action_id,
-      "! <p class="shorttext">Base URI</p>
-      "! Base uri
-      "! $required
-      base_uri                       TYPE string,
       "! <p class="shorttext">Title</p>
       "! Title
       "! $required
-      title                          TYPE ty_action_title,
-      "! <p class="shorttext">Description</p>
+      title                        TYPE ty_action_title,
+      "! <p class="shorttext">Summary</p>
       "! What is the action doing and how can it be used
       "! $required
-      description                    TYPE string,
-      "! <p class="shorttext">Action Filters</p>
-      "! Filters for application of action according to specific object type or object type groups
-      "! $required
-      filters                        TYPE ty_filters,
-      "! <p class="shorttext">Implementation Class</p>
-      "! Implementation class for handling the action input. Needs to implement interface  {@link if_aia_action }.
-      "! $required
-      implementation_class           TYPE zif_aff_types_v1=>ty_object_name_30,
+      summary                      TYPE string,
+      "! <p class="shorttext">Implementing Class</p>
+      "! Implementing class for handling the action input. Needs to implement interface  {@link if_aia_action }.
+      implementing_class           TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Input UI Configuration Class</p>
       "! Input UI configuration class for implementing the server-driven UI input configuration.
       "! Needs to implement interface {@link IF_AIA_SD_ACTION_INPUT }.
-      "! $required
-      input_ui_configuration_class   TYPE zif_aff_types_v1=>ty_object_name_30,
-      "! <p class="shorttext">Don't Show in Run Action Dialog</p>
-      "! Flag to indicate that the action shouldn't be shown in the action selection dialog
-      "!   where all available actions are listed.
-      "! TODO: put in a structure: options -> all options stored in a string in database
-      "! $required
-      dont_show_in_run_action_dialog TYPE abap_bool,
+      input_ui_configuration_class TYPE zif_aff_types_v1=>ty_object_name_30,
     END OF ty_adt_saia_object.
 
   TYPES:
@@ -146,6 +102,9 @@ INTERFACE zif_aff_saia_v1
       "! General information
       "! $required
       general_information TYPE ty_adt_saia_object,
+      "! <p class="shorttext">Action Filters</p>
+      "! Filters for application of action according to specific object type or object type groups
+      filters             TYPE ty_filters,
     END OF ty_main.
 
 ENDINTERFACE.

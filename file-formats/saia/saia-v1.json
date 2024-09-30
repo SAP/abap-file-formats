@@ -62,94 +62,20 @@
       "description": "General information",
       "type": "object",
       "properties": {
-        "actionId": {
-          "title": "Action ID",
-          "description": "Unique action id - it should be human readable and reveal the intention of the action Action id is case insensitive",
-          "type": "string",
-          "maxLength": 20
-        },
-        "baseUri": {
-          "title": "Base URI",
-          "description": "Base uri",
-          "type": "string"
-        },
         "title": {
           "title": "Title",
           "description": "Title",
           "type": "string",
           "maxLength": 30
         },
-        "description": {
-          "title": "Description",
+        "summary": {
+          "title": "Summary",
           "description": "What is the action doing and how can it be used",
           "type": "string"
         },
-        "filters": {
-          "title": "Action Filters",
-          "description": "Filters for application of action according to specific object type or object type groups",
-          "type": "object",
-          "properties": {
-            "numberOfFocusedResources": {
-              "title": "Number of Focused Resources",
-              "description": "Number of focused resources",
-              "type": "string"
-            },
-            "supportedDevObjectTypes": {
-              "title": "Supported Development Object Types",
-              "description": "Supported development object types",
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "title": "Workbench Object Type",
-                "description": "Workbench object type",
-                "type": "object",
-                "properties": {
-                  "transportObjectType": {
-                    "title": "Transport Object Type",
-                    "description": "Transport object type",
-                    "type": "string",
-                    "maxLength": 4
-                  },
-                  "transportObjectSubtypeWb": {
-                    "title": "Transport Object Sub-Type",
-                    "description": "Transport object sub-type",
-                    "type": "string",
-                    "maxLength": 3
-                  }
-                },
-                "additionalProperties": false
-              }
-            },
-            "supportedResourceTypes": {
-              "title": "Supported Resource Types",
-              "description": "Supported resource types",
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "title": "Resource Type",
-                "description": "Resource type",
-                "type": "object",
-                "properties": {
-                  "categoryScheme": {
-                    "title": "Category Scheme",
-                    "description": "Category scheme",
-                    "type": "string"
-                  },
-                  "categoryTerm": {
-                    "title": "Category Term",
-                    "description": "Category term",
-                    "type": "string"
-                  }
-                },
-                "additionalProperties": false
-              }
-            }
-          },
-          "additionalProperties": false
-        },
-        "implementationClass": {
-          "title": "Implementation Class",
-          "description": "Implementation class for handling the action input. Needs to implement interface {@link if_aia_action }.",
+        "implementingClass": {
+          "title": "Implementing Class",
+          "description": "Implementing class for handling the action input. Needs to implement interface {@link if_aia_action }.",
           "type": "string",
           "maxLength": 30
         },
@@ -158,24 +84,71 @@
           "description": "Input UI configuration class for implementing the server-driven UI input configuration. Needs to implement interface {@link IF_AIA_SD_ACTION_INPUT }.",
           "type": "string",
           "maxLength": 30
-        },
-        "dontShowInRunActionDialog": {
-          "title": "Don't Show in Run Action Dialog",
-          "description": "Flag to indicate that the action shouldn't be shown in the action selection dialog where all available actions are listed. TODO: put in a structure: options -> all options stored in a string in database",
-          "type": "boolean"
         }
       },
       "additionalProperties": false,
       "required": [
-        "actionId",
-        "baseUri",
         "title",
-        "description",
-        "filters",
-        "implementationClass",
-        "inputUiConfigurationClass",
-        "dontShowInRunActionDialog"
+        "summary"
       ]
+    },
+    "filters": {
+      "title": "Action Filters",
+      "description": "Filters for application of action according to specific object type or object type groups",
+      "type": "object",
+      "properties": {
+        "numberOfFocusedResources": {
+          "title": "Number of Focused Resources",
+          "description": "Number of focused resources",
+          "type": "string",
+          "enum": [
+            "any",
+            "exactlyOne",
+            "atLeastOne",
+            "moreThanOne"
+          ],
+          "enumTitles": [
+            "Any",
+            "Exactly One",
+            "At Least One",
+            "More Than One"
+          ],
+          "enumDescriptions": [
+            "Any",
+            "Exactly one",
+            "At least one",
+            "More than one"
+          ],
+          "default": "any"
+        },
+        "supportedDevObjectTypes": {
+          "title": "Supported Workbench Object Types",
+          "description": "Supported workbench object types",
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "title": "Workbench Object Type",
+            "description": "Workbench object type",
+            "type": "object",
+            "properties": {
+              "workbenchObjectType": {
+                "title": "Workbench Object Type",
+                "description": "Workbench object type",
+                "type": "string",
+                "maxLength": 4
+              },
+              "workbenchObjectSubtypeWb": {
+                "title": "Workbench Object Sub-Type",
+                "description": "Workbench object sub-type",
+                "type": "string",
+                "maxLength": 3
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
     }
   },
   "additionalProperties": false,
