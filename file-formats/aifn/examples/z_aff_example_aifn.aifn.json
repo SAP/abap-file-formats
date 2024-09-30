@@ -5,7 +5,7 @@
     "originalLanguage": "en",
     "abapLanguageVersion": "cloudDevelopment"
   },
-  "namespaceDetails":{
+  "generalInformation":{
       "aifNamespace": "/AIFT"
   }
 }

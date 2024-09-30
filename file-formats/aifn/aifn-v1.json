@@ -54,9 +54,9 @@
         "originalLanguage"
       ]
     },
-    "namespaceDetails": {
-      "title": "Namespace Details",
-      "description": "Namespace details",
+    "generalInformation": {
+      "title": "General Information",
+      "description": "General information",
       "type": "object",
       "properties": {
         "aifNamespace": {
@@ -66,16 +66,13 @@
           "maxLength": 6
         }
       },
-      "additionalProperties": false,
-      "required": [
-        "aifNamespace"
-      ]
+      "additionalProperties": false
     }
   },
   "additionalProperties": false,
   "required": [
     "formatVersion",
     "header",
-    "namespaceDetails"
+    "generalInformation"
   ]
 }
