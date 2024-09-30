@@ -529,20 +529,46 @@ INTERFACE zif_aff_uiad_v1
 
     ty_tiles TYPE STANDARD TABLE OF ty_tile WITH DEFAULT KEY.
 
-  TYPES:
-    "! <p class="shorttext">Lifecycle</p>
-    "! Lifecycle state
-    BEGIN OF ty_lifecycle,
+  "! <p class="shorttext">Life Cycle Deprecation Status</p>
+  "! Life cycle deprecation status
+  "! $values {@link zif_aff_uiad_v1.data:co_life_cycle_status}
+  "! $default {@link zif_aff_uiad_v1.data:co_life_cycle_status.active}
+  TYPES ty_life_cycle_status TYPE c LENGTH 1.
+
+  CONSTANTS:
+    "! <p class="shorttext">Life Cycle Status</p>
+    "! Life cycle deprecation status
+    BEGIN OF co_life_cycle_status,
+
+      "! <p class="shorttext">Active</p>
+      "! LADI is active
+      active     TYPE ty_life_cycle_status VALUE ' ',
 
       "! <p class="shorttext">Deprecated</p>
-      "! Application is deprecated
-      deprecated TYPE abap_bool,
+      "! LADI is deprecated and should no longer be used
+      deprecated TYPE ty_life_cycle_status VALUE 'D',
+
+      "! <p class="shorttext">Obsolete</p>
+      "! LADI is obsolete and must no longer be used
+      obsolete   TYPE ty_life_cycle_status VALUE 'O',
+
+    END OF co_life_cycle_status.
+
+
+  TYPES:
+    "! <p class="shorttext">Life Cycle</p>
+    "! Life cycle
+    BEGIN OF ty_life_cycle,
+
+      "! <p class="shorttext">Status</p>
+      "! Life cycle status
+      status    TYPE ty_life_cycle_status,
 
       "! <p class="shorttext">Successor</p>
       "! LADI of the successor application
-      successor  TYPE c LENGTH 32,
+      successor TYPE c LENGTH 32,
 
-    END OF ty_lifecycle.
+    END OF ty_life_cycle.
 
   TYPES:
     "! <p class="shorttext">LADI</p>
@@ -590,9 +616,9 @@ INTERFACE zif_aff_uiad_v1
       "! $required
       tiles                    TYPE ty_tiles,
 
-      "! <p class="shorttext">Lifecycle</p>
-      "! Lifecycle state
-      lifecycle                TYPE ty_lifecycle,
+      "! <p class="shorttext">Life Cycle</p>
+      "! Life cycle
+      life_cycle               TYPE ty_life_cycle,
 
     END OF ty_main.
 
