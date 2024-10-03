@@ -60,7 +60,7 @@
       "type": "string",
       "maxLength": 3
     },
-    "taxauthMessages": {
+    "taxAuthorityMessages": {
       "title": "Tax Authority Message Types",
       "description": "Tax authority message types",
       "type": "array",
@@ -82,23 +82,17 @@
             "type": "string",
             "maxLength": 30
           },
-          "taxauthDocumenttype": {
+          "taxAuthorityDocumentType": {
             "title": "Tax Authority Document Type",
             "description": "Tax authority document type",
             "type": "string",
             "maxLength": 20
-          },
-          "originalLanguage": {
-            "title": "Original Language",
-            "description": "Original language of the ABAP object",
-            "type": "string",
-            "minLength": 2
           }
         },
         "additionalProperties": false
       }
     },
-    "taxauthTables": {
+    "taxAuthorityTables": {
       "title": "Additional Tax Authority Tables",
       "description": "Additional tax authority tables",
       "type": "array",
@@ -142,7 +136,7 @@
           },
           "positionNumber": {
             "title": "Position Number",
-            "description": "position number",
+            "description": "Position number",
             "type": "string",
             "maxLength": 2
           },
@@ -203,7 +197,7 @@
             "uniqueItems": true,
             "items": {
               "title": "Status Check",
-              "description": "status check",
+              "description": "Status check",
               "type": "object",
               "properties": {
                 "checkId": {
@@ -298,7 +292,7 @@
                   "type": "string",
                   "maxLength": 60
                 },
-                "contentComparisonFieldgroup": {
+                "contentComparisonFieldGroup": {
                   "title": "Comparison Field Groups",
                   "description": "Comparison field groups",
                   "type": "array",
@@ -340,7 +334,7 @@
                       },
                       "checkFormula": {
                         "title": "Check Formula",
-                        "description": "Formula applied to do content check for the field group",
+                        "description": "Formula applied to perform the content check on field group",
                         "type": "string",
                         "enum": [
                           "field",
@@ -366,13 +360,13 @@
                         "maxLength": 10
                       },
                       "comparisonField": {
-                        "title": "Fields Configuration",
-                        "description": "Configuration of fields those would be compared",
+                        "title": "Comparison Field Name",
+                        "description": "Field Names those values will be compared",
                         "type": "array",
                         "uniqueItems": true,
                         "items": {
-                          "title": "Fields Configuration",
-                          "description": "Configuration of field those would be compared",
+                          "title": "Comparison Field Name",
+                          "description": "Field Names those values will be compared",
                           "type": "object",
                           "properties": {
                             "representationType": {
@@ -686,12 +680,12 @@
     },
     "relationshipAttribute": {
       "title": "Representation Types",
-      "description": "Assign representation types associated with comsistency scenario",
+      "description": "Assign representation types associated with consistency scenario",
       "type": "array",
       "uniqueItems": true,
       "items": {
         "title": "Representation Type",
-        "description": "Assign representation type associated with comsistency scenario",
+        "description": "Assign representation type associated with consistency scenario",
         "type": "object",
         "properties": {
           "representationType": {
@@ -704,9 +698,9 @@
         "additionalProperties": false
       }
     },
-    "edocumentType": {
+    "edocumentTypes": {
       "title": "eDocument Type Assignment",
-      "description": "Assign eDocument types associated with comsistency scenario",
+      "description": "Assign eDocument types associated with consistency scenario",
       "type": "array",
       "uniqueItems": true,
       "items": {
