@@ -1,7 +1,5 @@
 INTERFACE zif_aff_edcc_v1
-  PUBLIC .
-
-
+  PUBLIC.
   TYPES:
     "! <p class="shorttext">Description</p>
     "! Description
