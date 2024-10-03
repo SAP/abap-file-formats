@@ -1,22 +1,21 @@
 {
   "formatVersion": "1",
   "header": {
-    "description": "Example Scenario",
+    "description": "example consistency scenario",
     "originalLanguage": "en",
     "abapLanguageVersion": "cloudDevelopment"
   },
-  "country": "ES",
-  "taxauthMessages": [
+  "country": "es",
+  "taxAuthorityMessages": [
     {
-      "messageType": "TaxAuthorityInvPull",
-      "messageTypeDescription": "Pull Data from Tax Authority",
-      "taxauthDocumenttype": "ES_IN_V_DOC1",
-      "originalLanguage": "en"
+      "messageType": "ES_INV_SUPPLIER_PULL",
+      "messageTypeDescription": "Example Spain Invoice pull",
+      "taxAuthorityDocumentType": "ES_INV_DOC"
     }
   ],
-  "taxauthTables": [
+  "taxAuthorityTables": [
     {
-      "tableName": "ES_TAXAUTH_TABLE"
+      "tableName": "EDCEXAMPINV"
     }
   ],
   "comparisonTypes": [
@@ -28,54 +27,44 @@
       "dataSource": "I_EDC_EXAMPLE",
       "existenceCheck": {
         "checkId": "Existence",
-        "description": "Example existence check",
+        "description": "Example",
         "fieldName": "EDCEXIST",
         "fieldValue": "X",
         "resultProcess": "ZMISSING1"
       },
       "statusCheck": [
         {
-          "checkId": "Example 1",
-          "description": "Example Status check",
+          "checkId": "EDCSTAT",
+          "description": "Example Status Check",
           "sequenceNumber": "1",
           "sourceFieldname1": "InvoiceReportingStatus",
           "sourceFieldvalue1": "ACCEPT",
-          "sourceFieldname2": "ACRStatus",
+          "sourceFieldname2": "ACRstatus",
           "sourceFieldvalue2": "REJECT",
           "resultProcess": "ZPROCESS1"
-        },
-        {
-          "checkId": "Example 2",
-          "description": "Example Status check",
-          "sequenceNumber": "2",
-          "sourceFieldname1": "InvoiceSubmissionStatus",
-          "sourceFieldvalue1": "ACCEPT",
-          "sourceFieldname2": "eDocumentStatus",
-          "sourceFieldvalue2": "REJECT",
-          "resultProcess": "ZPROCESS2"
         }
       ],
       "contentCheck": [
         {
           "checkId": "ExampleContentCheck1",
-          "description": "Content check of Invoices",
+          "description": "Sample content check",
           "checkNumber": "1",
-          "contentComparisonFieldgroup": [
+          "contentComparisonFieldGroup": [
             {
-              "fieldGroup": "InvoiceHeaderFields",
-              "description": "Example",
+              "fieldGroup": "INV_HEADER",
+              "description": "Invoice header fields",
               "fieldGroupLevel": "header",
               "checkFormula": "field",
-              "resultProcess": "ZCONTENT1",
+              "resultProcess": "ZHEADPROC1",
               "comparisonField": [
                 {
                   "representationType": "EDOCUMENT",
-                  "fieldName": "TotalAmount",
+                  "fieldName": "supplier_Invoice_tax_amount",
                   "comparisonSequence": "1"
                 },
                 {
                   "representationType": "TAXAUTHDOC",
-                  "fieldName": "TotalAmount",
+                  "fieldName": "purchase_Invoice_tax_amount",
                   "comparisonSequence": "2"
                 }
               ]
@@ -85,45 +74,61 @@
       ],
       "checkAttributes": [
         {
-          "checkId": "Existence",
-          "positionNumber": "1",
-          "executionSequence": "1",
-          "executionControl": "proceed",
-          "checkFilter": [
-            {
-              "filterOperation": "and",
-              "comparisonOperator": "equal",
-              "expressionIndicator": "beginof"
-            }
-          ]
-        },
-        {
-          "checkId": "Example 1",
-          "positionNumber": "2",
-          "executionSequence": "2",
+          "checkId": "",
           "executionControl": "proceed"
-        },
-        {
-          "checkId": "Example 2",
-          "positionNumber": "3",
-          "executionSequence": "3",
-          "executionControl": "proceed"
-        },
-        {
-          "checkId": "ExampleContentCheck1",
-          "positionNumber": "4",
-          "executionSequence": "4",
-          "executionControl": "noProceed"
         }
       ],
       "representationTypes": [
         {
           "representationType": "EDOCUMENT",
-          "description": "example eDocument"
+          "description": "eDocument"
         },
         {
           "representationType": "TAXAUTHDOC",
           "description": "Tax Authority Document"
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "event": "EDOCSUB",
+      "description": "Example eDocument submission event",
+      "assignedComparison": [
+        {
+          "comparisonType": "TaxAuthVeDoc",
+          "checkId": "EDCSTAT"
+        }
+      ],
+      "checkRelevance": [
+        {
+          "comparisonType": "TaxAuthVeDoc",
+          "checkId": "EDCSTAT",
+          "relevance": "relevant"
+        }
+      ]
+    }
+  ],
+  "relationshipAttribute": [
+    {
+      "representationType": "EDOCUMENT"
+    },
+    {
+      "representationType": "TAXAUTHDOC"
+    }
+  ],
+  "edocumentTypes": [
+    {
+      "edocType": "ZEXAMPLE"
+    }
+  ],
+  "inconsistencyCategories": [
+    {
+      "resultUiGroup": "ZCONTENTMISMATCH",
+      "countryXtension": "ZX_SOMEEXTENSION",
+      "resultProcess": [
+        {
+          "resultProcess": "ZPROCESS1"
         }
       ]
     }
