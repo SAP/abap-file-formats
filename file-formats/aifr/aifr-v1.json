@@ -54,9 +54,9 @@
         "originalLanguage"
       ]
     },
-    "recipientDetails": {
-      "title": "Recipient Details",
-      "description": "Recipient details",
+    "generalInformation": {
+      "title": "General Information",
+      "description": "General information",
       "type": "object",
       "properties": {
         "namespace": {
@@ -76,6 +76,6 @@
   "required": [
     "formatVersion",
     "header",
-    "recipientDetails"
+    "generalInformation"
   ]
 }
