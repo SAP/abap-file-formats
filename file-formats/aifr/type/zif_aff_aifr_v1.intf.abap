@@ -3,12 +3,12 @@ INTERFACE zif_aff_aifr_v1
   TYPES:
     "! <p class="shorttext">Recipient Details</p>
     "! Recipient details
-    BEGIN OF ty_recipient_details,
+    BEGIN OF ty_general_information,
       "! <p class="shorttext">Namespace</p>
       "! Namespace of the recipient
       "! $required
       namespace TYPE c LENGTH 15,
-    END OF ty_recipient_details,
+    END OF ty_general_information,
 
     "! <p class="shorttext">Recipient</p>
     "! Recipient
@@ -19,9 +19,9 @@ INTERFACE zif_aff_aifr_v1
       "! Header
       "! $required
       header            TYPE zif_aff_types_v1=>ty_header_60_cloud,
-      "! <p class="shorttext">Recipient Details</p>
-      "! Recipient details
+      "! <p class="shorttext">General Information</p>
+      "! General information
       "! $required
-      recipient_details TYPE ty_recipient_details,
+      general_information TYPE ty_general_information,
     END OF ty_main.
 ENDINTERFACE.
