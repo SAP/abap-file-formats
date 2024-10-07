@@ -2,9 +2,6 @@
   "formatVersion": "1",
   "header": {
     "description": "Example DESD for ABAP file format",
-    "originalLanguage": "en",
-    "abapLanguageVersion": "standard"
-  },
-  "generalInformation": {
+    "originalLanguage": "en"
   }
 }
