@@ -67,7 +67,7 @@
         },
         "usesRouting": {
           "title": "Uses Routing",
-          "description": "If set to abap_true, the logical external schema can only be used in routed scenarios.",
+          "description": "If true, the logical external schema can only be used in routed scenarios.",
           "type": "boolean"
         }
       },
