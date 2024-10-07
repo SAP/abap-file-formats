@@ -11,7 +11,7 @@ INTERFACE zif_aff_desd_v1
       "! details of logical external schema.
       default_remote_schema_name TYPE c LENGTH 256,
       "! <p class="shorttext">Uses Routing</p>
-      "! If set to abap_true, the logical external schema can only be used
+      "! If true, the logical external schema can only be used
       "! in routed scenarios.
       uses_routing               TYPE abap_bool,
     END OF ty_general_information,
