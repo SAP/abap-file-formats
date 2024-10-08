@@ -16,7 +16,7 @@ INTERFACE zif_aff_gsmg_v1
       "! <p class="shorttext">Category</p>
       "! Category
       "! $required
-      category             TYPE ty_category,
+      category TYPE ty_category,
 
     END OF ty_general_information.
 
