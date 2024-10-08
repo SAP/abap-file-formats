@@ -5,15 +5,15 @@
     "originalLanguage": "en",
     "abapLanguageVersion": "cloudDevelopment"
   },
-  "aifInterfaces":[
+  "applicationInterfaces":[
     {
-      "interfaceObjectName":"INT_OBJ_1"
+      "applicationInterface":"INT_OBJ_1"
     },
     {
-      "interfaceObjectName":"/AIFTCUST_WS_I00001"
+      "applicationInterface":"/AIFTCUST_WS_I00001"
     },
     {
-      "interfaceObjectName":"/AIFTCUST_WS_O00001"
+      "applicationInterface":"/AIFTCUST_WS_O00001"
     }
   ]
 }
