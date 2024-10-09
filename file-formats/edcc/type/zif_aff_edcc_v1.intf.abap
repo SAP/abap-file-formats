@@ -84,13 +84,13 @@ INTERFACE zif_aff_edcc_v1
     BEGIN OF ty_status_check,
       "! <p class="shorttext">Check Id</p>
       "! Check id
-      check_id           TYPE zif_aff_types_v1=>ty_object_name_30,
+      check_id            TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Check Description</p>
       "! Check description
-      description        TYPE zif_aff_types_v1=>ty_description_60,
+      description         TYPE zif_aff_types_v1=>ty_description_60,
       "! <p class="shorttext">Sequence Number</p>
       "! Sequence number
-      sequence_number    TYPE ty_sequence_number,
+      sequence_number     TYPE ty_sequence_number,
       "! <p class="shorttext">Source Field Name 1</p>
       "! Source field name 1
       source_field_name1  TYPE zif_aff_types_v1=>ty_object_name_30,
@@ -105,7 +105,7 @@ INTERFACE zif_aff_edcc_v1
       source_field_value2 TYPE ty_field_value,
       "! <p class="shorttext">Result Process</p>
       "! Result process
-      result_process     TYPE ty_result_process,
+      result_process      TYPE ty_result_process,
     END OF ty_status_check.
   TYPES:
     "! <p class="shorttext">Status Checks</p>
@@ -520,7 +520,7 @@ INTERFACE zif_aff_edcc_v1
     BEGIN OF co_check_formula,
       "! <p class="shorttext">Field to Field Comparison</p>
       "! Field to field comparison
-      field                      TYPE ty_check_formula VALUE '1',
+      field                       TYPE ty_check_formula VALUE '1',
       "! <p class="shorttext">Amount Comparison with Absolute Tolerance</p>
       "! Amount comparison with absolute tolerance
       field_with_abs_tolerance    TYPE ty_check_formula VALUE '2',
