@@ -218,25 +218,25 @@
                   "type": "string",
                   "maxLength": 3
                 },
-                "sourceFieldname1": {
+                "sourceFieldName1": {
                   "title": "Source Field Name 1",
                   "description": "Source field name 1",
                   "type": "string",
                   "maxLength": 30
                 },
-                "sourceFieldvalue1": {
+                "sourceFieldValue1": {
                   "title": "Source Field Value 1",
                   "description": "Source field value 1",
                   "type": "string",
                   "maxLength": 40
                 },
-                "sourceFieldname2": {
+                "sourceFieldName2": {
                   "title": "Source Field Name 2",
                   "description": "Source field name 2",
                   "type": "string",
                   "maxLength": 30
                 },
-                "sourceFieldvalue2": {
+                "sourceFieldValue2": {
                   "title": "Source Field Value 2",
                   "description": "Source field value 2",
                   "type": "string",
@@ -334,12 +334,12 @@
                       },
                       "checkFormula": {
                         "title": "Check Formula",
-                        "description": "Formula applied to perform the content check on field group",
+                        "description": "Formula applied to perform the content check on the field group",
                         "type": "string",
                         "enum": [
                           "field",
-                          "fieldWithAbstolerance",
-                          "fieldWithNonabstolerance"
+                          "fieldWithAbsTolerance",
+                          "fieldWithoutAbsTolerance"
                         ],
                         "enumTitles": [
                           "Field to Field Comparison",
@@ -361,12 +361,12 @@
                       },
                       "comparisonField": {
                         "title": "Comparison Field Name",
-                        "description": "Field Names those values will be compared",
+                        "description": "Field Names whose values will be compared",
                         "type": "array",
                         "uniqueItems": true,
                         "items": {
                           "title": "Comparison Field Name",
-                          "description": "Field Names those values will be compared",
+                          "description": "Field Names whose values will be compared",
                           "type": "object",
                           "properties": {
                             "representationType": {
@@ -514,8 +514,8 @@
                         "description": "Expression indicator",
                         "type": "string",
                         "enum": [
-                          "beginof",
-                          "endof"
+                          "beginOf",
+                          "endOf"
                         ],
                         "enumTitles": [
                           "Begin of Expression",
@@ -525,7 +525,7 @@
                           "Begin of expression",
                           "End of Eexpression"
                         ],
-                        "default": "beginof"
+                        "default": "beginOf"
                       }
                     },
                     "additionalProperties": false
@@ -705,7 +705,7 @@
       "uniqueItems": true,
       "items": {
         "title": "eDocument Type Assignment",
-        "description": "Assign eDocument types associated with comsistency scenario",
+        "description": "Assign eDocument types associated with consistency scenario",
         "type": "object",
         "properties": {
           "edocType": {
