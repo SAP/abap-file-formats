@@ -1,4 +1,4 @@
-"! AFF Type for Object SUCO (Authorization Default Variant)
+"! AFF Type for SUCO (Authorization Default Variant)
 INTERFACE zif_aff_suco_v1
   PUBLIC.
 
