@@ -93,16 +93,16 @@ INTERFACE zif_aff_edcc_v1
       sequence_number    TYPE ty_sequence_number,
       "! <p class="shorttext">Source Field Name 1</p>
       "! Source field name 1
-      source_fieldname1  TYPE zif_aff_types_v1=>ty_object_name_30,
+      source_field_name1  TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Source Field Value 1</p>
       "! Source field value 1
-      source_fieldvalue1 TYPE ty_field_value,
+      source_field_value1 TYPE ty_field_value,
       "! <p class="shorttext">Source Field Name 2</p>
       "! Source field name 2
-      source_fieldname2  TYPE zif_aff_types_v1=>ty_object_name_30,
+      source_field_name2  TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Source Field Value 2</p>
       "! Source field value 2
-      source_fieldvalue2 TYPE ty_field_value,
+      source_field_value2 TYPE ty_field_value,
       "! <p class="shorttext">Result Process</p>
       "! Result process
       result_process     TYPE ty_result_process,
@@ -125,13 +125,13 @@ INTERFACE zif_aff_edcc_v1
     ty_comparison_sequence TYPE c LENGTH 5.
   TYPES:
     "! <p class="shorttext">Check Formula</p>
-    "! Formula applied to perform the content check on field group
+    "! Formula applied to perform the content check on the field group
     "! $values {@link zif_aff_edcc_v1.data:co_check_formula}
     "! $default {@link zif_aff_edcc_v1.data:co_check_formula.field}
     ty_check_formula        TYPE c LENGTH 1.
   TYPES:
     "! <p class="shorttext">Comparison Field Name</p>
-    "! Field Names those values will be compared
+    "! Field Names whose values will be compared
     BEGIN OF ty_comparison_field,
       "! <p class="shorttext">Representation Type</p>
       "! Representation type
@@ -145,7 +145,7 @@ INTERFACE zif_aff_edcc_v1
     END OF ty_comparison_field.
   TYPES:
     "! <p class="shorttext">Comparison Field Name</p>
-    "! Field Names those values will be compared
+    "! Field Names whose values will be compared
     ty_comparison_fields TYPE SORTED TABLE OF ty_comparison_field WITH UNIQUE KEY representation_type.
   TYPES:
     "! <p class="shorttext">Comparison Field Group</p>
@@ -161,13 +161,13 @@ INTERFACE zif_aff_edcc_v1
       "! Level of comparison field group
       field_group_level TYPE ty_field_group_level,
       "! <p class="shorttext">Check Formula</p>
-      "! Formula applied to perform the content check on field group
+      "! Formula applied to perform the content check on the field group
       check_formula     TYPE ty_check_formula,
       "! <p class="shorttext">Result Process</p>
       "! Result process
       result_process    TYPE ty_result_process,
       "! <p class="shorttext">Comparison Field Name</p>
-      "! Field Names those values will be compared
+      "! Field Names whose values will be compared
       comparison_field  TYPE ty_comparison_fields,
     END OF ty_comparison_field_group.
   TYPES:
@@ -222,7 +222,7 @@ INTERFACE zif_aff_edcc_v1
     "! <p class="shorttext">Expression Indicator</p>
     "! Expression indicator
     "! $values {@link zif_aff_edcc_v1.data:co_expression}
-    "! $default {@link zif_aff_edcc_v1.data:co_expression.beginof}
+    "! $default {@link zif_aff_edcc_v1.data:co_expression.begin_of}
     ty_expression_indicator TYPE c LENGTH 3.
   TYPES:
     "! <p class="shorttext">Selection Filters on Check</p>
@@ -435,7 +435,7 @@ INTERFACE zif_aff_edcc_v1
     representation_type.
   TYPES:
     "! <p class="shorttext">eDocument Type Assignment</p>
-    "! Assign eDocument types associated with comsistency scenario
+    "! Assign eDocument types associated with consistency scenario
     BEGIN OF ty_edoc_type,
       "! <p class="shorttext">eDocument Type</p>
       "! eDocument Type
@@ -443,7 +443,7 @@ INTERFACE zif_aff_edcc_v1
     END OF ty_edoc_type.
   TYPES:
     "! <p class="shorttext">eDocument Type Assignment</p>
-    "! Assign eDocument types associated with comsistency scenario
+    "! Assign eDocument types associated with consistency scenario
     ty_edoc_types TYPE SORTED TABLE OF ty_edoc_type WITH UNIQUE KEY edoc_type.
   TYPES:
     "! <p class="shorttext">Inconsistency Category</p>
@@ -516,17 +516,17 @@ INTERFACE zif_aff_edcc_v1
 
   CONSTANTS:
     "! <p class="shorttext">Check Formula</p>
-    "! Formula applied to do content check for the field group
+    "! Formula applied to perform the content check on the field group
     BEGIN OF co_check_formula,
       "! <p class="shorttext">Field to Field Comparison</p>
       "! Field to field comparison
       field                      TYPE ty_check_formula VALUE '1',
       "! <p class="shorttext">Amount Comparison with Absolute Tolerance</p>
       "! Amount comparison with absolute tolerance
-      field_with_abstolerance    TYPE ty_check_formula VALUE '2',
+      field_with_abs_tolerance    TYPE ty_check_formula VALUE '2',
       "! <p class="shorttext">Amount Comparison without Absolute Tolerance</p>
       "! Amount comparison without absolute tolerance
-      field_with_nonabstolerance TYPE ty_check_formula VALUE '3',
+      field_without_abs_tolerance TYPE ty_check_formula VALUE '3',
     END OF co_check_formula.
   CONSTANTS:
     "! <p class="shorttext">Field Group Level</p>
@@ -556,10 +556,10 @@ INTERFACE zif_aff_edcc_v1
     BEGIN OF co_expression,
       "! <p class="shorttext">Begin of Expression</p>
       "! Begin of expression
-      beginof TYPE ty_expression_indicator VALUE '/',
+      begin_of TYPE ty_expression_indicator VALUE '/',
       "! <p class="shorttext">End of Expression</p>
       "! End of Eexpression
-      endof   TYPE ty_expression_indicator VALUE '\',
+      end_of   TYPE ty_expression_indicator VALUE '\',
     END OF co_expression.
   CONSTANTS:
     "! <p class="shorttext">Comparison Operator</p>
