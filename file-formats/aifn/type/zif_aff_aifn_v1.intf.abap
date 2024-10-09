@@ -1,17 +1,16 @@
-INTERFACE zif_aff_aifr_v1
+INTERFACE zif_aff_aifn_v1
   PUBLIC.
   TYPES:
-    "! <p class="shorttext">Recipient Details</p>
-    "! Recipient details
+    "! <p class="shorttext">Namespace Details</p>
+    "! Namespace details
     BEGIN OF ty_general_information,
-      "! <p class="shorttext">Namespace</p>
-      "! Namespace of the recipient
-      "! $required
-      namespace TYPE c LENGTH 15,
+      "! <p class="shorttext">AIF Namespace</p>
+      "! AIF namespace
+      aif_namespace TYPE c LENGTH 6,
     END OF ty_general_information,
 
-    "! <p class="shorttext">Recipient</p>
-    "! Recipient
+    "! <p class="shorttext">Namespace</p>
+    "! Namespace
     BEGIN OF ty_main,
       "! $required
       format_version      TYPE zif_aff_types_v1=>ty_format_version,
