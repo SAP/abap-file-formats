@@ -54,25 +54,25 @@
         "originalLanguage"
       ]
     },
-    "aifInterfaces": {
-      "title": "AIF Interfaces",
-      "description": "AIF interfaces",
+    "applicationInterfaces": {
+      "title": "Application Interfaces",
+      "description": "Application interfaces",
       "type": "array",
       "items": {
-        "title": "AIF Interface",
-        "description": "AIF interface",
+        "title": "Application Interface",
+        "description": "Application interface",
         "type": "object",
         "properties": {
-          "interfaceObjectName": {
-            "title": "Interface Object Name",
-            "description": "Interface object name",
+          "applicationInterface": {
+            "title": "Application Interface",
+            "description": "Application interface",
             "type": "string",
             "maxLength": 40
           }
         },
         "additionalProperties": false,
         "required": [
-          "interfaceObjectName"
+          "applicationInterface"
         ]
       }
     }
@@ -81,6 +81,6 @@
   "required": [
     "formatVersion",
     "header",
-    "aifInterfaces"
+    "applicationInterfaces"
   ]
 }
