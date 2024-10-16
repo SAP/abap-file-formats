@@ -8,7 +8,7 @@ INTERFACE zif_aff_suco_v1
     BEGIN OF ty_leading_application,
       "! <p class="shorttext">Program ID</p>
       "! Program ID
-      "! $required
+      "! $default 'R3TR'
       program_id   TYPE c LENGTH 4,
       "! <p class="shorttext">Object Type</p>
       "! Object type
