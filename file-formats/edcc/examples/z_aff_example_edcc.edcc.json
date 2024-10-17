@@ -9,7 +9,6 @@
   "taxAuthorityMessages": [
     {
       "messageType": "EXAMPLE_MESSAGE_TYPE",
-      "messageTypeDescription": "example message type",
       "taxAuthorityDocumentType": "EXAMPLE_INVOICE"
     }
   ],

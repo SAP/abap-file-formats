@@ -499,7 +499,8 @@ INTERFACE zif_aff_edcc_v1
   TYPES:
     "! <p class="shorttext">Additional Selection Fields</p>
     "! Additional selection fields of validation report
-    ty_additional_selection_fields TYPE SORTED TABLE OF ty_additional_selection_field WITH UNIQUE KEY table_name field_name.
+    ty_additional_selection_fields TYPE SORTED TABLE OF ty_additional_selection_field WITH UNIQUE KEY
+    table_name field_name.
   TYPES:
     "! <p class="shorttext">Consistency Scenario</p>
     "! Consistency scenario
