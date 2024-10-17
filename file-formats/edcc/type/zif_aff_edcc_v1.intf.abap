@@ -10,12 +10,11 @@ INTERFACE zif_aff_edcc_v1
     BEGIN OF ty_message,
       "! <p class="shorttext">Message Type</p>
       "! Message type
+      "! $required
       message_type                TYPE c LENGTH 20,
-      "! <p class="shorttext">Message Type Description</p>
-      "! Message type description
-      message_type_description    TYPE ty_short_description,
       "! <p class="shorttext">Tax Authority Document Type</p>
       "! Tax authority document type
+      "! $required
       tax_authority_document_type TYPE c LENGTH 20,
     END OF ty_message.
   TYPES:
@@ -65,9 +64,6 @@ INTERFACE zif_aff_edcc_v1
       "! <p class="shorttext">Check Id</p>
       "! Check id
       check_id       TYPE zif_aff_types_v1=>ty_object_name_30,
-      "! <p class="shorttext">Check Description</p>
-      "! Check description
-      description    TYPE zif_aff_types_v1=>ty_description_60,
       "! <p class="shorttext">Field Name</p>
       "! Field name
       field_name     TYPE zif_aff_types_v1=>ty_object_name_30,
@@ -85,9 +81,6 @@ INTERFACE zif_aff_edcc_v1
       "! <p class="shorttext">Check Id</p>
       "! Check id
       check_id            TYPE zif_aff_types_v1=>ty_object_name_30,
-      "! <p class="shorttext">Check Description</p>
-      "! Check description
-      description         TYPE zif_aff_types_v1=>ty_description_60,
       "! <p class="shorttext">Sequence Number</p>
       "! Sequence number
       sequence_number     TYPE ty_sequence_number,
@@ -182,9 +175,6 @@ INTERFACE zif_aff_edcc_v1
       "! <p class="shorttext">Check Id</p>
       "! Check id
       check_id                       TYPE zif_aff_types_v1=>ty_object_name_30,
-      "! <p class="shorttext">Check Description</p>
-      "! Check description
-      description                    TYPE zif_aff_types_v1=>ty_description_60,
       "! <p class="shorttext">Check Number</p>
       "! Check number
       check_number                   TYPE ty_check_number,
@@ -296,9 +286,6 @@ INTERFACE zif_aff_edcc_v1
       "! <p class="shorttext">Assigned Representation Type</p>
       "! Assigned representation type
       representation_type TYPE zif_aff_types_v1=>ty_object_name_30,
-      "! <p class="shorttext">Description</p>
-      "! Description
-      description         TYPE zif_aff_types_v1=>ty_description_60,
     END OF ty_representation_type.
   TYPES:
     "! <p class="shorttext">Representation Types</p>
@@ -406,9 +393,6 @@ INTERFACE zif_aff_edcc_v1
       "! <p class="shorttext">Event Name</p>
       "! Event name
       event               TYPE ty_event_name,
-      "! <p class="shorttext">Description</p>
-      "! Description
-      description         TYPE zif_aff_types_v1=>ty_description_100,
       "! <p class="shorttext">Assign Checks and Comparison Type</p>
       "! Assign Checks and Comparison Type
       assigned_comparison TYPE ty_assigned_comparisons,
@@ -479,39 +463,84 @@ INTERFACE zif_aff_edcc_v1
     ty_inconsistency_categories TYPE SORTED TABLE OF ty_inconsistency_category WITH UNIQUE KEY
                                   result_ui_group.
   TYPES:
+    "! <p class="shorttext">Field Type</p>
+    "! Field type
+    "! $values {@link zif_aff_edcc_v1.data:co_field_type}
+    "! $default {@link zif_aff_edcc_v1.data:co_field_type.select_options}
+     ty_field_type TYPE c LENGTH 1.
+  CONSTANTS:
+    "! <p class="shorttext">Field Type</p>
+    "! Field type
+    BEGIN OF co_field_type,
+      "! <p class="shorttext">Selection Option</p>
+      "! Selection option
+      select_options            TYPE ty_field_type VALUE 'S',
+      "! <p class="shorttext">Parameter Single Value</p>
+      "! Parameter single value
+      parameter_single_value    TYPE ty_field_type VALUE 'N',
+      "! <p class="shorttext">Parameter Multiple Values</p>
+      "! Parameter multiple values
+      parameter_multiple_values TYPE ty_field_type VALUE 'P',
+    END OF co_field_type.
+  TYPES:
+    "! <p class="shorttext">Additional Selection Field</p>
+    "! Additional selection fields of validation report
+    BEGIN OF ty_additional_selection_field,
+      "! <p class="shorttext">Table Name</p>
+      "! Table name
+      table_name TYPE zif_aff_types_v1=>ty_object_name_30,
+      "! <p class="shorttext">Field Name</p>
+      "! Field name
+      field_name TYPE zif_aff_types_v1=>ty_object_name_30,
+      "! <p class="shorttext">Field Type</p>
+      "! Field type
+      field_type TYPE ty_field_type,
+    END OF  ty_additional_selection_field.
+  TYPES:
+    "! <p class="shorttext">Additional Selection Fields</p>
+    "! Additional selection fields of validation report
+    ty_additional_selection_fields TYPE SORTED TABLE OF ty_additional_selection_field WITH UNIQUE KEY table_name field_name.
+  TYPES:
     "! <p class="shorttext">Consistency Scenario</p>
     "! Consistency scenario
     BEGIN OF ty_main,
       "! $required
-      format_version           TYPE zif_aff_types_v1=>ty_format_version,
+      format_version              TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header                   TYPE zif_aff_types_v1=>ty_header_60_cloud,
+      header                      TYPE zif_aff_types_v1=>ty_header_60_cloud,
       "! <p class="shorttext">Country</p>
       "! Country
-      country                  TYPE c LENGTH 3,
+      "! $required
+      country                     TYPE c LENGTH 3,
+      "! <p class="shorttext">Additional Selection Fields</p>
+      "! Additional selection fields of validation report
+      additional_selection_fields TYPE ty_additional_selection_fields,
       "! <p class="shorttext">Tax Authority Message Types</p>
       "! Tax authority message types
-      tax_authority_messages   TYPE ty_messages,
+      tax_authority_messages      TYPE ty_messages,
       "! <p class="shorttext">Additional Tax Authority Tables</p>
       "! Additional tax authority tables
-      tax_authority_tables     TYPE ty_tax_authority_tables,
+      tax_authority_tables        TYPE ty_tax_authority_tables,
       "! <p class="shorttext">Comparison Types</p>
       "! Define comparison types
-      comparison_types         TYPE ty_comparison_types,
+      "! $required
+      comparison_types            TYPE ty_comparison_types,
       "! <p class="shorttext">Events Assignment</p>
       "! Assign events to consistency scenario
-      events                   TYPE ty_events,
+      events                      TYPE ty_events,
       "! <p class="shorttext">Representation Types</p>
       "! Assign representation types associated with consistency scenario
-      relationship_attribute   TYPE ty_relationship_attributes,
+      "! $required
+      relationship_attribute      TYPE ty_relationship_attributes,
       "! <p class="shorttext">eDocument Type Assignment</p>
       "! Assign eDocument types associated with consistency scenario
-      edocument_types          TYPE ty_edoc_types,
+      edocument_types             TYPE ty_edoc_types,
       "! <p class="shorttext">Inconsistency Categories</p>
       "! Inconsistency categories
-      inconsistency_categories TYPE ty_inconsistency_categories,
+      "! $required
+      inconsistency_categories    TYPE ty_inconsistency_categories,
     END OF ty_main.
 
   CONSTANTS:

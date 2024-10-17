@@ -60,6 +60,53 @@
       "type": "string",
       "maxLength": 3
     },
+    "additionalSelectionFields": {
+      "title": "Additional Selection Fields",
+      "description": "Additional selection fields of validation report",
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "title": "Additional Selection Field",
+        "description": "Additional selection fields of validation report",
+        "type": "object",
+        "properties": {
+          "tableName": {
+            "title": "Table Name",
+            "description": "Table name",
+            "type": "string",
+            "maxLength": 30
+          },
+          "fieldName": {
+            "title": "Field Name",
+            "description": "Field name",
+            "type": "string",
+            "maxLength": 30
+          },
+          "fieldType": {
+            "title": "Field Type",
+            "description": "Field type",
+            "type": "string",
+            "enum": [
+              "selectOptions",
+              "parameterSingleValue",
+              "parameterMultipleValues"
+            ],
+            "enumTitles": [
+              "Selection Option",
+              "Parameter Single Value",
+              "Parameter Multiple Values"
+            ],
+            "enumDescriptions": [
+              "Selection option",
+              "Parameter single value",
+              "Parameter multiple values"
+            ],
+            "default": "selectOptions"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
     "taxAuthorityMessages": {
       "title": "Tax Authority Message Types",
       "description": "Tax authority message types",
@@ -76,12 +123,6 @@
             "type": "string",
             "maxLength": 20
           },
-          "messageTypeDescription": {
-            "title": "Message Type Description",
-            "description": "Message type description",
-            "type": "string",
-            "maxLength": 30
-          },
           "taxAuthorityDocumentType": {
             "title": "Tax Authority Document Type",
             "description": "Tax authority document type",
@@ -89,7 +130,11 @@
             "maxLength": 20
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "required": [
+          "messageType",
+          "taxAuthorityDocumentType"
+        ]
       }
     },
     "taxAuthorityTables": {
@@ -163,12 +208,6 @@
                 "type": "string",
                 "maxLength": 30
               },
-              "description": {
-                "title": "Check Description",
-                "description": "Check description",
-                "type": "string",
-                "maxLength": 60
-              },
               "fieldName": {
                 "title": "Field Name",
                 "description": "Field name",
@@ -205,12 +244,6 @@
                   "description": "Check id",
                   "type": "string",
                   "maxLength": 30
-                },
-                "description": {
-                  "title": "Check Description",
-                  "description": "Check description",
-                  "type": "string",
-                  "maxLength": 60
                 },
                 "sequenceNumber": {
                   "title": "Sequence Number",
@@ -267,12 +300,6 @@
                   "description": "Check id",
                   "type": "string",
                   "maxLength": 30
-                },
-                "description": {
-                  "title": "Check Description",
-                  "description": "Check description",
-                  "type": "string",
-                  "maxLength": 60
                 },
                 "checkNumber": {
                   "title": "Check Number",
@@ -550,12 +577,6 @@
                   "description": "Assigned representation type",
                   "type": "string",
                   "maxLength": 30
-                },
-                "description": {
-                  "title": "Description",
-                  "description": "Description",
-                  "type": "string",
-                  "maxLength": 60
                 }
               },
               "additionalProperties": false
@@ -590,12 +611,6 @@
             "description": "Event name",
             "type": "string",
             "maxLength": 25
-          },
-          "description": {
-            "title": "Description",
-            "description": "Description",
-            "type": "string",
-            "maxLength": 100
           },
           "assignedComparison": {
             "title": "Assign Checks and Comparison Type",
@@ -768,6 +783,10 @@
   "additionalProperties": false,
   "required": [
     "formatVersion",
-    "header"
+    "header",
+    "country",
+    "comparisonTypes",
+    "relationshipAttribute",
+    "inconsistencyCategories"
   ]
 }

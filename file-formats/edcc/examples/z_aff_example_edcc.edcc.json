@@ -1,70 +1,69 @@
 {
   "formatVersion": "1",
   "header": {
-    "description": "example consistency scenario",
+    "description": "Sample Consistency Scenario",
     "originalLanguage": "en",
     "abapLanguageVersion": "cloudDevelopment"
   },
-  "country": "es",
+  "country": "en",
   "taxAuthorityMessages": [
     {
-      "messageType": "ES_INV_SUPPLIER_PULL",
-      "messageTypeDescription": "Example Spain Invoice pull",
-      "taxAuthorityDocumentType": "ES_INV_DOC"
+      "messageType": "EXAMPLE_MESSAGE_TYPE",
+      "messageTypeDescription": "example message type",
+      "taxAuthorityDocumentType": "EXAMPLE_INVOICE"
     }
   ],
   "taxAuthorityTables": [
     {
-      "tableName": "EDCEXAMPINV"
+      "tableName": "EXAMPLE_TAXAUTHORITY_TABLES"
     }
   ],
   "comparisonTypes": [
     {
-      "comparisonType": "TaxAuthVeDoc",
-      "description": "Compare Tax Authority Invoice with eDocument",
+      "comparisonType": "TaxAuthV/sEdoc",
+      "description": "Tax Authority V/s Edocument",
       "positionNumber": "1",
-      "className": "CL_EDC_EXAMPLE_CLASS",
-      "dataSource": "I_EDC_EXAMPLE",
+      "className": "CL_EDC_EXAMPLE_VALTYPE",
+      "dataSource": "CDS_COMPARISON_EXAMPLE",
       "existenceCheck": {
-        "checkId": "Existence",
-        "description": "Example",
-        "fieldName": "EDCEXIST",
+        "checkId": "EXISTENCE_CHECK",
+        "fieldName": "CDS_COMPARISON_EXAMPLE-FIELD1",
         "fieldValue": "X",
-        "resultProcess": "ZMISSING1"
+        "resultProcess": "EXMISMATCH"
       },
       "statusCheck": [
         {
-          "checkId": "EDCSTAT",
-          "description": "Example Status Check",
+          "checkId": "STATUS_MISMATCH",
           "sequenceNumber": "1",
-          "sourceFieldname1": "InvoiceReportingStatus",
-          "sourceFieldvalue1": "ACCEPT",
-          "sourceFieldname2": "ACRstatus",
-          "sourceFieldvalue2": "REJECT",
-          "resultProcess": "ZPROCESS1"
+          "sourceFieldName1": "CDS_EXAMPLE_FIELD1",
+          "sourceFieldValue1": "ACCEPTED",
+          "sourceFieldName2": "CDS_EXAMPLE_FIELD2",
+          "sourceFieldValue2": "REJECTED",
+          "resultProcess": "REJRESULT"
         }
       ],
       "contentCheck": [
         {
-          "checkId": "ExampleContentCheck1",
-          "description": "Sample content check",
+          "checkId": "CONTENT_CHECK",
           "checkNumber": "1",
+          "dataSource": "CDS_CONTENT_CHECK",
+          "additionalDescription": "Description for UI",
           "contentComparisonFieldGroup": [
             {
-              "fieldGroup": "INV_HEADER",
-              "description": "Invoice header fields",
+              "fieldGroup": "EXMPL_FIELDGRP1",
+              "description": "Description of Field Group",
               "fieldGroupLevel": "header",
               "checkFormula": "field",
-              "resultProcess": "ZHEADPROC1",
+              "resultProcess": "EXCONTENT",
               "comparisonField": [
                 {
                   "representationType": "EDOCUMENT",
-                  "fieldName": "supplier_Invoice_tax_amount",
+                  "fieldName": "CDS_TAX_FIELD1",
                   "comparisonSequence": "1"
                 },
                 {
                   "representationType": "TAXAUTHDOC",
-                  "fieldName": "purchase_Invoice_tax_amount",
+                  "fieldName": "CDS_TAXAUTH_TAXFIELD1",
                   "comparisonSequence": "2"
                 }
               ]
@@ -74,36 +73,46 @@
       ],
       "checkAttributes": [
         {
-          "checkId": "",
+          "checkId": "EXISTENCE_CHECK",
+          "positionNumber": "1",
+          "executionSequence": "1",
           "executionControl": "proceed"
+        },
+        {
+          "checkId": "STATUS_MISMATCH",
+          "positionNumber": "2",
+          "executionSequence": "2",
+          "executionControl": "noProceed"
+        },
+        {
+          "checkId": "CONTENT_CHECK",
+          "positionNumber": "3",
+          "executionSequence": "3",
+          "executionControl": "noProceed"
         }
       ],
       "representationTypes": [
         {
-          "representationType": "EDOCUMENT",
-          "description": "eDocument"
+          "representationType": "EDOCUMENT"
         },
         {
-          "representationType": "TAXAUTHDOC",
-          "description": "Tax Authority Document"
+          "representationType": "TAXAUTHDOC"
         }
       ]
     }
   ],
   "events": [
     {
-      "event": "EDOCSUB",
-      "description": "Example eDocument submission event",
+      "event": "EDOC_SUBMIT",
       "assignedComparison": [
         {
-          "comparisonType": "TaxAuthVeDoc",
-          "checkId": "EDCSTAT"
+          "comparisonType": "TaxAuthV/sEdoc"
         }
       ],
       "checkRelevance": [
         {
-          "comparisonType": "TaxAuthVeDoc",
-          "checkId": "EDCSTAT",
+          "comparisonType": "TaxAuthV/sEdoc",
+          "checkId": "EXISTENCE_CHECK",
           "relevance": "relevant"
         }
       ]
@@ -119,16 +128,16 @@
   ],
   "edocumentTypes": [
     {
-      "edocType": "ZEXAMPLE"
+      "edocType": "EXEDOCTYPE"
     }
   ],
   "inconsistencyCategories": [
     {
-      "resultUiGroup": "ZCONTENTMISMATCH",
-      "countryXtension": "ZX_SOMEEXTENSION",
+      "resultUiGroup": "EDOC_MISSING",
+      "countryXtension": "X_CDS_EXAMPLE_EXTENSION",
       "resultProcess": [
         {
-          "resultProcess": "ZPROCESS1"
+          "resultProcess": "EXMISMATCH"
         }
       ]
     }
