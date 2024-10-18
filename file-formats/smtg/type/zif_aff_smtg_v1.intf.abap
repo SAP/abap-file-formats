@@ -1,45 +1,46 @@
-INTERFACE zif_aff_smtg_v1
-  PUBLIC.
+interface zif_aff_smtg_v1
+  public.
 
-  TYPES:
+  types:
     "! <p class="shorttext">General Information</p>
     "! Combines template header and administrative data.
-    BEGIN OF ty_general_information,
-      "! <p class="shorttext">Comment</p>
-      "! Comment to that email template
-      comment                     TYPE c LENGTH 255,
+    begin of ty_general_information,
+      "! <p class="shorttext">Template Description</p>
+      "! Long description to that email template
+      long_description            type c length 255,
       "! <p class="shorttext">Predelivered</p>
       "! Indicator if the template is predelivered
-      is_predelivered             TYPE abap_bool,
-      "! <p class="shorttext">Automatic Text Generation</p>
+      is_predelivered             type abap_bool,
+      "! <p class="shorttext">Generate Plain Text from HTML</p>
       "! Indicator if the template text body is generated automatically from html body
-      is_plaintext_auto_generated TYPE abap_bool,
+      is_plaintext_auto_generated type abap_bool,
       "! <p class="shorttext">CDS View</p>
       "! The corresponding CDS view name for the template
       "! $required
-      cds_view                    TYPE zif_aff_types_v1=>ty_object_name_30,
+      cds_view                    type zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Subject</p>
       "! The subject of the email template
-      email_subject               TYPE c LENGTH 1024,
-    END OF ty_general_information.
+      email_subject               type c length 255,
+    end of ty_general_information.
+  " Corresponding content ist stored in a separate file and implemented as action
 
 
-  TYPES:
+  types:
     "! <p class="shorttext">Email Template</p>
     "! Email Template
-    BEGIN OF ty_main,
+    begin of ty_main,
       "! <p class="shorttext">Format Version</p>
       "! Format version
       "! $required
-      format_version      TYPE zif_aff_types_v1=>ty_format_version,
+      format_version      type zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header              TYPE zif_aff_types_v1=>ty_header_60,
+      header              type zif_aff_types_v1=>ty_header_60,
       "! <p class="shorttext">General Information</p>
       "! General information
       "! $required
-      general_information TYPE ty_general_information,
-    END OF ty_main.
+      general_information type ty_general_information,
+    end of ty_main.
 
-ENDINTERFACE.
+endinterface.
