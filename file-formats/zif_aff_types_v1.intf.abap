@@ -141,10 +141,10 @@ INTERFACE zif_aff_types_v1 PUBLIC.
       abap_language_version TYPE ty_abap_language_version,
     END OF ty_header_80.
 
-    TYPES:
+  TYPES:
     "! <p class="shorttext">Header(no key user)</p>
     "! The header for an ABAP main object (without source code) with a description of 80 characters (no key user)
-      BEGIN OF ty_header_80_cloud,
+    BEGIN OF ty_header_80_cloud,
       "! $required
       description           TYPE ty_description_80,
       "! $required
