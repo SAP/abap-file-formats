@@ -93,7 +93,8 @@
       },
       "additionalProperties": false,
       "required": [
-        "cdsView"
+        "cdsView",
+        "emailSubject"
       ]
     }
   },
