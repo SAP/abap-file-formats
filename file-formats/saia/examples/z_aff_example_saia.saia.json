@@ -1,0 +1,29 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "IDE Action (SAIA) Example Object",
+    "originalLanguage": "en"
+  },
+  "generalInformation": {
+    "title": "SAIA AFF Demo Action",
+    "summary": "This is a demo action for AFF.",
+    "implementingClass": "ZCL_DEMO_IMPL_CLASS",
+    "inputUiConfigurationClass": "ZCL_DEMO_INPUT_UI_CONFIG_CLASS"
+  },
+  "filters": {
+    "numberOfFocusedResources": "exactlyOne",
+    "supportedDevObjectTypes": [
+      {
+        "workbenchObjectType": "BDEF",
+        "workbenchObjectSubtype": "BAC"
+      },
+      {
+        "workbenchObjectType": "CLAS"
+      },
+      {
+        "workbenchObjectType": "INTF",
+        "workbenchObjectSubtype": "IO"
+      }
+    ]
+  }
+}
