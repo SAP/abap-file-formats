@@ -35,7 +35,7 @@ INTERFACE zif_aff_suco_v1
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header              TYPE zif_aff_types_v1=>ty_header_80,
+      header              TYPE zif_aff_types_v1=>ty_header_80_cloud,
       "! <p class="shorttext">Leading Application</p>
       "! Leading application
       "! $required
