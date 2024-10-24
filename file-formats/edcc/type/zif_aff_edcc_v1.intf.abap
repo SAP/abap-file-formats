@@ -79,16 +79,16 @@ INTERFACE zif_aff_edcc_v1
       sequence_number     TYPE ty_sequence_number,
       "! <p class="shorttext">Source Field Name 1</p>
       "! Source field name 1
-      source_field_name1  TYPE zif_aff_types_v1=>ty_object_name_30,
+      source_field_name_1  TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Source Field Value 1</p>
       "! Source field value 1
-      source_field_value1 TYPE ty_field_value,
+      source_field_value_1 TYPE ty_field_value,
       "! <p class="shorttext">Source Field Name 2</p>
       "! Source field name 2
-      source_field_name2  TYPE zif_aff_types_v1=>ty_object_name_30,
+      source_field_name_2  TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Source Field Value 2</p>
       "! Source field value 2
-      source_field_value2 TYPE ty_field_value,
+      source_field_value_2 TYPE ty_field_value,
       "! <p class="shorttext">Result Process</p>
       "! Result process
       result_process      TYPE ty_result_process,
