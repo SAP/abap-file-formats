@@ -1,16 +1,20 @@
 {
   "formatVersion": "1",
   "header": {
-    "description": "Example AIFD for ABAP File Format",
+    "description": "Example AIFI for ABAP File Format",
     "originalLanguage": "en",
     "abapLanguageVersion": "standard"
   },
   "generalInformation": {
-    "integrationType": "soap",
+    "integrationTypeDescription": "SOAP",
+    "scenario": "Inbound Monitoring",
+    "scenarioDescription": "Inbound Monitoring",
     "soapSettings": {
       "soapClass": "CL_SOAP_RFC_PROXY_TEST",
       "soapMethod": "EXECUTE",
-      "soapRecordType": "/AIF/T100_SAP_FLIGHT"
+      "soapRecordType": "/AIF/T100_SAP_FLIGHT",
+      "usesProxyXmlTransformation": false,
+      "usesExtendedXmlHandling": false
     },
     "eventSettings": {
       "repositoryId": "AIF_REPO_1",
@@ -26,28 +30,27 @@
     "namespace": "/AIF/",
     "interfaceName": "IFTEST",
     "interfaceVersion": "1",
-    "rawStructure": "/AIF/T100_RAW_FLIGHT",
-    "sapStructure": "/AIF/T100_SAP_FLIGHT",
+    "dataStructure": "/AIF/T100_RAW_FLIGHT",
+    "mappedDataStructure": "/AIF/T100_SAP_FLIGHT",
     "indexTable": "/AIF/STD_IDX_TBL",
-    "appLogLifetime": "90",
+    "retentionPeriod": "090",
+    "expirationBehavior": "archive",
     "direction": "both",
     "usesPreprocessing": false,
-    "usesProxyXmlTransformation": false,
-    "usesExtendedXmlHandling": false,
     "usesPostprocesssing": false
   },
-  "recipientAssignment": [],
-  "structureSettings": [
+  "recipientAssignment": [
+    {
+      "recipient": "ZDC_REC"
+    }
+  ],
+  "errorHandlingConfigs": [
     {
       "sequence": "010",
-      "component": "TEST",
-      "isChangeable": true,
+      "component": "STRUC-FIELD",
+      "isChangeable": false,
       "isHidden": false,
-      "usesDdic": false,
-      "description": "Test",
-      "shortText": "Test1",
-      "mediumText": "Test12",
-      "longText": "Test123"
+      "usesDdic": true
     }
   ],
   "engines": {
@@ -74,12 +77,14 @@
         "isTreeNodeVisible": true,
         "isAlertRecipientRelevant": false
       },
-      "ruleKeyFieldNames": [
-        {
-          "ruleKeyFieldName": "TEST_FIELD1",
-          "fieldSequnceNumber": "010"
-        }
-      ],
+      "keyFieldRule": {
+        "ruleKeyFieldNames": [
+          {
+            "ruleKeyFieldName": "TEST_FIELD1",
+            "fieldSequnceNumber": "010"
+          }
+        ]
+      },
       "fioriFeatures": {
         "isShownInMessageMonitor": true,
         "isShownByDefault": false
@@ -102,12 +107,14 @@
         "isTreeNodeVisible": true,
         "isAlertRecipientRelevant": false
       },
-      "ruleKeyFieldNames": [
-        {
-          "ruleKeyFieldName": "TEST_FIELD2",
-          "fieldSequnceNumber": "010"
-        }
-      ],
+      "keyFieldRule": {
+        "ruleKeyFieldNames": [
+          {
+            "ruleKeyFieldName": "TEST_FIELD2",
+            "fieldSequnceNumber": "010"
+          }
+        ]
+      },
       "fioriFeatures": {
         "isShownInMessageMonitor": true,
         "isShownByDefault": false
@@ -130,20 +137,22 @@
         "isTreeNodeVisible": true,
         "isAlertRecipientRelevant": false
       },
-      "ruleKeyFieldNames": [
-        {
-          "ruleKeyFieldName": "NON",
-          "fieldSequnceNumber": "010"
-        },
-        {
-          "ruleKeyFieldName": "SENSE",
-          "fieldSequnceNumber": "020"
-        },
-        {
-          "ruleKeyFieldName": "?",
-          "fieldSequnceNumber": "030"
-        }
-      ],
+      "keyFieldRule": {
+        "ruleKeyFieldNames": [
+          {
+            "ruleKeyFieldName": "NON",
+            "fieldSequnceNumber": "010"
+          },
+          {
+            "ruleKeyFieldName": "SENSE",
+            "fieldSequnceNumber": "020"
+          },
+          {
+            "ruleKeyFieldName": "?",
+            "fieldSequnceNumber": "030"
+          }
+        ]
+      },
       "fioriFeatures": {
         "isShownInMessageMonitor": true,
         "isShownByDefault": false
