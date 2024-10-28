@@ -30,6 +30,19 @@ INTERFACE zif_aff_aifi_v1
       sap TYPE ty_sap_raw_structure_type VALUE 'S',
     END OF co_sap_raw_structure_type.
 
+  "! $values { @link zif_aff_aifi_v1.data:co_expiration_behavior_type }
+  "! $default { @link zif_aff_aifi_v1.data:co_expiration_behavior_type.archive }
+  TYPES ty_expiration_behavior_type TYPE c LENGTH 1.
+  CONSTANTS:
+    BEGIN OF co_expiration_behavior_type,
+      "! <p class="shorttext">Delete Messages</p>
+      "! Delete messages after retention period
+      delete  TYPE ty_expiration_behavior_type VALUE 'D',
+      "! <p class="shorttext">Archive Messages</p>
+      "! Archive messages after retention period
+      archive TYPE ty_expiration_behavior_type VALUE 'A',
+    END OF co_expiration_behavior_type.
+
   "! $values { @link zif_aff_aifi_v1.data:co_direction_type }
   "! $default { @link zif_aff_aifi_v1.data:co_direction_type.both }
   TYPES ty_direction_type TYPE c LENGTH 1.
@@ -44,6 +57,9 @@ INTERFACE zif_aff_aifi_v1
       "! <p class="shorttext">Both</p>
       "! Both
       both     TYPE ty_direction_type VALUE ' ',
+      "! <p class="shorttext">Internal</p>
+      "! Internal
+      internal TYPE ty_direction_type VALUE 'S',
     END OF co_direction_type.
 
   TYPES:
@@ -54,17 +70,25 @@ INTERFACE zif_aff_aifi_v1
       "! <p class="shorttext">SOAP Class</p>
       "! SOAP class
       "! $required
-      soap_class       TYPE zif_aff_types_v1=>ty_object_name_30,
+      soap_class                    TYPE zif_aff_types_v1=>ty_object_name_30,
       " SOAP / web service method is stored in /AIF/T_FINF-PRX_METHOD type /aif/proxy_method
       "! <p class="shorttext">SOAP Method</p>
       "! SOAP method
       "! $required
-      soap_method      TYPE zif_aff_types_v1=>ty_object_name_30,
+      soap_method                   TYPE zif_aff_types_v1=>ty_object_name_30,
       " SOAP / web service record type is stored in /AIF/T_FINF-RECTYPERAW type /aif/rectyperaw
       "! <p class="shorttext">SOAP Record Type</p>
       "! SOAP record type
       "! $required
-      soap_record_type TYPE c LENGTH 45,
+      soap_record_type              TYPE c LENGTH 45,
+      " /AIF/PROXY_XML_TRANSFORMATION
+      "! <p class="shorttext">Proxy XML Transformation</p>
+      "! Use proxy xml transformation
+      uses_proxy_xml_transformation TYPE abap_bool,
+      " /AIF/PRX_XXML
+      "! <p class="shorttext">Extend XML Handling</p>
+      "! Extend xml handling
+      uses_extended_xml_handling    TYPE abap_bool,
     END OF ty_soap_settings.
 
   TYPES:
@@ -120,72 +144,78 @@ INTERFACE zif_aff_aifi_v1
     BEGIN OF ty_general_information,
       "! <p class="shorttext">Integration Type</p>
       "! Integration type
-      integration_type              TYPE c LENGTH 40,
+      integration_type             TYPE c LENGTH 4,
+      "! <p class="shorttext">Integration Type</p>
+      "! Integration type description
+      integration_type_description TYPE c LENGTH 40,
+      "! <p class="shorttext">Scenario</p>
+      "! Scenario
+      scenario                     TYPE c LENGTH 4,
+      "! <p class="shorttext">Scenario</p>
+      "! Scenario description
+      scenario_description         TYPE c LENGTH 40,
       "! <p class="shorttext">SOAP Settings</p>
       "! SOAP settings
-      soap_settings                 TYPE ty_soap_settings,
+      soap_settings                TYPE ty_soap_settings,
       "! <p class="shorttext">Event Settings</p>
       "! Event settings
-      event_settings                TYPE ty_event_settings,
+      event_settings               TYPE ty_event_settings,
       "! <p class="shorttext">BgPF Settings</p>
       "! Background processing framework settings
-      bgpf_settings                 TYPE ty_bgpf_settings,
+      bgpf_settings                TYPE ty_bgpf_settings,
       " (type /aif/ns_obj_name)
       "! <p class="shorttext">Namespace</p>
       "! Namespace
-      "! $required
-      namespace                     TYPE c LENGTH 15,
+      namespace                    TYPE c LENGTH 15,
       " (type /aif/ifname)
       "! <p class="shorttext">AIF Interface Name</p>
       "! AIF interface name
-      "! $required
-      interface_name                TYPE c LENGTH 10,
+      interface_name               TYPE c LENGTH 10,
       " (type /aif/ifversion)
       "! <p class="shorttext">AIF Interface Version</p>
       "! AIF interface version
-      "! $required
-      interface_version             TYPE c LENGTH 5,
+      interface_version            TYPE c LENGTH 5,
       " (type /aif/if_ddic_struct_raw)
-      "! <p class="shorttext">RAW Structure</p>
-      "! RAW structure
-      raw_structure                 TYPE zif_aff_types_v1=>ty_object_name_30,
+      "! <p class="shorttext">Data Structure</p>
+      "! Data structure
+      "! $required
+      data_structure               TYPE zif_aff_types_v1=>ty_object_name_30,
       " (type /aif/if_ddic_struct)
-      "! <p class="shorttext">SAP Structure</p>
-      "! SAP structure
-      sap_structure                 TYPE zif_aff_types_v1=>ty_object_name_30,
+      "! <p class="shorttext">Mapped Data Structure</p>
+      "! Mapped data structure
+      mapped_data_structure        TYPE zif_aff_types_v1=>ty_object_name_30,
       " (type /aif/msg_tbl)
       "! <p class="shorttext">Index Table</p>
       "! Index table
-      "! $default '/AIF/STD_IDX_TBL'
-      index_table                   TYPE zif_aff_types_v1=>ty_object_name_30,
+      "! $required
+      index_table                  TYPE zif_aff_types_v1=>ty_object_name_30,
       " (type /aif/ifdisplay)
       "! <p class="shorttext">Interface Display Name</p>
       "! Interface display name
-      display_name                  TYPE c LENGTH 120,
-      " (type /aif/msg_lifetime)
-      "! <p class="shorttext">Application Log Lifetime</p>
-      "! Application log lifetime
-      "! $default '90'
-      app_log_lifetime              TYPE n LENGTH 10,
+      display_name                 TYPE c LENGTH 120,
+      " (relevant types /AIF/MSG_LIFETIME && /AIF/DATA_OLDER_THAN_E)
+      "! <p class="shorttext">Retention Period</p>
+      "! Retention period
+      "! $default '090'
+      retention_period             TYPE c LENGTH 3,
+      "! <p class="shorttext">Expiration Behavior</p>
+      "! Expiration_behavior
+      expiration_behavior          TYPE ty_expiration_behavior_type,
+      " (type /aif/system_field)
+      "! <p class="shorttext">Sending System</p>
+      "! Path for sending system in data structure
+      sending_system               TYPE string,
       " (type /aif/ifdirection)
       "! <p class="shorttext">Direction</p>
       "! Direction
-      direction                     TYPE ty_direction_type,
+      direction                    TYPE ty_direction_type,
       " /AIF/PRE_PROCESSING
       "! <p class="shorttext">Preprocessing</p>
       "! Preprocessing
-      uses_preprocessing            TYPE abap_bool,
-      " /AIF/PROXY_XML_TRANSFORMATION
-      "! <p class="shorttext">Proxy XML Transformation</p>
-      "! Use proxy xml transformation
-      uses_proxy_xml_transformation TYPE abap_bool,
-      " /AIF/PRX_XXML
-      "! <p class="shorttext">Extend XML Handling</p>
-      "! Extend xml handling
-      uses_extended_xml_handling    TYPE abap_bool,
+      uses_preprocessing           TYPE abap_bool,
       "! <p class="shorttext">Postprocessing</p>
       "! Postprocessing
-      uses_postprocesssing          TYPE abap_bool,
+      uses_postprocesssing         TYPE abap_bool,
     END OF ty_general_information.
 
   TYPES:
@@ -330,12 +360,12 @@ INTERFACE zif_aff_aifi_v1
 
   TYPES:
     " Related key fields used by key field rules
-    "! <p class="shorttext">Rule Key Field Name</p>
-    "! Rule key field name
+    "! <p class="shorttext">Rule Key Field</p>
+    "! Rule key field
     BEGIN OF ty_rule_key_field_name,
       " (type /aif/key_fieldname_enh)
-      "! <p class="shorttext">Key Field Name</p>
-      "! Key field name
+      "! <p class="shorttext">Rule Key Field Name</p>
+      "! Rule Key field name
       rule_key_field_name  TYPE zif_aff_types_v1=>ty_object_name_30,
       " (type /aif/field_number_enh)
       "! <p class="shorttext">Field Sequence Number</p>
@@ -348,24 +378,39 @@ INTERFACE zif_aff_aifi_v1
   TYPES ty_rule_key_field_names TYPE STANDARD TABLE OF ty_rule_key_field_name WITH DEFAULT KEY.
 
   TYPES:
+    "! <p class="shorttext">Key Field Rule</p>
+    "! Key field rule
+    BEGIN OF ty_key_field_rule,
+      "! <p class="shorttext">Rule Key Field Names</p>
+      "! Rule key field names
+      rule_key_field_names TYPE ty_rule_key_field_names,
+      "! <p class="shorttext">Key Field Rule Class</p>
+      "! Key Field Rule class
+      rule_class           TYPE zif_aff_types_v1=>ty_object_name_30,
+      "! <p class="shorttext">Key Field Rule Method</p>
+      "! Key field rule method
+      rule_method          TYPE zif_aff_types_v1=>ty_object_name_30,
+    END OF ty_key_field_rule.
+
+  TYPES:
     "! <p class="shorttext">Key Field</p>
     "! Key field
     BEGIN OF ty_key_field,
       "! <p class="shorttext">General</p>
       "! General key field settings
-      key_field_settings   TYPE ty_key_field_settings,
+      key_field_settings  TYPE ty_key_field_settings,
       "! <p class="shorttext">Key Field Determination by Qualifier</p>
       "! Key field determination by qualifier
-      key_field_qualifier  TYPE ty_key_field_qualifier,
+      key_field_qualifier TYPE ty_key_field_qualifier,
       "! <p class="shorttext">Key Field Selection</p>
       "! Key field selection type and settings
-      key_field_selection  TYPE ty_key_field_selection,
+      key_field_selection TYPE ty_key_field_selection,
       "! <p class="shorttext">Key Field Rules</p>
       "! Key field rules
-      rule_key_field_names TYPE ty_rule_key_field_names,
+      key_field_rule      TYPE ty_key_field_rule,
       "! <p class="shorttext">SAP Fiori Features</p>
       "! SAP Fiori specific features
-      fiori_features       TYPE ty_fiori_features,
+      fiori_features      TYPE ty_fiori_features,
     END OF ty_key_field.
 
   "! <p class="shorttext">Key Fields</p>
@@ -374,9 +419,9 @@ INTERFACE zif_aff_aifi_v1
   TYPES ty_key_fields TYPE STANDARD TABLE OF ty_key_field WITH DEFAULT KEY.
 
   TYPES:
-    "! <p class="shorttext">Structure Setting</p>
-    "! Structure setting
-    BEGIN OF ty_structure_setting,
+    "! <p class="shorttext">Error Handling Configuration</p>
+    "! Error handling configuration
+    BEGIN OF ty_error_handling_config,
       " (type /aif/countnr)
       "! <p class="shorttext">Sequence</p>
       "! Sequence
@@ -414,11 +459,11 @@ INTERFACE zif_aff_aifi_v1
       "! <p class="shorttext">Long Text</p>
       "! Long text
       long_text     TYPE c LENGTH 40,
-    END OF ty_structure_setting.
+    END OF ty_error_handling_config.
 
-  "! <p class="shorttext">Structure Settings</p>
-  "! Structure Settings
-  TYPES ty_structure_settings TYPE STANDARD TABLE OF ty_structure_setting WITH DEFAULT KEY.
+  "! <p class="shorttext">Error Handling Configuration</p>
+  "! Error handling configuration
+  TYPES ty_error_handling_configs TYPE STANDARD TABLE OF ty_error_handling_config WITH DEFAULT KEY.
 
   TYPES:
     "! <p class="shorttext">Engines</p>
@@ -448,31 +493,31 @@ INTERFACE zif_aff_aifi_v1
     "! Application interface
     BEGIN OF ty_main,
       "! $required
-      format_version       TYPE zif_aff_types_v1=>ty_format_version,
+      format_version         TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header               TYPE zif_aff_types_v1=>ty_header_60_cloud,
+      header                 TYPE zif_aff_types_v1=>ty_header_60_cloud,
       "! <p class="shorttext">General Information</p>
       "! General information
       "! $required
-      general_information  TYPE ty_general_information,
+      general_information    TYPE ty_general_information,
       "! <p class="shorttext">Recipient Assignment</p>
       "! Recipient assignment
       "! $required
-      recipient_assignment TYPE ty_recipients,
-      "! <p class="shorttext">Structure Settings</p>
-      "! Structure settings
+      recipient_assignment   TYPE ty_recipients,
+      "! <p class="shorttext">Error Handling Configuration</p>
+      "! Error handling configuration
       "! $required
-      structure_settings   TYPE ty_structure_settings,
+      error_handling_configs TYPE ty_error_handling_configs,
       "! <p class="shorttext">Engines</p>
       "! Engines
       "! $required
-      engines              TYPE ty_engines,
+      engines                TYPE ty_engines,
       "! <p class="shorttext">Key Fields</p>
       "! Key fields
       "! $required
-      key_fields           TYPE ty_key_fields,
+      key_fields             TYPE ty_key_fields,
     END OF ty_main.
 
 ENDINTERFACE.

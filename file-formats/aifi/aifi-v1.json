@@ -63,6 +63,24 @@
           "title": "Integration Type",
           "description": "Integration type",
           "type": "string",
+          "maxLength": 4
+        },
+        "integrationTypeDescription": {
+          "title": "Integration Type",
+          "description": "Integration type description",
+          "type": "string",
+          "maxLength": 40
+        },
+        "scenario": {
+          "title": "Scenario",
+          "description": "Scenario",
+          "type": "string",
+          "maxLength": 4
+        },
+        "scenarioDescription": {
+          "title": "Scenario",
+          "description": "Scenario description",
+          "type": "string",
           "maxLength": 40
         },
         "soapSettings": {
@@ -87,6 +105,16 @@
               "description": "SOAP record type",
               "type": "string",
               "maxLength": 45
+            },
+            "usesProxyXmlTransformation": {
+              "title": "Proxy XML Transformation",
+              "description": "Use proxy xml transformation",
+              "type": "boolean"
+            },
+            "usesExtendedXmlHandling": {
+              "title": "Extend XML Handling",
+              "description": "Extend xml handling",
+              "type": "boolean"
             }
           },
           "additionalProperties": false,
@@ -184,15 +212,15 @@
           "type": "string",
           "maxLength": 5
         },
-        "rawStructure": {
-          "title": "RAW Structure",
-          "description": "RAW structure",
+        "dataStructure": {
+          "title": "Data Structure",
+          "description": "Data structure",
           "type": "string",
           "maxLength": 30
         },
-        "sapStructure": {
-          "title": "SAP Structure",
-          "description": "SAP structure",
+        "mappedDataStructure": {
+          "title": "Mapped Data Structure",
+          "description": "Mapped data structure",
           "type": "string",
           "maxLength": 30
         },
@@ -200,8 +228,7 @@
           "title": "Index Table",
           "description": "Index table",
           "type": "string",
-          "maxLength": 30,
-          "default": "/AIF/STD_IDX_TBL"
+          "maxLength": 30
         },
         "displayName": {
           "title": "Interface Display Name",
@@ -209,13 +236,35 @@
           "type": "string",
           "maxLength": 120
         },
-        "appLogLifetime": {
-          "title": "Application Log Lifetime",
-          "description": "Application log lifetime",
+        "retentionPeriod": {
+          "title": "Retention Period",
+          "description": "Retention period",
           "type": "string",
-          "maxLength": 10,
-          "pattern": "^[0-9]+$",
-          "default": "90"
+          "maxLength": 3,
+          "default": "090"
+        },
+        "expirationBehavior": {
+          "title": "Expiration Behavior",
+          "description": "Expiration_behavior",
+          "type": "string",
+          "enum": [
+            "delete",
+            "archive"
+          ],
+          "enumTitles": [
+            "Delete Messages",
+            "Archive Messages"
+          ],
+          "enumDescriptions": [
+            "Delete messages after retention period",
+            "Archive messages after retention period"
+          ],
+          "default": "archive"
+        },
+        "sendingSystem": {
+          "title": "Sending System",
+          "description": "Path for sending system in data structure",
+          "type": "string"
         },
         "direction": {
           "title": "Direction",
@@ -224,33 +273,26 @@
           "enum": [
             "inbound",
             "outbound",
-            "both"
+            "both",
+            "internal"
           ],
           "enumTitles": [
             "Inbound",
             "Outbound",
-            "Both"
+            "Both",
+            "Internal"
           ],
           "enumDescriptions": [
             "Inbound",
             "Outbound",
-            "Both"
+            "Both",
+            "Internal"
           ],
           "default": "both"
         },
         "usesPreprocessing": {
           "title": "Preprocessing",
           "description": "Preprocessing",
-          "type": "boolean"
-        },
-        "usesProxyXmlTransformation": {
-          "title": "Proxy XML Transformation",
-          "description": "Use proxy xml transformation",
-          "type": "boolean"
-        },
-        "usesExtendedXmlHandling": {
-          "title": "Extend XML Handling",
-          "description": "Extend xml handling",
           "type": "boolean"
         },
         "usesPostprocesssing": {
@@ -261,9 +303,8 @@
       },
       "additionalProperties": false,
       "required": [
-        "namespace",
-        "interfaceName",
-        "interfaceVersion"
+        "dataStructure",
+        "indexTable"
       ]
     },
     "recipientAssignment": {
@@ -288,13 +329,13 @@
         ]
       }
     },
-    "structureSettings": {
-      "title": "Structure Settings",
-      "description": "Structure settings",
+    "errorHandlingConfigs": {
+      "title": "Error Handling Configuration",
+      "description": "Error handling configuration",
       "type": "array",
       "items": {
-        "title": "Structure Setting",
-        "description": "Structure setting",
+        "title": "Error Handling Configuration",
+        "description": "Error handling configuration",
         "type": "object",
         "properties": {
           "sequence": {
@@ -607,30 +648,50 @@
             },
             "additionalProperties": false
           },
-          "ruleKeyFieldNames": {
+          "keyFieldRule": {
             "title": "Key Field Rules",
             "description": "Key field rules",
-            "type": "array",
-            "items": {
-              "title": "Rule Key Field Name",
-              "description": "Rule key field name",
-              "type": "object",
-              "properties": {
-                "ruleKeyFieldName": {
-                  "title": "Key Field Name",
-                  "description": "Key field name",
-                  "type": "string",
-                  "maxLength": 30
-                },
-                "fieldSequnceNumber": {
-                  "title": "Field Sequence Number",
-                  "description": "Field sequence number",
-                  "type": "string",
-                  "maxLength": 3
+            "type": "object",
+            "properties": {
+              "ruleKeyFieldNames": {
+                "title": "Rule Key Field Names",
+                "description": "Rule key field names",
+                "type": "array",
+                "items": {
+                  "title": "Rule Key Field",
+                  "description": "Rule key field",
+                  "type": "object",
+                  "properties": {
+                    "ruleKeyFieldName": {
+                      "title": "Rule Key Field Name",
+                      "description": "Rule Key field name",
+                      "type": "string",
+                      "maxLength": 30
+                    },
+                    "fieldSequnceNumber": {
+                      "title": "Field Sequence Number",
+                      "description": "Field sequence number",
+                      "type": "string",
+                      "maxLength": 3
+                    }
+                  },
+                  "additionalProperties": false
                 }
               },
-              "additionalProperties": false
-            }
+              "ruleClass": {
+                "title": "Key Field Rule Class",
+                "description": "Key Field Rule class",
+                "type": "string",
+                "maxLength": 30
+              },
+              "ruleMethod": {
+                "title": "Key Field Rule Method",
+                "description": "Key field rule method",
+                "type": "string",
+                "maxLength": 30
+              }
+            },
+            "additionalProperties": false
           },
           "fioriFeatures": {
             "title": "SAP Fiori Features",
@@ -674,7 +735,7 @@
     "header",
     "generalInformation",
     "recipientAssignment",
-    "structureSettings",
+    "errorHandlingConfigs",
     "engines",
     "keyFields"
   ]
