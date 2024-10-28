@@ -6,8 +6,9 @@
     "abapLanguageVersion": "standard"
   },
   "generalInformation": {
+    "integrationType": "SOAP",
     "integrationTypeDescription": "SOAP",
-    "scenario": "Inbound Monitoring",
+    "scenario": "INMO",
     "scenarioDescription": "Inbound Monitoring",
     "soapSettings": {
       "soapClass": "CL_SOAP_RFC_PROXY_TEST",
