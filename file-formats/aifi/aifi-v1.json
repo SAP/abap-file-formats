@@ -649,13 +649,13 @@
             "additionalProperties": false
           },
           "keyFieldRule": {
-            "title": "Key Field Rules",
-            "description": "Key field rules",
+            "title": "Key Field Rule",
+            "description": "Key field rule",
             "type": "object",
             "properties": {
-              "ruleKeyFieldNames": {
-                "title": "Rule Key Field Names",
-                "description": "Rule key field names",
+              "ruleKeyFields": {
+                "title": "Rule Key Fields",
+                "description": "Rule key fields",
                 "type": "array",
                 "items": {
                   "title": "Rule Key Field",

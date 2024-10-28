@@ -362,7 +362,7 @@ INTERFACE zif_aff_aifi_v1
     " Related key fields used by key field rules
     "! <p class="shorttext">Rule Key Field</p>
     "! Rule key field
-    BEGIN OF ty_rule_key_field_name,
+    BEGIN OF ty_rule_key_field,
       " (type /aif/key_fieldname_enh)
       "! <p class="shorttext">Rule Key Field Name</p>
       "! Rule Key field name
@@ -371,25 +371,25 @@ INTERFACE zif_aff_aifi_v1
       "! <p class="shorttext">Field Sequence Number</p>
       "! Field sequence number
       field_sequnce_number TYPE c LENGTH 3,
-    END OF ty_rule_key_field_name.
+    END OF ty_rule_key_field.
 
-  "! <p class="shorttext">Key Field Rules</p>
-  "! Key field rules
-  TYPES ty_rule_key_field_names TYPE STANDARD TABLE OF ty_rule_key_field_name WITH DEFAULT KEY.
+  "! <p class="shorttext">Rule Key Fields</p>
+  "! Rule key fields
+  TYPES ty_rule_key_fields TYPE STANDARD TABLE OF ty_rule_key_field WITH DEFAULT KEY.
 
   TYPES:
     "! <p class="shorttext">Key Field Rule</p>
     "! Key field rule
     BEGIN OF ty_key_field_rule,
-      "! <p class="shorttext">Rule Key Field Names</p>
-      "! Rule key field names
-      rule_key_field_names TYPE ty_rule_key_field_names,
+      "! <p class="shorttext">Rule Key Fields</p>
+      "! Rule key fields
+      rule_key_fields TYPE ty_rule_key_fields,
       "! <p class="shorttext">Key Field Rule Class</p>
       "! Key Field Rule class
-      rule_class           TYPE zif_aff_types_v1=>ty_object_name_30,
+      rule_class      TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Key Field Rule Method</p>
       "! Key field rule method
-      rule_method          TYPE zif_aff_types_v1=>ty_object_name_30,
+      rule_method     TYPE zif_aff_types_v1=>ty_object_name_30,
     END OF ty_key_field_rule.
 
   TYPES:
@@ -405,8 +405,8 @@ INTERFACE zif_aff_aifi_v1
       "! <p class="shorttext">Key Field Selection</p>
       "! Key field selection type and settings
       key_field_selection TYPE ty_key_field_selection,
-      "! <p class="shorttext">Key Field Rules</p>
-      "! Key field rules
+      "! <p class="shorttext">Key Field Rule</p>
+      "! Key field rule
       key_field_rule      TYPE ty_key_field_rule,
       "! <p class="shorttext">SAP Fiori Features</p>
       "! SAP Fiori specific features

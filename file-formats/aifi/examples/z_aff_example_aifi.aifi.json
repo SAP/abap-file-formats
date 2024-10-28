@@ -79,7 +79,7 @@
         "isAlertRecipientRelevant": false
       },
       "keyFieldRule": {
-        "ruleKeyFieldNames": [
+        "ruleKeyFields": [
           {
             "ruleKeyFieldName": "TEST_FIELD1",
             "fieldSequnceNumber": "010"
@@ -109,7 +109,7 @@
         "isAlertRecipientRelevant": false
       },
       "keyFieldRule": {
-        "ruleKeyFieldNames": [
+        "ruleKeyFields": [
           {
             "ruleKeyFieldName": "TEST_FIELD2",
             "fieldSequnceNumber": "010"
@@ -139,7 +139,7 @@
         "isAlertRecipientRelevant": false
       },
       "keyFieldRule": {
-        "ruleKeyFieldNames": [
+        "ruleKeyFields": [
           {
             "ruleKeyFieldName": "NON",
             "fieldSequnceNumber": "010"
