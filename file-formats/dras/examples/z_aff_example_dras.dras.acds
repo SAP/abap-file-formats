@@ -1,0 +1,5 @@
+@EndUserText.label: 'Example CDS Aspect'
+define aspect Z_AFF_EXAMPLE_DRAS {
+  example_bound_field : abap.int2;
+  example_calculated_field = ( example_bound_field + 3 ) * 2;
+}

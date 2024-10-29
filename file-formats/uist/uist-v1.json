@@ -69,8 +69,8 @@
           "title": "Sort Priority",
           "description": "Sort priority",
           "type": "number",
-          "minimum": -9999.999,
-          "maximum": 9999.999
+          "minimum": -9999.99999,
+          "maximum": 9999.99999
         },
         "mergeId": {
           "title": "Merge ID",

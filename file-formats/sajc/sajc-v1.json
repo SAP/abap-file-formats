@@ -250,6 +250,33 @@
             "type": "string",
             "maxLength": 4
           },
+          "valueHelp": {
+            "title": "Value Help",
+            "description": "Name of the object on which the value help is based: for value helps based on a CDS view: name of the data definition; for value helps based on a domain: name of the domain",
+            "type": "string",
+            "maxLength": 30
+          },
+          "valueHelpType": {
+            "title": "Value Help Type",
+            "description": "Type of the value help (based on a CDS view, or based on the 'Fixed values' list of a dictionary domain)",
+            "type": "string",
+            "enum": [
+              "none",
+              "cdsView",
+              "domain"
+            ],
+            "enumTitles": [
+              "None",
+              "CDS view",
+              "Domain"
+            ],
+            "enumDescriptions": [
+              "No or unsupported value help type",
+              "Value help based on a CDS view",
+              "Value help based on the 'Fixed values' list of a dictionary domain"
+            ],
+            "default": "none"
+          },
           "backendCall": {
             "title": "Backend Call",
             "description": "Flag indicating whether a call of the backend system is triggered after a parameter value change to check it",
