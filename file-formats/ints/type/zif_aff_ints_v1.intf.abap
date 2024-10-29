@@ -17,7 +17,6 @@ INTERFACE zif_aff_ints_v1
       "! Logical object type
       logical_object_type TYPE c LENGTH 1,
     END OF ty_islm_psddlobj,
-    tt_islm_psddlobj TYPE STANDARD TABLE OF ty_islm_psddlobj WITH DEFAULT KEY,
 
     "! <p class="shorttext">Intelligent Scenario</p>
     "! Intelligent Scenario
@@ -90,7 +89,6 @@ INTERFACE zif_aff_ints_v1
       "! Table or view field name
       to_field       TYPE c LENGTH 30,
     END OF ty_islm_psbindmp,
-    tt_islm_psbindmp TYPE STANDARD TABLE OF ty_islm_psbindmp WITH DEFAULT KEY,
 
     "! <p class="shorttext">Dataset Bindings</p>
     "! Dataset Bindings
@@ -102,7 +100,6 @@ INTERFACE zif_aff_ints_v1
       "! Reference UUID
       reference TYPE c LENGTH 36,
     END OF ty_islm_psbind,
-    tt_islm_psbind TYPE STANDARD TABLE OF ty_islm_psbind WITH DEFAULT KEY,
 
     "! <p class="shorttext">Scenario Signatures</p>
     "! Scenario Signatures
@@ -117,7 +114,6 @@ INTERFACE zif_aff_ints_v1
       "! Description
       description    TYPE c LENGTH 100,
     END OF ty_islm_pssig,
-    tt_islm_pssig TYPE STANDARD TABLE OF ty_islm_pssig WITH DEFAULT KEY,
 
     "! <p class="shorttext">Signature Fields</p>
     "! Signature Fields
@@ -141,7 +137,6 @@ INTERFACE zif_aff_ints_v1
       "! Data managent type
       dm_type        TYPE c LENGTH 30,
     END OF ty_islm_pssigfld,
-    tt_islm_pssigfld TYPE STANDARD TABLE OF ty_islm_pssigfld WITH DEFAULT KEY,
 
     "! <p class="shorttext">Intelligent Scenario Modelling Context</p>
     "! Intelligent Scenario Modelling Context
@@ -156,7 +151,6 @@ INTERFACE zif_aff_ints_v1
       "! Description
       description TYPE c LENGTH 100,
     END OF ty_islm_mdlctxcc,
-    tt_islm_mdlctxcc TYPE STANDARD TABLE OF ty_islm_mdlctxcc WITH DEFAULT KEY,
 
     "! <p class="shorttext">Modeling Context Filters</p>
     "! Modeling Context Filters
@@ -186,7 +180,6 @@ INTERFACE zif_aff_ints_v1
       "! Modeling Context Filter High Value
       high_value       TYPE string,
     END OF ty_islm_mctxfcc,
-    tt_islm_mctxfcc TYPE STANDARD TABLE OF ty_islm_mctxfcc WITH DEFAULT KEY,
 
     "! <p class="shorttext">Modeling Context Filters</p>
     "! Modeling Context Filters
@@ -204,7 +197,6 @@ INTERFACE zif_aff_ints_v1
       "! Parameter value
       value   TYPE string,
     END OF ty_islm_pspardef,
-    tt_islm_pspardef TYPE STANDARD TABLE OF ty_islm_pspardef WITH DEFAULT KEY,
 
     "! <p class="shorttext">Scenario parameter signature</p>
     "! Scenario parameter signature
@@ -228,7 +220,6 @@ INTERFACE zif_aff_ints_v1
       "! Parameter size
       param_size  TYPE i,
     END OF ty_islm_pspar,
-    tt_islm_pspar TYPE STANDARD TABLE OF ty_islm_pspar WITH DEFAULT KEY,
 
     "! <p class="shorttext">Scenario additional information</p>
     "! Scenario additional information
@@ -246,7 +237,6 @@ INTERFACE zif_aff_ints_v1
       "! Additional information position ID
       position_id         TYPE i,
     END OF ty_islm_psaddlinfo,
-    tt_islm_psaddlinfo TYPE STANDARD TABLE OF ty_islm_psaddlinfo WITH DEFAULT KEY,
 
     "! <p class="shorttext">Scenario additional information texts</p>
     "! Scenario additional information texts
@@ -267,7 +257,6 @@ INTERFACE zif_aff_ints_v1
       "! Additional information value text label
       value_label         TYPE c LENGTH 255,
     END OF ty_islm_psaddlinfot,
-    tt_islm_psaddlinfot TYPE STANDARD TABLE OF ty_islm_psaddlinfot WITH DEFAULT KEY,
 
     "! <p class="shorttext">SBS Scenario Segment Fields</p>
     "! SBS Scenario Segment Fields
@@ -282,7 +271,6 @@ INTERFACE zif_aff_ints_v1
       "! Key field or not
       iskey          TYPE c LENGTH 1,
     END OF ty_islm_pssgmntfld,
-    tt_islm_pssgmntfld TYPE STANDARD TABLE OF ty_islm_pssgmntfld WITH DEFAULT KEY,
 
     "! <p class="shorttext">Intelligent Scenario Models</p>
     "! Intelligent Scenario Models
@@ -313,7 +301,6 @@ INTERFACE zif_aff_ints_v1
       "! $required
       llm_model_version TYPE c LENGTH 30,
     END OF ty_models,
-    tt_models TYPE STANDARD TABLE OF ty_models WITH DEFAULT KEY,
 
     "! <p class="shorttext">Model Prompt Template</p>
     "! Model Prompt Template
@@ -340,7 +327,6 @@ INTERFACE zif_aff_ints_v1
       "! Prompt Visibility
       visible           TYPE abap_bool,
     END OF ty_islm_mdlprmttmpl,
-    tt_islm_mdlprmttmpl TYPE STANDARD TABLE OF ty_islm_mdlprmttmpl WITH DEFAULT KEY,
 
     "! <p class="shorttext">Intelligent scenarios</p>
     "! Intelligent scenarios
@@ -359,46 +345,46 @@ INTERFACE zif_aff_ints_v1
       islm_ps          TYPE ty_islm_ps,
       "! <p class="shorttext">Objects based on Scenario</p>
       "! Objects based on Scenario
-      islm_psddlobj    TYPE tt_islm_psddlobj,
+      islm_psddlobj    TYPE STANDARD TABLE OF ty_islm_psddlobj WITH DEFAULT KEY,
       "! <p class="shorttext">Scenario Binding Mappings</p>
       "! Scenario Binding Mappings
-      islm_psbindmp    TYPE tt_islm_psbindmp,
+      islm_psbindmp    TYPE STANDARD TABLE OF ty_islm_psbindmp WITH DEFAULT KEY,
       "! <p class="shorttext">Dataset Bindings</p>
       "! Dataset Bindings
-      islm_psbind      TYPE tt_islm_psbind,
+      islm_psbind      TYPE STANDARD TABLE OF ty_islm_psbind WITH DEFAULT KEY,
       "! <p class="shorttext">Scenario Signatures</p>
       "! Scenario Signatures
-      islm_pssig       TYPE tt_islm_pssig,
+      islm_pssig       TYPE STANDARD TABLE OF ty_islm_pssig WITH DEFAULT KEY,
       "! <p class="shorttext">Signature Fields</p>
       "! Signature Fields
-      islm_pssigfld    TYPE tt_islm_pssigfld,
+      islm_pssigfld    TYPE STANDARD TABLE OF ty_islm_pssigfld WITH DEFAULT KEY,
       "! <p class="shorttext">Intelligent Scenario Modelling Context</p>
       "! Intelligent Scenario Modelling Context
-      islm_mdlctxcc    TYPE tt_islm_mdlctxcc,
+      islm_mdlctxcc    TYPE STANDARD TABLE OF ty_islm_mdlctxcc WITH DEFAULT KEY,
       "! <p class="shorttext">Modeling Context Filters</p>
       "! Modeling Context Filters
-      islm_mctxfcc     TYPE tt_islm_mctxfcc,
+      islm_mctxfcc     TYPE STANDARD TABLE OF ty_islm_mctxfcc WITH DEFAULT KEY,
       "! <p class="shorttext">Modeling Context Filters</p>
       "! Modeling Context Filters
-      islm_pspardef    TYPE tt_islm_pspardef,
+      islm_pspardef    TYPE STANDARD TABLE OF ty_islm_pspardef WITH DEFAULT KEY,
       "! <p class="shorttext">Scenario parameter signature</p>
       "! Scenario parameter signature
-      islm_pspar       TYPE tt_islm_pspar,
+      islm_pspar       TYPE STANDARD TABLE OF ty_islm_pspar WITH DEFAULT KEY,
       "! <p class="shorttext">Scenario additional information</p>
       "! Scenario additional information
-      islm_psaddlinfo  TYPE tt_islm_psaddlinfo,
+      islm_psaddlinfo  TYPE STANDARD TABLE OF ty_islm_psaddlinfo WITH DEFAULT KEY,
       "! <p class="shorttext">Scenario additional information texts</p>
       "! Scenario additional information texts
-      islm_psaddlinfot TYPE tt_islm_psaddlinfot,
+      islm_psaddlinfot TYPE STANDARD TABLE OF ty_islm_psaddlinfot WITH DEFAULT KEY,
       "! <p class="shorttext">SBS Scenario Segment Fields</p>
       "! SBS Scenario Segment Fields
-      islm_pssgmntfld  TYPE tt_islm_pssgmntfld,
+      islm_pssgmntfld  TYPE STANDARD TABLE OF ty_islm_pssgmntfld WITH DEFAULT KEY,
       "! <p class="shorttext">Intelligent Scenario Models</p>
       "! Intelligent Scenario Models
       "! $required
-      islm_models      TYPE tt_models,
+      islm_models      TYPE STANDARD TABLE OF ty_models WITH DEFAULT KEY,
       "! <p class="shorttext">Model Prompt Templates</p>
       "! Model Prompt Templates
-      islm_mdlprmttmpl TYPE tt_islm_mdlprmttmpl,
+      islm_mdlprmttmpl TYPE STANDARD TABLE OF ty_islm_mdlprmttmpl WITH DEFAULT KEY,
     END OF ty_main.
 ENDINTERFACE.
