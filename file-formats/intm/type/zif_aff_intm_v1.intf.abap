@@ -1,5 +1,5 @@
 INTERFACE zif_aff_intm_v1
-  PUBLIC .
+  PUBLIC.
 
   TYPES:
     "! <p class="shorttext">Intelligent Scenario Model</p>
@@ -54,7 +54,7 @@ INTERFACE zif_aff_intm_v1
       fieldname      TYPE c LENGTH 30,
       "! <p class="shorttext">Position</p>
       "! Position
-      field_position TYPE	i,
+      field_position TYPE i,
       "! <p class="shorttext">Key field Boolean flag?</p>
       "! Key field Boolean flag?
       is_key         TYPE	abap_bool,
@@ -121,5 +121,5 @@ INTERFACE zif_aff_intm_v1
       "! <p class="shorttext">Model Prompt Templates</p>
       "! Model Prompt Templates
       islm_mdlprmttmpl TYPE STANDARD TABLE OF ty_islm_mdlprmttmpl WITH DEFAULT KEY,
-    END OF ty_main .
+    END OF ty_main.
 ENDINTERFACE.
