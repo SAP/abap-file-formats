@@ -57,7 +57,7 @@ INTERFACE zif_aff_intm_v1
       field_position TYPE i,
       "! <p class="shorttext">Key field Boolean flag?</p>
       "! Key field Boolean flag?
-      is_key         TYPE	abap_bool,
+      is_key         TYPE	 abap_bool,
     END OF ty_islm_mdlsgmntfld,
 
     "! <p class="shorttext">Intelligent Scenario Model Prompt Template</p>
