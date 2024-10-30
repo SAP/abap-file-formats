@@ -7,7 +7,7 @@ INTERFACE zif_aff_smtg_v1
     BEGIN OF ty_general_information,
       "! <p class="shorttext">Template Description</p>
       "! Long description to that email template
-      template_description            TYPE c LENGTH 255,
+      template_description        TYPE c LENGTH 255,
       "! <p class="shorttext">CDS View</p>
       "! The corresponding CDS view name for the template
       "! $required
