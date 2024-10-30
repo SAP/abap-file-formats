@@ -7,21 +7,21 @@ INTERFACE zif_aff_smtg_v1
     BEGIN OF ty_general_information,
       "! <p class="shorttext">Template Description</p>
       "! Long description to that email template
-      long_description            TYPE c LENGTH 255,
-      "! <p class="shorttext">Predelivered</p>
-      "! Indicator if the template is predelivered
-      is_predelivered             TYPE abap_bool,
-      "! <p class="shorttext">Generate Plain Text from HTML</p>
-      "! Indicator if the template text body is generated automatically from html body
-      is_plaintext_auto_generated TYPE abap_bool,
+      template_description            TYPE c LENGTH 255,
       "! <p class="shorttext">CDS View</p>
       "! The corresponding CDS view name for the template
       "! $required
       cds_view                    TYPE zif_aff_types_v1=>ty_object_name_30,
+      "! <p class="shorttext">Predelivered</p>
+      "! Indicator if the template is predelivered
+      is_predelivered             TYPE abap_bool,
       "! <p class="shorttext">Subject</p>
       "! The subject of the email template
       "! $required
       email_subject               TYPE c LENGTH 255,
+      "! <p class="shorttext">Generate Plain Text from HTML</p>
+      "! Indicator if the template text body is generated automatically from html body
+      is_plaintext_auto_generated TYPE abap_bool,
     END OF ty_general_information.
   " Corresponding content ist stored in a separate file and implemented as action
 
