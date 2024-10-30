@@ -3,12 +3,12 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/intm/intm-v1.json",
   "title": "Intelligent scenario Models",
-  "description": "Intelligent scenario Models",
+  "description": "This is an intelligent scenario model",
   "type": "object",
   "properties": {
     "formatVersion": {
-      "title": "Format Version",
-      "description": "Format version",
+      "title": "ABAP File Format Version",
+      "description": "The ABAP file format version",
       "type": "string",
       "const": "1"
     },
@@ -57,175 +57,170 @@
         "originalLanguage"
       ]
     },
-    "islmModelcc": {
+    "intelligentModel": {
       "title": "Intelligent Scenario Model",
-      "description": "Intelligent Scenario Model",
+      "description": "This is an intelligent scenario model",
       "type": "object",
       "properties": {
         "name": {
           "title": "Model Name",
-          "description": "Model Name",
+          "description": "This is the model name",
           "type": "string",
           "maxLength": 30
         },
         "parent": {
           "title": "Parent",
-          "description": "Parent",
+          "description": "This is the parent of the model",
           "type": "string",
           "maxLength": 36
         },
-        "description": {
-          "title": "Model Description",
-          "description": "Model Description",
-          "type": "string"
-        },
         "modelType": {
           "title": "Model Type",
-          "description": "Model Type",
+          "description": "This is the model type",
           "type": "string",
           "maxLength": 256
         },
         "adapterId": {
           "title": "Adapter ID",
-          "description": "Adapter ID",
+          "description": "This is the adapter ID",
           "type": "string",
           "maxLength": 32
         },
         "nativeModelType": {
           "title": "Native Model Type",
-          "description": "Native Model Type",
+          "description": "This is the native model type",
           "type": "string",
           "maxLength": 256
         },
         "modelSpecification": {
           "title": "Model Content",
-          "description": "Model Content",
+          "description": "This is the model content",
           "type": "string"
         },
         "modelDefinition": {
-          "title": "Model definition",
-          "description": "Model definition",
+          "title": "Model Definition",
+          "description": "This is the model definition",
           "type": "string"
         },
         "state": {
           "title": "State of model",
-          "description": "State of model",
+          "description": "This is the state of the model",
           "type": "string",
           "maxLength": 10
         },
         "signature": {
           "title": "Signature",
-          "description": "Signature",
+          "description": "This is the model signature",
           "type": "string"
         },
         "bindings": {
           "title": "Bindings",
-          "description": "Bindings",
+          "description": "This is the model bindings",
           "type": "string"
         },
         "newModel": {
-          "title": "Model flag: Original = ' ', Enhancement = 'X'",
-          "description": "New model?",
+          "title": "Model flag",
+          "description": "This is the flag that indicate new model or enhancement(X)",
           "type": "boolean"
         },
         "abapLanguageVersion": {
           "title": "ABAP Language Version",
-          "description": "ABAP Language Version",
+          "description": "This is the abap language version",
           "type": "string",
           "maxLength": 1
         }
       },
       "additionalProperties": false
     },
-    "islmModel": {
+    "modelDetails": {
       "title": "Model Details",
-      "description": "Model Details",
+      "description": "These are the model details",
       "type": "object",
       "properties": {
         "executableId": {
           "title": "Executable ID",
-          "description": "Executable ID",
+          "description": "This is the executable ID",
           "type": "string",
           "maxLength": 64
         },
         "llmName": {
           "title": "Large Language Model Name",
-          "description": "Large Language Model Name",
+          "description": "This is the large language model name",
           "type": "string"
         },
         "llmModelVersion": {
           "title": "LLM Model Version",
-          "description": "LLM Model Version",
+          "description": "This is the LLM model version",
           "type": "string",
           "maxLength": 30
         }
       },
       "additionalProperties": false
     },
-    "islmMdlsgmntfld": {
+    "segmentFields": {
       "title": "Model Segment Fields",
-      "description": "Model Segment Fields",
+      "description": "These are the model segment fields",
       "type": "array",
       "items": {
-        "title": "Model Segment Fields",
-        "description": "Model Segment Fields",
+        "title": "Segment Fields",
+        "description": "These are the model segment fields",
         "type": "object",
         "properties": {
           "fieldname": {
-            "title": "Table or view field name",
-            "description": "Table or view field name",
+            "title": "Table or View Field Name",
+            "description": "This is the field of a table or view",
             "type": "string",
             "maxLength": 30
           },
           "fieldPosition": {
             "title": "Position",
-            "description": "Position",
+            "description": "This is the field position",
             "type": "integer",
             "minimum": -2147483648,
             "maximum": 2147483647
           },
           "isKey": {
-            "title": "Key field Boolean flag?",
-            "description": "Key field Boolean flag?",
+            "title": "Key field",
+            "description": "This is the flag that indicates key field or not",
             "type": "boolean"
           }
         },
         "additionalProperties": false
       }
     },
-    "islmMdlprmttmpl": {
+    "promptTemplates": {
       "title": "Model Prompt Templates",
-      "description": "Model Prompt Templates",
+      "description": "These are the model prompt templates",
       "type": "array",
       "items": {
-        "title": "Intelligent Scenario Model Prompt Template",
-        "description": "Intelligent Scenario Model Prompt Template",
+        "title": "Model Prompt Templates",
+        "description": "These are the model prompt templates",
         "type": "object",
         "properties": {
           "name": {
-            "title": "Prompt template name",
-            "description": "Prompt template name",
+            "title": "Prompt Template Name",
+            "description": "This is the prompt template name",
             "type": "string",
             "maxLength": 30
           },
           "description": {
             "title": "Description",
-            "description": "Description",
+            "description": "This is the description of prompt template",
             "type": "string"
           },
           "prompt": {
             "title": "Prompt",
-            "description": "Prompt",
+            "description": "This is the prompt",
             "type": "string"
           },
           "promptParameters": {
             "title": "Prompt Parameters",
-            "description": "Prompt Parameters",
+            "description": "These are the prompt parameters",
             "type": "string"
           },
           "visible": {
             "title": "Prompt Visibility",
-            "description": "Prompt Visibility",
+            "description": "These is the flag for the prompt visibility",
             "type": "boolean"
           }
         },
@@ -241,7 +236,7 @@
   "required": [
     "formatVersion",
     "header",
-    "islmModelcc",
-    "islmModel"
+    "intelligentModel",
+    "modelDetails"
   ]
 }
