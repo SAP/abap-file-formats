@@ -3,7 +3,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/ints/ints-v1.json",
   "title": "Intelligent Scenario",
-  "description": "This is an intelligent scenario",
+  "description": "Intelligent scenario",
   "type": "object",
   "properties": {
     "formatVersion": {
@@ -59,172 +59,160 @@
     },
     "intelligentScenario": {
       "title": "Intelligent Scenario",
-      "description": "This is an intelligent scenario",
+      "description": "Intelligent scenario",
       "type": "object",
       "properties": {
         "scenarioType": {
           "title": "Intelligent Scenario Type",
-          "description": "This is intelligent scenario type",
+          "description": "Intelligent scenario type",
           "type": "string",
           "maxLength": 256
         },
-        "extensible": {
+        "isExtensible": {
           "title": "Extensible",
-          "description": "This is extensibility flag",
+          "description": "Extensibility flag",
           "type": "boolean"
         },
         "multiActiveModel": {
           "title": "Multiple Active Model",
-          "description": "This is the multiple active model enablement flag",
+          "description": "Multiple active model enablement flag",
           "type": "boolean"
         },
         "dmEnabled": {
           "title": "Data Management",
-          "description": "This is the data management enablement flag",
+          "description": "Data management enablement flag",
           "type": "boolean"
         },
-        "tkeyAutoSwitchOn": {
-          "title": "Turnkey Auto Switch On Enablement",
-          "description": "This is turnkey auto switch on enablement flag",
+        "turnkeyAutoSwitchOn": {
+          "title": "Turnkey Auto Switch",
+          "description": "Turnkey auto switch on enablement flag",
           "type": "boolean"
         },
-        "tkeyType": {
+        "turnkeyType": {
           "title": "Turnkey Implementation Type",
-          "description": "This is the type of turnkey implementation",
+          "description": "Type of turnkey implementation",
           "type": "string",
           "maxLength": 10
         },
-        "scenarioTech": {
+        "scenarioTechnology": {
           "title": "Scenario Technology",
-          "description": "This is the scenario technology",
+          "description": "Scenario technology",
           "type": "string",
           "maxLength": 20
         },
-        "objectName": {
+        "predictionClass": {
           "title": "Prediction Class",
-          "description": "This is a prediction class",
+          "description": "Prediction class",
           "type": "string",
           "maxLength": 30
         },
-        "prereqChkClass": {
+        "prerequisiteCheckClass": {
           "title": "Prerequisite Check Class",
-          "description": "This is a prerequisite check class",
+          "description": "Prerequisite check class",
           "type": "string",
           "maxLength": 30
         },
-        "scenarioTechId": {
-          "title": "Scenario Technical Id",
-          "description": "This is the scenario technical ID",
+        "scenarioTechnicalId": {
+          "title": "Scenario Technical ID",
+          "description": "Scenario technical ID",
           "type": "string",
           "maxLength": 64
         },
         "state": {
-          "title": "State of Intelligent Scenario",
-          "description": "This is the state of an intelligent scenario",
+          "title": "State",
+          "description": "State of an intelligent scenario",
           "type": "string",
           "maxLength": 10
         },
-        "abapLanguageVersion": {
-          "title": "ABAP Language Version",
-          "description": "This is the abap language version",
-          "type": "string",
-          "maxLength": 1
-        },
-        "ismVersion": {
+        "islmVersion": {
           "title": "ISLM Framework Version",
-          "description": "This is the version of ISLM framework",
+          "description": "ISLM framework version",
           "type": "number",
           "minimum": -99999.99,
           "maximum": 99999.99
         },
-        "tkeyClass": {
+        "turnkeyClass": {
           "title": "Turnkey Class",
-          "description": "This is the turnkey class",
+          "description": "Turnkey class",
           "type": "string",
           "maxLength": 30
         },
         "usageType": {
-          "title": "Intelligent Scenario Usage Type",
-          "description": "This is the usage type of an intelligent scenario",
+          "title": "Usage Type",
+          "description": "Usage type of an intelligent scenario",
           "type": "string",
           "maxLength": 10
         },
         "oauthProfile": {
-          "title": "OAuth 2.0 Client Profile",
-          "description": "This is the OAuth 2.0 client profile",
+          "title": "OAuth Profile",
+          "description": "OAuth 2.0 client profile",
           "type": "string",
           "maxLength": 30
         }
       },
       "additionalProperties": false,
       "required": [
-        "scenarioType",
-        "tkeyType"
+        "scenarioType"
       ]
     },
+    "modellingContext": {
+      "title": "Modelling Context",
+      "description": "Intelligent scenario modelling context",
+      "type": "object",
+      "properties": {
+        "name": {
+          "title": "Modelling Context Name",
+          "description": "Modelling context name",
+          "type": "string",
+          "maxLength": 30
+        },
+        "modellingContextId": {
+          "title": "Modelling Context ID",
+          "description": "Modelling context ID",
+          "type": "string",
+          "maxLength": 36
+        },
+        "description": {
+          "title": "Description",
+          "description": "Description",
+          "type": "string",
+          "maxLength": 100
+        }
+      },
+      "additionalProperties": false
+    },
     "scenarioDdlObjects": {
-      "title": "Objects Based on Scenario",
-      "description": "These are the objects based on scenario",
+      "title": "Scenario Objects",
+      "description": "Objects based on scenario",
       "type": "array",
       "items": {
-        "title": "Objects Based on Scenario",
-        "description": "These are the objects based on scenario",
+        "title": "Scenario Objects",
+        "description": "Objects based on scenario",
         "type": "object",
         "properties": {
           "objectName": {
-            "title": "Object Name in Object Directory",
-            "description": "This is the object name",
+            "title": "Object Name",
+            "description": "Object name",
             "type": "string",
             "maxLength": 40
           },
           "objectType": {
-            "title": "Object Type in Object Directory",
-            "description": "This is the type of the object",
+            "title": "Object Type",
+            "description": "Type of the object",
             "type": "string",
             "maxLength": 4
           },
           "objectStatus": {
             "title": "Object Status",
-            "description": "This is the status of the object",
+            "description": "Status of the object",
             "type": "string",
             "maxLength": 1
           },
           "logicalObjectType": {
-            "title": "Logical Object Type of a BOM Object",
-            "description": "This is the logical object type",
+            "title": "Logical Object Type",
+            "description": "Logical object type of a BOM object",
             "type": "string",
             "maxLength": 1
-          }
-        },
-        "additionalProperties": false
-      }
-    },
-    "bindingMappings": {
-      "title": "Binding Mappings",
-      "description": "These are scenario binding mappings",
-      "type": "array",
-      "items": {
-        "title": "Binding Mappings",
-        "description": "These are scenario binding mappings",
-        "type": "object",
-        "properties": {
-          "signatureName": {
-            "title": "Signature Name",
-            "description": "This is signature name",
-            "type": "string",
-            "maxLength": 30
-          },
-          "fromField": {
-            "title": "Table or View Field Name",
-            "description": "This is a table or view field name",
-            "type": "string",
-            "maxLength": 30
-          },
-          "toField": {
-            "title": "Table or View Field Name",
-            "description": "This is a table or view field name",
-            "type": "string",
-            "maxLength": 30
           }
         },
         "additionalProperties": false
@@ -232,7 +220,7 @@
     },
     "bindings": {
       "title": "Dataset Bindings",
-      "description": "These are scenario dataset bindings",
+      "description": "Scenario dataset bindings",
       "type": "array",
       "items": {
         "title": "Dataset Bindings",
@@ -240,14 +228,14 @@
         "type": "object",
         "properties": {
           "name": {
-            "title": "Name",
-            "description": "This is the name of the binding",
+            "title": "Binding Name",
+            "description": "Name of the binding",
             "type": "string",
             "maxLength": 30
           },
           "reference": {
-            "title": "Reference UUID",
-            "description": "This is a reference UUID",
+            "title": "Reference",
+            "description": "Reference",
             "type": "string",
             "maxLength": 36
           }
@@ -257,207 +245,61 @@
     },
     "signatures": {
       "title": "Signatures",
-      "description": "These are the scenario signatures",
+      "description": "Scenario signatures",
       "type": "array",
       "items": {
         "title": "Signatures",
-        "description": "These are the scenario signatures",
+        "description": "Scenario signatures",
         "type": "object",
         "properties": {
-          "name": {
+          "inputName": {
             "title": "Signature Name",
-            "description": "This is the signature name",
+            "description": "Signature name",
             "type": "string",
             "maxLength": 30
           },
           "signatureType": {
             "title": "Signature Type",
-            "description": "This is the signature type",
+            "description": "Signature type",
             "type": "string",
             "maxLength": 32
           },
           "description": {
             "title": "Description",
-            "description": "This is the description",
+            "description": "Description",
             "type": "string",
             "maxLength": 100
-          }
-        },
-        "additionalProperties": false
-      }
-    },
-    "signatureFields": {
-      "title": "Signature Fields",
-      "description": "These are the fields of signature",
-      "type": "array",
-      "items": {
-        "title": "Signature Fields",
-        "description": "These are the fields of signature",
-        "type": "object",
-        "properties": {
-          "inputName": {
-            "title": "Name",
-            "description": "This is the signature input name",
-            "type": "string",
-            "maxLength": 30
           },
-          "name": {
-            "title": "Table or View Field Name",
-            "description": "This is a table or view field name",
+          "fieldName": {
+            "title": "Field Name",
+            "description": "Table or view field name",
             "type": "string",
             "maxLength": 30
           },
           "fieldPosition": {
             "title": "Position",
-            "description": "This is the position of the field",
+            "description": "Position of the field",
             "type": "integer",
             "minimum": -2147483648,
             "maximum": 2147483647
           },
-          "storage": {
-            "title": "Storage",
-            "description": "This is the storage type of the field",
+          "storageType": {
+            "title": "Storage Type",
+            "description": "Storage type of the field",
             "type": "string",
             "maxLength": 100
           },
-          "type": {
+          "fieldType": {
             "title": "Role of Field",
-            "description": "This is the role of field in an intelligent scenario (such as key, target)",
+            "description": "Role of field in an intelligent scenario (such as key, target)",
             "type": "string",
             "maxLength": 30
           },
-          "dmType": {
+          "dataManagementType": {
             "title": "Data Management Type",
-            "description": "This is the type of data management",
+            "description": "Data management type",
             "type": "string",
             "maxLength": 30
-          }
-        },
-        "additionalProperties": false
-      }
-    },
-    "modellingContext": {
-      "title": "Modelling Context",
-      "description": "This is the intelligent scenario Modelling context",
-      "type": "array",
-      "items": {
-        "title": "Modelling Context",
-        "description": "This is the intelligent scenario Modelling context",
-        "type": "object",
-        "properties": {
-          "name": {
-            "title": "Name",
-            "description": "This is the name of the modelling context",
-            "type": "string",
-            "maxLength": 30
-          },
-          "guid": {
-            "title": "UUID",
-            "description": "This is the modelling context UUID",
-            "type": "string",
-            "maxLength": 36
-          },
-          "description": {
-            "title": "Description",
-            "description": "This is the description",
-            "type": "string",
-            "maxLength": 100
-          }
-        },
-        "additionalProperties": false
-      }
-    },
-    "modellingContextFilters": {
-      "title": "Modeling Context Filters",
-      "description": "These are the modeling context filters",
-      "type": "array",
-      "items": {
-        "title": "Modeling Context Filters",
-        "description": "These are the modeling context filters",
-        "type": "object",
-        "properties": {
-          "mcName": {
-            "title": "MC Name",
-            "description": "This is the modelling context name",
-            "type": "string",
-            "maxLength": 30
-          },
-          "name": {
-            "title": "Name",
-            "description": "This is the name",
-            "type": "string",
-            "maxLength": 30
-          },
-          "filterIndex": {
-            "title": "Index",
-            "description": "This is the filter index",
-            "type": "integer",
-            "minimum": -2147483648,
-            "maximum": 2147483647
-          },
-          "modelingContext": {
-            "title": "UUID",
-            "description": "This is the modelling context UUID",
-            "type": "string",
-            "maxLength": 36
-          },
-          "field": {
-            "title": "Table or View Field Name",
-            "description": "This is the field name of table or view",
-            "type": "string",
-            "maxLength": 30
-          },
-          "operation": {
-            "title": "Operation Filter Value",
-            "description": "This is the operation filter value",
-            "type": "string",
-            "maxLength": 10
-          },
-          "value": {
-            "title": "Modeling Context Filter Low Value",
-            "description": "This is the low value of modeling context filter",
-            "type": "string"
-          },
-          "highValue": {
-            "title": "Modeling Context Filter High Value",
-            "description": "This is the high value of modeling context filter",
-            "type": "string"
-          }
-        },
-        "additionalProperties": false
-      }
-    },
-    "parameterDefaults": {
-      "title": "Parameter Defaults",
-      "description": "These are the scenario parameter defaults",
-      "type": "array",
-      "items": {
-        "title": "Parameter defaults",
-        "description": "These are the scenario parameter defaults",
-        "type": "object",
-        "properties": {
-          "guid": {
-            "title": "UUID",
-            "description": "This is the scenario UUID",
-            "type": "string",
-            "maxLength": 36
-          },
-          "name": {
-            "title": "Parameter Name",
-            "description": "This is the parameter name",
-            "type": "string",
-            "maxLength": 256
-          },
-          "context": {
-            "title": "Parameter Context",
-            "description": "This is the parameter context",
-            "type": "string",
-            "maxLength": 1000
-          },
-          "value": {
-            "title": "Parameter Value",
-            "description": "This is the parameter value",
-            "type": "string"
           }
         },
         "additionalProperties": false
@@ -465,48 +307,65 @@
     },
     "parameters": {
       "title": "Parameter Signature",
-      "description": "These are the scenario parameters signature",
+      "description": "Scenario parameters signature",
       "type": "array",
       "items": {
         "title": "Parameter Signature",
-        "description": "These are the scenario parameters signature",
+        "description": "Parameter signature",
         "type": "object",
         "properties": {
           "name": {
             "title": "Parameter Name",
-            "description": "This is the parameter name",
+            "description": "Parameter name",
             "type": "string",
             "maxLength": 256
           },
           "type": {
             "title": "Parameter Type",
-            "description": "This is the parameter type",
+            "description": "Parameter type",
             "type": "string",
             "maxLength": 32
           },
           "description": {
             "title": "Parameter Description",
-            "description": "This is the parameter description",
+            "description": "Parameter description",
             "type": "string"
           },
           "storage": {
             "title": "Storage",
-            "description": "This is the storage type",
+            "description": "Storage type",
             "type": "string",
             "maxLength": 100
           },
-          "context": {
-            "title": "Parameter Context Flag",
-            "description": "This is the flag for parameter context",
+          "hasContext": {
+            "title": "Context Flag",
+            "description": "Parameter context flag",
             "type": "string",
             "maxLength": 1
           },
-          "paramSize": {
+          "parameterSize": {
             "title": "Parameter Size",
-            "description": "This is the size of parameter",
+            "description": "Parameter size",
             "type": "integer",
             "minimum": -2147483648,
             "maximum": 2147483647
+          },
+          "parameterId": {
+            "title": "Parameter ID",
+            "description": "Parameter ID",
+            "type": "string",
+            "maxLength": 36
+          },
+          "context": {
+            "title": "Parameter Context",
+            "description": "Parameter context",
+            "type": "string",
+            "maxLength": 1000
+          },
+          "value": {
+            "title": "Parameter Value",
+            "description": "Parameter value",
+            "type": "string"
           }
         },
         "additionalProperties": false
@@ -514,80 +373,48 @@
     },
     "additionalInfo": {
       "title": "Additional Information",
-      "description": "These are the scenario additional information",
+      "description": "Scenario additional information",
       "type": "array",
       "items": {
         "title": "Additional Information",
-        "description": "These are the scenario additional information",
+        "description": "Additional information",
         "type": "object",
         "properties": {
           "additionalInfoKey": {
-            "title": "Additional Information Key",
-            "description": "This is an additional information key",
+            "title": "Key",
+            "description": "Additional information key",
             "type": "string",
             "maxLength": 50
           },
           "valueId": {
-            "title": "Additional Information Value ID",
-            "description": "This is the additional information value ID",
+            "title": "Value ID",
+            "description": "Additional information value ID",
             "type": "integer",
             "minimum": -2147483648,
             "maximum": 2147483647
           },
           "value": {
-            "title": "Additional Information Value",
-            "description": "This is the value of an additional information",
+            "title": "Value",
+            "description": "Additional information value",
             "type": "string",
             "maxLength": 1024
           },
           "positionId": {
-            "title": "Additional Information Position ID",
-            "description": "This is the position of an additional information ID",
-            "type": "integer",
-            "minimum": -2147483648,
-            "maximum": 2147483647
-          }
-        },
-        "additionalProperties": false
-      }
-    },
-    "additionalInfoText": {
-      "title": "Additional Information Texts",
-      "description": "These are the scenario additional information texts",
-      "type": "array",
-      "items": {
-        "title": "Additional Information Texts",
-        "description": "These are the scenario additional information texts",
-        "type": "object",
-        "properties": {
-          "language": {
-            "title": "Language Key",
-            "description": "This is the language key",
-            "type": "string",
-            "minLength": 2
-          },
-          "additionalInfoKey": {
-            "title": "Additional Information Key",
-            "description": "This is an additional information key",
-            "type": "string",
-            "maxLength": 50
-          },
-          "valueId": {
-            "title": "Additional Information Value ID",
-            "description": "This is the additional information value ID",
+            "title": "Position ID",
+            "description": "Additional information position ID",
             "type": "integer",
             "minimum": -2147483648,
             "maximum": 2147483647
           },
           "keyLabel": {
-            "title": "Additional Information Key Text Label",
-            "description": "This is the additional information key text label",
+            "title": "Key Text Label",
+            "description": "Additional information key text label",
             "type": "string",
             "maxLength": 255
           },
           "valueLabel": {
-            "title": "Additional Information Value Text Label",
-            "description": "This is the additional information value text label",
+            "title": "Value Text Label",
+            "description": "Additional information value text label",
             "type": "string",
             "maxLength": 255
           }
@@ -597,31 +424,30 @@
     },
     "sbsSegmentFields": {
       "title": "SBS Segment Fields",
-      "description": "These are the SBS Scenario Segment Fields",
+      "description": "SBS Scenario Segment Fields",
       "type": "array",
       "items": {
         "title": "SBS Segment Fields",
-        "description": "These are the SBS Scenario Segment Fields",
+        "description": "SBS scenario segment fields",
         "type": "object",
         "properties": {
-          "fieldname": {
-            "title": "Table or View Field Name",
-            "description": "This is the field name of a table or view",
+          "fieldName": {
+            "title": "Field Name",
+            "description": "Table or view field name",
             "type": "string",
             "maxLength": 30
           },
           "fieldPosition": {
             "title": "Position",
-            "description": "This is the position",
+            "description": "Position",
             "type": "integer",
             "minimum": -2147483648,
             "maximum": 2147483647
           },
-          "iskey": {
+          "isKey": {
             "title": "Key Field",
-            "description": "This is key field or not",
-            "type": "string",
-            "maxLength": 1
+            "description": "Key field or not",
+            "type": "boolean"
           }
         },
         "additionalProperties": false

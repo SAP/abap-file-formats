@@ -1,0 +1,23 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "ADT Test 929",
+    "originalLanguage": "en"
+  },
+  "intelligentScenario": {
+    "scenarioType": "SAPGENAI",
+    "isExtensible": true,
+    "turnkeyAutoSwitchOn": true,
+    "turnkeyType": "DEFAULT",
+    "scenarioTechnology": "SIDEBYSIDE",
+    "state": "Published",
+    "islmVersion": 1.0,
+    "usageType": "STATELESS",
+    "oauthProfile": "ISLM_SAPGENAI_OAUTH_PRF_HCP"
+  },
+  "modellingContext": {
+    "name": "DEFAULT",
+    "modellingContextId": "239DC90FCC57C241F8327BA9E7130AE9",
+    "description": "Default context"
+  }
+}
