@@ -24,49 +24,49 @@ INTERFACE zif_aff_ints_v1
       "! <p class="shorttext">Intelligent Scenario Type</p>
       "! Intelligent scenario type
       "! $required
-      scenario_type            TYPE c LENGTH 256,
+      scenario_type             TYPE c LENGTH 256,
       "! <p class="shorttext">Extensible</p>
       "! Extensibility flag
-      is_extensible            TYPE abap_bool,
+      is_extensible             TYPE abap_bool,
       "! <p class="shorttext">Multiple Active Model</p>
       "! Multiple active model enablement flag
-      multi_active_model       TYPE abap_bool,
+      is_multi_active_model     TYPE abap_bool,
       "! <p class="shorttext">Data Management</p>
       "! Data management enablement flag
-      dm_enabled               TYPE abap_bool,
+      is_dm_enabled             TYPE abap_bool,
       "! <p class="shorttext">Turnkey Auto Switch</p>
       "! Turnkey auto switch on enablement flag
-      turnkey_auto_switch_on   TYPE abap_bool,
+      is_turnkey_auto_switch_on TYPE abap_bool,
       "! <p class="shorttext">Turnkey Implementation Type</p>
       "! Type of turnkey implementation
-      turnkey_type             TYPE c LENGTH 10,
+      turnkey_type              TYPE c LENGTH 10,
       "! <p class="shorttext">Scenario Technology</p>
       "! Scenario technology
-      scenario_technology      TYPE c LENGTH 20,
+      scenario_technology       TYPE c LENGTH 20,
       "! <p class="shorttext">Prediction Class</p>
       "! Prediction class
-      prediction_class         TYPE zif_aff_types_v1=>ty_object_name_30,
+      prediction_class          TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Prerequisite Check Class</p>
       "! Prerequisite check class
-      prerequisite_check_class TYPE zif_aff_types_v1=>ty_object_name_30,
+      prerequisite_check_class  TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Scenario Technical ID</p>
       "! Scenario technical ID
-      scenario_technical_id    TYPE c LENGTH 64,
+      scenario_technical_id     TYPE c LENGTH 64,
       "! <p class="shorttext">State</p>
       "! State of an intelligent scenario
-      state                    TYPE c LENGTH 10,
+      state                     TYPE c LENGTH 10,
       "! <p class="shorttext">ISLM Framework Version</p>
       "! ISLM framework version
-      islm_version             TYPE p LENGTH 4 DECIMALS 2,
+      islm_version              TYPE p LENGTH 4 DECIMALS 2,
       "! <p class="shorttext">Turnkey Class</p>
       "! Turnkey class
-      turnkey_class            TYPE zif_aff_types_v1=>ty_object_name_30,
+      turnkey_class             TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Usage Type</p>
       "! Usage type of an intelligent scenario
-      usage_type               TYPE c LENGTH 10,
+      usage_type                TYPE c LENGTH 10,
       "! <p class="shorttext">OAuth Profile</p>
       "! OAuth 2.0 client profile
-      oauth_profile            TYPE c LENGTH 30,
+      oauth_profile             TYPE c LENGTH 30,
     END OF ty_intelligent_scenario,
 
     "! <p class="shorttext">Dataset Bindings</p>

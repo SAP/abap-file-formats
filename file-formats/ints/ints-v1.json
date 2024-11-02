@@ -73,17 +73,17 @@
           "description": "Extensibility flag",
           "type": "boolean"
         },
-        "multiActiveModel": {
+        "isMultiActiveModel": {
           "title": "Multiple Active Model",
           "description": "Multiple active model enablement flag",
           "type": "boolean"
         },
-        "dmEnabled": {
+        "isDmEnabled": {
           "title": "Data Management",
           "description": "Data management enablement flag",
           "type": "boolean"
         },
-        "turnkeyAutoSwitchOn": {
+        "isTurnkeyAutoSwitchOn": {
           "title": "Turnkey Auto Switch",
           "description": "Turnkey auto switch on enablement flag",
           "type": "boolean"

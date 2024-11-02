@@ -7,7 +7,7 @@
   "intelligentScenario": {
     "scenarioType": "SAPGENAI",
     "isExtensible": true,
-    "turnkeyAutoSwitchOn": true,
+    "isTurnkeyAutoSwitchOn": true,
     "turnkeyType": "DEFAULT",
     "scenarioTechnology": "SIDEBYSIDE",
     "state": "Published",
