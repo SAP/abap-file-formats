@@ -1,0 +1,34 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Model creation test via ADT",
+    "originalLanguage": "en"
+  },
+  "intelligentModel": {
+    "name": "RM_TEST_ADT_929_MOD",
+    "intelligentScenario": "RM_TEST_ADT_929",
+    "intelligentScenarioId": "239DC90FCC57C241F8327BA9E7130AE9",
+    "modelType": "SAPGENAI",
+    "adapterId": "SAPGENAI.Default",
+    "nativeModelType": "SAPGENAI.Default",
+    "state": "Published",
+    "executableId": "azure-openai",
+    "llmName": "gpt-4",
+    "llmModelVersion": "0613"
+  },
+  "promptTemplates": [
+    {
+      "name": "SYSTEM_PROMPT",
+      "description": "System prompt",
+      "prompt": "You are a sales executive who is responsible for reaching out to customers for confirming or declining their orders. Evaluate the size of the delivery vehicle based on the number of items. Calculate the distance between the billing and delivery location in kilometers. \n\nThe subject of email should be of format <Confirmation on order number: {order_number} placed on {booking_date}> \nThe body of email should be of format: \"\"SO contains <Category> to be delivered to <Location>. And will be delivered via a <size> vehicle. \nIF <distance between source address and delivery address> > 100 kms THEN include a message about potential delivery delays ELSE congratulate on being eligible for one day delivery",
+      "promptParameters": "[]"
+    },
+    {
+      "name": "USER_PROMPT",
+      "description": "User prompt",
+      "prompt": "Build a confirmation mail for a sales order containing {ISLM_Items} where the items are categorized for example pencil and paper will be stationary, printer and mouse will be electronics. The source address contains {ISLM_Source} and the delivery address is in {ISLM_Destination}.",
+      "promptParameters": "[{\"Name\":\"ISLM_Items\",\"Value\":\"\"},{\"Name\":\"ISLM_Source\",\"Value\":\"\"},{\"Name\":\"ISLM_Destination\",\"Value\":\"\"}]",
+      "visible": true
+    }
+  ]
+}

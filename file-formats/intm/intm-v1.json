@@ -3,7 +3,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/intm/intm-v1.json",
   "title": "Intelligent scenario Models",
-  "description": "This is an intelligent scenario model",
+  "description": "Intelligent scenario model",
   "type": "object",
   "properties": {
     "formatVersion": {
@@ -59,98 +59,90 @@
     },
     "intelligentModel": {
       "title": "Intelligent Scenario Model",
-      "description": "This is an intelligent scenario model",
+      "description": "Intelligent scenario model",
       "type": "object",
       "properties": {
         "name": {
           "title": "Model Name",
-          "description": "This is the model name",
+          "description": "Model name",
           "type": "string",
           "maxLength": 30
         },
-        "parent": {
-          "title": "Parent",
-          "description": "This is the parent of the model",
+        "intelligentScenario": {
+          "title": "Intelligent Scenario",
+          "description": "Intelligent scenario of the model",
+          "type": "string",
+          "maxLength": 20
+        },
+        "intelligentScenarioId": {
+          "title": "Intelligent Scenario ID",
+          "description": "Intelligent scenario ID which is the parent of the model",
           "type": "string",
           "maxLength": 36
         },
         "modelType": {
           "title": "Model Type",
-          "description": "This is the model type",
+          "description": "Model type",
           "type": "string",
           "maxLength": 256
         },
         "adapterId": {
           "title": "Adapter ID",
-          "description": "This is the adapter ID",
+          "description": "Adapter ID",
           "type": "string",
           "maxLength": 32
         },
         "nativeModelType": {
           "title": "Native Model Type",
-          "description": "This is the native model type",
+          "description": "Native model type",
           "type": "string",
           "maxLength": 256
         },
         "modelSpecification": {
           "title": "Model Content",
-          "description": "This is the model content",
+          "description": "Model content",
           "type": "string"
         },
         "modelDefinition": {
           "title": "Model Definition",
-          "description": "This is the model definition",
+          "description": "Model definition",
           "type": "string"
         },
         "state": {
-          "title": "State of model",
-          "description": "This is the state of the model",
+          "title": "State",
+          "description": "State of the model",
           "type": "string",
           "maxLength": 10
         },
         "signature": {
           "title": "Signature",
-          "description": "This is the model signature",
+          "description": "Model signature",
           "type": "string"
         },
         "bindings": {
           "title": "Bindings",
-          "description": "This is the model bindings",
+          "description": "Model bindings",
           "type": "string"
         },
         "newModel": {
           "title": "Model flag",
-          "description": "This is the flag that indicate new model or enhancement(X)",
+          "description": "Model flag that indicate new model or enhancement(X)",
           "type": "boolean"
         },
-        "abapLanguageVersion": {
-          "title": "ABAP Language Version",
-          "description": "This is the abap language version",
-          "type": "string",
-          "maxLength": 1
-        }
-      },
-      "additionalProperties": false
-    },
-    "modelDetails": {
-      "title": "Model Details",
-      "description": "These are the model details",
-      "type": "object",
-      "properties": {
         "executableId": {
           "title": "Executable ID",
-          "description": "This is the executable ID",
+          "description": "Executable ID",
           "type": "string",
           "maxLength": 64
         },
         "llmName": {
           "title": "Large Language Model Name",
-          "description": "This is the large language model name",
+          "description": "Large language model name",
           "type": "string"
         },
         "llmModelVersion": {
           "title": "LLM Model Version",
-          "description": "This is the LLM model version",
+          "description": "LLM model version",
           "type": "string",
           "maxLength": 30
         }
@@ -159,29 +151,29 @@
     },
     "segmentFields": {
       "title": "Model Segment Fields",
-      "description": "These are the model segment fields",
+      "description": "Model segment fields",
       "type": "array",
       "items": {
         "title": "Segment Fields",
-        "description": "These are the model segment fields",
+        "description": "Model segment fields",
         "type": "object",
         "properties": {
           "fieldname": {
-            "title": "Table or View Field Name",
-            "description": "This is the field of a table or view",
+            "title": "Field Name",
+            "description": "Table or view field name",
             "type": "string",
             "maxLength": 30
           },
           "fieldPosition": {
             "title": "Position",
-            "description": "This is the field position",
+            "description": "Field position",
             "type": "integer",
             "minimum": -2147483648,
             "maximum": 2147483647
           },
           "isKey": {
-            "title": "Key field",
-            "description": "This is the flag that indicates key field or not",
+            "title": "Key Field",
+            "description": "Key field or not",
             "type": "boolean"
           }
         },
@@ -190,37 +182,37 @@
     },
     "promptTemplates": {
       "title": "Model Prompt Templates",
-      "description": "These are the model prompt templates",
+      "description": "Model prompt templates",
       "type": "array",
       "items": {
         "title": "Model Prompt Templates",
-        "description": "These are the model prompt templates",
+        "description": "Model prompt templates",
         "type": "object",
         "properties": {
           "name": {
             "title": "Prompt Template Name",
-            "description": "This is the prompt template name",
+            "description": "Prompt template name",
             "type": "string",
             "maxLength": 30
           },
           "description": {
             "title": "Description",
-            "description": "This is the description of prompt template",
+            "description": "Description of prompt template",
             "type": "string"
           },
           "prompt": {
             "title": "Prompt",
-            "description": "This is the prompt",
+            "description": "Prompt",
             "type": "string"
           },
           "promptParameters": {
             "title": "Prompt Parameters",
-            "description": "These are the prompt parameters",
+            "description": "Prompt parameters",
             "type": "string"
           },
           "visible": {
             "title": "Prompt Visibility",
-            "description": "These is the flag for the prompt visibility",
+            "description": "Prompt visibility",
             "type": "boolean"
           }
         },
@@ -236,7 +228,6 @@
   "required": [
     "formatVersion",
     "header",
-    "intelligentModel",
-    "modelDetails"
+    "intelligentModel"
   ]
 }
