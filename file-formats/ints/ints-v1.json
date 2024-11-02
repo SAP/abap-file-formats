@@ -331,8 +331,8 @@
             "description": "Parameter description",
             "type": "string"
           },
-          "storage": {
-            "title": "Storage",
+          "storageType": {
+            "title": "Storage Type",
             "description": "Storage type",
             "type": "string",
             "maxLength": 100

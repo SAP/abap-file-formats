@@ -135,9 +135,9 @@ INTERFACE zif_aff_ints_v1
       "! <p class="shorttext">Parameter Description</p>
       "! Parameter description
       description    TYPE string,
-      "! <p class="shorttext">Storage</p>
+      "! <p class="shorttext">Storage Type</p>
       "! Storage type
-      storage        TYPE c LENGTH 100,
+      storage_type   TYPE c LENGTH 100,
       "! <p class="shorttext">Context Flag</p>
       "! Parameter context flag
       has_context    TYPE c LENGTH 1,
