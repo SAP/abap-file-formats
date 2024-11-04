@@ -130,7 +130,7 @@ INTERFACE zif_aff_smbc_v1
       variant_management             TYPE string,
       "! <p class="shorttext synchronized">Editable Header Content</p>
       "! If true, the header content is changeable in edit mode
-      editable_header_content TYPE abap_bool,
+      editable_header_content        TYPE abap_bool,
       "! <p class="shorttext synchronized">Show Transport Selection Strip</p>
       "! If true, the selected transport request and transport request select action are displayed in a message strip.
       show_transport_selection_strip TYPE abap_bool,
