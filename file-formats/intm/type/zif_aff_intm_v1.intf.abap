@@ -23,8 +23,8 @@ INTERFACE zif_aff_intm_v1
       "! <p class="shorttext">Native Model Type</p>
       "! Native model type
       native_model_type    TYPE c LENGTH 256,
-      "! <p class="shorttext">Model Content</p>
-      "! Model content
+      "! <p class="shorttext">Model Specification</p>
+      "! Model specification
       model_specification  TYPE string,
       "! <p class="shorttext">Model Definition</p>
       "! Model definition
@@ -39,8 +39,8 @@ INTERFACE zif_aff_intm_v1
       "! Model bindings
       bindings             TYPE string,
       "! <p class="shorttext">Model flag</p>
-      "! Model flag that indicate new model or enhancement(X)
-      new_model            TYPE abap_bool,
+      "! If true, the model is an enhancement, if false the model is a new model.
+      is_enhancement       TYPE abap_bool,
       "! <p class="shorttext">Executable ID</p>
       "! Executable ID
       executable_id        TYPE c LENGTH 64,
@@ -52,23 +52,23 @@ INTERFACE zif_aff_intm_v1
       llm_model_version    TYPE c LENGTH 30,
     END OF ty_intelligent_model,
 
-    "! <p class="shorttext">Segment Fields</p>
-    "! Model segment fields
-    BEGIN OF ty_segment_fields,
+    "! <p class="shorttext">Segment Field</p>
+    "! Model segment field
+    BEGIN OF ty_segment_field,
       "! <p class="shorttext">Field Name</p>
       "! Table or view field name
       fieldname      TYPE c LENGTH 30,
       "! <p class="shorttext">Position</p>
       "! Field position
       field_position TYPE i,
-      "! <p class="shorttext">Key Field</p>
-      "! Key field or not
+      "! <p class="shorttext">Is Key Field</p>
+      "! If true, the field is a key field
       is_key         TYPE abap_bool,
-    END OF ty_segment_fields,
+    END OF ty_segment_field,
 
-    "! <p class="shorttext">Model Prompt Templates</p>
-    "! Model prompt templates
-    BEGIN OF ty_prompt_templates,
+    "! <p class="shorttext">Model Prompt Template</p>
+    "! Model prompt template
+    BEGIN OF ty_prompt_template,
       "! <p class="shorttext">Prompt Template Name</p>
       "! Prompt template name
       "! $required
@@ -84,9 +84,9 @@ INTERFACE zif_aff_intm_v1
       "! Prompt parameters
       prompt_parameters TYPE string,
       "! <p class="shorttext">Prompt Visibility</p>
-      "! Prompt visibility
-      visible           TYPE abap_bool,
-    END OF ty_prompt_templates,
+      "! If true, the prompt is visible
+      is_visible        TYPE abap_bool,
+    END OF ty_prompt_template,
 
     "! <p class="shorttext">Intelligent scenario Models</p>
     "! Intelligent scenario model
@@ -103,9 +103,9 @@ INTERFACE zif_aff_intm_v1
       intelligent_model TYPE ty_intelligent_model,
       "! <p class="shorttext">Model Segment Fields</p>
       "! Model segment fields
-      segment_fields    TYPE STANDARD TABLE OF ty_segment_fields WITH DEFAULT KEY,
+      segment_fields    TYPE STANDARD TABLE OF ty_segment_field WITH DEFAULT KEY,
       "! <p class="shorttext">Model Prompt Templates</p>
       "! Model prompt templates
-      prompt_templates  TYPE STANDARD TABLE OF ty_prompt_templates WITH DEFAULT KEY,
+      prompt_templates  TYPE STANDARD TABLE OF ty_prompt_template WITH DEFAULT KEY,
     END OF ty_main.
 ENDINTERFACE.

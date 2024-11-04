@@ -99,8 +99,8 @@
           "maxLength": 256
         },
         "modelSpecification": {
-          "title": "Model Content",
-          "description": "Model content",
+          "title": "Model Specification",
+          "description": "Model specification",
           "type": "string"
         },
         "modelDefinition": {
@@ -124,9 +124,9 @@
           "description": "Model bindings",
           "type": "string"
         },
-        "newModel": {
+        "isEnhancement": {
           "title": "Model flag",
-          "description": "Model flag that indicate new model or enhancement(X)",
+          "description": "If true, the model is an enhancement, if false the model is a new model.",
           "type": "boolean"
         },
         "executableId": {
@@ -154,8 +154,8 @@
       "description": "Model segment fields",
       "type": "array",
       "items": {
-        "title": "Segment Fields",
-        "description": "Model segment fields",
+        "title": "Segment Field",
+        "description": "Model segment field",
         "type": "object",
         "properties": {
           "fieldname": {
@@ -172,8 +172,8 @@
             "maximum": 2147483647
           },
           "isKey": {
-            "title": "Key Field",
-            "description": "Key field or not",
+            "title": "Is Key Field",
+            "description": "If true, the field is a key field",
             "type": "boolean"
           }
         },
@@ -185,8 +185,8 @@
       "description": "Model prompt templates",
       "type": "array",
       "items": {
-        "title": "Model Prompt Templates",
-        "description": "Model prompt templates",
+        "title": "Model Prompt Template",
+        "description": "Model prompt template",
         "type": "object",
         "properties": {
           "name": {
@@ -210,9 +210,9 @@
             "description": "Prompt parameters",
             "type": "string"
           },
-          "visible": {
+          "isVisible": {
             "title": "Prompt Visibility",
-            "description": "Prompt visibility",
+            "description": "If true, the prompt is visible",
             "type": "boolean"
           }
         },
