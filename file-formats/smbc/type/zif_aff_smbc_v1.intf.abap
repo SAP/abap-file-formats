@@ -176,7 +176,7 @@ INTERFACE zif_aff_smbc_v1
       hide_filter                   TYPE ty_personalization-hide_filter,
       "! <p class="shorttext synchronized">Hide Sort</p>
       "! If true, the user cannot sort the table
-      hide_sort              TYPE ty_personalization-hide_sort,
+      hide_sort                     TYPE ty_personalization-hide_sort,
       "! <p class="shorttext synchronized">Hide Column</p>
       "! If true, the user cannot add and remove columns to the table
       hide_column            TYPE ty_personalization-hide_column,
