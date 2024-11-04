@@ -228,7 +228,7 @@ INTERFACE zif_aff_smbc_v1
       "! <p class="shorttext">Name</p>
       "! Name of the Business Configuration
       "! $required
-      name             TYPE c LENGTH 50,
+      name                TYPE c LENGTH 50,
       "! <p class="shorttext">Configuration Group</p>
       "! $showAlways
       configuration_group TYPE c LENGTH 30,
