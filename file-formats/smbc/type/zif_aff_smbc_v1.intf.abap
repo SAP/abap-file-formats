@@ -179,7 +179,7 @@ INTERFACE zif_aff_smbc_v1
       hide_sort                     TYPE ty_personalization-hide_sort,
       "! <p class="shorttext synchronized">Hide Column</p>
       "! If true, the user cannot add and remove columns to the table
-      hide_column            TYPE ty_personalization-hide_column,
+      hide_column                   TYPE ty_personalization-hide_column,
       "! <p class="shorttext synchronized">Condensed Table Layout</p>
       "! If true, display rows in a condensed way. Only applicaple to Table Type 'GridTable'.
       condensed_table_layout TYPE abap_bool,
