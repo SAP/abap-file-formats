@@ -7,49 +7,49 @@ INTERFACE zif_aff_intm_v1
     BEGIN OF ty_intelligent_model,
       "! <p class="shorttext">Model Name</p>
       "! Model name
-      name                    TYPE c LENGTH 30 ,
+      name                 TYPE c LENGTH 30,
       "! <p class="shorttext">Intelligent Scenario</p>
       "! Intelligent scenario of the model
-      intelligent_scenario    TYPE c LENGTH 20,
+      intelligent_scenario TYPE c LENGTH 20,
       "! <p class="shorttext">Modelling Context ID</p>
       "! Modelling context ID which is the parent of the model
-      modelling_context_id    TYPE c LENGTH 36,
+      modelling_context_id TYPE c LENGTH 36,
       "! <p class="shorttext">Model Type</p>
       "! Model type
-      model_type              TYPE c LENGTH 256,
+      model_type           TYPE c LENGTH 256,
       "! <p class="shorttext">Adapter ID</p>
       "! Adapter ID
-      adapter_id              TYPE c LENGTH 32,
+      adapter_id           TYPE c LENGTH 32,
       "! <p class="shorttext">Native Model Type</p>
       "! Native model type
-      native_model_type       TYPE c LENGTH 256,
+      native_model_type    TYPE c LENGTH 256,
       "! <p class="shorttext">Model Content</p>
       "! Model content
-      model_specification     TYPE string,
+      model_specification  TYPE string,
       "! <p class="shorttext">Model Definition</p>
       "! Model definition
-      model_definition        TYPE string,
+      model_definition     TYPE string,
       "! <p class="shorttext">State</p>
       "! State of the model
-      state                   TYPE c LENGTH 10,
+      state                TYPE c LENGTH 10,
       "! <p class="shorttext">Signature</p>
       "! Model signature
-      signature               TYPE string,
+      signature            TYPE string,
       "! <p class="shorttext">Bindings</p>
       "! Model bindings
-      bindings                TYPE string,
+      bindings             TYPE string,
       "! <p class="shorttext">Model flag</p>
       "! Model flag that indicate new model or enhancement(X)
-      new_model               TYPE abap_bool,
+      new_model            TYPE abap_bool,
       "! <p class="shorttext">Executable ID</p>
       "! Executable ID
-      executable_id           TYPE c LENGTH 64,
+      executable_id        TYPE c LENGTH 64,
       "! <p class="shorttext">Large Language Model Name</p>
       "! Large language model name
-      llm_name                TYPE string,
+      llm_name             TYPE string,
       "! <p class="shorttext">LLM Model Version</p>
       "! LLM model version
-      llm_model_version       TYPE c LENGTH 30,
+      llm_model_version    TYPE c LENGTH 30,
     END OF ty_intelligent_model,
 
     "! <p class="shorttext">Segment Fields</p>
