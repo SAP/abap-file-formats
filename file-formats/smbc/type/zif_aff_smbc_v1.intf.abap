@@ -216,7 +216,7 @@ INTERFACE zif_aff_smbc_v1
       service_binding     TYPE c LENGTH 40,
       "! <p class="shorttext">Service Name</p>
       "! $required
-      service_name     TYPE c LENGTH 40,
+      service_name        TYPE c LENGTH 40,
       "! <p class="shorttext">Service Version</p>
       "! The major version number of the service to be used (as defined in the Service Binding)
       "! $required
