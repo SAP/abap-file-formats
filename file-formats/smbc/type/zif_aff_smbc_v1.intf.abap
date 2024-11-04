@@ -192,7 +192,7 @@ INTERFACE zif_aff_smbc_v1
       disable_paste                 TYPE abap_bool,
       "! <p class="shorttext synchronized">Enable Full Screen</p>
       "! If true, a button on the table toolbar allows the user to open the table in fullscreen dialog
-      enable_full_screen     TYPE abap_bool,
+      enable_full_screen            TYPE abap_bool,
       "! <p class="shorttext synchronized">Enable Mass Edit</p>
       "! Mass editing allows users to simultaneously change multiple objects that share the same editable properties
       enable_mass_edit TYPE abap_bool,
