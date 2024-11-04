@@ -69,23 +69,23 @@
           "maxLength": 256
         },
         "isExtensible": {
-          "title": "Extensible",
-          "description": "Extensibility flag",
+          "title": "Is Extensible",
+          "description": "If true, the scenario is extensible",
           "type": "boolean"
         },
         "isMultiActiveModel": {
-          "title": "Multiple Active Model",
-          "description": "Multiple active model enablement flag",
+          "title": "Is Multiple Active Model",
+          "description": "If true, the scenario can have multiple active models",
           "type": "boolean"
         },
-        "isDmEnabled": {
-          "title": "Data Management",
-          "description": "Data management enablement flag",
+        "isDataManagementEnabled": {
+          "title": "Uses Data Management",
+          "description": "If true, the scenario uses Data Management",
           "type": "boolean"
         },
         "isTurnkeyAutoSwitchOn": {
-          "title": "Turnkey Auto Switch",
-          "description": "Turnkey auto switch on enablement flag",
+          "title": "Is Turnkey Auto Switch ON",
+          "description": "If true, scenario will be turnkey enabled to automate the operations",
           "type": "boolean"
         },
         "turnkeyType": {
@@ -186,8 +186,8 @@
       "description": "Objects based on scenario",
       "type": "array",
       "items": {
-        "title": "Scenario Objects",
-        "description": "Objects based on scenario",
+        "title": "Scenario Object",
+        "description": "Object generated based on a scenario",
         "type": "object",
         "properties": {
           "objectName": {
@@ -206,13 +206,58 @@
             "title": "Object Status",
             "description": "Status of the object",
             "type": "string",
-            "maxLength": 1
+            "enum": [
+              "error",
+              "termination",
+              "information",
+              "warning",
+              "success"
+            ],
+            "enumTitles": [
+              "Error",
+              "Termination",
+              "Information",
+              "Warning",
+              "Success"
+            ],
+            "enumDescriptions": [
+              "Error",
+              "Termination",
+              "Information",
+              "Warning",
+              "Success message"
+            ],
+            "default": "success"
           },
           "logicalObjectType": {
             "title": "Logical Object Type",
             "description": "Logical object type of a BOM object",
             "type": "string",
-            "maxLength": 1
+            "enum": [
+              "tableFunction",
+              "cdsView",
+              "class",
+              "dcl",
+              "model",
+              "avas"
+            ],
+            "enumTitles": [
+              "Table Function",
+              "CDS View",
+              "Class",
+              "DCL",
+              "Model",
+              "Avas"
+            ],
+            "enumDescriptions": [
+              "Table Function",
+              "CDS view",
+              "Class",
+              "DCL",
+              "Model",
+              "Avas"
+            ],
+            "default": "cdsView"
           }
         },
         "additionalProperties": false
@@ -223,8 +268,8 @@
       "description": "Scenario dataset bindings",
       "type": "array",
       "items": {
-        "title": "Dataset Bindings",
-        "description": "These are scenario dataset bindings",
+        "title": "Dataset Binding",
+        "description": "Scenario dataset binding",
         "type": "object",
         "properties": {
           "name": {
@@ -234,8 +279,8 @@
             "maxLength": 30
           },
           "reference": {
-            "title": "Reference",
-            "description": "Reference",
+            "title": "Reference object",
+            "description": "Reference object(for example - CDS view)",
             "type": "string",
             "maxLength": 36
           }
@@ -248,8 +293,8 @@
       "description": "Scenario signatures",
       "type": "array",
       "items": {
-        "title": "Signatures",
-        "description": "Scenario signatures",
+        "title": "Signature",
+        "description": "Scenario signature",
         "type": "object",
         "properties": {
           "inputName": {
@@ -339,9 +384,8 @@
           },
           "hasContext": {
             "title": "Context Flag",
-            "description": "Parameter context flag",
-            "type": "string",
-            "maxLength": 1
+            "description": "If true, then input context value is available",
+            "type": "boolean"
           },
           "parameterSize": {
             "title": "Parameter Size",
@@ -427,8 +471,8 @@
       "description": "SBS Scenario Segment Fields",
       "type": "array",
       "items": {
-        "title": "SBS Segment Fields",
-        "description": "SBS scenario segment fields",
+        "title": "SBS Segment Field",
+        "description": "SBS scenario segment field",
         "type": "object",
         "properties": {
           "fieldName": {
@@ -445,8 +489,8 @@
             "maximum": 2147483647
           },
           "isKey": {
-            "title": "Key Field",
-            "description": "Key field or not",
+            "title": "Is Key Field",
+            "description": "If true, the field is a key field",
             "type": "boolean"
           }
         },
