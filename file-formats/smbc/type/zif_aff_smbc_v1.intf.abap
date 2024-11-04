@@ -163,7 +163,7 @@ INTERFACE zif_aff_smbc_v1
       "! $minimum 0
       "! $maximum 30
       "! $default '0'
-      frozen_column_count TYPE i,
+      frozen_column_count           TYPE i,
       "! <p class="shorttext synchronized">Table Creation Mode</p>
       "! $values {@link zif_aff_smbc_v1.data:co_creation_mode_name}
       "! $default {@link zif_aff_smbc_v1.data:co_creation_mode_name.new_page}
