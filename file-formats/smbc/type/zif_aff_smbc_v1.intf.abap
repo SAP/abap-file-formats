@@ -170,7 +170,7 @@ INTERFACE zif_aff_smbc_v1
       creation_mode_name            TYPE ty_creation_mode-name,
       "! <p class="shorttext synchronized">Create at End</p>
       "! If true, a new row is added to the end of the table instead of the beginning of the table
-      create_at_end          TYPE ty_creation_mode-create_at_end,
+      create_at_end                 TYPE ty_creation_mode-create_at_end,
       "! <p class="shorttext synchronized">Hide Filter</p>
       "! If true, the user cannot filter data of the table
       hide_filter            TYPE ty_personalization-hide_filter,
