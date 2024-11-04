@@ -11,9 +11,9 @@ INTERFACE zif_aff_intm_v1
       "! <p class="shorttext">Intelligent Scenario</p>
       "! Intelligent scenario of the model
       intelligent_scenario    TYPE c LENGTH 20,
-      "! <p class="shorttext">Intelligent Scenario ID</p>
-      "! Intelligent scenario ID which is the parent of the model
-      intelligent_scenario_id TYPE c LENGTH 36,
+      "! <p class="shorttext">Modelling Context ID</p>
+      "! Modelling context ID which is the parent of the model
+      modelling_context_id    TYPE c LENGTH 36,
       "! <p class="shorttext">Model Type</p>
       "! Model type
       model_type              TYPE c LENGTH 256,

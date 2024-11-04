@@ -74,9 +74,9 @@
           "type": "string",
           "maxLength": 20
         },
-        "intelligentScenarioId": {
-          "title": "Intelligent Scenario ID",
-          "description": "Intelligent scenario ID which is the parent of the model",
+        "modellingContextId": {
+          "title": "Modelling Context ID",
+          "description": "Modelling context ID which is the parent of the model",
           "type": "string",
           "maxLength": 36
         },
