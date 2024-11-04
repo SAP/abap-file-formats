@@ -109,7 +109,7 @@ INTERFACE zif_aff_smbc_v1
       "! Defines whether data in the List Report is automatically loaded on first app start.
       "! $values {@link zif_aff_smbc_v1.data:co_initial_load}
       "! $default {@link zif_aff_smbc_v1.data:co_initial_load.enabled}
-      initial_load TYPE string,
+      initial_load       TYPE string,
       "! <p class="shorttext synchronized">Variant Management</p>
       "! $values {@link zif_aff_smbc_v1.data:co_list_variant_management}
       "! $default {@link zif_aff_smbc_v1.data:co_list_variant_management.page}
