@@ -189,7 +189,7 @@ INTERFACE zif_aff_smbc_v1
       width_including_column_header TYPE abap_bool,
       "! <p class="shorttext synchronized">Disable Paste</p>
       "! If true, disable the possibility to add several items by copying and pasting data from an excel file
-      disable_paste          TYPE abap_bool,
+      disable_paste                 TYPE abap_bool,
       "! <p class="shorttext synchronized">Enable Full Screen</p>
       "! If true, a button on the table toolbar allows the user to open the table in fullscreen dialog
       enable_full_screen     TYPE abap_bool,
