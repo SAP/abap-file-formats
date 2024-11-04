@@ -173,7 +173,7 @@ INTERFACE zif_aff_smbc_v1
       create_at_end                 TYPE ty_creation_mode-create_at_end,
       "! <p class="shorttext synchronized">Hide Filter</p>
       "! If true, the user cannot filter data of the table
-      hide_filter            TYPE ty_personalization-hide_filter,
+      hide_filter                   TYPE ty_personalization-hide_filter,
       "! <p class="shorttext synchronized">Hide Sort</p>
       "! If true, the user cannot sort the table
       hide_sort              TYPE ty_personalization-hide_sort,
