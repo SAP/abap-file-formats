@@ -213,7 +213,7 @@ INTERFACE zif_aff_smbc_v1
       "! <p class="shorttext">Service Binding</p>
       "! Service Binding used for business configuration maintenance
       "! $required
-      service_binding  TYPE c LENGTH 40,
+      service_binding     TYPE c LENGTH 40,
       "! <p class="shorttext">Service Name</p>
       "! $required
       service_name     TYPE c LENGTH 40,
