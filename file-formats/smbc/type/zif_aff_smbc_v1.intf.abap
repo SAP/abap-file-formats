@@ -139,7 +139,7 @@ INTERFACE zif_aff_smbc_v1
     BEGIN OF ty_table_setting,
       "! <p class="shorttext synchronized">Entity Set</p>
       entity_set                    TYPE string,
-      table_type             TYPE ty_table_type,
+      table_type                    TYPE ty_table_type,
       "! <p class="shorttext synchronized">Selection Mode</p>
       "! $values {@link zif_aff_smbc_v1.data:co_selection_mode}
       "! $default {@link zif_aff_smbc_v1.data:co_selection_mode.multi}
