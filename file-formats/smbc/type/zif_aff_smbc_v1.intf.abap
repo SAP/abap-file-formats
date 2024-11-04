@@ -143,7 +143,7 @@ INTERFACE zif_aff_smbc_v1
       "! <p class="shorttext synchronized">Selection Mode</p>
       "! $values {@link zif_aff_smbc_v1.data:co_selection_mode}
       "! $default {@link zif_aff_smbc_v1.data:co_selection_mode.multi}
-      selection_mode         TYPE string,
+      selection_mode                TYPE string,
       "! <p class="shorttext synchronized">Select All</p>
       "! Enable Select all checkbox
       select_all         TYPE abap_bool,
