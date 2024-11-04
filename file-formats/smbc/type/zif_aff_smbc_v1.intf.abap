@@ -127,7 +127,7 @@ INTERFACE zif_aff_smbc_v1
       "! <p class="shorttext synchronized">Variant Management</p>
       "! $values {@link zif_aff_smbc_v1.data:co_page_variant_management}
       "! $default {@link zif_aff_smbc_v1.data:co_page_variant_management.none}
-      variant_management TYPE string,
+      variant_management             TYPE string,
       "! <p class="shorttext synchronized">Editable Header Content</p>
       "! If true, the header content is changeable in edit mode
       editable_header_content TYPE abap_bool,
