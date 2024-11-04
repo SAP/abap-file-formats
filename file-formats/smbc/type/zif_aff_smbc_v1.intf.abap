@@ -123,7 +123,7 @@ INTERFACE zif_aff_smbc_v1
       "! Toggle between onepage concept and tabs.
       "! $values {@link zif_aff_smbc_v1.data:co_section_layout}
       "! $default {@link zif_aff_smbc_v1.data:co_section_layout.page}
-      section_layout          TYPE string,
+      section_layout                 TYPE string,
       "! <p class="shorttext synchronized">Variant Management</p>
       "! $values {@link zif_aff_smbc_v1.data:co_page_variant_management}
       "! $default {@link zif_aff_smbc_v1.data:co_page_variant_management.none}
