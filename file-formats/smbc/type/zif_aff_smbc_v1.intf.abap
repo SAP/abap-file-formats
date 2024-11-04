@@ -146,7 +146,7 @@ INTERFACE zif_aff_smbc_v1
       selection_mode                TYPE string,
       "! <p class="shorttext synchronized">Select All</p>
       "! Enable Select all checkbox
-      select_all         TYPE abap_bool,
+      select_all                    TYPE abap_bool,
       "! <p class="shorttext synchronized">Row Count Mode</p>
       "! Defines how the table handles the visible rows in the table
       "! $values {@link zif_aff_smbc_v1.data:co_row_count_mode}
