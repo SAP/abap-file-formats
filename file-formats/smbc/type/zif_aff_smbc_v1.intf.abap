@@ -224,7 +224,7 @@ INTERFACE zif_aff_smbc_v1
       "! <p class="shorttext">Root Entity Set</p>
       "! Root Entity Set exposed by the Service Definition
       "! $required
-      root_entity_set  TYPE c LENGTH 30,
+      root_entity_set     TYPE c LENGTH 30,
       "! <p class="shorttext">Name</p>
       "! Name of the Business Configuration
       "! $required
