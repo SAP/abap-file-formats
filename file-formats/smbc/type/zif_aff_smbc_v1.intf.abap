@@ -235,7 +235,7 @@ INTERFACE zif_aff_smbc_v1
       "! <p class="shorttext">Skip Root Entity List Report</p>
       "! If true, the UI automatically navigates to the Object Page of the root entity
       "! $showAlways
-      skip_root_entity TYPE abap_bool,
+      skip_root_entity    TYPE abap_bool,
     END OF ty_service_configuration.
 
   TYPES:
