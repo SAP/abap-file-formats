@@ -118,7 +118,7 @@ INTERFACE zif_aff_smbc_v1
     "! <p class="shorttext synchronized">Object Page Settings</p>
     BEGIN OF ty_object_page,
       "! <p class="shorttext synchronized">Entity Set</p>
-      entity_set              TYPE string,
+      entity_set                     TYPE string,
       "! <p class="shorttext synchronized">Section Layout</p>
       "! Toggle between onepage concept and tabs.
       "! $values {@link zif_aff_smbc_v1.data:co_section_layout}
