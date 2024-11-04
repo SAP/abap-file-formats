@@ -167,7 +167,7 @@ INTERFACE zif_aff_smbc_v1
       "! <p class="shorttext synchronized">Table Creation Mode</p>
       "! $values {@link zif_aff_smbc_v1.data:co_creation_mode_name}
       "! $default {@link zif_aff_smbc_v1.data:co_creation_mode_name.new_page}
-      creation_mode_name     TYPE ty_creation_mode-name,
+      creation_mode_name            TYPE ty_creation_mode-name,
       "! <p class="shorttext synchronized">Create at End</p>
       "! If true, a new row is added to the end of the table instead of the beginning of the table
       create_at_end          TYPE ty_creation_mode-create_at_end,
