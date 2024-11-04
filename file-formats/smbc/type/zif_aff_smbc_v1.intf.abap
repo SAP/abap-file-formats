@@ -220,7 +220,7 @@ INTERFACE zif_aff_smbc_v1
       "! <p class="shorttext">Service Version</p>
       "! The major version number of the service to be used (as defined in the Service Binding)
       "! $required
-      service_version  TYPE n LENGTH 4,
+      service_version     TYPE n LENGTH 4,
       "! <p class="shorttext">Root Entity Set</p>
       "! Root Entity Set exposed by the Service Definition
       "! $required
