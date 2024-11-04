@@ -157,7 +157,7 @@ INTERFACE zif_aff_smbc_v1
       "! $minimum 1
       "! $maximum 1000
       "! $default '5'
-      row_count TYPE i,
+      row_count                     TYPE i,
       "! <p class="shorttext synchronized">Frozen Column Count</p>
       "! You can freeze the first columns of a table so that they always remain visible when scrolling the table horizontally
       "! $minimum 0
