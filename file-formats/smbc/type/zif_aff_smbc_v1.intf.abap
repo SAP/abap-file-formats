@@ -151,7 +151,7 @@ INTERFACE zif_aff_smbc_v1
       "! Defines how the table handles the visible rows in the table
       "! $values {@link zif_aff_smbc_v1.data:co_row_count_mode}
       "! $default {@link zif_aff_smbc_v1.data:co_row_count_mode.fixed}
-      row_count_mode TYPE string,
+      row_count_mode                TYPE string,
       "! <p class="shorttext synchronized">Row Count</p>
       "! Number of visible rows of the table
       "! $minimum 1
