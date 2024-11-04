@@ -7,7 +7,7 @@ INTERFACE zif_aff_intm_v1
     BEGIN OF ty_intelligent_model,
       "! <p class="shorttext">Model Name</p>
       "! Model name
-      name                    TYPE c LENGTH 30,
+      name                    TYPE c LENGTH 30 ,
       "! <p class="shorttext">Intelligent Scenario</p>
       "! Intelligent scenario of the model
       intelligent_scenario    TYPE c LENGTH 20,
