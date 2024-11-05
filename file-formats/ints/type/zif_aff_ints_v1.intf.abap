@@ -73,16 +73,16 @@ INTERFACE zif_aff_ints_v1
       "! Intelligent scenario type
       "! $required
       scenario_type              TYPE c LENGTH 256,
-      "! <p class="shorttext">Is Extensible</p>
+      "! <p class="shorttext">Extensible</p>
       "! If true, the scenario is extensible
       is_extensible              TYPE abap_bool,
-      "! <p class="shorttext">Is Multiple Active Model</p>
+      "! <p class="shorttext">Multiple Active Models</p>
       "! If true, the scenario can have multiple active models
       is_multi_active_model      TYPE abap_bool,
-      "! <p class="shorttext">Uses Data Management</p>
+      "! <p class="shorttext">Data Management</p>
       "! If true, the scenario uses Data Management
       is_data_management_enabled TYPE abap_bool,
-      "! <p class="shorttext">Is Turnkey Auto Switch ON</p>
+      "! <p class="shorttext">Automate Turnkey Switch On</p>
       "! If true, scenario will be turnkey enabled to automate the operations
       is_turnkey_auto_switch_on  TYPE abap_bool,
       "! <p class="shorttext">Turnkey Implementation Type</p>

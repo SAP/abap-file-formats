@@ -69,22 +69,22 @@
           "maxLength": 256
         },
         "isExtensible": {
-          "title": "Is Extensible",
+          "title": "Extensible",
           "description": "If true, the scenario is extensible",
           "type": "boolean"
         },
         "isMultiActiveModel": {
-          "title": "Is Multiple Active Model",
+          "title": "Multiple Active Models",
           "description": "If true, the scenario can have multiple active models",
           "type": "boolean"
         },
         "isDataManagementEnabled": {
-          "title": "Uses Data Management",
+          "title": "Data Management",
           "description": "If true, the scenario uses Data Management",
           "type": "boolean"
         },
         "isTurnkeyAutoSwitchOn": {
-          "title": "Is Turnkey Auto Switch ON",
+          "title": "Automate Turnkey Switch On",
           "description": "If true, scenario will be turnkey enabled to automate the operations",
           "type": "boolean"
         },
