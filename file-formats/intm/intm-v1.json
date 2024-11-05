@@ -57,12 +57,12 @@
         "originalLanguage"
       ]
     },
-    "intelligentModel": {
+    "intelligentScenarioModel": {
       "title": "Intelligent Scenario Model",
       "description": "Intelligent scenario model",
       "type": "object",
       "properties": {
-        "name": {
+        "modelName": {
           "title": "Model Name",
           "description": "Model name",
           "type": "string",
@@ -125,7 +125,7 @@
           "type": "string"
         },
         "isEnhancement": {
-          "title": "Model flag",
+          "title": "Is Enhancement",
           "description": "If true, the model is an enhancement, if false the model is a new model.",
           "type": "boolean"
         },
@@ -140,16 +140,16 @@
           "description": "Large language model name",
           "type": "string"
         },
-        "llmModelVersion": {
-          "title": "LLM Model Version",
-          "description": "LLM model version",
+        "llmVersion": {
+          "title": "Large Language Model Version",
+          "description": "Large language model version",
           "type": "string",
           "maxLength": 30
         }
       },
       "additionalProperties": false
     },
-    "segmentFields": {
+    "modelSegmentFields": {
       "title": "Model Segment Fields",
       "description": "Model segment fields",
       "type": "array",
@@ -158,7 +158,7 @@
         "description": "Model segment field",
         "type": "object",
         "properties": {
-          "fieldname": {
+          "fieldName": {
             "title": "Field Name",
             "description": "Table or view field name",
             "type": "string",
@@ -180,7 +180,7 @@
         "additionalProperties": false
       }
     },
-    "promptTemplates": {
+    "modelPromptTemplates": {
       "title": "Model Prompt Templates",
       "description": "Model prompt templates",
       "type": "array",
@@ -189,14 +189,14 @@
         "description": "Model prompt template",
         "type": "object",
         "properties": {
-          "name": {
+          "promptTemplateName": {
             "title": "Prompt Template Name",
             "description": "Prompt template name",
             "type": "string",
             "maxLength": 30
           },
-          "description": {
-            "title": "Description",
+          "promptTemplateDescription": {
+            "title": "Prompt Template Description",
             "description": "Description of prompt template",
             "type": "string"
           },
@@ -218,7 +218,7 @@
         },
         "additionalProperties": false,
         "required": [
-          "name",
+          "promptTemplateName",
           "prompt"
         ]
       }
@@ -228,6 +228,6 @@
   "required": [
     "formatVersion",
     "header",
-    "intelligentModel"
+    "intelligentScenarioModel"
   ]
 }

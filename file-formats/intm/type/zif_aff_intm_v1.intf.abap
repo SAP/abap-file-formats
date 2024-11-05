@@ -4,10 +4,10 @@ INTERFACE zif_aff_intm_v1
   TYPES:
     "! <p class="shorttext">Intelligent Scenario Model</p>
     "! Intelligent scenario model
-    BEGIN OF ty_intelligent_model,
+    BEGIN OF ty_intelligent_scenario_model,
       "! <p class="shorttext">Model Name</p>
       "! Model name
-      name                 TYPE c LENGTH 30,
+      model_name           TYPE c LENGTH 30,
       "! <p class="shorttext">Intelligent Scenario</p>
       "! Intelligent scenario of the model
       intelligent_scenario TYPE c LENGTH 20,
@@ -38,7 +38,7 @@ INTERFACE zif_aff_intm_v1
       "! <p class="shorttext">Bindings</p>
       "! Model bindings
       bindings             TYPE string,
-      "! <p class="shorttext">Model flag</p>
+      "! <p class="shorttext">Is Enhancement</p>
       "! If true, the model is an enhancement, if false the model is a new model.
       is_enhancement       TYPE abap_bool,
       "! <p class="shorttext">Executable ID</p>
@@ -47,17 +47,17 @@ INTERFACE zif_aff_intm_v1
       "! <p class="shorttext">Large Language Model Name</p>
       "! Large language model name
       llm_name             TYPE string,
-      "! <p class="shorttext">LLM Model Version</p>
-      "! LLM model version
-      llm_model_version    TYPE c LENGTH 30,
-    END OF ty_intelligent_model,
+      "! <p class="shorttext">Large Language Model Version</p>
+      "! Large language model version
+      llm_version          TYPE c LENGTH 30,
+    END OF ty_intelligent_scenario_model,
 
     "! <p class="shorttext">Segment Field</p>
     "! Model segment field
     BEGIN OF ty_segment_field,
       "! <p class="shorttext">Field Name</p>
       "! Table or view field name
-      fieldname      TYPE c LENGTH 30,
+      field_name     TYPE c LENGTH 30,
       "! <p class="shorttext">Position</p>
       "! Field position
       field_position TYPE i,
@@ -72,40 +72,40 @@ INTERFACE zif_aff_intm_v1
       "! <p class="shorttext">Prompt Template Name</p>
       "! Prompt template name
       "! $required
-      name              TYPE c LENGTH 30,
-      "! <p class="shorttext">Description</p>
+      prompt_template_name        TYPE c LENGTH 30,
+      "! <p class="shorttext">Prompt Template Description</p>
       "! Description of prompt template
-      description       TYPE string,
+      prompt_template_description TYPE string,
       "! <p class="shorttext">Prompt</p>
       "! Prompt
       "! $required
-      prompt            TYPE string,
+      prompt                      TYPE string,
       "! <p class="shorttext">Prompt Parameters</p>
       "! Prompt parameters
-      prompt_parameters TYPE string,
+      prompt_parameters           TYPE string,
       "! <p class="shorttext">Prompt Visibility</p>
       "! If true, the prompt is visible
-      is_visible        TYPE abap_bool,
+      is_visible                  TYPE abap_bool,
     END OF ty_prompt_template,
 
     "! <p class="shorttext">Intelligent scenario Models</p>
     "! Intelligent scenario model
     BEGIN OF ty_main,
       "! $required
-      format_version    TYPE zif_aff_types_v1=>ty_format_version,
+      format_version             TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header            TYPE zif_aff_types_v1=>ty_header_60,
+      header                     TYPE zif_aff_types_v1=>ty_header_60,
       "! <p class="shorttext">Intelligent Scenario Model</p>
       "! Intelligent scenario model
       "! $required
-      intelligent_model TYPE ty_intelligent_model,
+      intelligent_scenario_model TYPE ty_intelligent_scenario_model,
       "! <p class="shorttext">Model Segment Fields</p>
       "! Model segment fields
-      segment_fields    TYPE STANDARD TABLE OF ty_segment_field WITH DEFAULT KEY,
+      model_segment_fields       TYPE STANDARD TABLE OF ty_segment_field WITH DEFAULT KEY,
       "! <p class="shorttext">Model Prompt Templates</p>
       "! Model prompt templates
-      prompt_templates  TYPE STANDARD TABLE OF ty_prompt_template WITH DEFAULT KEY,
+      model_prompt_templates     TYPE STANDARD TABLE OF ty_prompt_template WITH DEFAULT KEY,
     END OF ty_main.
 ENDINTERFACE.
