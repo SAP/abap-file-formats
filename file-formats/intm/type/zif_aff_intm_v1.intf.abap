@@ -58,7 +58,7 @@ INTERFACE zif_aff_intm_v1
       "! <p class="shorttext">Field Name</p>
       "! Table or view field name
       field_name     TYPE c LENGTH 30,
-      "! <p class="shorttext">Position</p>
+      "! <p class="shorttext">Field Position</p>
       "! Field position
       field_position TYPE i,
       "! <p class="shorttext">Is Key Field</p>
@@ -88,7 +88,7 @@ INTERFACE zif_aff_intm_v1
       is_visible                  TYPE abap_bool,
     END OF ty_prompt_template,
 
-    "! <p class="shorttext">Intelligent scenario Models</p>
+    "! <p class="shorttext">Intelligent scenario Model</p>
     "! Intelligent scenario model
     BEGIN OF ty_main,
       "! $required
