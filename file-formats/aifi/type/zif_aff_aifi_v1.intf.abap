@@ -238,10 +238,10 @@ INTERFACE zif_aff_aifi_v1
     "! General key field settings
     BEGIN OF ty_key_field_settings,
       " (type /aif/key_fieldname, field of index table)
-      "! <p class="shorttext">Key Field Name</p>
+      "! <p class="shorttext">Name</p>
       "! Key field name
       "! $required
-      key_field_name     TYPE zif_aff_types_v1=>ty_object_name_30,
+      name     TYPE zif_aff_types_v1=>ty_object_name_30,
       " (type rollname)
       "! <p class="shorttext">Data Element</p>
       "! Data element
