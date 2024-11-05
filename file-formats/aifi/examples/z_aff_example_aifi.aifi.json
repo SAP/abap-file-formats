@@ -7,9 +7,7 @@
   },
   "generalInformation": {
     "integrationType": "SOAP",
-    "integrationTypeDescription": "SOAP",
-    "scenario": "INMO",
-    "scenarioDescription": "Inbound Monitoring",
+    "scenario": "Inbound Monitoring",
     "soapSettings": {
       "soapClass": "CL_SOAP_RFC_PROXY_TEST",
       "soapMethod": "EXECUTE",
@@ -62,13 +60,11 @@
   },
   "keyFields": [
     {
-      "keyFieldSettings": {
-        "keyFieldName": "/AIF/TEST1",
-        "dataElement": "STRING",
-        "sapRawStructure": "raw",
-        "isSelectOption": false,
-        "isColumnDisplay": true
-      },
+      "name": "/AIF/TEST1",
+      "dataElement": "STRING",
+      "sapRawStructure": "raw",
+      "isSelectOption": false,
+      "isColumnDisplay": true,
       "keyFieldQualifier": {
         "usesQualifier": false,
         "qualifierOperator": "containsPattern"
@@ -81,7 +77,7 @@
       "keyFieldRule": {
         "ruleKeyFields": [
           {
-            "ruleKeyFieldName": "TEST_FIELD1",
+            "name": "TEST_FIELD1",
             "fieldSequnceNumber": "010"
           }
         ]
@@ -92,13 +88,11 @@
       }
     },
     {
-      "keyFieldSettings": {
-        "keyFieldName": "/AIF/TEST2",
-        "dataElement": "STRING",
-        "sapRawStructure": "raw",
-        "isSelectOption": false,
-        "isColumnDisplay": true
-      },
+      "name": "/AIF/TEST2",
+      "dataElement": "STRING",
+      "sapRawStructure": "raw",
+      "isSelectOption": false,
+      "isColumnDisplay": true,
       "keyFieldQualifier": {
         "usesQualifier": false,
         "qualifierOperator": "equals"
@@ -111,7 +105,7 @@
       "keyFieldRule": {
         "ruleKeyFields": [
           {
-            "ruleKeyFieldName": "TEST_FIELD2",
+            "name": "TEST_FIELD2",
             "fieldSequnceNumber": "010"
           }
         ]
@@ -122,13 +116,11 @@
       }
     },
     {
-      "keyFieldSettings": {
-        "keyFieldName": "AIF_TEST3",
-        "dataElement": "BOOLEAN",
-        "sapRawStructure": "raw",
-        "isSelectOption": false,
-        "isColumnDisplay": true
-      },
+      "name": "AIF_TEST3",
+      "dataElement": "BOOLEAN",
+      "sapRawStructure": "raw",
+      "isSelectOption": false,
+      "isColumnDisplay": true,
       "keyFieldQualifier": {
         "usesQualifier": false,
         "qualifierOperator": "equals"
@@ -141,15 +133,15 @@
       "keyFieldRule": {
         "ruleKeyFields": [
           {
-            "ruleKeyFieldName": "NON",
+            "name": "NON",
             "fieldSequnceNumber": "010"
           },
           {
-            "ruleKeyFieldName": "SENSE",
+            "name": "SENSE",
             "fieldSequnceNumber": "020"
           },
           {
-            "ruleKeyFieldName": "?",
+            "name": "?",
             "fieldSequnceNumber": "030"
           }
         ]

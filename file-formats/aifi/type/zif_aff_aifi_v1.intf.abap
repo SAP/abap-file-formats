@@ -144,78 +144,72 @@ INTERFACE zif_aff_aifi_v1
     BEGIN OF ty_general_information,
       "! <p class="shorttext">Integration Type</p>
       "! Integration type
-      integration_type             TYPE c LENGTH 4,
-      "! <p class="shorttext">Integration Type</p>
-      "! Integration type description
-      integration_type_description TYPE c LENGTH 40,
+      integration_type      TYPE c LENGTH 40,
       "! <p class="shorttext">Scenario</p>
       "! Scenario
-      scenario                     TYPE c LENGTH 4,
-      "! <p class="shorttext">Scenario</p>
-      "! Scenario description
-      scenario_description         TYPE c LENGTH 40,
+      scenario              TYPE c LENGTH 40,
       "! <p class="shorttext">SOAP Settings</p>
       "! SOAP settings
-      soap_settings                TYPE ty_soap_settings,
+      soap_settings         TYPE ty_soap_settings,
       "! <p class="shorttext">Event Settings</p>
       "! Event settings
-      event_settings               TYPE ty_event_settings,
+      event_settings        TYPE ty_event_settings,
       "! <p class="shorttext">BgPF Settings</p>
       "! Background processing framework settings
-      bgpf_settings                TYPE ty_bgpf_settings,
+      bgpf_settings         TYPE ty_bgpf_settings,
       " (type /aif/ns_obj_name)
       "! <p class="shorttext">Namespace</p>
       "! Namespace
-      namespace                    TYPE c LENGTH 15,
+      namespace             TYPE c LENGTH 15,
       " (type /aif/ifname)
       "! <p class="shorttext">AIF Interface Name</p>
       "! AIF interface name
-      interface_name               TYPE c LENGTH 10,
+      interface_name        TYPE c LENGTH 10,
       " (type /aif/ifversion)
       "! <p class="shorttext">AIF Interface Version</p>
       "! AIF interface version
-      interface_version            TYPE c LENGTH 5,
+      interface_version     TYPE c LENGTH 5,
       " (type /aif/if_ddic_struct_raw)
       "! <p class="shorttext">Data Structure</p>
       "! Data structure
       "! $required
-      data_structure               TYPE zif_aff_types_v1=>ty_object_name_30,
+      data_structure        TYPE zif_aff_types_v1=>ty_object_name_30,
       " (type /aif/if_ddic_struct)
       "! <p class="shorttext">Mapped Data Structure</p>
       "! Mapped data structure
-      mapped_data_structure        TYPE zif_aff_types_v1=>ty_object_name_30,
+      mapped_data_structure TYPE zif_aff_types_v1=>ty_object_name_30,
       " (type /aif/msg_tbl)
       "! <p class="shorttext">Index Table</p>
       "! Index table
       "! $required
-      index_table                  TYPE zif_aff_types_v1=>ty_object_name_30,
+      index_table           TYPE zif_aff_types_v1=>ty_object_name_30,
       " (type /aif/ifdisplay)
       "! <p class="shorttext">Interface Display Name</p>
       "! Interface display name
-      display_name                 TYPE c LENGTH 120,
+      display_name          TYPE c LENGTH 120,
       " (relevant types /AIF/MSG_LIFETIME && /AIF/DATA_OLDER_THAN_E)
       "! <p class="shorttext">Retention Period</p>
       "! Retention period
       "! $default '090'
-      retention_period             TYPE c LENGTH 3,
+      retention_period      TYPE c LENGTH 3,
       "! <p class="shorttext">Expiration Behavior</p>
       "! Expiration_behavior
-      expiration_behavior          TYPE ty_expiration_behavior_type,
+      expiration_behavior   TYPE ty_expiration_behavior_type,
       " (type /aif/system_field)
       "! <p class="shorttext">Sending System</p>
       "! Path for sending system in data structure
-      sending_system               TYPE string,
+      sending_system        TYPE string,
       " (type /aif/ifdirection)
       "! <p class="shorttext">Direction</p>
       "! Direction
-      direction                    TYPE ty_direction_type,
+      direction             TYPE ty_direction_type,
       " /AIF/PRE_PROCESSING
       "! <p class="shorttext">Preprocessing</p>
       "! Preprocessing
-      uses_preprocessing           TYPE abap_bool,
+      uses_preprocessing    TYPE abap_bool,
       "! <p class="shorttext">Postprocessing</p>
       "! Postprocessing
-      uses_postprocesssing         TYPE abap_bool,
+      uses_postprocesssing  TYPE abap_bool,
     END OF ty_general_information.
 
   TYPES:
@@ -232,43 +226,6 @@ INTERFACE zif_aff_aifi_v1
   "! <p class="shorttext">Recipients</p>
   "! Recipients
   TYPES ty_recipients TYPE STANDARD TABLE OF ty_recipient WITH DEFAULT KEY.
-
-  TYPES:
-    "! <p class="shorttext">General</p>
-    "! General key field settings
-    BEGIN OF ty_key_field_settings,
-      " (type /aif/key_fieldname, field of index table)
-      "! <p class="shorttext">Name</p>
-      "! Key field name
-      "! $required
-      name     TYPE zif_aff_types_v1=>ty_object_name_30,
-      " (type rollname)
-      "! <p class="shorttext">Data Element</p>
-      "! Data element
-      "! $required
-      data_element       TYPE zif_aff_types_v1=>ty_object_name_30,
-      " (type /aif/stexti)
-      "! <p class="shorttext">Name of Select-Option/Parameter</p>
-      "! Name of select-option/parameter
-      select_option_name TYPE c LENGTH 8,
-      " (type /aif/lfieldname_kflds, field of sap/raw structure)
-      "! <p class="shorttext">Field Name</p>
-      "! Field name in define key fields
-      field_name         TYPE c LENGTH 120,
-      " (type /aif/raw_or_sap_kflds)
-      "! <p class="shorttext">SAP or RAW Structure</p>
-      "! Is sap or raw structure?
-      sap_raw_structure  TYPE ty_sap_raw_structure_type,
-      " /AIF/FLD_IS_SELECT_OPT
-      "! <p class="shorttext">Select-Option</p>
-      "! Is select-option?
-      is_select_option   TYPE abap_bool,
-      " /AIF/IS_COL
-      "! <p class="shorttext">Display Column</p>
-      "! Display the column
-      "! $default 'X'
-      is_column_display  TYPE abap_bool,
-    END OF ty_key_field_settings.
 
   TYPES:
     "! <p class="shorttext">Key Field Determination by Qualifier</p>
@@ -366,7 +323,7 @@ INTERFACE zif_aff_aifi_v1
       " (type /aif/key_fieldname_enh)
       "! <p class="shorttext">Name</p>
       "! Rule Key field name
-      name  TYPE zif_aff_types_v1=>ty_object_name_30,
+      name                 TYPE zif_aff_types_v1=>ty_object_name_30,
       " (type /aif/field_number_enh)
       "! <p class="shorttext">Field Sequence Number</p>
       "! Field sequence number
@@ -396,9 +353,37 @@ INTERFACE zif_aff_aifi_v1
     "! <p class="shorttext">Key Field Details</p>
     "! Key field details
     BEGIN OF ty_key_field,
-      "! <p class="shorttext">General</p>
-      "! General key field settings
-      key_field_settings  TYPE ty_key_field_settings,
+      " (type /aif/key_fieldname, field of index table)
+      "! <p class="shorttext">Name</p>
+      "! Key field name
+      "! $required
+      name                TYPE zif_aff_types_v1=>ty_object_name_30,
+      " (type rollname)
+      "! <p class="shorttext">Data Element</p>
+      "! Data element
+      "! $required
+      data_element        TYPE zif_aff_types_v1=>ty_object_name_30,
+      " (type /aif/stexti)
+      "! <p class="shorttext">Name of Select-Option/Parameter</p>
+      "! Name of select-option/parameter
+      select_option_name  TYPE c LENGTH 8,
+      " (type /aif/lfieldname_kflds, field of sap/raw structure)
+      "! <p class="shorttext">Field Name</p>
+      "! Field name in define key fields
+      field_name          TYPE c LENGTH 120,
+      " (type /aif/raw_or_sap_kflds)
+      "! <p class="shorttext">SAP or RAW Structure</p>
+      "! Is sap or raw structure?
+      sap_raw_structure   TYPE ty_sap_raw_structure_type,
+      " /AIF/FLD_IS_SELECT_OPT
+      "! <p class="shorttext">Select-Option</p>
+      "! Is select-option?
+      is_select_option    TYPE abap_bool,
+      " /AIF/IS_COL
+      "! <p class="shorttext">Display Column</p>
+      "! Display the column
+      "! $default 'X'
+      is_column_display   TYPE abap_bool,
       "! <p class="shorttext">Key Field Determination by Qualifier</p>
       "! Key field determination by qualifier
       key_field_qualifier TYPE ty_key_field_qualifier,

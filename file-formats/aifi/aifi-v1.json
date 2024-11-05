@@ -63,23 +63,11 @@
           "title": "Integration Type",
           "description": "Integration type",
           "type": "string",
-          "maxLength": 4
-        },
-        "integrationTypeDescription": {
-          "title": "Integration Type",
-          "description": "Integration type description",
-          "type": "string",
           "maxLength": 40
         },
         "scenario": {
           "title": "Scenario",
           "description": "Scenario",
-          "type": "string",
-          "maxLength": 4
-        },
-        "scenarioDescription": {
-          "title": "Scenario",
-          "description": "Scenario description",
           "type": "string",
           "maxLength": 40
         },
@@ -435,74 +423,62 @@
       "description": "Key fields",
       "type": "array",
       "items": {
-        "title": "Key Field",
-        "description": "Key field",
+        "title": "Key Field Details",
+        "description": "Key field details",
         "type": "object",
         "properties": {
-          "keyFieldSettings": {
-            "title": "General",
-            "description": "General key field settings",
-            "type": "object",
-            "properties": {
-              "keyFieldName": {
-                "title": "Key Field Name",
-                "description": "Key field name",
-                "type": "string",
-                "maxLength": 30
-              },
-              "dataElement": {
-                "title": "Data Element",
-                "description": "Data element",
-                "type": "string",
-                "maxLength": 30
-              },
-              "selectOptionName": {
-                "title": "Name of Select-Option/Parameter",
-                "description": "Name of select-option/parameter",
-                "type": "string",
-                "maxLength": 8
-              },
-              "fieldName": {
-                "title": "Field Name",
-                "description": "Field name in define key fields",
-                "type": "string",
-                "maxLength": 120
-              },
-              "sapRawStructure": {
-                "title": "SAP or RAW Structure",
-                "description": "Is sap or raw structure?",
-                "type": "string",
-                "enum": [
-                  "raw",
-                  "sap"
-                ],
-                "enumTitles": [
-                  "Source Structure (raw for inbound, SAP for outbound)",
-                  "Destination Structure (SAP for inbound, raw for outbound)"
-                ],
-                "enumDescriptions": [
-                  "Source structure (raw for inbound, SAP for outbound)",
-                  "Destination structure (SAP for inbound, raw for outbound)"
-                ],
-                "default": "raw"
-              },
-              "isSelectOption": {
-                "title": "Select-Option",
-                "description": "Is select-option?",
-                "type": "boolean"
-              },
-              "isColumnDisplay": {
-                "title": "Display Column",
-                "description": "Display the column",
-                "type": "boolean",
-                "default": true
-              }
-            },
-            "additionalProperties": false,
-            "required": [
-              "keyFieldName",
-              "dataElement"
-            ]
+          "name": {
+            "title": "Name",
+            "description": "Key field name",
+            "type": "string",
+            "maxLength": 30
+          },
+          "dataElement": {
+            "title": "Data Element",
+            "description": "Data element",
+            "type": "string",
+            "maxLength": 30
+          },
+          "selectOptionName": {
+            "title": "Name of Select-Option/Parameter",
+            "description": "Name of select-option/parameter",
+            "type": "string",
+            "maxLength": 8
+          },
+          "fieldName": {
+            "title": "Field Name",
+            "description": "Field name in define key fields",
+            "type": "string",
+            "maxLength": 120
+          },
+          "sapRawStructure": {
+            "title": "SAP or RAW Structure",
+            "description": "Is sap or raw structure?",
+            "type": "string",
+            "enum": [
+              "raw",
+              "sap"
+            ],
+            "enumTitles": [
+              "Source Structure (raw for inbound, SAP for outbound)",
+              "Destination Structure (SAP for inbound, raw for outbound)"
+            ],
+            "enumDescriptions": [
+              "Source structure (raw for inbound, SAP for outbound)",
+              "Destination structure (SAP for inbound, raw for outbound)"
+            ],
+            "default": "raw"
+          },
+          "isSelectOption": {
+            "title": "Select-Option",
+            "description": "Is select-option?",
+            "type": "boolean"
+          },
+          "isColumnDisplay": {
+            "title": "Display Column",
+            "description": "Display the column",
+            "type": "boolean",
+            "default": true
           },
           "keyFieldQualifier": {
             "title": "Key Field Determination by Qualifier",
@@ -662,8 +638,8 @@
                   "description": "Rule key field",
                   "type": "object",
                   "properties": {
-                    "ruleKeyFieldName": {
-                      "title": "Rule Key Field Name",
+                    "name": {
+                      "title": "Name",
                       "description": "Rule Key field name",
                       "type": "string",
                       "maxLength": 30
@@ -725,7 +701,11 @@
             "additionalProperties": false
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "dataElement"
+        ]
       }
     }
   },
