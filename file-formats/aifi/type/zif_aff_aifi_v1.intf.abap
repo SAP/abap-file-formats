@@ -393,8 +393,8 @@ INTERFACE zif_aff_aifi_v1
     END OF ty_key_field_rule.
 
   TYPES:
-    "! <p class="shorttext">Key Field</p>
-    "! Key field
+    "! <p class="shorttext">Key Field Details</p>
+    "! Key field details
     BEGIN OF ty_key_field,
       "! <p class="shorttext">General</p>
       "! General key field settings
