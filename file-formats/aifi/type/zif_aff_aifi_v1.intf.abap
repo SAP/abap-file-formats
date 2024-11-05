@@ -364,9 +364,9 @@ INTERFACE zif_aff_aifi_v1
     "! Rule key field
     BEGIN OF ty_rule_key_field,
       " (type /aif/key_fieldname_enh)
-      "! <p class="shorttext">Rule Key Field Name</p>
+      "! <p class="shorttext">Name</p>
       "! Rule Key field name
-      rule_key_field_name  TYPE zif_aff_types_v1=>ty_object_name_30,
+      name  TYPE zif_aff_types_v1=>ty_object_name_30,
       " (type /aif/field_number_enh)
       "! <p class="shorttext">Field Sequence Number</p>
       "! Field sequence number
