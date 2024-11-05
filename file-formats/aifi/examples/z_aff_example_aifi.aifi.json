@@ -62,7 +62,7 @@
     {
       "name": "/AIF/TEST1",
       "dataElement": "STRING",
-      "sapRawStructure": "raw",
+      "structureType": "sourceStructure",
       "isSelectOption": false,
       "isColumnDisplay": true,
       "keyFieldQualifier": {
@@ -90,7 +90,7 @@
     {
       "name": "/AIF/TEST2",
       "dataElement": "STRING",
-      "sapRawStructure": "raw",
+      "structureType": "sourceStructure",
       "isSelectOption": false,
       "isColumnDisplay": true,
       "keyFieldQualifier": {
@@ -118,7 +118,7 @@
     {
       "name": "AIF_TEST3",
       "dataElement": "BOOLEAN",
-      "sapRawStructure": "raw",
+      "structureType": "sourceStructure",
       "isSelectOption": false,
       "isColumnDisplay": true,
       "keyFieldQualifier": {

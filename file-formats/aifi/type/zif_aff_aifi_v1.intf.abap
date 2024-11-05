@@ -17,18 +17,18 @@ INTERFACE zif_aff_aifi_v1
       document TYPE ty_selection_type VALUE 'D',
     END OF co_selection_type.
 
-  "! $values { @link zif_aff_aifi_v1.data:co_sap_raw_structure_type }
-  "! $default { @link zif_aff_aifi_v1.data:co_sap_raw_structure_type.raw }
-  TYPES ty_sap_raw_structure_type TYPE c LENGTH 1.
+  "! $values { @link zif_aff_aifi_v1.data:co_structure_type }
+  "! $default { @link zif_aff_aifi_v1.data:co_structure_type.source_structure }
+  TYPES ty_structure_type TYPE c LENGTH 1.
   CONSTANTS:
-    BEGIN OF co_sap_raw_structure_type,
-      "! <p class="shorttext">Source Structure (raw for inbound, SAP for outbound)</p>
+    BEGIN OF co_structure_type,
+      "! <p class="shorttext">Source Structure</p>
       "! Source structure (raw for inbound, SAP for outbound)
-      raw TYPE ty_sap_raw_structure_type VALUE ' ',
-      "! <p class="shorttext">Destination Structure (SAP for inbound, raw for outbound)</p>
+      source_structure      TYPE ty_structure_type VALUE ' ',
+      "! <p class="shorttext">Destination Structure</p>
       "! Destination structure (SAP for inbound, raw for outbound)
-      sap TYPE ty_sap_raw_structure_type VALUE 'S',
-    END OF co_sap_raw_structure_type.
+      destination_structure TYPE ty_structure_type VALUE 'S',
+    END OF co_structure_type.
 
   "! $values { @link zif_aff_aifi_v1.data:co_expiration_behavior_type }
   "! $default { @link zif_aff_aifi_v1.data:co_expiration_behavior_type.archive }
@@ -372,9 +372,9 @@ INTERFACE zif_aff_aifi_v1
       "! Field name in define key fields
       field_name          TYPE c LENGTH 120,
       " (type /aif/raw_or_sap_kflds)
-      "! <p class="shorttext">SAP or RAW Structure</p>
-      "! Is sap or raw structure?
-      sap_raw_structure   TYPE ty_sap_raw_structure_type,
+      "! <p class="shorttext">Structure Type</p>
+      "! Structure type (source or destination)
+      structure_type      TYPE ty_structure_type,
       " /AIF/FLD_IS_SELECT_OPT
       "! <p class="shorttext">Select-Option</p>
       "! Is select-option?

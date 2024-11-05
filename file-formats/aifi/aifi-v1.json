@@ -451,23 +451,23 @@
             "type": "string",
             "maxLength": 120
           },
-          "sapRawStructure": {
-            "title": "SAP or RAW Structure",
-            "description": "Is sap or raw structure?",
+          "structureType": {
+            "title": "Structure Type",
+            "description": "Structure type (source or destination)",
             "type": "string",
             "enum": [
-              "raw",
-              "sap"
+              "sourceStructure",
+              "destinationStructure"
             ],
             "enumTitles": [
-              "Source Structure (raw for inbound, SAP for outbound)",
-              "Destination Structure (SAP for inbound, raw for outbound)"
+              "Source Structure",
+              "Destination Structure"
             ],
             "enumDescriptions": [
               "Source structure (raw for inbound, SAP for outbound)",
               "Destination structure (SAP for inbound, raw for outbound)"
             ],
-            "default": "raw"
+            "default": "sourceStructure"
           },
           "isSelectOption": {
             "title": "Select-Option",
