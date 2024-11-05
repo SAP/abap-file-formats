@@ -80,7 +80,7 @@
         },
         "isDataManagementEnabled": {
           "title": "Data Management",
-          "description": "If true, the scenario uses Data Management",
+          "description": "If true, the scenario uses data management",
           "type": "boolean"
         },
         "isTurnkeyAutoSwitchOn": {
@@ -160,7 +160,7 @@
       "description": "Intelligent scenario modelling context",
       "type": "object",
       "properties": {
-        "name": {
+        "modellingContextName": {
           "title": "Modelling Context Name",
           "description": "Modelling context name",
           "type": "string",
@@ -172,9 +172,9 @@
           "type": "string",
           "maxLength": 36
         },
-        "description": {
-          "title": "Description",
-          "description": "Description",
+        "modellingContextDescription": {
+          "title": "Modelling Context Description",
+          "description": "Modelling context description",
           "type": "string",
           "maxLength": 100
         }
@@ -250,7 +250,7 @@
               "Avas"
             ],
             "enumDescriptions": [
-              "Table Function",
+              "Table function",
               "CDS view",
               "Class",
               "DCL",
@@ -272,14 +272,14 @@
         "description": "Scenario dataset binding",
         "type": "object",
         "properties": {
-          "name": {
+          "bindingName": {
             "title": "Binding Name",
             "description": "Name of the binding",
             "type": "string",
             "maxLength": 30
           },
-          "reference": {
-            "title": "Reference object",
+          "referenceObject": {
+            "title": "Reference Object",
             "description": "Reference object(for example - CDS view)",
             "type": "string",
             "maxLength": 36
@@ -297,7 +297,7 @@
         "description": "Scenario signature",
         "type": "object",
         "properties": {
-          "inputName": {
+          "signatureName": {
             "title": "Signature Name",
             "description": "Signature name",
             "type": "string",
@@ -309,7 +309,7 @@
             "type": "string",
             "maxLength": 32
           },
-          "description": {
+          "signatureDescription": {
             "title": "Description",
             "description": "Description",
             "type": "string",
@@ -322,7 +322,7 @@
             "maxLength": 30
           },
           "fieldPosition": {
-            "title": "Position",
+            "title": "Field Position",
             "description": "Position of the field",
             "type": "integer",
             "minimum": -2147483648,
@@ -334,7 +334,7 @@
             "type": "string",
             "maxLength": 100
           },
-          "fieldType": {
+          "fieldRole": {
             "title": "Role of Field",
             "description": "Role of field in an intelligent scenario (such as key, target)",
             "type": "string",
@@ -359,19 +359,19 @@
         "description": "Parameter signature",
         "type": "object",
         "properties": {
-          "name": {
+          "parameterName": {
             "title": "Parameter Name",
             "description": "Parameter name",
             "type": "string",
             "maxLength": 256
           },
-          "type": {
+          "parameterType": {
             "title": "Parameter Type",
             "description": "Parameter type",
             "type": "string",
             "maxLength": 32
           },
-          "description": {
+          "parameterDescription": {
             "title": "Parameter Description",
             "description": "Parameter description",
             "type": "string"
@@ -400,13 +400,13 @@
             "type": "string",
             "maxLength": 36
           },
-          "context": {
+          "parameterContext": {
             "title": "Parameter Context",
             "description": "Parameter context",
             "type": "string",
             "maxLength": 1000
           },
-          "value": {
+          "parameterValue": {
             "title": "Parameter Value",
             "description": "Parameter value",
             "type": "string"
@@ -425,7 +425,7 @@
         "type": "object",
         "properties": {
           "additionalInfoKey": {
-            "title": "Key",
+            "title": "Additional Info Key",
             "description": "Additional information key",
             "type": "string",
             "maxLength": 50
@@ -450,13 +450,13 @@
             "minimum": -2147483648,
             "maximum": 2147483647
           },
-          "keyLabel": {
+          "keyTextLabel": {
             "title": "Key Text Label",
             "description": "Additional information key text label",
             "type": "string",
             "maxLength": 255
           },
-          "valueLabel": {
+          "valueTextLabel": {
             "title": "Value Text Label",
             "description": "Additional information value text label",
             "type": "string",
@@ -482,8 +482,8 @@
             "maxLength": 30
           },
           "fieldPosition": {
-            "title": "Position",
-            "description": "Position",
+            "title": "Field Position",
+            "description": "Field position",
             "type": "integer",
             "minimum": -2147483648,
             "maximum": 2147483647

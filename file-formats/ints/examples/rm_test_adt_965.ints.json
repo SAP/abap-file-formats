@@ -1,7 +1,7 @@
 {
   "formatVersion": "1",
   "header": {
-    "description": "ADT Test 959",
+    "description": "ADT Test 965",
     "originalLanguage": "en"
   },
   "intelligentScenario": {
@@ -16,8 +16,8 @@
     "oauthProfile": "ISLM_SAPGENAI_OAUTH_PRF_HCP"
   },
   "modellingContext": {
-    "name": "DEFAULT",
-    "modellingContextId": "0405E348470277F0EBDAEF4E3CEC2C31",
-    "description": "Default context"
+    "modellingContextName": "DEFAULT",
+    "modellingContextId": "6317387B9D71A70C6C9E025D46DC0066",
+    "modellingContextDescription": "Default context"
   }
 }

@@ -29,7 +29,7 @@ INTERFACE zif_aff_ints_v1
   CONSTANTS:
     BEGIN OF co_logical_object_type,
       "! <p class="shorttext">Table Function</p>
-      "! Table Function
+      "! Table function
       table_function TYPE ty_logical_object_type VALUE 'F',
       "! <p class="shorttext">CDS View</p>
       "! CDS view
@@ -80,7 +80,7 @@ INTERFACE zif_aff_ints_v1
       "! If true, the scenario can have multiple active models
       is_multi_active_model      TYPE abap_bool,
       "! <p class="shorttext">Data Management</p>
-      "! If true, the scenario uses Data Management
+      "! If true, the scenario uses data management
       is_data_management_enabled TYPE abap_bool,
       "! <p class="shorttext">Automate Turnkey Switch On</p>
       "! If true, scenario will be turnkey enabled to automate the operations
@@ -122,10 +122,10 @@ INTERFACE zif_aff_ints_v1
     BEGIN OF ty_binding,
       "! <p class="shorttext">Binding Name</p>
       "! Name of the binding
-      name      TYPE zif_aff_types_v1=>ty_object_name_30,
-      "! <p class="shorttext">Reference object</p>
+      binding_name     TYPE zif_aff_types_v1=>ty_object_name_30,
+      "! <p class="shorttext">Reference Object</p>
       "! Reference object(for example - CDS view)
-      reference TYPE c LENGTH 36,
+      reference_object TYPE c LENGTH 36,
     END OF ty_binding,
 
     "! <p class="shorttext">Signature</p>
@@ -133,28 +133,28 @@ INTERFACE zif_aff_ints_v1
     BEGIN OF ty_signature,
       "! <p class="shorttext">Signature Name</p>
       "! Signature name
-      input_name           TYPE zif_aff_types_v1=>ty_object_name_30,
+      signature_name        TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Signature Type</p>
       "! Signature type
-      signature_type       TYPE c LENGTH 32,
+      signature_type        TYPE c LENGTH 32,
       "! <p class="shorttext">Description</p>
       "! Description
-      description          TYPE c LENGTH 100,
+      signature_description TYPE c LENGTH 100,
       "! <p class="shorttext">Field Name</p>
       "! Table or view field name
-      field_name           TYPE zif_aff_types_v1=>ty_object_name_30,
-      "! <p class="shorttext">Position</p>
+      field_name            TYPE zif_aff_types_v1=>ty_object_name_30,
+      "! <p class="shorttext">Field Position</p>
       "! Position of the field
-      field_position       TYPE i,
+      field_position        TYPE i,
       "! <p class="shorttext">Storage Type</p>
       "! Storage type of the field
-      storage_type         TYPE c LENGTH 100,
+      storage_type          TYPE c LENGTH 100,
       "! <p class="shorttext">Role of Field</p>
       "! Role of field in an intelligent scenario (such as key, target)
-      field_type           TYPE c LENGTH 30,
+      field_role            TYPE c LENGTH 30,
       "! <p class="shorttext">Data Management Type</p>
       "! Data management type
-      data_management_type TYPE zif_aff_types_v1=>ty_object_name_30,
+      data_management_type  TYPE zif_aff_types_v1=>ty_object_name_30,
     END OF ty_signature,
 
     "! <p class="shorttext">Modelling Context</p>
@@ -162,13 +162,13 @@ INTERFACE zif_aff_ints_v1
     BEGIN OF ty_modelling_context,
       "! <p class="shorttext">Modelling Context Name</p>
       "! Modelling context name
-      name                 TYPE zif_aff_types_v1=>ty_object_name_30,
+      modelling_context_name        TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Modelling Context ID</p>
       "! Modelling context ID
-      modelling_context_id TYPE c LENGTH 36,
-      "! <p class="shorttext">Description</p>
-      "! Description
-      description          TYPE c LENGTH 100,
+      modelling_context_id          TYPE c LENGTH 36,
+      "! <p class="shorttext">Modelling Context Description</p>
+      "! Modelling context description
+      modelling_context_description TYPE c LENGTH 100,
     END OF ty_modelling_context,
 
     "! <p class="shorttext">Parameter Signature</p>
@@ -176,37 +176,37 @@ INTERFACE zif_aff_ints_v1
     BEGIN OF ty_parameter,
       "! <p class="shorttext">Parameter Name</p>
       "! Parameter name
-      name           TYPE c LENGTH 256,
+      parameter_name        TYPE c LENGTH 256,
       "! <p class="shorttext">Parameter Type</p>
       "! Parameter type
-      type           TYPE c LENGTH 32,
+      parameter_type        TYPE c LENGTH 32,
       "! <p class="shorttext">Parameter Description</p>
       "! Parameter description
-      description    TYPE string,
+      parameter_description TYPE string,
       "! <p class="shorttext">Storage Type</p>
       "! Storage type
-      storage_type   TYPE c LENGTH 100,
+      storage_type          TYPE c LENGTH 100,
       "! <p class="shorttext">Context Flag</p>
       "! If true, then input context value is available
-      has_context    TYPE abap_bool,
+      has_context           TYPE abap_bool,
       "! <p class="shorttext">Parameter Size</p>
       "! Parameter size
-      parameter_size TYPE i,
+      parameter_size        TYPE i,
       "! <p class="shorttext">Parameter ID</p>
       "! Parameter ID
-      parameter_id   TYPE c LENGTH 36,
+      parameter_id          TYPE c LENGTH 36,
       "! <p class="shorttext">Parameter Context</p>
       "! Parameter context
-      context        TYPE c LENGTH 1000,
+      parameter_context     TYPE c LENGTH 1000,
       "! <p class="shorttext">Parameter Value</p>
       "! Parameter value
-      value          TYPE string,
+      parameter_value       TYPE string,
     END OF ty_parameter,
 
     "! <p class="shorttext">Additional Information</p>
     "! Additional information
     BEGIN OF ty_additional_info,
-      "! <p class="shorttext">Key</p>
+      "! <p class="shorttext">Additional Info Key</p>
       "! Additional information key
       additional_info_key TYPE c LENGTH 50,
       "! <p class="shorttext">Value ID</p>
@@ -220,10 +220,10 @@ INTERFACE zif_aff_ints_v1
       position_id         TYPE i,
       "! <p class="shorttext">Key Text Label</p>
       "! Additional information key text label
-      key_label           TYPE c LENGTH 255,
+      key_text_label      TYPE c LENGTH 255,
       "! <p class="shorttext">Value Text Label</p>
       "! Additional information value text label
-      value_label         TYPE c LENGTH 255,
+      value_text_label    TYPE c LENGTH 255,
     END OF ty_additional_info,
 
     "! <p class="shorttext">SBS Segment Field</p>
@@ -232,8 +232,8 @@ INTERFACE zif_aff_ints_v1
       "! <p class="shorttext">Field Name</p>
       "! Table or view field name
       field_name     TYPE c LENGTH 30,
-      "! <p class="shorttext">Position</p>
-      "! Position
+      "! <p class="shorttext">Field Position</p>
+      "! Field position
       field_position TYPE i,
       "! <p class="shorttext">Is Key Field</p>
       "! If true, the field is a key field
