@@ -66,13 +66,16 @@ INTERFACE zif_aff_ints_v1
       logical_object_type TYPE ty_logical_object_type,
     END OF ty_scenario_ddl_object,
 
-    "! <p class="shorttext">Intelligent Scenario</p>
-    "! Intelligent scenario
-    BEGIN OF ty_intelligent_scenario,
+    "! <p class="shorttext">General Information</p>
+    "! General information
+    BEGIN OF ty_general_information,
       "! <p class="shorttext">Intelligent Scenario Type</p>
       "! Intelligent scenario type
       "! $required
       scenario_type              TYPE c LENGTH 256,
+      "! <p class="shorttext">Scenario Technology</p>
+      "! Scenario technology
+      scenario_technology        TYPE c LENGTH 20,
       "! <p class="shorttext">Extensible</p>
       "! If true, the scenario is extensible
       is_extensible              TYPE abap_bool,
@@ -82,21 +85,6 @@ INTERFACE zif_aff_ints_v1
       "! <p class="shorttext">Data Management</p>
       "! If true, the scenario uses data management
       is_data_management_enabled TYPE abap_bool,
-      "! <p class="shorttext">Automate Turnkey Switch On</p>
-      "! If true, scenario will be turnkey enabled to automate the operations
-      is_turnkey_auto_switch_on  TYPE abap_bool,
-      "! <p class="shorttext">Turnkey Implementation Type</p>
-      "! Type of turnkey implementation
-      turnkey_type               TYPE c LENGTH 10,
-      "! <p class="shorttext">Scenario Technology</p>
-      "! Scenario technology
-      scenario_technology        TYPE c LENGTH 20,
-      "! <p class="shorttext">Prediction Class</p>
-      "! Prediction class
-      prediction_class           TYPE zif_aff_types_v1=>ty_object_name_30,
-      "! <p class="shorttext">Prerequisite Check Class</p>
-      "! Prerequisite check class
-      prerequisite_check_class   TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Scenario Technical ID</p>
       "! Scenario technical ID
       scenario_technical_id      TYPE c LENGTH 64,
@@ -106,16 +94,43 @@ INTERFACE zif_aff_ints_v1
       "! <p class="shorttext">ISLM Framework Version</p>
       "! ISLM framework version
       islm_version               TYPE p LENGTH 4 DECIMALS 2,
+    END OF ty_general_information,
+
+    "! <p class="shorttext">Class Information</p>
+    "! Class information
+    BEGIN OF ty_class_information,
+      "! <p class="shorttext">Prediction Class</p>
+      "! Prediction class
+      prediction_class         TYPE zif_aff_types_v1=>ty_object_name_30,
+      "! <p class="shorttext">Prerequisite Check Class</p>
+      "! Prerequisite check class
+      prerequisite_check_class TYPE zif_aff_types_v1=>ty_object_name_30,
+    END OF ty_class_information,
+
+    "! <p class="shorttext">Turnkey Information</p>
+    "! Turnkey information
+    BEGIN OF ty_turnkey_information,
+      "! <p class="shorttext">Automate Turnkey Switch On</p>
+      "! If true, scenario will be turnkey enabled to automate the operations
+      is_turnkey_auto_switch_on TYPE abap_bool,
+      "! <p class="shorttext">Turnkey Implementation Type</p>
+      "! Type of turnkey implementation
+      turnkey_type              TYPE c LENGTH 10,
       "! <p class="shorttext">Turnkey Class</p>
       "! Turnkey class
-      turnkey_class              TYPE zif_aff_types_v1=>ty_object_name_30,
+      turnkey_class             TYPE zif_aff_types_v1=>ty_object_name_30,
+    END OF ty_turnkey_information,
+
+    "! <p class="shorttext">Connection Information</p>
+    "! Connection information
+    BEGIN OF ty_connection_information,
       "! <p class="shorttext">Usage Type</p>
       "! Usage type of an intelligent scenario
-      usage_type                 TYPE c LENGTH 10,
+      usage_type    TYPE c LENGTH 10,
       "! <p class="shorttext">OAuth Profile</p>
       "! OAuth 2.0 client profile
-      oauth_profile              TYPE c LENGTH 30,
-    END OF ty_intelligent_scenario,
+      oauth_profile TYPE c LENGTH 30,
+    END OF ty_connection_information,
 
     "! <p class="shorttext">Dataset Binding</p>
     "! Scenario dataset binding
@@ -244,35 +259,45 @@ INTERFACE zif_aff_ints_v1
     "! Intelligent scenario
     BEGIN OF ty_main,
       "! $required
-      format_version       TYPE zif_aff_types_v1=>ty_format_version,
+      format_version         TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header               TYPE zif_aff_types_v1=>ty_header_60,
-      "! <p class="shorttext">Intelligent Scenario</p>
-      "! Intelligent scenario
+      header                 TYPE zif_aff_types_v1=>ty_header_60,
+      "! <p class="shorttext">General Information</p>
+      "! General information
       "! $required
-      intelligent_scenario TYPE ty_intelligent_scenario,
+      general_information    TYPE ty_general_information,
+      "! <p class="shorttext">Class Information</p>
+      "! Class information
+      "! $required
+      class_information      TYPE ty_class_information,
+      "! <p class="shorttext">Turnkey Information</p>
+      "! Turnkey information
+      turnkey_information    TYPE ty_turnkey_information,
+      "! <p class="shorttext">Connection Information</p>
+      "! Connection information
+      connection_information TYPE ty_connection_information,
       "! <p class="shorttext">Modelling Context</p>
       "! Intelligent scenario modelling context
-      modelling_context    TYPE ty_modelling_context,
+      modelling_context      TYPE ty_modelling_context,
       "! <p class="shorttext">Scenario Objects</p>
       "! Objects based on scenario
-      scenario_ddl_objects TYPE STANDARD TABLE OF ty_scenario_ddl_object WITH DEFAULT KEY,
+      scenario_ddl_objects   TYPE STANDARD TABLE OF ty_scenario_ddl_object WITH DEFAULT KEY,
       "! <p class="shorttext">Dataset Bindings</p>
       "! Scenario dataset bindings
-      bindings             TYPE STANDARD TABLE OF ty_binding WITH DEFAULT KEY,
+      bindings               TYPE STANDARD TABLE OF ty_binding WITH DEFAULT KEY,
       "! <p class="shorttext">Signatures</p>
       "! Scenario signatures
-      signatures           TYPE STANDARD TABLE OF ty_signature WITH DEFAULT KEY,
+      signatures             TYPE STANDARD TABLE OF ty_signature WITH DEFAULT KEY,
       "! <p class="shorttext">Parameter Signature</p>
       "! Scenario parameters signature
-      parameters           TYPE STANDARD TABLE OF ty_parameter WITH DEFAULT KEY,
+      parameters             TYPE STANDARD TABLE OF ty_parameter WITH DEFAULT KEY,
       "! <p class="shorttext">Additional Information</p>
       "! Scenario additional information
-      additional_info      TYPE STANDARD TABLE OF ty_additional_info WITH DEFAULT KEY,
+      additional_info        TYPE STANDARD TABLE OF ty_additional_info WITH DEFAULT KEY,
       "! <p class="shorttext">SBS Segment Fields</p>
       "! SBS Scenario Segment Fields
-      sbs_segment_fields   TYPE STANDARD TABLE OF ty_sbs_segment_field WITH DEFAULT KEY,
+      sbs_segment_fields     TYPE STANDARD TABLE OF ty_sbs_segment_field WITH DEFAULT KEY,
     END OF ty_main.
 ENDINTERFACE.

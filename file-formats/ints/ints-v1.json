@@ -57,9 +57,9 @@
         "originalLanguage"
       ]
     },
-    "intelligentScenario": {
-      "title": "Intelligent Scenario",
-      "description": "Intelligent scenario",
+    "generalInformation": {
+      "title": "General Information",
+      "description": "General information",
       "type": "object",
       "properties": {
         "scenarioType": {
@@ -67,6 +67,12 @@
           "description": "Intelligent scenario type",
           "type": "string",
           "maxLength": 256
+        },
+        "scenarioTechnology": {
+          "title": "Scenario Technology",
+          "description": "Scenario technology",
+          "type": "string",
+          "maxLength": 20
         },
         "isExtensible": {
           "title": "Extensible",
@@ -82,35 +88,6 @@
           "title": "Data Management",
           "description": "If true, the scenario uses data management",
           "type": "boolean"
-        },
-        "isTurnkeyAutoSwitchOn": {
-          "title": "Automate Turnkey Switch On",
-          "description": "If true, scenario will be turnkey enabled to automate the operations",
-          "type": "boolean"
-        },
-        "turnkeyType": {
-          "title": "Turnkey Implementation Type",
-          "description": "Type of turnkey implementation",
-          "type": "string",
-          "maxLength": 10
-        },
-        "scenarioTechnology": {
-          "title": "Scenario Technology",
-          "description": "Scenario technology",
-          "type": "string",
-          "maxLength": 20
-        },
-        "predictionClass": {
-          "title": "Prediction Class",
-          "description": "Prediction class",
-          "type": "string",
-          "maxLength": 30
-        },
-        "prerequisiteCheckClass": {
-          "title": "Prerequisite Check Class",
-          "description": "Prerequisite check class",
-          "type": "string",
-          "maxLength": 30
         },
         "scenarioTechnicalId": {
           "title": "Scenario Technical ID",
@@ -130,13 +107,63 @@
           "type": "number",
           "minimum": -99999.99,
           "maximum": 99999.99
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "scenarioType"
+      ]
+    },
+    "classInformation": {
+      "title": "Class Information",
+      "description": "Class information",
+      "type": "object",
+      "properties": {
+        "predictionClass": {
+          "title": "Prediction Class",
+          "description": "Prediction class",
+          "type": "string",
+          "maxLength": 30
+        },
+        "prerequisiteCheckClass": {
+          "title": "Prerequisite Check Class",
+          "description": "Prerequisite check class",
+          "type": "string",
+          "maxLength": 30
+        }
+      },
+      "additionalProperties": false
+    },
+    "turnkeyInformation": {
+      "title": "Turnkey Information",
+      "description": "Turnkey information",
+      "type": "object",
+      "properties": {
+        "isTurnkeyAutoSwitchOn": {
+          "title": "Automate Turnkey Switch On",
+          "description": "If true, scenario will be turnkey enabled to automate the operations",
+          "type": "boolean"
+        },
+        "turnkeyType": {
+          "title": "Turnkey Implementation Type",
+          "description": "Type of turnkey implementation",
+          "type": "string",
+          "maxLength": 10
         },
         "turnkeyClass": {
           "title": "Turnkey Class",
           "description": "Turnkey class",
           "type": "string",
           "maxLength": 30
-        },
+        }
+      },
+      "additionalProperties": false
+    },
+    "connectionInformation": {
+      "title": "Connection Information",
+      "description": "Connection information",
+      "type": "object",
+      "properties": {
         "usageType": {
           "title": "Usage Type",
           "description": "Usage type of an intelligent scenario",
@@ -150,10 +177,7 @@
           "maxLength": 30
         }
       },
-      "additionalProperties": false,
-      "required": [
-        "scenarioType"
-      ]
+      "additionalProperties": false
     },
     "modellingContext": {
       "title": "Modelling Context",
@@ -502,6 +526,7 @@
   "required": [
     "formatVersion",
     "header",
-    "intelligentScenario"
+    "generalInformation",
+    "classInformation"
   ]
 }

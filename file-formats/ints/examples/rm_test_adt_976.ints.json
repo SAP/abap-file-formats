@@ -1,23 +1,28 @@
 {
   "formatVersion": "1",
   "header": {
-    "description": "ADT Test 965",
+    "description": "Creation of scenario via ADT",
     "originalLanguage": "en"
   },
-  "intelligentScenario": {
+  "generalInformation": {
     "scenarioType": "SAPGENAI",
-    "isExtensible": true,
-    "isTurnkeyAutoSwitchOn": true,
-    "turnkeyType": "DEFAULT",
     "scenarioTechnology": "SIDEBYSIDE",
+    "isExtensible": true,
     "state": "Published",
-    "islmVersion": 1.0,
+    "islmVersion": 1.0
+  },
+  "classInformation": {},
+  "turnkeyInformation": {
+    "isTurnkeyAutoSwitchOn": true,
+    "turnkeyType": "DEFAULT"
+  },
+  "connectionInformation": {
     "usageType": "STATELESS",
     "oauthProfile": "ISLM_SAPGENAI_OAUTH_PRF_HCP"
   },
   "modellingContext": {
     "modellingContextName": "DEFAULT",
-    "modellingContextId": "6317387B9D71A70C6C9E025D46DC0066",
+    "modellingContextId": "7FD071C0C04C56148FE3424E30FFB40B",
     "modellingContextDescription": "Default context"
   }
 }
