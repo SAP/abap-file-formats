@@ -57,9 +57,9 @@
         "originalLanguage"
       ]
     },
-    "intelligentScenarioModel": {
-      "title": "Intelligent Scenario Model",
-      "description": "Intelligent scenario model",
+    "generalInformation": {
+      "title": "General Information",
+      "description": "General information",
       "type": "object",
       "properties": {
         "modelName": {
@@ -67,6 +67,12 @@
           "description": "Model name",
           "type": "string",
           "maxLength": 30
+        },
+        "modelType": {
+          "title": "Model Type",
+          "description": "Model type",
+          "type": "string",
+          "maxLength": 256
         },
         "intelligentScenario": {
           "title": "Intelligent Scenario",
@@ -79,12 +85,6 @@
           "description": "Modelling context ID which is the parent of the model",
           "type": "string",
           "maxLength": 36
-        },
-        "modelType": {
-          "title": "Model Type",
-          "description": "Model type",
-          "type": "string",
-          "maxLength": 256
         },
         "adapterId": {
           "title": "Adapter ID",
@@ -228,6 +228,6 @@
   "required": [
     "formatVersion",
     "header",
-    "intelligentScenarioModel"
+    "generalInformation"
   ]
 }

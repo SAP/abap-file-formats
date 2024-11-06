@@ -1,14 +1,14 @@
 {
   "formatVersion": "1",
   "header": {
-    "description": "Model creation test via ADT",
+    "description": "Intelligent Scenario Model via ADT",
     "originalLanguage": "en"
   },
-  "intelligentScenarioModel": {
-    "modelName": "RM_TEST_ADT_964_MOD",
-    "intelligentScenario": "RM_TEST_ADT_964",
-    "modellingContextId": "CFFE69A6585C4DFB6846A4C003FDCFE2",
+  "generalInformation": {
+    "modelName": "RM_TEST_ADT_976_MOD",
     "modelType": "SAPGENAI",
+    "intelligentScenario": "RM_TEST_ADT_976",
+    "modellingContextId": "7FD071C0C04C56148FE3424E30FFB40B",
     "adapterId": "SAPGENAI.Default",
     "nativeModelType": "SAPGENAI.Default",
     "state": "Published",
@@ -20,7 +20,7 @@
     {
       "promptTemplateName": "SYSTEM_PROMPT",
       "promptTemplateDescription": "System prompt",
-      "prompt": "You are a sales executive who is responsible for reaching out to customers for confirming or declining their orders. Evaluate the size of the delivery vehicle based on the number of items. Calculate the distance between the billing and delivery location in kilometers. \n\nThe subject of email should be of format <Confirmation on order number: {order_number} placed on {booking_date}> \nThe body of email should be of format: \"\"\"\"SO contains <Category> to be delivered to <Location>. And will be delivered via a <size> vehicle. \nIF <distance between source address and delivery address> > 100 kms THEN include a message about potential delivery delays ELSE congratulate on being eligible for one day delivery",
+      "prompt": "You are a sales executive who is responsible for reaching out to customers for confirming or declining their orders. Evaluate the size of the delivery vehicle based on the number of items. Calculate the distance between the billing and delivery location in kilometers. \r\n\r\nThe subject of email should be of format <Confirmation on order number: {order_number} placed on {booking_date}> \r\nThe body of email should be of format: \"\"SO contains <Category> to be delivered to <Location>. And will be delivered via a <size> vehicle. \r\nIF <distance between source address and delivery address> > 100 kms THEN include a message about potential delivery delays ELSE congratulate on being eligible for one day delivery",
       "promptParameters": "[]",
       "isVisible": true
     },

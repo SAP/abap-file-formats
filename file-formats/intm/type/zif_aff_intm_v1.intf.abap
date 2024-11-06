@@ -2,21 +2,21 @@ INTERFACE zif_aff_intm_v1
   PUBLIC.
 
   TYPES:
-    "! <p class="shorttext">Intelligent Scenario Model</p>
-    "! Intelligent scenario model
-    BEGIN OF ty_intelligent_scenario_model,
+    "! <p class="shorttext">General Information</p>
+    "! General information
+    BEGIN OF ty_general_information,
       "! <p class="shorttext">Model Name</p>
       "! Model name
       model_name           TYPE c LENGTH 30,
+      "! <p class="shorttext">Model Type</p>
+      "! Model type
+      model_type           TYPE c LENGTH 256,
       "! <p class="shorttext">Intelligent Scenario</p>
       "! Intelligent scenario of the model
       intelligent_scenario TYPE c LENGTH 20,
       "! <p class="shorttext">Modelling Context ID</p>
       "! Modelling context ID which is the parent of the model
       modelling_context_id TYPE c LENGTH 36,
-      "! <p class="shorttext">Model Type</p>
-      "! Model type
-      model_type           TYPE c LENGTH 256,
       "! <p class="shorttext">Adapter ID</p>
       "! Adapter ID
       adapter_id           TYPE c LENGTH 32,
@@ -50,7 +50,7 @@ INTERFACE zif_aff_intm_v1
       "! <p class="shorttext">Large Language Model Version</p>
       "! Large language model version
       llm_version          TYPE c LENGTH 30,
-    END OF ty_intelligent_scenario_model,
+    END OF ty_general_information,
 
     "! <p class="shorttext">Segment Field</p>
     "! Model segment field
@@ -92,20 +92,20 @@ INTERFACE zif_aff_intm_v1
     "! Intelligent scenario model
     BEGIN OF ty_main,
       "! $required
-      format_version             TYPE zif_aff_types_v1=>ty_format_version,
+      format_version         TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header                     TYPE zif_aff_types_v1=>ty_header_60,
-      "! <p class="shorttext">Intelligent Scenario Model</p>
-      "! Intelligent scenario model
+      header                 TYPE zif_aff_types_v1=>ty_header_60,
+      "! <p class="shorttext">General Information</p>
+      "! General information
       "! $required
-      intelligent_scenario_model TYPE ty_intelligent_scenario_model,
+      general_information    TYPE ty_general_information,
       "! <p class="shorttext">Model Segment Fields</p>
       "! Model segment fields
-      model_segment_fields       TYPE STANDARD TABLE OF ty_segment_field WITH DEFAULT KEY,
+      model_segment_fields   TYPE STANDARD TABLE OF ty_segment_field WITH DEFAULT KEY,
       "! <p class="shorttext">Model Prompt Templates</p>
       "! Model prompt templates
-      model_prompt_templates     TYPE STANDARD TABLE OF ty_prompt_template WITH DEFAULT KEY,
+      model_prompt_templates TYPE STANDARD TABLE OF ty_prompt_template WITH DEFAULT KEY,
     END OF ty_main.
 ENDINTERFACE.
