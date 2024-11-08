@@ -17,7 +17,7 @@ INTERFACE zif_aff_smbc_v1
     END OF co_page_variant_management,
     "! <p class="shorttext synchronized">Selection Mode</p>
     BEGIN OF co_selection_mode,
-      "! <p class="shorttext synchronized">Automatic</p>
+      "! <p class="shorttext synchronized">Automatic (deprecated)</p>
       auto   TYPE string VALUE 'Auto',
       "! <p class="shorttext synchronized">Select Multiple Entries</p>
       multi  TYPE string VALUE 'Multi',
@@ -159,10 +159,9 @@ INTERFACE zif_aff_smbc_v1
       "! $default '5'
       row_count                     TYPE i,
       "! <p class="shorttext synchronized">Frozen Column Count</p>
-      "! You can freeze the first columns of a table so that they always remain visible when scrolling the table horizontally
+      "! You can freeze the first columns of a table so that they always remain visible when scrolling horizontally
       "! $minimum 0
       "! $maximum 30
-      "! $default '0'
       frozen_column_count           TYPE i,
       "! <p class="shorttext synchronized">Table Creation Mode</p>
       "! $values {@link zif_aff_smbc_v1.data:co_creation_mode_name}
