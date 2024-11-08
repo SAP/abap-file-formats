@@ -239,7 +239,7 @@
                   "none"
                 ],
                 "enumTitles": [
-                  "Automatic",
+                  "Automatic (deprecated)",
                   "Select Multiple Entries",
                   "Select Single Entry",
                   "None"
@@ -279,11 +279,10 @@
               },
               "frozenColumnCount": {
                 "title": "Frozen Column Count",
-                "description": "You can freeze the first columns of a table so that they always remain visible when scrolling the table horizontally",
+                "description": "You can freeze the first columns of a table so that they always remain visible when scrolling horizontally",
                 "type": "integer",
                 "minimum": 0,
-                "maximum": 30,
-                "default": 0
+                "maximum": 30
               },
               "creationModeName": {
                 "title": "Table Creation Mode",
