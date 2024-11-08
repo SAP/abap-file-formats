@@ -54,21 +54,21 @@
         "originalLanguage"
       ]
     },
-    "recipientDetails": {
-      "title": "Recipient Details",
-      "description": "Recipient details",
+    "generalInformation": {
+      "title": "General Information",
+      "description": "General information",
       "type": "object",
       "properties": {
-        "namespaceObjectName": {
-          "title": "Namespace Object Name",
-          "description": "Namespace object name of the recipient",
+        "namespace": {
+          "title": "Namespace",
+          "description": "Namespace of the recipient",
           "type": "string",
           "maxLength": 15
         }
       },
       "additionalProperties": false,
       "required": [
-        "namespaceObjectName"
+        "namespace"
       ]
     }
   },
@@ -76,6 +76,6 @@
   "required": [
     "formatVersion",
     "header",
-    "recipientDetails"
+    "generalInformation"
   ]
 }
