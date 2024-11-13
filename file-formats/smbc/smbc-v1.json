@@ -194,6 +194,11 @@
                 "title": "Editable Header Content",
                 "description": "If true, the header content is changeable in edit mode",
                 "type": "boolean"
+              },
+              "showTransportSelectionStrip": {
+                "title": "Show Transport Selection Strip",
+                "description": "If true, the selected transport request and transport request select action are displayed in a message strip.",
+                "type": "boolean"
               }
             },
             "additionalProperties": false
@@ -234,12 +239,17 @@
                   "none"
                 ],
                 "enumTitles": [
-                  "Automatic",
+                  "Automatic (deprecated)",
                   "Select Multiple Entries",
                   "Select Single Entry",
                   "None"
                 ],
-                "default": "auto"
+                "default": "multi"
+              },
+              "selectAll": {
+                "title": "Select All",
+                "description": "Enable Select all checkbox",
+                "type": "boolean"
               },
               "rowCountMode": {
                 "title": "Row Count Mode",
@@ -266,6 +276,13 @@
                 "minimum": 1,
                 "maximum": 1000,
                 "default": 5
+              },
+              "frozenColumnCount": {
+                "title": "Frozen Column Count",
+                "description": "You can freeze the first columns of a table so that they always remain visible when scrolling horizontally",
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 30
               },
               "creationModeName": {
                 "title": "Table Creation Mode",
@@ -313,6 +330,11 @@
               "condensedTableLayout": {
                 "title": "Condensed Table Layout",
                 "description": "If true, display rows in a condensed way. Only applicaple to Table Type 'GridTable'.",
+                "type": "boolean"
+              },
+              "widthIncludingColumnHeader": {
+                "title": "Include Column Headers in Width Calculation",
+                "description": "If true, include the column labels while calculating the default column width. By default, the column width is calculated based on the type of the content",
                 "type": "boolean"
               },
               "disablePaste": {
