@@ -11,7 +11,7 @@ INTERFACE zif_aff_aifr_v1
       "! <p class="shorttext">AIF Recipient</p>
       "! SAP Application Interface recipient
       "! $required
-      aif_recipient TYPE c LENGTH 25,  "/AIF/RECIPIENT_NAME
+      aif_recipient TYPE c LENGTH 25, 
     END OF ty_general_information,
 
     "! <p class="shorttext">Recipient</p>
