@@ -64,11 +64,18 @@
           "description": "Namespace of the recipient",
           "type": "string",
           "maxLength": 15
+        },
+        "aifRecipient": {
+          "title": "AIF Recipient",
+          "description": "SAP Application Interface recipient",
+          "type": "string",
+          "maxLength": 25
         }
       },
       "additionalProperties": false,
       "required": [
-        "namespace"
+        "namespace",
+        "aifRecipient"
       ]
     }
   },
