@@ -65,7 +65,7 @@
           "type": "string",
           "maxLength": 15
         },
-        "aifRecipientName": {
+        "aifRecipient": {
           "title": "AIF Recipient",
           "description": "SAP Application Interface recipient",
           "type": "string",
@@ -75,7 +75,7 @@
       "additionalProperties": false,
       "required": [
         "namespace",
-        "aifRecipientName"
+        "aifRecipient"
       ]
     }
   },
