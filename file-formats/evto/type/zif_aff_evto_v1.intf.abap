@@ -3,7 +3,7 @@ INTERFACE zif_aff_evto_v1
 
   TYPES:
     "! <p class="shorttext">Event Object</p>
-    "! SAP object type
+    "! Event Object
     BEGIN OF ty_main,
       "! $required
       format_version  TYPE zif_aff_types_v1=>ty_format_version,
