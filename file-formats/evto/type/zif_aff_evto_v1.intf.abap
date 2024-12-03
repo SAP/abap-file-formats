@@ -1,0 +1,40 @@
+INTERFACE if_aff_evto_v1
+  PUBLIC.
+
+  TYPES:
+    "! <p class="shorttext">Event Object</p>
+    "! SAP object type
+    BEGIN OF ty_main,
+      "! $required
+      format_version  TYPE if_aff_types_v1=>ty_format_version,
+
+      "! <p class="shorttext">Header</p>
+      "! Header
+      "! $required
+      header          TYPE if_aff_types_v1=>ty_header_60_cloud,
+
+      "! <p class="shorttext">Major Version</p>
+      "! Major version
+      "! $minimum 1
+      "! $required
+      major_version   TYPE i,
+
+      "! <p class="shorttext">Minor Version</p>
+      "! Minor version
+      "! $minimum 0
+      "! $required
+      minor_version   TYPE i,
+
+      "! <p class="shorttext">Patch Version</p>
+      "! Patch version
+      "! $minimum 0
+      "! $required
+      patch_version   TYPE i,
+
+      "! <p class="shorttext">SAP Object Type</p>
+      "! SAP Object Type
+      "! $required
+      sap_object_type TYPE c LENGTH 30,
+
+    END OF ty_main.
+ENDINTERFACE.
