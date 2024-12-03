@@ -1,4 +1,4 @@
-INTERFACE if_aff_evto_v1
+INTERFACE zif_aff_evto_v1
   PUBLIC.
 
   TYPES:
@@ -6,12 +6,12 @@ INTERFACE if_aff_evto_v1
     "! SAP object type
     BEGIN OF ty_main,
       "! $required
-      format_version  TYPE if_aff_types_v1=>ty_format_version,
+      format_version  TYPE zif_aff_types_v1=>ty_format_version,
 
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header          TYPE if_aff_types_v1=>ty_header_60_cloud,
+      header          TYPE zif_aff_types_v1=>ty_header_60_cloud,
 
       "! <p class="shorttext">Major Version</p>
       "! Major version
