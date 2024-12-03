@@ -4,7 +4,9 @@
     "description": "ABAP Platform Reference Content for Country",
     "originalLanguage": "en"
   },
-  "attributes": {},
+  "attributes": {
+    "scopeRelevant": false
+  },
   "customizingObjects": [
     {
       "objectName": "ADDR_PCDFORMAT",
@@ -26,6 +28,8 @@
           "dataRecords": [
             {
               "keyValue": "BN",
+              "incomplete": false,
+              "operationAtActivation": "modify",
               "data": [
                 {
                   "fieldName": "COUNTRY",
@@ -39,6 +43,8 @@
             },
             {
               "keyValue": "BR",
+              "incomplete": false,
+              "operationAtActivation": "modify",
               "data": [
                 {
                   "fieldName": "COUNTRY",
@@ -78,6 +84,8 @@
           "dataRecords": [
             {
               "keyValue": "BN BE",
+              "incomplete": false,
+              "operationAtActivation": "modify",
               "data": [
                 {
                   "fieldName": "BLAND",
@@ -103,6 +111,8 @@
             },
             {
               "keyValue": "BN BM",
+              "incomplete": false,
+              "operationAtActivation": "modify",
               "data": [
                 {
                   "fieldName": "BLAND",
@@ -128,6 +138,8 @@
             },
             {
               "keyValue": "BN TE",
+              "incomplete": false,
+              "operationAtActivation": "modify",
               "data": [
                 {
                   "fieldName": "BLAND",
@@ -153,6 +165,8 @@
             },
             {
               "keyValue": "BN TU",
+              "incomplete": false,
+              "operationAtActivation": "modify",
               "data": [
                 {
                   "fieldName": "BLAND",
@@ -178,6 +192,8 @@
             },
             {
               "keyValue": "BR AC",
+              "incomplete": false,
+              "operationAtActivation": "modify",
               "data": [
                 {
                   "fieldName": "BLAND",
@@ -208,6 +224,8 @@
             },
             {
               "keyValue": "BR AL",
+              "incomplete": false,
+              "operationAtActivation": "modify",
               "data": [
                 {
                   "fieldName": "BLAND",
@@ -238,6 +256,8 @@
             },
             {
               "keyValue": "BR AM",
+              "incomplete": false,
+              "operationAtActivation": "modify",
               "data": [
                 {
                   "fieldName": "BLAND",
@@ -268,6 +288,8 @@
             },
             {
               "keyValue": "BR AP",
+              "incomplete": false,
+              "operationAtActivation": "modify",
               "data": [
                 {
                   "fieldName": "BLAND",
@@ -298,6 +320,8 @@
             },
             {
               "keyValue": "BR BA",
+              "incomplete": false,
+              "operationAtActivation": "modify",
               "data": [
                 {
                   "fieldName": "BLAND",
@@ -328,6 +352,8 @@
             },
             {
               "keyValue": "BR CE",
+              "incomplete": false,
+              "operationAtActivation": "modify",
               "data": [
                 {
                   "fieldName": "BLAND",
@@ -358,6 +384,8 @@
             },
             {
               "keyValue": "BR DF",
+              "incomplete": false,
+              "operationAtActivation": "modify",
               "data": [
                 {
                   "fieldName": "BLAND",
@@ -388,6 +416,8 @@
             },
             {
               "keyValue": "BR ES",
+              "incomplete": false,
+              "operationAtActivation": "modify",
               "data": [
                 {
                   "fieldName": "BLAND",
@@ -418,6 +448,8 @@
             },
             {
               "keyValue": "BR GO",
+              "incomplete": false,
+              "operationAtActivation": "modify",
               "data": [
                 {
                   "fieldName": "BLAND",
@@ -448,6 +480,8 @@
             },
             {
               "keyValue": "BR MA",
+              "incomplete": false,
+              "operationAtActivation": "modify",
               "data": [
                 {
                   "fieldName": "BLAND",
@@ -478,6 +512,8 @@
             },
             {
               "keyValue": "BR MG",
+              "incomplete": false,
+              "operationAtActivation": "modify",
               "data": [
                 {
                   "fieldName": "BLAND",
@@ -508,6 +544,8 @@
             },
             {
               "keyValue": "BR MS",
+              "incomplete": false,
+              "operationAtActivation": "modify",
               "data": [
                 {
                   "fieldName": "BLAND",
@@ -538,6 +576,8 @@
             },
             {
               "keyValue": "BR MT",
+              "incomplete": false,
+              "operationAtActivation": "modify",
               "data": [
                 {
                   "fieldName": "BLAND",
@@ -568,6 +608,8 @@
             },
             {
               "keyValue": "BR PA",
+              "incomplete": false,
+              "operationAtActivation": "modify",
               "data": [
                 {
                   "fieldName": "BLAND",
@@ -593,6 +635,8 @@
             },
             {
               "keyValue": "BR PB",
+              "incomplete": false,
+              "operationAtActivation": "modify",
               "data": [
                 {
                   "fieldName": "BLAND",
@@ -623,6 +667,8 @@
             },
             {
               "keyValue": "BR PE",
+              "incomplete": false,
+              "operationAtActivation": "modify",
               "data": [
                 {
                   "fieldName": "BLAND",
@@ -653,6 +699,8 @@
             },
             {
               "keyValue": "BR PI",
+              "incomplete": false,
+              "operationAtActivation": "modify",
               "data": [
                 {
                   "fieldName": "BLAND",
@@ -683,6 +731,8 @@
             },
             {
               "keyValue": "BR PR",
+              "incomplete": false,
+              "operationAtActivation": "modify",
               "data": [
                 {
                   "fieldName": "BLAND",
@@ -713,6 +763,8 @@
             },
             {
               "keyValue": "BR RJ",
+              "incomplete": false,
+              "operationAtActivation": "modify",
               "data": [
                 {
                   "fieldName": "BLAND",
@@ -743,6 +795,8 @@
             },
             {
               "keyValue": "BR RN",
+              "incomplete": false,
+              "operationAtActivation": "modify",
               "data": [
                 {
                   "fieldName": "BLAND",
@@ -768,6 +822,8 @@
             },
             {
               "keyValue": "BR RO",
+              "incomplete": false,
+              "operationAtActivation": "modify",
               "data": [
                 {
                   "fieldName": "BLAND",
@@ -798,6 +854,8 @@
             },
             {
               "keyValue": "BR RR",
+              "incomplete": false,
+              "operationAtActivation": "modify",
               "data": [
                 {
                   "fieldName": "BLAND",
@@ -828,6 +886,8 @@
             },
             {
               "keyValue": "BR RS",
+              "incomplete": false,
+              "operationAtActivation": "modify",
               "data": [
                 {
                   "fieldName": "BLAND",
@@ -858,6 +918,8 @@
             },
             {
               "keyValue": "BR SC",
+              "incomplete": false,
+              "operationAtActivation": "modify",
               "data": [
                 {
                   "fieldName": "BLAND",
@@ -888,6 +950,8 @@
             },
             {
               "keyValue": "BR SE",
+              "incomplete": false,
+              "operationAtActivation": "modify",
               "data": [
                 {
                   "fieldName": "BLAND",
@@ -918,6 +982,8 @@
             },
             {
               "keyValue": "BR SP",
+              "incomplete": false,
+              "operationAtActivation": "modify",
               "data": [
                 {
                   "fieldName": "BLAND",
@@ -948,6 +1014,8 @@
             },
             {
               "keyValue": "BR TO",
+              "incomplete": false,
+              "operationAtActivation": "modify",
               "data": [
                 {
                   "fieldName": "BLAND",
@@ -1096,6 +1164,8 @@
           "dataRecords": [
             {
               "keyValue": "BN",
+              "incomplete": false,
+              "operationAtActivation": "modify",
               "data": [
                 {
                   "fieldName": "ADDRS"
@@ -1239,6 +1309,8 @@
             },
             {
               "keyValue": "BR",
+              "incomplete": false,
+              "operationAtActivation": "modify",
               "data": [
                 {
                   "fieldName": "ADDRS",
