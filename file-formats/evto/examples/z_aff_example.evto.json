@@ -4,8 +4,10 @@
     "description": "Example Event Object.",
     "originalLanguage": "en"
   },
-  "majorVersion": 1,
-  "minorVersion": 0,
-  "patchVersion": 4,
-  "sapObjectType": "Z_AFF_EXAMPLE"
+  "generalInformation": {
+    "sapObjectType": "Z_AFF_EXAMPLE",
+    "majorVersion": 1,
+    "minorVersion": 0,
+    "patchVersion": 4
+  }
 }

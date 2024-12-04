@@ -54,41 +54,52 @@
         "originalLanguage"
       ]
     },
-    "majorVersion": {
-      "title": "Major Version",
-      "description": "Major version",
-      "type": "integer",
-      "minimum": 1,
-      "maximum": 2147483647
-    },
-    "minorVersion": {
-      "title": "Minor Version",
-      "description": "Minor version",
-      "type": "integer",
-      "minimum": 0,
-      "maximum": 2147483647
-    },
-    "patchVersion": {
-      "title": "Patch Version",
-      "description": "Patch version",
-      "type": "integer",
-      "minimum": 0,
-      "maximum": 2147483647
-    },
-    "sapObjectType": {
-      "title": "SAP Object Type",
-      "description": "SAP Object Type",
-      "type": "string",
-      "maxLength": 30
+    "generalInformation": {
+      "title": "General Information",
+      "description": "General information",
+      "type": "object",
+      "properties": {
+        "sapObjectType": {
+          "title": "SAP Object Type",
+          "description": "SAP Object Type",
+          "type": "string",
+          "maxLength": 30
+        },
+        "majorVersion": {
+          "title": "Major Version",
+          "description": "Major version",
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2147483647
+        },
+        "minorVersion": {
+          "title": "Minor Version",
+          "description": "Minor version",
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2147483647
+        },
+        "patchVersion": {
+          "title": "Patch Version",
+          "description": "Patch version",
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2147483647
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "sapObjectType",
+        "majorVersion",
+        "minorVersion",
+        "patchVersion"
+      ]
     }
   },
   "additionalProperties": false,
   "required": [
     "formatVersion",
     "header",
-    "majorVersion",
-    "minorVersion",
-    "patchVersion",
-    "sapObjectType"
+    "generalInformation"
   ]
 }
