@@ -47,7 +47,7 @@ INTERFACE zif_aff_scp1_v1
       "! <p class="shorttext">Table (with Text Table)</p>
       "! All tables must have a generated table maintenance dialog
       table_with_text_table         TYPE ty_object_type 
-      VALUE if_svim_constants=>mc_customizing_objtype-table_with_text_table,
+VALUE if_svim_constants=>mc_customizing_objtype-table_with_text_table,
       "! <p class="shorttext">Individual Transaction Object</p>
       "! Different tables can be grouped together as individual transport objects.
       "! Only explicitly specified table keys are exported
