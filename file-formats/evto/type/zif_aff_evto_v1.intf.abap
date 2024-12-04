@@ -43,6 +43,7 @@ INTERFACE zif_aff_evto_v1
 
       "! <p class="shorttext">General Information</p>
       "! General information
+      "! $required
       general_information TYPE ty_general_information,
     END OF ty_main.
 ENDINTERFACE.
