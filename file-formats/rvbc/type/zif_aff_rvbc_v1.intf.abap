@@ -26,7 +26,7 @@ INTERFACE zif_aff_rvbc_v1
       "! <p class="shorttext">Application ID</p>
       "! Application ID
       "! $required
-      application               TYPE rvb_app_id,
+      application                TYPE rvb_app_id,
       "! <p class="shorttext">Source</p>
       "! Source
       "! $required
