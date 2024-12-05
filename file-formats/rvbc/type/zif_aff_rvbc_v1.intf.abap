@@ -3,7 +3,7 @@ INTERFACE zif_aff_rvbc_v1
   PUBLIC.
   "! $values { @link zif_aff_rvbc_v1.data:co_extensibility_mode }
   "! $default { @link zif_aff_rvbc_v1.data:co_extensibility_mode.not_supported }
-  TYPES ty_extensibility_mode TYPE numc2.
+  TYPES ty_extensibility_mode TYPE n LENGTH 2.
   CONSTANTS:
     BEGIN OF co_extensibility_mode,
       "! <p class="shorttext">Fully supported include custom analytical queries</p>
