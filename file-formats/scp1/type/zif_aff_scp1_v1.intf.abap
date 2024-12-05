@@ -9,11 +9,11 @@ INTERFACE zif_aff_scp1_v1
     BEGIN OF co_type,
       "! <p class="shorttext">BC Set With Direct Value Assignment</p>
       "! A BC Set contains selected data from any number of Customizing objects/tables
-      simple       TYPE ty_type VALUE if_scpr_constants=>mc_bcset_type-simple_bcset,
+      simple       TYPE ty_type VALUE 'TMV',
       "! <p class="shorttext">Hierarchical BC Sets</p>
       "! A hierarchical BC Set comprises several other BC Sets, which can also be hierarchical.
       "! The hierarchy can have any number of levels
-      hierarchical TYPE ty_type VALUE if_scpr_constants=>mc_bcset_type-hierarchical_bcset,
+      hierarchical TYPE ty_type VALUE 'TMP',
     END OF co_type.
 
   TYPES:
@@ -24,6 +24,7 @@ INTERFACE zif_aff_scp1_v1
       "! Type of BC Set i.e. a simple BC Set or hierarchical BC Set, which contains several other BC Sets
       "! $values {@link zif_aff_scp1_v1.data:co_type}
       "! $default {@link zif_aff_scp1_v1.data:co_type.simple}
+      "! $required
       type           TYPE ty_type,
       "! <p class="shorttext">Scoping Relevant</p>
       "! Scope Relevant
@@ -39,21 +40,21 @@ INTERFACE zif_aff_scp1_v1
     BEGIN OF co_object_type,
       "! <p class="shorttext">View Cluster</p>
       "! A view cluster is a group of maintenance dialogs which are collected in one maintenance unit
-      view_cluster                  TYPE ty_object_type VALUE if_svim_constants=>mc_customizing_objtype-view_cluster,
+      view_cluster                  TYPE ty_object_type VALUE 'C',
       "! <p class="shorttext">Logical Transport Object</p>
       "! Different tables can be grouped together as logical transport objects. Always entire object is exported,
       "! not only explicitly specified table key
-      logical_transport_object      TYPE ty_object_type VALUE if_svim_constants=>mc_customizing_objtype-logical_transport,
+      logical_transport_object      TYPE ty_object_type VALUE 'L',
       "! <p class="shorttext">Table (with Text Table)</p>
       "! All tables must have a generated table maintenance dialog
-      table_with_text_table         TYPE ty_object_type VALUE if_svim_constants=>mc_customizing_objtype-table_with_text_table,
+      table_with_text_table         TYPE ty_object_type VALUE 'S',
       "! <p class="shorttext">Individual Transaction Object</p>
       "! Different tables can be grouped together as individual transport objects.
       "! Only explicitly specified table keys are exported
-      individual_transaction_object TYPE ty_object_type VALUE if_svim_constants=>mc_customizing_objtype-individual_transaction,
+      individual_transaction_object TYPE ty_object_type VALUE 'T',
       "! <p class="shorttext">View</p>
       "! All maintenance views must have a generated table maintenance dialog
-      view                          TYPE ty_object_type VALUE if_svim_constants=>mc_customizing_objtype-view,
+      view                          TYPE ty_object_type VALUE 'V',
     END OF co_object_type.
 
   "! <p class="shorttext">Data Record Operation at Activation</p>
@@ -64,10 +65,10 @@ INTERFACE zif_aff_scp1_v1
     BEGIN OF co_operation_at_activation,
       "! <p class="shorttext">Modify</p>
       "! Data records which are to be modified at activation
-      modify TYPE ty_operation_at_activation VALUE if_scpr_constants=>mc_operation_at_activation-modify,
+      modify TYPE ty_operation_at_activation VALUE '',
       "! <p class="shorttext">Delete</p>
       "! Data records which are to be deleted at activation are flagged with value 'L'
-      delete TYPE ty_operation_at_activation VALUE if_scpr_constants=>mc_operation_at_activation-delete,
+      delete TYPE ty_operation_at_activation VALUE 'L',
     END OF co_operation_at_activation.
 
   "! <p class="shorttext">Field Attribute Value</p>
@@ -78,10 +79,10 @@ INTERFACE zif_aff_scp1_v1
     BEGIN OF co_field_attribute,
       "! <p class="shorttext">Fixed Key Field Value</p>
       "! Fixed value for a key field. The value cannot be changed after activation
-      fixed_key_field TYPE ty_field_attribute_value VALUE if_scpr_constants=>mc_field_attribute_value-fixed_key_field,
+      fixed_key_field TYPE ty_field_attribute_value VALUE 'FKY',
       "! <p class="shorttext">Default Field Value</p>
       "! Default value of a data field
-      default_value   TYPE ty_field_attribute_value VALUE if_scpr_constants=>mc_field_attribute_value-default_value,
+      default_value   TYPE ty_field_attribute_value VALUE 'USE',
     END OF co_field_attribute.
 
   TYPES:
