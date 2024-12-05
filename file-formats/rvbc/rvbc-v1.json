@@ -62,13 +62,13 @@
       "description": "Booklet Definition",
       "type": "object",
       "properties": {
-        "reviewbookletapplication": {
+        "application": {
           "title": "Application ID",
           "description": "Application ID",
           "type": "string",
           "maxLength": 70
         },
-        "reviewbookletsource": {
+        "source": {
           "title": "Source",
           "description": "Source",
           "type": "string",
@@ -81,7 +81,7 @@
             "Custom"
           ]
         },
-        "reviewbookletstatus": {
+        "status": {
           "title": "Status",
           "description": "Status",
           "type": "string",
@@ -94,7 +94,7 @@
             "Final"
           ]
         },
-        "revbookletelmntconstcystatus": {
+        "elementConsistencyStatus": {
           "title": "Consistency Status",
           "description": "Consistency Status",
           "type": "string",
@@ -109,7 +109,7 @@
             "Error"
           ]
         },
-        "reviewbookletextensibilitymode": {
+        "extensibilityMode": {
           "title": "Extensibility Mode",
           "description": "Extensibility Mode",
           "type": "string",
@@ -130,13 +130,13 @@
           ],
           "default": "notSupported"
         },
-        "reviewbookletmainlanguage": {
+        "mainLanguage": {
           "title": "Main Language",
           "description": "Main Language",
           "type": "string",
           "minLength": 2
         },
-        "abaplanguageversion": {
+        "abapLanguageVersion": {
           "title": "ABAP Language Version",
           "description": "ABAP Language Version",
           "type": "string",
@@ -154,11 +154,11 @@
       },
       "additionalProperties": false,
       "required": [
-        "reviewbookletapplication",
-        "reviewbookletsource",
-        "reviewbookletstatus",
-        "revbookletelmntconstcystatus",
-        "reviewbookletextensibilitymode"
+        "application",
+        "source",
+        "status",
+        "elementConsistencyStatus",
+        "extensibilityMode"
       ]
     },
     "predefinedIna1Service": {
@@ -166,19 +166,19 @@
       "description": "Favorites",
       "type": "object",
       "properties": {
-        "reviewbookletina1service": {
+        "ina1ServiceId": {
           "title": "Service ID",
           "description": "Service ID",
           "type": "string",
           "maxLength": 30
         },
-        "ina1service": {
+        "ina1Service": {
           "title": "Service Name",
           "description": "Service Name",
           "type": "string",
           "maxLength": 40
         },
-        "reviewbookletina1servicetype": {
+        "serviceType": {
           "title": "Service Type",
           "description": "Service Type",
           "type": "string",
@@ -194,9 +194,9 @@
       },
       "additionalProperties": false,
       "required": [
-        "reviewbookletina1service",
-        "ina1service",
-        "reviewbookletina1servicetype"
+        "ina1ServiceId",
+        "ina1Service",
+        "serviceType"
       ]
     }
   },

@@ -26,29 +26,29 @@ INTERFACE zif_aff_rvbc_v1
       "! <p class="shorttext">Application ID</p>
       "! Application ID
       "! $required
-      ReviewBookletApplication       TYPE rvb_app_id,
+      application               TYPE rvb_app_id,
       "! <p class="shorttext">Source</p>
       "! Source
       "! $required
-      ReviewBookletSource            TYPE rvb_source,
+      source                    TYPE rvb_source,
       "! <p class="shorttext">Status</p>
       "! Status
       "! $required
-      ReviewBookletStatus            TYPE rvb_status,
+      status                    TYPE rvb_status,
       "! <p class="shorttext">Consistency Status</p>
       "! Consistency Status
       "! $required
-      RevBookletElmntConstcyStatus   TYPE rvb_constcy_status,
+      element_consistency_status TYPE rvb_constcy_status,
       "! <p class="shorttext">Extensibility Mode</p>
       "! Extensibility Mode
       "! $required
-      ReviewBookletExtensibilityMode TYPE ty_extensibility_mode,
+      extensibility_mode        TYPE ty_extensibility_mode,
       "! <p class="shorttext">Main Language</p>
       "! Main Language
-      ReviewBookletMainLanguage      TYPE spras,
+      main_language             TYPE spras,
       "! <p class="shorttext">ABAP Language Version</p>
       "! ABAP Language Version
-      ABAPLanguageVersion            TYPE abap_language_version,
+      abap_language_version     TYPE abap_language_version,
 
     END OF ty_booklet_definition.
 
@@ -59,15 +59,15 @@ INTERFACE zif_aff_rvbc_v1
       "! <p class="shorttext">Service ID</p>
       "! Service ID
       "! $required
-      ReviewBookletINA1Service     TYPE rvb_ina1_service_id,
+      ina1_service_id TYPE rvb_ina1_service_id,
       "! <p class="shorttext">Service Name</p>
       "! Service Name
       "! $required
-      INA1Service                  TYPE rvb_ina1_service_name,
+      ina1_service    TYPE rvb_ina1_service_name,
       "! <p class="shorttext">Service Type</p>
       "! Service Type
       "! $required
-      ReviewBookletINA1ServiceType TYPE rvb_ina1_service_type,
+      service_type    TYPE rvb_ina1_service_type,
     END OF ty_ina1_service.
 
   TYPES:
