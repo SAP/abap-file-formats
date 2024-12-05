@@ -3,7 +3,16 @@ INTERFACE zif_aff_rvbc_v1
   PUBLIC.
   "! $values { @link zif_aff_rvbc_v1.data:co_extensibility_mode }
   "! $default { @link zif_aff_rvbc_v1.data:co_extensibility_mode.not_supported }
-  TYPES ty_extensibility_mode TYPE n LENGTH 2.
+  TYPES ty_extensibility_mode    TYPE n LENGTH 2.
+  TYPES ty_app_id                TYPE c LENGTH 70.
+  TYPES ty_source                TYPE n LENGTH 1.
+  TYPES ty_status                TYPE n LENGTH 1.
+  TYPES ty_constcy_status        TYPE n LENGTH 1.
+  TYPES ty_abap_language_version TYPE c LENGTH 1.
+  TYPES ty_ina1_service_id       TYPE c LENGTH 30.
+  TYPES ty_ina1_service_name     TYPE c LENGTH 40.
+  TYPES ty_ina1_service_type     TYPE n LENGTH 2.
+
   CONSTANTS:
     BEGIN OF co_extensibility_mode,
       "! <p class="shorttext">Fully supported include custom analytical queries</p>
@@ -25,19 +34,19 @@ INTERFACE zif_aff_rvbc_v1
       "! <p class="shorttext">Application ID</p>
       "! Application ID
       "! $required
-      application                TYPE rvb_app_id,
+      application                TYPE ty_app_id,
       "! <p class="shorttext">Source</p>
       "! Source
       "! $required
-      source                     TYPE rvb_source,
+      source                     TYPE ty_source,
       "! <p class="shorttext">Status</p>
       "! Status
       "! $required
-      status                     TYPE rvb_status,
+      status                     TYPE ty_status,
       "! <p class="shorttext">Consistency Status</p>
       "! Consistency Status
       "! $required
-      element_consistency_status TYPE rvb_constcy_status,
+      element_consistency_status TYPE ty_constcy_status,
       "! <p class="shorttext">Extensibility Mode</p>
       "! Extensibility Mode
       "! $required
@@ -47,7 +56,7 @@ INTERFACE zif_aff_rvbc_v1
       main_language              TYPE spras,
       "! <p class="shorttext">ABAP Language Version</p>
       "! ABAP Language Version
-      abap_language_version      TYPE abap_language_version,
+      abap_language_version      TYPE ty_abap_language_version,
 
     END OF ty_booklet_definition.
 
@@ -58,15 +67,15 @@ INTERFACE zif_aff_rvbc_v1
       "! <p class="shorttext">Service ID</p>
       "! Service ID
       "! $required
-      ina1_service_id TYPE rvb_ina1_service_id,
+      ina1_service_id TYPE ty_ina1_service_id,
       "! <p class="shorttext">Service Name</p>
       "! Service Name
       "! $required
-      ina1_service    TYPE rvb_ina1_service_name,
+      ina1_service    TYPE ty_ina1_service_name,
       "! <p class="shorttext">Service Type</p>
       "! Service Type
       "! $required
-      service_type    TYPE rvb_ina1_service_type,
+      service_type    TYPE ty_ina1_service_type,
     END OF ty_ina1_service.
 
   TYPES:

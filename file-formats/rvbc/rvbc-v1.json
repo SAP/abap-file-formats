@@ -72,42 +72,22 @@
           "title": "Source",
           "description": "Source",
           "type": "string",
-          "enum": [
-            "predefined",
-            "custom"
-          ],
-          "enumDescriptions": [
-            "Predefined",
-            "Custom"
-          ]
+          "maxLength": 1,
+          "pattern": "^[0-9]+$"
         },
         "status": {
           "title": "Status",
           "description": "Status",
           "type": "string",
-          "enum": [
-            "draft",
-            "final"
-          ],
-          "enumDescriptions": [
-            "Draft",
-            "Final"
-          ]
+          "maxLength": 1,
+          "pattern": "^[0-9]+$"
         },
         "elementConsistencyStatus": {
           "title": "Consistency Status",
           "description": "Consistency Status",
           "type": "string",
-          "enum": [
-            "consistencyCheckRequired",
-            "consistent",
-            "error"
-          ],
-          "enumDescriptions": [
-            "Consistency Check Required",
-            "Consistent",
-            "Error"
-          ]
+          "maxLength": 1,
+          "pattern": "^[0-9]+$"
         },
         "extensibilityMode": {
           "title": "Extensibility Mode",
@@ -140,16 +120,7 @@
           "title": "ABAP Language Version",
           "description": "ABAP Language Version",
           "type": "string",
-          "enum": [
-            "standardAbap",
-            "abapForKeyUsers",
-            "abapForCloudDevelopment"
-          ],
-          "enumDescriptions": [
-            "Standard ABAP",
-            "ABAP for Key Users",
-            "ABAP for Cloud Development"
-          ]
+          "maxLength": 1
         }
       },
       "additionalProperties": false,
@@ -182,14 +153,8 @@
           "title": "Service Type",
           "description": "Service Type",
           "type": "string",
-          "enum": [
-            "predefinedUmbrellaInaService",
-            "customUmbrellaInaService"
-          ],
-          "enumDescriptions": [
-            "Predefined Umbrella InA Service",
-            "Custom Umbrella Ina Service"
-          ]
+          "maxLength": 2,
+          "pattern": "^[0-9]+$"
         }
       },
       "additionalProperties": false,
