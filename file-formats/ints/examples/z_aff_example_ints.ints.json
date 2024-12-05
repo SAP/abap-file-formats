@@ -1,0 +1,28 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Creation of scenario via ADT",
+    "originalLanguage": "en"
+  },
+  "generalInformation": {
+    "scenarioType": "SAPGENAI",
+    "scenarioTechnology": "SIDEBYSIDE",
+    "isExtensible": true,
+    "state": "Published",
+    "islmVersion": 1.0
+  },
+  "classInformation": {},
+  "turnkeyInformation": {
+    "isTurnkeyAutoSwitchOn": true,
+    "turnkeyType": "DEFAULT"
+  },
+  "connectionInformation": {
+    "usageType": "STATELESS",
+    "oauthProfile": "ISLM_SAPGENAI_OAUTH_PRF_HCP"
+  },
+  "modellingContext": {
+    "modellingContextName": "DEFAULT",
+    "modellingContextId": "7FD071C0C04C56148FE3424E30FFB40B",
+    "modellingContextDescription": "Default context"
+  }
+}
