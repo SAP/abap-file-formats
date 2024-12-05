@@ -54,7 +54,7 @@ INTERFACE zif_aff_rvbc_v1
       extensibility_mode         TYPE ty_extensibility_mode,
       "! <p class="shorttext">Main Language</p>
       "! Main Language
-      main_language              TYPE spras,
+      main_language              TYPE ty_main_language,
       "! <p class="shorttext">ABAP Language Version</p>
       "! ABAP Language Version
       abap_language_version      TYPE ty_abap_language_version,

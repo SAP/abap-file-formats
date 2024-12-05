@@ -114,7 +114,7 @@
           "title": "Main Language",
           "description": "Main Language",
           "type": "string",
-          "minLength": 2
+          "maxLength": 1
         },
         "abapLanguageVersion": {
           "title": "ABAP Language Version",
