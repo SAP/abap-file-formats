@@ -12,6 +12,7 @@ INTERFACE zif_aff_rvbc_v1
   TYPES ty_ina1_service_id       TYPE c LENGTH 30.
   TYPES ty_ina1_service_name     TYPE c LENGTH 40.
   TYPES ty_ina1_service_type     TYPE n LENGTH 2.
+  TYPES ty_main_language         TYPE c LENGTH 1.
 
   CONSTANTS:
     BEGIN OF co_extensibility_mode,
