@@ -83,7 +83,10 @@
           "type": "boolean"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "required": [
+        "type"
+      ]
     },
     "subBcSets": {
       "title": "Sub-BC Sets",
