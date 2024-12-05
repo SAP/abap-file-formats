@@ -3,19 +3,18 @@ INTERFACE zif_aff_rvbc_v1
   PUBLIC.
   "! $values { @link zif_aff_rvbc_v1.data:co_extensibility_mode }
   "! $default { @link zif_aff_rvbc_v1.data:co_extensibility_mode.not_supported }
-  TYPES ty_extensibility_mode TYPE rvb_ext_mode.
+  TYPES ty_extensibility_mode TYPE numc2.
   CONSTANTS:
     BEGIN OF co_extensibility_mode,
       "! <p class="shorttext">Fully supported include custom analytical queries</p>
       "! Fully supported include custom analytical queries
-      fully_supported              TYPE ty_extensibility_mode VALUE if_rvb_constants=>rvb_extensibility_mode-fully_supported,
+      fully_supported              TYPE ty_extensibility_mode VALUE 0,
       "! <p class="shorttext">Supported only for predefined analytical queries</p>
       "! Supported only for predefined analytical queries
-      supported_predefined_queries TYPE ty_extensibility_mode
-                                   VALUE if_rvb_constants=>rvb_extensibility_mode-supported_predefined_queries,
+      supported_predefined_queries TYPE ty_extensibility_mode VALUE 1,
       "! <p class="shorttext">Not Supported</p>
       "! Not Supported
-      not_supported                TYPE ty_extensibility_mode VALUE if_rvb_constants=>rvb_extensibility_mode-not_supported,
+      not_supported                TYPE ty_extensibility_mode VALUE 2,
     END OF co_extensibility_mode.
 
 
