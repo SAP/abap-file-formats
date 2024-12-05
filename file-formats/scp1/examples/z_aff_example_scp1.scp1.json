@@ -5,6 +5,7 @@
     "originalLanguage": "en"
   },
   "attributes": {
+    "type": "simple",
     "scopeRelevant": false
   },
   "customizingObjects": [
@@ -53,6 +54,54 @@
                 {
                   "fieldName": "POSTAL_CODE_FORMAT",
                   "fieldValue": "NNNNN-NNN"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "objectName": "CL_ORGCRIT",
+      "objectType": "viewCluster",
+      "imgActivity": "SVIM_ORG_CRIT_DEF",
+      "entities": [
+        {
+          "name": "ORGCRIT",
+          "fieldAttributes": [
+            {
+              "fieldName": "OC_GLOB",
+              "fieldAttribute": "defaultValue"
+            },
+            {
+              "fieldName": "ORGCRITBEZ",
+              "fieldAttribute": "defaultValue"
+            },
+            {
+              "fieldName": "ORG_CRIT",
+              "fieldAttribute": "fixedKeyField"
+            }
+          ],
+          "dataRecords": [
+            {
+              "keyValue": "ORG_CRIT_TEST",
+              "incomplete": false,
+              "operationAtActivation": "modify",
+              "data": [
+                {
+                  "fieldName": "OC_GLOB",
+                  "fieldValue": "X"
+                },
+                {
+                  "fieldName": "ORG_CRIT",
+                  "fieldValue": "ORG_CRIT_TEST"
+                }
+              ],
+              "translations": [
+                {
+                  "language": "en",
+                  "fieldName": "ORGCRITBEZ",
+                  "fieldValue": "Test organizational criterion"
                 }
               ]
             }
@@ -1041,414 +1090,6 @@
                   "language": "fr",
                   "fieldName": "BEZEI",
                   "fieldValue": "Tocantins"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "objectName": "V_T005_BAS",
-      "objectType": "view",
-      "imgActivity": "SIMG_CFMENUSAPCOY07",
-      "entities": [
-        {
-          "name": "V_T005_BAS",
-          "fieldAttributes": [
-            {
-              "fieldName": "ADDRS",
-              "fieldAttribute": "defaultValue"
-            },
-            {
-              "fieldName": "DATFM",
-              "fieldAttribute": "defaultValue"
-            },
-            {
-              "fieldName": "INTCA",
-              "fieldAttribute": "defaultValue"
-            },
-            {
-              "fieldName": "INTCA3",
-              "fieldAttribute": "defaultValue"
-            },
-            {
-              "fieldName": "INTCN3",
-              "fieldAttribute": "defaultValue"
-            },
-            {
-              "fieldName": "LAND1",
-              "fieldAttribute": "fixedKeyField"
-            },
-            {
-              "fieldName": "LANDK",
-              "fieldAttribute": "defaultValue"
-            },
-            {
-              "fieldName": "LANDX",
-              "fieldAttribute": "defaultValue"
-            },
-            {
-              "fieldName": "LANDX50",
-              "fieldAttribute": "defaultValue"
-            },
-            {
-              "fieldName": "LNPLZ",
-              "fieldAttribute": "defaultValue"
-            },
-            {
-              "fieldName": "NATIO",
-              "fieldAttribute": "defaultValue"
-            },
-            {
-              "fieldName": "NATIO50",
-              "fieldAttribute": "defaultValue"
-            },
-            {
-              "fieldName": "NMFMT",
-              "fieldAttribute": "defaultValue"
-            },
-            {
-              "fieldName": "PRPLZ",
-              "fieldAttribute": "defaultValue"
-            },
-            {
-              "fieldName": "SPRAS",
-              "fieldAttribute": "defaultValue"
-            },
-            {
-              "fieldName": "SPTXT",
-              "fieldAttribute": "SHO"
-            },
-            {
-              "fieldName": "TIMEFM",
-              "fieldAttribute": "defaultValue"
-            },
-            {
-              "fieldName": "XADDR",
-              "fieldAttribute": "defaultValue"
-            },
-            {
-              "fieldName": "XDEZP",
-              "fieldAttribute": "defaultValue"
-            },
-            {
-              "fieldName": "XEGLD",
-              "fieldAttribute": "defaultValue"
-            },
-            {
-              "fieldName": "XMWSN",
-              "fieldAttribute": "defaultValue"
-            },
-            {
-              "fieldName": "XPLPF",
-              "fieldAttribute": "defaultValue"
-            },
-            {
-              "fieldName": "XPLST",
-              "fieldAttribute": "defaultValue"
-            },
-            {
-              "fieldName": "XPLZS",
-              "fieldAttribute": "defaultValue"
-            },
-            {
-              "fieldName": "XREGS",
-              "fieldAttribute": "defaultValue"
-            },
-            {
-              "fieldName": "XSKFN",
-              "fieldAttribute": "defaultValue"
-            }
-          ],
-          "dataRecords": [
-            {
-              "keyValue": "BN",
-              "incomplete": false,
-              "operationAtActivation": "modify",
-              "data": [
-                {
-                  "fieldName": "ADDRS"
-                },
-                {
-                  "fieldName": "DATFM",
-                  "fieldValue": "1"
-                },
-                {
-                  "fieldName": "INTCA",
-                  "fieldValue": "BN"
-                },
-                {
-                  "fieldName": "INTCA3",
-                  "fieldValue": "BRN"
-                },
-                {
-                  "fieldName": "INTCN3",
-                  "fieldValue": "096"
-                },
-                {
-                  "fieldName": "LAND1",
-                  "fieldValue": "BN"
-                },
-                {
-                  "fieldName": "LANDK",
-                  "fieldValue": "BRU"
-                },
-                {
-                  "fieldName": "LNPLZ",
-                  "fieldValue": "06"
-                },
-                {
-                  "fieldName": "NMFMT"
-                },
-                {
-                  "fieldName": "PRPLZ",
-                  "fieldValue": "9"
-                },
-                {
-                  "fieldName": "SPRAS",
-                  "fieldValue": "7"
-                },
-                {
-                  "fieldName": "TIMEFM",
-                  "fieldValue": "1"
-                },
-                {
-                  "fieldName": "XADDR",
-                  "fieldValue": "X"
-                },
-                {
-                  "fieldName": "XDEZP",
-                  "fieldValue": "X"
-                },
-                {
-                  "fieldName": "XEGLD"
-                },
-                {
-                  "fieldName": "XMWSN"
-                },
-                {
-                  "fieldName": "XPLPF"
-                },
-                {
-                  "fieldName": "XPLST"
-                },
-                {
-                  "fieldName": "XPLZS",
-                  "fieldValue": "X"
-                },
-                {
-                  "fieldName": "XREGS"
-                },
-                {
-                  "fieldName": "XSKFN"
-                }
-              ],
-              "translations": [
-                {
-                  "language": "de",
-                  "fieldName": "LANDX",
-                  "fieldValue": "Brunei Daruss."
-                },
-                {
-                  "language": "de",
-                  "fieldName": "LANDX50",
-                  "fieldValue": "Brunei Darussalam"
-                },
-                {
-                  "language": "de",
-                  "fieldName": "NATIO",
-                  "fieldValue": "Brunei"
-                },
-                {
-                  "language": "de",
-                  "fieldName": "NATIO50",
-                  "fieldValue": "Brunei"
-                },
-                {
-                  "language": "en",
-                  "fieldName": "LANDX",
-                  "fieldValue": "Brunei Daruss."
-                },
-                {
-                  "language": "en",
-                  "fieldName": "LANDX50",
-                  "fieldValue": "Brunei Darussalam"
-                },
-                {
-                  "language": "en",
-                  "fieldName": "NATIO",
-                  "fieldValue": "Brunei"
-                },
-                {
-                  "language": "en",
-                  "fieldName": "NATIO50",
-                  "fieldValue": "Brunei"
-                },
-                {
-                  "language": "fr",
-                  "fieldName": "LANDX",
-                  "fieldValue": "Brunéi Daruss."
-                },
-                {
-                  "language": "fr",
-                  "fieldName": "LANDX50",
-                  "fieldValue": "Brunéi Darussalam"
-                },
-                {
-                  "language": "fr",
-                  "fieldName": "NATIO",
-                  "fieldValue": "Brunéienne"
-                },
-                {
-                  "language": "fr",
-                  "fieldName": "NATIO50",
-                  "fieldValue": "Brunéienne"
-                }
-              ]
-            },
-            {
-              "keyValue": "BR",
-              "incomplete": false,
-              "operationAtActivation": "modify",
-              "data": [
-                {
-                  "fieldName": "ADDRS",
-                  "fieldValue": "007"
-                },
-                {
-                  "fieldName": "DATFM",
-                  "fieldValue": "1"
-                },
-                {
-                  "fieldName": "INTCA",
-                  "fieldValue": "BR"
-                },
-                {
-                  "fieldName": "INTCA3",
-                  "fieldValue": "BRA"
-                },
-                {
-                  "fieldName": "INTCN3",
-                  "fieldValue": "076"
-                },
-                {
-                  "fieldName": "LAND1",
-                  "fieldValue": "BR"
-                },
-                {
-                  "fieldName": "LANDK",
-                  "fieldValue": "BRA"
-                },
-                {
-                  "fieldName": "LNPLZ",
-                  "fieldValue": "09"
-                },
-                {
-                  "fieldName": "NMFMT"
-                },
-                {
-                  "fieldName": "PRPLZ",
-                  "fieldValue": "7"
-                },
-                {
-                  "fieldName": "SPRAS",
-                  "fieldValue": "P"
-                },
-                {
-                  "fieldName": "TIMEFM",
-                  "fieldValue": "0"
-                },
-                {
-                  "fieldName": "XADDR",
-                  "fieldValue": "X"
-                },
-                {
-                  "fieldName": "XDEZP"
-                },
-                {
-                  "fieldName": "XEGLD"
-                },
-                {
-                  "fieldName": "XMWSN"
-                },
-                {
-                  "fieldName": "XPLPF"
-                },
-                {
-                  "fieldName": "XPLST"
-                },
-                {
-                  "fieldName": "XPLZS",
-                  "fieldValue": "X"
-                },
-                {
-                  "fieldName": "XREGS"
-                },
-                {
-                  "fieldName": "XSKFN"
-                }
-              ],
-              "translations": [
-                {
-                  "language": "de",
-                  "fieldName": "LANDX",
-                  "fieldValue": "Brasilien"
-                },
-                {
-                  "language": "de",
-                  "fieldName": "LANDX50",
-                  "fieldValue": "Brasilien"
-                },
-                {
-                  "language": "de",
-                  "fieldName": "NATIO",
-                  "fieldValue": "Brasilianisch"
-                },
-                {
-                  "language": "de",
-                  "fieldName": "NATIO50",
-                  "fieldValue": "Brasilianisch"
-                },
-                {
-                  "language": "en",
-                  "fieldName": "LANDX",
-                  "fieldValue": "Brazil"
-                },
-                {
-                  "language": "en",
-                  "fieldName": "LANDX50",
-                  "fieldValue": "Brazil"
-                },
-                {
-                  "language": "en",
-                  "fieldName": "NATIO",
-                  "fieldValue": "Brazilian"
-                },
-                {
-                  "language": "en",
-                  "fieldName": "NATIO50",
-                  "fieldValue": "Brazilian"
-                },
-                {
-                  "language": "fr",
-                  "fieldName": "LANDX",
-                  "fieldValue": "Brésil"
-                },
-                {
-                  "language": "fr",
-                  "fieldName": "LANDX50",
-                  "fieldValue": "Brésil"
-                },
-                {
-                  "language": "fr",
-                  "fieldName": "NATIO",
-                  "fieldValue": "Brésilienne"
-                },
-                {
-                  "language": "fr",
-                  "fieldName": "NATIO50",
-                  "fieldValue": "Brésilienne"
                 }
               ]
             }
