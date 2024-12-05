@@ -30,11 +30,11 @@ INTERFACE zif_aff_rvbc_v1
       "! <p class="shorttext">Source</p>
       "! Source
       "! $required
-      source                    TYPE rvb_source,
+      source                     TYPE rvb_source,
       "! <p class="shorttext">Status</p>
       "! Status
       "! $required
-      status                    TYPE rvb_status,
+      status                     TYPE rvb_status,
       "! <p class="shorttext">Consistency Status</p>
       "! Consistency Status
       "! $required
@@ -42,13 +42,13 @@ INTERFACE zif_aff_rvbc_v1
       "! <p class="shorttext">Extensibility Mode</p>
       "! Extensibility Mode
       "! $required
-      extensibility_mode        TYPE ty_extensibility_mode,
+      extensibility_mode         TYPE ty_extensibility_mode,
       "! <p class="shorttext">Main Language</p>
       "! Main Language
-      main_language             TYPE spras,
+      main_language              TYPE spras,
       "! <p class="shorttext">ABAP Language Version</p>
       "! ABAP Language Version
-      abap_language_version     TYPE abap_language_version,
+      abap_language_version      TYPE abap_language_version,
 
     END OF ty_booklet_definition.
 
