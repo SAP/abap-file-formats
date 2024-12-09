@@ -3,7 +3,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/rvbc/rvbc-v1.json",
   "title": "Object Type RVBC",
-  "description": "object type RVBC",
+  "description": "Object type RVBC",
   "type": "object",
   "properties": {
     "formatVersion": {
@@ -59,7 +59,7 @@
     },
     "bookletDefinition": {
       "title": "Booklet Definition",
-      "description": "Booklet Definition",
+      "description": "Booklet definition",
       "type": "object",
       "properties": {
         "application": {
@@ -82,16 +82,16 @@
           "maxLength": 1,
           "pattern": "^[0-9]+$"
         },
-        "elementConsistencyStatus": {
+        "consistencyStatus": {
           "title": "Consistency Status",
-          "description": "Consistency Status",
+          "description": "Consistency status",
           "type": "string",
           "maxLength": 1,
           "pattern": "^[0-9]+$"
         },
         "extensibilityMode": {
           "title": "Extensibility Mode",
-          "description": "Extensibility Mode",
+          "description": "Extensibility mode",
           "type": "string",
           "enum": [
             "fullySupported",
@@ -99,28 +99,16 @@
             "notSupported"
           ],
           "enumTitles": [
-            "Fully supported include custom analytical queries",
-            "Supported only for predefined analytical queries",
+            "Fully Supported Including Custom Analytical Queries",
+            "Supported Only for Predefined Analytical Queries",
             "Not Supported"
           ],
           "enumDescriptions": [
-            "Fully supported include custom analytical queries",
+            "Fully supported including custom analytical queries",
             "Supported only for predefined analytical queries",
-            "Not Supported"
+            "Not supported"
           ],
           "default": "notSupported"
-        },
-        "mainLanguage": {
-          "title": "Main Language",
-          "description": "Main Language",
-          "type": "string",
-          "maxLength": 1
-        },
-        "abapLanguageVersion": {
-          "title": "ABAP Language Version",
-          "description": "ABAP Language Version",
-          "type": "string",
-          "maxLength": 1
         }
       },
       "additionalProperties": false,
@@ -128,13 +116,13 @@
         "application",
         "source",
         "status",
-        "elementConsistencyStatus",
+        "consistencyStatus",
         "extensibilityMode"
       ]
     },
     "predefinedIna1Service": {
-      "title": "Favorites",
-      "description": "Favorites",
+      "title": "Predefined InA Service",
+      "description": "Predefined Ina service",
       "type": "object",
       "properties": {
         "ina1ServiceId": {
@@ -145,13 +133,13 @@
         },
         "ina1Service": {
           "title": "Service Name",
-          "description": "Service Name",
+          "description": "Service name",
           "type": "string",
           "maxLength": 40
         },
         "serviceType": {
           "title": "Service Type",
-          "description": "Service Type",
+          "description": "Service type",
           "type": "string",
           "maxLength": 2,
           "pattern": "^[0-9]+$"
