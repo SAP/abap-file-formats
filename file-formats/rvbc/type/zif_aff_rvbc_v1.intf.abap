@@ -86,7 +86,7 @@ INTERFACE zif_aff_rvbc_v1
       "! Booklet definition
       booklet_definition      TYPE ty_booklet_definition,
       "! <p class="shorttext">Predefined InA Service</p>
-      "! Predefined Ina service
+      "! Predefined InA service
       predefined_ina1_service TYPE ty_ina1_service,
     END OF ty_main.
 
