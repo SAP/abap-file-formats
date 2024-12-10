@@ -122,7 +122,7 @@
     },
     "predefinedIna1Service": {
       "title": "Predefined InA Service",
-      "description": "Predefined Ina service",
+      "description": "Predefined InA service",
       "type": "object",
       "properties": {
         "ina1ServiceId": {
