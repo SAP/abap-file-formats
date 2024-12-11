@@ -78,22 +78,19 @@
           "title": "Source",
           "description": "Source",
           "type": "string",
-          "maxLength": 1,
-          "pattern": "^[0-9]+$"
+          "maxLength": 70
         },
         "status": {
           "title": "Status",
           "description": "Status",
           "type": "string",
-          "maxLength": 1,
-          "pattern": "^[0-9]+$"
+          "maxLength": 70
         },
         "consistencyStatus": {
           "title": "Consistency Status",
           "description": "Consistency status",
           "type": "string",
-          "maxLength": 1,
-          "pattern": "^[0-9]+$"
+          "maxLength": 70
         },
         "extensibilityMode": {
           "title": "Extensibility Mode",
