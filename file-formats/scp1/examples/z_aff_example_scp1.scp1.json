@@ -6,7 +6,7 @@
   },
   "attributes": {
     "type": "simple",
-    "scopeRelevant": false
+    "isRelevantForScope": false
   },
   "customizingObjects": [
     {
