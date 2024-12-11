@@ -25,11 +25,11 @@ INTERFACE zif_aff_scp1_v1
       "! $values {@link zif_aff_scp1_v1.data:co_type}
       "! $default {@link zif_aff_scp1_v1.data:co_type.simple}
       "! $required
-      type           TYPE ty_type,
+      type                  TYPE ty_type,
       "! <p class="shorttext">Scoping Relevant</p>
       "! Scope Relevant
       "! $showAlways
-      scope_relevant TYPE abap_bool,
+      is_relevant_for_scope TYPE abap_bool,
     END OF ty_attributes.
 
   "! <p class="shorttext">Customizing Object Type</p>
@@ -228,11 +228,11 @@ INTERFACE zif_aff_scp1_v1
     BEGIN OF ty_sub_bcset,
       "! <p class="shorttext">Name</p>
       "! Name of the BC Set
-      name     TYPE c LENGTH 32,
+      name                  TYPE c LENGTH 32,
       "! <p class="shorttext">Position</p>
       "! Position of BC Set in Hierarchical BC Set
-      "! $maxLength 10
-      position TYPE i,
+      "! $maximum 10
+      position_in_hierarchy TYPE i,
     END OF ty_sub_bcset.
 
   "! <p class="shorttext">Sub-BC Sets</p>
@@ -244,8 +244,6 @@ INTERFACE zif_aff_scp1_v1
     "! <p class="shorttext">Business Configuration Set</p>
     "! Metadata information of BC Set
     BEGIN OF ty_main,
-      "! <p class="shorttext">Format Version</p>
-      "! Format version
       "! $required
       format_version      TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
