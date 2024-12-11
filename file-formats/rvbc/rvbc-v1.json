@@ -62,6 +62,12 @@
       "description": "Booklet definition",
       "type": "object",
       "properties": {
+        "id": {
+          "title": "ID",
+          "description": "ID",
+          "type": "string",
+          "maxLength": 30
+        },
         "application": {
           "title": "Application ID",
           "description": "Application ID",
@@ -114,9 +120,6 @@
       "additionalProperties": false,
       "required": [
         "application",
-        "source",
-        "status",
-        "consistencyStatus",
         "extensibilityMode"
       ]
     },
