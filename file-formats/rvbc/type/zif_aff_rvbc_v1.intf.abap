@@ -11,6 +11,7 @@ INTERFACE zif_aff_rvbc_v1
   TYPES ty_ina1_service_id    TYPE c LENGTH 30.
   TYPES ty_ina1_service_name  TYPE c LENGTH 40.
   TYPES ty_ina1_service_type  TYPE n LENGTH 2.
+  TYPES ty_booklet_id         TYPE c LENGTH 30.
 
   CONSTANTS:
     BEGIN OF co_extensibility_mode,
@@ -30,21 +31,21 @@ INTERFACE zif_aff_rvbc_v1
     "! <p class="shorttext">Review Booklet Definition</p>
     "! Review booklet definition
     BEGIN OF ty_booklet_definition,
+      "! <p class="shorttext">ID</p>
+      "! ID
+      id                 TYPE ty_booklet_id,
       "! <p class="shorttext">Application ID</p>
       "! Application ID
       "! $required
       application        TYPE ty_app_id,
       "! <p class="shorttext">Source</p>
       "! Source
-      "! $required
       source             TYPE ty_source,
       "! <p class="shorttext">Status</p>
       "! Status
-      "! $required
       status             TYPE ty_status,
       "! <p class="shorttext">Consistency Status</p>
       "! Consistency status
-      "! $required
       consistency_status TYPE ty_consistency_status,
       "! <p class="shorttext">Extensibility Mode</p>
       "! Extensibility mode
