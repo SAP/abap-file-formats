@@ -5,9 +5,9 @@ INTERFACE zif_aff_rvbc_v1
   "! $default { @link zif_aff_rvbc_v1.data:co_extensibility_mode.not_supported }
   TYPES ty_extensibility_mode TYPE n LENGTH 2.
   TYPES ty_app_id             TYPE c LENGTH 70.
-  TYPES ty_source             TYPE n LENGTH 1.
-  TYPES ty_status             TYPE n LENGTH 1.
-  TYPES ty_consistency_status TYPE n LENGTH 1.
+  TYPES ty_source             TYPE c LENGTH 70.
+  TYPES ty_status             TYPE c LENGTH 70.
+  TYPES ty_consistency_status TYPE c LENGTH 70.
   TYPES ty_ina1_service_id    TYPE c LENGTH 30.
   TYPES ty_ina1_service_name  TYPE c LENGTH 40.
   TYPES ty_ina1_service_type  TYPE n LENGTH 2.
