@@ -62,12 +62,6 @@
       "description": "Booklet definition",
       "type": "object",
       "properties": {
-        "id": {
-          "title": "ID",
-          "description": "ID",
-          "type": "string",
-          "maxLength": 30
-        },
         "application": {
           "title": "Application ID",
           "description": "Application ID",
@@ -78,19 +72,58 @@
           "title": "Source",
           "description": "Source",
           "type": "string",
-          "maxLength": 70
+          "enum": [
+            "predefined",
+            "custom"
+          ],
+          "enumTitles": [
+            "Predefined",
+            "Custom"
+          ],
+          "enumDescriptions": [
+            "Predefined",
+            "Custom"
+          ],
+          "default": "predefined"
         },
         "status": {
           "title": "Status",
           "description": "Status",
           "type": "string",
-          "maxLength": 70
+          "enum": [
+            "draft",
+            "final"
+          ],
+          "enumTitles": [
+            "Draft",
+            "Final"
+          ],
+          "enumDescriptions": [
+            "Draft",
+            "Final"
+          ],
+          "default": "draft"
         },
         "consistencyStatus": {
           "title": "Consistency Status",
           "description": "Consistency status",
           "type": "string",
-          "maxLength": 70
+          "enum": [
+            "checkRequired",
+            "consistent",
+            "error"
+          ],
+          "enumTitles": [
+            "Consistency Check Is Required",
+            "Consistent",
+            "Error"
+          ],
+          "enumDescriptions": [
+            "Consistency check is required",
+            "Consistent",
+            "Error"
+          ],
+          "default": "checkRequired"
         },
         "extensibilityMode": {
           "title": "Extensibility Mode",
@@ -123,6 +156,38 @@
     "predefinedIna1Service": {
       "title": "Predefined InA Service",
       "description": "Predefined InA service",
+      "type": "object",
+      "properties": {
+        "ina1ServiceId": {
+          "title": "Service ID",
+          "description": "Service ID",
+          "type": "string",
+          "maxLength": 30
+        },
+        "ina1Service": {
+          "title": "Service Name",
+          "description": "Service name",
+          "type": "string",
+          "maxLength": 40
+        },
+        "serviceType": {
+          "title": "Service Type",
+          "description": "Service type",
+          "type": "string",
+          "maxLength": 2,
+          "pattern": "^[0-9]+$"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "ina1ServiceId",
+        "ina1Service",
+        "serviceType"
+      ]
+    },
+    "customIna1Service": {
+      "title": "Custom InA Service",
+      "description": "Custom InA service",
       "type": "object",
       "properties": {
         "ina1ServiceId": {
