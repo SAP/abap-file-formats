@@ -1,18 +1,16 @@
 "! AFF type for the object RVBC ( Review Booklets )
 INTERFACE zif_aff_rvbc_v1
   PUBLIC.
-  "! $values { @link zif_aff_rvbc_v1.data:co_extensibility_mode }
-  "! $default { @link zif_aff_rvbc_v1.data:co_extensibility_mode.not_supported }
-  TYPES ty_extensibility_mode TYPE n LENGTH 2.
+
   TYPES ty_app_id             TYPE c LENGTH 70.
-  TYPES ty_source             TYPE c LENGTH 70.
-  TYPES ty_status             TYPE c LENGTH 70.
-  TYPES ty_consistency_status TYPE c LENGTH 70.
   TYPES ty_ina1_service_id    TYPE c LENGTH 30.
   TYPES ty_ina1_service_name  TYPE c LENGTH 40.
   TYPES ty_ina1_service_type  TYPE n LENGTH 2.
   TYPES ty_booklet_id         TYPE c LENGTH 30.
 
+  "! $values { @link zif_aff_rvbc_v1.data:co_extensibility_mode }
+  "! $default { @link zif_aff_rvbc_v1.data:co_extensibility_mode.not_supported }
+  TYPES ty_extensibility_mode TYPE n LENGTH 2.
   CONSTANTS:
     BEGIN OF co_extensibility_mode,
       "! <p class="shorttext">Fully Supported Including Custom Analytical Queries</p>
@@ -26,14 +24,52 @@ INTERFACE zif_aff_rvbc_v1
       not_supported                TYPE ty_extensibility_mode VALUE 2,
     END OF co_extensibility_mode.
 
+  "! $values { @link zif_aff_rvbc_v1.data:co_source }
+  "! $default { @link zif_aff_rvbc_v1.data:co_source.predefined }
+  TYPES ty_source TYPE n LENGTH 1.
+  CONSTANTS:
+    BEGIN OF co_source,
+      "! <p class="shorttext">Predefined</p>
+      "! Predefined
+      predefined TYPE ty_source VALUE 1,
+      "! <p class="shorttext">Custom</p>
+      "! Custom
+      custom     TYPE ty_source VALUE 2,
+    END OF co_source.
+
+  "! $values { @link zif_aff_rvbc_v1.data:co_status }
+  "! $default { @link zif_aff_rvbc_v1.data:co_status.draft }
+  TYPES ty_status TYPE n LENGTH 1.
+  CONSTANTS:
+    BEGIN OF co_status,
+      "! <p class="shorttext">Draft</p>
+      "! Draft
+      draft TYPE ty_status VALUE 1,
+      "! <p class="shorttext">Final</p>
+      "! Final
+      final TYPE ty_status VALUE 2,
+    END OF co_status.
+
+  "! $values { @link zif_aff_rvbc_v1.data:co_consistency_status }
+  "! $default { @link zif_aff_rvbc_v1.data:co_consistency_status.check_required }
+  TYPES ty_consistency_status TYPE n LENGTH 1.
+  CONSTANTS:
+    BEGIN OF co_consistency_status,
+      "! <p class="shorttext">Consistency Check Is Required</p>
+      "! Consistency check is required
+      check_required TYPE ty_consistency_status VALUE 0,
+      "! <p class="shorttext">Consistent</p>
+      "! Consistent
+      consistent     TYPE ty_consistency_status VALUE 1,
+      "! <p class="shorttext">Error</p>
+      "! Error
+      error          TYPE ty_consistency_status VALUE 2,
+    END OF co_consistency_status.
 
   TYPES:
     "! <p class="shorttext">Review Booklet Definition</p>
     "! Review booklet definition
     BEGIN OF ty_booklet_definition,
-      "! <p class="shorttext">ID</p>
-      "! ID
-      id                 TYPE ty_booklet_id,
       "! <p class="shorttext">Application ID</p>
       "! Application ID
       "! $required
@@ -89,6 +125,9 @@ INTERFACE zif_aff_rvbc_v1
       "! <p class="shorttext">Predefined InA Service</p>
       "! Predefined InA service
       predefined_ina1_service TYPE ty_ina1_service,
+      "! <p class="shorttext">Custom InA Service</p>
+      "! Custom InA service
+      custom_ina1_service     TYPE ty_ina1_service,
     END OF ty_main.
 
 ENDINTERFACE.
