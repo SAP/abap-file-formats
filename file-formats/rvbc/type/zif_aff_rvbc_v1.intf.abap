@@ -6,7 +6,6 @@ INTERFACE zif_aff_rvbc_v1
   TYPES ty_ina1_service_id    TYPE c LENGTH 30.
   TYPES ty_ina1_service_name  TYPE c LENGTH 40.
   TYPES ty_ina1_service_type  TYPE n LENGTH 2.
-  TYPES ty_booklet_id         TYPE c LENGTH 30.
 
   "! $values { @link zif_aff_rvbc_v1.data:co_extensibility_mode }
   "! $default { @link zif_aff_rvbc_v1.data:co_extensibility_mode.not_supported }
