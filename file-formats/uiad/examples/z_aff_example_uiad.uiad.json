@@ -1,5 +1,5 @@
 {
-  "formatVersion": "1",
+  "formatVersion": "2",
   "header": {
     "description": "Example of UIAD AFF Format",
     "originalLanguage": "en"
@@ -8,14 +8,15 @@
     "appType": "ui5",
     "catalogId": "ZLOCAL_TEST",
     "information": "Not translated info text",
-    "supportComponent": "CA-FLP-ABA"
+    "supportComponent": "CA-FLP-ABA",
+    "targetMappingTitle": "Target Mapping Title"
   },
   "ui5AppDetails": {
     "appId": "sap.ushell.demo.AppNavSample",
     "icfPath": "/sap/bc/ui5_ui5/ui2/appnavsample"
   },
   "navigation": {
-    "targetMappingId": "Z_AFF_EXAMPLE_TM",
+    "targetMappingId": "Z_AFF_EXAMPLE_TM2",
     "semanticObject": "NavSample",
     "action": "display",
     "desktop": true,
@@ -26,12 +27,11 @@
         "name": "tmParamName",
         "defaultValue": "Hello World!"
       }
-    ],
-    "additionalParameterHandling": "ignored"
+    ]
   },
   "tiles": [
     {
-      "id": "Z_AFF_EXAMPLE_TILE_STATIC",
+      "id": "Z_AFF_EXAMPLE_TILE_STATIC_2",
       "tileType": "static",
       "isDefault": true,
       "standard": {
