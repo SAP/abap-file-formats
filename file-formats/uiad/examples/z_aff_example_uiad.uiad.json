@@ -16,7 +16,7 @@
     "icfPath": "/sap/bc/ui5_ui5/ui2/appnavsample"
   },
   "navigation": {
-    "targetMappingId": "Z_AFF_EXAMPLE_TM2",
+    "targetMappingId": "Z_AFF_EXAMPLE_TM",
     "semanticObject": "NavSample",
     "action": "display",
     "desktop": true,
@@ -27,11 +27,12 @@
         "name": "tmParamName",
         "defaultValue": "Hello World!"
       }
-    ]
+    ],
+    "additionalParameterHandling": "ignored"
   },
   "tiles": [
     {
-      "id": "Z_AFF_EXAMPLE_TILE_STATIC_2",
+      "id": "Z_AFF_EXAMPLE_TILE_STATIC",
       "tileType": "static",
       "isDefault": true,
       "standard": {
