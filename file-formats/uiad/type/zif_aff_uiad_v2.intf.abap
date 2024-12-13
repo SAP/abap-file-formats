@@ -17,8 +17,8 @@ INTERFACE zif_aff_uiad_v2
     END OF ty_header.
   "! <p class="shorttext">Application Type</p>
   "! LADI application type
-  "! $values {@link if_aff_uiad_v1.data:co_app_type}
-  "! $default {@link if_aff_uiad_v1.data:co_app_type.ui5}
+  "! $values {@link zif_aff_uiad_v2.data:co_app_type}
+  "! $default {@link zif_aff_uiad_v2.data:co_app_type.ui5}
   TYPES ty_app_type TYPE c LENGTH 1.
   TYPES:
     "! <p class="shorttext">General Information</p>
@@ -76,8 +76,8 @@ INTERFACE zif_aff_uiad_v2
 
     END OF ty_app_details_ui5.
   "! Web Dynpro integration mode
-  "! $values {@link if_aff_uiad_v1.data:co_web_dynpro_integration_mode}
-  "! $default {@link if_aff_uiad_v1.data:co_web_dynpro_integration_mode.system_default}
+  "! $values {@link zif_aff_uiad_v2.data:co_web_dynpro_integration_mode}
+  "! $default {@link zif_aff_uiad_v2.data:co_web_dynpro_integration_mode.system_default}
   TYPES ty_web_dynpro_integration_mode TYPE c LENGTH 1.
   TYPES:
     "! <p class="shorttext">Web Dynpro Application Inforation</p>
@@ -150,8 +150,8 @@ INTERFACE zif_aff_uiad_v2
     END OF ty_app_details_url_template.
   "! <p class="shorttext">Filter Type</p>
   "! Type of the filter value
-  "! $values {@link if_aff_uiad_v1.data:co_filter_type}
-  "! $default {@link if_aff_uiad_v1.data:co_filter_type.plain}
+  "! $values {@link zif_aff_uiad_v2.data:co_filter_type}
+  "! $default {@link zif_aff_uiad_v2.data:co_filter_type.plain}
   TYPES ty_filter_type TYPE c LENGTH 1.
   TYPES:
     "! <p class="shorttext">Navigation Parameter</p>
@@ -187,8 +187,8 @@ INTERFACE zif_aff_uiad_v2
   TYPES ty_parameter_items           TYPE STANDARD TABLE OF ty_parameter_item WITH DEFAULT KEY.
   "! <p class="shorttext">Additional Parameter Handling</p>
   "! How additional parameters are handled
-  "! $values {@link if_aff_uiad_v1.data:co_additional_param_handling}
-  "! $default {@link if_aff_uiad_v1.data:co_additional_param_handling.allowed}
+  "! $values {@link zif_aff_uiad_v2.data:co_additional_param_handling}
+  "! $default {@link zif_aff_uiad_v2.data:co_additional_param_handling.allowed}
   TYPES ty_additional_param_handling TYPE c LENGTH 1.
   TYPES:
     "! <p class="shorttext">Navigation Information</p>
@@ -241,8 +241,8 @@ INTERFACE zif_aff_uiad_v2
     END OF ty_navigation.
   "! <p class="shorttext">Tile Type</p>
   "! Tile type
-  "! $values {@link if_aff_uiad_v1.data:co_tile_type}
-  "! $default {@link if_aff_uiad_v1.data:co_tile_type.static}
+  "! $values {@link zif_aff_uiad_v2.data:co_tile_type}
+  "! $default {@link zif_aff_uiad_v2.data:co_tile_type.static}
   TYPES ty_tile_type TYPE c LENGTH 1.
   TYPES:
     "! <p class="shorttext">Dynamic Tile Details</p>
@@ -399,8 +399,8 @@ INTERFACE zif_aff_uiad_v2
   TYPES ty_tiles             TYPE STANDARD TABLE OF ty_tile WITH DEFAULT KEY.
   "! <p class="shorttext">Life Cycle Deprecation Status</p>
   "! Life cycle deprecation status
-  "! $values {@link if_aff_uiad_v1.data:co_life_cycle_status}
-  "! $default {@link if_aff_uiad_v1.data:co_life_cycle_status.active}
+  "! $values {@link zif_aff_uiad_v2.data:co_life_cycle_status}
+  "! $default {@link zif_aff_uiad_v2.data:co_life_cycle_status.active}
   TYPES ty_life_cycle_status TYPE c LENGTH 1.
   TYPES:
     "! <p class="shorttext">Life Cycle</p>
@@ -592,7 +592,5 @@ INTERFACE zif_aff_uiad_v2
       obsolete   TYPE ty_life_cycle_status VALUE 'O',
 
     END OF co_life_cycle_status.
-
-  CONSTANTS co_format_version TYPE zif_aff_types_v1=>ty_format_version VALUE '2'.
 
 ENDINTERFACE.

@@ -622,6 +622,4 @@ INTERFACE zif_aff_uiad_v1
 
     END OF ty_main.
 
-  CONSTANTS co_format_version TYPE zif_aff_types_v1=>ty_format_version VALUE '1'.
-
 ENDINTERFACE.
