@@ -360,7 +360,7 @@ This leads to the following generated JSON schema:
 ```
 ## Naming Conventions
 
-Within AFF's ABAP interfaces following naming conventions apply. 
+Within AFF's ABAP interfaces following naming conventions apply.
 
 - The interface is called `zif_aff_<object type>_v<format version>` (e.g., `zif_aff_intf_v1`)
 - Types starts with `ty_`
