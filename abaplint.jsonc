@@ -131,7 +131,7 @@
     "no_yoda_conditions": true,
     "object_naming": {
       "clas": "^(ZC(L|X)\\_AFF\\_|Z\\_AFF\\_EXAMPLE)",
-      "intf": "^(ZIF\\_AFF\\_[A-Z0-9]{4}\\_V[0-9]+$|Z\\_AFF\\_EXAMPLE)",
+      "intf": "^(ZIF\\_AFF\\_[A-Z0-9]{4}\\_V[0-9]+$|ZIF\\_AFF\\[A-Z0-9_]*\\_TYPES\\_V[0-9]+$|Z\\_AFF\\_EXAMPLE)",
       "prog": "^Z",
       "fugr": "^Z",
       "tabl": "^Z",
