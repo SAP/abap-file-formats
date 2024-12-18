@@ -363,7 +363,7 @@ This leads to the following generated JSON schema:
 Following naming conventions apply to AFF's ABAP interfaces:
 
 - The interface is called `zif_aff_<object type>_v<format version>` (e.g., `zif_aff_intf_v1`)
-- Types starts with `ty_`
+- Types start with `ty_`
 - Constants start with `co_`
 
 These conventions are checked by abaplint.
