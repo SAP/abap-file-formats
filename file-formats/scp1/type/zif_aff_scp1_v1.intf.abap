@@ -231,6 +231,7 @@ INTERFACE zif_aff_scp1_v1
       name                  TYPE c LENGTH 32,
       "! <p class="shorttext">Position</p>
       "! Position of BC Set in Hierarchical BC Set
+      "! $minimum 1
       "! $maximum 10
       position_in_hierarchy TYPE i,
     END OF ty_sub_bcset.
