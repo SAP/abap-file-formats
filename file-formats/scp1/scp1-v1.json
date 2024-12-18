@@ -108,7 +108,7 @@
             "title": "Position",
             "description": "Position of BC Set in Hierarchical BC Set",
             "type": "integer",
-            "minimum": -2147483648,
+            "minimum": 1,
             "maximum": 10
           }
         },
