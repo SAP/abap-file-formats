@@ -3,9 +3,7 @@ INTERFACE zif_aff_rvbc_v1
   PUBLIC.
 
   TYPES ty_app_id             TYPE c LENGTH 70.
-  TYPES ty_ina1_service_id    TYPE c LENGTH 30.
   TYPES ty_ina1_service_name  TYPE c LENGTH 40.
-  TYPES ty_ina1_service_type  TYPE n LENGTH 2.
 
   "! $values { @link zif_aff_rvbc_v1.data:co_extensibility_mode }
   "! $default { @link zif_aff_rvbc_v1.data:co_extensibility_mode.not_supported }
@@ -88,23 +86,6 @@ INTERFACE zif_aff_rvbc_v1
       extensibility_mode TYPE ty_extensibility_mode,
     END OF ty_booklet_definition.
 
-  TYPES:
-    "! <p class="shorttext">InA Service</p>
-    "! InA Service
-    BEGIN OF ty_ina1_service,
-      "! <p class="shorttext">Service ID</p>
-      "! Service ID
-      "! $required
-      ina1_service_id TYPE ty_ina1_service_id,
-      "! <p class="shorttext">Service Name</p>
-      "! Service name
-      "! $required
-      ina1_service    TYPE ty_ina1_service_name,
-      "! <p class="shorttext">Service Type</p>
-      "! Service type
-      "! $required
-      service_type    TYPE ty_ina1_service_type,
-    END OF ty_ina1_service.
 
   TYPES:
     "! <p class="shorttext">Object Type RVBC</p>
@@ -123,10 +104,10 @@ INTERFACE zif_aff_rvbc_v1
       booklet_definition      TYPE ty_booklet_definition,
       "! <p class="shorttext">Predefined InA Service</p>
       "! Predefined InA service
-      predefined_ina1_service TYPE ty_ina1_service,
+      predefined_ina1_service TYPE ty_ina1_service_name,
       "! <p class="shorttext">Custom InA Service</p>
       "! Custom InA service
-      custom_ina1_service     TYPE ty_ina1_service,
+      custom_ina1_service     TYPE ty_ina1_service_name,
     END OF ty_main.
 
 ENDINTERFACE.
