@@ -156,66 +156,14 @@
     "predefinedIna1Service": {
       "title": "Predefined InA Service",
       "description": "Predefined InA service",
-      "type": "object",
-      "properties": {
-        "ina1ServiceId": {
-          "title": "Service ID",
-          "description": "Service ID",
-          "type": "string",
-          "maxLength": 30
-        },
-        "ina1Service": {
-          "title": "Service Name",
-          "description": "Service name",
-          "type": "string",
-          "maxLength": 40
-        },
-        "serviceType": {
-          "title": "Service Type",
-          "description": "Service type",
-          "type": "string",
-          "maxLength": 2,
-          "pattern": "^[0-9]+$"
-        }
-      },
-      "additionalProperties": false,
-      "required": [
-        "ina1ServiceId",
-        "ina1Service",
-        "serviceType"
-      ]
+      "type": "string",
+      "maxLength": 40
     },
     "customIna1Service": {
       "title": "Custom InA Service",
       "description": "Custom InA service",
-      "type": "object",
-      "properties": {
-        "ina1ServiceId": {
-          "title": "Service ID",
-          "description": "Service ID",
-          "type": "string",
-          "maxLength": 30
-        },
-        "ina1Service": {
-          "title": "Service Name",
-          "description": "Service name",
-          "type": "string",
-          "maxLength": 40
-        },
-        "serviceType": {
-          "title": "Service Type",
-          "description": "Service type",
-          "type": "string",
-          "maxLength": 2,
-          "pattern": "^[0-9]+$"
-        }
-      },
-      "additionalProperties": false,
-      "required": [
-        "ina1ServiceId",
-        "ina1Service",
-        "serviceType"
-      ]
+      "type": "string",
+      "maxLength": 40
     }
   },
   "additionalProperties": false,
