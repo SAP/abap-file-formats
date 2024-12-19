@@ -2,8 +2,7 @@
   "formatVersion": "1",
   "header": {
     "description": "Example RVBC for ABAP File Formats",
-    "originalLanguage": "en",
-    "abapLanguageVersion": "standard"
+    "originalLanguage": "en"
   },
   "bookletDefinition": {
     "application": "test.app.adt.editor",
