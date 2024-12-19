@@ -1,0 +1,21 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Example RVBC for ABAP File Formats",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "standard"
+  },
+  "bookletDefinition": {
+    "application": "test.app.adt.editor",
+    "source": "predefined",
+    "status": "draft",
+    "consistencyStatus": "consistent",
+    "extensibilityMode": "supportedPredefinedQueries"
+  },
+  "predefinedIna1Service": {
+    "ina1Service": "UI_INA_TST_FLIGHT_SERVBIND"
+  },
+  "customIna1Service": {
+    "ina1Service": "YY1_TEST_INA1"
+  }
+}
