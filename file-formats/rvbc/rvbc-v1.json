@@ -156,14 +156,36 @@
     "predefinedIna1Service": {
       "title": "Predefined InA Service",
       "description": "Predefined InA service",
-      "type": "string",
-      "maxLength": 40
+      "type": "object",
+      "properties": {
+        "ina1Service": {
+          "title": "Service Name",
+          "description": "Service name",
+          "type": "string",
+          "maxLength": 40
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "ina1Service"
+      ]
     },
     "customIna1Service": {
       "title": "Custom InA Service",
       "description": "Custom InA service",
-      "type": "string",
-      "maxLength": 40
+      "type": "object",
+      "properties": {
+        "ina1Service": {
+          "title": "Service Name",
+          "description": "Service name",
+          "type": "string",
+          "maxLength": 40
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "ina1Service"
+      ]
     }
   },
   "additionalProperties": false,
