@@ -11,7 +11,6 @@
     "state": "Published",
     "islmVersion": 1.0
   },
-  "classInformation": {},
   "turnkeyInformation": {
     "isTurnkeyAutoSwitchOn": true,
     "turnkeyType": "DEFAULT"

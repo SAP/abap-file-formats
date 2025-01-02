@@ -270,7 +270,6 @@ INTERFACE zif_aff_ints_v1
       general_information    TYPE ty_general_information,
       "! <p class="shorttext">Class Information</p>
       "! Class information
-      "! $required
       class_information      TYPE ty_class_information,
       "! <p class="shorttext">Turnkey Information</p>
       "! Turnkey information

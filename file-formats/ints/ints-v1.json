@@ -526,7 +526,6 @@
   "required": [
     "formatVersion",
     "header",
-    "generalInformation",
-    "classInformation"
+    "generalInformation"
   ]
 }
