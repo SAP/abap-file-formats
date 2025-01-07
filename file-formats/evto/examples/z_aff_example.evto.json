@@ -1,0 +1,13 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Example Event Object.",
+    "originalLanguage": "en"
+  },
+  "generalInformation": {
+    "sapObjectType": "Z_AFF_EXAMPLE",
+    "majorVersion": 1,
+    "minorVersion": 0,
+    "patchVersion": 4
+  }
+}
