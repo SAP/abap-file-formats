@@ -158,7 +158,7 @@
       "description": "Predefined InA service",
       "type": "object",
       "properties": {
-        "ina1Service": {
+        "ina1ServiceName": {
           "title": "Service Name",
           "description": "Service name",
           "type": "string",
@@ -167,7 +167,7 @@
       },
       "additionalProperties": false,
       "required": [
-        "ina1Service"
+        "ina1ServiceName"
       ]
     },
     "customIna1Service": {
@@ -175,7 +175,7 @@
       "description": "Custom InA service",
       "type": "object",
       "properties": {
-        "ina1Service": {
+        "ina1ServiceName": {
           "title": "Service Name",
           "description": "Service name",
           "type": "string",
@@ -184,7 +184,7 @@
       },
       "additionalProperties": false,
       "required": [
-        "ina1Service"
+        "ina1ServiceName"
       ]
     }
   },
