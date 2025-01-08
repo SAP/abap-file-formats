@@ -93,7 +93,7 @@ INTERFACE zif_aff_rvbc_v1
       "! <p class="shorttext">Service Name</p>
       "! Service name
       "! $required
-      ina1_service TYPE ty_ina1_service_name,
+      ina1_service_name TYPE ty_ina1_service_name,
     END OF ty_ina1_service.
 
   TYPES:
