@@ -104,27 +104,6 @@
           ],
           "default": "draft"
         },
-        "consistencyStatus": {
-          "title": "Consistency Status",
-          "description": "Consistency status",
-          "type": "string",
-          "enum": [
-            "checkRequired",
-            "consistent",
-            "error"
-          ],
-          "enumTitles": [
-            "Consistency Check Is Required",
-            "Consistent",
-            "Error"
-          ],
-          "enumDescriptions": [
-            "Consistency check is required",
-            "Consistent",
-            "Error"
-          ],
-          "default": "checkRequired"
-        },
         "extensibilityMode": {
           "title": "Extensibility Mode",
           "description": "Extensibility mode",

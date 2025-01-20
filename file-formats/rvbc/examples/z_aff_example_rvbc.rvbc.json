@@ -8,7 +8,6 @@
     "application": "test.app.adt.editor",
     "source": "predefined",
     "status": "draft",
-    "consistencyStatus": "consistent",
     "extensibilityMode": "supportedPredefinedQueries"
   },
   "predefinedIna1Service": {

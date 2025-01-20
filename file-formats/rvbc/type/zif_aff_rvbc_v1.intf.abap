@@ -47,22 +47,6 @@ INTERFACE zif_aff_rvbc_v1
       final TYPE ty_status VALUE 2,
     END OF co_status.
 
-  "! $values { @link zif_aff_rvbc_v1.data:co_consistency_status }
-  "! $default { @link zif_aff_rvbc_v1.data:co_consistency_status.check_required }
-  TYPES ty_consistency_status TYPE n LENGTH 1.
-  CONSTANTS:
-    BEGIN OF co_consistency_status,
-      "! <p class="shorttext">Consistency Check Is Required</p>
-      "! Consistency check is required
-      check_required TYPE ty_consistency_status VALUE 0,
-      "! <p class="shorttext">Consistent</p>
-      "! Consistent
-      consistent     TYPE ty_consistency_status VALUE 1,
-      "! <p class="shorttext">Error</p>
-      "! Error
-      error          TYPE ty_consistency_status VALUE 2,
-    END OF co_consistency_status.
-
   TYPES:
     "! <p class="shorttext">Review Booklet Definition</p>
     "! Review booklet definition
@@ -77,9 +61,6 @@ INTERFACE zif_aff_rvbc_v1
       "! <p class="shorttext">Status</p>
       "! Status
       status             TYPE ty_status,
-      "! <p class="shorttext">Consistency Status</p>
-      "! Consistency status
-      consistency_status TYPE ty_consistency_status,
       "! <p class="shorttext">Extensibility Mode</p>
       "! Extensibility mode
       "! $required
