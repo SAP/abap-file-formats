@@ -1,12 +1,10 @@
 "! <p class="shorttext synchronized" lang="en">Create eDocument Types</p>
 "! eDocument types that can be used in eInvoice Process
-INTERFACE zif_aff_edot_v1
-PUBLIC.
+INTERFACE zif_aff_edot_v1 PUBLIC.
 
-  TYPES:
   "! <p class="shorttext">eDocument Type</p>
   "! Specify eDocument types
-    ty_edoc_type TYPE c LENGTH 10.
+  TYPES ty_edoc_type         TYPE c LENGTH 10.
 
   "! <p class="shorttext">Description</p>
   "! Description
@@ -32,12 +30,12 @@ PUBLIC.
     END OF ty_sral_configuration.
   "! <p class="shorttext">SRAL Configuration Types</p>
   "! SRAL Configuration types
-  TYPES tt_sral_configuration TYPE SORTED TABLE OF ty_sral_configuration WITH UNIQUE KEY file_type.
+  TYPES ty_sral_configurations TYPE SORTED TABLE OF ty_sral_configuration WITH UNIQUE KEY file_type.
 
   TYPES:
     "! <p class="shorttext">eDocument Type Specific Additional Table Type</p>
     "! eDocument Type Specific Additional Table type
-    BEGIN OF ty_edoc_spec_additional_table,
+    BEGIN OF ty_additional_table,
       "! <p class="shorttext">Sequence Number Type</p>
       "! Sequence Number
       "! $required
@@ -46,10 +44,10 @@ PUBLIC.
       "! Table name
       "! $required
       table_name           TYPE zif_aff_types_v1=>ty_object_name_30,
-    END OF ty_edoc_spec_additional_table.
+    END OF ty_additional_table.
   "! <p class="shorttext">eDocument Type Specific Additional Table Types</p>
   "! eDocument Type Specific Additional Table types
-  TYPES tt_edoc_spec_additional_table TYPE SORTED TABLE OF ty_edoc_spec_additional_table WITH UNIQUE KEY sequence_number_type.
+  TYPES ty_additional_tables TYPE SORTED TABLE OF ty_additional_table WITH UNIQUE KEY sequence_number_type.
 
   TYPES:
     "! <p class="shorttext">General Information</p>
@@ -78,10 +76,10 @@ PUBLIC.
       archive_prep_req_type        TYPE abap_bool,
       "! <p class="shorttext">Additional Selection Fields</p>
       "! Additional selection fields of validation report
-      edocument_sral_configuration TYPE tt_sral_configuration,
+      edocument_sral_configuration TYPE ty_sral_configurations,
       "! <p class="shorttext">eDocument Type Specific Additional Tables</p>
       "! eDocument Type Specific Additional Tables
-      edoc_spec_additional_table   TYPE tt_edoc_spec_additional_table,
+      edoc_spec_additional_table   TYPE ty_additional_tables,
     END OF ty_edoc_information.
 
   TYPES:

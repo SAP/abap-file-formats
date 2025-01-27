@@ -1,5 +1,4 @@
-INTERFACE zif_aff_edoi_v1
-  PUBLIC.
+INTERFACE zif_aff_edoi_v1 PUBLIC.
 
   "! <p class="shorttext">Interface direction</p>
   "! Interface direction
@@ -14,7 +13,7 @@ INTERFACE zif_aff_edoi_v1
       "! <p class="shorttext">Interface Version</p>
       "! Interface Version
       "! $required
-      int_version      TYPE numc04,
+      int_version      TYPE edoc_int_version,
       "! <p class="shorttext">Interface Version Description</p>
       "! Interface Version Description
       "! $required
@@ -27,7 +26,7 @@ INTERFACE zif_aff_edoi_v1
     END OF ty_edoc_interface_version.
   "! <p class="shorttext">Interface Versions</p>
   "! eDocument Interface Versions
-  TYPES tt_edoc_interface_version TYPE SORTED TABLE OF ty_edoc_interface_version WITH UNIQUE KEY int_version.
+  TYPES ty_edoc_interface_versions TYPE SORTED TABLE OF ty_edoc_interface_version WITH UNIQUE KEY int_version.
   TYPES:
     "! <p class="shorttext">Attribute Determination for Communication with Cloud Edition</p>
     "! DRC Integration Attribute Determination
@@ -55,12 +54,12 @@ INTERFACE zif_aff_edoi_v1
       "! <p class="shorttext">Response Interface Version</p>
       "! Response Interface Version
       "! $required
-      resp_int_version  TYPE numc04,
+      resp_int_version  TYPE edoc_int_version,
 
     END OF ty_edoc_int_drc_attr.
   "! <p class="shorttext">Interface Versions</p>
   "! eDocument Interface Versions
-  TYPES tt_edoc_int_drc_attr TYPE SORTED TABLE OF ty_edoc_int_drc_attr WITH UNIQUE KEY process_type.
+  TYPES ty_edoc_int_drc_attributes TYPE SORTED TABLE OF ty_edoc_int_drc_attr WITH UNIQUE KEY process_type.
   TYPES:
     "! <p class="shorttext">General Information</p>
     "! eDocument Interface
@@ -82,11 +81,11 @@ INTERFACE zif_aff_edoi_v1
       "! <p class="shorttext">Interface Version</p>
       "! Interface Version
       "! $required
-      edocument_interface_version TYPE tt_edoc_interface_version,
+      edocument_interface_version TYPE ty_edoc_interface_versions,
       "! <p class="shorttext">Attribute Determination for Communication with Cloud Edition</p>
       "! DRC Integration Attribute Determination
       "! $required
-      edoc_spec_additional_table  TYPE tt_edoc_int_drc_attr,
+      edoc_spec_additional_table  TYPE ty_edoc_int_drc_attributes,
     END OF ty_edoc_interface.
   TYPES:
     "! <p class="shorttext">eDocument Interface</p>
