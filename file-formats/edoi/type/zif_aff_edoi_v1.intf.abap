@@ -13,7 +13,7 @@ INTERFACE zif_aff_edoi_v1 PUBLIC.
       "! <p class="shorttext">Interface Version</p>
       "! Interface Version
       "! $required
-      int_version      TYPE edoc_int_version,
+      int_version      TYPE c LENGTH 4,
       "! <p class="shorttext">Interface Version Description</p>
       "! Interface Version Description
       "! $required
@@ -54,7 +54,7 @@ INTERFACE zif_aff_edoi_v1 PUBLIC.
       "! <p class="shorttext">Response Interface Version</p>
       "! Response Interface Version
       "! $required
-      resp_int_version  TYPE edoc_int_version,
+      resp_int_version  TYPE c LENGTH 4,
 
     END OF ty_edoc_int_drc_attr.
   "! <p class="shorttext">Interface Versions</p>

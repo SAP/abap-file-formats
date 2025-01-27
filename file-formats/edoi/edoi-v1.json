@@ -106,8 +106,7 @@
                 "title": "Interface Version",
                 "description": "Interface Version",
                 "type": "string",
-                "maxLength": 4,
-                "pattern": "^[0-9]+$"
+                "maxLength": 4
               },
               "intVersionDesc": {
                 "title": "Interface Version Description",
@@ -174,8 +173,7 @@
                 "title": "Response Interface Version",
                 "description": "Response Interface Version",
                 "type": "string",
-                "maxLength": 4,
-                "pattern": "^[0-9]+$"
+                "maxLength": 4
               }
             },
             "additionalProperties": false,
