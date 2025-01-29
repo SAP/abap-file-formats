@@ -51,9 +51,8 @@ INTERFACE zif_aff_rvbc_v1
     "! <p class="shorttext">Review Booklet Definition</p>
     "! Review booklet definition
     BEGIN OF ty_booklet_definition,
-      "! <p class="shorttext">Application ID</p>
-      "! Application ID
-      "! $required
+      "! <p class="shorttext">Fiori Application</p>
+      "! Fiori application
       application        TYPE ty_app_id,
       "! <p class="shorttext">Source</p>
       "! Source
@@ -63,7 +62,6 @@ INTERFACE zif_aff_rvbc_v1
       status             TYPE ty_status,
       "! <p class="shorttext">Extensibility Mode</p>
       "! Extensibility mode
-      "! $required
       extensibility_mode TYPE ty_extensibility_mode,
     END OF ty_booklet_definition.
 
@@ -71,10 +69,12 @@ INTERFACE zif_aff_rvbc_v1
     "! <p class="shorttext">InA Service</p>
     "! InA Service
     BEGIN OF ty_ina1_service,
-      "! <p class="shorttext">Service Name</p>
-      "! Service name
-      "! $required
-      ina1_service_name TYPE ty_ina1_service_name,
+      "! <p class="shorttext">Predefined InA Service</p>
+      "! Predefined InA service
+      predefined_ina1_service TYPE ty_ina1_service_name,
+      "! <p class="shorttext">Custom InA Service</p>
+      "! Custom InA service
+      custom_ina1_service     TYPE ty_ina1_service_name,
     END OF ty_ina1_service.
 
   TYPES:
@@ -84,20 +84,17 @@ INTERFACE zif_aff_rvbc_v1
       "! <p class="shorttext">Format Version</p>
       "! Format version
       "! $required
-      format_version          TYPE zif_aff_types_v1=>ty_format_version,
+      format_version     TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header                  TYPE zif_aff_types_v1=>ty_header_60,
+      header             TYPE zif_aff_types_v1=>ty_header_60,
       "! <p class="shorttext">Booklet Definition</p>
       "! Booklet definition
-      booklet_definition      TYPE ty_booklet_definition,
-      "! <p class="shorttext">Predefined InA Service</p>
-      "! Predefined InA service
-      predefined_ina1_service TYPE ty_ina1_service,
-      "! <p class="shorttext">Custom InA Service</p>
-      "! Custom InA service
-      custom_ina1_service     TYPE ty_ina1_service,
+      booklet_definition TYPE ty_booklet_definition,
+      "! <p class="shorttext">InA Service</p>
+      "! InA service
+      ina1_service       TYPE ty_ina1_service,
     END OF ty_main.
 
 ENDINTERFACE.

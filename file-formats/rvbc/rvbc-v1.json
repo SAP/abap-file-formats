@@ -63,8 +63,8 @@
       "type": "object",
       "properties": {
         "application": {
-          "title": "Application ID",
-          "description": "Application ID",
+          "title": "Fiori Application",
+          "description": "Fiori application",
           "type": "string",
           "maxLength": 70
         },
@@ -126,45 +126,27 @@
           "default": "notSupported"
         }
       },
-      "additionalProperties": false,
-      "required": [
-        "application",
-        "extensibilityMode"
-      ]
+      "additionalProperties": false
     },
-    "predefinedIna1Service": {
-      "title": "Predefined InA Service",
-      "description": "Predefined InA service",
+    "ina1Service": {
+      "title": "InA Service",
+      "description": "InA service",
       "type": "object",
       "properties": {
-        "ina1ServiceName": {
-          "title": "Service Name",
-          "description": "Service name",
+        "predefinedIna1Service": {
+          "title": "Predefined InA Service",
+          "description": "Predefined InA service",
+          "type": "string",
+          "maxLength": 40
+        },
+        "customIna1Service": {
+          "title": "Custom InA Service",
+          "description": "Custom InA service",
           "type": "string",
           "maxLength": 40
         }
       },
-      "additionalProperties": false,
-      "required": [
-        "ina1ServiceName"
-      ]
-    },
-    "customIna1Service": {
-      "title": "Custom InA Service",
-      "description": "Custom InA service",
-      "type": "object",
-      "properties": {
-        "ina1ServiceName": {
-          "title": "Service Name",
-          "description": "Service name",
-          "type": "string",
-          "maxLength": 40
-        }
-      },
-      "additionalProperties": false,
-      "required": [
-        "ina1ServiceName"
-      ]
+      "additionalProperties": false
     }
   },
   "additionalProperties": false,

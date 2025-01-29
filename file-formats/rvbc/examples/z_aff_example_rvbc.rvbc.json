@@ -10,10 +10,8 @@
     "status": "draft",
     "extensibilityMode": "supportedPredefinedQueries"
   },
-  "predefinedIna1Service": {
-    "ina1ServiceName": "UI_INA_TST_FLIGHT_SERVBIND"
-  },
-  "customIna1Service": {
-    "ina1ServiceName": "YY1_TEST_INA1"
+  "ina1Service": {
+    "predefinedIna1Service": "UI_INA_TST_FLIGHT_SERVBIND",
+    "customIna1Service": "YY1_TEST_INA1"
   }
 }
