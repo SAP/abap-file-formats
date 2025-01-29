@@ -4,7 +4,7 @@
     "description": "Example RVBC for ABAP File Formats",
     "originalLanguage": "en"
   },
-  "bookletDefinition": {    
+  "bookletDefinition": {
     "source": "predefined",
     "status": "draft",
     "application": "test.app.adt.editor",
