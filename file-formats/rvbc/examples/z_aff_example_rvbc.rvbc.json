@@ -4,10 +4,10 @@
     "description": "Example RVBC for ABAP File Formats",
     "originalLanguage": "en"
   },
-  "bookletDefinition": {
-    "application": "test.app.adt.editor",
+  "bookletDefinition": {    
     "source": "predefined",
     "status": "draft",
+    "application": "test.app.adt.editor",
     "extensibilityMode": "supportedPredefinedQueries"
   },
   "ina1Service": {

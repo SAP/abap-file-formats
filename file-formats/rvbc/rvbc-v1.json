@@ -62,12 +62,6 @@
       "description": "Booklet definition",
       "type": "object",
       "properties": {
-        "application": {
-          "title": "Fiori Application",
-          "description": "Fiori application",
-          "type": "string",
-          "maxLength": 70
-        },
         "source": {
           "title": "Source",
           "description": "Source",
@@ -103,6 +97,12 @@
             "Final"
           ],
           "default": "draft"
+        },
+        "application": {
+          "title": "Fiori Application",
+          "description": "Fiori application",
+          "type": "string",
+          "maxLength": 70
         },
         "extensibilityMode": {
           "title": "Extensibility Mode",

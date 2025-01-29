@@ -51,15 +51,15 @@ INTERFACE zif_aff_rvbc_v1
     "! <p class="shorttext">Review Booklet Definition</p>
     "! Review booklet definition
     BEGIN OF ty_booklet_definition,
-      "! <p class="shorttext">Fiori Application</p>
-      "! Fiori application
-      application        TYPE ty_app_id,
       "! <p class="shorttext">Source</p>
       "! Source
       source             TYPE ty_source,
       "! <p class="shorttext">Status</p>
       "! Status
       status             TYPE ty_status,
+      "! <p class="shorttext">Fiori Application</p>
+      "! Fiori application
+      application        TYPE ty_app_id,
       "! <p class="shorttext">Extensibility Mode</p>
       "! Extensibility mode
       extensibility_mode TYPE ty_extensibility_mode,
