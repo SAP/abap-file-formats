@@ -128,18 +128,18 @@
       },
       "additionalProperties": false
     },
-    "ina1Service": {
-      "title": "InA Service",
-      "description": "InA service",
+    "ina1Services": {
+      "title": "InA Services",
+      "description": "InA services",
       "type": "object",
       "properties": {
-        "predefinedIna1Service": {
+        "predefined": {
           "title": "Predefined InA Service",
           "description": "Predefined InA service",
           "type": "string",
           "maxLength": 40
         },
-        "customIna1Service": {
+        "custom": {
           "title": "Custom InA Service",
           "description": "Custom InA service",
           "type": "string",

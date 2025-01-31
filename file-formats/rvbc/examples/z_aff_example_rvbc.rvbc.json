@@ -10,8 +10,8 @@
     "application": "test.app.adt.editor",
     "extensibilityMode": "supportedPredefinedQueries"
   },
-  "ina1Service": {
-    "predefinedIna1Service": "UI_INA_TST_FLIGHT_SERVBIND",
-    "customIna1Service": "YY1_TEST_INA1"
+  "ina1Services": {
+    "predefined": "UI_INA_TST_FLIGHT_SERVBIND",
+    "custom": "YY1_TEST_INA1"
   }
 }

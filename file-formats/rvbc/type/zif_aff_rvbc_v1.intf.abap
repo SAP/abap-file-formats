@@ -66,16 +66,16 @@ INTERFACE zif_aff_rvbc_v1
     END OF ty_booklet_definition.
 
   TYPES:
-    "! <p class="shorttext">InA Service</p>
-    "! InA Service
-    BEGIN OF ty_ina1_service,
+    "! <p class="shorttext">InA Services</p>
+    "! InA Services
+    BEGIN OF ty_ina1_services,
       "! <p class="shorttext">Predefined InA Service</p>
       "! Predefined InA service
-      predefined_ina1_service TYPE ty_ina1_service_name,
+      predefined TYPE ty_ina1_service_name,
       "! <p class="shorttext">Custom InA Service</p>
       "! Custom InA service
-      custom_ina1_service     TYPE ty_ina1_service_name,
-    END OF ty_ina1_service.
+      custom     TYPE ty_ina1_service_name,
+    END OF ty_ina1_services.
 
   TYPES:
     "! <p class="shorttext">Object Type RVBC</p>
@@ -92,9 +92,9 @@ INTERFACE zif_aff_rvbc_v1
       "! <p class="shorttext">Booklet Definition</p>
       "! Booklet definition
       booklet_definition TYPE ty_booklet_definition,
-      "! <p class="shorttext">InA Service</p>
-      "! InA service
-      ina1_service       TYPE ty_ina1_service,
+      "! <p class="shorttext">InA Services</p>
+      "! InA services
+      ina1_services      TYPE ty_ina1_services,
     END OF ty_main.
 
 ENDINTERFACE.
