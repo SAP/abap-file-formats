@@ -3,7 +3,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/edot/edot-v1.json",
   "title": "eDocument Type",
-  "description": "eDocument Type",
+  "description": "eDocument type",
   "type": "object",
   "properties": {
     "formatVersion": {
@@ -18,10 +18,8 @@
       "type": "object",
       "properties": {
         "description": {
-          "title": "Description",
-          "description": "Description of the ABAP object",
           "type": "string",
-          "maxLength": 60
+          "maxLength": 30
         },
         "originalLanguage": {
           "title": "Original Language",
@@ -35,17 +33,14 @@
           "type": "string",
           "enum": [
             "standard",
-            "keyUser",
             "cloudDevelopment"
           ],
           "enumTitles": [
             "Standard",
-            "ABAP for Key Users",
             "ABAP Cloud Development"
           ],
           "enumDescriptions": [
             "Standard",
-            "ABAP for key user extensibility",
             "ABAP cloud development"
           ],
           "default": "standard"
@@ -58,42 +53,30 @@
       ]
     },
     "generalInformation": {
-      "title": "eDocument Type",
-      "description": "eDocument Type",
+      "title": "General Information",
+      "description": "General information",
       "type": "object",
       "properties": {
-        "edocumentType": {
-          "title": "eDocument Type",
-          "description": "eDoc Type",
-          "type": "string",
-          "maxLength": 10
-        },
-        "edocTypeDesc": {
-          "title": "Description",
-          "description": "eDocument Type Description",
+        "tableName": {
+          "title": "eDocument Table Name",
+          "description": "eDocument table name",
           "type": "string",
           "maxLength": 30
         },
         "contingency": {
           "title": "Created in Contingency Mode",
-          "description": "Contingency",
+          "description": "Created in contingency mode",
           "type": "boolean"
         },
         "contingencyType": {
           "title": "eDocument Type Created Using Contingency",
-          "description": "Contingency Type",
+          "description": "eDocument type created using contingency",
           "type": "string",
           "maxLength": 10
         },
-        "tableName": {
-          "title": "Table Name",
-          "description": "Table name",
-          "type": "string",
-          "maxLength": 30
-        },
-        "archivePrepReqType": {
+        "archivePrepReq": {
           "title": "Preprocess Before Archiving",
-          "description": "Archive Prep Req Type",
+          "description": "Preprocess before archiving",
           "type": "boolean"
         },
         "edocumentSralConfiguration": {
@@ -103,53 +86,53 @@
           "uniqueItems": true,
           "items": {
             "title": "SRAL Configuration Type",
-            "description": "eDocument SRAL Configuration type",
+            "description": "SRAL configuration type",
             "type": "object",
             "properties": {
               "fileType": {
                 "title": "File Type",
-                "description": "File Type",
+                "description": "File type",
                 "type": "string",
                 "maxLength": 10
               },
-              "fileStructureType": {
+              "fileStructure": {
                 "title": "File Structure Type",
-                "description": "File Structure type",
+                "description": "File structure type",
                 "type": "string",
                 "maxLength": 30
               },
-              "fileDescriptionType": {
+              "fileDescription": {
                 "title": "File Description",
-                "description": "File Description type",
+                "description": "File description",
                 "type": "string",
                 "maxLength": 60
               },
-              "notCloudRelevantType": {
+              "isCloudRelevant": {
                 "title": "File Cloud Relevancy",
-                "description": "File Cloud Relevancy type",
+                "description": "File cloud relevancy type",
                 "type": "boolean"
               }
             },
             "additionalProperties": false,
             "required": [
               "fileType",
-              "fileStructureType"
+              "fileStructure"
             ]
           }
         },
         "edocSpecAdditionalTable": {
           "title": "eDocument Type Specific Additional Tables",
-          "description": "eDocument Type Specific Additional Tables",
+          "description": "eDocument type specific additional tables",
           "type": "array",
           "uniqueItems": true,
           "items": {
-            "title": "eDocument Type Specific Additional Table Type",
-            "description": "eDocument Type Specific Additional Table type",
+            "title": "eDocument Type Specific Additional Tables",
+            "description": "eDocument type specific additional tables",
             "type": "object",
             "properties": {
-              "sequenceNumberType": {
-                "title": "Sequence Number Type",
-                "description": "Sequence Number",
+              "sequenceNumber": {
+                "title": "Sequence Number",
+                "description": "Sequence number",
                 "type": "string",
                 "maxLength": 10
               },
@@ -162,18 +145,13 @@
             },
             "additionalProperties": false,
             "required": [
-              "sequenceNumberType",
+              "sequenceNumber",
               "tableName"
             ]
           }
         }
       },
-      "additionalProperties": false,
-      "required": [
-        "edocumentType",
-        "edocTypeDesc",
-        "archivePrepReqType"
-      ]
+      "additionalProperties": false
     }
   },
   "additionalProperties": false,
