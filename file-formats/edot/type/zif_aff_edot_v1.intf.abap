@@ -46,8 +46,8 @@ INTERFACE zif_aff_edot_v1 PUBLIC.
     "! <p class="shorttext">General Information</p>
     "! General information
     BEGIN OF ty_edoc_information,
-      "! <p class="shorttext">Table Name</p>
-      "! Table name
+      "! <p class="shorttext">eDocument Table Name</p>
+      "! eDocument table name
       table_name                   TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Created in Contingency Mode</p>
       "! Created in contingency mode
