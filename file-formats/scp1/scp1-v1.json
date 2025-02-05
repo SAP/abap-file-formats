@@ -14,6 +14,7 @@
     },
     "header": {
       "title": "Header",
+      "description": "Header",
       "type": "object",
       "properties": {
         "description": {
@@ -76,26 +77,16 @@
           ],
           "default": "simple"
         },
-        "softwareComponent": {
-          "title": "Software Component",
-          "description": "BC Set is assigned to a software component. If the software component is not installed in the system, then activation of BC Set is aborted",
-          "type": "string",
-          "maxLength": 30
-        },
-        "minimumRelease": {
-          "title": "Minimum Release",
-          "description": "To activate the BC Set successfully, installed software component must be at least at this release",
-          "type": "string",
-          "maxLength": 10
-        },
-        "maximumRelease": {
-          "title": "Maximum Release",
-          "description": "To activate the BC Set successfully, installed software component must be within this release",
-          "type": "string",
-          "maxLength": 10
+        "isRelevantForScope": {
+          "title": "Scoping Relevant",
+          "description": "Scope Relevant",
+          "type": "boolean"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "required": [
+        "type"
+      ]
     },
     "subBcSets": {
       "title": "Sub-BC Sets",
@@ -112,6 +103,13 @@
             "description": "Name of the BC Set",
             "type": "string",
             "maxLength": 32
+          },
+          "positionInHierarchy": {
+            "title": "Position",
+            "description": "Position of BC Set in Hierarchical BC Set",
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 10
           }
         },
         "additionalProperties": false
@@ -197,37 +195,29 @@
                         "type": "string",
                         "maxLength": 30
                       },
-                      "fieldAttributeValue": {
+                      "fieldAttribute": {
                         "title": "Field Attribute",
                         "description": "Defines the attribute of field like during BC Set activation, the field value must be copied to database table or not",
                         "type": "string",
                         "enum": [
                           "fixedKeyField",
-                          "keyField",
-                          "defaultValue",
-                          "fixedValue",
-                          "variable"
+                          "defaultValue"
                         ],
                         "enumTitles": [
                           "Fixed Key Field Value",
-                          "Changed Key Field Value",
-                          "Default Field Value",
-                          "Fixed Field Value",
-                          "Changed Field Value"
+                          "Default Field Value"
                         ],
                         "enumDescriptions": [
-                          "Fixed value for a key field. The value can not be changed after activation",
-                          "Key field in which the user can change the value of the field when activating the data",
-                          "Default value of a data field",
-                          "The value of this data field can no longer be changed after an activation",
-                          "Data field whose value the user can change when activating"
-                        ]
+                          "Fixed value for a key field. The value cannot be changed after activation",
+                          "Default value of a data field"
+                        ],
+                        "default": "defaultValue"
                       }
                     },
                     "additionalProperties": false,
                     "required": [
                       "fieldName",
-                      "fieldAttributeValue"
+                      "fieldAttribute"
                     ]
                   }
                 },
@@ -332,6 +322,7 @@
                     "additionalProperties": false,
                     "required": [
                       "keyValue",
+                      "operationAtActivation",
                       "data"
                     ]
                   }
