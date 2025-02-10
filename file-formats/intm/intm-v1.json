@@ -205,11 +205,6 @@
             "description": "Prompt",
             "type": "string"
           },
-          "promptParameters": {
-            "title": "Prompt Parameters",
-            "description": "Prompt parameters",
-            "type": "string"
-          },
           "isVisible": {
             "title": "Prompt Visibility",
             "description": "If true, the prompt is visible",

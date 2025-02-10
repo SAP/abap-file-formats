@@ -80,9 +80,6 @@ INTERFACE zif_aff_intm_v1
       "! Prompt
       "! $required
       prompt                      TYPE string,
-      "! <p class="shorttext">Prompt Parameters</p>
-      "! Prompt parameters
-      prompt_parameters           TYPE string,
       "! <p class="shorttext">Prompt Visibility</p>
       "! If true, the prompt is visible
       is_visible                  TYPE abap_bool,
