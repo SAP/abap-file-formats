@@ -2,7 +2,6 @@
   "formatVersion": "1",
   "header": {
     "description": "ADVC Example Object",
-    "originalLanguage": "en",
-    "abapLanguageVersion": "5",
+    "originalLanguage": "en"
   }
 }
