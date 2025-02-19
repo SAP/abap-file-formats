@@ -18,12 +18,14 @@
       "type": "object",
       "properties": {
         "description": {
+          "title": "Description",
+          "description": "eDocument type description",
           "type": "string",
           "maxLength": 30
         },
         "originalLanguage": {
           "title": "Original Language",
-          "description": "Original language of the ABAP object",
+          "description": "Original language of the eDocument type",
           "type": "string",
           "minLength": 2
         },
@@ -63,95 +65,95 @@
           "type": "string",
           "maxLength": 30
         },
-        "contingency": {
+        "contingencyMode": {
           "title": "Created in Contingency Mode",
           "description": "Created in contingency mode",
           "type": "boolean"
         },
-        "contingencyType": {
+        "contingencyEdocType": {
           "title": "eDocument Type Created Using Contingency",
           "description": "eDocument type created using contingency",
           "type": "string",
           "maxLength": 10
         },
-        "archivePrepReq": {
+        "archivePreprocess": {
           "title": "Preprocess Before Archiving",
           "description": "Preprocess before archiving",
           "type": "boolean"
-        },
-        "edocumentSralConfiguration": {
-          "title": "Additional Selection Fields",
-          "description": "Additional selection fields of validation report",
-          "type": "array",
-          "uniqueItems": true,
-          "items": {
-            "title": "SRAL Configuration Type",
-            "description": "SRAL configuration type",
-            "type": "object",
-            "properties": {
-              "fileType": {
-                "title": "File Type",
-                "description": "File type",
-                "type": "string",
-                "maxLength": 10
-              },
-              "fileStructure": {
-                "title": "File Structure Type",
-                "description": "File structure type",
-                "type": "string",
-                "maxLength": 30
-              },
-              "fileDescription": {
-                "title": "File Description",
-                "description": "File description",
-                "type": "string",
-                "maxLength": 60
-              },
-              "isCloudRelevant": {
-                "title": "File Cloud Relevancy",
-                "description": "File cloud relevancy type",
-                "type": "boolean"
-              }
-            },
-            "additionalProperties": false,
-            "required": [
-              "fileType",
-              "fileStructure"
-            ]
-          }
-        },
-        "edocSpecAdditionalTable": {
-          "title": "eDocument Type Specific Additional Tables",
-          "description": "eDocument type specific additional tables",
-          "type": "array",
-          "uniqueItems": true,
-          "items": {
-            "title": "eDocument Type Specific Additional Tables",
-            "description": "eDocument type specific additional tables",
-            "type": "object",
-            "properties": {
-              "sequenceNumber": {
-                "title": "Sequence Number",
-                "description": "Sequence number",
-                "type": "string",
-                "maxLength": 10
-              },
-              "tableName": {
-                "title": "Table Name",
-                "description": "Table name",
-                "type": "string",
-                "maxLength": 30
-              }
-            },
-            "additionalProperties": false,
-            "required": [
-              "sequenceNumber",
-              "tableName"
-            ]
-          }
         }
       },
       "additionalProperties": false
+    },
+    "edocumentSralConfiguration": {
+      "title": "Additional Selection Fields",
+      "description": "Additional selection fields of validation report",
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "title": "SRAL Configuration Type",
+        "description": "SRAL configuration type",
+        "type": "object",
+        "properties": {
+          "fileType": {
+            "title": "File Type",
+            "description": "File type",
+            "type": "string",
+            "maxLength": 10
+          },
+          "fileStructure": {
+            "title": "File Structure Type",
+            "description": "File structure type",
+            "type": "string",
+            "maxLength": 30
+          },
+          "fileDescription": {
+            "title": "File Description",
+            "description": "File description",
+            "type": "string",
+            "maxLength": 60
+          },
+          "isCloudRelevant": {
+            "title": "File Cloud Relevancy",
+            "description": "File cloud relevancy",
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "fileType",
+          "fileStructure"
+        ]
+      }
+    },
+    "edocSpecAdditionalTable": {
+      "title": "eDocument Type Specific Additional Tables",
+      "description": "eDocument type specific additional tables",
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "title": "eDocument Type Specific Additional Tables",
+        "description": "eDocument type specific additional tables",
+        "type": "object",
+        "properties": {
+          "sequenceNumber": {
+            "title": "Sequence Number",
+            "description": "Sequence number",
+            "type": "string",
+            "maxLength": 10
+          },
+          "tableName": {
+            "title": "Table Name",
+            "description": "Table name",
+            "type": "string",
+            "maxLength": 30
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "sequenceNumber",
+          "tableName"
+        ]
+      }
     }
   },
   "additionalProperties": false,
