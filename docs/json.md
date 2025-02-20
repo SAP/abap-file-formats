@@ -358,6 +358,16 @@ This leads to the following generated JSON schema:
   ]
 }
 ```
+## Naming Conventions
+
+Following naming conventions apply to AFF's ABAP interfaces:
+
+- The interface is called `zif_aff_<object type>_v<format version>` (e.g., `zif_aff_intf_v1`)
+- Types start with `ty_`
+- Constants start with `co_`
+
+These conventions are checked by abaplint.
+
 ## Reusable Fields in JSON Files
 
 This section describes fields that can be reused by all file formats.
