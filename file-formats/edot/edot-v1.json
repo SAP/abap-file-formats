@@ -65,26 +65,26 @@
           "type": "string",
           "maxLength": 30
         },
+        "archivePreprocess": {
+          "title": "Preprocess Before Archiving",
+          "description": "Preprocess before archiving",
+          "type": "boolean"
+        },
         "contingencyMode": {
           "title": "Created in Contingency Mode",
           "description": "Created in contingency mode",
           "type": "boolean"
         },
         "contingencyEdocType": {
-          "title": "eDocument Type Created Using Contingency",
-          "description": "eDocument type created using contingency",
+          "title": "Contingency eDocument Type",
+          "description": "Contingency eDocument type",
           "type": "string",
           "maxLength": 10
-        },
-        "archivePreprocess": {
-          "title": "Preprocess Before Archiving",
-          "description": "Preprocess before archiving",
-          "type": "boolean"
         }
       },
       "additionalProperties": false
     },
-    "edocumentSralConfiguration": {
+    "sralConfiguration": {
       "title": "Additional Selection Fields",
       "description": "Additional selection fields of validation report",
       "type": "array",
