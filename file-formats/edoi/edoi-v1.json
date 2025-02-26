@@ -63,19 +63,7 @@
           "title": "Interface Direction",
           "description": "Interface direction.",
           "type": "string",
-          "enum": [
-            "outbound",
-            "inbound"
-          ],
-          "enumTitles": [
-            "Outbound",
-            "Inbound"
-          ],
-          "enumDescriptions": [
-            "Outbound",
-            "Inbound"
-          ],
-          "default": "outbound"
+          "maxLength": 1
         }
       },
       "additionalProperties": false,
@@ -96,12 +84,13 @@
           "interfaceVersion": {
             "title": "Interface Version",
             "description": "Interface version",
-            "type": "string",
-            "maxLength": 4
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 9999
           },
           "interfaceVersionDescription": {
             "title": "Interface Version Description",
-            "description": "Interface dersion description",
+            "description": "Interface version description",
             "type": "string",
             "maxLength": 30
           },
@@ -120,7 +109,7 @@
         ]
       }
     },
-    "edocSpecAdditionalTable": {
+    "drcAttributes": {
       "title": "Attribute Determination for Communication with Cloud Edition",
       "description": "Attribute determination for communication with cloud edition",
       "type": "array",
@@ -163,8 +152,9 @@
           "responseInterfaceVersion": {
             "title": "Response Interface Version",
             "description": "Response interface version",
-            "type": "string",
-            "maxLength": 4
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 9999
           }
         },
         "additionalProperties": false,
@@ -185,6 +175,6 @@
     "header",
     "generalInformation",
     "interfaceVersion",
-    "edocSpecAdditionalTable"
+    "drcAttributes"
   ]
 }
