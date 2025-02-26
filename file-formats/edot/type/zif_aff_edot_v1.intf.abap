@@ -57,7 +57,7 @@ INTERFACE zif_aff_edot_v1
       "! Created in contingency mode
       contingency_mode      TYPE abap_bool,
       "! <p class="shorttext">Contingency eDocument Type</p>
-      "! Contingency eDocument Type
+      "! Contingency eDocument type
       contingency_edoc_type TYPE c LENGTH 10,
     END OF ty_edoc_information .
   TYPES:
