@@ -66,8 +66,8 @@
           "maxLength": 15
         },
         "fixValueName": {
-          "title": "AIF Fix Value Name",
-          "description": "AIF Fix Value Name",
+          "title": "AIF Fix Value",
+          "description": "AIF Fix Value",
           "type": "string",
           "maxLength": 20
         },

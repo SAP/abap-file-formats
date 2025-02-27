@@ -8,8 +8,8 @@ INTERFACE zif_aff_aiff_v1
       "! Namespace
       "! $required
       namespace      TYPE c LENGTH 15,
-      "! <p class="shorttext">AIF Fix Value Name</p>
-      "! AIF Fix Value Name
+      "! <p class="shorttext">AIF Fix Value</p>
+      "! AIF Fix Value
       "! $required
       fix_value_name TYPE c LENGTH 20,
       "! <p class="shorttext">Field Value</p>
