@@ -28,27 +28,6 @@
           "description": "Original language of the ABAP object",
           "type": "string",
           "minLength": 2
-        },
-        "abapLanguageVersion": {
-          "title": "ABAP Language Version",
-          "description": "ABAP language version",
-          "type": "string",
-          "enum": [
-            "standard",
-            "keyUser",
-            "cloudDevelopment"
-          ],
-          "enumTitles": [
-            "Standard",
-            "ABAP for Key Users",
-            "ABAP Cloud Development"
-          ],
-          "enumDescriptions": [
-            "Standard",
-            "ABAP for key user extensibility",
-            "ABAP cloud development"
-          ],
-          "default": "standard"
         }
       },
       "additionalProperties": false,
@@ -57,9 +36,9 @@
         "originalLanguage"
       ]
     },
-    "extensionPointDetails": {
-      "title": "Extension Point Details",
-      "description": "Details for SAP gui extension point",
+    "generalInformation": {
+      "title": "General Information",
+      "description": "General information",
       "type": "object",
       "properties": {
         "extensionInclude": {
@@ -89,17 +68,17 @@
       ]
     },
     "transactionCodes": {
-      "title": "Transaction Codes",
+      "title": "Transaction codes",
       "description": "Transaction codes of extensible application",
       "type": "array",
       "items": {
-        "title": "Transaction Code",
-        "description": "Transaction Code",
+        "title": "Transaction code",
+        "description": "Transaction code",
         "type": "object",
         "properties": {
           "transactionCode": {
-            "title": "Transaction Code",
-            "description": "Transaction Codes",
+            "title": "Transaction code",
+            "description": "Transaction codes",
             "type": "string",
             "maxLength": 20
           }

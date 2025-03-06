@@ -1,42 +1,38 @@
 INTERFACE zif_aff_sxtg_v1
   PUBLIC.
 
-  TYPES ty_extension_include          TYPE c LENGTH 30.
-  TYPES ty_application_data_structure TYPE c LENGTH 30.
-  TYPES ty_ui_extension_entity        TYPE c LENGTH 30.
-
   TYPES:
-    "! <p class="shorttext">Transaction Code</p>
-    "! Transaction Code
+    "! <p class="shorttext">Transaction code</p>
+    "! Transaction code
     BEGIN OF ty_transaction_code,
-      "! <p class="shorttext">Transaction Code</p>
-      "! Transaction Codes
+      "! <p class="shorttext">Transaction code</p>
+      "! Transaction codes
       transaction_code TYPE c LENGTH 20,
     END OF ty_transaction_code.
 
-  "! <p class="shorttext">Transaction Codes</p>
-  "! Transaction Codes
+  "! <p class="shorttext">Transaction codes</p>
+  "! Transaction codes
   TYPES ty_transaction_codes TYPE STANDARD TABLE OF ty_transaction_code WITH KEY transaction_code.
 
   TYPES:
-    "! <p class="shorttext">Extension Point Details</p>
-    "! Details for SAP gui extension point
-    BEGIN OF ty_extension_point_details,
+    "! <p class="shorttext">General Information</p>
+    "! General information
+    BEGIN OF ty_general_information,
       "! <p class="shorttext">Extension Include</p>
       "! Extension include with persisted custom fields
       "! $required
-      extension_include          TYPE ty_extension_include,
+      extension_include          TYPE zif_aff_types_v1=>ty_object_name_30,
 
       "! <p class="shorttext">Application Data Structure</p>
       "! Structure with application data
       "! $required
-      application_data_structure TYPE ty_application_data_structure,
+      application_data_structure TYPE zif_aff_types_v1=>ty_object_name_30,
 
       "! <p class="shorttext">UI Extension Entity</p>
       "! Abstract entity with ui definition
       "! $required
-      ui_extension_entity        TYPE ty_ui_extension_entity,
-    END OF ty_extension_point_details.
+      ui_extension_entity        TYPE zif_aff_types_v1=>ty_object_name_30,
+    END OF ty_general_information.
 
   TYPES:
     "! <p class="shorttext">SAP GUI Extension Point</p>
@@ -49,13 +45,13 @@ INTERFACE zif_aff_sxtg_v1
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header                  TYPE zif_aff_types_v1=>ty_header_60,
+      header                  TYPE zif_aff_types_v1=>ty_header_60_no_abap_lv ,
 
-      "! <p class="shorttext">Extension Point Details</p>
-      "! Details for SAP gui extension point
-      extension_point_details TYPE ty_extension_point_details,
+      "! <p class="shorttext">General Information</p>
+      "! General information
+      general_information TYPE ty_general_information,
 
-      "! <p class="shorttext">Transaction Codes</p>
+      "! <p class="shorttext">Transaction codes</p>
       "! Transaction codes of extensible application
       transaction_codes       TYPE ty_transaction_codes,
     END OF ty_main.
