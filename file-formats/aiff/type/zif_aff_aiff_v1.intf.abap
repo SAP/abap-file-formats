@@ -1,7 +1,7 @@
 INTERFACE zif_aff_aiff_v1
   PUBLIC.
   TYPES:
-    "! <p class="shorttext">General Information.</p>
+    "! <p class="shorttext">General Information</p>
     "! General information
     BEGIN OF ty_general_information,
       "! <p class="shorttext">Namespace</p>
