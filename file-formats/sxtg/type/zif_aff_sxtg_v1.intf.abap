@@ -41,11 +41,11 @@ INTERFACE zif_aff_sxtg_v1
       "! <p class="shorttext">Format Version</p>
       "! Format version
       "! $required
-      format_version          TYPE zif_aff_types_v1=>ty_format_version,
+      format_version      TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header                  TYPE zif_aff_types_v1=>ty_header_60_no_abap_lv ,
+      header              TYPE zif_aff_types_v1=>ty_header_60_no_abap_lv,
 
       "! <p class="shorttext">General Information</p>
       "! General information
@@ -53,7 +53,7 @@ INTERFACE zif_aff_sxtg_v1
 
       "! <p class="shorttext">Transaction codes</p>
       "! Transaction codes of extensible application
-      transaction_codes       TYPE ty_transaction_codes,
+      transaction_codes   TYPE ty_transaction_codes,
     END OF ty_main.
 
 ENDINTERFACE.
