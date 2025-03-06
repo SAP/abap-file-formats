@@ -68,16 +68,16 @@
       ]
     },
     "transactionCodes": {
-      "title": "Transaction codes",
+      "title": "Transaction Codes",
       "description": "Transaction codes of extensible application",
       "type": "array",
       "items": {
-        "title": "Transaction code",
+        "title": "Transaction Code",
         "description": "Transaction code",
         "type": "object",
         "properties": {
           "transactionCode": {
-            "title": "Transaction code",
+            "title": "Transaction Code",
             "description": "Transaction codes",
             "type": "string",
             "maxLength": 20

@@ -2,15 +2,15 @@ INTERFACE zif_aff_sxtg_v1
   PUBLIC.
 
   TYPES:
-    "! <p class="shorttext">Transaction code</p>
+    "! <p class="shorttext">Transaction Code</p>
     "! Transaction code
     BEGIN OF ty_transaction_code,
-      "! <p class="shorttext">Transaction code</p>
+      "! <p class="shorttext">Transaction Code</p>
       "! Transaction codes
       transaction_code TYPE c LENGTH 20,
     END OF ty_transaction_code.
 
-  "! <p class="shorttext">Transaction codes</p>
+  "! <p class="shorttext">Transaction Codes</p>
   "! Transaction codes
   TYPES ty_transaction_codes TYPE STANDARD TABLE OF ty_transaction_code WITH KEY transaction_code.
 
@@ -51,7 +51,7 @@ INTERFACE zif_aff_sxtg_v1
       "! General information
       general_information TYPE ty_general_information,
 
-      "! <p class="shorttext">Transaction codes</p>
+      "! <p class="shorttext">Transaction Codes</p>
       "! Transaction codes of extensible application
       transaction_codes   TYPE ty_transaction_codes,
     END OF ty_main.
