@@ -50,10 +50,10 @@ INTERFACE zif_aff_edot_v1
       table_name            TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Preprocess Before Archiving</p>
       "! Preprocess before archiving
-      archive_preprocess    TYPE abap_bool,
+      is_archive_preprocess_needed    TYPE abap_bool,
       "! <p class="shorttext">Created in Contingency Mode</p>
       "! Created in contingency mode
-      contingency_mode      TYPE abap_bool,
+      is_created_in_contingency_mode      TYPE abap_bool,
       "! <p class="shorttext">Contingency eDocument Type</p>
       "! Contingency eDocument type
       contingency_edoc_type TYPE c LENGTH 10,

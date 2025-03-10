@@ -65,12 +65,12 @@
           "type": "string",
           "maxLength": 30
         },
-        "archivePreprocess": {
+        "isArchivePreprocessNeeded": {
           "title": "Preprocess Before Archiving",
           "description": "Preprocess before archiving",
           "type": "boolean"
         },
-        "contingencyMode": {
+        "isCreatedInContingencyMode": {
           "title": "Created in Contingency Mode",
           "description": "Created in contingency mode",
           "type": "boolean"
