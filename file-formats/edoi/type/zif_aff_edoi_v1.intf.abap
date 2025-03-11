@@ -47,7 +47,7 @@ INTERFACE zif_aff_edoi_v1 PUBLIC.
       active_from                   TYPE sy-datum,
     END OF ty_interface_version.
   "! <p class="shorttext">Interface Versions</p>
-  "! ainterface versions
+  "! Interface versions
   TYPES ty_interface_versions TYPE SORTED TABLE OF ty_interface_version WITH UNIQUE KEY interface_version.
   TYPES:
     "! <p class="shorttext">Attribute Determination for Communication with Cloud Edition</p>
