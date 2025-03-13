@@ -36,7 +36,7 @@ INTERFACE zif_aff_edoi_v1 PUBLIC.
       "! $required
       "! $minimum 1
       "! $maximum 9999
-      version             TYPE i,
+      version     TYPE i,
       "! <p class="shorttext">Description</p>
       "! Description
       "! $required
@@ -44,7 +44,7 @@ INTERFACE zif_aff_edoi_v1 PUBLIC.
       "! <p class="shorttext">Active From</p>
       "! Active from
       "! $required
-      active_from                   TYPE sy-datum,
+      active_from TYPE sy-datum,
     END OF ty_interface_version.
   "! <p class="shorttext">Interface Versions</p>
   "! Interface versions
@@ -72,7 +72,7 @@ INTERFACE zif_aff_edoi_v1 PUBLIC.
       "! <p class="shorttext">Response Interface</p>
       "! eDoc response interface
       "! $required
-      response_interface      TYPE c LENGTH 30,
+      response_interface         TYPE c LENGTH 30,
       "! <p class="shorttext">Response Interface Version</p>
       "! Response interface version
       "! $required
