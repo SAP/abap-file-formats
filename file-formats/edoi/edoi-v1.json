@@ -61,7 +61,7 @@
       "properties": {
         "interfaceDirection": {
           "title": "Interface Direction",
-          "description": "Interface direction.",
+          "description": "Interface direction",
           "type": "string",
           "maxLength": 1
         }
@@ -81,16 +81,16 @@
         "description": "eDocument interface version",
         "type": "object",
         "properties": {
-          "interfaceVersion": {
-            "title": "Interface Version",
-            "description": "Interface version",
+          "version": {
+            "title": "Version",
+            "description": "Version",
             "type": "integer",
             "minimum": 1,
             "maximum": 9999
           },
-          "interfaceVersionDescription": {
-            "title": "Interface Version Description",
-            "description": "Interface version description",
+          "description": {
+            "title": "Description",
+            "description": "Description",
             "type": "string",
             "maxLength": 30
           },
@@ -103,8 +103,8 @@
         },
         "additionalProperties": false,
         "required": [
-          "interfaceVersion",
-          "interfaceVersionDescription",
+          "version",
+          "description",
           "activeFrom"
         ]
       }
@@ -143,7 +143,7 @@
             "type": "string",
             "maxLength": 30
           },
-          "responseInterfaceId": {
+          "responseInterface": {
             "title": "Response Interface",
             "description": "eDoc response interface",
             "type": "string",
@@ -163,7 +163,7 @@
           "processVersion",
           "processSubtype",
           "drcAction",
-          "responseInterfaceId",
+          "responseInterface",
           "responseInterfaceVersion"
         ]
       }

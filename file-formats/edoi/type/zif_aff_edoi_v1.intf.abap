@@ -20,27 +20,27 @@ INTERFACE zif_aff_edoi_v1 PUBLIC.
   TYPES:
     "! <p class="shorttext">General Information</p>
     "! General information
-    BEGIN OF ty_interface,
+    BEGIN OF ty_general_information,
       "! <p class="shorttext">Interface Direction</p>
-      "! Interface direction.
+      "! Interface direction
       "! $required
       interface_direction TYPE ty_interface_direction,
-    END OF ty_interface.
+    END OF ty_general_information.
 
   TYPES:
     "! <p class="shorttext">Interface Version</p>
     "! eDocument interface version
     BEGIN OF ty_interface_version,
-      "! <p class="shorttext">Interface Version</p>
-      "! Interface version
+      "! <p class="shorttext">Version</p>
+      "! Version
       "! $required
       "! $minimum 1
       "! $maximum 9999
-      interface_version             TYPE i,
-      "! <p class="shorttext">Interface Version Description</p>
-      "! Interface version description
+      version             TYPE i,
+      "! <p class="shorttext">Description</p>
+      "! Description
       "! $required
-      interface_version_description TYPE c LENGTH 30,
+      description TYPE c LENGTH 30,
       "! <p class="shorttext">Active From</p>
       "! Active from
       "! $required
@@ -48,7 +48,7 @@ INTERFACE zif_aff_edoi_v1 PUBLIC.
     END OF ty_interface_version.
   "! <p class="shorttext">Interface Versions</p>
   "! Interface versions
-  TYPES ty_interface_versions TYPE SORTED TABLE OF ty_interface_version WITH UNIQUE KEY interface_version.
+  TYPES ty_interface_versions TYPE SORTED TABLE OF ty_interface_version WITH UNIQUE KEY version.
   TYPES:
     "! <p class="shorttext">Attribute Determination for Communication with Cloud Edition</p>
     "! Attribute determination for communication with cloud edition
@@ -72,7 +72,7 @@ INTERFACE zif_aff_edoi_v1 PUBLIC.
       "! <p class="shorttext">Response Interface</p>
       "! eDoc response interface
       "! $required
-      response_interface_id      TYPE c LENGTH 30,
+      response_interface      TYPE c LENGTH 30,
       "! <p class="shorttext">Response Interface Version</p>
       "! Response interface version
       "! $required
@@ -101,7 +101,7 @@ INTERFACE zif_aff_edoi_v1 PUBLIC.
       "! <p class="shorttext">General Information</p>
       "! General information
       "! $required
-      general_information TYPE ty_interface,
+      general_information TYPE ty_general_information,
       "! <p class="shorttext">Interface Version</p>
       "! Interface version
       "! $required
