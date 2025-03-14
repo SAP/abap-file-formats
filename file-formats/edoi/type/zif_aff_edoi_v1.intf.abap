@@ -102,10 +102,10 @@ INTERFACE zif_aff_edoi_v1 PUBLIC.
       "! General information
       "! $required
       general_information TYPE ty_general_information,
-      "! <p class="shorttext">Interface Version</p>
-      "! Interface version
+      "! <p class="shorttext">Interface Versions</p>
+      "! Interface versions
       "! $required
-      interface_version   TYPE ty_interface_versions,
+      interface_versions  TYPE ty_interface_versions,
       "! <p class="shorttext">Attribute Determination for Communication with Cloud Edition</p>
       "! Attribute determination for communication with cloud edition
       "! $required

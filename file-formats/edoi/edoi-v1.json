@@ -71,9 +71,9 @@
         "interfaceDirection"
       ]
     },
-    "interfaceVersion": {
-      "title": "Interface Version",
-      "description": "Interface version",
+    "interfaceVersions": {
+      "title": "Interface Versions",
+      "description": "Interface versions",
       "type": "array",
       "uniqueItems": true,
       "items": {
@@ -174,7 +174,7 @@
     "formatVersion",
     "header",
     "generalInformation",
-    "interfaceVersion",
+    "interfaceVersions",
     "drcAttributes"
   ]
 }
