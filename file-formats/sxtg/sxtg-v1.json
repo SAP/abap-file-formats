@@ -78,7 +78,7 @@
         "properties": {
           "transactionCode": {
             "title": "Transaction Code",
-            "description": "Transaction codes",
+            "description": "Transaction code",
             "type": "string",
             "maxLength": 20
           }

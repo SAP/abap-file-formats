@@ -6,7 +6,7 @@ INTERFACE zif_aff_sxtg_v1
     "! Transaction code
     BEGIN OF ty_transaction_code,
       "! <p class="shorttext">Transaction Code</p>
-      "! Transaction codes
+      "! Transaction code
       transaction_code TYPE c LENGTH 20,
     END OF ty_transaction_code.
 
