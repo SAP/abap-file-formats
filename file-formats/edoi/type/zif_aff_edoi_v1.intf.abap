@@ -50,9 +50,9 @@ INTERFACE zif_aff_edoi_v1 PUBLIC.
   "! Interface versions
   TYPES ty_interface_versions TYPE SORTED TABLE OF ty_interface_version WITH UNIQUE KEY version.
   TYPES:
-    "! <p class="shorttext">Attribute Determination for Communication with Cloud Edition</p>
-    "! Attribute determination for communication with cloud edition
-    BEGIN OF ty_drc_attribute,
+    "! <p class="shorttext">Communication Integration Attributes</p>
+    "! Communication integration attributes
+    BEGIN OF ty_communication_attribute,
       "! <p class="shorttext">Process Type</p>
       "! DRC process type
       "! $required
@@ -80,10 +80,10 @@ INTERFACE zif_aff_edoi_v1 PUBLIC.
       "! $maximum 9999
       response_interface_version TYPE i,
 
-    END OF ty_drc_attribute.
+    END OF ty_communication_attribute.
   "! <p class="shorttext">Interface Versions</p>
   "! eDocument interface versions
-  TYPES ty_drc_attributes TYPE SORTED TABLE OF ty_drc_attribute WITH UNIQUE KEY process_type.
+  TYPES ty_communication_attributes TYPE SORTED TABLE OF ty_communication_attribute WITH UNIQUE KEY process_type.
 
 
   TYPES:
@@ -93,23 +93,23 @@ INTERFACE zif_aff_edoi_v1 PUBLIC.
       "! <p class="shorttext">Format Version</p>
       "! Format version
       "! $required
-      format_version      TYPE zif_aff_types_v1=>ty_format_version,
+      format_version           TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header              TYPE zif_aff_types_v1=>ty_header_100_cloud,
+      header                   TYPE zif_aff_types_v1=>ty_header_100_cloud,
       "! <p class="shorttext">General Information</p>
       "! General information
       "! $required
-      general_information TYPE ty_general_information,
+      general_information      TYPE ty_general_information,
       "! <p class="shorttext">Interface Versions</p>
       "! Interface versions
       "! $required
-      interface_versions  TYPE ty_interface_versions,
-      "! <p class="shorttext">Attribute Determination for Communication with Cloud Edition</p>
-      "! Attribute determination for communication with cloud edition
+      interface_versions       TYPE ty_interface_versions,
+      "! <p class="shorttext">Communication Integration Attributes</p>
+      "! Communication integration attributes
       "! $required
-      drc_attributes      TYPE ty_drc_attributes,
+      communication_attributes TYPE ty_communication_attributes,
 
     END OF ty_main.
 

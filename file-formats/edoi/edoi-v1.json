@@ -109,14 +109,14 @@
         ]
       }
     },
-    "drcAttributes": {
-      "title": "Attribute Determination for Communication with Cloud Edition",
-      "description": "Attribute determination for communication with cloud edition",
+    "communicationAttributes": {
+      "title": "Communication Integration Attributes",
+      "description": "Communication integration attributes",
       "type": "array",
       "uniqueItems": true,
       "items": {
-        "title": "Attribute Determination for Communication with Cloud Edition",
-        "description": "Attribute determination for communication with cloud edition",
+        "title": "Communication Integration Attributes",
+        "description": "Communication integration attributes",
         "type": "object",
         "properties": {
           "processType": {
@@ -175,6 +175,6 @@
     "header",
     "generalInformation",
     "interfaceVersions",
-    "drcAttributes"
+    "communicationAttributes"
   ]
 }
