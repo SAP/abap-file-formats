@@ -165,12 +165,13 @@ Normally, if an ABAP object is serialized, only the components of the correspond
 is added. Note that also the `$required` annotation leads to such behavior.
 
 ### Default Values
-To set the `default` for a component of the JSON Schema, the annotation
+To specify the `default` value for a field of the JSON Schema, the annotation
 ```abap
 "! $default
 ```
- is used, followed by the specification of the default. To provide the default, there are two different possibilities:
-1. If the component has enum values, the default value is specified by a link to the corresponding component of the constant describing the enum.
+is used, followed by the specification of the default value. 
+To provide the default, there are two different possibilities:
+1. If the field has enum values, the default value is specified by a link to the corresponding component of the constant describing the enum.
 ```abap
 "! $default {@link source_name.data:constant_name.default_component}
 ```
@@ -179,6 +180,13 @@ To set the `default` for a component of the JSON Schema, the annotation
 "! $default 'value'
 ```
 This also ensures that only components whose value is not equal to a specific default value are serialized to the JSON data file.
+
+Default values can only specified if one of the following rules apply:
+
+1. The default value represents the initial value of the underlying data type (e.g., `0` for an interger or `space` for a character field).
+2. The field and all higher-level structures of the field are marked as `$required`.
+3. For enumerations, all other values must **not** represent type initial value of the underlying data type.
+
 Fields, which are not specified in the JSON data file, are deserialized to their default values.
 Note that if you specify a default value, initial values are written to the JSON data file, unless they are not equal to the selected default.
 
