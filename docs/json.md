@@ -169,7 +169,7 @@ To specify the `default` value for a field of the JSON Schema, the annotation
 ```abap
 "! $default
 ```
-is used, followed by the specification of the default value. 
+is used, followed by the specification of the default value.
 To provide the default, there are two different possibilities:
 1. If the field has enum values, the default value is specified by a link to the corresponding component of the constant describing the enum.
 ```abap
