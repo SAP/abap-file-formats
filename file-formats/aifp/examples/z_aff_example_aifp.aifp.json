@@ -1,0 +1,45 @@
+
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Example AIFP for ABAP File Format",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "namespace": "AIFNS",
+    "aifCheck": "BP_EXIST"
+  },
+  "messageDetail": {},
+  "singleCheckAssignment": [
+    {
+      "checkNumber": "10",
+      "checkDescription": "Check Business Partner Exist",
+      "checkScenario": "database",
+      "fieldCheckDetail": {
+        "fieldCheck": "empty",
+        "fieldCheckOperator": "equal"
+      },
+      "databaseCheckDetail": {
+        "databaseCheckType": "checkExistence",
+        "databaseCheckOperator": "equal"
+      },
+      "classCheckDetail": {},
+      "successMessageDetail": {}
+    },
+    {
+      "checkNumber": "20",
+      "checkDescription": "Check not empty",
+      "checkScenario": "simpledb",
+      "fieldCheckDetail": {
+        "fieldCheck": "notEmpty"
+      },
+      "databaseCheckDetail": {
+        "databaseCheckType": "checkExistence",
+        "databaseCheckOperator": "equal"
+      },
+      "classCheckDetail": {},
+      "successMessageDetail": {}
+    }
+  ]
+}
