@@ -84,14 +84,14 @@
       },
       "additionalProperties": false
     },
-    "sralConfiguration": {
-      "title": "Additional Selection Fields",
-      "description": "Additional selection fields of validation report",
+    "readAccessLogConfigurations": {
+      "title": "Read Access Log Configurations",
+      "description": "Read access log configurations",
       "type": "array",
       "uniqueItems": true,
       "items": {
-        "title": "SRAL Configuration Type",
-        "description": "SRAL configuration type",
+        "title": "Read Access Log Configuration",
+        "description": "Read access log configuration",
         "type": "object",
         "properties": {
           "fileType": {
@@ -125,7 +125,7 @@
         ]
       }
     },
-    "edocSpecAdditionalTable": {
+    "edocSpecAdditionalTables": {
       "title": "eDocument Type Specific Additional Tables",
       "description": "eDocument type specific additional tables",
       "type": "array",
@@ -138,8 +138,9 @@
           "sequenceNumber": {
             "title": "Sequence Number",
             "description": "Sequence number",
-            "type": "string",
-            "maxLength": 10
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 9999
           },
           "tableName": {
             "title": "Table Name",

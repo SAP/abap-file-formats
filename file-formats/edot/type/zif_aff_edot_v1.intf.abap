@@ -4,9 +4,9 @@ INTERFACE zif_aff_edot_v1
   PUBLIC.
 
   TYPES:
-    "! <p class="shorttext">SRAL Configuration Type</p>
-    "! SRAL configuration type
-    BEGIN OF ty_sral_configuration,
+    "! <p class="shorttext">Read Access Log Configuration</p>
+    "! Read access log configuration
+    BEGIN OF ty_read_access_log_config,
       "! <p class="shorttext">File Type</p>
       "! File type
       "! $required
@@ -21,10 +21,10 @@ INTERFACE zif_aff_edot_v1
       "! <p class="shorttext">File Cloud Relevancy</p>
       "! File cloud relevancy
       is_cloud_relevant TYPE abap_bool,
-    END OF ty_sral_configuration.
-  "! <p class="shorttext">SRAL Configuration</p>
-  "! SRAL configuration
-  TYPES ty_sral_configurations TYPE SORTED TABLE OF ty_sral_configuration WITH UNIQUE KEY file_type.
+    END OF ty_read_access_log_config.
+  "! <p class="shorttext">Read Access Log Configurations</p>
+  "! Read access log configurations
+  TYPES ty_read_access_log_configs  TYPE SORTED TABLE OF ty_read_access_log_config  WITH UNIQUE KEY file_type.
   TYPES:
     "! <p class="shorttext">eDocument Type Specific Additional Tables</p>
     "! eDocument type specific additional tables
@@ -32,19 +32,21 @@ INTERFACE zif_aff_edot_v1
       "! <p class="shorttext">Sequence Number</p>
       "! Sequence number
       "! $required
-      sequence_number TYPE c LENGTH 10,
+      "! $minimum 1
+      "! $maximum 9999
+      sequence_number TYPE i,
       "! <p class="shorttext">Table Name</p>
       "! Table name
       "! $required
       table_name      TYPE zif_aff_types_v1=>ty_object_name_30,
     END OF ty_additional_table.
-  "! <p class="shorttext">eDocument Type Specific Additional Tables</p>
-  "! eDocument type specific additional tables
+  "! <p class="shorttext">Read Access Log Configuration</p>
+  "! Read access log configuration
   TYPES ty_additional_tables TYPE SORTED TABLE OF ty_additional_table WITH UNIQUE KEY sequence_number.
   TYPES:
     "! <p class="shorttext">General Information</p>
     "! General information
-    BEGIN OF ty_edoc_information,
+    BEGIN OF ty_general_information,
       "! <p class="shorttext">eDocument Table Name</p>
       "! eDocument table name
       table_name                     TYPE zif_aff_types_v1=>ty_object_name_30,
@@ -57,7 +59,7 @@ INTERFACE zif_aff_edot_v1
       "! <p class="shorttext">Contingency eDocument Type</p>
       "! Contingency eDocument type
       contingency_edoc_type          TYPE c LENGTH 10,
-    END OF ty_edoc_information.
+    END OF ty_general_information.
   TYPES:
     "! <p class="shorttext">Header for EDOT object</p>
     "! The header for an ABAP main object (without source code) with a description of 30 characters (no key user)
@@ -83,21 +85,20 @@ INTERFACE zif_aff_edot_v1
       "! <p class="shorttext">Format Version</p>
       "! Format version
       "! $required
-      format_version             TYPE zif_aff_types_v1=>ty_format_version,
+      format_version                TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header                     TYPE ty_header_30_cloud,
+      header                        TYPE ty_header_30_cloud,
       "! <p class="shorttext">General Information</p>
       "! General information
       "! $required
-      general_information        TYPE ty_edoc_information,
-      "! <p class="shorttext">Additional Selection Fields</p>
-      "! Additional selection fields of validation report
-      sral_configuration         TYPE ty_sral_configurations,
+      general_information           TYPE ty_general_information,
+      "! <p class="shorttext">Read Access Log Configurations</p>
+      "! Read access log configurations
+      read_access_log_configurations TYPE ty_read_access_log_configs,
       "! <p class="shorttext">eDocument Type Specific Additional Tables</p>
       "! eDocument type specific additional tables
-      edoc_spec_additional_table TYPE ty_additional_tables,
-
+      edoc_spec_additional_tables    TYPE ty_additional_tables,
     END OF ty_main.
 ENDINTERFACE.

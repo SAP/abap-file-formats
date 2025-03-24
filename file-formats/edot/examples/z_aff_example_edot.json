@@ -1,0 +1,24 @@
+{
+    "header": {
+      "abapLanguageVersion": "standard"
+    },
+    "generalInformation": {
+      "tableName": "EDOFRINV",
+      "isArchivePreprocessNeeded": false,
+      "isCreatedInContingencyMode": false
+    },
+    "readAccessLogConfigurations": [
+      {
+        "fileType": "REQUEST",
+        "fileStructure": "EDO_FR_INV_INVOICE_TYPE",
+        "fileDescription": "eDocument France: Invoice Request",
+        "isCloudRelevant": false
+      }
+    ],
+    "edocSpecAdditionalTables": [
+      {
+        "sequenceNumber": 1,
+        "tableName": "EDOFRINV1"
+      }
+    ]
+  }
