@@ -1,5 +1,9 @@
 {
     "formatVersion": "1",
+    "header": {
+      "description": "Example EDOT for ABAP file formats",
+      "originalLanguage": "en"
+    },
     "generalInformation": {
       "tableName": "EDOFRINV",
       "isArchivePreprocessNeeded": false,
