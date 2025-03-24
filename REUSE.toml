@@ -6,5 +6,5 @@ SPDX-PackageDownloadLocation = "https://github.com/SAP/abap-file-formats"
 [[annotations]]
 path = "**"
 precedence = "aggregate"
-SPDX-FileCopyrightText = "2021 SAP SE or an SAP affiliate company and ABAP File Formats contributors"
+SPDX-FileCopyrightText = "2021 SAP SE or an SAP affiliate company and ABAP file formats contributors"
 SPDX-License-Identifier = "MIT"
