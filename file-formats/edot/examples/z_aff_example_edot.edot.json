@@ -1,7 +1,5 @@
 {
-    "header": {
-      "abapLanguageVersion": "standard"
-    },
+    "formatVersion": "1",
     "generalInformation": {
       "tableName": "EDOFRINV",
       "isArchivePreprocessNeeded": false,

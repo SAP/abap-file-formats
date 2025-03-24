@@ -85,15 +85,15 @@ INTERFACE zif_aff_edot_v1
       "! <p class="shorttext">Format Version</p>
       "! Format version
       "! $required
-      format_version                TYPE zif_aff_types_v1=>ty_format_version,
+      format_version                 TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header                        TYPE ty_header_30_cloud,
+      header                         TYPE ty_header_30_cloud,
       "! <p class="shorttext">General Information</p>
       "! General information
       "! $required
-      general_information           TYPE ty_general_information,
+      general_information            TYPE ty_general_information,
       "! <p class="shorttext">Read Access Log Configurations</p>
       "! Read access log configurations
       read_access_log_configurations TYPE ty_read_access_log_configs,
