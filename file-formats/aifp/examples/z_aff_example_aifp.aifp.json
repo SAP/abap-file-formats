@@ -13,26 +13,10 @@
     {
       "checkNumber": "10",
       "checkDescription": "Check Business Partner Exist",
-      "checkScenario": "database",
+      "checkScenario": "simple",
       "fieldCheckDetail": {
         "fieldCheck": "empty",
         "fieldCheckOperator": "equal"
-      },
-      "databaseCheckDetail": {
-        "databaseCheckType": "checkExistence",
-        "databaseCheckOperator": "equal"
-      }
-    },
-    {
-      "checkNumber": "20",
-      "checkDescription": "Check not empty",
-      "checkScenario": "simpledb",
-      "fieldCheckDetail": {
-        "fieldCheck": "notEmpty"
-      },
-      "databaseCheckDetail": {
-        "databaseCheckType": "checkExistence",
-        "databaseCheckOperator": "equal"
       }
     }
   ]
