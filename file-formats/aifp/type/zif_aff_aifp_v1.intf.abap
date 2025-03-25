@@ -1,5 +1,5 @@
-interface zif_aff_aifp_v1
-  public.
+INTERFACE zif_aff_aifp_v1
+  PUBLIC.
 
   types:
   "! $values { @link zif_aff_aifp_v1.data:co_check_scenario }
