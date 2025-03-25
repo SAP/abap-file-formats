@@ -119,7 +119,7 @@ INTERFACE zif_aff_aifp_v1
   TYPES:
   "! <p class="shorttext">Single Checks</p>
   "! Single checks
-    ty_single_checks TYPE STANDARD TABLE OF ty_single_check WITH DEFAULT KEY .
+    ty_single_checks TYPE STANDARD TABLE OF ty_single_check WITH DEFAULT KEY.
   TYPES:
     "! <p class="shorttext">Check Message Detail</p>
     "! Check detail
