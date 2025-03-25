@@ -154,7 +154,7 @@ INTERFACE zif_aff_aifp_v1
       "! <p class="shorttext">AIF Check</p>
       "! SAP Application Interface check
       "! $required
-      aif_check TYPE c LENGTH 20 ,
+      aif_check TYPE c LENGTH 20,
     END OF ty_general_information.
   TYPES:
     "! <p class="shorttext">Recipient</p>
