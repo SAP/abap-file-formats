@@ -1,27 +1,27 @@
 INTERFACE zif_aff_aifp_v1
   PUBLIC.
 
-  types:
+  TYPES:
   "! $values { @link zif_aff_aifp_v1.data:co_check_scenario }
   "! $default { @link zif_aff_aifp_v1.data:co_check_scenario.simple }
     ty_check_scenario TYPE c LENGTH 10 .
-  types:
+  TYPES:
   "! $values { @link zif_aff_aifp_v1.data:co_simple_field_check }
   "! $default { @link zif_aff_aifp_v1.data:co_simple_field_check.empty }
     ty_simple_field_check TYPE c LENGTH 1 .
-  types:
+  TYPES:
   "! $values { @link zif_aff_aifp_v1.data:co_operator }
   "! $default { @link zif_aff_aifp_v1.data:co_operator.equal }
     ty_operator TYPE c LENGTH 2 .
-  types:
+  TYPES:
   "! $values { @link zif_aff_aifp_v1.data:co_operator_db }
   "! $default { @link zif_aff_aifp_v1.data:co_operator_db.equal }
     ty_operator_db TYPE c LENGTH 2 .
-  types:
+  TYPES:
   "! $values { @link zif_aff_aifp_v1.data:co_database_check_type }
   "! $default { @link zif_aff_aifp_v1.data:co_database_check_type.check_existence }
     ty_database_check_type TYPE c LENGTH 1 .
-  types:
+  TYPES:
     "! <p class="shorttext">Success Message Detail</p>
     "! Success message detail
     BEGIN OF ty_success_message_detail,
@@ -44,7 +44,7 @@ INTERFACE zif_aff_aifp_v1
       "! Success message variable 4
       success_message_variable_4 TYPE c LENGTH 120,
     END OF ty_success_message_detail .
-  types:
+  TYPES:
     "! <p class="shorttext">Field Check Detail</p>
     "! Field check detail
     BEGIN OF ty_field_check_detail,
@@ -58,7 +58,7 @@ INTERFACE zif_aff_aifp_v1
       "! Pattern for Field Check
       field_check_pattern  TYPE c LENGTH 60,
     END OF ty_field_check_detail .
-  types:
+  TYPES:
     "! <p class="shorttext">Database Check Detail</p>
     "! Database check detail
     BEGIN OF ty_database_check_detail,
@@ -81,7 +81,7 @@ INTERFACE zif_aff_aifp_v1
       "! Pattern for database check
       database_check_pattern  TYPE c LENGTH 60,
     END OF ty_database_check_detail .
-  types:
+  TYPES:
     "! <p class="shorttext">Class Check Detail</p>
     "! Class check detail
     BEGIN OF ty_class_check_detail,
@@ -89,7 +89,7 @@ INTERFACE zif_aff_aifp_v1
       "! Check class
       check_class TYPE c LENGTH 30,
     END OF ty_class_check_detail .
-  types:
+  TYPES:
     "! <p class="shorttext">Single Check</p>
     "! Single check
     BEGIN OF ty_single_check,
@@ -116,11 +116,11 @@ INTERFACE zif_aff_aifp_v1
       "! Success message detail
       success_message_detail TYPE ty_success_message_detail,
     END OF ty_single_check .
-  types:
+  TYPES:
   "! <p class="shorttext">Single Checks</p>
   "! Single checks
     ty_single_checks TYPE STANDARD TABLE OF ty_single_check WITH DEFAULT KEY .
-  types:
+  TYPES:
     "! <p class="shorttext">Check Message Detail</p>
     "! Check detail
     BEGIN OF ty_check_message_detail,
@@ -143,7 +143,7 @@ INTERFACE zif_aff_aifp_v1
       "! Error message variable 4
       error_message_variable_4 TYPE c LENGTH 120,
     END OF ty_check_message_detail .
-  types:
+  TYPES:
     "! <p class="shorttext">Check Details</p>
     "! Check details
     BEGIN OF ty_general_information,
@@ -156,7 +156,7 @@ INTERFACE zif_aff_aifp_v1
       "! $required
       aif_check TYPE c LENGTH 20,
     END OF ty_general_information .
-  types:
+  TYPES:
     "! <p class="shorttext">Recipient</p>
     "! Recipient
     BEGIN OF ty_main,
@@ -179,7 +179,7 @@ INTERFACE zif_aff_aifp_v1
       single_check_assignment TYPE ty_single_checks,
     END OF ty_main .
 
-  constants:
+  CONSTANTS:
     BEGIN OF co_check_scenario,
       "! <p class="shorttext">Simple Field Check</p>
       "! Simple field check
@@ -200,7 +200,7 @@ INTERFACE zif_aff_aifp_v1
       "! Manual implementation
       implement  TYPE ty_check_scenario VALUE 'IMPLEMENT',
     END OF co_check_scenario .
-  constants:
+  CONSTANTS:
     BEGIN OF co_simple_field_check,
       "! <p class="shorttext">Empty</p>
       "! Empty
@@ -239,7 +239,7 @@ INTERFACE zif_aff_aifp_v1
       "! Alphanumeric with special chars and German Umlauts
       x                  TYPE ty_simple_field_check VALUE 'X',
     END OF co_simple_field_check .
-  constants:
+  CONSTANTS:
     BEGIN OF co_operator,
       "! <p class="shorttext">Equal</p>
       "! Equal
@@ -263,7 +263,7 @@ INTERFACE zif_aff_aifp_v1
       "! Matches (regular expression)
       matches                    TYPE ty_operator VALUE 'MT',
     END OF co_operator .
-  constants:
+  CONSTANTS:
     BEGIN OF co_operator_db,
       "! <p class="shorttext">Equal</p>
       "! Equal
@@ -278,7 +278,7 @@ INTERFACE zif_aff_aifp_v1
       "! No pattern
       no_pattern       TYPE ty_operator VALUE 'NP',
     END OF co_operator_db .
-  constants:
+  CONSTANTS:
     BEGIN OF co_database_check_type,
       "! <p class="shorttext">Check Existence</p>
       "! Check Existence
@@ -290,4 +290,4 @@ INTERFACE zif_aff_aifp_v1
       "! Compare
       compare             TYPE ty_operator VALUE '3',
     END OF co_database_check_type .
-endinterface.
+ENDINTERFACE.
