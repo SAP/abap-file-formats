@@ -12,7 +12,7 @@ INTERFACE zif_aff_aifp_v1
   TYPES:
   "! $values { @link zif_aff_aifp_v1.data:co_operator }
   "! $default { @link zif_aff_aifp_v1.data:co_operator.equal }
-    ty_operator TYPE c LENGTH 2 .
+    ty_operator TYPE c LENGTH 2.
   TYPES:
   "! $values { @link zif_aff_aifp_v1.data:co_operator_db }
   "! $default { @link zif_aff_aifp_v1.data:co_operator_db.equal }
