@@ -9,15 +9,22 @@
     "namespace": "AIFNS",
     "aifCheck": "BP_EXIST"
   },
+  "errorMessage": {},
   "singleCheckAssignment": [
     {
       "checkNumber": "10",
       "checkDescription": "Check Business Partner Exist",
       "checkScenario": "simple",
-      "fieldCheckDetail": {
+      "fieldCheck": {
         "fieldCheck": "empty",
-        "fieldCheckOperator": "equal"
-      }
+        "fieldCheckOperator": "equals"
+      },
+      "databaseCheck": {
+        "databaseCheckType": "checkExistence",
+        "databaseCheckOperator": "equals"
+      },
+      "classCheck": {},
+      "successMessage": {}
     }
   ]
 }
