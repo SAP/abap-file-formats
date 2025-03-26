@@ -186,7 +186,7 @@ Default values can only specified if one of the following rules apply:
 1. The default value represents the initial value of the underlying data type (e.g., `0` for an interger or `space` for a character field).
 
 2. The field and all higher-level structures* of the field are marked as `$required`.
-   
+
    > *) Arrays don't need to be marked as `$required` in this case.
    In Json it is possible to distinguish between empty arrays (`"table": []`) and arrays with "empty" array items (`"table": [{}]`).
    All fields with defaults in the array items that don't follow the other rules, along with their higher-level structures, must be marked as `$required`.
