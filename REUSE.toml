@@ -1,0 +1,10 @@
+version = 1
+SPDX-PackageName = "ABAP file formats"
+SPDX-PackageSupplier = "ABAP file formats team <abap-file-formats@sap.com>"
+SPDX-PackageDownloadLocation = "https://github.com/SAP/abap-file-formats"
+
+[[annotations]]
+path = "**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2021 SAP SE or an SAP affiliate company and ABAP file formats contributors"
+SPDX-License-Identifier = "MIT"
