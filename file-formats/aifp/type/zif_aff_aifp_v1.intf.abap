@@ -61,7 +61,7 @@ INTERFACE zif_aff_aifp_v1
       "! Where Condition for Select Statement
       where_condition         TYPE c LENGTH 200,
       "! <p class="shorttext">Database Check Type</p>
-      "! Database Check Type
+      "! Database check type
       database_check_type     TYPE ty_database_check_type,
       "! <p class="shorttext">Field Name for Comparison</p>
       "! Field Name for Comparison
@@ -152,22 +152,22 @@ INTERFACE zif_aff_aifp_v1
     BEGIN OF co_check_scenario,
       "! <p class="shorttext">Simple Field Check</p>
       "! Simple field check
-      simple     TYPE ty_check_scenario VALUE 'SIMPLE',
+      simple                TYPE ty_check_scenario VALUE 'SIMPLE',
       "! <p class="shorttext">Advanced Field Check</p>
       "! Advanced field check
-      advanced   TYPE ty_check_scenario VALUE 'ADVANCED',
+      advanced              TYPE ty_check_scenario VALUE 'ADVANCED',
       "! <p class="shorttext">Simple Field Check and Database Check</p>
-      "! Simple field check  and database check
-      simpledb   TYPE ty_check_scenario VALUE 'SIMPLEDB',
+      "! Simple field check and database check
+      simpledb              TYPE ty_check_scenario VALUE 'SIMPLEDB',
       "! <p class="shorttext">Advanced Field Check and Database Check</p>
       "! Advanced field check and database check
-      advanceddb TYPE ty_check_scenario VALUE 'ADVANCEDDB',
+      advanceddb            TYPE ty_check_scenario VALUE 'ADVANCEDDB',
       "! <p class="shorttext">Database Check</p>
       "! Database check
-      database   TYPE ty_check_scenario VALUE 'DATABASE',
+      database              TYPE ty_check_scenario VALUE 'DATABASE',
       "! <p class="shorttext">Manual Implementation</p>
       "! Manual implementation
-      implement  TYPE ty_check_scenario VALUE 'IMPLEMENT',
+      manual_implementation TYPE ty_check_scenario VALUE 'IMPLEMENT',
     END OF co_check_scenario.
   CONSTANTS:
     BEGIN OF co_simple_field_check,

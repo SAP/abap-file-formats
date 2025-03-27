@@ -9,7 +9,6 @@
     "namespace": "AIFNS",
     "aifCheck": "BP_EXIST"
   },
-  "errorMessage": {},
   "singleCheckAssignment": [
     {
       "checkNumber": "10",
@@ -22,9 +21,7 @@
       "databaseCheck": {
         "databaseCheckType": "checkExistence",
         "databaseCheckOperator": "equals"
-      },
-      "classCheck": {},
-      "successMessage": {}
+      }
     }
   ]
 }

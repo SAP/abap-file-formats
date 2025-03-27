@@ -150,7 +150,7 @@
               "simpledb",
               "advanceddb",
               "database",
-              "implement"
+              "manualImplementation"
             ],
             "enumTitles": [
               "Simple Field Check",
@@ -293,7 +293,7 @@
               },
               "databaseCheckType": {
                 "title": "Database Check Type",
-                "description": "Database Check Type",
+                "description": "Database check type",
                 "type": "string",
                 "enum": [
                   "checkExistence",
