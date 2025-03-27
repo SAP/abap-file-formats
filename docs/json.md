@@ -181,7 +181,7 @@ To provide the default, there are two different possibilities:
 ```
 This also ensures that only components whose value is not equal to a specific default value are serialized to the JSON data file.
 
-Default values can only specified if one of the following rules apply:
+Default values can only be specified if one of the following rules apply:
 
 1. The default value represents the initial value of the underlying data type (e.g., `0` for an integer or `space` for a character field).
 
