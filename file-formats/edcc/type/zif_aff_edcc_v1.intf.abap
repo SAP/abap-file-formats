@@ -384,11 +384,11 @@ INTERFACE zif_aff_edcc_v1
       "! <p class="shorttext">Representation Type</p>
       "! Representation type
       "! $required
-      representation_type TYPE zif_aff_types_v1=>ty_object_name_30,
+      name TYPE zif_aff_types_v1=>ty_object_name_30,
     END OF ty_representation_attribute.
   "! <p class="shorttext">Representation Types</p>
   "! Assign representation types associated with consistency scenario
-  TYPES ty_representation_attributes TYPE SORTED TABLE OF ty_representation_attribute WITH UNIQUE KEY representation_type.
+  TYPES ty_representation_attributes TYPE SORTED TABLE OF ty_representation_attribute WITH UNIQUE KEY name.
   TYPES:
     "! <p class="shorttext">eDocument Type Assignment</p>
     "! Assign eDocument types associated with consistency scenario

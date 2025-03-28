@@ -70,7 +70,7 @@
         "description": "Assign representation type associated with consistency scenario",
         "type": "object",
         "properties": {
-          "representationType": {
+          "name": {
             "title": "Representation Type",
             "description": "Representation type",
             "type": "string",
@@ -79,7 +79,7 @@
         },
         "additionalProperties": false,
         "required": [
-          "representationType"
+          "name"
         ]
       }
     },
