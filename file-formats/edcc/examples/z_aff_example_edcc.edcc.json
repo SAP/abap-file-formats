@@ -5,10 +5,10 @@
   "country": "en",
   "representationTypes": [
     {
-      "representationType": "EDOCUMENT"
+      "name": "EDOCUMENT"
     },
     {
-      "representationType": "TAXAUTHDOC"
+      "name": "TAXAUTHDOC"
     }
   ],
   "additionalSelectionFields": [],
