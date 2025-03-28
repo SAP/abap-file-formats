@@ -1,0 +1,132 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Sample Consistency Scenario",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "country": "es",
+  "representationTypes": [
+    {
+      "name": "EDOCUMENT"
+    },
+    {
+      "name": "TAXAUTHDOC"
+    }
+  ],
+  "additionalSelectionFields": [],
+  "taxAuthorityMessages": [
+    {
+      "messageType": "EXAMPLE_MESSAGE",
+      "taxAuthorityDocumentType": "INVOICE"
+    }
+  ],
+  "taxAuthorityTables": [],
+  "edocumentTypes": [
+    {
+      "edocType": "EINVOICEES"
+    }
+  ],
+  "comparisonTypeAndEvent": {
+    "comparisonTypes": [
+      {
+        "name": "EXAMPLE_COMPARISON",
+        "description": "EXAMPLE_COMPARISON",
+        "positionNumber": "1",
+        "implementingClass": "CL_EXAMPLE",
+        "dataSource": "CDS_EXAMPLE",
+        "assignChecks": {
+          "existenceCheck": {
+            "checkId": "EXAMPLE_EXIST",
+            "fieldName": "SOMETHING",
+            "fieldValue": "SOMETHING",
+            "resultProcess": "RESULT_EX"
+          },
+          "statusChecks": [
+            {
+              "checkId": "EXAMPLE_STATUS",
+              "sequenceNumber": "1",
+              "sourceFieldName1": "EXAMPLE_FIELD1",
+              "sourceFieldValue1": "EXAMPLE_VALUE1",
+              "sourceFieldName2": "EXAMPLE_FIELD2",
+              "sourceFieldValue2": "EXAMPLE_VALUE2",
+              "resultProcess": "RESULT_EX1"
+            }
+          ],
+          "contentChecks": [
+            {
+              "checkId": "EXAMPLE_CONTENT",
+              "checkNumber": "1",
+              "additionalDescription": "Description",
+              "contentComparisonFieldGroup": [
+                {
+                  "fieldGroup": "EXAMPLE_FIELDGRP",
+                  "description": "Description",
+                  "fieldGroupLevel": "header",
+                  "checkFormula": "field",
+                  "resultProcess": "RESULT_EX2",
+                  "comparisonField": [
+                    {
+                      "representationType": "EDOCUMENT",
+                      "fieldName": "Something",
+                      "comparisonSequence": "1"
+                    },
+                    {
+                      "representationType": "TAXAUTHDOC",
+                      "fieldName": "SOMETHING2",
+                      "comparisonSequence": "2"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "checkAttributes": [
+            {
+              "checkId": "EXAMPLE_EXIST",
+              "executionSequence": "1",
+              "executionControl": "proceed"
+            }
+          ]
+        },
+        "representationTypes": [
+          {
+            "representationType": "EDOCUMENT"
+          },
+          {
+            "representationType": "TAXAUTHDOC"
+          }
+        ]
+      }
+    ],
+    "events": [
+      {
+        "event": "EXAMPLE_EVENT",
+        "assignedComparison": [
+          {
+            "comparisonType": "EXAMPLE_COMPARISON",
+            "checkId": "EXAMPLE_EXIST"
+          }
+        ],
+        "checkRelevance": [
+          {
+            "comparisonType": "EXAMPLE_COMPARISON",
+            "checkId": "EXAMPLE_EXIST",
+            "relevance": "unchanged"
+          }
+        ]
+      }
+    ],
+    "inconsistencyCategories": [
+      {
+        "resultUiGroup": "SOMETHING",
+        "countryXtension": "",
+        "resultProcess": [
+          {
+            "resultProcess": "RESULT_EX"
+          }
+        ]
+      }
+    ]
+  }
+}
