@@ -4,7 +4,6 @@ INTERFACE zif_aff_scp1_v1
   "! <p class="shorttext">Type</p>
   TYPES ty_type TYPE c LENGTH 3.
 
-
   CONSTANTS:
     "! <p class="shorttext">Type</p>
     BEGIN OF co_type,
@@ -17,35 +16,20 @@ INTERFACE zif_aff_scp1_v1
       hierarchical TYPE ty_type VALUE 'TMP',
     END OF co_type.
 
-  "! <p class="shorttext">Release</p>
-  TYPES ty_release TYPE c LENGTH 10.
-
-  CONSTANTS:
-    "! <p class="shorttext">Validity</p>
-    BEGIN OF co_validity,
-      "! <p class="shorttext">All Releases</p>
-      all_releases TYPE ty_release VALUE '*',
-    END OF co_validity.
-
   TYPES:
-    "! <p class="shorttext">Attribute</p>
+    "! <p class="shorttext">Attributes</p>
     "! Attributes of BC Set
     BEGIN OF ty_attributes,
       "! <p class="shorttext">Type</p>
       "! Type of BC Set i.e. a simple BC Set or hierarchical BC Set, which contains several other BC Sets
       "! $values {@link zif_aff_scp1_v1.data:co_type}
       "! $default {@link zif_aff_scp1_v1.data:co_type.simple}
-      type               TYPE ty_type,
-      "! <p class="shorttext">Software Component</p>
-      "! BC Set is assigned to a software component. If the software component is not installed in the system,
-      "! then activation of BC Set is aborted
-      software_component TYPE c LENGTH 30,
-      "! <p class="shorttext">Minimum Release</p>
-      "! To activate the BC Set successfully, installed software component must be at least at this release
-      minimum_release    TYPE ty_release,
-      "! <p class="shorttext">Maximum Release</p>
-      "! To activate the BC Set successfully, installed software component must be within this release
-      maximum_release    TYPE ty_release,
+      "! $required
+      type                  TYPE ty_type,
+      "! <p class="shorttext">Scoping Relevant</p>
+      "! Scope Relevant
+      "! $showAlways
+      is_relevant_for_scope TYPE abap_bool,
     END OF ty_attributes.
 
   "! <p class="shorttext">Customizing Object Type</p>
@@ -88,27 +72,17 @@ INTERFACE zif_aff_scp1_v1
     END OF co_operation_at_activation.
 
   "! <p class="shorttext">Field Attribute Value</p>
-  "! $values {@link zif_aff_scp1_v1.data:co_field_attribute}
   TYPES ty_field_attribute_value TYPE c LENGTH 3.
 
   CONSTANTS:
     "! <p class="shorttext">Field Attribute</p>
     BEGIN OF co_field_attribute,
       "! <p class="shorttext">Fixed Key Field Value</p>
-      "! Fixed value for a key field. The value can not be changed after activation
+      "! Fixed value for a key field. The value cannot be changed after activation
       fixed_key_field TYPE ty_field_attribute_value VALUE 'FKY',
-      "! <p class="shorttext">Changed Key Field Value</p>
-      "! Key field in which the user can change the value of the field when activating the data
-      key_field       TYPE ty_field_attribute_value VALUE 'KEY',
       "! <p class="shorttext">Default Field Value</p>
       "! Default value of a data field
       default_value   TYPE ty_field_attribute_value VALUE 'USE',
-      "! <p class="shorttext">Fixed Field Value</p>
-      "! The value of this data field can no longer be changed after an activation
-      fixed_value     TYPE ty_field_attribute_value VALUE 'FIX',
-      "! <p class="shorttext">Changed Field Value</p>
-      "! Data field whose value the user can change when activating
-      variable        TYPE ty_field_attribute_value VALUE 'VAR',
     END OF co_field_attribute.
 
   TYPES:
@@ -160,9 +134,11 @@ INTERFACE zif_aff_scp1_v1
       "! Automatic customizing recording only puts the key fields of a data record or
       "! data records, in the BC Set. Such BC Sets must be post-processed.
       "! Such data records are flagged as incomplete
+      "! $showAlways
       incomplete              TYPE abap_bool,
       "! <p class="shorttext">Operation at Activation</p>
       "! Data records which are to be deleted at activation are flagged with value 'L'
+      "! $required
       "! $values {@link zif_aff_scp1_v1.data:co_operation_at_activation}
       "! $default {@link zif_aff_scp1_v1.data:co_operation_at_activation.modify}
       operation_at_activation TYPE ty_operation_at_activation,
@@ -185,12 +161,14 @@ INTERFACE zif_aff_scp1_v1
       "! <p class="shorttext">Field Name</p>
       "! Name of field in table/view
       "! $required
-      field_name            TYPE c LENGTH 30,
+      field_name      TYPE c LENGTH 30,
       "! <p class="shorttext">Field Attribute</p>
       "! Defines the attribute of field like during BC Set activation, the field value must be copied to database
       "! table or not
       "! $required
-      field_attribute_value TYPE ty_field_attribute_value,
+      "! $values {@link zif_aff_scp1_v1.data:co_field_attribute}
+      "! $default {@link zif_aff_scp1_v1.data:co_field_attribute.default_value}
+      field_attribute TYPE ty_field_attribute_value,
     END OF ty_field_attribute.
 
   TYPES ty_field_attributes TYPE SORTED TABLE OF ty_field_attribute WITH UNIQUE KEY field_name.
@@ -250,7 +228,12 @@ INTERFACE zif_aff_scp1_v1
     BEGIN OF ty_sub_bcset,
       "! <p class="shorttext">Name</p>
       "! Name of the BC Set
-      name TYPE c LENGTH 32,
+      name                  TYPE c LENGTH 32,
+      "! <p class="shorttext">Position</p>
+      "! Position of BC Set in Hierarchical BC Set
+      "! $minimum 1
+      "! $maximum 10
+      position_in_hierarchy TYPE i,
     END OF ty_sub_bcset.
 
   "! <p class="shorttext">Sub-BC Sets</p>
@@ -265,6 +248,7 @@ INTERFACE zif_aff_scp1_v1
       "! $required
       format_version      TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
+      "! Header
       "! $required
       header              TYPE zif_aff_types_v1=>ty_header_60_cloud,
       "! <p class="shorttext">Attributes</p>
