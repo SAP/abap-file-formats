@@ -1,9 +1,8 @@
 {
-  "formatVersion": "1",
   "header": {
     "abapLanguageVersion": "standard"
   },
-  "country": "en",
+  "country": "es",
   "representationTypes": [
     {
       "name": "EDOCUMENT"
@@ -13,59 +12,38 @@
     }
   ],
   "additionalSelectionFields": [],
-  "taxAuthorityMessages": [],
+  "taxAuthorityMessages": [
+    {
+      "messageType": "EXAMPLE_MESSAGE",
+      "taxAuthorityDocumentType": "INVOICE"
+    }
+  ],
   "taxAuthorityTables": [],
-  "edocumentTypes": [],
+  "edocumentTypes": [
+    {
+      "edocType": "EINVOICEES"
+    }
+  ],
   "comparisonTypeAndEvent": {
     "comparisonTypes": [
       {
-        "name": "eDocumentV/sTaxAuthority",
-        "description": "example",
+        "name": "EXAMPLE_COMPARISON",
+        "description": "EXAMPLE_COMPARISON",
         "positionNumber": "1",
         "implementingClass": "CL_EXAMPLE",
-        "dataSource": "CDS_Example",
+        "dataSource": "CDS_EXAMPLE",
         "assignChecks": {
           "existenceCheck": {
-            "checkId": "EXIST",
-            "fieldName": "CDS_Field_NAME",
-            "fieldValue": "ITS_VALUE",
-            "resultProcess": "PROCESS1"
+            "checkId": "EXAMPLE_EXIST",
+            "fieldName": "SOMETHING",
+            "fieldValue": "SOMETHING",
+            "resultProcess": "RESULT_EX"
           },
-          "statusChecks": [
-            {
-              "checkId": "STATUS_CHECK1",
-              "sequenceNumber": "1",
-              "sourceFieldName1": "CDS_FIELDNAME",
-              "sourceFieldValue1": "ITS_VALUE",
-              "sourceFieldName2": "CDS_FIELDNAME3",
-              "sourceFieldValue2": "ITS_VALUE3",
-              "resultProcess": "EXAMPLE"
-            }
-          ],
-          "contentChecks": [
-            {
-              "checkId": "CONTENT_CHECK",
-              "checkNumber": "1",
-              "dataSource": "",
-              "additionalDescription": "something",
-              "contentComparisonFieldGroup": []
-            }
-          ],
           "checkAttributes": [
             {
-              "checkId": "EXIST",
+              "checkId": "EXAMPLE_EXIST",
               "executionSequence": "1",
               "executionControl": "proceed"
-            },
-            {
-              "checkId": "STATUS_CHECK1",
-              "executionSequence": "2",
-              "executionControl": "proceed"
-            },
-            {
-              "checkId": "CONTENT_CHECK",
-              "executionSequence": "3",
-              "executionControl": "noProceed"
             }
           ]
         },
@@ -81,28 +59,29 @@
     ],
     "events": [
       {
-        "event": "SOME_EVENT",
+        "event": "EXAMPLE_EVENT",
         "assignedComparison": [
           {
-            "comparisonType": "eDOCUMENTv/sTAXAUTHORITY",
-            "checkId": "EXIST"
+            "comparisonType": "EXAMPLE_COMPARISON",
+            "checkId": "EXAMPLE_EXIST"
           }
         ],
         "checkRelevance": [
           {
-            "comparisonType": "eDOCUMENTv/sTAXAUTHORITY",
-            "checkId": "EXIST",
-            "relevance": "relevant"
+            "comparisonType": "EXAMPLE_COMPARISON",
+            "checkId": "EXAMPLE_EXIST",
+            "relevance": "unchanged"
           }
         ]
       }
     ],
     "inconsistencyCategories": [
       {
-        "resultUiGroup": "GROUPUI1",
+        "resultUiGroup": "SOMETHING",
+        "countryXtension": "",
         "resultProcess": [
           {
-            "resultProcess": "PROCESS1"
+            "resultProcess": "RESULT_EX"
           }
         ]
       }
