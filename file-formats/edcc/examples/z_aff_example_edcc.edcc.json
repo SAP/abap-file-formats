@@ -1,7 +1,9 @@
 {
   "formatVersion": "1",
   "header": {
-    "abapLanguageVersion": "standard"
+    "description": "something",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
   },
   "country": "es",
   "representationTypes": [
