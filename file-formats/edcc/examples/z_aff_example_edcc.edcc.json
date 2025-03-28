@@ -1,123 +1,9 @@
 {
-  "formatVersion": "1",
   "header": {
-    "description": "Sample Consistency Scenario",
-    "originalLanguage": "en",
-    "abapLanguageVersion": "cloudDevelopment"
+    "abapLanguageVersion": "standard"
   },
   "country": "en",
-  "taxAuthorityMessages": [
-    {
-      "messageType": "EXAMPLE_MESSAGE_TYPE",
-      "taxAuthorityDocumentType": "EXAMPLE_INVOICE"
-    }
-  ],
-  "taxAuthorityTables": [
-    {
-      "tableName": "EXAMPLE_TAXAUTHORITY_TABLES"
-    }
-  ],
-  "comparisonTypes": [
-    {
-      "comparisonType": "TaxAuthV/sEdoc",
-      "description": "Tax Authority V/s Edocument",
-      "positionNumber": "1",
-      "className": "CL_EDC_EXAMPLE_VALTYPE",
-      "dataSource": "CDS_COMPARISON_EXAMPLE",
-      "existenceCheck": {
-        "checkId": "EXISTENCE_CHECK",
-        "fieldName": "CDS_COMPARISON_EXAMPLE-FIELD1",
-        "fieldValue": "X",
-        "resultProcess": "EXMISMATCH"
-      },
-      "statusCheck": [
-        {
-          "checkId": "STATUS_MISMATCH",
-          "sequenceNumber": "1",
-          "sourceFieldName1": "CDS_EXAMPLE_FIELD1",
-          "sourceFieldValue1": "ACCEPTED",
-          "sourceFieldName2": "CDS_EXAMPLE_FIELD2",
-          "sourceFieldValue2": "REJECTED",
-          "resultProcess": "REJRESULT"
-        }
-      ],
-      "contentCheck": [
-        {
-          "checkId": "CONTENT_CHECK",
-          "checkNumber": "1",
-          "dataSource": "CDS_CONTENT_CHECK",
-          "additionalDescription": "Description for UI",
-          "contentComparisonFieldGroup": [
-            {
-              "fieldGroup": "EXMPL_FIELDGRP1",
-              "description": "Description of Field Group",
-              "fieldGroupLevel": "header",
-              "checkFormula": "field",
-              "resultProcess": "EXCONTENT",
-              "comparisonField": [
-                {
-                  "representationType": "EDOCUMENT",
-                  "fieldName": "CDS_TAX_FIELD1",
-                  "comparisonSequence": "1"
-                },
-                {
-                  "representationType": "TAXAUTHDOC",
-                  "fieldName": "CDS_TAXAUTH_TAXFIELD1",
-                  "comparisonSequence": "2"
-                }
-              ]
-            }
-          ]
-        }
-      ],
-      "checkAttributes": [
-        {
-          "checkId": "EXISTENCE_CHECK",
-          "positionNumber": "1",
-          "executionSequence": "1",
-          "executionControl": "proceed"
-        },
-        {
-          "checkId": "STATUS_MISMATCH",
-          "positionNumber": "2",
-          "executionSequence": "2",
-          "executionControl": "noProceed"
-        },
-        {
-          "checkId": "CONTENT_CHECK",
-          "positionNumber": "3",
-          "executionSequence": "3",
-          "executionControl": "noProceed"
-        }
-      ],
-      "representationTypes": [
-        {
-          "representationType": "EDOCUMENT"
-        },
-        {
-          "representationType": "TAXAUTHDOC"
-        }
-      ]
-    }
-  ],
-  "events": [
-    {
-      "event": "EDOC_SUBMIT",
-      "assignedComparison": [
-        {
-          "comparisonType": "TaxAuthV/sEdoc"
-        }
-      ],
-      "checkRelevance": [
-        {
-          "comparisonType": "TaxAuthV/sEdoc",
-          "checkId": "EXISTENCE_CHECK",
-          "relevance": "relevant"
-        }
-      ]
-    }
-  ],
-  "relationshipAttribute": [
+  "representationTypes": [
     {
       "representationType": "EDOCUMENT"
     },
@@ -125,20 +11,100 @@
       "representationType": "TAXAUTHDOC"
     }
   ],
-  "edocumentTypes": [
-    {
-      "edocType": "EXEDOCTYPE"
-    }
-  ],
-  "inconsistencyCategories": [
-    {
-      "resultUiGroup": "EDOC_MISSING",
-      "countryXtension": "X_CDS_EXAMPLE_EXTENSION",
-      "resultProcess": [
-        {
-          "resultProcess": "EXMISMATCH"
-        }
-      ]
-    }
-  ]
+  "additionalSelectionFields": [],
+  "taxAuthorityMessages": [],
+  "taxAuthorityTables": [],
+  "edocumentTypes": [],
+  "comparisonTypeAndEvent": {
+    "comparisonTypes": [
+      {
+        "name": "eDocumentV/sTaxAuthority",
+        "description": "example",
+        "positionNumber": "1",
+        "implementingClass": "CL_EXAMPLE",
+        "dataSource": "CDS_Example",
+        "assignChecks": {
+          "existenceCheck": {
+            "checkId": "EXIST",
+            "fieldName": "CDS_Field_NAME",
+            "fieldValue": "ITS_VALUE",
+            "resultProcess": "PROCESS1"
+          },
+          "statusChecks": [
+            {
+              "checkId": "STATUS_CHECK1",
+              "sequenceNumber": "1",
+              "sourceFieldName1": "CDS_FIELDNAME",
+              "sourceFieldValue1": "ITS_VALUE",
+              "sourceFieldName2": "CDS_FIELDNAME3",
+              "sourceFieldValue2": "ITS_VALUE3",
+              "resultProcess": "EXAMPLE"
+            }
+          ],
+          "contentChecks": [
+            {
+              "checkId": "CONTENT_CHECK",
+              "checkNumber": "1",
+              "dataSource": "",
+              "additionalDescription": "something",
+              "contentComparisonFieldGroup": []
+            }
+          ],
+          "checkAttributes": [
+            {
+              "checkId": "EXIST",
+              "executionSequence": "1",
+              "executionControl": "proceed"
+            },
+            {
+              "checkId": "STATUS_CHECK1",
+              "executionSequence": "2",
+              "executionControl": "proceed"
+            },
+            {
+              "checkId": "CONTENT_CHECK",
+              "executionSequence": "3",
+              "executionControl": "noProceed"
+            }
+          ]
+        },
+        "representationTypes": [
+          {
+            "representationType": "EDOCUMENT"
+          },
+          {
+            "representationType": "TAXAUTHDOC"
+          }
+        ]
+      }
+    ],
+    "events": [
+      {
+        "event": "SOME_EVENT",
+        "assignedComparison": [
+          {
+            "comparisonType": "eDOCUMENTv/sTAXAUTHORITY",
+            "checkId": "EXIST"
+          }
+        ],
+        "checkRelevance": [
+          {
+            "comparisonType": "eDOCUMENTv/sTAXAUTHORITY",
+            "checkId": "EXIST",
+            "relevance": "relevant"
+          }
+        ]
+      }
+    ],
+    "inconsistencyCategories": [
+      {
+        "resultUiGroup": "GROUPUI1",
+        "resultProcess": [
+          {
+            "resultProcess": "PROCESS1"
+          }
+        ]
+      }
+    ]
+  }
 }

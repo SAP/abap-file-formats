@@ -2,9 +2,57 @@ INTERFACE zif_aff_edcc_v1
   PUBLIC.
 
 
+  "! <p class="shorttext">Sequence Number</p>
+  "! Sequence number
+  TYPES ty_sequence_number      TYPE c LENGTH 3.
+  "! <p class="shorttext">Filter Operation</p>
+  "! Operand to build the where condition
+  "! $values {@link zif_aff_edcc_v1.data:co_filter_operation}
+  "! $default {@link zif_aff_edcc_v1.data:co_filter_operation.and}
+  TYPES ty_filter_operation     TYPE c LENGTH 3.
+  "! <p class="shorttext">Comparison Operator</p>
+  "! Comparison operator
+  "! $values {@link zif_aff_edcc_v1.data:co_compare_operation}
+  "! $default {@link zif_aff_edcc_v1.data:co_compare_operation.equal}
+  TYPES ty_comparison_operator  TYPE c LENGTH 3.
+  "! <p class="shorttext">Filter Field Value</p>
+  "! Value used to build the where condition
+  TYPES ty_filter_value         TYPE c LENGTH 30.
+  "! <p class="shorttext">Expression Indicator</p>
+  "! Expression indicator
+  "! $values {@link zif_aff_edcc_v1.data:co_expression}
+  "! $default {@link zif_aff_edcc_v1.data:co_expression.begin_of}
+  TYPES ty_expression_indicator TYPE c LENGTH 3.
+*  types:
+*    "! <p class="shorttext">Selection Filters on Check</p>
+*    "! Selection filters on check
+*    BEGIN OF ty_check_filter,
+*      "! <p class="shorttext">Sequence Number</p>
+*      "! Sequence number
+*      sequence_number      TYPE ty_sequence_number,
+*      "! <p class="shorttext">Filter Operation</p>
+*      "! Operand to build the where condition
+*      filter_operation     TYPE ty_filter_operation,
+*      "! <p class="shorttext">Filter Field</p>
+*      "! Field on which where condition would be applied
+*      filter_field         TYPE zif_aff_types_v1=>ty_object_name_30,
+*      "! <p class="shorttext">Comparison Operator</p>
+*      "! Comparison operator
+*      comparison_operator  TYPE ty_comparison_operator,
+*      "! <p class="shorttext">Filter Field Value</p>
+*      "! Value used to build the where condition
+*      filter_value         TYPE ty_filter_value,
+*      "! <p class="shorttext">Expression Indicator</p>
+*      "! Expression indicator
+*      expression_indicator TYPE ty_expression_indicator,
+*    END OF ty_check_filter .
+*  types:
+*  "! <p class="shorttext">Selection Filters on Check</p>
+*  "! Selection filters on check
+*    ty_check_filters         TYPE SORTED TABLE OF ty_check_filter WITH UNIQUE KEY sequence_number .
   "! <p class="shorttext">Description</p>
   "! Description
-  TYPES ty_short_description TYPE c LENGTH 30.
+  TYPES ty_short_description    TYPE c LENGTH 30.
   TYPES:
     "! <p class="shorttext">Tax Authority Message Type</p>
     "! Tax authority message type
@@ -27,6 +75,7 @@ INTERFACE zif_aff_edcc_v1
     BEGIN OF ty_tax_authority_table,
       "! <p class="shorttext">Table Name</p>
       "! Table name
+      "! $required
       table_name TYPE zif_aff_types_v1=>ty_object_name_30,
     END OF ty_tax_authority_table.
   "! <p class="shorttext">Additional Tax Authority Tables</p>
@@ -34,19 +83,16 @@ INTERFACE zif_aff_edcc_v1
   TYPES ty_tax_authority_tables TYPE SORTED TABLE OF ty_tax_authority_table WITH UNIQUE KEY table_name.
   "! <p class="shorttext">Position Number</p>
   "! Position number
-  TYPES ty_position_number      TYPE c LENGTH 2.
+  TYPES ty_position_number      TYPE n LENGTH 2.
   "! <p class="shorttext">Result Process</p>
   "! Result process
   TYPES ty_result_process       TYPE c LENGTH 10.
   "! <p class="shorttext">Field Value</p>
   "! Field value
   TYPES ty_field_value          TYPE c LENGTH 40.
-  "! <p class="shorttext">Sequence Number</p>
-  "! Sequence number
-  TYPES ty_sequence_number      TYPE c LENGTH 3.
   "! <p class="shorttext">Check Number</p>
   "! Check number
-  TYPES ty_check_number         TYPE c LENGTH 5.
+  TYPES ty_check_number         TYPE n LENGTH 5.
   "! <p class="shorttext">Description</p>
   "! Description
   TYPES ty_long_description     TYPE c LENGTH 120.
@@ -56,16 +102,23 @@ INTERFACE zif_aff_edcc_v1
     BEGIN OF ty_existence_check,
       "! <p class="shorttext">Check Id</p>
       "! Check id
+      "! $required
       check_id       TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Field Name</p>
       "! Field name
+      "! $required
       field_name     TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Field Value</p>
       "! Field value
+      "! $required
       field_value    TYPE ty_field_value,
       "! <p class="shorttext">Result Process</p>
       "! Result process
+      "! $required
       result_process TYPE ty_result_process,
+*      "! <p class="shorttext">Selection Filters on Check</p>
+*      "! Selection filters on check
+*      check_filter       TYPE ty_check_filters,
     END OF ty_existence_check.
   TYPES:
     "! <p class="shorttext">Status Check</p>
@@ -73,25 +126,35 @@ INTERFACE zif_aff_edcc_v1
     BEGIN OF ty_status_check,
       "! <p class="shorttext">Check Id</p>
       "! Check id
+      "! $required
       check_id             TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Sequence Number</p>
       "! Sequence number
+      "! $required
       sequence_number      TYPE ty_sequence_number,
       "! <p class="shorttext">Source Field Name 1</p>
       "! Source field name 1
+      "! $required
       source_field_name_1  TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Source Field Value 1</p>
       "! Source field value 1
+      "! $required
       source_field_value_1 TYPE ty_field_value,
       "! <p class="shorttext">Source Field Name 2</p>
       "! Source field name 2
+      "! $required
       source_field_name_2  TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Source Field Value 2</p>
       "! Source field value 2
+      "! $required
       source_field_value_2 TYPE ty_field_value,
       "! <p class="shorttext">Result Process</p>
       "! Result process
+      "! $required
       result_process       TYPE ty_result_process,
+*      "! <p class="shorttext">Selection Filters on Check</p>
+*      "! Selection filters on check
+*      check_filter       TYPE ty_check_filters,
     END OF ty_status_check.
   "! <p class="shorttext">Status Checks</p>
   "! Assigned status checks
@@ -116,12 +179,15 @@ INTERFACE zif_aff_edcc_v1
     BEGIN OF ty_comparison_field,
       "! <p class="shorttext">Representation Type</p>
       "! Representation type
+      "! $required
       representation_type TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Field Name</p>
       "! Field name to be compared
+      "! $required
       field_name          TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Comparison Sequence</p>
       "! Comparison sequence
+      "! $required
       comparison_sequence TYPE ty_comparison_sequence,
     END OF ty_comparison_field.
   "! <p class="shorttext">Comparison Field Name</p>
@@ -133,21 +199,27 @@ INTERFACE zif_aff_edcc_v1
     BEGIN OF ty_comparison_field_group,
       "! <p class="shorttext">Mismatch Field Group</p>
       "! Comparison field group for mismatched fields
+      "! $required
       field_group       TYPE ty_field_group,
       "! <p class="shorttext">Description</p>
       "! Mismatch field group description
+      "! $required
       description       TYPE ty_short_description,
       "! <p class="shorttext">Field Group Level</p>
       "! Level of comparison field group
+      "! $required
       field_group_level TYPE ty_field_group_level,
       "! <p class="shorttext">Check Formula</p>
       "! Formula applied to perform the content check on the field group
+      "! $required
       check_formula     TYPE ty_check_formula,
       "! <p class="shorttext">Result Process</p>
       "! Result process
+      "! $required
       result_process    TYPE ty_result_process,
       "! <p class="shorttext">Comparison Field Name</p>
       "! Field Names whose values will be compared
+      "! $required
       comparison_field  TYPE ty_comparison_fields,
     END OF ty_comparison_field_group.
   "! <p class="shorttext">Comparison Field Groups</p>
@@ -159,97 +231,63 @@ INTERFACE zif_aff_edcc_v1
     BEGIN OF ty_content_check,
       "! <p class="shorttext">Check Id</p>
       "! Check id
+      "! $required
       check_id                       TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Check Number</p>
       "! Check number
+      "! $required
       check_number                   TYPE ty_check_number,
       "! <p class="shorttext">Additional Data Source</p>
       "! Additional data source
       data_source                    TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Additional Description</p>
       "! Additional check description
+      "! $required
       additional_description         TYPE zif_aff_types_v1=>ty_description_60,
       "! <p class="shorttext">Comparison Field Groups</p>
       "! Comparison field groups
+      "! $required
       content_comparison_field_group TYPE ty_comparison_field_groups,
+*      "! <p class="shorttext">Selection Filters on Check</p>
+*      "! Selection filters on check
+*      check_filter       TYPE ty_check_filters,
     END OF ty_content_check.
   "! <p class="shorttext">Content Checks</p>
   "! Assigned content checks
-  TYPES ty_content_checks       TYPE SORTED TABLE OF ty_content_check WITH UNIQUE KEY check_id check_number.
-  "! <p class="shorttext">Filter Operation</p>
-  "! Operand to build the where condition
-  "! $values {@link zif_aff_edcc_v1.data:co_filter_operation}
-  "! $default {@link zif_aff_edcc_v1.data:co_filter_operation.and}
-  TYPES ty_filter_operation     TYPE c LENGTH 3.
-  "! <p class="shorttext">Comparison Operator</p>
-  "! Comparison operator
-  "! $values {@link zif_aff_edcc_v1.data:co_compare_operation}
-  "! $default {@link zif_aff_edcc_v1.data:co_compare_operation.equal}
-  TYPES ty_comparison_operator  TYPE c LENGTH 3.
-  "! <p class="shorttext">Filter Field Value</p>
-  "! Value used to build the where condition
-  TYPES ty_filter_value         TYPE c LENGTH 30.
-  "! <p class="shorttext">Expression Indicator</p>
-  "! Expression indicator
-  "! $values {@link zif_aff_edcc_v1.data:co_expression}
-  "! $default {@link zif_aff_edcc_v1.data:co_expression.begin_of}
-  TYPES ty_expression_indicator TYPE c LENGTH 3.
-  TYPES:
-    "! <p class="shorttext">Selection Filters on Check</p>
-    "! Selection filters on check
-    BEGIN OF ty_check_filter,
-      "! <p class="shorttext">Sequence Number</p>
-      "! Sequence number
-      sequence_number      TYPE ty_sequence_number,
-      "! <p class="shorttext">Filter Operation</p>
-      "! Operand to build the where condition
-      filter_operation     TYPE ty_filter_operation,
-      "! <p class="shorttext">Filter Field</p>
-      "! Field on which where condition would be applied
-      filter_field         TYPE zif_aff_types_v1=>ty_object_name_30,
-      "! <p class="shorttext">Comparison Operator</p>
-      "! Comparison operator
-      comparison_operator  TYPE ty_comparison_operator,
-      "! <p class="shorttext">Filter Field Value</p>
-      "! Value used to build the where condition
-      filter_value         TYPE ty_filter_value,
-      "! <p class="shorttext">Expression Indicator</p>
-      "! Expression indicator
-      expression_indicator TYPE ty_expression_indicator,
-    END OF ty_check_filter.
-  "! <p class="shorttext">Selection Filters on Check</p>
-  "! Selection filters on check
-  TYPES ty_check_filters         TYPE SORTED TABLE OF ty_check_filter WITH UNIQUE KEY sequence_number.
-  "! <p class="shorttext">Position Number</p>
-  "! Position number
-  TYPES ty_check_position_number TYPE c LENGTH 3.
+  TYPES ty_content_checks     TYPE SORTED TABLE OF ty_content_check WITH UNIQUE KEY check_id check_number.
+*  types:
+*  "! <p class="shorttext">Position Number</p>
+*  "! Position number
+*    ty_check_position_number TYPE c LENGTH 3 .
   "! <p class="shorttext">Check Execution Sequence</p>
   "! Check execution sequence
-  TYPES ty_execution_sequence    TYPE c LENGTH 3.
+  TYPES ty_execution_sequence TYPE c LENGTH 3.
   "! <p class="shorttext">Check Execution Control</p>
   "! Check execution control
   "! $values {@link zif_aff_edcc_v1.data:co_execution_control}
   "! $default {@link zif_aff_edcc_v1.data:co_execution_control.proceed}
-  TYPES ty_execution_control     TYPE c LENGTH 2.
+  TYPES ty_execution_control  TYPE c LENGTH 2.
   TYPES:
     "! <p class="shorttext">Check Attribute</p>
     "! Check attribute
     BEGIN OF ty_check_attribute,
       "! <p class="shorttext">Check Id</p>
       "! Check id
+      "! $required
       check_id           TYPE zif_aff_types_v1=>ty_object_name_30,
-      "! <p class="shorttext">Position Number</p>
-      "! Position number
-      position_number    TYPE ty_check_position_number,
+*      "! <p class="shorttext">Position Number</p>
+*      "! Position number
+*      position_number    TYPE ty_check_position_number,
       "! <p class="shorttext">Check Execution Sequence</p>
       "! Check execution sequence
+      "! $required
       execution_sequence TYPE ty_execution_sequence,
       "! <p class="shorttext">Check Execution Control</p>
       "! Check execution control
       execution_control  TYPE ty_execution_control,
-      "! <p class="shorttext">Selection Filters on Check</p>
-      "! Selection filters on check
-      check_filter       TYPE ty_check_filters,
+*      "! <p class="shorttext">Selection Filters on Check</p>
+*      "! Selection filters on check
+*      check_filter       TYPE ty_check_filters,
     END OF ty_check_attribute.
   "! <p class="shorttext">Check Attributes</p>
   "! Check attributes
@@ -260,20 +298,40 @@ INTERFACE zif_aff_edcc_v1
     BEGIN OF ty_representation_type,
       "! <p class="shorttext">Assigned Representation Type</p>
       "! Assigned representation type
+      "! $required
       representation_type TYPE zif_aff_types_v1=>ty_object_name_30,
     END OF ty_representation_type.
   "! <p class="shorttext">Representation Types</p>
   "! Assigned representation types
   TYPES ty_representation_types TYPE SORTED TABLE OF ty_representation_type WITH UNIQUE KEY representation_type.
   TYPES:
+    "! <p class="shorttext">Assign Checks</p>
+    "! Assign checks
+    BEGIN OF ty_assign_checks,
+      "! <p class="shorttext">Existence Check</p>
+      "! Assigned existence check
+      "! $required
+      existence_check  TYPE ty_existence_check,
+      "! <p class="shorttext">Status Checks</p>
+      "! Assigned status checks
+      status_checks    TYPE ty_status_checks,
+      "! <p class="shorttext">Content Checks</p>
+      "! Assigned content checks
+      content_checks   TYPE ty_content_checks,
+      "! <p class="shorttext">Check Attributes</p>
+      "! Check attributes
+      "! $required
+      check_attributes TYPE ty_check_attributes,
+    END OF ty_assign_checks.
+  TYPES:
     "! <p class="shorttext">Comparison Type</p>
     "! Comparison type
     BEGIN OF ty_comparison_type,
-      "! <p class="shorttext">Comparison Type</p>
+      "! <p class="shorttext">Name</p>
       "! Comparison type
       "! $required
-      comparison_type      TYPE zif_aff_types_v1=>ty_object_name_30,
-      "! <p class="shorttext">Comparison Type Description</p>
+      name                 TYPE zif_aff_types_v1=>ty_object_name_30,
+      "! <p class="shorttext">Description</p>
       "! Description of the comparison type
       "! $required
       description          TYPE ty_long_description,
@@ -284,25 +342,15 @@ INTERFACE zif_aff_edcc_v1
       "! <p class="shorttext">Implementing Class</p>
       "! Implementing Class
       "! $required
-      class_name           TYPE zif_aff_types_v1=>ty_object_name_30,
+      implementing_class   TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Data Source</p>
       "! Data Source
       "! $required
       data_source          TYPE zif_aff_types_v1=>ty_object_name_30,
-      "! <p class="shorttext">Existence Check</p>
-      "! Assigned existence check
+      "! <p class="shorttext">Assign Checks</p>
+      "! Assign checks
       "! $required
-      existence_check      TYPE ty_existence_check,
-      "! <p class="shorttext">Status Checks</p>
-      "! Assigned status checks
-      status_check         TYPE ty_status_checks,
-      "! <p class="shorttext">Content Checks</p>
-      "! Assigned content checks
-      content_check        TYPE ty_content_checks,
-      "! <p class="shorttext">Check Attributes</p>
-      "! Check attributes
-      "! $required
-      check_attributes     TYPE ty_check_attributes,
+      assign_checks        TYPE ty_assign_checks,
       "! <p class="shorttext">Representation Types</p>
       "! Assigned representation types
       "! $required
@@ -310,7 +358,7 @@ INTERFACE zif_aff_edcc_v1
     END OF ty_comparison_type.
   "! <p class="shorttext">Comparison Types</p>
   "! Define comparison types
-  TYPES ty_comparison_types TYPE SORTED TABLE OF ty_comparison_type WITH UNIQUE KEY comparison_type.
+  TYPES ty_comparison_types TYPE SORTED TABLE OF ty_comparison_type WITH UNIQUE KEY name.
   "! <p class="shorttext">Relevance</p>
   "! Relevance
   "! $values {@link zif_aff_edcc_v1.data:co_relevance}
@@ -325,6 +373,7 @@ INTERFACE zif_aff_edcc_v1
     BEGIN OF ty_assigned_comparison,
       "! <p class="shorttext">Comparison Type</p>
       "! Comparison type
+      "! $required
       comparison_type TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Check Id</p>
       "! Check id
@@ -333,7 +382,7 @@ INTERFACE zif_aff_edcc_v1
   "! <p class="shorttext">Assign Checks and Comparison Type</p>
   "! Assign Checks and Comparison Type
   TYPES ty_assigned_comparisons TYPE SORTED TABLE OF ty_assigned_comparison WITH UNIQUE KEY
-        comparison_type check_id.
+            comparison_type check_id.
   TYPES:
     "! <p class="shorttext">Check Relevance</p>
     "! Define relevance of check
@@ -353,19 +402,22 @@ INTERFACE zif_aff_edcc_v1
   "! <p class="shorttext">Check Relevance</p>
   "! Define relevance of checks
   TYPES ty_check_relevances TYPE SORTED TABLE OF ty_check_relevance WITH UNIQUE KEY
-                              comparison_type check_id.
+                                  comparison_type check_id.
   TYPES:
     "! <p class="shorttext">Assign Event</p>
     "! Assign event to consistency scenario
     BEGIN OF ty_event,
       "! <p class="shorttext">Event Name</p>
       "! Event name
+      "! $required
       event               TYPE ty_event_name,
       "! <p class="shorttext">Assign Checks and Comparison Type</p>
       "! Assign Checks and Comparison Type
+      "! $required
       assigned_comparison TYPE ty_assigned_comparisons,
       "! <p class="shorttext">Check Relevance</p>
       "! Define relevance of checks
+      "! $required
       check_relevance     TYPE ty_check_relevances,
     END OF ty_event.
   "! <p class="shorttext">Assign Events</p>
@@ -374,20 +426,22 @@ INTERFACE zif_aff_edcc_v1
   TYPES:
     "! <p class="shorttext">Representation Type</p>
     "! Assign representation type associated with consistency scenario
-    BEGIN OF ty_relationship_attribute,
+    BEGIN OF ty_representation_attribute,
       "! <p class="shorttext">Representation Type</p>
       "! Representation type
+      "! $required
       representation_type TYPE zif_aff_types_v1=>ty_object_name_30,
-    END OF ty_relationship_attribute.
+    END OF ty_representation_attribute.
   "! <p class="shorttext">Representation Types</p>
   "! Assign representation types associated with consistency scenario
-  TYPES ty_relationship_attributes TYPE SORTED TABLE OF ty_relationship_attribute WITH UNIQUE KEY representation_type.
+  TYPES ty_representation_attributes TYPE SORTED TABLE OF ty_representation_attribute WITH UNIQUE KEY representation_type.
   TYPES:
     "! <p class="shorttext">eDocument Type Assignment</p>
     "! Assign eDocument types associated with consistency scenario
     BEGIN OF ty_edoc_type,
       "! <p class="shorttext">eDocument Type</p>
       "! eDocument Type
+      "! $required
       edoc_type TYPE c LENGTH 10,
     END OF ty_edoc_type.
   "! <p class="shorttext">eDocument Type Assignment</p>
@@ -411,12 +465,14 @@ INTERFACE zif_aff_edcc_v1
     BEGIN OF ty_inconsistency_category,
       "! <p class="shorttext">Inconsistency Category</p>
       "! Inconsistency category
+      "! $required
       result_ui_group  TYPE ty_resultgroup,
       "! <p class="shorttext">Country View Extension</p>
       "! Country view extension
       country_xtension TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Result Processes</p>
       "! Assign result process to the UI group
+      "! $required
       result_process   TYPE ty_result_processes,
     END OF ty_inconsistency_category.
   "! <p class="shorttext">Inconsistency Categories</p>
@@ -433,18 +489,35 @@ INTERFACE zif_aff_edcc_v1
     BEGIN OF ty_additional_selection_field,
       "! <p class="shorttext">Table Name</p>
       "! Table name
+      "! $required
       table_name TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Field Name</p>
       "! Field name
+      "! $required
       field_name TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Field Type</p>
       "! Field type
+      "! $required
       field_type TYPE ty_field_type,
     END OF  ty_additional_selection_field.
   "! <p class="shorttext">Additional Selection Fields</p>
   "! Additional selection fields of validation report
   TYPES ty_additional_selection_fields TYPE SORTED TABLE OF ty_additional_selection_field WITH UNIQUE KEY
-        table_name field_name.
+            table_name field_name.
+  TYPES:
+    BEGIN OF ty_comparison_type_and_event,
+      "! <p class="shorttext">Comparison Types</p>
+      "! Define comparison types
+      "! $required
+      comparison_types         TYPE ty_comparison_types,
+      "! <p class="shorttext">Events Assignment</p>
+      "! Assign events to consistency scenario
+      events                   TYPE ty_events,
+      "! <p class="shorttext">Inconsistency Categories</p>
+      "! Inconsistency categories
+      "! $required
+      inconsistency_categories TYPE ty_inconsistency_categories,
+    END OF ty_comparison_type_and_event.
   TYPES:
     "! <p class="shorttext">Consistency Scenario</p>
     "! Consistency scenario
@@ -459,6 +532,10 @@ INTERFACE zif_aff_edcc_v1
       "! Country
       "! $required
       country                     TYPE c LENGTH 3,
+      "! <p class="shorttext">Representation Types</p>
+      "! Assign representation types associated with consistency scenario
+      "! $required
+      representation_types          TYPE ty_representation_attributes,
       "! <p class="shorttext">Additional Selection Fields</p>
       "! Additional selection fields of validation report
       additional_selection_fields TYPE ty_additional_selection_fields,
@@ -468,24 +545,13 @@ INTERFACE zif_aff_edcc_v1
       "! <p class="shorttext">Additional Tax Authority Tables</p>
       "! Additional tax authority tables
       tax_authority_tables        TYPE ty_tax_authority_tables,
-      "! <p class="shorttext">Comparison Types</p>
-      "! Define comparison types
-      "! $required
-      comparison_types            TYPE ty_comparison_types,
-      "! <p class="shorttext">Events Assignment</p>
-      "! Assign events to consistency scenario
-      events                      TYPE ty_events,
-      "! <p class="shorttext">Representation Types</p>
-      "! Assign representation types associated with consistency scenario
-      "! $required
-      relationship_attribute      TYPE ty_relationship_attributes,
       "! <p class="shorttext">eDocument Type Assignment</p>
       "! Assign eDocument types associated with consistency scenario
       edocument_types             TYPE ty_edoc_types,
-      "! <p class="shorttext">Inconsistency Categories</p>
-      "! Inconsistency categories
+      "! <p class="shorttext">Comparison Types and Events</p>
+      "! Define Comparison types and assign events to the comparison scenario
       "! $required
-      inconsistency_categories    TYPE ty_inconsistency_categories,
+      comparison_type_and_event   TYPE ty_comparison_type_and_event,
     END OF ty_main.
 
   CONSTANTS:
