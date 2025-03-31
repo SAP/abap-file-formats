@@ -127,22 +127,22 @@
         "description": "Single check",
         "type": "object",
         "properties": {
-          "checkNumber": {
-            "title": "Check Number",
-            "description": "Check number",
+          "number": {
+            "title": "Number",
+            "description": "Number",
             "type": "string",
             "maxLength": 3,
             "pattern": "^[0-9]+$"
           },
-          "checkDescription": {
-            "title": "Check Description",
-            "description": "Check description",
+          "description": {
+            "title": "Description",
+            "description": "Description",
             "type": "string",
             "maxLength": 120
           },
-          "checkScenario": {
-            "title": "Check Scenario",
-            "description": "Check scenario",
+          "scenario": {
+            "title": "Scenario",
+            "description": "Scenario",
             "type": "string",
             "enum": [
               "simple",
@@ -223,9 +223,9 @@
                 ],
                 "default": "empty"
               },
-              "fieldCheckOperator": {
-                "title": "Field Check Operator",
-                "description": "Field Check Operator",
+              "operator": {
+                "title": "Operator",
+                "description": "Operator for field check",
                 "type": "string",
                 "enum": [
                   "equals",
@@ -265,8 +265,8 @@
                 ],
                 "default": "equals"
               },
-              "fieldCheckPattern": {
-                "title": "Field Check Pattern",
+              "pattern": {
+                "title": "Pattern",
                 "description": "Pattern for Field Check",
                 "type": "string",
                 "maxLength": 60
@@ -291,9 +291,9 @@
                 "type": "string",
                 "maxLength": 200
               },
-              "databaseCheckType": {
-                "title": "Database Check Type",
-                "description": "Database check type",
+              "checkType": {
+                "title": "Check Type",
+                "description": "Check type",
                 "type": "string",
                 "enum": [
                   "checkExistence",
@@ -318,9 +318,9 @@
                 "type": "string",
                 "maxLength": 45
               },
-              "databaseCheckOperator": {
-                "title": "Database Check Operator",
-                "description": "Database check operator",
+              "operator": {
+                "title": "Operator",
+                "description": "Operator for database check",
                 "type": "string",
                 "enum": [
                   "equals",
@@ -360,8 +360,8 @@
                 ],
                 "default": "equals"
               },
-              "databaseCheckPattern": {
-                "title": "Database Check Pattern",
+              "pattern": {
+                "title": "Pattern",
                 "description": "Pattern for database check",
                 "type": "string",
                 "maxLength": 60
@@ -374,9 +374,9 @@
             "description": "Class check",
             "type": "object",
             "properties": {
-              "checkClass": {
-                "title": "Check Class",
-                "description": "Check class",
+              "class": {
+                "title": "Class",
+                "description": "Class name for check",
                 "type": "string",
                 "maxLength": 30
               }
@@ -426,7 +426,7 @@
         },
         "additionalProperties": false,
         "required": [
-          "checkNumber"
+          "number"
         ]
       }
     }

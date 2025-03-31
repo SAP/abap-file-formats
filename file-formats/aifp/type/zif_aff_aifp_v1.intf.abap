@@ -43,12 +43,12 @@ INTERFACE zif_aff_aifp_v1
       "! <p class="shorttext">Field Check</p>
       "! Field check
       field_check          TYPE ty_simple_field_check,
-      "! <p class="shorttext">Field Check Operator</p>
-      "! Field Check Operator
-      field_check_operator TYPE zif_aff_types_v1=>ty_option,
-      "! <p class="shorttext">Field Check Pattern</p>
+      "! <p class="shorttext">Operator</p>
+      "! Operator for field check
+      operator TYPE zif_aff_types_v1=>ty_option,
+      "! <p class="shorttext">Pattern</p>
       "! Pattern for Field Check
-      field_check_pattern  TYPE c LENGTH 60,
+      pattern  TYPE c LENGTH 60,
     END OF ty_field_check.
   TYPES:
     "! <p class="shorttext">Database Check</p>
@@ -60,41 +60,41 @@ INTERFACE zif_aff_aifp_v1
       "! <p class="shorttext">Where Condition for Select Statement</p>
       "! Where Condition for Select Statement
       where_condition         TYPE c LENGTH 200,
-      "! <p class="shorttext">Database Check Type</p>
-      "! Database check type
-      database_check_type     TYPE ty_database_check_type,
+      "! <p class="shorttext">Check Type</p>
+      "! Check type
+      check_type     TYPE ty_database_check_type,
       "! <p class="shorttext">Field Name for Comparison</p>
       "! Field Name for Comparison
       field_name              TYPE c LENGTH 45,
-      "! <p class="shorttext">Database Check Operator</p>
-      "! Database check operator
-      database_check_operator TYPE zif_aff_types_v1=>ty_option,
-      "! <p class="shorttext">Database Check Pattern</p>
+      "! <p class="shorttext">Operator</p>
+      "! Operator for database check
+      operator TYPE zif_aff_types_v1=>ty_option,
+      "! <p class="shorttext">Pattern</p>
       "! Pattern for database check
-      database_check_pattern  TYPE c LENGTH 60,
+      pattern  TYPE c LENGTH 60,
     END OF ty_database_check.
   TYPES:
     "! <p class="shorttext">Class Check</p>
     "! Class check
     BEGIN OF ty_class_check,
-      "! <p class="shorttext">Check Class</p>
-      "! Check class
-      check_class TYPE zif_aff_types_v1=>ty_object_name_30,
+      "! <p class="shorttext">Class</p>
+      "! Class name for check
+      class TYPE zif_aff_types_v1=>ty_object_name_30,
     END OF ty_class_check.
   TYPES:
     "! <p class="shorttext">Single Check</p>
     "! Single check
     BEGIN OF ty_single_check,
-      "! <p class="shorttext">Check Number</p>
-      "! Check number
+      "! <p class="shorttext">Number</p>
+      "! Number
       "! $required
-      check_number      TYPE n LENGTH 3,
-      "! <p class="shorttext">Check Description</p>
-      "! Check description
-      check_description TYPE c LENGTH 120,
-      "! <p class="shorttext">Check Scenario</p>
-      "! Check scenario
-      check_scenario    TYPE ty_check_scenario,
+      number      TYPE n LENGTH 3,
+      "! <p class="shorttext">Description</p>
+      "! Description
+      description TYPE c LENGTH 120,
+      "! <p class="shorttext">Scenario</p>
+      "! Scenario
+      scenario    TYPE ty_check_scenario,
       "! <p class="shorttext">Field Check</p>
       "! Field check
       field_check       TYPE ty_field_check,

@@ -11,16 +11,18 @@
   },
   "singleCheckAssignment": [
     {
-      "checkNumber": "10",
-      "checkDescription": "Check Business Partner Exist",
-      "checkScenario": "simple",
+      "number": "10",
+      "description": "Check Business Partner Exist",
+      "scenario": "simpledb",
       "fieldCheck": {
         "fieldCheck": "empty",
-        "fieldCheckOperator": "equals"
+        "operator": "equals"
       },
       "databaseCheck": {
-        "databaseCheckType": "checkExistence",
-        "databaseCheckOperator": "equals"
+        "tableName": "BUP000",
+        "whereCondition": "ID = '$1'",
+        "checkType": "checkExistence",
+        "operator": "equals"
       }
     }
   ]
