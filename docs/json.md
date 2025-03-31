@@ -187,7 +187,7 @@ Default values can only be specified if one of the following rules apply:
 
 2. For enumerations, all other values must **not** represent type initial value of the underlying data type.
 
-3. The field and all higher-level structures* of the field are marked as `$required`.
+3. All higher-level structures* of the field are marked as `$required`.
 
    > *) Arrays don't need to be marked as `$required` in this case.
    In JSON it is possible to distinguish between empty arrays (`"table": []`) and arrays with "empty" array items (`"table": [{}]`).
