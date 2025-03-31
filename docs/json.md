@@ -196,7 +196,7 @@ Default values can only be specified if one of the following rules apply:
 Fields that are not specified in the JSON data file are deserialized to their default values.
 Note that if you specify a default value, initial values are written to the JSON data file, unless they are not equal to the selected default.
 
-Since fields, which are not specified in the JSON data, might be represented by either initial values or default values, implementations of serialization and deserialization of ABAP file formats must consider fields with default values as specified here.
+Since fields that are not specified in the JSON data might be represented by either initial values or default values, implementations of serialization and deserialization of ABAP file formats must consider fields with default values, as specified here.
 
 ### Enum Values
 To pass enum values to a JSON Schema, a type and a constant are necessary.
