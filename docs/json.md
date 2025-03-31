@@ -193,7 +193,7 @@ Default values can only be specified if one of the following rules apply:
    In JSON it is possible to distinguish between empty arrays (`"table": []`) and arrays with "empty" array items (`"table": [{}]`).
    All fields with defaults in the array items that don't follow the other rules, along with their higher-level structures, must be marked as `$required`.
 
-Fields, which are not specified in the JSON data file, are deserialized to their default values.
+Fields that are not specified in the JSON data file are deserialized to their default values.
 Note that if you specify a default value, initial values are written to the JSON data file, unless they are not equal to the selected default.
 
 Since fields, which are not specified in the JSON data, might be represented by either initial values or default values, implementations of serialization and deserialization of ABAP file formats must consider fields with default values as specified here.
