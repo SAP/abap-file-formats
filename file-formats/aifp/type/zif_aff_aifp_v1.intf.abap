@@ -42,13 +42,13 @@ INTERFACE zif_aff_aifp_v1
     BEGIN OF ty_field_check,
       "! <p class="shorttext">Field Check</p>
       "! Field check
-      field_check          TYPE ty_simple_field_check,
+      field_check TYPE ty_simple_field_check,
       "! <p class="shorttext">Operator</p>
       "! Operator for field check
-      operator TYPE zif_aff_types_v1=>ty_option,
+      operator    TYPE zif_aff_types_v1=>ty_option,
       "! <p class="shorttext">Pattern</p>
       "! Pattern for Field Check
-      pattern  TYPE c LENGTH 60,
+      pattern     TYPE c LENGTH 60,
     END OF ty_field_check.
   TYPES:
     "! <p class="shorttext">Database Check</p>
@@ -56,22 +56,22 @@ INTERFACE zif_aff_aifp_v1
     BEGIN OF ty_database_check,
       "! <p class="shorttext">Table Name</p>
       "! Table name
-      table_name              TYPE c LENGTH 45,
+      table_name      TYPE c LENGTH 45,
       "! <p class="shorttext">Where Condition for Select Statement</p>
       "! Where Condition for Select Statement
-      where_condition         TYPE c LENGTH 200,
+      where_condition TYPE c LENGTH 200,
       "! <p class="shorttext">Check Type</p>
       "! Check type
-      check_type     TYPE ty_database_check_type,
+      check_type      TYPE ty_database_check_type,
       "! <p class="shorttext">Field Name for Comparison</p>
       "! Field Name for Comparison
-      field_name              TYPE c LENGTH 45,
+      field_name      TYPE c LENGTH 45,
       "! <p class="shorttext">Operator</p>
       "! Operator for database check
-      operator TYPE zif_aff_types_v1=>ty_option,
+      operator        TYPE zif_aff_types_v1=>ty_option,
       "! <p class="shorttext">Pattern</p>
       "! Pattern for database check
-      pattern  TYPE c LENGTH 60,
+      pattern         TYPE c LENGTH 60,
     END OF ty_database_check.
   TYPES:
     "! <p class="shorttext">Class Check</p>
@@ -88,25 +88,25 @@ INTERFACE zif_aff_aifp_v1
       "! <p class="shorttext">Number</p>
       "! Number
       "! $required
-      number      TYPE n LENGTH 3,
+      number          TYPE n LENGTH 3,
       "! <p class="shorttext">Description</p>
       "! Description
-      description TYPE c LENGTH 120,
+      description     TYPE c LENGTH 120,
       "! <p class="shorttext">Scenario</p>
       "! Scenario
-      scenario    TYPE ty_check_scenario,
+      scenario        TYPE ty_check_scenario,
       "! <p class="shorttext">Field Check</p>
       "! Field check
-      field_check       TYPE ty_field_check,
+      field_check     TYPE ty_field_check,
       "! <p class="shorttext">Database Check</p>
       "! Database check
-      database_check    TYPE ty_database_check,
+      database_check  TYPE ty_database_check,
       "! <p class="shorttext">Class Check</p>
       "! Class check
-      class_check       TYPE ty_class_check,
+      class_check     TYPE ty_class_check,
       "! <p class="shorttext">Success Message</p>
       "! Success message
-      success_message   TYPE ty_message,
+      success_message TYPE ty_message,
     END OF ty_single_check.
   TYPES:
   "! <p class="shorttext">Single Checks</p>
