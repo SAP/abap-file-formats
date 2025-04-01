@@ -6,9 +6,9 @@ INTERFACE zif_aff_aifp_v1
   "! $default { @link zif_aff_aifp_v1.data:co_check_scenario.simple }
     ty_check_scenario TYPE c LENGTH 10.
   TYPES:
-  "! $values { @link zif_aff_aifp_v1.data:co_simple_field_check }
-  "! $default { @link zif_aff_aifp_v1.data:co_simple_field_check.empty }
-    ty_simple_field_check TYPE c LENGTH 1.
+  "! $values { @link zif_aff_aifp_v1.data:co_simple_check_type }
+  "! $default { @link zif_aff_aifp_v1.data:co_simple_check_type.empty }
+    ty_simple_check_type TYPE c LENGTH 1.
   TYPES:
   "! $values { @link zif_aff_aifp_v1.data:co_database_check_type }
   "! $default { @link zif_aff_aifp_v1.data:co_database_check_type.check_existence }
@@ -42,7 +42,7 @@ INTERFACE zif_aff_aifp_v1
     BEGIN OF ty_field_check,
       "! <p class="shorttext">Check Type</p>
       "! Check type
-      check_type TYPE ty_simple_field_check,
+      check_type TYPE ty_simple_check_type,
       "! <p class="shorttext">Operator</p>
       "! Operator for field check
       operator   TYPE zif_aff_types_v1=>ty_option,
@@ -170,44 +170,44 @@ INTERFACE zif_aff_aifp_v1
       manual_implementation TYPE ty_check_scenario VALUE 'IMPLEMENT',
     END OF co_check_scenario.
   CONSTANTS:
-    BEGIN OF co_simple_field_check,
+    BEGIN OF co_simple_check_type,
       "! <p class="shorttext">Empty</p>
       "! Empty
-      empty                       TYPE ty_simple_field_check VALUE 'I',
+      empty                       TYPE ty_simple_check_type VALUE 'I',
       "! <p class="shorttext">Not Empty</p>
       "! Not empty
-      not_empty                   TYPE ty_simple_field_check VALUE 'N',
+      not_empty                   TYPE ty_simple_check_type VALUE 'N',
       "! <p class="shorttext">Empty or '0'</p>
       "! Empty or '0'
-      empty_or_zero               TYPE ty_simple_field_check VALUE '0',
+      empty_or_zero               TYPE ty_simple_check_type VALUE '0',
       "! <p class="shorttext">Numeric (Integer)</p>
       "! Numeric (Integer)
-      numeric_integer             TYPE ty_simple_field_check VALUE '1',
+      numeric_integer             TYPE ty_simple_check_type VALUE '1',
       "! <p class="shorttext">Numeric or Empty</p>
       "! Numeric or empty
-      numeric_empty               TYPE ty_simple_field_check VALUE '2',
+      numeric_empty               TYPE ty_simple_check_type VALUE '2',
       "! <p class="shorttext">Numeric (Integer/Negative)</p>
       "! Numeric (Integer/Negative)
-      numeric_negativ             TYPE ty_simple_field_check VALUE '3',
+      numeric_negativ             TYPE ty_simple_check_type VALUE '3',
       "! <p class="shorttext">Numeric (Comma/Negative)</p>
       "! Numeric (Comma/Negative)
-      numeric_comma               TYPE ty_simple_field_check VALUE '4',
+      numeric_comma               TYPE ty_simple_check_type VALUE '4',
       "! <p class="shorttext">Numeric (Dot/Negative)</p>
       "! Numeric (Dot/Negative)
-      numeric_dot                 TYPE ty_simple_field_check VALUE '5',
+      numeric_dot                 TYPE ty_simple_check_type VALUE '5',
       "! <p class="shorttext">Only Characters A-Z</p>
       "! Only characters A-Z
-      only_chars_capital          TYPE ty_simple_field_check VALUE 'A',
+      only_chars_capital          TYPE ty_simple_check_type VALUE 'A',
       "! <p class="shorttext">Only Characters a-z</p>
       "! Only characters a-z
-      only_chars_lower            TYPE ty_simple_field_check VALUE 'a',
+      only_chars_lower            TYPE ty_simple_check_type VALUE 'a',
       "! <p class="shorttext">Only Characters A-Z, a-z</p>
       "! Only characters A-Z, a-z
-      only_chars                  TYPE ty_simple_field_check VALUE 'Z',
+      only_chars                  TYPE ty_simple_check_type VALUE 'Z',
       "! <p class="shorttext">Alphanumeric with special chars and German Umlauts</p>
       "! Alphanumeric with special chars and German Umlauts
-      alphanumeric_special_umlaut TYPE ty_simple_field_check VALUE 'X',
-    END OF co_simple_field_check.
+      alphanumeric_special_umlaut TYPE ty_simple_check_type VALUE 'X',
+    END OF co_simple_check_type.
   CONSTANTS:
     BEGIN OF co_database_check_type,
       "! <p class="shorttext">Check Existence</p>
