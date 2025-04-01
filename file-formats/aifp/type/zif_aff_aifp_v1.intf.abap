@@ -42,13 +42,13 @@ INTERFACE zif_aff_aifp_v1
     BEGIN OF ty_field_check,
       "! <p class="shorttext">Check Type</p>
       "! Check type
-      check_type  TYPE ty_simple_field_check,
+      check_type TYPE ty_simple_field_check,
       "! <p class="shorttext">Operator</p>
       "! Operator for field check
-      operator    TYPE zif_aff_types_v1=>ty_option,
+      operator   TYPE zif_aff_types_v1=>ty_option,
       "! <p class="shorttext">Pattern</p>
       "! Pattern for Field Check
-      pattern     TYPE c LENGTH 60,
+      pattern    TYPE c LENGTH 60,
     END OF ty_field_check.
   TYPES:
     "! <p class="shorttext">Database Check</p>
