@@ -9,13 +9,13 @@
     "namespace": "AIFNS",
     "aifCheck": "BP_EXIST"
   },
-  "singleCheckAssignment": [
+  "checkAssignments": [
     {
       "number": "10",
       "description": "Check Business Partner Exist",
       "scenario": "simpledb",
       "fieldCheck": {
-        "fieldCheck": "empty",
+        "checkType": "empty",
         "operator": "equals"
       },
       "databaseCheck": {

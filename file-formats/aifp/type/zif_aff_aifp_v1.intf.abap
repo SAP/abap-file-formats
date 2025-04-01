@@ -40,9 +40,9 @@ INTERFACE zif_aff_aifp_v1
     "! <p class="shorttext">Field Check</p>
     "! Field check
     BEGIN OF ty_field_check,
-      "! <p class="shorttext">Field Check</p>
-      "! Field check
-      field_check TYPE ty_simple_field_check,
+      "! <p class="shorttext">Check Type</p>
+      "! Check type
+      check_type  TYPE ty_simple_field_check,
       "! <p class="shorttext">Operator</p>
       "! Operator for field check
       operator    TYPE zif_aff_types_v1=>ty_option,
@@ -82,8 +82,8 @@ INTERFACE zif_aff_aifp_v1
       class TYPE zif_aff_types_v1=>ty_object_name_30,
     END OF ty_class_check.
   TYPES:
-    "! <p class="shorttext">Single Check</p>
-    "! Single check
+    "! <p class="shorttext">Single Check Details</p>
+    "! Single check details
     BEGIN OF ty_single_check,
       "! <p class="shorttext">Number</p>
       "! Number
@@ -130,22 +130,22 @@ INTERFACE zif_aff_aifp_v1
     "! Check
     BEGIN OF ty_main,
       "! $required
-      format_version          TYPE zif_aff_types_v1=>ty_format_version,
+      format_version      TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header                  TYPE zif_aff_types_v1=>ty_header_60_cloud,
+      header              TYPE zif_aff_types_v1=>ty_header_60_cloud,
       "! <p class="shorttext">General Information</p>
       "! General information
       "! $required
-      general_information     TYPE ty_general_information,
+      general_information TYPE ty_general_information,
       "! <p class="shorttext">Error Message</p>
       "! Error message
-      error_message           TYPE ty_message,
-      "! <p class="shorttext">Single Check Assignment</p>
-      "! Single check assignment
+      error_message       TYPE ty_message,
+      "! <p class="shorttext">Check Assignments</p>
+      "! Check assignments
       "! $required
-      single_check_assignment TYPE ty_single_checks,
+      check_assignments   TYPE ty_single_checks,
     END OF ty_main.
 
   CONSTANTS:

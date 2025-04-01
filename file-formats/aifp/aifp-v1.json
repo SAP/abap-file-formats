@@ -118,13 +118,13 @@
       },
       "additionalProperties": false
     },
-    "singleCheckAssignment": {
-      "title": "Single Check Assignment",
-      "description": "Single check assignment",
+    "checkAssignments": {
+      "title": "Check Assignments",
+      "description": "Check assignments",
       "type": "array",
       "items": {
-        "title": "Single Check",
-        "description": "Single check",
+        "title": "Single Check Details",
+        "description": "Single check details",
         "type": "object",
         "properties": {
           "number": {
@@ -175,9 +175,9 @@
             "description": "Field check",
             "type": "object",
             "properties": {
-              "fieldCheck": {
-                "title": "Field Check",
-                "description": "Field check",
+              "checkType": {
+                "title": "Check Type",
+                "description": "Check type",
                 "type": "string",
                 "enum": [
                   "empty",
@@ -436,6 +436,6 @@
     "formatVersion",
     "header",
     "generalInformation",
-    "singleCheckAssignment"
+    "checkAssignments"
   ]
 }
