@@ -13,7 +13,7 @@
     {
       "number": "10",
       "description": "Check Business Partner Exist",
-      "scenario": "SMDB",
+      "scenario": "simpleFieldAndDbCheck",
       "fieldCheck": {
         "checkType": "empty",
         "operator": "equals"
