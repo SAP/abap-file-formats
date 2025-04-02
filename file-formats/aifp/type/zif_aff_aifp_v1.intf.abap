@@ -3,7 +3,7 @@ INTERFACE zif_aff_aifp_v1
 
   TYPES:
   "! $values { @link zif_aff_aifp_v1.data:co_check_scenario }
-  "! $default { @link zif_aff_aifp_v1.data:co_check_scenario.simple }
+  "! $default { @link zif_aff_aifp_v1.data:co_check_scenario.simple_field_check }
     ty_check_scenario TYPE c LENGTH 10.
   TYPES:
   "! $values { @link zif_aff_aifp_v1.data:co_simple_check_type }
@@ -74,13 +74,13 @@ INTERFACE zif_aff_aifp_v1
       pattern         TYPE c LENGTH 60,
     END OF ty_database_check.
   TYPES:
-    "! <p class="shorttext">Class Check</p>
-    "! Class check
-    BEGIN OF ty_class_check,
+    "! <p class="shorttext">Manual Implementation</p>
+    "! Manual implementation
+    BEGIN OF ty_manual_implementation,
       "! <p class="shorttext">Class</p>
       "! Class name for check
       class TYPE zif_aff_types_v1=>ty_object_name_30,
-    END OF ty_class_check.
+    END OF ty_manual_implementation.
   TYPES:
     "! <p class="shorttext">Single Check Details</p>
     "! Single check details
@@ -88,22 +88,22 @@ INTERFACE zif_aff_aifp_v1
       "! <p class="shorttext">Number</p>
       "! Number
       "! $required
-      number          TYPE n LENGTH 3,
+      number                TYPE n LENGTH 3,
       "! <p class="shorttext">Description</p>
       "! Description
-      description     TYPE c LENGTH 120,
+      description           TYPE c LENGTH 120,
       "! <p class="shorttext">Scenario</p>
       "! Scenario
-      scenario        TYPE ty_check_scenario,
+      scenario              TYPE ty_check_scenario,
       "! <p class="shorttext">Field Check</p>
       "! Field check
-      field_check     TYPE ty_field_check,
+      field_check           TYPE ty_field_check,
       "! <p class="shorttext">Database Check</p>
       "! Database check
-      database_check  TYPE ty_database_check,
-      "! <p class="shorttext">Class Check</p>
-      "! Class check
-      class_check     TYPE ty_class_check,
+      database_check        TYPE ty_database_check,
+      "! <p class="shorttext">Manual Implementation</p>
+      "! Manual implementation
+      manual_implementation TYPE ty_manual_implementation,
       "! <p class="shorttext">Success Message</p>
       "! Success message
       success_message TYPE ty_message,
@@ -152,22 +152,22 @@ INTERFACE zif_aff_aifp_v1
     BEGIN OF co_check_scenario,
       "! <p class="shorttext">Simple Field Check</p>
       "! Simple field check
-      simple                TYPE ty_check_scenario VALUE 'SIMPLE',
+      simple_field_check          TYPE ty_check_scenario VALUE 'SMPL',
       "! <p class="shorttext">Advanced Field Check</p>
       "! Advanced field check
-      advanced              TYPE ty_check_scenario VALUE 'ADVANCED',
+      advanced_field_check        TYPE ty_check_scenario VALUE 'ADVD',
       "! <p class="shorttext">Simple Field Check and Database Check</p>
       "! Simple field check and database check
-      simpledb              TYPE ty_check_scenario VALUE 'SIMPLEDB',
+      simple_field_and_db_check   TYPE ty_check_scenario VALUE 'SMDB',
       "! <p class="shorttext">Advanced Field Check and Database Check</p>
       "! Advanced field check and database check
-      advanceddb            TYPE ty_check_scenario VALUE 'ADVANCEDDB',
+      advanced_field_and_db_check TYPE ty_check_scenario VALUE 'ADDB',
       "! <p class="shorttext">Database Check</p>
       "! Database check
-      database              TYPE ty_check_scenario VALUE 'DATABASE',
+      database_check              TYPE ty_check_scenario VALUE 'DBCK',
       "! <p class="shorttext">Manual Implementation</p>
       "! Manual implementation
-      manual_implementation TYPE ty_check_scenario VALUE 'IMPLEMENT',
+      manual_implementation       TYPE ty_check_scenario VALUE 'IMPL',
     END OF co_check_scenario.
   CONSTANTS:
     BEGIN OF co_simple_check_type,

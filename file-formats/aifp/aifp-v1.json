@@ -145,11 +145,11 @@
             "description": "Scenario",
             "type": "string",
             "enum": [
-              "simple",
-              "advanced",
-              "simpledb",
-              "advanceddb",
-              "database",
+              "simpleFieldCheck",
+              "advancedFieldCheck",
+              "simpleFieldAndDbCheck",
+              "advancedFieldAndDbCheck",
+              "databaseCheck",
               "manualImplementation"
             ],
             "enumTitles": [
@@ -168,7 +168,7 @@
               "Database check",
               "Manual implementation"
             ],
-            "default": "simple"
+            "default": "simpleFieldCheck"
           },
           "fieldCheck": {
             "title": "Field Check",
@@ -369,9 +369,9 @@
             },
             "additionalProperties": false
           },
-          "classCheck": {
-            "title": "Class Check",
-            "description": "Class check",
+          "manualImplementation": {
+            "title": "Manual Implementation",
+            "description": "Manual implementation",
             "type": "object",
             "properties": {
               "class": {
