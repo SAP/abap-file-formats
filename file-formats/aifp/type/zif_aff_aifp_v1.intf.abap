@@ -106,7 +106,7 @@ INTERFACE zif_aff_aifp_v1
       manual_implementation TYPE ty_manual_implementation,
       "! <p class="shorttext">Success Message</p>
       "! Success message
-      success_message TYPE ty_message,
+      success_message       TYPE ty_message,
     END OF ty_single_check.
   TYPES:
   "! <p class="shorttext">Single Checks</p>

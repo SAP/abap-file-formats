@@ -13,7 +13,7 @@
     {
       "number": "10",
       "description": "Check Business Partner Exist",
-      "scenario": "simpledb",
+      "scenario": "simple_field_and_db_check",
       "fieldCheck": {
         "checkType": "empty",
         "operator": "equals"
