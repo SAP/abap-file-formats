@@ -5,21 +5,6 @@ INTERFACE zif_aff_edcc_v1
   "! <p class="shorttext">Sequence Number</p>
   "! Sequence number
   TYPES ty_sequence_number      TYPE c LENGTH 3.
-  "! <p class="shorttext">Filter Operation</p>
-  "! Operand to build the where condition
-  "! $values {@link zif_aff_edcc_v1.data:co_filter_operation}
-  "! $default {@link zif_aff_edcc_v1.data:co_filter_operation.and}
-  TYPES ty_filter_operation     TYPE c LENGTH 3.
-  "! <p class="shorttext">Comparison Operator</p>
-  "! Comparison operator
-  "! $values {@link zif_aff_edcc_v1.data:co_compare_operation}
-  "! $default {@link zif_aff_edcc_v1.data:co_compare_operation.equal}
-  TYPES ty_comparison_operator  TYPE c LENGTH 3.
-  "! <p class="shorttext">Expression Indicator</p>
-  "! Expression indicator
-  "! $values {@link zif_aff_edcc_v1.data:co_expression}
-  "! $default {@link zif_aff_edcc_v1.data:co_expression.begin_of}
-  TYPES ty_expression_indicator TYPE c LENGTH 3.
   "! <p class="shorttext">Description</p>
   "! Description
   TYPES ty_short_description    TYPE c LENGTH 30.

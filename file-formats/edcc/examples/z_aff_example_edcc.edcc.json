@@ -23,6 +23,7 @@
       {
         "name": "EDOCv/sTAXAUTH",
         "description": "example",
+        "positionNumber": "1",
         "implementingClass": "CL_EXAMPLE",
         "dataSource": "CL_CDS_EXAMPLE",
         "checks": {
