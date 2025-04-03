@@ -67,12 +67,12 @@
       "uniqueItems": true,
       "items": {
         "title": "Representation Type",
-        "description": "Assign representation type associated with consistency scenario",
+        "description": "Assigned representation type",
         "type": "object",
         "properties": {
           "name": {
-            "title": "Representation Type",
-            "description": "Representation type",
+            "title": "Name",
+            "description": "Assigned representation type",
             "type": "string",
             "maxLength": 30
           }
@@ -93,9 +93,9 @@
         "description": "Additional selection fields of validation report",
         "type": "object",
         "properties": {
-          "tableName": {
-            "title": "Table Name",
-            "description": "Table name",
+          "viewName": {
+            "title": "View Name",
+            "description": "View name",
             "type": "string",
             "maxLength": 30
           },
@@ -129,13 +129,13 @@
         },
         "additionalProperties": false,
         "required": [
-          "tableName",
+          "viewName",
           "fieldName",
           "fieldType"
         ]
       }
     },
-    "taxAuthorityMessages": {
+    "taxAuthorityMessageTypes": {
       "title": "Tax Authority Message Types",
       "description": "Tax authority message types",
       "type": "array",
@@ -145,8 +145,8 @@
         "description": "Tax authority message type",
         "type": "object",
         "properties": {
-          "messageType": {
-            "title": "Message Type",
+          "name": {
+            "title": "Name",
             "description": "Message type",
             "type": "string",
             "maxLength": 20
@@ -160,7 +160,7 @@
         },
         "additionalProperties": false,
         "required": [
-          "messageType",
+          "name",
           "taxAuthorityDocumentType"
         ]
       }
@@ -175,8 +175,8 @@
         "description": "Additional tax authority table",
         "type": "object",
         "properties": {
-          "tableName": {
-            "title": "Table Name",
+          "name": {
+            "title": "Name",
             "description": "Table name",
             "type": "string",
             "maxLength": 30
@@ -184,22 +184,22 @@
         },
         "additionalProperties": false,
         "required": [
-          "tableName"
+          "name"
         ]
       }
     },
     "edocumentTypes": {
-      "title": "eDocument Type Assignment",
+      "title": "eDocument Types",
       "description": "Assign eDocument types associated with consistency scenario",
       "type": "array",
       "uniqueItems": true,
       "items": {
-        "title": "eDocument Type Assignment",
-        "description": "Assign eDocument types associated with consistency scenario",
+        "title": "eDocument Type",
+        "description": "eDocument types associated with consistency scenario",
         "type": "object",
         "properties": {
-          "edocType": {
-            "title": "eDocument Type",
+          "name": {
+            "title": "Name",
             "description": "eDocument Type",
             "type": "string",
             "maxLength": 10
@@ -207,13 +207,13 @@
         },
         "additionalProperties": false,
         "required": [
-          "edocType"
+          "name"
         ]
       }
     },
-    "comparisonTypeAndEvent": {
+    "comparisonTypesAndEvents": {
       "title": "Comparison Types and Events",
-      "description": "Define Comparison types and assign events to the comparison scenario",
+      "description": "Define comparison types and assign events to the comparison scenario",
       "type": "object",
       "properties": {
         "comparisonTypes": {
@@ -257,9 +257,9 @@
                 "type": "string",
                 "maxLength": 30
               },
-              "assignChecks": {
-                "title": "Assign Checks",
-                "description": "Assign checks",
+              "checks": {
+                "title": "Checks",
+                "description": "Assigned checks",
                 "type": "object",
                 "properties": {
                   "existenceCheck": {
@@ -268,7 +268,7 @@
                     "type": "object",
                     "properties": {
                       "checkId": {
-                        "title": "Check Id",
+                        "title": "Check ID",
                         "description": "Check id",
                         "type": "string",
                         "maxLength": 30
@@ -311,7 +311,7 @@
                       "type": "object",
                       "properties": {
                         "checkId": {
-                          "title": "Check Id",
+                          "title": "Check ID",
                           "description": "Check id",
                           "type": "string",
                           "maxLength": 30
@@ -376,7 +376,7 @@
                       "type": "object",
                       "properties": {
                         "checkId": {
-                          "title": "Check Id",
+                          "title": "Check ID",
                           "description": "Check id",
                           "type": "string",
                           "maxLength": 30
@@ -400,7 +400,7 @@
                           "type": "string",
                           "maxLength": 60
                         },
-                        "contentComparisonFieldGroup": {
+                        "comparisonFieldGroups": {
                           "title": "Comparison Field Groups",
                           "description": "Comparison field groups",
                           "type": "array",
@@ -410,8 +410,8 @@
                             "description": "Comparison field group",
                             "type": "object",
                             "properties": {
-                              "fieldGroup": {
-                                "title": "Mismatch Field Group",
+                              "name": {
+                                "title": "Name",
                                 "description": "Comparison field group for mismatched fields",
                                 "type": "string",
                                 "maxLength": 20
@@ -422,8 +422,8 @@
                                 "type": "string",
                                 "maxLength": 30
                               },
-                              "fieldGroupLevel": {
-                                "title": "Field Group Level",
+                              "level": {
+                                "title": "Level",
                                 "description": "Level of comparison field group",
                                 "type": "string",
                                 "enum": [
@@ -467,8 +467,8 @@
                                 "type": "string",
                                 "maxLength": 10
                               },
-                              "comparisonField": {
-                                "title": "Comparison Field Name",
+                              "comparisonFields": {
+                                "title": "Comparison Fields",
                                 "description": "Field Names whose values will be compared",
                                 "type": "array",
                                 "uniqueItems": true,
@@ -507,12 +507,12 @@
                             },
                             "additionalProperties": false,
                             "required": [
-                              "fieldGroup",
+                              "name",
                               "description",
-                              "fieldGroupLevel",
+                              "level",
                               "checkFormula",
                               "resultProcess",
-                              "comparisonField"
+                              "comparisonFields"
                             ]
                           }
                         }
@@ -522,63 +522,62 @@
                         "checkId",
                         "checkNumber",
                         "additionalDescription",
-                        "contentComparisonFieldGroup"
+                        "comparisonFieldGroups"
                       ]
                     }
                   },
-                  "checkAttributes": {
-                    "title": "Check Attributes",
-                    "description": "Check attributes",
+                  "runAttributes": {
+                    "title": "Run Attributes",
+                    "description": "Check run attributes",
                     "type": "array",
                     "uniqueItems": true,
                     "items": {
-                      "title": "Check Attribute",
-                      "description": "Check attribute",
+                      "title": "Run Attribute",
+                      "description": "Check run attribute",
                       "type": "object",
                       "properties": {
                         "checkId": {
-                          "title": "Check Id",
+                          "title": "Check ID",
                           "description": "Check id",
                           "type": "string",
                           "maxLength": 30
                         },
-                        "executionSequence": {
-                          "title": "Check Execution Sequence",
-                          "description": "Check execution sequence",
+                        "runSequence": {
+                          "title": "Sequence",
+                          "description": "Check run sequence",
                           "type": "string",
                           "maxLength": 3
                         },
-                        "executionControl": {
-                          "title": "Check Execution Control",
-                          "description": "Check execution control",
+                        "controlParameter": {
+                          "title": "Control Parameter",
+                          "description": "Check execution control parameter",
                           "type": "string",
                           "enum": [
-                            "proceed",
-                            "noProceed"
+                            "alwaysRunCheck",
+                            "runCheckIfNoInconsistency"
                           ],
                           "enumTitles": [
-                            "No Check",
-                            "Proceed If No Inconsistency Identified From Previous Check"
+                            "Always Run Check",
+                            "Run Check if No Inconsistency"
                           ],
                           "enumDescriptions": [
-                            "Proceed with check even when inconsistency is identified",
-                            "Proceed If No Inconsistency Identified From Previous Check"
+                            "Proceed with check even if inconsistency is identified",
+                            "Proceed If no inconsistency identified from previous check"
                           ],
-                          "default": "proceed"
+                          "default": "alwaysRunCheck"
                         }
                       },
                       "additionalProperties": false,
                       "required": [
                         "checkId",
-                        "executionSequence"
+                        "runSequence"
                       ]
                     }
                   }
                 },
                 "additionalProperties": false,
                 "required": [
-                  "existenceCheck",
-                  "checkAttributes"
+                  "existenceCheck"
                 ]
               },
               "representationTypes": {
@@ -591,8 +590,8 @@
                   "description": "Assigned representation type",
                   "type": "object",
                   "properties": {
-                    "representationType": {
-                      "title": "Assigned Representation Type",
+                    "name": {
+                      "title": "Name",
                       "description": "Assigned representation type",
                       "type": "string",
                       "maxLength": 30
@@ -600,7 +599,7 @@
                   },
                   "additionalProperties": false,
                   "required": [
-                    "representationType"
+                    "name"
                   ]
                 }
               }
@@ -612,35 +611,35 @@
               "positionNumber",
               "implementingClass",
               "dataSource",
-              "assignChecks",
+              "checks",
               "representationTypes"
             ]
           }
         },
         "events": {
-          "title": "Events Assignment",
-          "description": "Assign events to consistency scenario",
+          "title": "Events",
+          "description": "Assigned events to consistency scenario",
           "type": "array",
           "uniqueItems": true,
           "items": {
-            "title": "Assign Event",
-            "description": "Assign event to consistency scenario",
+            "title": "Event",
+            "description": "Assigned event to consistency scenario",
             "type": "object",
             "properties": {
-              "event": {
-                "title": "Event Name",
+              "name": {
+                "title": "Name",
                 "description": "Event name",
                 "type": "string",
                 "maxLength": 25
               },
-              "assignedComparison": {
-                "title": "Assign Checks and Comparison Type",
-                "description": "Assign Checks and Comparison Type",
+              "comparisonTypesAndChecks": {
+                "title": "Comparison Types And Checks",
+                "description": "Assigned comparison Types and checks",
                 "type": "array",
                 "uniqueItems": true,
                 "items": {
-                  "title": "Assigned Comparison",
-                  "description": "Assigned comparison",
+                  "title": "Comparison Type and Check",
+                  "description": "Assigned comparison type and check",
                   "type": "object",
                   "properties": {
                     "comparisonType": {
@@ -650,7 +649,7 @@
                       "maxLength": 30
                     },
                     "checkId": {
-                      "title": "Check Id",
+                      "title": "Check ID",
                       "description": "Check id",
                       "type": "string",
                       "maxLength": 30
@@ -679,7 +678,7 @@
                       "maxLength": 30
                     },
                     "checkId": {
-                      "title": "Check Id",
+                      "title": "Check ID",
                       "description": "Check id",
                       "type": "string",
                       "maxLength": 30
@@ -716,15 +715,15 @@
             },
             "additionalProperties": false,
             "required": [
-              "event",
-              "assignedComparison",
+              "name",
+              "comparisonTypesAndChecks",
               "checkRelevance"
             ]
           }
         },
         "inconsistencyCategories": {
           "title": "Inconsistency Categories",
-          "description": "Inconsistency categories",
+          "description": "Inconsistency categories and assigned result processes",
           "type": "array",
           "uniqueItems": true,
           "items": {
@@ -732,19 +731,25 @@
             "description": "Inconsistency category",
             "type": "object",
             "properties": {
-              "resultUiGroup": {
-                "title": "Inconsistency Category",
+              "name": {
+                "title": "Name",
                 "description": "Inconsistency category",
                 "type": "string",
                 "maxLength": 20
               },
-              "countryXtension": {
+              "description": {
+                "title": "Description",
+                "description": "Description of the result ui group",
+                "type": "string",
+                "maxLength": 120
+              },
+              "countryViewExtension": {
                 "title": "Country View Extension",
                 "description": "Country view extension",
                 "type": "string",
                 "maxLength": 30
               },
-              "resultProcess": {
+              "resultProcesses": {
                 "title": "Result Processes",
                 "description": "Assign result process to the UI group",
                 "type": "array",
@@ -754,21 +759,24 @@
                   "description": "Assign result process to the UI group",
                   "type": "object",
                   "properties": {
-                    "resultProcess": {
-                      "title": "Result Process",
-                      "description": "Result process",
+                    "name": {
+                      "title": "Name",
                       "type": "string",
                       "maxLength": 10
                     }
                   },
-                  "additionalProperties": false
+                  "additionalProperties": false,
+                  "required": [
+                    "name"
+                  ]
                 }
               }
             },
             "additionalProperties": false,
             "required": [
-              "resultUiGroup",
-              "resultProcess"
+              "name",
+              "description",
+              "resultProcesses"
             ]
           }
         }
@@ -786,6 +794,6 @@
     "header",
     "country",
     "representationTypes",
-    "comparisonTypeAndEvent"
+    "comparisonTypesAndEvents"
   ]
 }

@@ -5,7 +5,7 @@
     "originalLanguage": "en",
     "abapLanguageVersion": "cloudDevelopment"
   },
-  "country": "es",
+  "country": "MX",
   "representationTypes": [
     {
       "name": "EDOCUMENT"
@@ -15,103 +15,47 @@
     }
   ],
   "additionalSelectionFields": [],
-  "taxAuthorityMessages": [
-    {
-      "messageType": "EXAMPLE_MESSAGE",
-      "taxAuthorityDocumentType": "INVOICE"
-    }
-  ],
+  "taxAuthorityMessageTypes": [],
   "taxAuthorityTables": [],
-  "edocumentTypes": [
-    {
-      "edocType": "EINVOICEES"
-    }
-  ],
-  "comparisonTypeAndEvent": {
+  "edocumentTypes": [],
+  "comparisonTypesAndEvents": {
     "comparisonTypes": [
       {
-        "name": "EXAMPLE_COMPARISON",
-        "description": "EXAMPLE_COMPARISON",
-        "positionNumber": "1",
+        "name": "EDOCv/sTAXAUTH",
+        "description": "example",
         "implementingClass": "CL_EXAMPLE",
-        "dataSource": "CDS_EXAMPLE",
-        "assignChecks": {
+        "dataSource": "CL_CDS_EXAMPLE",
+        "checks": {
           "existenceCheck": {
-            "checkId": "EXAMPLE_EXIST",
-            "fieldName": "SOMETHING",
-            "fieldValue": "SOMETHING",
-            "resultProcess": "RESULT_EX"
-          },
-          "statusChecks": [
-            {
-              "checkId": "EXAMPLE_STATUS",
-              "sequenceNumber": "1",
-              "sourceFieldName1": "EXAMPLE_FIELD1",
-              "sourceFieldValue1": "EXAMPLE_VALUE1",
-              "sourceFieldName2": "EXAMPLE_FIELD2",
-              "sourceFieldValue2": "EXAMPLE_VALUE2",
-              "resultProcess": "RESULT_EX1"
-            }
-          ],
-          "contentChecks": [
-            {
-              "checkId": "EXAMPLE_CONTENT",
-              "checkNumber": "1",
-              "additionalDescription": "Description",
-              "contentComparisonFieldGroup": [
-                {
-                  "fieldGroup": "EXAMPLE_FIELDGRP",
-                  "description": "Description",
-                  "fieldGroupLevel": "header",
-                  "checkFormula": "field",
-                  "resultProcess": "RESULT_EX2",
-                  "comparisonField": [
-                    {
-                      "representationType": "EDOCUMENT",
-                      "fieldName": "Something",
-                      "comparisonSequence": "1"
-                    },
-                    {
-                      "representationType": "TAXAUTHDOC",
-                      "fieldName": "SOMETHING2",
-                      "comparisonSequence": "2"
-                    }
-                  ]
-                }
-              ]
-            }
-          ],
-          "checkAttributes": [
-            {
-              "checkId": "EXAMPLE_EXIST",
-              "executionSequence": "1",
-              "executionControl": "proceed"
-            }
-          ]
+            "checkId": "EXIST",
+            "fieldName": "EXAMPLE",
+            "fieldValue": "VAL",
+            "resultProcess": "EXAMPLERES"
+          }
         },
         "representationTypes": [
           {
-            "representationType": "EDOCUMENT"
+            "name": "EDOCUMENT"
           },
           {
-            "representationType": "TAXAUTHDOC"
+            "name": "TAXAUTHDOC"
           }
         ]
       }
     ],
     "events": [
       {
-        "event": "EXAMPLE_EVENT",
-        "assignedComparison": [
+        "name": "EDOC_SUBMIT",
+        "comparisonTypesAndChecks": [
           {
-            "comparisonType": "EXAMPLE_COMPARISON",
-            "checkId": "EXAMPLE_EXIST"
+            "comparisonType": "EDOCv/sTAXAUTH",
+            "checkId": "EXIST"
           }
         ],
         "checkRelevance": [
           {
-            "comparisonType": "EXAMPLE_COMPARISON",
-            "checkId": "EXAMPLE_EXIST",
+            "comparisonType": "EDOCv/sTAXAUTH",
+            "checkId": "EXIST",
             "relevance": "unchanged"
           }
         ]
@@ -119,11 +63,11 @@
     ],
     "inconsistencyCategories": [
       {
-        "resultUiGroup": "SOMETHING",
-        "countryXtension": "",
-        "resultProcess": [
+        "name": "GROUPRESULT",
+        "description": "example",
+        "resultProcesses": [
           {
-            "resultProcess": "RESULT_EX"
+            "name": "EXAMPLERES"
           }
         ]
       }
