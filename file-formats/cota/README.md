@@ -1,4 +1,12 @@
-# COTA File Format
+# Communication Target File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+COTA | Communication Target | -
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :--- | :--- | :--- | :---
