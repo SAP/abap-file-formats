@@ -165,9 +165,9 @@ INTERFACE zif_aff_aifp_v1
       "! <p class="shorttext">Database Check</p>
       "! Database check
       database_check              TYPE ty_check_scenario VALUE 'DBCK',
-      "! <p class="shorttext">Manual Implementation</p>
-      "! Manual implementation
-      manual_implementation       TYPE ty_check_scenario VALUE 'IMPL',
+      "! <p class="shorttext">Custom Implementation</p>
+      "! Custom implementation
+      custom_implementation       TYPE ty_check_scenario VALUE 'IMPL',
     END OF co_check_scenario.
   CONSTANTS:
     BEGIN OF co_simple_check_type,

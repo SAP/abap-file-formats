@@ -150,7 +150,7 @@
               "simpleFieldAndDbCheck",
               "advancedFieldAndDbCheck",
               "databaseCheck",
-              "manualImplementation"
+              "customImplementation"
             ],
             "enumTitles": [
               "Simple Field Check",
@@ -158,7 +158,7 @@
               "Simple Field Check and Database Check",
               "Advanced Field Check and Database Check",
               "Database Check",
-              "Manual Implementation"
+              "Custom Implementation"
             ],
             "enumDescriptions": [
               "Simple field check",
@@ -166,7 +166,7 @@
               "Simple field check and database check",
               "Advanced field check and database check",
               "Database check",
-              "Manual implementation"
+              "Custom implementation"
             ],
             "default": "simpleFieldCheck"
           },
