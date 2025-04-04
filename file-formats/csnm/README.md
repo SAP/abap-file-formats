@@ -1,4 +1,12 @@
-# CSNM File Format
+# Core Schema Notation Model File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+CSNM | Core Schema Notation Model | -
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :--- | :--- | :--- | :---

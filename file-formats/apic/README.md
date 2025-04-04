@@ -1,4 +1,13 @@
-# APIC File Format
+# API Catalog File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+APIC | API Catalog | -
+
+## File Structure
+
 
 File | Cardinality | Definition | Schema | Example
 :--- | :---  | :--- | :--- | :---

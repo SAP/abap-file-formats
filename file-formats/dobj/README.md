@@ -1,4 +1,12 @@
-# DOBJ File Format
+# Data Destruction Object File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+DOBJ | Data Destruction Object | -
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :---  | :--- | :--- | :---

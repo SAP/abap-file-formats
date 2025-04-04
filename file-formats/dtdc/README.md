@@ -1,4 +1,12 @@
-# DTDC File Format
+# Dynamic Cache File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+DTDC | Dynamic Cache | Dictionary
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :---  | :--- | :--- | :---

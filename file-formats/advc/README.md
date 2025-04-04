@@ -1,4 +1,12 @@
-# ADVC File Format
+# Application Variant File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+ADVC | Application Variant | LRep
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :--- | :--- | :--- | :---

@@ -1,4 +1,12 @@
-# DRTY File Format
+# Type File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+DRTY | Type | Core Data Services
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :---  | :--- | :--- | :---

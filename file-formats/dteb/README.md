@@ -1,4 +1,12 @@
-# DTEB File Format
+# Entity Buffer File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+DTEB | Entity Buffer | Core Data Services
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :---  | :--- | :--- | :---

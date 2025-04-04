@@ -1,4 +1,12 @@
-# APOB File Format
+# Application Object File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+APOB | Application Object | -
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :--- | :--- | :--- | :---

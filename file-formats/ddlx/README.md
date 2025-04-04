@@ -1,5 +1,12 @@
-# DDLX File Format
+# Metadata Extension File Format
 
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+DDLX | Metadata Extension | Core Data Services
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :---  | :--- | :--- | :---

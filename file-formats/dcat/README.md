@@ -1,4 +1,12 @@
-# DCAT File Format
+# Data Category File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+DCAT | Data Category | -
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :--- | :--- | :--- | :---

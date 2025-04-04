@@ -1,4 +1,12 @@
-# CHKV File Format
+# ATC Check Variant File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+CHKV | ATC Check Variant | ABAP Test Cockpit
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :---  | :--- | :--- | :---

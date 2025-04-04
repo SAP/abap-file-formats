@@ -1,4 +1,12 @@
-# DRAS File Format
+# Aspect File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+DRAS | Aspect | Core Data Services
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :--- | :--- | :--- | :---

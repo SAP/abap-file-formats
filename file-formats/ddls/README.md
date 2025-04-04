@@ -1,5 +1,12 @@
-# DDLS File Format
+# Data Definition File Format
 
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+DDLS | Data Definition | Core Data Services
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :---  | :--- | :--- | :---
