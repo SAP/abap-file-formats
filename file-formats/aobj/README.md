@@ -1,4 +1,12 @@
-# AOBJ File Format
+# Archiving Object File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+AOBJ | Archiving Object | -
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :---  | :--- | :--- | :---
