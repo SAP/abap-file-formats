@@ -74,13 +74,13 @@ INTERFACE zif_aff_aifp_v1
       pattern         TYPE c LENGTH 60,
     END OF ty_database_check.
   TYPES:
-    "! <p class="shorttext">Manual Implementation</p>
-    "! Manual implementation
-    BEGIN OF ty_manual_implementation,
+    "! <p class="shorttext">Custom Implementation</p>
+    "! Custom implementation
+    BEGIN OF ty_custom_implementation,
       "! <p class="shorttext">Class</p>
       "! Class name for check
       class TYPE zif_aff_types_v1=>ty_object_name_30,
-    END OF ty_manual_implementation.
+    END OF ty_custom_implementation.
   TYPES:
     "! <p class="shorttext">Single Check Details</p>
     "! Single check details
@@ -101,9 +101,9 @@ INTERFACE zif_aff_aifp_v1
       "! <p class="shorttext">Database Check</p>
       "! Database check
       database_check        TYPE ty_database_check,
-      "! <p class="shorttext">Manual Implementation</p>
-      "! Manual implementation
-      manual_implementation TYPE ty_manual_implementation,
+      "! <p class="shorttext">Custom Implementation</p>
+      "! Custom implementation
+      custom_implementation TYPE ty_custom_implementation,
       "! <p class="shorttext">Success Message</p>
       "! Success message
       success_message       TYPE ty_message,

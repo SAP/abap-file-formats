@@ -369,9 +369,9 @@
             },
             "additionalProperties": false
           },
-          "manualImplementation": {
-            "title": "Manual Implementation",
-            "description": "Manual implementation",
+          "customImplementation": {
+            "title": "Custom Implementation",
+            "description": "Custom implementation",
             "type": "object",
             "properties": {
               "class": {
