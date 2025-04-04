@@ -187,16 +187,16 @@ Default values can only be specified if one of the following rules apply:
 
 2. For enumerations, all other values must **not** represent type initial value of the underlying data type.
 
-3. The field and all higher-level structures* of the field are marked as `$required`.
+3. All higher-level structures* of the field are marked as `$required`.
 
    > *) Arrays don't need to be marked as `$required` in this case.
    In JSON it is possible to distinguish between empty arrays (`"table": []`) and arrays with "empty" array items (`"table": [{}]`).
    All fields with defaults in the array items that don't follow the other rules, along with their higher-level structures, must be marked as `$required`.
 
-Fields, which are not specified in the JSON data file, are deserialized to their default values.
+Fields that are not specified in the JSON data file are deserialized to their default values.
 Note that if you specify a default value, initial values are written to the JSON data file, unless they are not equal to the selected default.
 
-Since fields, which are not specified in the JSON data, might be represented by either initial values or default values, implementations of serialization and deserialization of ABAP file formats must consider fields with default values as specified here.
+Since fields that are not specified in the JSON data might be represented by either initial values or default values, implementations of serialization and deserialization of ABAP file formats must consider fields with default values, as specified here.
 
 ### Enum Values
 To pass enum values to a JSON Schema, a type and a constant are necessary.
