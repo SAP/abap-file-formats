@@ -14,10 +14,6 @@
       "name": "TAXAUTHDOC"
     }
   ],
-  "additionalSelectionFields": [],
-  "taxAuthorityMessageTypes": [],
-  "taxAuthorityTables": [],
-  "edocumentTypes": [],
   "comparisonTypesAndEvents": {
     "comparisonTypes": [
       {
