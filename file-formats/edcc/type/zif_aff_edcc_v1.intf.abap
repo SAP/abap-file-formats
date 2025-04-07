@@ -201,9 +201,6 @@ INTERFACE zif_aff_edcc_v1
   "! <p class="shorttext">Content Checks</p>
   "! Assigned content checks
   TYPES ty_content_checks    TYPE SORTED TABLE OF ty_content_check WITH UNIQUE KEY check_id check_number.
-  "! <p class="shorttext">Sequence</p>
-  "! Check run sequence
-  TYPES ty_run_sequence      TYPE c LENGTH 3.
   "! <p class="shorttext">Control Parameter</p>
   "! Check execution control parameter
   "! $values {@link zif_aff_edcc_v1.data:co_control_parameter}
