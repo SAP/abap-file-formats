@@ -248,7 +248,7 @@ INTERFACE zif_aff_edcc_v1
       "! Assigned content checks
       content_checks  TYPE ty_content_checks,
       "! <p class="shorttext">Checks Sequence</p>
-      "! Checks sequence and control parameter
+      "! Sequence of the checks and control parameter
       checks_sequence TYPE ty_checks_sequence,
     END OF ty_checks.
   TYPES:
@@ -442,6 +442,13 @@ INTERFACE zif_aff_edcc_v1
       inconsistency_categories TYPE ty_inconsistency_categories,
     END OF ty_comparison_types_and_events.
   TYPES:
+    BEGIN OF ty_attributes,
+      "! <p class="shorttext">Country</p>
+      "! Country
+      "! $required
+      country TYPE c LENGTH 3,
+    END OF ty_attributes.
+  TYPES:
     "! <p class="shorttext">Consistency Scenario</p>
     "! Consistency scenario
     BEGIN OF ty_main,
@@ -451,10 +458,10 @@ INTERFACE zif_aff_edcc_v1
       "! Header
       "! $required
       header                      TYPE zif_aff_types_v1=>ty_header_60_cloud,
-      "! <p class="shorttext">Country</p>
-      "! Country
+      "! <p class="shorttext">General Information</p>
+      "! General information of consistency scenario
       "! $required
-      country                     TYPE c LENGTH 3,
+      general_information         TYPE ty_attributes,
       "! <p class="shorttext">Representation Types</p>
       "! Assign representation types associated with consistency scenario
       "! $required

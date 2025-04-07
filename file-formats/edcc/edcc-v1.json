@@ -54,11 +54,22 @@
         "originalLanguage"
       ]
     },
-    "country": {
-      "title": "Country",
-      "description": "Country",
-      "type": "string",
-      "maxLength": 3
+    "generalInformation": {
+      "title": "General Information",
+      "description": "General information of consistency scenario",
+      "type": "object",
+      "properties": {
+        "country": {
+          "title": "Country",
+          "description": "Country",
+          "type": "string",
+          "maxLength": 3
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "country"
+      ]
     },
     "representationTypes": {
       "title": "Representation Types",
@@ -528,7 +539,7 @@
                   },
                   "checksSequence": {
                     "title": "Checks Sequence",
-                    "description": "Checks sequence and control parameter",
+                    "description": "Sequence of the checks and control parameter",
                     "type": "array",
                     "uniqueItems": true,
                     "items": {
@@ -785,7 +796,7 @@
   "required": [
     "formatVersion",
     "header",
-    "country",
+    "generalInformation",
     "representationTypes",
     "comparisonTypesAndEvents"
   ]

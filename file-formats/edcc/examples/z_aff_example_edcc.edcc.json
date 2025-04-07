@@ -5,7 +5,9 @@
     "originalLanguage": "en",
     "abapLanguageVersion": "cloudDevelopment"
   },
-  "country": "MX",
+  "generalInformation": {
+    "country": "MX"
+  },
   "representationTypes": [
     {
       "name": "EDOCUMENT"
@@ -14,6 +16,10 @@
       "name": "TAXAUTHDOC"
     }
   ],
+  "additionalSelectionFields": [],
+  "taxAuthorityMessageTypes": [],
+  "taxAuthorityTables": [],
+  "edocumentTypes": [],
   "comparisonTypesAndEvents": {
     "comparisonTypes": [
       {
@@ -28,7 +34,10 @@
             "fieldName": "EXAMPLE",
             "fieldValue": "VAL",
             "resultProcess": "EXAMPLERES"
-          }
+          },
+          "statusChecks": [],
+          "contentChecks": [],
+          "checksSequence": []
         },
         "representationTypes": [
           {
