@@ -1,4 +1,12 @@
-# SPRV File Format
+# SOAP Provider Model File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+SPRV | SOAP Provider Model | Business Services
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :--- | :--- | :--- | :---
