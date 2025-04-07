@@ -208,7 +208,7 @@ INTERFACE zif_aff_edcc_v1
   TYPES ty_control_parameter TYPE c LENGTH 2.
   TYPES:
     "! <p class="shorttext">Check Sequence</p>
-    "! Check sequence and control parameter
+    "!Sequence of the checks and control parameter
     BEGIN OF ty_check_sequence,
       "! <p class="shorttext">Check ID</p>
       "! Check id
@@ -218,8 +218,8 @@ INTERFACE zif_aff_edcc_v1
       "! Check execution control parameter
       control_parameter TYPE ty_control_parameter,
     END OF ty_check_sequence.
-  "! <p class="shorttext">Checks Sequence</p>
-  "! Checks sequence and control parameter
+  "! <p class="shorttext">Check Sequence</p>
+  "! Sequence of the checks and control parameter
   TYPES ty_checks_sequence TYPE SORTED TABLE OF ty_check_sequence WITH UNIQUE KEY check_id.
   TYPES:
     "! <p class="shorttext">Representation Type</p>
@@ -247,9 +247,9 @@ INTERFACE zif_aff_edcc_v1
       "! <p class="shorttext">Content Checks</p>
       "! Assigned content checks
       content_checks  TYPE ty_content_checks,
-      "! <p class="shorttext">Checks Sequence</p>
+      "! <p class="shorttext">Check Sequence</p>
       "! Sequence of the checks and control parameter
-      checks_sequence TYPE ty_checks_sequence,
+      check_sequence  TYPE ty_checks_sequence,
     END OF ty_checks.
   TYPES:
     "! <p class="shorttext">Comparison Type</p>
@@ -529,10 +529,10 @@ INTERFACE zif_aff_edcc_v1
     "! Check execution control parameter
     BEGIN OF co_control_parameter,
       "! <p class="shorttext">Always Run Check</p>
-      "! Proceed with check even if inconsistency is identified
+      "!Proceed even if inconsistency was found by previous checks
       always_run_check              TYPE ty_control_parameter VALUE '00',
       "! <p class="shorttext">Run Check if No Inconsistency</p>
-      "! Proceed If no inconsistency identified from previous check
+      "!Proceed If no inconsistency was found by previous checks
       run_check_if_no_inconsistency TYPE ty_control_parameter VALUE '01',
     END OF co_control_parameter.
   CONSTANTS:

@@ -537,14 +537,14 @@
                       ]
                     }
                   },
-                  "checksSequence": {
-                    "title": "Checks Sequence",
+                  "checkSequence": {
+                    "title": "Check Sequence",
                     "description": "Sequence of the checks and control parameter",
                     "type": "array",
                     "uniqueItems": true,
                     "items": {
                       "title": "Check Sequence",
-                      "description": "Check sequence and control parameter",
+                      "description": "Sequence of the checks and control parameter",
                       "type": "object",
                       "properties": {
                         "checkId": {
@@ -566,8 +566,8 @@
                             "Run Check if No Inconsistency"
                           ],
                           "enumDescriptions": [
-                            "Proceed with check even if inconsistency is identified",
-                            "Proceed If no inconsistency identified from previous check"
+                            "Proceed even if inconsistency was found by previous checks",
+                            "Proceed If no inconsistency was found by previous checks"
                           ],
                           "default": "alwaysRunCheck"
                         }

@@ -16,10 +16,6 @@
       "name": "TAXAUTHDOC"
     }
   ],
-  "additionalSelectionFields": [],
-  "taxAuthorityMessageTypes": [],
-  "taxAuthorityTables": [],
-  "edocumentTypes": [],
   "comparisonTypesAndEvents": {
     "comparisonTypes": [
       {
@@ -34,10 +30,7 @@
             "fieldName": "EXAMPLE",
             "fieldValue": "VAL",
             "resultProcess": "EXAMPLERES"
-          },
-          "statusChecks": [],
-          "contentChecks": [],
-          "checksSequence": []
+          }
         },
         "representationTypes": [
           {
