@@ -4,10 +4,10 @@ INTERFACE zif_aff_edcc_v1
 
   "! <p class="shorttext">Sequence Number</p>
   "! Sequence number
-  TYPES ty_sequence_number      TYPE c LENGTH 3.
+  TYPES ty_sequence_number   TYPE c LENGTH 3.
   "! <p class="shorttext">Description</p>
   "! Description
-  TYPES ty_short_description    TYPE c LENGTH 30.
+  TYPES ty_short_description TYPE c LENGTH 30.
   TYPES:
     "! <p class="shorttext">Tax Authority Message Type</p>
     "! Tax authority message type
@@ -210,24 +210,20 @@ INTERFACE zif_aff_edcc_v1
   "! $default {@link zif_aff_edcc_v1.data:co_control_parameter.always_run_check}
   TYPES ty_control_parameter TYPE c LENGTH 2.
   TYPES:
-    "! <p class="shorttext">Run Attribute</p>
-    "! Check run attribute
-    BEGIN OF ty_run_attribute,
+    "! <p class="shorttext">Check Sequence</p>
+    "! Check sequence and control parameter
+    BEGIN OF ty_check_sequence,
       "! <p class="shorttext">Check ID</p>
       "! Check id
       "! $required
       check_id          TYPE zif_aff_types_v1=>ty_object_name_30,
-      "! <p class="shorttext">Sequence</p>
-      "! Check run sequence
-      "! $required
-      run_sequence      TYPE ty_run_sequence,
       "! <p class="shorttext">Control Parameter</p>
       "! Check execution control parameter
       control_parameter TYPE ty_control_parameter,
-    END OF ty_run_attribute.
-  "! <p class="shorttext">Run Attributes</p>
-  "! Check run attributes
-  TYPES ty_run_attributes TYPE SORTED TABLE OF ty_run_attribute WITH UNIQUE KEY check_id.
+    END OF ty_check_sequence.
+  "! <p class="shorttext">Checks Sequence</p>
+  "! Checks sequence and control parameter
+  TYPES ty_checks_sequence TYPE SORTED TABLE OF ty_check_sequence WITH UNIQUE KEY check_id.
   TYPES:
     "! <p class="shorttext">Representation Type</p>
     "! Assigned representation type
@@ -254,9 +250,9 @@ INTERFACE zif_aff_edcc_v1
       "! <p class="shorttext">Content Checks</p>
       "! Assigned content checks
       content_checks  TYPE ty_content_checks,
-      "! <p class="shorttext">Run Attributes</p>
-      "! Check run attributes
-      run_attributes  TYPE ty_run_attributes,
+      "! <p class="shorttext">Checks Sequence</p>
+      "! Checks sequence and control parameter
+      checks_sequence TYPE ty_checks_sequence,
     END OF ty_checks.
   TYPES:
     "! <p class="shorttext">Comparison Type</p>
