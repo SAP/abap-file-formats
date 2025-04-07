@@ -526,14 +526,14 @@
                       ]
                     }
                   },
-                  "runAttributes": {
-                    "title": "Run Attributes",
-                    "description": "Check run attributes",
+                  "checksSequence": {
+                    "title": "Checks Sequence",
+                    "description": "Checks sequence and control parameter",
                     "type": "array",
                     "uniqueItems": true,
                     "items": {
-                      "title": "Run Attribute",
-                      "description": "Check run attribute",
+                      "title": "Check Sequence",
+                      "description": "Check sequence and control parameter",
                       "type": "object",
                       "properties": {
                         "checkId": {
@@ -541,12 +541,6 @@
                           "description": "Check id",
                           "type": "string",
                           "maxLength": 30
-                        },
-                        "runSequence": {
-                          "title": "Sequence",
-                          "description": "Check run sequence",
-                          "type": "string",
-                          "maxLength": 3
                         },
                         "controlParameter": {
                           "title": "Control Parameter",
@@ -569,8 +563,7 @@
                       },
                       "additionalProperties": false,
                       "required": [
-                        "checkId",
-                        "runSequence"
+                        "checkId"
                       ]
                     }
                   }
