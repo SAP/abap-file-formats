@@ -5,16 +5,16 @@
     "originalLanguage": "en"
   },
   "generalInformation": {
-    "modelName": "RM_TEST_ADT_974_MOD",
+    "modelName": "RM_ADT_IMP_002_MOD",
     "modelType": "SAPGENAI",
-    "intelligentScenario": "RM_TEST_ADT_974",
-    "modellingContextId": "685A28A5E8E8    Default context",
+    "intelligentScenario": "RM_ADT_IMP_002",
+    "modellingContextId": "F02813D0CE0DCE409AEF358CA789F860",
     "adapterId": "SAPGENAI.Default",
     "nativeModelType": "SAPGENAI.Default",
     "state": "Published",
     "executableId": "azure-openai",
     "llmName": "gpt-4",
-    "llmVersion": "0613"
+    "llmVersion": "turbo-2024-04-09"
   },
   "modelPromptTemplates": [
     {
