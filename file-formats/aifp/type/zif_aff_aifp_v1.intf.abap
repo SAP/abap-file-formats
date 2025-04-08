@@ -54,9 +54,9 @@ INTERFACE zif_aff_aifp_v1
     "! <p class="shorttext">Database Check</p>
     "! Database check
     BEGIN OF ty_database_check,
-      "! <p class="shorttext">Table Name</p>
-      "! Table name
-      table_name      TYPE c LENGTH 45,
+      "! <p class="shorttext">Table</p>
+      "! Table
+      table           TYPE c LENGTH 45,
       "! <p class="shorttext">Where Condition for Select Statement</p>
       "! Where Condition for Select Statement
       where_condition TYPE c LENGTH 200,
@@ -82,8 +82,8 @@ INTERFACE zif_aff_aifp_v1
       class TYPE zif_aff_types_v1=>ty_object_name_30,
     END OF ty_custom_implementation.
   TYPES:
-    "! <p class="shorttext">Single Check Details</p>
-    "! Single check details
+    "! <p class="shorttext">Check Details</p>
+    "! Check details
     BEGIN OF ty_single_check,
       "! <p class="shorttext">Number</p>
       "! Number
@@ -109,12 +109,12 @@ INTERFACE zif_aff_aifp_v1
       success_message       TYPE ty_message,
     END OF ty_single_check.
   TYPES:
-  "! <p class="shorttext">Single Checks</p>
-  "! Single checks
+  "! <p class="shorttext">Check Details</p>
+  "! Check details
     ty_single_checks TYPE STANDARD TABLE OF ty_single_check WITH DEFAULT KEY.
   TYPES:
-    "! <p class="shorttext">Check Details</p>
-    "! Check details
+    "! <p class="shorttext">General Information</p>
+    "! General information
     BEGIN OF ty_general_information,
       "! <p class="shorttext">Namespace</p>
       "! Namespace of the check
@@ -204,8 +204,8 @@ INTERFACE zif_aff_aifp_v1
       "! <p class="shorttext">Only Characters A-Z, a-z</p>
       "! Only characters A-Z, a-z
       only_chars                  TYPE ty_simple_check_type VALUE 'Z',
-      "! <p class="shorttext">Alphanumeric with special chars and German Umlauts</p>
-      "! Alphanumeric with special chars and German Umlauts
+      "! <p class="shorttext">Alphanumeric with Special Chars and German Umlauts</p>
+      "! Alphanumeric with special chars and German umlauts
       alphanumeric_special_umlaut TYPE ty_simple_check_type VALUE 'X',
     END OF co_simple_check_type.
   CONSTANTS:

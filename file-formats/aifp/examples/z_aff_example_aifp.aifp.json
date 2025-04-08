@@ -19,7 +19,7 @@
         "operator": "equals"
       },
       "databaseCheck": {
-        "tableName": "BUP000",
+        "table": "BUP000",
         "whereCondition": "ID = '$1'",
         "checkType": "checkExistence",
         "operator": "equals"

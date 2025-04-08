@@ -123,8 +123,8 @@
       "description": "Check assignments",
       "type": "array",
       "items": {
-        "title": "Single Check Details",
-        "description": "Single check details",
+        "title": "Check Details",
+        "description": "Check details",
         "type": "object",
         "properties": {
           "number": {
@@ -205,7 +205,7 @@
                   "Only Characters A-Z",
                   "Only Characters a-z",
                   "Only Characters A-Z, a-z",
-                  "Alphanumeric with special chars and German Umlauts"
+                  "Alphanumeric with Special Chars and German Umlauts"
                 ],
                 "enumDescriptions": [
                   "Empty",
@@ -219,7 +219,7 @@
                   "Only characters A-Z",
                   "Only characters a-z",
                   "Only characters A-Z, a-z",
-                  "Alphanumeric with special chars and German Umlauts"
+                  "Alphanumeric with special chars and German umlauts"
                 ],
                 "default": "empty"
               },
@@ -279,9 +279,9 @@
             "description": "Database check",
             "type": "object",
             "properties": {
-              "tableName": {
-                "title": "Table Name",
-                "description": "Table name",
+              "table": {
+                "title": "Table",
+                "description": "Table",
                 "type": "string",
                 "maxLength": 45
               },
