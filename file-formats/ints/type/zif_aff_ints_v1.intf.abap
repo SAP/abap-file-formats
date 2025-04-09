@@ -24,13 +24,13 @@ INTERFACE zif_aff_ints_v1
     END OF co_object_status.
 
   "! $values { @link zif_aff_ints_v1.data:co_scenario_technology }
-  "! $default { @link zif_aff_ints_v1.data:co_scenario_technology.sidebyside }
+  "! $default { @link zif_aff_ints_v1.data:co_scenario_technology.side_by_side }
   TYPES ty_scenario_technology TYPE c LENGTH 20.
   CONSTANTS:
     BEGIN OF co_scenario_technology,
-      "! <p class="shorttext">Side-By-Side</p>
-      "! Side-by-Side
-      sidebyside TYPE ty_scenario_technology VALUE 'SIDEBYSIDE',
+      "! <p class="shorttext">Side-by-Side</p>
+      "! Side-by-side
+      side_by_side TYPE ty_scenario_technology VALUE 'SIDEBYSIDE',
       "! <p class="shorttext">Embedded</p>
       "! Embedded
       embedded   TYPE ty_scenario_technology VALUE 'EMBEDDED',
