@@ -4,7 +4,7 @@
 
 Object Type | Description | Group
 :--- | :--- | :---
-NONT | SAP Object Node Type | SAP Objet Type Management
+NONT | SAP Object Node Type | SAP Object Type Management
 
 ## File Structure
 
