@@ -1,0 +1,13 @@
+{
+    "formatVersion": "1",
+    "header": {
+      "description": "Example AIFF for ABAP File Format",
+      "originalLanguage": "en",
+      "abapLanguageVersion": "cloudDevelopment"
+    },
+    "generalInformation":{
+        "namespace": "AIFNS",
+        "aifFixValue": "FixValue1",
+        "fieldValue": "1"
+    }
+  }

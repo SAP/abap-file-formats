@@ -130,8 +130,8 @@
     "no_public_attributes": true,
     "no_yoda_conditions": true,
     "object_naming": {
-      "clas": "^(ZC(L|X)\\_AFF\\_|Z\\_AFF\\_EXAMPLE)",
-      "intf": "^(ZIF\\_AFF\\_|Z\\_AFF\\_EXAMPLE)",
+      "clas": "^(ZC(L|X)_AFF_|Z_AFF_EXAMPLE)",
+      "intf": "(^ZIF_AFF_[A-Z0-9]{4}_V[0-9]+$)|(^ZIF_AFF[A-Z0-9_]*_TYPES_V[0-9]+$)|(^Z_AFF_EXAMPLE)",
       "prog": "^Z",
       "fugr": "^Z",
       "tabl": "^Z",

@@ -1,21 +1,24 @@
-INTERFACE zif_aff_aifr_v1
+INTERFACE zif_aff_aiff_v1
   PUBLIC.
   TYPES:
-    "! <p class="shorttext">Recipient Details</p>
-    "! Recipient details
+    "! <p class="shorttext">General Information</p>
+    "! General information
     BEGIN OF ty_general_information,
       "! <p class="shorttext">Namespace</p>
-      "! Namespace of the recipient
+      "! Namespace
       "! $required
       namespace     TYPE c LENGTH 15,
-      "! <p class="shorttext">AIF Recipient</p>
-      "! SAP Application Interface recipient
+      "! <p class="shorttext">AIF Fix Value</p>
+      "! AIF fix value
       "! $required
-      aif_recipient TYPE c LENGTH 25,
+      aif_fix_value TYPE c LENGTH 20,
+      "! <p class="shorttext">Field Value</p>
+      "! Field value
+      field_value   TYPE c LENGTH 255,
     END OF ty_general_information,
 
-    "! <p class="shorttext">Recipient</p>
-    "! Recipient
+    "! <p class="shorttext">Fix Value</p>
+    "! Fix value
     BEGIN OF ty_main,
       "! $required
       format_version      TYPE zif_aff_types_v1=>ty_format_version,
@@ -28,4 +31,5 @@ INTERFACE zif_aff_aifr_v1
       "! $required
       general_information TYPE ty_general_information,
     END OF ty_main.
+
 ENDINTERFACE.
