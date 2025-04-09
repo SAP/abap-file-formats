@@ -1,5 +1,5 @@
 {
-  "formatVersion": "2",
+  "formatVersion": "1",
   "header": {
     "description": "Example of UIAD AFF Format",
     "originalLanguage": "en"
@@ -8,8 +8,7 @@
     "appType": "ui5",
     "catalogId": "ZLOCAL_TEST",
     "information": "Not translated info text",
-    "supportComponent": "CA-FLP-ABA",
-    "targetMappingTitle": "Target Mapping Title"
+    "supportComponent": "CA-FLP-ABA"
   },
   "ui5AppDetails": {
     "appId": "sap.ushell.demo.AppNavSample",
