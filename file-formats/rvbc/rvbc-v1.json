@@ -126,7 +126,10 @@
           "default": "notSupported"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "required": [
+        "extensibilityMode"
+      ]
     },
     "ina1Services": {
       "title": "InA Services",
@@ -152,6 +155,7 @@
   "additionalProperties": false,
   "required": [
     "formatVersion",
-    "header"
+    "header",
+    "bookletDefinition"
   ]
 }

@@ -62,6 +62,7 @@ INTERFACE zif_aff_rvbc_v1
       application        TYPE ty_app_id,
       "! <p class="shorttext">Extensibility Mode</p>
       "! Extensibility mode
+      "! $required
       extensibility_mode TYPE ty_extensibility_mode,
     END OF ty_booklet_definition.
 
@@ -91,6 +92,7 @@ INTERFACE zif_aff_rvbc_v1
       header             TYPE zif_aff_types_v1=>ty_header_60,
       "! <p class="shorttext">Booklet Definition</p>
       "! Booklet definition
+      "! $required
       booklet_definition TYPE ty_booklet_definition,
       "! <p class="shorttext">InA Services</p>
       "! InA services
