@@ -91,6 +91,7 @@ INTERFACE zif_aff_rvbc_v1
       header             TYPE zif_aff_types_v1=>ty_header_60,
       "! <p class="shorttext">Booklet Definition</p>
       "! Booklet definition
+      "! $required
       booklet_definition TYPE ty_booklet_definition,
       "! <p class="shorttext">InA Services</p>
       "! InA services
