@@ -185,7 +185,7 @@
                   "emptyOrZero",
                   "numericInteger",
                   "numericEmpty",
-                  "numericNegativ",
+                  "numericNegative",
                   "numericComma",
                   "numericDot",
                   "onlyCharsCapital",

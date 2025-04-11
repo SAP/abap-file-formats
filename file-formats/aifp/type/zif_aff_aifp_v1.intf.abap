@@ -188,7 +188,7 @@ INTERFACE zif_aff_aifp_v1
       numeric_empty               TYPE ty_simple_check_type VALUE '2',
       "! <p class="shorttext">Numeric (Integer/Negative)</p>
       "! Numeric (Integer/Negative)
-      numeric_negativ             TYPE ty_simple_check_type VALUE '3',
+      numeric_negative            TYPE ty_simple_check_type VALUE '3',
       "! <p class="shorttext">Numeric (Comma/Negative)</p>
       "! Numeric (Comma/Negative)
       numeric_comma               TYPE ty_simple_check_type VALUE '4',
