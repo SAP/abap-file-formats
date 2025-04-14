@@ -72,7 +72,19 @@
           "title": "Scenario Technology",
           "description": "Scenario technology",
           "type": "string",
-          "maxLength": 20
+          "enum": [
+            "sideBySide",
+            "embedded"
+          ],
+          "enumTitles": [
+            "Side-by-Side",
+            "Embedded"
+          ],
+          "enumDescriptions": [
+            "Side-by-side",
+            "Embedded"
+          ],
+          "default": "sideBySide"
         },
         "isExtensible": {
           "title": "Extensible",
@@ -111,7 +123,8 @@
       },
       "additionalProperties": false,
       "required": [
-        "scenarioType"
+        "scenarioType",
+        "scenarioTechnology"
       ]
     },
     "classInformation": {

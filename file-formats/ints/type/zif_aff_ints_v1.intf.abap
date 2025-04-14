@@ -88,7 +88,8 @@ INTERFACE zif_aff_ints_v1
       scenario_type              TYPE c LENGTH 256,
       "! <p class="shorttext">Scenario Technology</p>
       "! Scenario technology
-      scenario_technology        TYPE c LENGTH 20,
+      "! $required
+      scenario_technology        TYPE ty_scenario_technology,
       "! <p class="shorttext">Extensible</p>
       "! If true, the scenario is extensible
       is_extensible              TYPE abap_bool,

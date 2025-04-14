@@ -6,7 +6,7 @@
   },
   "generalInformation": {
     "scenarioType": "SAPGENAI",
-    "scenarioTechnology": "SIDEBYSIDE",
+    "scenarioTechnology": "sideBySide",
     "isExtensible": true,
     "state": "Published",
     "islmVersion": 1.0
@@ -21,7 +21,7 @@
   },
   "modellingContext": {
     "modellingContextName": "DEFAULT",
-    "modellingContextId": "58742D6DB9823D0964E809776B3AE8E6",
+    "modellingContextId": "FD7EE83C8A15E829D272C9A50AB7B0A9",
     "modellingContextDescription": "Default context"
   }
 }
