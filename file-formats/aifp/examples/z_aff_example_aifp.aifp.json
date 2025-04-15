@@ -1,0 +1,29 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Example AIFP for ABAP File Format",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "namespace": "AIFNS",
+    "aifCheck": "BP_EXIST"
+  },
+  "checkAssignments": [
+    {
+      "number": "10",
+      "description": "Check Business Partner Exist",
+      "scenario": "simpleFieldAndDbCheck",
+      "fieldCheck": {
+        "checkType": "empty",
+        "operator": "equals"
+      },
+      "databaseCheck": {
+        "table": "BUP000",
+        "whereCondition": "ID = '$1'",
+        "checkType": "checkExistence",
+        "operator": "equals"
+      }
+    }
+  ]
+}
