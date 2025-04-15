@@ -114,8 +114,8 @@
       "description": "Checks assignment",
       "type": "array",
       "items": {
-        "title": "Check Data",
-        "description": "Check data",
+        "title": "Check Details",
+        "description": "Check details",
         "type": "object",
         "properties": {
           "number": {
@@ -127,11 +127,11 @@
           },
           "checkObjName": {
             "title": "Check",
-            "description": "(type /AIF/CHECK_OBJ_NAME ) Check",
+            "description": "Check",
             "type": "string",
             "maxLength": 30
           },
-          "checkIgnore": {
+          "checkBehaviour": {
             "title": "Check Behavior",
             "description": "Check behavior",
             "type": "string",

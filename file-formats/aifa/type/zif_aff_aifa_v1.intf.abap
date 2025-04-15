@@ -23,9 +23,9 @@ INTERFACE zif_aff_aifa_v1
       "! Field name
       field_name TYPE c LENGTH 255,
     END OF ty_fields_check,
-    "! <p class="shorttext">Fields To Restore</p>
-    "! Fields to restore
-    tty_fields_check TYPE STANDARD TABLE OF ty_fields_check WITH DEFAULT KEY.
+    "! <p class="shorttext">Fields To Check</p>
+    "! Fields to check
+    ty_fields_checks TYPE STANDARD TABLE OF ty_fields_check WITH DEFAULT KEY.
 
   TYPES:
     "! <p class="shorttext">General Information</p>
@@ -47,37 +47,38 @@ INTERFACE zif_aff_aifa_v1
       class          TYPE zif_aff_types_v1=>ty_object_name_30,
     END OF ty_general_information,
 
-    "! <p class="shorttext">Check Data</p>
-    "! Check data
-    BEGIN OF ty_check_data,
+    "! <p class="shorttext">Check Details</p>
+    "! Check details
+    BEGIN OF ty_check_details,
       "! <p class="shorttext">Number</p>
       "! Number
       "! $required
-      number         TYPE n LENGTH 3,
+      number          TYPE n LENGTH 3,
       "! <p class="shorttext">Check</p>
-      "! (type /AIF/CHECK_OBJ_NAME )
       "! Check
       "! $required
-      check_obj_name TYPE zif_aff_types_v1=>ty_object_name_30,
+      check_obj_name  TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Check Behavior</p>
       "! Check behavior
-      check_ignore   TYPE error_handling_type,
+      check_behaviour TYPE error_handling_type,
       "! <p class="shorttext">Field Name</p>
       "! Field name
-      field_name     TYPE tty_fields_check,
-    END OF ty_check_data,
-    tty_check_data TYPE STANDARD TABLE OF ty_check_data WITH DEFAULT KEY,
+      field_name      TYPE ty_fields_checks,
+    END OF ty_check_details,
+    "! <p class="shorttext">Check Data</p>
+    "! Check data
+    ty_check_data TYPE STANDARD TABLE OF ty_check_details WITH DEFAULT KEY,
 
     "! <p class="shorttext">Field To Restore</p>
     "! Field to restore
-    BEGIN OF ty_fields_restore,
+    BEGIN OF ty_field_restore,
       "! <p class="shorttext">Field Name</p>
       "! Field name
       field_name TYPE c LENGTH 255,
-    END OF ty_fields_restore,
+    END OF ty_field_restore,
     "! <p class="shorttext">Fields To Restore</p>
     "! Fields to restore
-    tty_fields_restore TYPE STANDARD TABLE OF ty_fields_restore WITH DEFAULT KEY,
+    ty_fields_restore TYPE STANDARD TABLE OF ty_field_restore WITH DEFAULT KEY,
 
     "! <p class="shorttext">Action</p>
     "! Action
@@ -94,9 +95,9 @@ INTERFACE zif_aff_aifa_v1
       general_information TYPE ty_general_information,
       "! <p class="shorttext">Fields To Restore Assignment</p>
       "! Fields to restore assignment
-      field_restore       TYPE tty_fields_restore,
+      field_restore       TYPE ty_fields_restore,
       "! <p class="shorttext">Checks Assignment</p>
       "! Checks assignment
-      check_data          TYPE tty_check_data,
+      check_data          TYPE ty_check_data,
     END OF ty_main.
 ENDINTERFACE.
