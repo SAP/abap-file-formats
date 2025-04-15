@@ -220,7 +220,6 @@ INTERFACE zif_aff_edcc_v1
     END OF ty_check_sequence.
   "! <p class="shorttext">Check Sequence</p>
   "! Sequence of the checks and control parameter
-*  TYPES ty_checks_sequence TYPE sorted TABLE OF ty_check_sequence WITH UNIQUE KEY check_id.
   TYPES ty_checks_sequence TYPE STANDARD TABLE OF ty_check_sequence WITH KEY check_id.
   TYPES:
     "! <p class="shorttext">Representation Type</p>
