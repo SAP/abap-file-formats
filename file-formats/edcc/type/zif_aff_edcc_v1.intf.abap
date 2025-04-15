@@ -446,7 +446,7 @@ INTERFACE zif_aff_edcc_v1
       "! <p class="shorttext">Country Code</p>
       "! Country code
       "! $required
-      country TYPE c LENGTH 2,
+      country_code TYPE c LENGTH 2,
     END OF ty_attributes.
   TYPES:
     "! <p class="shorttext">Consistency Scenario</p>
