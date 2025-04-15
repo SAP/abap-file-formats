@@ -1,6 +1,9 @@
 INTERFACE zif_aff_aifa_v1
    PUBLIC.
 
+  "! $values { @link zif_aff_aifa_v1.data:co_error_handling }
+  "! $default { @link zif_aff_aifa_v1.data:co_error_handling.ignore_data }
+  TYPES error_handling_type TYPE c LENGTH 1.
   CONSTANTS:
     BEGIN OF co_error_handling,
       "! <p class="shorttext">Treat As An Error</p>
@@ -12,10 +15,6 @@ INTERFACE zif_aff_aifa_v1
     END OF co_error_handling.
 
   TYPES:
-    "! $values { @link zif_aff_aifa_v1.data:co_error_handling }
-    "! $default { @link zif_aff_aifa_v1.data:co_error_handling.ignore_data }
-    error_handling_type TYPE c LENGTH 1,
-
     "! <p class="shorttext">Field To Check</p>
     "! Field to check
     BEGIN OF ty_fields_check,
@@ -100,4 +99,5 @@ INTERFACE zif_aff_aifa_v1
       "! Checks assignment
       check_data          TYPE ty_check_data,
     END OF ty_main.
+
 ENDINTERFACE.
