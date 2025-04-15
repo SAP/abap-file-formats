@@ -59,7 +59,7 @@
       "description": "General information of consistency scenario",
       "type": "object",
       "properties": {
-        "country": {
+        "countryCode": {
           "title": "Country Code",
           "description": "Country code",
           "type": "string",
@@ -68,7 +68,7 @@
       },
       "additionalProperties": false,
       "required": [
-        "country"
+        "countryCode"
       ]
     },
     "representationTypes": {
