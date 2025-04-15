@@ -3,7 +3,7 @@ INTERFACE zif_aff_aifa_v1
 
   "! $values { @link zif_aff_aifa_v1.data:co_error_handling }
   "! $default { @link zif_aff_aifa_v1.data:co_error_handling.ignore_data }
-  TYPES error_handling_type TYPE c LENGTH 1.
+  TYPES ty_error_handling_type TYPE c LENGTH 1.
   CONSTANTS:
     BEGIN OF co_error_handling,
       "! <p class="shorttext">Treat As An Error</p>
@@ -59,7 +59,7 @@ INTERFACE zif_aff_aifa_v1
       check_obj_name  TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Check Behavior</p>
       "! Check behavior
-      check_behaviour TYPE error_handling_type,
+      check_behaviour TYPE ty_error_handling_type,
       "! <p class="shorttext">Field Name</p>
       "! Field name
       field_name      TYPE ty_fields_checks,
