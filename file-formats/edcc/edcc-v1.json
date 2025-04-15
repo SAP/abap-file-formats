@@ -60,10 +60,10 @@
       "type": "object",
       "properties": {
         "country": {
-          "title": "Country",
-          "description": "Country",
+          "title": "Country Code",
+          "description": "Country code",
           "type": "string",
-          "maxLength": 3
+          "maxLength": 2
         }
       },
       "additionalProperties": false,
@@ -223,7 +223,7 @@
       }
     },
     "comparisonTypesAndEvents": {
-      "title": "Comparison Types and Events",
+      "title": "Comparison Types And Events",
       "description": "Define comparison types and assign events to the comparison scenario",
       "type": "object",
       "properties": {
@@ -541,7 +541,6 @@
                     "title": "Check Sequence",
                     "description": "Sequence of the checks and control parameter",
                     "type": "array",
-                    "uniqueItems": true,
                     "items": {
                       "title": "Check Sequence",
                       "description": "Sequence of the checks and control parameter",
@@ -563,7 +562,7 @@
                           ],
                           "enumTitles": [
                             "Always Run Check",
-                            "Run Check if No Inconsistency"
+                            "Run Check if No Inconsistency was found by Previous Checks"
                           ],
                           "enumDescriptions": [
                             "Proceed even if inconsistency was found by previous checks",
@@ -642,7 +641,7 @@
                 "type": "array",
                 "uniqueItems": true,
                 "items": {
-                  "title": "Comparison Type and Check",
+                  "title": "Comparison Type And Check",
                   "description": "Assigned comparison type and check",
                   "type": "object",
                   "properties": {

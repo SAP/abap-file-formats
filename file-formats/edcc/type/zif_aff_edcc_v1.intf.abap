@@ -220,7 +220,8 @@ INTERFACE zif_aff_edcc_v1
     END OF ty_check_sequence.
   "! <p class="shorttext">Check Sequence</p>
   "! Sequence of the checks and control parameter
-  TYPES ty_checks_sequence TYPE SORTED TABLE OF ty_check_sequence WITH UNIQUE KEY check_id.
+*  TYPES ty_checks_sequence TYPE sorted TABLE OF ty_check_sequence WITH UNIQUE KEY check_id.
+  TYPES ty_checks_sequence TYPE STANDARD TABLE OF ty_check_sequence WITH KEY check_id.
   TYPES:
     "! <p class="shorttext">Representation Type</p>
     "! Assigned representation type
@@ -296,7 +297,7 @@ INTERFACE zif_aff_edcc_v1
   "! Event name
   TYPES ty_event_name       TYPE c LENGTH 25.
   TYPES:
-    "! <p class="shorttext">Comparison Type and Check</p>
+    "! <p class="shorttext">Comparison Type And Check</p>
     "! Assigned comparison type and check
     BEGIN OF ty_comparison_check,
       "! <p class="shorttext">Comparison Type</p>
@@ -443,10 +444,10 @@ INTERFACE zif_aff_edcc_v1
     END OF ty_comparison_types_and_events.
   TYPES:
     BEGIN OF ty_attributes,
-      "! <p class="shorttext">Country</p>
-      "! Country
+      "! <p class="shorttext">Country Code</p>
+      "! Country code
       "! $required
-      country TYPE c LENGTH 3,
+      country TYPE c LENGTH 2,
     END OF ty_attributes.
   TYPES:
     "! <p class="shorttext">Consistency Scenario</p>
@@ -478,7 +479,7 @@ INTERFACE zif_aff_edcc_v1
       "! <p class="shorttext">eDocument Types</p>
       "! Assign eDocument types associated with consistency scenario
       edocument_types             TYPE ty_edoc_types,
-      "! <p class="shorttext">Comparison Types and Events</p>
+      "! <p class="shorttext">Comparison Types And Events</p>
       "! Define comparison types and assign events to the comparison scenario
       "! $required
       comparison_types_and_events TYPE ty_comparison_types_and_events,
@@ -531,7 +532,7 @@ INTERFACE zif_aff_edcc_v1
       "! <p class="shorttext">Always Run Check</p>
       "!Proceed even if inconsistency was found by previous checks
       always_run_check              TYPE ty_control_parameter VALUE '00',
-      "! <p class="shorttext">Run Check if No Inconsistency</p>
+      "! <p class="shorttext">Run Check if No Inconsistency was found by Previous Checks</p>
       "!Proceed If no inconsistency was found by previous checks
       run_check_if_no_inconsistency TYPE ty_control_parameter VALUE '01',
     END OF co_control_parameter.
