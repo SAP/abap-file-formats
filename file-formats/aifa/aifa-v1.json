@@ -71,7 +71,7 @@
           "type": "string",
           "maxLength": 20
         },
-        "mainCompType": {
+        "mainComponentType": {
           "title": "Main Component Type",
           "description": "Main component type",
           "type": "string",
@@ -91,27 +91,26 @@
       ]
     },
     "fieldRestore": {
-      "title": "Fields To Restore Assignment",
-      "description": "Fields to restore assignment",
+      "title": "Fields To Restore",
+      "description": "Fields to restore",
       "type": "array",
       "items": {
         "title": "Field To Restore",
         "description": "Field to restore",
         "type": "object",
         "properties": {
-          "fieldName": {
-            "title": "Field Name",
-            "description": "Field name",
-            "type": "string",
-            "maxLength": 255
+          "name": {
+            "title": "Name",
+            "description": "Name",
+            "type": "string"
           }
         },
         "additionalProperties": false
       }
     },
     "checkData": {
-      "title": "Checks Assignment",
-      "description": "Checks assignment",
+      "title": "Checks",
+      "description": "Checks",
       "type": "array",
       "items": {
         "title": "Check Details",
@@ -140,11 +139,11 @@
               "ignoreData"
             ],
             "enumTitles": [
-              "Treat As An Error",
+              "Treat As Error",
               "Ignore Data"
             ],
             "enumDescriptions": [
-              "Treat as error if check in not successful",
+              "Treat as error if check is not successful",
               "Ignore data if check is not successful"
             ],
             "default": "ignoreData"
@@ -158,11 +157,10 @@
               "description": "Field to check",
               "type": "object",
               "properties": {
-                "fieldName": {
+                "name": {
                   "title": "Field Name",
                   "description": "Field name",
-                  "type": "string",
-                  "maxLength": 255
+                  "type": "string"
                 }
               },
               "additionalProperties": false
