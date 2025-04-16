@@ -1,4 +1,12 @@
-# EVTO File Format
+# Event Object File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+EVTO | Event Object | Business Services
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :--- | :--- | :--- | :---

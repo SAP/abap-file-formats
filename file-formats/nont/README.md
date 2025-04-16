@@ -1,4 +1,12 @@
-# NONT File Format
+# SAP Object Node Type File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+NONT | SAP Object Node Type | SAP Object Type Management
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :---  | :--- | :--- | :---

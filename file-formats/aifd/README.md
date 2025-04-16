@@ -1,4 +1,12 @@
-# AIFD File Format
+# Deployment Scenario File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+AIFD | Deployment Scenario | Application Interface Framework
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :--- | :--- | :--- | :---
