@@ -1,4 +1,12 @@
-# EDCC File Format
+# Consistency Scenario File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+EDCC | Consistency Scenario | -
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :--- | :--- | :--- | :---
