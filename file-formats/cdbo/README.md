@@ -1,4 +1,12 @@
-# CDBO File Format
+# Custom Data Browser Object File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+CDBO | Custom Data Browser Object | -
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :---  | :--- | :--- | :---

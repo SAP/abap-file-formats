@@ -1,5 +1,14 @@
-# ENHO File Format
+# Enhancement Implementation File Format
 
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+ENHO | Enhancement Implementation | Enhancements
+
+**Limitation**: The current version of the file format covers BAdIs only.
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :---  | :--- | :--- | :---
