@@ -33,17 +33,17 @@ INTERFACE zif_aff_aifa_v1
       "! <p class="shorttext">Namespace</p>
       "! Namespace
       "! $required
-      namespace      TYPE c LENGTH 15,
+      namespace           TYPE c LENGTH 15,
       "! <p class="shorttext">AIF Action</p>
       "! AIF action
       "! $required
-      aif_action     TYPE c LENGTH 20,
+      aif_action          TYPE c LENGTH 20,
       "! <p class="shorttext">Main Component Type</p>
       "! Main component type
       main_component_type TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Class</p>
       "! Class
-      class          TYPE zif_aff_types_v1=>ty_object_name_30,
+      class               TYPE zif_aff_types_v1=>ty_object_name_30,
     END OF ty_general_information,
 
     "! <p class="shorttext">Check Details</p>
