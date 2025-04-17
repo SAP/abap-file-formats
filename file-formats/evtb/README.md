@@ -1,4 +1,12 @@
-# EVTB File Format
+# Event Binding File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+EVTB | Event Binding | Business Services
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :---  | :--- | :--- | :---

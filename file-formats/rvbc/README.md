@@ -1,4 +1,12 @@
-# RVBC File Format
+# Review Booklet File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+RVBC | Review Booklet | -
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :--- | :--- | :--- | :---

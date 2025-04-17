@@ -1,4 +1,12 @@
-# DOMA File Format
+# Domain File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+DOMA | Domain | Dictionary
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :---  | :--- | :--- | :---

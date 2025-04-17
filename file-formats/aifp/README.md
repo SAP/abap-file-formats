@@ -1,4 +1,12 @@
-# AIFP File Format
+# Check File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+AIFP | Check | Application Interface Framework
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :--- | :--- | :--- | :---

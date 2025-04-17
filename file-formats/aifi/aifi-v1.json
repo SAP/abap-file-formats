@@ -351,8 +351,7 @@
           "usesDdic": {
             "title": "Use DDIC",
             "description": "Use ddic description?",
-            "type": "boolean",
-            "default": true
+            "type": "boolean"
           },
           "description": {
             "title": "Description",
@@ -477,8 +476,7 @@
           "isColumnDisplay": {
             "title": "Display Column",
             "description": "Display the column",
-            "type": "boolean",
-            "default": true
+            "type": "boolean"
           },
           "keyFieldQualifier": {
             "title": "Key Field Determination by Qualifier",
@@ -613,8 +611,7 @@
               "isTreeNodeVisible": {
                 "title": "Show Tree Node",
                 "description": "Show tree node in view 1 tree",
-                "type": "boolean",
-                "default": true
+                "type": "boolean"
               },
               "isAlertRecipientRelevant": {
                 "title": "Relevant for Alert Recipient Determination",
@@ -689,8 +686,7 @@
               "isShownInMessageMonitor": {
                 "title": "Display in Message Monitoring",
                 "description": "Display in message monitoring",
-                "type": "boolean",
-                "default": true
+                "type": "boolean"
               },
               "isShownByDefault": {
                 "title": "Display in Message Monitoring by Default",

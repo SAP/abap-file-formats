@@ -1,4 +1,12 @@
-# ILMB File Format
+# ILM Object File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+ILMB | ILM Object | -
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :--- | :--- | :--- | :---

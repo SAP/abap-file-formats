@@ -1,4 +1,12 @@
-# AIFF File Format
+#  Fix Value File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+AIFF | Fix Value | Application Interface Framework
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :--- | :--- | :--- | :---
