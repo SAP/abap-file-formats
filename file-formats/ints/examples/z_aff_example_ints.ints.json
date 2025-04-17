@@ -1,0 +1,27 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "ISLM ADT for INTS - Scenario",
+    "originalLanguage": "en"
+  },
+  "generalInformation": {
+    "scenarioType": "SAPGENAI",
+    "scenarioTechnology": "sideBySide",
+    "isExtensible": true,
+    "state": "Published",
+    "islmVersion": 1.0
+  },
+  "turnkeyInformation": {
+    "isTurnkeyAutoSwitchOn": true,
+    "turnkeyType": "DEFAULT"
+  },
+  "connectionInformation": {
+    "usageType": "STATELESS",
+    "oauthProfile": "ISLM_SAPGENAI_OAUTH_PRF_HCP"
+  },
+  "modellingContext": {
+    "modellingContextName": "DEFAULT",
+    "modellingContextId": "FD7EE83C8A15E829D272C9A50AB7B0A9",
+    "modellingContextDescription": "Default context"
+  }
+}
