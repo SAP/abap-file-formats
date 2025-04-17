@@ -1,4 +1,12 @@
-# INTS File Format
+# Intelligent Scenario File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+INTS | Intelligent Scenario | Intelligent Scenario Lifecycle Management
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :--- | :--- | :--- | :---
