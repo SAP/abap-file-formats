@@ -1,4 +1,12 @@
-# INTM File Format
+# Intelligent Scenario Model File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+INTM | Intelligent Scenario Model | Intelligent Scenario Lifecycle Management
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :--- | :--- | :--- | :---
