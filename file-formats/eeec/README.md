@@ -1,4 +1,12 @@
-# EEEC File Format
+# Event Consumption Model File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+EEEC | Event Consumption Model | Business Services
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :---  | :--- | :--- | :---

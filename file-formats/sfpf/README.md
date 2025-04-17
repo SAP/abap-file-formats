@@ -1,4 +1,12 @@
-# SFPF File Format
+# Form File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+SFPF | Form | Form Objects
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :---  | :--- | :--- | :---

@@ -1,4 +1,12 @@
-# SAJT File Format
+# Application Job Template File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+SAJT | Application Job Template | Application Jobs
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :---  | :--- | :--- | :---

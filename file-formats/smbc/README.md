@@ -1,4 +1,12 @@
-# SMBC File Format
+# Business Configuration Maintenance Object  File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+SMBC | Business Configuration Maintenance Object | Business Configuration Management
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :--- | :--- | :--- | :---

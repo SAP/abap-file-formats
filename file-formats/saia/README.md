@@ -1,4 +1,12 @@
-# SAIA File Format
+# IDE Action File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+SAIA | IDE Action | -
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :--- | :--- | :--- | :---
