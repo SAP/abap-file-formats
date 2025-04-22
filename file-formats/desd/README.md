@@ -1,4 +1,12 @@
-# DESD File Format
+# Logical External Schema File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+DESD | Logical External Schema | Core Data Services
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :---  | :--- | :--- | :---

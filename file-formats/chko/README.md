@@ -1,4 +1,12 @@
-# CHKO File Format
+# ATC Check File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+CHKO | ATC Check | ABAP Test Cockpit
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :---  | :--- | :--- | :---

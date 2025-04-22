@@ -1,4 +1,12 @@
-# SCP1 File Format
+# Business Confgiguration Set File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+SCP1 | Business Confgiguration Set | Business Configuration Management
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :---  | :--- | :--- | :---
