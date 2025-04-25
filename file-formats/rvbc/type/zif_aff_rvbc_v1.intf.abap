@@ -53,9 +53,11 @@ INTERFACE zif_aff_rvbc_v1
     BEGIN OF ty_booklet_definition,
       "! <p class="shorttext">Source</p>
       "! Source
+      "! $required
       source             TYPE ty_source,
       "! <p class="shorttext">Status</p>
       "! Status
+      "! $required
       status             TYPE ty_status,
       "! <p class="shorttext">Fiori Application</p>
       "! Fiori application
