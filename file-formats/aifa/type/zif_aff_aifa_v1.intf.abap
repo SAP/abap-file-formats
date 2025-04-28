@@ -56,7 +56,7 @@ INTERFACE zif_aff_aifa_v1
       "! <p class="shorttext">Numeric ID</p>
       "! Numeric id
       "! $required
-      numeric_id          TYPE n LENGTH 3,
+      numeric_id      TYPE n LENGTH 3,
       "! <p class="shorttext">Check Behavior</p>
       "! Check behavior
       check_behaviour TYPE ty_error_handling_type,
