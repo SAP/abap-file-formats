@@ -117,18 +117,18 @@
         "description": "Check details",
         "type": "object",
         "properties": {
-          "number": {
-            "title": "Number",
-            "description": "Number",
-            "type": "string",
-            "maxLength": 3,
-            "pattern": "^[0-9]+$"
-          },
           "checkObjName": {
             "title": "Check",
             "description": "Check",
             "type": "string",
             "maxLength": 30
+          },
+          "numericId": {
+            "title": "Numeric ID",
+            "description": "Numeric id",
+            "type": "string",
+            "maxLength": 3,
+            "pattern": "^[0-9]+$"
           },
           "checkBehaviour": {
             "title": "Check Behavior",
@@ -169,8 +169,8 @@
         },
         "additionalProperties": false,
         "required": [
-          "number",
-          "checkObjName"
+          "checkObjName",
+          "numericId"
         ]
       }
     }

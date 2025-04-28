@@ -49,14 +49,14 @@ INTERFACE zif_aff_aifa_v1
     "! <p class="shorttext">Check Details</p>
     "! Check details
     BEGIN OF ty_check_details,
-      "! <p class="shorttext">Number</p>
-      "! Number
-      "! $required
-      number          TYPE n LENGTH 3,
       "! <p class="shorttext">Check</p>
       "! Check
       "! $required
       check_obj_name  TYPE zif_aff_types_v1=>ty_object_name_30,
+      "! <p class="shorttext">Numeric ID</p>
+      "! Numeric id
+      "! $required
+      numeric_id          TYPE n LENGTH 3,
       "! <p class="shorttext">Check Behavior</p>
       "! Check behavior
       check_behaviour TYPE ty_error_handling_type,
