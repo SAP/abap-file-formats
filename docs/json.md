@@ -1,11 +1,11 @@
 ## JSON Files in ABAP File Formats
 JSON files are central since every ABAP object specifies at least a JSON file.
-Depending on the object, there might be additional files containing source code or other information, but there is always a JSON file with the pattern `<object_name>.<object_type>.json`, see [`File Names`](./specification.md#File-Names).
+Depending on the object, there might be additional files containing source code or other information, but there is always a JSON file with the pattern `<object_name>.<object_type>.json`, see [`File Names`](./specification.md#file-names).
 For its annotation and validation, the ABAP file formats provide JSON Schemas.
 
 ## Table of Contents
 * [Format Versions and Compatibility](#format-versions-and-compatibility)
-* [Writing JSON Schema with ABAP Types](#writing-JSON-schema-with-ABAP-types)
+* [Writing JSON Schema with ABAP Types](#writing-json-schema-with-abap-types)
 * [Example](#example)
 * [Reusable Fields in JSON Files](#reusable-fields-in-json-files)
 
@@ -92,7 +92,7 @@ i | integer | `"minimum": -2147483648, "maximum": 2147483647`
 n | string | `"maxLength": <length of character field>, "pattern": "^[0-9]+$"`
 p | number | `"minimum": <minimum value>, "maximum": <maximum value>
 abap_bool | boolean |
-sy-langu | string | `"minLength": 2, "maxLength": 2, "pattern": "^[a-z]+$"`
+sy-langu | string | `"minLength": 2`
 table | array | if the table has unique keys, `"uniqueItems": true` is added to the schema; hashed tables are not supported
 
 ### Title
@@ -130,6 +130,15 @@ Choosing an ABAP data type with length specification results in the field `maxLe
 ```
 followed by a space and the desired value are used.
 
+### Regular Expressions
+
+In order to express constraints to the values of a field, it is possible to pass regular expressions enclosed in single quotes:
+
+```abap
+"! $pattern '<regex pattern, i.e. [a-z]*>'
+```
+The complete syntax of regular expressions is not widely supported, therefore it is recommended to stick on the subset described [here](https://json-schema.org/understanding-json-schema/reference/regular_expressions).
+
 ### Multiple Of
 The annotation
 ```abap
@@ -145,6 +154,9 @@ If a field is to be declared as "required" in the JSON Schema, the annotation
 ```
 is used.
 
+Please note, we do not recommend using the `$required` annotation for boolean fields, as omitting such a field in the JSON file is equivalent to setting its value to `false`.
+If the field is crucial to be serialized (even if the value is `false`), you can use the annotation `$showAlways`.
+
 ### Always Shown Fields
 Normally, if an ABAP object is serialized, only the components of the corresponding type with a non-initial value are written to the JSON data file. If a component shall be shown regardless to its value, the annotation
 ```abap
@@ -153,12 +165,13 @@ Normally, if an ABAP object is serialized, only the components of the correspond
 is added. Note that also the `$required` annotation leads to such behavior.
 
 ### Default Values
-To set the `default` for a component of the JSON Schema, the annotation
+To specify the `default` value for a field of the JSON Schema, the annotation
 ```abap
 "! $default
 ```
- is used, followed by the specification of the default. To provide the default, there are two different possibilities:
-1. If the component has enum values, the default value is specified by a link to the corresponding component of the constant describing the enum.
+is used, followed by the specification of the default value.
+To provide the default, there are two different possibilities:
+1. If the field has enum values, the default value is specified by a link to the corresponding component of the constant describing the enum.
 ```abap
 "! $default {@link source_name.data:constant_name.default_component}
 ```
@@ -167,10 +180,23 @@ To set the `default` for a component of the JSON Schema, the annotation
 "! $default 'value'
 ```
 This also ensures that only components whose value is not equal to a specific default value are serialized to the JSON data file.
-Fields, which are not specified in the JSON data file, are deserialized to their default values.
+
+Default values can only be specified if one of the following rules apply:
+
+1. The default value represents the initial value of the underlying data type (e.g., `0` for an integer or `space` for a character field).
+
+2. For enumerations, all other values must **not** represent type initial value of the underlying data type.
+
+3. All higher-level structures* of the field are marked as `$required`.
+
+   > *) Arrays don't need to be marked as `$required` in this case.
+   In JSON it is possible to distinguish between empty arrays (`"table": []`) and arrays with "empty" array items (`"table": [{}]`).
+   All fields with defaults in the array items that don't follow the other rules, along with their higher-level structures, must be marked as `$required`.
+
+Fields that are not specified in the JSON data file are deserialized to their default values.
 Note that if you specify a default value, initial values are written to the JSON data file, unless they are not equal to the selected default.
 
-Since fields, which are not specified in the JSON data, might be represented by either initial values or default values, implementations of serialization and deserialization of ABAP file formats must consider fields with default values as specified here.
+Since fields that are not specified in the JSON data might be represented by either initial values or default values, implementations of serialization and deserialization of ABAP file formats must consider fields with default values, as specified here.
 
 ### Enum Values
 To pass enum values to a JSON Schema, a type and a constant are necessary.
@@ -196,7 +222,6 @@ Remark: If an enum is used, it should be checked if one of the following points 
 2. The field with enum values has a specified default value.
 
 In case additional values for the enum should be added compatibly later, a default value must always be specified (see [Format Versions and Compatibility](#format-versions-and-compatibility)). If systems don't support the new enumeration value (e.g., in lower releases), the value will be changed to the default value by the file format implementations.
-
 
 The order of the comments and annotations presented here is important: First, there is the comment for the title followed by the one for the description, in case they are both provided. After these two, the remaining annotations are always located. Between them, the order is irrelevant.
 
@@ -306,9 +331,7 @@ This leads to the following generated JSON schema:
           "title": "Original Language",
           "description": "Original language of the ABAP object",
           "type": "string",
-          "minLength": 2,
-          "maxLength": 2,
-          "pattern": "^[a-z]+$"
+          "minLength": 2
         },
         "abapLanguageVersion": {
           "title": "ABAP Language Version (source code object)",
@@ -349,6 +372,16 @@ This leads to the following generated JSON schema:
   ]
 }
 ```
+## Naming Conventions
+
+Following naming conventions apply to AFF's ABAP interfaces:
+
+- The interface is called `zif_aff_<object type>_v<format version>` (e.g., `zif_aff_intf_v1`)
+- Types start with `ty_`
+- Constants start with `co_`
+
+These conventions are checked by abaplint.
+
 ## Reusable Fields in JSON Files
 
 This section describes fields that can be reused by all file formats.
@@ -369,7 +402,8 @@ The field `description` contains the description of the object.
 
 The field `originalLanguage` stores the information about the original language of the object.
 
-The original language is specified with [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language codes.
+The original language is specified with [BCP47](https://en.wikipedia.org/wiki/IETF_language_tag) language tags, which combine [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language codes with subtags for language variations.
+A full list of SAP supported BCP47 language tags can be found [here](./languages.md).
 
 All translatable texts in the object shall be maintained in their original language.
 Translations of the texts shall be stored in separate files.

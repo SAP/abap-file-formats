@@ -27,9 +27,7 @@
           "title": "Original Language",
           "description": "Original language of the ABAP object",
           "type": "string",
-          "minLength": 2,
-          "maxLength": 2,
-          "pattern": "^[a-z]+$"
+          "minLength": 2
         },
         "abapLanguageVersion": {
           "title": "ABAP Language Version",
@@ -71,13 +69,19 @@
           "title": "Namespace",
           "description": "Namespace of the service provider",
           "type": "string",
-          "maxLength": 30
+          "maxLength": 255
         },
         "prefix": {
           "title": "Object Name Prefix",
           "description": "Prefix for all generated objects",
           "type": "string",
           "maxLength": 10
+        },
+        "implementingClass": {
+          "title": "Implementing Class",
+          "description": "Implementing class of service provider",
+          "type": "string",
+          "maxLength": 30
         }
       },
       "additionalProperties": false,

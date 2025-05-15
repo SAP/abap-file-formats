@@ -1,4 +1,12 @@
-# INTF File Format
+# Interface File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+INTF | Interface | Source Code Library
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :---  | :--- | :--- | :---

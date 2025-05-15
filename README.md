@@ -4,7 +4,7 @@
 
 ## Description
 
-This project provides file format definitions of ABAP repository objects.
+This project provides file format definitions of [ABAP repository objects][1].
 
 The project is still in an early phase. We plan to modify and extend this document as our understanding improves. Since the ABAP file formats can still change in the future, we do not recommend using them in a productive environment, yet.
 
@@ -39,7 +39,7 @@ Comments and suggestions for improvements are most welcome.
 
 Do you feel responsible for an ABAP object type?
 We will be more than happy if you contribute your object type to this project.
-Just open a new pull request and create an ABAP type like it is specified [here](./docs/json.md#writing-JSON-schema-with-ABAP-types).
+Just open a new pull request and create an ABAP type like it is specified [here](./docs/json.md#writing-json-schema-with-abap-types).
 Feel free to hand over the type to us, so we can generate the JSON Schema for you.
 
 More details are found in [Contributing](./CONTRIBUTING.md).
@@ -54,3 +54,5 @@ For validation and annotation of JSON data, there is a visual studio code extens
 
 <!-- markdown-link-check-disable-next-line -->
 Please see our [LICENSE](LICENSE) for copyright and license information. Detailed information including third-party components and their licensing/copyright information is available via the [REUSE tool](https://api.reuse.software/info/github.com/SAP/abap-file-formats).
+
+[1]: ./docs/glossary.md#abap-repository-object

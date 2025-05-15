@@ -1,0 +1,12 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Example AIFR for ABAP File Format",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation":{
+      "namespace": "AIFNS",
+      "aifRecipient": "REC_WS_INB"
+  }
+}
