@@ -112,7 +112,8 @@
         "abstractEntity",
         "customEntity",
         "hierarchy",
-        "projectionView"
+        "projectionView",
+        "externalEntity"
       ],
       "enumTitles": [
         "DDIC-Based View",
@@ -124,7 +125,8 @@
         "Abstract Entity",
         "Custom Entity",
         "Hierarchy",
-        "Projection View"
+        "Projection View",
+        "External Entity"
       ],
       "enumDescriptions": [
         "DDIC-based view",
@@ -136,7 +138,8 @@
         "Abstract entity",
         "Custom entity",
         "Hierarchy",
-        "Projection view"
+        "Projection view",
+        "External entity"
       ]
     },
     "parentName": {

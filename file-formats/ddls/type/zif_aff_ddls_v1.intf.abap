@@ -45,6 +45,9 @@ INTERFACE zif_aff_ddls_v1
       "! <p class="shorttext">Projection View</p>
       "! Projection view
       projection_view    TYPE ty_source_type VALUE 'P',
+      "! <p class="shorttext">External Entity</p>
+      "! External entity
+      external_entity    TYPE ty_source_type VALUE 'O',
     END OF co_source_type,
 
     "! <p class="shorttext">Source Origin</p>
