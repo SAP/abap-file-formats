@@ -1,4 +1,10 @@
-# AIFA File Format
+# Action File Format
+
+## Object Type Information
+Object Type | Description | Group
+:--- | :--- | :---
+AIFA  | Action | Application Interface Framework
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :--- | :--- | :--- | :---

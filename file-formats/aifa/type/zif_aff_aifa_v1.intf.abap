@@ -52,7 +52,7 @@ INTERFACE zif_aff_aifa_v1
       "! <p class="shorttext">Check</p>
       "! Check
       "! $required
-      check_obj_name  TYPE zif_aff_types_v1=>ty_object_name_30,
+      check  TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Numeric ID</p>
       "! Numeric id
       "! $required
@@ -60,12 +60,12 @@ INTERFACE zif_aff_aifa_v1
       "! <p class="shorttext">Check Behavior</p>
       "! Check behavior
       check_behaviour TYPE ty_error_handling_type,
-      "! <p class="shorttext">Field Name</p>
-      "! Field name
+      "! <p class="shorttext">Fields</p>
+      "! Fields
       field_name      TYPE ty_fields_to_check,
     END OF ty_check_details,
-    "! <p class="shorttext">Check Data</p>
-    "! Check data
+    "! <p class="shorttext">Checks</p>
+    "! Checks
     ty_checks TYPE STANDARD TABLE OF ty_check_details WITH DEFAULT KEY,
 
     "! <p class="shorttext">Field To Restore</p>
@@ -94,10 +94,10 @@ INTERFACE zif_aff_aifa_v1
       general_information TYPE ty_general_information,
       "! <p class="shorttext">Fields To Restore</p>
       "! Fields to restore
-      field_restore       TYPE ty_fields_to_restore,
+      fields_to_restore       TYPE ty_fields_to_restore,
       "! <p class="shorttext">Checks</p>
       "! Checks
-      check_data          TYPE ty_checks,
+      checks          TYPE ty_checks,
     END OF ty_main.
 
 ENDINTERFACE.

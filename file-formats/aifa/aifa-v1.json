@@ -90,7 +90,7 @@
         "aifAction"
       ]
     },
-    "fieldRestore": {
+    "fieldsToRestore": {
       "title": "Fields To Restore",
       "description": "Fields to restore",
       "type": "array",
@@ -108,7 +108,7 @@
         "additionalProperties": false
       }
     },
-    "checkData": {
+    "checks": {
       "title": "Checks",
       "description": "Checks",
       "type": "array",
@@ -117,7 +117,7 @@
         "description": "Check details",
         "type": "object",
         "properties": {
-          "checkObjName": {
+          "check": {
             "title": "Check",
             "description": "Check",
             "type": "string",
@@ -149,8 +149,8 @@
             "default": "ignoreData"
           },
           "fieldName": {
-            "title": "Field Name",
-            "description": "Field name",
+            "title": "Fields",
+            "description": "Fields",
             "type": "array",
             "items": {
               "title": "Field To Check",
@@ -169,7 +169,7 @@
         },
         "additionalProperties": false,
         "required": [
-          "checkObjName",
+          "check",
           "numericId"
         ]
       }
