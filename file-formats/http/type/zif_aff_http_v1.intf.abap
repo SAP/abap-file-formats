@@ -1,5 +1,5 @@
 INTERFACE zif_aff_http_v1
- PUBLIC.
+  PUBLIC.
 
   TYPES:
     "! <p class="shorttext">General Information</p>
