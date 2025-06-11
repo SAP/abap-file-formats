@@ -3,7 +3,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/http/http-v1.json",
   "title": "HTTP Service",
-  "description": "Creation of HTTP Service",
+  "description": "HTTP Service",
   "type": "object",
   "properties": {
     "formatVersion": {
@@ -54,28 +54,22 @@
         "originalLanguage"
       ]
     },
-    "configuration": {
+    "generalInformation": {
       "title": "General Information",
       "description": "General information",
       "type": "object",
       "properties": {
-        "serviceName": {
-          "title": "Name",
-          "description": "Name",
-          "type": "string",
-          "maxLength": 30
-        },
-        "serviceClass": {
+        "handlerClass": {
           "title": "Handler Class",
           "description": "Handler class",
           "type": "string",
           "maxLength": 30
         },
-        "serviceUrl": {
+        "url": {
           "title": "URL",
           "description": "URL",
           "type": "string",
-          "maxLength": 30
+          "maxLength": 60
         }
       },
       "additionalProperties": false
@@ -85,6 +79,6 @@
   "required": [
     "formatVersion",
     "header",
-    "configuration"
+    "generalInformation"
   ]
 }
