@@ -69,7 +69,7 @@
           "title": "URL",
           "description": "URL",
           "type": "string",
-          "maxLength": 60
+          "maxLength": 120
         }
       },
       "additionalProperties": false
