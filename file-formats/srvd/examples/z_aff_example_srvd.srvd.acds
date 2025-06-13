@@ -1,0 +1,4 @@
+@EndUserText.label: 'Example'
+define service z_aff_example_srvd {
+  expose z_aff_example_ddls as myEntity;
+}
