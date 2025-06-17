@@ -1,8 +1,10 @@
 {
   "formatVersion": "1",
-  "header": {
-    "abapLanguageVersion": "standard"
-  },
+    "header": {
+      "description": "Example AIFA for ABAP File Format",
+      "originalLanguage": "en",
+      "abapLanguageVersion": "cloudDevelopment"
+    },
   "generalInformation": {
     "namespace": "ZSMA4",
     "aifAction": "CREATE_PROUDCT",
