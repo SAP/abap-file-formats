@@ -9,9 +9,6 @@ INTERFACE zif_aff_http_v1
       "! <p class="shorttext">Handler Class</p>
       "! Handler class
       handler_class TYPE zif_aff_types_v1=>ty_object_name_30,
-      "! <p class="shorttext">URL</p>
-      "! URL
-      url           TYPE c LENGTH 120,
     END OF ty_general_information.
 
   TYPES:

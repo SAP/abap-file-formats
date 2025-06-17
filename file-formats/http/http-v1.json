@@ -64,12 +64,6 @@
           "description": "Handler class",
           "type": "string",
           "maxLength": 30
-        },
-        "url": {
-          "title": "URL",
-          "description": "URL",
-          "type": "string",
-          "maxLength": 120
         }
       },
       "additionalProperties": false
