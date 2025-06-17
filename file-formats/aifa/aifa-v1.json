@@ -117,25 +117,25 @@
         "description": "Check details",
         "type": "object",
         "properties": {
+          "id": {
+            "title": "ID",
+            "description": "ID",
+            "type": "string",
+            "maxLength": 3,
+            "pattern": "^[0-9]+$"
+          },
           "check": {
             "title": "Check",
             "description": "Check",
             "type": "string",
             "maxLength": 30
           },
-          "numericId": {
-            "title": "Numeric ID",
-            "description": "Numeric id",
-            "type": "string",
-            "maxLength": 3,
-            "pattern": "^[0-9]+$"
-          },
           "checkBehaviour": {
             "title": "Check Behavior",
             "description": "Check behavior",
             "type": "string",
             "enum": [
-              "triggerError",
+              "treatAsError",
               "ignoreData"
             ],
             "enumTitles": [
@@ -148,7 +148,7 @@
             ],
             "default": "ignoreData"
           },
-          "fieldName": {
+          "fields": {
             "title": "Fields",
             "description": "Fields",
             "type": "array",
@@ -157,9 +157,42 @@
               "description": "Field to check",
               "type": "object",
               "properties": {
+                "type": {
+                  "title": "Type",
+                  "description": "Type",
+                  "type": "string",
+                  "enum": [
+                    "sourceStructure",
+                    "destinationStructure",
+                    "constant",
+                    "systemField",
+                    "sendingSystem",
+                    "currentLineNumber",
+                    "hierarchicalMapping"
+                  ],
+                  "enumTitles": [
+                    "Source Structure",
+                    "Destination Structure",
+                    "Constant",
+                    "System Field",
+                    "Sending System",
+                    "Current Line Number",
+                    "Hierarchical Mapping"
+                  ],
+                  "enumDescriptions": [
+                    "Field is in source structure",
+                    "Field is in desctination structure",
+                    "Field is constant value",
+                    "Field is system field",
+                    "Field is in sending systemte",
+                    "Field is current line number",
+                    "Fieldpath is starting from a parant node"
+                  ],
+                  "default": "sourceStructure"
+                },
                 "name": {
-                  "title": "Field Name",
-                  "description": "Field name",
+                  "title": "Name/Value",
+                  "description": "Name/Value",
                   "type": "string"
                 }
               },
@@ -169,8 +202,8 @@
         },
         "additionalProperties": false,
         "required": [
-          "check",
-          "numericId"
+          "id",
+          "check"
         ]
       }
     }

@@ -2,24 +2,55 @@ INTERFACE zif_aff_aifa_v1
    PUBLIC.
 
   "! $values { @link zif_aff_aifa_v1.data:co_error_handling }
-  "! $default { @link zif_aff_aifa_v1.data:co_error_handling.ignore_data }
-  TYPES ty_error_handling_type TYPE c LENGTH 1.
+  "! $default { @link zif_aff_aifa_v1.data:co_error_handling.source_structure }
+  TYPES ty_field_type TYPE c LENGTH 1.
   CONSTANTS:
     BEGIN OF co_error_handling,
+      "! <p class="shorttext">Source Structure</p>
+      "! Field is in source structure
+      source_structure      TYPE c LENGTH 5 VALUE 'SRC_S',
+      "! <p class="shorttext">Destination Structure</p>
+      "! Field is in desctination structure
+      destination_structure TYPE c LENGTH 5 VALUE 'DST_S',
+      "! <p class="shorttext">Constant</p>
+      "! Field is constant value
+      constant        TYPE c LENGTH 5 VALUE 'CONST',
+      "! <p class="shorttext">System Field</p>
+      "! Field is system field
+      system_field          TYPE c LENGTH 5 VALUE 'SYSTF',
+      "! <p class="shorttext">Sending System</p>
+      "! Field is in sending systemte
+      sending_system        TYPE c LENGTH 5 VALUE 'SND_S',
+      "! <p class="shorttext">Current Line Number</p>
+      "! Field is current line number
+      current_line_number   TYPE c LENGTH 5 VALUE 'LINEN',
+      "! <p class="shorttext">Hierarchical Mapping</p>
+      "! Fieldpath is starting from a parant node
+      hierarchical_mapping  TYPE c LENGTH 5 VALUE 'MAP_H',
+    END OF co_error_handling.
+
+  "! $values { @link zif_aff_aifa_v1.data:co_field_type }
+  "! $default { @link zif_aff_aifa_v1.data:co_field_type.ignore_data }
+  TYPES ty_error_handling_type TYPE c LENGTH 1.
+  CONSTANTS:
+    BEGIN OF co_field_type,
       "! <p class="shorttext">Treat As Error</p>
       "! Treat as error if check is not successful
-      trigger_error TYPE c LENGTH 1 VALUE '',
+      treat_as_error TYPE c LENGTH 1 VALUE '',
       "! <p class="shorttext">Ignore Data</p>
       "! Ignore data if check is not successful
-      ignore_data   TYPE c LENGTH 1 VALUE 'I',
-    END OF co_error_handling.
+      ignore_data    TYPE c LENGTH 1 VALUE 'I',
+    END OF co_field_type.
 
   TYPES:
     "! <p class="shorttext">Field To Check</p>
     "! Field to check
     BEGIN OF ty_field_to_check,
-      "! <p class="shorttext">Field Name</p>
-      "! Field name
+      "! <p class="shorttext">Type</p>
+      "! Type
+      type TYPE ty_field_type,
+      "! <p class="shorttext">Name/Value</p>
+      "! Name/Value
       name TYPE string,
     END OF ty_field_to_check,
     "! <p class="shorttext">Fields To Check</p>
@@ -49,20 +80,20 @@ INTERFACE zif_aff_aifa_v1
     "! <p class="shorttext">Check Details</p>
     "! Check details
     BEGIN OF ty_check_details,
+      "! <p class="shorttext">ID</p>
+      "! ID
+      "! $required
+      id              TYPE n LENGTH 3,
       "! <p class="shorttext">Check</p>
       "! Check
       "! $required
       check           TYPE zif_aff_types_v1=>ty_object_name_30,
-      "! <p class="shorttext">Numeric ID</p>
-      "! Numeric id
-      "! $required
-      numeric_id      TYPE n LENGTH 3,
       "! <p class="shorttext">Check Behavior</p>
       "! Check behavior
       check_behaviour TYPE ty_error_handling_type,
       "! <p class="shorttext">Fields</p>
       "! Fields
-      field_name      TYPE ty_fields_to_check,
+      fields          TYPE ty_fields_to_check,
     END OF ty_check_details,
     "! <p class="shorttext">Checks</p>
     "! Checks
