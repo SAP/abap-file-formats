@@ -1,0 +1,29 @@
+{
+  "header": {
+    "abapLanguageVersion": "standard"
+  },
+  "generalInformation": {
+    "namespace": "ZSMA4",
+    "aifAction": "CREATE_PROUDCT",
+    "mainComponentType": "ZLC_PRODUCT",
+    "class": "ZLC_PRODUCT_CLASS"
+  },
+  "fieldsToRestore": [
+    {
+      "name": "INTERNAL_ID"
+    }
+  ],
+  "checks": [
+    {
+      "id": "10",
+      "check": "CHECK_EMPTY",
+      "checkBehaviour": "ignoreData",
+      "fields": [
+        {
+          "type": "sourceStructure",
+          "name": "BUPA"
+        }
+      ]
+    }
+  ]
+}
