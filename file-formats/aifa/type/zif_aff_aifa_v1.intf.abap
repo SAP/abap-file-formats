@@ -1,11 +1,11 @@
 INTERFACE zif_aff_aifa_v1
    PUBLIC.
 
-  "! $values { @link zif_aff_aifa_v1.data:co_error_handling }
-  "! $default { @link zif_aff_aifa_v1.data:co_error_handling.source_structure }
-  TYPES ty_field_type TYPE c LENGTH 1.
+  "! $values { @link zif_aff_aifa_v1.data:co_field_type }
+  "! $default { @link zif_aff_aifa_v1.data:co_field_type.source_structure }
+  TYPES ty_field_type TYPE c LENGTH 5.
   CONSTANTS:
-    BEGIN OF co_error_handling,
+    BEGIN OF co_field_type,
       "! <p class="shorttext">Source Structure</p>
       "! Field is in source structure
       source_structure      TYPE c LENGTH 5 VALUE 'SRC_S',
@@ -27,20 +27,20 @@ INTERFACE zif_aff_aifa_v1
       "! <p class="shorttext">Hierarchical Mapping</p>
       "! Fieldpath is starting from a parant node
       hierarchical_mapping  TYPE c LENGTH 5 VALUE 'MAP_H',
-    END OF co_error_handling.
+    END OF co_field_type.
 
-  "! $values { @link zif_aff_aifa_v1.data:co_field_type }
-  "! $default { @link zif_aff_aifa_v1.data:co_field_type.ignore_data }
+  "! $values { @link zif_aff_aifa_v1.data:co_error_handling_type }
+  "! $default { @link zif_aff_aifa_v1.data:co_error_handling_type.ignore_data }
   TYPES ty_error_handling_type TYPE c LENGTH 1.
   CONSTANTS:
-    BEGIN OF co_field_type,
+    BEGIN OF co_error_handling_type,
       "! <p class="shorttext">Treat As Error</p>
       "! Treat as error if check is not successful
       treat_as_error TYPE c LENGTH 1 VALUE '',
       "! <p class="shorttext">Ignore Data</p>
       "! Ignore data if check is not successful
       ignore_data    TYPE c LENGTH 1 VALUE 'I',
-    END OF co_field_type.
+    END OF co_error_handling_type.
 
   TYPES:
     "! <p class="shorttext">Field To Check</p>
