@@ -96,6 +96,24 @@
         "cdsView",
         "emailSubject"
       ]
+    },
+    "emailTemplateContent": {
+      "title": "Email Template Content",
+      "description": "Email Template Content",
+      "type": "array",
+      "items": {
+        "title": "Email Template Content",
+        "description": "Displays the HTML und plain text template content.",
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Name",
+            "description": "Name",
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
     }
   },
   "additionalProperties": false,
