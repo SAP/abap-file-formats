@@ -33,7 +33,11 @@
           "title": "ABAP Language Version",
           "description": "ABAP language version",
           "type": "string",
-          "enum": ["standard", "keyUser", "cloudDevelopment"],
+          "enum": [
+            "standard",
+            "keyUser",
+            "cloudDevelopment"
+          ],
           "enumTitles": [
             "Standard",
             "ABAP for Key Users",
@@ -48,9 +52,15 @@
         }
       },
       "additionalProperties": false,
-      "required": ["description", "originalLanguage"]
+      "required": [
+        "description",
+        "originalLanguage"
+      ]
     }
   },
   "additionalProperties": false,
-  "required": ["formatVersion", "header"]
+  "required": [
+    "formatVersion",
+    "header"
+  ]
 }
