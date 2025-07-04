@@ -1,9 +1,11 @@
 # Output Management Email Template File Format
 
 ## Object Type Information
+
 Object Type | Description | Group
 :--- | :--- | :---
 SMTG  | Output Management Email Template | Others
+
 ## File Structure
 
 File | Cardinality | Definition | Schema | Example

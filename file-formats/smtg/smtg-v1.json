@@ -97,18 +97,18 @@
         "emailSubject"
       ]
     },
-    "emailTemplateContent": {
-      "title": "Email Template Content",
-      "description": "Email Template Content",
+    "templateContent": {
+      "title": "Template Content",
+      "description": "Template Content",
       "type": "array",
       "items": {
         "title": "Email Template Content",
         "description": "Displays the HTML und plain text template content.",
         "type": "object",
         "properties": {
-          "name": {
-            "title": "Name",
-            "description": "Name",
+          "contentName": {
+            "title": "Template Content Name",
+            "description": "Name of the content",
             "type": "string"
           }
         },
