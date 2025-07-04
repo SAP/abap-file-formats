@@ -36,7 +36,7 @@ INTERFACE zif_aff_smtg_v1
 
   "! <p class="shorttext">Table of Template Content Types</p>
   "! Table of template content types
-  TYPES tyt_template_content TYPE STANDARD TABLE OF ty_template_content WITH DEFAULT KEY.
+  TYPES ty_template_contents TYPE STANDARD TABLE OF ty_template_content WITH DEFAULT KEY.
 
   TYPES:
     "! <p class="shorttext">Email Template</p>
@@ -56,7 +56,7 @@ INTERFACE zif_aff_smtg_v1
       general_information TYPE ty_general_information,
       "! <p class="shorttext">Template Content</p>
       "! Template Content
-      template_content    TYPE tyt_template_content,
+      template_content    TYPE ty_template_contents,
     END OF ty_main.
 
 ENDINTERFACE.
