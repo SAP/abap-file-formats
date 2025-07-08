@@ -32,7 +32,7 @@
         "drcAction": "TRANSMIT",
         "responseInterface": "INVOICER",
         "responseInterfaceVersion": 2
-      }
+      }    
     }
   ]
 }
