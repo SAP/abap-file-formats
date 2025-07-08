@@ -81,10 +81,6 @@ INTERFACE zif_aff_edoi_v1 PUBLIC.
   "! Interface versions
   TYPES ty_interface_versions       TYPE SORTED TABLE OF ty_interface_version WITH UNIQUE KEY version.
 
-  "! <p class="shorttext">Interface Versions</p>
-  "! eDocument interface versions
-  TYPES ty_communication_attributes TYPE SORTED TABLE OF ty_communication_attribute WITH UNIQUE KEY process_type.
-
   TYPES:
     "! <p class="shorttext">eDocument Interface</p>
     "! eDocument interface

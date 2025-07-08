@@ -20,6 +20,19 @@
         "responseInterface": "INVOICER",
         "responseInterfaceVersion": 1
       }
+    },
+    {
+      "version": 2,
+      "description": "Version 2",
+      "activeFrom": "01.07.2025",
+      "communicationAttribute": {
+        "processType": "CUSTOMER_INVOICE",
+        "processVersion": "1.1.0",
+        "processSubtype": "DOMESTIC",
+        "drcAction": "TRANSMIT",
+        "responseInterface": "INVOICER",
+        "responseInterfaceVersion": 2
+      }
     }
   ]
 }
