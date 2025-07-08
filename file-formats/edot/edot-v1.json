@@ -84,14 +84,14 @@
       },
       "additionalProperties": false
     },
-    "readAccessLogConfigurations": {
-      "title": "Read Access Log Configurations",
-      "description": "Read access log configurations",
+    "readAccessLoggingSettings": {
+      "title": "Read Access Logging Settings",
+      "description": "Read access logging settings",
       "type": "array",
       "uniqueItems": true,
       "items": {
-        "title": "Read Access Log Configuration",
-        "description": "Read access log configuration",
+        "title": "Read Access Log Settings",
+        "description": "Read access log settings",
         "type": "object",
         "properties": {
           "fileType": {
@@ -111,11 +111,6 @@
             "description": "File description",
             "type": "string",
             "maxLength": 60
-          },
-          "isCloudRelevant": {
-            "title": "File Cloud Relevancy",
-            "description": "File cloud relevancy",
-            "type": "boolean"
           }
         },
         "additionalProperties": false,
