@@ -4,9 +4,9 @@ INTERFACE zif_aff_edot_v1
   PUBLIC.
 
   TYPES:
-    "! <p class="shorttext">Read Access Log Settings</p>
-    "! Read access log settings
-    BEGIN OF ty_read_access_logging,
+    "! <p class="shorttext">Read Access Loggging Settings</p>
+    "! Read access logging settings
+    BEGIN OF ty_read_access_logging_setting,
       "! <p class="shorttext">File Type</p>
       "! File type
       "! $required
@@ -18,10 +18,10 @@ INTERFACE zif_aff_edot_v1
       "! <p class="shorttext">File Description</p>
       "! File description
       file_description  TYPE c LENGTH 60,
-     END OF ty_read_access_logging.
+     END OF ty_read_access_logging_setting.
   "! <p class="shorttext">Read Access Logging Settings</p>
   "! Read access logging settings
-  TYPES ty_read_acc_logging_settings  TYPE SORTED TABLE OF ty_read_access_logging  WITH UNIQUE KEY file_type.
+  TYPES ty_read_acc_logging_settings  TYPE SORTED TABLE OF ty_read_access_logging_setting  WITH UNIQUE KEY file_type.
   TYPES:
     "! <p class="shorttext">eDocument Type Specific Additional Tables</p>
     "! eDocument type specific additional tables
@@ -37,8 +37,8 @@ INTERFACE zif_aff_edot_v1
       "! $required
       table_name      TYPE zif_aff_types_v1=>ty_object_name_30,
     END OF ty_additional_table.
-  "! <p class="shorttext">Read Access Log Configuration</p>
-  "! Read access log configuration
+  "! <p class="shorttext">Read Access Logging Settings</p>
+  "! Read access logging settings
   TYPES ty_additional_tables TYPE SORTED TABLE OF ty_additional_table WITH UNIQUE KEY sequence_number.
   TYPES:
     "! <p class="shorttext">General Information</p>
