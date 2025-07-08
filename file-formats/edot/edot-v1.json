@@ -90,8 +90,8 @@
       "type": "array",
       "uniqueItems": true,
       "items": {
-        "title": "Read Access Log Settings",
-        "description": "Read access log settings",
+        "title": "Read Access Loggging Settings",
+        "description": "Read access logging settings",
         "type": "object",
         "properties": {
           "fileType": {

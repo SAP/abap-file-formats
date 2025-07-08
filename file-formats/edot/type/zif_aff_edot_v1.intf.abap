@@ -10,18 +10,18 @@ INTERFACE zif_aff_edot_v1
       "! <p class="shorttext">File Type</p>
       "! File type
       "! $required
-      file_type         TYPE c LENGTH 10,
+      file_type        TYPE c LENGTH 10,
       "! <p class="shorttext">File Structure Type</p>
       "! File structure type
       "! $required
-      file_structure    TYPE c LENGTH 30,
+      file_structure   TYPE c LENGTH 30,
       "! <p class="shorttext">File Description</p>
       "! File description
-      file_description  TYPE c LENGTH 60,
-     END OF ty_read_access_logging_setting.
+      file_description TYPE c LENGTH 60,
+    END OF ty_read_access_logging_setting.
   "! <p class="shorttext">Read Access Logging Settings</p>
   "! Read access logging settings
-  TYPES ty_read_acc_logging_settings  TYPE SORTED TABLE OF ty_read_access_logging_setting  WITH UNIQUE KEY file_type.
+  TYPES ty_read_acc_logging_settings TYPE SORTED TABLE OF ty_read_access_logging_setting WITH UNIQUE KEY file_type.
   TYPES:
     "! <p class="shorttext">eDocument Type Specific Additional Tables</p>
     "! eDocument type specific additional tables
@@ -82,20 +82,20 @@ INTERFACE zif_aff_edot_v1
       "! <p class="shorttext">Format Version</p>
       "! Format version
       "! $required
-      format_version                 TYPE zif_aff_types_v1=>ty_format_version,
+      format_version               TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header                         TYPE ty_header_30_cloud,
+      header                       TYPE ty_header_30_cloud,
       "! <p class="shorttext">General Information</p>
       "! General information
       "! $required
-      general_information            TYPE ty_general_information,
+      general_information          TYPE ty_general_information,
       "! <p class="shorttext">Read Access Logging Settings</p>
       "! Read access logging settings
       read_access_logging_settings TYPE ty_read_acc_logging_settings,
       "! <p class="shorttext">eDocument Type Specific Additional Tables</p>
       "! eDocument type specific additional tables
-      edoc_spec_additional_tables    TYPE ty_additional_tables,
+      edoc_spec_additional_tables  TYPE ty_additional_tables,
     END OF ty_main.
 ENDINTERFACE.
