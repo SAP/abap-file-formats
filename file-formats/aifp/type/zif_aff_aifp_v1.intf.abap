@@ -13,28 +13,46 @@ INTERFACE zif_aff_aifp_v1
   "! $values { @link zif_aff_aifp_v1.data:co_database_check_type }
   "! $default { @link zif_aff_aifp_v1.data:co_database_check_type.check_existence }
     ty_database_check_type TYPE c LENGTH 1.
+  "! $values { @link zif_aff_aifp_v1.data:co_field_type }
+  "! $default { @link zif_aff_aifp_v1.data:co_field_type.pattern }
+  TYPES ty_field_type TYPE c LENGTH 7.
+  "! $values { @link zif_aff_aifp_v1.data:co_variable_type }
+  "! $default { @link zif_aff_aifp_v1.data:co_variable_type.source_structure }
+  TYPES ty_variable_type TYPE c LENGTH 5.
   TYPES:
     "! <p class="shorttext">Check Message</p>
     "! Check Message
     BEGIN OF ty_message,
       "! <p class="shorttext">Message Class</p>
       "! Message class
-      message_class      TYPE c LENGTH 20,
+      message_class           TYPE c LENGTH 20,
       "! <p class="shorttext">Message Number</p>
       "! Message number
-      message_number     TYPE c LENGTH 3,
-      "! <p class="shorttext">Message Variable 1</p>
-      "! Message variable 1
-      message_variable_1 TYPE string,
-      "! <p class="shorttext">Message Variable 2</p>
-      "! Message variable 2
-      message_variable_2 TYPE string,
-      "! <p class="shorttext">Message Variable 3</p>
-      "! Message variable 3
-      message_variable_3 TYPE string,
-      "! <p class="shorttext">Message Variable 4</p>
-      "! Message variable 4
-      message_variable_4 TYPE string,
+      message_number          TYPE c LENGTH 3,
+      "! <p class="shorttext">Variable 1 Type</p>
+      "! Variable 1 type
+      variable_1_type TYPE ty_variable_type,
+      "! <p class="shorttext">Variable 1</p>
+      "! Variable 1
+      variable_1      TYPE string,
+      "! <p class="shorttext">Variable 2 Type</p>
+      "! Variable 2 type
+      variable_2_type TYPE ty_variable_type,
+      "! <p class="shorttext">Variable 2</p>
+      "! Variable 2
+      variable_2      TYPE string,
+      "! <p class="shorttext">Variable 3 Type</p>
+      "! Variable 3 type
+      variable_3_type TYPE ty_variable_type,
+      "! <p class="shorttext">Variable 3</p>
+      "! Variable 3
+      variable_3      TYPE string,
+      "! <p class="shorttext">Variable 4 Type</p>
+      "! Variable 4 type
+      variable_4_type TYPE ty_variable_type,
+      "! <p class="shorttext">Variable 4</p>
+      "! Variable 4
+      variable_4      TYPE string,
     END OF ty_message.
   TYPES:
     "! <p class="shorttext">Field Check</p>
@@ -46,9 +64,12 @@ INTERFACE zif_aff_aifp_v1
       "! <p class="shorttext">Operator</p>
       "! Operator for field check
       operator   TYPE zif_aff_types_v1=>ty_option,
-      "! <p class="shorttext">Pattern</p>
-      "! Pattern for Field Check
-      pattern    TYPE c LENGTH 60,
+      "! <p class="shorttext">Field Type</p>
+      "! Field type
+      field_type TYPE ty_field_type,
+      "! <p class="shorttext">Value</p>
+      "! Value or pattern for Field Check
+      value      TYPE c LENGTH 60,
     END OF ty_field_check.
   TYPES:
     "! <p class="shorttext">Database Check</p>
@@ -69,9 +90,12 @@ INTERFACE zif_aff_aifp_v1
       "! <p class="shorttext">Operator</p>
       "! Operator for database check
       operator        TYPE zif_aff_types_v1=>ty_option,
-      "! <p class="shorttext">Pattern</p>
-      "! Pattern for database check
-      pattern         TYPE c LENGTH 60,
+      "! <p class="shorttext">Field Type</p>
+      "! Field type
+      field_type      TYPE ty_field_type,
+      "! <p class="shorttext">Value</p>
+      "! Value or pattern for database check
+      value           TYPE c LENGTH 60,
     END OF ty_database_check.
   TYPES:
     "! <p class="shorttext">Custom Implementation</p>
@@ -220,4 +244,37 @@ INTERFACE zif_aff_aifp_v1
       "! Compare
       compare             TYPE ty_database_check_type VALUE '3',
     END OF co_database_check_type.
+  CONSTANTS:
+    BEGIN OF co_field_type,
+      "! <p class="shorttext">Defined Fields</p>
+      "! Defined field in the check assignment
+      defined_fields TYPE ty_field_type VALUE 'DEF_FLD',
+      "! <p class="shorttext">Pattern</p>
+      "! Pattern
+      pattern        TYPE ty_field_type VALUE 'STRING',
+      "! <p class="shorttext">System Field</p>
+      "! Field is system field
+      system_field   TYPE ty_field_type VALUE 'SYS_FLD',
+    END OF co_field_type.
+  CONSTANTS:
+    BEGIN OF co_variable_type,
+      "! <p class="shorttext">Source Structure</p>
+      "! Field is in source structure
+      source_structure      TYPE ty_variable_type VALUE 'SRC_S',
+      "! <p class="shorttext">Destination Structure</p>
+      "! Field is in desctination structure
+      destination_structure TYPE ty_variable_type VALUE 'DST_S',
+      "! <p class="shorttext">Constant</p>
+      "! Field is constant value
+      constant              TYPE ty_variable_type VALUE 'CONST',
+      "! <p class="shorttext">System Field</p>
+      "! Field is system field
+      system_field          TYPE ty_variable_type VALUE 'SYSTF',
+      "! <p class="shorttext">Message Variable (All)</p>
+      "! Message variable (all)
+      message_variable_a    TYPE ty_variable_type VALUE 'MSGVA',
+      "! <p class="shorttext">Message Variable (Single)</p>
+      "! Message variable (single)
+      message_variable_s    TYPE ty_variable_type VALUE 'MSGVS',
+    END OF co_variable_type.
 ENDINTERFACE.

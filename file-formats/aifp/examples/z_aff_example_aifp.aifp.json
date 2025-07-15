@@ -15,14 +15,16 @@
       "description": "Check Business Partner Exist",
       "scenario": "simpleFieldAndDbCheck",
       "fieldCheck": {
-        "checkType": "empty",
-        "operator": "equals"
+        "checkType": "empty"
       },
       "databaseCheck": {
         "table": "BUP000",
         "whereCondition": "ID = '$1'",
-        "checkType": "checkExistence",
-        "operator": "equals"
+        "checkType": "compare",
+        "fieldName": "NAME",
+        "operator": "equals",
+        "fieldType": "definedFields",
+        "value": "2"
       }
     }
   ]

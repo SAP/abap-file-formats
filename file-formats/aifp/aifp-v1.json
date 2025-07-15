@@ -95,24 +95,144 @@
           "type": "string",
           "maxLength": 3
         },
-        "messageVariable1": {
-          "title": "Message Variable 1",
-          "description": "Message variable 1",
+        "variable1Type": {
+          "title": "Variable 1 Type",
+          "description": "Variable 1 type",
+          "type": "string",
+          "enum": [
+            "sourceStructure",
+            "destinationStructure",
+            "constant",
+            "systemField",
+            "messageVariableA",
+            "messageVariableS"
+          ],
+          "enumTitles": [
+            "Source Structure",
+            "Destination Structure",
+            "Constant",
+            "System Field",
+            "Message Variable (All)",
+            "Message Variable (Single)"
+          ],
+          "enumDescriptions": [
+            "Field is in source structure",
+            "Field is in desctination structure",
+            "Field is constant value",
+            "Field is system field",
+            "Message variable (all)",
+            "Message variable (single)"
+          ],
+          "default": "sourceStructure"
+        },
+        "variable1": {
+          "title": "Variable 1",
+          "description": "Variable 1",
           "type": "string"
         },
-        "messageVariable2": {
-          "title": "Message Variable 2",
-          "description": "Message variable 2",
+        "variable2Type": {
+          "title": "Variable 2 Type",
+          "description": "Variable 2 type",
+          "type": "string",
+          "enum": [
+            "sourceStructure",
+            "destinationStructure",
+            "constant",
+            "systemField",
+            "messageVariableA",
+            "messageVariableS"
+          ],
+          "enumTitles": [
+            "Source Structure",
+            "Destination Structure",
+            "Constant",
+            "System Field",
+            "Message Variable (All)",
+            "Message Variable (Single)"
+          ],
+          "enumDescriptions": [
+            "Field is in source structure",
+            "Field is in desctination structure",
+            "Field is constant value",
+            "Field is system field",
+            "Message variable (all)",
+            "Message variable (single)"
+          ],
+          "default": "sourceStructure"
+        },
+        "variable2": {
+          "title": "Variable 2",
+          "description": "Variable 2",
           "type": "string"
         },
-        "messageVariable3": {
-          "title": "Message Variable 3",
-          "description": "Message variable 3",
+        "variable3Type": {
+          "title": "Variable 3 Type",
+          "description": "Variable 3 type",
+          "type": "string",
+          "enum": [
+            "sourceStructure",
+            "destinationStructure",
+            "constant",
+            "systemField",
+            "messageVariableA",
+            "messageVariableS"
+          ],
+          "enumTitles": [
+            "Source Structure",
+            "Destination Structure",
+            "Constant",
+            "System Field",
+            "Message Variable (All)",
+            "Message Variable (Single)"
+          ],
+          "enumDescriptions": [
+            "Field is in source structure",
+            "Field is in desctination structure",
+            "Field is constant value",
+            "Field is system field",
+            "Message variable (all)",
+            "Message variable (single)"
+          ],
+          "default": "sourceStructure"
+        },
+        "variable3": {
+          "title": "Variable 3",
+          "description": "Variable 3",
           "type": "string"
         },
-        "messageVariable4": {
-          "title": "Message Variable 4",
-          "description": "Message variable 4",
+        "variable4Type": {
+          "title": "Variable 4 Type",
+          "description": "Variable 4 type",
+          "type": "string",
+          "enum": [
+            "sourceStructure",
+            "destinationStructure",
+            "constant",
+            "systemField",
+            "messageVariableA",
+            "messageVariableS"
+          ],
+          "enumTitles": [
+            "Source Structure",
+            "Destination Structure",
+            "Constant",
+            "System Field",
+            "Message Variable (All)",
+            "Message Variable (Single)"
+          ],
+          "enumDescriptions": [
+            "Field is in source structure",
+            "Field is in desctination structure",
+            "Field is constant value",
+            "Field is system field",
+            "Message variable (all)",
+            "Message variable (single)"
+          ],
+          "default": "sourceStructure"
+        },
+        "variable4": {
+          "title": "Variable 4",
+          "description": "Variable 4",
           "type": "string"
         }
       },
@@ -265,9 +385,30 @@
                 ],
                 "default": "equals"
               },
-              "pattern": {
-                "title": "Pattern",
-                "description": "Pattern for Field Check",
+              "fieldType": {
+                "title": "Field Type",
+                "description": "Field type",
+                "type": "string",
+                "enum": [
+                  "definedFields",
+                  "pattern",
+                  "systemField"
+                ],
+                "enumTitles": [
+                  "Defined Fields",
+                  "Pattern",
+                  "System Field"
+                ],
+                "enumDescriptions": [
+                  "Defined field in the check assignment",
+                  "Pattern",
+                  "Field is system field"
+                ],
+                "default": "pattern"
+              },
+              "value": {
+                "title": "Value",
+                "description": "Value or pattern for Field Check",
                 "type": "string",
                 "maxLength": 60
               }
@@ -360,9 +501,30 @@
                 ],
                 "default": "equals"
               },
-              "pattern": {
-                "title": "Pattern",
-                "description": "Pattern for database check",
+              "fieldType": {
+                "title": "Field Type",
+                "description": "Field type",
+                "type": "string",
+                "enum": [
+                  "definedFields",
+                  "pattern",
+                  "systemField"
+                ],
+                "enumTitles": [
+                  "Defined Fields",
+                  "Pattern",
+                  "System Field"
+                ],
+                "enumDescriptions": [
+                  "Defined field in the check assignment",
+                  "Pattern",
+                  "Field is system field"
+                ],
+                "default": "pattern"
+              },
+              "value": {
+                "title": "Value",
+                "description": "Value or pattern for database check",
                 "type": "string",
                 "maxLength": 60
               }
@@ -400,24 +562,144 @@
                 "type": "string",
                 "maxLength": 3
               },
-              "messageVariable1": {
-                "title": "Message Variable 1",
-                "description": "Message variable 1",
+              "variable1Type": {
+                "title": "Variable 1 Type",
+                "description": "Variable 1 type",
+                "type": "string",
+                "enum": [
+                  "sourceStructure",
+                  "destinationStructure",
+                  "constant",
+                  "systemField",
+                  "messageVariableA",
+                  "messageVariableS"
+                ],
+                "enumTitles": [
+                  "Source Structure",
+                  "Destination Structure",
+                  "Constant",
+                  "System Field",
+                  "Message Variable (All)",
+                  "Message Variable (Single)"
+                ],
+                "enumDescriptions": [
+                  "Field is in source structure",
+                  "Field is in desctination structure",
+                  "Field is constant value",
+                  "Field is system field",
+                  "Message variable (all)",
+                  "Message variable (single)"
+                ],
+                "default": "sourceStructure"
+              },
+              "variable1": {
+                "title": "Variable 1",
+                "description": "Variable 1",
                 "type": "string"
               },
-              "messageVariable2": {
-                "title": "Message Variable 2",
-                "description": "Message variable 2",
+              "variable2Type": {
+                "title": "Variable 2 Type",
+                "description": "Variable 2 type",
+                "type": "string",
+                "enum": [
+                  "sourceStructure",
+                  "destinationStructure",
+                  "constant",
+                  "systemField",
+                  "messageVariableA",
+                  "messageVariableS"
+                ],
+                "enumTitles": [
+                  "Source Structure",
+                  "Destination Structure",
+                  "Constant",
+                  "System Field",
+                  "Message Variable (All)",
+                  "Message Variable (Single)"
+                ],
+                "enumDescriptions": [
+                  "Field is in source structure",
+                  "Field is in desctination structure",
+                  "Field is constant value",
+                  "Field is system field",
+                  "Message variable (all)",
+                  "Message variable (single)"
+                ],
+                "default": "sourceStructure"
+              },
+              "variable2": {
+                "title": "Variable 2",
+                "description": "Variable 2",
                 "type": "string"
               },
-              "messageVariable3": {
-                "title": "Message Variable 3",
-                "description": "Message variable 3",
+              "variable3Type": {
+                "title": "Variable 3 Type",
+                "description": "Variable 3 type",
+                "type": "string",
+                "enum": [
+                  "sourceStructure",
+                  "destinationStructure",
+                  "constant",
+                  "systemField",
+                  "messageVariableA",
+                  "messageVariableS"
+                ],
+                "enumTitles": [
+                  "Source Structure",
+                  "Destination Structure",
+                  "Constant",
+                  "System Field",
+                  "Message Variable (All)",
+                  "Message Variable (Single)"
+                ],
+                "enumDescriptions": [
+                  "Field is in source structure",
+                  "Field is in desctination structure",
+                  "Field is constant value",
+                  "Field is system field",
+                  "Message variable (all)",
+                  "Message variable (single)"
+                ],
+                "default": "sourceStructure"
+              },
+              "variable3": {
+                "title": "Variable 3",
+                "description": "Variable 3",
                 "type": "string"
               },
-              "messageVariable4": {
-                "title": "Message Variable 4",
-                "description": "Message variable 4",
+              "variable4Type": {
+                "title": "Variable 4 Type",
+                "description": "Variable 4 type",
+                "type": "string",
+                "enum": [
+                  "sourceStructure",
+                  "destinationStructure",
+                  "constant",
+                  "systemField",
+                  "messageVariableA",
+                  "messageVariableS"
+                ],
+                "enumTitles": [
+                  "Source Structure",
+                  "Destination Structure",
+                  "Constant",
+                  "System Field",
+                  "Message Variable (All)",
+                  "Message Variable (Single)"
+                ],
+                "enumDescriptions": [
+                  "Field is in source structure",
+                  "Field is in desctination structure",
+                  "Field is constant value",
+                  "Field is system field",
+                  "Message variable (all)",
+                  "Message variable (single)"
+                ],
+                "default": "sourceStructure"
+              },
+              "variable4": {
+                "title": "Variable 4",
+                "description": "Variable 4",
                 "type": "string"
               }
             },
