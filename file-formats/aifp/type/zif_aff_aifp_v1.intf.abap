@@ -25,34 +25,34 @@ INTERFACE zif_aff_aifp_v1
     BEGIN OF ty_message,
       "! <p class="shorttext">Message Class</p>
       "! Message class
-      message_class           TYPE c LENGTH 20,
+      message_class   TYPE c LENGTH 20,
       "! <p class="shorttext">Message Number</p>
       "! Message number
-      message_number          TYPE c LENGTH 3,
+      message_number  TYPE c LENGTH 3,
       "! <p class="shorttext">Variable 1 Type</p>
       "! Variable 1 type
-      variable_1_type         TYPE ty_variable_type,
+      variable_1_type TYPE ty_variable_type,
       "! <p class="shorttext">Variable 1</p>
       "! Variable 1
-      variable_1              TYPE string,
+      variable_1      TYPE string,
       "! <p class="shorttext">Variable 2 Type</p>
       "! Variable 2 type
-      variable_2_type         TYPE ty_variable_type,
+      variable_2_type TYPE ty_variable_type,
       "! <p class="shorttext">Variable 2</p>
       "! Variable 2
-      variable_2              TYPE string,
+      variable_2      TYPE string,
       "! <p class="shorttext">Variable 3 Type</p>
       "! Variable 3 type
-      variable_3_type         TYPE ty_variable_type,
+      variable_3_type TYPE ty_variable_type,
       "! <p class="shorttext">Variable 3</p>
       "! Variable 3
-      variable_3              TYPE string,
+      variable_3      TYPE string,
       "! <p class="shorttext">Variable 4 Type</p>
       "! Variable 4 type
-      variable_4_type         TYPE ty_variable_type,
+      variable_4_type TYPE ty_variable_type,
       "! <p class="shorttext">Variable 4</p>
       "! Variable 4
-      variable_4              TYPE string,
+      variable_4      TYPE string,
     END OF ty_message.
   TYPES:
     "! <p class="shorttext">Field Check</p>
