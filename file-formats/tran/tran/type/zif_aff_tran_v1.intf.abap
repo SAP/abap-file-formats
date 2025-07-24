@@ -203,7 +203,7 @@ INTERFACE zif_aff_tran_v1
     ty_maintenance_mode   TYPE c LENGTH 1,
     "! <p class="shorttext">Maintenance Status</p>
     "! The maintenance status of an authorization object controls if AUTHORITY-CHECK runs for it
-    "! in its application andwhether an authorization default is added to a role’s data
+    "! in its application andwhether an authorization default is added to a data of role
     "! by the profile generator when the app is in the role menu.
     "! $values {@link zif_aff_tran_v1.data:co_maintenance_status}
     "! $default {@link zif_aff_tran_v1.data:co_maintenance_status.default_with_values}
@@ -243,7 +243,7 @@ INTERFACE zif_aff_tran_v1
 
     "! <p class="shorttext">Maintenance Status</p>
     "! The maintenance status of an authorization object controls if AUTHORITY-CHECK runs for it in its application and
-    "! whether an authorization default is added to a role’s data by the profile
+    "! whether an authorization default is added to a data of role by the profile
     "! generator when the app is in the role menu.
     BEGIN OF co_maintenance_status,
       "! <p class="shorttext">Undefined</p>
@@ -283,7 +283,7 @@ INTERFACE zif_aff_tran_v1
     "! <p class="shorttext">Start Authorization Object Field Value</p>
     "! A start authorization object controls who may run a transaction. It is checked at transaction start.
     "! Fields must have single or empty values. Empty fields trigger a DUMMY check.
-    "! This object is auto-assigned in the transaction’s authorization defaults.
+    "! This object is auto-assigned in the authorization defaults of transaction.
     BEGIN OF ty_sao_afv,
       "! <p class="shorttext">Authorization Field</p>
       "! Name of the authorization field of the start authorization object
@@ -304,7 +304,7 @@ INTERFACE zif_aff_tran_v1
     "! <p class="shorttext">Start Authorization Object</p>
     "! A start authorization object controls who may run a transaction. It is checked at transaction start.
     "! Fields must have single or empty values. Empty fields trigger a DUMMY check.
-    "! This object is auto-assigned in the transaction’s authorization defaults.
+    "! This object is auto-assigned in the authorization defaults transaction.
     BEGIN OF ty_sao,
       "! <p class="shorttext">Start Authorization Object Name</p>
       "! Name of the start authorization object
@@ -346,7 +346,7 @@ INTERFACE zif_aff_tran_v1
       auth_object_name         TYPE c LENGTH 10,
       "! <p class="shorttext">Maintenance Status</p>
       "! The maintenance status of an authorization object controls if AUTHORITY-CHECK runs for
-      "! it in its application and whether an authorization default is added to a role’s data by
+      "! it in its application and whether an authorization default is added to a data of role data by
       "! the profile generator when the app is in the role menu.
       maintenance_status       TYPE ty_maintenance_status,
       "! <p class="shorttext">Authorization Defaults Documentation for Object</p>
@@ -458,7 +458,7 @@ INTERFACE zif_aff_tran_v1
       "! <p class="shorttext">Start Authorization Object</p>
       "! A start authorization object controls who may run a transaction. It is checked at transaction start.
       "! Fields must have single or empty values. Empty fields trigger a DUMMY check.
-      "! This object is auto-assigned in the transaction’s authorization defaults.
+      "! This object is auto-assigned in the authorization defaults transaction.
       start_authorization_object TYPE ty_sao,
       "! <p class="shorttext">Authorization Default Values</p>
       "! Authorization default values define which authorization objects and field values are automatically proposed
