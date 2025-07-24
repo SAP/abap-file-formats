@@ -297,7 +297,7 @@ INTERFACE zif_aff_tran_v1
   "! <p class="shorttext">Start Authorization Object Field Value</p>
   "! A start authorization object controls who may run a transaction. It is checked at transaction start.
   "! Fields must have single or empty values. Empty fields trigger a DUMMY check.
-  "! This object is auto-assigned in the transaction’s authorization defaults.
+  "! This object is auto-assigned in the authorization defaults transaction.
   TYPES ty_sao_afv_t TYPE STANDARD TABLE OF ty_sao_afv WITH DEFAULT KEY.
 
   TYPES:
