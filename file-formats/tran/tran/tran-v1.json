@@ -363,7 +363,7 @@
       "properties": {
         "startAuthorizationObject": {
           "title": "Start Authorization Object",
-          "description": "A start authorization object controls who may run a transaction. It is checked at transaction start. Fields must have single or empty values. Empty fields trigger a DUMMY check. This object is auto-assigned in the transaction’s authorization defaults.",
+          "description": "A start authorization object controls who may run a transaction. It is checked at transaction start. Fields must have single or empty values. Empty fields trigger a DUMMY check. This object is auto-assigned in the authorization defaults transaction.",
           "type": "object",
           "properties": {
             "authObjectName": {
@@ -378,7 +378,7 @@
               "type": "array",
               "items": {
                 "title": "Start Authorization Object Field Value",
-                "description": "A start authorization object controls who may run a transaction. It is checked at transaction start. Fields must have single or empty values. Empty fields trigger a DUMMY check. This object is auto-assigned in the transaction’s authorization defaults.",
+                "description": "A start authorization object controls who may run a transaction. It is checked at transaction start. Fields must have single or empty values. Empty fields trigger a DUMMY check. This object is auto-assigned in the authorization defaults of transaction.",
                 "type": "object",
                 "properties": {
                   "authFieldName": {
@@ -468,7 +468,7 @@
                   },
                   "maintenanceStatus": {
                     "title": "Maintenance Status",
-                    "description": "The maintenance status of an authorization object controls if AUTHORITY-CHECK runs for it in its application and whether an authorization default is added to a role’s data by the profile generator when the app is in the role menu.",
+                    "description": "The maintenance status of an authorization object controls if AUTHORITY-CHECK runs for it in its application and whether an authorization default is added to a data of role data by the profile generator when the app is in the role menu.",
                     "type": "string",
                     "enum": [
                       "undefined",
