@@ -5,14 +5,14 @@
     "originalLanguage": "en"
   },
   "generalInformation": {
-    "interfaceDirection": "outbound"
+    "direction": "outbound"
   },
-  "interfaceVersions": [
+  "versions": [
     {
       "version": 1,
       "description": "Initial Version",
       "activeFrom": "01.01.2025",
-      "communicationAttribute": {
+      "communicationAttributes": {
         "processType": "CUSTOMER_INVOICE",
         "processVersion": "1.0.0",
         "processSubtype": "DOMESTIC",
@@ -25,7 +25,7 @@
       "version": 2,
       "description": "Version 2",
       "activeFrom": "01.07.2025",
-      "communicationAttribute": {
+      "communicationAttributes": {
         "processType": "CUSTOMER_INVOICE",
         "processVersion": "1.1.0",
         "processSubtype": "DOMESTIC",

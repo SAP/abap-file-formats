@@ -1,36 +1,36 @@
 INTERFACE zif_aff_edoi_v1 PUBLIC.
 
-  "! <p class="shorttext">Interface Direction</p>
+  "! <p class="shorttext">Direction</p>
   "! Interface direction
   "! $values {@link zif_aff_edoi_v1.data:co_interface_direction}
   "! $default {@link zif_aff_edoi_v1.data:co_interface_direction.outbound}
-  TYPES ty_interface_direction TYPE c LENGTH 1.
+  TYPES ty_direction TYPE c LENGTH 1.
   CONSTANTS:
-    "! <p class="shorttext">Interface Direction</p>
+    "! <p class="shorttext">Direction</p>
     "! Interface direction
     BEGIN OF co_interface_direction,
       "! <p class="shorttext">Outbound</p>
       "! Outbound
-      outbound TYPE ty_interface_direction VALUE 'O',
+      outbound TYPE ty_direction VALUE 'O',
       "! <p class="shorttext">Inbound</p>
       "! Inbound
-      inbound  TYPE ty_interface_direction VALUE 'I',
+      inbound  TYPE ty_direction VALUE 'I',
     END OF co_interface_direction.
 
   TYPES:
     "! <p class="shorttext">General Information</p>
     "! General information
     BEGIN OF ty_general_information,
-      "! <p class="shorttext">Interface Direction</p>
+      "! <p class="shorttext">Direction</p>
       "! Interface direction
       "! $required
-      interface_direction TYPE ty_interface_direction,
+      direction TYPE ty_direction,
     END OF ty_general_information.
 
   TYPES:
     "! <p class="shorttext">Communication Integration Attributes</p>
     "! Communication integration attributes
-    BEGIN OF ty_communication_attribute,
+    BEGIN OF ty_communication_attributes,
       "! <p class="shorttext">Process Type</p>
       "! DRC process type
       process_type               TYPE c LENGTH 50,
@@ -51,35 +51,33 @@ INTERFACE zif_aff_edoi_v1 PUBLIC.
       "! $minimum 1
       "! $maximum 9999
       response_interface_version TYPE i,
-    END OF ty_communication_attribute.
+    END OF ty_communication_attributes.
 
   TYPES:
-    "! <p class="shorttext">Interface Version</p>
-    "! eDocument interface version
-    BEGIN OF ty_interface_version,
+    "! <p class="shorttext">Version Details</p>
+    "! eDocument interface version details
+    BEGIN OF ty_version_details,
       "! <p class="shorttext">Version</p>
       "! Version
       "! $required
       "! $minimum 1
       "! $maximum 9999
-      version                 TYPE i,
+      version                  TYPE i,
       "! <p class="shorttext">Description</p>
       "! Description
       "! $required
-      description             TYPE c LENGTH 30,
+      description              TYPE c LENGTH 30,
       "! <p class="shorttext">Active From</p>
       "! Active from
       "! $required
-      active_from             TYPE sy-datum,
+      active_from              TYPE sy-datum,
       "! <p class="shorttext">Communication Integration Attributes</p>
       "! Communication integration attributes
-      "! $required
-      communication_attribute TYPE ty_communication_attribute,
-    END OF ty_interface_version.
-
-  "! <p class="shorttext">Interface Versions</p>
+      communication_attributes TYPE ty_communication_attributes,
+    END OF ty_version_details.
+  "! <p class="shorttext">Versions</p>
   "! Interface versions
-  TYPES ty_interface_versions       TYPE SORTED TABLE OF ty_interface_version WITH UNIQUE KEY version.
+  TYPES ty_versions TYPE SORTED TABLE OF ty_version_details WITH UNIQUE KEY version.
 
   TYPES:
     "! <p class="shorttext">eDocument Interface</p>
@@ -97,10 +95,10 @@ INTERFACE zif_aff_edoi_v1 PUBLIC.
       "! General information
       "! $required
       general_information TYPE ty_general_information,
-      "! <p class="shorttext">Interface Versions</p>
+      "! <p class="shorttext">Versions</p>
       "! Interface versions
       "! $required
-      interface_versions  TYPE ty_interface_versions,
+      versions            TYPE ty_versions,
 
     END OF ty_main.
 

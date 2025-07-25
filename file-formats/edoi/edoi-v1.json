@@ -59,8 +59,8 @@
       "description": "General information",
       "type": "object",
       "properties": {
-        "interfaceDirection": {
-          "title": "Interface Direction",
+        "direction": {
+          "title": "Direction",
           "description": "Interface direction",
           "type": "string",
           "enum": [
@@ -80,17 +80,17 @@
       },
       "additionalProperties": false,
       "required": [
-        "interfaceDirection"
+        "direction"
       ]
     },
-    "interfaceVersions": {
-      "title": "Interface Versions",
+    "versions": {
+      "title": "Versions",
       "description": "Interface versions",
       "type": "array",
       "uniqueItems": true,
       "items": {
-        "title": "Interface Version",
-        "description": "eDocument interface version",
+        "title": "Version Details",
+        "description": "eDocument interface version details",
         "type": "object",
         "properties": {
           "version": {
@@ -112,7 +112,7 @@
             "type": "string",
             "format": "date-time"
           },
-          "communicationAttribute": {
+          "communicationAttributes": {
             "title": "Communication Integration Attributes",
             "description": "Communication integration attributes",
             "type": "object",
@@ -162,8 +162,7 @@
         "required": [
           "version",
           "description",
-          "activeFrom",
-          "communicationAttribute"
+          "activeFrom"
         ]
       }
     }
@@ -173,6 +172,6 @@
     "formatVersion",
     "header",
     "generalInformation",
-    "interfaceVersions"
+    "versions"
   ]
 }
