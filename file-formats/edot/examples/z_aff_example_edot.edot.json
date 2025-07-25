@@ -2,10 +2,11 @@
   "formatVersion": "1",
   "header": {
     "description": "Example EDOT for file formats",
-    "originalLanguage": "en"
+    "originalLanguage": "en",
+    "abapLanguageVersion": "standard"
   },
   "generalInformation": {
-    "tableName": "EDOFRINV",
+    "table": "EDOFRINV",
     "preprocessBeforeArchiving": false,
     "createdInContingencyMode": false
   },
