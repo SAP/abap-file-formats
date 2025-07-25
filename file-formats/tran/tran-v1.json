@@ -322,7 +322,7 @@
           ],
           "default": "inactive"
         },
-        "uiClasification": {
+        "uiClassification": {
           "title": "UI Classification",
           "description": "Professional User Transactions emulate SAP GUI for Windows, suited for expert users handling complex tasks. Easy Web Transactions offer a simplified, web-friendly UI via SAP GUI for HTML, ideal for casual users, without menus or toolbars.",
           "type": "string",
