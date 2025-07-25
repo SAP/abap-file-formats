@@ -19,8 +19,10 @@
   },
   "userInterface": {
     "inheritanceMode": "active",
-    "pervasiveMode": "",
-    "win32Mode": "notSupported"
+    "pervasiveMode": "disabled",
+    "webguiMode": "S",
+    "platinMode": "S",
+    "win32Mode": "N"
   },
   "authorizations": {
     "authorizationDefaults": {

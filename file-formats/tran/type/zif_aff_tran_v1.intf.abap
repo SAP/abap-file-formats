@@ -455,7 +455,7 @@ INTERFACE zif_aff_tran_v1
       "! Professional User Transactions emulate SAP GUI for Windows, suited for expert users handling complex tasks.
       "! Easy Web Transactions offer a simplified, web-friendly UI via SAP GUI for HTML, ideal for casual users,
       "! without menus or toolbars.
-      ui_clasification TYPE ty_ui_classification,
+      ui_classification TYPE ty_ui_classification,
       "! <p class="shorttext">Service</p>
       "! The Service Name of an Internet Application Component (IAC) links a transaction to a web service,
       "! enabling its execution via a browser. It's required for Easy Web Transactions if the service
