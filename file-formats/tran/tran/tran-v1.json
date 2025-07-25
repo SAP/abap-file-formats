@@ -307,7 +307,20 @@
         "inheritanceMode": {
           "title": "Inherit UI Attributes",
           "description": "Transaction UI Attributes Inheritance Mode controls how UI settings like screen variants or field attributes are inherited from a parent transaction to its variants, ensuring consistent user interfaces across related transactions.",
-          "type": "boolean"
+          "type": "string",
+          "enum": [
+            "active",
+            "inactive"
+          ],
+          "enumTitles": [
+            "Active",
+            "Inactive"
+          ],
+          "enumDescriptions": [
+            "Active",
+            "Inactive"
+          ],
+          "default": "inactive"
         },
         "uiClasification": {
           "title": "UI Classification",
@@ -336,22 +349,74 @@
         "pervasiveMode": {
           "title": "Pervasive Enabled",
           "description": "Transaction Pervasive Mode enables a simplified, responsive UI for transactions on various devices, like tablets or smartphones. It's designed for casual users needing quick, intuitive access to core functions with minimal screen complexity.",
-          "type": "boolean"
+          "type": "string",
+          "enum": [
+            "disabled",
+            "enabled"
+          ],
+          "enumTitles": [
+            "Disabled",
+            "Enabled"
+          ],
+          "enumDescriptions": [
+            "Disabled",
+            "Enabled"
+          ],
+          "default": "enabled"
         },
         "webguiMode": {
           "title": "SAP GUI for HTML",
           "description": "The transaction supports the start from SAP GUI for HTML.",
-          "type": "boolean"
+          "type": "string",
+          "enum": [
+            "supported",
+            "notSupported"
+          ],
+          "enumTitles": [
+            "Supported",
+            "Not Supported"
+          ],
+          "enumDescriptions": [
+            "Supported",
+            "Not Supported"
+          ],
+          "default": "supported"
         },
         "platinMode": {
           "title": "SAP GUI for Java",
           "description": "The transaction supports the start from SAP GUI for Java.",
-          "type": "boolean"
+          "type": "string",
+          "enum": [
+            "supported",
+            "notSupported"
+          ],
+          "enumTitles": [
+            "Supported",
+            "Not Supported"
+          ],
+          "enumDescriptions": [
+            "Supported",
+            "Not Supported"
+          ],
+          "default": "supported"
         },
         "win32Mode": {
           "title": "SAP GUI for Windows",
           "description": "The transaction supports the start from SAP GUI for Windows.",
-          "type": "boolean"
+          "type": "string",
+          "enum": [
+            "supported",
+            "notSupported"
+          ],
+          "enumTitles": [
+            "Supported",
+            "Not Supported"
+          ],
+          "enumDescriptions": [
+            "Supported",
+            "Not Supported"
+          ],
+          "default": "supported"
         }
       },
       "additionalProperties": false
@@ -444,7 +509,20 @@
             "inheritanceMode": {
               "title": "Inheritance Mode",
               "description": "Authorization defaults inheritance mode controls how authorization settings are passed from a parent transaction to its variants, ensuring consistent access rights and roles across related transactions.",
-              "type": "boolean"
+              "type": "string",
+              "enum": [
+                "active",
+                "inactive"
+              ],
+              "enumTitles": [
+                "Active",
+                "Inactive"
+              ],
+              "enumDescriptions": [
+                "Active",
+                "Inactive"
+              ],
+              "default": "active"
             },
             "documentation": {
               "title": "Authorization Defaults Documentation for Application",
