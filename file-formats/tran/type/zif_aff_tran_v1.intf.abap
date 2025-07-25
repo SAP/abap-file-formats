@@ -450,7 +450,7 @@ INTERFACE zif_aff_tran_v1
       "! Transaction UI Attributes Inheritance Mode controls how UI settings like screen variants
       "! or field attributes are inherited from a parent transaction to its variants, ensuring
       "! consistent user interfaces across related transactions.
-      inheritance_mode TYPE ty_ua_inheritance_mode,
+      inheritance_mode  TYPE ty_ua_inheritance_mode,
       "! <p class="shorttext">UI Classification</p>
       "! Professional User Transactions emulate SAP GUI for Windows, suited for expert users handling complex tasks.
       "! Easy Web Transactions offer a simplified, web-friendly UI via SAP GUI for HTML, ideal for casual users,
@@ -460,21 +460,21 @@ INTERFACE zif_aff_tran_v1
       "! The Service Name of an Internet Application Component (IAC) links a transaction to a web service,
       "! enabling its execution via a browser. It's required for Easy Web Transactions if the service
       "! name differs from the transaction name.
-      iac_service_name TYPE c LENGTH 14,
+      iac_service_name  TYPE c LENGTH 14,
       "! <p class="shorttext">Pervasive Enabled</p>
       "! Transaction Pervasive Mode enables a simplified, responsive UI for transactions on various devices,
       "! like tablets or smartphones. It's designed for casual users needing quick, intuitive access to core
       "! functions with minimal screen complexity.
-      pervasive_mode   TYPE ty_ua_pervasive_mode,
+      pervasive_mode    TYPE ty_ua_pervasive_mode,
       "! <p class="shorttext">SAP GUI for HTML</p>
       "! The transaction supports the start from SAP GUI for HTML.
-      webgui_mode      TYPE ty_ua_support_mode,
+      webgui_mode       TYPE ty_ua_support_mode,
       "! <p class="shorttext">SAP GUI for Java</p>
       "! The transaction supports the start from SAP GUI for Java.
-      platin_mode      TYPE ty_ua_support_mode,
+      platin_mode       TYPE ty_ua_support_mode,
       "! <p class="shorttext">SAP GUI for Windows</p>
       "! The transaction supports the start from SAP GUI for Windows.
-      win32_mode       TYPE ty_ua_support_mode,
+      win32_mode        TYPE ty_ua_support_mode,
     END OF ty_ua.
 
   TYPES:
