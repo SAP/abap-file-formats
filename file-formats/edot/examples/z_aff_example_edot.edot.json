@@ -1,0 +1,22 @@
+{
+  "header": {
+    "abapLanguageVersion": "standard"
+  },
+  "generalInformation": {
+    "table": "FRINV",
+    "preprocessBeforeArchiving": false,
+    "createdInContingencyMode": false
+  },
+  "readAccessLoggingSettings": [
+    {
+      "fileType": "REQUEST",
+      "fileStructure": "EDO_FR_INV_INVOICE_TYPE",
+      "fileDescription": "eDocument France: Invoice Request"
+    }
+  ],
+  "additionalTables": [
+    {
+      "name": "EDOFRINV1"
+    }
+  ]
+}

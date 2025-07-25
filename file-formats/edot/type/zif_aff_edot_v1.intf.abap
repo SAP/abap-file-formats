@@ -11,8 +11,8 @@ INTERFACE zif_aff_edot_v1
       "! File type
       "! $required
       file_type        TYPE c LENGTH 10,
-      "! <p class="shorttext">File Structure Type</p>
-      "! File structure type
+      "! <p class="shorttext">File Structure</p>
+      "! File structure
       "! $required
       file_structure   TYPE c LENGTH 30,
       "! <p class="shorttext">File Description</p>
@@ -23,39 +23,33 @@ INTERFACE zif_aff_edot_v1
   "! Read access logging settings
   TYPES ty_read_acc_logging_settings TYPE SORTED TABLE OF ty_read_access_logging_setting WITH UNIQUE KEY file_type.
   TYPES:
-    "! <p class="shorttext">eDocument Type Specific Additional Tables</p>
-    "! eDocument type specific additional tables
+    "! <p class="shorttext">Additional Table</p>
+    "! Additional eDocument table
     BEGIN OF ty_additional_table,
-      "! <p class="shorttext">Sequence Number</p>
-      "! Sequence number
+      "! <p class="shorttext">Name</p>
+      "! eDocument additional table name
       "! $required
-      "! $minimum 1
-      "! $maximum 9999
-      sequence_number TYPE i,
-      "! <p class="shorttext">Table Name</p>
-      "! Table name
-      "! $required
-      table_name      TYPE zif_aff_types_v1=>ty_object_name_30,
+      name TYPE zif_aff_types_v1=>ty_object_name_30,
     END OF ty_additional_table.
-  "! <p class="shorttext">Read Access Logging Settings</p>
-  "! Read access logging settings
-  TYPES ty_additional_tables TYPE SORTED TABLE OF ty_additional_table WITH UNIQUE KEY sequence_number.
+  "! <p class="shorttext">Additional Tables</p>
+  "! Additional eDocument tables
+  TYPES ty_additional_tables TYPE SORTED TABLE OF ty_additional_table WITH UNIQUE KEY name.
   TYPES:
     "! <p class="shorttext">General Information</p>
     "! General information
     BEGIN OF ty_general_information,
-      "! <p class="shorttext">eDocument Table Name</p>
-      "! eDocument table name
-      table_name                     TYPE zif_aff_types_v1=>ty_object_name_30,
+      "! <p class="shorttext">eDocument Table</p>
+      "! eDocument table
+      table                       TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Preprocess Before Archiving</p>
       "! Preprocess before archiving
-      is_archive_preprocess_needed   TYPE abap_bool,
+      preprocess_before_archiving TYPE abap_bool,
       "! <p class="shorttext">Created in Contingency Mode</p>
       "! Created in contingency mode
-      is_created_in_contingency_mode TYPE abap_bool,
+      created_in_contingency_mode TYPE abap_bool,
       "! <p class="shorttext">Contingency eDocument Type</p>
       "! Contingency eDocument type
-      contingency_edoc_type          TYPE c LENGTH 10,
+      contingency_edoc_type       TYPE c LENGTH 10,
     END OF ty_general_information.
   TYPES:
     "! <p class="shorttext">Header for EDOT object</p>
@@ -94,8 +88,8 @@ INTERFACE zif_aff_edot_v1
       "! <p class="shorttext">Read Access Logging Settings</p>
       "! Read access logging settings
       read_access_logging_settings TYPE ty_read_acc_logging_settings,
-      "! <p class="shorttext">eDocument Type Specific Additional Tables</p>
-      "! eDocument type specific additional tables
-      edoc_spec_additional_tables  TYPE ty_additional_tables,
+      "! <p class="shorttext">Additional Tables</p>
+      "! Additional tables
+      additional_tables            TYPE ty_additional_tables,
     END OF ty_main.
 ENDINTERFACE.

@@ -59,18 +59,18 @@
       "description": "General information",
       "type": "object",
       "properties": {
-        "tableName": {
-          "title": "eDocument Table Name",
-          "description": "eDocument table name",
+        "table": {
+          "title": "eDocument Table",
+          "description": "eDocument table",
           "type": "string",
           "maxLength": 30
         },
-        "isArchivePreprocessNeeded": {
+        "preprocessBeforeArchiving": {
           "title": "Preprocess Before Archiving",
           "description": "Preprocess before archiving",
           "type": "boolean"
         },
-        "isCreatedInContingencyMode": {
+        "createdInContingencyMode": {
           "title": "Created in Contingency Mode",
           "description": "Created in contingency mode",
           "type": "boolean"
@@ -101,8 +101,8 @@
             "maxLength": 10
           },
           "fileStructure": {
-            "title": "File Structure Type",
-            "description": "File structure type",
+            "title": "File Structure",
+            "description": "File structure",
             "type": "string",
             "maxLength": 30
           },
@@ -120,34 +120,26 @@
         ]
       }
     },
-    "edocSpecAdditionalTables": {
-      "title": "eDocument Type Specific Additional Tables",
-      "description": "eDocument type specific additional tables",
+    "additionalTables": {
+      "title": "Additional Tables",
+      "description": "Additional tables",
       "type": "array",
       "uniqueItems": true,
       "items": {
-        "title": "eDocument Type Specific Additional Tables",
-        "description": "eDocument type specific additional tables",
+        "title": "Additional Table",
+        "description": "Additional eDocument table",
         "type": "object",
         "properties": {
-          "sequenceNumber": {
-            "title": "Sequence Number",
-            "description": "Sequence number",
-            "type": "integer",
-            "minimum": 1,
-            "maximum": 9999
-          },
-          "tableName": {
-            "title": "Table Name",
-            "description": "Table name",
+          "name": {
+            "title": "Name",
+            "description": "eDocument additional table name",
             "type": "string",
             "maxLength": 30
           }
         },
         "additionalProperties": false,
         "required": [
-          "sequenceNumber",
-          "tableName"
+          "name"
         ]
       }
     }
