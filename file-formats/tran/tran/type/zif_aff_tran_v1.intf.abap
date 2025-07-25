@@ -53,6 +53,51 @@ INTERFACE zif_aff_tran_v1
       easy_web_transaction          TYPE ty_ui_classification VALUE 'E',
     END OF co_ui_classification.
 
+  "! $values {@link zif_aff_tran_v1.data:co_ua_inheritance_mode}
+  "! $default {@link zif_aff_tran_v1.data:co_ua_inheritance_mode.inactive}
+  TYPES ty_ua_inheritance_mode TYPE c LENGTH 1.
+  CONSTANTS:
+    "! <p class="shorttext">UI Attributes Inheritance Mode</p>
+    "! UI attributes inheritance mode
+    BEGIN OF co_ua_inheritance_mode,
+      "! <p class="shorttext">Active</p>
+      "! Active
+      active   TYPE ty_ua_inheritance_mode VALUE 'A',
+      "! <p class="shorttext">Inactive</p>
+      "! Inactive
+      inactive TYPE ty_ua_inheritance_mode VALUE 'I',
+    END OF co_ua_inheritance_mode.
+
+  "! $values {@link zif_aff_tran_v1.data:co_ua_pervasive_mode}
+  "! $default {@link zif_aff_tran_v1.data:co_ua_pervasive_mode.enabled}
+  TYPES ty_ua_pervasive_mode TYPE c LENGTH 1.
+  CONSTANTS:
+    "! <p class="shorttext">UI Attributes Inheritance Mode</p>
+    "! UI attributes inheritance mode
+    BEGIN OF co_ua_pervasive_mode,
+      "! <p class="shorttext">Disabled</p>
+      "! Disabled
+      disabled TYPE ty_ua_pervasive_mode VALUE 'D',
+      "! <p class="shorttext">Enabled</p>
+      "! Enabled
+      enabled  TYPE ty_ua_pervasive_mode VALUE 'E',
+    END OF co_ua_pervasive_mode.
+
+  "! $values {@link zif_aff_tran_v1.data:co_ua_support_mode}
+  "! $default {@link zif_aff_tran_v1.data:co_ua_support_mode.supported}
+  TYPES ty_ua_support_mode TYPE c LENGTH 1.
+  CONSTANTS:
+    "! <p class="shorttext">SAP GUI Support</p>
+    "! SAP GUI support
+    BEGIN OF co_ua_support_mode,
+      "! <p class="shorttext">Supported</p>
+      "! Supported
+      supported     TYPE ty_ua_support_mode VALUE 'X',
+      "! <p class="shorttext">Not Supported</p>
+      "! Not Supported
+      not_supported TYPE ty_ua_support_mode VALUE ' ',
+    END OF co_ua_support_mode.
+
   TYPES ty_skip_initial_screen_mode TYPE c LENGTH 1.
   CONSTANTS:
     "! $values {@link zif_aff_tran_v1.data:co_skip_initial_screen_mode}
@@ -271,6 +316,22 @@ INTERFACE zif_aff_tran_v1
       inactive_values        TYPE ty_maintenance_status VALUE 'I',
     END OF co_maintenance_status.
 
+  "! $values {@link zif_aff_tran_v1.data:co_inheritance_mode}
+  "! $default {@link zif_aff_tran_v1.data:co_inheritance_mode.active}
+  TYPES ty_inheritance_mode TYPE c LENGTH 10.
+  CONSTANTS:
+    "! <p class="shorttext">Authorization Defaults Inheritance Mode</p>
+    "! The inheritance mode control if the authorization defaults of the parent
+    "! transaction are used, of if the parameter transaction uses own authorization defaults.
+    BEGIN OF co_inheritance_mode,
+      "! <p class="shorttext">Active</p>
+      "! Active
+      active   TYPE ty_inheritance_mode VALUE 'ACTIVE',
+      "! <p class="shorttext">Inactive</p>
+      "! Inactive
+      inactive TYPE ty_inheritance_mode VALUE 'INACTIVE',
+    END OF co_inheritance_mode.
+
   TYPES:
     "! <p class="shorttext">Authorization Value</p>
     "! Authorization value
@@ -372,7 +433,7 @@ INTERFACE zif_aff_tran_v1
       "! Authorization defaults inheritance mode controls how authorization settings are passed from
       "! a parent transaction to its variants,
       "! ensuring consistent access rights and roles across related transactions.
-      inheritance_mode TYPE abap_bool,
+      inheritance_mode TYPE ty_inheritance_mode,
       "! <p class="shorttext">Authorization Defaults Documentation for Application</p>
       "! Authorization defaults documentation for application.
       documentation    TYPE string,
@@ -389,7 +450,7 @@ INTERFACE zif_aff_tran_v1
       "! Transaction UI Attributes Inheritance Mode controls how UI settings like screen variants
       "! or field attributes are inherited from a parent transaction to its variants, ensuring
       "! consistent user interfaces across related transactions.
-      inheritance_mode TYPE abap_bool,
+      inheritance_mode TYPE ty_ua_inheritance_mode,
       "! <p class="shorttext">UI Classification</p>
       "! Professional User Transactions emulate SAP GUI for Windows, suited for expert users handling complex tasks.
       "! Easy Web Transactions offer a simplified, web-friendly UI via SAP GUI for HTML, ideal for casual users,
@@ -404,16 +465,16 @@ INTERFACE zif_aff_tran_v1
       "! Transaction Pervasive Mode enables a simplified, responsive UI for transactions on various devices,
       "! like tablets or smartphones. It's designed for casual users needing quick, intuitive access to core
       "! functions with minimal screen complexity.
-      pervasive_mode   TYPE abap_bool,
+      pervasive_mode   TYPE ty_ua_pervasive_mode,
       "! <p class="shorttext">SAP GUI for HTML</p>
       "! The transaction supports the start from SAP GUI for HTML.
-      webgui_mode      TYPE abap_bool,
+      webgui_mode      TYPE ty_ua_support_mode,
       "! <p class="shorttext">SAP GUI for Java</p>
       "! The transaction supports the start from SAP GUI for Java.
-      platin_mode      TYPE abap_bool,
+      platin_mode      TYPE ty_ua_support_mode,
       "! <p class="shorttext">SAP GUI for Windows</p>
       "! The transaction supports the start from SAP GUI for Windows.
-      win32_mode       TYPE abap_bool,
+      win32_mode       TYPE ty_ua_support_mode,
     END OF ty_ua.
 
   TYPES:
