@@ -135,7 +135,19 @@
               "title": "Skip Initial Screen",
               "description": "Skip initial screen mode allows bypassing the first screen of the parent transaction by using predefined values.",
               "type": "string",
-              "maxLength": 1
+              "enum": [
+                "skip",
+                "show"
+              ],
+              "enumTitles": [
+                "Skip Initial Screen",
+                "Show Initial Screen"
+              ],
+              "enumDescriptions": [
+                "Skip Initial Screen",
+                "Show Initial Screen"
+              ],
+              "default": "show"
             },
             "parameterValues": {
               "title": "Parameter values",
