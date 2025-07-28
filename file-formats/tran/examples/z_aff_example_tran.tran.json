@@ -8,7 +8,6 @@
     "transactionType": "par",
     "parameterTransaction": {
       "parParentTransactionCode": "SE16",
-      "skipInitialScreenMode": "N",
       "parameterValues": [
         {
           "parameterName": "DATABROWSE-TABLENAME",
