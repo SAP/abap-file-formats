@@ -98,10 +98,10 @@ INTERFACE zif_aff_tran_v1
       not_supported TYPE ty_ua_support_mode VALUE ' ',
     END OF co_ua_support_mode.
 
+    "! $values {@link zif_aff_tran_v1.data:co_skip_initial_screen_mode}
+    "! $default {@link zif_aff_tran_v1.data:co_skip_initial_screen_mode.show}
   TYPES ty_skip_initial_screen_mode TYPE c LENGTH 1.
   CONSTANTS:
-    "! $values {@link zif_aff_tran_v1.data:co_skip_initial_screen_mode}
-    "! $default {@link zif_aff_tran_v1.data:co_skip_initial_screen_mode.skip}
     "! <p class="shorttext">Skip Initial Screen Mode</p>
     BEGIN OF co_skip_initial_screen_mode,
       "! <p class="shorttext">Skip Initial Screen</p>
