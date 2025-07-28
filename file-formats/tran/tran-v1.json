@@ -126,9 +126,22 @@
               "maximum": 2147483647
             },
             "stvMaintenanceMode": {
-              "title": "Editing of standard transaction variant allowed",
+              "title": "Editing of standard transaction variant",
               "description": "If this indicator is set, activating a transaction variant as standard transaction variant is enabled in the transaction variant maintenance. This changes how the transaction looks at runtime, when it is started directly via its transaction code.",
-              "type": "boolean"
+              "type": "string",
+              "enum": [
+                "allowed",
+                "notAllowed"
+              ],
+              "enumTitles": [
+                "Allowed",
+                "Not Allowed"
+              ],
+              "enumDescriptions": [
+                "Allowed",
+                "Not Allowed"
+              ],
+              "default": "notAllowed"
             }
           },
           "additionalProperties": false
