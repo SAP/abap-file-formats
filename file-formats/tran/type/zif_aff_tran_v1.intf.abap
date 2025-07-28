@@ -126,6 +126,20 @@ INTERFACE zif_aff_tran_v1
       show TYPE ty_skip_initial_screen_mode VALUE 'N',
     END OF co_skip_initial_screen_mode.
 
+  "! $values {@link zif_aff_tran_v1.data:co_variant_maintenance_mode}
+  "! $default {@link zif_aff_tran_v1.data:co_variant_maintenance_mode.no_allowed}
+  TYPES ty_variant_maintenance_mode TYPE c LENGTH 1.
+  CONSTANTS:
+    "! <p class="shorttext">Editing of standard transaction variant</p>
+    BEGIN OF co_variant_maintenance_mode,
+      "! <p class="shorttext">Allowed</p>
+      "! Allowed
+      allowed TYPE ty_variant_maintenance_mode VALUE 'A',
+      "! <p class="shorttext">Not Allowed</p>
+      "! Not Allowed
+      not_allowed TYPE ty_variant_maintenance_mode VALUE 'N',
+    END OF co_variant_maintenance_mode.
+
   "! $values {@link zif_aff_tran_v1.data:co_update_mode}
   "! $default {@link zif_aff_tran_v1.data:co_update_mode.asynchronous}
   TYPES ty_update_mode TYPE c LENGTH 1.
