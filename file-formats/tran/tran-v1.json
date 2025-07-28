@@ -92,7 +92,20 @@
         "lockStatus": {
           "title": "Lock Status",
           "description": "Transaction lock status indicates whether a transaction is currently blocked from execution. It helps prevent unauthorized or unintended use, especially during maintenance, development, or when a transaction is obsolete or being phased out.",
-          "type": "boolean"
+          "type": "string",
+          "enum": [
+            "locked",
+            "notLocked"
+          ],
+          "enumTitles": [
+            "Locked",
+            "Not Locked"
+          ],
+          "enumDescriptions": [
+            "Locked",
+            "Not locked"
+          ],
+          "default": "notLocked"
         },
         "dialogTransaction": {
           "title": "Dialog Transaction",
@@ -140,8 +153,8 @@
                 "show"
               ],
               "enumTitles": [
-                "Skip Initial Screen",
-                "Show Initial Screen"
+                "Skip",
+                "Show"
               ],
               "enumDescriptions": [
                 "Skip Initial Screen",

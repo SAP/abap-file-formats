@@ -98,16 +98,30 @@ INTERFACE zif_aff_tran_v1
       not_supported TYPE ty_ua_support_mode VALUE ' ',
     END OF co_ua_support_mode.
 
-    "! $values {@link zif_aff_tran_v1.data:co_skip_initial_screen_mode}
-    "! $default {@link zif_aff_tran_v1.data:co_skip_initial_screen_mode.show}
+  "! $values {@link zif_aff_tran_v1.data:co_lock_status}
+  "! $default {@link zif_aff_tran_v1.data:co_lock_status.Not_Locked}
+  TYPES ty_lock_status TYPE c LENGTH 1.
+  CONSTANTS:
+    "! <p class="shorttext">Lock Status</p>
+    BEGIN OF co_lock_status,
+      "! <p class="shorttext">Locked</p>
+      "! Locked
+      locked     TYPE ty_lock_status VALUE 'X',
+      "! <p class="shorttext">Not Locked</p>
+      "! Not locked
+      not_locked TYPE ty_lock_status VALUE ' ',
+    END OF co_lock_status.
+
+  "! $values {@link zif_aff_tran_v1.data:co_skip_initial_screen_mode}
+  "! $default {@link zif_aff_tran_v1.data:co_skip_initial_screen_mode.show}
   TYPES ty_skip_initial_screen_mode TYPE c LENGTH 1.
   CONSTANTS:
     "! <p class="shorttext">Skip Initial Screen Mode</p>
     BEGIN OF co_skip_initial_screen_mode,
-      "! <p class="shorttext">Skip Initial Screen</p>
+      "! <p class="shorttext">Skip</p>
       "! Skip Initial Screen
       skip TYPE ty_skip_initial_screen_mode VALUE 'Y',
-      "! <p class="shorttext">Show Initial Screen</p>
+      "! <p class="shorttext">Show</p>
       "! Show Initial Screen
       show TYPE ty_skip_initial_screen_mode VALUE 'N',
     END OF co_skip_initial_screen_mode.
@@ -488,7 +502,7 @@ INTERFACE zif_aff_tran_v1
       "! Transaction lock status indicates whether a transaction is currently blocked from execution.
       "! It helps prevent unauthorized or unintended use, especially during maintenance, development,
       "! or when a transaction is obsolete or being phased out.
-      lock_status           TYPE abap_bool,
+      lock_status           TYPE ty_lock_status,
       "! <p class="shorttext">Dialog Transaction</p>
       "! The runtime calls a dynpro of a function group, module pool or report.
       "! The dynpro specified as initial screen must not be a selection screen.
