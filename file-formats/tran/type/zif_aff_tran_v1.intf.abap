@@ -127,7 +127,7 @@ INTERFACE zif_aff_tran_v1
     END OF co_skip_initial_screen_mode.
 
   "! $values {@link zif_aff_tran_v1.data:co_variant_maintenance_mode}
-  "! $default {@link zif_aff_tran_v1.data:co_variant_maintenance_mode.no_allowed}
+  "! $default {@link zif_aff_tran_v1.data:co_variant_maintenance_mode.not_allowed}
   TYPES ty_variant_maintenance_mode TYPE c LENGTH 1.
   CONSTANTS:
     "! <p class="shorttext">Editing of standard transaction variant</p>
@@ -166,11 +166,11 @@ INTERFACE zif_aff_tran_v1
       "! <p class="shorttext">Dynpro</p>
       "! Transaction start dynpro number for dialog transaction
       program_dynnr        TYPE i,
-      "! <p class="shorttext">Editing of standard transaction variant allowed</p>
+      "! <p class="shorttext">Editing of standard transaction variant</p>
       "! If this indicator is set, activating a transaction variant as standard transaction variant
       "! is enabled in the transaction variant maintenance.
       "! This changes how the transaction looks at runtime, when it is started directly via its transaction code.
-      stv_maintenance_mode TYPE abap_bool,
+      stv_maintenance_mode TYPE ty_variant_maintenance_mode,
     END OF ty_dia.
 
   TYPES:
