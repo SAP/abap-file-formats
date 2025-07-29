@@ -1,4 +1,12 @@
-# CHDO File Format
+# Change Document Object File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+CHDO | Change Document Object | Change Document Management
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :---  | :--- | :--- | :---

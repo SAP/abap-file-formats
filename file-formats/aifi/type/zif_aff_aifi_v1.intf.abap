@@ -284,7 +284,6 @@ INTERFACE zif_aff_aifi_v1
       " /AIF/IS_HIDDEN, swap to positive stature
       "! <p class="shorttext">Show Tree Node</p>
       "! Show tree node in view 1 tree
-      "! $default 'X'
       is_tree_node_visible        TYPE abap_bool,
       " (type /aif/alertrelevant)
       "! <p class="shorttext">Relevant for Alert Recipient Determination</p>
@@ -307,7 +306,6 @@ INTERFACE zif_aff_aifi_v1
       " /AIF/NOT_SHOW_FIELD
       "! <p class="shorttext">Display in Message Monitoring</p>
       "! Display in message monitoring
-      "! $default 'X'
       is_shown_in_message_monitor TYPE abap_bool,
       " /AIF/IS_DEFAULT_FIELD
       "! <p class="shorttext">Display in Message Monitoring by Default</p>
@@ -382,7 +380,6 @@ INTERFACE zif_aff_aifi_v1
       " /AIF/IS_COL
       "! <p class="shorttext">Display Column</p>
       "! Display the column
-      "! $default 'X'
       is_column_display   TYPE abap_bool,
       "! <p class="shorttext">Key Field Determination by Qualifier</p>
       "! Key field determination by qualifier
@@ -426,7 +423,6 @@ INTERFACE zif_aff_aifi_v1
       " (type /aif/use_ddic)
       "! <p class="shorttext">Use DDIC</p>
       "! Use ddic description?
-      "! $default 'X'
       uses_ddic     TYPE abap_bool,
       " (type /aif/err_lb_description)
       "! <p class="shorttext">Description</p>

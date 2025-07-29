@@ -1,4 +1,12 @@
-# AIFN File Format
+# Namespace File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+AIFN | Namespace | Application Interface Framework
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :--- | :--- | :--- | :---

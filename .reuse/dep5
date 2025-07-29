@@ -1,8 +1,0 @@
-Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: ABAP file formats
-Upstream-Contact: ABAP file formats team <abap-file-formats@sap.com>
-Source: https://github.com/SAP/abap-file-formats
-
-Files: *
-Copyright: 2021 SAP SE or an SAP affiliate company and ABAP File Formats contributors
-License: MIT

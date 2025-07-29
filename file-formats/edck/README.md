@@ -1,4 +1,12 @@
-# EDCK File Format
+# Consistency Check File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+EDCK | Consistency Check | -
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :--- | :--- | :--- | :---

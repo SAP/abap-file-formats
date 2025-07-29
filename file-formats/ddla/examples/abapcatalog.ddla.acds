@@ -1,0 +1,31 @@
+@Scope:[#VIEW]
+annotation AbapCatalog {
+   buffering {
+      status            : String(20) enum { NOT_ALLOWED; ACTIVE; SWITCHED_OFF; } default #SWITCHED_OFF;
+      type              : String(10) enum { SINGLE; GENERIC; FULL; NONE; }       default #NONE;
+      numberOfKeyFields : Integer                                                default 000;
+   };
+
+   dbHints : array of {
+      dbSystem : String(3) enum {
+         ADA;
+         DB2;
+         DB4;
+         DB6;
+         INF;
+         MSS;
+         ORA;
+         HDB;
+         ASE;
+         ALL;
+      };
+   };
+
+   sqlViewName : String(16);
+
+   sqlViewAppendName : String(16);
+
+   compiler {
+      compareFilter : Boolean default true;
+   };
+};

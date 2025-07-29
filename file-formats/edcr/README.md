@@ -1,4 +1,12 @@
-# EDCR File Format
+# Representation Type File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+EDCR | Representation Type | -
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :--- | :--- | :--- | :---

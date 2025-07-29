@@ -1,4 +1,12 @@
-# DSFI File Format
+# Scalar Function Implementation File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+DSFI | Scalar Function Implementation | Core Data Services
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Examples
 :--- | :--- | :--- | :--- | :---

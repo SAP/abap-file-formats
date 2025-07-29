@@ -1,4 +1,12 @@
-# NTTA File Format
+# Note Type Assignment File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+NTTA | Note Type Assignment | Notes for Application Objects
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :--- | :--- | :--- | :---
