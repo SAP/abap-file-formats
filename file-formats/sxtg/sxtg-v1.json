@@ -72,13 +72,13 @@
       "description": "Transaction codes of extensible application",
       "type": "array",
       "items": {
-        "title": "Transaction Code",
-        "description": "Transaction code",
+        "title": "Transaction Codes",
+        "description": "Transaction codes",
         "type": "object",
         "properties": {
-          "transactionCode": {
-            "title": "Transaction Code",
-            "description": "Transaction code",
+          "name": {
+            "title": "Name",
+            "description": "Name of transaction code",
             "type": "string",
             "maxLength": 20
           }

@@ -1,4 +1,12 @@
-# SXTG File Format
+# SAP GUI Extension Point File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+SXTG  | SAP GUI Extension Point | Extensibility
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :--- | :--- | :--- | :---
