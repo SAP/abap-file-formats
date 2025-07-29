@@ -3,7 +3,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/sxtg/sxtg-v1.json",
   "title": "SAP GUI Extension Point",
-  "description": "SAP gui extension point for developer extensibility",
+  "description": "SAP GUI extension point for developer extensibility",
   "type": "object",
   "properties": {
     "formatVersion": {
