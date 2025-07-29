@@ -4,7 +4,7 @@ CLASS cl_run DEFINITION PUBLIC FINAL CREATE PUBLIC.
       IMPORTING
         main_object_type   TYPE string
         sub_object_type   TYPE string
-        format_version TYPE string
+        format_version TYPE i
       RETURNING
         VALUE(result) TYPE string.
 ENDCLASS.
@@ -19,6 +19,7 @@ CLASS cl_run IMPLEMENTATION.
     DATA schema_id  TYPE string.
     DATA ref        TYPE REF TO data.
     FIELD-SYMBOLS <row> LIKE LINE OF string_tab.
+    FIELD-SYMBOLS <ref> TYPE any.
 
     schema_id = |https://github.com/SAP/abap-file-formats/blob/main/file-formats/{ to_lower( main_object_type ) }/{ to_lower( sub_object_type ) }-v{ format_version }.json|.
     type_name = to_upper( |ZIF_AFF_{ sub_object_type }_V{ format_version }=>TY_MAIN| ).
@@ -34,7 +35,8 @@ CLASS cl_run IMPLEMENTATION.
       EXPORTING
         writer = writer.
 
-    string_tab = generator->zif_aff_generator~generate_type( ref->* ).
+    ASSIGN ref->* TO <ref>.
+    string_tab = generator->zif_aff_generator~generate_type( <ref> ).
 
 * workaround for transpiler/JS keywords
     LOOP AT string_tab ASSIGNING <row>.
@@ -43,7 +45,7 @@ CLASS cl_run IMPLEMENTATION.
       ENDIF.
     ENDLOOP.
 
-    CONCATENATE LINES OF string_tab INTO result SEPARATED BY |\n|.
+    CONCATENATE LINES OF string_tab INTO result SEPARATED BY cl_abap_char_utilities=>newline.
   ENDMETHOD.
 
 ENDCLASS.
