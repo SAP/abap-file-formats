@@ -36,7 +36,7 @@ INTERFACE zif_aff_sxtg_v1
 
   TYPES:
     "! <p class="shorttext">SAP GUI Extension Point</p>
-    "! SAP gui extension point for developer extensibility
+    "! SAP GUI extension point for developer extensibility
     BEGIN OF ty_main,
       "! <p class="shorttext">Format Version</p>
       "! Format version
