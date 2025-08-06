@@ -9,9 +9,7 @@
     "uiAttributes": {
       "inheritanceMode": "active",
       "pervasiveMode": "disabled",
-      "webguiMode": "S",
-      "platinMode": "S",
-      "win32Mode": "N"
+      "win32Mode": "notSupported"
     }
   },
   "authorizations": {
