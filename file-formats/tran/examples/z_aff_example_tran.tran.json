@@ -4,22 +4,15 @@
     "description": "SE93 Test - Parameter Transaction",
     "originalLanguage": "en"
   },
-  "generalInformation": {
-    "transactionType": "par",
-    "parameterTransaction": {
-      "parParentTransactionCode": "SE16",
-      "parameterValues": [
-        {
-          "parameterName": "DATABROWSE-TABLENAME",
-          "parameterValue": "TSTC"
-        }
-      ]
-    }
-  },
+  "generalInformation": {},
   "userInterface": {
-    "inheritanceMode": "active",
-    "pervasiveMode": "disabled",
-    "win32Mode": "notSupported"
+    "uiAttributes": {
+      "inheritanceMode": "active",
+      "pervasiveMode": "disabled",
+      "webguiMode": "S",
+      "platinMode": "S",
+      "win32Mode": "N"
+    }
   },
   "authorizations": {
     "authorizationDefaults": {

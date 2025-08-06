@@ -59,402 +59,417 @@
     },
     "generalInformation": {
       "title": "General Information",
-      "description": "General Information contains details about the transaction, depending on the transaction type.",
+      "description": "The general information contains details about the transaction, depending on the transaction type.",
       "type": "object",
       "properties": {
-        "transactionType": {
-          "title": "Transaction Type",
-          "description": "The transaction type defines which object will be started at runtime when the transaction is called. Depending on the transaction type, other type of object can be started and different fields become relevant.",
-          "type": "string",
-          "enum": [
-            "dia",
-            "oo",
-            "par",
-            "rep",
-            "var"
-          ],
-          "enumTitles": [
-            "Dialog Transaction",
-            "OO Transaction",
-            "Parameter Transaction",
-            "Report Transaction",
-            "Variant Transaction"
-          ],
-          "enumDescriptions": [
-            "The runtime calls a dynpro of a function group, module pool or report. The dynpro specified as initial screen must not be a selection screen. The program logic defines which screens are displayed after the initial screen.",
-            "At runtime, the system calls a class method. The transaction links to either the ABAP Object Services Transaction Service (for persistent objects) or to a public method of a class. For instance methods, the system auto-creates a class instance.",
-            "Parameter transactions specialize dialog or report transactions by presetting initial screen values. You can also skip the initial screen to prevent users from changing these predefined values.",
-            "The runtime calls a dynpro of a report. The dynpro specified as initial screen must be a selection screen. The execution of a report usually has three stages: data entry, data processing, and data output.",
-            "Variant transactions customize dialog or report transactions by adapting menus and screens at runtime. They let you preset field values, set field attributes, or hide screens to streamline user interaction."
-          ],
-          "default": "par"
-        },
-        "lockStatus": {
-          "title": "Lock Status",
-          "description": "Transaction lock status indicates whether a transaction is currently blocked from execution. It helps prevent unauthorized or unintended use, especially during maintenance, development, or when a transaction is obsolete or being phased out.",
-          "type": "string",
-          "enum": [
-            "locked",
-            "notLocked"
-          ],
-          "enumTitles": [
-            "Locked",
-            "Not Locked"
-          ],
-          "enumDescriptions": [
-            "Locked",
-            "Not locked"
-          ],
-          "default": "notLocked"
-        },
-        "dialogTransaction": {
-          "title": "Dialog Transaction",
-          "description": "The runtime calls a dynpro of a function group, module pool or report. The dynpro specified as initial screen must not be a selection screen. The program logic defines which screens are displayed after the initial screen.",
+        "implementation": {
+          "title": "Implementation",
+          "description": "The implementation contains details about the transaction, depending on the transaction type.",
           "type": "object",
           "properties": {
-            "programName": {
-              "title": "Program",
-              "description": "Program name for dialog transaction",
-              "type": "string",
-              "maxLength": 40
-            },
-            "programDynnr": {
-              "title": "Dynpro",
-              "description": "Transaction start dynpro number for dialog transaction",
-              "type": "integer",
-              "minimum": -2147483648,
-              "maximum": 2147483647
-            },
-            "stvMaintenanceMode": {
-              "title": "Editing of standard transaction variant",
-              "description": "If this indicator is set, activating a transaction variant as standard transaction variant is enabled in the transaction variant maintenance. This changes how the transaction looks at runtime, when it is started directly via its transaction code.",
+            "transactionType": {
+              "title": "Transaction Type",
+              "description": "The transaction type defines which object will be started at runtime when the transaction is called. Depending on the transaction type, other type of object can be started and different fields become relevant.",
               "type": "string",
               "enum": [
-                "allowed",
-                "notAllowed"
+                "dialogTransaction",
+                "ooTransaction",
+                "parameterTransaction",
+                "reportTransaction",
+                "variantTransaction"
               ],
               "enumTitles": [
-                "Allowed",
-                "Not Allowed"
+                "Dialog Transaction",
+                "OO Transaction",
+                "Parameter Transaction",
+                "Report Transaction",
+                "Variant Transaction"
               ],
               "enumDescriptions": [
-                "Allowed",
-                "Not Allowed"
+                "The runtime calls a dynpro of a function group, module pool or report. The dynpro specified as initial screen must not be a selection screen. The program logic defines which screens are displayed after the initial screen.",
+                "At runtime, the system calls a class method. The transaction links to either the ABAP Object Services Transaction Service (for persistent objects) or to a public method of a class. For instance methods, the system auto-creates a class instance.",
+                "Parameter transactions specialize dialog or report transactions by presetting initial screen values. You can also skip the initial screen to prevent users from changing these predefined values.",
+                "The runtime calls a dynpro of a report. The dynpro specified as initial screen must be a selection screen. The execution of a report usually has three stages: data entry, data processing, and data output.",
+                "Variant transactions customize dialog or report transactions by adapting menus and screens at runtime. They let you preset field values, set field attributes, or hide screens to streamline user interaction."
               ],
-              "default": "notAllowed"
-            }
-          },
-          "additionalProperties": false
-        },
-        "parameterTransaction": {
-          "title": "Parameter Transaction",
-          "description": "Parameter transactions specialize dialog or report transactions by presetting initial screen values. You can also skip the initial screen to prevent users from changing these predefined values.",
-          "type": "object",
-          "properties": {
-            "parParentTransactionCode": {
-              "title": "Parent Transaction",
-              "description": "The parent transaction code of the parameter transaction defines the transaction that provides the program and the dynpro number that are started when the transaction is called. The parent transaction can be a dialog or a report transaction.",
-              "type": "string",
-              "maxLength": 20
+              "default": "parameterTransaction"
             },
-            "skipInitialScreenMode": {
-              "title": "Skip Initial Screen",
-              "description": "Skip initial screen mode allows bypassing the first screen of the parent transaction by using predefined values.",
+            "lockStatus": {
+              "title": "Lock Status",
+              "description": "Transaction lock status indicates whether a transaction is currently blocked from execution. It helps prevent unauthorized or unintended use, especially during maintenance, development, or when a transaction is obsolete or being phased out.",
               "type": "string",
               "enum": [
-                "skip",
-                "show"
+                "locked",
+                "notLocked"
               ],
               "enumTitles": [
-                "Skip",
-                "Show"
+                "Locked",
+                "Not Locked"
               ],
               "enumDescriptions": [
-                "Skip Initial Screen",
-                "Show Initial Screen"
+                "Locked",
+                "Not locked"
               ],
-              "default": "show"
+              "default": "notLocked"
             },
-            "parameterValues": {
-              "title": "Parameter values",
-              "description": "Parameter values",
-              "type": "array",
-              "items": {
-                "title": "Parameter Value",
-                "description": "Parameter transaction parameter value",
-                "type": "object",
-                "properties": {
-                  "parameterName": {
-                    "title": "Parameter Name",
-                    "description": "Name of the parameter for the parameter transaction",
-                    "type": "string",
-                    "maxLength": 132
-                  },
-                  "parameterValue": {
-                    "title": "Parameter Value",
-                    "description": "Value for the parameter of the parameter transaction",
-                    "type": "string",
-                    "maxLength": 50
-                  }
+            "dialogTransaction": {
+              "title": "Dialog Transaction",
+              "description": "The runtime calls a dynpro of a function group, module pool or report. The dynpro specified as initial screen must not be a selection screen. The program logic defines which screens are displayed after the initial screen.",
+              "type": "object",
+              "properties": {
+                "programName": {
+                  "title": "Program",
+                  "description": "Program name for dialog transaction",
+                  "type": "string",
+                  "maxLength": 40
                 },
-                "additionalProperties": false,
-                "required": [
-                  "parameterName"
-                ]
-              }
+                "programDynnr": {
+                  "title": "Dynpro",
+                  "description": "Transaction start dynpro number for dialog transaction",
+                  "type": "string",
+                  "maxLength": 4,
+                  "pattern": "^[0-9]+$"
+                },
+                "stvMaintenanceMode": {
+                  "title": "Standard Transaction Variant Maintenance",
+                  "description": "If the standard transaction variant maintenance mode is allowed, activating a transaction variant as standard transaction variant is enabled in the transaction variant maintenance.",
+                  "type": "string",
+                  "enum": [
+                    "allowed",
+                    "notAllowed"
+                  ],
+                  "enumTitles": [
+                    "Allowed",
+                    "Not Allowed"
+                  ],
+                  "enumDescriptions": [
+                    "Allowed",
+                    "Not Allowed"
+                  ],
+                  "default": "notAllowed"
+                }
+              },
+              "additionalProperties": false
+            },
+            "parameterTransaction": {
+              "title": "Parameter Transaction",
+              "description": "Parameter transactions specialize dialog or report transactions by presetting initial screen values. You can also skip the initial screen to prevent users from changing these predefined values.",
+              "type": "object",
+              "properties": {
+                "parParentTransactionCode": {
+                  "title": "Parent Transaction",
+                  "description": "The parent transaction code of the parameter transaction defines the transaction that provides the program and the dynpro number that are started when the transaction is called. The parent transaction can be a dialog or a report transaction.",
+                  "type": "string",
+                  "maxLength": 20
+                },
+                "skipInitialScreenMode": {
+                  "title": "Skip Initial Screen",
+                  "description": "Skip initial screen mode allows bypassing the first screen of the parent transaction by using predefined values.",
+                  "type": "string",
+                  "enum": [
+                    "skip",
+                    "show"
+                  ],
+                  "enumTitles": [
+                    "Skip",
+                    "Show"
+                  ],
+                  "enumDescriptions": [
+                    "Skip Initial Screen",
+                    "Show Initial Screen"
+                  ],
+                  "default": "show"
+                },
+                "parameterValues": {
+                  "title": "Parameter values",
+                  "description": "Parameter values",
+                  "type": "array",
+                  "items": {
+                    "title": "Parameter Value",
+                    "description": "Parameter transaction parameter value",
+                    "type": "object",
+                    "properties": {
+                      "parameterName": {
+                        "title": "Parameter Name",
+                        "description": "Name of the parameter for the parameter transaction",
+                        "type": "string",
+                        "maxLength": 132
+                      },
+                      "parameterValue": {
+                        "title": "Parameter Value",
+                        "description": "Value for the parameter of the parameter transaction",
+                        "type": "string",
+                        "maxLength": 50
+                      }
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                      "parameterName"
+                    ]
+                  }
+                }
+              },
+              "additionalProperties": false,
+              "required": [
+                "parParentTransactionCode"
+              ]
+            },
+            "reportTransaction": {
+              "title": "Report Transaction",
+              "description": "The runtime calls a dynpro of a report. The dynpro specified as initial screen must be a selection screen. The execution of a report usually has three stages: data entry, data processing, and data output.",
+              "type": "object",
+              "properties": {
+                "reportName": {
+                  "title": "Report",
+                  "description": "Report name for the report transaction",
+                  "type": "string",
+                  "maxLength": 40
+                },
+                "reportDynnr": {
+                  "title": "Screen",
+                  "description": "Transaction start selection screen for the report transaction",
+                  "type": "string",
+                  "maxLength": 4
+                },
+                "reportVariantName": {
+                  "title": "Variant",
+                  "description": "Variant name for the report transaction",
+                  "type": "string",
+                  "maxLength": 14
+                }
+              },
+              "additionalProperties": false
+            },
+            "ooTransaction": {
+              "title": "OO Transaction",
+              "description": "At runtime, the system calls a class method. The transaction links to either the ABAP Object Services Transaction Service (for persistent objects) or to a public method of a class. For instance methods, the system auto-creates a class instance.",
+              "type": "object",
+              "properties": {
+                "localInProgramIndi": {
+                  "title": "Local in Program",
+                  "description": "If this indicator is set, the OO transaction uses a local ABAP class within this specified ABAP program. Otherwise it uses a global ABAP class.",
+                  "type": "boolean"
+                },
+                "classProgramName": {
+                  "title": "Program",
+                  "description": "Name of the program for the OO transacton",
+                  "type": "string",
+                  "maxLength": 40
+                },
+                "className": {
+                  "title": "Class",
+                  "description": "Name of the ABAP class",
+                  "type": "string",
+                  "maxLength": 30
+                },
+                "methodName": {
+                  "title": "Method",
+                  "description": "Name of the method of the ABAP class",
+                  "type": "string",
+                  "maxLength": 61
+                },
+                "ooTransactionModelIndi": {
+                  "title": "OO Transaction Model",
+                  "description": "If this indicator is set, the OO transaction follows the object-oriented transaction model. See the interface IF_OS_TRANSACTION_MANAGER for more information.",
+                  "type": "boolean"
+                },
+                "updateMode": {
+                  "title": "Update Mode",
+                  "description": "The update mode for an OO transaction defines how data changes are processed: synchronously, asynchronously, or immediately.",
+                  "type": "string",
+                  "enum": [
+                    "asynchronous",
+                    "synchronous",
+                    "local"
+                  ],
+                  "enumTitles": [
+                    "Asynchronous",
+                    "Synchronous",
+                    "Local"
+                  ],
+                  "enumDescriptions": [
+                    "Asynchronous",
+                    "Synchronous",
+                    "Local"
+                  ],
+                  "default": "asynchronous"
+                }
+              },
+              "additionalProperties": false,
+              "required": [
+                "className",
+                "methodName"
+              ]
+            },
+            "variantTransaction": {
+              "title": "Variant Transaction",
+              "description": "Variant transactions customize dialog or report transactions by adapting menus and screens at runtime. They let you preset field values, set field attributes, or hide screens to streamline user interaction.",
+              "type": "object",
+              "properties": {
+                "varParentTransactionCode": {
+                  "title": "Parent Transaction",
+                  "description": "The parent transaction code links related transaction to its original (parent) transaction. It enables inheritance of settings like UI attributes or authorizations, ensuring consistency and reducing duplication in configuration.",
+                  "type": "string",
+                  "maxLength": 20
+                },
+                "transactionVariantCiIndi": {
+                  "title": "Cross-Client",
+                  "description": "If the indicator is set, the transaction variant is cross-client. If the switch is not set, the transaction variant is client-specific.",
+                  "type": "boolean"
+                },
+                "transactionCiVariantName": {
+                  "title": "Transaction Variant",
+                  "description": "Name of the cross-client transaction variant. A cross-client transaction variant is available in the system regardless of which client is currently active, and the field contents used in the transaction variant must be available in all clients.",
+                  "type": "string",
+                  "maxLength": 30
+                },
+                "transactionVariantName": {
+                  "title": "Transaction Variant",
+                  "description": "Name of the client-specific transaction variant. A client-specific transaction variant exists only in the client where it was created, and the field contents used in the transaction variant must be available in that client.",
+                  "type": "string",
+                  "maxLength": 30
+                }
+              },
+              "additionalProperties": false,
+              "required": [
+                "varParentTransactionCode"
+              ]
             }
           },
           "additionalProperties": false,
           "required": [
-            "parParentTransactionCode"
-          ]
-        },
-        "reportTransaction": {
-          "title": "Report Transaction",
-          "description": "The runtime calls a dynpro of a report. The dynpro specified as initial screen must be a selection screen. The execution of a report usually has three stages: data entry, data processing, and data output.",
-          "type": "object",
-          "properties": {
-            "reportName": {
-              "title": "Report",
-              "description": "Report name for the report transaction",
-              "type": "string",
-              "maxLength": 40
-            },
-            "reportDynnr": {
-              "title": "Screen",
-              "description": "Transaction start selection screen for the report transaction",
-              "type": "integer",
-              "minimum": -2147483648,
-              "maximum": 2147483647
-            },
-            "reportVariantName": {
-              "title": "Variant",
-              "description": "Variant name for the report transaction",
-              "type": "string",
-              "maxLength": 14
-            }
-          },
-          "additionalProperties": false
-        },
-        "ooTransaction": {
-          "title": "OO Transaction",
-          "description": "At runtime, the system calls a class method. The transaction links to either the ABAP Object Services Transaction Service (for persistent objects) or to a public method of a class. For instance methods, the system auto-creates a class instance.",
-          "type": "object",
-          "properties": {
-            "localInProgramIndi": {
-              "title": "Local in Program",
-              "description": "If this indicator is set, the OO transaction uses a local ABAP class within this specified ABAP program. Otherwise it uses a global ABAP class.",
-              "type": "boolean"
-            },
-            "classProgramName": {
-              "title": "Program",
-              "description": "Name of the program for the OO transacton",
-              "type": "string",
-              "maxLength": 40
-            },
-            "className": {
-              "title": "Class",
-              "description": "Name of the ABAP class",
-              "type": "string",
-              "maxLength": 30
-            },
-            "methodName": {
-              "title": "Method Name",
-              "description": "Name of the method of the ABAP class",
-              "type": "string",
-              "maxLength": 61
-            },
-            "ooTransactionModelIndi": {
-              "title": "OO Transaction Model",
-              "description": "If this indicator is set, the OO transaction follows the object-oriented transaction model. See the interface IF_OS_TRANSACTION_MANAGER for more information.",
-              "type": "boolean"
-            },
-            "updateMode": {
-              "title": "Update Mode",
-              "description": "The update mode for an OO transaction defines how data changes are processed: synchronously, asynchronously, or immediately.",
-              "type": "string",
-              "enum": [
-                "asynchronous",
-                "synchronous",
-                "local"
-              ],
-              "enumTitles": [
-                "Asynchronous",
-                "Synchronous",
-                "Local"
-              ],
-              "enumDescriptions": [
-                "Asynchronous",
-                "Synchronous",
-                "Local"
-              ],
-              "default": "asynchronous"
-            }
-          },
-          "additionalProperties": false,
-          "required": [
-            "className",
-            "methodName"
-          ]
-        },
-        "variantTransaction": {
-          "title": "Variant Transaction",
-          "description": "Variant transactions customize dialog or report transactions by adapting menus and screens at runtime. They let you preset field values, set field attributes, or hide screens to streamline user interaction.",
-          "type": "object",
-          "properties": {
-            "varParentTransactionCode": {
-              "title": "Parent Transaction",
-              "description": "The parent transaction code links related transaction to its original (parent) transaction. It enables inheritance of settings like UI attributes or authorizations, ensuring consistency and reducing duplication in configuration.",
-              "type": "string",
-              "maxLength": 20
-            },
-            "transactionVariantCiIndi": {
-              "title": "Cross Client",
-              "description": "If the indicator is set, the transaction variant is cross-client. If the switch is not set, the transaction variant is client-specific.",
-              "type": "boolean"
-            },
-            "transactionCiVariantName": {
-              "title": "Transaction Variant",
-              "description": "Name of the cross-client transaction variant. A cross-client transaction variant is available in the system regardless of which client is currently active, and the field contents used in the transaction variant must be available in all clients.",
-              "type": "string",
-              "maxLength": 30
-            },
-            "transactionVariantName": {
-              "title": "Transaction Variant",
-              "description": "Name of the client-specific transaction variant. A client-specific transaction variant exists only in the client where it was created, and the field contents used in the transaction variant must be available in that client.",
-              "type": "string",
-              "maxLength": 30
-            }
-          },
-          "additionalProperties": false,
-          "required": [
-            "varParentTransactionCode"
+            "transactionType"
           ]
         }
       },
-      "additionalProperties": false,
-      "required": [
-        "transactionType"
-      ]
+      "additionalProperties": false
     },
     "userInterface": {
       "title": "User Interface",
       "description": "User Interface manage UI classification and GUI support",
       "type": "object",
       "properties": {
-        "inheritanceMode": {
-          "title": "Inherit UI Attributes",
-          "description": "Transaction UI Attributes Inheritance Mode controls how UI settings like screen variants or field attributes are inherited from a parent transaction to its variants, ensuring consistent user interfaces across related transactions.",
-          "type": "string",
-          "enum": [
-            "active",
-            "inactive"
-          ],
-          "enumTitles": [
-            "Active",
-            "Inactive"
-          ],
-          "enumDescriptions": [
-            "Active",
-            "Inactive"
-          ],
-          "default": "inactive"
-        },
-        "uiClassification": {
-          "title": "UI Classification",
-          "description": "Professional User Transactions emulate SAP GUI for Windows, suited for expert users handling complex tasks. Easy Web Transactions offer a simplified, web-friendly UI via SAP GUI for HTML, ideal for casual users, without menus or toolbars.",
-          "type": "string",
-          "enum": [
-            "professionalUserTransaction",
-            "easyWebTransaction"
-          ],
-          "enumTitles": [
-            "Professional User Transaction",
-            "Easy Web Transaction"
-          ],
-          "enumDescriptions": [
-            "Professional User Transactions are designed for experienced, frequent users of the SAP System who mainly run highly complex transactions.",
-            "Easy Web Transactions are the logical further development of Internet Application Components (IACs). You must specify a service name for an Easy Web Transactions, if one exists and is different from the name of the transaction."
-          ],
-          "default": "professionalUserTransaction"
-        },
-        "iacServiceName": {
-          "title": "Service",
-          "description": "The Service Name of an Internet Application Component (IAC) links a transaction to a web service, enabling its execution via a browser. It's required for Easy Web Transactions if the service name differs from the transaction name.",
-          "type": "string",
-          "maxLength": 14
-        },
-        "pervasiveMode": {
-          "title": "Pervasive Enabled",
-          "description": "Transaction Pervasive Mode enables a simplified, responsive UI for transactions on various devices, like tablets or smartphones. It's designed for casual users needing quick, intuitive access to core functions with minimal screen complexity.",
-          "type": "string",
-          "enum": [
-            "disabled",
-            "enabled"
-          ],
-          "enumTitles": [
-            "Disabled",
-            "Enabled"
-          ],
-          "enumDescriptions": [
-            "Disabled",
-            "Enabled"
-          ],
-          "default": "enabled"
-        },
-        "webguiMode": {
-          "title": "SAP GUI for HTML",
-          "description": "The transaction supports the start from SAP GUI for HTML.",
-          "type": "string",
-          "enum": [
-            "supported",
-            "notSupported"
-          ],
-          "enumTitles": [
-            "Supported",
-            "Not Supported"
-          ],
-          "enumDescriptions": [
-            "Supported",
-            "Not Supported"
-          ],
-          "default": "supported"
-        },
-        "platinMode": {
-          "title": "SAP GUI for Java",
-          "description": "The transaction supports the start from SAP GUI for Java.",
-          "type": "string",
-          "enum": [
-            "supported",
-            "notSupported"
-          ],
-          "enumTitles": [
-            "Supported",
-            "Not Supported"
-          ],
-          "enumDescriptions": [
-            "Supported",
-            "Not Supported"
-          ],
-          "default": "supported"
-        },
-        "win32Mode": {
-          "title": "SAP GUI for Windows",
-          "description": "The transaction supports the start from SAP GUI for Windows.",
-          "type": "string",
-          "enum": [
-            "supported",
-            "notSupported"
-          ],
-          "enumTitles": [
-            "Supported",
-            "Not Supported"
-          ],
-          "enumDescriptions": [
-            "Supported",
-            "Not Supported"
-          ],
-          "default": "supported"
+        "uiAttributes": {
+          "title": "UI Attributes",
+          "description": "UI attributes manage UI classification and GUI support",
+          "type": "object",
+          "properties": {
+            "inheritanceMode": {
+              "title": "Inherit UI Attributes",
+              "description": "Transaction UI Attributes Inheritance Mode controls how UI settings like screen variants or field attributes are inherited from a parent transaction to its variants, ensuring consistent user interfaces across related transactions.",
+              "type": "string",
+              "enum": [
+                "active",
+                "inactive"
+              ],
+              "enumTitles": [
+                "Active",
+                "Inactive"
+              ],
+              "enumDescriptions": [
+                "Active",
+                "Inactive"
+              ],
+              "default": "inactive"
+            },
+            "uiClassification": {
+              "title": "UI Classification",
+              "description": "Professional User Transactions emulate SAP GUI for Windows, suited for expert users handling complex tasks. Easy Web Transactions offer a simplified, web-friendly UI via SAP GUI for HTML, ideal for casual users, without menus or toolbars.",
+              "type": "string",
+              "enum": [
+                "professionalUserTransaction",
+                "easyWebTransaction"
+              ],
+              "enumTitles": [
+                "Professional User Transaction",
+                "Easy Web Transaction"
+              ],
+              "enumDescriptions": [
+                "Professional User Transactions are designed for experienced, frequent users of the SAP System who mainly run highly complex transactions.",
+                "Easy Web Transactions are the logical further development of Internet Application Components (IACs). You must specify a service name for an Easy Web Transactions, if one exists and is different from the name of the transaction."
+              ],
+              "default": "professionalUserTransaction"
+            },
+            "iacServiceName": {
+              "title": "Service",
+              "description": "The Service Name of an Internet Application Component (IAC) links a transaction to a web service, enabling its execution via a browser. It's required for Easy Web Transactions if the service name differs from the transaction name.",
+              "type": "string",
+              "maxLength": 14
+            },
+            "pervasiveMode": {
+              "title": "Pervasive Enabled",
+              "description": "Transaction Pervasive Mode enables a simplified, responsive UI for transactions on various devices, like tablets or smartphones. It's designed for casual users needing quick, intuitive access to core functions with minimal screen complexity.",
+              "type": "string",
+              "enum": [
+                "disabled",
+                "enabled"
+              ],
+              "enumTitles": [
+                "Disabled",
+                "Enabled"
+              ],
+              "enumDescriptions": [
+                "Disabled",
+                "Enabled"
+              ],
+              "default": "enabled"
+            },
+            "webguiMode": {
+              "title": "SAP GUI for HTML",
+              "description": "The transaction supports the start from SAP GUI for HTML.",
+              "type": "string",
+              "enum": [
+                "supported",
+                "notSupported"
+              ],
+              "enumTitles": [
+                "Supported",
+                "Not Supported"
+              ],
+              "enumDescriptions": [
+                "Supported",
+                "Not Supported"
+              ],
+              "default": "supported"
+            },
+            "platinMode": {
+              "title": "SAP GUI for Java",
+              "description": "The transaction supports the start from SAP GUI for Java.",
+              "type": "string",
+              "enum": [
+                "supported",
+                "notSupported"
+              ],
+              "enumTitles": [
+                "Supported",
+                "Not Supported"
+              ],
+              "enumDescriptions": [
+                "Supported",
+                "Not Supported"
+              ],
+              "default": "supported"
+            },
+            "win32Mode": {
+              "title": "SAP GUI for Windows",
+              "description": "The transaction supports the start from SAP GUI for Windows.",
+              "type": "string",
+              "enum": [
+                "supported",
+                "notSupported"
+              ],
+              "enumTitles": [
+                "Supported",
+                "Not Supported"
+              ],
+              "enumDescriptions": [
+                "Supported",
+                "Not Supported"
+              ],
+              "default": "supported"
+            }
+          },
+          "additionalProperties": false
         }
       },
       "additionalProperties": false
