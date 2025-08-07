@@ -77,9 +77,9 @@
           "type": "string",
           "maxLength": 30
         },
-        "class": {
-          "title": "Class",
-          "description": "Class",
+        "implementingClass": {
+          "title": "Implementing Class",
+          "description": "Implementing Class",
           "type": "string",
           "maxLength": 30
         }
@@ -153,7 +153,7 @@
             "description": "Fields",
             "type": "array",
             "items": {
-              "title": "Field To Check",
+              "title": "Fields To Check",
               "description": "Field to check",
               "type": "object",
               "properties": {

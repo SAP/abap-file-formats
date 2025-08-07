@@ -14,7 +14,7 @@ INTERFACE zif_aff_aifa_v1
       destination_structure TYPE c LENGTH 5 VALUE 'DST_S',
       "! <p class="shorttext">Constant</p>
       "! Field is constant value
-      constant        TYPE c LENGTH 5 VALUE 'CONST',
+      constant              TYPE c LENGTH 5 VALUE 'CONST',
       "! <p class="shorttext">System Field</p>
       "! Field is system field
       system_field          TYPE c LENGTH 5 VALUE 'SYSTF',
@@ -43,7 +43,7 @@ INTERFACE zif_aff_aifa_v1
     END OF co_error_handling_type.
 
   TYPES:
-    "! <p class="shorttext">Field To Check</p>
+    "! <p class="shorttext">Fields To Check</p>
     "! Field to check
     BEGIN OF ty_field_to_check,
       "! <p class="shorttext">Type</p>
@@ -72,9 +72,9 @@ INTERFACE zif_aff_aifa_v1
       "! <p class="shorttext">Main Component Type</p>
       "! Main component type
       main_component_type TYPE zif_aff_types_v1=>ty_object_name_30,
-      "! <p class="shorttext">Class</p>
-      "! Class
-      class               TYPE zif_aff_types_v1=>ty_object_name_30,
+      "! <p class="shorttext">Implementing Class</p>
+      "! Implementing Class
+      implementing_class  TYPE zif_aff_types_v1=>ty_object_name_30,
     END OF ty_general_information,
 
     "! <p class="shorttext">Check Details</p>

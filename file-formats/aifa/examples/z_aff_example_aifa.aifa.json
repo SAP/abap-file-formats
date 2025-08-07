@@ -9,7 +9,7 @@
     "namespace": "ZSMA4",
     "aifAction": "CREATE_PROUDCT",
     "mainComponentType": "ZLC_PRODUCT",
-    "class": "ZLC_PRODUCT_CLASS"
+    "implementing_class": "ZLC_PRODUCT_CLASS"
   },
   "fieldsToRestore": [
     {
