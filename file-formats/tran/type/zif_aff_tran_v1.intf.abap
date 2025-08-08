@@ -45,7 +45,7 @@ INTERFACE zif_aff_tran_v1
   TYPES ty_program_name  TYPE c LENGTH 40.
   "! <p class="shorttext">Dynpro</p>
   "!   Transaction Start Dynpro Number for Dialog Transaction
-  TYPES ty_program_dynnr TYPE n LENGTH 4.
+  TYPES ty_program_dynnr TYPE c LENGTH 4.
 
   "! $values {@link zif_aff_tran_v1.data:co_lock_status}
   "! $default {@link zif_aff_tran_v1.data:co_lock_status.Not_Locked}
