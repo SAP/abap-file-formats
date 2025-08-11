@@ -73,7 +73,7 @@ INTERFACE zif_aff_aifa_v1
       "! Main component type
       main_component_type TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Implementing Class</p>
-      "! Implementing Class
+      "! Implementing class
       implementing_class  TYPE zif_aff_types_v1=>ty_object_name_30,
     END OF ty_general_information,
 

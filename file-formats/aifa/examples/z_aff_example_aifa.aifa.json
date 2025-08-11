@@ -1,32 +1,34 @@
 {
-  "formatVersion": "1",
-    "header": {
-      "description": "Example AIFA for ABAP File Format",
-      "originalLanguage": "en",
-      "abapLanguageVersion": "cloudDevelopment"
-    },
+  "header": {
+    "abapLanguageVersion": "standard"
+  },
   "generalInformation": {
-    "namespace": "ZSMA4",
-    "aifAction": "CREATE_PROUDCT",
-    "mainComponentType": "ZLC_PRODUCT",
-    "implementing_class": "ZLC_PRODUCT_CLASS"
+    "namespace": "ZAIFN",
+    "aifAction": "CREATE_BUPA",
+    "mainComponentType": "ZAIF_CREATE_BUPA_STRUCTURE",
+    "implementingClass": "ZAIF_CL_CREATE_BUPA"
   },
   "fieldsToRestore": [
     {
-      "name": "INTERNAL_ID"
+      "name": "BUPA_ID"
     }
   ],
   "checks": [
     {
-      "id": "10",
-      "check": "CHECK_EMPTY",
-      "checkBehaviour": "ignoreData",
+      "id": "001",
+      "check": "BUPA_EXIST",
+      "checkBehaviour": "treatAsError",
       "fields": [
         {
           "type": "sourceStructure",
-          "name": "BUPA"
+          "name": "BUPA_ID"
+        },
+        {
+          "type": "sourceStructure",
+          "name": "BUPA_TYPE"
         }
       ]
     }
   ]
 }
+

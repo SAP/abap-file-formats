@@ -79,7 +79,7 @@
         },
         "implementingClass": {
           "title": "Implementing Class",
-          "description": "Implementing Class",
+          "description": "Implementing class",
           "type": "string",
           "maxLength": 30
         }
