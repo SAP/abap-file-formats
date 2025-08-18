@@ -2,8 +2,7 @@
   "formatVersion": "1",
   "header": {
     "description": "Example AIFA for ABAP File Format",
-    "originalLanguage": "en",
-    "abapLanguageVersion": "standard"
+    "originalLanguage": "en"
   },
   "generalInformation": {
     "namespace": "ZAIFN",
