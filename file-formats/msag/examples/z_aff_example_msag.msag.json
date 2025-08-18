@@ -1,0 +1,18 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Z_AFF_EXAMPLE_MSAG",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "A"
+  },
+  "messages": [
+    {
+      "number": "000",
+      "text": "Data saved successfully"
+    },
+    {
+      "number": "001",
+      "text": "Invalid input: &1"
+    }
+  ]
+}
