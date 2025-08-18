@@ -29,9 +29,9 @@ INTERFACE zif_aff_smtg_v1
     "! <p class="shorttext">Email Template Content</p>
     "! Displays the HTML und plain text template content.
     BEGIN OF ty_template_content,
-      "! <p class="shorttext">Template Content Name</p>
-      "! Name of the content
-      content_name TYPE string,
+      "! <p class="shorttext">Name</p>
+      "! Name
+      name TYPE string,
     END OF ty_template_content.
 
   "! <p class="shorttext">Table of Template Content Types</p>

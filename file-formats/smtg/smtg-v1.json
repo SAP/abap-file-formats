@@ -106,9 +106,9 @@
         "description": "Displays the HTML und plain text template content.",
         "type": "object",
         "properties": {
-          "contentName": {
-            "title": "Template Content Name",
-            "description": "Name of the content",
+          "name": {
+            "title": "Name",
+            "description": "Name",
             "type": "string"
           }
         },
