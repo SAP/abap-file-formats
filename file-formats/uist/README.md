@@ -1,4 +1,12 @@
-# UIST File Format
+# Launchpad Space Template File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+UIST | Launchpad Space Template | Fiori User Interface
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :---  | :--- | :--- | :---

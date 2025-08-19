@@ -1,4 +1,12 @@
-# GSMP File Format
+# Metric Provider File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+GSMP | Metric Provider | -
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :---  | :--- | :--- | :---

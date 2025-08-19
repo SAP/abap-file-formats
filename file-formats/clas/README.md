@@ -1,4 +1,12 @@
-# CLAS File Format
+# Class File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+CLAS | Class | Source Code Library
+
+## File Structure
 
 The files correspond to the tabs in ABAP Development Tools, enriched with metadata and translation relevant texts.
 

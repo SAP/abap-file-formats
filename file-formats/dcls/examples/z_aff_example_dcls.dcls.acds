@@ -1,0 +1,5 @@
+define role z_aff_example_dcls {
+  grant select on z_aff_example_ddls
+    where
+      z_aff_example_ddls.carrid = 'LH';
+}

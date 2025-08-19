@@ -1,4 +1,12 @@
-# SIAD File Format
+# Business Role Template - Launchpad Space Template Assignment File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+SIAD | Business Role Template - Launchpad Space Template Assignment | Identity and Access Management
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :--- | :--- | :--- | :---

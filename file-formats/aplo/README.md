@@ -1,4 +1,12 @@
-# APLO File Format
+# Application Log Object File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+APLO | Application Log Object | -
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :---  | :--- | :--- | :---

@@ -1,4 +1,12 @@
-# SAJC File Format
+# Application Job Catalog Entry File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+SAJC | Application Job Catalog Entry | Application Jobs
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :--- | :--- | :--- | :---

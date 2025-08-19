@@ -1,4 +1,12 @@
-# SUCO File Format
+# Authorization Default Variant File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+SUCO | Authorization Default Variant | Authorizations
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :--- | :--- | :--- | :---
