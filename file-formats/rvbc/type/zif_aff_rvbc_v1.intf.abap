@@ -53,9 +53,11 @@ INTERFACE zif_aff_rvbc_v1
     BEGIN OF ty_booklet_definition,
       "! <p class="shorttext">Source</p>
       "! Source
+      "! $required
       source             TYPE ty_source,
       "! <p class="shorttext">Status</p>
       "! Status
+      "! $required
       status             TYPE ty_status,
       "! <p class="shorttext">Fiori Application</p>
       "! Fiori application
@@ -91,6 +93,7 @@ INTERFACE zif_aff_rvbc_v1
       header             TYPE zif_aff_types_v1=>ty_header_60,
       "! <p class="shorttext">Booklet Definition</p>
       "! Booklet definition
+      "! $required
       booklet_definition TYPE ty_booklet_definition,
       "! <p class="shorttext">InA Services</p>
       "! InA services

@@ -1,4 +1,12 @@
-# DSFD File Format
+# Scalar Function Definition File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+DSFD | Scalar Function Definition | Core Data Services
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :--- | :--- | :--- | :---

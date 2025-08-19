@@ -1,4 +1,12 @@
-# BGQC File Format
+# Background Processing Context File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+BGQC | Background Processing Context | -
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :---  | :--- | :--- | :---

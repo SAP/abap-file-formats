@@ -1,4 +1,12 @@
-# SRVB File Format
+# Service Binding File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+SRVB | Service Binding | Business Services
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :---  | :--- | :--- | :---

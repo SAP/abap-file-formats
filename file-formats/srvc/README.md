@@ -1,4 +1,12 @@
-# SRVC File Format
+# Service Consumption Model File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+SRVC | Service Consumption Model | Business Services
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :---  | :--- | :--- | :---
