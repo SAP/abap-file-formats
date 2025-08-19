@@ -6,6 +6,7 @@
     "abapLanguageVersion": "cloudDevelopment"
   },
   "generalInformation":{
-      "namespace": "AIFNS"
+      "namespace": "AIFNS",
+      "aifRecipient": "REC_WS_INB"
   }
 }

@@ -1,4 +1,12 @@
-# SWCR File Format
+# Software Component Relations File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+SWCR | Software Component Relations | -
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :---  | :--- | :--- | :---

@@ -1,0 +1,75 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Sample Consistency Scenario",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "countryCode": "MX"
+  },
+  "representationTypes": [
+    {
+      "name": "EDOCUMENT"
+    },
+    {
+      "name": "TAXAUTHDOC"
+    }
+  ],
+  "comparisonTypesAndEvents": {
+    "comparisonTypes": [
+      {
+        "name": "EDOCv/sTAXAUTH",
+        "description": "example",
+        "positionNumber": "1",
+        "implementingClass": "CL_EXAMPLE",
+        "dataSource": "CL_CDS_EXAMPLE",
+        "checks": {
+          "existenceCheck": {
+            "checkId": "EXIST",
+            "fieldName": "EXAMPLE",
+            "fieldValue": "VAL",
+            "resultProcess": "EXAMPLERES"
+          }
+        },
+        "representationTypes": [
+          {
+            "name": "EDOCUMENT"
+          },
+          {
+            "name": "TAXAUTHDOC"
+          }
+        ]
+      }
+    ],
+    "events": [
+      {
+        "name": "EDOC_SUBMIT",
+        "comparisonTypesAndChecks": [
+          {
+            "comparisonType": "EDOCv/sTAXAUTH",
+            "checkId": "EXIST"
+          }
+        ],
+        "checkRelevance": [
+          {
+            "comparisonType": "EDOCv/sTAXAUTH",
+            "checkId": "EXIST",
+            "relevance": "unchanged"
+          }
+        ]
+      }
+    ],
+    "inconsistencyCategories": [
+      {
+        "name": "GROUPRESULT",
+        "description": "example",
+        "resultProcesses": [
+          {
+            "name": "EXAMPLERES"
+          }
+        ]
+      }
+    ]
+  }
+}

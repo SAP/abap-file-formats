@@ -1,4 +1,12 @@
-# SUSI File Format
+# Authorization Default (External) File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+SUSI | Authorization Default (External) | Authorizations
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :--- | :--- | :--- | :---

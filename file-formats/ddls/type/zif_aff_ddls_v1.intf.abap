@@ -4,6 +4,7 @@ INTERFACE zif_aff_ddls_v1
   "! <p class="shorttext">Source Type</p>
   "! Source type
   "! $values {@link zif_aff_ddls_v1.data:co_source_type}
+  "! $default {@link zif_aff_ddls_v1.data:co_source_type.unknown}
   TYPES ty_source_type TYPE c LENGTH 1.
 
   "! <p class="shorttext">Source Origin</p>
@@ -45,6 +46,12 @@ INTERFACE zif_aff_ddls_v1
       "! <p class="shorttext">Projection View</p>
       "! Projection view
       projection_view    TYPE ty_source_type VALUE 'P',
+      "! <p class="shorttext">External Entity</p>
+      "! External entity
+      external_entity    TYPE ty_source_type VALUE 'O',
+      "! <p class="shorttext">Unknown</p>
+      "! Unknown
+      unknown            TYPE ty_source_type VALUE ' ',
     END OF co_source_type,
 
     "! <p class="shorttext">Source Origin</p>

@@ -1,4 +1,12 @@
-# NTTY File Format
+# Note Type File Format
+
+## Object Type Information
+
+Object Type | Description | Group
+:--- | :--- | :---
+NTTY | Note Type | Notes for Application Objects
+
+## File Structure
 
 File | Cardinality | Definition | Schema | Example
 :--- | :---  | :--- | :--- | :---
