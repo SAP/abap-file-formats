@@ -104,8 +104,8 @@
             "destinationStructure",
             "constant",
             "systemField",
-            "messageVariableA",
-            "messageVariableS"
+            "messageVariableAll",
+            "messageVariableSingle"
           ],
           "enumTitles": [
             "Source Structure",
@@ -116,10 +116,10 @@
             "Message Variable (Single)"
           ],
           "enumDescriptions": [
-            "Field is in source structure",
-            "Field is in desctination structure",
-            "Field is constant value",
-            "Field is system field",
+            "Source structure",
+            "Destination structure",
+            "Constant value",
+            "System field",
             "Message variable (all)",
             "Message variable (single)"
           ],
@@ -139,8 +139,8 @@
             "destinationStructure",
             "constant",
             "systemField",
-            "messageVariableA",
-            "messageVariableS"
+            "messageVariableAll",
+            "messageVariableSingle"
           ],
           "enumTitles": [
             "Source Structure",
@@ -151,10 +151,10 @@
             "Message Variable (Single)"
           ],
           "enumDescriptions": [
-            "Field is in source structure",
-            "Field is in desctination structure",
-            "Field is constant value",
-            "Field is system field",
+            "Source structure",
+            "Destination structure",
+            "Constant value",
+            "System field",
             "Message variable (all)",
             "Message variable (single)"
           ],
@@ -174,8 +174,8 @@
             "destinationStructure",
             "constant",
             "systemField",
-            "messageVariableA",
-            "messageVariableS"
+            "messageVariableAll",
+            "messageVariableSingle"
           ],
           "enumTitles": [
             "Source Structure",
@@ -186,10 +186,10 @@
             "Message Variable (Single)"
           ],
           "enumDescriptions": [
-            "Field is in source structure",
-            "Field is in desctination structure",
-            "Field is constant value",
-            "Field is system field",
+            "Source structure",
+            "Destination structure",
+            "Constant value",
+            "System field",
             "Message variable (all)",
             "Message variable (single)"
           ],
@@ -209,8 +209,8 @@
             "destinationStructure",
             "constant",
             "systemField",
-            "messageVariableA",
-            "messageVariableS"
+            "messageVariableAll",
+            "messageVariableSingle"
           ],
           "enumTitles": [
             "Source Structure",
@@ -221,10 +221,10 @@
             "Message Variable (Single)"
           ],
           "enumDescriptions": [
-            "Field is in source structure",
-            "Field is in desctination structure",
-            "Field is constant value",
-            "Field is system field",
+            "Source structure",
+            "Destination structure",
+            "Constant value",
+            "System field",
             "Message variable (all)",
             "Message variable (single)"
           ],
@@ -390,19 +390,19 @@
                 "description": "Field type",
                 "type": "string",
                 "enum": [
-                  "definedFields",
+                  "definedField",
                   "pattern",
                   "systemField"
                 ],
                 "enumTitles": [
-                  "Defined Fields",
+                  "Defined Field",
                   "Pattern",
                   "System Field"
                 ],
                 "enumDescriptions": [
                   "Defined field in the check assignment",
                   "Pattern",
-                  "Field is system field"
+                  "System field"
                 ],
                 "default": "pattern"
               },
@@ -506,19 +506,19 @@
                 "description": "Field type",
                 "type": "string",
                 "enum": [
-                  "definedFields",
+                  "definedField",
                   "pattern",
                   "systemField"
                 ],
                 "enumTitles": [
-                  "Defined Fields",
+                  "Defined Field",
                   "Pattern",
                   "System Field"
                 ],
                 "enumDescriptions": [
                   "Defined field in the check assignment",
                   "Pattern",
-                  "Field is system field"
+                  "System field"
                 ],
                 "default": "pattern"
               },
@@ -571,8 +571,8 @@
                   "destinationStructure",
                   "constant",
                   "systemField",
-                  "messageVariableA",
-                  "messageVariableS"
+                  "messageVariableAll",
+                  "messageVariableSingle"
                 ],
                 "enumTitles": [
                   "Source Structure",
@@ -583,10 +583,10 @@
                   "Message Variable (Single)"
                 ],
                 "enumDescriptions": [
-                  "Field is in source structure",
-                  "Field is in desctination structure",
-                  "Field is constant value",
-                  "Field is system field",
+                  "Source structure",
+                  "Destination structure",
+                  "Constant value",
+                  "System field",
                   "Message variable (all)",
                   "Message variable (single)"
                 ],
@@ -606,8 +606,8 @@
                   "destinationStructure",
                   "constant",
                   "systemField",
-                  "messageVariableA",
-                  "messageVariableS"
+                  "messageVariableAll",
+                  "messageVariableSingle"
                 ],
                 "enumTitles": [
                   "Source Structure",
@@ -618,10 +618,10 @@
                   "Message Variable (Single)"
                 ],
                 "enumDescriptions": [
-                  "Field is in source structure",
-                  "Field is in desctination structure",
-                  "Field is constant value",
-                  "Field is system field",
+                  "Source structure",
+                  "Destination structure",
+                  "Constant value",
+                  "System field",
                   "Message variable (all)",
                   "Message variable (single)"
                 ],
@@ -641,8 +641,8 @@
                   "destinationStructure",
                   "constant",
                   "systemField",
-                  "messageVariableA",
-                  "messageVariableS"
+                  "messageVariableAll",
+                  "messageVariableSingle"
                 ],
                 "enumTitles": [
                   "Source Structure",
@@ -653,10 +653,10 @@
                   "Message Variable (Single)"
                 ],
                 "enumDescriptions": [
-                  "Field is in source structure",
-                  "Field is in desctination structure",
-                  "Field is constant value",
-                  "Field is system field",
+                  "Source structure",
+                  "Destination structure",
+                  "Constant value",
+                  "System field",
                   "Message variable (all)",
                   "Message variable (single)"
                 ],
@@ -676,8 +676,8 @@
                   "destinationStructure",
                   "constant",
                   "systemField",
-                  "messageVariableA",
-                  "messageVariableS"
+                  "messageVariableAll",
+                  "messageVariableSingle"
                 ],
                 "enumTitles": [
                   "Source Structure",
@@ -688,10 +688,10 @@
                   "Message Variable (Single)"
                 ],
                 "enumDescriptions": [
-                  "Field is in source structure",
-                  "Field is in desctination structure",
-                  "Field is constant value",
-                  "Field is system field",
+                  "Source structure",
+                  "Destination structure",
+                  "Constant value",
+                  "System field",
                   "Message variable (all)",
                   "Message variable (single)"
                 ],

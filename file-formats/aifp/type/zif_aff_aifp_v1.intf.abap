@@ -246,35 +246,35 @@ INTERFACE zif_aff_aifp_v1
     END OF co_database_check_type.
   CONSTANTS:
     BEGIN OF co_field_type,
-      "! <p class="shorttext">Defined Fields</p>
+      "! <p class="shorttext">Defined Field</p>
       "! Defined field in the check assignment
-      defined_fields TYPE ty_field_type VALUE 'DEF_FLD',
+      defined_field TYPE ty_field_type VALUE 'DEF_FLD',
       "! <p class="shorttext">Pattern</p>
       "! Pattern
-      pattern        TYPE ty_field_type VALUE 'STRING',
+      pattern       TYPE ty_field_type VALUE 'STRING',
       "! <p class="shorttext">System Field</p>
-      "! Field is system field
-      system_field   TYPE ty_field_type VALUE 'SYS_FLD',
+      "! System field
+      system_field  TYPE ty_field_type VALUE 'SYS_FLD',
     END OF co_field_type.
   CONSTANTS:
     BEGIN OF co_variable_type,
       "! <p class="shorttext">Source Structure</p>
-      "! Field is in source structure
-      source_structure      TYPE ty_variable_type VALUE 'SRC_S',
+      "! Source structure
+      source_structure        TYPE ty_variable_type VALUE 'SRC_S',
       "! <p class="shorttext">Destination Structure</p>
-      "! Field is in desctination structure
-      destination_structure TYPE ty_variable_type VALUE 'DST_S',
+      "! Destination structure
+      destination_structure   TYPE ty_variable_type VALUE 'DST_S',
       "! <p class="shorttext">Constant</p>
-      "! Field is constant value
-      constant              TYPE ty_variable_type VALUE 'CONST',
+      "! Constant value
+      constant                TYPE ty_variable_type VALUE 'CONST',
       "! <p class="shorttext">System Field</p>
-      "! Field is system field
-      system_field          TYPE ty_variable_type VALUE 'SYSTF',
+      "! System field
+      system_field            TYPE ty_variable_type VALUE 'SYSTF',
       "! <p class="shorttext">Message Variable (All)</p>
       "! Message variable (all)
-      message_variable_a    TYPE ty_variable_type VALUE 'MSGVA',
+      message_variable_all    TYPE ty_variable_type VALUE 'MSGVA',
       "! <p class="shorttext">Message Variable (Single)</p>
       "! Message variable (single)
-      message_variable_s    TYPE ty_variable_type VALUE 'MSGVS',
+      message_variable_single TYPE ty_variable_type VALUE 'MSGVS',
     END OF co_variable_type.
 ENDINTERFACE.

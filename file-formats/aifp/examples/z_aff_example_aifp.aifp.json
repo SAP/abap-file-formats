@@ -23,7 +23,7 @@
         "checkType": "compare",
         "fieldName": "NAME",
         "operator": "equals",
-        "fieldType": "definedFields",
+        "fieldType": "definedField",
         "value": "2"
       }
     }
