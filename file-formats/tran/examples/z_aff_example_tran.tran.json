@@ -4,7 +4,27 @@
     "description": "SE93 Test - Parameter Transaction",
     "originalLanguage": "en"
   },
-  "generalInformation": {},
+  "generalInformation": {
+    "implementation": {
+      "transactionType": "parameterTransaction",
+      "dialogTransaction": {
+        "programDynnr": "0000",
+        "stvMaintenanceMode": ""
+      },
+      "parameterTransaction": {
+        "parParentTransactionCode": "SE16",
+        "parameterValues": [
+          {
+            "parameterName": "DATABROWSE-TABLENAME",
+            "parameterValue": "TSTC"
+          }
+        ]
+      },
+      "reportTransaction": {
+        "reportDynnr": "0000"
+      }
+    }
+  },
   "userInterface": {
     "uiAttributes": {
       "inheritanceMode": "active",
