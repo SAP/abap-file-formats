@@ -7,10 +7,6 @@
   "generalInformation": {
     "implementation": {
       "transactionType": "parameterTransaction",
-      "dialogTransaction": {
-        "programDynnr": "0000",
-        "stvMaintenanceMode": ""
-      },
       "parameterTransaction": {
         "parParentTransactionCode": "SE16",
         "parameterValues": [
@@ -19,9 +15,6 @@
             "parameterValue": "TSTC"
           }
         ]
-      },
-      "reportTransaction": {
-        "reportDynnr": "0000"
       }
     }
   },
