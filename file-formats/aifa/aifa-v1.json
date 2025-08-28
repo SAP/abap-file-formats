@@ -191,8 +191,13 @@
                   "default": "sourceStructure"
                 },
                 "name": {
-                  "title": "Name/Value",
-                  "description": "Name/Value",
+                  "title": "Name",
+                  "description": "Name",
+                  "type": "string"
+                },
+                "value": {
+                  "title": "Value",
+                  "description": "Value",
                   "type": "string"
                 }
               },
