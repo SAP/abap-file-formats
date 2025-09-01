@@ -42,9 +42,9 @@ INTERFACE zif_aff_tran_v1
 
   "! <p class="shorttext">Program</p>
   "! Program name
-  TYPES ty_program_name  TYPE c LENGTH 40.
+  TYPES ty_program_name  TYPE zif_aff_types_v1=>ty_object_name_40.
   "! <p class="shorttext">Dynpro</p>
-  "!   Transaction Start Dynpro Number for Dialog Transaction
+  "! Transaction start dynpro number for dialog transaction
   TYPES ty_program_dynnr TYPE c LENGTH 4.
 
   "! $values {@link zif_aff_tran_v1.data:co_lock_status}
@@ -124,9 +124,9 @@ INTERFACE zif_aff_tran_v1
 
   "! <p class="shorttext">Report</p>
   "! Report name
-  TYPES ty_report_name         TYPE c LENGTH 40.
+  TYPES ty_report_name         TYPE zif_aff_types_v1=>ty_object_name_40.
   "! <p class="shorttext">Selection Screen</p>
-  "! Transaction Start Selection Screen for Report Transaction
+  "! Transaction start selection screen for the report transaction
   TYPES ty_report_dynnr        TYPE c LENGTH 4.
 
   "! <p class="shorttext">Variant</p>
@@ -147,10 +147,10 @@ INTERFACE zif_aff_tran_v1
 
   "! <p class="shorttext">Program Name</p>
   "! Program name
-  TYPES ty_class_program_name TYPE c LENGTH 40.
+  TYPES ty_class_program_name TYPE zif_aff_types_v1=>ty_object_name_40.
   "! <p class="shorttext">Class</p>
   "! Class name
-  TYPES ty_class_name         TYPE c LENGTH 30.
+  TYPES ty_class_name         TYPE zif_aff_types_v1=>ty_object_name_30.
   "! <p class="shorttext">Method</p>
   "! Method name
   TYPES ty_method_name        TYPE c LENGTH 61.
@@ -226,10 +226,10 @@ INTERFACE zif_aff_tran_v1
   TYPES ty_var_parent_transaction_code TYPE ty_transaction_code.
   "! <p class="shorttext">Cross-Client Transaction Variant</p>
   "! Name of cross-client transaction variant
-  TYPES ty_transaction_ci_variant_name TYPE c LENGTH 30.
+  TYPES ty_transaction_ci_variant_name TYpe zif_aff_types_v1=>ty_object_name_30.
   "! <p class="shorttext">Transaction Variant</p>
   "! Name of transaction variant
-  TYPES ty_transaction_variant_name    TYPE c LENGTH 30.
+  TYPES ty_transaction_variant_name    TYPE zif_aff_types_v1=>ty_object_name_30.
   TYPES:
     BEGIN OF ty_variant_transaction,
       "! <p class="shorttext">Parent Transaction</p>
@@ -388,7 +388,7 @@ INTERFACE zif_aff_tran_v1
   TYPES ty_auth_field TYPE c LENGTH 10.
   "! <p class="shorttext">Authorization Value</p>
   "! Authorization value
-  TYPES ty_auth_value TYPE c LENGTH 40.
+  TYPES ty_auth_value TYPE zif_aff_types_v1=>ty_object_name_40.
 
   TYPES:
     "! <p class="shorttext">Start Authorization Object Field Value</p>
