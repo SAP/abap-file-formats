@@ -226,7 +226,7 @@ INTERFACE zif_aff_tran_v1
   TYPES ty_var_parent_transaction_code TYPE ty_transaction_code.
   "! <p class="shorttext">Cross-Client Transaction Variant</p>
   "! Name of cross-client transaction variant
-  TYPES ty_transaction_ci_variant_name TYpe zif_aff_types_v1=>ty_object_name_30.
+  TYPES ty_transaction_ci_variant_name TYPE zif_aff_types_v1=>ty_object_name_30.
   "! <p class="shorttext">Transaction Variant</p>
   "! Name of transaction variant
   TYPES ty_transaction_variant_name    TYPE zif_aff_types_v1=>ty_object_name_30.
