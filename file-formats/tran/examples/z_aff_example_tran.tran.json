@@ -5,17 +5,15 @@
     "originalLanguage": "en"
   },
   "generalInformation": {
-    "implementation": {
-      "transactionType": "parameterTransaction",
-      "parameterTransaction": {
-        "parParentTransactionCode": "SE16",
-        "parameterValues": [
-          {
-            "parameterName": "DATABROWSE-TABLENAME",
-            "parameterValue": "TSTC"
-          }
-        ]
-      }
+    "transactionType": "parameterTransaction",
+    "parameterTransaction": {
+      "parParentTransactionCode": "SE16",
+      "parameterValues": [
+        {
+          "parameterName": "DATABROWSE-TABLENAME",
+          "parameterValue": "TSTC"
+        }
+      ]
     }
   },
   "userInterface": {
