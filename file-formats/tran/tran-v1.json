@@ -62,286 +62,278 @@
       "description": "The general information contains details about the transaction, depending on the transaction type.",
       "type": "object",
       "properties": {
-        "implementation": {
-          "title": "Implementation",
-          "description": "The implementation contains details about the transaction, depending on the transaction type.",
+        "transactionType": {
+          "title": "Type",
+          "description": "The transaction type defines which object will be started at runtime when the transaction is called. Depending on the transaction type, other type of object can be started and different fields become relevant.",
+          "type": "string",
+          "enum": [
+            "dialogTransaction",
+            "ooTransaction",
+            "parameterTransaction",
+            "reportTransaction",
+            "variantTransaction"
+          ],
+          "enumTitles": [
+            "Dialog Transaction",
+            "OO Transaction",
+            "Parameter Transaction",
+            "Report Transaction",
+            "Variant Transaction"
+          ],
+          "enumDescriptions": [
+            "The runtime calls a dynpro of a function group, module pool or report. The dynpro specified as initial screen must not be a selection screen. The program logic defines which screens are displayed after the initial screen.",
+            "At runtime, the system calls a class method. The transaction links to either the ABAP Object Services Transaction Service (for persistent objects) or to a public method of a class. For instance methods, the system auto-creates a class instance.",
+            "Parameter transactions specialize dialog or report transactions by presetting initial screen values. You can also skip the initial screen to prevent users from changing these predefined values.",
+            "The runtime calls a dynpro of a report. The dynpro specified as initial screen must be a selection screen. The execution of a report usually has three stages: data entry, data processing, and data output.",
+            "Variant transactions customize dialog or report transactions by adapting menus and screens at runtime. They let you preset field values, set field attributes, or hide screens to streamline user interaction."
+          ],
+          "default": "parameterTransaction"
+        },
+        "lockStatus": {
+          "title": "Lock Status",
+          "description": "Transaction lock status indicates whether a transaction is currently blocked from execution. It helps prevent unauthorized or unintended use, especially during maintenance, development, or when a transaction is obsolete or being phased out.",
+          "type": "string",
+          "enum": [
+            "locked",
+            "notLocked"
+          ],
+          "enumTitles": [
+            "Locked",
+            "Not Locked"
+          ],
+          "enumDescriptions": [
+            "Locked",
+            "Not locked"
+          ],
+          "default": "notLocked"
+        },
+        "dialogTransaction": {
+          "title": "Dialog Transaction",
+          "description": "The runtime calls a dynpro of a function group, module pool or report. The dynpro specified as initial screen must not be a selection screen. The program logic defines which screens are displayed after the initial screen.",
           "type": "object",
           "properties": {
-            "transactionType": {
-              "title": "Transaction Type",
-              "description": "The transaction type defines which object will be started at runtime when the transaction is called. Depending on the transaction type, other type of object can be started and different fields become relevant.",
+            "programName": {
+              "title": "Program",
+              "description": "Program name for dialog transaction",
+              "type": "string",
+              "maxLength": 40
+            },
+            "programDynnr": {
+              "title": "Dynpro",
+              "description": "Transaction start dynpro number for dialog transaction",
+              "type": "string",
+              "maxLength": 4
+            },
+            "stvMaintenanceMode": {
+              "title": "Standard Transaction Variant Maintenance",
+              "description": "If the standard transaction variant maintenance mode is allowed, activating a transaction variant as standard transaction variant is enabled in the transaction variant maintenance.",
               "type": "string",
               "enum": [
-                "dialogTransaction",
-                "ooTransaction",
-                "parameterTransaction",
-                "reportTransaction",
-                "variantTransaction"
+                "allowed",
+                "notAllowed"
               ],
               "enumTitles": [
-                "Dialog Transaction",
-                "OO Transaction",
-                "Parameter Transaction",
-                "Report Transaction",
-                "Variant Transaction"
+                "Allowed",
+                "Not Allowed"
               ],
               "enumDescriptions": [
-                "The runtime calls a dynpro of a function group, module pool or report. The dynpro specified as initial screen must not be a selection screen. The program logic defines which screens are displayed after the initial screen.",
-                "At runtime, the system calls a class method. The transaction links to either the ABAP Object Services Transaction Service (for persistent objects) or to a public method of a class. For instance methods, the system auto-creates a class instance.",
-                "Parameter transactions specialize dialog or report transactions by presetting initial screen values. You can also skip the initial screen to prevent users from changing these predefined values.",
-                "The runtime calls a dynpro of a report. The dynpro specified as initial screen must be a selection screen. The execution of a report usually has three stages: data entry, data processing, and data output.",
-                "Variant transactions customize dialog or report transactions by adapting menus and screens at runtime. They let you preset field values, set field attributes, or hide screens to streamline user interaction."
+                "Allowed",
+                "Not Allowed"
               ],
-              "default": "parameterTransaction"
+              "default": "notAllowed"
+            }
+          },
+          "additionalProperties": false
+        },
+        "parameterTransaction": {
+          "title": "Parameter Transaction",
+          "description": "Parameter transactions specialize dialog or report transactions by presetting initial screen values. You can also skip the initial screen to prevent users from changing these predefined values.",
+          "type": "object",
+          "properties": {
+            "parParentTransactionCode": {
+              "title": "Parent Transaction",
+              "description": "The parent transaction code of the parameter transaction defines the transaction that provides the program and the dynpro number that are started when the transaction is called. The parent transaction can be a dialog or a report transaction.",
+              "type": "string",
+              "maxLength": 20
             },
-            "lockStatus": {
-              "title": "Lock Status",
-              "description": "Transaction lock status indicates whether a transaction is currently blocked from execution. It helps prevent unauthorized or unintended use, especially during maintenance, development, or when a transaction is obsolete or being phased out.",
+            "skipInitialScreenMode": {
+              "title": "Initial Screen",
+              "description": "Initial screen mode allows bypassing the first screen of the parent transaction by using predefined values.",
               "type": "string",
               "enum": [
-                "locked",
-                "notLocked"
+                "skip",
+                "show"
               ],
               "enumTitles": [
-                "Locked",
-                "Not Locked"
+                "Skip",
+                "Show"
               ],
               "enumDescriptions": [
-                "Locked",
-                "Not locked"
+                "Skip Initial Screen",
+                "Show Initial Screen"
               ],
-              "default": "notLocked"
+              "default": "show"
             },
-            "dialogTransaction": {
-              "title": "Dialog Transaction",
-              "description": "The runtime calls a dynpro of a function group, module pool or report. The dynpro specified as initial screen must not be a selection screen. The program logic defines which screens are displayed after the initial screen.",
-              "type": "object",
-              "properties": {
-                "programName": {
-                  "title": "Program",
-                  "description": "Program name for dialog transaction",
-                  "type": "string",
-                  "maxLength": 40
-                },
-                "programDynnr": {
-                  "title": "Dynpro",
-                  "description": "Transaction start dynpro number for dialog transaction",
-                  "type": "string",
-                  "maxLength": 4
-                },
-                "stvMaintenanceMode": {
-                  "title": "Standard Transaction Variant Maintenance",
-                  "description": "If the standard transaction variant maintenance mode is allowed, activating a transaction variant as standard transaction variant is enabled in the transaction variant maintenance.",
-                  "type": "string",
-                  "enum": [
-                    "allowed",
-                    "notAllowed"
-                  ],
-                  "enumTitles": [
-                    "Allowed",
-                    "Not Allowed"
-                  ],
-                  "enumDescriptions": [
-                    "Allowed",
-                    "Not Allowed"
-                  ],
-                  "default": "notAllowed"
-                }
-              },
-              "additionalProperties": false
-            },
-            "parameterTransaction": {
-              "title": "Parameter Transaction",
-              "description": "Parameter transactions specialize dialog or report transactions by presetting initial screen values. You can also skip the initial screen to prevent users from changing these predefined values.",
-              "type": "object",
-              "properties": {
-                "parParentTransactionCode": {
-                  "title": "Parent Transaction",
-                  "description": "The parent transaction code of the parameter transaction defines the transaction that provides the program and the dynpro number that are started when the transaction is called. The parent transaction can be a dialog or a report transaction.",
-                  "type": "string",
-                  "maxLength": 20
-                },
-                "skipInitialScreenMode": {
-                  "title": "Skip Initial Screen",
-                  "description": "Skip initial screen mode allows bypassing the first screen of the parent transaction by using predefined values.",
-                  "type": "string",
-                  "enum": [
-                    "skip",
-                    "show"
-                  ],
-                  "enumTitles": [
-                    "Skip",
-                    "Show"
-                  ],
-                  "enumDescriptions": [
-                    "Skip Initial Screen",
-                    "Show Initial Screen"
-                  ],
-                  "default": "show"
-                },
-                "parameterValues": {
-                  "title": "Parameter values",
-                  "description": "Parameter values",
-                  "type": "array",
-                  "items": {
-                    "title": "Parameter Value",
-                    "description": "Parameter transaction parameter value",
-                    "type": "object",
-                    "properties": {
-                      "parameterName": {
-                        "title": "Parameter Name",
-                        "description": "Name of the parameter for the parameter transaction",
-                        "type": "string",
-                        "maxLength": 132
-                      },
-                      "parameterValue": {
-                        "title": "Parameter Value",
-                        "description": "Value for the parameter of the parameter transaction",
-                        "type": "string",
-                        "maxLength": 50
-                      }
-                    },
-                    "additionalProperties": false,
-                    "required": [
-                      "parameterName"
-                    ]
+            "parameterValues": {
+              "title": "Parameters",
+              "description": "Parameter values",
+              "type": "array",
+              "items": {
+                "title": "Parameters",
+                "description": "Parameter transaction parameter value",
+                "type": "object",
+                "properties": {
+                  "parameterName": {
+                    "title": "Name",
+                    "description": "Name of the parameter for the parameter transaction",
+                    "type": "string",
+                    "maxLength": 132
+                  },
+                  "parameterValue": {
+                    "title": "Value",
+                    "description": "Value for the parameter of the parameter transaction",
+                    "type": "string",
+                    "maxLength": 50
                   }
-                }
-              },
-              "additionalProperties": false,
-              "required": [
-                "parParentTransactionCode"
-              ]
-            },
-            "reportTransaction": {
-              "title": "Report Transaction",
-              "description": "The runtime calls a dynpro of a report. The dynpro specified as initial screen must be a selection screen. The execution of a report usually has three stages: data entry, data processing, and data output.",
-              "type": "object",
-              "properties": {
-                "reportName": {
-                  "title": "Report",
-                  "description": "Report name for the report transaction",
-                  "type": "string",
-                  "maxLength": 40
                 },
-                "reportDynnr": {
-                  "title": "Screen",
-                  "description": "Transaction start selection screen for the report transaction",
-                  "type": "string",
-                  "maxLength": 4
-                },
-                "reportVariantName": {
-                  "title": "Variant",
-                  "description": "Variant name for the report transaction",
-                  "type": "string",
-                  "maxLength": 14
-                }
-              },
-              "additionalProperties": false
-            },
-            "ooTransaction": {
-              "title": "OO Transaction",
-              "description": "At runtime, the system calls a class method. The transaction links to either the ABAP Object Services Transaction Service (for persistent objects) or to a public method of a class. For instance methods, the system auto-creates a class instance.",
-              "type": "object",
-              "properties": {
-                "localInProgramIndi": {
-                  "title": "Local in Program",
-                  "description": "If this indicator is set, the OO transaction uses a local ABAP class within this specified ABAP program. Otherwise it uses a global ABAP class.",
-                  "type": "boolean"
-                },
-                "classProgramName": {
-                  "title": "Program",
-                  "description": "Name of the program for the OO transacton",
-                  "type": "string",
-                  "maxLength": 40
-                },
-                "className": {
-                  "title": "Class",
-                  "description": "Name of the ABAP class",
-                  "type": "string",
-                  "maxLength": 30
-                },
-                "methodName": {
-                  "title": "Method",
-                  "description": "Name of the method of the ABAP class",
-                  "type": "string",
-                  "maxLength": 61
-                },
-                "ooTransactionModelIndi": {
-                  "title": "OO Transaction Model",
-                  "description": "If this indicator is set, the OO transaction follows the object-oriented transaction model. See the interface IF_OS_TRANSACTION_MANAGER for more information.",
-                  "type": "boolean"
-                },
-                "updateMode": {
-                  "title": "Update Mode",
-                  "description": "The update mode for an OO transaction defines how data changes are processed: synchronously, asynchronously, or immediately.",
-                  "type": "string",
-                  "enum": [
-                    "asynchronous",
-                    "synchronous",
-                    "local"
-                  ],
-                  "enumTitles": [
-                    "Asynchronous",
-                    "Synchronous",
-                    "Local"
-                  ],
-                  "enumDescriptions": [
-                    "Asynchronous",
-                    "Synchronous",
-                    "Local"
-                  ],
-                  "default": "asynchronous"
-                }
-              },
-              "additionalProperties": false,
-              "required": [
-                "className",
-                "methodName"
-              ]
-            },
-            "variantTransaction": {
-              "title": "Variant Transaction",
-              "description": "Variant transactions customize dialog or report transactions by adapting menus and screens at runtime. They let you preset field values, set field attributes, or hide screens to streamline user interaction.",
-              "type": "object",
-              "properties": {
-                "varParentTransactionCode": {
-                  "title": "Parent Transaction",
-                  "description": "The parent transaction code links related transaction to its original (parent) transaction. It enables inheritance of settings like UI attributes or authorizations, ensuring consistency and reducing duplication in configuration.",
-                  "type": "string",
-                  "maxLength": 20
-                },
-                "transactionVariantCiIndi": {
-                  "title": "Cross-Client",
-                  "description": "If the indicator is set, the transaction variant is cross-client. If the switch is not set, the transaction variant is client-specific.",
-                  "type": "boolean"
-                },
-                "transactionCiVariantName": {
-                  "title": "Transaction Variant",
-                  "description": "Name of the cross-client transaction variant. A cross-client transaction variant is available in the system regardless of which client is currently active, and the field contents used in the transaction variant must be available in all clients.",
-                  "type": "string",
-                  "maxLength": 30
-                },
-                "transactionVariantName": {
-                  "title": "Transaction Variant",
-                  "description": "Name of the client-specific transaction variant. A client-specific transaction variant exists only in the client where it was created, and the field contents used in the transaction variant must be available in that client.",
-                  "type": "string",
-                  "maxLength": 30
-                }
-              },
-              "additionalProperties": false,
-              "required": [
-                "varParentTransactionCode"
-              ]
+                "additionalProperties": false,
+                "required": [
+                  "parameterName"
+                ]
+              }
             }
           },
           "additionalProperties": false,
           "required": [
-            "transactionType"
+            "parParentTransactionCode"
+          ]
+        },
+        "reportTransaction": {
+          "title": "Report Transaction",
+          "description": "The runtime calls a dynpro of a report. The dynpro specified as initial screen must be a selection screen. The execution of a report usually has three stages: data entry, data processing, and data output.",
+          "type": "object",
+          "properties": {
+            "reportName": {
+              "title": "Report",
+              "description": "Report name for the report transaction",
+              "type": "string",
+              "maxLength": 40
+            },
+            "reportDynnr": {
+              "title": "Screen",
+              "description": "Transaction start selection screen for the report transaction",
+              "type": "string",
+              "maxLength": 4
+            },
+            "reportVariantName": {
+              "title": "Variant",
+              "description": "Variant name for the report transaction",
+              "type": "string",
+              "maxLength": 14
+            }
+          },
+          "additionalProperties": false
+        },
+        "ooTransaction": {
+          "title": "OO Transaction",
+          "description": "At runtime, the system calls a class method. The transaction links to either the ABAP Object Services Transaction Service (for persistent objects) or to a public method of a class. For instance methods, the system auto-creates a class instance.",
+          "type": "object",
+          "properties": {
+            "localInProgramIndi": {
+              "title": "Local in Program",
+              "description": "If this indicator is set, the OO transaction uses a local ABAP class within this specified ABAP program. Otherwise it uses a global ABAP class.",
+              "type": "boolean"
+            },
+            "classProgramName": {
+              "title": "Program",
+              "description": "Name of the program for the OO transacton",
+              "type": "string",
+              "maxLength": 40
+            },
+            "className": {
+              "title": "Class",
+              "description": "Name of the ABAP class",
+              "type": "string",
+              "maxLength": 30
+            },
+            "methodName": {
+              "title": "Method",
+              "description": "Name of the method of the ABAP class",
+              "type": "string",
+              "maxLength": 61
+            },
+            "ooTransactionModelIndi": {
+              "title": "OO Transaction Model",
+              "description": "If this indicator is set, the OO transaction follows the object-oriented transaction model. See the interface IF_OS_TRANSACTION_MANAGER for more information.",
+              "type": "boolean"
+            },
+            "updateMode": {
+              "title": "Update Mode",
+              "description": "The update mode for an OO transaction defines how data changes are processed: synchronously, asynchronously, or immediately.",
+              "type": "string",
+              "enum": [
+                "asynchronous",
+                "synchronous",
+                "local"
+              ],
+              "enumTitles": [
+                "Asynchronous",
+                "Synchronous",
+                "Local"
+              ],
+              "enumDescriptions": [
+                "Asynchronous",
+                "Synchronous",
+                "Local"
+              ],
+              "default": "asynchronous"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "className",
+            "methodName"
+          ]
+        },
+        "variantTransaction": {
+          "title": "Variant Transaction",
+          "description": "Variant transactions customize dialog or report transactions by adapting menus and screens at runtime. They let you preset field values, set field attributes, or hide screens to streamline user interaction.",
+          "type": "object",
+          "properties": {
+            "varParentTransactionCode": {
+              "title": "Parent Transaction",
+              "description": "The parent transaction code links related transaction to its original (parent) transaction. It enables inheritance of settings like UI attributes or authorizations, ensuring consistency and reducing duplication in configuration.",
+              "type": "string",
+              "maxLength": 20
+            },
+            "transactionVariantCiIndi": {
+              "title": "Cross-Client",
+              "description": "If the indicator is set, the transaction variant is cross-client. If the switch is not set, the transaction variant is client-specific.",
+              "type": "boolean"
+            },
+            "transactionCiVariantName": {
+              "title": "Transaction Variant",
+              "description": "Name of the cross-client transaction variant. A cross-client transaction variant is available in the system regardless of which client is currently active, and the field contents used in the transaction variant must be available in all clients.",
+              "type": "string",
+              "maxLength": 30
+            },
+            "transactionVariantName": {
+              "title": "Transaction Variant",
+              "description": "Name of the client-specific transaction variant. A client-specific transaction variant exists only in the client where it was created, and the field contents used in the transaction variant must be available in that client.",
+              "type": "string",
+              "maxLength": 30
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "varParentTransactionCode"
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "required": [
+        "transactionType"
+      ]
     },
     "userInterface": {
       "title": "User Interface",
@@ -354,7 +346,7 @@
           "type": "object",
           "properties": {
             "inheritanceMode": {
-              "title": "Inherit UI Attributes",
+              "title": "Inheritance Mode",
               "description": "Transaction UI Attributes Inheritance Mode controls how UI settings like screen variants or field attributes are inherited from a parent transaction to its variants, ensuring consistent user interfaces across related transactions.",
               "type": "string",
               "enum": [
@@ -396,7 +388,7 @@
               "maxLength": 14
             },
             "pervasiveMode": {
-              "title": "Pervasive Enabled",
+              "title": "Pervasive Mode",
               "description": "Transaction Pervasive Mode enables a simplified, responsive UI for transactions on various devices, like tablets or smartphones. It's designed for casual users needing quick, intuitive access to core functions with minimal screen complexity.",
               "type": "string",
               "enum": [
@@ -484,17 +476,17 @@
           "type": "object",
           "properties": {
             "authObjectName": {
-              "title": "Start Authorization Object Name",
+              "title": "Authorization Object",
               "description": "Name of the start authorization object",
               "type": "string",
               "maxLength": 10
             },
             "authObjectFieldValues": {
-              "title": "Start Authorization Object Field Values",
+              "title": "Authorization Field Values",
               "description": "Fields with values for the start authorization object",
               "type": "array",
               "items": {
-                "title": "Start Authorization Object Field Value",
+                "title": "Authorization Field Values",
                 "description": "A start authorization object controls who may run a transaction. It is checked at transaction start. Fields must have single or empty values. Empty fields trigger a DUMMY check. This object is auto-assigned in the authorization defaults of transaction.",
                 "type": "object",
                 "properties": {
@@ -577,21 +569,21 @@
               "default": "active"
             },
             "documentation": {
-              "title": "Authorization Defaults Documentation for Application",
+              "title": "Documentation",
               "description": "Authorization defaults documentation for application.",
               "type": "string"
             },
             "authObjects": {
-              "title": "Authorization Defaults Authorization Objects",
+              "title": "Authorization Objects",
               "description": "Authorization default values define which authorization objects and field values are automatically proposed when creating roles for a transaction, simplifying role maintenance and ensuring consistent security settings across users and roles.",
               "type": "array",
               "items": {
-                "title": "Authorization Defaults Authorization Object Details",
+                "title": "Authorization Object Details",
                 "description": "Authorization default values define which authorization objects and field values are automatically proposed when creating roles for a transaction, simplifying role maintenance and ensuring consistent security settings across users and roles.",
                 "type": "object",
                 "properties": {
                   "authObjectName": {
-                    "title": "Authorization Object Name",
+                    "title": "Object",
                     "description": "Name of the authorization object",
                     "type": "string",
                     "maxLength": 10
@@ -624,16 +616,16 @@
                     "default": "defaultWithValues"
                   },
                   "documentation": {
-                    "title": "Authorization Defaults Documentation for Object",
+                    "title": "Documentation",
                     "description": "Authorization defaults documentation for object",
                     "type": "string"
                   },
                   "authObjectFieldValues": {
-                    "title": "Authorization Defaults Authorization Field Value",
+                    "title": "Authorization Field Values",
                     "description": "Authorization defaults authorization field value",
                     "type": "array",
                     "items": {
-                      "title": "Authorization Defaults Authorization Field Value",
+                      "title": "Authorization Field Values",
                       "description": "Authorization defaults authorization field value",
                       "type": "object",
                       "properties": {

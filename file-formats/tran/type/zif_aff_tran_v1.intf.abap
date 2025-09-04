@@ -188,14 +188,14 @@ INTERFACE zif_aff_tran_v1
   "! Parameter value
   TYPES ty_parameter_value TYPE c LENGTH 50.
   TYPES:
-    "! <p class="shorttext">Parameter Value</p>
+    "! <p class="shorttext">Parameters</p>
     "! Parameter transaction parameter value
     BEGIN OF ty_par_pv,
-      "! <p class="shorttext">Parameter Name</p>
+      "! <p class="shorttext">Name</p>
       "! Name of the parameter for the parameter transaction
       "! $required
       parameter_name  TYPE ty_parameter_name,
-      "! <p class="shorttext">Parameter Value</p>
+      "! <p class="shorttext">Value</p>
       "! Value for the parameter of the parameter transaction
       parameter_value TYPE ty_parameter_value,
     END OF ty_par_pv.
@@ -212,11 +212,11 @@ INTERFACE zif_aff_tran_v1
       "! The parent transaction can be a dialog or a report transaction.
       "! $required
       par_parent_transaction_code TYPE ty_par_parent_transaction_code,
-      "! <p class="shorttext">Skip Initial Screen</p>
-      "! Skip initial screen mode allows bypassing the first screen of the parent
+      "! <p class="shorttext">Initial Screen</p>
+      "! Initial screen mode allows bypassing the first screen of the parent
       "! transaction by using predefined values.
       skip_initial_screen_mode    TYPE ty_skip_initial_screen_mode,
-      "! <p class="shorttext">Parameter values</p>
+      "! <p class="shorttext">Parameters</p>
       "! Parameter values
       parameter_values            TYPE ty_par_pv_t,
     END OF ty_parameter_transaction.
@@ -255,8 +255,8 @@ INTERFACE zif_aff_tran_v1
     END OF ty_variant_transaction.
 
   TYPES:
-    BEGIN OF ty_implementation,
-      "! <p class="shorttext">Transaction Type</p>
+    BEGIN OF ty_general_information,
+      "! <p class="shorttext">Type</p>
       "! The transaction type defines which object will be started at runtime when the transaction is called.
       "! Depending on the transaction type, other type of object can be started and different fields become relevant.
       "! $required
@@ -289,7 +289,7 @@ INTERFACE zif_aff_tran_v1
       "! Variant transactions customize dialog or report transactions by adapting menus and screens at runtime.
       "! They let you preset field values, set field attributes, or hide screens to streamline user interaction.
       variant_transaction   TYPE ty_variant_transaction,
-    END OF ty_implementation.
+    END OF ty_general_information.
 
   "! <p class="shorttext">Maintenance Mode</p>
   "! Maintenance modes for applications define how applications can be modified.
@@ -391,7 +391,7 @@ INTERFACE zif_aff_tran_v1
   TYPES ty_auth_value TYPE zif_aff_types_v1=>ty_object_name_40.
 
   TYPES:
-    "! <p class="shorttext">Start Authorization Object Field Value</p>
+    "! <p class="shorttext">Authorization Field Values</p>
     "! A start authorization object controls who may run a transaction. It is checked at transaction start.
     "! Fields must have single or empty values. Empty fields trigger a DUMMY check.
     "! This object is auto-assigned in the authorization defaults of transaction.
@@ -405,7 +405,7 @@ INTERFACE zif_aff_tran_v1
       auth_field_value TYPE ty_auth_value,
     END OF ty_sao_afv.
 
-  "! <p class="shorttext">Start Authorization Object Field Value</p>
+  "! <p class="shorttext">Authorization Field Values</p>
   "! A start authorization object controls who may run a transaction. It is checked at transaction start.
   "! Fields must have single or empty values. Empty fields trigger a DUMMY check.
   "! This object is auto-assigned in the authorization defaults transaction.
@@ -420,22 +420,22 @@ INTERFACE zif_aff_tran_v1
   TYPES ty_sao_name         TYPE ty_auth_object_name.
 
   TYPES:
-    "! <p class="shorttext">Start Authorization Object</p>
+    "! <p class="shorttext">Start Authorization Object Details</p>
     "! A start authorization object controls who may run a transaction. It is checked at transaction start.
     "! Fields must have single or empty values. Empty fields trigger a DUMMY check.
     "! This object is auto-assigned in the authorization defaults transaction.
     BEGIN OF ty_sao,
-      "! <p class="shorttext">Start Authorization Object Name</p>
+      "! <p class="shorttext">Authorization Object</p>
       "! Name of the start authorization object
       "! $required
       auth_object_name         TYPE ty_sao_name,
-      "! <p class="shorttext">Start Authorization Object Field Values</p>
+      "! <p class="shorttext">Authorization Field Values</p>
       "! Fields with values for the start authorization object
       auth_object_field_values TYPE ty_sao_afv_t,
     END OF ty_sao.
 
   TYPES:
-    "! <p class="shorttext">Authorization Defaults Authorization Field Value</p>
+    "! <p class="shorttext">Authorization Field Values</p>
     "! Authorization defaults authorization field value
     BEGIN OF ty_ad_afv,
       "! <p class="shorttext">Authorization Field</p>
@@ -449,17 +449,17 @@ INTERFACE zif_aff_tran_v1
       "! To value
       auth_field_high_value TYPE ty_auth_value,
     END OF ty_ad_afv.
-  "! <p class="shorttext">Authorization Defaults Authorization Field Values</p>
+  "! <p class="shorttext">Authorization Field Values</p>
   "! Authorization defaults authorization field values
   TYPES ty_ad_afv_t TYPE STANDARD TABLE OF ty_ad_afv WITH DEFAULT KEY.
 
   TYPES:
-    "! <p class="shorttext">Authorization Defaults Authorization Object Details</p>
+    "! <p class="shorttext">Authorization Object Details</p>
     "! Authorization default values define which authorization objects and field values are automatically
     "! proposed when creating roles for a transaction,
     "! simplifying role maintenance and ensuring consistent security settings across users and roles.
     BEGIN OF ty_ad_ao,
-      "! <p class="shorttext">Authorization Object Name</p>
+      "! <p class="shorttext">Object</p>
       "! Name of the authorization object
       auth_object_name         TYPE ty_auth_object_name,
       "! <p class="shorttext">Maintenance Status</p>
@@ -467,10 +467,10 @@ INTERFACE zif_aff_tran_v1
       "! it in its application and whether an authorization default is added to a data of role data by
       "! the profile generator when the app is in the role menu.
       maintenance_status       TYPE ty_maintenance_status,
-      "! <p class="shorttext">Authorization Defaults Documentation for Object</p>
+      "! <p class="shorttext">Documentation</p>
       "! Authorization defaults documentation for object
       documentation            TYPE string,
-      "! <p class="shorttext">Authorization Defaults Authorization Field Value</p>
+      "! <p class="shorttext">Authorization Field Values</p>
       "! Authorization defaults authorization field value
       auth_object_field_values TYPE ty_ad_afv_t,
     END OF ty_ad_ao.
@@ -491,10 +491,10 @@ INTERFACE zif_aff_tran_v1
       "! a parent transaction to its variants,
       "! ensuring consistent access rights and roles across related transactions.
       inheritance_mode TYPE ty_inheritance_mode,
-      "! <p class="shorttext">Authorization Defaults Documentation for Application</p>
+      "! <p class="shorttext">Documentation</p>
       "! Authorization defaults documentation for application.
       documentation    TYPE string,
-      "! <p class="shorttext">Authorization Defaults Authorization Objects</p>
+      "! <p class="shorttext">Authorization Objects</p>
       "! Authorization default values define which authorization objects and field values are automatically
       "! proposed when creating roles for a transaction, simplifying role maintenance and ensuring consistent
       "! security settings across users and roles.
@@ -583,7 +583,7 @@ INTERFACE zif_aff_tran_v1
 
   TYPES:
     BEGIN OF ty_ui_attributes,
-      "! <p class="shorttext">Inherit UI Attributes</p>
+      "! <p class="shorttext">Inheritance Mode</p>
       "! Transaction UI Attributes Inheritance Mode controls how UI settings like screen variants
       "! or field attributes are inherited from a parent transaction to its variants, ensuring
       "! consistent user interfaces across related transactions.
@@ -598,7 +598,7 @@ INTERFACE zif_aff_tran_v1
       "! enabling its execution via a browser. It's required for Easy Web Transactions if the service
       "! name differs from the transaction name.
       iac_service_name  TYPE c LENGTH 14,
-      "! <p class="shorttext">Pervasive Enabled</p>
+      "! <p class="shorttext">Pervasive Mode</p>
       "! Transaction Pervasive Mode enables a simplified, responsive UI for transactions on various devices,
       "! like tablets or smartphones. It's designed for casual users needing quick, intuitive access to core
       "! functions with minimal screen complexity.
@@ -613,15 +613,6 @@ INTERFACE zif_aff_tran_v1
       "! The transaction supports the start from SAP GUI for Windows.
       win32_mode        TYPE ty_ua_win32_mode,
     END OF ty_ui_attributes.
-
-
-
-  TYPES:
-    BEGIN OF ty_general_information,
-      "! <p class="shorttext">Implementation</p>
-      "! The implementation contains details about the transaction, depending on the transaction type.
-      implementation TYPE ty_implementation,
-    END OF ty_general_information.
 
   TYPES:
     BEGIN OF ty_authorizations,
