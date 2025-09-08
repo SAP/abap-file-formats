@@ -8,6 +8,7 @@
     "transactionType": "parameterTransaction",
     "parameterTransaction": {
       "parParentTransactionCode": "SE16",
+      "skipInitialScreenMode": "show",
       "parameterValues": [
         {
           "parameterName": "DATABROWSE-TABLENAME",
@@ -25,7 +26,6 @@
   },
   "authorizations": {
     "authorizationDefaults": {
-      "inheritanceMode": "inactive",
       "authObjects": [
         {
           "authObjectName": "S_ABPLNGVS",
