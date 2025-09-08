@@ -1,26 +1,26 @@
 INTERFACE zif_aff_aifp_v1
-  PUBLIC .
+  PUBLIC.
 
   TYPES:
   "! $values { @link zif_aff_aifp_v1.data:co_check_scenario }
   "! $default { @link zif_aff_aifp_v1.data:co_check_scenario.simple_field_check }
-    ty_check_scenario TYPE c LENGTH 10 .
+    ty_check_scenario TYPE c LENGTH 10.
   TYPES:
   "! $values { @link zif_aff_aifp_v1.data:co_simple_check_type }
   "! $default { @link zif_aff_aifp_v1.data:co_simple_check_type.empty }
-    ty_simple_check_type TYPE c LENGTH 1 .
+    ty_simple_check_type TYPE c LENGTH 1.
   TYPES:
   "! $values { @link zif_aff_aifp_v1.data:co_database_check_type }
   "! $default { @link zif_aff_aifp_v1.data:co_database_check_type.check_existence }
-    ty_database_check_type TYPE c LENGTH 1 .
+    ty_database_check_type TYPE c LENGTH 1.
   TYPES:
   "! $values { @link zif_aff_aifp_v1.data:co_field_type }
   "! $default { @link zif_aff_aifp_v1.data:co_field_type.pattern }
-    ty_field_type TYPE c LENGTH 7 .
+    ty_field_type TYPE c LENGTH 7.
   TYPES:
   "! $values { @link zif_aff_aifp_v1.data:co_variable_type }
   "! $default { @link zif_aff_aifp_v1.data:co_variable_type.source_structure }
-    ty_variable_type TYPE c LENGTH 5 .
+    ty_variable_type TYPE c LENGTH 5.
   TYPES:
     "! <p class="shorttext">Variable List</p>
     "! Variable list
@@ -43,7 +43,7 @@ INTERFACE zif_aff_aifp_v1
   TYPES:
   "! <p class="shorttext">Variable Details</p>
   "! Variable details
-    ty_variables TYPE STANDARD TABLE OF ty_variable WITH DEFAULT KEY .
+    ty_variables TYPE STANDARD TABLE OF ty_variable WITH DEFAULT KEY.
   TYPES:
     "! <p class="shorttext">Check Message</p>
     "! Check Message
@@ -147,7 +147,7 @@ INTERFACE zif_aff_aifp_v1
   TYPES:
   "! <p class="shorttext">Check Details</p>
   "! Check details
-    ty_single_checks TYPE STANDARD TABLE OF ty_single_check WITH DEFAULT KEY .
+    ty_single_checks TYPE STANDARD TABLE OF ty_single_check WITH DEFAULT KEY.
   TYPES:
     "! <p class="shorttext">General Information</p>
     "! General information
@@ -160,7 +160,7 @@ INTERFACE zif_aff_aifp_v1
       "! SAP Application Interface check
       "! $required
       aif_check TYPE c LENGTH 20,
-    END OF ty_general_information .
+    END OF ty_general_information.
   TYPES:
     "! <p class="shorttext">Check</p>
     "! Check
