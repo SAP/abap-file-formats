@@ -3,16 +3,27 @@
   "header": {
     "description": "Example AIFP for ABAP File Format",
     "originalLanguage": "en",
-    "abapLanguageVersion": "cloudDevelopment"
+    "abapLanguageVersion": "standard"
   },
   "generalInformation": {
-    "namespace": "AIFNS",
+    "namespace": "ZAIFNS",
     "aifCheck": "BP_EXIST"
   },
-  "checkAssignments": [
+  "errorMessage": {
+    "messageClass": "/AIF/CREATE_CUST",
+    "messageNumber": "001",
+    "variableAssignments": [
+      {
+        "number": 1,
+        "type": "sourceStructure",
+        "path": "BP_ID"
+      }
+    ]
+  },
+  "singleCheckAssignments": [
     {
-      "number": "10",
       "description": "Check Business Partner Exist",
+      "id": "10",
       "scenario": "simpleFieldAndDbCheck",
       "fieldCheck": {
         "checkType": "empty"

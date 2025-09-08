@@ -1,58 +1,62 @@
 INTERFACE zif_aff_aifp_v1
-  PUBLIC.
+  PUBLIC .
 
   TYPES:
   "! $values { @link zif_aff_aifp_v1.data:co_check_scenario }
   "! $default { @link zif_aff_aifp_v1.data:co_check_scenario.simple_field_check }
-    ty_check_scenario TYPE c LENGTH 10.
+    ty_check_scenario TYPE c LENGTH 10 .
   TYPES:
   "! $values { @link zif_aff_aifp_v1.data:co_simple_check_type }
   "! $default { @link zif_aff_aifp_v1.data:co_simple_check_type.empty }
-    ty_simple_check_type TYPE c LENGTH 1.
+    ty_simple_check_type TYPE c LENGTH 1 .
   TYPES:
   "! $values { @link zif_aff_aifp_v1.data:co_database_check_type }
   "! $default { @link zif_aff_aifp_v1.data:co_database_check_type.check_existence }
-    ty_database_check_type TYPE c LENGTH 1.
+    ty_database_check_type TYPE c LENGTH 1 .
+  TYPES:
   "! $values { @link zif_aff_aifp_v1.data:co_field_type }
   "! $default { @link zif_aff_aifp_v1.data:co_field_type.pattern }
-  TYPES ty_field_type TYPE c LENGTH 7.
+    ty_field_type TYPE c LENGTH 7 .
+  TYPES:
   "! $values { @link zif_aff_aifp_v1.data:co_variable_type }
   "! $default { @link zif_aff_aifp_v1.data:co_variable_type.source_structure }
-  TYPES ty_variable_type TYPE c LENGTH 5.
+    ty_variable_type TYPE c LENGTH 5 .
+  TYPES:
+    "! <p class="shorttext">Variable List</p>
+    "! Variable list
+    BEGIN OF ty_variable,
+      "! <p class="shorttext">Number</p>
+      "! Number
+      "! $minimum 1
+      "! $maximum 4
+      number TYPE i,
+      "! <p class="shorttext">Type</p>
+      "! Type
+      type   TYPE ty_variable_type,
+      "! <p class="shorttext">Path</p>
+      "! path
+      path   TYPE string,
+      "! <p class="shorttext">Value</p>
+      "! Value
+      value  TYPE string,
+    END OF ty_variable.
+  TYPES:
+  "! <p class="shorttext">Variable Details</p>
+  "! Variable details
+    ty_variables TYPE STANDARD TABLE OF ty_variable WITH DEFAULT KEY .
   TYPES:
     "! <p class="shorttext">Check Message</p>
     "! Check Message
     BEGIN OF ty_message,
       "! <p class="shorttext">Message Class</p>
       "! Message class
-      message_class   TYPE c LENGTH 20,
+      message_class        TYPE c LENGTH 20,
       "! <p class="shorttext">Message Number</p>
       "! Message number
-      message_number  TYPE c LENGTH 3,
-      "! <p class="shorttext">Variable 1 Type</p>
-      "! Variable 1 type
-      variable_1_type TYPE ty_variable_type,
-      "! <p class="shorttext">Variable 1</p>
-      "! Variable 1
-      variable_1      TYPE string,
-      "! <p class="shorttext">Variable 2 Type</p>
-      "! Variable 2 type
-      variable_2_type TYPE ty_variable_type,
-      "! <p class="shorttext">Variable 2</p>
-      "! Variable 2
-      variable_2      TYPE string,
-      "! <p class="shorttext">Variable 3 Type</p>
-      "! Variable 3 type
-      variable_3_type TYPE ty_variable_type,
-      "! <p class="shorttext">Variable 3</p>
-      "! Variable 3
-      variable_3      TYPE string,
-      "! <p class="shorttext">Variable 4 Type</p>
-      "! Variable 4 type
-      variable_4_type TYPE ty_variable_type,
-      "! <p class="shorttext">Variable 4</p>
-      "! Variable 4
-      variable_4      TYPE string,
+      message_number       TYPE c LENGTH 3,
+      "! <p class="shorttext">Message Variable Assignments</p>
+      "! Message variable assignments
+      variable_assignments TYPE ty_variables,
     END OF ty_message.
   TYPES:
     "! <p class="shorttext">Field Check</p>
@@ -67,6 +71,9 @@ INTERFACE zif_aff_aifp_v1
       "! <p class="shorttext">Field Type</p>
       "! Field type
       field_type TYPE ty_field_type,
+      "! <p class="shorttext">Field</p>
+      "! Field
+      field      TYPE c LENGTH 60,
       "! <p class="shorttext">Value</p>
       "! Value or pattern for Field Check
       value      TYPE c LENGTH 60,
@@ -93,6 +100,9 @@ INTERFACE zif_aff_aifp_v1
       "! <p class="shorttext">Field Type</p>
       "! Field type
       field_type      TYPE ty_field_type,
+      "! <p class="shorttext">Field</p>
+      "! Field
+      field           TYPE c LENGTH 60,
       "! <p class="shorttext">Value</p>
       "! Value or pattern for database check
       value           TYPE c LENGTH 60,
@@ -105,17 +115,19 @@ INTERFACE zif_aff_aifp_v1
       "! Class name for check
       class TYPE zif_aff_types_v1=>ty_object_name_30,
     END OF ty_custom_implementation.
+
   TYPES:
-    "! <p class="shorttext">Check Details</p>
-    "! Check details
+    "! <p class="shorttext">Single Check</p>
+    "! Single check
     BEGIN OF ty_single_check,
-      "! <p class="shorttext">Number</p>
-      "! Number
-      "! $required
-      number                TYPE n LENGTH 3,
       "! <p class="shorttext">Description</p>
       "! Description
+      "! $required
       description           TYPE c LENGTH 120,
+      "! <p class="shorttext">ID</p>
+      "! ID
+      "! $required
+      id                    TYPE n LENGTH 3,
       "! <p class="shorttext">Scenario</p>
       "! Scenario
       scenario              TYPE ty_check_scenario,
@@ -135,7 +147,7 @@ INTERFACE zif_aff_aifp_v1
   TYPES:
   "! <p class="shorttext">Check Details</p>
   "! Check details
-    ty_single_checks TYPE STANDARD TABLE OF ty_single_check WITH DEFAULT KEY.
+    ty_single_checks TYPE STANDARD TABLE OF ty_single_check WITH DEFAULT KEY .
   TYPES:
     "! <p class="shorttext">General Information</p>
     "! General information
@@ -148,28 +160,28 @@ INTERFACE zif_aff_aifp_v1
       "! SAP Application Interface check
       "! $required
       aif_check TYPE c LENGTH 20,
-    END OF ty_general_information.
+    END OF ty_general_information .
   TYPES:
     "! <p class="shorttext">Check</p>
     "! Check
     BEGIN OF ty_main,
       "! $required
-      format_version      TYPE zif_aff_types_v1=>ty_format_version,
+      format_version           TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header              TYPE zif_aff_types_v1=>ty_header_60_cloud,
+      header                   TYPE zif_aff_types_v1=>ty_header_60_cloud,
       "! <p class="shorttext">General Information</p>
       "! General information
       "! $required
-      general_information TYPE ty_general_information,
+      general_information      TYPE ty_general_information,
       "! <p class="shorttext">Error Message</p>
       "! Error message
-      error_message       TYPE ty_message,
-      "! <p class="shorttext">Check Assignments</p>
-      "! Check assignments
+      error_message            TYPE ty_message,
+      "! <p class="shorttext">Single Check Assignments</p>
+      "! Single check assignments
       "! $required
-      check_assignments   TYPE ty_single_checks,
+      single_check_assignments TYPE ty_single_checks,
     END OF ty_main.
 
   CONSTANTS:

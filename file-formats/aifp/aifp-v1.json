@@ -95,170 +95,90 @@
           "type": "string",
           "maxLength": 3
         },
-        "variable1Type": {
-          "title": "Variable 1 Type",
-          "description": "Variable 1 type",
-          "type": "string",
-          "enum": [
-            "sourceStructure",
-            "destinationStructure",
-            "constant",
-            "systemField",
-            "messageVariableAll",
-            "messageVariableSingle"
-          ],
-          "enumTitles": [
-            "Source Structure",
-            "Destination Structure",
-            "Constant",
-            "System Field",
-            "Message Variable (All)",
-            "Message Variable (Single)"
-          ],
-          "enumDescriptions": [
-            "Source structure",
-            "Destination structure",
-            "Constant value",
-            "System field",
-            "Message variable (all)",
-            "Message variable (single)"
-          ],
-          "default": "sourceStructure"
-        },
-        "variable1": {
-          "title": "Variable 1",
-          "description": "Variable 1",
-          "type": "string"
-        },
-        "variable2Type": {
-          "title": "Variable 2 Type",
-          "description": "Variable 2 type",
-          "type": "string",
-          "enum": [
-            "sourceStructure",
-            "destinationStructure",
-            "constant",
-            "systemField",
-            "messageVariableAll",
-            "messageVariableSingle"
-          ],
-          "enumTitles": [
-            "Source Structure",
-            "Destination Structure",
-            "Constant",
-            "System Field",
-            "Message Variable (All)",
-            "Message Variable (Single)"
-          ],
-          "enumDescriptions": [
-            "Source structure",
-            "Destination structure",
-            "Constant value",
-            "System field",
-            "Message variable (all)",
-            "Message variable (single)"
-          ],
-          "default": "sourceStructure"
-        },
-        "variable2": {
-          "title": "Variable 2",
-          "description": "Variable 2",
-          "type": "string"
-        },
-        "variable3Type": {
-          "title": "Variable 3 Type",
-          "description": "Variable 3 type",
-          "type": "string",
-          "enum": [
-            "sourceStructure",
-            "destinationStructure",
-            "constant",
-            "systemField",
-            "messageVariableAll",
-            "messageVariableSingle"
-          ],
-          "enumTitles": [
-            "Source Structure",
-            "Destination Structure",
-            "Constant",
-            "System Field",
-            "Message Variable (All)",
-            "Message Variable (Single)"
-          ],
-          "enumDescriptions": [
-            "Source structure",
-            "Destination structure",
-            "Constant value",
-            "System field",
-            "Message variable (all)",
-            "Message variable (single)"
-          ],
-          "default": "sourceStructure"
-        },
-        "variable3": {
-          "title": "Variable 3",
-          "description": "Variable 3",
-          "type": "string"
-        },
-        "variable4Type": {
-          "title": "Variable 4 Type",
-          "description": "Variable 4 type",
-          "type": "string",
-          "enum": [
-            "sourceStructure",
-            "destinationStructure",
-            "constant",
-            "systemField",
-            "messageVariableAll",
-            "messageVariableSingle"
-          ],
-          "enumTitles": [
-            "Source Structure",
-            "Destination Structure",
-            "Constant",
-            "System Field",
-            "Message Variable (All)",
-            "Message Variable (Single)"
-          ],
-          "enumDescriptions": [
-            "Source structure",
-            "Destination structure",
-            "Constant value",
-            "System field",
-            "Message variable (all)",
-            "Message variable (single)"
-          ],
-          "default": "sourceStructure"
-        },
-        "variable4": {
-          "title": "Variable 4",
-          "description": "Variable 4",
-          "type": "string"
+        "variableAssignments": {
+          "title": "Message Variable Assignments",
+          "description": "Message variable assignments",
+          "type": "array",
+          "items": {
+            "title": "Variable List",
+            "description": "Variable list",
+            "type": "object",
+            "properties": {
+              "number": {
+                "title": "Number",
+                "description": "Number",
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 4
+              },
+              "type": {
+                "title": "Type",
+                "description": "Type",
+                "type": "string",
+                "enum": [
+                  "sourceStructure",
+                  "destinationStructure",
+                  "constant",
+                  "systemField",
+                  "messageVariableAll",
+                  "messageVariableSingle"
+                ],
+                "enumTitles": [
+                  "Source Structure",
+                  "Destination Structure",
+                  "Constant",
+                  "System Field",
+                  "Message Variable (All)",
+                  "Message Variable (Single)"
+                ],
+                "enumDescriptions": [
+                  "Source structure",
+                  "Destination structure",
+                  "Constant value",
+                  "System field",
+                  "Message variable (all)",
+                  "Message variable (single)"
+                ],
+                "default": "sourceStructure"
+              },
+              "path": {
+                "title": "Path",
+                "description": "path",
+                "type": "string"
+              },
+              "value": {
+                "title": "Value",
+                "description": "Value",
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
         }
       },
       "additionalProperties": false
     },
-    "checkAssignments": {
-      "title": "Check Assignments",
-      "description": "Check assignments",
+    "singleCheckAssignments": {
+      "title": "Single Check Assignments",
+      "description": "Single check assignments",
       "type": "array",
       "items": {
-        "title": "Check Details",
-        "description": "Check details",
+        "title": "Single Check",
+        "description": "Single check",
         "type": "object",
         "properties": {
-          "number": {
-            "title": "Number",
-            "description": "Number",
-            "type": "string",
-            "maxLength": 3,
-            "pattern": "^[0-9]+$"
-          },
           "description": {
             "title": "Description",
             "description": "Description",
             "type": "string",
             "maxLength": 120
+          },
+          "id": {
+            "title": "ID",
+            "description": "ID",
+            "type": "string",
+            "maxLength": 3,
+            "pattern": "^[0-9]+$"
           },
           "scenario": {
             "title": "Scenario",
@@ -406,6 +326,12 @@
                 ],
                 "default": "pattern"
               },
+              "field": {
+                "title": "Field",
+                "description": "Field",
+                "type": "string",
+                "maxLength": 60
+              },
               "value": {
                 "title": "Value",
                 "description": "Value or pattern for Field Check",
@@ -522,6 +448,12 @@
                 ],
                 "default": "pattern"
               },
+              "field": {
+                "title": "Field",
+                "description": "Field",
+                "type": "string",
+                "maxLength": 60
+              },
               "value": {
                 "title": "Value",
                 "description": "Value or pattern for database check",
@@ -562,145 +494,65 @@
                 "type": "string",
                 "maxLength": 3
               },
-              "variable1Type": {
-                "title": "Variable 1 Type",
-                "description": "Variable 1 type",
-                "type": "string",
-                "enum": [
-                  "sourceStructure",
-                  "destinationStructure",
-                  "constant",
-                  "systemField",
-                  "messageVariableAll",
-                  "messageVariableSingle"
-                ],
-                "enumTitles": [
-                  "Source Structure",
-                  "Destination Structure",
-                  "Constant",
-                  "System Field",
-                  "Message Variable (All)",
-                  "Message Variable (Single)"
-                ],
-                "enumDescriptions": [
-                  "Source structure",
-                  "Destination structure",
-                  "Constant value",
-                  "System field",
-                  "Message variable (all)",
-                  "Message variable (single)"
-                ],
-                "default": "sourceStructure"
-              },
-              "variable1": {
-                "title": "Variable 1",
-                "description": "Variable 1",
-                "type": "string"
-              },
-              "variable2Type": {
-                "title": "Variable 2 Type",
-                "description": "Variable 2 type",
-                "type": "string",
-                "enum": [
-                  "sourceStructure",
-                  "destinationStructure",
-                  "constant",
-                  "systemField",
-                  "messageVariableAll",
-                  "messageVariableSingle"
-                ],
-                "enumTitles": [
-                  "Source Structure",
-                  "Destination Structure",
-                  "Constant",
-                  "System Field",
-                  "Message Variable (All)",
-                  "Message Variable (Single)"
-                ],
-                "enumDescriptions": [
-                  "Source structure",
-                  "Destination structure",
-                  "Constant value",
-                  "System field",
-                  "Message variable (all)",
-                  "Message variable (single)"
-                ],
-                "default": "sourceStructure"
-              },
-              "variable2": {
-                "title": "Variable 2",
-                "description": "Variable 2",
-                "type": "string"
-              },
-              "variable3Type": {
-                "title": "Variable 3 Type",
-                "description": "Variable 3 type",
-                "type": "string",
-                "enum": [
-                  "sourceStructure",
-                  "destinationStructure",
-                  "constant",
-                  "systemField",
-                  "messageVariableAll",
-                  "messageVariableSingle"
-                ],
-                "enumTitles": [
-                  "Source Structure",
-                  "Destination Structure",
-                  "Constant",
-                  "System Field",
-                  "Message Variable (All)",
-                  "Message Variable (Single)"
-                ],
-                "enumDescriptions": [
-                  "Source structure",
-                  "Destination structure",
-                  "Constant value",
-                  "System field",
-                  "Message variable (all)",
-                  "Message variable (single)"
-                ],
-                "default": "sourceStructure"
-              },
-              "variable3": {
-                "title": "Variable 3",
-                "description": "Variable 3",
-                "type": "string"
-              },
-              "variable4Type": {
-                "title": "Variable 4 Type",
-                "description": "Variable 4 type",
-                "type": "string",
-                "enum": [
-                  "sourceStructure",
-                  "destinationStructure",
-                  "constant",
-                  "systemField",
-                  "messageVariableAll",
-                  "messageVariableSingle"
-                ],
-                "enumTitles": [
-                  "Source Structure",
-                  "Destination Structure",
-                  "Constant",
-                  "System Field",
-                  "Message Variable (All)",
-                  "Message Variable (Single)"
-                ],
-                "enumDescriptions": [
-                  "Source structure",
-                  "Destination structure",
-                  "Constant value",
-                  "System field",
-                  "Message variable (all)",
-                  "Message variable (single)"
-                ],
-                "default": "sourceStructure"
-              },
-              "variable4": {
-                "title": "Variable 4",
-                "description": "Variable 4",
-                "type": "string"
+              "variableAssignments": {
+                "title": "Message Variable Assignments",
+                "description": "Message variable assignments",
+                "type": "array",
+                "items": {
+                  "title": "Variable List",
+                  "description": "Variable list",
+                  "type": "object",
+                  "properties": {
+                    "number": {
+                      "title": "Number",
+                      "description": "Number",
+                      "type": "integer",
+                      "minimum": 1,
+                      "maximum": 4
+                    },
+                    "type": {
+                      "title": "Type",
+                      "description": "Type",
+                      "type": "string",
+                      "enum": [
+                        "sourceStructure",
+                        "destinationStructure",
+                        "constant",
+                        "systemField",
+                        "messageVariableAll",
+                        "messageVariableSingle"
+                      ],
+                      "enumTitles": [
+                        "Source Structure",
+                        "Destination Structure",
+                        "Constant",
+                        "System Field",
+                        "Message Variable (All)",
+                        "Message Variable (Single)"
+                      ],
+                      "enumDescriptions": [
+                        "Source structure",
+                        "Destination structure",
+                        "Constant value",
+                        "System field",
+                        "Message variable (all)",
+                        "Message variable (single)"
+                      ],
+                      "default": "sourceStructure"
+                    },
+                    "path": {
+                      "title": "Path",
+                      "description": "path",
+                      "type": "string"
+                    },
+                    "value": {
+                      "title": "Value",
+                      "description": "Value",
+                      "type": "string"
+                    }
+                  },
+                  "additionalProperties": false
+                }
               }
             },
             "additionalProperties": false
@@ -708,7 +560,8 @@
         },
         "additionalProperties": false,
         "required": [
-          "number"
+          "description",
+          "id"
         ]
       }
     }
@@ -718,6 +571,6 @@
     "formatVersion",
     "header",
     "generalInformation",
-    "checkAssignments"
+    "singleCheckAssignments"
   ]
 }
