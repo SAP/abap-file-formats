@@ -62,7 +62,7 @@ INTERFACE zif_aff_tran_v1
     END OF co_lock_status.
 
   "! $values {@link zif_aff_tran_v1.data:co_skip_initial_screen_mode}
-  "! $default {@link zif_aff_tran_v1.data:co_skip_initial_screen_mode.show}
+  "! $default {@link zif_aff_tran_v1.data:co_skip_initial_screen_mode.skip}
   TYPES ty_skip_initial_screen_mode TYPE c LENGTH 1.
   CONSTANTS:
     "! <p class="shorttext">Skip Initial Screen Mode</p>
@@ -76,7 +76,7 @@ INTERFACE zif_aff_tran_v1
     END OF co_skip_initial_screen_mode.
 
   "! $values {@link zif_aff_tran_v1.data:co_stv_maintenance_mode}
-  "! $default {@link zif_aff_tran_v1.data:co_stv_maintenance_mode.not_allowed}
+  "! $default {@link zif_aff_tran_v1.data:co_stv_maintenance_mode.allowed}
   TYPES ty_stv_maintenance_mode TYPE c LENGTH 1.
   CONSTANTS:
     "! <p class="shorttext">Editing of standard transaction variant</p>
@@ -368,7 +368,7 @@ INTERFACE zif_aff_tran_v1
     END OF co_maintenance_status.
 
   "! $values {@link zif_aff_tran_v1.data:co_inheritance_mode}
-  "! $default {@link zif_aff_tran_v1.data:co_inheritance_mode.active}
+  "! $default {@link zif_aff_tran_v1.data:co_inheritance_mode.inactive}
   TYPES ty_inheritance_mode TYPE c LENGTH 10.
   CONSTANTS:
     "! <p class="shorttext">Authorization Defaults Inheritance Mode</p>

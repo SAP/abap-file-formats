@@ -140,7 +140,7 @@
                 "Allowed",
                 "Not Allowed"
               ],
-              "default": "notAllowed"
+              "default": "allowed"
             }
           },
           "additionalProperties": false
@@ -172,7 +172,7 @@
                 "Skip Initial Screen",
                 "Show Initial Screen"
               ],
-              "default": "show"
+              "default": "skip"
             },
             "parameterValues": {
               "title": "Parameters",
@@ -566,7 +566,7 @@
                 "Active",
                 "Inactive"
               ],
-              "default": "active"
+              "default": "inactive"
             },
             "documentation": {
               "title": "Documentation",
