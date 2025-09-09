@@ -35,7 +35,7 @@ INTERFACE zif_aff_aifp_v1
       type   TYPE ty_variable_type,
       "! <p class="shorttext">Field</p>
       "! Field
-      field   TYPE string,
+      field  TYPE string,
       "! <p class="shorttext">Value</p>
       "! Value
       value  TYPE string,
