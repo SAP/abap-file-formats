@@ -19,7 +19,7 @@ INTERFACE zif_aff_aifp_v1
     ty_field_type TYPE c LENGTH 7.
   TYPES:
   "! $values { @link zif_aff_aifp_v1.data:co_variable_type }
-  "! $default { @link zif_aff_aifp_v1.data:co_variable_type.source_structure }
+  "! $default { @link zif_aff_aifp_v1.data:co_variable_type.defined_field }
     ty_variable_type TYPE c LENGTH 5.
   TYPES:
     "! <p class="shorttext">Variable List</p>
@@ -270,23 +270,20 @@ INTERFACE zif_aff_aifp_v1
     END OF co_field_type.
   CONSTANTS:
     BEGIN OF co_variable_type,
-      "! <p class="shorttext">Source Structure</p>
-      "! Source structure
-      source_structure        TYPE ty_variable_type VALUE 'SRC_S',
-      "! <p class="shorttext">Destination Structure</p>
-      "! Destination structure
-      destination_structure   TYPE ty_variable_type VALUE 'DST_S',
+*      "! <p class="shorttext">Source Structure</p>
+*      "! Source structure
+*      source_structure        TYPE ty_variable_type VALUE 'SRC_S',
+*      "! <p class="shorttext">Destination Structure</p>
+*      "! Destination structure
+*      destination_structure   TYPE ty_variable_type VALUE 'DST_S',
       "! <p class="shorttext">Constant</p>
       "! Constant value
       constant                TYPE ty_variable_type VALUE 'CONST',
       "! <p class="shorttext">System Field</p>
       "! System field
       system_field            TYPE ty_variable_type VALUE 'SYSTF',
-      "! <p class="shorttext">Message Variable (All)</p>
-      "! Message variable (all)
-      message_variable_all    TYPE ty_variable_type VALUE 'MSGVA',
-      "! <p class="shorttext">Message Variable (Single)</p>
-      "! Message variable (single)
-      message_variable_single TYPE ty_variable_type VALUE 'MSGVS',
+      "! <p class="shorttext">Defined Field</p>
+      "! Defined field in the check assignment
+      defined_field           TYPE ty_variable_type VALUE 'D_FLD',
     END OF co_variable_type.
 ENDINTERFACE.

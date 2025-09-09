@@ -15,8 +15,8 @@
     "variableAssignments": [
       {
         "number": 1,
-        "type": "sourceStructure",
-        "path": "BP_ID"
+        "type": "definedField",
+        "value": "1"
       }
     ]
   },

@@ -116,30 +116,21 @@
                 "description": "Type",
                 "type": "string",
                 "enum": [
-                  "sourceStructure",
-                  "destinationStructure",
                   "constant",
                   "systemField",
-                  "messageVariableAll",
-                  "messageVariableSingle"
+                  "definedField"
                 ],
                 "enumTitles": [
-                  "Source Structure",
-                  "Destination Structure",
                   "Constant",
                   "System Field",
-                  "Message Variable (All)",
-                  "Message Variable (Single)"
+                  "Defined Field"
                 ],
                 "enumDescriptions": [
-                  "Source structure",
-                  "Destination structure",
                   "Constant value",
                   "System field",
-                  "Message variable (all)",
-                  "Message variable (single)"
+                  "Defined field in the check assignment"
                 ],
-                "default": "sourceStructure"
+                "default": "definedField"
               },
               "path": {
                 "title": "Path",
@@ -515,30 +506,21 @@
                       "description": "Type",
                       "type": "string",
                       "enum": [
-                        "sourceStructure",
-                        "destinationStructure",
                         "constant",
                         "systemField",
-                        "messageVariableAll",
-                        "messageVariableSingle"
+                        "definedField"
                       ],
                       "enumTitles": [
-                        "Source Structure",
-                        "Destination Structure",
                         "Constant",
                         "System Field",
-                        "Message Variable (All)",
-                        "Message Variable (Single)"
+                        "Defined Field"
                       ],
                       "enumDescriptions": [
-                        "Source structure",
-                        "Destination structure",
                         "Constant value",
                         "System field",
-                        "Message variable (all)",
-                        "Message variable (single)"
+                        "Defined field in the check assignment"
                       ],
-                      "default": "sourceStructure"
+                      "default": "definedField"
                     },
                     "path": {
                       "title": "Path",
