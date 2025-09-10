@@ -22,9 +22,9 @@
   },
   "homepage": "https://github.com/SAP/abap-file-formats#readme",
   "dependencies": {
-    "@abaplint/database-sqlite": "^2.10.24",
-    "@abaplint/runtime": "^2.10.75",
-    "@abaplint/transpiler-cli": "^2.10.75",
+    "@abaplint/database-sqlite": "^2.11.0",
+    "@abaplint/runtime": "^2.11.58",
+    "@abaplint/transpiler-cli": "^2.11.58",
     "@actions/core": "^1.11.1",
     "oras-pull": "^0.1.7"
   }
