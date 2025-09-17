@@ -115,13 +115,4 @@ INTERFACE zif_aff_ddls_v1
       parent_name    TYPE c LENGTH 40,
     END OF ty_main.
 
-  TYPES:
-    "! Dependencies of DDLS object type
-    BEGIN OF baseinfo_ddls,
-      "! $required
-      baseinfo       TYPE if_cds_baseinfo=>baseinfo,
-      "! $required
-      format_version TYPE zif_aff_types_v1=>ty_format_version,
-    END OF baseinfo_ddls.
-
 ENDINTERFACE.
