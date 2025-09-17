@@ -96,7 +96,8 @@
         "Extensions for data sources",
         "Custom search modeler",
         "Service Consumption Model"
-      ]
+      ],
+      "default": "abapDevelopmentTools"
     },
     "sourceType": {
       "title": "Source Type",
