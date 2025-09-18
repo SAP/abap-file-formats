@@ -103,12 +103,10 @@ INTERFACE zif_aff_ddls_v1
       "! <p class="shorttext">Source Origin</p>
       "! Source origin
       "! $required
-      "! $showAlways
       source_origin  TYPE ty_source_origin,
       "! <p class="shorttext">Source Type</p>
       "! Source type
       "! $required
-      "! $showAlways
       source_type    TYPE ty_source_type,
       "! <p class="shorttext">Parent Name</p>
       "! DDLS name of the parent of an extend
