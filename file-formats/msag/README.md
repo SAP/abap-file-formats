@@ -1,10 +1,10 @@
-# Message Class object type metadata File Format
+# Message Class File Format
 
 ## Object Type Information
 
 Object Type | Description | Group
 :--- | :--- | :---
-MSAG  | Message Class object type metadata | Texts
+MSAG | Message Class  | Texts
 
 ## File Structure
 
