@@ -1,5 +1,5 @@
 INTERFACE zif_aff_msag_v1
- PUBLIC.
+  PUBLIC.
 
   TYPES:
     "! <p class="shorttext">Message Properties</p>
