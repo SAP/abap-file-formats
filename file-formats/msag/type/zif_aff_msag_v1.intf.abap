@@ -15,7 +15,7 @@ INTERFACE zif_aff_msag_v1
 
   "! <p class="shorttext">Internal table to store messages</p>
   "! Internal table to store messages
-  TYPES tt_messages TYPE STANDARD TABLE OF ty_message WITH DEFAULT KEY.
+  TYPES ty_messages TYPE STANDARD TABLE OF ty_message WITH DEFAULT KEY.
 
   TYPES:
     "! <p class="shorttext">Message Class Properties</p>
@@ -30,7 +30,7 @@ INTERFACE zif_aff_msag_v1
       "! <p class="shorttext">Messages</p>
       "! Messages
       "! $required
-      messages       TYPE tt_messages,
+      messages       TYPE ty_messages,
     END OF ty_main.
 
 ENDINTERFACE.
