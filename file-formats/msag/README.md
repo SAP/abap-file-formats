@@ -14,5 +14,5 @@ File | Cardinality | Definition | Schema | Example
 
 ---
 
-**Note:**  
+**Note:**
 Long text support is not currently included in the ABAP file format. However, support for long text will be added in a future version.
