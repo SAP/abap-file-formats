@@ -1,5 +1,5 @@
 INTERFACE zif_aff_chkv_v1
-  PUBLIC .
+  PUBLIC.
 
   TYPES:
     "! <p class="shorttext">Range Value</p>
