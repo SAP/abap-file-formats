@@ -29,22 +29,22 @@ INTERFACE zif_aff_chkv_v1
     ty_param_value TYPE string,
     "! <p class="shorttext">Component</p>
     "! Component of a structure as a key-value pair
-    begin of ty_structured_value_comp,
+    BEGIN OF ty_structured_value_comp,
       "! <p class="shorttext">Component Name</p>
       "! Name of a component of a structure
       "! $required
-      field type string,
+      field TYPE string,
       "! <p class="shorttext">Component Value</p>
       "! Value of a component of a structure
       "! $required
-      value type string,
-    end of ty_structured_value_comp,
+      value TYPE string,
+    END OF ty_structured_value_comp,
     "! <p class="shorttext">Structure</p>
     "! A structured value as a list of key-value pairs
-    ty_structured_value type sorted table of ty_structured_value_comp with unique key field,
+    ty_structured_value TYPE SORTED TABLE OF ty_structured_value_comp WITH UNIQUE KEY field,
     "! <p class="shorttext">Structure List</p>
     "! A list of structured values
-    ty_structured_value_list type standard table of ty_structured_value with empty key,
+    ty_structured_value_list TYPE STANDARD TABLE OF ty_structured_value WITH DEFAULT KEY,
 
     "! <p class="shorttext">Parameter</p>
     "! Parameter of ATC check
