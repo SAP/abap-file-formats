@@ -1,5 +1,5 @@
 INTERFACE zif_aff_chkv_v1
-  PUBLIC.
+  PUBLIC .
 
   TYPES:
     "! <p class="shorttext">Range Value</p>
@@ -27,6 +27,24 @@ INTERFACE zif_aff_chkv_v1
     "! <p class="shorttext">Entry in Value List</p>
     "! A parameter value in the parameter value list
     ty_param_value TYPE string,
+    "! <p class="shorttext">Component</p>
+    "! Component of a structure as a key-value pair
+    begin of ty_structured_value_comp,
+      "! <p class="shorttext">Component Name</p>
+      "! Name of a component of a structure
+      "! $required
+      field type string,
+      "! <p class="shorttext">Component Value</p>
+      "! Value of a component of a structure
+      "! $required
+      value type string,
+    end of ty_structured_value_comp,
+    "! <p class="shorttext">Structure</p>
+    "! A structured value as a list of key-value pairs
+    ty_structured_value type sorted table of ty_structured_value_comp with unique key field,
+    "! <p class="shorttext">Structure List</p>
+    "! A list of structured values
+    ty_structured_value_list type standard table of ty_structured_value with empty key,
 
     "! <p class="shorttext">Parameter</p>
     "! Parameter of ATC check
@@ -38,6 +56,12 @@ INTERFACE zif_aff_chkv_v1
       "! <p class="shorttext">Parameter Value</p>
       "! The value of the parameter
       value            TYPE string,
+      "! <p class="shorttext">Parameter Structure</p>
+      "! A structured value of a parameter
+      structured_value   TYPE ty_structured_value,
+      "! <p class="shorttext">Parameter Structure List</p>
+      "! A list of structured values of a parameter
+      structured_value_list TYPE ty_structured_value_list,
       "! <p class="shorttext">List of Parameter Values</p>
       "! List of values for a multi-value check parameter
       value_list       TYPE STANDARD TABLE OF ty_param_value WITH DEFAULT KEY,
@@ -73,17 +97,17 @@ INTERFACE zif_aff_chkv_v1
     "! ATC check variant properties
     BEGIN OF ty_main,
       "! $required
-      format_version  TYPE zif_aff_types_v1=>ty_format_version,
+      format_version     TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header          TYPE zif_aff_types_v1=>ty_header_60_cloud,
+      header             TYPE zif_aff_types_v1=>ty_header_60_cloud,
       "! <p class="shorttext">Remote-Enabled</p>
       "! The ATC check variant is remote-enabled
-      remote_enabled  TYPE abap_bool,
+      remote_enabled     TYPE abap_bool,
       "! <p class="shorttext">Selected Checks</p>
       "! The checks selected in the ATC check variant
-      selected_checks TYPE ty_checks,
+      selected_checks    TYPE ty_checks,
     END OF ty_main.
 
 ENDINTERFACE.

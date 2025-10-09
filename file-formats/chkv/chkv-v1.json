@@ -93,6 +93,67 @@
                   "description": "The value of the parameter",
                   "type": "string"
                 },
+                "structuredValue": {
+                  "title": "Parameter Structure",
+                  "description": "A structured value of a parameter",
+                  "type": "array",
+                  "uniqueItems": true,
+                  "items": {
+                    "title": "Component",
+                    "description": "Component of a structure as a key-value pair",
+                    "type": "object",
+                    "properties": {
+                      "field": {
+                        "title": "Component Name",
+                        "description": "Name of a component of a structure",
+                        "type": "string"
+                      },
+                      "value": {
+                        "title": "Component Value",
+                        "description": "Value of a component of a structure",
+                        "type": "string"
+                      }
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                      "field",
+                      "value"
+                    ]
+                  }
+                },
+                "structuredValueList": {
+                  "title": "Parameter Structure List",
+                  "description": "A list of structured values of a parameter",
+                  "type": "array",
+                  "items": {
+                    "title": "Structure",
+                    "description": "A structured value as a list of key-value pairs",
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": {
+                      "title": "Component",
+                      "description": "Component of a structure as a key-value pair",
+                      "type": "object",
+                      "properties": {
+                        "field": {
+                          "title": "Component Name",
+                          "description": "Name of a component of a structure",
+                          "type": "string"
+                        },
+                        "value": {
+                          "title": "Component Value",
+                          "description": "Value of a component of a structure",
+                          "type": "string"
+                        }
+                      },
+                      "additionalProperties": false,
+                      "required": [
+                        "field",
+                        "value"
+                      ]
+                    }
+                  }
+                },
                 "valueList": {
                   "title": "List of Parameter Values",
                   "description": "List of values for a multi-value check parameter",
