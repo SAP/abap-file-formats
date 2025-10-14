@@ -15,7 +15,7 @@ INTERFACE zif_aff_msag_v1
 
   "! <p class="shorttext">Internal table to store messages</p>
   "! Internal table to store messages
-  TYPES ty_messages TYPE STANDARD TABLE OF ty_message WITH DEFAULT KEY.
+  TYPES ty_messages TYPE SORTED TABLE OF ty_message WITH UNIQUE KEY number.
 
   TYPES:
     "! <p class="shorttext">Message Class Properties</p>
