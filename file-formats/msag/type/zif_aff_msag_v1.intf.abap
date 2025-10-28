@@ -1,5 +1,5 @@
 INTERFACE zif_aff_msag_v1
-  PUBLIC.
+ PUBLIC.
 
   TYPES:
     "! <p class="shorttext">Message Properties</p>
@@ -26,7 +26,7 @@ INTERFACE zif_aff_msag_v1
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header         TYPE zif_aff_types_v1=>ty_header_60,
+      header         TYPE zif_aff_types_v1=>ty_header_60_no_abap_lv,
       "! <p class="shorttext">Messages</p>
       "! Messages
       "! $required
