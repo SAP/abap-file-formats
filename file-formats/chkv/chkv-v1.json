@@ -94,8 +94,8 @@
                   "type": "string"
                 },
                 "structuredValue": {
-                  "title": "Parameter Structure",
-                  "description": "A structured value of a parameter",
+                  "title": "Structured Value",
+                  "description": "A structured value of a parameter, i.e. a value with named components",
                   "type": "array",
                   "uniqueItems": true,
                   "items": {
@@ -104,7 +104,7 @@
                     "type": "object",
                     "properties": {
                       "field": {
-                        "title": "Component Name",
+                        "title": "Component Field Name",
                         "description": "Name of a component of a structure",
                         "type": "string"
                       },
@@ -122,7 +122,7 @@
                   }
                 },
                 "structuredValueList": {
-                  "title": "Parameter Structure List",
+                  "title": "Structured Value List",
                   "description": "A list of structured values of a parameter",
                   "type": "array",
                   "items": {
@@ -136,7 +136,7 @@
                       "type": "object",
                       "properties": {
                         "field": {
-                          "title": "Component Name",
+                          "title": "Component Field Name",
                           "description": "Name of a component of a structure",
                           "type": "string"
                         },
