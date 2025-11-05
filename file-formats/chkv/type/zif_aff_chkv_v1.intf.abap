@@ -30,7 +30,7 @@ INTERFACE zif_aff_chkv_v1
     "! <p class="shorttext">Component</p>
     "! Component of a structure as a key-value pair
     BEGIN OF ty_structured_value_comp,
-      "! <p class="shorttext">Component Name</p>
+      "! <p class="shorttext">Component Field Name</p>
       "! Name of a component of a structure
       "! $required
       field TYPE string,
@@ -56,10 +56,10 @@ INTERFACE zif_aff_chkv_v1
       "! <p class="shorttext">Parameter Value</p>
       "! The value of the parameter
       value                 TYPE string,
-      "! <p class="shorttext">Parameter Structure</p>
-      "! A structured value of a parameter
+      "! <p class="shorttext">Structured Value</p>
+      "! A structured value of a parameter, i.e. a value with named components
       structured_value      TYPE ty_structured_value,
-      "! <p class="shorttext">Parameter Structure List</p>
+      "! <p class="shorttext">Structured Value List</p>
       "! A list of structured values of a parameter
       structured_value_list TYPE ty_structured_value_list,
       "! <p class="shorttext">List of Parameter Values</p>
