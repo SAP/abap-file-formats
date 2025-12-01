@@ -53,8 +53,8 @@
             "maxLength": 3
           },
           "text": {
-            "title": "Short Text",
-            "description": "Short text",
+            "title": "Message Text",
+            "description": "Message text",
             "type": "string",
             "maxLength": 73
           }

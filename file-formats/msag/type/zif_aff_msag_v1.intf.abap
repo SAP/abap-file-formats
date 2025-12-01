@@ -8,8 +8,8 @@ INTERFACE zif_aff_msag_v1
       "! <p class="shorttext">Message Number</p>
       "! Message number
       number TYPE c LENGTH 3,
-      "! <p class="shorttext">Short Text</p>
-      "! Short text
+      "! <p class="shorttext">Message Text</p>
+      "! Message text
       text   TYPE c LENGTH 73,
     END OF ty_message.
 
