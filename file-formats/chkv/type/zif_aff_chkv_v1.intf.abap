@@ -27,6 +27,24 @@ INTERFACE zif_aff_chkv_v1
     "! <p class="shorttext">Entry in Value List</p>
     "! A parameter value in the parameter value list
     ty_param_value TYPE string,
+    "! <p class="shorttext">Component</p>
+    "! Component of a structure as a key-value pair
+    BEGIN OF ty_structured_value_comp,
+      "! <p class="shorttext">Component Field Name</p>
+      "! Name of a component of a structure
+      "! $required
+      field TYPE string,
+      "! <p class="shorttext">Component Value</p>
+      "! Value of a component of a structure
+      "! $required
+      value TYPE string,
+    END OF ty_structured_value_comp,
+    "! <p class="shorttext">Structure</p>
+    "! A structured value as a list of key-value pairs
+    ty_structured_value TYPE SORTED TABLE OF ty_structured_value_comp WITH UNIQUE KEY field,
+    "! <p class="shorttext">Structure List</p>
+    "! A list of structured values
+    ty_structured_value_list TYPE STANDARD TABLE OF ty_structured_value WITH DEFAULT KEY,
 
     "! <p class="shorttext">Parameter</p>
     "! Parameter of ATC check
@@ -34,16 +52,22 @@ INTERFACE zif_aff_chkv_v1
       "! <p class="shorttext">Parameter Name</p>
       "! The parameter name
       "! $required
-      name             TYPE string,
+      name                  TYPE string,
       "! <p class="shorttext">Parameter Value</p>
       "! The value of the parameter
-      value            TYPE string,
+      value                 TYPE string,
+      "! <p class="shorttext">Structured Value</p>
+      "! A structured value of a parameter, i.e. a value with named components
+      structured_value      TYPE ty_structured_value,
+      "! <p class="shorttext">Structured Value List</p>
+      "! A list of structured values of a parameter
+      structured_value_list TYPE ty_structured_value_list,
       "! <p class="shorttext">List of Parameter Values</p>
       "! List of values for a multi-value check parameter
-      value_list       TYPE STANDARD TABLE OF ty_param_value WITH DEFAULT KEY,
+      value_list            TYPE STANDARD TABLE OF ty_param_value WITH DEFAULT KEY,
       "! <p class="shorttext">List of Range Values</p>
       "! List of range values for a check parameter
-      value_range_list TYPE ty_ranges,
+      value_range_list      TYPE ty_ranges,
     END OF ty_parameter,
 
     "! <p class="shorttext">Parameters</p>
