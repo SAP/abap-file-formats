@@ -10,6 +10,7 @@ INTERFACE zif_aff_ddls_v1
   "! <p class="shorttext">Source Origin</p>
   "! Source origin
   "! $values {@link zif_aff_ddls_v1.data:co_source_origin}
+  "! $default {@link zif_aff_ddls_v1.data:co_source_origin.abap_development_tools}
   TYPES ty_source_origin TYPE c LENGTH 1.
 
   CONSTANTS:

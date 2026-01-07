@@ -48,10 +48,13 @@ INTERFACE zif_aff_aifa_v1
     BEGIN OF ty_field_to_check,
       "! <p class="shorttext">Type</p>
       "! Type
-      type TYPE ty_field_type,
-      "! <p class="shorttext">Name/Value</p>
-      "! Name/Value
-      name TYPE string,
+      type  TYPE ty_field_type,
+      "! <p class="shorttext">Name</p>
+      "! Name
+      name  TYPE string,
+      "! <p class="shorttext">Value</p>
+      "! Value
+      value TYPE string,
     END OF ty_field_to_check,
     "! <p class="shorttext">Fields To Check</p>
     "! Fields to check
