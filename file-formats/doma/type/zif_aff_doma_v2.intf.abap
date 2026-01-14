@@ -159,47 +159,51 @@ INTERFACE zif_aff_doma_v2 PUBLIC.
     "! Domain properties
     BEGIN OF ty_main,
       "! $required
-      format_version        TYPE zif_aff_types_v1=>ty_format_version,
+      format_version              TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header                TYPE zif_aff_types_v1=>ty_header_60,
+      header                      TYPE zif_aff_types_v1=>ty_header_60,
 
       "! $required
       "! $values {@link zif_aff_doma_v2.data:co_data_type}
-      data_type             TYPE ty_data_type,
+      data_type                   TYPE ty_data_type,
 
       "! $required
-      length                TYPE ty_length,
+      length                      TYPE ty_length,
 
       "! Set if decimal
-      decimals              TYPE ty_decimals,
+      decimals                    TYPE ty_decimals,
 
       "! <p class="shorttext">Supports Negative Values</p>
       "! Supports negative values
-      negative_values       TYPE abap_bool,
+      negative_values             TYPE abap_bool,
 
       "! <p class="shorttext">Case Sensitive</p>
       "! Values are case sensitive
-      case_sensitive        TYPE abap_bool,
+      case_sensitive              TYPE abap_bool,
+
+      "! <p class="shorttext">AM/PM time format supported</p>
+      "! AM/PM time format supported
+      am_pm_time_format_supported TYPE abap_bool,
 
       "! Set the output length
-      output_length         TYPE ty_output_length,
+      output_length               TYPE ty_output_length,
 
       "! Conversion Routine
-      conversion_routine    TYPE ty_conv_routine,
+      conversion_routine          TYPE ty_conv_routine,
 
       "! Value table
-      value_table           TYPE ty_value_table,
+      value_table                 TYPE ty_value_table,
 
       "! Fixed values
-      fixed_values          TYPE ty_single_values,
+      fixed_values                TYPE ty_single_values,
 
       "! Fixed value intervals
-      fixed_value_intervals TYPE ty_intervals_values,
+      fixed_value_intervals       TYPE ty_intervals_values,
 
       "! Fixed value appends
-      fixed_value_appends   TYPE STANDARD TABLE OF zif_aff_types_v1=>ty_object_name_30 WITH DEFAULT KEY,
+      fixed_value_appends         TYPE STANDARD TABLE OF zif_aff_types_v1=>ty_object_name_30 WITH DEFAULT KEY,
     END OF ty_main.
 
 ENDINTERFACE.
