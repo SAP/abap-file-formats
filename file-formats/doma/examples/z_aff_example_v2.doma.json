@@ -4,7 +4,7 @@
     "description": "Example DOMA for ABAP file formats",
     "originalLanguage": "en"
   },
-  "dataType": "CHAR",
+  "dataType": "characterString",
   "length": 3,
   "outputLength":3,
   "fixedValues": [
