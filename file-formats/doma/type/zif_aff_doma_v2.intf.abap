@@ -4,95 +4,95 @@ INTERFACE zif_aff_doma_v2 PUBLIC.
 
   CONSTANTS:
     BEGIN OF co_data_type,
-      "! <p class="shorttext">todo</p>
-      "! todo
+      "! <p class="shorttext">Posting period YYYYMM</p>
+      "! Posting period YYYYMM
       posting_period       TYPE ty_data_type VALUE 'ACCP',
-      "! <p class="shorttext">todo</p>
-      "! todo
+      "! <p class="shorttext">Character String</p>
+      "! Character String
       character_string     TYPE ty_data_type VALUE 'CHAR',
-      "! <p class="shorttext">todo</p>
-      "! todo
+      "! <p class="shorttext">Client</p>
+      "! Client
       client               TYPE ty_data_type VALUE 'CLNT',
-      "! <p class="shorttext">todo</p>
-      "! todo
+      "! <p class="shorttext">Currency key, referenced by CURR fields</p>
+      "! Currency key, referenced by CURR fields
       currency_key         TYPE ty_data_type VALUE 'CUKY',
-      "! <p class="shorttext">todo</p>
-      "! todo
+      "! <p class="shorttext">Currency field, stored as DEC</p>
+      "! Currency field, stored as DEC
       currency_field       TYPE ty_data_type VALUE 'CURR',
-      "! <p class="shorttext">todo</p>
-      "! todo
+      "! <p class="shorttext">Decimal Floating Point, 16 Digits, DEC on Database</p>
+      "! Decimal Floating Point, 16 Digits, DEC on Database
       floating_point16_dec TYPE ty_data_type VALUE 'DF16_DEC',
-      "! <p class="shorttext">todo</p>
-      "! todo
+      "! <p class="shorttext">Decimal Floating Point, 16 Digits,  RAW on Database</p>
+      "! Decimal Floating Point, 16 Digits,  RAW on Database
       floating_point16_raw TYPE ty_data_type VALUE 'DF16_RAW',
-      "! <p class="shorttext">todo</p>
-      "! todo
+      "! <p class="shorttext">Decimal Floating Point. 16 Digits, with Scale Field</p>
+      "! Decimal Floating Point. 16 Digits, with Scale Field
       floating_point16_scl TYPE ty_data_type VALUE 'DF16_SCL',
-      "! <p class="shorttext">todo</p>
-      "! todo
+      "! <p class="shorttext">Decimal Floating Point, 34 Digits, DEC on Database</p>
+      "! Decimal Floating Point, 34 Digits, DEC on Database
       floating_point34_dec TYPE ty_data_type VALUE 'DF34_DEC',
-      "! <p class="shorttext">todo</p>
-      "! todo
+      "! <p class="shorttext">Decimal Floating Point, 34 Digits, RAW on Database</p>
+      "! Decimal Floating Point, 34 Digits, RAW on Database
       floating_point34_raw TYPE ty_data_type VALUE 'DF34_RAW',
-      "! <p class="shorttext">todo</p>
-      "! todo
+      "! <p class="shorttext">Decimal Floating Point, 34 Digits, with Scale Field</p>
+      "! Decimal Floating Point, 34 Digits, with Scale Field
       floating_point34_scl TYPE ty_data_type VALUE 'DF34_SCL',
-      "! <p class="shorttext">todo</p>
-      "! todo
+      "! <p class="shorttext">Date field (YYYYMMDD) stored as char(8)</p>
+      "! Date field (YYYYMMDD) stored as char(8)
       date                 TYPE ty_data_type VALUE 'DATS',
-      "! <p class="shorttext">todo</p>
-      "! todo
+      "! <p class="shorttext">Counter or amount field with comma and sign</p>
+      "! Counter or amount field with comma and sign
       counter_or_amount    TYPE ty_data_type VALUE 'DEC',
-      "! <p class="shorttext">todo</p>
-      "! todo
+      "! <p class="shorttext">Floating point number, accurate to 8 bytes</p>
+      "! Floating point number, accurate to 8 bytes
       floating_point       TYPE ty_data_type VALUE 'FLTP',
-      "! <p class="shorttext">todo</p>
-      "! todo
+      "! <p class="shorttext">1-byte integer, integer number <= 255</p>
+      "! 1-byte integer, integer number <= 255
       integer_1            TYPE ty_data_type VALUE 'INT1',
-      "! <p class="shorttext">todo</p>
-      "! todo
+      "! <p class="shorttext">2-byte integer, only for length field before LCHR or LRAW</p>
+      "! 2-byte integer, only for length field before LCHR or LRAW
       integer_2            TYPE ty_data_type VALUE 'INT2',
-      "! <p class="shorttext">todo</p>
-      "! todo
+      "! <p class="shorttext">4-byte integer, integer number with sign</p>
+      "! 4-byte integer, integer number with sign
       integer_4            TYPE ty_data_type VALUE 'INT4',
-      "! <p class="shorttext">todo</p>
-      "! todo
+      "! <p class="shorttext">Language key</p>
+      "! Language key
       language             TYPE ty_data_type VALUE 'LANG',
-      "! <p class="shorttext">todo</p>
-      "! todo
+      "! <p class="shorttext">Long character string, requires preceding INT2 field</p>
+      "! Long character string, requires preceding INT2 field
       long_string          TYPE ty_data_type VALUE 'LCHR',
-      "! <p class="shorttext">todo</p>
-      "! todo
+      "! <p class="shorttext">Long byte string, requires preceding INT2 field</p>
+      "! Long byte string, requires preceding INT2 field
       long_byte_string     TYPE ty_data_type VALUE 'LRAW',
-      "! <p class="shorttext">todo</p>
-      "! todo
+      "! <p class="shorttext">Character string with only digits</p>
+      "! Character string with only digits
       numeric_character    TYPE ty_data_type VALUE 'NUMC',
-      "! <p class="shorttext">todo</p>
-      "! todo
+      "! <p class="shorttext">Obsolete data type, do not use</p>
+      "! Obsolete data type, do not use
       obsolete_prec        TYPE ty_data_type VALUE 'PREC',
-      "! <p class="shorttext">todo</p>
-      "! todo
+      "! <p class="shorttext">Quantity field, points to a unit field with format UNIT</p>
+      "! Quantity field, points to a unit field with format UNIT
       quantity             TYPE ty_data_type VALUE 'QUAN',
-      "! <p class="shorttext">todo</p>
-      "! todo
+      "! <p class="shorttext">Uninterpreted sequence of bytes</p>
+      "! Uninterpreted sequence of bytes
       byte_sequence        TYPE ty_data_type VALUE 'RAW',
-      "! <p class="shorttext">todo</p>
-      "! todo
+      "! <p class="shorttext">Byte String of Variable Length</p>
+      "! Byte String of Variable Length
       byte_string          TYPE ty_data_type VALUE 'RAWSTRING',
-      "! <p class="shorttext">todo</p>
-      "! todo
+      "! <p class="shorttext">Short Character String of Variable Length</p>
+      "! Short Character String of Variable Length
       short_string         TYPE ty_data_type VALUE 'SSTRING',
-      "! <p class="shorttext">todo</p>
-      "! todo
+      "! <p class="shorttext">Character String of Variable Length</p>
+      "! Character String of Variable Length
       string               TYPE ty_data_type VALUE 'STRING',
-      "! <p class="shorttext">todo</p>
-      "! todo
+      "! <p class="shorttext">Time field (hhmmss), stored as char(6)</p>
+      "! Time field (hhmmss), stored as char(6)
       time                 TYPE ty_data_type VALUE 'TIMS',
-      "! <p class="shorttext">todo</p>
-      "! todo
+      "! <p class="shorttext">Unit key for QUAN fields</p>
+      "! Unit key for QUAN fields
       unit                 TYPE ty_data_type VALUE 'UNIT',
-      "! <p class="shorttext">todo</p>
-      "! todo
+      "! <p class="shorttext">Long character string, no longer supported from Rel. 3.0</p>
+      "! Long character string, no longer supported from Rel. 3.0
       obsolete_varc        TYPE ty_data_type VALUE 'VARC',
     END OF co_data_type.
 
