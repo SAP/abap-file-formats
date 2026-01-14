@@ -30,14 +30,16 @@ async function run() {
   }
 
 
-  const types = [];
+  const types = ["doma"];
   const directory = '../file-formats'; // Replace with your directory
+  /*
   for (const f of fs.readdirSync(directory)) {
     if (f.length === 4) {
       types.push(f.toLowerCase());
     }
   }
   types.sort();
+  */
 
 
   let error = false;
@@ -49,6 +51,7 @@ async function run() {
 
     const files = fs.readdirSync(directory + path.sep + type);
     const jsonFiles = files.filter(file => path.extname(file) === '.json');
+    console.dir(jsonFiles);
     let objTypeVersNumb = jsonFiles.map((file) => {
       // Extract the characters before '-v' as namePart and the number after '-v' as versionNumber using regex
       let match = file.match(/(.*)(?:-v)(\d+)(?=\.json)/);
@@ -62,6 +65,7 @@ async function run() {
 
       return null;
     });
+    console.dir(objTypeVersNumb);
 
     for (let aff of objTypeVersNumb) {
       if (aff) {

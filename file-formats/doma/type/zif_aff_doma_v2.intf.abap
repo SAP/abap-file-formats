@@ -4,35 +4,95 @@ INTERFACE zif_aff_doma_v2 PUBLIC.
 
   CONSTANTS:
     BEGIN OF co_data_type,
+      "! <p class="shorttext">todo</p>
+      "! todo
       posting_period       TYPE ty_data_type VALUE 'ACCP',
+      "! <p class="shorttext">todo</p>
+      "! todo
       character_string     TYPE ty_data_type VALUE 'CHAR',
+      "! <p class="shorttext">todo</p>
+      "! todo
       client               TYPE ty_data_type VALUE 'CLNT',
+      "! <p class="shorttext">todo</p>
+      "! todo
       currency_key         TYPE ty_data_type VALUE 'CUKY',
+      "! <p class="shorttext">todo</p>
+      "! todo
       currency_field       TYPE ty_data_type VALUE 'CURR',
+      "! <p class="shorttext">todo</p>
+      "! todo
       floating_point16_dec TYPE ty_data_type VALUE 'DF16_DEC',
+      "! <p class="shorttext">todo</p>
+      "! todo
       floating_point16_raw TYPE ty_data_type VALUE 'DF16_RAW',
+      "! <p class="shorttext">todo</p>
+      "! todo
       floating_point16_scl TYPE ty_data_type VALUE 'DF16_SCL',
+      "! <p class="shorttext">todo</p>
+      "! todo
       floating_point34_dec TYPE ty_data_type VALUE 'DF34_DEC',
+      "! <p class="shorttext">todo</p>
+      "! todo
       floating_point34_raw TYPE ty_data_type VALUE 'DF34_RAW',
+      "! <p class="shorttext">todo</p>
+      "! todo
       floating_point34_scl TYPE ty_data_type VALUE 'DF34_SCL',
+      "! <p class="shorttext">todo</p>
+      "! todo
       date                 TYPE ty_data_type VALUE 'DATS',
+      "! <p class="shorttext">todo</p>
+      "! todo
       counter_or_amount    TYPE ty_data_type VALUE 'DEC',
+      "! <p class="shorttext">todo</p>
+      "! todo
       floating_point       TYPE ty_data_type VALUE 'FLTP',
+      "! <p class="shorttext">todo</p>
+      "! todo
       integer_1            TYPE ty_data_type VALUE 'INT1',
+      "! <p class="shorttext">todo</p>
+      "! todo
       integer_2            TYPE ty_data_type VALUE 'INT2',
+      "! <p class="shorttext">todo</p>
+      "! todo
       integer_4            TYPE ty_data_type VALUE 'INT4',
-      language_ie6         TYPE ty_data_type VALUE 'LANG',
+      "! <p class="shorttext">todo</p>
+      "! todo
+      language             TYPE ty_data_type VALUE 'LANG',
+      "! <p class="shorttext">todo</p>
+      "! todo
       long_string          TYPE ty_data_type VALUE 'LCHR',
+      "! <p class="shorttext">todo</p>
+      "! todo
       long_byte_string     TYPE ty_data_type VALUE 'LRAW',
+      "! <p class="shorttext">todo</p>
+      "! todo
       numeric_character    TYPE ty_data_type VALUE 'NUMC',
+      "! <p class="shorttext">todo</p>
+      "! todo
       obsolete_prec        TYPE ty_data_type VALUE 'PREC',
+      "! <p class="shorttext">todo</p>
+      "! todo
       quantity             TYPE ty_data_type VALUE 'QUAN',
+      "! <p class="shorttext">todo</p>
+      "! todo
       byte_sequence        TYPE ty_data_type VALUE 'RAW',
+      "! <p class="shorttext">todo</p>
+      "! todo
       byte_string          TYPE ty_data_type VALUE 'RAWSTRING',
+      "! <p class="shorttext">todo</p>
+      "! todo
       short_string         TYPE ty_data_type VALUE 'SSTRING',
+      "! <p class="shorttext">todo</p>
+      "! todo
       string               TYPE ty_data_type VALUE 'STRING',
+      "! <p class="shorttext">todo</p>
+      "! todo
       time                 TYPE ty_data_type VALUE 'TIMS',
+      "! <p class="shorttext">todo</p>
+      "! todo
       unit                 TYPE ty_data_type VALUE 'UNIT',
+      "! <p class="shorttext">todo</p>
+      "! todo
       obsolete_varc        TYPE ty_data_type VALUE 'VARC',
     END OF co_data_type.
 
