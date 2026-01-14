@@ -22,8 +22,8 @@ INTERFACE zif_aff_doma_v2 PUBLIC.
       "! <p class="shorttext">Decimal Floating Point, 16 Digits, DEC on Database</p>
       "! Decimal Floating Point, 16 Digits, DEC on Database
       floating_point16_dec TYPE ty_data_type VALUE 'DF16_DEC',
-      "! <p class="shorttext">Decimal Floating Point, 16 Digits,  RAW on Database</p>
-      "! Decimal Floating Point, 16 Digits,  RAW on Database
+      "! <p class="shorttext">Decimal Floating Point, 16 Digits, RAW on Database</p>
+      "! Decimal Floating Point, 16 Digits, RAW on Database
       floating_point16_raw TYPE ty_data_type VALUE 'DF16_RAW',
       "! <p class="shorttext">Decimal Floating Point. 16 Digits, with Scale Field</p>
       "! Decimal Floating Point. 16 Digits, with Scale Field
