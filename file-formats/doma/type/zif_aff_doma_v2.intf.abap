@@ -96,6 +96,32 @@ INTERFACE zif_aff_doma_v2 PUBLIC.
       obsolete_varc        TYPE ty_data_type VALUE 'VARC',
     END OF co_data_type.
 
+  TYPES ty_output_style TYPE n LENGTH 2.
+
+  CONSTANTS: BEGIN OF co_output_style,
+               "! <p class="shorttext">Normal</p>
+               "! Normal
+               normal                       TYPE ty_output_style VALUE '00',
+               "! <p class="shorttext">Sign right</p>
+               "! Sign right
+               sign_right                   TYPE ty_output_style VALUE '01',
+               "! <p class="shorttext">Scale-preserving</p>
+               "! Scale-preserving
+               scale_preserving             TYPE ty_output_style VALUE '02',
+               "! <p class="shorttext">Scientific</p>
+               "! Scientific
+               scientific                   TYPE ty_output_style VALUE '03',
+               "! <p class="shorttext">Scientific with leading zero</p>
+               "! Scientific with leading zero
+               scientific_with_leading_zero TYPE ty_output_style VALUE '04',
+               "! <p class="shorttext">Scale-preserving scientific</p>
+               "! Scale-preserving scientific
+               scale_preserving_scientific  TYPE ty_output_style VALUE '05',
+               "! <p class="shorttext">Engineering</p>
+               "! Engineering
+               engineering                  TYPE ty_output_style VALUE '06',
+             END OF co_output_style.
+
   "! <p class="shorttext">No Characters</p>
   "! Number of characters
   "! $minimum 0
@@ -186,6 +212,11 @@ INTERFACE zif_aff_doma_v2 PUBLIC.
       "! <p class="shorttext">AM/PM time format supported</p>
       "! AM/PM time format supported
       am_pm_time_format_supported TYPE abap_bool,
+
+      "! <p class="shorttext">Output style (for Releases < 71*)</p>
+      "! Output style (for Releases < 71*)
+      "! $values {@link zif_aff_doma_v2.data:co_output_style}
+      output_style                TYPE ty_output_style,
 
       "! Set the output length
       output_length               TYPE ty_output_length,

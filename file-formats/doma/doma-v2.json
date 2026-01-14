@@ -179,6 +179,43 @@
       "description": "Values are case sensitive",
       "type": "boolean"
     },
+    "amPmTimeFormatSupported": {
+      "title": "AM/PM time format supported",
+      "description": "AM/PM time format supported",
+      "type": "boolean"
+    },
+    "outputStyle": {
+      "title": "Output style (for Releases < 71*)",
+      "description": "Output style (for Releases < 71*)",
+      "type": "string",
+      "enum": [
+        "normal",
+        "signRight",
+        "scalePreserving",
+        "scientific",
+        "scientificWithLeadingZero",
+        "scalePreservingScientific",
+        "engineering"
+      ],
+      "enumTitles": [
+        "Normal",
+        "Sign right",
+        "Scale-preserving",
+        "Scientific",
+        "Scientific with leading zero",
+        "Scale-preserving scientific",
+        "Engineering"
+      ],
+      "enumDescriptions": [
+        "Normal",
+        "Sign right",
+        "Scale-preserving",
+        "Scientific",
+        "Scientific with leading zero",
+        "Scale-preserving scientific",
+        "Engineering"
+      ]
+    },
     "outputLength": {
       "description": "Set the output length",
       "type": "integer",
