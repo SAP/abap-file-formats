@@ -36,11 +36,6 @@ INTERFACE zif_aff_doma_v2 PUBLIC.
       varc TYPE ty_data_type VALUE 'VARC',
     END OF co_data_type.
 
-  "! <p class="shorttext">Data Type for the Domain</p>
-  "! Data type for the domain
-  "! $values {@link zif_aff_doma_v2.data:co_data_type}
-  TYPES ty_data_type            TYPE ty_data_type.
-
   "! <p class="shorttext">No Characters</p>
   "! Number of characters
   "! $minimum 0
@@ -111,6 +106,7 @@ INTERFACE zif_aff_doma_v2 PUBLIC.
       header                TYPE zif_aff_types_v1=>ty_header_60,
 
       "! $required
+      "! $values {@link zif_aff_doma_v2.data:co_data_type}
       data_type             TYPE ty_data_type,
 
       "! $required
