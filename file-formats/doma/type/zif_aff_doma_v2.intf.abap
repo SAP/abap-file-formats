@@ -137,6 +137,9 @@ INTERFACE zif_aff_doma_v2 PUBLIC.
 
       "! Fixed value intervals
       fixed_value_intervals TYPE ty_intervals_values,
+
+      "! Fixed value appends
+      fixed_value_appends   TYPE STANDARD TABLE OF zif_aff_types_v1=>ty_object_name_30 WITH DEFAULT KEY,
     END OF ty_main.
 
 ENDINTERFACE.
