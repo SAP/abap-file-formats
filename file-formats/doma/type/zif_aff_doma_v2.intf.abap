@@ -140,8 +140,8 @@ INTERFACE zif_aff_doma_v2 PUBLIC.
   "! $maximum 999999
   TYPES ty_output_length        TYPE i.
 
-  "! <p class="shorttext">Convertion Routine</p>
-  "! Convertion routine
+  "! <p class="shorttext">Conversion Routine</p>
+  "! Conversion routine
   TYPES ty_conv_routine         TYPE c LENGTH 5.
 
   "! <p class="shorttext">Value Table</p>
