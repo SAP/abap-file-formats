@@ -1,0 +1,42 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "CHDO example",
+    "originalLanguage": "de"
+  },
+  "generalInformation": {
+    "generatedObject": "ZCL_Z_AFF_EXAM_CHDO_CHDO"
+  },
+  "tablesAndStructures": [
+    {
+      "name": "SZD_TABL_TAB",
+      "referenceTable": "",
+      "multipleChanges": false,
+      "databaseInsertions": {
+        "logValues": true,
+        "logInitialValues": true
+      },
+      "databaseDeletions": {
+        "logValues": true,
+        "logInitialValues": false
+      }
+    },
+    {
+      "name": "SZD_TABS_TAB",
+      "referenceTable": "",
+      "multipleChanges": true,
+      "databaseInsertions": {
+        "logValues": false,
+        "logInitialValues": false
+      },
+      "databaseDeletions": {
+        "logValues": true,
+        "logInitialValues": true
+      }
+    }
+  ],
+  "errorMessage": {
+    "id": "CD",
+    "number": "600"
+  }
+}
