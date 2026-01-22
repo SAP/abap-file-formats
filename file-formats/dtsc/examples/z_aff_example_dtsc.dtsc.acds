@@ -1,0 +1,11 @@
+define static cache Z_AFF_EXAMPLE_DTSC on DDDTSC_CDS_VERI_TYPES
+{
+ fchar,
+ flang,
+ min( fint1 ),
+ sum( fint2 ),
+ sum( fint4 ),
+ FD34s
+}
+retention 50
+creation configurable default on
