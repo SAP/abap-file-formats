@@ -57,52 +57,212 @@
         "originalLanguage"
       ]
     },
-    "dataType": {
-      "title": "Data Type for the Domain",
-      "description": "Data type for the domain",
-      "type": "string",
-      "maxLength": 4
+    "format": {
+      "title": "Format",
+      "description": "Format",
+      "type": "object",
+      "properties": {
+        "dataType": {
+          "title": "Data Type",
+          "description": "Data type",
+          "type": "string",
+          "enum": [
+            "postingPeriod",
+            "characterString",
+            "client",
+            "currencyKey",
+            "currencyField",
+            "floatingPoint16Dec",
+            "floatingPoint16Raw",
+            "floatingPoint16Scl",
+            "floatingPoint34Dec",
+            "floatingPoint34Raw",
+            "floatingPoint34Scl",
+            "date",
+            "dateHana",
+            "counterOrAmount",
+            "floatingPointNumber",
+            "integer1",
+            "integer2",
+            "integer4",
+            "integer8",
+            "languageKey",
+            "longString",
+            "longByteString",
+            "numericCharacter",
+            "obsoletePrec",
+            "quantity",
+            "byteSequence",
+            "byteString",
+            "shortString",
+            "string",
+            "time",
+            "timeHana",
+            "unit",
+            "obsoleteVarc"
+          ],
+          "enumTitles": [
+            "Posting period YYYYMM",
+            "Character String",
+            "Client",
+            "Currency Key",
+            "Currency Field",
+            "Decimal Floating Point, 16 Digits, DEC on Database",
+            "Decimal Floating Point, 16 Digits, RAW on Database",
+            "Decimal Floating Point. 16 Digits, with Scale Field",
+            "Decimal Floating Point, 34 Digits, DEC on Database",
+            "Decimal Floating Point, 34 Digits, RAW on Database",
+            "Decimal Floating Point, 34 Digits, with Scale Field",
+            "Date (YYYYMMDD)",
+            "Date (YYYYMMDD), HANA Type",
+            "Counter or Amount",
+            "Floating Point Number",
+            "1-Bypte Integer",
+            "2-Byte Integer",
+            "4-Byte Integer",
+            "8-Byte Integer",
+            "Language Key",
+            "Long Character String",
+            "Long Byte String",
+            "Numeric Character String",
+            "Obsolete Data Type PREC (Do Not Use)",
+            "Quantity",
+            "Uninterpreted sequence of bytes",
+            "Byte String of Variable Length",
+            "Short Character String of Variable Length",
+            "Character String of Variable Length",
+            "Time (hhmmss)",
+            "Time (hhmmss; Native HANA Type)",
+            "Unit",
+            "Long character string, no longer supported from Rel. 3.0"
+          ],
+          "enumDescriptions": [
+            "Posting period YYYYMM",
+            "Character string",
+            "Client",
+            "Currency key, referenced by CURR fields",
+            "Currency field, stored as DEC",
+            "Decimal floating point, 16 digits, DEC on database",
+            "Decimal floating point, 16 digits, RAW on database",
+            "Decimal floating point. 16 digits, with scale field",
+            "Decimal floating point, 34 Digits, DEC on database",
+            "Decimal floating point, 34 Digits, RAW on database",
+            "Decimal floating point, 34 digits, with scale field",
+            "Date field (YYYYMMDD), stored as char(8)",
+            "Date field (YYYYMMDD), HANA type",
+            "Counter or amount field with comma and sign",
+            "Floating point number, accurate to 8 bytes",
+            "1-byte integer, integer number <= 255",
+            "2-byte integer, only for length field before LCHR or LRAW",
+            "4-byte integer, integer number with sign",
+            "8-byte integer, integer number with sign",
+            "Language key",
+            "Long character string, requires preceding INT2 field",
+            "Long byte string, requires preceding INT2 field",
+            "Character string with only digits",
+            "Obsolete data type PREC, do not use",
+            "Quantity field, points to a unit field with format UNIT",
+            "Uninterpreted sequence of bytes",
+            "Byte String of Variable Length",
+            "Short Character String of Variable Length",
+            "Character String of Variable Length",
+            "Time field (hhmmss), stored as char(6)",
+            "Time field (hhmmss), native HANA type",
+            "Unit key for QUAN fields",
+            "Long character string, no longer supported from Rel. 3.0"
+          ],
+          "default": "characterString"
+        },
+        "length": {
+          "title": "Length",
+          "description": "Length",
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 999999
+        },
+        "decimals": {
+          "description": "Set if decimal",
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 999999
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "dataType",
+        "length"
+      ]
     },
-    "length": {
-      "title": "No Characters",
-      "description": "Number of characters",
-      "type": "integer",
-      "minimum": 0,
-      "maximum": 999999
-    },
-    "decimals": {
-      "description": "Set if decimal",
-      "type": "integer",
-      "minimum": 0,
-      "maximum": 999999
-    },
-    "negativeValues": {
-      "title": "Supports Negative Values",
-      "description": "Supports negative values",
-      "type": "boolean"
-    },
-    "caseSensitive": {
-      "title": "Case Sensitive",
-      "description": "Values are case sensitive",
-      "type": "boolean"
-    },
-    "outputLength": {
-      "description": "Set the output length",
-      "type": "integer",
-      "minimum": 0,
-      "maximum": 999999
-    },
-    "conversionRoutine": {
-      "description": "Conversion Routine",
-      "type": "string",
-      "maxLength": 5
-    },
-    "valueTable": {
-      "description": "Value table",
-      "type": "string",
-      "maxLength": 30
+    "outputCharacteristics": {
+      "title": "Output Characteristics",
+      "description": "Output characteristics",
+      "type": "object",
+      "properties": {
+        "style": {
+          "title": "Style",
+          "description": "Output style (for Releases < 71*)",
+          "type": "string",
+          "enum": [
+            "normal",
+            "signRight",
+            "scalePreserving",
+            "scientific",
+            "scientificWithLeadingZero",
+            "scalePreservingScientific",
+            "engineering"
+          ],
+          "enumTitles": [
+            "Normal",
+            "Sign right",
+            "Scale-preserving",
+            "Scientific",
+            "Scientific with leading zero",
+            "Scale-preserving scientific",
+            "Engineering"
+          ],
+          "enumDescriptions": [
+            "Normal",
+            "Sign right",
+            "Scale-preserving",
+            "Scientific",
+            "Scientific with leading zero",
+            "Scale-preserving scientific",
+            "Engineering"
+          ],
+          "default": "normal"
+        },
+        "length": {
+          "title": "Length",
+          "description": "Set the output length",
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 999999
+        },
+        "conversionRoutine": {
+          "description": "Conversion Routine",
+          "type": "string",
+          "maxLength": 5
+        },
+        "caseSensitive": {
+          "title": "Case Sensitive",
+          "description": "Values are case sensitive",
+          "type": "boolean"
+        },
+        "negativeValues": {
+          "title": "Negative Values",
+          "description": "Supports negative values",
+          "type": "boolean"
+        },
+        "amPmTimeFormat": {
+          "title": "AM/PM Time Format",
+          "description": "AM/PM time format supported",
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
     },
     "fixedValues": {
+      "title": "Fixed Values",
       "description": "Fixed values",
       "type": "array",
       "items": {
@@ -127,6 +287,7 @@
       }
     },
     "fixedValueIntervals": {
+      "title": "Fixed Value Intervals",
       "description": "Fixed value intervals",
       "type": "array",
       "items": {
@@ -158,13 +319,45 @@
           "highLimit"
         ]
       }
+    },
+    "valueTable": {
+      "title": "Value Table",
+      "description": "Value table",
+      "type": "object",
+      "properties": {
+        "name": {
+          "title": "Name",
+          "description": "Name",
+          "type": "string",
+          "maxLength": 30
+        }
+      },
+      "additionalProperties": false
+    },
+    "fixedValueAppends": {
+      "title": "Fixed Value Appends",
+      "description": "Fixed value appends",
+      "type": "array",
+      "items": {
+        "title": "Fixed Value Appends",
+        "description": "Fixed value appends",
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Name",
+            "description": "Name",
+            "type": "string",
+            "maxLength": 30
+          }
+        },
+        "additionalProperties": false
+      }
     }
   },
   "additionalProperties": false,
   "required": [
     "formatVersion",
     "header",
-    "dataType",
-    "length"
+    "format"
   ]
 }
