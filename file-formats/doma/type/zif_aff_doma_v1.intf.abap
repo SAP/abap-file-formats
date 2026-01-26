@@ -249,7 +249,7 @@ INTERFACE zif_aff_doma_v1 PUBLIC.
     BEGIN OF ty_fixed_value_append,
       "! <p class="shorttext">Name</p>
       "! Name
-      name   TYPE zif_aff_types_v1=>ty_object_name_30,
+      name TYPE zif_aff_types_v1=>ty_object_name_30,
     END OF ty_fixed_value_append,
 
     ty_fixed_value_appends TYPE STANDARD TABLE OF ty_fixed_value_append WITH DEFAULT KEY.
