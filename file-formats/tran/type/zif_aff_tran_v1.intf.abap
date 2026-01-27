@@ -76,7 +76,6 @@ INTERFACE zif_aff_tran_v1
     END OF co_skip_initial_screen_mode.
 
   "! $values {@link zif_aff_tran_v1.data:co_stv_maintenance_mode}
-  "! $default {@link zif_aff_tran_v1.data:co_stv_maintenance_mode.allowed}
   TYPES ty_stv_maintenance_mode TYPE c LENGTH 1.
   CONSTANTS:
     "! <p class="shorttext">Editing of standard transaction variant</p>
@@ -119,6 +118,7 @@ INTERFACE zif_aff_tran_v1
       "! If the standard transaction variant maintenance mode is allowed, activating
       "! a transaction variant as standard transaction variant is enabled in the
       "! transaction variant maintenance.
+      "! $required
       stv_maintenance_mode TYPE ty_stv_maintenance_mode,
     END OF ty_dialog_transaction.
 
@@ -206,7 +206,7 @@ INTERFACE zif_aff_tran_v1
   TYPES ty_par_parent_transaction_code TYPE ty_transaction_code.
   TYPES:
     BEGIN OF ty_parameter_transaction,
-      "! <p class="shorttext">Parent Transaction</p>
+      "! <p class="shorttext">Core Transaction</p>
       "! The parent transaction code of the parameter transaction defines the transaction that provides
       "! the program and the dynpro number that are started when the transaction is called.
       "! The parent transaction can be a dialog or a report transaction.
@@ -221,7 +221,7 @@ INTERFACE zif_aff_tran_v1
       parameter_values            TYPE ty_par_pv_t,
     END OF ty_parameter_transaction.
 
-  "! <p class="shorttext">Parent Transaction</p>
+  "! <p class="shorttext">Core Transaction</p>
   "! Name of parent transaction
   TYPES ty_var_parent_transaction_code TYPE ty_transaction_code.
   "! <p class="shorttext">Cross-Client Transaction Variant</p>
