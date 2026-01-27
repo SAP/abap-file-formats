@@ -201,19 +201,19 @@ INTERFACE zif_aff_tran_v1
     END OF ty_par_pv.
   TYPES ty_par_pv_t                    TYPE STANDARD TABLE OF ty_par_pv WITH DEFAULT KEY.
 
-  "! <p class="shorttext">Parent Transaction</p>
-  "! Name of parent transaction
+  "! <p class="shorttext">Core Transaction</p>
+  "! Name of core transaction
   TYPES ty_par_parent_transaction_code TYPE ty_transaction_code.
   TYPES:
     BEGIN OF ty_parameter_transaction,
       "! <p class="shorttext">Core Transaction</p>
-      "! The parent transaction code of the parameter transaction defines the transaction that provides
+      "! The core transaction code of the parameter transaction defines the transaction that provides
       "! the program and the dynpro number that are started when the transaction is called.
-      "! The parent transaction can be a dialog or a report transaction.
+      "! The core transaction can be a dialog or a report transaction.
       "! $required
       par_parent_transaction_code TYPE ty_par_parent_transaction_code,
       "! <p class="shorttext">Initial Screen</p>
-      "! Initial screen mode allows bypassing the first screen of the parent
+      "! Initial screen mode allows bypassing the first screen of the core
       "! transaction by using predefined values.
       skip_initial_screen_mode    TYPE ty_skip_initial_screen_mode,
       "! <p class="shorttext">Parameters</p>
@@ -222,7 +222,7 @@ INTERFACE zif_aff_tran_v1
     END OF ty_parameter_transaction.
 
   "! <p class="shorttext">Core Transaction</p>
-  "! Name of parent transaction
+  "! Name of core transaction
   TYPES ty_var_parent_transaction_code TYPE ty_transaction_code.
   "! <p class="shorttext">Cross-Client Transaction Variant</p>
   "! Name of cross-client transaction variant
@@ -232,8 +232,8 @@ INTERFACE zif_aff_tran_v1
   TYPES ty_transaction_variant_name    TYPE zif_aff_types_v1=>ty_object_name_30.
   TYPES:
     BEGIN OF ty_variant_transaction,
-      "! <p class="shorttext">Parent Transaction</p>
-      "! The parent transaction code links related transaction to its original (parent) transaction.
+      "! <p class="shorttext">Core Transaction</p>
+      "! The core transaction code links related transaction to its original (core transaction.
       "! It enables inheritance of settings like UI attributes or authorizations,
       "! ensuring consistency and reducing duplication in configuration.
       "! $required
@@ -371,8 +371,7 @@ INTERFACE zif_aff_tran_v1
   "! $default {@link zif_aff_tran_v1.data:co_inheritance_mode.inactive}
   TYPES ty_inheritance_mode TYPE c LENGTH 10.
   CONSTANTS:
-    "! <p class="shorttext">Authorization Defaults Inheritance Mode</p>
-    "! The inheritance mode control if the authorization defaults of the parent
+    "! <p class="shorttext">Authorization Defaults Inheritance Mode</p>core
     "! transaction are used, of if the parameter transaction uses own authorization defaults.
     BEGIN OF co_inheritance_mode,
       "! <p class="shorttext">Active</p>
@@ -488,7 +487,7 @@ INTERFACE zif_aff_tran_v1
       maintenance_mode TYPE ty_maintenance_mode,
       "! <p class="shorttext">Inheritance Mode</p>
       "! Authorization defaults inheritance mode controls how authorization settings are passed from
-      "! a parent transaction to its variants,
+      "! a core transaction to its variants,
       "! ensuring consistent access rights and roles across related transactions.
       inheritance_mode TYPE ty_inheritance_mode,
       "! <p class="shorttext">Documentation</p>
@@ -585,7 +584,7 @@ INTERFACE zif_aff_tran_v1
     BEGIN OF ty_ui_attributes,
       "! <p class="shorttext">Inheritance Mode</p>
       "! Transaction UI Attributes Inheritance Mode controls how UI settings like screen variants
-      "! or field attributes are inherited from a parent transaction to its variants, ensuring
+      "! or field attributes are inherited from a core transaction to its variants, ensuring
       "! consistent user interfaces across related transactions.
       inheritance_mode  TYPE ty_ua_inheritance_mode,
       "! <p class="shorttext">UI Classification</p>

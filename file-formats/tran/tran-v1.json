@@ -139,11 +139,13 @@
               "enumDescriptions": [
                 "Allowed",
                 "Not Allowed"
-              ],
-              "default": "allowed"
+              ]
             }
           },
-          "additionalProperties": false
+          "additionalProperties": false,
+          "required": [
+            "stvMaintenanceMode"
+          ]
         },
         "parameterTransaction": {
           "title": "Parameter Transaction",
@@ -151,14 +153,14 @@
           "type": "object",
           "properties": {
             "parParentTransactionCode": {
-              "title": "Parent Transaction",
-              "description": "The parent transaction code of the parameter transaction defines the transaction that provides the program and the dynpro number that are started when the transaction is called. The parent transaction can be a dialog or a report transaction.",
+              "title": "Core Transaction",
+              "description": "The core transaction code of the parameter transaction defines the transaction that provides the program and the dynpro number that are started when the transaction is called. The core transaction can be a dialog or a report transaction.",
               "type": "string",
               "maxLength": 20
             },
             "skipInitialScreenMode": {
               "title": "Initial Screen",
-              "description": "Initial screen mode allows bypassing the first screen of the parent transaction by using predefined values.",
+              "description": "Initial screen mode allows bypassing the first screen of the core transaction by using predefined values.",
               "type": "string",
               "enum": [
                 "skip",
@@ -301,8 +303,8 @@
           "type": "object",
           "properties": {
             "varParentTransactionCode": {
-              "title": "Parent Transaction",
-              "description": "The parent transaction code links related transaction to its original (parent) transaction. It enables inheritance of settings like UI attributes or authorizations, ensuring consistency and reducing duplication in configuration.",
+              "title": "Core Transaction",
+              "description": "The core transaction code links related transaction to its original (core transaction. It enables inheritance of settings like UI attributes or authorizations, ensuring consistency and reducing duplication in configuration.",
               "type": "string",
               "maxLength": 20
             },
@@ -347,7 +349,7 @@
           "properties": {
             "inheritanceMode": {
               "title": "Inheritance Mode",
-              "description": "Transaction UI Attributes Inheritance Mode controls how UI settings like screen variants or field attributes are inherited from a parent transaction to its variants, ensuring consistent user interfaces across related transactions.",
+              "description": "Transaction UI Attributes Inheritance Mode controls how UI settings like screen variants or field attributes are inherited from a core transaction to its variants, ensuring consistent user interfaces across related transactions.",
               "type": "string",
               "enum": [
                 "active",
@@ -552,7 +554,7 @@
             },
             "inheritanceMode": {
               "title": "Inheritance Mode",
-              "description": "Authorization defaults inheritance mode controls how authorization settings are passed from a parent transaction to its variants, ensuring consistent access rights and roles across related transactions.",
+              "description": "Authorization defaults inheritance mode controls how authorization settings are passed from a core transaction to its variants, ensuring consistent access rights and roles across related transactions.",
               "type": "string",
               "enum": [
                 "active",
