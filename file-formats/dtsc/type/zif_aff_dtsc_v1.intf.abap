@@ -3,7 +3,7 @@ INTERFACE zif_aff_dtsc_v1
 
   TYPES:
     "! <p class="shorttext">Static Cache</p>
-    "! Static cache
+    "! Dictionary Tuning Static Cache
     BEGIN OF ty_main,
       "! $required
       format_version TYPE zif_aff_types_v1=>ty_format_version,
