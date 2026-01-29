@@ -1,6 +1,6 @@
 interface zif_aff_dtix_v1
   public.
-    types:
+  types:
       "! <p class="shorttext">Entity index</p>
       "! Entity index
       begin of ty_main,
