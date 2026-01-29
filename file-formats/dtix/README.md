@@ -10,4 +10,4 @@ DTIX  | Dictionary Tuning Index | Core Data Services
 
 File | Cardinality | Definition | Schema | Example
 :--- | :--- | :--- | :--- | :---
-`<name>.dtix.json` | 1 | [`zif_aff_dtix_v1.intf.abap`](./type/zif_aff_dtix_v1.intf.abap) | [`dtix-v1.json`](./dtix-v1.json) | [`zjo_test_tabentity4_charindex.dtix.json`](./examples/zjo_test_tabentity4_charindex.dtix.json)
+`<name>.dtix.json` | 1 | [`zif_aff_dtix_v1.intf.abap`](./type/zif_aff_dtix_v1.intf.abap) | [`dtix-v1.json`](./dtix-v1.json) | [`z_aff_example_dtix.dtix.json`](./examples/z_aff_example_dtix.dtix.json)
