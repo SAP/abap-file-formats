@@ -3,7 +3,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/dtsc/dtsc-v1.json",
   "title": "Static Cache",
-  "description": "Static cache",
+  "description": "Dictionary tuning static cache",
   "type": "object",
   "properties": {
     "formatVersion": {
