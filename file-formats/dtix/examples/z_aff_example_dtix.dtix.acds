@@ -2,6 +2,6 @@ define text index z_aff_example_dtix on z_aff_example_stte
 {
   element_name
 }
-mime type 'application/x-cscompr' 
-token separators '\\/;,.:()[]!?*@#\{\}"''&' 
+mime type 'application/x-cscompr'
+token separators '\\/;,.:()[]!?*@#\{\}"''&'
 creation configurable default off
