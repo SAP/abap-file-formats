@@ -14,4 +14,4 @@ File | Cardinality | Definition | Schema | Example | Extension Example
 `<name>.bdef.abdl` | 1 | [BDEF](https://help.sap.com/doc/abapdocu_cp_index_htm/CLOUD/en-US/abencds_bdef.html) | | [`z_aff_example_bdef.bdef.abdl`](./examples/z_aff_example_bdef.bdef.abdl) | [`z_aff_example_bdef_extension.bdef.abdl`](./examples/z_aff_example_bdef_extension.bdef.abdl)
 
 
-A behavior definition can have multiple extensions. An extension behavior definition must define the behavior definition name of the extedned BDEF in the JSON file.
+A behavior definition can have multiple extensions. An extension behavior definition must define the behavior definition name of the extended BDEF in the JSON file.
