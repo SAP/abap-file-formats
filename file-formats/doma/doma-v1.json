@@ -118,7 +118,7 @@
             "Decimal Floating Point, 34 Digits, DEC on Database",
             "Decimal Floating Point, 34 Digits, RAW on Database",
             "Decimal Floating Point, 34 Digits, with Scale Field",
-            "Floating Point Number, HANA Type, LArge Decimal",
+            "Floating Point Number, HANA Type, Large Decimal",
             "Date (YYYYMMDD)",
             "Date (YYYYMMDD), HANA Type",
             "Counter or Amount",

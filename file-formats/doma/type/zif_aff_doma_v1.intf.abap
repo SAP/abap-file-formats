@@ -54,7 +54,7 @@ INTERFACE zif_aff_doma_v1 PUBLIC.
       "! Decimal floating point, 34 digits, with scale field
       "! $enumValue 'DF34_SCL'
       df34_scl   TYPE ty_data_type VALUE 'D34S',
-      "! <p class="shorttext">Floating Point Number, HANA Type, LArge Decimal</p>
+      "! <p class="shorttext">Floating Point Number, HANA Type, Large Decimal</p>
       "! Floating point number, HANA type, large decimal
       "! $enumValue 'DECFLOAT34'
       decfloat34 TYPE ty_data_type VALUE 'D34N',
