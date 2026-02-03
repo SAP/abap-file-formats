@@ -5,7 +5,7 @@
     "originalLanguage": "en"
   },
   "format": {
-    "dataType": "characterString",
+    "dataType": "CHAR",
     "length": 3
   },
   "outputCharacteristics": {

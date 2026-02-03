@@ -1,110 +1,159 @@
 INTERFACE zif_aff_doma_v1 PUBLIC.
 
   "! $values {@link zif_aff_doma_v1.data:co_data_type}
-  "! $default {@link zif_aff_doma_v1.data:co_data_type.character_string}
-  TYPES ty_data_type TYPE c LENGTH 10.
+  "! $default {@link zif_aff_doma_v1.data:co_data_type.char}
+  TYPES ty_data_type TYPE c LENGTH 4.
 
   CONSTANTS:
     BEGIN OF co_data_type,
       "! <p class="shorttext">Posting period YYYYMM</p>
       "! Posting period YYYYMM
-      posting_period        TYPE ty_data_type VALUE 'ACCP',
+      "! $enumValue 'ACCP'
+      accp       TYPE ty_data_type VALUE 'ACCP',
       "! <p class="shorttext">Character String</p>
       "! Character string
-      character_string      TYPE ty_data_type VALUE 'CHAR',
+      "! $enumValue 'CHAR'
+      char       TYPE ty_data_type VALUE 'CHAR',
       "! <p class="shorttext">Client</p>
       "! Client
-      client                TYPE ty_data_type VALUE 'CLNT',
+      "! $enumValue 'CLNT'
+      clnt       TYPE ty_data_type VALUE 'CLNT',
       "! <p class="shorttext">Currency Key</p>
       "! Currency key, referenced by CURR fields
-      currency_key          TYPE ty_data_type VALUE 'CUKY',
+      "! $enumValue 'CUKY'
+      cuky       TYPE ty_data_type VALUE 'CUKY',
       "! <p class="shorttext">Currency Field</p>
       "! Currency field, stored as DEC
-      currency_field        TYPE ty_data_type VALUE 'CURR',
+      "! $enumValue 'CURR'
+      curr       TYPE ty_data_type VALUE 'CURR',
       "! <p class="shorttext">Decimal Floating Point, 16 Digits, DEC on Database</p>
       "! Decimal floating point, 16 digits, DEC on database
-      floating_point16_dec  TYPE ty_data_type VALUE 'DF16_DEC',
+      "! $enumValue 'DF16_DEC'
+      df16_dec   TYPE ty_data_type VALUE 'D16D',
       "! <p class="shorttext">Decimal Floating Point, 16 Digits, RAW on Database</p>
       "! Decimal floating point, 16 digits, RAW on database
-      floating_point16_raw  TYPE ty_data_type VALUE 'DF16_RAW',
+      "! $enumValue 'DF16_RAW'
+      df16_raw   TYPE ty_data_type VALUE 'D16R',
       "! <p class="shorttext">Decimal Floating Point. 16 Digits, with Scale Field</p>
       "! Decimal floating point. 16 digits, with scale field
-      floating_point16_scl  TYPE ty_data_type VALUE 'DF16_SCL',
+      "! $enumValue 'DF16_SCL'
+      df16_scl   TYPE ty_data_type VALUE 'D16S',
+      "! <p class="shorttext">Floating Point Number, HANA Type, Small Decimal</p>
+      "! Floating point number, HANA type, small decimal
+      "! $enumValue 'DECFLOAT16'
+      decfloat16 TYPE ty_data_type VALUE 'D16N',
       "! <p class="shorttext">Decimal Floating Point, 34 Digits, DEC on Database</p>
       "! Decimal floating point, 34 Digits, DEC on database
-      floating_point34_dec  TYPE ty_data_type VALUE 'DF34_DEC',
+      "! $enumValue 'DF34_DEC'
+      df34_dec   TYPE ty_data_type VALUE 'D34D',
       "! <p class="shorttext">Decimal Floating Point, 34 Digits, RAW on Database</p>
       "! Decimal floating point, 34 Digits, RAW on database
-      floating_point34_raw  TYPE ty_data_type VALUE 'DF34_RAW',
+      "! $enumValue 'DF34_RAW'
+      df34_raw   TYPE ty_data_type VALUE 'D34R',
       "! <p class="shorttext">Decimal Floating Point, 34 Digits, with Scale Field</p>
       "! Decimal floating point, 34 digits, with scale field
-      floating_point34_scl  TYPE ty_data_type VALUE 'DF34_SCL',
+      "! $enumValue 'DF34_SCL'
+      df34_scl   TYPE ty_data_type VALUE 'D34S',
+      "! <p class="shorttext">Floating Point Number, HANA Type, LArge Decimal</p>
+      "! Floating point number, HANA type, large decimal
+      "! $enumValue 'DECFLOAT34'
+      decfloat34 TYPE ty_data_type VALUE 'D34N',
       "! <p class="shorttext">Date (YYYYMMDD)</p>
       "! Date field (YYYYMMDD), stored as char(8)
-      date                  TYPE ty_data_type VALUE 'DATS',
+      "! $enumValue 'DATS'
+      dats       TYPE ty_data_type VALUE 'DATS',
       "! <p class="shorttext">Date (YYYYMMDD), HANA Type</p>
       "! Date field (YYYYMMDD), HANA type
-      date_hana             TYPE ty_data_type VALUE 'DATN',
+      "! $enumValue 'DATN'
+      datn       TYPE ty_data_type VALUE 'DATN',
       "! <p class="shorttext">Counter or Amount</p>
       "! Counter or amount field with comma and sign
-      counter_or_amount     TYPE ty_data_type VALUE 'DEC',
+      "! $enumValue 'DEC'
+      dec        TYPE ty_data_type VALUE 'DEC',
       "! <p class="shorttext">Floating Point Number</p>
       "! Floating point number, accurate to 8 bytes
-      floating_point_number TYPE ty_data_type VALUE 'FLTP',
+      "! $enumValue 'FLTP'
+      fltp       TYPE ty_data_type VALUE 'FLTP',
+      "! <p class="shorttext">Geometry</p>
+      "! Geometry, EWKB representation
+      "! $enumValue 'GEOM_EWKB'
+      geom_ewkb  TYPE ty_data_type VALUE 'GGM1',
       "! <p class="shorttext">1-Bypte Integer</p>
       "! 1-byte integer, integer number <= 255
-      integer_1             TYPE ty_data_type VALUE 'INT1',
+      "! $enumValue 'INT1'
+      int1       TYPE ty_data_type VALUE 'INT1',
       "! <p class="shorttext">2-Byte Integer</p>
       "! 2-byte integer, only for length field before LCHR or LRAW
-      integer_2             TYPE ty_data_type VALUE 'INT2',
+      "! $enumValue 'INT2'
+      int2       TYPE ty_data_type VALUE 'INT2',
       "! <p class="shorttext">4-Byte Integer</p>
       "! 4-byte integer, integer number with sign
-      integer_4             TYPE ty_data_type VALUE 'INT4',
+      "! $enumValue 'INT4'
+      int4       TYPE ty_data_type VALUE 'INT4',
       "! <p class="shorttext">8-Byte Integer</p>
       "! 8-byte integer, integer number with sign
-      integer_8             TYPE ty_data_type VALUE 'INT8',
+      "! $enumValue 'INT8'
+      int8       TYPE ty_data_type VALUE 'INT8',
       "! <p class="shorttext">Language Key</p>
       "! Language key
-      language_key          TYPE ty_data_type VALUE 'LANG',
+      "! $enumValue 'LANG'
+      lang       TYPE ty_data_type VALUE 'LANG',
       "! <p class="shorttext">Long Character String</p>
       "! Long character string, requires preceding INT2 field
-      long_string           TYPE ty_data_type VALUE 'LCHR',
+      "! $enumValue 'LCHR'
+      lchr       TYPE ty_data_type VALUE 'LCHR',
       "! <p class="shorttext">Long Byte String</p>
       "! Long byte string, requires preceding INT2 field
-      long_byte_string      TYPE ty_data_type VALUE 'LRAW',
+      "! $enumValue 'LRAW'
+      lraw       TYPE ty_data_type VALUE 'LRAW',
       "! <p class="shorttext">Numeric Character String</p>
       "! Character string with only digits
-      numeric_character     TYPE ty_data_type VALUE 'NUMC',
+      "! $enumValue 'NUMC'
+      numc       TYPE ty_data_type VALUE 'NUMC',
       "! <p class="shorttext">Obsolete Data Type PREC (Do Not Use)</p>
       "! Obsolete data type PREC, do not use
-      obsolete_prec         TYPE ty_data_type VALUE 'PREC',
+      "! $enumValue 'PREC'
+      prec       TYPE ty_data_type VALUE 'PREC',
       "! <p class="shorttext">Quantity</p>
       "! Quantity field, points to a unit field with format UNIT
-      quantity              TYPE ty_data_type VALUE 'QUAN',
+      "! $enumValue 'QUAN'
+      quan       TYPE ty_data_type VALUE 'QUAN',
       "! <p class="shorttext">Uninterpreted sequence of bytes</p>
       "! Uninterpreted sequence of bytes
-      byte_sequence         TYPE ty_data_type VALUE 'RAW',
+      "! $enumValue 'RAW'
+      raw        TYPE ty_data_type VALUE 'RAW',
       "! <p class="shorttext">Byte String of Variable Length</p>
       "! Byte String of Variable Length
-      byte_string           TYPE ty_data_type VALUE 'RAWSTRING',
+      "! $enumValue 'RAWSTRING'
+      rawstring  TYPE ty_data_type VALUE 'RSTR',
       "! <p class="shorttext">Short Character String of Variable Length</p>
       "! Short Character String of Variable Length
-      short_string          TYPE ty_data_type VALUE 'SSTRING',
+      "! $enumValue 'SSTRING'
+      sstring    TYPE ty_data_type VALUE 'SSTR',
       "! <p class="shorttext">Character String of Variable Length</p>
       "! Character String of Variable Length
-      string                TYPE ty_data_type VALUE 'STRING',
+      "! $enumValue 'STRING'
+      string     TYPE ty_data_type VALUE 'STRG',
       "! <p class="shorttext">Time (hhmmss)</p>
       "! Time field (hhmmss), stored as char(6)
-      time                  TYPE ty_data_type VALUE 'TIMS',
+      "! $enumValue 'TIMS'
+      tims       TYPE ty_data_type VALUE 'TIMS',
       "! <p class="shorttext">Time (hhmmss; Native HANA Type)</p>
       "! Time field (hhmmss), native HANA type
-      time_hana             TYPE ty_data_type VALUE 'TIMN',
+      "! $enumValue 'TIMN'
+      timn       TYPE ty_data_type VALUE 'TIMN',
       "! <p class="shorttext">Unit</p>
       "! Unit key for QUAN fields
-      unit                  TYPE ty_data_type VALUE 'UNIT',
+      "! $enumValue 'UNIT'
+      unit       TYPE ty_data_type VALUE 'UNIT',
+      "! <p class="shorttext">Timestamp, HANA Type</p>
+      "! Timestamp, HANA type
+      "! $enumValue 'UTCLONG'
+      utclong    TYPE ty_data_type VALUE 'UTCL',
       "! <p class="shorttext">Long character string, no longer supported from Rel. 3.0</p>
       "! Long character string, no longer supported from Rel. 3.0
-      obsolete_varc         TYPE ty_data_type VALUE 'VARC',
+      "! $enumValue 'VARC'
+      varc       TYPE ty_data_type VALUE 'VARC',
     END OF co_data_type.
 
   "! $values {@link zif_aff_doma_v1.data:co_output_style}
