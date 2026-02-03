@@ -1,0 +1,40 @@
+{
+  "header": {
+    "description": "Example Lock Object",
+    "originalLanguage": "DE",
+    "abapLanguageVersion": "standard"
+  },
+  "primaryTable": {
+    "primaryTable": "ZTEST_TABLE",
+    "lockMode": "exclusiveLock"
+  },
+  "lockModules": {
+    "allowRfc": true,
+    "lockModule": "ZTEST_TABLE_ENQUEUE",
+    "unlockModule": "ZTEST_TABLE_DEQUEUE"
+  },
+  "secondaryTables": [
+    {
+      "primaryTable": "ZTEST_SUBTAB",
+      "lockMode": "exclusiveLock"
+    },
+    {
+      "primaryTable": "ZTEST_SUBTAB2",
+      "lockMode": "sharedLock"
+    }
+  ],
+  "lockParameters": [
+    {
+      "active": true,
+      "parameterName": "FIELD1",
+      "table": "ZTEST_TABLE",
+      "field": "Field1"
+    },
+    {
+      "active": false,
+      "parameterName": "FIELD2",
+      "table": "ZTEST_SUBTAB",
+      "field": "FIELD2"
+    }
+  ]
+}
