@@ -45,7 +45,7 @@ INTERFACE zif_aff_tran_v1
   TYPES ty_program_name  TYPE zif_aff_types_v1=>ty_object_name_40.
   "! <p class="shorttext">Dynpro</p>
   "! Transaction start dynpro number for dialog transaction
-  TYPES ty_program_dynnr TYPE c LENGTH 4.
+  TYPES ty_program_dynnr TYPE n LENGTH 4.
 
   "! $values {@link zif_aff_tran_v1.data:co_lock_status}
   "! $default {@link zif_aff_tran_v1.data:co_lock_status.Not_Locked}
@@ -89,12 +89,15 @@ INTERFACE zif_aff_tran_v1
     END OF co_stv_maintenance_mode.
 
   "! $values {@link zif_aff_tran_v1.data:co_update_mode}
-  "! $default {@link zif_aff_tran_v1.data:co_update_mode.asynchronous}
+  "! $default {@link zif_aff_tran_v1.data:co_update_mode.not_set}
   TYPES ty_update_mode TYPE c LENGTH 1.
   CONSTANTS:
     "! <p class="shorttext">Update Mode</p>
     "! Update Mode for OO Transactions
     BEGIN OF co_update_mode,
+      "! <p class="shorttext">Not set</p>
+      "! Update mode is not set
+      not_set      TYPE ty_update_mode VALUE '',
       "! <p class="shorttext">Asynchronous</p>
       "! Asynchronous
       asynchronous TYPE ty_update_mode VALUE 'U',
@@ -127,7 +130,7 @@ INTERFACE zif_aff_tran_v1
   TYPES ty_report_name         TYPE zif_aff_types_v1=>ty_object_name_40.
   "! <p class="shorttext">Selection Screen</p>
   "! Transaction start selection screen for the report transaction
-  TYPES ty_report_dynnr        TYPE c LENGTH 4.
+  TYPES ty_report_dynnr        TYPE n LENGTH 4.
 
   "! <p class="shorttext">Variant</p>
   "! Variant name

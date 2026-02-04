@@ -122,7 +122,8 @@
               "title": "Dynpro",
               "description": "Transaction start dynpro number for dialog transaction",
               "type": "string",
-              "maxLength": 4
+              "maxLength": 4,
+              "pattern": "^[0-9]+$"
             },
             "stvMaintenanceMode": {
               "title": "Standard Transaction Variant Maintenance",
@@ -225,7 +226,8 @@
               "title": "Screen",
               "description": "Transaction start selection screen for the report transaction",
               "type": "string",
-              "maxLength": 4
+              "maxLength": 4,
+              "pattern": "^[0-9]+$"
             },
             "reportVariantName": {
               "title": "Variant",
@@ -274,21 +276,24 @@
               "description": "The update mode for an OO transaction defines how data changes are processed: synchronously, asynchronously, or immediately.",
               "type": "string",
               "enum": [
+                "notSet",
                 "asynchronous",
                 "synchronous",
                 "local"
               ],
               "enumTitles": [
+                "Not set",
                 "Asynchronous",
                 "Synchronous",
                 "Local"
               ],
               "enumDescriptions": [
+                "Update mode is not set",
                 "Asynchronous",
                 "Synchronous",
                 "Local"
               ],
-              "default": "asynchronous"
+              "default": "notSet"
             }
           },
           "additionalProperties": false,
