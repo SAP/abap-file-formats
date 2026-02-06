@@ -1,0 +1,10 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Example BDEF for ABAP file formats",
+    "originalLanguage": "en"
+  },
+  "extendedBehaviorDefintion": {
+    "name": "Z_AFF_EXAMPLE_BDEF"
+  }
+}
