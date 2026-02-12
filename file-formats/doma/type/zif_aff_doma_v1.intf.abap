@@ -160,7 +160,8 @@ INTERFACE zif_aff_doma_v1 PUBLIC.
   "! $default {@link zif_aff_doma_v1.data:co_output_style.normal}
   TYPES ty_output_style TYPE n LENGTH 2.
 
-  CONSTANTS: BEGIN OF co_output_style,
+  CONSTANTS: 
+    BEGIN OF co_output_style,
                "! <p class="shorttext">Normal</p>
                "! Normal
                normal                       TYPE ty_output_style VALUE '00',
