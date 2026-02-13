@@ -69,11 +69,13 @@ INTERFACE zif_aff_srvd_v1
       "! Source Origin states which tool was used to create the service definition
       "! $values {@link zif_aff_srvd_v1.data:co_source_origin}
       "! $default {@link zif_aff_srvd_v1.data:co_source_origin.abap_development_tools}
+      "! $required
       source_origin TYPE ty_source_origin,
       "! <p class="shorttext">Source Type</p>
       "! Source type states which statement is in the service definition.
       "! $values {@link zif_aff_srvd_v1.data:co_source_type}
       "! $default {@link zif_aff_srvd_v1.data:co_source_type.definition}
+      "! $required
       source_type   TYPE ty_source_type,
     END OF ty_general_information,
 
