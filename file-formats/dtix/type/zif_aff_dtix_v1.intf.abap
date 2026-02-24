@@ -1,8 +1,8 @@
 INTERFACE zif_aff_dtix_v1
   PUBLIC.
   TYPES:
-    "! <p class="shorttext">Entity index</p>
-    "! Entity index
+    "! <p class="shorttext">Dictionary Tuning Index</p>
+    "! Dictionary Tuning Index
     BEGIN OF ty_main,
       "! $required
       format_version TYPE zif_aff_types_v1=>ty_format_version,
@@ -11,7 +11,4 @@ INTERFACE zif_aff_dtix_v1
       "! $required
       header         TYPE zif_aff_types_v1=>ty_header_60,
     END OF ty_main.
-  CONSTANTS:
-    co_st_name               TYPE string VALUE 'DDIC_AFF_DTIX_PROPERTIES',
-    co_format_version        TYPE zif_aff_types_v1=>ty_format_version VALUE '1'.
 ENDINTERFACE.
