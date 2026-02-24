@@ -65,7 +65,7 @@ INTERFACE zif_aff_scp1_v1
     BEGIN OF co_operation_at_activation,
       "! <p class="shorttext">Upsert</p>
       "! Data records which are to be modified at activation
-      modify TYPE ty_operation_at_activation VALUE '',
+      upsert TYPE ty_operation_at_activation VALUE '',
       "! <p class="shorttext">Delete</p>
       "! Data records which are to be deleted at activation are flagged with value 'L'
       delete TYPE ty_operation_at_activation VALUE 'L',
@@ -143,7 +143,7 @@ INTERFACE zif_aff_scp1_v1
       "! Data records which are to be deleted at activation are flagged with value 'L'
       "! $required
       "! $values {@link zif_aff_scp1_v1.data:co_operation_at_activation}
-      "! $default {@link zif_aff_scp1_v1.data:co_operation_at_activation.modify}
+      "! $default {@link zif_aff_scp1_v1.data:co_operation_at_activation.upsert}
       operation_at_activation TYPE ty_operation_at_activation,
       "! <p class="shorttext">Data</p>
       "! Complete data record of selected key value
