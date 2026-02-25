@@ -1,8 +1,7 @@
 {
   "header": {
     "description": "Example Lock Object",
-    "originalLanguage": "DE",
-    "abapLanguageVersion": "standard"
+    "originalLanguage": "de"
   },
   "primaryTable": {
     "name": "ZTEST_TABLE",
