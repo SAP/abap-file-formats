@@ -6,7 +6,7 @@
   },
   "primaryTable": {
     "name": "ZTEST_TABLE",
-    "lockMode": "exclusiveLock"
+    "lockMode": "exclusive"
   },
   "lockModules": {
     "allowRfc": true,
@@ -16,11 +16,11 @@
   "secondaryTables": [
     {
       "name": "ZTEST_SUBTAB",
-      "lockMode": "exclusiveLock"
+      "lockMode": "exclusive"
     },
     {
       "name": "ZTEST_SUBTAB2",
-      "lockMode": "sharedLock"
+      "lockMode": "shared"
     }
   ],
   "lockParameters": [
