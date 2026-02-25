@@ -48,7 +48,7 @@ INTERFACE zif_aff_enqu_v1
       "! <p class="shorttext">Table Name</p>
       "! Table Name
       "! $required
-      name TYPE if_aff_types_v1=>ty_object_name_30,
+      name      TYPE if_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Lock Mode</p>
       "! Lock Mode
       "! $required
