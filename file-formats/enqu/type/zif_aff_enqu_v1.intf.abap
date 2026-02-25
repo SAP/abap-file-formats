@@ -90,7 +90,7 @@ INTERFACE zif_aff_enqu_v1
       table  TYPE if_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Field</p>
       "! Field
-      field          TYPE ty_field_name,
+      field  TYPE ty_field_name,
     END OF ty_lock_parameter,
 
     "! <p class="shorttext">Lock Parameters</p>
