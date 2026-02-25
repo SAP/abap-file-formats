@@ -57,7 +57,7 @@ INTERFACE zif_aff_enqu_v1
 
   "! <p class="shorttext">Lock Tables</p>
   "! Tables and corresponding lock modes
-  TYPES ty_lock_tables TYPE STANDARD TABLE OF ty_lock_table WITH EMPTY KEY.
+  TYPES ty_lock_tables TYPE STANDARD TABLE OF ty_lock_table WITH DEFAULT KEY.
 
   TYPES:
     "! <p class="shorttext">Lock Modules</p>
