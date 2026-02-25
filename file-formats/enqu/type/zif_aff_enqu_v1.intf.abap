@@ -95,7 +95,7 @@ INTERFACE zif_aff_enqu_v1
 
     "! <p class="shorttext">Lock Parameters</p>
     "! Lock parameter candidates are derived from the primary keys of the tables
-    ty_lock_parameters TYPE STANDARD TABLE OF ty_lock_parameter WITH EMPTY KEY.
+    ty_lock_parameters TYPE STANDARD TABLE OF ty_lock_parameter WITH DEFAULT KEY.
 
   TYPES:
     "! <p class="shorttext">Lock Object</p>
