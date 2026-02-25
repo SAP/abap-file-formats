@@ -48,7 +48,7 @@ INTERFACE zif_aff_enqu_v1
       "! <p class="shorttext">Table Name</p>
       "! Table Name
       "! $required
-      name      TYPE if_aff_types_v1=>ty_object_name_30,
+      name      TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Lock Mode</p>
       "! Lock Mode
       "! $required
@@ -68,10 +68,10 @@ INTERFACE zif_aff_enqu_v1
       allow_rfc     TYPE abap_bool,
       "! <p class="shorttext">Lock Module</p>
       "! Lock Module
-      lock_module   TYPE if_aff_types_v1=>ty_object_name_30,
+      lock_module   TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Unlock Module</p>
       "! Unlock Module
-      unlock_module TYPE if_aff_types_v1=>ty_object_name_30,
+      unlock_module TYPE zif_aff_types_v1=>ty_object_name_30,
     END OF ty_lock_modules.
 
   TYPES ty_field_name TYPE c LENGTH 30.
@@ -87,7 +87,7 @@ INTERFACE zif_aff_enqu_v1
       name   TYPE ty_field_name,
       "! <p class="shorttext">Table</p>
       "! Table
-      table  TYPE if_aff_types_v1=>ty_object_name_30,
+      table  TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Field</p>
       "! Field
       field  TYPE ty_field_name,
@@ -104,11 +104,11 @@ INTERFACE zif_aff_enqu_v1
       "! <p class="shorttext">Format Version</p>
       "! Format version
       "! $required
-      format_version   TYPE if_aff_types_v1=>ty_format_version,
+      format_version   TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header           TYPE if_aff_types_v1=>ty_header_60,
+      header           TYPE zif_aff_types_v1=>ty_header_60,
       "! <p class="shorttext">Primary Table</p>
       "! Primary Table of the lock object
       primary_table    TYPE ty_lock_table,
