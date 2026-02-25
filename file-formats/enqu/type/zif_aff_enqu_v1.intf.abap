@@ -87,7 +87,7 @@ INTERFACE zif_aff_enqu_v1
       name   TYPE ty_field_name,
       "! <p class="shorttext">Table</p>
       "! Table
-      table          TYPE if_aff_types_v1=>ty_object_name_30,
+      table  TYPE if_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Field</p>
       "! Field
       field          TYPE ty_field_name,
