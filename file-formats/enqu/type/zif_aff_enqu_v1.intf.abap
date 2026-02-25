@@ -84,7 +84,7 @@ INTERFACE zif_aff_enqu_v1
       active TYPE abap_bool,
       "! <p class="shorttext">Parameter Name</p>
       "! Parameter_name
-      name TYPE ty_field_name,
+      name   TYPE ty_field_name,
       "! <p class="shorttext">Table</p>
       "! Table
       table          TYPE if_aff_types_v1=>ty_object_name_30,
