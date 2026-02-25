@@ -201,15 +201,18 @@
                         "type": "string",
                         "enum": [
                           "fixedKeyField",
-                          "defaultValue"
+                          "defaultValue",
+                          "forbiddenField"
                         ],
                         "enumTitles": [
                           "Fixed Key Field Value",
-                          "Default Field Value"
+                          "Default Field Value",
+                          "Forbidden Field Value"
                         ],
                         "enumDescriptions": [
                           "Fixed value for a key field. The value cannot be changed after activation",
-                          "Default value of a data field"
+                          "Default value of a data field",
+                          "Forbidden or ignored field will not be included in the BC Set"
                         ],
                         "default": "defaultValue"
                       }
@@ -246,18 +249,18 @@
                         "description": "Data records which are to be deleted at activation are flagged with value 'L'",
                         "type": "string",
                         "enum": [
-                          "modify",
+                          "upsert",
                           "delete"
                         ],
                         "enumTitles": [
-                          "Modify",
+                          "Upsert",
                           "Delete"
                         ],
                         "enumDescriptions": [
                           "Data records which are to be modified at activation",
                           "Data records which are to be deleted at activation are flagged with value 'L'"
                         ],
-                        "default": "modify"
+                        "default": "upsert"
                       },
                       "data": {
                         "title": "Data",
