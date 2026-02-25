@@ -28,7 +28,7 @@
       "active": true,
       "name": "FIELD1",
       "table": "ZTEST_TABLE",
-      "field": "Field1"
+      "field": "FIELD1"
     },
     {
       "active": false,
