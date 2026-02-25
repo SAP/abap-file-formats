@@ -8,31 +8,31 @@ INTERFACE zif_aff_enqu_v1
     BEGIN OF co_lock_modes,
       "! <p class="shorttext">Exclusive Lock</p>
       "! Exclusive Lock
-      exclusive_lock                 TYPE ty_lock_mode VALUE 'E',
+      exclusive                 TYPE ty_lock_mode VALUE 'E',
       "! <p class="shorttext">Shared lock</p>
       "! Shared lock
-      shared_lock                    TYPE ty_lock_mode VALUE 'S',
+      shared                    TYPE ty_lock_mode VALUE 'S',
       "! <p class="shorttext">Exclusive, not cumulative</p>
       "! Exclusive, not cumulative
-      exclusive_not_cumulative_lock  TYPE ty_lock_mode VALUE 'X',
+      exclusive_not_cumulative  TYPE ty_lock_mode VALUE 'X',
       "! <p class="shorttext">Set optimistic lock</p>
       "! Set optimistic lock
-      set_optimistic_lock            TYPE ty_lock_mode VALUE 'O',
+      set_optimistic            TYPE ty_lock_mode VALUE 'O',
       "! <p class="shorttext">Promote optimistic lock; transform from '0' to 'E'</p>
       "! Promote optimistic lock; transform from '0' to 'E'
-      promote_optimistic_lock        TYPE ty_lock_mode VALUE 'R',
+      promote_optimistic        TYPE ty_lock_mode VALUE 'R',
       "! <p class="shorttext">Only conflict check extended exclusive lock, as with 'X'</p>
       "! Only conflict check extended exclusive lock, as with 'X'
       conflict_check_extended_excl   TYPE ty_lock_mode VALUE 'U',
       "! <p class="shorttext">Only conflict check exclusive lock, as with 'E'</p>
       "! Only conflict check exclusive lock, as with 'E'
-      conflict_check_exclusive_lock  TYPE ty_lock_mode VALUE 'V',
+      conflict_check_exclusive  TYPE ty_lock_mode VALUE 'V',
       "! <p class="shorttext">Conflict check for shared lock only, as with 'S'</p>
       "! CaConflict check for shared lock only, as with 'S'
-      conflict_check_shared_lock     TYPE ty_lock_mode VALUE 'W',
+      conflict_check_shared    TYPE ty_lock_mode VALUE 'W',
       "! <p class="shorttext">Only promotion check optimized lock, as with 'R'</p>
       "! Only promotion check optimized lock, as with 'R'
-      promotion_check_optimized_lock TYPE ty_lock_mode VALUE 'C',
+      promotion_check_optimized TYPE ty_lock_mode VALUE 'C',
       "! <p class="shorttext">Reserved</p>
       "! Reserved
       reserved_1                     TYPE ty_lock_mode VALUE 'T',
@@ -45,10 +45,10 @@ INTERFACE zif_aff_enqu_v1
     "! <p class="shorttext">Primary Table</p>
     "! Primary Table of the lock object
     BEGIN OF ty_lock_table,
-      "! <p class="shorttext">Table</p>
-      "! Table
+      "! <p class="shorttext">Table Name</p>
+      "! Table Name
       "! $required
-      primary_table TYPE if_aff_types_v1=>ty_object_name_30,
+      name TYPE if_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Lock Mode</p>
       "! Lock Mode
       "! $required
@@ -84,7 +84,7 @@ INTERFACE zif_aff_enqu_v1
       active         TYPE abap_bool,
       "! <p class="shorttext">Parameter Name</p>
       "! Parameter_name
-      parameter_name TYPE ty_field_name,
+      name TYPE ty_field_name,
       "! <p class="shorttext">Table</p>
       "! Table
       table          TYPE if_aff_types_v1=>ty_object_name_30,
