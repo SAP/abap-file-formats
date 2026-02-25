@@ -5,7 +5,7 @@
     "abapLanguageVersion": "standard"
   },
   "primaryTable": {
-    "primaryTable": "ZTEST_TABLE",
+    "name": "ZTEST_TABLE",
     "lockMode": "exclusiveLock"
   },
   "lockModules": {
@@ -15,11 +15,11 @@
   },
   "secondaryTables": [
     {
-      "primaryTable": "ZTEST_SUBTAB",
+      "name": "ZTEST_SUBTAB",
       "lockMode": "exclusiveLock"
     },
     {
-      "primaryTable": "ZTEST_SUBTAB2",
+      "name": "ZTEST_SUBTAB2",
       "lockMode": "sharedLock"
     }
   ],
