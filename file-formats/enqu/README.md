@@ -10,4 +10,4 @@ ENQU | Lock Object | Dictionary
 
 File | Cardinality | Definition | Schema | Example
 :--- | :---  | :--- | :--- | :---
-`<name>.enqu.json` | 1 | [`zif_aff_enqu_v1.intf.abap`](./type/zif_aff_enqu_v1.intf.abap) | [`enqu-v1.json`](./enqu-v1.json) | [`z_aff_example_enqu.enqu.json`](./examples/z_aff_example_enqu.enqu.json)
+`<name>.enqu.json` | 1 | [`zif_aff_enqu_v1.intf.abap`](./type/zif_aff_enqu_v1.intf.abap) | [`enqu-v1.json`](./enqu-v1.json) | [`z_aff_enqu_ex.enqu.json`](./examples/z_aff_enqu_ex.enqu.json)
