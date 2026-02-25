@@ -63,9 +63,9 @@ INTERFACE zif_aff_scp1_v1
   CONSTANTS:
     "! <p class="shorttext">Data Record Operation at Activation</p>
     BEGIN OF co_operation_at_activation,
-      "! <p class="shorttext">Modify</p>
+      "! <p class="shorttext">Upsert</p>
       "! Data records which are to be modified at activation
-      modify TYPE ty_operation_at_activation VALUE '',
+      upsert TYPE ty_operation_at_activation VALUE '',
       "! <p class="shorttext">Delete</p>
       "! Data records which are to be deleted at activation are flagged with value 'L'
       delete TYPE ty_operation_at_activation VALUE 'L',
@@ -83,6 +83,9 @@ INTERFACE zif_aff_scp1_v1
       "! <p class="shorttext">Default Field Value</p>
       "! Default value of a data field
       default_value   TYPE ty_field_attribute_value VALUE 'USE',
+      "! <p class="shorttext">Forbidden Field Value</p>
+      "! Forbidden or ignored field will not be included in the BC Set
+      forbidden_field TYPE ty_field_attribute_value VALUE 'LOC',
     END OF co_field_attribute.
 
   TYPES:
@@ -140,7 +143,7 @@ INTERFACE zif_aff_scp1_v1
       "! Data records which are to be deleted at activation are flagged with value 'L'
       "! $required
       "! $values {@link zif_aff_scp1_v1.data:co_operation_at_activation}
-      "! $default {@link zif_aff_scp1_v1.data:co_operation_at_activation.modify}
+      "! $default {@link zif_aff_scp1_v1.data:co_operation_at_activation.upsert}
       operation_at_activation TYPE ty_operation_at_activation,
       "! <p class="shorttext">Data</p>
       "! Complete data record of selected key value
