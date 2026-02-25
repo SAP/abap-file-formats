@@ -52,7 +52,7 @@ INTERFACE zif_aff_enqu_v1
       "! <p class="shorttext">Lock Mode</p>
       "! Lock Mode
       "! $required
-      lock_mode     TYPE ty_lock_mode,
+      lock_mode TYPE ty_lock_mode,
     END OF ty_lock_table.
 
   "! <p class="shorttext">Lock Tables</p>
