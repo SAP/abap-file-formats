@@ -26,13 +26,13 @@
   "lockParameters": [
     {
       "active": true,
-      "parameterName": "FIELD1",
+      "name": "FIELD1",
       "table": "ZTEST_TABLE",
       "field": "Field1"
     },
     {
       "active": false,
-      "parameterName": "FIELD2",
+      "name": "FIELD2",
       "table": "ZTEST_SUBTAB",
       "field": "FIELD2"
     }
