@@ -1,0 +1,11 @@
+define static cache z_aff_example_dtsc on demo_cds_cube_view
+{
+  sum( amount_sum ),
+  currency_sum,
+  quantity_sum,
+  uom_sum
+}
+retention 60
+segregate cache data by
+created_on >= '20240101' and lifecycle_status = 'A'
+creation configurable default on
