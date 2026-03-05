@@ -271,7 +271,7 @@
       "type": "string",
       "maxLength": 20
     },
-    "defaultCommponentName": {
+    "defaultComponentName": {
       "title": "Default component name",
       "description": "Default component name",
       "type": "string",
