@@ -1,3 +1,4 @@
+
 INTERFACE zif_aff_doma_v1 PUBLIC.
 
   "! $values {@link zif_aff_doma_v1.data:co_output_style}
