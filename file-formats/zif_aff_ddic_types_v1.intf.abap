@@ -82,7 +82,7 @@ INTERFACE zif_aff_ddic_types_v1 PUBLIC.
       "! Geometry, EWKB representation
       "! $enumValue 'GEOM_EWKB'
       geom_ewkb  TYPE ty_data_type VALUE 'GGM1',
-      "! <p class="shorttext">1-Bypte Integer</p>
+      "! <p class="shorttext">1-Byte Integer</p>
       "! 1-byte integer, integer number <= 255
       "! $enumValue 'INT1'
       int1       TYPE ty_data_type VALUE 'INT1',
