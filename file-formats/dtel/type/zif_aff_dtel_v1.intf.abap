@@ -80,7 +80,7 @@ INTERFACE zif_aff_dtel_v1 PUBLIC.
 
       "! <p class="shorttext">Default component name</p>
       "! Default component name
-      default_commponent_name   TYPE c LENGTH 30,
+      default_component_name    TYPE c LENGTH 30,
 
       "! <p class="shorttext">Change document relevant</p>
       "! Change document relevant
