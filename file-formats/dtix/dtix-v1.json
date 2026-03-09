@@ -3,7 +3,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/dtix/dtix-v1.json",
   "title": "Entity index",
-  "description": "Entity index",
+  "description": "Dictionary Tuning Index",
   "type": "object",
   "properties": {
     "formatVersion": {
