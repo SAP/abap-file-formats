@@ -106,7 +106,7 @@
             "Promote optimistic lock; transform from '0' to 'E'",
             "Only conflict check extended exclusive lock, as with 'X'",
             "Only conflict check exclusive lock, as with 'E'",
-            "CaConflict check for shared lock only, as with 'S'",
+            "Conflict check for shared lock only, as with 'S'",
             "Only promotion check optimized lock, as with 'R'",
             "Reserved",
             "Reserved"
@@ -197,7 +197,7 @@
               "Promote optimistic lock; transform from '0' to 'E'",
               "Only conflict check extended exclusive lock, as with 'X'",
               "Only conflict check exclusive lock, as with 'E'",
-              "CaConflict check for shared lock only, as with 'S'",
+              "Conflict check for shared lock only, as with 'S'",
               "Only promotion check optimized lock, as with 'R'",
               "Reserved",
               "Reserved"
