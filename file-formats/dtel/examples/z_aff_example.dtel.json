@@ -4,7 +4,9 @@
     "description": "Example data element",
     "originalLanguage": "en"
   },
-  "domainName": "Z_AFF_EXAMPLE_DOMA",
+  "dataTypeInformation":{
+    "domainName": "Z_AFF_EXAMPLE_DOMA"
+  },
   "fieldLabels": {
     "short": "Example",
     "medium": "Example field",
