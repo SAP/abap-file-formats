@@ -28,7 +28,7 @@ INTERFACE zif_aff_enqu_v1
       "! Only conflict check exclusive lock, as with 'E'
       conflict_check_exclusive  TYPE ty_lock_mode VALUE 'V',
       "! <p class="shorttext">Conflict check for shared lock only, as with 'S'</p>
-      "! CaConflict check for shared lock only, as with 'S'
+      "! Conflict check for shared lock only, as with 'S'
       conflict_check_shared    TYPE ty_lock_mode VALUE 'W',
       "! <p class="shorttext">Only promotion check optimized lock, as with 'R'</p>
       "! Only promotion check optimized lock, as with 'R'
