@@ -74,8 +74,8 @@ INTERFACE zif_aff_dtel_v1 PUBLIC.
   TYPES:
       "! <p class="shorttext">Basic Direction</p>
       "! Basic direction
-      "! $values @link( zif_aff_dtel_v1.co_bidi_basic_direction )
-      "! $default @link( zif_aff_dtel_v1.co_bidi_basic_direction.left_to_right )
+      "! $values {@link zif_aff_dtel_v1.co_bidi_basic_direction }
+      "! $default {@link zif_aff_dtel_v1.co_bidi_basic_direction.left_to_right }
     ty_basic_direction TYPE c LENGTH 1.
 
   CONSTANTS:
@@ -121,7 +121,7 @@ INTERFACE zif_aff_dtel_v1 PUBLIC.
       "! <p class="shorttext">No input history</p>
       "! No input history
       no_input_history         TYPE abap_bool,
-    END OF TY_ADDITIONAL_PROPERTIES.
+    END OF ty_additional_properties.
 
 
   TYPES:
@@ -129,33 +129,33 @@ INTERFACE zif_aff_dtel_v1 PUBLIC.
     "! Data Element (DTEL)
     BEGIN OF ty_main,
       "! $required
-      format_version           TYPE zif_aff_types_v1=>ty_format_version,
+      format_version        TYPE zif_aff_types_v1=>ty_format_version,
 
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header                   TYPE zif_aff_types_v1=>ty_header_60,
+      header                TYPE zif_aff_types_v1=>ty_header_60,
 
       "! <p class="shorttext">Data Type Information</p>
       "! Data type information
       "! $required
-      data_type_information    TYPE ty_data_type_information,
+      data_type_information TYPE ty_data_type_information,
 
       "! <p class="shorttext">Field Labels</p>
       "! Field labels
-      field_labels             TYPE ty_field_labels,
+      field_labels          TYPE ty_field_labels,
 
       "! <p class="shorttext">Search Help</p>
       "! Search help
-      search_help              TYPE ty_search_help,
+      search_help           TYPE ty_search_help,
 
       "! <p class="shorttext">Bidirectional Options</p>
       "! Bidirectional options
-      bidirectional_options    type ty_bidirectional_options,
+      bidirectional_options TYPE ty_bidirectional_options,
 
       "! <p class="shorttext">Additional Properties</p>
       "! Additional properties
-      additional_properties    type ty_additional_properties,
+      additional_properties TYPE ty_additional_properties,
 
     END OF ty_main.
 
