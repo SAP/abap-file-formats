@@ -342,7 +342,7 @@ INTERFACE zif_aff_doma_v1 PUBLIC.
 
       "! <p class="shorttext">Documentation</p>
       "! Documentation for the domain
-      documentation          TYPE zif_aff_longtexts_v1=>ty_lines,
+      documentation          TYPE zif_aff_longtexts_types_v1=>ty_lines,
     END OF ty_main.
 
 ENDINTERFACE.

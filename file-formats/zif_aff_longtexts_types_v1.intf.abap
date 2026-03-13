@@ -1,6 +1,6 @@
 "! <p class="shorttext synchronized" lang="en">Long text types</p>
 "! Types for AFF long texts
-INTERFACE zif_aff_longtexts_v1 PUBLIC.
+INTERFACE zif_aff_longtexts_types_v1 PUBLIC.
 
   TYPES:
     "! <p class="shorttext">Long Text Line</p>
