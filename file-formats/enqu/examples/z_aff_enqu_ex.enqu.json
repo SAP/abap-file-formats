@@ -8,11 +8,6 @@
     "name": "ZTEST_TABLE",
     "lockMode": "exclusive"
   },
-  "lockModules": {
-    "allowRfc": true,
-    "lockModule": "ZTEST_TABLE_ENQUEUE",
-    "unlockModule": "ZTEST_TABLE_DEQUEUE"
-  },
   "secondaryTables": [
     {
       "name": "ZTEST_SUBTAB",
@@ -25,16 +20,17 @@
   ],
   "lockParameters": [
     {
-      "active": true,
       "name": "FIELD1",
       "table": "ZTEST_TABLE",
-      "field": "FIELD1"
+      "field": "FIELD1",
+      "active": true
     },
     {
-      "active": false,
       "name": "FIELD2",
       "table": "ZTEST_SUBTAB",
-      "field": "FIELD2"
+      "field": "FIELD2",
+      "active": false
     }
-  ]
+  ],
+  "allowRfc": true
 }
