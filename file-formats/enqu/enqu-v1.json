@@ -83,7 +83,8 @@
             "conflictCheckShared",
             "promotionCheckOptimized",
             "reserved1",
-            "reserved2"
+            "reserved2",
+            "empty"
           ],
           "enumTitles": [
             "Exclusive Lock",
@@ -96,7 +97,8 @@
             "Conflict check for shared lock only, as with 'S'",
             "Only promotion check optimized lock, as with 'R'",
             "Reserved",
-            "Reserved"
+            "Reserved",
+            "empty"
           ],
           "enumDescriptions": [
             "Exclusive Lock",
@@ -109,7 +111,8 @@
             "Conflict check for shared lock only, as with 'S'",
             "Only promotion check optimized lock, as with 'R'",
             "Reserved",
-            "Reserved"
+            "Reserved",
+            "empty"
           ]
         }
       },
@@ -118,31 +121,6 @@
         "name",
         "lockMode"
       ]
-    },
-    "lockModules": {
-      "title": "Lock Modules",
-      "description": "The lock modules are generated on activation",
-      "type": "object",
-      "properties": {
-        "allowRfc": {
-          "title": "Allow RFC",
-          "description": "Allow RFC",
-          "type": "boolean"
-        },
-        "lockModule": {
-          "title": "Lock Module",
-          "description": "Lock Module",
-          "type": "string",
-          "maxLength": 30
-        },
-        "unlockModule": {
-          "title": "Unlock Module",
-          "description": "Unlock Module",
-          "type": "string",
-          "maxLength": 30
-        }
-      },
-      "additionalProperties": false
     },
     "secondaryTables": {
       "title": "Secondary Tables",
@@ -174,7 +152,8 @@
               "conflictCheckShared",
               "promotionCheckOptimized",
               "reserved1",
-              "reserved2"
+              "reserved2",
+              "empty"
             ],
             "enumTitles": [
               "Exclusive Lock",
@@ -187,7 +166,8 @@
               "Conflict check for shared lock only, as with 'S'",
               "Only promotion check optimized lock, as with 'R'",
               "Reserved",
-              "Reserved"
+              "Reserved",
+              "empty"
             ],
             "enumDescriptions": [
               "Exclusive Lock",
@@ -200,7 +180,8 @@
               "Conflict check for shared lock only, as with 'S'",
               "Only promotion check optimized lock, as with 'R'",
               "Reserved",
-              "Reserved"
+              "Reserved",
+              "empty"
             ]
           }
         },
@@ -220,11 +201,6 @@
         "description": "Lock Parameter",
         "type": "object",
         "properties": {
-          "active": {
-            "title": "Active",
-            "description": "Parameter is part of Function Module Interface",
-            "type": "boolean"
-          },
           "name": {
             "title": "Parameter Name",
             "description": "Parameter_name",
@@ -242,10 +218,20 @@
             "description": "Field",
             "type": "string",
             "maxLength": 30
+          },
+          "active": {
+            "title": "Active",
+            "description": "Parameter is part of Function Module Interface",
+            "type": "boolean"
           }
         },
         "additionalProperties": false
       }
+    },
+    "allowRfc": {
+      "title": "Allow RFC",
+      "description": "Allow RFC for Lock Modules",
+      "type": "boolean"
     }
   },
   "additionalProperties": false,
