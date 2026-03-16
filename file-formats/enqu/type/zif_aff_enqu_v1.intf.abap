@@ -1,8 +1,8 @@
 INTERFACE zif_aff_enqu_v1
   PUBLIC.
 
-  "! $values { @link zif_aff_enqu_v1.data:co_lock_modes }
-  "! $default { @link zif_aff_enqu_v1.data:co_lock_modes.exclusive_lock }
+  "! $values { @link zah_aff_enqu_v1.data:co_lock_modes }
+  "! $default { @link zah_aff_enqu_v1.data:co_lock_modes.exclusive_lock }
   TYPES ty_lock_mode TYPE c LENGTH 1.
   CONSTANTS:
     BEGIN OF co_lock_modes,
@@ -39,6 +39,9 @@ INTERFACE zif_aff_enqu_v1
       "! <p class="shorttext">Reserved</p>
       "! Reserved
       reserved_2                     TYPE ty_lock_mode VALUE '+',
+      "! <p class="shorttext">empty</p>
+      "! empty
+      empty                     TYPE ty_lock_mode VALUE ' ',
     END OF co_lock_modes.
 
   TYPES:
@@ -48,54 +51,39 @@ INTERFACE zif_aff_enqu_v1
       "! <p class="shorttext">Table Name</p>
       "! Table Name
       "! $required
-      name      TYPE zif_aff_types_v1=>ty_object_name_30,
+      name TYPE if_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Lock Mode</p>
       "! Lock Mode
       "! $required
-      lock_mode TYPE ty_lock_mode,
+      lock_mode     TYPE ty_lock_mode,
     END OF ty_lock_table.
 
   "! <p class="shorttext">Lock Tables</p>
   "! Tables and corresponding lock modes
-  TYPES ty_lock_tables TYPE STANDARD TABLE OF ty_lock_table WITH DEFAULT KEY.
-
-  TYPES:
-    "! <p class="shorttext">Lock Modules</p>
-    "! Lock Modules are generated on activation
-    BEGIN OF ty_lock_modules,
-      "! <p class="shorttext">Allow RFC</p>
-      "! Allow RFC
-      allow_rfc     TYPE abap_bool,
-      "! <p class="shorttext">Lock Module</p>
-      "! Lock Module
-      lock_module   TYPE zif_aff_types_v1=>ty_object_name_30,
-      "! <p class="shorttext">Unlock Module</p>
-      "! Unlock Module
-      unlock_module TYPE zif_aff_types_v1=>ty_object_name_30,
-    END OF ty_lock_modules.
+  TYPES ty_lock_tables TYPE STANDARD TABLE OF ty_lock_table WITH EMPTY KEY.
 
   TYPES ty_field_name TYPE c LENGTH 30.
   TYPES:
     "! <p class="shorttext">Lock Parameter</p>
     "! Lock Parameter
     BEGIN OF ty_lock_parameter,
-      "! <p class="shorttext">Active</p>
-      "! Parameter is part of Function Module Interface
-      active TYPE abap_bool,
       "! <p class="shorttext">Parameter Name</p>
       "! Parameter_name
-      name   TYPE ty_field_name,
+      name TYPE ty_field_name,
       "! <p class="shorttext">Table</p>
       "! Table
-      table  TYPE zif_aff_types_v1=>ty_object_name_30,
+      table          TYPE if_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Field</p>
       "! Field
-      field  TYPE ty_field_name,
+      field          TYPE ty_field_name,
+      "! <p class="shorttext">Active</p>
+      "! Parameter is part of Function Module Interface
+      active         TYPE abap_bool,
     END OF ty_lock_parameter,
 
     "! <p class="shorttext">Lock Parameters</p>
     "! Lock parameter candidates are derived from the primary keys of the tables
-    ty_lock_parameters TYPE STANDARD TABLE OF ty_lock_parameter WITH DEFAULT KEY.
+    ty_lock_parameters TYPE STANDARD TABLE OF ty_lock_parameter WITH EMPTY KEY.
 
   TYPES:
     "! <p class="shorttext">Lock Object</p>
@@ -104,23 +92,23 @@ INTERFACE zif_aff_enqu_v1
       "! <p class="shorttext">Format Version</p>
       "! Format version
       "! $required
-      format_version   TYPE zif_aff_types_v1=>ty_format_version,
+      format_version   TYPE if_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header           TYPE zif_aff_types_v1=>ty_header_60,
+      header           TYPE if_aff_types_v1=>ty_header_60,
       "! <p class="shorttext">Primary Table</p>
       "! Primary Table of the lock object
       primary_table    TYPE ty_lock_table,
-      "! <p class="shorttext">Lock Modules</p>
-      "! The lock modules are generated on activation
-      lock_modules     TYPE ty_lock_modules,
       "! <p class="shorttext">Secondary Tables</p>
       "! Secondary Tables must have a foreign key relation to the primary table
       secondary_tables TYPE ty_lock_tables,
       "! <p class="shorttext">Lock Parameters</p>
       "! Lock parameter candidates are derived from the primary keys of the tables
       lock_parameters  TYPE ty_lock_parameters,
+      "! <p class="shorttext">Allow RFC</p>
+      "! Allow RFC for Lock Modules
+      allow_rfc     TYPE abap_bool,
     END OF ty_main.
 
 ENDINTERFACE.
