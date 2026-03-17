@@ -115,7 +115,7 @@ INTERFACE if_aff_abiq_v1
     END OF ty_assigned_query,
     "! <p class="shorttext">Assigned Queries</p>
     "! Assigned Queries
-    ty_assigned_queries TYPE STANDARD TABLE OF ty_assigned_query WITH EMPTY KEY.
+    ty_assigned_queries TYPE STANDARD TABLE OF ty_assigned_query WITH DEFAULT KEY.
 
   TYPES:
     "! <p class="shorttext">Object Type ABIQ</p>
