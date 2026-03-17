@@ -9,13 +9,13 @@ INTERFACE if_aff_abiq_v1
     BEGIN OF co_quick_action_type,
       "! <p class="shorttext">LLM</p>
       "! LLM Quick Action
-      llm  TYPE ty_quick_action_type VALUE 01,
+      llm  TYPE ty_quick_action_type VALUE 1,
       "! <p class="shorttext">JSON</p>
       "! JSON Quick Action
-      json TYPE ty_quick_action_type VALUE 02,
+      json TYPE ty_quick_action_type VALUE 2,
       "! <p class="shorttext">PAL</p>
       "! PAL Quick Action
-      pal  TYPE ty_quick_action_type VALUE 03,
+      pal  TYPE ty_quick_action_type VALUE 3,
     END OF co_quick_action_type.
 
   "! $values { @link if_aff_abiq_v1.data:co_quick_action_scope }
@@ -25,13 +25,13 @@ INTERFACE if_aff_abiq_v1
     BEGIN OF co_quick_action_scope,
       "! <p class="shorttext">Query</p>
       "! Query
-      query     TYPE ty_quick_action_scope VALUE 01,
+      query     TYPE ty_quick_action_scope VALUE 1,
       "! <p class="shorttext">One Data Provider</p>
       "! One Data Provider per Page
-      single_dp TYPE ty_quick_action_scope VALUE 02,
+      single_dp TYPE ty_quick_action_scope VALUE 2,
       "! <p class="shorttext">Two Data Providers</p>
       "! Two Data Providers per Page
-      multi_dp  TYPE ty_quick_action_scope VALUE 03,
+      multi_dp  TYPE ty_quick_action_scope VALUE 3,
     END OF co_quick_action_scope.
 
   "! $values { @link if_aff_abiq_v1.data:co_output_type }
@@ -41,13 +41,13 @@ INTERFACE if_aff_abiq_v1
     BEGIN OF co_output_type,
       "! <p class="shorttext">Not Set</p>
       "! Not Set
-      not_set    TYPE ty_quick_action_scope VALUE 00,
+      not_set    TYPE ty_quick_action_scope VALUE 0,
       "! <p class="shorttext">HTML</p>
       "! HTML
-      html       TYPE ty_quick_action_scope VALUE 01,
+      html       TYPE ty_quick_action_scope VALUE 1,
       "! <p class="shorttext">Card Chart</p>
       "! Card Chart
-      card_chart TYPE ty_quick_action_scope VALUE 02,
+      card_chart TYPE ty_quick_action_scope VALUE 2,
     END OF co_output_type.
 
   TYPES:
