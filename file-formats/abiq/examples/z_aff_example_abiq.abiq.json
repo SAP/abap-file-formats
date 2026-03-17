@@ -1,0 +1,24 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Example Quick Action",
+    "originalLanguage": "en"
+  },
+  "quickActionDefinition": {
+    "type": "llm",
+    "scope": "singleDp",
+    "consumptionVisible": false
+  },
+  "promptDefinition": {
+    "systemPrompt": "You are uniquely qualified to navigate, comprehend, and analyze the complex hierarchies of tabular financial data. Follow the instructions carefully.",
+    "userPrompt": "Analyze the review booket data... {result_set}",
+    "resultSetRequired": true,
+    "commentsRequired": true,
+    "outputType": "html"
+  },
+  "assignedQueries": [
+    {
+      "queryName": "C_MYDUMMYQUERY"
+    }
+  ]
+}
