@@ -1,6 +1,6 @@
 "! AFF type for the object ABIQ ( ABI Quick-ACtions )
-interface zif_aff_abiq_v1
-  public.
+INTERFACE zif_aff_abiq_v1
+  PUBLIC.
 
   "! $values { @link zif_aff_abiq_v1.data:co_quick_action_type }
   "! $default { @link zif_aff_abiq_v1.data:co_quick_action_type.llm }
