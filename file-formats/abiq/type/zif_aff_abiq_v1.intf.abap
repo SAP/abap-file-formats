@@ -115,7 +115,7 @@ interface zif_aff_abiq_v1
     end of ty_assigned_query,
     "! <p class="shorttext">Assigned Queries</p>
     "! Assigned Queries
-    ty_assigned_queries type standard table of ty_assigned_query with empty key.
+    ty_assigned_queries type standard table of ty_assigned_query with DEFAULT key.
 
   types:
     "! <p class="shorttext">Object Type ABIQ</p>
