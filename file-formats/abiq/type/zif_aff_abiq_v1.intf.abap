@@ -2,8 +2,8 @@
 INTERFACE zif_aff_abiq_v1
   PUBLIC.
 
-  "! $values { @link if_aff_abiq_v1.data:co_quick_action_type }
-  "! $default { @link if_aff_abiq_v1.data:co_quick_action_type.llm }
+  "! $values { @link zif_aff_abiq_v1.data:co_quick_action_type }
+  "! $default { @link zif_aff_abiq_v1.data:co_quick_action_type.llm }
   TYPES ty_quick_action_type TYPE numc2.
   CONSTANTS:
     BEGIN OF co_quick_action_type,
@@ -18,8 +18,8 @@ INTERFACE zif_aff_abiq_v1
       pal  TYPE ty_quick_action_type VALUE 3,
     END OF co_quick_action_type.
 
-  "! $values { @link if_aff_abiq_v1.data:co_quick_action_scope }
-  "! $default { @link if_aff_abiq_v1.data:co_quick_action_scope.query }
+  "! $values { @link zif_aff_abiq_v1.data:co_quick_action_scope }
+  "! $default { @link zif_aff_abiq_v1.data:co_quick_action_scope.query }
   TYPES ty_quick_action_scope TYPE numc2.
   CONSTANTS:
     BEGIN OF co_quick_action_scope,
@@ -34,8 +34,8 @@ INTERFACE zif_aff_abiq_v1
       multi_dp  TYPE ty_quick_action_scope VALUE 3,
     END OF co_quick_action_scope.
 
-  "! $values { @link if_aff_abiq_v1.data:co_output_type }
-  "! $default { @link if_aff_abiq_v1.data:co_output_type.not_set }
+  "! $values { @link zif_aff_abiq_v1.data:co_output_type }
+  "! $default { @link zif_aff_abiq_v1.data:co_output_type.not_set }
   TYPES ty_output_type TYPE numc2.
   CONSTANTS:
     BEGIN OF co_output_type,
@@ -124,11 +124,11 @@ INTERFACE zif_aff_abiq_v1
       "! <p class="shorttext">Format Version</p>
       "! Format version
       "! $required
-      format_version          TYPE if_aff_types_v1=>ty_format_version,
+      format_version          TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header                  TYPE if_aff_types_v1=>ty_header_60,
+      header                  TYPE zif_aff_types_v1=>ty_header_60,
       "! <p class="shorttext">Quick Action Definition</p>
       "! Quick Action Definition
       "! $required
