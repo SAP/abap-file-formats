@@ -1,5 +1,5 @@
 "! AFF type for the object ABIQ ( ABI Quick-ACtions )
-INTERFACE if_aff_abiq_v1
+INTERFACE zif_aff_abiq_v1
   PUBLIC.
 
   "! $values { @link if_aff_abiq_v1.data:co_quick_action_type }
