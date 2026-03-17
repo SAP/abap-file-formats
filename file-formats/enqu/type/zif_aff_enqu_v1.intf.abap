@@ -78,7 +78,7 @@ INTERFACE zif_aff_enqu_v1
       field  TYPE ty_field_name,
       "! <p class="shorttext">Active</p>
       "! Parameter is part of Function Module Interface
-      active         TYPE abap_bool,
+      active TYPE abap_bool,
     END OF ty_lock_parameter,
 
     "! <p class="shorttext">Lock Parameters</p>
