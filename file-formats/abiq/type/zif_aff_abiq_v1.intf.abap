@@ -2,9 +2,11 @@
 INTERFACE zif_aff_abiq_v1
   PUBLIC.
 
+  TYPES ty_query_name TYPE c LENGTH 30.
+
   "! $values { @link zif_aff_abiq_v1.data:co_quick_action_type }
   "! $default { @link zif_aff_abiq_v1.data:co_quick_action_type.llm }
-  TYPES ty_quick_action_type TYPE numc2.
+  TYPES ty_quick_action_type TYPE n LENGTH 2.
   CONSTANTS:
     BEGIN OF co_quick_action_type,
       "! <p class="shorttext">LLM</p>
@@ -20,7 +22,7 @@ INTERFACE zif_aff_abiq_v1
 
   "! $values { @link zif_aff_abiq_v1.data:co_quick_action_scope }
   "! $default { @link zif_aff_abiq_v1.data:co_quick_action_scope.query }
-  TYPES ty_quick_action_scope TYPE numc2.
+  TYPES ty_quick_action_scope TYPE n LENGTH 2.
   CONSTANTS:
     BEGIN OF co_quick_action_scope,
       "! <p class="shorttext">Query</p>
@@ -36,7 +38,7 @@ INTERFACE zif_aff_abiq_v1
 
   "! $values { @link zif_aff_abiq_v1.data:co_output_type }
   "! $default { @link zif_aff_abiq_v1.data:co_output_type.not_set }
-  TYPES ty_output_type TYPE numc2.
+  TYPES ty_output_type TYPE n LENGTH 2.
   CONSTANTS:
     BEGIN OF co_output_type,
       "! <p class="shorttext">Not Set</p>
@@ -111,7 +113,7 @@ INTERFACE zif_aff_abiq_v1
       "! <p class="shorttext">Query Name</p>
       "! Query Name
       "! $required
-      query_name TYPE char30,
+      query_name TYPE ty_query_name,
     END OF ty_assigned_query,
     "! <p class="shorttext">Assigned Queries</p>
     "! Assigned Queries
