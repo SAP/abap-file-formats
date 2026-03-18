@@ -108,7 +108,7 @@ INTERFACE zif_aff_enqu_v1
       lock_parameters  TYPE ty_lock_parameters,
       "! <p class="shorttext">Allow RFC</p>
       "! Allow RFC for Lock Modules
-      allow_rfc     TYPE abap_bool,
+      allow_rfc        TYPE abap_bool,
     END OF ty_main.
 
 ENDINTERFACE.
