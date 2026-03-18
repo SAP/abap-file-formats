@@ -18,8 +18,8 @@ INTERFACE zif_aff_enqu_v1
       "! <p class="shorttext">Set optimistic lock</p>
       "! Set optimistic lock
       set_optimistic            TYPE ty_lock_mode VALUE 'O',
-      "! <p class="shorttext">Promote optimistic lock; transform from '0' to 'E'</p>
-      "! Promote optimistic lock; transform from '0' to 'E'
+      "! <p class="shorttext">Promote optimistic lock; transform from 'O' to 'E'</p>
+      "! Promote optimistic lock; transform from 'O' to 'E'
       promote_optimistic        TYPE ty_lock_mode VALUE 'R',
       "! <p class="shorttext">Only conflict check extended exclusive lock, as with 'X'</p>
       "! Only conflict check extended exclusive lock, as with 'X'
