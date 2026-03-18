@@ -84,7 +84,7 @@
             "promotionCheckOptimized",
             "reserved1",
             "reserved2",
-            "empty"
+            "initial"
           ],
           "enumTitles": [
             "Exclusive Lock",
@@ -98,7 +98,7 @@
             "Only promotion check optimized lock, as with 'R'",
             "Reserved",
             "Reserved",
-            "empty"
+            "Initial"
           ],
           "enumDescriptions": [
             "Exclusive Lock",
@@ -112,7 +112,7 @@
             "Only promotion check optimized lock, as with 'R'",
             "Reserved",
             "Reserved",
-            "empty"
+            "Initial"
           ]
         }
       },
@@ -153,7 +153,7 @@
               "promotionCheckOptimized",
               "reserved1",
               "reserved2",
-              "empty"
+              "initial"
             ],
             "enumTitles": [
               "Exclusive Lock",
@@ -167,7 +167,7 @@
               "Only promotion check optimized lock, as with 'R'",
               "Reserved",
               "Reserved",
-              "empty"
+              "Initial"
             ],
             "enumDescriptions": [
               "Exclusive Lock",
@@ -181,7 +181,7 @@
               "Only promotion check optimized lock, as with 'R'",
               "Reserved",
               "Reserved",
-              "empty"
+              "Initial"
             ]
           }
         },
