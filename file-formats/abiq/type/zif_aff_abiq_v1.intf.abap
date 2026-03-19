@@ -11,7 +11,7 @@ INTERFACE zif_aff_abiq_v1
       "! LLM quick action
       llm  TYPE ty_quick_action_type VALUE 1,
       "! <p class="shorttext">JSON</p>
-      "! JSON Quick Action
+      "! JSON quick action
       json TYPE ty_quick_action_type VALUE 2,
       "! <p class="shorttext">PAL</p>
       "! PAL Quick Action
