@@ -134,7 +134,7 @@ INTERFACE zif_aff_abiq_v1
       "! $required
       quick_action_definition TYPE ty_quick_action_definition,
       "! <p class="shorttext">Prompt Definition</p>
-      "! Prompt Definition
+      "! Prompt definition (used when type is LLM)
       prompt_definition       TYPE ty_prompt_definition,
       "! <p class="shorttext">JSON Definition</p>
       "! JSON Definition
