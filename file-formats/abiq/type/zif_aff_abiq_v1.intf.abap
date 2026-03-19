@@ -62,9 +62,8 @@ INTERFACE zif_aff_abiq_v1
       "! Scope
       "! $required
       scope               TYPE ty_quick_action_scope,
-      "! <p class="shorttext">Visible</p>
-      "! Visible for Consumption
-      "! $required
+      "! <p class="shorttext">Consumption Visible</p>
+      "! Visible for consumption
       consumption_visible TYPE abap_bool,
     END OF ty_quick_action_definition.
 
