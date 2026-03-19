@@ -8,7 +8,7 @@ INTERFACE zif_aff_abiq_v1
   CONSTANTS:
     BEGIN OF co_quick_action_type,
       "! <p class="shorttext">LLM</p>
-      "! LLM Quick Action
+      "! LLM quick action
       llm  TYPE ty_quick_action_type VALUE 1,
       "! <p class="shorttext">JSON</p>
       "! JSON Quick Action
