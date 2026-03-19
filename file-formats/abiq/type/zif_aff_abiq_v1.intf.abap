@@ -140,7 +140,7 @@ INTERFACE zif_aff_abiq_v1
       "! JSON definition (used when type is JSON)
       json_definition         TYPE ty_json_definition,
       "! <p class="shorttext">Assigned Queries</p>
-      "! Assigned Queries
+      "! Assigned queries
       assigned_queries        TYPE ty_assigned_queries,
     END OF ty_main.
 
