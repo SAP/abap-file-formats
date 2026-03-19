@@ -114,8 +114,8 @@ INTERFACE zif_aff_abiq_v1
       query_name TYPE ty_query_name,
     END OF ty_assigned_query,
     "! <p class="shorttext">Assigned Queries</p>
-    "! Assigned Queries
-    ty_assigned_queries TYPE STANDARD TABLE OF ty_assigned_query WITH DEFAULT KEY.
+    "! Assigned queries
+    ty_assigned_queries TYPE SORTED TABLE OF ty_assigned_query WITH UNIQUE KEY query_name.
 
   TYPES:
     "! <p class="shorttext">Object Type ABIQ</p>
