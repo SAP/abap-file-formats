@@ -40,14 +40,14 @@ INTERFACE zif_aff_abiq_v1
   CONSTANTS:
     BEGIN OF co_output_type,
       "! <p class="shorttext">Not Set</p>
-      "! Not Set
-      not_set    TYPE ty_quick_action_scope VALUE 0,
+      "! Not set
+      not_set    TYPE ty_output_type VALUE 0,
       "! <p class="shorttext">HTML</p>
       "! HTML
-      html       TYPE ty_quick_action_scope VALUE 1,
+      html       TYPE ty_output_type VALUE 1,
       "! <p class="shorttext">Card Chart</p>
-      "! Card Chart
-      card_chart TYPE ty_quick_action_scope VALUE 2,
+      "! Card chart
+      card_chart TYPE ty_output_type VALUE 2,
     END OF co_output_type.
 
   TYPES:
