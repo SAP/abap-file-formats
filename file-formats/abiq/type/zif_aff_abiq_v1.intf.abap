@@ -80,8 +80,7 @@ INTERFACE zif_aff_abiq_v1
       "! $required
       user_prompt         TYPE string,
       "! <p class="shorttext">Result Set Required</p>
-      "! >Result Set Required
-      "! $required
+      "! Result set required
       result_set_required TYPE abap_bool,
       "! <p class="shorttext">Comments Required</p>
       "! Comments Required
