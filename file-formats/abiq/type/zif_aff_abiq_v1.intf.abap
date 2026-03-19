@@ -76,7 +76,7 @@ INTERFACE zif_aff_abiq_v1
       "! $required
       system_prompt       TYPE string,
       "! <p class="shorttext">User Prompt</p>
-      "! User Prompt
+      "! User prompt
       "! $required
       user_prompt         TYPE string,
       "! <p class="shorttext">Result Set Required</p>
