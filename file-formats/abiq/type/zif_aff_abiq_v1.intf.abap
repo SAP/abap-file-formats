@@ -2,8 +2,6 @@
 INTERFACE zif_aff_abiq_v1
   PUBLIC.
 
-  TYPES ty_query_name TYPE c LENGTH 30.
-
   "! $values { @link zif_aff_abiq_v1.data:co_quick_action_type }
   "! $default { @link zif_aff_abiq_v1.data:co_quick_action_type.llm }
   TYPES ty_quick_action_type TYPE n LENGTH 2.
