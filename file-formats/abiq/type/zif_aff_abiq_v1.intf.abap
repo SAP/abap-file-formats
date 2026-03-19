@@ -96,7 +96,7 @@ INTERFACE zif_aff_abiq_v1
     "! JSON Definition
     BEGIN OF ty_json_definition,
       "! <p class="shorttext">JSON Content</p>
-      "! JSON Content
+      "! JSON content
       "! $required
       json_content TYPE string,
     END OF ty_json_definition.
