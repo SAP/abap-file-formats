@@ -27,8 +27,8 @@ INTERFACE zif_aff_abiq_v1
       "! Query
       query     TYPE ty_quick_action_scope VALUE 1,
       "! <p class="shorttext">One Data Provider</p>
-      "! One Data Provider per Page
-      single_dp TYPE ty_quick_action_scope VALUE 2,
+      "! One data provider per page
+      one_data_provider TYPE ty_quick_action_scope VALUE 2,
       "! <p class="shorttext">Two Data Providers</p>
       "! Two Data Providers per Page
       multi_dp  TYPE ty_quick_action_scope VALUE 3,
