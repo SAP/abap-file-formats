@@ -72,7 +72,7 @@ INTERFACE zif_aff_abiq_v1
     "! Prompt Definition
     BEGIN OF ty_prompt_definition,
       "! <p class="shorttext">System Prompt</p>
-      "! System Prompt
+      "! System prompt
       "! $required
       system_prompt       TYPE string,
       "! <p class="shorttext">User Prompt</p>
