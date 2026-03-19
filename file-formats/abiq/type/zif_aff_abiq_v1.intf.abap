@@ -106,9 +106,9 @@ INTERFACE zif_aff_abiq_v1
     "! >Assigned Query
     BEGIN OF ty_assigned_query,
       "! <p class="shorttext">Query Name</p>
-      "! Query Name
+      "! Query name
       "! $required
-      query_name TYPE ty_query_name,
+      query_name TYPE zif_aff_types_v1=>ty_object_name_30,
     END OF ty_assigned_query,
     "! <p class="shorttext">Assigned Queries</p>
     "! Assigned queries
