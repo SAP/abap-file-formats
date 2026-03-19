@@ -1,4 +1,4 @@
-"! AFF type for the object ABIQ ( ABI Quick-ACtions )
+"! AFF type for the object ABIQ ( ABI Quick-Actions )
 INTERFACE zif_aff_abiq_v1
   PUBLIC.
 

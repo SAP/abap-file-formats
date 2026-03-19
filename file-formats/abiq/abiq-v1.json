@@ -59,7 +59,7 @@
     },
     "quickActionDefinition": {
       "title": "Quick Action Definition",
-      "description": "Quick Action Definition",
+      "description": "Quick action definition",
       "type": "object",
       "properties": {
         "type": {
@@ -77,9 +77,9 @@
             "PAL"
           ],
           "enumDescriptions": [
-            "LLM Quick Action",
-            "JSON Quick Action",
-            "PAL Quick Action"
+            "LLM quick action",
+            "JSON quick action",
+            "PAL quick action"
           ],
           "default": "llm"
         },
@@ -89,62 +89,61 @@
           "type": "string",
           "enum": [
             "query",
-            "singleDp",
-            "multiDp"
+            "oneDataProvider",
+            "multipleDataProviders"
           ],
           "enumTitles": [
             "Query",
             "One Data Provider",
-            "Two Data Providers"
+            "Multiple Data Providers"
           ],
           "enumDescriptions": [
             "Query",
-            "One Data Provider per Page",
-            "Two Data Providers per Page"
+            "One data provider per page",
+            "Multiple data providers per page"
           ],
           "default": "query"
         },
         "consumptionVisible": {
-          "title": "Visible",
-          "description": "Visible for Consumption",
+          "title": "Consumption Visible",
+          "description": "Visible for consumption",
           "type": "boolean"
         }
       },
       "additionalProperties": false,
       "required": [
         "type",
-        "scope",
-        "consumptionVisible"
+        "scope"
       ]
     },
     "promptDefinition": {
       "title": "Prompt Definition",
-      "description": "Prompt Definition",
+      "description": "Prompt definition (used when type is LLM)",
       "type": "object",
       "properties": {
         "systemPrompt": {
           "title": "System Prompt",
-          "description": "System Prompt",
+          "description": "System prompt",
           "type": "string"
         },
         "userPrompt": {
           "title": "User Prompt",
-          "description": "User Prompt",
+          "description": "User prompt",
           "type": "string"
         },
         "resultSetRequired": {
           "title": "Result Set Required",
-          "description": ">Result Set Required",
+          "description": "Result set required",
           "type": "boolean"
         },
         "commentsRequired": {
           "title": "Comments Required",
-          "description": "Comments Required",
+          "description": "Comments required",
           "type": "boolean"
         },
         "outputType": {
           "title": "Output Type",
-          "description": "Output Type",
+          "description": "Output type",
           "type": "string",
           "enum": [
             "notSet",
@@ -157,9 +156,9 @@
             "Card Chart"
           ],
           "enumDescriptions": [
-            "Not Set",
+            "Not set",
             "HTML",
-            "Card Chart"
+            "Card chart"
           ],
           "default": "notSet"
         }
@@ -168,19 +167,17 @@
       "required": [
         "systemPrompt",
         "userPrompt",
-        "resultSetRequired",
-        "commentsRequired",
         "outputType"
       ]
     },
     "jsonDefinition": {
       "title": "JSON Definition",
-      "description": "JSON Definition",
+      "description": "JSON definition (used when type is JSON)",
       "type": "object",
       "properties": {
         "jsonContent": {
           "title": "JSON Content",
-          "description": "JSON Content",
+          "description": "JSON content",
           "type": "string"
         }
       },
@@ -191,16 +188,17 @@
     },
     "assignedQueries": {
       "title": "Assigned Queries",
-      "description": "Assigned Queries",
+      "description": "Assigned queries",
       "type": "array",
+      "uniqueItems": true,
       "items": {
         "title": "Assigned Query",
-        "description": ">Assigned Query",
+        "description": "Assigned query",
         "type": "object",
         "properties": {
           "queryName": {
             "title": "Query Name",
-            "description": "Query Name",
+            "description": "Query name",
             "type": "string",
             "maxLength": 30
           }
