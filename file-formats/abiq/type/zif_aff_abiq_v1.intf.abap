@@ -29,9 +29,9 @@ INTERFACE zif_aff_abiq_v1
       "! <p class="shorttext">One Data Provider</p>
       "! One data provider per page
       one_data_provider TYPE ty_quick_action_scope VALUE 2,
-      "! <p class="shorttext">Two Data Providers</p>
-      "! Two Data Providers per Page
-      multi_dp  TYPE ty_quick_action_scope VALUE 3,
+      "! <p class="shorttext">Multiple Data Providers</p>
+      "! Multiple data providers per page
+      multiple_data_providers  TYPE ty_quick_action_scope VALUE 3,
     END OF co_quick_action_scope.
 
   "! $values { @link zif_aff_abiq_v1.data:co_output_type }
