@@ -87,7 +87,7 @@ INTERFACE zif_aff_abiq_v1
       "! $required
       comments_required   TYPE abap_bool,
       "! <p class="shorttext">Output Type</p>
-      "! Output Type
+      "! Output type
       "! $required
       output_type         TYPE ty_output_type,
     END OF ty_prompt_definition.
