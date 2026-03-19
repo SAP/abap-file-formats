@@ -137,7 +137,7 @@ INTERFACE zif_aff_abiq_v1
       "! Prompt definition (used when type is LLM)
       prompt_definition       TYPE ty_prompt_definition,
       "! <p class="shorttext">JSON Definition</p>
-      "! JSON Definition
+      "! JSON definition (used when type is JSON)
       json_definition         TYPE ty_json_definition,
       "! <p class="shorttext">Assigned Queries</p>
       "! Assigned Queries
