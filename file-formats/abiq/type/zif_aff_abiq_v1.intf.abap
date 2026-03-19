@@ -130,7 +130,7 @@ INTERFACE zif_aff_abiq_v1
       "! $required
       header                  TYPE zif_aff_types_v1=>ty_header_60,
       "! <p class="shorttext">Quick Action Definition</p>
-      "! Quick Action Definition
+      "! Quick action definition
       "! $required
       quick_action_definition TYPE ty_quick_action_definition,
       "! <p class="shorttext">Prompt Definition</p>
