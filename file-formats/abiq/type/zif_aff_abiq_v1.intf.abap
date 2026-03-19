@@ -103,7 +103,7 @@ INTERFACE zif_aff_abiq_v1
 
   TYPES:
     "! <p class="shorttext">Assigned Query</p>
-    "! >Assigned Query
+    "! Assigned query
     BEGIN OF ty_assigned_query,
       "! <p class="shorttext">Query Name</p>
       "! Query name
