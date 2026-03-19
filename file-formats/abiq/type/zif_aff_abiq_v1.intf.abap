@@ -83,8 +83,7 @@ INTERFACE zif_aff_abiq_v1
       "! Result set required
       result_set_required TYPE abap_bool,
       "! <p class="shorttext">Comments Required</p>
-      "! Comments Required
-      "! $required
+      "! Comments required
       comments_required   TYPE abap_bool,
       "! <p class="shorttext">Output Type</p>
       "! Output type
