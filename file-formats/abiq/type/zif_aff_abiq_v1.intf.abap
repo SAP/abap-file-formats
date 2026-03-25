@@ -123,7 +123,7 @@ INTERFACE zif_aff_abiq_v1
       "! <p class="shorttext">Format Version</p>
       "! Format version
       "! $required
-      format_version          TYPE zif_aff_types_v1=>ty_format_version,
+      format_version      TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
