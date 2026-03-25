@@ -4,7 +4,7 @@
     "description": "Example Quick Action",
     "originalLanguage": "en"
   },
-  "quickActionDefinition": {
+  "generalInformation": {
     "type": "llm",
     "scope": "oneDataProvider",
     "consumptionVisible": false

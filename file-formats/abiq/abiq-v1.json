@@ -57,9 +57,9 @@
         "originalLanguage"
       ]
     },
-    "quickActionDefinition": {
-      "title": "Quick Action Definition",
-      "description": "Quick action definition",
+    "generalInformation": {
+      "title": "General Information",
+      "description": "General information",
       "type": "object",
       "properties": {
         "type": {
@@ -214,6 +214,6 @@
   "required": [
     "formatVersion",
     "header",
-    "quickActionDefinition"
+    "generalInformation"
   ]
 }
