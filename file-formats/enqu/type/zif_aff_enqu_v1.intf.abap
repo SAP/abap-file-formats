@@ -39,9 +39,9 @@ INTERFACE zif_aff_enqu_v1
       "! <p class="shorttext">Reserved</p>
       "! Reserved
       reserved_2                     TYPE ty_lock_mode VALUE '+',
-      "! <p class="shorttext">Initial</p>
-      "! Initial
-      initial                        TYPE ty_lock_mode VALUE '',
+      "! <p class="shorttext">Undefined</p>
+      "! Undefined
+      undefined                      TYPE ty_lock_mode VALUE '',
     END OF co_lock_modes.
 
   TYPES:
