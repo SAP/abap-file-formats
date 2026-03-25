@@ -88,6 +88,8 @@ INTERFACE zif_aff_abiq_v1
       "! <p class="shorttext">Output Type</p>
       "! Output type
       "! $required
+      "! <p class="shorttext">Output Type</p>
+      "! Output type
       output_type         TYPE ty_output_type,
     END OF ty_prompt_definition.
 
