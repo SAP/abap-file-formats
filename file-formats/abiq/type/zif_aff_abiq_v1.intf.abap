@@ -69,7 +69,7 @@ INTERFACE zif_aff_abiq_v1
 
   TYPES:
     "! <p class="shorttext">Prompt Definition</p>
-    "! Prompt Definition
+    "! Prompt definition
     BEGIN OF ty_prompt_definition,
       "! <p class="shorttext">System Prompt</p>
       "! System prompt
