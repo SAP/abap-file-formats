@@ -95,7 +95,7 @@ INTERFACE zif_aff_abiq_v1
 
   TYPES:
     "! <p class="shorttext">JSON Definition</p>
-    "! JSON Definition
+    "! JSON definition
     BEGIN OF ty_json_definition,
       "! <p class="shorttext">JSON Content</p>
       "! JSON content
