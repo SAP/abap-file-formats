@@ -134,7 +134,7 @@ INTERFACE zif_aff_abiq_v1
       general_information TYPE ty_quick_action_definition,
       "! <p class="shorttext">Prompt Definition</p>
       "! Prompt definition (used when type is LLM)
-      prompt_definition       TYPE ty_prompt_definition,
+      prompt_definition   TYPE ty_prompt_definition,
       "! <p class="shorttext">JSON Definition</p>
       "! JSON definition (used when type is JSON)
       json_definition         TYPE ty_json_definition,
