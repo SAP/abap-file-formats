@@ -127,7 +127,7 @@ INTERFACE zif_aff_abiq_v1
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header                  TYPE zif_aff_types_v1=>ty_header_60,
+      header              TYPE zif_aff_types_v1=>ty_header_60,
       "! <p class="shorttext">General Information</p>
       "! General information
       "! $required
