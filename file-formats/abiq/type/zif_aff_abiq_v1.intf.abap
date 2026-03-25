@@ -52,7 +52,7 @@ INTERFACE zif_aff_abiq_v1
 
   TYPES:
     "! <p class="shorttext">Quick Action Definition</p>
-    "! Quick Action Definition
+    "! Quick action definition
     BEGIN OF ty_quick_action_definition,
       "! <p class="shorttext">Type</p>
       "! Type
