@@ -137,7 +137,7 @@ INTERFACE zif_aff_abiq_v1
       prompt_definition   TYPE ty_prompt_definition,
       "! <p class="shorttext">JSON Definition</p>
       "! JSON definition (used when type is JSON)
-      json_definition         TYPE ty_json_definition,
+      json_definition     TYPE ty_json_definition,
       "! <p class="shorttext">Assigned Queries</p>
       "! Assigned queries
       assigned_queries        TYPE ty_assigned_queries,
