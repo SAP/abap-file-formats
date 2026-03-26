@@ -87,9 +87,6 @@ INTERFACE zif_aff_abiq_v1
       comments_required   TYPE abap_bool,
       "! <p class="shorttext">Output Type</p>
       "! Output type
-      "! $required
-      "! <p class="shorttext">Output Type</p>
-      "! Output type
       output_type         TYPE ty_output_type,
     END OF ty_prompt_definition.
 
@@ -127,7 +124,7 @@ INTERFACE zif_aff_abiq_v1
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header              TYPE zif_aff_types_v1=>ty_header_60,
+      header              TYPE zif_aff_types_v1=>ty_header_60_cloud,
       "! <p class="shorttext">General Information</p>
       "! General information
       "! $required
@@ -140,7 +137,7 @@ INTERFACE zif_aff_abiq_v1
       json_definition     TYPE ty_json_definition,
       "! <p class="shorttext">Assigned Queries</p>
       "! Assigned queries
-      assigned_queries        TYPE ty_assigned_queries,
+      assigned_queries    TYPE ty_assigned_queries,
     END OF ty_main.
 
 ENDINTERFACE.
