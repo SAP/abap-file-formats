@@ -72,7 +72,7 @@ INTERFACE zif_aff_prog_v1 PUBLIC.
       program_type             TYPE ty_program_type,
       "! <p class="shorttext">Program Status</p>
       "! Program status
-      status                   TYPE ty_program_status,
+      program_status           TYPE ty_program_status,
       "! <p class="shorttext">Fix Point Arithmetic</p>
       "! Fix point arithmetic
       has_fix_point_arithmetic TYPE abap_bool,

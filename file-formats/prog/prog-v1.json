@@ -86,7 +86,7 @@
           ],
           "default": "executableProgram"
         },
-        "status": {
+        "programStatus": {
           "title": "Program Status",
           "description": "Program status",
           "type": "string",

@@ -6,7 +6,7 @@
   },
   "generalInformation": {
     "programType": "executableProgram",
-    "status": "sapProductionProgram",
+    "programStatus": "sapProductionProgram",
     "hasFixPointArithmetic": true,
     "authorizationGroup": "BC440",
     "application": "S"
