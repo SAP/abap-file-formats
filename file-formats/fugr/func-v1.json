@@ -194,7 +194,7 @@
       "title": "Release Date",
       "description": "Release date",
       "type": "string",
-      "format": "date-time"
+      "format": "date"
     },
     "global": {
       "title": "Global",
