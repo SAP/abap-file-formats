@@ -69,28 +69,28 @@ INTERFACE zif_aff_prog_v1 PUBLIC.
     BEGIN OF ty_general_information,
       "! <p class="shorttext">Program Type</p>
       "! Program type
-      program_type             TYPE ty_program_type,
+      program_type         TYPE ty_program_type,
       "! <p class="shorttext">Program Status</p>
       "! Program status
-      program_status           TYPE ty_program_status,
+      program_status       TYPE ty_program_status,
       "! <p class="shorttext">Fix Point Arithmetic</p>
       "! Fix point arithmetic
       fix_point_arithmetic TYPE abap_bool,
       "! <p class="shorttext">Edit Locked</p>
       "! The editor lock flag prevents other users from making changes to the program.
       "! Only the last person to change the program can remove the flag.
-      edit_locked              TYPE abap_bool,
+      edit_locked          TYPE abap_bool,
       "! <p class="shorttext">Starts Using Variant</p>
       "! A user can only start this report using a variant.
-      starts_using_variant     TYPE abap_bool,
+      starts_using_variant TYPE abap_bool,
       "! <p class="shorttext">Authorization Group</p>
       "! Programs that are assigned to an authorization group are protected against
       "! display and execution. Security-related programs should, therefore, always
       "! be assigned to an authorization group.
-      authorization_group      TYPE c LENGTH 8,
+      authorization_group  TYPE c LENGTH 8,
       "! <p class="shorttext">Application</p>
       "! Application (taplp)
-      application              TYPE c LENGTH 1,
+      application          TYPE c LENGTH 1,
     END OF ty_general_information.
 
   TYPES:
