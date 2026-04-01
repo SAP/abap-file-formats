@@ -113,7 +113,7 @@
           ],
           "default": "unknown"
         },
-        "hasFixPointArithmetic": {
+        "fixPointArithmetic": {
           "title": "Fix Point Arithmetic",
           "description": "Fix point arithmetic",
           "type": "boolean"

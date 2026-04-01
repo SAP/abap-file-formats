@@ -7,7 +7,7 @@
   "generalInformation": {
     "programType": "executableProgram",
     "programStatus": "sapProductionProgram",
-    "hasFixPointArithmetic": true,
+    "fixPointArithmetic": true,
     "authorizationGroup": "BC440",
     "application": "S"
   },
