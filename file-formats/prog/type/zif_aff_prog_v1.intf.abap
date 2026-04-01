@@ -75,7 +75,7 @@ INTERFACE zif_aff_prog_v1 PUBLIC.
       program_status           TYPE ty_program_status,
       "! <p class="shorttext">Fix Point Arithmetic</p>
       "! Fix point arithmetic
-      has_fix_point_arithmetic TYPE abap_bool,
+      fix_point_arithmetic TYPE abap_bool,
       "! <p class="shorttext">Edit Locked</p>
       "! The editor lock flag prevents other users from making changes to the program.
       "! Only the last person to change the program can remove the flag.
