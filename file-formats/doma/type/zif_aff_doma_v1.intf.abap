@@ -339,6 +339,10 @@ INTERFACE zif_aff_doma_v1 PUBLIC.
       "! <p class="shorttext">Fixed Value Appends</p>
       "! Fixed value appends
       fixed_value_appends    TYPE ty_fixed_value_appends,
+
+      "! <p class="shorttext">Documentation</p>
+      "! Documentation for the domain
+      documentation          TYPE zif_aff_longtexts_types_v1=>ty_lines,
     END OF ty_main.
 
 ENDINTERFACE.

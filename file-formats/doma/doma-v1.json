@@ -364,6 +364,35 @@
         },
         "additionalProperties": false
       }
+    },
+    "documentation": {
+      "title": "Documentation",
+      "description": "Documentation for the domain",
+      "type": "array",
+      "items": {
+        "title": "Long Text Line",
+        "description": "Long text line with format and content",
+        "type": "object",
+        "properties": {
+          "format": {
+            "title": "Format",
+            "description": "Paragraph format, max. length 2",
+            "type": "string",
+            "maxLength": 2
+          },
+          "line": {
+            "title": "Line",
+            "description": "Long text line content, max. length 72",
+            "type": "string",
+            "maxLength": 72
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "format",
+          "line"
+        ]
+      }
     }
   },
   "additionalProperties": false,
