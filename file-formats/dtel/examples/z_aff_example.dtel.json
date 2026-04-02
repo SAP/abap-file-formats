@@ -1,0 +1,16 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Example data element",
+    "originalLanguage": "en"
+  },
+  "dataTypeInformation":{
+    "domainName": "Z_AFF_EXAMPLE_DOMA"
+  },
+  "fieldLabels": {
+    "short": "Example",
+    "medium": "Example field",
+    "long": "Example data element field",
+    "heading": "Example data element"
+  }
+}
