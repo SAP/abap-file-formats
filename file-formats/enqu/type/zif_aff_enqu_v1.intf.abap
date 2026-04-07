@@ -1,8 +1,8 @@
 INTERFACE zif_aff_enqu_v1
   PUBLIC.
 
-  "! $values { @link zif_aff_enqu_v1.data:co_lock_modes }
-  "! $default { @link zif_aff_enqu_v1.data:co_lock_modes.exclusive_lock }
+  "! $values { @link zah_aff_enqu_v1.data:co_lock_modes }
+  "! $default { @link zah_aff_enqu_v1.data:co_lock_modes.exclusive_lock }
   TYPES ty_lock_mode TYPE c LENGTH 1.
   CONSTANTS:
     BEGIN OF co_lock_modes,
@@ -46,12 +46,12 @@ INTERFACE zif_aff_enqu_v1
 
   TYPES:
     "! <p class="shorttext">Primary Table</p>
-    "! Primary table of the lock object
+    "! Primary Table of the lock object
     BEGIN OF ty_lock_table,
       "! <p class="shorttext">Table Name</p>
       "! Table name
       "! $required
-      name      TYPE zif_aff_types_v1=>ty_object_name_30,
+      name      TYPE if_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Lock Mode</p>
       "! Lock mode
       "! $required
@@ -60,30 +60,30 @@ INTERFACE zif_aff_enqu_v1
 
   "! <p class="shorttext">Lock Tables</p>
   "! Tables and corresponding lock modes
-  TYPES ty_lock_tables TYPE STANDARD TABLE OF ty_lock_table WITH DEFAULT KEY.
+  TYPES ty_lock_tables TYPE STANDARD TABLE OF ty_lock_table WITH EMPTY KEY.
 
-  TYPES ty_field_name TYPE c LENGTH 30.
+  TYPES ty_field_name  TYPE c LENGTH 30.
   TYPES:
     "! <p class="shorttext">Lock Parameter</p>
-    "! Lock Parameter
+    "! Lock parameter
     BEGIN OF ty_lock_parameter,
       "! <p class="shorttext">Parameter Name</p>
       "! Parameter name
       name   TYPE ty_field_name,
       "! <p class="shorttext">Table</p>
       "! Table
-      table  TYPE zif_aff_types_v1=>ty_object_name_30,
+      table  TYPE if_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Field</p>
       "! Field
       field  TYPE ty_field_name,
       "! <p class="shorttext">Active</p>
-      "! Parameter is part of Function Module Interface
+      "! Parameter is part of function module interface
       active TYPE abap_bool,
     END OF ty_lock_parameter,
 
     "! <p class="shorttext">Lock Parameters</p>
     "! Lock parameter candidates are derived from the primary keys of the tables
-    ty_lock_parameters TYPE STANDARD TABLE OF ty_lock_parameter WITH DEFAULT KEY.
+    ty_lock_parameters TYPE STANDARD TABLE OF ty_lock_parameter WITH EMPTY KEY.
 
   TYPES:
     "! <p class="shorttext">Lock Object</p>
@@ -92,11 +92,11 @@ INTERFACE zif_aff_enqu_v1
       "! <p class="shorttext">Format Version</p>
       "! Format version
       "! $required
-      format_version   TYPE zif_aff_types_v1=>ty_format_version,
+      format_version   TYPE if_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header           TYPE zif_aff_types_v1=>ty_header_60,
+      header           TYPE if_aff_types_v1=>ty_header_60,
       "! <p class="shorttext">Primary Table</p>
       "! Primary table of the lock object
       primary_table    TYPE ty_lock_table,
