@@ -3,7 +3,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/enqu/enqu-v1.json",
   "title": "Lock Object",
-  "description": "Lock Object (ENQU) v1",
+  "description": "Lock object (ENQU) v1",
   "type": "object",
   "properties": {
     "formatVersion": {
@@ -59,18 +59,18 @@
     },
     "primaryTable": {
       "title": "Primary Table",
-      "description": "Primary Table of the lock object",
+      "description": "Primary table of the lock object",
       "type": "object",
       "properties": {
         "name": {
           "title": "Table Name",
-          "description": "Table Name",
+          "description": "Table name",
           "type": "string",
           "maxLength": 30
         },
         "lockMode": {
           "title": "Lock Mode",
-          "description": "Lock Mode",
+          "description": "Lock mode",
           "type": "string",
           "enum": [
             "exclusive",
@@ -124,7 +124,7 @@
     },
     "secondaryTables": {
       "title": "Secondary Tables",
-      "description": "Secondary Tables must have a foreign key relation to the primary table",
+      "description": "Secondary tables must have a foreign key relation to the primary table",
       "type": "array",
       "items": {
         "title": "Primary Table",
@@ -133,13 +133,13 @@
         "properties": {
           "name": {
             "title": "Table Name",
-            "description": "Table Name",
+            "description": "Table name",
             "type": "string",
             "maxLength": 30
           },
           "lockMode": {
             "title": "Lock Mode",
-            "description": "Lock Mode",
+            "description": "Lock mode",
             "type": "string",
             "enum": [
               "exclusive",
@@ -198,12 +198,12 @@
       "type": "array",
       "items": {
         "title": "Lock Parameter",
-        "description": "Lock Parameter",
+        "description": "Lock parameter",
         "type": "object",
         "properties": {
           "name": {
             "title": "Parameter Name",
-            "description": "Parameter_name",
+            "description": "Parameter name",
             "type": "string",
             "maxLength": 30
           },
@@ -221,7 +221,7 @@
           },
           "active": {
             "title": "Active",
-            "description": "Parameter is part of Function Module Interface",
+            "description": "Parameter is part of function module interface",
             "type": "boolean"
           }
         },
@@ -230,7 +230,7 @@
     },
     "allowRfc": {
       "title": "Allow RFC",
-      "description": "Allow RFC for Lock Modules",
+      "description": "Allow RFC for lock modules",
       "type": "boolean"
     }
   },
