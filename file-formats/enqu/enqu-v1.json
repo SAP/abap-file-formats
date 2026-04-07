@@ -84,35 +84,35 @@
             "promotionCheckOptimized",
             "reserved1",
             "reserved2",
-            "undefined"
+            "initial"
           ],
           "enumTitles": [
             "Exclusive Lock",
-            "Shared lock",
-            "Exclusive, not cumulative",
-            "Set optimistic lock",
-            "Promote optimistic lock; transform from 'O' to 'E'",
-            "Only conflict check extended exclusive lock, as with 'X'",
-            "Only conflict check exclusive lock, as with 'E'",
-            "Conflict check for shared lock only, as with 'S'",
-            "Only promotion check optimized lock, as with 'R'",
+            "Shared Lock",
+            "Exclusive, Not Cumulative",
+            "Set Optimistic Lock",
+            "Promote Optimistic Lock",
+            "Only Conflict Check Extended Exclusive Lock",
+            "Only Conflict Check Exclusive Lock",
+            "Conflict Check For Shared Lock Only",
+            "Only Promotion Check Optimized Lock",
             "Reserved",
             "Reserved",
-            "Undefined"
+            "Initial"
           ],
           "enumDescriptions": [
-            "Exclusive Lock",
+            "Exclusive lock",
             "Shared lock",
             "Exclusive, not cumulative",
             "Set optimistic lock",
-            "Promote optimistic lock; transform from 'O' to 'E'",
+            "Promote optimistic lock; transform from '0' to 'E'",
             "Only conflict check extended exclusive lock, as with 'X'",
             "Only conflict check exclusive lock, as with 'E'",
             "Conflict check for shared lock only, as with 'S'",
             "Only promotion check optimized lock, as with 'R'",
             "Reserved",
             "Reserved",
-            "Undefined"
+            "Initial"
           ]
         }
       },
@@ -153,35 +153,35 @@
               "promotionCheckOptimized",
               "reserved1",
               "reserved2",
-              "undefined"
+              "initial"
             ],
             "enumTitles": [
               "Exclusive Lock",
-              "Shared lock",
-              "Exclusive, not cumulative",
-              "Set optimistic lock",
-              "Promote optimistic lock; transform from 'O' to 'E'",
-              "Only conflict check extended exclusive lock, as with 'X'",
-              "Only conflict check exclusive lock, as with 'E'",
-              "Conflict check for shared lock only, as with 'S'",
-              "Only promotion check optimized lock, as with 'R'",
+              "Shared Lock",
+              "Exclusive, Not Cumulative",
+              "Set Optimistic Lock",
+              "Promote Optimistic Lock",
+              "Only Conflict Check Extended Exclusive Lock",
+              "Only Conflict Check Exclusive Lock",
+              "Conflict Check For Shared Lock Only",
+              "Only Promotion Check Optimized Lock",
               "Reserved",
               "Reserved",
-              "Undefined"
+              "Initial"
             ],
             "enumDescriptions": [
-              "Exclusive Lock",
+              "Exclusive lock",
               "Shared lock",
               "Exclusive, not cumulative",
               "Set optimistic lock",
-              "Promote optimistic lock; transform from 'O' to 'E'",
+              "Promote optimistic lock; transform from '0' to 'E'",
               "Only conflict check extended exclusive lock, as with 'X'",
               "Only conflict check exclusive lock, as with 'E'",
               "Conflict check for shared lock only, as with 'S'",
               "Only promotion check optimized lock, as with 'R'",
               "Reserved",
               "Reserved",
-              "Undefined"
+              "Initial"
             ]
           }
         },
