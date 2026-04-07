@@ -107,7 +107,7 @@ INTERFACE zif_aff_enqu_v1
       "! Lock parameter candidates are derived from the primary keys of the tables
       lock_parameters  TYPE ty_lock_parameters,
       "! <p class="shorttext">Allow RFC</p>
-      "! Allow RFC for Lock Modules
+      "! Allow RFC for lock modules
       allow_rfc        TYPE abap_bool,
     END OF ty_main.
 
