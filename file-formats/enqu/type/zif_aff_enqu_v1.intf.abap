@@ -98,7 +98,7 @@ INTERFACE zif_aff_enqu_v1
       "! $required
       header           TYPE zif_aff_types_v1=>ty_header_60,
       "! <p class="shorttext">Primary Table</p>
-      "! Primary Table of the lock object
+      "! Primary table of the lock object
       primary_table    TYPE ty_lock_table,
       "! <p class="shorttext">Secondary Tables</p>
       "! Secondary tables must have a foreign key relation to the primary table
