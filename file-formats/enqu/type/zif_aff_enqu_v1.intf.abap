@@ -46,7 +46,7 @@ INTERFACE zif_aff_enqu_v1
 
   TYPES:
     "! <p class="shorttext">Primary Table</p>
-    "! Primary Table of the lock object
+    "! Primary table of the lock object
     BEGIN OF ty_lock_table,
       "! <p class="shorttext">Table Name</p>
       "! Table name
