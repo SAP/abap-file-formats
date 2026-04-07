@@ -8,40 +8,40 @@ INTERFACE zif_aff_enqu_v1
     BEGIN OF co_lock_modes,
       "! <p class="shorttext">Exclusive Lock</p>
       "! Exclusive lock
-      exclusive                 TYPE ty_lock_mode VALUE 'E',
-      "! <p class="shorttext">Shared lock</p>
+      exclusive                    TYPE ty_lock_mode VALUE 'E',
+      "! <p class="shorttext">Shared Lock</p>
       "! Shared lock
-      shared                    TYPE ty_lock_mode VALUE 'S',
-      "! <p class="shorttext">Exclusive, not cumulative</p>
+      shared                       TYPE ty_lock_mode VALUE 'S',
+      "! <p class="shorttext">Exclusive, Not Cumulative</p>
       "! Exclusive, not cumulative
-      exclusive_not_cumulative  TYPE ty_lock_mode VALUE 'X',
-      "! <p class="shorttext">Set optimistic lock</p>
+      exclusive_not_cumulative     TYPE ty_lock_mode VALUE 'X',
+      "! <p class="shorttext">Set Optimistic Lock</p>
       "! Set optimistic lock
-      set_optimistic            TYPE ty_lock_mode VALUE 'O',
-      "! <p class="shorttext">Promote optimistic lock; transform from 'O' to 'E'</p>
-      "! Promote optimistic lock; transform from 'O' to 'E'
-      promote_optimistic        TYPE ty_lock_mode VALUE 'R',
-      "! <p class="shorttext">Only conflict check extended exclusive lock, as with 'X'</p>
+      set_optimistic               TYPE ty_lock_mode VALUE 'O',
+      "! <p class="shorttext">Promote Optimistic Lock</p>
+      "! Promote optimistic lock; transform from '0' to 'E'
+      promote_optimistic           TYPE ty_lock_mode VALUE 'R',
+      "! <p class="shorttext">Only Conflict Check Extended Exclusive Lock</p>
       "! Only conflict check extended exclusive lock, as with 'X'
-      conflict_check_extended_excl   TYPE ty_lock_mode VALUE 'U',
-      "! <p class="shorttext">Only conflict check exclusive lock, as with 'E'</p>
+      conflict_check_extended_excl TYPE ty_lock_mode VALUE 'U',
+      "! <p class="shorttext">Only Conflict Check Exclusive Lock</p>
       "! Only conflict check exclusive lock, as with 'E'
-      conflict_check_exclusive  TYPE ty_lock_mode VALUE 'V',
-      "! <p class="shorttext">Conflict check for shared lock only, as with 'S'</p>
+      conflict_check_exclusive     TYPE ty_lock_mode VALUE 'V',
+      "! <p class="shorttext">Conflict Check For Shared Lock Only</p>
       "! Conflict check for shared lock only, as with 'S'
-      conflict_check_shared    TYPE ty_lock_mode VALUE 'W',
-      "! <p class="shorttext">Only promotion check optimized lock, as with 'R'</p>
+      conflict_check_shared        TYPE ty_lock_mode VALUE 'W',
+      "! <p class="shorttext">Only Promotion Check Optimized Lock</p>
       "! Only promotion check optimized lock, as with 'R'
-      promotion_check_optimized TYPE ty_lock_mode VALUE 'C',
+      promotion_check_optimized    TYPE ty_lock_mode VALUE 'C',
       "! <p class="shorttext">Reserved</p>
       "! Reserved
-      reserved_1                     TYPE ty_lock_mode VALUE 'T',
+      reserved_1                   TYPE ty_lock_mode VALUE 'T',
       "! <p class="shorttext">Reserved</p>
       "! Reserved
-      reserved_2                     TYPE ty_lock_mode VALUE '+',
-      "! <p class="shorttext">Undefined</p>
-      "! Undefined
-      undefined                      TYPE ty_lock_mode VALUE '',
+      reserved_2                   TYPE ty_lock_mode VALUE '+',
+      "! <p class="shorttext">Initial</p>
+      "! Initial
+      initial                        TYPE ty_lock_mode VALUE '',
     END OF co_lock_modes.
 
   TYPES:
