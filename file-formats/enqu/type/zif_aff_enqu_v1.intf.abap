@@ -68,7 +68,7 @@ INTERFACE zif_aff_enqu_v1
     "! Lock Parameter
     BEGIN OF ty_lock_parameter,
       "! <p class="shorttext">Parameter Name</p>
-      "! Parameter_name
+      "! Parameter name
       name   TYPE ty_field_name,
       "! <p class="shorttext">Table</p>
       "! Table
