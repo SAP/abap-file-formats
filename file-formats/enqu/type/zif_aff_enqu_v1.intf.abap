@@ -53,7 +53,7 @@ INTERFACE zif_aff_enqu_v1
       "! $required
       name      TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Lock Mode</p>
-      "! Lock Mode
+      "! Lock mode
       "! $required
       lock_mode TYPE ty_lock_mode,
     END OF ty_lock_table.
