@@ -101,7 +101,7 @@ INTERFACE zif_aff_enqu_v1
       "! Primary Table of the lock object
       primary_table    TYPE ty_lock_table,
       "! <p class="shorttext">Secondary Tables</p>
-      "! Secondary Tables must have a foreign key relation to the primary table
+      "! Secondary tables must have a foreign key relation to the primary table
       secondary_tables TYPE ty_lock_tables,
       "! <p class="shorttext">Lock Parameters</p>
       "! Lock parameter candidates are derived from the primary keys of the tables
