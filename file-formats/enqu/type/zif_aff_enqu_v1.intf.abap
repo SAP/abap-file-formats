@@ -49,7 +49,7 @@ INTERFACE zif_aff_enqu_v1
     "! Primary Table of the lock object
     BEGIN OF ty_lock_table,
       "! <p class="shorttext">Table Name</p>
-      "! Table Name
+      "! Table name
       "! $required
       name      TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Lock Mode</p>
