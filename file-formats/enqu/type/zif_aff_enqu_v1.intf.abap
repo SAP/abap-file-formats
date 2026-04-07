@@ -7,7 +7,7 @@ INTERFACE zif_aff_enqu_v1
   CONSTANTS:
     BEGIN OF co_lock_modes,
       "! <p class="shorttext">Exclusive Lock</p>
-      "! Exclusive Lock
+      "! Exclusive lock
       exclusive                 TYPE ty_lock_mode VALUE 'E',
       "! <p class="shorttext">Shared lock</p>
       "! Shared lock
