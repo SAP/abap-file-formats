@@ -2,7 +2,7 @@ INTERFACE zif_aff_enqu_v1
   PUBLIC.
 
   "! $values { @link zah_aff_enqu_v1.data:co_lock_modes }
-  "! $default { @link zah_aff_enqu_v1.data:co_lock_modes.exclusive_lock }
+  "! $default { @link zah_aff_enqu_v1.data:co_lock_modes.exclusive }
   TYPES ty_lock_mode TYPE c LENGTH 1.
   CONSTANTS:
     BEGIN OF co_lock_modes,
