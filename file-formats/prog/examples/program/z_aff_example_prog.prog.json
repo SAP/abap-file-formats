@@ -1,0 +1,17 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Example",
+    "originalLanguage": "en"
+  },
+  "generalInformation": {
+    "programType": "executableProgram",
+    "programStatus": "sapProductionProgram",
+    "fixPointArithmetic": true,
+    "authorizationGroup": "BC440",
+    "application": "S"
+  },
+  "logicalDatabase": {
+    "name": "D$S"
+  }
+}
