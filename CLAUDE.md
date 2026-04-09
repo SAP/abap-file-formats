@@ -229,22 +229,6 @@ END OF ty_main.
 - Add it to the list of file types in the pattern: `[*.{abap,md,properties,acds,json,mjs,gitignore,yml,abdl}]`
 - Ensures proper formatting (UTF-8, LF, trailing newline) for all file types
 
-### Enum Value Naming
-
-**When defining enums** (PR #726 - DOMA):
-- Provide comprehensive enum constants with descriptive titles
-- External (JSON) names use camelCase: `dataType`, `sourceOrigin`
-- Internal (ABAP) values use short codes: `'X'`, `'1'`, `'5'`
-- Always include ABAP Doc with shorttext and description for each enum value
-- Group related enums in well-named constant structures (e.g., `co_data_type`)
-
-### Length Changes are Breaking
-
-**Data type length modifications** (PR #726):
-- Changing field length from 4 to 10 characters is an incompatible change
-- Document the reason: "uses what is shown to the developer" vs internal representation
-- If doing this on v1, requires explicit approval and rationale
-
 ## Key Repository Locations
 
 - `file-formats/` - All ABAP type definitions and JSON schemas
