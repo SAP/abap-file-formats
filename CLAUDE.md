@@ -229,15 +229,6 @@ END OF ty_main.
 - Add it to the list of file types in the pattern: `[*.{abap,md,properties,acds,json,mjs,gitignore,yml,abdl}]`
 - Ensures proper formatting (UTF-8, LF, trailing newline) for all file types
 
-### Collaboration & Review Process
-
-**Observed patterns**:
-- PRs require at least 2 approvals from maintainers
-- After making commits, the author needs another approver (can't approve own changes)
-- Community feedback is solicited for significant changes (wait a few days before merging)
-- Breaking changes require explicit justification and sign-off from domain experts
-- Claude Code is actively used for PR generation (noted in PR #733 body)
-
 ### Enum Value Naming
 
 **When defining enums** (PR #726 - DOMA):
