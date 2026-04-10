@@ -32,10 +32,8 @@ jobs:
     - name: Post checklist (no existing comment)
       if: steps.find.outputs.id == ''
       run: |
-        gh pr comment "$PR" --body "<!-- abap-doc-casing-checklist --><!-- casing:ready -->
-## ABAP Doc Checks
-
-- [ ] Run ABAP Doc title/description casing check"
+        BODY=$'<!-- abap-doc-casing-checklist --><!-- casing:ready -->\n## ABAP Doc Checks\n\n- [ ] Run ABAP Doc title/description casing check'
+        gh pr comment "$PR" --body "$BODY"
       env:
         GH_TOKEN: ${{ github.token }}
         GH_REPO: ${{ github.repository }}
