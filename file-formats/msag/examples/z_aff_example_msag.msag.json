@@ -1,0 +1,17 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Example message class object for ABAP File Formats",
+    "originalLanguage": "en"
+  },
+  "messages": [
+    {
+      "number": "000",
+      "text": "Data saved successfully"
+    },
+    {
+      "number": "001",
+      "text": "Invalid input: &1"
+    }
+  ]
+}

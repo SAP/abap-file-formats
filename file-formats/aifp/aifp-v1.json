@@ -95,50 +95,81 @@
           "type": "string",
           "maxLength": 3
         },
-        "messageVariable1": {
-          "title": "Message Variable 1",
-          "description": "Message variable 1",
-          "type": "string"
-        },
-        "messageVariable2": {
-          "title": "Message Variable 2",
-          "description": "Message variable 2",
-          "type": "string"
-        },
-        "messageVariable3": {
-          "title": "Message Variable 3",
-          "description": "Message variable 3",
-          "type": "string"
-        },
-        "messageVariable4": {
-          "title": "Message Variable 4",
-          "description": "Message variable 4",
-          "type": "string"
+        "variableAssignments": {
+          "title": "Message Variable Assignments",
+          "description": "Message variable assignments",
+          "type": "array",
+          "items": {
+            "title": "Variable List",
+            "description": "Variable list",
+            "type": "object",
+            "properties": {
+              "number": {
+                "title": "Number",
+                "description": "Number",
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 4
+              },
+              "type": {
+                "title": "Type",
+                "description": "Type",
+                "type": "string",
+                "enum": [
+                  "constant",
+                  "systemField",
+                  "definedField"
+                ],
+                "enumTitles": [
+                  "Constant",
+                  "System Field",
+                  "Defined Field"
+                ],
+                "enumDescriptions": [
+                  "Constant value",
+                  "System field",
+                  "Defined field in the check assignment"
+                ],
+                "default": "definedField"
+              },
+              "field": {
+                "title": "Field",
+                "description": "Field",
+                "type": "string"
+              },
+              "value": {
+                "title": "Value",
+                "description": "Value",
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
         }
       },
       "additionalProperties": false
     },
-    "checkAssignments": {
-      "title": "Check Assignments",
-      "description": "Check assignments",
+    "singleCheckAssignments": {
+      "title": "Single Check Assignments",
+      "description": "Single check assignments",
       "type": "array",
       "items": {
-        "title": "Check Details",
-        "description": "Check details",
+        "title": "Single Check",
+        "description": "Single check",
         "type": "object",
         "properties": {
-          "number": {
-            "title": "Number",
-            "description": "Number",
-            "type": "string",
-            "maxLength": 3,
-            "pattern": "^[0-9]+$"
-          },
           "description": {
             "title": "Description",
             "description": "Description",
             "type": "string",
             "maxLength": 120
+          },
+          "id": {
+            "title": "ID",
+            "description": "ID",
+            "type": "string",
+            "maxLength": 3,
+            "pattern": "^[0-9]+$"
           },
           "scenario": {
             "title": "Scenario",
@@ -265,9 +296,36 @@
                 ],
                 "default": "equals"
               },
-              "pattern": {
-                "title": "Pattern",
-                "description": "Pattern for Field Check",
+              "fieldType": {
+                "title": "Field Type",
+                "description": "Field type",
+                "type": "string",
+                "enum": [
+                  "definedField",
+                  "pattern",
+                  "systemField"
+                ],
+                "enumTitles": [
+                  "Defined Field",
+                  "Pattern",
+                  "System Field"
+                ],
+                "enumDescriptions": [
+                  "Defined field in the check assignment",
+                  "Pattern",
+                  "System field"
+                ],
+                "default": "pattern"
+              },
+              "field": {
+                "title": "Field",
+                "description": "Field",
+                "type": "string",
+                "maxLength": 60
+              },
+              "value": {
+                "title": "Value",
+                "description": "Value or pattern for Field Check",
                 "type": "string",
                 "maxLength": 60
               }
@@ -360,9 +418,36 @@
                 ],
                 "default": "equals"
               },
-              "pattern": {
-                "title": "Pattern",
-                "description": "Pattern for database check",
+              "fieldType": {
+                "title": "Field Type",
+                "description": "Field type",
+                "type": "string",
+                "enum": [
+                  "definedField",
+                  "pattern",
+                  "systemField"
+                ],
+                "enumTitles": [
+                  "Defined Field",
+                  "Pattern",
+                  "System Field"
+                ],
+                "enumDescriptions": [
+                  "Defined field in the check assignment",
+                  "Pattern",
+                  "System field"
+                ],
+                "default": "pattern"
+              },
+              "field": {
+                "title": "Field",
+                "description": "Field",
+                "type": "string",
+                "maxLength": 60
+              },
+              "value": {
+                "title": "Value",
+                "description": "Value or pattern for database check",
                 "type": "string",
                 "maxLength": 60
               }
@@ -400,25 +485,56 @@
                 "type": "string",
                 "maxLength": 3
               },
-              "messageVariable1": {
-                "title": "Message Variable 1",
-                "description": "Message variable 1",
-                "type": "string"
-              },
-              "messageVariable2": {
-                "title": "Message Variable 2",
-                "description": "Message variable 2",
-                "type": "string"
-              },
-              "messageVariable3": {
-                "title": "Message Variable 3",
-                "description": "Message variable 3",
-                "type": "string"
-              },
-              "messageVariable4": {
-                "title": "Message Variable 4",
-                "description": "Message variable 4",
-                "type": "string"
+              "variableAssignments": {
+                "title": "Message Variable Assignments",
+                "description": "Message variable assignments",
+                "type": "array",
+                "items": {
+                  "title": "Variable List",
+                  "description": "Variable list",
+                  "type": "object",
+                  "properties": {
+                    "number": {
+                      "title": "Number",
+                      "description": "Number",
+                      "type": "integer",
+                      "minimum": 1,
+                      "maximum": 4
+                    },
+                    "type": {
+                      "title": "Type",
+                      "description": "Type",
+                      "type": "string",
+                      "enum": [
+                        "constant",
+                        "systemField",
+                        "definedField"
+                      ],
+                      "enumTitles": [
+                        "Constant",
+                        "System Field",
+                        "Defined Field"
+                      ],
+                      "enumDescriptions": [
+                        "Constant value",
+                        "System field",
+                        "Defined field in the check assignment"
+                      ],
+                      "default": "definedField"
+                    },
+                    "field": {
+                      "title": "Field",
+                      "description": "Field",
+                      "type": "string"
+                    },
+                    "value": {
+                      "title": "Value",
+                      "description": "Value",
+                      "type": "string"
+                    }
+                  },
+                  "additionalProperties": false
+                }
               }
             },
             "additionalProperties": false
@@ -426,7 +542,8 @@
         },
         "additionalProperties": false,
         "required": [
-          "number"
+          "description",
+          "id"
         ]
       }
     }
@@ -436,6 +553,6 @@
     "formatVersion",
     "header",
     "generalInformation",
-    "checkAssignments"
+    "singleCheckAssignments"
   ]
 }

@@ -1,0 +1,5 @@
+extension implementation in class bp_z_aff_example_bdef_ext unique;
+
+extend behavior for RootEntity {
+  action extensionAction;
+}

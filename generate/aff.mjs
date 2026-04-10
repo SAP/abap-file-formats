@@ -40,7 +40,6 @@ async function run() {
   types.sort();
 
 
-  let error = false;
   for (const type of types) {
     if (type.toUpperCase() === "ENHO") {
       core.notice(type.toUpperCase() + " skipped, https://github.com/SAP/abap-file-formats/issues/409");

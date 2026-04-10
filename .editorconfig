@@ -4,7 +4,7 @@
 root = true
 
 # ensure the LF line endings
-[*.{abap,md,properties,acds,json,mjs,gitignore,yml}]
+[*.{abap,md,properties,acds,json,mjs,gitignore,yml,abdl}]
 charset = utf-8
 end_of_line = lf
 insert_final_newline = true
