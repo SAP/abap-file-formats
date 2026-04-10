@@ -50,71 +50,9 @@ Checks if JSON schema changes are compatible with previous versions using `json-
 
 ## Architecture
 
-### File Naming Convention
-
-ABAP file formats follow a strict naming pattern:
-```
-<object_name>.<object_type>.[<sub_object_name>.<sub_object_type>.]<file_extension>
-```
-
-Example: `cl_example.clas.json` (metadata), `cl_example.clas.abap` (source code)
-
-Namespaces convert slashes to brackets: `/NMSPC/CL_OBJECT` → `(nmspc)cl_object`
-
-### Format Versions
-
-JSON schemas are versioned (e.g., `intf-v1.json`, `clas-v1.json`). Each JSON file contains a mandatory `formatVersion` field.
-
-**Compatible changes** (don't bump version):
-- Adding non-mandatory fields
-- Changing descriptions/titles
-- Adding enum values when a default is specified
-
-**Incompatible changes** (require new version):
-- Adding mandatory fields
-- Removing fields
-- Renaming fields
-- Changing field types
-- Changing structure
-
-### ABAP Type Interface Pattern
-
-Every object type has an interface `zif_aff_<object_type>_v<version>` containing:
-- `ty_main` structure defining the JSON schema structure
-- ABAP Doc comments that become JSON schema title/description
-- Special annotations like `$required`, `$default`, `$values` for enums
-
-**Naming conventions**:
-- Interfaces: `zif_aff_<type>_v<n>` (e.g., `zif_aff_intf_v1`)
-- Types: `ty_*` prefix
-- Constants: `co_*` prefix
-- Field names in ABAP: snake_case (converted to camelCase in JSON)
-
-Common reusable types are in `file-formats/zif_aff_types_v1.intf.abap`.
-
-### ABAP Doc Annotations
-
-Key annotations for JSON schema generation:
-- `"! <p class="shorttext">Title</p>` - Adds title (title case)
-- `"! Description text` - Adds description (sentence case)
-- `"! $required` - Makes field required
-- `"! $default 'value'` - Sets default value
-- `"! $values {@link source.data:constant}` - Defines enum values
-- `"! $pattern '<regex>'` - Adds regex pattern validation
-- `"! $minLength value` / `$maxLength value` - String length constraints
-- `"! $minimum value` / `$maximum value` - Number constraints
-- `"! $showAlways` - Serialize even if value is initial
-
-Use sorted tables with defined keys, not hashed tables.
-
-### Formatting Standards
-
-All files must follow (enforced by `.editorconfig`):
-- UTF-8 encoding, no BOM
-- LF line endings (`\n`)
-- Empty line at EOF
-- JSON: 2-space indentation
-- No trailing whitespace
+See the full specs in `docs/`:
+- `docs/specification.md` — file naming conventions, file extensions, formatting standards
+- `docs/json.md` — format versions, compatibility rules, ABAP type interface pattern, ABAP Doc annotations, naming conventions
 
 ## Adding a New Object Type
 
