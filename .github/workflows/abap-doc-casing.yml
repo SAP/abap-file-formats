@@ -1,0 +1,73 @@
+name: ABAP Doc Casing Check
+
+on:
+  issue_comment:
+    types: [created]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  check-casing:
+    name: Check ABAP Doc title/description casing
+    if: >
+      github.event.issue.pull_request &&
+      contains(github.event.comment.body, '/check-casing')
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+    - name: Get PR info
+      id: pr
+      run: |
+        gh pr view ${{ github.event.issue.number }} \
+          --json headRefOid,baseRefName \
+          --jq '"sha="+.headRefOid+"\nbase="+.baseRefName' \
+          >> "$GITHUB_OUTPUT"
+      env:
+        GH_TOKEN: ${{ github.token }}
+
+    - uses: actions/checkout@v6
+      with:
+        ref: ${{ steps.pr.outputs.sha }}
+        fetch-depth: 0
+
+    - name: Set up Python 3.x
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+
+    - name: Register problem matcher
+      run: echo "::add-matcher::.github/problem-matchers/abap-doc-casing.json"
+
+    - name: Run casing check
+      id: casing
+      run: |
+        git diff origin/${{ steps.pr.outputs.base }}...${{ steps.pr.outputs.sha }} -- '*.abap' \
+          | python3 scripts/check_abap_doc_casing.py --pr-diff > /tmp/casing_output.txt 2>&1
+        echo "exit_code=$?" >> "$GITHUB_OUTPUT"
+        cat /tmp/casing_output.txt
+
+    - name: Post result comment
+      if: always()
+      run: |
+        OUTPUT=$(cat /tmp/casing_output.txt)
+        if echo "$OUTPUT" | grep -q "casing violation"; then
+          BODY="## ABAP Doc Casing Check
+
+        \`/check-casing\` found violations:
+
+        \`\`\`
+        $OUTPUT
+        \`\`\`
+
+        Fix the violations or add terms to \`scripts/casing-terms.json\` for known product names/acronyms."
+        else
+          BODY="## ABAP Doc Casing Check
+
+        All ABAP Doc casing checks passed. ✓"
+        fi
+        gh pr comment ${{ github.event.issue.number }} --body "$BODY"
+      env:
+        GH_TOKEN: ${{ github.token }}
