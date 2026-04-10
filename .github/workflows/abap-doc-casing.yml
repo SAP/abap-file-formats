@@ -46,59 +46,34 @@ jobs:
       id: casing
       run: |
         git diff origin/${{ steps.pr.outputs.base }}...${{ steps.pr.outputs.sha }} -- '*.abap' \
-          | python3 scripts/check_abap_doc_casing.py --pr-diff > /tmp/casing_output.txt 2>&1
-        echo "exit_code=$?" >> "$GITHUB_OUTPUT"
-        cat /tmp/casing_output.txt
+          | python3 scripts/check_abap_doc_casing.py --pr-diff --json > /tmp/casing_output.json 2>&1 || true
 
     - name: Post result comment
       if: always()
       run: |
         python3 << 'EOF'
-        import json, os, re, subprocess, sys
+        import json, os, subprocess, sys
 
         sha  = os.environ['PR_SHA']
         pr   = os.environ['PR_NUM']
         repo = os.environ['GH_REPO']
 
-        violation_re = re.compile(r'^(.+):(\d+): (.+)$')
-        detail_re    = re.compile(r'(?:title not Title Case|description not sentence case): "(.+)" -> "(.+)"$')
-        comments = []
         try:
-            with open('/tmp/casing_output.txt') as f:
-                for line in f:
-                    m = violation_re.match(line.strip())
-                    if not m:
-                        continue
-                    path, lineno, msg = m.group(1), int(m.group(2)), m.group(3)
-                    # Build a suggestion block: read the file line, replace old text with new
-                    suggestion = None
-                    d = detail_re.search(msg)
-                    if d:
-                        old_text, new_text = d.group(1), d.group(2)
-                        try:
-                            with open(path) as src:
-                                file_lines = src.readlines()
-                            raw = file_lines[lineno - 1].rstrip('\n')
-                            fixed = raw.replace(old_text, new_text, 1)
-                            if fixed != raw:
-                                suggestion = fixed
-                        except (OSError, IndexError):
-                            pass
-                    comments.append({
-                        'path': path,
-                        'line': lineno,
-                        'msg':  msg,
-                        'suggestion': suggestion,
-                    })
-        except FileNotFoundError:
-            pass
+            comments = json.loads(open('/tmp/casing_output.json').read())
+        except (FileNotFoundError, json.JSONDecodeError):
+            comments = None
+
+        if comments is None:
+            body = "## ABAP Doc Casing Check\n\nCasing check did not run — an earlier step failed."
+            subprocess.run(['gh', 'pr', 'comment', pr, '--body', body], check=True)
+            sys.exit(0)
 
         # Post each violation as an inline review comment with suggestion
         for c in comments:
-            if c['suggestion'] is not None:
-                body = f"**Casing violation:** {c['msg']}\n\n```suggestion\n{c['suggestion']}\n```"
+            if 'suggestion' in c:
+                body = f"**Casing violation:** {c['message']}\n\n```suggestion\n{c['suggestion']}\n```"
             else:
-                body = f"**Casing violation:** {c['msg']}"
+                body = f"**Casing violation:** {c['message']}"
             payload = json.dumps({
                 'commit_id': sha,
                 'path': c['path'],
@@ -125,11 +100,7 @@ jobs:
                 f"for known product names/acronyms."
             )
         else:
-            try:
-                output = open('/tmp/casing_output.txt').read().strip()
-                body = "## ABAP Doc Casing Check\n\nAll ABAP Doc casing checks passed. ✓"
-            except FileNotFoundError:
-                body = "## ABAP Doc Casing Check\n\nCasing check did not run — an earlier step failed."
+            body = "## ABAP Doc Casing Check\n\nAll ABAP Doc casing checks passed. ✓"
 
         subprocess.run(['gh', 'pr', 'comment', pr, '--body', body], check=True)
         EOF
