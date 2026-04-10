@@ -27,6 +27,7 @@ jobs:
           >> "$GITHUB_OUTPUT"
       env:
         GH_TOKEN: ${{ github.token }}
+        GH_REPO: ${{ github.repository }}
 
     - uses: actions/checkout@v6
       with:
@@ -52,7 +53,7 @@ jobs:
     - name: Post result comment
       if: always()
       run: |
-        OUTPUT=$(cat /tmp/casing_output.txt)
+        OUTPUT=$(cat /tmp/casing_output.txt 2>/dev/null || echo "Casing check did not run — an earlier step failed.")
         if echo "$OUTPUT" | grep -q "casing violation"; then
           BODY="## ABAP Doc Casing Check
 
@@ -71,3 +72,4 @@ jobs:
         gh pr comment ${{ github.event.issue.number }} --body "$BODY"
       env:
         GH_TOKEN: ${{ github.token }}
+        GH_REPO: ${{ github.repository }}
