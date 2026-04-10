@@ -113,7 +113,7 @@ INTERFACE zif_aff_aifa_v1
     "! Fields to restore
     ty_fields_to_restore TYPE STANDARD TABLE OF ty_field_to_restore WITH DEFAULT KEY,
 
-    "! <p class="shorttext">action</p>
+    "! <p class="shorttext">Action</p>
     "! Action
     BEGIN OF ty_main,
       "! $required
