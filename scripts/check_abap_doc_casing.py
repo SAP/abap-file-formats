@@ -8,6 +8,8 @@ Usage:
     python check_abap_doc_casing.py                         # scan all files under file-formats/
     python check_abap_doc_casing.py file1.abap file2.abap   # scan specific files
     python check_abap_doc_casing.py --diff < changed_files  # read file list from stdin
+    python check_abap_doc_casing.py --fix                   # auto-fix all violations in-place
+    python check_abap_doc_casing.py --fix file1.abap        # auto-fix a specific file
 """
 
 import json
@@ -194,13 +196,18 @@ ANNOTATION_RE = re.compile(r'"!\s+\$')
 
 
 def check_file(filepath, preserve_set, multiword_terms):
-    """Check a single ABAP file. Returns list of (line_num, message) violations."""
+    """Check a single ABAP file.
+
+    Returns list of (line_num, message, raw_line, fixed_line) tuples.
+    raw_line / fixed_line are the full source lines (with newline) when a
+    mechanical fix is available, otherwise both are None.
+    """
     violations = []
     try:
         with open(filepath, encoding="utf-8") as f:
             lines = f.readlines()
     except (OSError, UnicodeDecodeError) as e:
-        return [(0, f"Could not read file: {e}")]
+        return [(0, f"Could not read file: {e}", None, None)]
 
     prev_was_shorttext = False
 
@@ -214,9 +221,13 @@ def check_file(filepath, preserve_set, multiword_terms):
             if title:
                 expected = expected_title_case(title, preserve_set, multiword_terms)
                 if title != expected:
-                    violations.append(
-                        (line_num, f"title not Title Case: \"{title}\" -> \"{expected}\"")
-                    )
+                    fixed = line.replace(title, expected, 1)
+                    violations.append((
+                        line_num,
+                        f"title not Title Case: \"{title}\" -> \"{expected}\"",
+                        line,
+                        fixed,
+                    ))
             prev_was_shorttext = True
             continue
 
@@ -232,15 +243,42 @@ def check_file(filepath, preserve_set, multiword_terms):
                 if desc:
                     expected = expected_sentence_case(desc, preserve_set, multiword_terms)
                     if desc != expected:
-                        violations.append(
-                            (line_num, f"description not sentence case: \"{desc}\" -> \"{expected}\"")
-                        )
+                        fixed = line.replace(desc, expected, 1)
+                        violations.append((
+                            line_num,
+                            f"description not sentence case: \"{desc}\" -> \"{expected}\"",
+                            line,
+                            fixed,
+                        ))
             prev_was_shorttext = False
             continue
 
         prev_was_shorttext = False
 
     return violations
+
+
+def fix_file(filepath, violations):
+    """Apply fixes from violations in-place. Returns number of lines changed."""
+    try:
+        with open(filepath, encoding="utf-8") as f:
+            lines = f.readlines()
+    except (OSError, UnicodeDecodeError):
+        return 0
+
+    changed = 0
+    for line_num, _msg, raw_line, fixed_line in violations:
+        if fixed_line is None or raw_line is None:
+            continue
+        idx = line_num - 1
+        if 0 <= idx < len(lines) and lines[idx] == raw_line:
+            lines[idx] = fixed_line
+            changed += 1
+
+    if changed:
+        with open(filepath, "w", encoding="utf-8") as f:
+            f.writelines(lines)
+    return changed
 
 
 def parse_pr_diff(diff_text):
@@ -299,24 +337,28 @@ def main():
     # Multi-word terms need special handling (matched as phrases, not individual words)
     multiword_terms = [t for t in preserve_terms if " " in t]
 
+    fix_mode  = "--fix"  in sys.argv
+    json_mode = "--json" in sys.argv
+    args = [a for a in sys.argv[1:] if a not in ("--fix", "--json")]
+
     # Determine files to check
     files = []
     changed_lines_filter = None  # if set, only report violations on these line numbers
 
-    if "--pr-diff" in sys.argv:
+    if "--pr-diff" in args:
         # Read unified diff from stdin, check only added/modified lines
         diff_text = sys.stdin.read()
         changed_lines_filter = parse_pr_diff(diff_text)
         files = [p for p in changed_lines_filter if p.endswith(".abap") and os.path.isfile(p)]
-    elif "--diff" in sys.argv:
+    elif "--diff" in args:
         # Read file list from stdin
         for line in sys.stdin:
             path = line.strip()
             if path.endswith(".abap") and os.path.isfile(path):
                 files.append(path)
-    elif len(sys.argv) > 1:
+    elif args:
         # Explicit file arguments
-        for arg in sys.argv[1:]:
+        for arg in args:
             if arg.startswith("-"):
                 continue
             if os.path.isfile(arg):
@@ -338,22 +380,48 @@ def main():
         sys.exit(0)
 
     total_violations = 0
+    total_fixed = 0
+    json_out = []
     for filepath in sorted(files):
         violations = check_file(filepath, preserve_set, multiword_terms)
-        for line_num, msg in violations:
-            # In --pr-diff mode, skip violations not in the PR's changed lines
-            if changed_lines_filter is not None:
-                allowed = changed_lines_filter.get(filepath, set())
-                if line_num not in allowed:
-                    continue
-            try:
-                rel = os.path.relpath(filepath)
-            except ValueError:
-                rel = filepath
-            print(f"{rel}:{line_num}: {msg}")
-            total_violations += 1
+        # Filter to changed lines in --pr-diff mode
+        if changed_lines_filter is not None:
+            allowed = changed_lines_filter.get(filepath, set())
+            violations = [v for v in violations if v[0] in allowed]
 
-    if total_violations > 0:
+        if not violations:
+            continue
+
+        try:
+            rel = os.path.relpath(filepath)
+        except ValueError:
+            rel = filepath
+
+        if fix_mode:
+            n = fix_file(filepath, violations)
+            total_fixed += n
+            for line_num, msg, raw, fixed in violations:
+                status = "fixed" if fixed is not None else "skipped"
+                print(f"{rel}:{line_num}: {status}: {msg}")
+        elif json_mode:
+            for line_num, msg, raw, fixed in violations:
+                record = {"path": rel, "line": line_num, "message": msg}
+                if fixed is not None:
+                    record["suggestion"] = fixed.rstrip("\n")
+                json_out.append(record)
+        else:
+            for line_num, msg, _, _ in violations:
+                print(f"{rel}:{line_num}: {msg}")
+        total_violations += len(violations)
+
+    if json_mode:
+        import json as _json
+        print(_json.dumps(json_out, ensure_ascii=False))
+        sys.exit(1 if total_violations > 0 else 0)
+    elif fix_mode:
+        print(f"\n{total_fixed}/{total_violations} violation(s) fixed.")
+        sys.exit(0)
+    elif total_violations > 0:
         print(f"\n{total_violations} casing violation(s) found.")
         sys.exit(1)
     else:
