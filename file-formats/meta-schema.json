@@ -72,8 +72,8 @@
                   "type": "string",
                   "enum": [
                     "1",
-                    "0..1",
-                    "0..n"
+                    "0...1",
+                    "0...n"
                   ],
                   "description": "Number of files of this type per repository object"
                 },
