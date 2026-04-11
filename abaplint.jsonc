@@ -188,7 +188,7 @@
     "unsecure_fae": true,
     "unused_methods": true,
     "unused_types": {
-      "skipNames": ["ty_main","ty_header_80","ty_object_name_40", "ty_lines"]
+      "skipNames": ["ty_main","ty_header_80","ty_object_name_40"]
     },
     "unused_variables": true,
     "use_bool_expression": true,

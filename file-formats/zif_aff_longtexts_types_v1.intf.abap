@@ -19,4 +19,15 @@ INTERFACE zif_aff_longtexts_types_v1 PUBLIC.
     "! Long text lines
     ty_lines TYPE STANDARD TABLE OF ty_line WITH DEFAULT KEY.
 
+  TYPES:
+    "! <p class="shorttext">ABAP Daemon</p>
+    "! ABAP daemon
+    BEGIN OF ty_main,
+      "! $required
+      format_version TYPE zif_aff_types_v1=>ty_format_version,
+      "! <p class="shorttext">Start Type</p>
+      "! Start type
+      lines          TYPE ty_lines,
+    END OF ty_main.
+
 ENDINTERFACE.
