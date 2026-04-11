@@ -1,0 +1,53 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "CLAS",
+    "description": "Class"
+  },
+  "versions": [
+    {
+      "version": 1,
+      "files": [
+        {
+          "filePattern": "<name>.clas.json",
+          "cardinality": "1",
+          "schema": "clas-v1.json",
+          "definitionInterface": "zif_aff_clas_v1",
+          "examples": ["examples/z_aff_example_clas.clas.json"]
+        },
+        {
+          "filePattern": "<name>.clas.abap",
+          "cardinality": "1",
+          "definitionUrl": "https://help.sap.com/doc/abapdocu_cp_index_htm/CLOUD/en-US/index.htm?file=abapclass.htm",
+          "examples": ["examples/z_aff_example_clas.clas.abap"]
+        },
+        {
+          "filePattern": "<name>.clas.definitions.abap",
+          "cardinality": "0..1",
+          "examples": ["examples/z_aff_example_clas.clas.definitions.abap"]
+        },
+        {
+          "filePattern": "<name>.clas.implementations.abap",
+          "cardinality": "0..1",
+          "examples": ["examples/z_aff_example_clas.clas.implementations.abap"]
+        },
+        {
+          "filePattern": "<name>.clas.macros.abap",
+          "cardinality": "0..1",
+          "examples": ["examples/z_aff_example_clas.clas.macros.abap"]
+        },
+        {
+          "filePattern": "<name>.clas.testclasses.abap",
+          "cardinality": "0..1",
+          "examples": ["examples/z_aff_example_clas.clas.testclasses.abap"]
+        },
+        {
+          "filePattern": "<name>.clas.texts.<lang>.properties",
+          "cardinality": "0..n",
+          "definitionUrl": "https://help.sap.com/viewer/c238d694b825421f940829321ffa326a/7.40.19/en-US/4ec6cf916e391014adc9fffe4e204223.html",
+          "examples": ["examples/z_aff_example_clas.clas.texts.en.properties"]
+        }
+      ]
+    }
+  ]
+}
