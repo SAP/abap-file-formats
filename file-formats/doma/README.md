@@ -11,3 +11,4 @@ DOMA  | Domain | Dictionary
 File | Cardinality | Definition | Schema | Example
 :--- | :--- | :--- | :--- | :---
 `<name>.doma.json` | 1 | [`zif_aff_doma_v1.intf.abap`](./type/zif_aff_doma_v1.intf.abap) | [`doma-v1.json`](./doma-v1.json) | [`z_aff_example.doma.json`](./examples/z_aff_example.doma.json)
+`<name>.doma.longtext.json` | 0...1 | [`zif_aff_longtexts_types_v1.intf.abap`](../zif_aff_longtexts_types_v1.intf.abap) | [`longtexts-v1.json`](./longtexts-v1.json) | [`z_aff_example.doma.longtext.json`](./examples/z_aff_example.doma.longtext.json)
