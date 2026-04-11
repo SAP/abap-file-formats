@@ -1,19 +1,12 @@
 {
   "global": {
     "files": "/file-formats/**/*.*",
-    "exclude": ["/examples/"],
-    "skipGeneratedGatewayClasses": true,
-    "skipGeneratedPersistentClasses": true,
-    "skipGeneratedFunctionGroups": true,
-    "useApackDependencies": false,
-    "skipIncludesWithoutMain": false
+    "exclude": ["/examples/"]
   },
   "dependencies": [],
   "syntax": {
     "version": "v702",
-    "errorNamespace": ".",
-    "globalConstants": [],
-    "globalMacros": []
+    "errorNamespace": "."
   },
   "rules": {
     "align_parameters": true,
@@ -195,7 +188,7 @@
     "unsecure_fae": true,
     "unused_methods": true,
     "unused_types": {
-      "skipNames": ["ty_main","ty_header_80","ty_object_name_40"]
+      "skipNames": ["ty_main","ty_header_80","ty_object_name_40", "ty_lines"]
     },
     "unused_variables": true,
     "use_bool_expression": true,
