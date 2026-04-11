@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "meta-schema.json",
   "title": "AFF Object Type Metadata",
   "description": "Machine-readable metadata for an ABAP File Format object type folder",
