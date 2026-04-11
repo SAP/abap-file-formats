@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/doma/longtexts-v1.json",
+  "title": "Long Text Lines",
+  "description": "Long text lines",
+  "type": "array",
+  "items": {
+    "title": "Long Text Line",
+    "description": "Long text line with format and content",
+    "type": "object",
+    "properties": {
+      "format": {
+        "title": "Format",
+        "description": "Paragraph format, max. length 2",
+        "type": "string",
+        "maxLength": 2
+      },
+      "line": {
+        "title": "Line",
+        "description": "Long text line content, max. length 72",
+        "type": "string",
+        "maxLength": 72
+      }
+    },
+    "additionalProperties": false,
+    "required": [
+      "format",
+      "line"
+    ]
+  }
+}
