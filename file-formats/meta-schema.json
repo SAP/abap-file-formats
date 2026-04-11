@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "meta-schema.json",
+  "$id": "https://raw.githubusercontent.com/SAP/abap-file-formats/main/file-formats/meta-schema.json",
   "title": "AFF Object Type Metadata",
   "description": "Machine-readable metadata for an ABAP File Format object type folder",
   "type": "object",
