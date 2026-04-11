@@ -42,6 +42,11 @@ def match_schema_to_data( ):
         example_version = decode_json( example )[ 'formatVersion' ]
         json_schema = [ schema for schema in schemas if example_type in os.path.basename(schema).split( sep = '-' )[0]
                                                         and example_version in os.path.basename(schema).split( sep='-')[1]]
+
+        if example_type == 'longtext':
+            obj_type = os.path.basename(example).split(sep='.')[1]
+            json_schema = [schema for schema in json_schema if os.path.basename(os.path.dirname(schema)) == obj_type]
+
         try:
             match[example] = json_schema.pop( 0 )
         except IndexError:
