@@ -23,27 +23,27 @@
         },
         {
           "filePattern": "<name>.clas.definitions.abap",
-          "cardinality": "0..1",
+          "cardinality": "0...1",
           "examples": ["examples/z_aff_example_clas.clas.definitions.abap"]
         },
         {
           "filePattern": "<name>.clas.implementations.abap",
-          "cardinality": "0..1",
+          "cardinality": "0...1",
           "examples": ["examples/z_aff_example_clas.clas.implementations.abap"]
         },
         {
           "filePattern": "<name>.clas.macros.abap",
-          "cardinality": "0..1",
+          "cardinality": "0...1",
           "examples": ["examples/z_aff_example_clas.clas.macros.abap"]
         },
         {
           "filePattern": "<name>.clas.testclasses.abap",
-          "cardinality": "0..1",
+          "cardinality": "0...1",
           "examples": ["examples/z_aff_example_clas.clas.testclasses.abap"]
         },
         {
           "filePattern": "<name>.clas.texts.<lang>.properties",
-          "cardinality": "0..n",
+          "cardinality": "0...n",
           "definitionUrl": "https://help.sap.com/viewer/c238d694b825421f940829321ffa326a/7.40.19/en-US/4ec6cf916e391014adc9fffe4e204223.html",
           "examples": ["examples/z_aff_example_clas.clas.texts.en.properties"]
         }
