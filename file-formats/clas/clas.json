@@ -12,7 +12,7 @@
           "filePattern": "<name>.clas.json",
           "cardinality": "1",
           "schema": "clas-v1.json",
-          "definitionInterface": "zif_aff_clas_v1",
+          "definitionInterface": "type/zif_aff_clas_v1.intf.abap",
           "examples": ["examples/z_aff_example_clas.clas.json"]
         },
         {
