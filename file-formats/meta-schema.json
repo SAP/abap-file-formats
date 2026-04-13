@@ -46,8 +46,7 @@
         "additionalProperties": false,
         "properties": {
           "version": {
-            "type": "integer",
-            "minimum": 1
+            "type": "string"
           },
           "deprecated": {
             "type": "boolean",
