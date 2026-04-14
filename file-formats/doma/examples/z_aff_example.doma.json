@@ -4,17 +4,21 @@
     "description": "Example DOMA for ABAP file formats",
     "originalLanguage": "en"
   },
-  "dataType": "CHAR",
-  "length": 3,
-  "outputLength":3,
+  "format": {
+    "dataType": "CHAR",
+    "length": 3
+  },
+  "outputCharacteristics": {
+    "length": 3
+  },
   "fixedValues": [
     {
       "fixedValue": "ABC",
-      "description": "Fixed value ABC"
+      "description": "Fixed Value ABC"
     },
     {
       "fixedValue": "XYZ",
-      "description": "Fixed value XYZ"
+      "description": "Fixed Value XYZ"
     }
   ]
 }
