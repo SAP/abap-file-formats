@@ -1,0 +1,37 @@
+name: AFF Review Process Reminder
+
+on:
+  pull_request:
+    types: [opened, reopened]
+    paths:
+      - 'file-formats/**'
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  post-review-reminder:
+    name: Post review process reminder
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check if comment already exists
+      id: find
+      run: |
+        ID=$(gh api "repos/$GITHUB_REPOSITORY/issues/$PR/comments" \
+          --jq '[.[] | select(.user.login == "github-actions[bot]") | select(.body | contains("<!-- aff-review-reminder -->"))][0].id // empty')
+        echo "id=${ID:-}" >> "$GITHUB_OUTPUT"
+      env:
+        GH_TOKEN: ${{ github.token }}
+        GH_REPO: ${{ github.repository }}
+        PR: ${{ github.event.pull_request.number }}
+
+    - name: Post review reminder
+      if: steps.find.outputs.id == ''
+      run: |
+        BODY=$'<!-- aff-review-reminder -->\n## AFF Review Process\n\nThank you for your contribution to the ABAP File Formats! 🎉\n\nTo help us manage reviews efficiently:\n- Add the **`awaiting-review`** label when ready for (re)review\n- See [CONTRIBUTING.md](../blob/main/CONTRIBUTING.md) for review process details'
+        gh pr comment "$PR" --body "$BODY"
+      env:
+        GH_TOKEN: ${{ github.token }}
+        GH_REPO: ${{ github.repository }}
+        PR: ${{ github.event.pull_request.number }}
