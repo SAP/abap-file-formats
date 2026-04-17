@@ -20,8 +20,8 @@ INTERFACE zif_aff_docu_v1 PUBLIC.
     ty_lines TYPE STANDARD TABLE OF ty_line WITH DEFAULT KEY.
 
   TYPES:
-    "! <p class="shorttext">ABAP Daemon</p>
-    "! ABAP daemon
+    "! <p class="shorttext">Documentation</p>
+    "! Documentation
     BEGIN OF ty_main,
       "! $required
       format_version TYPE zif_aff_types_v1=>ty_format_version,
