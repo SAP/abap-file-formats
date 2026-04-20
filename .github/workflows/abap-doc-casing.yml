@@ -1,19 +1,82 @@
 name: ABAP Doc Casing Check
 
 on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+    paths:
+      - '**.abap'
   issue_comment:
-    types: [created]
+    types: [created, edited]
 
 permissions:
   contents: read
   pull-requests: write
 
 jobs:
+  post-checklist:
+    name: Post casing checklist on PR
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+    - name: Find existing checklist comment
+      id: find
+      run: |
+        ID=$(gh api "repos/$GITHUB_REPOSITORY/issues/$PR/comments" \
+          --jq '[.[] | select(.user.login == "github-actions[bot]") | select(.body | contains("<!-- abap-doc-casing-checklist -->"))][0].id // empty')
+        echo "id=${ID:-}" >> "$GITHUB_OUTPUT"
+      env:
+        GH_TOKEN: ${{ github.token }}
+        GH_REPO: ${{ github.repository }}
+        PR: ${{ github.event.pull_request.number }}
+
+    - name: Post checklist (no existing comment)
+      if: steps.find.outputs.id == ''
+      run: |
+        BODY=$'<!-- abap-doc-casing-checklist --><!-- casing:ready -->\n## ABAP Doc Checks\n\n- [ ] Run ABAP Doc title/description casing check'
+        gh pr comment "$PR" --body "$BODY"
+      env:
+        GH_TOKEN: ${{ github.token }}
+        GH_REPO: ${{ github.repository }}
+        PR: ${{ github.event.pull_request.number }}
+
+    - name: Reset checklist after new ABAP changes
+      if: steps.find.outputs.id != '' && github.event.action == 'synchronize'
+      run: |
+        python3 - <<'EOF'
+        import json, os, subprocess
+
+        repo = os.environ['GITHUB_REPOSITORY']
+        cid  = os.environ['COMMENT_ID']
+
+        new_body = (
+            "<!-- abap-doc-casing-checklist --><!-- casing:ready -->\n"
+            "## ABAP Doc Checks\n\n"
+            "- [ ] Run ABAP Doc title/description casing check\n\n"
+            "> New commits with ABAP changes were pushed. Check the box to run again."
+        )
+        payload = json.dumps({'body': new_body})
+        subprocess.run(
+            ['gh', 'api', f'repos/{repo}/issues/comments/{cid}',
+             '--method', 'PATCH', '--input', '-'],
+            input=payload, text=True, check=True,
+        )
+        EOF
+      env:
+        GH_TOKEN: ${{ github.token }}
+        COMMENT_ID: ${{ steps.find.outputs.id }}
+
   check-casing:
     name: Check ABAP Doc title/description casing
     if: >
-      github.event.issue.pull_request &&
-      contains(github.event.comment.body, '/check-casing')
+      github.event_name == 'issue_comment' &&
+      github.event.issue.pull_request != null && (
+        (github.event.action == 'created' && contains(github.event.comment.body, '/check-casing')) ||
+        (github.event.action == 'edited' &&
+         github.event.comment.user.login == 'github-actions[bot]' &&
+         contains(github.event.comment.body, '<!-- abap-doc-casing-checklist -->') &&
+         contains(github.event.comment.body, '<!-- casing:ready -->') &&
+         contains(github.event.comment.body, '[x] Run ABAP Doc'))
+      )
     runs-on: ubuntu-latest
     timeout-minutes: 5
 
@@ -25,6 +88,13 @@ jobs:
           --json headRefOid,baseRefName \
           --jq '"sha="+.headRefOid+"\nbase="+.baseRefName' \
           >> "$GITHUB_OUTPUT"
+        if [[ "${{ github.event.action }}" == 'edited' ]]; then
+          echo "source=checkbox" >> "$GITHUB_OUTPUT"
+          echo "checklist_id=${{ github.event.comment.id }}" >> "$GITHUB_OUTPUT"
+        else
+          echo "source=slash" >> "$GITHUB_OUTPUT"
+          echo "checklist_id=" >> "$GITHUB_OUTPUT"
+        fi
       env:
         GH_TOKEN: ${{ github.token }}
         GH_REPO: ${{ github.repository }}
@@ -48,64 +118,90 @@ jobs:
         git diff origin/${{ steps.pr.outputs.base }}...${{ steps.pr.outputs.sha }} -- '*.abap' \
           | python3 scripts/check_abap_doc_casing.py --pr-diff --json > /tmp/casing_output.json 2>&1 || true
 
-    - name: Post result comment
+    - name: Post results
       if: always()
       run: |
         python3 << 'EOF'
         import json, os, subprocess, sys
 
-        sha  = os.environ['PR_SHA']
-        pr   = os.environ['PR_NUM']
-        repo = os.environ['GH_REPO']
+        sha    = os.environ['PR_SHA']
+        pr     = os.environ['PR_NUM']
+        repo   = os.environ['GH_REPO']
+        source = os.environ['SOURCE']
+        cid    = os.environ.get('CHECKLIST_ID', '').strip()
 
         try:
-            comments = json.loads(open('/tmp/casing_output.json').read())
+            violations = json.loads(open('/tmp/casing_output.json').read())
         except (FileNotFoundError, json.JSONDecodeError):
-            comments = None
+            violations = None
 
-        if comments is None:
-            body = "## ABAP Doc Casing Check\n\nCasing check did not run — an earlier step failed."
-            subprocess.run(['gh', 'pr', 'comment', pr, '--body', body], check=True)
-            sys.exit(0)
-
-        # Post each violation as an inline review comment with suggestion
-        for c in comments:
-            if 'suggestion' in c:
-                body = f"**Casing violation:** {c['message']}\n\n```suggestion\n{c['suggestion']}\n```"
-            else:
+        # Post inline review comments with suggestions
+        if violations:
+            for c in violations:
                 body = f"**Casing violation:** {c['message']}"
-            payload = json.dumps({
-                'commit_id': sha,
-                'path': c['path'],
-                'line': c['line'],
-                'side': 'RIGHT',
-                'body': body,
-            })
+                if 'suggestion' in c:
+                    body += f"\n\n```suggestion\n{c['suggestion']}\n```"
+                payload = json.dumps({
+                    'commit_id': sha,
+                    'path': c['path'],
+                    'line': c['line'],
+                    'side': 'RIGHT',
+                    'body': body,
+                })
+                r = subprocess.run(
+                    ['gh', 'api', f'repos/{repo}/pulls/{pr}/comments',
+                     '--method', 'POST', '--input', '-'],
+                    input=payload, text=True, capture_output=True,
+                )
+                if r.returncode != 0:
+                    print(f"Warning: could not post inline comment: {r.stderr.strip()}", file=sys.stderr)
+
+        if source == 'checkbox' and cid:
+            # Update checklist comment with result status
+            if violations is None:
+                status = '⚠ check did not run — see workflow logs'
+            elif violations:
+                n = len(violations)
+                status = f'⚠ {n} violation(s) — see inline comments in **Files changed**'
+            else:
+                status = '✓ all checks passed'
+
+            new_body = (
+                f"<!-- abap-doc-casing-checklist --><!-- casing:done -->\n"
+                f"## ABAP Doc Checks\n\n"
+                f"- [x] Run ABAP Doc title/description casing check — {status}"
+            )
+            payload = json.dumps({'body': new_body})
             r = subprocess.run(
-                ['gh', 'api', f'repos/{repo}/pulls/{pr}/comments',
-                 '--method', 'POST', '--input', '-'],
+                ['gh', 'api', f'repos/{repo}/issues/comments/{cid}',
+                 '--method', 'PATCH', '--input', '-'],
                 input=payload, text=True, capture_output=True,
             )
             if r.returncode != 0:
-                print(f"Warning: could not post inline comment: {r.stderr.strip()}", file=sys.stderr)
+                print(f"Warning: could not update checklist comment: {r.stderr.strip()}", file=sys.stderr)
 
-        # Post summary PR comment
-        n = len(comments)
-        if n > 0:
-            body = (
-                f"## ABAP Doc Casing Check\n\n"
-                f"`/check-casing` found {n} violation(s) — "
-                f"see inline comments in the **Files changed** tab.\n\n"
-                f"Fix the violations or add terms to `scripts/casing-terms.json` "
-                f"for known product names/acronyms."
-            )
         else:
-            body = "## ABAP Doc Casing Check\n\nAll ABAP Doc casing checks passed. ✓"
+            # Slash command: post a summary comment
+            if violations is None:
+                body = "## ABAP Doc Casing Check\n\nCasing check did not run — an earlier step failed."
+            elif violations:
+                n = len(violations)
+                body = (
+                    f"## ABAP Doc Casing Check\n\n"
+                    f"`/check-casing` found {n} violation(s) — "
+                    f"see inline comments in the **Files changed** tab.\n\n"
+                    f"Fix the violations or add terms to `scripts/casing-terms.json` "
+                    f"for known product names/acronyms."
+                )
+            else:
+                body = "## ABAP Doc Casing Check\n\nAll ABAP Doc casing checks passed. ✓"
 
-        subprocess.run(['gh', 'pr', 'comment', pr, '--body', body], check=True)
+            subprocess.run(['gh', 'pr', 'comment', pr, '--body', body], check=True)
         EOF
       env:
         GH_TOKEN: ${{ github.token }}
         GH_REPO: ${{ github.repository }}
         PR_SHA: ${{ steps.pr.outputs.sha }}
         PR_NUM: ${{ github.event.issue.number }}
+        SOURCE: ${{ steps.pr.outputs.source }}
+        CHECKLIST_ID: ${{ steps.pr.outputs.checklist_id }}
