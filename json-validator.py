@@ -10,7 +10,10 @@ import re
 msg_errors = list()
 msg_warning = list()
 schemas = sorted( glob.glob('./file-formats/*/*.json') )
+schemas = [ s for s in schemas if re.search(r'-v\d+\.json$', s) ]
 examples = sorted( glob.glob('./file-formats/*/examples/*.json', recursive=True) )
+meta_instances = sorted( glob.glob('./file-formats/*/*.json') )
+meta_instances = [ f for f in meta_instances if not re.search(r'-v\d+\.json$', f) and not re.search(r'meta-schema\.json$', f) ]
 
 def decode_json( file ):
     with open(file, 'r') as json_f:
@@ -59,9 +62,24 @@ def validate_examples( matches ):
     print(f"::endgroup::")
 
 
+def validate_meta_instances( files ):
+    print(f"::group::Validate meta instances")
+    for file in files:
+        instance = decode_json( file )
+        if instance is None:
+            continue
+        schema_ref = instance.get('$schema')
+        if schema_ref is None:
+            msg_warning.append(f"::notice file={file},line=1,col=1::No $schema found in {file}")
+            continue
+        schema_path = os.path.normpath(os.path.join(os.path.dirname(file), schema_ref))
+        validate_json( schema_path, file )
+    print(f"::endgroup::")
+
 matches = match_schema_to_data( )
 
 validate_examples( matches )
+validate_meta_instances( meta_instances )
 
 print()
 
