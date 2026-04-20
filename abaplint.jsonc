@@ -1,19 +1,12 @@
 {
   "global": {
     "files": "/file-formats/**/*.*",
-    "exclude": ["/examples/"],
-    "skipGeneratedGatewayClasses": true,
-    "skipGeneratedPersistentClasses": true,
-    "skipGeneratedFunctionGroups": true,
-    "useApackDependencies": false,
-    "skipIncludesWithoutMain": false
+    "exclude": ["/examples/"]
   },
   "dependencies": [],
   "syntax": {
     "version": "v702",
-    "errorNamespace": ".",
-    "globalConstants": [],
-    "globalMacros": []
+    "errorNamespace": "."
   },
   "rules": {
     "align_parameters": true,
