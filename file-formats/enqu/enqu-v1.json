@@ -113,7 +113,8 @@
             "Reserved",
             "Reserved",
             "Initial"
-          ]
+          ],
+          "default": "exclusive"
         }
       },
       "additionalProperties": false,
@@ -182,7 +183,8 @@
               "Reserved",
               "Reserved",
               "Initial"
-            ]
+            ],
+            "default": "exclusive"
           }
         },
         "additionalProperties": false,
@@ -225,18 +227,34 @@
             "type": "boolean"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "table",
+          "field"
+        ]
       }
     },
-    "allowRfc": {
-      "title": "Allow RFC",
-      "description": "Allow RFC for lock modules",
-      "type": "boolean"
+    "lockModules": {
+      "title": "Lock Modules",
+      "description": "Lock modules are generated during activation",
+      "type": "object",
+      "properties": {
+        "allowRfc": {
+          "title": "Allow RFC",
+          "description": "Allow RFC for lock modules",
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
     }
   },
   "additionalProperties": false,
   "required": [
     "formatVersion",
-    "header"
+    "header",
+    "primaryTable",
+    "lockParameters",
+    "lockModules"
   ]
 }
