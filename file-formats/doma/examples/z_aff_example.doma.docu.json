@@ -1,0 +1,13 @@
+{
+  "formatVersion": "1",
+  "lines": [
+    {
+      "format": "P1",
+      "line": "This is an example long text for the domain Z_AFF_EXAMPLE."
+    },
+    {
+      "format": "P1",
+      "line": "It describes the meaning and usage of the domain values."
+    }
+  ]
+}
