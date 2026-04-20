@@ -1,7 +1,7 @@
 name: ABAP Doc Casing Check
 
 on:
-  pull_request:
+  pull_request_target:
     types: [opened, reopened, synchronize]
     paths:
       - '**.abap'
@@ -15,7 +15,7 @@ permissions:
 jobs:
   post-checklist:
     name: Post casing checklist on PR
-    if: github.event_name == 'pull_request'
+    if: github.event_name == 'pull_request_target'
     runs-on: ubuntu-latest
     steps:
     - name: Find existing checklist comment
@@ -27,7 +27,7 @@ jobs:
       env:
         GH_TOKEN: ${{ github.token }}
         GH_REPO: ${{ github.repository }}
-        PR: ${{ github.event.pull_request.number }}
+        PR: ${{ github.event.number }}
 
     - name: Post checklist (no existing comment)
       if: steps.find.outputs.id == ''
@@ -37,7 +37,7 @@ jobs:
       env:
         GH_TOKEN: ${{ github.token }}
         GH_REPO: ${{ github.repository }}
-        PR: ${{ github.event.pull_request.number }}
+        PR: ${{ github.event.number }}
 
     - name: Reset checklist after new ABAP changes
       if: steps.find.outputs.id != '' && github.event.action == 'synchronize'
