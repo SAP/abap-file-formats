@@ -9,8 +9,7 @@ import re
 
 msg_errors = list()
 msg_warning = list()
-schemas = sorted( glob.glob('./file-formats/*/*.json') + glob.glob('./file-formats/*/*.json')  )
-schemas = [ s for s in schemas if re.search(r'-v\d+\.json$', s) ]
+schemas = sorted( glob.glob('./file-formats/*-v*.json') + glob.glob('./file-formats/*/*.json') )
 examples = sorted( glob.glob('./file-formats/*/examples/*.json', recursive=True) )
 meta_instances = sorted( glob.glob('./file-formats/*/*.json') )
 meta_instances = [ f for f in meta_instances if not re.search(r'-v\d+\.json$', f) and not re.search(r'meta-schema\.json$', f) ]
