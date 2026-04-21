@@ -101,7 +101,7 @@ INTERFACE zif_aff_enqu_v1
 
   TYPES:
     "! <p class="shorttext">Lock Object</p>
-    "! Lock object (ENQU) v1
+    "! Lock object (ENQU)
     BEGIN OF ty_main,
       "! <p class="shorttext">Format Version</p>
       "! Format version
