@@ -3,7 +3,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/enqu/enqu-v1.json",
   "title": "Lock Object",
-  "description": "Lock object (ENQU) v1",
+  "description": "Lock object (ENQU)",
   "type": "object",
   "properties": {
     "formatVersion": {
@@ -89,7 +89,7 @@
           "enumTitles": [
             "Exclusive Lock",
             "Shared Lock",
-            "Exclusive, Not Cumulative",
+            "Exclusive Lock, Not Cumulative",
             "Set Optimistic Lock",
             "Promote Optimistic Lock",
             "Only Conflict Check Extended Exclusive Lock",
@@ -103,7 +103,7 @@
           "enumDescriptions": [
             "Exclusive lock",
             "Shared lock",
-            "Exclusive, not cumulative",
+            "Exclusive lock, not cumulative",
             "Set optimistic lock",
             "Promote optimistic lock; transform from '0' to 'E'",
             "Only conflict check extended exclusive lock, as with 'X'",
@@ -159,7 +159,7 @@
             "enumTitles": [
               "Exclusive Lock",
               "Shared Lock",
-              "Exclusive, Not Cumulative",
+              "Exclusive Lock, Not Cumulative",
               "Set Optimistic Lock",
               "Promote Optimistic Lock",
               "Only Conflict Check Extended Exclusive Lock",
@@ -173,7 +173,7 @@
             "enumDescriptions": [
               "Exclusive lock",
               "Shared lock",
-              "Exclusive, not cumulative",
+              "Exclusive lock, not cumulative",
               "Set optimistic lock",
               "Promote optimistic lock; transform from '0' to 'E'",
               "Only conflict check extended exclusive lock, as with 'X'",
