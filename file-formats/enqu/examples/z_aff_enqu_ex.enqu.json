@@ -25,7 +25,8 @@
     {
       "name": "SECOND_NAME",
       "table": "ZTABL_SECOND",
-      "field": "SECOND_ID"
+      "field": "SECOND_ID",
+      "active": false
     }
   ],
   "lockModules": {
