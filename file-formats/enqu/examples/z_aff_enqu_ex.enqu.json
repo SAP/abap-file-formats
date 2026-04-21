@@ -2,8 +2,7 @@
   "formatVersion": "1",
   "header": {
     "description": "Lock Object Example",
-    "originalLanguage": "EN",
-    "abapLanguageVersion": "standard"
+    "originalLanguage": "en"
   },
   "primaryTable": {
     "name": "ZTABL_TEST",
