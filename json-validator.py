@@ -9,7 +9,7 @@ import re
 
 msg_errors = list()
 msg_warning = list()
-schemas = sorted( glob.glob('./file-formats/*/*.json') )
+schemas = sorted( glob.glob('./file-formats/*/*.json') + glob.glob('./file-formats/*/*.json')  )
 schemas = [ s for s in schemas if re.search(r'-v\d+\.json$', s) ]
 examples = sorted( glob.glob('./file-formats/*/examples/*.json', recursive=True) )
 meta_instances = sorted( glob.glob('./file-formats/*/*.json') )
@@ -45,6 +45,7 @@ def match_schema_to_data( ):
         example_version = decode_json( example )[ 'formatVersion' ]
         json_schema = [ schema for schema in schemas if example_type in os.path.basename(schema).split( sep = '-' )[0]
                                                         and example_version in os.path.basename(schema).split( sep='-')[1]]
+
         try:
             match[example] = json_schema.pop( 0 )
         except IndexError:
