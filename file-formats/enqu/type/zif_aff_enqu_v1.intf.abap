@@ -12,8 +12,8 @@ INTERFACE zif_aff_enqu_v1
       "! <p class="shorttext">Shared Lock</p>
       "! Shared lock
       shared                       TYPE ty_lock_mode VALUE 'S',
-      "! <p class="shorttext">Exclusive, Not Cumulative</p>
-      "! Exclusive, not cumulative
+      "! <p class="shorttext">Exclusive Lock, Not Cumulative</p>
+      "! Exclusive lock, not cumulative
       exclusive_not_cumulative     TYPE ty_lock_mode VALUE 'X',
       "! <p class="shorttext">Set Optimistic Lock</p>
       "! Set optimistic lock
