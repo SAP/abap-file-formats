@@ -1,16 +1,19 @@
 import json
 import jsonschema
-from jsonschema import validate
-from jsonschema import exceptions
 import os
 import glob
 import sys
-import re
 
 msg_errors = list()
 msg_warning = list()
 schemas = sorted( glob.glob('./file-formats/*-v*.json') + glob.glob('./file-formats/*/*-v*.json') )
 examples = sorted( glob.glob('./file-formats/*/examples/*.json', recursive=True) )
+
+meta_schema = './file-formats/meta-schema.json'
+metadata_files = sorted([
+    path for path in glob.glob('./file-formats/*/*.json')
+    if os.path.basename(path) == f"{os.path.basename(os.path.dirname(path))}.json"
+])
 
 def decode_json( file ):
     with open(file, 'r') as json_f:
@@ -24,12 +27,16 @@ def decode_json( file ):
 def validate_json( schema, instance ):
     json_schema = decode_json( schema )
     json_instance = decode_json( instance )
+
+    if json_schema is None or json_instance is None:
+        return
+
     try:
-        validate( instance=json_instance, schema=json_schema)
+        jsonschema.validate( instance=json_instance, schema=json_schema)
     except jsonschema.exceptions.ValidationError as ex_validation:
         msg_errors.append(f"::error file={instance},line=1,col=1::{ex_validation.message} in {instance}")
     except jsonschema.exceptions.SchemaError as ex_schema:
-        msg_errors.print(f"::error file={instance},line=1,col=1::{ex_schema.message} in {instance}")
+        msg_errors.append(f"::error file={instance},line=1,col=1::{ex_schema.message} in {instance}")
     else:
         #print(f"::set-output name={os.path.basename(instance).ljust(31)} valid instance of schema {os.path.basename(schema)}" )
         print( "valid: " + os.path.basename(schema) + "; " + os.path.basename(instance))
@@ -59,10 +66,17 @@ def validate_examples( matches ):
         validate_json( matches[example], example )
     print(f"::endgroup::")
 
+def validate_metadata_files():
+    print(f"::group::Validate metadata JSON files")
+    for metadata_file in metadata_files:
+        validate_json( meta_schema, metadata_file )
+    print(f"::endgroup::")
+
 
 matches = match_schema_to_data( )
 
 validate_examples( matches )
+validate_metadata_files()
 
 print()
 
