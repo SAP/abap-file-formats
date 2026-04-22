@@ -6,7 +6,7 @@
   },
   "versions": [
     {
-      "version": "1",
+      "versiosdfn": "1",
       "files": [
         {
           "filePattern": "<name>.clas.json",
