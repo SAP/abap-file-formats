@@ -4,7 +4,7 @@
     "description": "Example class for ABAP file formats",
     "originalLanguage": "en"
   },
-  "foobar fixPointArithmetic": true,
+  "fixPointArithmetic": true,
   "descriptions": {
     "types": [
       {
