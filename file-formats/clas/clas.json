@@ -9,7 +9,6 @@
       "version": "1",
       "files": [
         {
-          "filePattern": "<name>.clas.json",
           "cardinality": "1",
           "schema": "clas-v1.json",
           "definitionInterface": "type/zif_aff_clas_v1.intf.abap",
