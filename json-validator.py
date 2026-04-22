@@ -9,7 +9,12 @@ import re
 
 msg_errors = list()
 msg_warning = list()
-schemas = sorted( glob.glob('./file-formats/*-v*.json') + glob.glob('./file-formats/*/*.json') )
+# Only versioned JSON schema files should be treated as schemas.
+# This avoids pulling in metadata files like file-formats/clas/clas.json.
+schemas = sorted(
+    glob.glob('./file-formats/*-v*.json') +
+    glob.glob('./file-formats/*/*-v*.json')
+)
 examples = sorted( glob.glob('./file-formats/*/examples/*.json', recursive=True) )
 meta_instances = sorted( glob.glob('./file-formats/*/*.json') )
 meta_instances = [ f for f in meta_instances if not re.search(r'-v\d+\.json$', f) and not re.search(r'meta-schema\.json$', f) ]
@@ -26,12 +31,14 @@ def decode_json( file ):
 def validate_json( schema, instance ):
     json_schema = decode_json( schema )
     json_instance = decode_json( instance )
+    if json_schema is None or json_instance is None:
+        return
     try:
         validate( instance=json_instance, schema=json_schema)
     except jsonschema.exceptions.ValidationError as ex_validation:
         msg_errors.append(f"::error file={instance},line=1,col=1::{ex_validation.message} in {instance}")
     except jsonschema.exceptions.SchemaError as ex_schema:
-        msg_errors.print(f"::error file={instance},line=1,col=1::{ex_schema.message} in {instance}")
+        msg_errors.append(f"::error file={instance},line=1,col=1::{ex_schema.message} in {instance}")
     else:
         #print(f"::set-output name={os.path.basename(instance).ljust(31)} valid instance of schema {os.path.basename(schema)}" )
         print( "valid: " + os.path.basename(schema) + "; " + os.path.basename(instance))
@@ -41,7 +48,13 @@ def match_schema_to_data( ):
 
     for example in examples:
         example_type = os.path.basename(example).split( sep = '.' )[-2]
-        example_version = decode_json( example )[ 'formatVersion' ]
+        example_json = decode_json( example )
+        if example_json is None:
+            continue
+        example_version = example_json.get('formatVersion')
+        if example_version is None:
+            msg_errors.append(f"::error file={example},line=1,col=1::Missing formatVersion in {example}")
+            continue
         json_schema = [ schema for schema in schemas if example_type in os.path.basename(schema).split( sep = '-' )[0]
                                                         and example_version in os.path.basename(schema).split( sep='-')[1]]
 
