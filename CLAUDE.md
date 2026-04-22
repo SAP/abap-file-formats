@@ -29,10 +29,12 @@ npm test          # Runs both compile and generate
 ```
 
 The generation process:
-1. Downloads ABAP-to-JS transpiler tools via `oras-pull`
+1. Downloads ABAP generator classes from [SAP/abap-file-formats-tools](https://github.com/SAP/abap-file-formats-tools) via `oras-pull` (OCI artifact from `ghcr.io/sap/abap-file-formats-tools`)
 2. Copies ABAP interface files from `file-formats/` to `downport/`
-3. Transpiles ABAP to JavaScript in `output/`
+3. Transpiles ABAP to JavaScript in `output/` using `@abaplint/transpiler-cli`
 4. Runs `aff.mjs` to generate JSON schemas in `generated/`
+
+The generation logic itself (classes like `zcl_aff_generator`, `zcl_aff_writer_json_schema`, `zcl_aff_abap_doc_reader`) lives in the [abap-file-formats-tools](https://github.com/SAP/abap-file-formats-tools) repository, not in this repo. These classes introspect ABAP type definitions and ABAP Doc annotations to produce JSON Schema output. Alternatively, individuals can clone the tools repo into an ABAP system and run the report `z_generate_json_schema` directly there.
 
 ### JSON Validation
 ```bash
