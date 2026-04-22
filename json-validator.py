@@ -9,7 +9,7 @@ import re
 
 msg_errors = list()
 msg_warning = list()
-schemas = sorted( glob.glob('./file-formats/*-v*.json') + glob.glob('./file-formats/*/*.json') )
+schemas = sorted( glob.glob('./file-formats/*-v*.json') + glob.glob('./file-formats/*/*-v*.json') )
 examples = sorted( glob.glob('./file-formats/*/examples/*.json', recursive=True) )
 
 def decode_json( file ):
