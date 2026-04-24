@@ -245,13 +245,29 @@ INTERFACE zif_aff_dynp_v1 PUBLIC.
       header     TYPE ty_dyhead,
       containers TYPE ty_dycatt_tab,
       fields     TYPE ty_dyfatc_tab,
+    END OF ty_dynpro.
+
+  TYPES: BEGIN OF ty_dynpro_native,
       nat_header TYPE ty_d020s,
       nat_fields TYPE STANDARD TABLE OF ty_d021s WITH DEFAULT KEY,
       nat_texts  TYPE STANDARD TABLE OF ty_d021t WITH DEFAULT KEY,
-    END OF ty_dynpro.
+    END OF ty_dynpro_native.
 
-* todo: language + description?
-* todo: split up native and the normal dynpro types?
-  TYPES ty_dynpro_tt TYPE STANDARD TABLE OF ty_dynpro WITH DEFAULT KEY.
+  TYPES:
+    "! <p class="shorttext">Dynpro</p>
+    "! Dynpro
+    BEGIN OF ty_main,
+      "! $required
+      format_version TYPE zif_aff_types_v1=>ty_format_version,
+      "! <p class="shorttext">Description</p>
+      "! Description
+      description    TYPE string,
+      "! <p class="shorttext">Dynpro</p>
+      "! Dynpro
+      dynpro         TYPE ty_dynpro,
+      "! <p class="shorttext">Native Dynpro</p>
+      "! Native dynpro (optional, only if the dynpro contains native elements)
+      native_dynpro  TYPE ty_dynpro_native,
+    END OF ty_main.
 
 ENDINTERFACE.
