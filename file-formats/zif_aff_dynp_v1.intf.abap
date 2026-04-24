@@ -2,26 +2,6 @@ INTERFACE zif_aff_dynp_v1 PUBLIC.
 
 ************************************************************************
 * Standalone replica of the ty_dynpro type from ZCL_ABAPGIT_OBJECTS_PROGRAM
-* All DDIC references (structures, data elements, table types) have been
-* fully inlined using only ABAP built-in primitive types.
-*
-* DDIC origin -> local replacement:
-*   RPY_DYHEAD  -> ty_dyhead
-*   RPY_DYCATT  -> ty_dycatt     (row type of DYCATT_TAB)
-*   DYCATT_TAB  -> ty_dycatt_tab
-*   RPY_DYFATC  -> ty_dyfatc     (row type of DYFATC_TAB)
-*   DYFATC_TAB  -> ty_dyfatc_tab
-*   RPY_DYFLOW  -> ty_dyflow     (row type of SWYDYFLOW)
-*   SWYDYFLOW   -> ty_dyflow_tab
-*   D020S       -> ty_d020s
-*   D021S       -> ty_d021s
-*   D021T       -> ty_d021t
-*
-* Type-mapping convention:
-*   CHAR n -> c LENGTH n      NUMC n -> n LENGTH n
-*   LANG   -> c LENGTH 1      DATS   -> d       TIMS   -> t
-*   RAW  n -> x LENGTH n      INT1   -> x LENGTH 1   (byte-compatible)
-*   STRG   -> string
 ************************************************************************
 
 * ---------------------------------------------------------------------
