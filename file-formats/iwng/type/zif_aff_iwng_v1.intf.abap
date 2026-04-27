@@ -35,7 +35,7 @@ INTERFACE /iwngw/if_aff_iwng_v1
       "! <p class="shorttext">Provider Class Name</p>
       "! Provider Class Name
       "! $required
-      provider_class TYPE /iwngw/if_aff_iwng_v1=>ty_provider_class,
+      provider_class TYPE ty_provider_class,
       "! <p class="shorttext">State(Client-specific)</p>
       "! State(client-dependent)
       state          TYPE ty_state,
