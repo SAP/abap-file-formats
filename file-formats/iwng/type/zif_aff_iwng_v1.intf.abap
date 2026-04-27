@@ -1,8 +1,8 @@
-INTERFACE zif_aff_iwng_v1
-  PUBLIC .
+INTERFACE /iwngw/if_aff_iwng_v1
+  PUBLIC.
 
-  "! $values { @link zif_aff_iwng_v1.data:co_state }
-  "! $default { @link zif_aff_iwng_v1.data:co_state.off }
+  "! $values { @link /iwngw/if_aff_iwng_v1.data:co_state }
+  "! $default { @link /iwngw/if_aff_iwng_v1.data:co_state.off }
   TYPES ty_state TYPE c LENGTH 1.
   CONSTANTS:
     "! <p class="shorttext">State</p>
@@ -15,29 +15,29 @@ INTERFACE zif_aff_iwng_v1
       "! On
       on  TYPE ty_state VALUE 'X',
     END OF co_state.
-  TYPES: ty_provider_id TYPE c LENGTH 32.
-  TYPES: ty_provider_class TYPE c LENGTH 30.
+  TYPES ty_provider_id    TYPE c LENGTH 32.
+  TYPES ty_provider_class TYPE c LENGTH 30.
   TYPES:
     "! <p class="shorttext">Notification Provider Object</p>
     "! Create Notification provider object
     BEGIN OF ty_main,
       "! <p class="shorttext">Format Version</p>
       "! Format version
-      format_version TYPE zif_aff_types_v1=>ty_format_version,
+      format_version TYPE if_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header         TYPE zif_aff_types_v1=>ty_header_60_cloud,
+      header         TYPE if_aff_types_v1=>ty_header_60_cloud,
       "! <p class="shorttext">Provider ID</p>
       "! Provider ID
       "! $required
-      provider_id TYPE zif_aff_iwng_v1=>ty_provider_id,
+      provider_id    TYPE /iwngw/if_aff_iwng_v1=>ty_provider_id,
       "! <p class="shorttext">Provider Class Name</p>
       "! Provider Class Name
       "! $required
-      provider_class TYPE zif_aff_iwng_v1=>ty_provider_class,
+      provider_class TYPE /iwngw/if_aff_iwng_v1=>ty_provider_class,
       "! <p class="shorttext">State(Client-specific)</p>
       "! State(client-dependent)
-      state TYPE ty_state,
+      state          TYPE ty_state,
     END OF ty_main.
 ENDINTERFACE.
