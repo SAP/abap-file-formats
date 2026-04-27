@@ -23,6 +23,8 @@ INTERFACE zif_aff_iwng_v1
     BEGIN OF ty_main,
       "! <p class="shorttext">Format Version</p>
       "! Format version
+      "! $required
+      "! $default '1'
       format_version TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header

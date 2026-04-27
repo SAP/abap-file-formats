@@ -87,6 +87,7 @@
   },
   "additionalProperties": false,
   "required": [
+    "formatVersion",
     "header",
     "providerId",
     "providerClass"
