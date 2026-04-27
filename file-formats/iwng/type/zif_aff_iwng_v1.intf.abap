@@ -1,8 +1,8 @@
-INTERFACE /iwngw/if_aff_iwng_v1
+INTERFACE zif_aff_iwng_v1
   PUBLIC.
 
-  "! $values { @link /iwngw/if_aff_iwng_v1.data:co_state }
-  "! $default { @link /iwngw/if_aff_iwng_v1.data:co_state.off }
+  "! $values { @link zif_aff_iwng_v1.data:co_state }
+  "! $default { @link zif_aff_iwng_v1.data:co_state.off }
   TYPES ty_state TYPE c LENGTH 1.
   CONSTANTS:
     "! <p class="shorttext">State</p>
@@ -23,11 +23,11 @@ INTERFACE /iwngw/if_aff_iwng_v1
     BEGIN OF ty_main,
       "! <p class="shorttext">Format Version</p>
       "! Format version
-      format_version TYPE if_aff_types_v1=>ty_format_version,
+      format_version TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header         TYPE if_aff_types_v1=>ty_header_60_cloud,
+      header         TYPE zif_aff_types_v1=>ty_header_60_cloud,
       "! <p class="shorttext">Provider ID</p>
       "! Provider ID
       "! $required
