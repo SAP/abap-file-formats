@@ -31,7 +31,7 @@ INTERFACE /iwngw/if_aff_iwng_v1
       "! <p class="shorttext">Provider ID</p>
       "! Provider ID
       "! $required
-      provider_id    TYPE /iwngw/if_aff_iwng_v1=>ty_provider_id,
+      provider_id    TYPE ty_provider_id,
       "! <p class="shorttext">Provider Class Name</p>
       "! Provider Class Name
       "! $required
