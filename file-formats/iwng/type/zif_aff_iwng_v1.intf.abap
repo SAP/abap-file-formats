@@ -15,7 +15,7 @@ INTERFACE zif_aff_iwng_v1
       "! State(client-dependent)
       "! $values { @link zif_aff_iwng_v1.data:co_state }
       "! $default { @link zif_aff_iwng_v1.data:co_state.off }
-      state          TYPE boolean,
+      state          TYPE abap_bool,
     END OF ty_general_information.
 
   CONSTANTS:
@@ -24,10 +24,10 @@ INTERFACE zif_aff_iwng_v1
     BEGIN OF co_state,
       "! <p class="shorttext">Off</p>
       "! Off
-      off TYPE boolean VALUE abap_false,
+      off TYPE abap_bool VALUE abap_false,
       "! <p class="shorttext">On</p>
       "! On
-      on  TYPE boolean VALUE abap_true,
+      on  TYPE abap_bool VALUE abap_true,
     END OF co_state.
   TYPES:
     "! <p class="shorttext">Notification Provider Object</p>
