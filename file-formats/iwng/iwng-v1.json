@@ -54,42 +54,52 @@
         "originalLanguage"
       ]
     },
-    "providerId": {
-      "title": "Provider ID",
-      "description": "Provider ID",
-      "type": "string",
-      "maxLength": 32
-    },
-    "providerClass": {
-      "title": "Provider Class Name",
-      "description": "Provider Class Name",
-      "type": "string",
-      "maxLength": 30
-    },
-    "state": {
-      "title": "State(Client-specific)",
-      "description": "State(client-dependent)",
-      "type": "string",
-      "enum": [
-        "off",
-        "on"
-      ],
-      "enumTitles": [
-        "Off",
-        "On"
-      ],
-      "enumDescriptions": [
-        "Off",
-        "On"
-      ],
-      "default": "off"
+    "generalInformation": {
+      "title": "General Information",
+      "description": "General Information",
+      "type": "object",
+      "properties": {
+        "providerId": {
+          "title": "Provider ID",
+          "description": "Provider ID",
+          "type": "string",
+          "maxLength": 32
+        },
+        "providerClass": {
+          "title": "Provider Class Name",
+          "description": "Provider Class Name",
+          "type": "string",
+          "maxLength": 30
+        },
+        "state": {
+          "title": "State(client-dependent)",
+          "description": "State(client-dependent)",
+          "type": "string",
+          "enum": [
+            "off",
+            "on"
+          ],
+          "enumTitles": [
+            "Off",
+            "On"
+          ],
+          "enumDescriptions": [
+            "Off",
+            "On"
+          ],
+          "default": "off"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "providerId",
+        "providerClass"
+      ]
     }
   },
   "additionalProperties": false,
   "required": [
     "formatVersion",
-    "header",
-    "providerId",
-    "providerClass"
+    "header"
   ]
 }
