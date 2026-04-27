@@ -60,12 +60,6 @@
       "type": "string",
       "maxLength": 32
     },
-    "description": {
-      "title": "Description",
-      "description": "Description",
-      "type": "string",
-      "maxLength": 60
-    },
     "providerClass": {
       "title": "Provider Class Name",
       "description": "Provider Class Name",
@@ -74,7 +68,7 @@
     },
     "state": {
       "title": "State(Client-specific)",
-      "description": "State(Client-specific)",
+      "description": "State(client-dependent)",
       "type": "string",
       "enum": [
         "off",
@@ -93,10 +87,8 @@
   },
   "additionalProperties": false,
   "required": [
-    "formatVersion",
     "header",
     "providerId",
-    "description",
     "providerClass"
   ]
 }

@@ -1,0 +1,10 @@
+{
+  "header": {
+    "description": "Test Notification Provider Object",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "standard"
+  },
+  "providerId": "Z_TEST_AFF_NOTIF_PROVIDER",
+  "providerClass": "ZCL_TEST_AFF_NOTIF_PROV_IMPL",
+  "state": "on"
+}
