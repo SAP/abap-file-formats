@@ -7,7 +7,6 @@
   },
   "generalInformation": {
     "providerId": "Z_TEST_AFF_NOTIF_PROVIDER",
-    "providerClass": "ZCL_TEST_AFF_NOTIF_PROV_IMPL",
-    "state": "off"
+    "providerClass": "ZCL_TEST_AFF_NOTIF_PROV_IMPL"
   }
 }

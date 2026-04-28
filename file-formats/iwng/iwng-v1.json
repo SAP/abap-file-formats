@@ -70,24 +70,6 @@
           "description": "Provider Class Name",
           "type": "string",
           "maxLength": 30
-        },
-        "state": {
-          "title": "State(client-dependent)",
-          "description": "State(client-dependent)",
-          "type": "string",
-          "enum": [
-            "off",
-            "on"
-          ],
-          "enumTitles": [
-            "Off",
-            "On"
-          ],
-          "enumDescriptions": [
-            "Off",
-            "On"
-          ],
-          "default": "off"
         }
       },
       "additionalProperties": false,
