@@ -15,7 +15,7 @@ INTERFACE zif_aff_iwng_v1
 
   TYPES:
     "! <p class="shorttext">Notification Provider Object</p>
-    "! Create Notification provider object
+    "! Notification provider object
     BEGIN OF ty_main,
       "! <p class="shorttext">Format Version</p>
       "! Format version
