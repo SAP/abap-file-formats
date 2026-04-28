@@ -1,4 +1,4 @@
-# Notification Provider Registration Repo Object Type File Format
+# Notification Provider Object File Format
 
 ## Object Type Information
 
