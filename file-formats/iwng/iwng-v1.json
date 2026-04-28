@@ -3,7 +3,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/iwng/iwng-v1.json",
   "title": "Notification Provider Object",
-  "description": "Create Notification provider object",
+  "description": "Notification provider object",
   "type": "object",
   "properties": {
     "formatVersion": {
