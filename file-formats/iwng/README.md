@@ -4,7 +4,7 @@
 
 Object Type | Description | Group
 :--- | :--- | :---
-IWNG  | Notification Provider Registration Repo Object Type | Others
+IWNG  | Notification Provider Object | Others
 
 ## File Structure
 
