@@ -294,21 +294,21 @@ INTERFACE zif_aff_ttyp_v1 PUBLIC.
       "! <p class="shorttext">Format Version</p>
       "! Format version
       "! $required
-      format_version      TYPE zif_aff_types_v1=>ty_format_version,
+      format_version  TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header              TYPE zif_aff_types_v1=>ty_header_60_no_abap_lv,
+      header          TYPE zif_aff_types_v1=>ty_header_60_no_abap_lv,
       "! <p class="shorttext">Row Type</p>
       "! Definition of the table line type
       "! $required
-      row_type            TYPE ty_row_type,
+      row_type        TYPE ty_row_type,
       "! <p class="shorttext">Initialization and Access</p>
       "! Access type and initial fill size
-      init_and_access     TYPE ty_init_and_access,
+      init_and_access TYPE ty_init_and_access,
       "! <p class="shorttext">Key Settings</p>
       "! Primary and secondary key definitions
-      key_settings        TYPE ty_key_settings,
+      key_settings    TYPE ty_key_settings,
     END OF ty_main.
 
 ENDINTERFACE.
