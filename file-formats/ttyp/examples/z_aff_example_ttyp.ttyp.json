@@ -4,11 +4,9 @@
     "description": "Example table type for ABAP file formats",
     "originalLanguage": "en"
   },
-  "generalInformation": {
-    "rowType": {
-      "typeKind": "dictionaryType",
-      "typeName": "Z_AFF_EXAMPLE_STRUC"
-    }
+  "rowType": {
+    "typeKind": "dictionaryType",
+    "typeName": "Z_AFF_EXAMPLE_STRUC"
   },
   "initAndAccess": {
     "accessType": "sorted",

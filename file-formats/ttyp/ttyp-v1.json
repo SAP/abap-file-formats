@@ -36,102 +36,91 @@
         "originalLanguage"
       ]
     },
-    "generalInformation": {
-      "title": "General Information",
-      "description": "General information",
+    "rowType": {
+      "title": "Row Type",
+      "description": "Definition of the table line type",
       "type": "object",
       "properties": {
-        "rowType": {
-          "title": "Row Type",
-          "description": "Definition of the table line type",
+        "typeKind": {
+          "title": "Type Kind",
+          "description": "How the row type is specified",
+          "type": "string",
+          "enum": [
+            "dictionaryType",
+            "refToDictionaryType",
+            "refToClassOrInterfaceType",
+            "rangeTypeOnDataelement",
+            "rangeTypeOnPredefinedType",
+            "predefinedAbapType",
+            "refToPredefinedAbapType"
+          ],
+          "enumTitles": [
+            "Dictionary Type",
+            "Reference to Dictionary Type",
+            "Reference to Class or Interface",
+            "Range Type on Data Element",
+            "Range Type on Predefined Type",
+            "Predefined ABAP Type",
+            "Reference to Predefined ABAP Type"
+          ],
+          "enumDescriptions": [
+            "Line type is a named dictionary type (structure, table type, data element, etc.)",
+            "Line type is a reference to a named dictionary type",
+            "Line type is a reference to a class or interface type",
+            "Line type is a ranges table based on a data element",
+            "Line type is a ranges table based on a predefined ABAP type",
+            "Line type is a predefined ABAP built-in type",
+            "Line type is a reference to a predefined ABAP built-in type"
+          ],
+          "default": "dictionaryType"
+        },
+        "typeName": {
+          "title": "Type Name",
+          "description": "Name of the referenced dictionary type, class, interface, or data element. Relevant when typeKind is dictionaryType, refToDictionaryType, refToClassOrInterfaceType, or rangeTypeOnDataelement.",
+          "type": "string",
+          "maxLength": 30
+        },
+        "builtInType": {
+          "title": "Built-In Type",
+          "description": "Details of the built-in ABAP type used as row type. Relevant when typeKind is predefinedAbapType or refToPredefinedAbapType.",
           "type": "object",
           "properties": {
-            "typeKind": {
-              "title": "Type Kind",
-              "description": "How the row type is specified",
-              "type": "string",
-              "enum": [
-                "dictionaryType",
-                "refToDictionaryType",
-                "refToClassOrInterfaceType",
-                "rangeTypeOnDataelement",
-                "rangeTypeOnPredefinedType",
-                "predefinedAbapType",
-                "refToPredefinedAbapType"
-              ],
-              "enumTitles": [
-                "Dictionary Type",
-                "Reference to Dictionary Type",
-                "Reference to Class or Interface",
-                "Range Type on Data Element",
-                "Range Type on Predefined Type",
-                "Predefined ABAP Type",
-                "Reference to Predefined ABAP Type"
-              ],
-              "enumDescriptions": [
-                "Line type is a named dictionary type (structure, table type, data element, etc.)",
-                "Line type is a reference to a named dictionary type",
-                "Line type is a reference to a class or interface type",
-                "Line type is a ranges table based on a data element",
-                "Line type is a ranges table based on a predefined ABAP type",
-                "Line type is a predefined ABAP built-in type",
-                "Line type is a reference to a predefined ABAP built-in type"
-              ],
-              "default": "dictionaryType"
-            },
-            "typeName": {
-              "title": "Type Name",
-              "description": "Name of the referenced dictionary type, class, interface, or data element. Relevant when typeKind is dictionaryType, refToDictionaryType, refToClassOrInterfaceType, or rangeTypeOnDataelement.",
-              "type": "string",
-              "maxLength": 30
-            },
-            "builtInType": {
-              "title": "Built-In Type",
-              "description": "Details of the built-in ABAP type used as row type. Relevant when typeKind is predefinedAbapType or refToPredefinedAbapType.",
-              "type": "object",
-              "properties": {
-                "dataType": {
-                  "title": "Data Type",
-                  "description": "ABAP built-in data type name (e.g. CHAR, INT4, STRING)",
-                  "type": "string",
-                  "maxLength": 10
-                },
-                "length": {
-                  "title": "Length",
-                  "description": "Length of the built-in type (relevant for length-variable types such as CHAR, NUMC)",
-                  "type": "integer",
-                  "minimum": 0,
-                  "maximum": 2147483647
-                },
-                "decimals": {
-                  "title": "Decimals",
-                  "description": "Number of decimal places (relevant for DEC, CURR, QUAN)",
-                  "type": "integer",
-                  "minimum": 0,
-                  "maximum": 2147483647
-                }
-              },
-              "additionalProperties": false,
-              "required": [
-                "dataType"
-              ]
-            },
-            "rangeType": {
-              "title": "Range Type",
-              "description": "Name of the predefined ABAP type for the RANGES row. Relevant when typeKind is rangeTypeOnPredefinedType.",
+            "dataType": {
+              "title": "Data Type",
+              "description": "ABAP built-in data type name (e.g. CHAR, INT4, STRING)",
               "type": "string",
               "maxLength": 10
+            },
+            "length": {
+              "title": "Length",
+              "description": "Length of the built-in type (relevant for length-variable types such as CHAR, NUMC)",
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 2147483647
+            },
+            "decimals": {
+              "title": "Decimals",
+              "description": "Number of decimal places (relevant for DEC, CURR, QUAN)",
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 2147483647
             }
           },
           "additionalProperties": false,
           "required": [
-            "typeKind"
+            "dataType"
           ]
+        },
+        "rangeType": {
+          "title": "Range Type",
+          "description": "Name of the predefined ABAP type for the RANGES row. Relevant when typeKind is rangeTypeOnPredefinedType.",
+          "type": "string",
+          "maxLength": 10
         }
       },
       "additionalProperties": false,
       "required": [
-        "rowType"
+        "typeKind"
       ]
     },
     "initAndAccess": {
@@ -374,6 +363,6 @@
   "required": [
     "formatVersion",
     "header",
-    "generalInformation"
+    "rowType"
   ]
 }

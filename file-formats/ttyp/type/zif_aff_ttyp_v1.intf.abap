@@ -215,16 +215,6 @@ INTERFACE zif_aff_ttyp_v1 PUBLIC.
     END OF ty_row_type.
 
   TYPES:
-    "! <p class="shorttext">General Information</p>
-    "! General information
-    BEGIN OF ty_general_information,
-      "! <p class="shorttext">Row Type</p>
-      "! Definition of the table line type
-      "! $required
-      row_type TYPE ty_row_type,
-    END OF ty_general_information.
-
-  TYPES:
     "! <p class="shorttext">Initialization and Access</p>
     "! Initialization and access
     BEGIN OF ty_init_and_access,
@@ -309,10 +299,10 @@ INTERFACE zif_aff_ttyp_v1 PUBLIC.
       "! Header
       "! $required
       header              TYPE zif_aff_types_v1=>ty_header_60_no_abap_lv,
-      "! <p class="shorttext">General Information</p>
-      "! General information
+      "! <p class="shorttext">Row Type</p>
+      "! Definition of the table line type
       "! $required
-      general_information TYPE ty_general_information,
+      row_type            TYPE ty_row_type,
       "! <p class="shorttext">Initialization and Access</p>
       "! Access type and initial fill size
       init_and_access     TYPE ty_init_and_access,
