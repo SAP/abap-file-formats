@@ -64,7 +64,7 @@ INTERFACE zif_aff_ttyp_v1 PUBLIC.
   "! How the primary table key fields are determined
   "! $values {@link zif_aff_ttyp_v1.data:co_prim_key_definition}
   "! $default {@link zif_aff_ttyp_v1.data:co_prim_key_definition.row_type}
-  TYPES ty_prim_key_definition TYPE c LENGTH 14.
+  TYPES ty_primary_key_definition TYPE c LENGTH 14.
 
   CONSTANTS:
     "! <p class="shorttext">Primary Key Definition</p>
@@ -72,13 +72,13 @@ INTERFACE zif_aff_ttyp_v1 PUBLIC.
     BEGIN OF co_prim_key_definition,
       "! <p class="shorttext">Row Type (All Non-Reference Fields)</p>
       "! Key consists of all non-reference fields of the row type (classic default)
-      row_type       TYPE ty_prim_key_definition VALUE 'rowType',
+      row_type       TYPE ty_primary_key_definition VALUE 'rowType',
       "! <p class="shorttext">Key Components</p>
       "! Key fields are listed explicitly in key components
-      key_components TYPE ty_prim_key_definition VALUE 'keyComponents',
+      key_components TYPE ty_primary_key_definition VALUE 'keyComponents',
       "! <p class="shorttext">Standard (Empty Key)</p>
       "! Empty primary key; used for standard tables without explicit key definition
-      standard       TYPE ty_prim_key_definition VALUE 'standard',
+      standard       TYPE ty_primary_key_definition VALUE 'standard',
     END OF co_prim_key_definition.
 
   "! <p class="shorttext">Key Uniqueness</p>
@@ -160,18 +160,9 @@ INTERFACE zif_aff_ttyp_v1 PUBLIC.
     END OF co_sec_keys_allowed.
 
   TYPES:
-    "! <p class="shorttext">Key Component</p>
-    "! A single explicitly named key field
-    BEGIN OF ty_key_component,
-      "! <p class="shorttext">Name</p>
-      "! Field name of the key component
-      "! $required
-      name TYPE zif_aff_types_v1=>ty_object_name_30,
-    END OF ty_key_component,
-
     "! <p class="shorttext">Key Components</p>
     "! Explicitly named key field components
-    ty_key_components TYPE STANDARD TABLE OF ty_key_component WITH DEFAULT KEY.
+    ty_key_components TYPE STANDARD TABLE OF zif_aff_types_v1=>ty_object_name_30 WITH DEFAULT KEY.
 
   TYPES:
     "! <p class="shorttext">Built-In Type</p>
@@ -195,7 +186,7 @@ INTERFACE zif_aff_ttyp_v1 PUBLIC.
     "! Definition of the table line type
     BEGIN OF ty_row_type,
       "! <p class="shorttext">Type Kind</p>
-      "! How the row type is specified
+      "! Type kind
       "! $required
       type_kind     TYPE ty_row_type_kind,
       "! <p class="shorttext">Type Name</p>
@@ -217,7 +208,7 @@ INTERFACE zif_aff_ttyp_v1 PUBLIC.
   TYPES:
     "! <p class="shorttext">Initialization and Access</p>
     "! Initialization and access
-    BEGIN OF ty_init_and_access,
+    BEGIN OF ty_initialization_and_access,
       "! <p class="shorttext">Access Type</p>
       "! Internal table access type
       access_type       TYPE ty_access_type,
@@ -225,7 +216,7 @@ INTERFACE zif_aff_ttyp_v1 PUBLIC.
       "! Expected initial number of rows; used for memory pre-allocation
       "! $minimum 0
       initial_row_count TYPE i,
-    END OF ty_init_and_access.
+    END OF ty_initialization_and_access.
 
   TYPES:
     "! <p class="shorttext">Secondary Key</p>
@@ -240,9 +231,9 @@ INTERFACE zif_aff_ttyp_v1 PUBLIC.
       description TYPE zif_aff_types_v1=>ty_description_80,
       "! <p class="shorttext">Access Type</p>
       "! Access type of the secondary key
-      access      TYPE ty_sec_key_access,
+      access_type TYPE ty_sec_key_access,
       "! <p class="shorttext">Key Definition</p>
-      "! How the secondary key fields are determined
+      "! Key definition
       definition  TYPE ty_sec_key_definition,
       "! <p class="shorttext">Key Components</p>
       "! Explicitly named key fields; relevant when definition is keyComponents
@@ -258,10 +249,10 @@ INTERFACE zif_aff_ttyp_v1 PUBLIC.
     "! Primary key definition
     BEGIN OF ty_primary_key,
       "! <p class="shorttext">Key Definition</p>
-      "! How the primary key fields are determined
-      definition TYPE ty_prim_key_definition,
+      "! Key definition
+      definition TYPE ty_primary_key_definition,
       "! <p class="shorttext">Key Uniqueness</p>
-      "! Whether the primary key is unique or non-unique
+      "! Key uniqueness
       kind       TYPE ty_key_kind,
       "! <p class="shorttext">Alias</p>
       "! Optional alias name for the primary key;
@@ -278,13 +269,13 @@ INTERFACE zif_aff_ttyp_v1 PUBLIC.
     BEGIN OF ty_key_settings,
       "! <p class="shorttext">Primary Key</p>
       "! Primary key definition
-      primary_key      TYPE ty_primary_key,
-      "! <p class="shorttext">Further Secondary Keys</p>
-      "! Whether additional secondary keys beyond those listed may be defined at usage
-      sec_keys_allowed TYPE ty_sec_keys_allowed,
+      primary_key            TYPE ty_primary_key,
+      "! <p class="shorttext">Secondary Keys allowed</p>
+      "! Whether additional secondary keys may be defined at usage
+      secondary_keys_allowed TYPE ty_sec_keys_allowed,
       "! <p class="shorttext">Secondary Keys</p>
       "! Defined secondary keys
-      secondary_keys   TYPE ty_secondary_keys,
+      secondary_keys         TYPE ty_secondary_keys,
     END OF ty_key_settings.
 
   TYPES:
@@ -294,21 +285,21 @@ INTERFACE zif_aff_ttyp_v1 PUBLIC.
       "! <p class="shorttext">Format Version</p>
       "! Format version
       "! $required
-      format_version  TYPE zif_aff_types_v1=>ty_format_version,
+      format_version            TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header          TYPE zif_aff_types_v1=>ty_header_60_no_abap_lv,
+      header                    TYPE zif_aff_types_v1=>ty_header_60_no_abap_lv,
       "! <p class="shorttext">Row Type</p>
       "! Definition of the table line type
       "! $required
-      row_type        TYPE ty_row_type,
+      row_type                  TYPE ty_row_type,
       "! <p class="shorttext">Initialization and Access</p>
       "! Access type and initial fill size
-      init_and_access TYPE ty_init_and_access,
+      initialization_and_access TYPE ty_initialization_and_access,
       "! <p class="shorttext">Key Settings</p>
       "! Primary and secondary key definitions
-      key_settings    TYPE ty_key_settings,
+      key_settings              TYPE ty_key_settings,
     END OF ty_main.
 
 ENDINTERFACE.
