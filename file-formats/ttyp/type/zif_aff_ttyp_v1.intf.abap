@@ -1,14 +1,14 @@
 INTERFACE zif_aff_ttyp_v1 PUBLIC.
 
   "! <p class="shorttext">Row Type Kind</p>
-  "! Kind of the row type definition
+  "! Row type kind
   "! $values {@link zif_aff_ttyp_v1.data:co_row_type_kind}
   "! $default {@link zif_aff_ttyp_v1.data:co_row_type_kind.dictionary_type}
   TYPES ty_row_type_kind TYPE c LENGTH 30.
 
   CONSTANTS:
     "! <p class="shorttext">Row Type Kind</p>
-    "! Kind of the row type definition
+    "! Row type kind
     BEGIN OF co_row_type_kind,
       "! <p class="shorttext">Dictionary Type</p>
       "! Line type is a named dictionary type (structure, table type, data element, etc.)
@@ -83,24 +83,24 @@ INTERFACE zif_aff_ttyp_v1 PUBLIC.
 
   "! <p class="shorttext">Key Uniqueness</p>
   "! Uniqueness of the primary table key
-  "! $values {@link zif_aff_ttyp_v1.data:co_key_kind}
-  "! $default {@link zif_aff_ttyp_v1.data:co_key_kind.not_specified}
-  TYPES ty_key_kind TYPE c LENGTH 12.
+  "! $values {@link zif_aff_ttyp_v1.data:co_key_uniqueness}
+  "! $default {@link zif_aff_ttyp_v1.data:co_key_uniqueness.not_specified}
+  TYPES ty_key_uniqueness TYPE c LENGTH 12.
 
   CONSTANTS:
     "! <p class="shorttext">Key Uniqueness</p>
     "! Uniqueness of the primary table key
-    BEGIN OF co_key_kind,
+    BEGIN OF co_key_uniqueness,
       "! <p class="shorttext">Unique</p>
       "! Duplicate key values are not allowed
-      unique        TYPE ty_key_kind VALUE 'unique',
+      unique        TYPE ty_key_uniqueness VALUE 'unique',
       "! <p class="shorttext">Non-Unique</p>
       "! Duplicate key values are allowed
-      non_unique    TYPE ty_key_kind VALUE 'nonUnique',
+      non_unique    TYPE ty_key_uniqueness VALUE 'nonUnique',
       "! <p class="shorttext">Not Specified</p>
       "! Uniqueness not specified
-      not_specified TYPE ty_key_kind VALUE 'notSpecified',
-    END OF co_key_kind.
+      not_specified TYPE ty_key_uniqueness VALUE 'notSpecified',
+    END OF co_key_uniqueness.
 
   "! <p class="shorttext">Secondary Key Access</p>
   "! Access type of a secondary table key
@@ -143,12 +143,12 @@ INTERFACE zif_aff_ttyp_v1 PUBLIC.
 
   TYPES:
     "! <p class="shorttext">Key Components</p>
-    "! Explicitly named key field components
+    "! Key components
     ty_key_components TYPE STANDARD TABLE OF zif_aff_types_v1=>ty_object_name_30 WITH DEFAULT KEY.
 
   TYPES:
     "! <p class="shorttext">Built-In Type</p>
-    "! Properties of a predefined ABAP built-in row type
+    "! Predefined ABAP built-in type
     BEGIN OF ty_built_in_type,
       "! <p class="shorttext">Data Type</p>
       "! ABAP built-in data type
@@ -165,7 +165,7 @@ INTERFACE zif_aff_ttyp_v1 PUBLIC.
 
   TYPES:
     "! <p class="shorttext">Row Type</p>
-    "! Definition of the table line type
+    "! Row type
     BEGIN OF ty_row_type,
       "! <p class="shorttext">Type Kind</p>
       "! Type kind
@@ -202,7 +202,7 @@ INTERFACE zif_aff_ttyp_v1 PUBLIC.
 
   TYPES:
     "! <p class="shorttext">Secondary Key</p>
-    "! Definition of a single secondary table key
+    "! Secondary key
     BEGIN OF ty_secondary_key,
       "! <p class="shorttext">Identifier</p>
       "! Name of the secondary key (up to 30 characters)
@@ -223,7 +223,7 @@ INTERFACE zif_aff_ttyp_v1 PUBLIC.
     END OF ty_secondary_key,
 
     "! <p class="shorttext">Secondary Keys</p>
-    "! List of secondary table keys
+    "! Secondary keys
     ty_secondary_keys TYPE STANDARD TABLE OF ty_secondary_key WITH DEFAULT KEY.
 
   TYPES:
@@ -235,7 +235,7 @@ INTERFACE zif_aff_ttyp_v1 PUBLIC.
       definition TYPE ty_primary_key_definition,
       "! <p class="shorttext">Key Uniqueness</p>
       "! Key uniqueness
-      kind       TYPE ty_key_kind,
+      uniqueness TYPE ty_key_uniqueness,
       "! <p class="shorttext">Alias</p>
       "! Optional alias name for the primary key;
       "! only relevant for sorted or hashed tables
@@ -252,7 +252,7 @@ INTERFACE zif_aff_ttyp_v1 PUBLIC.
       "! <p class="shorttext">Primary Key</p>
       "! Primary key definition
       primary_key            TYPE ty_primary_key,
-      "! <p class="shorttext">Secondary Keys allowed</p>
+      "! <p class="shorttext">Secondary Keys Allowed</p>
       "! Whether additional secondary keys are allowed
       secondary_keys_allowed TYPE abap_bool,
       "! <p class="shorttext">Secondary Keys</p>
@@ -273,11 +273,11 @@ INTERFACE zif_aff_ttyp_v1 PUBLIC.
       "! $required
       header                    TYPE zif_aff_types_v1=>ty_header_60_no_abap_lv,
       "! <p class="shorttext">Row Type</p>
-      "! Definition of the table line type
+      "! Row type
       "! $required
       row_type                  TYPE ty_row_type,
       "! <p class="shorttext">Initialization and Access</p>
-      "! Access type and initial fill size
+      "! Initialization and access
       initialization_and_access TYPE ty_initialization_and_access,
       "! <p class="shorttext">Key Settings</p>
       "! Primary and secondary key definitions

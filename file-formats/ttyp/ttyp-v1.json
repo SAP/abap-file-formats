@@ -38,7 +38,7 @@
     },
     "rowType": {
       "title": "Row Type",
-      "description": "Definition of the table line type",
+      "description": "Row type",
       "type": "object",
       "properties": {
         "typeKind": {
@@ -359,7 +359,7 @@
     },
     "initializationAndAccess": {
       "title": "Initialization and Access",
-      "description": "Access type and initial fill size",
+      "description": "Initialization and access",
       "type": "object",
       "properties": {
         "accessType": {
@@ -430,7 +430,7 @@
               ],
               "default": "rowType"
             },
-            "kind": {
+            "uniqueness": {
               "title": "Key Uniqueness",
               "description": "Key uniqueness",
               "type": "string",
@@ -472,7 +472,7 @@
           "additionalProperties": false
         },
         "secondaryKeysAllowed": {
-          "title": "Secondary Keys allowed",
+          "title": "Secondary Keys Allowed",
           "description": "Whether additional secondary keys are allowed",
           "type": "boolean"
         },
@@ -482,7 +482,7 @@
           "type": "array",
           "items": {
             "title": "Secondary Key",
-            "description": "Definition of a single secondary table key",
+            "description": "Secondary key",
             "type": "object",
             "properties": {
               "identifier": {

@@ -15,7 +15,7 @@
   "keySettings": {
     "primaryKey": {
       "definition": "keyComponents",
-      "kind": "unique",
+      "uniqueness": "unique",
       "components": [
         "FIELD1",
         "FIELD2"
