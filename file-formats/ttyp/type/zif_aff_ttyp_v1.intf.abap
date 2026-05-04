@@ -178,17 +178,16 @@ INTERFACE zif_aff_ttyp_v1 PUBLIC.
     "! Properties of a predefined ABAP built-in row type
     BEGIN OF ty_built_in_type,
       "! <p class="shorttext">Data Type</p>
-      "! ABAP built-in data type name (e.g. CHAR, INT4, STRING)
+      "! ABAP built-in data type
+      "! $values {@link zif_aff_ddic_types_v1.data:co_data_type}
       "! $required
-      data_type TYPE c LENGTH 10,
+      data_type TYPE zif_aff_ddic_types_v1=>ty_data_type,
       "! <p class="shorttext">Length</p>
       "! Length of the built-in type (relevant for length-variable types such as CHAR, NUMC)
-      "! $minimum 0
-      length    TYPE i,
+      length    TYPE zif_aff_ddic_types_v1=>ty_length,
       "! <p class="shorttext">Decimals</p>
       "! Number of decimal places (relevant for DEC, CURR, QUAN)
-      "! $minimum 0
-      decimals  TYPE i,
+      decimals  TYPE zif_aff_ddic_types_v1=>ty_decimals,
     END OF ty_built_in_type.
 
   TYPES:
@@ -211,7 +210,8 @@ INTERFACE zif_aff_ttyp_v1 PUBLIC.
       "! <p class="shorttext">Range Type</p>
       "! Name of the predefined ABAP type for the RANGES row.
       "! Relevant when typeKind is rangeTypeOnPredefinedType.
-      range_type    TYPE c LENGTH 10,
+      "! $values {@link zif_aff_ddic_types_v1.data:co_data_type}
+      range_type    TYPE zif_aff_ddic_types_v1=>ty_data_type,
     END OF ty_row_type.
 
   TYPES:
