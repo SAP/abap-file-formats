@@ -61,14 +61,14 @@ INTERFACE zif_aff_ttyp_v1 PUBLIC.
     END OF co_access_type.
 
   "! <p class="shorttext">Primary Key Definition</p>
-  "! How the primary table key fields are determined
+  "! Primary key definition
   "! $values {@link zif_aff_ttyp_v1.data:co_prim_key_definition}
   "! $default {@link zif_aff_ttyp_v1.data:co_prim_key_definition.row_type}
   TYPES ty_primary_key_definition TYPE c LENGTH 14.
 
   CONSTANTS:
     "! <p class="shorttext">Primary Key Definition</p>
-    "! How the primary table key fields are determined
+    "! Primary key definition
     BEGIN OF co_prim_key_definition,
       "! <p class="shorttext">Row Type (All Non-Reference Fields)</p>
       "! Key consists of all non-reference fields of the row type (classic default)
@@ -124,14 +124,14 @@ INTERFACE zif_aff_ttyp_v1 PUBLIC.
     END OF co_sec_key_access.
 
   "! <p class="shorttext">Secondary Key Definition</p>
-  "! How secondary key fields are determined
+  "! Secondary key definition
   "! $values {@link zif_aff_ttyp_v1.data:co_sec_key_definition}
   "! $default {@link zif_aff_ttyp_v1.data:co_sec_key_definition.row_type}
   TYPES ty_sec_key_definition TYPE c LENGTH 14.
 
   CONSTANTS:
     "! <p class="shorttext">Secondary Key Definition</p>
-    "! How secondary key fields are determined
+    "! Secondary key definition
     BEGIN OF co_sec_key_definition,
       "! <p class="shorttext">Row Type (All Fields)</p>
       "! All fields of the row type are secondary key fields
@@ -140,24 +140,6 @@ INTERFACE zif_aff_ttyp_v1 PUBLIC.
       "! Key fields are listed explicitly in key components
       key_components TYPE ty_sec_key_definition VALUE 'keyComponents',
     END OF co_sec_key_definition.
-
-  "! <p class="shorttext">Further Secondary Keys</p>
-  "! Whether additional secondary keys beyond those defined are permitted
-  "! $values {@link zif_aff_ttyp_v1.data:co_sec_keys_allowed}
-  "! $default {@link zif_aff_ttyp_v1.data:co_sec_keys_allowed.not_allowed}
-  TYPES ty_sec_keys_allowed TYPE c LENGTH 12.
-
-  CONSTANTS:
-    "! <p class="shorttext">Further Secondary Keys</p>
-    "! Whether additional secondary keys are permitted at usage
-    BEGIN OF co_sec_keys_allowed,
-      "! <p class="shorttext">Not Allowed</p>
-      "! No further secondary keys may be defined at usage
-      not_allowed TYPE ty_sec_keys_allowed VALUE 'notAllowed',
-      "! <p class="shorttext">Allowed</p>
-      "! Further secondary keys may be defined at usage
-      allowed     TYPE ty_sec_keys_allowed VALUE 'allowed',
-    END OF co_sec_keys_allowed.
 
   TYPES:
     "! <p class="shorttext">Key Components</p>
@@ -271,8 +253,8 @@ INTERFACE zif_aff_ttyp_v1 PUBLIC.
       "! Primary key definition
       primary_key            TYPE ty_primary_key,
       "! <p class="shorttext">Secondary Keys allowed</p>
-      "! Whether additional secondary keys may be defined at usage
-      secondary_keys_allowed TYPE ty_sec_keys_allowed,
+      "! Whether additional secondary keys are allowed
+      secondary_keys_allowed TYPE abap_bool,
       "! <p class="shorttext">Secondary Keys</p>
       "! Defined secondary keys
       secondary_keys         TYPE ty_secondary_keys,

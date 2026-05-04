@@ -8,7 +8,7 @@
     "typeKind": "dictionaryType",
     "typeName": "Z_AFF_EXAMPLE_STRUC"
   },
-  "initAndAccess": {
+  "initializationAndAccess": {
     "accessType": "sorted",
     "initialRowCount": 10
   },
@@ -17,15 +17,11 @@
       "definition": "keyComponents",
       "kind": "unique",
       "components": [
-        {
-          "name": "FIELD1"
-        },
-        {
-          "name": "FIELD2"
-        }
+        "FIELD1",
+        "FIELD2"
       ]
     },
-    "secKeysAllowed": "notAllowed",
+    "secondaryKeysAllowed": false,
     "secondaryKeys": []
   }
 }

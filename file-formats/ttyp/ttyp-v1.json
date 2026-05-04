@@ -43,7 +43,7 @@
       "properties": {
         "typeKind": {
           "title": "Type Kind",
-          "description": "How the row type is specified",
+          "description": "Type kind",
           "type": "string",
           "enum": [
             "dictionaryType",
@@ -87,23 +87,140 @@
           "properties": {
             "dataType": {
               "title": "Data Type",
-              "description": "ABAP built-in data type name (e.g. CHAR, INT4, STRING)",
+              "description": "ABAP built-in data type",
               "type": "string",
-              "maxLength": 10
+              "enum": [
+                "ACCP",
+                "CHAR",
+                "CLNT",
+                "CUKY",
+                "CURR",
+                "DF16_DEC",
+                "DF16_RAW",
+                "DF16_SCL",
+                "DECFLOAT16",
+                "DF34_DEC",
+                "DF34_RAW",
+                "DF34_SCL",
+                "DECFLOAT34",
+                "DATS",
+                "DATN",
+                "DEC",
+                "FLTP",
+                "GEOM_EWKB",
+                "INT1",
+                "INT2",
+                "INT4",
+                "INT8",
+                "LANG",
+                "LCHR",
+                "LRAW",
+                "NUMC",
+                "PREC",
+                "QUAN",
+                "RAW",
+                "RAWSTRING",
+                "SSTRING",
+                "STRING",
+                "TIMS",
+                "TIMN",
+                "UNIT",
+                "UTCLONG",
+                "VARC"
+              ],
+              "enumTitles": [
+                "Posting period YYYYMM",
+                "Character String",
+                "Client",
+                "Currency Key",
+                "Currency Field",
+                "Decimal Floating Point, 16 Digits, DEC on Database",
+                "Decimal Floating Point, 16 Digits, RAW on Database",
+                "Decimal Floating Point. 16 Digits, with Scale Field",
+                "Floating Point Number, HANA Type, Small Decimal",
+                "Decimal Floating Point, 34 Digits, DEC on Database",
+                "Decimal Floating Point, 34 Digits, RAW on Database",
+                "Decimal Floating Point, 34 Digits, with Scale Field",
+                "Floating Point Number, HANA Type, Large Decimal",
+                "Date (YYYYMMDD)",
+                "Date (YYYYMMDD), HANA Type",
+                "Counter or Amount",
+                "Floating Point Number",
+                "Geometry",
+                "1-Byte Integer",
+                "2-Byte Integer",
+                "4-Byte Integer",
+                "8-Byte Integer",
+                "Language Key",
+                "Long Character String",
+                "Long Byte String",
+                "Numeric Character String",
+                "Obsolete Data Type PREC (Do Not Use)",
+                "Quantity",
+                "Uninterpreted sequence of bytes",
+                "Byte String of Variable Length",
+                "Short Character String of Variable Length",
+                "Character String of Variable Length",
+                "Time (hhmmss)",
+                "Time (hhmmss; Native HANA Type)",
+                "Unit",
+                "Timestamp, HANA Type",
+                "Long character string, no longer supported from Rel. 3.0"
+              ],
+              "enumDescriptions": [
+                "Posting period YYYYMM",
+                "Character string",
+                "Client",
+                "Currency key, referenced by CURR fields",
+                "Currency field, stored as DEC",
+                "Decimal floating point, 16 digits, DEC on database",
+                "Decimal floating point, 16 digits, RAW on database",
+                "Decimal floating point. 16 digits, with scale field",
+                "Floating point number, HANA type, small decimal",
+                "Decimal floating point, 34 Digits, DEC on database",
+                "Decimal floating point, 34 Digits, RAW on database",
+                "Decimal floating point, 34 digits, with scale field",
+                "Floating point number, HANA type, large decimal",
+                "Date field (YYYYMMDD), stored as char(8)",
+                "Date field (YYYYMMDD), HANA type",
+                "Counter or amount field with comma and sign",
+                "Floating point number, accurate to 8 bytes",
+                "Geometry, EWKB representation",
+                "1-byte integer, integer number <= 255",
+                "2-byte integer, only for length field before LCHR or LRAW",
+                "4-byte integer, integer number with sign",
+                "8-byte integer, integer number with sign",
+                "Language key",
+                "Long character string, requires preceding INT2 field",
+                "Long byte string, requires preceding INT2 field",
+                "Character string with only digits",
+                "Obsolete data type PREC, do not use",
+                "Quantity field, points to a unit field with format UNIT",
+                "Uninterpreted sequence of bytes",
+                "Byte String of Variable Length",
+                "Short Character String of Variable Length",
+                "Character String of Variable Length",
+                "Time field (hhmmss), stored as char(6)",
+                "Time field (hhmmss), native HANA type",
+                "Unit key for QUAN fields",
+                "Timestamp, HANA type",
+                "Long character string, no longer supported from Rel. 3.0"
+              ],
+              "default": "CHAR"
             },
             "length": {
               "title": "Length",
               "description": "Length of the built-in type (relevant for length-variable types such as CHAR, NUMC)",
               "type": "integer",
               "minimum": 0,
-              "maximum": 2147483647
+              "maximum": 999999
             },
             "decimals": {
               "title": "Decimals",
               "description": "Number of decimal places (relevant for DEC, CURR, QUAN)",
               "type": "integer",
               "minimum": 0,
-              "maximum": 2147483647
+              "maximum": 999999
             }
           },
           "additionalProperties": false,
@@ -115,7 +232,124 @@
           "title": "Range Type",
           "description": "Name of the predefined ABAP type for the RANGES row. Relevant when typeKind is rangeTypeOnPredefinedType.",
           "type": "string",
-          "maxLength": 10
+          "enum": [
+            "ACCP",
+            "CHAR",
+            "CLNT",
+            "CUKY",
+            "CURR",
+            "DF16_DEC",
+            "DF16_RAW",
+            "DF16_SCL",
+            "DECFLOAT16",
+            "DF34_DEC",
+            "DF34_RAW",
+            "DF34_SCL",
+            "DECFLOAT34",
+            "DATS",
+            "DATN",
+            "DEC",
+            "FLTP",
+            "GEOM_EWKB",
+            "INT1",
+            "INT2",
+            "INT4",
+            "INT8",
+            "LANG",
+            "LCHR",
+            "LRAW",
+            "NUMC",
+            "PREC",
+            "QUAN",
+            "RAW",
+            "RAWSTRING",
+            "SSTRING",
+            "STRING",
+            "TIMS",
+            "TIMN",
+            "UNIT",
+            "UTCLONG",
+            "VARC"
+          ],
+          "enumTitles": [
+            "Posting period YYYYMM",
+            "Character String",
+            "Client",
+            "Currency Key",
+            "Currency Field",
+            "Decimal Floating Point, 16 Digits, DEC on Database",
+            "Decimal Floating Point, 16 Digits, RAW on Database",
+            "Decimal Floating Point. 16 Digits, with Scale Field",
+            "Floating Point Number, HANA Type, Small Decimal",
+            "Decimal Floating Point, 34 Digits, DEC on Database",
+            "Decimal Floating Point, 34 Digits, RAW on Database",
+            "Decimal Floating Point, 34 Digits, with Scale Field",
+            "Floating Point Number, HANA Type, Large Decimal",
+            "Date (YYYYMMDD)",
+            "Date (YYYYMMDD), HANA Type",
+            "Counter or Amount",
+            "Floating Point Number",
+            "Geometry",
+            "1-Byte Integer",
+            "2-Byte Integer",
+            "4-Byte Integer",
+            "8-Byte Integer",
+            "Language Key",
+            "Long Character String",
+            "Long Byte String",
+            "Numeric Character String",
+            "Obsolete Data Type PREC (Do Not Use)",
+            "Quantity",
+            "Uninterpreted sequence of bytes",
+            "Byte String of Variable Length",
+            "Short Character String of Variable Length",
+            "Character String of Variable Length",
+            "Time (hhmmss)",
+            "Time (hhmmss; Native HANA Type)",
+            "Unit",
+            "Timestamp, HANA Type",
+            "Long character string, no longer supported from Rel. 3.0"
+          ],
+          "enumDescriptions": [
+            "Posting period YYYYMM",
+            "Character string",
+            "Client",
+            "Currency key, referenced by CURR fields",
+            "Currency field, stored as DEC",
+            "Decimal floating point, 16 digits, DEC on database",
+            "Decimal floating point, 16 digits, RAW on database",
+            "Decimal floating point. 16 digits, with scale field",
+            "Floating point number, HANA type, small decimal",
+            "Decimal floating point, 34 Digits, DEC on database",
+            "Decimal floating point, 34 Digits, RAW on database",
+            "Decimal floating point, 34 digits, with scale field",
+            "Floating point number, HANA type, large decimal",
+            "Date field (YYYYMMDD), stored as char(8)",
+            "Date field (YYYYMMDD), HANA type",
+            "Counter or amount field with comma and sign",
+            "Floating point number, accurate to 8 bytes",
+            "Geometry, EWKB representation",
+            "1-byte integer, integer number <= 255",
+            "2-byte integer, only for length field before LCHR or LRAW",
+            "4-byte integer, integer number with sign",
+            "8-byte integer, integer number with sign",
+            "Language key",
+            "Long character string, requires preceding INT2 field",
+            "Long byte string, requires preceding INT2 field",
+            "Character string with only digits",
+            "Obsolete data type PREC, do not use",
+            "Quantity field, points to a unit field with format UNIT",
+            "Uninterpreted sequence of bytes",
+            "Byte String of Variable Length",
+            "Short Character String of Variable Length",
+            "Character String of Variable Length",
+            "Time field (hhmmss), stored as char(6)",
+            "Time field (hhmmss), native HANA type",
+            "Unit key for QUAN fields",
+            "Timestamp, HANA type",
+            "Long character string, no longer supported from Rel. 3.0"
+          ],
+          "default": "CHAR"
         }
       },
       "additionalProperties": false,
@@ -123,7 +357,7 @@
         "typeKind"
       ]
     },
-    "initAndAccess": {
+    "initializationAndAccess": {
       "title": "Initialization and Access",
       "description": "Access type and initial fill size",
       "type": "object",
@@ -177,7 +411,7 @@
           "properties": {
             "definition": {
               "title": "Key Definition",
-              "description": "How the primary key fields are determined",
+              "description": "Key definition",
               "type": "string",
               "enum": [
                 "rowType",
@@ -198,7 +432,7 @@
             },
             "kind": {
               "title": "Key Uniqueness",
-              "description": "Whether the primary key is unique or non-unique",
+              "description": "Key uniqueness",
               "type": "string",
               "enum": [
                 "unique",
@@ -228,43 +462,19 @@
               "description": "Explicitly named key fields; relevant when definition is keyComponents",
               "type": "array",
               "items": {
-                "title": "Key Component",
-                "description": "A single explicitly named key field",
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "title": "Name",
-                    "description": "Field name of the key component",
-                    "type": "string",
-                    "maxLength": 30
-                  }
-                },
-                "additionalProperties": false,
-                "required": [
-                  "name"
-                ]
+                "title": "Object Name",
+                "description": "Object name with max. length 30",
+                "type": "string",
+                "maxLength": 30
               }
             }
           },
           "additionalProperties": false
         },
-        "secKeysAllowed": {
-          "title": "Further Secondary Keys",
-          "description": "Whether additional secondary keys beyond those listed may be defined at usage",
-          "type": "string",
-          "enum": [
-            "notAllowed",
-            "allowed"
-          ],
-          "enumTitles": [
-            "Not Allowed",
-            "Allowed"
-          ],
-          "enumDescriptions": [
-            "No further secondary keys may be defined at usage",
-            "Further secondary keys may be defined at usage"
-          ],
-          "default": "notAllowed"
+        "secondaryKeysAllowed": {
+          "title": "Secondary Keys allowed",
+          "description": "Whether additional secondary keys are allowed",
+          "type": "boolean"
         },
         "secondaryKeys": {
           "title": "Secondary Keys",
@@ -287,7 +497,7 @@
                 "type": "string",
                 "maxLength": 80
               },
-              "access": {
+              "accessType": {
                 "title": "Access Type",
                 "description": "Access type of the secondary key",
                 "type": "string",
@@ -310,7 +520,7 @@
               },
               "definition": {
                 "title": "Key Definition",
-                "description": "How the secondary key fields are determined",
+                "description": "Key definition",
                 "type": "string",
                 "enum": [
                   "rowType",
@@ -331,21 +541,10 @@
                 "description": "Explicitly named key fields; relevant when definition is keyComponents",
                 "type": "array",
                 "items": {
-                  "title": "Key Component",
-                  "description": "A single explicitly named key field",
-                  "type": "object",
-                  "properties": {
-                    "name": {
-                      "title": "Name",
-                      "description": "Field name of the key component",
-                      "type": "string",
-                      "maxLength": 30
-                    }
-                  },
-                  "additionalProperties": false,
-                  "required": [
-                    "name"
-                  ]
+                  "title": "Object Name",
+                  "description": "Object name with max. length 30",
+                  "type": "string",
+                  "maxLength": 30
                 }
               }
             },
