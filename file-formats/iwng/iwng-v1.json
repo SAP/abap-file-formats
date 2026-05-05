@@ -54,35 +54,17 @@
         "originalLanguage"
       ]
     },
-    "generalInformation": {
-      "title": "General Information",
-      "description": "General information",
-      "type": "object",
-      "properties": {
-        "providerId": {
-          "title": "Provider ID",
-          "description": "Provider ID",
-          "type": "string",
-          "maxLength": 32
-        },
-        "providerClass": {
-          "title": "Provider Class Name",
-          "description": "Provider class name",
-          "type": "string",
-          "maxLength": 30
-        }
-      },
-      "additionalProperties": false,
-      "required": [
-        "providerId",
-        "providerClass"
-      ]
+    "providerClass": {
+      "title": "Provider Class Name",
+      "description": "Provider class name",
+      "type": "string",
+      "maxLength": 30
     }
   },
   "additionalProperties": false,
   "required": [
     "formatVersion",
     "header",
-    "generalInformation"
+    "providerClass"
   ]
 }
