@@ -96,8 +96,8 @@ INTERFACE zif_aff_dtel_v1 PUBLIC.
       "! Basic direction
       basic_direction TYPE ty_basic_direction,
 
-      "! <p class="shorttext">Bidirectional no filtering</p>
-      "! Bidirectional no filtering
+      "! <p class="shorttext">No Bidirectional Filtering</p>
+      "! Deactivates bidirectional text filtering
       no_filtering    TYPE abap_bool,
     END OF ty_bidirectional_options.
 
