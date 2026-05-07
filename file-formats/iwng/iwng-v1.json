@@ -56,12 +56,12 @@
     },
     "generalInformation": {
       "title": "General Information",
-      "description": "General Information",
+      "description": "General information",
       "type": "object",
       "properties": {
         "providerClass": {
-          "title": "Provider Class Name",
-          "description": "Provider Class Name",
+          "title": "Provider Class",
+          "description": "Provider class",
           "type": "string",
           "maxLength": 30
         }
