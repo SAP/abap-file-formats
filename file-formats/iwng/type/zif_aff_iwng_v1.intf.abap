@@ -3,7 +3,7 @@ INTERFACE zif_aff_iwng_v1
   TYPES:
     BEGIN OF ty_general_information,
       "! <p class="shorttext">Provider Class Name</p>
-      "! Provider Class Name
+      "! Provider class name
       "! $required
       provider_class TYPE zif_aff_types_v1=>ty_object_name_30,
     END OF ty_general_information.
