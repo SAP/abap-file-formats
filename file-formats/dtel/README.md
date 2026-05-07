@@ -1,3 +1,5 @@
+# DRAFT FIRST VERSION - SUBJECT TO CHANGE
+
 # Dictionary Data Elements File Format
 
 ## Object Type Information
