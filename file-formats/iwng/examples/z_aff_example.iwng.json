@@ -4,5 +4,7 @@
     "description": "Notification provider example",
     "originalLanguage": "en"
   },
-  "providerClass": "ZCL_NOTIF_EXAMPLE_PROVIDER"
+  "generalInformation": {
+    "providerClass": "ZCL_NOTIF_EXAMPLE_PROVIDER"
+  }
 }

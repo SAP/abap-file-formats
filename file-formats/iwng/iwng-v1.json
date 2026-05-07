@@ -54,17 +54,28 @@
         "originalLanguage"
       ]
     },
-    "providerClass": {
-      "title": "Provider Class Name",
-      "description": "Provider class name",
-      "type": "string",
-      "maxLength": 30
+    "generalInformation": {
+      "title": "General Information",
+      "description": "General Information",
+      "type": "object",
+      "properties": {
+        "providerClass": {
+          "title": "Provider Class Name",
+          "description": "Provider Class Name",
+          "type": "string",
+          "maxLength": 30
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "providerClass"
+      ]
     }
   },
   "additionalProperties": false,
   "required": [
     "formatVersion",
     "header",
-    "providerClass"
+    "generalInformation"
   ]
 }
