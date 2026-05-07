@@ -20,7 +20,7 @@ INTERFACE zif_aff_iwng_v1
       "! $required
       header              TYPE zif_aff_types_v1=>ty_header_60_cloud,
       "! <p class="shorttext">General Information</p>
-      "! General Information
+      "! General information
       "! $required
       general_information TYPE ty_general_information,
     END OF ty_main.
