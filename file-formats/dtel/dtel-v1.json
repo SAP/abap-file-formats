@@ -312,8 +312,8 @@
           "default": "leftToRight"
         },
         "noFiltering": {
-          "title": "Bidirectional no filtering",
-          "description": "Bidirectional no filtering",
+          "title": "No Bidirectional Filtering",
+          "description": "Deactivates bidirectional text filtering",
           "type": "boolean"
         }
       },
