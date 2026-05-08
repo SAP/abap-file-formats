@@ -1,10 +1,9 @@
 name: AFF Review Process Reminder
 
 on:
-  pull_request_target:
-    types: [opened, reopened]
-    paths:
-      - 'file-formats/**'
+  workflow_run:
+    workflows: ["AFF Review Process Reminder (PR)"]
+    types: [completed]
 
 permissions:
   contents: read
@@ -14,6 +13,7 @@ permissions:
 jobs:
   post-review-reminder:
     name: Post review process reminder
+    if: github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'pull_request' && github.event.workflow_run.pull_requests[0].number != null
     runs-on: ubuntu-latest
     steps:
     - name: Check if comment already exists
@@ -25,7 +25,7 @@ jobs:
       env:
         GH_TOKEN: ${{ github.token }}
         GH_REPO: ${{ github.repository }}
-        PR: ${{ github.event.pull_request.number }}
+        PR: ${{ github.event.workflow_run.pull_requests[0].number }}
 
     - name: Post review reminder
       if: steps.find.outputs.id == ''
@@ -35,4 +35,4 @@ jobs:
       env:
         GH_TOKEN: ${{ github.token }}
         GH_REPO: ${{ github.repository }}
-        PR: ${{ github.event.pull_request.number }}
+        PR: ${{ github.event.workflow_run.pull_requests[0].number }}

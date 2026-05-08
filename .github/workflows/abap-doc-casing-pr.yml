@@ -1,0 +1,17 @@
+name: ABAP Doc Casing Check (PR)
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+    paths:
+      - '**.abap'
+
+permissions: {}
+
+jobs:
+  trigger-only:
+    name: Trigger workflow_run only
+    runs-on: ubuntu-latest
+    steps:
+    - name: No-op
+      run: echo "Trigger workflow_run for secure checklist posting"
