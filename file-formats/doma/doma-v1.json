@@ -106,7 +106,7 @@
             "VARC"
           ],
           "enumTitles": [
-            "Posting period YYYYMM",
+            "Posting Period YYYYMM",
             "Character String",
             "Client",
             "Currency Key",
@@ -134,7 +134,7 @@
             "Numeric Character String",
             "Obsolete Data Type PREC (Do Not Use)",
             "Quantity",
-            "Uninterpreted sequence of bytes",
+            "Uninterpreted Sequence of Bytes",
             "Byte String of Variable Length",
             "Short Character String of Variable Length",
             "Character String of Variable Length",
@@ -142,7 +142,7 @@
             "Time (hhmmss; Native HANA Type)",
             "Unit",
             "Timestamp, HANA Type",
-            "Long character string, no longer supported from Rel. 3.0"
+            "Long Character String, No Longer Supported from Rel. 3.0"
           ],
           "enumDescriptions": [
             "Posting period YYYYMM",
@@ -154,8 +154,8 @@
             "Decimal floating point, 16 digits, RAW on database",
             "Decimal floating point. 16 digits, with scale field",
             "Floating point number, HANA type, small decimal",
-            "Decimal floating point, 34 Digits, DEC on database",
-            "Decimal floating point, 34 Digits, RAW on database",
+            "Decimal floating point, 34 digits, DEC on database",
+            "Decimal floating point, 34 digits, RAW on database",
             "Decimal floating point, 34 digits, with scale field",
             "Floating point number, HANA type, large decimal",
             "Date field (YYYYMMDD), stored as char(8)",
@@ -174,9 +174,9 @@
             "Obsolete data type PREC, do not use",
             "Quantity field, points to a unit field with format UNIT",
             "Uninterpreted sequence of bytes",
-            "Byte String of Variable Length",
-            "Short Character String of Variable Length",
-            "Character String of Variable Length",
+            "Byte string of variable length",
+            "Short character string of variable length",
+            "Character string of variable length",
             "Time field (hhmmss), stored as char(6)",
             "Time field (hhmmss), native HANA type",
             "Unit key for QUAN fields",
