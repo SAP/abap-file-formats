@@ -12,7 +12,7 @@ permissions: {}
 jobs:
   trigger-only:
     name: Trigger workflow_run only
-    if: false
+    if: false  # Intentionally skipped: this workflow exists only to trigger a workflow_run event.
     runs-on: ubuntu-latest
     steps:
     - name: No-op

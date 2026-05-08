@@ -15,7 +15,7 @@ permissions:
 jobs:
   post-checklist:
     name: Post casing checklist on PR
-    if: github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'pull_request' && github.event.workflow_run.pull_requests[0].number != ''
+    if: github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'pull_request' && github.event.workflow_run.pull_requests[0] != null
     runs-on: ubuntu-latest
     steps:
     - name: Find existing checklist comment
@@ -40,7 +40,7 @@ jobs:
         PR: ${{ github.event.workflow_run.pull_requests[0].number }}
 
     - name: Reset checklist after new ABAP changes
-      if: steps.find.outputs.id != '' && github.event.workflow_run.event == 'pull_request'
+      if: steps.find.outputs.id != ''
       run: |
         python3 - <<'EOF'
         import json, os, subprocess

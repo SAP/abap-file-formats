@@ -2,7 +2,11 @@ name: ABAP Doc Casing Check (PR)
 
 on:
   pull_request:
-    types: [opened, reopened, synchronize]
+    # Only synchronize: the reset checklist step should fire only when new commits are
+    # pushed, not on PR open/reopen. In workflow_run context, the original PR action
+    # is not directly accessible, so narrowing the trigger source is the cleanest way
+    # to ensure reset only happens on actual changes.
+    types: [synchronize]
     paths:
       - '**.abap'
 
@@ -11,7 +15,7 @@ permissions: {}
 jobs:
   trigger-only:
     name: Trigger workflow_run only
-    if: false
+    if: false  # Intentionally skipped: this workflow exists only to trigger a workflow_run event.
     runs-on: ubuntu-latest
     steps:
     - name: No-op
