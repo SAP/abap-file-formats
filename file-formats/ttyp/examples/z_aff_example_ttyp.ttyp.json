@@ -20,8 +20,6 @@
         "FIELD1",
         "FIELD2"
       ]
-    },
-    "secondaryKeysAllowed": false,
-    "secondaryKeys": []
+    }
   }
 }
