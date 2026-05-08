@@ -245,7 +245,7 @@
         },
         "shortLength": {
           "title": "Short Length",
-          "description": "Output length for the short field label",
+          "description": "Short length",
           "type": "integer",
           "minimum": 0,
           "maximum": 55
@@ -258,7 +258,7 @@
         },
         "mediumLength": {
           "title": "Medium Length",
-          "description": "Output length for the medium field label",
+          "description": "Medium length",
           "type": "integer",
           "minimum": 0,
           "maximum": 55
@@ -271,7 +271,7 @@
         },
         "longLength": {
           "title": "Long Length",
-          "description": "Output length for the long field label",
+          "description": "Long length",
           "type": "integer",
           "minimum": 0,
           "maximum": 55
@@ -284,7 +284,7 @@
         },
         "headingLength": {
           "title": "Heading Length",
-          "description": "Output length for the heading field label",
+          "description": "Heading length",
           "type": "integer",
           "minimum": 0,
           "maximum": 55

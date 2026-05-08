@@ -18,7 +18,7 @@ INTERFACE zif_aff_dtel_v1 PUBLIC.
     END OF ty_predefined_type.
 
   "! <p class="shorttext">Label Length</p>
-  "! Output length of a field label
+  "! Label length
   "! $minimum 0
   "! $maximum 55
   TYPES ty_label_length TYPE i.
@@ -31,25 +31,25 @@ INTERFACE zif_aff_dtel_v1 PUBLIC.
       "! Short field label
       short          TYPE c LENGTH 10,
       "! <p class="shorttext">Short Length</p>
-      "! Output length for the short field label
+      "! Short length
       short_length   TYPE ty_label_length,
       "! <p class="shorttext">Medium</p>
       "! Medium field label
       medium         TYPE c LENGTH 20,
       "! <p class="shorttext">Medium Length</p>
-      "! Output length for the medium field label
+      "! Medium length
       medium_length  TYPE ty_label_length,
       "! <p class="shorttext">Long</p>
       "! Long field label
       long           TYPE c LENGTH 40,
       "! <p class="shorttext">Long Length</p>
-      "! Output length for the long field label
+      "! Long length
       long_length    TYPE ty_label_length,
       "! <p class="shorttext">Heading</p>
       "! Heading field label
       heading        TYPE c LENGTH 55,
       "! <p class="shorttext">Heading Length</p>
-      "! Output length for the heading field label
+      "! Heading length
       heading_length TYPE ty_label_length,
     END OF ty_field_labels.
 
