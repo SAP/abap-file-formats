@@ -3,14 +3,14 @@
 INTERFACE zif_aff_ddic_types_v1 PUBLIC.
 
   "! <p class="shorttext">Data Type</p>
-  "! ABAP Dictionary data type
+  "! ABAP dictionary data type
   "! $values {@link zif_aff_ddic_types_v1.data:co_data_type}
   "! $default {@link zif_aff_ddic_types_v1.data:co_data_type.char}
   TYPES ty_data_type TYPE c LENGTH 4.
 
   CONSTANTS:
     BEGIN OF co_data_type,
-      "! <p class="shorttext">Posting period YYYYMM</p>
+      "! <p class="shorttext">Posting Period YYYYMM</p>
       "! Posting period YYYYMM
       "! $enumValue 'ACCP'
       accp       TYPE ty_data_type VALUE 'ACCP',
@@ -47,11 +47,11 @@ INTERFACE zif_aff_ddic_types_v1 PUBLIC.
       "! $enumValue 'DECFLOAT16'
       decfloat16 TYPE ty_data_type VALUE 'D16N',
       "! <p class="shorttext">Decimal Floating Point, 34 Digits, DEC on Database</p>
-      "! Decimal floating point, 34 Digits, DEC on database
+      "! Decimal floating point, 34 digits, DEC on database
       "! $enumValue 'DF34_DEC'
       df34_dec   TYPE ty_data_type VALUE 'D34D',
       "! <p class="shorttext">Decimal Floating Point, 34 Digits, RAW on Database</p>
-      "! Decimal floating point, 34 Digits, RAW on database
+      "! Decimal floating point, 34 digits, RAW on database
       "! $enumValue 'DF34_RAW'
       df34_raw   TYPE ty_data_type VALUE 'D34R',
       "! <p class="shorttext">Decimal Floating Point, 34 Digits, with Scale Field</p>
@@ -122,20 +122,20 @@ INTERFACE zif_aff_ddic_types_v1 PUBLIC.
       "! Quantity field, points to a unit field with format UNIT
       "! $enumValue 'QUAN'
       quan       TYPE ty_data_type VALUE 'QUAN',
-      "! <p class="shorttext">Uninterpreted sequence of bytes</p>
+      "! <p class="shorttext">Uninterpreted Sequence of Bytes</p>
       "! Uninterpreted sequence of bytes
       "! $enumValue 'RAW'
       raw        TYPE ty_data_type VALUE 'RAW',
       "! <p class="shorttext">Byte String of Variable Length</p>
-      "! Byte String of Variable Length
+      "! Byte string of variable length
       "! $enumValue 'RAWSTRING'
       rawstring  TYPE ty_data_type VALUE 'RSTR',
       "! <p class="shorttext">Short Character String of Variable Length</p>
-      "! Short Character String of Variable Length
+      "! Short character string of variable length
       "! $enumValue 'SSTRING'
       sstring    TYPE ty_data_type VALUE 'SSTR',
       "! <p class="shorttext">Character String of Variable Length</p>
-      "! Character String of Variable Length
+      "! Character string of variable length
       "! $enumValue 'STRING'
       string     TYPE ty_data_type VALUE 'STRG',
       "! <p class="shorttext">Time (hhmmss)</p>
@@ -154,7 +154,7 @@ INTERFACE zif_aff_ddic_types_v1 PUBLIC.
       "! Timestamp, HANA type
       "! $enumValue 'UTCLONG'
       utclong    TYPE ty_data_type VALUE 'UTCL',
-      "! <p class="shorttext">Long character string, no longer supported from Rel. 3.0</p>
+      "! <p class="shorttext">Long Character String, No Longer Supported from Rel. 3.0</p>
       "! Long character string, no longer supported from Rel. 3.0
       "! $enumValue 'VARC'
       varc       TYPE ty_data_type VALUE 'VARC',

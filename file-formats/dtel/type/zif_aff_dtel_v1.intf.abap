@@ -124,19 +124,19 @@ INTERFACE zif_aff_dtel_v1 PUBLIC.
     "! <p class="shorttext">Additional Properties</p>
     "! Additional properties
     BEGIN OF ty_additional_properties,
-      "! <p class="shorttext">Set/Get parameter ID</p>
+      "! <p class="shorttext">Set/Get Parameter ID</p>
       "! Set/Get parameter ID
       parameter_id             TYPE c LENGTH 20,
 
-      "! <p class="shorttext">Default component name</p>
+      "! <p class="shorttext">Default Component Name</p>
       "! Default component name
       default_component_name   TYPE c LENGTH 30,
 
-      "! <p class="shorttext">Change document relevant</p>
+      "! <p class="shorttext">Change Document Relevant</p>
       "! Change document relevant
       change_document_relevant TYPE abap_bool,
 
-      "! <p class="shorttext">No input history</p>
+      "! <p class="shorttext">No Input History</p>
       "! No input history
       no_input_history         TYPE abap_bool,
     END OF ty_additional_properties.
@@ -144,7 +144,7 @@ INTERFACE zif_aff_dtel_v1 PUBLIC.
 
   TYPES:
     "! <p class="shorttext">Data Element</p>
-    "! Data Element (DTEL)
+    "! Data element (DTEL)
     BEGIN OF ty_main,
       "! $required
       format_version        TYPE zif_aff_types_v1=>ty_format_version,

@@ -3,7 +3,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/SAP/abap-file-formats/blob/main/file-formats/dtel/dtel-v1.json",
   "title": "Data Element",
-  "description": "Data Element (DTEL)",
+  "description": "Data element (DTEL)",
   "type": "object",
   "properties": {
     "formatVersion": {
@@ -117,7 +117,7 @@
                 "VARC"
               ],
               "enumTitles": [
-                "Posting period YYYYMM",
+                "Posting Period YYYYMM",
                 "Character String",
                 "Client",
                 "Currency Key",
@@ -145,7 +145,7 @@
                 "Numeric Character String",
                 "Obsolete Data Type PREC (Do Not Use)",
                 "Quantity",
-                "Uninterpreted sequence of bytes",
+                "Uninterpreted Sequence of Bytes",
                 "Byte String of Variable Length",
                 "Short Character String of Variable Length",
                 "Character String of Variable Length",
@@ -153,7 +153,7 @@
                 "Time (hhmmss; Native HANA Type)",
                 "Unit",
                 "Timestamp, HANA Type",
-                "Long character string, no longer supported from Rel. 3.0"
+                "Long Character String, No Longer Supported from Rel. 3.0"
               ],
               "enumDescriptions": [
                 "Posting period YYYYMM",
@@ -165,8 +165,8 @@
                 "Decimal floating point, 16 digits, RAW on database",
                 "Decimal floating point. 16 digits, with scale field",
                 "Floating point number, HANA type, small decimal",
-                "Decimal floating point, 34 Digits, DEC on database",
-                "Decimal floating point, 34 Digits, RAW on database",
+                "Decimal floating point, 34 digits, DEC on database",
+                "Decimal floating point, 34 digits, RAW on database",
                 "Decimal floating point, 34 digits, with scale field",
                 "Floating point number, HANA type, large decimal",
                 "Date field (YYYYMMDD), stored as char(8)",
@@ -185,9 +185,9 @@
                 "Obsolete data type PREC, do not use",
                 "Quantity field, points to a unit field with format UNIT",
                 "Uninterpreted sequence of bytes",
-                "Byte String of Variable Length",
-                "Short Character String of Variable Length",
-                "Character String of Variable Length",
+                "Byte string of variable length",
+                "Short character string of variable length",
+                "Character string of variable length",
                 "Time field (hhmmss), stored as char(6)",
                 "Time field (hhmmss), native HANA type",
                 "Unit key for QUAN fields",
@@ -353,24 +353,24 @@
       "type": "object",
       "properties": {
         "parameterId": {
-          "title": "Set/Get parameter ID",
+          "title": "Set/Get Parameter ID",
           "description": "Set/Get parameter ID",
           "type": "string",
           "maxLength": 20
         },
         "defaultComponentName": {
-          "title": "Default component name",
+          "title": "Default Component Name",
           "description": "Default component name",
           "type": "string",
           "maxLength": 30
         },
         "changeDocumentRelevant": {
-          "title": "Change document relevant",
+          "title": "Change Document Relevant",
           "description": "Change document relevant",
           "type": "boolean"
         },
         "noInputHistory": {
-          "title": "No input history",
+          "title": "No Input History",
           "description": "No input history",
           "type": "boolean"
         }
