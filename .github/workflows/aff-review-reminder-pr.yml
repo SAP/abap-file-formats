@@ -2,6 +2,7 @@ name: AFF Review Process Reminder (PR)
 
 on:
   pull_request:
+    # Only opened/reopened: the reminder should be posted once per PR, not on every push.
     types: [opened, reopened]
     paths:
       - 'file-formats/**'
@@ -11,6 +12,7 @@ permissions: {}
 jobs:
   trigger-only:
     name: Trigger workflow_run only
+    if: false
     runs-on: ubuntu-latest
     steps:
     - name: No-op

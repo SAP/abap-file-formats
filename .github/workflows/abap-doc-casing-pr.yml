@@ -11,6 +11,7 @@ permissions: {}
 jobs:
   trigger-only:
     name: Trigger workflow_run only
+    if: false
     runs-on: ubuntu-latest
     steps:
     - name: No-op
