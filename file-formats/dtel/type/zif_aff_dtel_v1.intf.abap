@@ -17,12 +17,6 @@ INTERFACE zif_aff_dtel_v1 PUBLIC.
       decimals  TYPE zif_aff_ddic_types_v1=>ty_decimals,
     END OF ty_predefined_type.
 
-  "! <p class="shorttext">Label Length</p>
-  "! Label length
-  "! $minimum 0
-  "! $maximum 55
-  TYPES ty_label_length TYPE i.
-
   TYPES:
     "! <p class="shorttext">Field Labels</p>
     "! Field labels
@@ -32,25 +26,33 @@ INTERFACE zif_aff_dtel_v1 PUBLIC.
       short          TYPE c LENGTH 10,
       "! <p class="shorttext">Short Length</p>
       "! Short length
-      short_length   TYPE ty_label_length,
+      "! $minimum 0
+      "! $maximum 10
+      short_length   TYPE i,
       "! <p class="shorttext">Medium</p>
       "! Medium field label
       medium         TYPE c LENGTH 20,
       "! <p class="shorttext">Medium Length</p>
       "! Medium length
-      medium_length  TYPE ty_label_length,
+      "! $minimum 0
+      "! $maximum 20
+      medium_length  TYPE i,
       "! <p class="shorttext">Long</p>
       "! Long field label
       long           TYPE c LENGTH 40,
       "! <p class="shorttext">Long Length</p>
       "! Long length
-      long_length    TYPE ty_label_length,
+      "! $minimum 0
+      "! $maximum 40
+      long_length    TYPE i,
       "! <p class="shorttext">Heading</p>
       "! Heading field label
       heading        TYPE c LENGTH 55,
       "! <p class="shorttext">Heading Length</p>
       "! Heading length
-      heading_length TYPE ty_label_length,
+      "! $minimum 0
+      "! $maximum 55
+      heading_length TYPE i,
     END OF ty_field_labels.
 
   TYPES:

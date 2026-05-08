@@ -248,7 +248,7 @@
           "description": "Short length",
           "type": "integer",
           "minimum": 0,
-          "maximum": 55
+          "maximum": 10
         },
         "medium": {
           "title": "Medium",
@@ -261,7 +261,7 @@
           "description": "Medium length",
           "type": "integer",
           "minimum": 0,
-          "maximum": 55
+          "maximum": 20
         },
         "long": {
           "title": "Long",
@@ -274,7 +274,7 @@
           "description": "Long length",
           "type": "integer",
           "minimum": 0,
-          "maximum": 55
+          "maximum": 40
         },
         "heading": {
           "title": "Heading",
