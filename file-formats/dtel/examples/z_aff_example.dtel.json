@@ -9,8 +9,12 @@
   },
   "fieldLabels": {
     "short": "Example",
+    "shortLength": 7,
     "medium": "Example field",
+    "mediumLength": 13,
     "long": "Example data element field",
-    "heading": "Example data element"
+    "longLength": 26,
+    "heading": "Example data element",
+    "headingLength": 20
   }
 }

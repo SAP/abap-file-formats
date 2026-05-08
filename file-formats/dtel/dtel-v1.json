@@ -243,11 +243,25 @@
           "type": "string",
           "maxLength": 10
         },
+        "shortLength": {
+          "title": "Short Length",
+          "description": "Output length for the short field label",
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 55
+        },
         "medium": {
           "title": "Medium",
           "description": "Medium field label",
           "type": "string",
           "maxLength": 20
+        },
+        "mediumLength": {
+          "title": "Medium Length",
+          "description": "Output length for the medium field label",
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 55
         },
         "long": {
           "title": "Long",
@@ -255,11 +269,25 @@
           "type": "string",
           "maxLength": 40
         },
+        "longLength": {
+          "title": "Long Length",
+          "description": "Output length for the long field label",
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 55
+        },
         "heading": {
           "title": "Heading",
           "description": "Heading field label",
           "type": "string",
           "maxLength": 55
+        },
+        "headingLength": {
+          "title": "Heading Length",
+          "description": "Output length for the heading field label",
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 55
         }
       },
       "additionalProperties": false
