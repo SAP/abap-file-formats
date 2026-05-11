@@ -98,7 +98,7 @@ INTERFACE zif_aff_tabldtt_v1 PUBLIC.
     BEGIN OF ty_buffering,
       "! <p class="shorttext">State</p>
       "! Buffer State
-      state              TYPE ty_buffer_state,
+      state                 TYPE ty_buffer_state,
       "! <p class="shorttext">Type</p>
       "! Buffer Type
       type               TYPE ty_buffer_type,
