@@ -196,7 +196,7 @@ INTERFACE zif_aff_tabldtt_v1 PUBLIC.
       "! <p class="shorttext">Data Class Category</p>
       "! Data class category
       "! $required
-      data_class_category  TYPE ty_data_class_category,
+      data_class_category TYPE ty_data_class_category,
       "! <p class="shorttext">Size Category</p>
       "! Size category
       size_category        TYPE ty_size_category,
