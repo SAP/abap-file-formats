@@ -15,7 +15,7 @@ You are reviewing contributions to the AFF specification repository. A typical P
 
 - Interface file named exactly `zif_aff_<object_type>_v<version>.intf.abap` (prefix `zif_`, not `zob_`, not `zcl_`)
 - Example JSON file named `z_aff_example_<type>.<type>.json`
-- All files: UTF-8, no BOM, LF line endings, trailing newline at EOF, 2-space JSON indentation
+- Verify against the .editorconfig of this repository
 - Namespace objects use bracket notation: `/NMSPC/OBJ` → `(nmspc)obj`
 
 ---
