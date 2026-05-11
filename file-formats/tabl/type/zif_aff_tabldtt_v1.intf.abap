@@ -101,7 +101,7 @@ INTERFACE zif_aff_tabldtt_v1 PUBLIC.
       state                 TYPE ty_buffer_state,
       "! <p class="shorttext">Type</p>
       "! Buffer Type
-      type               TYPE ty_buffer_type,
+      type                  TYPE ty_buffer_type,
       "! <p class="shorttext">Number of Key Fields</p>
       "! Number of key fields for buffering area (not counting client field)
       "! $minimum 0
