@@ -199,7 +199,7 @@ INTERFACE zif_aff_tabldtt_v1 PUBLIC.
       data_class_category TYPE ty_data_class_category,
       "! <p class="shorttext">Size Category</p>
       "! Size category
-      size_category        TYPE ty_size_category,
+      size_category       TYPE ty_size_category,
       "! <p class="shorttext">Log Changes</p>
       "! Log changes
       log_changes          TYPE abap_bool,
