@@ -220,7 +220,7 @@ INTERFACE zif_aff_tabldtt_v1 PUBLIC.
       "! <p class="shorttext">General Information</p>
       "! General information
       "! $required
-      general_information TYPE ty_technical_table_settings,
+      general_information  TYPE ty_technical_table_settings,
       "! <p class="shorttext">Buffering</p>
       "! Buffering
       buffering            TYPE ty_buffering,
