@@ -9,7 +9,7 @@ INTERFACE zif_aff_tabl_v1 PUBLIC.
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header                   TYPE zif_aff_types_v1=>ty_header_60,
+      header         TYPE zif_aff_types_v1=>ty_header_60,
     END OF ty_main.
 
 ENDINTERFACE.
