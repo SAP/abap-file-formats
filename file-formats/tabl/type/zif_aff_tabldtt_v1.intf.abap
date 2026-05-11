@@ -202,7 +202,7 @@ INTERFACE zif_aff_tabldtt_v1 PUBLIC.
       size_category       TYPE ty_size_category,
       "! <p class="shorttext">Log Changes</p>
       "! Log changes
-      log_changes          TYPE abap_bool,
+      log_changes         TYPE abap_bool,
       "! <p class="shorttext">Writable by AMDP</p>
       "! Writable by AMDP
       writable_by_amdp     TYPE abap_bool,
