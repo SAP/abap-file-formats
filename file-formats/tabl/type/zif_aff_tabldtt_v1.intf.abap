@@ -208,7 +208,7 @@ INTERFACE zif_aff_tabldtt_v1 PUBLIC.
       writable_by_amdp    TYPE abap_bool,
       "! <p class="shorttext">Translation</p>
       "! Translation settings
-      translation           TYPE ty_translation_type,
+      translation         TYPE ty_translation_type,
     END OF ty_technical_table_settings.
 
   TYPES:
