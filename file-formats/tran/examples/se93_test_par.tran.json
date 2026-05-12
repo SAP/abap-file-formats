@@ -1,0 +1,62 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "SE93 Test - Parameter Transaction",
+    "originalLanguage": "en"
+  },
+  "generalInformation": {
+    "transactionType": "parameterTransaction",
+    "parameterTransaction": {
+      "parParentTransactionCode": "SE16",
+      "skipInitialScreenMode": "show",
+      "parameterValues": [
+        {
+          "parameterName": "DATABROWSE-TABLENAME",
+          "parameterValue": "TSTC"
+        }
+      ]
+    }
+  },
+  "userInterface": {
+    "uiAttributes": {
+      "inheritanceMode": "active",
+      "pervasiveMode": "disabled",
+      "win32Mode": "notSupported"
+    }
+  },
+  "authorizations": {
+    "authorizationDefaults": {
+      "authObjects": [
+        {
+          "authObjectName": "S_ABPLNGVS",
+          "maintenanceStatus": "noDefault"
+        },
+        {
+          "authObjectName": "S_DEVELOP",
+          "maintenanceStatus": "noDefault"
+        },
+        {
+          "authObjectName": "S_TABU_CLI",
+          "maintenanceStatus": "noDefault"
+        },
+        {
+          "authObjectName": "S_TABU_NAM",
+          "authObjectFieldValues": [
+            {
+              "authFieldName": "ACTVT",
+              "authFieldLowValue": "03"
+            },
+            {
+              "authFieldName": "TABLE",
+              "authFieldLowValue": ""
+            }
+          ]
+        },
+        {
+          "authObjectName": "S_TCODE",
+          "maintenanceStatus": "noDefault"
+        }
+      ]
+    }
+  }
+}
