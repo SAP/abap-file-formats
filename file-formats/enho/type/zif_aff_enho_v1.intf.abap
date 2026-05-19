@@ -1,5 +1,5 @@
-interface zif_aff_enho_v1
-  public.
+INTERFACE zif_aff_enho_v1
+  PUBLIC.
 
   "! <p class="shorttext">Filter Comparator</p>
   "! Filter comparator
