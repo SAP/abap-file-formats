@@ -5,7 +5,7 @@ INTERFACE zif_aff_enho_v1
   "! Filter comparator
   "! $values {@link zif_aff_enho_v1.data:co_comparator}
   "! $default {@link zif_aff_enho_v1.data:co_comparator.equal}
-  types ty_comparator type c length 2.
+  TYPES ty_comparator TYPE c LENGTH 2.
 
   constants:
     "! <p class="shorttext">Filter Comparator</p>
