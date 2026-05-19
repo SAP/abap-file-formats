@@ -84,7 +84,7 @@ INTERFACE zif_aff_enho_v1
       filtername TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Filter Type</p>
       "! Filter type
-      filtertype TYPE ty_filtertype, " read only / ENHS
+      filtertype TYPE ty_filtertype,
       "! <p class="shorttext">Comparator</p>
       "! Comparator
       comparator TYPE ty_comparator,
