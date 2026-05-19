@@ -34,7 +34,7 @@ INTERFACE zif_aff_enho_v1
       "! It is not case-sensitive.
       covers_pattern     TYPE ty_comparator VALUE 'CP',
       "! <p class="shorttext">No Pattern</p>
-      "! No Pattern: True, if a logical expression with CP is false, that is, if operand1 does not fit the 
+      "! No Pattern: True, if a logical expression with CP is false, that is, if operand1 does not fit the
       "! pattern operand2.
       no_pattern         TYPE ty_comparator VALUE 'NP',
       "! <p class="shorttext">Contains String</p>
