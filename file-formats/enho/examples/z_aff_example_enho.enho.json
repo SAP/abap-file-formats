@@ -15,9 +15,20 @@
       "isDefaultImplementation": true,
       "isActiveImplementation": true,
       "customizing": "notSupported",
-      "filterValues": [
-        "EXAMPLE_FILTER=example_value1"
-      ]
+      "filterValues": {
+        "or": [
+          {
+            "and": [
+              {
+                "filter": {
+                  "filtername": "EXAMPLE_FILTER",
+                  "value": "EXAMPLE_VALUE"
+                }
+              }
+            ]
+          }
+        ]
+      }
     }
   ],
   "referencedObjects": [
