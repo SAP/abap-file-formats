@@ -31,19 +31,28 @@ INTERFACE zif_aff_enho_v1
       not_equal          TYPE ty_comparator VALUE '<>',
       "! <p class="shorttext">Covers Pattern</p>
       "! Covers Pattern: True, if the content of operand1 fits the pattern in operand2.
+      "! Wildcard characters can be used to create the operand2 pattern,
+      "! where "*" represents any character string (including a blank string) and "+" represents any character.
       "! It is not case-sensitive.
       covers_pattern     TYPE ty_comparator VALUE 'CP',
       "! <p class="shorttext">No Pattern</p>
-      "! No Pattern: True, if a logical expression with CP is false, that is, if operand1 does not fit the
-      "! pattern operand2.
+      "! No Pattern: True, if a logical expression with CP is false, that is, if operand1 does not fit the pattern
+      "! operand2. If the comparison is false, sy-fdpos contains the offset of operand2 in operand1, whereby
+      "! leading wildcard characters "*" in operand2 are ignored if operand2 also contains other characters.
+      "! If the comparison is true, sy-fdpos contains the length of operand1.
       no_pattern         TYPE ty_comparator VALUE 'NP',
       "! <p class="shorttext">Contains String</p>
       "! Contains String: True, if the content of operand2 is contained in operand1. It is not case-sensitive and
-      "! trailing blanks in the left operand are respected.
+      "! trailing blanks in the left operand are respected. If operand1 is of type string and initial, or of type c
+      "! and contains only blank characters, the logical expression is false, unless operand2 is also of type string
+      "! and initial, or of type c and only contains blank characters. In this case, the logical expression is always
+      "! true. If the comparison is true, sy-fdpos contains the offset of operand2 in operand1. If the comparison is
+      "! false, sy-fdpos contains the length of operand1.
       contains_string    TYPE ty_comparator VALUE 'CS',
       "! <p class="shorttext">Contains No String</p>
       "! Contains No String: True, if a logical expression with CS is false, that is if operand1 does not contain the
-      "! content of operand2.
+      "! content of operand2. If the comparison is false, sy-fdpos contains the offset of operand2 in operand1.
+      "! If the comparison is true, sy-fdpos contains the length of operand1.
       contains_no_string TYPE ty_comparator VALUE 'NS',
     END OF co_comparator.
 
