@@ -162,7 +162,7 @@ INTERFACE zif_aff_enho_v1
       "! <p class="shorttext">Name</p>
       "! Name of the BAdI implementation
       "! $required
-      name                      TYPE zzif_aff_types_v1=>ty_object_name_30,
+      name                      TYPE ZIF_AFF_TYPES_V1=>ty_object_name_30,
       "! <p class="shorttext">Description</p>
       "! Description of the BAdI implementation
       "! $required
@@ -170,10 +170,10 @@ INTERFACE zif_aff_enho_v1
       "! <p class="shorttext">BAdI Definition</p>
       "! BAdI Definition of the BAdI implementation
       "! $required
-      badi_definition           TYPE zzif_aff_types_v1=>ty_object_name_30,
+      badi_definition           TYPE ZIF_AFF_TYPES_V1=>ty_object_name_30,
       "! <p class="shorttext">Implementing Class</p>
       "! Implementing class of the BAdI implementation
-      implementing_class        TYPE zzif_aff_types_v1=>ty_object_name_30,
+      implementing_class        TYPE ZIF_AFF_TYPES_V1=>ty_object_name_30,
       "! <p class="shorttext">Is Example Implementation</p>
       "! BAdI implementation is an example implementation
       "! $showAlways
@@ -262,7 +262,7 @@ INTERFACE zif_aff_enho_v1
       "! <p class="shorttext">Enhancement Spot Name</p>
       "! Enhancement Spot name
       "! $required
-      enhancement_spot TYPE zzif_aff_types_v1=>ty_object_name_30,
+      enhancement_spot TYPE ZIF_AFF_TYPES_V1=>ty_object_name_30,
     END OF ty_general_information.
 
 
@@ -271,11 +271,11 @@ INTERFACE zif_aff_enho_v1
     "! Object type ENHO
     BEGIN OF ty_main,
       "! $required
-      format_version       TYPE zzif_aff_types_v1=>ty_format_version,
+      format_version       TYPE ZIF_AFF_TYPES_V1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header               TYPE zzif_aff_types_v1=>ty_header_100,
+      header               TYPE ZIF_AFF_TYPES_V1=>ty_header_100,
       "! <p class="shorttext">General Information</p>
       "! General Information
       "! $required
