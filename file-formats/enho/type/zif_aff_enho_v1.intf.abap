@@ -271,7 +271,7 @@ INTERFACE zif_aff_enho_v1
       "! <p class="shorttext">Enhancement Spot Name</p>
       "! Enhancement Spot name
       "! $required
-      enhancement_spot TYPE ZIF_AFF_TYPES_V1=>ty_object_name_30,
+      enhancement_spot TYPE zif_aff_types_v1=>ty_object_name_30,
     END OF ty_general_information.
 
 
