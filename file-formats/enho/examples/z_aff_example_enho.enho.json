@@ -4,7 +4,9 @@
     "description": "Example ENHO for ABAP file formats",
     "originalLanguage": "en"
   },
-  "enhancementSpot": "Z_AFF_EXAMPLE_ENHS",
+  "generalInformation": {
+    "enhancementSpot": "Z_AFF_EXAMPLE_ENHS"
+  },
   "badiImplementations": [
     {
       "name": "Z_AFF_EXAMPLE_BADI_IMPL",
