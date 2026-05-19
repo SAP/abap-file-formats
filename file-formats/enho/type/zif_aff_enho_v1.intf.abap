@@ -179,7 +179,7 @@ INTERFACE zif_aff_enho_v1
       "! <p class="shorttext">BAdI Definition</p>
       "! BAdI Definition of the BAdI implementation
       "! $required
-      badi_definition           TYPE ZIF_AFF_TYPES_V1=>ty_object_name_30,
+      badi_definition           TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Implementing Class</p>
       "! Implementing class of the BAdI implementation
       implementing_class        TYPE ZIF_AFF_TYPES_V1=>ty_object_name_30,
