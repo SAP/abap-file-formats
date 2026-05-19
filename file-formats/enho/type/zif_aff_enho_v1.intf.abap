@@ -75,16 +75,17 @@ INTERFACE zif_aff_enho_v1
     END OF co_filtertype.
 
 
+
   TYPES:
     "! This structure contains all relevant data of one BADI implementation filter:
     "! It compares one filter-name (from the BADI definition) with one filter-value using one comparator.
     BEGIN OF ty_filter,
       "! <p class="shorttext">Filter Name</p>
       "! Filter name
-      filtername TYPE zif_aff_types_v1=>ty_object_name_30,
+      filtername TYPE if_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Filter Type</p>
       "! Filter type
-      filtertype TYPE ty_filtertype,
+      filtertype TYPE ty_filtertype, " read only / ENHS
       "! <p class="shorttext">Comparator</p>
       "! Comparator
       comparator TYPE ty_comparator,
@@ -94,21 +95,17 @@ INTERFACE zif_aff_enho_v1
     END OF ty_filter.
 
 
-  TYPES tt_filters TYPE STANDARD TABLE OF ty_filter WITH DEFAULT KEY.
-
   TYPES:
     "! <p class="shorttext">Level 2</p>
     "! Level 2
     BEGIN OF ty_level_2,
       "! <p class="shorttext">Or</p>
       "! Or
-      or     TYPE tt_filters,
+      or     TYPE STANDARD TABLE OF ty_filter WITH DEFAULT KEY,
       "! <p class="shorttext">Filter</p>
       "! Filter
       filter TYPE ty_filter,
     END OF ty_level_2.
-
-  TYPES tt_level_2 TYPE STANDARD TABLE OF ty_level_2 WITH DEFAULT KEY.
 
   TYPES:
     "! <p class="shorttext">Level 1</p>
@@ -116,13 +113,11 @@ INTERFACE zif_aff_enho_v1
     BEGIN OF ty_level_1,
       "! <p class="shorttext">And</p>
       "! And
-      and    TYPE tt_level_2,
+      and    TYPE STANDARD TABLE OF ty_level_2 WITH DEFAULT KEY,
       "! <p class="shorttext">Filter</p>
       "! Filter
       filter TYPE ty_filter,
     END OF ty_level_1.
-
-  TYPES tt_level_1 TYPE STANDARD TABLE OF ty_level_1 WITH DEFAULT KEY.
 
   TYPES:
     "! <p class="shorttext">Level 0</p>
@@ -130,10 +125,10 @@ INTERFACE zif_aff_enho_v1
     BEGIN OF ty_level_0,
       "! <p class="shorttext">Or</p>
       "! Or
-      or     TYPE tt_level_1,
+      or     TYPE STANDARD TABLE OF ty_level_1 WITH DEFAULT KEY,
       "! <p class="shorttext">And</p>
       "! And
-      and    TYPE tt_level_2,
+      and    TYPE STANDARD TABLE OF ty_level_2 WITH DEFAULT KEY,
       "! <p class="shorttext">Filter</p>
       "! Filter
       filter TYPE ty_filter,
