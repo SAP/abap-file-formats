@@ -284,7 +284,7 @@ INTERFACE zif_aff_enho_v1
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header               TYPE ZIF_AFF_TYPES_V1=>ty_header_100,
+      header               TYPE zif_aff_types_v1=>ty_header_100,
       "! <p class="shorttext">General Information</p>
       "! General Information
       "! $required
