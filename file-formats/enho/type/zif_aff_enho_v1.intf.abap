@@ -171,7 +171,7 @@ INTERFACE zif_aff_enho_v1
       "! <p class="shorttext">Name</p>
       "! Name of the BAdI implementation
       "! $required
-      name                      TYPE ZIF_AFF_TYPES_V1=>ty_object_name_30,
+      name                      TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Description</p>
       "! Description of the BAdI implementation
       "! $required
