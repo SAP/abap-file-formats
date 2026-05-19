@@ -80,7 +80,7 @@ INTERFACE zif_aff_enho_v1
     BEGIN OF ty_filter,
       "! <p class="shorttext">Filter Name</p>
       "! Filter name
-      filtername TYPE if_aff_types_v1=>ty_object_name_30,
+      filtername TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Filter Type</p>
       "! Filter type
       filtertype TYPE ty_filtertype, " read only / ENHS
@@ -166,7 +166,7 @@ INTERFACE zif_aff_enho_v1
       "! <p class="shorttext">Name</p>
       "! Name of the BAdI implementation
       "! $required
-      name                      TYPE if_aff_types_v1=>ty_object_name_30,
+      name                      TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Description</p>
       "! Description of the BAdI implementation
       "! $required
@@ -174,10 +174,10 @@ INTERFACE zif_aff_enho_v1
       "! <p class="shorttext">BAdI Definition</p>
       "! BAdI Definition of the BAdI implementation
       "! $required
-      badi_definition           TYPE if_aff_types_v1=>ty_object_name_30,
+      badi_definition           TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Implementing Class</p>
       "! Implementing class of the BAdI implementation
-      implementing_class        TYPE if_aff_types_v1=>ty_object_name_30,
+      implementing_class        TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Is Example Implementation</p>
       "! BAdI implementation is an example implementation
       "! $showAlways
@@ -266,7 +266,7 @@ INTERFACE zif_aff_enho_v1
       "! <p class="shorttext">Enhancement Spot Name</p>
       "! Enhancement Spot name
       "! $required
-      enhancement_spot TYPE if_aff_types_v1=>ty_object_name_30,
+      enhancement_spot TYPE zif_aff_types_v1=>ty_object_name_30,
     END OF ty_general_information.
 
 
@@ -275,11 +275,11 @@ INTERFACE zif_aff_enho_v1
     "! Object type ENHO
     BEGIN OF ty_main,
       "! $required
-      format_version       TYPE if_aff_types_v1=>ty_format_version,
+      format_version       TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header               TYPE if_aff_types_v1=>ty_header_100,
+      header               TYPE zif_aff_types_v1=>ty_header_100,
       "! <p class="shorttext">General Information</p>
       "! General Information
       "! $required
