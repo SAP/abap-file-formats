@@ -83,8 +83,6 @@ INTERFACE zif_aff_enho_v1
       packed         TYPE ty_filtertype VALUE 'P',
     END OF co_filtertype.
 
-
-
   TYPES:
     "! This structure contains all relevant data of one BADI implementation filter:
     "! It compares one filter-name (from the BADI definition) with one filter-value using one comparator.
@@ -103,45 +101,44 @@ INTERFACE zif_aff_enho_v1
       value      TYPE string,
     END OF ty_filter.
 
-
   TYPES:
-    "! <p class="shorttext">Level 2</p>
-    "! Level 2
-    BEGIN OF ty_level_2,
+    "! <p class="shorttext">And</p>
+    "! And
+    BEGIN OF ty_and,
       "! <p class="shorttext">Or</p>
       "! Or
       or     TYPE STANDARD TABLE OF ty_filter WITH DEFAULT KEY,
       "! <p class="shorttext">Filter</p>
       "! Filter
       filter TYPE ty_filter,
-    END OF ty_level_2.
+    END OF ty_and.
 
   TYPES:
-    "! <p class="shorttext">Level 1</p>
-    "! Level 1
-    BEGIN OF ty_level_1,
+    "! <p class="shorttext">Outer or</p>
+    "! Outer or
+    BEGIN OF ty_outer_or,
       "! <p class="shorttext">And</p>
       "! And
-      and    TYPE STANDARD TABLE OF ty_level_2 WITH DEFAULT KEY,
+      and    TYPE STANDARD TABLE OF ty_and WITH DEFAULT KEY,
       "! <p class="shorttext">Filter</p>
       "! Filter
       filter TYPE ty_filter,
-    END OF ty_level_1.
+    END OF ty_outer_or.
 
   TYPES:
-    "! <p class="shorttext">Level 0</p>
-    "! Level 0
-    BEGIN OF ty_level_0,
+    "! <p class="shorttext">Filter Values</p>
+    "! Filter values
+    BEGIN OF ty_filter_values,
       "! <p class="shorttext">Or</p>
       "! Or
-      or     TYPE STANDARD TABLE OF ty_level_1 WITH DEFAULT KEY,
+      or     TYPE STANDARD TABLE OF ty_outer_or WITH DEFAULT KEY,
       "! <p class="shorttext">And</p>
       "! And
-      and    TYPE STANDARD TABLE OF ty_level_2 WITH DEFAULT KEY,
+      and    TYPE STANDARD TABLE OF ty_and WITH DEFAULT KEY,
       "! <p class="shorttext">Filter</p>
       "! Filter
       filter TYPE ty_filter,
-    END OF ty_level_0.
+    END OF ty_filter_values.
 
   "! <p class="shorttext">Customizing</p>
   "! Customizing
@@ -201,7 +198,8 @@ INTERFACE zif_aff_enho_v1
       customizing               TYPE ty_customizing,
       "! <p class="shorttext">Filter Values</p>
       "! Filter values for this BAdI implementation
-      filter_values             TYPE ty_level_0,
+      "! The filter tree has at most 3 levels: or, and, or (with filters on each level)
+      filter_values             TYPE ty_filter_values,
     END OF ty_badi_impl,
 
     "! <p class="shorttext">BAdI Implementations of the ENHO</p>
