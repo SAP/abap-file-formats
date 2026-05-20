@@ -32,13 +32,13 @@ INTERFACE zif_aff_enho_v1
       "! <p class="shorttext">Covers Pattern</p>
       "! Covers Pattern: True, if the content of operand1 fits the pattern in operand2.
       "! Wildcard characters can be used to create the operand2 pattern,
-      "! where "*" represents any character string (including a blank string) and "+" represents any character.
+      "! where * represents any character string (including a blank string) and + represents any character.
       "! It is not case-sensitive.
       covers_pattern     TYPE ty_comparator VALUE 'CP',
       "! <p class="shorttext">No Pattern</p>
       "! No Pattern: True, if a logical expression with CP is false, that is, if operand1 does not fit the pattern
       "! operand2. If the comparison is false, sy-fdpos contains the offset of operand2 in operand1, whereby
-      "! leading wildcard characters "*" in operand2 are ignored if operand2 also contains other characters.
+      "! leading wildcard characters * in operand2 are ignored if operand2 also contains other characters.
       "! If the comparison is true, sy-fdpos contains the length of operand1.
       no_pattern         TYPE ty_comparator VALUE 'NP',
       "! <p class="shorttext">Contains String</p>
@@ -84,6 +84,7 @@ INTERFACE zif_aff_enho_v1
     END OF co_filtertype.
 
   TYPES:
+    "! <p class="shorttext">Filter</p>
     "! This structure contains all relevant data of one BADI implementation filter:
     "! It compares one filter-name (from the BADI definition) with one filter-value using one comparator.
     BEGIN OF ty_filter,
@@ -164,7 +165,7 @@ INTERFACE zif_aff_enho_v1
   TYPES:
     "! <p class="shorttext">BAdI Implementation</p>
     "! Information about this BAdI implementation
-    BEGIN OF ty_badi_impl,
+    BEGIN OF ty_badi_implementation,
       "! <p class="shorttext">Name</p>
       "! Name of the BAdI implementation
       "! $required
@@ -200,11 +201,11 @@ INTERFACE zif_aff_enho_v1
       "! Filter values for this BAdI implementation
       "! The filter tree has at most 3 levels: or, and, or (with filters on each level)
       filter_values             TYPE ty_filter_values,
-    END OF ty_badi_impl,
+    END OF ty_badi_implementation,
 
     "! <p class="shorttext">BAdI Implementations of the ENHO</p>
     "! BAdI implementations of the ENHO
-    ty_badi_impls TYPE STANDARD TABLE OF ty_badi_impl WITH DEFAULT KEY.
+    ty_badi_implementations TYPE STANDARD TABLE OF ty_badi_implementation WITH DEFAULT KEY.
 
 
   "! <p class="shorttext">Element Usage</p>
@@ -289,7 +290,7 @@ INTERFACE zif_aff_enho_v1
       general_information  TYPE ty_general_information,
       "! <p class="shorttext">BAdI Implementations of the ENHO</p>
       "! BAdI implementations of the ENHO
-      badi_implementations TYPE ty_badi_impls,
+      badi_implementations TYPE ty_badi_implementations,
       "! <p class="shorttext">Referenced Objects</p>
       "! Referenced objects of the enhancement implementation
       "! $required
