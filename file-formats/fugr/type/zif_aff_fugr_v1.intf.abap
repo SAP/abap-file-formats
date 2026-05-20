@@ -30,18 +30,18 @@ INTERFACE zif_aff_fugr_v1
 
   "! <p class="shorttext">Description</p>
   "! Description of the ABAP object
-  TYPES ty_description_40 TYPE c LENGTH 40.
+  TYPES ty_description TYPE c LENGTH 40.
 
   TYPES:
     "! <p class="shorttext">Header</p>
     "! The header for an ABAP main object (with source code) with a description of 40 characters
-    BEGIN OF ty_header_40_src,
+    BEGIN OF ty_header,
       "! $required
-      description           TYPE ty_description_40,
+      description           TYPE ty_description,
       "! $required
       original_language     TYPE zif_aff_types_v1=>ty_original_language,
       abap_language_version TYPE zif_aff_types_v1=>ty_abap_language_version_src,
-    END OF ty_header_40_src.
+    END OF ty_header.
 
   TYPES:
     "! <p class="shorttext">Object Type FUGR</p>
@@ -52,7 +52,7 @@ INTERFACE zif_aff_fugr_v1
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header               TYPE ty_header_40_src,
+      header               TYPE ty_header,
       "! <p class="shorttext">Fix Point Arithmetic</p>
       "! Fix point arithmetic
       "! $required

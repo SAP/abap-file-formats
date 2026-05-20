@@ -183,15 +183,15 @@ INTERFACE zif_aff_func_v1
 
   "! <p class="shorttext">Description</p>
   "! Description of the ABAP object
-  TYPES ty_description_74 TYPE c LENGTH 74.
+  TYPES ty_description TYPE c LENGTH 74.
 
   TYPES:
     "! <p class="shorttext">Header</p>
     "! The header for an ABAP subobject with a description of 74 characters
-    BEGIN OF ty_header_only_description,
+    BEGIN OF ty_header,
       "! $required
-      description TYPE ty_description_74,
-    END OF ty_header_only_description.
+      description TYPE ty_description,
+    END OF ty_header.
 
   TYPES:
     "! <p class="shorttext">Object Type FUNC</p>
@@ -202,7 +202,7 @@ INTERFACE zif_aff_func_v1
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header               TYPE ty_header_only_description,
+      header               TYPE ty_header,
       "! <p class="shorttext">Processing Type</p>
       "! Processing type
       "! $required
