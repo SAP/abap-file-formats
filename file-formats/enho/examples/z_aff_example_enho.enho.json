@@ -24,7 +24,15 @@
               {
                 "filter": {
                   "filtername": "EXAMPLE_FILTER",
-                  "value": "EXAMPLE_VALUE"
+                  "comparator": "greaterThan",
+                  "value": "1"
+                }
+              },
+              {
+                "filter": {
+                  "filtername": "EXAMPLE_FILTER",
+                  "comparator": "lessThan",
+                  "value": "5"
                 }
               }
             ]
