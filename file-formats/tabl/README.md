@@ -6,6 +6,8 @@ Object Type | Description | Group
 :--- | :--- | :---
 TABL  | Table and Structure | Dictionary
 
+Table indexes are not covered.
+
 ## File Structure
 
 File | Cardinality | Definition | Schema | Example
