@@ -102,10 +102,10 @@ INTERFACE zif_aff_tabt_v1 PUBLIC.
       "! <p class="shorttext">Type</p>
       "! Buffer Type
       type                  TYPE ty_buffer_type,
-      "! <p class="shorttext">Number of Key Fields</p>
+      "! <p class="shorttext">Number of Key Fields for Generic Buffering</p>
       "! Number of key fields for buffering area (not counting client field)
       "! $minimum 0
-      nr_of_area_key_fields TYPE i,
+      nr_of_key_flds_4_generic_buff TYPE i,
     END OF ty_buffering.
 
   "! <p class="shorttext">Translation Type</p>

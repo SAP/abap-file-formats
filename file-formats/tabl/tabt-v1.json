@@ -161,8 +161,8 @@
           ],
           "default": "noBuffer"
         },
-        "nrOfAreaKeyFields": {
-          "title": "Number of Key Fields",
+        "nrOfKeyFlds4GenericBuff": {
+          "title": "Number of Key Fields for Generic Buffering",
           "description": "Number of key fields for buffering area (not counting client field)",
           "type": "integer",
           "minimum": 0,

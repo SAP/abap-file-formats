@@ -15,7 +15,7 @@
   "buffering": {
     "state": "switchedOn",
     "type": "generic",
-    "nrOfAreaKeyFields": 2
+    "nrOfKeyFlds4GenericBuff": 2
   },
   "dbSpecificSettings": {
     "storageType": "rowStore",
