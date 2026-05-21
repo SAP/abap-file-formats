@@ -13,7 +13,6 @@
       "description": "This is an example Badi Implementation",
       "badiDefinition": "Z_AFF_EXAMPLE_BADI_DEFINITION",
       "implementingClass": "Z_AFF_EXAMPLE_BADI_IMPL",
-      "isExampleImplementation": false,
       "isDefaultImplementation": true,
       "isActiveImplementation": true,
       "customizing": "notSupported",
@@ -24,14 +23,16 @@
               {
                 "filter": {
                   "filtername": "EXAMPLE_FILTER",
-                  "comparator": "greaterThan",
+                  "filtertype": "string",
+                  "comparator": ">",
                   "value": "1"
                 }
               },
               {
                 "filter": {
                   "filtername": "EXAMPLE_FILTER",
-                  "comparator": "lessThan",
+                  "filtertype": "string",
+                  "comparator": "<",
                   "value": "5"
                 }
               }
