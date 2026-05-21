@@ -98,10 +98,10 @@ INTERFACE zif_aff_tabt_v1 PUBLIC.
     BEGIN OF ty_buffering,
       "! <p class="shorttext">State</p>
       "! Buffer State
-      state                 TYPE ty_buffer_state,
+      state                         TYPE ty_buffer_state,
       "! <p class="shorttext">Type</p>
       "! Buffer Type
-      type                  TYPE ty_buffer_type,
+      type                          TYPE ty_buffer_type,
       "! <p class="shorttext">Number of Key Fields for Generic Buffering</p>
       "! Number of key fields for buffering area (not counting client field)
       "! $minimum 0
