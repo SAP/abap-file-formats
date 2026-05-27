@@ -487,6 +487,7 @@ INTERFACE zif_aff_tran_v1
     BEGIN OF ty_ad,
       "! <p class="shorttext">Maintenance Mode</p>
       "! Maintenance modes for applications define how applications can be modified.
+      "! $required
       maintenance_mode TYPE ty_maintenance_mode,
       "! <p class="shorttext">Inheritance Mode</p>
       "! Authorization defaults inheritance mode controls how authorization settings are passed from
@@ -503,6 +504,127 @@ INTERFACE zif_aff_tran_v1
       auth_objects     TYPE ty_ad_ao_t,
     END OF ty_ad.
 
+  TYPES:
+    BEGIN OF ty_authorizations,
+      "! <p class="shorttext">Start Authorization Object</p>
+      "! A start authorization object controls who may run a transaction. It is checked at transaction start.
+      "! Fields must have single or empty values. Empty fields trigger a DUMMY check.
+      "! This object is auto-assigned in the authorization defaults transaction.
+      start_authorization_object TYPE ty_sao,
+      "! <p class="shorttext">Authorization Default Values</p>
+      "! Authorization default values define which authorization objects and field values are automatically proposed
+      "! when creating roles for a transaction, simplifying role maintenance and ensuring consistent security
+      "! settings across users and roles.
+      "! $required
+      authorization_defaults     TYPE ty_ad,
+    END OF ty_authorizations.
+
+  TYPES:
+    "! <p class="shorttext">Transaction Service</p>
+    "! Transaction Service
+    BEGIN OF ty_transaction_service,
+      "! <p class="shorttext">Application Name</p>
+      "! Authorization Defaults Hash Key Name
+      "! $required
+      application_name TYPE zif_aff_types_v1=>ty_object_name_30,
+      "! <p class="shorttext">Application Type</p>
+      "! Authorization Defaults Hash Key Type
+      "! $required
+      application_type TYPE c LENGTH 2,
+      "! <p class="shorttext">Program ID</p>
+      "! Program ID in Requests and Tasks
+      program_id       TYPE c LENGTH 4,
+      "! <p class="shorttext">Object Type</p>
+      "! Object Type in Object Directory
+      object_type      TYPE c LENGTH 4,
+      "! <p class="shorttext">Object Name</p>
+      "! Object Name in Object Directory
+      object_name      TYPE zif_aff_types_v1=>ty_object_name_40,
+      "! <p class="shorttext">External Service Type</p>
+      "! External Service Type
+      service_type     TYPE c LENGTH 16,
+      "! <p class="shorttext">External Service</p>
+      "! External Service
+      service          TYPE string,
+    END OF ty_transaction_service.
+  TYPES ty_transaction_service_t TYPE STANDARD TABLE OF ty_transaction_service WITH DEFAULT KEY.
+
+  "! $values {@link zif_aff_tran_v1.data:co_transaction_rel_type}
+  TYPES ty_transaction_rel_type TYPE c LENGTH 10.
+  CONSTANTS:
+    "! <p class="shorttext">Transaction Relationship</p>
+    "! Transaction Relationship
+    BEGIN OF co_transaction_rel_type,
+      "! <p class="shorttext">INCL_ROLE</p>
+      "! Include in Role for Transaction
+      include_role  TYPE ty_transaction_rel_type VALUE 'INCL_ROLE',
+      "! <p class="shorttext">REQU_ROLE</p>
+      "! Requires Transaction in Roles
+      requires_role TYPE ty_transaction_rel_type VALUE 'REQU_ROLE',
+    END OF co_transaction_rel_type.
+
+  TYPES:
+    "! <p class="shorttext">Transaction Relationships</p>
+    "! Transaction Relationship between current transaction and related transactions
+    BEGIN OF ty_transaction_relationship,
+      "! <p class="shorttext">Relationship Type</p>
+      "! Relationship Type
+      "! $required
+      relationship_type TYPE ty_transaction_rel_type,
+      "! <p class="shorttext">Related Transaction Name</p>
+      "! Related Transaction Name
+      related_tcode     TYPE ty_transaction_code,
+    END OF ty_transaction_relationship.
+  TYPES ty_transaction_relationship_t TYPE STANDARD TABLE OF ty_transaction_relationship WITH DEFAULT KEY.
+
+
+  "! $values {@link zif_aff_tran_v1.data:co_transaction_srv_rel_type}
+  TYPES ty_transaction_srv_rel_type TYPE c LENGTH 10.
+  CONSTANTS:
+    "! <p class="shorttext">Transaction Relationship</p>
+    "! Transaction Relationship
+    BEGIN OF co_transaction_srv_rel_type,
+      "! <p class="shorttext">INCL_ROLE</p>
+      "! Include in Role for Transaction
+      include_role  TYPE ty_transaction_srv_rel_type VALUE 'INCL_ROLE',
+      "! <p class="shorttext">REQU_ROLE</p>
+      "! Requires Transaction in Roles
+      requires_role TYPE ty_transaction_srv_rel_type VALUE 'REQU_ROLE',
+    END OF co_transaction_srv_rel_type.
+
+  TYPES:
+    "! <p class="shorttext">Service Relationship</p>
+    "! Transaction Relationship between current transaction and related service
+    BEGIN OF ty_service_relationship,
+      "! <p class="shorttext">Relationship Type</p>
+      "! Relationship Type
+      "! $required
+      relationship_type        TYPE ty_transaction_srv_rel_type,
+      "! <p class="shorttext">Application Type</p>
+      "! Authorization Defaults Hash Key Type
+      "! $required
+      related_application_type TYPE c LENGTH 2,
+      "! <p class="shorttext">Application Name</p>
+      "! Authorization Defaults Hash Key Name
+      "! $required
+      related_application_name TYPE zif_aff_types_v1=>ty_object_name_30,
+      "! <p class="shorttext">Program ID</p>
+      "! Program ID in Requests and Tasks
+      program_id               TYPE c LENGTH 4,
+      "! <p class="shorttext">Object Type</p>
+      "! Object Type in Object Directory
+      object_type              TYPE c LENGTH 4,
+      "! <p class="shorttext">Object Name</p>
+      "! Object Name in Object Directory
+      object_name              TYPE zif_aff_types_v1=>ty_object_name_40,
+      "! <p class="shorttext">External Service Type</p>
+      "! External Service Type
+      service_type             TYPE c LENGTH 16,
+      "! <p class="shorttext">External Service</p>
+      "! External Service
+      service                  TYPE string,
+    END OF ty_service_relationship.
+  TYPES ty_service_relationship_t TYPE STANDARD TABLE OF ty_service_relationship WITH DEFAULT KEY.
 
   "! $values {@link zif_aff_tran_v1.data:co_ui_classification}
   "! $default {@link zif_aff_tran_v1.data:co_ui_classification.professional_user_transaction}
@@ -617,21 +739,6 @@ INTERFACE zif_aff_tran_v1
     END OF ty_ui_attributes.
 
   TYPES:
-    BEGIN OF ty_authorizations,
-      "! <p class="shorttext">Start Authorization Object</p>
-      "! A start authorization object controls who may run a transaction. It is checked at transaction start.
-      "! Fields must have single or empty values. Empty fields trigger a DUMMY check.
-      "! This object is auto-assigned in the authorization defaults transaction.
-      start_authorization_object TYPE ty_sao,
-      "! <p class="shorttext">Authorization Default Values</p>
-      "! Authorization default values define which authorization objects and field values are automatically proposed
-      "! when creating roles for a transaction, simplifying role maintenance and ensuring consistent security
-      "! settings across users and roles.
-      "! $required
-      authorization_defaults     TYPE ty_ad,
-    END OF ty_authorizations.
-
-  TYPES:
     BEGIN OF ty_user_interface,
       "! <p class="shorttext">UI Attributes</p>
       "! UI attributes manage UI classification and GUI support
@@ -645,23 +752,32 @@ INTERFACE zif_aff_tran_v1
       "! <p class="shorttext">Format Version</p>
       "! Format version
       "! $required
-      format_version      TYPE zif_aff_types_v1=>ty_format_version,
+      format_version            TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header              TYPE zif_aff_types_v1=>ty_header_80,
+      header                    TYPE zif_aff_types_v1=>ty_header_80,
       "! <p class="shorttext">General Information</p>
       "! The general information contains details about the transaction, depending on the transaction type.
       "! $required
-      general_information TYPE ty_general_information,
+      general_information       TYPE ty_general_information,
+      "! <p class="shorttext">Transaction Services</p>
+      "! Transaction Services
+      transaction_services      TYPE ty_transaction_service_t,
+      "! <p class="shorttext">Transaction Relationships</p>
+      "! Relationships to related transactions
+      transaction_relationships TYPE ty_transaction_relationship_t,
+      "! <p class="shorttext">Service Relationships</p>
+      "! Relationships to services
+      service_relationships     TYPE ty_service_relationship_t,
       "! <p class="shorttext">User Interface</p>
       "! User Interface manage UI classification and GUI support
-      user_interface      TYPE ty_user_interface,
+      user_interface            TYPE ty_user_interface,
       "! <p class="shorttext">Authorizations</p>
       "! Authorizations contain settings related to security and access control:
       "! Start Authorization Object and
       "! Authorization Default Values
-      authorizations      TYPE ty_authorizations,
+      authorizations            TYPE ty_authorizations,
     END OF ty_main.
 
 ENDINTERFACE.

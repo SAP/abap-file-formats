@@ -4,7 +4,7 @@
 
 Object Type | Description | Group
 :--- | :--- | :---
-TRAN  | Transaction | Others
+TRAN  | Transaction | Authorizations
 
 ## File Structure
 

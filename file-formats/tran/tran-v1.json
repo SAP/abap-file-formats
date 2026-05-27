@@ -342,6 +342,179 @@
         "transactionType"
       ]
     },
+    "transactionServices": {
+      "title": "Transaction Services",
+      "description": "Transaction Services",
+      "type": "array",
+      "items": {
+        "title": "Transaction Service",
+        "description": "Transaction Service",
+        "type": "object",
+        "properties": {
+          "applicationName": {
+            "title": "Application Name",
+            "description": "Authorization Defaults Hash Key Name",
+            "type": "string",
+            "maxLength": 30
+          },
+          "applicationType": {
+            "title": "Application Type",
+            "description": "Authorization Defaults Hash Key Type",
+            "type": "string",
+            "maxLength": 2
+          },
+          "programId": {
+            "title": "Program ID",
+            "description": "Program ID in Requests and Tasks",
+            "type": "string",
+            "maxLength": 4
+          },
+          "objectType": {
+            "title": "Object Type",
+            "description": "Object Type in Object Directory",
+            "type": "string",
+            "maxLength": 4
+          },
+          "objectName": {
+            "title": "Object Name",
+            "description": "Object Name in Object Directory",
+            "type": "string",
+            "maxLength": 40
+          },
+          "serviceType": {
+            "title": "External Service Type",
+            "description": "External Service Type",
+            "type": "string",
+            "maxLength": 16
+          },
+          "service": {
+            "title": "External Service",
+            "description": "External Service",
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "applicationName",
+          "applicationType"
+        ]
+      }
+    },
+    "transactionRelationships": {
+      "title": "Transaction Relationships",
+      "description": "Relationships to related transactions",
+      "type": "array",
+      "items": {
+        "title": "Transaction Relationships",
+        "description": "Transaction Relationship between current transaction and related transactions",
+        "type": "object",
+        "properties": {
+          "relationshipType": {
+            "title": "Relationship Type",
+            "description": "Relationship Type",
+            "type": "string",
+            "enum": [
+              "includeRole",
+              "requiresRole"
+            ],
+            "enumTitles": [
+              "INCL_ROLE",
+              "REQU_ROLE"
+            ],
+            "enumDescriptions": [
+              "Include in Role for Transaction",
+              "Requires Transaction in Roles"
+            ]
+          },
+          "relatedTcode": {
+            "title": "Related Transaction Name",
+            "description": "Related Transaction Name",
+            "type": "string",
+            "maxLength": 20
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "relationshipType"
+        ]
+      }
+    },
+    "serviceRelationships": {
+      "title": "Service Relationships",
+      "description": "Relationships to services",
+      "type": "array",
+      "items": {
+        "title": "Service Relationship",
+        "description": "Transaction Relationship between current transaction and related service",
+        "type": "object",
+        "properties": {
+          "relationshipType": {
+            "title": "Relationship Type",
+            "description": "Relationship Type",
+            "type": "string",
+            "enum": [
+              "includeRole",
+              "requiresRole"
+            ],
+            "enumTitles": [
+              "INCL_ROLE",
+              "REQU_ROLE"
+            ],
+            "enumDescriptions": [
+              "Include in Role for Transaction",
+              "Requires Transaction in Roles"
+            ]
+          },
+          "relatedApplicationType": {
+            "title": "Application Type",
+            "description": "Authorization Defaults Hash Key Type",
+            "type": "string",
+            "maxLength": 2
+          },
+          "relatedApplicationName": {
+            "title": "Application Name",
+            "description": "Authorization Defaults Hash Key Name",
+            "type": "string",
+            "maxLength": 30
+          },
+          "programId": {
+            "title": "Program ID",
+            "description": "Program ID in Requests and Tasks",
+            "type": "string",
+            "maxLength": 4
+          },
+          "objectType": {
+            "title": "Object Type",
+            "description": "Object Type in Object Directory",
+            "type": "string",
+            "maxLength": 4
+          },
+          "objectName": {
+            "title": "Object Name",
+            "description": "Object Name in Object Directory",
+            "type": "string",
+            "maxLength": 40
+          },
+          "serviceType": {
+            "title": "External Service Type",
+            "description": "External Service Type",
+            "type": "string",
+            "maxLength": 16
+          },
+          "service": {
+            "title": "External Service",
+            "description": "External Service",
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "relationshipType",
+          "relatedApplicationType",
+          "relatedApplicationName"
+        ]
+      }
+    },
     "userInterface": {
       "title": "User Interface",
       "description": "User Interface manage UI classification and GUI support",
@@ -663,7 +836,10 @@
               }
             }
           },
-          "additionalProperties": false
+          "additionalProperties": false,
+          "required": [
+            "maintenanceMode"
+          ]
         }
       },
       "additionalProperties": false,
