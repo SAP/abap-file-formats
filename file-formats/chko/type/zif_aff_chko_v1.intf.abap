@@ -40,10 +40,12 @@ INTERFACE zif_aff_chko_v1
       "! <p class="shorttext">Category</p>
       "! The parent category of an ATC check object
       "! $required
+      "! $pattern '^[A-Z0-9_/]+$'
       category           TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Implementing Class</p>
       "! The implementing class of the ATC check object
       "! $required
+      "! $pattern '^[A-Z0-9_/]+$'
       implementing_class TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Check Type</p>
       "! The check type of ATC check

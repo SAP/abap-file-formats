@@ -16,7 +16,7 @@ jobs:
     timeout-minutes: 10
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
     - name: Get deleted files
       id: changed-files
       uses: step-security/changed-files@v45.0.1

@@ -110,7 +110,7 @@
             "title": "Active From",
             "description": "Active from",
             "type": "string",
-            "format": "date-time"
+            "format": "date"
           },
           "communicationAttributes": {
             "title": "Communication Integration Attributes",

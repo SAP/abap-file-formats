@@ -19,7 +19,10 @@
     "addCommonJS": true,
     "keywords": ["in", "default"],
     "unknownTypes": "runtimeError",
-    "extraSetup": "../setup.mjs",
+    "setup": {
+      "filename": "../setup.mjs",
+      "preFunction": "setup"
+    },
     "skip": []
   }
 }

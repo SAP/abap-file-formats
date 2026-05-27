@@ -30,5 +30,13 @@ We welcome contributions to our codebase.
 
 Before you start your first contribution, please refer to [the contribution guidelines for SAP open source projects](https://github.com/SAP/.github/blob/main/CONTRIBUTING.md).
 
+### Pull Request Review Process
+
+To help us manage pull requests efficiently:
+
+1. **Assignee**: The repository owners will assign a main reviewer/caretaker to your PR who will coordinate the review process.
+
+2. **Review Label**: When your PR is ready for review (or re-review after making changes), add the `awaiting-review` label. This helps reviewers quickly identify which PRs need attention.
+
 ## Developer Certificate of Origin (DCO)
 Due to legal reasons, contributors will be asked to accept a DCO before they submit the first pull request to this projects, this happens in an automated fashion during the submission process. SAP uses [the standard DCO text of the Linux Foundation](https://developercertificate.org/).

@@ -1,0 +1,14 @@
+managed implementation in class bp_z_aff_example_bdef unique;
+strict ( 2 );
+
+define behavior for Z_AFF_EXAMPLE_BDEF alias RootEntity
+persistent table z_aff_bdef_root
+lock master
+authorization master ( none )
+{
+  create;
+  update;
+  delete;
+
+  field ( readonly : update ) key_field;
+}

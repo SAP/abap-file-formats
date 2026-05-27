@@ -56,6 +56,7 @@ For the text elements of classes, this language will be the original language (p
 
 ABAP file formats use the file types:
 * **`.abap`** stores ABAP source code as plain text
+* **`.abdl`** stores source code of in ABAP Behavior Definition Language as plain text
 * **`.acds`** stores source code of ABAP Core Data Services (CDS) as plain text
 * **`.json`** stores content of form-based editors or properties of objects, such as `originalLanguage`, `abapLanguageVersion` and others.
 Details are found in [JSON Files in ABAP File Formats](./json.md)
