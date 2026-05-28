@@ -2,7 +2,7 @@
   "formatVersion": "1",
   "generalInformation": {
     "dataClassCategory": "APPL1",
-    "sizeCategory": "cat3",
+    "sizeCategory": "3",
     "logChanges": true,
     "writableByAmdp": true,
     "translation": "standard"
