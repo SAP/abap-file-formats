@@ -1,10 +1,5 @@
 {
   "formatVersion": "1",
-  "header": {
-    "description": "Example Technical Settings for Customer Data Table",
-    "originalLanguage": "en",
-    "abapLanguageVersion": "cloudDevelopment"
-  },
   "generalInformation": {
     "dataClassCategory": "APPL1",
     "sizeCategory": "cat3",
