@@ -78,7 +78,7 @@ INTERFACE zif_aff_doma_v1 PUBLIC.
       "! Geometry, EWKB representation
       "! $enumValue 'GEOM_EWKB'
       geom_ewkb  TYPE ty_data_type VALUE 'GGM1',
-      "! <p class="shorttext">1-Bypte Integer</p>
+      "! <p class="shorttext">1-Byte Integer</p>
       "! 1-byte integer, integer number <= 255
       "! $enumValue 'INT1'
       int1       TYPE ty_data_type VALUE 'INT1',
@@ -185,18 +185,6 @@ INTERFACE zif_aff_doma_v1 PUBLIC.
                engineering                  TYPE ty_output_style VALUE '06',
              END OF co_output_style.
 
-  "! <p class="shorttext">No Characters</p>
-  "! Number of characters
-  "! $minimum 0
-  "! $maximum 999999
-  TYPES ty_length               TYPE i.
-
-  "! <p class="shorttext">Decimals</p>
-  "! Decimals
-  "! $minimum 0
-  "! $maximum 999999
-  TYPES ty_decimals             TYPE i.
-
   "! <p class="shorttext">Output Length</p>
   "! Output length
   "! $minimum 0
@@ -212,15 +200,15 @@ INTERFACE zif_aff_doma_v1 PUBLIC.
       "! <p class="shorttext">Data Type</p>
       "! Data type
       "! $required
-      data_type TYPE ty_data_type,
+      data_type TYPE zif_aff_ddic_types_v1=>ty_data_type,
 
       "! <p class="shorttext">Length</p>
       "! Length
       "! $required
-      length    TYPE ty_length,
+      length    TYPE zif_aff_ddic_types_v1=>ty_length,
 
       "! Set if decimal
-      decimals  TYPE ty_decimals,
+      decimals  TYPE zif_aff_ddic_types_v1=>ty_decimals,
 
     END OF ty_format.
 
