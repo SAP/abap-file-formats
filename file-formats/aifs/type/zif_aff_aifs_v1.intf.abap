@@ -207,7 +207,7 @@ INTERFACE zif_aff_aifs_v1
     END OF ty_indirect_mapping.
 
 
-TYPES:
+  TYPES:
     "! <p class="shorttext">Source Field</p>
     "! Source field
     BEGIN OF ty_field_mapping_field,
