@@ -1,0 +1,217 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Business Partner AIF Mapping",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "standard"
+  },
+  "generalInformation": {
+    "namespace": "ZAIF",
+    "dataStructure": "ZAIF_BUSINESS_PARTNER",
+    "mappedDataStructure": "ZAIF_SAP_BUSINESS_PARTNER"
+  },
+  "mappingInformation": [
+    {
+      "name": "10 / ZAIF_BUSINESS_PARTNER / ZAIF_SAP_BUSINESS_PARTNER",
+      "numericId": "10",
+      "dataStructure": "ZAIF_BUSINESS_PARTNER",
+      "mappedDataStructure": "ZAIF_SAP_BUSINESS_PARTNER",
+      "moveCorresponding": false,
+      "copyFields": true,
+      "indirectMapping": false,
+      "checks": [
+        {
+          "check": "BP_EXIST",
+          "numericId": "1",
+          "checkSourceData": false,
+          "checkBehaviour": "ignoreData",
+          "checkFieldlist": [
+            {
+              "number": "1",
+              "fieldPath": "GENERL_DATA-BP_ID"
+            }
+          ]
+        }
+      ],
+      "fieldMapping": [
+        {
+          "mappedField": "ADDRESS",
+          "numericId": "1",
+          "indirectMapping": {
+            "table": "123",
+            "indirectMappingSelection1": {
+              "operator": "notContainsPattern"
+            },
+            "indirectMappingSelection2": {
+              "operator": "equals"
+            },
+            "indirectMappingSelection3": {
+              "operator": "equals"
+            }
+          },
+          "sourceFieldlist": [
+            {
+              "fieldNumber": "1",
+              "field": "ADDRESS-STREET",
+              "checkBa": "before"
+            },
+            {
+              "fieldNumber": "2",
+              "field": "ADDRESS-HOUSE_NR",
+              "checkBa": "before"
+            },
+            {
+              "fieldNumber": "3",
+              "field": "ADDRESS-POSTAL_CODE",
+              "checkBa": "before"
+            },
+            {
+              "fieldNumber": "4",
+              "field": "ADDRESS-CITY",
+              "checkBa": "before"
+            },
+            {
+              "fieldNumber": "5",
+              "field": "ADDRESS-COUNTRY_CODE",
+              "checkBa": "before"
+            },
+            {
+              "fieldNumber": "6",
+              "field": "ADDRESS-COUNTRY",
+              "checkBa": "before"
+            }
+          ],
+          "conditions": [
+            {
+              "check": "CHECK_VALID_ADDRESS",
+              "numericId": "1",
+              "conditionType": "altFld",
+              "conditionFields": [
+                {
+                  "number": "1",
+                  "field": "ADDRESS-POSTAL_CODE"
+                },
+                {
+                  "number": "2",
+                  "field": "ADDRESS-COUNTRY_CODE"
+                }
+              ],
+              "alternativeFields": [
+                {
+                  "number": "1",
+                  "field": "ADDRESS-STREET"
+                },
+                {
+                  "number": "2",
+                  "field": "ADDRESS-HOUSE_NR"
+                },
+                {
+                  "number": "3",
+                  "field": "ADDRESS-CITY"
+                },
+                {
+                  "number": "4",
+                  "field": "ADDRESS-COUNTRY"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mappedField": "E_MAIL",
+          "numericId": "2",
+          "indirectMapping": {
+            "indirectMappingSelection1": {
+              "operator": "equals"
+            },
+            "indirectMappingSelection2": {
+              "operator": "equals"
+            },
+            "indirectMappingSelection3": {
+              "operator": "equals"
+            }
+          },
+          "sourceFieldlist": [
+            {
+              "fieldNumber": "1",
+              "field": "ADDRESS-EMAIL",
+              "checkBa": "before"
+            }
+          ],
+          "conditions": [
+            {
+              "check": "CONTACT_VIA_MAIL",
+              "numericId": "1",
+              "conditionType": "emptyValue",
+              "conditionFields": [
+                {
+                  "number": "1",
+                  "field": "ADDRESS-CONTACT_CHANNEL"
+                }
+              ],
+              "alternativeFields": []
+            },
+            {
+              "check": "IS_EMPTY",
+              "numericId": "2",
+              "conditionType": "emptyValue",
+              "conditionFields": [
+                {
+                  "number": "1",
+                  "field": "ADDRESS-E_MAIL"
+                }
+              ],
+              "alternativeFields": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "20 / ADDRESS / GENERAL_ADDRESS",
+      "numericId": "20",
+      "dataStructure": "ADDRESS",
+      "mappedDataStructure": "GENERAL_ADDRESS",
+      "moveCorresponding": true,
+      "copyFields": true,
+      "indirectMapping": false,
+      "checks": [],
+      "fieldMapping": [
+        {
+          "mappedField": "NAME",
+          "numericId": "1",
+          "indirectMapping": {
+            "indirectMappingSelection1": {
+              "operator": "equals"
+            },
+            "indirectMappingSelection2": {
+              "operator": "equals"
+            },
+            "indirectMappingSelection3": {
+              "operator": "equals"
+            }
+          },
+          "sourceFieldlist": [
+            {
+              "fieldNumber": "1",
+              "field": "NAME",
+              "checkBa": "before"
+            }
+          ],
+          "conditions": []
+        }
+      ]
+    },
+    {
+      "name": "1",
+      "numericId": "1",
+      "dataStructure": "1",
+      "mappedDataStructure": "1",
+      "copyFields": true,
+      "classBeforeMapping": "1",
+      "classAfterMapping": "1",
+      "checks": [],
+      "fieldMapping": []
+    }
+  ]
+}
