@@ -1,0 +1,17 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "SXTG: Sales Order Header (Home)",
+    "originalLanguage": "en"
+  },
+  "generalInformation": {
+    "extensionInclude": "SXTG_S_TSM_SO_INCL_EEW",
+    "applicationDataStructure": "SXTG_S_TSM_SO_APPL_DATA",
+    "uiExtensionEntity": "D_SXTG_TSM_SO_UI_HEADER"
+  },
+  "transactionCodes": [
+    {
+      "name": "SXTG_TSM_SO"
+    }
+  ]
+}

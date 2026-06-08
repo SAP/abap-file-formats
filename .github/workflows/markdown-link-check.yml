@@ -13,9 +13,14 @@ jobs:
     runs-on: ubuntu-22.04
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
+      - name: Set up Chrome
+        id: setup-chrome
+        uses: browser-actions/setup-chrome@v2
       - name: Run linkspector
         uses: umbrelladocs/action-linkspector@v1
+        env:
+          PUPPETEER_EXECUTABLE_PATH: ${{ steps.setup-chrome.outputs.chrome-path }}
         with:
           reporter: github-pr-review
           fail_on_error: true

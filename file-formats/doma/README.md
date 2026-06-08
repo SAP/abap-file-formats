@@ -2,12 +2,13 @@
 
 ## Object Type Information
 
-Object Type | Description | Group
+Object Type | Description | Group
 :--- | :--- | :---
-DOMA | Domain | Dictionary
+DOMA  | Domain | Dictionary
 
 ## File Structure
 
 File | Cardinality | Definition | Schema | Example
-:--- | :---  | :--- | :--- | :---
-`<name>.doma.json` | 1 | [`zif_aff_doma_v1.intf.abap`](./type/zif_aff_doma_v1.intf.abap) | [`doma-v1.json`](./doma-v1.json) | [`z_aff_example_doma.doma.json`](./examples/z_aff_example_doma.doma.json)
+:--- | :--- | :--- | :--- | :---
+`<name>.doma.json` | 1 | [`zif_aff_doma_v1.intf.abap`](./type/zif_aff_doma_v1.intf.abap) | [`doma-v1.json`](./doma-v1.json) | [`z_aff_example.doma.json`](./examples/z_aff_example.doma.json)
+`<name>.doma.docu.json` | 0...1 | [`zif_aff_docu_v1.intf.abap`](../zif_aff_docu_v1.intf.abap) | [`docu-v1.json`](../docu-v1.json) | [`z_aff_example.doma.docu.json`](./examples/z_aff_example.doma.docu.json)

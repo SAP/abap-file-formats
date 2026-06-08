@@ -1,0 +1,36 @@
+INTERFACE zif_aff_msag_v1
+  PUBLIC.
+
+  TYPES:
+    "! <p class="shorttext">Message Properties</p>
+    "! Message properties
+    BEGIN OF ty_message,
+      "! <p class="shorttext">Message Number</p>
+      "! Message number
+      number TYPE c LENGTH 3,
+      "! <p class="shorttext">Message Text</p>
+      "! Message text
+      text   TYPE c LENGTH 73,
+    END OF ty_message.
+
+  "! <p class="shorttext">Internal table to store messages</p>
+  "! Internal table to store messages
+  TYPES ty_messages TYPE SORTED TABLE OF ty_message WITH UNIQUE KEY number.
+
+  TYPES:
+    "! <p class="shorttext">Message Class Properties</p>
+    "! Message class properties
+    BEGIN OF ty_main,
+      "! $required
+      format_version TYPE zif_aff_types_v1=>ty_format_version,
+      "! <p class="shorttext">Header</p>
+      "! Header
+      "! $required
+      header         TYPE zif_aff_types_v1=>ty_header_60_no_abap_lv,
+      "! <p class="shorttext">Messages</p>
+      "! Messages
+      "! $required
+      messages       TYPE ty_messages,
+    END OF ty_main.
+
+ENDINTERFACE.

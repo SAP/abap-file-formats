@@ -1,0 +1,38 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "France: Customer Invoice Request",
+    "originalLanguage": "en"
+  },
+  "generalInformation": {
+    "direction": "outbound"
+  },
+  "versions": [
+    {
+      "version": 1,
+      "description": "Initial Version",
+      "activeFrom": "01.01.2025",
+      "communicationAttributes": {
+        "processType": "CUSTOMER_INVOICE",
+        "processVersion": "1.0.0",
+        "processSubtype": "DOMESTIC",
+        "drcAction": "TRANSMIT",
+        "responseInterface": "INVOICER",
+        "responseInterfaceVersion": 1
+      }
+    },
+    {
+      "version": 2,
+      "description": "Version 2",
+      "activeFrom": "01.07.2025",
+      "communicationAttributes": {
+        "processType": "CUSTOMER_INVOICE",
+        "processVersion": "1.1.0",
+        "processSubtype": "DOMESTIC",
+        "drcAction": "TRANSMIT",
+        "responseInterface": "INVOICER",
+        "responseInterfaceVersion": 2
+      }
+    }
+  ]
+}
