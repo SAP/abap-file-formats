@@ -130,7 +130,7 @@ INTERFACE zif_aff_aifs_v1
   TYPES:
    "! <p class="shorttext">Alternative Fields</p>
    "! Alternative fields
-   ty_alternative_fields TYPE STANDARD TABLE OF ty_alternative_field WITH DEFAULT KEY.
+    ty_alternative_fields TYPE STANDARD TABLE OF ty_alternative_field WITH DEFAULT KEY.
 
   TYPES:
     "! <p class="shorttext">Condition</p>
