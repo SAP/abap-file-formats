@@ -40,20 +40,11 @@ INTERFACE zif_aff_enho_v1
       "! Wildcard characters can be used to form the operand2 pattern, where * represents any character string,
       "! including an empty string, and + represents any character. It is not case-sensitive. Trailing blanks in
       "! the left operand are respected.
-      "! If the comparison is true, sy-fdpos contains the offset of operand2 in operand1, whereby leading
-      "! wildcard characters * in operand2 are ignored if operand2 also contains other characters. If the
-      "! comparison is false, sy-fdpos contains the length of operand1.
-      "! Characters in operand2 can be marked for direct comparisons by prefixing them with the escape character
-      "! #. For such characters in operand2, the operator is case-sensitive, wildcard characters and the escape
-      "! character are not subject to special handling and trailing blanks are relevant.
       "! $enumValue 'CP'
       conforms_to_pattern         TYPE ty_comparator VALUE 'CP',
       "! <p class="shorttext">Does Not Conform To Pattern</p>
       "! True, if a comparison expression with CP is false, that is, operand1 does not fit the pattern in
       "! operand2.
-      "! If the comparison is false, sy-fdpos contains the offset of operand2 in operand1, whereby leading
-      "! wildcard characters * in operand2 are ignored if operand2 also contains other characters.
-      "! If the comparison is true, sy-fdpos contains the length of operand1.
       "! $enumValue 'NP'
       does_not_conform_to_pattern TYPE ty_comparator VALUE 'NP',
       "! <p class="shorttext">Contains String</p>
@@ -61,15 +52,12 @@ INTERFACE zif_aff_enho_v1
       "! Trailing blanks in the left operand are respected. If operand1 is of type string and initial, or
       "! of type c and contains only blank characters, the comparison expression is false, unless operand2
       "! is also of type string and initial, or of type c and only contains blank characters, in which case,
-      "! the comparison expression is always true. If the comparison is true, sy-fdpos contains the offset of
-      "! operand2 in operand1. If the comparison is false, sy-fdpos contains the length of operand1.
+      "! the comparison expression is always true.
       "! $enumValue 'CS'
       contains_string             TYPE ty_comparator VALUE 'CS',
       "! <p class="shorttext">Contains No String</p>
       "! True, if a comparison expression with CS is false, that is if operand1 does not contain the content
       "! of operand2.
-      "! If the comparison is false, sy-fdpos contains the offset of operand2 in operand1. If the comparison
-      "! is true, sy-fdpos contains the length of operand1.
       "! $enumValue 'NS'
       contains_no_string          TYPE ty_comparator VALUE 'NS',
     END OF co_comparator.
@@ -106,12 +94,12 @@ INTERFACE zif_aff_enho_v1
     "! This structure contains all relevant data of one BADI implementation filter:
     "! It compares one filter-name (from the BADI definition) with one filter-value using one comparator.
     BEGIN OF ty_filter,
-      "! <p class="shorttext">Filter Name</p>
+      "! <p class="shorttext">Name</p>
       "! Filter name
-      filtername TYPE zif_aff_types_v1=>ty_object_name_30,
-      "! <p class="shorttext">Filter Type</p>
+      name       TYPE zif_aff_types_v1=>ty_object_name_30,
+      "! <p class="shorttext">Type</p>
       "! Filter type
-      filtertype TYPE ty_filtertype,
+      type       TYPE ty_filtertype,
       "! <p class="shorttext">Comparator</p>
       "! Comparator
       comparator TYPE ty_comparator,
@@ -224,67 +212,11 @@ INTERFACE zif_aff_enho_v1
     "! BAdI implementations of the ENHO
     ty_badi_implementations TYPE STANDARD TABLE OF ty_badi_implementation WITH DEFAULT KEY.
 
-
-  "! <p class="shorttext">Element Usage</p>
-  "! Element usage
-  "! $values {@link zif_aff_enho_v1.data:co_element_usage}
-  TYPES ty_element_usage TYPE c LENGTH 4.
-
-  CONSTANTS:
-    "! <p class="shorttext">Element Usage</p>
-    "! Element usage
-    BEGIN OF co_element_usage,
-      "! <p class="shorttext">Used Object</p>
-      "! Used object
-      used_object     TYPE ty_element_usage VALUE 'USEO',
-      "! <p class="shorttext">Enhanced Object</p>
-      "! Enhanced object
-      enhanced_object TYPE ty_element_usage VALUE 'EXTO',
-      "! <p class="shorttext">Migrated From</p>
-      "! Migrated from
-      migrated_from   TYPE ty_element_usage VALUE 'MIGR',
-    END OF co_element_usage.
-
-  TYPES:
-    "! <p class="shorttext">A Referenced Object</p>
-    "! A referenced object
-    BEGIN OF ty_referenced_object,
-      "! <p class="shorttext">Type of the Referenced Object</p>
-      "! Type of the referenced object
-      "! $required
-      object_type      TYPE c LENGTH 4,
-      "! <p class="shorttext">Name of the Referenced Object</p>
-      "! Name of the referenced object
-      "! $required
-      object_name      TYPE c LENGTH 120,
-      "! <p class="shorttext">Program ID of the Referenced Object</p>
-      "! Program ID (R3TR or LIMU) of the referenced object
-      "! $required
-      program_id       TYPE c LENGTH 4,
-      "! <p class="shorttext">Element Usage</p>
-      "! Element usage of the referenced object
-      "! $required
-      element_usage    TYPE ty_element_usage,
-      "! <p class="shorttext">Main Object Type</p>
-      "! Main object type of the referenced object
-      "! $required
-      main_object_type TYPE c LENGTH 4,
-      "! <p class="shorttext">Main Object Name</p>
-      "! Main object name of the referenced object
-      "! $required
-      main_object_name TYPE c LENGTH 40,
-    END OF ty_referenced_object,
-
-    "! <p class="shorttext">Referenced Objects</p>
-    "! Referenced objects of the enhancement implementation
-    ty_referenced_objects TYPE STANDARD TABLE OF ty_referenced_object WITH DEFAULT KEY.
-
-
   TYPES:
     "! <p class="shorttext">General Information</p>
     "! General information"
     BEGIN OF ty_general_information,
-      "! <p class="shorttext">Enhancement Spot Name</p>
+      "! <p class="shorttext">Enhancement Spot</p>
       "! Enhancement Spot name
       "! $required
       enhancement_spot TYPE zif_aff_types_v1=>ty_object_name_30,
@@ -302,16 +234,12 @@ INTERFACE zif_aff_enho_v1
       "! $required
       header               TYPE zif_aff_types_v1=>ty_header_100,
       "! <p class="shorttext">General Information</p>
-      "! General Information
+      "! General information
       "! $required
       general_information  TYPE ty_general_information,
       "! <p class="shorttext">BAdI Implementations of the ENHO</p>
       "! BAdI implementations of the ENHO
       badi_implementations TYPE ty_badi_implementations,
-      "! <p class="shorttext">Referenced Objects</p>
-      "! Referenced objects of the enhancement implementation
-      "! $required
-      referenced_objects   TYPE ty_referenced_objects,
     END OF ty_main.
 
 ENDINTERFACE.

@@ -40,31 +40,5 @@
         ]
       }
     }
-  ],
-  "referencedObjects": [
-    {
-      "objectType": "CLAS",
-      "objectName": "Z_AFF_EXAMPLE_BADI_IMPL",
-      "programId": "R3TR",
-      "elementUsage": "usedObject",
-      "mainObjectType": "CLAS",
-      "mainObjectName": "Z_AFF_EXAMPLE_BADI_IMPL"
-    },
-    {
-      "objectType": "ENHS",
-      "objectName": "Z_AFF_EXAMPLE_ENHS",
-      "programId": "R3TR",
-      "elementUsage": "enhancedObject",
-      "mainObjectType": "ENHS",
-      "mainObjectName": "Z_AFF_EXAMPLE_ENHS"
-    },
-    {
-      "objectType": "INTF",
-      "objectName": "Z_AFF_EXAMPLE_BADI_INTF",
-      "programId": "R3TR",
-      "elementUsage": "usedObject",
-      "mainObjectType": "INTF",
-      "mainObjectName": "Z_AFF_EXAMPLE_BADI_INTF"
-    }
   ]
 }
