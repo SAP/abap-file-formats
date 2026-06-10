@@ -22,16 +22,16 @@
             "and": [
               {
                 "filter": {
-                  "filtername": "EXAMPLE_INTEGER_FILTER",
-                  "filtertype": "integer",
+                  "name": "EXAMPLE_INTEGER_FILTER",
+                  "type": "integer",
                   "comparator": ">",
                   "value": "1"
                 }
               },
               {
                 "filter": {
-                  "filtername": "EXAMPLE_STRING_FILTER",
-                  "filtertype": "string",
+                  "name": "EXAMPLE_STRING_FILTER",
+                  "type": "string",
                   "value": "TEST"
                 }
               }
