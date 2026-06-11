@@ -17,25 +17,21 @@
       "isActiveImplementation": true,
       "customizing": "notSupported",
       "filterValues": {
-        "or": [
+        "and": [
           {
-            "and": [
-              {
-                "filter": {
-                  "name": "EXAMPLE_INTEGER_FILTER",
-                  "type": "integer",
-                  "comparator": ">",
-                  "value": "1"
-                }
-              },
-              {
-                "filter": {
-                  "name": "EXAMPLE_STRING_FILTER",
-                  "type": "string",
-                  "value": "TEST"
-                }
-              }
-            ]
+            "filter": {
+              "name": "EXAMPLE_INTEGER_FILTER",
+              "type": "integer",
+              "comparator": ">",
+              "value": "1"
+            }
+          },
+          {
+            "filter": {
+              "name": "EXAMPLE_STRING_FILTER",
+              "type": "string",
+              "value": "TEST"
+            }
           }
         ]
       }
