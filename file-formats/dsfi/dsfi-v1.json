@@ -13,7 +13,7 @@
     },
     "header": {
       "title": "Header",
-      "description": "The header for an ABAP main object (with source code) with a description of 60 characters",
+      "description": "The header for an ABAP main object (without source code) with a description of 60 characters",
       "type": "object",
       "properties": {
         "description": {
@@ -86,7 +86,7 @@
       "type": "object",
       "properties": {
         "amdpReference": {
-          "title": "AMDP Reference",
+          "title": "AMDP function implementation",
           "description": "The name of the AMDP implementation reference",
           "type": "string",
           "maxLength": 100

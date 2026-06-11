@@ -1,5 +1,5 @@
 INTERFACE zif_aff_dsfi_v1
-  PUBLIC.
+  PUBLIC .
 
 
   TYPES:
@@ -21,15 +21,15 @@ INTERFACE zif_aff_dsfi_v1
 
   TYPES:
     BEGIN OF ty_sql_properties,
-      "! <p class="shorttext">AMDP Reference</p>
+      "! <p class="shorttext">AMDP function implementation</p>
       "! The name of the AMDP implementation reference
       "! $required
-      amdp_reference               TYPE c LENGTH 100,
+      amdp_reference                TYPE ddamdpname,
       "! <p class="shorttext">Automatically Exposed in SQL Services</p>
       "! Flag whether or not the SQL implementation of the
       "! CDS scalar function will be automatically exposed in all SQL services
       "! $showAlways
-      auto_exposed_in_sql_services TYPE abap_bool,
+      auto_exposed_in_sql_services  TYPE abap_bool,
     END OF ty_sql_properties.
 
   TYPES:
@@ -38,7 +38,7 @@ INTERFACE zif_aff_dsfi_v1
       "! $required
       format_version       TYPE zif_aff_types_v1=>ty_format_version,
       "! $required
-      header               TYPE zif_aff_types_v1=>ty_header_60_src,
+      header               TYPE zif_aff_types_v1=>ty_header_60,
       "! <p class="shorttext">Scalar Function Name</p>
       "! The name of the scalar function
       "! $required
