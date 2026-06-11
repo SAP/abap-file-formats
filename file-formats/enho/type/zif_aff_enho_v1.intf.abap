@@ -1,14 +1,14 @@
 INTERFACE zif_aff_enho_v1
   PUBLIC.
 
-  "! <p class="shorttext">Filter Comparator</p>
+  "! <p class="shorttext">Comparator</p>
   "! Filter comparator
   "! $values {@link zif_aff_enho_v1.data:co_comparator}
   "! $default {@link zif_aff_enho_v1.data:co_comparator.equal}
   TYPES ty_comparator TYPE c LENGTH 2.
 
   CONSTANTS:
-    "! <p class="shorttext">Filter Comparator</p>
+    "! <p class="shorttext">Comparator</p>
     "! Filter comparator
     BEGIN OF co_comparator,
       "! <p class="shorttext">Equal</p>
@@ -91,8 +91,7 @@ INTERFACE zif_aff_enho_v1
 
   TYPES:
     "! <p class="shorttext">Filter</p>
-    "! This structure contains all relevant data of one BADI implementation filter:
-    "! It compares one filter-name (from the BADI definition) with one filter-value using one comparator.
+    "! Filter
     BEGIN OF ty_filter,
       "! <p class="shorttext">Name</p>
       "! Filter name
@@ -157,59 +156,59 @@ INTERFACE zif_aff_enho_v1
     "! <p class="shorttext">Customizing</p>
     "! Customizing
     BEGIN OF co_customizing,
-      "! <p class="shorttext">Customizing Not Supported</p>
+      "! <p class="shorttext">Not Supported</p>
       "! Customizing is not supported
       not_supported          TYPE ty_customizing VALUE 'X',
-      "! <p class="shorttext">Customizing Supported</p>
+      "! <p class="shorttext">Supported</p>
       "! Customizing is supported
       supported              TYPE ty_customizing VALUE ' ',
-      "! <p class="shorttext">Customizing Supported (No Transport)</p>
+      "! <p class="shorttext">Supported (No Transport)</p>
       "! Customizing is supported (without transport)
       supported_no_transport TYPE ty_customizing VALUE 'D',
     END OF co_customizing.
 
   TYPES:
     "! <p class="shorttext">BAdI Implementation</p>
-    "! Information about this BAdI implementation
+    "! BAdI Implementation
     BEGIN OF ty_badi_implementation,
       "! <p class="shorttext">Name</p>
       "! Name of the BAdI implementation
       "! $required
       name                      TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Description</p>
-      "! Description of the BAdI implementation
+      "! Description
       "! $required
       description               TYPE c LENGTH 255,
       "! <p class="shorttext">BAdI Definition</p>
-      "! BAdI Definition of the BAdI implementation
+      "! BAdI Definition
       "! $required
       badi_definition           TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Implementing Class</p>
-      "! Implementing class of the BAdI implementation
+      "! Implementing class
       implementing_class        TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Is Example Implementation</p>
       "! BAdI implementation is an example implementation
       is_example_implementation TYPE abap_bool,
       "! <p class="shorttext">Is Default Implementation</p>
-      "! BAdI implementation is the default implementation of the BAdI definition
+      "! Is the default implementation of the BAdI definition
       "! $showAlways
       is_default_implementation TYPE abap_bool,
       "! <p class="shorttext">BAdI Implementation is Active</p>
       "! BAdI implementation is active
       "! $showAlways
       is_active_implementation  TYPE abap_bool,
-      "! <p class="shorttext">BAdI Implementation Customizing</p>
-      "! Does the BAdI implementation support customizing
+      "! <p class="shorttext">Customizing</p>
+      "! Customizing
       "! $showAlways
       customizing               TYPE ty_customizing,
       "! <p class="shorttext">Filter Values</p>
-      "! Filter values for this BAdI implementation
+      "! Filter values
       "! The filter tree has at most 3 levels: or, and, or (with filters on each level)
       filter_values             TYPE ty_filter_values,
     END OF ty_badi_implementation,
 
-    "! <p class="shorttext">BAdI Implementations of the ENHO</p>
-    "! BAdI implementations of the ENHO
+    "! <p class="shorttext">BAdI Implementations</p>
+    "! BAdI implementations
     ty_badi_implementations TYPE STANDARD TABLE OF ty_badi_implementation WITH DEFAULT KEY.
 
   TYPES:
@@ -224,7 +223,7 @@ INTERFACE zif_aff_enho_v1
 
 
   TYPES:
-    "! <p class="shorttext">ENHO Object Type</p>
+    "! <p class="shorttext">ENHO</p>
     "! Object type ENHO
     BEGIN OF ty_main,
       "! $required
@@ -237,8 +236,8 @@ INTERFACE zif_aff_enho_v1
       "! General information
       "! $required
       general_information  TYPE ty_general_information,
-      "! <p class="shorttext">BAdI Implementations of the ENHO</p>
-      "! BAdI implementations of the ENHO
+      "! <p class="shorttext">BAdI Implementations</p>
+      "! BAdI implementations
       badi_implementations TYPE ty_badi_implementations,
     END OF ty_main.
 
