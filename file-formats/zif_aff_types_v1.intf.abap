@@ -193,14 +193,6 @@ INTERFACE zif_aff_types_v1 PUBLIC.
       abap_language_version TYPE ty_abap_language_version_cloud,
     END OF ty_header_100_cloud.
 
-  TYPES:
-    "! <p class="shorttext">Header</p>
-    "! The header for an ABAP subobject with a description of 60 characters
-    BEGIN OF ty_header_only_description,
-      "! $required
-      description TYPE ty_description_60,
-    END OF ty_header_only_description.
-
   "! <p class="shorttext">Option</p>
   "! Option
   "! $values {@link zif_aff_types_v1.data:co_option}
