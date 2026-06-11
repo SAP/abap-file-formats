@@ -24,7 +24,7 @@ INTERFACE zif_aff_dsfi_v1
       "! <p class="shorttext">AMDP function implementation</p>
       "! The name of the AMDP implementation reference
       "! $required
-      amdp_reference               TYPE ddamdpname,
+      amdp_reference               TYPE c LENGTH 100,
       "! <p class="shorttext">Automatically Exposed in SQL Services</p>
       "! Flag whether or not the SQL implementation of the
       "! CDS scalar function will be automatically exposed in all SQL services
