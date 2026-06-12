@@ -1,4 +1,4 @@
-# Transaction File Format
+t# Transaction File Format
 
 ## Object Type Information
 
@@ -10,4 +10,4 @@ TRAN  | Transaction | Authorizations
 
 File | Cardinality | Definition | Schema | Example
 :--- | :--- | :--- | :--- | :---
-`<name>.tran.json` | 1 | [`zif_aff_tran_v1.intf.abap`](./type/zif_aff_tran_v1.intf.abap) | [`tran-v1.json`](./tran-v1.json) | [`z_aff_example_tran.json`](./examples/z_aff_example_tran.json)
+`<name>.tran.json` | 1 | [`zif_aff_tran_v1.intf.abap`](./type/zif_aff_tran_v1.intf.abap) | [`tran-v1.json`](./tran-v1.json) | [`z_aff_example_tran.tran.json`](./examples/z_aff_example_tran.tran.json)
