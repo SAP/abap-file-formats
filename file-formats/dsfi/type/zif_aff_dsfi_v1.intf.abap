@@ -21,7 +21,7 @@ INTERFACE zif_aff_dsfi_v1
 
   TYPES:
     BEGIN OF ty_sql_properties,
-      "! <p class="shorttext">AMDP function implementation</p>
+      "! <p class="shorttext">AMDP Function Implementation</p>
       "! The name of the AMDP implementation reference
       "! $required
       amdp_reference               TYPE c LENGTH 100,
@@ -37,6 +37,8 @@ INTERFACE zif_aff_dsfi_v1
     BEGIN OF ty_main,
       "! $required
       format_version       TYPE zif_aff_types_v1=>ty_format_version,
+      "! <p class="shorttext">Header</p>
+      "! Header
       "! $required
       header               TYPE zif_aff_types_v1=>ty_header_60,
       "! <p class="shorttext">Scalar Function Name</p>
