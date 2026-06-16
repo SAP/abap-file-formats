@@ -236,7 +236,8 @@ INTERFACE zif_aff_enho_v1
 
   TYPES:
     "! <p class="shorttext">General Information</p>
-    "! General information"
+    "! General information
+
     BEGIN OF ty_general_information,
       "! <p class="shorttext">Enhancement Spot</p>
       "! Enhancement Spot name
