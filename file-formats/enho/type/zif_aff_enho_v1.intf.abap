@@ -1,6 +1,26 @@
 INTERFACE zif_aff_enho_v1
   PUBLIC.
 
+  "! <p class="shorttext">Range Filter Comparator</p>
+  "! Range filter comparator
+  "! $values {@link zif_aff_enho_v1.data:co_range_filter_comparator}
+  "! $default {@link zif_aff_enho_v1.data:co_range_filter_comparator.less_than}
+  TYPES ty_range_filter_comparator TYPE c LENGTH 2.
+
+  CONSTANTS:
+    "! <p class="shorttext">Range Filter Comparator</p>
+    "! Range filter comparator
+    BEGIN OF co_range_filter_comparator,
+      "! <p class="shorttext">Less Than</p>
+      "! True, if the value of operand1 is less than the value of operand2.
+      "! $enumValue '<'
+      less_than  TYPE ty_range_filter_comparator VALUE '<',
+      "! <p class="shorttext">Less Equal</p>
+      "! True, if the value of operand1 is less than or equal to the value of operand2.
+      "! $enumValue '<='
+      less_equal TYPE ty_range_filter_comparator VALUE '<=',
+    END OF co_range_filter_comparator.
+
   "! <p class="shorttext">Comparator</p>
   "! Filter comparator
   "! $values {@link zif_aff_enho_v1.data:co_comparator}
@@ -62,32 +82,35 @@ INTERFACE zif_aff_enho_v1
       contains_no_string          TYPE ty_comparator VALUE 'NS',
     END OF co_comparator.
 
-  "! <p class="shorttext">Filter Type</p>
-  "! Filter type
-  "! $values {@link zif_aff_enho_v1.data:co_filtertype}
-  "! $default {@link zif_aff_enho_v1.data:co_filtertype.character_like}
-  TYPES ty_filtertype TYPE c LENGTH 1.
+  TYPES:
+    "! <p class="shorttext">Normal Filter</p>
+    "! Normal filter
+    BEGIN OF ty_normal_filter,
+      "! <p class="shorttext">Comparator</p>
+      "! Comparator
+      comparator TYPE ty_comparator,
+      "! <p class="shorttext">Filter Value</p>
+      "! Filter value
+      value      TYPE string,
+    END OF ty_normal_filter.
 
-  CONSTANTS:
-    "! <p class="shorttext">Filter Type</p>
-    "! Filter type
-    BEGIN OF co_filtertype,
-      "! <p class="shorttext">Integer</p>
-      "! Integer
-      integer        TYPE ty_filtertype VALUE 'I',
-      "! <p class="shorttext">Character-Like</p>
-      "! Character-like
-      character_like TYPE ty_filtertype VALUE 'C',
-      "! <p class="shorttext">String</p>
-      "! String
-      string         TYPE ty_filtertype VALUE 'S',
-      "! <p class="shorttext">Numeric</p>
-      "! Numeric
-      numeric        TYPE ty_filtertype VALUE 'N',
-      "! <p class="shorttext">Packed</p>
-      "! Packed
-      packed         TYPE ty_filtertype VALUE 'P',
-    END OF co_filtertype.
+  TYPES:
+    "! <p class="shorttext">Range Filter</p>
+    "! Range filter
+    BEGIN OF ty_range_filter,
+      "! <p class="shorttext">Low Comparator</p>
+      "! Low comparator
+      low_comparator  TYPE ty_range_filter_comparator,
+      "! <p class="shorttext">Low Filter Value</p>
+      "! Low filter value
+      low_value       TYPE string,
+      "! <p class="shorttext">High Comparator</p>
+      "! High comparator
+      high_comparator TYPE ty_range_filter_comparator,
+      "! <p class="shorttext">High Filter Value</p>
+      "! High filter value
+      high_value      TYPE string,
+    END OF ty_range_filter.
 
   TYPES:
     "! <p class="shorttext">Filter</p>
@@ -95,16 +118,16 @@ INTERFACE zif_aff_enho_v1
     BEGIN OF ty_filter,
       "! <p class="shorttext">Name</p>
       "! Filter name
-      name       TYPE zif_aff_types_v1=>ty_object_name_30,
-      "! <p class="shorttext">Type</p>
-      "! Filter type
-      type       TYPE ty_filtertype,
-      "! <p class="shorttext">Comparator</p>
-      "! Comparator
-      comparator TYPE ty_comparator,
-      "! <p class="shorttext">Filter Value</p>
-      "! Filter value
-      value      TYPE string,
+      name                  TYPE zif_aff_types_v1=>ty_object_name_30,
+      "! <p class="shorttext">Normal Filter</p>
+      "! Normal filter
+      normal_filter_details TYPE ty_normal_filter,
+      "! <p class="shorttext">Is Range Filter</p>
+      "! Is range filter
+      is_range_filter       TYPE abap_bool,
+      "! <p class="shorttext">Range Filter</p>
+      "! Range filter
+      range_filter_details  TYPE ty_range_filter,
     END OF ty_filter.
 
   TYPES:

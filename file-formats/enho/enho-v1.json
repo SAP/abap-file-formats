@@ -181,79 +181,84 @@
                                   "type": "string",
                                   "maxLength": 30
                                 },
-                                "type": {
-                                  "title": "Type",
-                                  "description": "Filter type",
-                                  "type": "string",
-                                  "enum": [
-                                    "integer",
-                                    "characterLike",
-                                    "string",
-                                    "numeric",
-                                    "packed"
-                                  ],
-                                  "enumTitles": [
-                                    "Integer",
-                                    "Character-Like",
-                                    "String",
-                                    "Numeric",
-                                    "Packed"
-                                  ],
-                                  "enumDescriptions": [
-                                    "Integer",
-                                    "Character-like",
-                                    "String",
-                                    "Numeric",
-                                    "Packed"
-                                  ],
-                                  "default": "characterLike"
+                                "normalFilterDetails": {
+                                  "title": "Normal Filter",
+                                  "description": "Normal filter",
+                                  "type": "object",
+                                  "properties": {
+                                    "comparator": {
+                                      "title": "Comparator",
+                                      "description": "Comparator",
+                                      "type": "string",
+                                      "enum": ["=","<",">","<=",">=","<>","CP","NP","CS","NS"],
+                                      "enumTitles": ["Equal","Less Than","Greater Than","Less Equal","Greater Equal","Not Equal","Conforms To Pattern","Does Not Conform To Pattern","Contains String","Contains No String"],
+                                      "enumDescriptions": [
+                                        "True, if the value of operand1 is equal to the value of operand2.",
+                                        "True, if the value of operand1 is less than the value of operand2.",
+                                        "True, if the value of operand1 is greater than the value of operand2.",
+                                        "True, if the value of operand1 is less than or equal to the value of operand2.",
+                                        "True, if the value of operand1 is greater than or equal to the value of operand2.",
+                                        "True, if the value of operand1 is not equal to the value of operand2.",
+                                        "True, if the content of operand1 matches the pattern in operand2. Wildcard characters can be used to form the operand2 pattern, where * represents any character string, including an empty string, and + represents any character. It is not case-sensitive. Trailing blanks in the left operand are respected.",
+                                        "True, if a comparison expression with CP is false, that is, operand1 does not fit the pattern in operand2.",
+                                        "True, if the content of operand2 is contained in operand1. Trailing blanks in the left operand are respected. If operand1 is of type string and initial, or of type c and contains only blank characters, the comparison expression is false, unless operand2 is also of type string and initial, or of type c and only contains blank characters, in which case, the comparison expression is always true.",
+                                        "True, if a comparison expression with CS is false, that is if operand1 does not contain the content of operand2."
+                                      ],
+                                      "default": "="
+                                    },
+                                    "value": {
+                                      "title": "Filter Value",
+                                      "description": "Filter value",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "additionalProperties": false
                                 },
-                                "comparator": {
-                                  "title": "Comparator",
-                                  "description": "Comparator",
-                                  "type": "string",
-                                  "enum": [
-                                    "=",
-                                    "<",
-                                    ">",
-                                    "<=",
-                                    ">=",
-                                    "<>",
-                                    "CP",
-                                    "NP",
-                                    "CS",
-                                    "NS"
-                                  ],
-                                  "enumTitles": [
-                                    "Equal",
-                                    "Less Than",
-                                    "Greater Than",
-                                    "Less Equal",
-                                    "Greater Equal",
-                                    "Not Equal",
-                                    "Conforms To Pattern",
-                                    "Does Not Conform To Pattern",
-                                    "Contains String",
-                                    "Contains No String"
-                                  ],
-                                  "enumDescriptions": [
-                                    "True, if the value of operand1 is equal to the value of operand2.",
-                                    "True, if the value of operand1 is less than the value of operand2.",
-                                    "True, if the value of operand1 is greater than the value of operand2.",
-                                    "True, if the value of operand1 is less than or equal to the value of operand2.",
-                                    "True, if the value of operand1 is greater than or equal to the value of operand2.",
-                                    "True, if the value of operand1 is not equal to the value of operand2.",
-                                    "True, if the content of operand1 matches the pattern in operand2. Wildcard characters can be used to form the operand2 pattern, where * represents any character string, including an empty string, and + represents any character. It is not case-sensitive. Trailing blanks in the left operand are respected.",
-                                    "True, if a comparison expression with CP is false, that is, operand1 does not fit the pattern in operand2.",
-                                    "True, if the content of operand2 is contained in operand1. Trailing blanks in the left operand are respected. If operand1 is of type string and initial, or of type c and contains only blank characters, the comparison expression is false, unless operand2 is also of type string and initial, or of type c and only contains blank characters, in which case, the comparison expression is always true.",
-                                    "True, if a comparison expression with CS is false, that is if operand1 does not contain the content of operand2."
-                                  ],
-                                  "default": "="
+                                "isRangeFilter": {
+                                  "title": "Is Range Filter",
+                                  "description": "Is range filter",
+                                  "type": "boolean"
                                 },
-                                "value": {
-                                  "title": "Filter Value",
-                                  "description": "Filter value",
-                                  "type": "string"
+                                "rangeFilterDetails": {
+                                  "title": "Range Filter",
+                                  "description": "Range filter",
+                                  "type": "object",
+                                  "properties": {
+                                    "lowComparator": {
+                                      "title": "Low Comparator",
+                                      "description": "Low comparator",
+                                      "type": "string",
+                                      "enum": ["<","<="],
+                                      "enumTitles": ["Less Than","Less Equal"],
+                                      "enumDescriptions": [
+                                        "True, if the value of operand1 is less than the value of operand2.",
+                                        "True, if the value of operand1 is less than or equal to the value of operand2."
+                                      ],
+                                      "default": "<"
+                                    },
+                                    "lowValue": {
+                                      "title": "Low Filter Value",
+                                      "description": "Low filter value",
+                                      "type": "string"
+                                    },
+                                    "highComparator": {
+                                      "title": "High Comparator",
+                                      "description": "High comparator",
+                                      "type": "string",
+                                      "enum": ["<","<="],
+                                      "enumTitles": ["Less Than","Less Equal"],
+                                      "enumDescriptions": [
+                                        "True, if the value of operand1 is less than the value of operand2.",
+                                        "True, if the value of operand1 is less than or equal to the value of operand2."
+                                      ]
+                                    },
+                                    "highValue": {
+                                      "title": "High Filter Value",
+                                      "description": "High filter value",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "additionalProperties": false
                                 }
                               },
                               "additionalProperties": false
@@ -270,79 +275,84 @@
                                 "type": "string",
                                 "maxLength": 30
                               },
-                              "type": {
-                                "title": "Type",
-                                "description": "Filter type",
-                                "type": "string",
-                                "enum": [
-                                  "integer",
-                                  "characterLike",
-                                  "string",
-                                  "numeric",
-                                  "packed"
-                                ],
-                                "enumTitles": [
-                                  "Integer",
-                                  "Character-Like",
-                                  "String",
-                                  "Numeric",
-                                  "Packed"
-                                ],
-                                "enumDescriptions": [
-                                  "Integer",
-                                  "Character-like",
-                                  "String",
-                                  "Numeric",
-                                  "Packed"
-                                ],
-                                "default": "characterLike"
+                              "normalFilterDetails": {
+                                "title": "Normal Filter",
+                                "description": "Normal filter",
+                                "type": "object",
+                                "properties": {
+                                  "comparator": {
+                                    "title": "Comparator",
+                                    "description": "Comparator",
+                                    "type": "string",
+                                    "enum": ["=","<",">","<=",">=","<>","CP","NP","CS","NS"],
+                                    "enumTitles": ["Equal","Less Than","Greater Than","Less Equal","Greater Equal","Not Equal","Conforms To Pattern","Does Not Conform To Pattern","Contains String","Contains No String"],
+                                    "enumDescriptions": [
+                                      "True, if the value of operand1 is equal to the value of operand2.",
+                                      "True, if the value of operand1 is less than the value of operand2.",
+                                      "True, if the value of operand1 is greater than the value of operand2.",
+                                      "True, if the value of operand1 is less than or equal to the value of operand2.",
+                                      "True, if the value of operand1 is greater than or equal to the value of operand2.",
+                                      "True, if the value of operand1 is not equal to the value of operand2.",
+                                      "True, if the content of operand1 matches the pattern in operand2. Wildcard characters can be used to form the operand2 pattern, where * represents any character string, including an empty string, and + represents any character. It is not case-sensitive. Trailing blanks in the left operand are respected.",
+                                      "True, if a comparison expression with CP is false, that is, operand1 does not fit the pattern in operand2.",
+                                      "True, if the content of operand2 is contained in operand1. Trailing blanks in the left operand are respected. If operand1 is of type string and initial, or of type c and contains only blank characters, the comparison expression is false, unless operand2 is also of type string and initial, or of type c and only contains blank characters, in which case, the comparison expression is always true.",
+                                      "True, if a comparison expression with CS is false, that is if operand1 does not contain the content of operand2."
+                                    ],
+                                    "default": "="
+                                  },
+                                  "value": {
+                                    "title": "Filter Value",
+                                    "description": "Filter value",
+                                    "type": "string"
+                                  }
+                                },
+                                "additionalProperties": false
                               },
-                              "comparator": {
-                                "title": "Comparator",
-                                "description": "Comparator",
-                                "type": "string",
-                                "enum": [
-                                  "=",
-                                  "<",
-                                  ">",
-                                  "<=",
-                                  ">=",
-                                  "<>",
-                                  "CP",
-                                  "NP",
-                                  "CS",
-                                  "NS"
-                                ],
-                                "enumTitles": [
-                                  "Equal",
-                                  "Less Than",
-                                  "Greater Than",
-                                  "Less Equal",
-                                  "Greater Equal",
-                                  "Not Equal",
-                                  "Conforms To Pattern",
-                                  "Does Not Conform To Pattern",
-                                  "Contains String",
-                                  "Contains No String"
-                                ],
-                                "enumDescriptions": [
-                                  "True, if the value of operand1 is equal to the value of operand2.",
-                                  "True, if the value of operand1 is less than the value of operand2.",
-                                  "True, if the value of operand1 is greater than the value of operand2.",
-                                  "True, if the value of operand1 is less than or equal to the value of operand2.",
-                                  "True, if the value of operand1 is greater than or equal to the value of operand2.",
-                                  "True, if the value of operand1 is not equal to the value of operand2.",
-                                  "True, if the content of operand1 matches the pattern in operand2. Wildcard characters can be used to form the operand2 pattern, where * represents any character string, including an empty string, and + represents any character. It is not case-sensitive. Trailing blanks in the left operand are respected.",
-                                  "True, if a comparison expression with CP is false, that is, operand1 does not fit the pattern in operand2.",
-                                  "True, if the content of operand2 is contained in operand1. Trailing blanks in the left operand are respected. If operand1 is of type string and initial, or of type c and contains only blank characters, the comparison expression is false, unless operand2 is also of type string and initial, or of type c and only contains blank characters, in which case, the comparison expression is always true.",
-                                  "True, if a comparison expression with CS is false, that is if operand1 does not contain the content of operand2."
-                                ],
-                                "default": "="
+                              "isRangeFilter": {
+                                "title": "Is Range Filter",
+                                "description": "Is range filter",
+                                "type": "boolean"
                               },
-                              "value": {
-                                "title": "Filter Value",
-                                "description": "Filter value",
-                                "type": "string"
+                              "rangeFilterDetails": {
+                                "title": "Range Filter",
+                                "description": "Range filter",
+                                "type": "object",
+                                "properties": {
+                                  "lowComparator": {
+                                    "title": "Low Comparator",
+                                    "description": "Low comparator",
+                                    "type": "string",
+                                    "enum": ["<","<="],
+                                    "enumTitles": ["Less Than","Less Equal"],
+                                    "enumDescriptions": [
+                                      "True, if the value of operand1 is less than the value of operand2.",
+                                      "True, if the value of operand1 is less than or equal to the value of operand2."
+                                    ],
+                                    "default": "<"
+                                  },
+                                  "lowValue": {
+                                    "title": "Low Filter Value",
+                                    "description": "Low filter value",
+                                    "type": "string"
+                                  },
+                                  "highComparator": {
+                                    "title": "High Comparator",
+                                    "description": "High comparator",
+                                    "type": "string",
+                                    "enum": ["<","<="],
+                                    "enumTitles": ["Less Than","Less Equal"],
+                                    "enumDescriptions": [
+                                      "True, if the value of operand1 is less than the value of operand2.",
+                                      "True, if the value of operand1 is less than or equal to the value of operand2."
+                                    ]
+                                  },
+                                  "highValue": {
+                                    "title": "High Filter Value",
+                                    "description": "High filter value",
+                                    "type": "string"
+                                  }
+                                },
+                                "additionalProperties": false
                               }
                             },
                             "additionalProperties": false
@@ -362,79 +372,84 @@
                           "type": "string",
                           "maxLength": 30
                         },
-                        "type": {
-                          "title": "Type",
-                          "description": "Filter type",
-                          "type": "string",
-                          "enum": [
-                            "integer",
-                            "characterLike",
-                            "string",
-                            "numeric",
-                            "packed"
-                          ],
-                          "enumTitles": [
-                            "Integer",
-                            "Character-Like",
-                            "String",
-                            "Numeric",
-                            "Packed"
-                          ],
-                          "enumDescriptions": [
-                            "Integer",
-                            "Character-like",
-                            "String",
-                            "Numeric",
-                            "Packed"
-                          ],
-                          "default": "characterLike"
+                        "normalFilterDetails": {
+                          "title": "Normal Filter",
+                          "description": "Normal filter",
+                          "type": "object",
+                          "properties": {
+                            "comparator": {
+                              "title": "Comparator",
+                              "description": "Comparator",
+                              "type": "string",
+                              "enum": ["=","<",">","<=",">=","<>","CP","NP","CS","NS"],
+                              "enumTitles": ["Equal","Less Than","Greater Than","Less Equal","Greater Equal","Not Equal","Conforms To Pattern","Does Not Conform To Pattern","Contains String","Contains No String"],
+                              "enumDescriptions": [
+                                "True, if the value of operand1 is equal to the value of operand2.",
+                                "True, if the value of operand1 is less than the value of operand2.",
+                                "True, if the value of operand1 is greater than the value of operand2.",
+                                "True, if the value of operand1 is less than or equal to the value of operand2.",
+                                "True, if the value of operand1 is greater than or equal to the value of operand2.",
+                                "True, if the value of operand1 is not equal to the value of operand2.",
+                                "True, if the content of operand1 matches the pattern in operand2. Wildcard characters can be used to form the operand2 pattern, where * represents any character string, including an empty string, and + represents any character. It is not case-sensitive. Trailing blanks in the left operand are respected.",
+                                "True, if a comparison expression with CP is false, that is, operand1 does not fit the pattern in operand2.",
+                                "True, if the content of operand2 is contained in operand1. Trailing blanks in the left operand are respected. If operand1 is of type string and initial, or of type c and contains only blank characters, the comparison expression is false, unless operand2 is also of type string and initial, or of type c and only contains blank characters, in which case, the comparison expression is always true.",
+                                "True, if a comparison expression with CS is false, that is if operand1 does not contain the content of operand2."
+                              ],
+                              "default": "="
+                            },
+                            "value": {
+                              "title": "Filter Value",
+                              "description": "Filter value",
+                              "type": "string"
+                            }
+                          },
+                          "additionalProperties": false
                         },
-                        "comparator": {
-                          "title": "Comparator",
-                          "description": "Comparator",
-                          "type": "string",
-                          "enum": [
-                            "=",
-                            "<",
-                            ">",
-                            "<=",
-                            ">=",
-                            "<>",
-                            "CP",
-                            "NP",
-                            "CS",
-                            "NS"
-                          ],
-                          "enumTitles": [
-                            "Equal",
-                            "Less Than",
-                            "Greater Than",
-                            "Less Equal",
-                            "Greater Equal",
-                            "Not Equal",
-                            "Conforms To Pattern",
-                            "Does Not Conform To Pattern",
-                            "Contains String",
-                            "Contains No String"
-                          ],
-                          "enumDescriptions": [
-                            "True, if the value of operand1 is equal to the value of operand2.",
-                            "True, if the value of operand1 is less than the value of operand2.",
-                            "True, if the value of operand1 is greater than the value of operand2.",
-                            "True, if the value of operand1 is less than or equal to the value of operand2.",
-                            "True, if the value of operand1 is greater than or equal to the value of operand2.",
-                            "True, if the value of operand1 is not equal to the value of operand2.",
-                            "True, if the content of operand1 matches the pattern in operand2. Wildcard characters can be used to form the operand2 pattern, where * represents any character string, including an empty string, and + represents any character. It is not case-sensitive. Trailing blanks in the left operand are respected.",
-                            "True, if a comparison expression with CP is false, that is, operand1 does not fit the pattern in operand2.",
-                            "True, if the content of operand2 is contained in operand1. Trailing blanks in the left operand are respected. If operand1 is of type string and initial, or of type c and contains only blank characters, the comparison expression is false, unless operand2 is also of type string and initial, or of type c and only contains blank characters, in which case, the comparison expression is always true.",
-                            "True, if a comparison expression with CS is false, that is if operand1 does not contain the content of operand2."
-                          ],
-                          "default": "="
+                        "isRangeFilter": {
+                          "title": "Is Range Filter",
+                          "description": "Is range filter",
+                          "type": "boolean"
                         },
-                        "value": {
-                          "title": "Filter Value",
-                          "description": "Filter value",
-                          "type": "string"
+                        "rangeFilterDetails": {
+                          "title": "Range Filter",
+                          "description": "Range filter",
+                          "type": "object",
+                          "properties": {
+                            "lowComparator": {
+                              "title": "Low Comparator",
+                              "description": "Low comparator",
+                              "type": "string",
+                              "enum": ["<","<="],
+                              "enumTitles": ["Less Than","Less Equal"],
+                              "enumDescriptions": [
+                                "True, if the value of operand1 is less than the value of operand2.",
+                                "True, if the value of operand1 is less than or equal to the value of operand2."
+                              ],
+                              "default": "<"
+                            },
+                            "lowValue": {
+                              "title": "Low Filter Value",
+                              "description": "Low filter value",
+                              "type": "string"
+                            },
+                            "highComparator": {
+                              "title": "High Comparator",
+                              "description": "High comparator",
+                              "type": "string",
+                              "enum": ["<","<="],
+                              "enumTitles": ["Less Than","Less Equal"],
+                              "enumDescriptions": [
+                                "True, if the value of operand1 is less than the value of operand2.",
+                                "True, if the value of operand1 is less than or equal to the value of operand2."
+                              ]
+                            },
+                            "highValue": {
+                              "title": "High Filter Value",
+                              "description": "High filter value",
+                              "type": "string"
+                            }
+                          },
+                          "additionalProperties": false
                         }
                       },
                       "additionalProperties": false
@@ -467,79 +482,84 @@
                             "type": "string",
                             "maxLength": 30
                           },
-                          "type": {
-                            "title": "Type",
-                            "description": "Filter type",
-                            "type": "string",
-                            "enum": [
-                              "integer",
-                              "characterLike",
-                              "string",
-                              "numeric",
-                              "packed"
-                            ],
-                            "enumTitles": [
-                              "Integer",
-                              "Character-Like",
-                              "String",
-                              "Numeric",
-                              "Packed"
-                            ],
-                            "enumDescriptions": [
-                              "Integer",
-                              "Character-like",
-                              "String",
-                              "Numeric",
-                              "Packed"
-                            ],
-                            "default": "characterLike"
+                          "normalFilterDetails": {
+                            "title": "Normal Filter",
+                            "description": "Normal filter",
+                            "type": "object",
+                            "properties": {
+                              "comparator": {
+                                "title": "Comparator",
+                                "description": "Comparator",
+                                "type": "string",
+                                "enum": ["=","<",">","<=",">=","<>","CP","NP","CS","NS"],
+                                "enumTitles": ["Equal","Less Than","Greater Than","Less Equal","Greater Equal","Not Equal","Conforms To Pattern","Does Not Conform To Pattern","Contains String","Contains No String"],
+                                "enumDescriptions": [
+                                  "True, if the value of operand1 is equal to the value of operand2.",
+                                  "True, if the value of operand1 is less than the value of operand2.",
+                                  "True, if the value of operand1 is greater than the value of operand2.",
+                                  "True, if the value of operand1 is less than or equal to the value of operand2.",
+                                  "True, if the value of operand1 is greater than or equal to the value of operand2.",
+                                  "True, if the value of operand1 is not equal to the value of operand2.",
+                                  "True, if the content of operand1 matches the pattern in operand2. Wildcard characters can be used to form the operand2 pattern, where * represents any character string, including an empty string, and + represents any character. It is not case-sensitive. Trailing blanks in the left operand are respected.",
+                                  "True, if a comparison expression with CP is false, that is, operand1 does not fit the pattern in operand2.",
+                                  "True, if the content of operand2 is contained in operand1. Trailing blanks in the left operand are respected. If operand1 is of type string and initial, or of type c and contains only blank characters, the comparison expression is false, unless operand2 is also of type string and initial, or of type c and only contains blank characters, in which case, the comparison expression is always true.",
+                                  "True, if a comparison expression with CS is false, that is if operand1 does not contain the content of operand2."
+                                ],
+                                "default": "="
+                              },
+                              "value": {
+                                "title": "Filter Value",
+                                "description": "Filter value",
+                                "type": "string"
+                              }
+                            },
+                            "additionalProperties": false
                           },
-                          "comparator": {
-                            "title": "Comparator",
-                            "description": "Comparator",
-                            "type": "string",
-                            "enum": [
-                              "=",
-                              "<",
-                              ">",
-                              "<=",
-                              ">=",
-                              "<>",
-                              "CP",
-                              "NP",
-                              "CS",
-                              "NS"
-                            ],
-                            "enumTitles": [
-                              "Equal",
-                              "Less Than",
-                              "Greater Than",
-                              "Less Equal",
-                              "Greater Equal",
-                              "Not Equal",
-                              "Conforms To Pattern",
-                              "Does Not Conform To Pattern",
-                              "Contains String",
-                              "Contains No String"
-                            ],
-                            "enumDescriptions": [
-                              "True, if the value of operand1 is equal to the value of operand2.",
-                              "True, if the value of operand1 is less than the value of operand2.",
-                              "True, if the value of operand1 is greater than the value of operand2.",
-                              "True, if the value of operand1 is less than or equal to the value of operand2.",
-                              "True, if the value of operand1 is greater than or equal to the value of operand2.",
-                              "True, if the value of operand1 is not equal to the value of operand2.",
-                              "True, if the content of operand1 matches the pattern in operand2. Wildcard characters can be used to form the operand2 pattern, where * represents any character string, including an empty string, and + represents any character. It is not case-sensitive. Trailing blanks in the left operand are respected.",
-                              "True, if a comparison expression with CP is false, that is, operand1 does not fit the pattern in operand2.",
-                              "True, if the content of operand2 is contained in operand1. Trailing blanks in the left operand are respected. If operand1 is of type string and initial, or of type c and contains only blank characters, the comparison expression is false, unless operand2 is also of type string and initial, or of type c and only contains blank characters, in which case, the comparison expression is always true.",
-                              "True, if a comparison expression with CS is false, that is if operand1 does not contain the content of operand2."
-                            ],
-                            "default": "="
+                          "isRangeFilter": {
+                            "title": "Is Range Filter",
+                            "description": "Is range filter",
+                            "type": "boolean"
                           },
-                          "value": {
-                            "title": "Filter Value",
-                            "description": "Filter value",
-                            "type": "string"
+                          "rangeFilterDetails": {
+                            "title": "Range Filter",
+                            "description": "Range filter",
+                            "type": "object",
+                            "properties": {
+                              "lowComparator": {
+                                "title": "Low Comparator",
+                                "description": "Low comparator",
+                                "type": "string",
+                                "enum": ["<","<="],
+                                "enumTitles": ["Less Than","Less Equal"],
+                                "enumDescriptions": [
+                                  "True, if the value of operand1 is less than the value of operand2.",
+                                  "True, if the value of operand1 is less than or equal to the value of operand2."
+                                ],
+                                "default": "<"
+                              },
+                              "lowValue": {
+                                "title": "Low Filter Value",
+                                "description": "Low filter value",
+                                "type": "string"
+                              },
+                              "highComparator": {
+                                "title": "High Comparator",
+                                "description": "High comparator",
+                                "type": "string",
+                                "enum": ["<","<="],
+                                "enumTitles": ["Less Than","Less Equal"],
+                                "enumDescriptions": [
+                                  "True, if the value of operand1 is less than the value of operand2.",
+                                  "True, if the value of operand1 is less than or equal to the value of operand2."
+                                ]
+                              },
+                              "highValue": {
+                                "title": "High Filter Value",
+                                "description": "High filter value",
+                                "type": "string"
+                              }
+                            },
+                            "additionalProperties": false
                           }
                         },
                         "additionalProperties": false
@@ -556,79 +576,84 @@
                           "type": "string",
                           "maxLength": 30
                         },
-                        "type": {
-                          "title": "Type",
-                          "description": "Filter type",
-                          "type": "string",
-                          "enum": [
-                            "integer",
-                            "characterLike",
-                            "string",
-                            "numeric",
-                            "packed"
-                          ],
-                          "enumTitles": [
-                            "Integer",
-                            "Character-Like",
-                            "String",
-                            "Numeric",
-                            "Packed"
-                          ],
-                          "enumDescriptions": [
-                            "Integer",
-                            "Character-like",
-                            "String",
-                            "Numeric",
-                            "Packed"
-                          ],
-                          "default": "characterLike"
+                        "normalFilterDetails": {
+                          "title": "Normal Filter",
+                          "description": "Normal filter",
+                          "type": "object",
+                          "properties": {
+                            "comparator": {
+                              "title": "Comparator",
+                              "description": "Comparator",
+                              "type": "string",
+                              "enum": ["=","<",">","<=",">=","<>","CP","NP","CS","NS"],
+                              "enumTitles": ["Equal","Less Than","Greater Than","Less Equal","Greater Equal","Not Equal","Conforms To Pattern","Does Not Conform To Pattern","Contains String","Contains No String"],
+                              "enumDescriptions": [
+                                "True, if the value of operand1 is equal to the value of operand2.",
+                                "True, if the value of operand1 is less than the value of operand2.",
+                                "True, if the value of operand1 is greater than the value of operand2.",
+                                "True, if the value of operand1 is less than or equal to the value of operand2.",
+                                "True, if the value of operand1 is greater than or equal to the value of operand2.",
+                                "True, if the value of operand1 is not equal to the value of operand2.",
+                                "True, if the content of operand1 matches the pattern in operand2. Wildcard characters can be used to form the operand2 pattern, where * represents any character string, including an empty string, and + represents any character. It is not case-sensitive. Trailing blanks in the left operand are respected.",
+                                "True, if a comparison expression with CP is false, that is, operand1 does not fit the pattern in operand2.",
+                                "True, if the content of operand2 is contained in operand1. Trailing blanks in the left operand are respected. If operand1 is of type string and initial, or of type c and contains only blank characters, the comparison expression is false, unless operand2 is also of type string and initial, or of type c and only contains blank characters, in which case, the comparison expression is always true.",
+                                "True, if a comparison expression with CS is false, that is if operand1 does not contain the content of operand2."
+                              ],
+                              "default": "="
+                            },
+                            "value": {
+                              "title": "Filter Value",
+                              "description": "Filter value",
+                              "type": "string"
+                            }
+                          },
+                          "additionalProperties": false
                         },
-                        "comparator": {
-                          "title": "Comparator",
-                          "description": "Comparator",
-                          "type": "string",
-                          "enum": [
-                            "=",
-                            "<",
-                            ">",
-                            "<=",
-                            ">=",
-                            "<>",
-                            "CP",
-                            "NP",
-                            "CS",
-                            "NS"
-                          ],
-                          "enumTitles": [
-                            "Equal",
-                            "Less Than",
-                            "Greater Than",
-                            "Less Equal",
-                            "Greater Equal",
-                            "Not Equal",
-                            "Conforms To Pattern",
-                            "Does Not Conform To Pattern",
-                            "Contains String",
-                            "Contains No String"
-                          ],
-                          "enumDescriptions": [
-                            "True, if the value of operand1 is equal to the value of operand2.",
-                            "True, if the value of operand1 is less than the value of operand2.",
-                            "True, if the value of operand1 is greater than the value of operand2.",
-                            "True, if the value of operand1 is less than or equal to the value of operand2.",
-                            "True, if the value of operand1 is greater than or equal to the value of operand2.",
-                            "True, if the value of operand1 is not equal to the value of operand2.",
-                            "True, if the content of operand1 matches the pattern in operand2. Wildcard characters can be used to form the operand2 pattern, where * represents any character string, including an empty string, and + represents any character. It is not case-sensitive. Trailing blanks in the left operand are respected.",
-                            "True, if a comparison expression with CP is false, that is, operand1 does not fit the pattern in operand2.",
-                            "True, if the content of operand2 is contained in operand1. Trailing blanks in the left operand are respected. If operand1 is of type string and initial, or of type c and contains only blank characters, the comparison expression is false, unless operand2 is also of type string and initial, or of type c and only contains blank characters, in which case, the comparison expression is always true.",
-                            "True, if a comparison expression with CS is false, that is if operand1 does not contain the content of operand2."
-                          ],
-                          "default": "="
+                        "isRangeFilter": {
+                          "title": "Is Range Filter",
+                          "description": "Is range filter",
+                          "type": "boolean"
                         },
-                        "value": {
-                          "title": "Filter Value",
-                          "description": "Filter value",
-                          "type": "string"
+                        "rangeFilterDetails": {
+                          "title": "Range Filter",
+                          "description": "Range filter",
+                          "type": "object",
+                          "properties": {
+                            "lowComparator": {
+                              "title": "Low Comparator",
+                              "description": "Low comparator",
+                              "type": "string",
+                              "enum": ["<","<="],
+                              "enumTitles": ["Less Than","Less Equal"],
+                              "enumDescriptions": [
+                                "True, if the value of operand1 is less than the value of operand2.",
+                                "True, if the value of operand1 is less than or equal to the value of operand2."
+                              ],
+                              "default": "<"
+                            },
+                            "lowValue": {
+                              "title": "Low Filter Value",
+                              "description": "Low filter value",
+                              "type": "string"
+                            },
+                            "highComparator": {
+                              "title": "High Comparator",
+                              "description": "High comparator",
+                              "type": "string",
+                              "enum": ["<","<="],
+                              "enumTitles": ["Less Than","Less Equal"],
+                              "enumDescriptions": [
+                                "True, if the value of operand1 is less than the value of operand2.",
+                                "True, if the value of operand1 is less than or equal to the value of operand2."
+                              ]
+                            },
+                            "highValue": {
+                              "title": "High Filter Value",
+                              "description": "High filter value",
+                              "type": "string"
+                            }
+                          },
+                          "additionalProperties": false
                         }
                       },
                       "additionalProperties": false
@@ -648,79 +673,84 @@
                     "type": "string",
                     "maxLength": 30
                   },
-                  "type": {
-                    "title": "Type",
-                    "description": "Filter type",
-                    "type": "string",
-                    "enum": [
-                      "integer",
-                      "characterLike",
-                      "string",
-                      "numeric",
-                      "packed"
-                    ],
-                    "enumTitles": [
-                      "Integer",
-                      "Character-Like",
-                      "String",
-                      "Numeric",
-                      "Packed"
-                    ],
-                    "enumDescriptions": [
-                      "Integer",
-                      "Character-like",
-                      "String",
-                      "Numeric",
-                      "Packed"
-                    ],
-                    "default": "characterLike"
+                  "normalFilterDetails": {
+                    "title": "Normal Filter",
+                    "description": "Normal filter",
+                    "type": "object",
+                    "properties": {
+                      "comparator": {
+                        "title": "Comparator",
+                        "description": "Comparator",
+                        "type": "string",
+                        "enum": ["=","<",">","<=",">=","<>","CP","NP","CS","NS"],
+                        "enumTitles": ["Equal","Less Than","Greater Than","Less Equal","Greater Equal","Not Equal","Conforms To Pattern","Does Not Conform To Pattern","Contains String","Contains No String"],
+                        "enumDescriptions": [
+                          "True, if the value of operand1 is equal to the value of operand2.",
+                          "True, if the value of operand1 is less than the value of operand2.",
+                          "True, if the value of operand1 is greater than the value of operand2.",
+                          "True, if the value of operand1 is less than or equal to the value of operand2.",
+                          "True, if the value of operand1 is greater than or equal to the value of operand2.",
+                          "True, if the value of operand1 is not equal to the value of operand2.",
+                          "True, if the content of operand1 matches the pattern in operand2. Wildcard characters can be used to form the operand2 pattern, where * represents any character string, including an empty string, and + represents any character. It is not case-sensitive. Trailing blanks in the left operand are respected.",
+                          "True, if a comparison expression with CP is false, that is, operand1 does not fit the pattern in operand2.",
+                          "True, if the content of operand2 is contained in operand1. Trailing blanks in the left operand are respected. If operand1 is of type string and initial, or of type c and contains only blank characters, the comparison expression is false, unless operand2 is also of type string and initial, or of type c and only contains blank characters, in which case, the comparison expression is always true.",
+                          "True, if a comparison expression with CS is false, that is if operand1 does not contain the content of operand2."
+                        ],
+                        "default": "="
+                      },
+                      "value": {
+                        "title": "Filter Value",
+                        "description": "Filter value",
+                        "type": "string"
+                      }
+                    },
+                    "additionalProperties": false
                   },
-                  "comparator": {
-                    "title": "Comparator",
-                    "description": "Comparator",
-                    "type": "string",
-                    "enum": [
-                      "=",
-                      "<",
-                      ">",
-                      "<=",
-                      ">=",
-                      "<>",
-                      "CP",
-                      "NP",
-                      "CS",
-                      "NS"
-                    ],
-                    "enumTitles": [
-                      "Equal",
-                      "Less Than",
-                      "Greater Than",
-                      "Less Equal",
-                      "Greater Equal",
-                      "Not Equal",
-                      "Conforms To Pattern",
-                      "Does Not Conform To Pattern",
-                      "Contains String",
-                      "Contains No String"
-                    ],
-                    "enumDescriptions": [
-                      "True, if the value of operand1 is equal to the value of operand2.",
-                      "True, if the value of operand1 is less than the value of operand2.",
-                      "True, if the value of operand1 is greater than the value of operand2.",
-                      "True, if the value of operand1 is less than or equal to the value of operand2.",
-                      "True, if the value of operand1 is greater than or equal to the value of operand2.",
-                      "True, if the value of operand1 is not equal to the value of operand2.",
-                      "True, if the content of operand1 matches the pattern in operand2. Wildcard characters can be used to form the operand2 pattern, where * represents any character string, including an empty string, and + represents any character. It is not case-sensitive. Trailing blanks in the left operand are respected.",
-                      "True, if a comparison expression with CP is false, that is, operand1 does not fit the pattern in operand2.",
-                      "True, if the content of operand2 is contained in operand1. Trailing blanks in the left operand are respected. If operand1 is of type string and initial, or of type c and contains only blank characters, the comparison expression is false, unless operand2 is also of type string and initial, or of type c and only contains blank characters, in which case, the comparison expression is always true.",
-                      "True, if a comparison expression with CS is false, that is if operand1 does not contain the content of operand2."
-                    ],
-                    "default": "="
+                  "isRangeFilter": {
+                    "title": "Is Range Filter",
+                    "description": "Is range filter",
+                    "type": "boolean"
                   },
-                  "value": {
-                    "title": "Filter Value",
-                    "description": "Filter value",
-                    "type": "string"
+                  "rangeFilterDetails": {
+                    "title": "Range Filter",
+                    "description": "Range filter",
+                    "type": "object",
+                    "properties": {
+                      "lowComparator": {
+                        "title": "Low Comparator",
+                        "description": "Low comparator",
+                        "type": "string",
+                        "enum": ["<","<="],
+                        "enumTitles": ["Less Than","Less Equal"],
+                        "enumDescriptions": [
+                          "True, if the value of operand1 is less than the value of operand2.",
+                          "True, if the value of operand1 is less than or equal to the value of operand2."
+                        ],
+                        "default": "<"
+                      },
+                      "lowValue": {
+                        "title": "Low Filter Value",
+                        "description": "Low filter value",
+                        "type": "string"
+                      },
+                      "highComparator": {
+                        "title": "High Comparator",
+                        "description": "High comparator",
+                        "type": "string",
+                        "enum": ["<","<="],
+                        "enumTitles": ["Less Than","Less Equal"],
+                        "enumDescriptions": [
+                          "True, if the value of operand1 is less than the value of operand2.",
+                          "True, if the value of operand1 is less than or equal to the value of operand2."
+                        ]
+                      },
+                      "highValue": {
+                        "title": "High Filter Value",
+                        "description": "High filter value",
+                        "type": "string"
+                      }
+                    },
+                    "additionalProperties": false
                   }
                 },
                 "additionalProperties": false
