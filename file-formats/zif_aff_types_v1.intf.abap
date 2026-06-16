@@ -140,7 +140,7 @@ INTERFACE zif_aff_types_v1 PUBLIC.
 
   TYPES:
     "! <p class="shorttext">Header</p>
-    "! The header for an ABAP main object (without ABAP language version) a description of 70 characters
+    "! The header for an ABAP main object (without ABAP language version) with a description of 70 characters
     BEGIN OF ty_header_70_no_abap_lv,
       "! $required
       description       TYPE ty_description_70,
