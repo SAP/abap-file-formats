@@ -245,7 +245,6 @@ INTERFACE zif_aff_enho_v1
       enhancement_spot TYPE zif_aff_types_v1=>ty_object_name_30,
     END OF ty_general_information.
 
-
   TYPES:
     "! <p class="shorttext">ENHO</p>
     "! Object type ENHO
