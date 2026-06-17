@@ -126,7 +126,7 @@ INTERFACE zif_aff_enho_v1
       filter_details       TYPE ty_filter_details,
       "! <p class="shorttext">Range Filter</p>
       "! Range filter
-      range_filter_details  TYPE ty_range_filter,
+      range_filter_details TYPE ty_range_filter,
     END OF ty_filter.
 
 
