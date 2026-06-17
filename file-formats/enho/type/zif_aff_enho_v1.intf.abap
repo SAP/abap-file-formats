@@ -120,7 +120,7 @@ INTERFACE zif_aff_enho_v1
     BEGIN OF ty_filter,
       "! <p class="shorttext">Name</p>
       "! Filter name
-      name                  TYPE zif_aff_types_v1=>ty_object_name_30,
+      name                 TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Filter</p>
       "! Filter
       filter_details        TYPE ty_filter_details,
