@@ -4,8 +4,9 @@ INTERFACE zif_aff_enho_v1
   "! <p class="shorttext">Range Filter Comparator</p>
   "! Range filter comparator
   "! $values {@link zif_aff_enho_v1.data:co_range_filter_comparator}
-  "! $default {@link zif_aff_enho_v1.data:co_range_filter_comparator.less_than}
+  "! $required
   TYPES ty_range_filter_comparator TYPE c LENGTH 2.
+
 
   CONSTANTS:
     "! <p class="shorttext">Range Filter Comparator</p>
@@ -82,17 +83,16 @@ INTERFACE zif_aff_enho_v1
       contains_no_string          TYPE ty_comparator VALUE 'NS',
     END OF co_comparator.
 
+
   TYPES:
-    "! <p class="shorttext">Normal Filter</p>
-    "! Normal filter
-    BEGIN OF ty_normal_filter,
-      "! <p class="shorttext">Comparator</p>
-      "! Comparator
+    "! <p class="shorttext">Filter</p>
+    "! Filter
+    BEGIN OF ty_filter_details,
       comparator TYPE ty_comparator,
       "! <p class="shorttext">Filter Value</p>
       "! Filter value
       value      TYPE string,
-    END OF ty_normal_filter.
+    END OF ty_filter_details.
 
   TYPES:
     "! <p class="shorttext">Range Filter</p>
@@ -100,12 +100,14 @@ INTERFACE zif_aff_enho_v1
     BEGIN OF ty_range_filter,
       "! <p class="shorttext">Low Comparator</p>
       "! Low comparator
+      "! $required
       low_comparator  TYPE ty_range_filter_comparator,
       "! <p class="shorttext">Low Filter Value</p>
       "! Low filter value
       low_value       TYPE string,
       "! <p class="shorttext">High Comparator</p>
       "! High comparator
+      "! $required
       high_comparator TYPE ty_range_filter_comparator,
       "! <p class="shorttext">High Filter Value</p>
       "! High filter value
@@ -119,16 +121,14 @@ INTERFACE zif_aff_enho_v1
       "! <p class="shorttext">Name</p>
       "! Filter name
       name                  TYPE zif_aff_types_v1=>ty_object_name_30,
-      "! <p class="shorttext">Normal Filter</p>
-      "! Normal filter
-      normal_filter_details TYPE ty_normal_filter,
-      "! <p class="shorttext">Is Range Filter</p>
-      "! Is range filter
-      is_range_filter       TYPE abap_bool,
+      "! <p class="shorttext">Filter</p>
+      "! Filter
+      filter_details        TYPE ty_filter_details,
       "! <p class="shorttext">Range Filter</p>
       "! Range filter
       range_filter_details  TYPE ty_range_filter,
     END OF ty_filter.
+
 
   TYPES:
     "! <p class="shorttext">And</p>
@@ -237,13 +237,13 @@ INTERFACE zif_aff_enho_v1
   TYPES:
     "! <p class="shorttext">General Information</p>
     "! General information
-
     BEGIN OF ty_general_information,
       "! <p class="shorttext">Enhancement Spot</p>
       "! Enhancement Spot name
       "! $required
       enhancement_spot TYPE zif_aff_types_v1=>ty_object_name_30,
     END OF ty_general_information.
+
 
   TYPES:
     "! <p class="shorttext">ENHO</p>

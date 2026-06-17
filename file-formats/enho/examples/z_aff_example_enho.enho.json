@@ -21,7 +21,7 @@
           {
             "filter": {
               "name": "EXAMPLE_NORMAL_FILTER",
-              "normalFilterDetails": {
+              "filterDetails": {
                 "comparator": ">",
                 "value": "1"
               }
@@ -30,9 +30,9 @@
           {
             "filter": {
               "name": "EXAMPLE_RANGE_FILTER",
-              "isRangeFilter": true,
               "rangeFilterDetails": {
                 "lowValue": "10",
+                "lowComparator": "<",
                 "highComparator": "<=",
                 "highValue": "100"
               }
