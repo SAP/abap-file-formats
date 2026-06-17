@@ -123,7 +123,7 @@ INTERFACE zif_aff_enho_v1
       name                 TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Filter</p>
       "! Filter
-      filter_details        TYPE ty_filter_details,
+      filter_details       TYPE ty_filter_details,
       "! <p class="shorttext">Range Filter</p>
       "! Range filter
       range_filter_details  TYPE ty_range_filter,
