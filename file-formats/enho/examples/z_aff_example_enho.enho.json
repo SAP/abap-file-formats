@@ -33,7 +33,6 @@
               "rangeFilterDetails": {
                 "lowComparator": "<",
                 "lowValue": "10",
-
                 "highComparator": "<=",
                 "highValue": "100"
               }
