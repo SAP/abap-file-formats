@@ -31,8 +31,9 @@
             "filter": {
               "name": "EXAMPLE_RANGE_FILTER",
               "rangeFilterDetails": {
-                "lowValue": "10",
                 "lowComparator": "<",
+                "lowValue": "10",
+
                 "highComparator": "<=",
                 "highValue": "100"
               }
