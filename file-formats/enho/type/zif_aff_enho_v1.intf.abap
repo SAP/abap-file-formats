@@ -7,7 +7,6 @@ INTERFACE zif_aff_enho_v1
   "! $required
   TYPES ty_range_filter_comparator TYPE c LENGTH 2.
 
-
   CONSTANTS:
     "! <p class="shorttext">Range Filter Comparator</p>
     "! Range filter comparator
@@ -88,9 +87,13 @@ INTERFACE zif_aff_enho_v1
     "! <p class="shorttext">Filter</p>
     "! Filter
     BEGIN OF ty_filter_details,
+      "! <p class="shorttext">Comparator</p>
+      "! Filter comparator
+      "! $required
       comparator TYPE ty_comparator,
       "! <p class="shorttext">Filter Value</p>
       "! Filter value
+      "! $required
       value      TYPE string,
     END OF ty_filter_details.
 
@@ -104,6 +107,7 @@ INTERFACE zif_aff_enho_v1
       low_comparator  TYPE ty_range_filter_comparator,
       "! <p class="shorttext">Low Filter Value</p>
       "! Low filter value
+      "! $required
       low_value       TYPE string,
       "! <p class="shorttext">High Comparator</p>
       "! High comparator
@@ -111,6 +115,7 @@ INTERFACE zif_aff_enho_v1
       high_comparator TYPE ty_range_filter_comparator,
       "! <p class="shorttext">High Filter Value</p>
       "! High filter value
+      "! $required
       high_value      TYPE string,
     END OF ty_range_filter.
 
@@ -120,6 +125,7 @@ INTERFACE zif_aff_enho_v1
     BEGIN OF ty_filter,
       "! <p class="shorttext">Name</p>
       "! Filter name
+      "! $required
       name                 TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Filter</p>
       "! Filter
@@ -208,6 +214,7 @@ INTERFACE zif_aff_enho_v1
       badi_definition           TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Implementing Class</p>
       "! Implementing class
+      "! $required
       implementing_class        TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Is Example Implementation</p>
       "! BAdI implementation is an example implementation
@@ -243,7 +250,6 @@ INTERFACE zif_aff_enho_v1
       "! $required
       enhancement_spot TYPE zif_aff_types_v1=>ty_object_name_30,
     END OF ty_general_information.
-
 
   TYPES:
     "! <p class="shorttext">ENHO</p>

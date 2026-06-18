@@ -234,7 +234,11 @@
                                       "type": "string"
                                     }
                                   },
-                                  "additionalProperties": false
+                                  "additionalProperties": false,
+                                  "required": [
+                                    "comparator",
+                                    "value"
+                                  ]
                                 },
                                 "rangeFilterDetails": {
                                   "title": "Range Filter",
@@ -289,11 +293,16 @@
                                   "additionalProperties": false,
                                   "required": [
                                     "lowComparator",
-                                    "highComparator"
+                                    "lowValue",
+                                    "highComparator",
+                                    "highValue"
                                   ]
                                 }
                               },
-                              "additionalProperties": false
+                              "additionalProperties": false,
+                              "required": [
+                                "name"
+                              ]
                             }
                           },
                           "filter": {
@@ -360,7 +369,11 @@
                                     "type": "string"
                                   }
                                 },
-                                "additionalProperties": false
+                                "additionalProperties": false,
+                                "required": [
+                                  "comparator",
+                                  "value"
+                                ]
                               },
                               "rangeFilterDetails": {
                                 "title": "Range Filter",
@@ -415,11 +428,16 @@
                                 "additionalProperties": false,
                                 "required": [
                                   "lowComparator",
-                                  "highComparator"
+                                  "lowValue",
+                                  "highComparator",
+                                  "highValue"
                                 ]
                               }
                             },
-                            "additionalProperties": false
+                            "additionalProperties": false,
+                            "required": [
+                              "name"
+                            ]
                           }
                         },
                         "additionalProperties": false
@@ -489,7 +507,11 @@
                               "type": "string"
                             }
                           },
-                          "additionalProperties": false
+                          "additionalProperties": false,
+                          "required": [
+                            "comparator",
+                            "value"
+                          ]
                         },
                         "rangeFilterDetails": {
                           "title": "Range Filter",
@@ -544,11 +566,16 @@
                           "additionalProperties": false,
                           "required": [
                             "lowComparator",
-                            "highComparator"
+                            "lowValue",
+                            "highComparator",
+                            "highValue"
                           ]
                         }
                       },
-                      "additionalProperties": false
+                      "additionalProperties": false,
+                      "required": [
+                        "name"
+                      ]
                     }
                   },
                   "additionalProperties": false
@@ -631,7 +658,11 @@
                                 "type": "string"
                               }
                             },
-                            "additionalProperties": false
+                            "additionalProperties": false,
+                            "required": [
+                              "comparator",
+                              "value"
+                            ]
                           },
                           "rangeFilterDetails": {
                             "title": "Range Filter",
@@ -686,11 +717,16 @@
                             "additionalProperties": false,
                             "required": [
                               "lowComparator",
-                              "highComparator"
+                              "lowValue",
+                              "highComparator",
+                              "highValue"
                             ]
                           }
                         },
-                        "additionalProperties": false
+                        "additionalProperties": false,
+                        "required": [
+                          "name"
+                        ]
                       }
                     },
                     "filter": {
@@ -757,7 +793,11 @@
                               "type": "string"
                             }
                           },
-                          "additionalProperties": false
+                          "additionalProperties": false,
+                          "required": [
+                            "comparator",
+                            "value"
+                          ]
                         },
                         "rangeFilterDetails": {
                           "title": "Range Filter",
@@ -812,11 +852,16 @@
                           "additionalProperties": false,
                           "required": [
                             "lowComparator",
-                            "highComparator"
+                            "lowValue",
+                            "highComparator",
+                            "highValue"
                           ]
                         }
                       },
-                      "additionalProperties": false
+                      "additionalProperties": false,
+                      "required": [
+                        "name"
+                      ]
                     }
                   },
                   "additionalProperties": false
@@ -886,7 +931,11 @@
                         "type": "string"
                       }
                     },
-                    "additionalProperties": false
+                    "additionalProperties": false,
+                    "required": [
+                      "comparator",
+                      "value"
+                    ]
                   },
                   "rangeFilterDetails": {
                     "title": "Range Filter",
@@ -941,11 +990,16 @@
                     "additionalProperties": false,
                     "required": [
                       "lowComparator",
-                      "highComparator"
+                      "lowValue",
+                      "highComparator",
+                      "highValue"
                     ]
                   }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "required": [
+                  "name"
+                ]
               }
             },
             "additionalProperties": false
@@ -955,7 +1009,8 @@
         "required": [
           "name",
           "description",
-          "badiDefinition"
+          "badiDefinition",
+          "implementingClass"
         ]
       }
     }
