@@ -1,0 +1,3 @@
+TYPE-POOL zaff.
+
+TYPES zaff_char10 TYPE c LENGTH 10.
