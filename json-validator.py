@@ -15,6 +15,11 @@ metadata_files = sorted([
     if os.path.basename(path) == f"{os.path.basename(os.path.dirname(path))}.json"
 ])
 
+# Map known multi-segment example suffixes to schema object types.
+TYPE_ALIASES = {
+    'tabl.settings': 'tabt',
+}
+
 def decode_json( file ):
     with open(file, 'r') as json_f:
         try:
@@ -41,14 +46,33 @@ def validate_json( schema, instance ):
         #print(f"::set-output name={os.path.basename(instance).ljust(31)} valid instance of schema {os.path.basename(schema)}" )
         print( "valid: " + os.path.basename(schema) + "; " + os.path.basename(instance))
 
+def get_example_types( example ):
+    filename_parts = os.path.basename(example).split( sep='.' )
+
+    if len(filename_parts) < 3:
+        return []
+
+    # Ignore the object name and file extension, keep all semantic suffix parts.
+    semantic_parts = filename_parts[1:-1]
+    candidates = list(semantic_parts)
+
+    for length in range(2, len(semantic_parts) + 1):
+        candidates.append('.'.join(semantic_parts[:length]))
+
+    mapped_candidates = [TYPE_ALIASES.get(candidate, candidate) for candidate in candidates]
+
+    # Preserve order while removing duplicates.
+    return list(dict.fromkeys(mapped_candidates))
+
 def match_schema_to_data( ):
     match = {}
 
     for example in examples:
-        example_type = os.path.basename(example).split( sep = '.' )[-2]
         example_version = decode_json( example )[ 'formatVersion' ]
-        json_schema = [ schema for schema in schemas if example_type in os.path.basename(schema).split( sep = '-' )[0]
-                                                        and example_version in os.path.basename(schema).split( sep='-')[1]]
+        example_types = get_example_types( example )
+        json_schema = [ schema for schema in schemas
+                        if os.path.basename(schema).split( sep='-' )[0] in example_types
+                        and example_version in os.path.basename(schema).split( sep='-' )[1] ]
 
         try:
             match[example] = json_schema.pop( 0 )
