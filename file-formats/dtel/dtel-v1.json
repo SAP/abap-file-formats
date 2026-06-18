@@ -153,7 +153,7 @@
                 "Decimal Floating Point. 16 Digits, with Scale Field",
                 "Floating Point Number, HANA Type, Small Decimal",
                 "Decimal Floating Point, 34 Digits, DEC on Database",
-                "Decimal Floating Point, 34 Digits, RAW on Database",
+                "Decimal Floating Point, 34 digits, RAW on Database",
                 "Decimal Floating Point, 34 Digits, with Scale Field",
                 "Floating Point Number, HANA Type, Large Decimal",
                 "Date (YYYYMMDD)",
@@ -192,7 +192,7 @@
                 "Decimal floating point. 16 digits, with scale field",
                 "Floating point number, HANA type, small decimal",
                 "Decimal floating point, 34 digits, DEC on database",
-                "Decimal floating point, 34 digits, RAW on database",
+                "Decimal floating point, 34 Digits, RAW on database",
                 "Decimal floating point, 34 digits, with scale field",
                 "Floating point number, HANA type, large decimal",
                 "Date field (YYYYMMDD), stored as char(8)",
@@ -300,7 +300,7 @@
         },
         "headingLength": {
           "title": "Length of Heading",
-          "description": "Note that the length that is entered is the upper limit for the lengths of all translations of the entered text. The maximum length of the heading should therefore be somewhat longer than the entered text in the original language. Also note that the heading is often displayed for editing list output of the corresponding column. The length of the heading should therefore, if possible, not exceed the length of the data element.",
+          "description": "Note that the length that is entered is the upper limit for the length of all translations of the entered text. The maximum length of the heading should therefore be somewhat longer than the entered text in the original language. Also note that the heading is often displayed for editing list output of the corresponding column. The length of the heading should therefore, if possible, not exceed the length of the data element.",
           "type": "integer",
           "minimum": 0,
           "maximum": 55

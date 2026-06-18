@@ -26,7 +26,8 @@ INTERFACE zif_aff_dtel_v1 PUBLIC.
       short          TYPE c LENGTH 10,
       "! <p class="shorttext">Length of Short Field Label</p>
       "! Note that the entered length is the upper limit for the lengths of all translations of the entered text.
-      "! The maximum length of the field label therefore should be somewhat longer than the length of the entered text in the original language.
+      "! The maximum length of the field label therefore should be
+      "! somewhat longer than the length of the entered text in the original language.
       "!
       "! $minimum 0
       "! $maximum 10
@@ -36,7 +37,8 @@ INTERFACE zif_aff_dtel_v1 PUBLIC.
       medium         TYPE c LENGTH 20,
       "! <p class="shorttext">Length of Medium Field Label</p>
       "! Note that the entered length is the upper limit for the lengths of all translations of the entered text.
-      "! The maximum length of the field label therefore should be somewhat longer than the length of the entered text in the original language.
+      "! The maximum length of the field label therefore should be
+      "! somewhat longer than the length of the entered text in the original language.
       "! The recommended length is 15 characters.
       "!
       "! $minimum 0
@@ -47,7 +49,8 @@ INTERFACE zif_aff_dtel_v1 PUBLIC.
       long           TYPE c LENGTH 40,
       "! <p class="shorttext">Length of Long Field Label</p>
       "! Note that the entered length is the upper limit for the lengths of all translations of the entered text.
-      "! The maximum length of the field label therefore should be somewhat longer than the length of the entered text in the original language.
+      "! The maximum length of the field label therefore should be
+      "! somewhat longer than the length of the entered text in the original language.
       "! The recommended length is 20 characters.
       "!
       "! $minimum 0
@@ -57,8 +60,9 @@ INTERFACE zif_aff_dtel_v1 PUBLIC.
       "! Heading field label
       heading        TYPE c LENGTH 55,
       "! <p class="shorttext">Length of Heading</p>
-      "! Note that the length that is entered is the upper limit for the lengths of all translations of the entered text.
-      "! The maximum length of the heading should therefore be somewhat longer than the entered text in the original language.
+      "! Note that the length that is entered is the upper limit for the length of all translations of the entered text.
+      "! The maximum length of the heading should therefore be
+      "! somewhat longer than the entered text in the original language.
       "! Also note that the heading is often displayed for editing list output of the corresponding column.
       "! The length of the heading should therefore, if possible, not exceed the length of the data element.
       "!
