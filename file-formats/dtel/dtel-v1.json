@@ -62,9 +62,35 @@
       "description": "Data type information",
       "type": "object",
       "properties": {
-        "domainName": {
-          "title": "Domain Name",
-          "description": "Reference domain name",
+        "category": {
+          "title": "Category",
+          "description": "Category",
+          "type": "string",
+          "enum": [
+            "domain",
+            "predefinedType",
+            "referenceToPredefinedType",
+            "referenceDictionaryType",
+            "referenceClasIntType"
+          ],
+          "enumTitles": [
+            "Domain",
+            "Predefined Type",
+            "Reference to Predefined Type",
+            "Reference to Dictionary Type",
+            "Reference to Class/Interface"
+          ],
+          "enumDescriptions": [
+            "Domain",
+            "Predefined Type",
+            "Reference to predefined type",
+            "Reference to dictionary type",
+            "Reference to class/interface"
+          ]
+        },
+        "typeName": {
+          "title": "Type Name",
+          "description": "Type name",
           "type": "string",
           "maxLength": 30
         },
@@ -193,8 +219,7 @@
                 "Unit key for QUAN fields",
                 "Timestamp, HANA type",
                 "Long character string, no longer supported from Rel. 3.0"
-              ],
-              "default": "CHAR"
+              ]
             },
             "length": {
               "title": "Length",
@@ -216,21 +241,12 @@
             "dataType",
             "length"
           ]
-        },
-        "referenceType": {
-          "title": "Reference Type",
-          "description": "Reference to an ABAP type",
-          "type": "string",
-          "maxLength": 30
-        },
-        "referencePredefinedType": {
-          "title": "Reference Predefined Type",
-          "description": "Reference to a predefined ABAP type",
-          "type": "string",
-          "maxLength": 30
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "required": [
+        "category"
+      ]
     },
     "fieldLabels": {
       "title": "Field Labels",
@@ -244,8 +260,8 @@
           "maxLength": 10
         },
         "shortLength": {
-          "title": "Short Length",
-          "description": "Short length",
+          "title": "Length of Short Field Label",
+          "description": "Note that the entered length is the upper limit for the lengths of all translations of the entered text. The maximum length of the field label therefore should be somewhat longer than the length of the entered text in the original language.",
           "type": "integer",
           "minimum": 0,
           "maximum": 10
@@ -257,8 +273,8 @@
           "maxLength": 20
         },
         "mediumLength": {
-          "title": "Medium Length",
-          "description": "Medium length",
+          "title": "Length of Medium Field Label",
+          "description": "Note that the entered length is the upper limit for the lengths of all translations of the entered text. The maximum length of the field label therefore should be somewhat longer than the length of the entered text in the original language. The recommended length is 15 characters.",
           "type": "integer",
           "minimum": 0,
           "maximum": 20
@@ -270,8 +286,8 @@
           "maxLength": 40
         },
         "longLength": {
-          "title": "Long Length",
-          "description": "Long length",
+          "title": "Length of Long Field Label",
+          "description": "Note that the entered length is the upper limit for the lengths of all translations of the entered text. The maximum length of the field label therefore should be somewhat longer than the length of the entered text in the original language. The recommended length is 20 characters.",
           "type": "integer",
           "minimum": 0,
           "maximum": 40
@@ -283,66 +299,11 @@
           "maxLength": 55
         },
         "headingLength": {
-          "title": "Heading Length",
-          "description": "Heading length",
+          "title": "Length of Heading",
+          "description": "Note that the length that is entered is the upper limit for the lengths of all translations of the entered text. The maximum length of the heading should therefore be somewhat longer than the entered text in the original language. Also note that the heading is often displayed for editing list output of the corresponding column. The length of the heading should therefore, if possible, not exceed the length of the data element.",
           "type": "integer",
           "minimum": 0,
           "maximum": 55
-        }
-      },
-      "additionalProperties": false
-    },
-    "searchHelp": {
-      "title": "Search Help",
-      "description": "Search help",
-      "type": "object",
-      "properties": {
-        "name": {
-          "title": "Name",
-          "description": "Search help name",
-          "type": "string",
-          "maxLength": 30
-        },
-        "parameter": {
-          "title": "Parameter",
-          "description": "Search help parameters",
-          "type": "string",
-          "maxLength": 30
-        }
-      },
-      "additionalProperties": false,
-      "required": [
-        "name",
-        "parameter"
-      ]
-    },
-    "bidirectionalOptions": {
-      "title": "Bidirectional Options",
-      "description": "Bidirectional options",
-      "type": "object",
-      "properties": {
-        "basicDirection": {
-          "title": "Basic Direction",
-          "description": "Basic direction",
-          "type": "string",
-          "enum": [
-            "leftToRight",
-            "rightToLeft"
-          ],
-          "enumTitles": [
-            "Left to Right",
-            "Right to Left"
-          ],
-          "enumDescriptions": [
-            "Left to right",
-            "Right to left"
-          ],
-          "default": "leftToRight"
-        },
-        "noFiltering": {
-          "title": "No Bidirectional Filtering",
-          "description": "Deactivates bidirectional text filtering",
-          "type": "boolean"
         }
       },
       "additionalProperties": false
@@ -352,6 +313,61 @@
       "description": "Additional properties",
       "type": "object",
       "properties": {
+        "searchHelp": {
+          "title": "Search Help",
+          "description": "Search help",
+          "type": "object",
+          "properties": {
+            "name": {
+              "title": "Name",
+              "description": "Search help name",
+              "type": "string",
+              "maxLength": 30
+            },
+            "parameter": {
+              "title": "Parameter",
+              "description": "Search help parameters",
+              "type": "string",
+              "maxLength": 30
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "name",
+            "parameter"
+          ]
+        },
+        "bidirectionalOptions": {
+          "title": "Bidirectional Options",
+          "description": "Bidirectional options",
+          "type": "object",
+          "properties": {
+            "basicDirection": {
+              "title": "Basic Direction",
+              "description": "Basic direction",
+              "type": "string",
+              "enum": [
+                "leftToRight",
+                "rightToLeft"
+              ],
+              "enumTitles": [
+                "Left to Right",
+                "Right to Left"
+              ],
+              "enumDescriptions": [
+                "Left to right",
+                "Right to left"
+              ],
+              "default": "leftToRight"
+            },
+            "noFiltering": {
+              "title": "No Bidirectional Filtering",
+              "description": "Deactivates bidirectional text filtering",
+              "type": "boolean"
+            }
+          },
+          "additionalProperties": false
+        },
         "parameterId": {
           "title": "Set/Get Parameter ID",
           "description": "Set/Get parameter ID",
