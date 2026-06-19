@@ -297,6 +297,14 @@ This is translated to JSON Schema with `oneOf` branches that constrain the discr
 
 For a given `$oneOfGroup`, generated schemas shall enforce exactly one valid branch.
 
+#### Deserialization Behavior
+
+ABAP's type system cannot express `oneOf` natively. When deserializing JSON to an ABAP structure (e.g., via `CALL TRANSFORMATION`), all branch fields exist as optional components simultaneously. The transformation populates whichever fields are present in the incoming JSON and leaves the others initial.
+
+This means the `oneOf` constraint is enforced at the JSON Schema validation layer, not at the transformation layer. If JSON Schema validation runs before deserialization (which is the expected usage), only the active branch field is present in the JSON, and the transformation result is correct.
+
+Without the `$oneOfGroup` annotations, alternative branches in ABAP type definitions are invisible to any tooling. Both branches could be populated simultaneously in the JSON without any validation error, leading to silent data inconsistency. The `oneOf` annotations close this gap by making the mutual exclusivity of branches verifiable at the schema level.
+
 Changes that introduce, remove, or alter `oneOf` constraints are usually incompatible and require increasing `formatVersion`.
 
 ### Additional Properties
