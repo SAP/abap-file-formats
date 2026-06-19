@@ -15,6 +15,11 @@ metadata_files = sorted([
     if os.path.basename(path) == f"{os.path.basename(os.path.dirname(path))}.json"
 ])
 
+# Map known multi-segment example suffixes to schema object types.
+TYPE_ALIASES = {
+    'tabl.settings': 'tabt',
+}
+
 def decode_json( file ):
     with open(file, 'r') as json_f:
         try:
@@ -41,17 +46,63 @@ def validate_json( schema, instance ):
         #print(f"::set-output name={os.path.basename(instance).ljust(31)} valid instance of schema {os.path.basename(schema)}" )
         print( "valid: " + os.path.basename(schema) + "; " + os.path.basename(instance))
 
+def get_example_types( example ):
+    filename_parts = os.path.basename(example).split( sep='.' )
+
+    if len(filename_parts) < 3:
+        return []
+
+    # Ignore the object name and file extension, keep semantic suffix parts.
+    semantic_parts = filename_parts[1:-1]
+
+    candidates = []
+
+    # For files like *.tabl.settings.json, prefer known combined aliases first.
+    if len(semantic_parts) >= 2:
+        combined = f"{semantic_parts[0]}.{semantic_parts[-1]}"
+        if combined in TYPE_ALIASES:
+            candidates.append(TYPE_ALIASES[combined])
+
+    # Prefer the most specific suffix (e.g. func, reps, settings) over object type.
+    for part in reversed(semantic_parts):
+        candidates.append(TYPE_ALIASES.get(part, part))
+
+    # Keep joined prefixes as a low-priority fallback for future extensions.
+    for length in range(2, len(semantic_parts) + 1):
+        joined = '.'.join(semantic_parts[:length])
+        candidates.append(TYPE_ALIASES.get(joined, joined))
+
+    # Preserve order while removing duplicates.
+    return list(dict.fromkeys(candidates))
+
 def match_schema_to_data( ):
     match = {}
 
     for example in examples:
-        example_type = os.path.basename(example).split( sep = '.' )[-2]
         example_version = decode_json( example )[ 'formatVersion' ]
-        json_schema = [ schema for schema in schemas if example_type in os.path.basename(schema).split( sep = '-' )[0]
-                                                        and example_version in os.path.basename(schema).split( sep='-')[1]]
+        example_types = get_example_types( example )
+
+        selected_schema = None
+        for example_type in example_types:
+            for schema in schemas:
+                schema_name_parts = os.path.basename(schema).split( sep='-' )
+                if len(schema_name_parts) < 2:
+                    continue
+
+                schema_type = schema_name_parts[0]
+                schema_version = schema_name_parts[1]
+
+                if schema_type == example_type and example_version in schema_version:
+                    selected_schema = schema
+                    break
+
+            if selected_schema is not None:
+                break
 
         try:
-            match[example] = json_schema.pop( 0 )
+            match[example] = selected_schema
+            if selected_schema is None:
+                raise IndexError
         except IndexError:
             msg_errors.append(f"no JSON Schema found for example {os.path.basename(example)}")
 
