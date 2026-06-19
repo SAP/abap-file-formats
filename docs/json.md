@@ -7,6 +7,7 @@ For its annotation and validation, the ABAP file formats provide JSON Schemas.
 * [Format Versions and Compatibility](#format-versions-and-compatibility)
 * [Writing JSON Schema with ABAP Types](#writing-json-schema-with-abap-types)
 * [Example](#example)
+* [Union Types (oneOf)](#union-types-oneof)
 * [Reusable Fields in JSON Files](#reusable-fields-in-json-files)
 
 ## Format Versions and Compatibility
@@ -224,6 +225,79 @@ Remark: If an enum is used, it should be checked if one of the following points 
 In case additional values for the enum should be added compatibly later, a default value must always be specified (see [Format Versions and Compatibility](#format-versions-and-compatibility)). If systems don't support the new enumeration value (e.g., in lower releases), the value will be changed to the default value by the file format implementations.
 
 The order of the comments and annotations presented here is important: First, there is the comment for the title followed by the one for the description, in case they are both provided. After these two, the remaining annotations are always located. Between them, the order is irrelevant.
+
+### Union Types (oneOf)
+
+To model alternatives in JSON files, one `oneOf` group can be defined by ABAP Doc annotations on the corresponding structure components.
+
+The following annotations are available:
+
+```abap
+"! $oneOfGroup group_name
+"! $oneOfDiscriminator field_name
+"! $oneOfDiscriminator {@link source_name.data:type_name-component_name}
+"! $oneOfValue 'enumValue'
+"! $oneOfValue {@link source_name.data:constant_name.component_name}
+```
+
+The annotation `$oneOfGroup` assigns a field to a union group. All fields that share the same group name belong to the same `oneOf`.
+
+The annotation `$oneOfDiscriminator` defines the field that selects the active branch. It can be specified either as a plain field name or as an ABAP Doc link.
+
+The annotation `$oneOfValue` defines the discriminator value that activates the annotated branch. It can be specified either as a literal JSON value in single quotation marks or as a link to a constant component.
+
+If `$oneOfValue` is specified as a link to an enum constant component, the resulting JSON value is derived exactly as for enum values:
+
+1. If the referenced enum component has an `$enumValue` annotation, this value is used.
+2. Otherwise, the component name is transformed to camel case.
+
+This guarantees consistency between enum definitions and `oneOf` discriminator values.
+
+Recommended usage:
+
+1. Define the discriminator as an enum field with `$values`.
+2. Use `{@link ...}` for `$oneOfValue` to avoid duplication.
+3. Use one unique `$oneOfValue` per branch in the same `$oneOfGroup`.
+
+Minimal example:
+
+```abap
+TYPES:
+  "! $values {@link zif_aff_example_v1.data:co_kind}
+  TYPES ty_kind TYPE c LENGTH 1.
+
+CONSTANTS:
+  BEGIN OF co_kind,
+    inline    TYPE ty_kind VALUE 'I',
+    reference TYPE ty_kind VALUE 'R',
+  END OF co_kind.
+
+TYPES:
+  BEGIN OF ty_main,
+    "! $required
+    format_version    TYPE zif_aff_types_v1=>ty_format_version,
+    "! $required
+    header            TYPE zif_aff_types_v1=>ty_header_60,
+    "! $required
+    payload_kind      TYPE ty_kind,
+
+    "! $oneOfGroup payload_variant
+    "! $oneOfDiscriminator payload_kind
+    "! $oneOfValue {@link zif_aff_example_v1.data:co_kind.inline}
+    inline_payload    TYPE string,
+
+    "! $oneOfGroup payload_variant
+    "! $oneOfDiscriminator payload_kind
+    "! $oneOfValue {@link zif_aff_example_v1.data:co_kind.reference}
+    reference_payload TYPE string,
+  END OF ty_main.
+```
+
+This is translated to JSON Schema with `oneOf` branches that constrain the discriminator value (via `const`) and require the corresponding branch field.
+
+For a given `$oneOfGroup`, generated schemas shall enforce exactly one valid branch.
+
+Changes that introduce, remove, or alter `oneOf` constraints are usually incompatible and require increasing `formatVersion`.
 
 ### Additional Properties
 
