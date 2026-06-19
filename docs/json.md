@@ -233,8 +233,8 @@ To model alternatives in JSON files, `oneOf` groups can be defined by ABAP Doc a
 The following annotations are available:
 
 ```abap
-"! $oneOfGroup group_name
-"! $oneOfDiscriminatorFor group_name
+"! $oneOfDiscriminatorFor <group_name>
+"! $oneOfGroup <group_name>
 "! $oneOfValue 'enumValue'
 "! $oneOfValue {@link source_name.data:constant_name.component_name}
 ```
@@ -296,16 +296,9 @@ TYPES:
 
 TYPES:
   "! <p class="shorttext">Main Data</p>
-  "! Main data of the example format
+  "! Main data of the example format.
+  "! For simplicity we skip the fields `formatVersion` and `header` in this example.
   BEGIN OF ty_main,
-    "! <p class="shorttext">Format Version</p>
-    "! ABAP file format version
-    "! $required
-    format_version    TYPE zif_aff_types_v1=>ty_format_version,
-    "! <p class="shorttext">Header</p>
-    "! Header information
-    "! $required
-    header            TYPE zif_aff_types_v1=>ty_header_60,
     "! <p class="shorttext">General Information</p>
     "! General information containing discriminator fields
     "! $required
@@ -337,8 +330,7 @@ This is translated to JSON Schema with `oneOf` branches that constrain the discr
       "properties": {
         "payloadKind": {
           "type": "string",
-          "enum": ["inline", "reference"],
-          "default": "inline"
+          "enum": ["inline", "reference"]
         }
       },
       "required": ["payloadKind"]
