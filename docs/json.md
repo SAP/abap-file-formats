@@ -254,46 +254,71 @@ This guarantees consistency between enum definitions and `oneOf` discriminator v
 
 Recommended usage:
 
-1. Define the discriminator as an enum field with `$values` and a default value with `$default`.
+1. Define the discriminator as an enum field with `$values`.
 2. Specify `$oneOfDiscriminatorFor <group_name>` on the discriminator field.
 3. The discriminator may be located in a different structure (for example in `general_information`) as long as it is in the same object scope.
 4. Use `{@link ...}` for `$oneOfValue` to avoid duplication.
 5. Use one unique `$oneOfValue` per branch in the same `$oneOfGroup`.
 
+In the example below, enum metadata (`$values`) is defined on the type `ty_kind` and is therefore reused by the field `payload_kind` via its type.
+
 Simple example:
 
 ```abap
 TYPES:
+  "! <p class="shorttext">Payload Kind</p>
+  "! Payload kind
   "! $values {@link zif_aff_example_v1.data:co_kind}
-  "! $default {@link zif_aff_example_v1.data:co_kind.inline}
   ty_kind TYPE c LENGTH 1.
 
 CONSTANTS:
+  "! <p class="shorttext">Payload Kind Values</p>
+  "! Allowed values for payload kind
   BEGIN OF co_kind,
+    "! <p class="shorttext">Inline</p>
+    "! Inline payload variant
     inline    TYPE ty_kind VALUE 'I',
+    "! <p class="shorttext">Reference</p>
+    "! Reference payload variant
     reference TYPE ty_kind VALUE 'R',
   END OF co_kind.
 
 TYPES:
+  "! <p class="shorttext">General Information</p>
+  "! General information for payload selection
   BEGIN OF ty_general_information,
+    "! <p class="shorttext">Payload Kind</p>
+    "! Payload kind selecting the active payload variant
     "! $required
     "! $oneOfDiscriminatorFor payload_variant
     payload_kind TYPE ty_kind,
   END OF ty_general_information.
 
 TYPES:
+  "! <p class="shorttext">Main Data</p>
+  "! Main data of the example format
   BEGIN OF ty_main,
+    "! <p class="shorttext">Format Version</p>
+    "! ABAP file format version
     "! $required
     format_version    TYPE zif_aff_types_v1=>ty_format_version,
+    "! <p class="shorttext">Header</p>
+    "! Header information
     "! $required
     header            TYPE zif_aff_types_v1=>ty_header_60,
+    "! <p class="shorttext">General Information</p>
+    "! General information containing discriminator fields
     "! $required
     general_information TYPE ty_general_information,
 
+    "! <p class="shorttext">Inline Payload</p>
+    "! Payload content for inline variant
     "! $oneOfGroup payload_variant
     "! $oneOfValue {@link zif_aff_example_v1.data:co_kind.inline}
     inline_payload    TYPE string,
 
+    "! <p class="shorttext">Reference Payload</p>
+    "! Payload content for reference variant
     "! $oneOfGroup payload_variant
     "! $oneOfValue {@link zif_aff_example_v1.data:co_kind.reference}
     reference_payload TYPE string,
