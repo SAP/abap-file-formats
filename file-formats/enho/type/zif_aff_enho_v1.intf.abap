@@ -24,7 +24,7 @@ INTERFACE zif_aff_enho_v1
   "! <p class="shorttext">Comparator</p>
   "! Filter comparator
   "! $values {@link zif_aff_enho_v1.data:co_comparator}
-  "! $default {@link zif_aff_enho_v1.data:co_comparator.equal}
+  "! $default {@link zif_aff_enho_v1.data:co_comparator.not_specified}
   TYPES ty_comparator TYPE c LENGTH 2.
 
   CONSTANTS:
@@ -80,43 +80,32 @@ INTERFACE zif_aff_enho_v1
       "! of operand2.
       "! $enumValue 'NS'
       contains_no_string          TYPE ty_comparator VALUE 'NS',
+      "! <p class="shorttext">Not specified</p>
+      "! Not specified: used in case of range filter
+      not_specified               TYPE ty_comparator VALUE 'XX',
     END OF co_comparator.
 
-
-  TYPES:
-    "! <p class="shorttext">Filter</p>
-    "! Filter
-    BEGIN OF ty_filter_details,
-      "! <p class="shorttext">Comparator</p>
-      "! Filter comparator
-      "! $required
-      comparator TYPE ty_comparator,
-      "! <p class="shorttext">Filter Value</p>
-      "! Filter value
-      "! $required
-      value      TYPE string,
-    END OF ty_filter_details.
 
   TYPES:
     "! <p class="shorttext">Range Filter</p>
     "! Range filter
     BEGIN OF ty_range_filter,
-      "! <p class="shorttext">Low Comparator</p>
-      "! Low comparator
+      "! <p class="shorttext">Left Comparator</p>
+      "! Left comparator
       "! $required
-      low_comparator  TYPE ty_range_filter_comparator,
-      "! <p class="shorttext">Low Filter Value</p>
-      "! Low filter value
+      left_comparator  TYPE ty_range_filter_comparator,
+      "! <p class="shorttext">Left Filter Value</p>
+      "! Left filter value
       "! $required
-      low_value       TYPE string,
-      "! <p class="shorttext">High Comparator</p>
-      "! High comparator
+      left_value       TYPE string,
+      "! <p class="shorttext">Right Comparator</p>
+      "! Right comparator
       "! $required
-      high_comparator TYPE ty_range_filter_comparator,
-      "! <p class="shorttext">High Filter Value</p>
-      "! High filter value
+      right_comparator TYPE ty_range_filter_comparator,
+      "! <p class="shorttext">Right Filter Value</p>
+      "! Right filter value
       "! $required
-      high_value      TYPE string,
+      right_value      TYPE string,
     END OF ty_range_filter.
 
   TYPES:
@@ -126,13 +115,16 @@ INTERFACE zif_aff_enho_v1
       "! <p class="shorttext">Name</p>
       "! Filter name
       "! $required
-      name                 TYPE zif_aff_types_v1=>ty_object_name_30,
-      "! <p class="shorttext">Filter</p>
-      "! Filter
-      filter_details       TYPE ty_filter_details,
-      "! <p class="shorttext">Range Filter</p>
-      "! Range filter
-      range_filter_details TYPE ty_range_filter,
+      name       TYPE zif_aff_types_v1=>ty_object_name_30,
+      "! <p class="shorttext">Comparator</p>
+      "! Filter comparator
+      comparator TYPE ty_comparator,
+      "! <p class="shorttext">Filter Value</p>
+      "! Filter value
+      value      TYPE string,
+      "! <p class="shorttext">Range</p>
+      "! Range
+      range      TYPE ty_range_filter,
     END OF ty_filter.
 
 

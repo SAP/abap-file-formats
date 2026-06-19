@@ -21,20 +21,18 @@
           {
             "filter": {
               "name": "EXAMPLE_NORMAL_FILTER",
-              "filterDetails": {
-                "comparator": ">",
-                "value": "1"
-              }
+              "comparator": ">",
+              "value": "1"
             }
           },
           {
             "filter": {
               "name": "EXAMPLE_RANGE_FILTER",
-              "rangeFilterDetails": {
-                "lowComparator": "<",
-                "lowValue": "10",
-                "highComparator": "<=",
-                "highValue": "100"
+              "range": {
+                "leftComparator": "<",
+                "leftValue": "10",
+                "rightComparator": "<=",
+                "rightValue": "100"
               }
             }
           }
