@@ -234,15 +234,14 @@ The following annotations are available:
 
 ```abap
 "! $oneOfGroup group_name
-"! $oneOfDiscriminator field_name
-"! $oneOfDiscriminator {@link source_name.data:type_name-component_name}
+"! $oneOfDiscriminatorFor group_name
 "! $oneOfValue 'enumValue'
 "! $oneOfValue {@link source_name.data:constant_name.component_name}
 ```
 
 The annotation `$oneOfGroup` assigns a field to a union group. All fields that share the same group name belong to the same `oneOf`.
 
-The annotation `$oneOfDiscriminator` defines the field that selects the active branch. It can be specified either as a plain field name or as an ABAP Doc link.
+The annotation `$oneOfDiscriminatorFor` marks a field as discriminator for the referenced `oneOf` group. For each `$oneOfGroup`, `$oneOfDiscriminatorFor` must be specified exactly once on the discriminator field.
 
 The annotation `$oneOfValue` defines the discriminator value that activates the annotated branch. It can be specified either as a literal JSON value in single quotation marks or as a link to a constant component.
 
@@ -255,15 +254,18 @@ This guarantees consistency between enum definitions and `oneOf` discriminator v
 
 Recommended usage:
 
-1. Define the discriminator as an enum field with `$values`.
-2. Use `{@link ...}` for `$oneOfValue` to avoid duplication.
-3. Use one unique `$oneOfValue` per branch in the same `$oneOfGroup`.
+1. Define the discriminator as an enum field with `$values` and a default value with `$default`.
+2. Specify `$oneOfDiscriminatorFor <group_name>` on the discriminator field.
+3. The discriminator may be located in a different structure (for example in `general_information`) as long as it is in the same object scope.
+4. Use `{@link ...}` for `$oneOfValue` to avoid duplication.
+5. Use one unique `$oneOfValue` per branch in the same `$oneOfGroup`.
 
-Minimal example:
+Simple example:
 
 ```abap
 TYPES:
   "! $values {@link zif_aff_example_v1.data:co_kind}
+  "! $default {@link zif_aff_example_v1.data:co_kind.inline}
   ty_kind TYPE c LENGTH 1.
 
 CONSTANTS:
@@ -273,27 +275,88 @@ CONSTANTS:
   END OF co_kind.
 
 TYPES:
+  BEGIN OF ty_general_information,
+    "! $required
+    "! $oneOfDiscriminatorFor payload_variant
+    payload_kind TYPE ty_kind,
+  END OF ty_general_information.
+
+TYPES:
   BEGIN OF ty_main,
     "! $required
     format_version    TYPE zif_aff_types_v1=>ty_format_version,
     "! $required
     header            TYPE zif_aff_types_v1=>ty_header_60,
     "! $required
-    payload_kind      TYPE ty_kind,
+    general_information TYPE ty_general_information,
 
     "! $oneOfGroup payload_variant
-    "! $oneOfDiscriminator payload_kind
     "! $oneOfValue {@link zif_aff_example_v1.data:co_kind.inline}
     inline_payload    TYPE string,
 
     "! $oneOfGroup payload_variant
-    "! $oneOfDiscriminator payload_kind
     "! $oneOfValue {@link zif_aff_example_v1.data:co_kind.reference}
     reference_payload TYPE string,
   END OF ty_main.
 ```
 
-This is translated to JSON Schema with `oneOf` branches that constrain the discriminator value (via `const`) and require the corresponding branch field.
+This is translated to JSON Schema with `oneOf` branches that constrain the discriminator value (via `const`) and require the corresponding branch field:
+
+
+```json
+{
+  "type": "object",
+  "properties": {
+    "generalInformation": {
+      "type": "object",
+      "properties": {
+        "payloadKind": {
+          "type": "string",
+          "enum": ["inline", "reference"],
+          "default": "inline"
+        }
+      },
+      "required": ["payloadKind"]
+    },
+    "inlinePayload": {
+      "type": "string"
+    },
+    "referencePayload": {
+      "type": "string"
+    }
+  },
+  "oneOf": [
+    {
+      "required": ["generalInformation", "inlinePayload"],
+      "properties": {
+        "generalInformation": {
+          "type": "object",
+          "properties": {
+            "payloadKind": {
+              "const": "inline"
+            }
+          },
+          "required": ["payloadKind"]
+        }
+      }
+    },
+    {
+      "required": ["generalInformation", "referencePayload"],
+      "properties": {
+        "generalInformation": {
+          "type": "object",
+          "properties": {
+            "payloadKind": {
+              "const": "reference"
+            }
+          },
+          "required": ["payloadKind"]
+        }
+      }
+    }
+  ]
+}
+```
 
 For a given `$oneOfGroup`, generated schemas enforce exactly one valid branch.
 
