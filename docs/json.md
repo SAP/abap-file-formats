@@ -264,7 +264,7 @@ Minimal example:
 ```abap
 TYPES:
   "! $values {@link zif_aff_example_v1.data:co_kind}
-  TYPES ty_kind TYPE c LENGTH 1.
+  ty_kind TYPE c LENGTH 1.
 
 CONSTANTS:
   BEGIN OF co_kind,
@@ -295,7 +295,7 @@ TYPES:
 
 This is translated to JSON Schema with `oneOf` branches that constrain the discriminator value (via `const`) and require the corresponding branch field.
 
-For a given `$oneOfGroup`, generated schemas shall enforce exactly one valid branch.
+For a given `$oneOfGroup`, generated schemas enforce exactly one valid branch.
 
 #### Deserialization Behavior
 
