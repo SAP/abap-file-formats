@@ -227,7 +227,8 @@ The order of the comments and annotations presented here is important: First, th
 
 ### Union Types (oneOf)
 
-To model alternatives in JSON files, one `oneOf` group can be defined by ABAP Doc annotations on the corresponding structure components.
+To model alternatives in JSON files, `oneOf` groups can be defined by ABAP Doc annotations on the corresponding structure components.
+
 
 The following annotations are available:
 
