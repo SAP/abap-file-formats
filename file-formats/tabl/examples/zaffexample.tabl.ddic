@@ -1,0 +1,11 @@
+@EndUserText.label : 'test'
+@AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
+@AbapCatalog.tableCategory : #TRANSPARENT
+@AbapCatalog.deliveryClass : #L
+@AbapCatalog.dataMaintenance : #RESTRICTED
+define table zaffexample {
+
+  key client : abap.clnt not null;
+  country    : abap.char(40);
+  city       : abap.char(40);
+}
