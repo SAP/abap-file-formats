@@ -20,7 +20,7 @@
         "or": [
           {
             "filter": {
-              "name": "EXAMPLE_NORMAL_FILTER",
+              "name": "EXAMPLE_FILTER",
               "comparator": ">",
               "value": "1"
             }
