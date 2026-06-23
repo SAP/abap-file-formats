@@ -166,22 +166,6 @@
         "userPrompt"
       ]
     },
-    "jsonDefinition": {
-      "title": "JSON Definition",
-      "description": "JSON definition (used when type is JSON)",
-      "type": "object",
-      "properties": {
-        "jsonContent": {
-          "title": "JSON Content",
-          "description": "JSON content",
-          "type": "string"
-        }
-      },
-      "additionalProperties": false,
-      "required": [
-        "jsonContent"
-      ]
-    },
     "assignedQueries": {
       "title": "Assigned Queries",
       "description": "Assigned queries",

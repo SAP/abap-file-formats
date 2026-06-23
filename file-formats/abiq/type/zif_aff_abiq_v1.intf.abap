@@ -91,16 +91,6 @@ INTERFACE zif_aff_abiq_v1
     END OF ty_prompt_definition.
 
   TYPES:
-    "! <p class="shorttext">JSON Definition</p>
-    "! JSON definition
-    BEGIN OF ty_json_definition,
-      "! <p class="shorttext">JSON Content</p>
-      "! JSON content
-      "! $required
-      json_content TYPE string,
-    END OF ty_json_definition.
-
-  TYPES:
     "! <p class="shorttext">Assigned Query</p>
     "! Assigned query
     BEGIN OF ty_assigned_query,
@@ -132,9 +122,6 @@ INTERFACE zif_aff_abiq_v1
       "! <p class="shorttext">Prompt Definition</p>
       "! Prompt definition (used when type is LLM)
       prompt_definition   TYPE ty_prompt_definition,
-      "! <p class="shorttext">JSON Definition</p>
-      "! JSON definition (used when type is JSON)
-      json_definition     TYPE ty_json_definition,
       "! <p class="shorttext">Assigned Queries</p>
       "! Assigned queries
       assigned_queries    TYPE ty_assigned_queries,

@@ -1,0 +1,17 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "AIRLINE_REVENUE_PER_SEAT JSON",
+    "originalLanguage": "en"
+  },
+  "generalInformation": {
+    "type": "json",
+    "scope": "query",
+    "consumptionVisible": true
+  },
+  "assignedQueries": [
+    {
+      "queryName": "C_CDS_TST_FLIGHT_VAR_Q2"
+    }
+  ]
+}
