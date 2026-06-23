@@ -1,10 +1,30 @@
 INTERFACE zif_aff_enho_v1
   PUBLIC.
 
+  "! <p class="shorttext">Range Filter Comparator</p>
+  "! Range filter comparator
+  "! $values {@link zif_aff_enho_v1.data:co_range_filter_comparator}
+  "! $required
+  TYPES ty_range_filter_comparator TYPE c LENGTH 2.
+
+  CONSTANTS:
+    "! <p class="shorttext">Range Filter Comparator</p>
+    "! Range filter comparator
+    BEGIN OF co_range_filter_comparator,
+      "! <p class="shorttext">Less Than</p>
+      "! True, if the value of operand1 is less than the value of operand2.
+      "! $enumValue '<'
+      less_than  TYPE ty_range_filter_comparator VALUE '<',
+      "! <p class="shorttext">Less Equal</p>
+      "! True, if the value of operand1 is less than or equal to the value of operand2.
+      "! $enumValue '<='
+      less_equal TYPE ty_range_filter_comparator VALUE '<=',
+    END OF co_range_filter_comparator.
+
   "! <p class="shorttext">Comparator</p>
   "! Filter comparator
   "! $values {@link zif_aff_enho_v1.data:co_comparator}
-  "! $default {@link zif_aff_enho_v1.data:co_comparator.equal}
+  "! $default {@link zif_aff_enho_v1.data:co_comparator.not_specified}
   TYPES ty_comparator TYPE c LENGTH 2.
 
   CONSTANTS:
@@ -60,34 +80,33 @@ INTERFACE zif_aff_enho_v1
       "! of operand2.
       "! $enumValue 'NS'
       contains_no_string          TYPE ty_comparator VALUE 'NS',
+      "! <p class="shorttext">Not specified</p>
+      "! Not specified: used in case of range filter
+      not_specified               TYPE ty_comparator VALUE 'XX',
     END OF co_comparator.
 
-  "! <p class="shorttext">Filter Type</p>
-  "! Filter type
-  "! $values {@link zif_aff_enho_v1.data:co_filtertype}
-  "! $default {@link zif_aff_enho_v1.data:co_filtertype.character_like}
-  TYPES ty_filtertype TYPE c LENGTH 1.
 
-  CONSTANTS:
-    "! <p class="shorttext">Filter Type</p>
-    "! Filter type
-    BEGIN OF co_filtertype,
-      "! <p class="shorttext">Integer</p>
-      "! Integer
-      integer        TYPE ty_filtertype VALUE 'I',
-      "! <p class="shorttext">Character-Like</p>
-      "! Character-like
-      character_like TYPE ty_filtertype VALUE 'C',
-      "! <p class="shorttext">String</p>
-      "! String
-      string         TYPE ty_filtertype VALUE 'S',
-      "! <p class="shorttext">Numeric</p>
-      "! Numeric
-      numeric        TYPE ty_filtertype VALUE 'N',
-      "! <p class="shorttext">Packed</p>
-      "! Packed
-      packed         TYPE ty_filtertype VALUE 'P',
-    END OF co_filtertype.
+  TYPES:
+    "! <p class="shorttext">Range Filter</p>
+    "! Range filter
+    BEGIN OF ty_range_filter,
+      "! <p class="shorttext">Left Comparator</p>
+      "! Left comparator
+      "! $required
+      left_comparator  TYPE ty_range_filter_comparator,
+      "! <p class="shorttext">Left Filter Value</p>
+      "! Left filter value
+      "! $required
+      left_value       TYPE string,
+      "! <p class="shorttext">Right Comparator</p>
+      "! Right comparator
+      "! $required
+      right_comparator TYPE ty_range_filter_comparator,
+      "! <p class="shorttext">Right Filter Value</p>
+      "! Right filter value
+      "! $required
+      right_value      TYPE string,
+    END OF ty_range_filter.
 
   TYPES:
     "! <p class="shorttext">Filter</p>
@@ -95,17 +114,19 @@ INTERFACE zif_aff_enho_v1
     BEGIN OF ty_filter,
       "! <p class="shorttext">Name</p>
       "! Filter name
+      "! $required
       name       TYPE zif_aff_types_v1=>ty_object_name_30,
-      "! <p class="shorttext">Type</p>
-      "! Filter type
-      type       TYPE ty_filtertype,
       "! <p class="shorttext">Comparator</p>
-      "! Comparator
+      "! Filter comparator
       comparator TYPE ty_comparator,
       "! <p class="shorttext">Filter Value</p>
       "! Filter value
       value      TYPE string,
+      "! <p class="shorttext">Range</p>
+      "! Range
+      range      TYPE ty_range_filter,
     END OF ty_filter.
+
 
   TYPES:
     "! <p class="shorttext">And</p>
@@ -185,6 +206,7 @@ INTERFACE zif_aff_enho_v1
       badi_definition           TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Implementing Class</p>
       "! Implementing class
+      "! $required
       implementing_class        TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Is Example Implementation</p>
       "! BAdI implementation is an example implementation
@@ -213,14 +235,13 @@ INTERFACE zif_aff_enho_v1
 
   TYPES:
     "! <p class="shorttext">General Information</p>
-    "! General information"
+    "! General information
     BEGIN OF ty_general_information,
       "! <p class="shorttext">Enhancement Spot</p>
       "! Enhancement Spot name
       "! $required
       enhancement_spot TYPE zif_aff_types_v1=>ty_object_name_30,
     END OF ty_general_information.
-
 
   TYPES:
     "! <p class="shorttext">ENHO</p>
