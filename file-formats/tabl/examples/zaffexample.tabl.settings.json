@@ -1,0 +1,19 @@
+{
+  "formatVersion": "1",
+  "generalInformation": {
+    "dataClassCategory": "APPL1",
+    "sizeCategory": "3",
+    "logChanges": true,
+    "writableByAmdp": true,
+    "translation": "standard"
+  },
+  "buffering": {
+    "state": "switchedOn",
+    "type": "generic",
+    "nrOfKeyFlds4GenericBuff": 2
+  },
+  "dbSpecificSettings": {
+    "storageType": "rowStore",
+    "loadUnit": "pageEnforced"
+  }
+}

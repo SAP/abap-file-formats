@@ -72,6 +72,10 @@ INTERFACE zif_aff_types_v1 PUBLIC.
 
   "! <p class="shorttext">Description</p>
   "! Description of the ABAP object
+  TYPES ty_description_70 TYPE c LENGTH 70.
+
+  "! <p class="shorttext">Description</p>
+  "! Description of the ABAP object
   TYPES ty_description_80 TYPE c LENGTH 80.
 
   "! <p class="shorttext">Description</p>
@@ -136,6 +140,16 @@ INTERFACE zif_aff_types_v1 PUBLIC.
 
   TYPES:
     "! <p class="shorttext">Header</p>
+    "! The header for an ABAP main object (without ABAP language version) with a description of 70 characters
+    BEGIN OF ty_header_70_no_abap_lv,
+      "! $required
+      description       TYPE ty_description_70,
+      "! $required
+      original_language TYPE ty_original_language,
+    END OF ty_header_70_no_abap_lv.
+
+  TYPES:
+    "! <p class="shorttext">Header</p>
     "! The header for an ABAP main object (without source code) with a description of 80 characters
     BEGIN OF ty_header_80,
       "! $required
@@ -177,14 +191,6 @@ INTERFACE zif_aff_types_v1 PUBLIC.
       original_language     TYPE ty_original_language,
       abap_language_version TYPE ty_abap_language_version_cloud,
     END OF ty_header_100_cloud.
-
-  TYPES:
-    "! <p class="shorttext">Header</p>
-    "! The header for an ABAP subobject with a description of 60 characters
-    BEGIN OF ty_header_only_description,
-      "! $required
-      description TYPE ty_description_60,
-    END OF ty_header_only_description.
 
   "! <p class="shorttext">Option</p>
   "! Option

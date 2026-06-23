@@ -21,7 +21,7 @@
           "title": "Description",
           "description": "Description of the ABAP object",
           "type": "string",
-          "maxLength": 60
+          "maxLength": 74
         }
       },
       "additionalProperties": false,
@@ -194,7 +194,7 @@
       "title": "Release Date",
       "description": "Release date",
       "type": "string",
-      "format": "date-time"
+      "format": "date"
     },
     "global": {
       "title": "Global",
