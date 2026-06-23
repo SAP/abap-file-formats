@@ -11,7 +11,7 @@
   },
   "assignedQueries": [
     {
-      "queryName": "C_CDS_TST_FLIGHT_VAR_Q2"
+      "queryName": "C_MYDUMMYQUERY"
     }
   ]
 }
