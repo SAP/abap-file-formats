@@ -127,6 +127,14 @@ INTERFACE zif_aff_enho_v1
       range      TYPE ty_range_filter,
     END OF ty_filter.
 
+  TYPES:
+    "! <p class="shorttext">Or</p>
+    "! Or
+    BEGIN OF ty_inner_or,
+      "! <p class="shorttext">Filter</p>
+      "! Filter
+      filter       TYPE ty_filter,
+    END OF ty_inner_or.
 
   TYPES:
     "! <p class="shorttext">And</p>
@@ -134,15 +142,15 @@ INTERFACE zif_aff_enho_v1
     BEGIN OF ty_and,
       "! <p class="shorttext">Or</p>
       "! Or
-      or     TYPE STANDARD TABLE OF ty_filter WITH DEFAULT KEY,
+      or     TYPE STANDARD TABLE OF ty_inner_or WITH DEFAULT KEY,
       "! <p class="shorttext">Filter</p>
       "! Filter
       filter TYPE ty_filter,
     END OF ty_and.
 
   TYPES:
-    "! <p class="shorttext">Outer or</p>
-    "! Outer or
+    "! <p class="shorttext">Or</p>
+    "! Or
     BEGIN OF ty_outer_or,
       "! <p class="shorttext">And</p>
       "! And
