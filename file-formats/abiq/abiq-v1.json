@@ -123,11 +123,6 @@
           "description": "System prompt",
           "type": "string"
         },
-        "userPrompt": {
-          "title": "User Prompt",
-          "description": "User prompt",
-          "type": "string"
-        },
         "resultSetRequired": {
           "title": "Result Set Required",
           "description": "Result set required",
@@ -162,8 +157,7 @@
       },
       "additionalProperties": false,
       "required": [
-        "systemPrompt",
-        "userPrompt"
+        "systemPrompt"
       ]
     },
     "assignedQueries": {

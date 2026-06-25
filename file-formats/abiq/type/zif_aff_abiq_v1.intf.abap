@@ -75,10 +75,6 @@ INTERFACE zif_aff_abiq_v1
       "! System prompt
       "! $required
       system_prompt       TYPE string,
-      "! <p class="shorttext">User Prompt</p>
-      "! User prompt
-      "! $required
-      user_prompt         TYPE string,
       "! <p class="shorttext">Result Set Required</p>
       "! Result set required
       result_set_required TYPE abap_bool,
