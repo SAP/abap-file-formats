@@ -133,7 +133,7 @@ INTERFACE zif_aff_enho_v1
     BEGIN OF ty_inner_or,
       "! <p class="shorttext">Filter</p>
       "! Filter
-      filter       TYPE ty_filter,
+      filter TYPE ty_filter,
     END OF ty_inner_or.
 
   TYPES:
