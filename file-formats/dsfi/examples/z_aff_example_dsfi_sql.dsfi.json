@@ -7,7 +7,7 @@
   "scalarFunctionName": "Z_AFF_EXAMPLE_DSFI",
   "engine": "sqlEngine",
   "sqlProperties": {
-    "amdpReference": "ZCL_DSFI_EXAMPLE=>EXECUTE",
+    "amdpFunctionImplementation": "ZCL_DSFI_EXAMPLE=>EXECUTE",
     "autoExposedInSqlServices": true
   }
 }
