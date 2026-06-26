@@ -93,7 +93,7 @@
         "description": "Structure mapping information",
         "type": "object",
         "properties": {
-          "name": {
+          "displayName": {
             "title": "Display Name",
             "description": "Display name",
             "type": "string"
@@ -187,17 +187,17 @@
                     "Treat as error if check is not successful",
                     "Ignore data if check is not successful"
                   ],
-                  "default": "ignoreData"
+                  "default": "triggerError"
                 },
-                "fieldnameLink": {
+                "fieldNameForDataLink": {
                   "title": "Field Name for Data Link",
                   "description": "Field name for data link",
                   "type": "string",
                   "maxLength": 120
                 },
-                "checkFieldlist": {
-                  "title": "Check Fieldlist",
-                  "description": "Check fieldlist",
+                "checkFields": {
+                  "title": "Check Fields",
+                  "description": "Check fields",
                   "type": "array",
                   "items": {
                     "title": "Check Fieldlist",
@@ -241,7 +241,7 @@
               "description": "Field mapping",
               "type": "object",
               "properties": {
-                "mappedField": {
+                "mappedDataStructureField": {
                   "title": "Mapped Data Structure Field",
                   "description": "Field in mapped data structure",
                   "type": "string"
@@ -273,7 +273,7 @@
                   "type": "string",
                   "maxLength": 20
                 },
-                "conversionDataelement": {
+                "dataElementForConversion": {
                   "title": "Data Element for Conversion",
                   "description": "Data element for conversion",
                   "type": "string",
@@ -285,13 +285,24 @@
                   "type": "string",
                   "maxLength": 5
                 },
-                "conversionDirection": {
+                "directionOfConversion": {
                   "title": "Direction of Conversion",
                   "description": "Direction of conversion",
                   "type": "string",
-                  "maxLength": 1
+                  "enum": [
+                    "externalToInternal",
+                    "internalToExternal"
+                  ],
+                  "enumTitles": [
+                    "External to Internal",
+                    "Internal to External"
+                  ],
+                  "enumDescriptions": [
+                    "Convert from external to internal format",
+                    "Convert from internal to external format"
+                  ]
                 },
-                "fieldnameLink": {
+                "fieldNameForDataLink": {
                   "title": "Field Name for Data Link",
                   "description": "Field name for data link",
                   "type": "string",
@@ -527,7 +538,7 @@
                   },
                   "additionalProperties": false
                 },
-                "sourceFieldlist": {
+                "sourceFields": {
                   "title": "Source Fields",
                   "description": "Fieldlist of source fields",
                   "type": "array",
@@ -562,7 +573,7 @@
                         "maxLength": 4,
                         "pattern": "^[0-9]+$"
                       },
-                      "checkBa": {
+                      "checkTiming": {
                         "title": "Check Before/After",
                         "description": "Check before or after",
                         "type": "string",
@@ -621,10 +632,10 @@
                         "description": "Condition type",
                         "type": "string",
                         "enum": [
-                          "altFld",
-                          "altVmap",
-                          "altVmapFld",
-                          "ignoreVmap",
+                          "alternativeField",
+                          "alternativeValueMapping",
+                          "altVmapWithAltField",
+                          "ignoreValueMapping",
                           "emptyValue"
                         ],
                         "enumTitles": [
@@ -641,7 +652,7 @@
                           "Ignore value mapping and use alternative field name",
                           "Empty value"
                         ],
-                        "default": "altFld"
+                        "default": "alternativeField"
                       },
                       "alternativeValueMapping": {
                         "title": "Alternative Value Mapping",
@@ -649,7 +660,7 @@
                         "type": "string",
                         "maxLength": 40
                       },
-                      "fieldnameLink": {
+                      "fieldNameForDataLink": {
                         "title": "Field Name for Data Link",
                         "description": "Field name for data link",
                         "type": "string",
@@ -673,7 +684,7 @@
                             },
                             "field": {
                               "title": "Field",
-                              "description": "Field",
+                              "description": "Specifies a field in the source or destination structure which will be handover to the check",
                               "type": "string"
                             }
                           },
@@ -739,7 +750,7 @@
               },
               "additionalProperties": false,
               "required": [
-                "mappedField",
+                "mappedDataStructureField",
                 "numericId"
               ]
             }
@@ -747,7 +758,7 @@
         },
         "additionalProperties": false,
         "required": [
-          "name",
+          "displayName",
           "numericId",
           "dataStructure",
           "mappedDataStructure"

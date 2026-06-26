@@ -2,7 +2,7 @@ INTERFACE zif_aff_aifs_v1
   PUBLIC.
 
   "! $values { @link zif_aff_aifs_v1.data:co_error_handling }
-  "! $default { @link zif_aff_aifs_v1.data:co_error_handling.ignore_data }
+  "! $default { @link zif_aff_aifs_v1.data:co_error_handling.trigger_error }
   TYPES ty_error_handling_type TYPE c LENGTH 1.
   CONSTANTS:
     BEGIN OF co_error_handling,
@@ -15,39 +15,51 @@ INTERFACE zif_aff_aifs_v1
     END OF co_error_handling.
 
   "! $values { @link zif_aff_aifs_v1.data:co_condition_type }
-  "! $default { @link zif_aff_aifs_v1.data:co_condition_type.alt_fld }
+  "! $default { @link zif_aff_aifs_v1.data:co_condition_type.alternative_field }
   TYPES ty_condition_type TYPE c LENGTH 5.
   CONSTANTS:
     BEGIN OF co_condition_type,
       "! <p class="shorttext">Use Alternative Field Name(s) for Field Name(s) or Value Mapping</p>
       "! Use alternative field name(s) for field name(s) or value mapping
-      alt_fld      TYPE ty_condition_type VALUE 'ALTFN',
+      alternative_field         TYPE ty_condition_type VALUE 'ALTFN',
       "! <p class="shorttext">Use Alternative Value Mapping</p>
       "! Use alternative value mapping
-      alt_vmap     TYPE ty_condition_type VALUE 'ALTVM',
+      alternative_value_mapping TYPE ty_condition_type VALUE 'ALTVM',
       "! <p class="shorttext">Use Alternative Value Mapping with Alternative Field Name(s)</p>
       "! Use alternative value mapping with alternative field name(s)
-      alt_vmap_fld TYPE ty_condition_type VALUE 'ALTVF',
+      alt_vmap_with_alt_field   TYPE ty_condition_type VALUE 'ALTVF',
       "! <p class="shorttext">Ignore Value Mapping - Use Alternative Field Name</p>
       "! Ignore value mapping and use alternative field name
-      ignore_vmap  TYPE ty_condition_type VALUE 'IGNVM',
+      ignore_value_mapping      TYPE ty_condition_type VALUE 'IGNVM',
       "! <p class="shorttext">Empty Value</p>
       "! Empty value
-      empty_value  TYPE ty_condition_type VALUE 'EMPTY',
+      empty_value               TYPE ty_condition_type VALUE 'EMPTY',
     END OF co_condition_type.
 
-  "! $values { @link zif_aff_aifs_v1.data:co_check_ba }
-  "! $default { @link zif_aff_aifs_v1.data:co_check_ba.before }
-  TYPES ty_check_ba TYPE c LENGTH 1.
+  "! $values { @link zif_aff_aifs_v1.data:co_check_timing }
+  "! $default { @link zif_aff_aifs_v1.data:co_check_timing.before }
+  TYPES ty_check_timing TYPE c LENGTH 1.
   CONSTANTS:
-    BEGIN OF co_check_ba,
+    BEGIN OF co_check_timing,
       "! <p class="shorttext">Before</p>
       "! Check before
-      before TYPE c LENGTH 1 VALUE 'B',
+      before TYPE ty_check_timing VALUE 'B',
       "! <p class="shorttext">After</p>
       "! Check after
-      after  TYPE c LENGTH 1 VALUE 'A',
-    END OF co_check_ba.
+      after  TYPE ty_check_timing VALUE 'A',
+    END OF co_check_timing.
+
+  "! $values { @link zif_aff_aifs_v1.data:co_direction_of_conversion }
+  TYPES ty_direction_of_conversion TYPE c LENGTH 1.
+  CONSTANTS:
+    BEGIN OF co_direction_of_conversion,
+      "! <p class="shorttext">External to Internal</p>
+      "! Convert from external to internal format
+      external_to_internal TYPE ty_direction_of_conversion VALUE 'I',
+      "! <p class="shorttext">Internal to External</p>
+      "! Convert from internal to external format
+      internal_to_external TYPE ty_direction_of_conversion VALUE 'O',
+    END OF co_direction_of_conversion.
 
   TYPES:
     "! <p class="shorttext">Structure Mapping Details</p>
@@ -83,9 +95,9 @@ INTERFACE zif_aff_aifs_v1
     END OF ty_field.
 
   TYPES:
-     "! <p class="shorttext">Check Fieldlist</p>
-     "! Check fieldlist
-     ty_fieldlist TYPE STANDARD TABLE OF ty_field WITH DEFAULT KEY.
+     "! <p class="shorttext">Check Fields</p>
+     "! Check fields
+     ty_check_fields TYPE STANDARD TABLE OF ty_field WITH DEFAULT KEY.
 
   TYPES:
     "! <p class="shorttext">Condition Field</p>
@@ -95,9 +107,8 @@ INTERFACE zif_aff_aifs_v1
       "! Number
       "! $required
       number TYPE n LENGTH 3,
-      " Specifies a field in the source or destination structure which will be handover to the check
       "! <p class="shorttext">Field</p>
-      "! Field
+      "! Specifies a field in the source or destination structure which will be handover to the check
       "! $required
       field  TYPE string,
     END OF ty_condition_field.
@@ -156,7 +167,7 @@ INTERFACE zif_aff_aifs_v1
       alternative_value_mapping TYPE c LENGTH 40,
       "! <p class="shorttext">Field Name for Data Link</p>
       "! Field name for data link
-      fieldname_link            TYPE c LENGTH 120,
+      field_name_for_data_link  TYPE c LENGTH 120,
       "! <p class="shorttext">Condition Fields</p>
       "! Fieldlist of condition fields
       condition_fields          TYPE ty_condition_fields,
@@ -206,7 +217,6 @@ INTERFACE zif_aff_aifs_v1
       indirect_mapping_selection_3 TYPE ty_indirect_mapping_selection,
     END OF ty_indirect_mapping.
 
-
   TYPES:
     "! <p class="shorttext">Source Field</p>
     "! Source field
@@ -227,13 +237,13 @@ INTERFACE zif_aff_aifs_v1
       field_length TYPE n LENGTH 4,
       "! <p class="shorttext">Check Before/After</p>
       "! Check before or after
-      check_ba     TYPE ty_check_ba,
+      check_timing TYPE ty_check_timing,
     END OF ty_field_mapping_field.
 
   TYPES:
      "! <p class="shorttext">Source Fields</p>
      "! Fieldlist of source fields
-     ty_field_mapping_fields TYPE STANDARD TABLE OF ty_field_mapping_field WITH DEFAULT KEY.
+     ty_source_fields TYPE STANDARD TABLE OF ty_field_mapping_field WITH DEFAULT KEY.
 
   TYPES:
     "! <p class="shorttext">Field Mapping</p>
@@ -242,47 +252,47 @@ INTERFACE zif_aff_aifs_v1
       "! <p class="shorttext">Mapped Data Structure Field</p>
       "! Field in mapped data structure
       "! $required
-      mapped_field           TYPE string,
+      mapped_data_structure_field TYPE string,
       "! <p class="shorttext">Numeric ID</p>
       "! Numeric ID
       "! $required
-      numeric_id             TYPE n LENGTH 3,
+      numeric_id                  TYPE n LENGTH 3,
       "! <p class="shorttext">Offset</p>
       "! Offset
-      field_offset           TYPE n LENGTH 4,
+      field_offset                TYPE n LENGTH 4,
       "! <p class="shorttext">Field Length</p>
       "! Field length
-      field_length           TYPE n LENGTH 4,
+      field_length                TYPE n LENGTH 4,
       "! <p class="shorttext">Separator</p>
       "! Separator
-      separator              TYPE c LENGTH 20,
+      separator                   TYPE c LENGTH 20,
       "! <p class="shorttext">Data Element for Conversion</p>
       "! Data element for conversion
-      conversion_dataelement TYPE c LENGTH 30,
+      data_element_for_conversion TYPE c LENGTH 30,
       "! <p class="shorttext">Conversion Routine</p>
       "! Conversion routine
-      conversion_routine     TYPE c LENGTH 5,
+      conversion_routine          TYPE c LENGTH 5,
       "! <p class="shorttext">Direction of Conversion</p>
       "! Direction of conversion
-      conversion_direction   TYPE c LENGTH 1,
+      direction_of_conversion     TYPE ty_direction_of_conversion,
       "! <p class="shorttext">Field Name for Data Link</p>
       "! Field name for data link
-      fieldname_link         TYPE c LENGTH 120,
+      field_name_for_data_link    TYPE c LENGTH 120,
       "! <p class="shorttext">Fix Value</p>
       "! Fix value
-      fix_value              TYPE c LENGTH 40,
+      fix_value                   TYPE c LENGTH 40,
       "! <p class="shorttext">Value Mapping</p>
       "! Value mapping
-      value_mapping          TYPE c LENGTH 40,
+      value_mapping               TYPE c LENGTH 40,
       "! <p class="shorttext">Indirect Mapping</p>
       "! Indirect mapping
-      indirect_mapping       TYPE ty_indirect_mapping,
+      indirect_mapping            TYPE ty_indirect_mapping,
       "! <p class="shorttext">Source Fields</p>
       "! Fieldlist of source fields
-      source_fieldlist       TYPE ty_field_mapping_fields,
+      source_fields               TYPE ty_source_fields,
       "! <p class="shorttext">Conditions</p>
       "! Conditions
-      conditions             TYPE ty_conditions,
+      conditions                  TYPE ty_conditions,
     END OF ty_field_mapping.
 
   TYPES:
@@ -297,23 +307,23 @@ INTERFACE zif_aff_aifs_v1
       "! <p class="shorttext">Check</p>
       "! Check
       "! $required
-      check             TYPE c LENGTH 40,
+      check                    TYPE c LENGTH 40,
       "! <p class="shorttext">Numeric ID</p>
       "! Numeric ID
       "! $required
-      numeric_id        TYPE n LENGTH 3,
+      numeric_id               TYPE n LENGTH 3,
       "! <p class="shorttext">Check Source Data</p>
       "! Check source data
-      check_source_data TYPE abap_bool,
+      check_source_data        TYPE abap_bool,
       "! <p class="shorttext">Check Behavior</p>
       "! Check behavior
-      check_behaviour   TYPE ty_error_handling_type,
+      check_behaviour          TYPE ty_error_handling_type,
       "! <p class="shorttext">Field Name for Data Link</p>
       "! Field name for data link
-      fieldname_link    TYPE c LENGTH 120,
-      "! <p class="shorttext">Check Fieldlist</p>
-      "! Check fieldlist
-      check_fieldlist   TYPE ty_fieldlist,
+      field_name_for_data_link TYPE c LENGTH 120,
+      "! <p class="shorttext">Check Fields</p>
+      "! Check fields
+      check_fields             TYPE ty_check_fields,
     END OF ty_check.
 
   TYPES:
@@ -328,7 +338,7 @@ INTERFACE zif_aff_aifs_v1
       "! <p class="shorttext">Display Name</p>
       "! Display name
       "! $required
-      name                  TYPE string,
+      display_name          TYPE string,
       "! <p class="shorttext">Numeric ID</p>
       "! Numeric ID
       "! $required
@@ -367,9 +377,9 @@ INTERFACE zif_aff_aifs_v1
     END OF ty_mapping_information.
 
   TYPES:
-     "! <p class="shorttext">Mapping Informations</p>
-     "! Mapping informations
-     ty_mapping_informations TYPE STANDARD TABLE OF ty_mapping_information WITH DEFAULT KEY.
+     "! <p class="shorttext">Mapping Information Items</p>
+     "! Mapping information items
+     ty_mapping_information_items TYPE STANDARD TABLE OF ty_mapping_information WITH DEFAULT KEY.
 
   TYPES:
     "! <p class="shorttext">Structure Mapping</p>
@@ -388,6 +398,6 @@ INTERFACE zif_aff_aifs_v1
       "! <p class="shorttext">Mapping Information</p>
       "! Mapping information
       "! $required
-      mapping_information TYPE ty_mapping_informations,
+      mapping_information TYPE ty_mapping_information_items,
     END OF ty_main.
 ENDINTERFACE.
