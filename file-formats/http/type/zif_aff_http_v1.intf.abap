@@ -9,6 +9,9 @@ INTERFACE zif_aff_http_v1
       "! <p class="shorttext">Handler Class</p>
       "! Handler class
       handler_class TYPE zif_aff_types_v1=>ty_object_name_30,
+      "! <p class="shorttext">URL</p>
+      "! URL
+      url           TYPE string,
     END OF ty_general_information.
 
   TYPES:
@@ -27,6 +30,6 @@ INTERFACE zif_aff_http_v1
       "! General information
       "! $required
       general_information TYPE ty_general_information,
-
     END OF ty_main.
+
 ENDINTERFACE.

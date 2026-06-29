@@ -10,27 +10,30 @@
   "badiImplementations": [
     {
       "name": "Z_AFF_EXAMPLE_BADI_IMPL",
-      "description": "This is an example Badi Implementation",
+      "description": "This is an example BAdI Implementation",
       "badiDefinition": "Z_AFF_EXAMPLE_BADI_DEFINITION",
       "implementingClass": "Z_AFF_EXAMPLE_BADI_IMPL",
       "isDefaultImplementation": true,
       "isActiveImplementation": true,
       "customizing": "notSupported",
       "filterValues": {
-        "and": [
+        "or": [
           {
             "filter": {
-              "name": "EXAMPLE_INTEGER_FILTER",
-              "type": "integer",
+              "name": "EXAMPLE_FILTER",
               "comparator": ">",
               "value": "1"
             }
           },
           {
             "filter": {
-              "name": "EXAMPLE_STRING_FILTER",
-              "type": "string",
-              "value": "TEST"
+              "name": "EXAMPLE_RANGE_FILTER",
+              "range": {
+                "leftComparator": "<",
+                "leftValue": "10",
+                "rightComparator": "<=",
+                "rightValue": "100"
+              }
             }
           }
         ]
