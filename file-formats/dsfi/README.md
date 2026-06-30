@@ -1,10 +1,10 @@
-# Scalar Function Implementation File Format
+# Dictionary Scalar Function Implementation Reference File Format
 
 ## Object Type Information
 
-Object Type | Description | Group
+Object Type | Description | Group
 :--- | :--- | :---
-DSFI | Scalar Function Implementation | Core Data Services
+DSFI | Dictionary Scalar Function Implementation Reference | Core Data Services
 
 ## File Structure
 
