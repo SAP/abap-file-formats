@@ -4,7 +4,7 @@ INTERFACE zif_aff_enho_v1
   "! <p class="shorttext">Range Filter Comparator</p>
   "! Range filter comparator
   "! $values {@link zif_aff_enho_v1.data:co_range_filter_comparator}
-  "! $default {@link zif_aff_enho_v1.data:co_range_filter_comparator.less_than}
+  "! $required
   TYPES ty_range_filter_comparator TYPE c LENGTH 2.
 
   CONSTANTS:
@@ -24,7 +24,7 @@ INTERFACE zif_aff_enho_v1
   "! <p class="shorttext">Comparator</p>
   "! Filter comparator
   "! $values {@link zif_aff_enho_v1.data:co_comparator}
-  "! $default {@link zif_aff_enho_v1.data:co_comparator.equal}
+  "! $default {@link zif_aff_enho_v1.data:co_comparator.not_specified}
   TYPES ty_comparator TYPE c LENGTH 2.
 
   CONSTANTS:
@@ -80,36 +80,32 @@ INTERFACE zif_aff_enho_v1
       "! of operand2.
       "! $enumValue 'NS'
       contains_no_string          TYPE ty_comparator VALUE 'NS',
+      "! <p class="shorttext">Not specified</p>
+      "! Not specified: used in case of range filter
+      not_specified               TYPE ty_comparator VALUE 'XX',
     END OF co_comparator.
 
-  TYPES:
-    "! <p class="shorttext">Normal Filter</p>
-    "! Normal filter
-    BEGIN OF ty_normal_filter,
-      "! <p class="shorttext">Comparator</p>
-      "! Comparator
-      comparator TYPE ty_comparator,
-      "! <p class="shorttext">Filter Value</p>
-      "! Filter value
-      value      TYPE string,
-    END OF ty_normal_filter.
 
   TYPES:
     "! <p class="shorttext">Range Filter</p>
     "! Range filter
     BEGIN OF ty_range_filter,
-      "! <p class="shorttext">Low Comparator</p>
-      "! Low comparator
-      low_comparator  TYPE ty_range_filter_comparator,
-      "! <p class="shorttext">Low Filter Value</p>
-      "! Low filter value
-      low_value       TYPE string,
-      "! <p class="shorttext">High Comparator</p>
-      "! High comparator
-      high_comparator TYPE ty_range_filter_comparator,
-      "! <p class="shorttext">High Filter Value</p>
-      "! High filter value
-      high_value      TYPE string,
+      "! <p class="shorttext">Left Comparator</p>
+      "! Left comparator
+      "! $required
+      left_comparator  TYPE ty_range_filter_comparator,
+      "! <p class="shorttext">Left Filter Value</p>
+      "! Left filter value
+      "! $required
+      left_value       TYPE string,
+      "! <p class="shorttext">Right Comparator</p>
+      "! Right comparator
+      "! $required
+      right_comparator TYPE ty_range_filter_comparator,
+      "! <p class="shorttext">Right Filter Value</p>
+      "! Right filter value
+      "! $required
+      right_value      TYPE string,
     END OF ty_range_filter.
 
   TYPES:
@@ -118,17 +114,27 @@ INTERFACE zif_aff_enho_v1
     BEGIN OF ty_filter,
       "! <p class="shorttext">Name</p>
       "! Filter name
-      name                  TYPE zif_aff_types_v1=>ty_object_name_30,
-      "! <p class="shorttext">Normal Filter</p>
-      "! Normal filter
-      normal_filter_details TYPE ty_normal_filter,
-      "! <p class="shorttext">Is Range Filter</p>
-      "! Is range filter
-      is_range_filter       TYPE abap_bool,
-      "! <p class="shorttext">Range Filter</p>
-      "! Range filter
-      range_filter_details  TYPE ty_range_filter,
+      "! $required
+      name       TYPE zif_aff_types_v1=>ty_object_name_30,
+      "! <p class="shorttext">Comparator</p>
+      "! Filter comparator
+      comparator TYPE ty_comparator,
+      "! <p class="shorttext">Filter Value</p>
+      "! Filter value
+      value      TYPE string,
+      "! <p class="shorttext">Range</p>
+      "! Range
+      range      TYPE ty_range_filter,
     END OF ty_filter.
+
+  TYPES:
+    "! <p class="shorttext">Or</p>
+    "! Or
+    BEGIN OF ty_inner_or,
+      "! <p class="shorttext">Filter</p>
+      "! Filter
+      filter TYPE ty_filter,
+    END OF ty_inner_or.
 
   TYPES:
     "! <p class="shorttext">And</p>
@@ -136,19 +142,22 @@ INTERFACE zif_aff_enho_v1
     BEGIN OF ty_and,
       "! <p class="shorttext">Or</p>
       "! Or
-      or     TYPE STANDARD TABLE OF ty_filter WITH DEFAULT KEY,
+      or     TYPE STANDARD TABLE OF ty_inner_or WITH DEFAULT KEY,
       "! <p class="shorttext">Filter</p>
       "! Filter
       filter TYPE ty_filter,
     END OF ty_and.
 
   TYPES:
-    "! <p class="shorttext">Outer or</p>
-    "! Outer or
+    "! <p class="shorttext">Or</p>
+    "! Or
     BEGIN OF ty_outer_or,
       "! <p class="shorttext">And</p>
       "! And
       and    TYPE STANDARD TABLE OF ty_and WITH DEFAULT KEY,
+      "! <p class="shorttext">Or</p>
+      "! Or
+      or     TYPE STANDARD TABLE OF ty_inner_or WITH DEFAULT KEY,
       "! <p class="shorttext">Filter</p>
       "! Filter
       filter TYPE ty_filter,
@@ -208,6 +217,7 @@ INTERFACE zif_aff_enho_v1
       badi_definition           TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Implementing Class</p>
       "! Implementing class
+      "! $required
       implementing_class        TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Is Example Implementation</p>
       "! BAdI implementation is an example implementation
@@ -237,7 +247,6 @@ INTERFACE zif_aff_enho_v1
   TYPES:
     "! <p class="shorttext">General Information</p>
     "! General information
-
     BEGIN OF ty_general_information,
       "! <p class="shorttext">Enhancement Spot</p>
       "! Enhancement Spot name
