@@ -433,6 +433,144 @@
                         "additionalProperties": false
                       }
                     },
+                    "or": {
+                      "title": "Or",
+                      "description": "Or",
+                      "type": "array",
+                      "items": {
+                        "title": "Or",
+                        "description": "Or",
+                        "type": "object",
+                        "properties": {
+                          "filter": {
+                            "title": "Filter",
+                            "description": "Filter",
+                            "type": "object",
+                            "properties": {
+                              "name": {
+                                "title": "Name",
+                                "description": "Filter name",
+                                "type": "string",
+                                "maxLength": 30
+                              },
+                              "comparator": {
+                                "title": "Comparator",
+                                "description": "Filter comparator",
+                                "type": "string",
+                                "enum": [
+                                  "=",
+                                  "<",
+                                  ">",
+                                  "<=",
+                                  ">=",
+                                  "<>",
+                                  "CP",
+                                  "NP",
+                                  "CS",
+                                  "NS",
+                                  "notSpecified"
+                                ],
+                                "enumTitles": [
+                                  "Equal",
+                                  "Less Than",
+                                  "Greater Than",
+                                  "Less Equal",
+                                  "Greater Equal",
+                                  "Not Equal",
+                                  "Conforms To Pattern",
+                                  "Does Not Conform To Pattern",
+                                  "Contains String",
+                                  "Contains No String",
+                                  "Not specified"
+                                ],
+                                "enumDescriptions": [
+                                  "True, if the value of operand1 is equal to the value of operand2.",
+                                  "True, if the value of operand1 is less than the value of operand2.",
+                                  "True, if the value of operand1 is greater than the value of operand2.",
+                                  "True, if the value of operand1 is less than or equal to the value of operand2.",
+                                  "True, if the value of operand1 is greater than or equal to the value of operand2.",
+                                  "True, if the value of operand1 is not equal to the value of operand2.",
+                                  "True, if the content of operand1 matches the pattern in operand2. Wildcard characters can be used to form the operand2 pattern, where * represents any character string, including an empty string, and + represents any character. It is not case-sensitive. Trailing blanks in the left operand are respected.",
+                                  "True, if a comparison expression with CP is false, that is, operand1 does not fit the pattern in operand2.",
+                                  "True, if the content of operand2 is contained in operand1. Trailing blanks in the left operand are respected. If operand1 is of type string and initial, or of type c and contains only blank characters, the comparison expression is false, unless operand2 is also of type string and initial, or of type c and only contains blank characters, in which case, the comparison expression is always true.",
+                                  "True, if a comparison expression with CS is false, that is if operand1 does not contain the content of operand2.",
+                                  "Not specified: used in case of range filter"
+                                ],
+                                "default": "notSpecified"
+                              },
+                              "value": {
+                                "title": "Filter Value",
+                                "description": "Filter value",
+                                "type": "string"
+                              },
+                              "range": {
+                                "title": "Range",
+                                "description": "Range",
+                                "type": "object",
+                                "properties": {
+                                  "leftComparator": {
+                                    "title": "Left Comparator",
+                                    "description": "Left comparator",
+                                    "type": "string",
+                                    "enum": [
+                                      "<",
+                                      "<="
+                                    ],
+                                    "enumTitles": [
+                                      "Less Than",
+                                      "Less Equal"
+                                    ],
+                                    "enumDescriptions": [
+                                      "True, if the value of operand1 is less than the value of operand2.",
+                                      "True, if the value of operand1 is less than or equal to the value of operand2."
+                                    ]
+                                  },
+                                  "leftValue": {
+                                    "title": "Left Filter Value",
+                                    "description": "Left filter value",
+                                    "type": "string"
+                                  },
+                                  "rightComparator": {
+                                    "title": "Right Comparator",
+                                    "description": "Right comparator",
+                                    "type": "string",
+                                    "enum": [
+                                      "<",
+                                      "<="
+                                    ],
+                                    "enumTitles": [
+                                      "Less Than",
+                                      "Less Equal"
+                                    ],
+                                    "enumDescriptions": [
+                                      "True, if the value of operand1 is less than the value of operand2.",
+                                      "True, if the value of operand1 is less than or equal to the value of operand2."
+                                    ]
+                                  },
+                                  "rightValue": {
+                                    "title": "Right Filter Value",
+                                    "description": "Right filter value",
+                                    "type": "string"
+                                  }
+                                },
+                                "additionalProperties": false,
+                                "required": [
+                                  "leftComparator",
+                                  "leftValue",
+                                  "rightComparator",
+                                  "rightValue"
+                                ]
+                              }
+                            },
+                            "additionalProperties": false,
+                            "required": [
+                              "name"
+                            ]
+                          }
+                        },
+                        "additionalProperties": false
+                      }
+                    },
                     "filter": {
                       "title": "Filter",
                       "description": "Filter",
