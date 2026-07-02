@@ -155,6 +155,9 @@ INTERFACE zif_aff_enho_v1
       "! <p class="shorttext">And</p>
       "! And
       and    TYPE STANDARD TABLE OF ty_and WITH DEFAULT KEY,
+      "! <p class="shorttext">Or</p>
+      "! Or
+      or     TYPE STANDARD TABLE OF ty_inner_or WITH DEFAULT KEY,
       "! <p class="shorttext">Filter</p>
       "! Filter
       filter TYPE ty_filter,
