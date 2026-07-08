@@ -7,21 +7,7 @@ import sys
 msg_errors = list()
 msg_warning = list()
 schemas = sorted( glob.glob('./file-formats/*-v*.json') + glob.glob('./file-formats/*/*-v*.json') )
-
-# Example files that are intentionally excluded from validation. These files provide a dedicated schema not available in the repository.
-EXEMPT_EXAMPLE_SUFFIXES = (
-    'abiq.content',
-)
-
-# Map known multi-segment example suffixes to schema object types.
-TYPE_ALIASES = {
-    'tabl.settings': 'tabt',
-}
-
-examples = sorted([
-    path for path in glob.glob('./file-formats/*/examples/*.json', recursive=True)
-    if not path.endswith(tuple(f'{suffix}.json' for suffix in EXEMPT_EXAMPLE_SUFFIXES))
-])
+examples = sorted( glob.glob('./file-formats/*/examples/*.json', recursive=True) )
 
 meta_schema = './file-formats/meta-schema.json'
 metadata_files = sorted([
@@ -29,6 +15,11 @@ metadata_files = sorted([
     if os.path.basename(path) == f"{os.path.basename(os.path.dirname(path))}.json"
 ])
 
+# Map known multi-segment example suffixes to schema object types.
+TYPE_ALIASES = {
+    'tabl.settings': 'tabt',
+    'abiq.content': 'abiq-content',
+}
 
 def decode_json( file ):
     with open(file, 'r') as json_f:
