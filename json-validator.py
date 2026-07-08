@@ -18,6 +18,7 @@ metadata_files = sorted([
 # Map known multi-segment example suffixes to schema object types.
 TYPE_ALIASES = {
     'tabl.settings': 'tabt',
+    'abiq.content': 'abiq-content',
 }
 
 def decode_json( file ):
