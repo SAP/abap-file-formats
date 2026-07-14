@@ -141,7 +141,7 @@ INTERFACE zif_aff_apis_v1
 
   "! <p class="shorttext">Successors</p>
   "! Successors
-  TYPES ty_successors TYPE SORTED TABLE OF ty_successor WITH UNIQUE KEY TABLE_line.
+  TYPES ty_successors TYPE SORTED TABLE OF ty_successor WITH UNIQUE KEY table_line.
 
   TYPES:
     "! <p class="shorttext">API Release State</p>
