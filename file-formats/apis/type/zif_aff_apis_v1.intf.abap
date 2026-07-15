@@ -29,14 +29,6 @@ INTERFACE zif_aff_apis_v1
   "! $default {@link zif_aff_apis_v1.data:co_release_state.released}
   TYPES ty_release_state            TYPE c LENGTH 30.
 
-  "! <p class="shorttext">Use in Cloud Development</p>
-  "! Use in cloud development
-  TYPES ty_use_in_cloud_development TYPE abap_bool.
-
-  "! <p class="shorttext">Use in Key User Apps</p>
-  "! Use in key user apps
-  TYPES ty_use_in_key_user_apps     TYPE abap_bool.
-
   "! <p class="shorttext">Feature Toggle ID</p>
   "! Feature toggle ID
   TYPES ty_feature_toggle_id        TYPE c LENGTH 40.
@@ -102,10 +94,10 @@ INTERFACE zif_aff_apis_v1
     BEGIN OF ty_visibility,
       "! <p class="shorttext">Use in Cloud Development</p>
       "! Use in cloud development
-      use_in_cloud_development TYPE ty_use_in_cloud_development,
+      use_in_cloud_development TYPE abap_bool,
       "! <p class="shorttext">Use in Key User Apps</p>
       "! Use in key user apps
-      use_in_key_user_apps     TYPE ty_use_in_key_user_apps,
+      use_in_key_user_apps     TYPE abap_bool,
     END OF ty_visibility.
 
   TYPES:

@@ -153,14 +153,12 @@
                     "useInCloudDevelopment": {
                       "title": "Use in Cloud Development",
                       "description": "Use in cloud development",
-                      "type": "string",
-                      "maxLength": 1
+                      "type": "boolean"
                     },
                     "useInKeyUserApps": {
                       "title": "Use in Key User Apps",
                       "description": "Use in key user apps",
-                      "type": "string",
-                      "maxLength": 1
+                      "type": "boolean"
                     }
                   },
                   "additionalProperties": false
