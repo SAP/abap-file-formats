@@ -3,44 +3,44 @@ INTERFACE zif_aff_apis_v1
 
   "! <p class="shorttext">Object Type in Object Directory</p>
   "! Object type in object directory
-  TYPES ty_directory_object_type    TYPE c LENGTH 4.
+  TYPES ty_directory_object_type  TYPE c LENGTH 4.
 
   "! <p class="shorttext">Object Name in Object Directory</p>
   "! Object name in object directory
-  TYPES ty_directory_object_name    TYPE c LENGTH 40.
+  TYPES ty_directory_object_name  TYPE c LENGTH 40.
 
   "! <p class="shorttext">Object Type of Releasable Object</p>
   "! Object type of releasable object
-  TYPES ty_releasable_object_type   TYPE c LENGTH 20.
+  TYPES ty_releasable_object_type TYPE c LENGTH 20.
 
   "! <p class="shorttext">Object Name of Releasable Object</p>
   "! Object name of releasable object
-  TYPES ty_releasable_object_name   TYPE c LENGTH 120.
+  TYPES ty_releasable_object_name TYPE c LENGTH 120.
 
   "! <p class="shorttext">Release Contract</p>
   "! Release contract
   "! $values {@link zif_aff_apis_v1.data:co_release_contract}
   "! $default {@link zif_aff_apis_v1.data:co_release_contract.c1}
-  TYPES ty_release_contract         TYPE c LENGTH 2.
+  TYPES ty_release_contract       TYPE c LENGTH 2.
 
   "! <p class="shorttext">Release State</p>
   "! Release state
   "! $values {@link zif_aff_apis_v1.data:co_release_state}
   "! $default {@link zif_aff_apis_v1.data:co_release_state.released}
-  TYPES ty_release_state            TYPE c LENGTH 30.
+  TYPES ty_release_state          TYPE c LENGTH 30.
 
   "! <p class="shorttext">Feature Toggle ID</p>
   "! Feature toggle ID
-  TYPES ty_feature_toggle_id        TYPE c LENGTH 40.
+  TYPES ty_feature_toggle_id      TYPE c LENGTH 40.
 
   "! <p class="shorttext">Planned Decommissioning Date</p>
   "! Planned decommissioning date as year month (i.e. YYYY-MM)
   "! $pattern '<[0-9]{4}-[0-9]{2}>'
-  TYPES ty_decommissioning_date     TYPE c LENGTH 7.
+  TYPES ty_decommissioning_date   TYPE c LENGTH 7.
 
   "! <p class="shorttext">Successor Concept Name</p>
   "! Successor concept name
-  TYPES ty_successor_concept_name   TYPE c LENGTH 50.
+  TYPES ty_successor_concept_name TYPE c LENGTH 50.
 
   CONSTANTS:
     "! <p class="shorttext">Release Contract</p>
@@ -133,7 +133,7 @@ INTERFACE zif_aff_apis_v1
 
   "! <p class="shorttext">Successors</p>
   "! Successors
-  TYPES ty_successors TYPE SORTED TABLE OF ty_successor WITH UNIQUE KEY table_line.
+  TYPES ty_successors TYPE SORTED TABLE OF ty_successor WITH UNIQUE KEY directory_object_type directory_object_name releasable_object_type releasable_object_name.
 
   TYPES:
     "! <p class="shorttext">API Release State</p>
