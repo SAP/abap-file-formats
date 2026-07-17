@@ -221,7 +221,11 @@
                   }
                 }
               },
-              "additionalProperties": false
+              "additionalProperties": false,
+              "required": [
+                "releaseContract",
+                "releaseState"
+              ]
             }
           }
         },

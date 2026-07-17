@@ -133,7 +133,8 @@ INTERFACE zif_aff_apis_v1
 
   "! <p class="shorttext">Successors</p>
   "! Successors
-  TYPES ty_successors TYPE SORTED TABLE OF ty_successor WITH UNIQUE KEY directory_object_type directory_object_name releasable_object_type releasable_object_name.
+  TYPES ty_successors TYPE SORTED TABLE OF ty_successor WITH UNIQUE KEY directory_object_type directory_object_name
+  releasable_object_type releasable_object_name.
 
   TYPES:
     "! <p class="shorttext">API Release State</p>
@@ -141,9 +142,11 @@ INTERFACE zif_aff_apis_v1
     BEGIN OF ty_api_release_state,
       "! <p class="shorttext">Release Contract</p>
       "! Release contract
+      "! $required
       release_contract             TYPE ty_release_contract,
       "! <p class="shorttext">Release State</p>
       "! Release state
+      "! $required
       release_state                TYPE ty_release_state,
       "! <p class="shorttext">Visibility</p>
       "! Visibility
