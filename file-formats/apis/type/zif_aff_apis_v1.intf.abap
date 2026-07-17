@@ -134,7 +134,7 @@ INTERFACE zif_aff_apis_v1
   "! <p class="shorttext">Successors</p>
   "! Successors
   TYPES ty_successors TYPE SORTED TABLE OF ty_successor WITH UNIQUE KEY directory_object_type directory_object_name
-  releasable_object_type releasable_object_name.
+    releasable_object_type releasable_object_name.
 
   TYPES:
     "! <p class="shorttext">API Release State</p>
