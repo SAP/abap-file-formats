@@ -1,9 +1,16 @@
 {
-  "header": {},
-  "directoryObjectKey": {},
+  "formatVersion": "1",
+  "header": {
+    "originalLanguage": "en",
+    "description": "API Release State of Objects example object"
+  },
+  "directoryObjectKey": {
+    "directoryObjectType": "CLAS",
+    "directoryObjectName": "SOME_CLASS"
+  },
   "apis": [
     {
-      "releasableObjectType": "CLAS",
+      "releasableObjectType": "CLASS",
       "releasableObjectName": "SOME_CLASS",
       "apiReleaseStates": [
         {
@@ -15,7 +22,9 @@
           "successors": [
             {
               "directoryObjectType": "CLAS",
-              "directoryObjectName": "SOME_SUCCESSOR_CLASS"
+              "directoryObjectName": "SOME_SUCCESSOR_CLAS",
+              "releasableObjectType": "CLAS",
+              "releasableObjectName": "SOME_SUCCESSOR_CLAS"
             },
             {}
           ]
