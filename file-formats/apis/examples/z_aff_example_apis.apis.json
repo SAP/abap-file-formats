@@ -10,7 +10,7 @@
   },
   "apis": [
     {
-      "releasableObjectType": "CLASS",
+      "releasableObjectType": "CLAS",
       "releasableObjectName": "SOME_CLASS",
       "apiReleaseStates": [
         {
