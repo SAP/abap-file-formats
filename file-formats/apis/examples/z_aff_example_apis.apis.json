@@ -1,0 +1,26 @@
+{
+  "header": {},
+  "directoryObjectKey": {},
+  "apis": [
+    {
+      "releasableObjectType": "CLAS",
+      "releasableObjectName": "SOME_CLASS",
+      "apiReleaseStates": [
+        {
+          "releaseContract": "c1",
+          "releaseState": "deprecated",
+          "visibility": {
+            "useInCloudDevelopment": true
+          },
+          "successors": [
+            {
+              "directoryObjectType": "CLAS",
+              "directoryObjectName": "SOME_SUCCESSOR_CLASS"
+            },
+            {}
+          ]
+        }
+      ]
+    }
+  ]
+}
