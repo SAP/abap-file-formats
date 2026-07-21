@@ -10,7 +10,7 @@ INTERFACE zif_aff_para_v1
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header              TYPE zif_aff_types_v1=>ty_header_60_no_abap_lv,
+      header         TYPE zif_aff_types_v1=>ty_header_60_no_abap_lv,
     END OF ty_main.
 
 ENDINTERFACE.
