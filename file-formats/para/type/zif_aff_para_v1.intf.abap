@@ -6,7 +6,7 @@ INTERFACE zif_aff_para_v1
     "! SET/GET Parameter
     BEGIN OF ty_main,
       "! $required
-      format_version      TYPE zif_aff_types_v1=>ty_format_version,
+      format_version TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
