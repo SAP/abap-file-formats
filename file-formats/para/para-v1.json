@@ -35,20 +35,6 @@
         "description",
         "originalLanguage"
       ]
-    },
-    "generalInformation": {
-      "title": "General Information",
-      "description": "General information",
-      "type": "object",
-      "properties": {
-        "userSpecificValue": {
-          "title": "User-specific value",
-          "description": "User-specific value of the SET/GET parameter",
-          "type": "string",
-          "maxLength": 40
-        }
-      },
-      "additionalProperties": false
     }
   },
   "additionalProperties": false,
