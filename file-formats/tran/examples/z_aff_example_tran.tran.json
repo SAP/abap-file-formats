@@ -27,6 +27,7 @@
   "authorizations": {
     "authorizationDefaults": {
       "maintenanceMode": "manual",
+      "defaultValuesRequired": "yes",
       "authObjects": [
         {
           "authObjectName": "S_ABPLNGVS",
