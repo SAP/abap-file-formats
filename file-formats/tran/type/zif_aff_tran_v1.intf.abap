@@ -344,7 +344,7 @@ INTERFACE zif_aff_tran_v1
   "! $default {@link zif_aff_tran_v1.data:co_default_values_required.yes}
   TYPES ty_default_values_required TYPE c LENGTH 1.
   CONSTANTS:
-    "! <p class="shorttext">Default Values are requird</p>
+    "! <p class="shorttext">Default Values Are Required</p>
     BEGIN OF co_default_values_required,
       "! <p class="shorttext">Yes</p>
       "! Default values are required
