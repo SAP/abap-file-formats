@@ -6,11 +6,7 @@
   },
   "dataTypeInformation": {
     "category": "domain",
-    "typeName": "Z_AFF_EXAMPLE_DOMA",
-    "predefinedType": {
-      "dataType": "CHAR",
-      "length": 3
-    }
+    "typeName": "Z_AFF_EXAMPLE_DOMA"
   },
   "fieldLabels": {
     "short": "Example",

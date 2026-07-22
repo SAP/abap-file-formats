@@ -12,4 +12,5 @@ DTEL  | Dictionary Data Elements | Dictionary
 
 File | Cardinality | Definition | Schema | Example
 :--- | :--- | :--- | :--- | :---
-`<name>.dtel.json` | 1 | [`zif_aff_dtel_v1.intf.abap`](./type/zif_aff_dtel_v1.intf.abap) | [`dtel-v1.json`](./dtel-v1.json) | [`z_aff_example.dtel.json`](./examples/z_aff_example.dtel.json)
+`<name>.dtel.json` | 1 | [`zif_aff_dtel_v1.intf.abap`](./type/zif_aff_dtel_v1.intf.abap) | [`dtel-v1.json`](./dtel-v1.json) | [`z_aff_example_domain.dtel.json`](./examples/z_aff_example_domain.dtel.json)
+`<name>.dtel.json` | 1 | [`zif_aff_dtel_v1.intf.abap`](./type/zif_aff_dtel_v1.intf.abap) | [`dtel-v1.json`](./dtel-v1.json) | [`z_aff_example_predefined_type.dtel.json`](./examples/z_aff_example_predefined_type.dtel.json)
