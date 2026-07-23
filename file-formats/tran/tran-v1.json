@@ -730,6 +730,24 @@
               ],
               "default": "manual"
             },
+            "defaultValuesRequired": {
+              "title": "Default Values Required",
+              "description": "Does the application need default values?",
+              "type": "string",
+              "enum": [
+                "yes",
+                "no"
+              ],
+              "enumTitles": [
+                "Yes",
+                "No"
+              ],
+              "enumDescriptions": [
+                "Default values are required",
+                "Default values are not required"
+              ],
+              "default": "yes"
+            },
             "inheritanceMode": {
               "title": "Inheritance Mode",
               "description": "Authorization defaults inheritance mode controls how authorization settings are passed from a core transaction to its variants, ensuring consistent access rights and roles across related transactions.",
@@ -838,7 +856,8 @@
           },
           "additionalProperties": false,
           "required": [
-            "maintenanceMode"
+            "maintenanceMode",
+            "defaultValuesRequired"
           ]
         }
       },

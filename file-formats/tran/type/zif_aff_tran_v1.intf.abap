@@ -299,6 +299,7 @@ INTERFACE zif_aff_tran_v1
   "! $values {@link zif_aff_tran_v1.data:co_maintenance_mode}
   "! $default {@link zif_aff_tran_v1.data:co_maintenance_mode.manual}
   TYPES ty_maintenance_mode   TYPE c LENGTH 1.
+
   "! <p class="shorttext">Maintenance Status</p>
   "! The maintenance status of an authorization object controls if AUTHORITY-CHECK runs for it
   "! in its application andwhether an authorization default is added to a data of role
@@ -338,6 +339,20 @@ INTERFACE zif_aff_tran_v1
       "! are not needed any more.
       obsolete                TYPE ty_maintenance_mode VALUE 'O',
     END OF co_maintenance_mode.
+
+  "! $values {@link zif_aff_tran_v1.data:co_default_values_required}
+  "! $default {@link zif_aff_tran_v1.data:co_default_values_required.yes}
+  TYPES ty_default_values_required TYPE c LENGTH 1.
+  CONSTANTS:
+    "! <p class="shorttext">Default Values Are Required</p>
+    BEGIN OF co_default_values_required,
+      "! <p class="shorttext">Yes</p>
+      "! Default values are required
+      yes TYPE ty_default_values_required VALUE '1',
+      "! <p class="shorttext">No</p>
+      "! Default values are not required
+      no  TYPE ty_default_values_required VALUE '0',
+    END OF co_default_values_required.
 
   CONSTANTS:
     "! <p class="shorttext">Maintenance Status</p>
@@ -488,20 +503,24 @@ INTERFACE zif_aff_tran_v1
       "! <p class="shorttext">Maintenance Mode</p>
       "! Maintenance modes for applications define how applications can be modified.
       "! $required
-      maintenance_mode TYPE ty_maintenance_mode,
+      maintenance_mode        TYPE ty_maintenance_mode,
+      "! <p class="shorttext">Default Values Required</p>
+      "! Does the application need default values?
+      "! $required
+      default_values_required TYPE ty_default_values_required,
       "! <p class="shorttext">Inheritance Mode</p>
       "! Authorization defaults inheritance mode controls how authorization settings are passed from
       "! a core transaction to its variants,
       "! ensuring consistent access rights and roles across related transactions.
-      inheritance_mode TYPE ty_inheritance_mode,
+      inheritance_mode        TYPE ty_inheritance_mode,
       "! <p class="shorttext">Documentation</p>
       "! Authorization defaults documentation for application.
-      documentation    TYPE string,
+      documentation           TYPE string,
       "! <p class="shorttext">Authorization Objects</p>
       "! Authorization default values define which authorization objects and field values are automatically
       "! proposed when creating roles for a transaction, simplifying role maintenance and ensuring consistent
       "! security settings across users and roles.
-      auth_objects     TYPE ty_ad_ao_t,
+      auth_objects            TYPE ty_ad_ao_t,
     END OF ty_ad.
 
   TYPES:
