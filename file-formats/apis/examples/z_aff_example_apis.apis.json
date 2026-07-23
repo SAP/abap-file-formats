@@ -2,32 +2,36 @@
   "formatVersion": "1",
   "header": {
     "originalLanguage": "en",
-    "description": "API Release State of Objects example object"
+    "description": "API Release State of I_BUSINESSUSER"
   },
   "directoryObjectKey": {
-    "directoryObjectType": "CLAS",
-    "directoryObjectName": "SOME_CLASS"
+    "type": "DDLS",
+    "name": "I_BUSINESSUSER"
   },
   "apis": [
     {
-      "releasableObjectType": "CLAS",
-      "releasableObjectName": "SOME_CLASS",
+      "releasableObjectKey": {
+        "type": "CDS_STOB",
+        "name": "I_BUSINESSUSER"
+      },
       "apiReleaseStates": [
         {
           "releaseContract": "c1",
           "releaseState": "deprecated",
           "visibility": {
-            "useInCloudDevelopment": true
+            "useInCloudDevelopment": true,
+            "useInKeyUserApps": true
           },
-          "successors": [
-            {
-              "directoryObjectType": "CLAS",
-              "directoryObjectName": "SOME_SUCCESSOR_CLAS",
-              "releasableObjectType": "CLAS",
-              "releasableObjectName": "SOME_SUCCESSOR_CLAS"
-            },
-            {}
-          ]
+          "successorInformation": {
+            "successorApis": [
+              {
+                "directoryObjectType": "DDLS",
+                "directoryObjectName": "I_BUSINESSUSERBASIC",
+                "releasableObjectType": "CDS_STOB",
+                "releasableObjectName": "I_BUSINESSUSERBASIC"
+              }
+            ]
+          }
         }
       ]
     }
