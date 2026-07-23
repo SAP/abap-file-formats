@@ -42,6 +42,10 @@ INTERFACE zif_aff_apis_v1
   "! Successor concept name
   TYPES ty_successor_concept_name TYPE c LENGTH 50.
 
+  "! <p class="shorttext">Local Comment</p>
+  "! Local comment
+  TYPES ty_local_comment          TYPE string.
+
   CONSTANTS:
     "! <p class="shorttext">Release Contract</p>
     "! Release contract
@@ -88,7 +92,6 @@ INTERFACE zif_aff_apis_v1
     END OF co_release_state.
 
   TYPES:
-
     "! <p class="shorttext">Visibility</p>
     "! Visibility
     BEGIN OF ty_visibility,
@@ -101,22 +104,33 @@ INTERFACE zif_aff_apis_v1
     END OF ty_visibility.
 
   TYPES:
-
     "! <p class="shorttext">Directory Object Key</p>
     "! Directory object key
     BEGIN OF ty_directory_object_key,
       "! <p class="shorttext">Object Type in Object Directory</p>
       "! Object type in object directory
-      directory_object_type TYPE ty_directory_object_type,
+      type TYPE ty_directory_object_type,
       "! <p class="shorttext">Object Name in Object Directory</p>
       "! Object name in object directory
-      directory_object_name TYPE ty_directory_object_name,
+      name TYPE ty_directory_object_name,
     END OF ty_directory_object_key.
+
+  TYPES:
+    "! <p class="shorttext">Releasable Object Key</p>
+    "! Releasable object key
+    BEGIN OF ty_releasable_object_key,
+      "! <p class="shorttext">Object Type of Releasable Object</p>
+      "! Object type of releasable object
+      type TYPE ty_releasable_object_type,
+      "! <p class="shorttext">Object Name of Releasable Object</p>
+      "! Object name of releasable object
+      name TYPE ty_releasable_object_name,
+    END OF ty_releasable_object_key.
 
   TYPES:
     "! <p class="shorttext">Successor</p>
     "! Successor
-    BEGIN OF ty_successor,
+    BEGIN OF ty_successor_api,
       "! <p class="shorttext">Object Type in Object Directory</p>
       "! Object type in object directory
       directory_object_type  TYPE ty_directory_object_type,
@@ -129,12 +143,24 @@ INTERFACE zif_aff_apis_v1
       "! <p class="shorttext">Object Name of Releasable Object</p>
       "! Object name of releasable object
       releasable_object_name TYPE ty_releasable_object_name,
-    END OF ty_successor.
+    END OF ty_successor_api.
 
   "! <p class="shorttext">Successors</p>
   "! Successors
-  TYPES ty_successors TYPE SORTED TABLE OF ty_successor WITH UNIQUE KEY directory_object_type directory_object_name
-    releasable_object_type releasable_object_name.
+  TYPES ty_successor_apis TYPE SORTED TABLE OF ty_successor_api WITH UNIQUE KEY directory_object_type
+    directory_object_name releasable_object_type releasable_object_name.
+
+  TYPES:
+    "! <p class="shorttext">Successor Information</p>
+    "! Successor information
+    BEGIN OF ty_successor_information,
+      "! <p class="shorttext">Successor Concept Name</p>
+      "! Successor concept name
+      successor_concept_name TYPE ty_successor_concept_name,
+      "! <p class="shorttext">Successor APIs</p>
+      "! Successor APIs
+      successor_apis         TYPE ty_successor_apis,
+    END OF ty_successor_information.
 
   TYPES:
     "! <p class="shorttext">API Release State</p>
@@ -148,6 +174,9 @@ INTERFACE zif_aff_apis_v1
       "! Release state
       "! $required
       release_state                TYPE ty_release_state,
+      "! <p class="shorttext">Local Comment</p>
+      "! Local comment
+      local_comment                TYPE ty_local_comment,
       "! <p class="shorttext">Visibility</p>
       "! Visibility
       visibility                   TYPE ty_visibility,
@@ -157,12 +186,9 @@ INTERFACE zif_aff_apis_v1
       "! <p class="shorttext">Planned Decommissioning Date</p>
       "! Planned decommissioning date
       planned_decommissioning_date TYPE ty_decommissioning_date,
-      "! <p class="shorttext">Successor Concept Name</p>
-      "! Successor concept name
-      successor_concept_name       TYPE ty_successor_concept_name,
-      "! <p class="shorttext">Successors</p>
-      "! Successors
-      successors                   TYPE ty_successors,
+      "! <p class="shorttext">Successor Information</p>
+      "! Successor information
+      successor_information        TYPE ty_successor_information,
     END OF ty_api_release_state.
 
   "! <p class="shorttext">API Release States</p>
@@ -173,22 +199,19 @@ INTERFACE zif_aff_apis_v1
     "! <p class="shorttext">API</p>
     "! API
     BEGIN OF ty_api,
-      "! <p class="shorttext">Object Type of Releasable Object</p>
-      "! Object type of releasable object
+      "! <p class="shorttext">Releasable Object Key</p>
+      "! Releasable object key
       "! $required
-      releasable_object_type TYPE ty_releasable_object_type,
-      "! <p class="shorttext">Object Name of Releasable Object</p>
-      "! Object name of releasable object
-      "! $required
-      releasable_object_name TYPE ty_releasable_object_name,
+      releasable_object_key TYPE ty_releasable_object_key,
       "! <p class="shorttext">API Release States</p>
       "! API release states
-      api_release_states     TYPE ty_api_release_states,
+      "! $required
+      api_release_states    TYPE ty_api_release_states,
     END OF ty_api.
 
   "! <p class="shorttext">APIs</p>
   "! APIs
-  TYPES ty_apis TYPE SORTED TABLE OF ty_api WITH UNIQUE KEY releasable_object_type releasable_object_name.
+  TYPES ty_apis TYPE SORTED TABLE OF ty_api WITH UNIQUE KEY releasable_object_key.
 
   TYPES:
     "! <p class="shorttext">API Release State of Objects</p>

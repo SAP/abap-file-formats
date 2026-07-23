@@ -41,13 +41,13 @@
       "description": "Directory object key",
       "type": "object",
       "properties": {
-        "directoryObjectType": {
+        "type": {
           "title": "Object Type in Object Directory",
           "description": "Object type in object directory",
           "type": "string",
           "maxLength": 4
         },
-        "directoryObjectName": {
+        "name": {
           "title": "Object Name in Object Directory",
           "description": "Object name in object directory",
           "type": "string",
@@ -66,17 +66,25 @@
         "description": "API",
         "type": "object",
         "properties": {
-          "releasableObjectType": {
-            "title": "Object Type of Releasable Object",
-            "description": "Object type of releasable object",
-            "type": "string",
-            "maxLength": 20
-          },
-          "releasableObjectName": {
-            "title": "Object Name of Releasable Object",
-            "description": "Object name of releasable object",
-            "type": "string",
-            "maxLength": 120
+          "releasableObjectKey": {
+            "title": "Releasable Object Key",
+            "description": "Releasable object key",
+            "type": "object",
+            "properties": {
+              "type": {
+                "title": "Object Type of Releasable Object",
+                "description": "Object type of releasable object",
+                "type": "string",
+                "maxLength": 20
+              },
+              "name": {
+                "title": "Object Name of Releasable Object",
+                "description": "Object name of releasable object",
+                "type": "string",
+                "maxLength": 120
+              }
+            },
+            "additionalProperties": false
           },
           "apiReleaseStates": {
             "title": "API Release States",
@@ -145,6 +153,11 @@
                   ],
                   "default": "released"
                 },
+                "localComment": {
+                  "title": "Local Comment",
+                  "description": "Local comment",
+                  "type": "string"
+                },
                 "visibility": {
                   "title": "Visibility",
                   "description": "Visibility",
@@ -176,49 +189,57 @@
                   "maxLength": 7,
                   "pattern": "<[0-9]{4}-[0-9]{2}>"
                 },
-                "successorConceptName": {
-                  "title": "Successor Concept Name",
-                  "description": "Successor concept name",
-                  "type": "string",
-                  "maxLength": 50
-                },
-                "successors": {
-                  "title": "Successors",
-                  "description": "Successors",
-                  "type": "array",
-                  "uniqueItems": true,
-                  "items": {
-                    "title": "Successor",
-                    "description": "Successor",
-                    "type": "object",
-                    "properties": {
-                      "directoryObjectType": {
-                        "title": "Object Type in Object Directory",
-                        "description": "Object type in object directory",
-                        "type": "string",
-                        "maxLength": 4
-                      },
-                      "directoryObjectName": {
-                        "title": "Object Name in Object Directory",
-                        "description": "Object name in object directory",
-                        "type": "string",
-                        "maxLength": 40
-                      },
-                      "releasableObjectType": {
-                        "title": "Object Type of Releasable Object",
-                        "description": "Object type of releasable object",
-                        "type": "string",
-                        "maxLength": 20
-                      },
-                      "releasableObjectName": {
-                        "title": "Object Name of Releasable Object",
-                        "description": "Object name of releasable object",
-                        "type": "string",
-                        "maxLength": 120
-                      }
+                "successorInformation": {
+                  "title": "Successor Information",
+                  "description": "Successor information",
+                  "type": "object",
+                  "properties": {
+                    "successorConceptName": {
+                      "title": "Successor Concept Name",
+                      "description": "Successor concept name",
+                      "type": "string",
+                      "maxLength": 50
                     },
-                    "additionalProperties": false
-                  }
+                    "successorApis": {
+                      "title": "Successor APIs",
+                      "description": "Successor APIs",
+                      "type": "array",
+                      "uniqueItems": true,
+                      "items": {
+                        "title": "Successor",
+                        "description": "Successor",
+                        "type": "object",
+                        "properties": {
+                          "directoryObjectType": {
+                            "title": "Object Type in Object Directory",
+                            "description": "Object type in object directory",
+                            "type": "string",
+                            "maxLength": 4
+                          },
+                          "directoryObjectName": {
+                            "title": "Object Name in Object Directory",
+                            "description": "Object name in object directory",
+                            "type": "string",
+                            "maxLength": 40
+                          },
+                          "releasableObjectType": {
+                            "title": "Object Type of Releasable Object",
+                            "description": "Object type of releasable object",
+                            "type": "string",
+                            "maxLength": 20
+                          },
+                          "releasableObjectName": {
+                            "title": "Object Name of Releasable Object",
+                            "description": "Object name of releasable object",
+                            "type": "string",
+                            "maxLength": 120
+                          }
+                        },
+                        "additionalProperties": false
+                      }
+                    }
+                  },
+                  "additionalProperties": false
                 }
               },
               "additionalProperties": false,
@@ -231,8 +252,8 @@
         },
         "additionalProperties": false,
         "required": [
-          "releasableObjectType",
-          "releasableObjectName"
+          "releasableObjectKey",
+          "apiReleaseStates"
         ]
       }
     }
