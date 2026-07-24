@@ -54,7 +54,11 @@
           "maxLength": 40
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "name"
+      ]
     },
     "apis": {
       "title": "APIs",
@@ -84,7 +88,11 @@
                 "maxLength": 120
               }
             },
-            "additionalProperties": false
+            "additionalProperties": false,
+            "required": [
+              "type",
+              "name"
+            ]
           },
           "apiReleaseStates": {
             "title": "API Release States",
@@ -235,7 +243,13 @@
                             "maxLength": 120
                           }
                         },
-                        "additionalProperties": false
+                        "additionalProperties": false,
+                        "required": [
+                          "directoryObjectType",
+                          "directoryObjectName",
+                          "releasableObjectType",
+                          "releasableObjectName"
+                        ]
                       }
                     }
                   },

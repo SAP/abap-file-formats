@@ -109,9 +109,11 @@ INTERFACE zif_aff_apis_v1
     BEGIN OF ty_directory_object_key,
       "! <p class="shorttext">Object Type in Object Directory</p>
       "! Object type in object directory
+      "! $required
       type TYPE ty_directory_object_type,
       "! <p class="shorttext">Object Name in Object Directory</p>
       "! Object name in object directory
+      "! $required
       name TYPE ty_directory_object_name,
     END OF ty_directory_object_key.
 
@@ -121,9 +123,11 @@ INTERFACE zif_aff_apis_v1
     BEGIN OF ty_releasable_object_key,
       "! <p class="shorttext">Object Type of Releasable Object</p>
       "! Object type of releasable object
+      "! $required
       type TYPE ty_releasable_object_type,
       "! <p class="shorttext">Object Name of Releasable Object</p>
       "! Object name of releasable object
+      "! $required
       name TYPE ty_releasable_object_name,
     END OF ty_releasable_object_key.
 
@@ -133,15 +137,19 @@ INTERFACE zif_aff_apis_v1
     BEGIN OF ty_successor_api,
       "! <p class="shorttext">Object Type in Object Directory</p>
       "! Object type in object directory
+      "! $required
       directory_object_type  TYPE ty_directory_object_type,
       "! <p class="shorttext">Object Name in Object Directory</p>
       "! Object name in object directory
+      "! $required
       directory_object_name  TYPE ty_directory_object_name,
       "! <p class="shorttext">Object Type of Releasable Object</p>
       "! Object type of releasable object
+      "! $required
       releasable_object_type TYPE ty_releasable_object_type,
       "! <p class="shorttext">Object Name of Releasable Object</p>
       "! Object name of releasable object
+      "! $required
       releasable_object_name TYPE ty_releasable_object_name,
     END OF ty_successor_api.
 
