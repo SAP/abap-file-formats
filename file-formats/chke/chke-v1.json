@@ -174,7 +174,7 @@
       "type": "object",  
       "properties": {  
         "objectScope": {  
-          "title": "Object scope",  
+          "title": "Object Scope",  
           "description": "The scope of the exemption at the object level (for example, a single finding or an entire object)",  
           "type": "string",  
           "enum": [  
