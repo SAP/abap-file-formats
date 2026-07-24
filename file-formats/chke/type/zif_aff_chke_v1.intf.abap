@@ -91,8 +91,8 @@ INTERFACE zif_aff_chke_v1
     "! <p class="shorttext">Header</p>
     "! Header
     BEGIN OF ty_header_without_description,
-      original_language     TYPE if_aff_types_v1=>ty_original_language,
-      abap_language_version TYPE if_aff_types_v1=>ty_abap_language_version,
+      original_language     TYPE zif_aff_types_v1=>ty_original_language,
+      abap_language_version TYPE zif_aff_types_v1=>ty_abap_language_version,
     END OF ty_header_without_description.
   TYPES:
     "! <p class="shorttext">Processing State</p>
@@ -154,7 +154,7 @@ INTERFACE zif_aff_chke_v1
       "! <p class="shorttext">Main Object Name</p>
       "! Main (i.e. TADIR) object name
       "! $required
-      objname          TYPE if_aff_types_v1=>ty_object_name_40,
+      objname          TYPE zif_aff_types_v1=>ty_object_name_40,
       "! <p class="shorttext">Main Object Type</p>
       "! Main (i.e. TADIR) object type
       "! $required
@@ -184,7 +184,7 @@ INTERFACE zif_aff_chke_v1
       "! <p class="shorttext">Check Class</p>
       "! The check class that emitted the finding being exempted
       "! $required
-      chkclass    TYPE if_aff_types_v1=>ty_object_name_30,
+      chkclass    TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Message Code</p>
       "! The message code of the finding being exempted
       chkcode     TYPE c LENGTH 25,
@@ -212,7 +212,7 @@ INTERFACE zif_aff_chke_v1
     "! $required
     BEGIN OF ty_main,
       "! $required
-      format_version  TYPE if_aff_types_v1=>ty_format_version,
+      format_version  TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
