@@ -41,7 +41,6 @@ INTERFACE zif_aff_chke_v1
     BEGIN OF ty_assessment_info,
       "! <p class="shorttext">Approver</p>
       "! The ABAP username of the user who assessed the exemption (in the original system)
-      "! $required
       approver       TYPE satc_ci_adt_exemp_approver,
       "! <p class="shorttext">Approver Email</p>
       "! The email of the user who assessed the exemption
@@ -107,10 +106,6 @@ INTERFACE zif_aff_chke_v1
       "! The support package to which the exemption is restricted
       valid_support_package       TYPE satc_ci_valid_support_package,
     END OF ty_constraints.
-  "! <p class="shorttext">Field Name</p>
-  "! Field name
-  TYPES ty_fieldname TYPE c LENGTH 30.
-  TYPES ty_fieldnames TYPE STANDARD TABLE OF ty_fieldname WITH EMPTY KEY.
   TYPES:
     "! <p class="shorttext">ATC Exemption</p>
     "! ATC exemption object information
