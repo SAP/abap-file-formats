@@ -167,7 +167,9 @@ INTERFACE zif_aff_chke_v1
       subobjtype       TYPE c LENGTH 4,
       "! <p class="shorttext">Checksum Version</p>
       "! Version of the checksum (set by check)
-      checksum_version TYPE int1,
+      "! $minimum 0
+      "! $maximum 255
+      checksum_version TYPE i,
       "! <p class="shorttext">Checksum</p>
       "! Checksum used to uniquely identify a specific finding
       "! $required
