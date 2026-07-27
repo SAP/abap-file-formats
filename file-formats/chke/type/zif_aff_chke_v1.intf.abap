@@ -173,7 +173,9 @@ INTERFACE zif_aff_chke_v1
       "! <p class="shorttext">Checksum</p>
       "! Checksum used to uniquely identify a specific finding
       "! $required
-      checksum         TYPE int4,
+      "! $minimum -2147483648
+      "! $maximum 2147483647
+      checksum         TYPE i,
     END OF ty_object_validity.
   TYPES:
     "! <p class="shorttext">Check Information</p>
