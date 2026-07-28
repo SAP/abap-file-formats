@@ -9,6 +9,7 @@
     "superPackage": "$TMP",
     "applicationComponent": "",
     "softwareComponent": "LOCAL",
-    "transportLayer": ""
+    "transportLayer": "",
+    "translationRelevance": "no_translation"
   }
 }
