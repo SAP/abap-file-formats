@@ -182,8 +182,7 @@
             "Unit key for QUAN fields",
             "Timestamp, HANA type",
             "Long character string, no longer supported from Rel. 3.0"
-          ],
-          "default": "CHAR"
+          ]
         },
         "length": {
           "title": "Length",
