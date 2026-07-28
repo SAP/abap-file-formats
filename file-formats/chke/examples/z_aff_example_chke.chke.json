@@ -22,20 +22,20 @@
   },
   "objectValidity": {
     "objectScope": "finding",
-    "objname": "ZCL_SALES_ORDER_API",
-    "objtype": "CLAS",
-    "subobjname": "IF_OO_ADT_CLASSRUN~MAIN",
-    "subobjtype": "METH",
+    "objectName": "ZCL_SALES_ORDER_API",
+    "objectType": "CLAS",
+    "subobjectName": "IF_OO_ADT_CLASSRUN~MAIN",
+    "subobjectType": "METH",
     "checksumVersion": 1,
     "checksum": 123456789
   },
   "checkValidity": {
     "checkScope": "finding",
-    "chkclass": "CL_CI_TEST_NO_ORDER_BY",
-    "chkcode": "AMB_SINGLE"
+    "checkClass": "CL_CI_TEST_NO_ORDER_BY",
+    "checkCode": "AMB_SINGLE"
   },
   "constraints": {
-    "validUntil": "2027-12-31",
+    "expirationDate": "2027-12-31",
     "affectedSoftwareComponent": "ZFIN_CORE",
     "validRelease": "001",
     "validSupportPackage": "0001"
