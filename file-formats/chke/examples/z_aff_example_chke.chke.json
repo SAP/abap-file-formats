@@ -32,7 +32,7 @@
   "checkValidity": {
     "checkScope": "finding",
     "checkClass": "CL_CI_TEST_NO_ORDER_BY",
-    "checkCode": "AMB_SINGLE"
+    "messageCode": "AMB_SINGLE"
   },
   "constraints": {
     "expirationDate": "2027-12-31",
