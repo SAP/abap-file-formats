@@ -107,12 +107,12 @@ INTERFACE zif_aff_apis_v1
     "! <p class="shorttext">Directory Object Key</p>
     "! Directory object key
     BEGIN OF ty_directory_object_key,
-      "! <p class="shorttext">Object Type in Object Directory</p>
-      "! Object type in object directory
+      "! <p class="shorttext">Object Type</p>
+      "! Object type
       "! $required
       type TYPE ty_directory_object_type,
-      "! <p class="shorttext">Object Name in Object Directory</p>
-      "! Object name in object directory
+      "! <p class="shorttext">Object Name</p>
+      "! Object name
       "! $required
       name TYPE ty_directory_object_name,
     END OF ty_directory_object_key.
@@ -121,12 +121,12 @@ INTERFACE zif_aff_apis_v1
     "! <p class="shorttext">Releasable Object Key</p>
     "! Releasable object key
     BEGIN OF ty_releasable_object_key,
-      "! <p class="shorttext">Object Type of Releasable Object</p>
-      "! Object type of releasable object
+      "! <p class="shorttext">Object Type</p>
+      "! Object type
       "! $required
       type TYPE ty_releasable_object_type,
-      "! <p class="shorttext">Object Name of Releasable Object</p>
-      "! Object name of releasable object
+      "! <p class="shorttext">Object Name</p>
+      "! Object name
       "! $required
       name TYPE ty_releasable_object_name,
     END OF ty_releasable_object_key.

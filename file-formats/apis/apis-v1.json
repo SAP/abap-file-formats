@@ -42,14 +42,14 @@
       "type": "object",
       "properties": {
         "type": {
-          "title": "Object Type in Object Directory",
-          "description": "Object type in object directory",
+          "title": "Object Type",
+          "description": "Object type",
           "type": "string",
           "maxLength": 4
         },
         "name": {
-          "title": "Object Name in Object Directory",
-          "description": "Object name in object directory",
+          "title": "Object Name",
+          "description": "Object name",
           "type": "string",
           "maxLength": 40
         }
@@ -76,14 +76,14 @@
             "type": "object",
             "properties": {
               "type": {
-                "title": "Object Type of Releasable Object",
-                "description": "Object type of releasable object",
+                "title": "Object Type",
+                "description": "Object type",
                 "type": "string",
                 "maxLength": 20
               },
               "name": {
-                "title": "Object Name of Releasable Object",
-                "description": "Object name of releasable object",
+                "title": "Object Name",
+                "description": "Object name",
                 "type": "string",
                 "maxLength": 120
               }
