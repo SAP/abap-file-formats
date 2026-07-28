@@ -5,10 +5,10 @@
     "originalLanguage": "en"
   },
   "generalInformation": {
-	"type": "development",
-	"superPackage": "$TMP",
-	"applicationComponent": "",
-	"softwareComponent": "LOCAL",
-	"transportLayer": ""
+    "type": "development",
+    "superPackage": "$TMP",
+    "applicationComponent": "",
+    "softwareComponent": "LOCAL",
+    "transportLayer": ""
   }
 }
