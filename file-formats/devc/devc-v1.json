@@ -107,8 +107,8 @@
           "description": "When this package property is activated, the package is encapsulated. The consequence of this is that only the development elements exposed in package interfaces of the package are visible to the outside. Possible client packages need use access to those package interfaces that contain the development objects used. Otherwise, errors occur during the package check.",
           "type": "boolean"
         },
-        "abapLanguageVersion": {
-          "title": "ABAP Language Version",
+        "defaultAbapLanguageVersion": {
+          "title": "Default ABAP Language Version",
           "description": "Determines ABAP Lanaguage Version for all new objects within the package.",
           "type": "string",
           "enum": [
