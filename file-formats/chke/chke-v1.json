@@ -102,7 +102,8 @@
       },
       "additionalProperties": false,
       "required": [
-        "state"
+        "state",
+        "notificationType"
       ]
     },
     "requestInfo": {
@@ -175,25 +176,13 @@
           "description": "The scope of the exemption at the object level (for example, a single finding or an entire object)",
           "type": "string",
           "enum": [
-            "package",
-            "object",
-            "subObject",
-            "finding",
-            "unknown"
+            "finding"
           ],
           "enumTitles": [
-            "Package",
-            "Object",
-            "Sub Object",
-            "Finding",
-            "Unknown"
+            "Finding"
           ],
           "enumDescriptions": [
-            "Package",
-            "Object",
-            "Sub Object",
-            "Finding",
-            "Unknown"
+            "Finding"
           ]
         },
         "objname": {
@@ -253,25 +242,13 @@
           "description": "The scope of the exemption at the check level (for example, a message code or an entire check)",
           "type": "string",
           "enum": [
-            "checkMessage",
-            "check",
-            "allChecks",
-            "finding",
-            "unknown"
+            "finding"
           ],
           "enumTitles": [
-            "Check Message",
-            "Check",
-            "All Checks",
-            "Finding",
-            "Unknown"
+            "Finding"
           ],
           "enumDescriptions": [
-            "Check Message",
-            "Check",
-            "All Checks",
-            "Finding",
-            "Unknown"
+            "Finding"
           ]
         },
         "chkclass": {
