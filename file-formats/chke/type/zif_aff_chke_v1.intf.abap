@@ -170,7 +170,7 @@ INTERFACE zif_aff_chke_v1
       check_class TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Message Code</p>
       "! The message code of the finding being exempted
-      check_code  TYPE c LENGTH 25,
+      message_code  TYPE c LENGTH 25,
     END OF ty_check_validity.
   TYPES:
     "! <p class="shorttext">Constraints</p>
