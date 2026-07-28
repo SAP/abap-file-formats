@@ -259,7 +259,7 @@
           "type": "string",
           "maxLength": 30
         },
-        "checkCode": {
+        "messageCode": {
           "title": "Message Code",
           "description": "The message code of the finding being exempted",
           "type": "string",
