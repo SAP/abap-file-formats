@@ -47,21 +47,9 @@ INTERFACE zif_aff_chke_v1
     "! <p class="shorttext">Object Scope</p>
     "! The scope of the exemption at the object level
     BEGIN OF co_object_scope,
-      "! <p class="shorttext">Package</p>
-      "! Package
-      package    TYPE ty_object_scope VALUE 'PCKG',
-      "! <p class="shorttext">Object</p>
-      "! Object
-      object     TYPE ty_object_scope VALUE 'OBJ',
-      "! <p class="shorttext">Sub Object</p>
-      "! Sub Object
-      sub_object TYPE ty_object_scope VALUE 'SUB',
       "! <p class="shorttext">Finding</p>
       "! Finding
-      finding    TYPE ty_object_scope VALUE 'FND',
-      "! <p class="shorttext">Unknown</p>
-      "! Unknown
-      unknown    TYPE ty_object_scope VALUE space,
+      finding TYPE ty_object_scope VALUE 'FND',
     END OF co_object_scope.
   "! <p class="shorttext">Check Scope</p>
   "! The scope of the exemption at the check level
@@ -71,21 +59,9 @@ INTERFACE zif_aff_chke_v1
     "! <p class="shorttext">Check Scope</p>
     "! The scope of the exemption at the check level
     BEGIN OF co_check_scope,
-      "! <p class="shorttext">Check Message</p>
-      "! Check Message
-      check_message TYPE ty_check_scope VALUE 'MSG',
-      "! <p class="shorttext">Check</p>
-      "! Check
-      check         TYPE ty_check_scope VALUE 'CHK',
-      "! <p class="shorttext">All Checks</p>
-      "! All Checks
-      all_checks    TYPE ty_check_scope VALUE 'ALL',
       "! <p class="shorttext">Finding</p>
       "! Finding
-      finding       TYPE ty_check_scope VALUE 'FND',
-      "! <p class="shorttext">Unknown</p>
-      "! Unknown
-      unknown       TYPE ty_check_scope VALUE space,
+      finding TYPE ty_check_scope VALUE 'FND',
     END OF co_check_scope.
   TYPES:
     "! <p class="shorttext">Header</p>
@@ -104,6 +80,7 @@ INTERFACE zif_aff_chke_v1
       state             TYPE ty_state,
       "! <p class="shorttext">Notification Type</p>
       "! Defines when e-mail notifications are sent to the requester
+      "! $required
       notification_type TYPE ty_notification_type,
       "! <p class="shorttext">Exemption ID</p>
       "! Technical ID within the ATC framework
