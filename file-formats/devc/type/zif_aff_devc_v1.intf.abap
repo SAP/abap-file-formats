@@ -33,6 +33,9 @@ INTERFACE zif_aff_devc_v1 PUBLIC.
     "! <p class="shorttext">Severity</p>
     "! Severity
     BEGIN OF co_severity,
+      "! <p class="shorttext">None</p>
+      "! None
+      none        TYPE ty_severity VALUE 'none' ##NO_TEXT,
       "! <p class="shorttext">Information</p>
       "! Information
       information TYPE ty_severity VALUE 'information' ##NO_TEXT,
@@ -42,9 +45,6 @@ INTERFACE zif_aff_devc_v1 PUBLIC.
       "! <p class="shorttext">Error</p>
       "! Error
       error       TYPE ty_severity VALUE 'error' ##NO_TEXT,
-      "! <p class="shorttext">None</p>
-      "! None
-      none        TYPE ty_severity VALUE 'none' ##NO_TEXT,
       "! <p class="shorttext">Obsolete</p>
       "! Obsolete
       obsolete    TYPE ty_severity VALUE 'obsolete' ##NO_TEXT,

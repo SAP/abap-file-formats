@@ -154,24 +154,24 @@
             "description": "severity",
             "type": "string",
             "enum": [
+              "none",
               "information",
               "warning",
               "error",
-              "none",
               "obsolete"
             ],
             "enumTitles": [
+              "None",
               "Information",
               "Warning",
               "Error",
-              "None",
               "Obsolete"
             ],
             "enumDescriptions": [
+              "None",
               "Information",
               "Warning",
               "Error",
-              "None",
               "Obsolete"
             ],
             "default": "none"
