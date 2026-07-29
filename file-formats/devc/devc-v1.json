@@ -109,7 +109,7 @@
         },
         "defaultAbapLanguageVersion": {
           "title": "Default ABAP Language Version",
-          "description": "Determines ABAP Lanaguage Version for all new objects within the package.",
+          "description": "Determines ABAP Language Version for all new objects within the package.",
           "type": "string",
           "enum": [
             "standard",
