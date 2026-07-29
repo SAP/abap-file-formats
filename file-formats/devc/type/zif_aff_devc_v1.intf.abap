@@ -23,68 +23,10 @@ INTERFACE zif_aff_devc_v1 PUBLIC.
       structure   TYPE ty_package_type VALUE 'structure' ##NO_TEXT,
     END OF co_package_type.
 
-  "! <p class="shorttext">Translation Relevance</p>
-  "! Internal SAP classification defining the languages into which a development package is translated
-  "! The translation relevance determines the languages into which the repository objects in a
-  "! development package are translated.
-  "! $values {@link zif_aff_devc_v1.data:co_translation_relevance}
-  TYPES ty_translation_relevance TYPE c LENGTH 25.
-
-  CONSTANTS:
-    "! <p class="shorttext">Translation Relevance</p>
-    "! The translation relevance determines the languages into which the repository objects in a
-    "! development package are translated.
-    "! You choose the translation relevance based on the target group of each development package.
-    "! If you are in any doubt, contact your translation delivery manager maintained in Sirius for
-    "! your program.
-    BEGIN OF co_translation_relevance,
-      "! <p class="shorttext">End User UI - All Languages</p>
-      "! Use this classification if the objects in the package contain texts visible to business
-      "! end users.
-      "! Texts in objects in the package are then translated into all languages in which the
-      "! product is available.
-      "! For business applications, this is usually the correct classification.
-      end_user_all_languages     TYPE ty_translation_relevance VALUE 'EndUserAllLanguages',
-      "! <p class="shorttext">End User UI - Reduced Language Scope</p>
-      "! Choose this classification if:
-      "! - Either the package is aimed at business end users and contains country-specific
-      "! developments, such as Payroll for France.
-      "! Texts in objects in the package only require translation into the language(s) for
-      "! the country/countries concerned.
-      "! - Or you want to restrict translation to fewer languages than the languages in which
-      "! the full product is available.
-      end_user_reduced_languages TYPE ty_translation_relevance VALUE 'EndUserReducedLanguages',
-      "! <p class="shorttext">Administrator UI - Admin Languages</p>
-      "! Use this classification only for packages in the ABAP Platform, which are intended for
-      "! system administrators.
-      "! Texts in objects in the package are then translated into English, German, French, and
-      "! Japanese for 7.0 - 7.30, plus
-      "! into Portuguese, Russian, and Simplified Chinese for 7.31 - 7.40,
-      "! plus Arabic, Danish, Dutch, Spanish, Italian, Korean, Swedish, Turkish, and Traditional
-      "! Chinese as of 7.50.
-      "! Do not choose this classification if the package contains objects intended for end users
-      "! of business applications.
-      administrator              TYPE ty_translation_relevance VALUE 'Administrator' ##NO_TEXT,
-      "! <p class="shorttext">Developer UI - German/English Only</p>
-      "! Use this classification only for packages in the ABAP Platform, which are intended for
-      "! system developers.
-      "! This type of package usually consists of ABAP Workbench applications, such as tools for
-      "! development, testing, and analysis,
-      "! plus other support tools and methods for modifying or enhancing code.
-      "! Texts in objects in the package are then translated into German and English only.
-      "! Do not choose this classification if the package contains objects intended for end users
-      "! of business applications.
-      developer                  TYPE ty_translation_relevance VALUE 'Developer' ##NO_TEXT,
-      "! <p class="shorttext">Not Translation-Relevant</p>
-      "! Choose this classification if the package is not relevant for translation, because the
-      "! package is, for example, not delivered
-      "! or is only used internally or by hosting partners, and not by any customer.
-      no_translation             TYPE ty_translation_relevance VALUE 'NoTranslation' ##NO_TEXT,
-    END OF co_translation_relevance.
-
   "! <p class="shorttext">Error Severity</p>
   "! Error Severity
   "! $values {@link zif_aff_devc_v1.data:co_severity}
+  "! $default {@link if_aff_devc_v1.data:co_severity.none}
   TYPES ty_severity TYPE c LENGTH 11.
 
   CONSTANTS:
@@ -166,13 +108,6 @@ INTERFACE zif_aff_devc_v1 PUBLIC.
       "! <p class="shorttext">Default ABAP Language Version</p>
       "! Determines ABAP Lanaguage Version for all new objects within the package.
       default_abap_language_version TYPE zif_aff_types_v1=>ty_abap_language_version,
-      "! <p class="shorttext">Translation Relevance</p>
-      "! Internal SAP classification defining the languages into which a development package is
-      "! translated
-      "! The translation relevance determines the languages into which the repository objects in
-      "! a development package are translated.
-      "! $required
-      translation_relevance         TYPE ty_translation_relevance,
     END OF ty_general_information.
 
   TYPES:

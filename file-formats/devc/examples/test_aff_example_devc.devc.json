@@ -7,9 +7,6 @@
   "generalInformation": {
     "type": "development",
     "superPackage": "$TMP",
-    "applicationComponent": "",
-    "softwareComponent": "LOCAL",
-    "transportLayer": "",
-    "translationRelevance": "noTranslation"
+    "softwareComponent": "LOCAL"
   }
 }
