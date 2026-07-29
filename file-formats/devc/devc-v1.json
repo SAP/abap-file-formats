@@ -177,10 +177,7 @@
             "default": "none"
           }
         },
-        "additionalProperties": false,
-        "required": [
-          "severity"
-        ]
+        "additionalProperties": false
       }
     }
   },
