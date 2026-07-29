@@ -26,7 +26,7 @@ INTERFACE zif_aff_devc_v1 PUBLIC.
   "! <p class="shorttext">Error Severity</p>
   "! Error Severity
   "! $values {@link zif_aff_devc_v1.data:co_severity}
-  "! $default {@link if_aff_devc_v1.data:co_severity.none}
+  "! $default {@link zif_aff_devc_v1.data:co_severity.none}
   TYPES ty_severity TYPE c LENGTH 11.
 
   CONSTANTS:
