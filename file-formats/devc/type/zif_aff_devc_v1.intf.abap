@@ -105,7 +105,7 @@ INTERFACE zif_aff_devc_v1 PUBLIC.
       "! Otherwise, errors occur during the package check.
       is_encapsulated               TYPE abap_bool,
       "! <p class="shorttext">Default ABAP Language Version</p>
-      "! Determines ABAP Lanaguage Version for all new objects within the package.
+      "! Determines ABAP Language Version for all new objects within the package.
       default_abap_language_version TYPE zif_aff_types_v1=>ty_abap_language_version,
     END OF ty_general_information.
 
