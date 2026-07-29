@@ -5,7 +5,6 @@
   "title": "Dynpro - Version 1",
   "description": "DYNP",
   "type": "object",
-
   "properties": {
     "formatVersion": {
       "title": "Format Version",
@@ -20,14 +19,14 @@
       "properties": {
         "description": {
           "title": "Description",
-          "description": "Description of the DYNPRO object",
+          "description": "Screen Description",
           "type": "string",
           "maxLength": 60
         },
         "originalLanguage": {
           "title": "Original Language",
           "description": "Original language of the screen",
-          "minLength": 1,
+          "type": "string",
           "maxLength": 2
         }
       },
@@ -46,11 +45,27 @@
           "title": "Screen Type",
           "description": "Screen type",
           "type": "string",
+          "maxLength": 1,
           "enum": [
-            "normal",
-            "subscreen",
-            "modal dialog box",
-            "selection dynpro"
+            " ",
+            "N",
+            "I",
+            "M",
+            "S"
+          ],
+          "enumTitles": [
+            "Normal",
+            "Normal",
+            "Subscreen",
+            "Modal Dialog Box",
+            "Selection Dynpro"
+          ],
+          "enumDescriptions": [
+            "Normal screen type (space character)",
+            "Normal screen type",
+            "Subscreen type",
+            "Modal dialog box type",
+            "Selection dynpro type"
           ]
         },
         "nextScreen": {
@@ -132,7 +147,7 @@
           "type": "boolean"
         },
         "okCode": {
-          "title": "Ok Code",
+          "title": "OK Code",
           "description": "OK code/function code triggered on screen",
           "type": "string",
           "maxLength": 70
@@ -480,7 +495,7 @@
     },
     "field": {
       "title": "Screen Field",
-      "description": "Screen field defintion",
+      "description": "Screen field definition",
       "type": "object",
       "properties": {
         "name": {
@@ -562,12 +577,34 @@
               "type": "string",
               "maxLength": 1,
               "enum": [
-                "'F' fixed modification ",
-                "'V' variable field label",
-                "'1, 2, 3' fixed field labels",
-                "'4' fixed header text",
-                "'X' dictionary field modified",
-                "' ' dictionary field original"
+                " ",
+                "X",
+                "F",
+                "V",
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "enumTitles": [
+                "Original",
+                "Modified",
+                "Fixed",
+                "Variable Label",
+                "Fixed Label 1",
+                "Fixed Label 2",
+                "Fixed Label 3",
+                "Fixed Header"
+              ],
+              "enumDescriptions": [
+                "Original DDIC field",
+                "Modified DDIC field",
+                "Fixed DDIC field",
+                "Variable label from field",
+                "Fixed label variant 1",
+                "Fixed label variant 2",
+                "Fixed label variant 3",
+                "Fixed header labels"
               ]
             }
           },
@@ -599,9 +636,19 @@
               "type": "string",
               "maxLength": 1,
               "enum": [
-                "' ' no box",
-                "'L' list box",
-                "'K' list box with key"
+                " ",
+                "L",
+                "K"
+              ],
+              "enumTitles": [
+                "None",
+                "List Box",
+                "List Box With Key Values"
+              ],
+              "enumDescriptions": [
+                "No dropdown",
+                "List box dropdown",
+                "List box with key values dropdown"
               ]
             },
             "withIcon": {
@@ -641,10 +688,22 @@
               "type": "string",
               "maxLength": 1,
               "enum": [
-                "'N' not possible",
-                "' ' possible",
-                "'R' recommended",
-                "'O' required"
+                "N",
+                " ",
+                "R",
+                "O"
+              ],
+              "enumTitles": [
+                "Not Possible",
+                "Possible",
+                "Recommended",
+                "Required"
+              ],
+              "enumDescriptions": [
+                "Input not possible",
+                "Input possible",
+                "Input recommended",
+                "Input required"
               ]
             },
             "starEntryAsFirstCharacterAllowed": {
@@ -832,8 +891,16 @@
               "type": "string",
               "maxLength": 1,
               "enum": [
-                "'D' Display",
-                "'H' Hide"
+                "D",
+                "H"
+              ],
+              "enumTitles": [
+                "Display",
+                "Hide"
+              ],
+              "enumDescriptions": [
+                "Display when switch framework switch is active",
+                "Hide when switch framework switch is active"
               ]
             },
             "entryHelp": {
@@ -847,8 +914,16 @@
               "type": "string",
               "maxLength": 1,
               "enum": [
-                "' ' Automatic value help (default) or POV value help",
-                "'A' Programmed in ABAP"
+                " ",
+                "A"
+              ],
+              "enumTitles": [
+                "Automatic Value Help",
+                "ABAP Programmed Value List"
+              ],
+              "enumDescriptions": [
+                "Automatic value help",
+                "ABAP-programmed value list"
               ]
             },
             "inputHelpKey": {
@@ -857,10 +932,22 @@
               "type": "string",
               "maxLength": 1,
               "enum": [
-              "' ' Temporary button if F4 exists",
-              "'0' No input help",
-              "'1' Temporary input help button",
-              "'2' Permanent input help button"
+                " ",
+                "0",
+                "1",
+                "2"
+              ],
+              "enumTitles": [
+                "Temporary If F4 Exists",
+                "Disabled",
+                "Temporary",
+                "Permanent"
+              ],
+              "enumDescriptions": [
+                "Temporary F4 help if field help exists",
+                "F4 help disabled",
+                "Temporary F4 help",
+                "Permanent F4 help"
               ]
             },
             "functionCode": {
@@ -869,19 +956,34 @@
               "type": "string",
               "maxLength": 20
             },
-
             "functionCodeType": {
               "title": "Function Code Type",
               "description": "Determines how the associated function code is handled at runtime",
               "type": "string",
               "maxLength": 1,
               "enum": [
-                "'E' Exit Command",
-                "'S' System Function",
-                "'T' Call of a Transaction",
-                "' ' Normal Application Function",
-                "'P' Local GUI Functions",
-                "'H' Internal Use"
+                " ",
+                "E",
+                "S",
+                "T",
+                "P",
+                "H"
+              ],
+              "enumTitles": [
+                "Normal Application Function",
+                "Exit Command",
+                "System Function",
+                "Transaction Call",
+                "Local GUI Function",
+                "Internal Use"
+              ],
+              "enumDescriptions": [
+                "Normal application function",
+                "Exit command",
+                "System function",
+                "Transaction call",
+                "Local GUI function",
+                "Internal use"
               ]
             },
             "dynamicContextMenu": {
@@ -947,6 +1049,24 @@
             "tableControl",
             "steploop",
             "radiobuttonGroup"
+          ],
+          "enumTitles": [
+            "Subscreen",
+            "Tabstrip Control",
+            "Splitter Control",
+            "Custom Control",
+            "Table Control",
+            "Step Loop",
+            "Radio Button Group"
+          ],
+          "enumDescriptions": [
+            "Subscreen container",
+            "Tabstrip control container",
+            "Splitter control container",
+            "Custom control container",
+            "Table control container",
+            "Step loop container",
+            "Radio button group container"
           ]
         },
         "name": {
@@ -1051,8 +1171,16 @@
               "type": "string",
               "maxLength": 1,
               "enum": [
-                "'D' Display",
-                "'H' Hide"
+                "D",
+                "H"
+              ],
+              "enumTitles": [
+                "Display",
+                "Hide"
+              ],
+              "enumDescriptions": [
+                "Display when switch framework switch is active",
+                "Hide when switch framework switch is active"
               ]
             },
             "target": {
@@ -1077,7 +1205,6 @@
           },
           "additionalProperties": false
         },
-
         "tabstripControl": {
           "title": "Specific Tabstrip Attributes",
           "description": "Tabstrip-specific attributes",
@@ -1203,3 +1330,4 @@
     }
   }
 }
+
