@@ -59,7 +59,6 @@ INTERFACE zif_aff_devc_v1 PUBLIC.
       package_interface TYPE c LENGTH 30,
       "! <p class="shorttext">severity</p>
       "! severity
-      "! $required
       severity          TYPE ty_severity,
     END OF ty_use_access.
 
