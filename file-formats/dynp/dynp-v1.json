@@ -706,8 +706,8 @@
                 "Input required"
               ]
             },
-            "starEntryAsFirstCharacterAllowed": {
-              "title": "Star Entry As First Character Allowed",
+            "starEntryAsFirstCharacter": {
+              "title": "Star Entry As First Character",
               "description": "Allows special input processing when an entry begins with '*'",
               "type": "boolean"
             },
