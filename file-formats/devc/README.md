@@ -1,10 +1,10 @@
-#  File Format
+#  Package File Format
 
 ## Object Type Information
 
 Object Type | Description | Group
 :--- | :--- | :---
-DEVC  |  | Package
+DEVC  | Package | Package
 
 ## File Structure
 
