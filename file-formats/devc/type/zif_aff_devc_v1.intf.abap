@@ -24,7 +24,7 @@ INTERFACE zif_aff_devc_v1 PUBLIC.
     END OF co_package_type.
 
   "! <p class="shorttext">Error Severity</p>
-  "! Error Severity
+  "! Error severity
   "! $values {@link zif_aff_devc_v1.data:co_severity}
   "! $default {@link zif_aff_devc_v1.data:co_severity.none}
   TYPES ty_severity TYPE c LENGTH 11.
@@ -52,13 +52,13 @@ INTERFACE zif_aff_devc_v1 PUBLIC.
 
   TYPES:
     "! <p class="shorttext">Use Access</p>
-    "! Use Access
+    "! Use access
     BEGIN OF ty_use_access,
       "! <p class="shorttext">Package Interface</p>
-      "! Package Interface
+      "! Package interface
       package_interface TYPE c LENGTH 30,
       "! <p class="shorttext">severity</p>
-      "! severity
+      "! Severity
       severity          TYPE ty_severity,
     END OF ty_use_access.
 

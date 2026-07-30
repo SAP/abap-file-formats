@@ -140,18 +140,18 @@
       "type": "array",
       "items": {
         "title": "Use Access",
-        "description": "Use Access",
+        "description": "Use access",
         "type": "object",
         "properties": {
           "packageInterface": {
             "title": "Package Interface",
-            "description": "Package Interface",
+            "description": "Package interface",
             "type": "string",
             "maxLength": 30
           },
           "severity": {
             "title": "severity",
-            "description": "severity",
+            "description": "Severity",
             "type": "string",
             "enum": [
               "none",
