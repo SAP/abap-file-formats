@@ -160,15 +160,21 @@
       ]
     },
     "propertyBag": {
+      "title": "Property Bag",
+      "description": "Property bag of the screen",
       "$ref": "#/$defs/propertyBag"
     },
     "fields": {
+      "title": "Screen Fields",
+      "description": "Array of screen fields",
       "type": "array",
       "items": {
         "$ref": "#/$defs/field"
       }
     },
     "containers": {
+      "title": "Containers",
+      "description": "Array of containers",
       "type": "array",
       "items": {
         "$ref": "#/$defs/container"
@@ -1234,22 +1240,30 @@
           "type": "boolean"
         },
         "specificContainerAttributes": {
+          "title": "Specific Container Attributes",
+          "description": "Container-specific attributes based on the container type",
           "$ref": "#/$defs/specificContainerAttributes"
         },
         "propertyBag": {
+          "title": "Property Bag",
+          "description": "Property bag of the container",
           "$ref": "#/$defs/propertyBag"
         },
         "fields": {
+          "title": "Container Screen Fields",
+          "description": "Array of screen fields within the container",
           "type": "array",
           "items": {
             "$ref": "#/$defs/field"
           }
         },
         "containers": {
+          "title": "Containers Within The Container",
+          "description": "Array of containers within the container",
           "type": "array",
           "items": {
             "$ref": "#/$defs/container"
-          }      
+          }
         }
       },
       "additionalProperties": false,
@@ -1341,14 +1355,18 @@
           "title": "Specific Splitter Control Attributes",
           "description": "Splitter control-specific attributes",
           "type": "object",
-          "properties": {},
+          "properties": {
+            // to be definied later
+          },
           "additionalProperties": false
         },
         "customControl": {
           "title": "Specific Custom Control Attributes",
           "description": "Custom control-specific attributes",
           "type": "object",
-          "properties": {},
+          "properties": {
+            // to be definied later
+          },
           "additionalProperties": false
         },
         "tableControl": {
@@ -1399,6 +1417,16 @@
                 "None",
                 "Single",
                 "Multiple"
+              ],
+              "enumTitles": [
+                "None",
+                "Single",
+                "Multiple"
+              ],
+              "enumDescriptions": [
+                "No line selection",
+                "Single line selection",
+                "Multiple line selection"
               ]
             },
             "columnSelectability": {
@@ -1409,6 +1437,16 @@
                 "None",
                 "Single",
                 "Multiple"
+              ],
+              "enumTitles": [
+                "None",
+                "Single",
+                "Multiple"
+              ],
+              "enumDescriptions": [
+                "No column selection",
+                "Single column selection",
+                "Multiple column selection"
               ]
             },
             "withSelectionColumn": {
@@ -1433,14 +1471,18 @@
           "title": "Specific Steploop Attributes",
           "description": "Steploop-specific attributes",
           "type": "object",
-          "properties": {},
+          "properties": {
+            // to be definied later
+          },
           "additionalProperties": false
         },
         "radiobuttonGroup": {
           "title": "Specific Radiobutton Group Attributes",
           "description": "Radiobutton group-specific attributes",
           "type": "object",
-          "properties": {},
+          "properties": {
+            // to be definied later
+          },
           "additionalProperties": false
         }
       },
