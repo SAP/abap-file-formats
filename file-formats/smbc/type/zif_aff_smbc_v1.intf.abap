@@ -180,7 +180,7 @@ INTERFACE zif_aff_smbc_v1
       "! If true, the user cannot add and remove columns to the table
       hide_column                   TYPE ty_personalization-hide_column,
       "! <p class="shorttext synchronized">Condensed Table Layout</p>
-      "! If true, display rows in a condensed way. Only applicaple to Table Type 'GridTable'.
+      "! If true, display rows in a condensed way. Only applicable to Table Type 'GridTable'.
       condensed_table_layout        TYPE abap_bool,
       "! <p class="shorttext synchronized">Include Column Headers in Width Calculation</p>
       "! If true, include the column labels while calculating the default column width.
@@ -200,7 +200,7 @@ INTERFACE zif_aff_smbc_v1
     ty_object_pages   TYPE SORTED TABLE OF ty_object_page WITH UNIQUE KEY entity_set,
     "! <p class="shorttext synchronized" >Table Settings</p>
     ty_table_settings TYPE SORTED TABLE OF ty_table_setting WITH UNIQUE KEY entity_set,
-    "! <p class="shorttext synchronized" >Confguration of List Report and Object Pages</p>
+    "! <p class="shorttext synchronized" >Configuration of List Report and Object Pages</p>
     BEGIN OF ty_settings,
       list_report    TYPE ty_list_report,
       object_pages   TYPE ty_object_pages,

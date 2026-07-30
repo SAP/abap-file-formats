@@ -164,7 +164,7 @@ INTERFACE zif_aff_tran_v1
       "! Otherwise it uses a global ABAP class.
       local_in_program_indi     TYPE abap_bool,
       "! <p class="shorttext">Program</p>
-      "! Name of the program for the OO transacton
+      "! Name of the program for the OO transaction
       class_program_name        TYPE ty_class_program_name,
       "! <p class="shorttext">Class</p>
       "! Name of the ABAP class
@@ -302,7 +302,7 @@ INTERFACE zif_aff_tran_v1
 
   "! <p class="shorttext">Maintenance Status</p>
   "! The maintenance status of an authorization object controls if AUTHORITY-CHECK runs for it
-  "! in its application andwhether an authorization default is added to a data of role
+  "! in its application and whether an authorization default is added to a data of role
   "! by the profile generator when the app is in the role menu.
   "! $values {@link zif_aff_tran_v1.data:co_maintenance_status}
   "! $default {@link zif_aff_tran_v1.data:co_maintenance_status.default_with_values}
@@ -481,7 +481,7 @@ INTERFACE zif_aff_tran_v1
       auth_object_name         TYPE ty_auth_object_name,
       "! <p class="shorttext">Maintenance Status</p>
       "! The maintenance status of an authorization object controls if AUTHORITY-CHECK runs for
-      "! it in its application and whether an authorization default is added to a data of role data by
+      "! it in its application and whether an authorization default is added to a data of role by
       "! the profile generator when the app is in the role menu.
       maintenance_status       TYPE ty_maintenance_status,
       "! <p class="shorttext">Documentation</p>
