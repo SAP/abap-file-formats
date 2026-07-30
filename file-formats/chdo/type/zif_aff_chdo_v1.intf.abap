@@ -89,7 +89,7 @@ INTERFACE zif_aff_chdo_v1
     BEGIN OF co_category,
       "! <p class="shorttext">Standard</p>
       "! Standard change document
-      standard           TYPE ty_category VALUE space,
+      standard            TYPE ty_category VALUE space,
       "! <p class="shorttext">Behavior Definition</p>
       "! Change document for behavior definitions
       behavior_definition TYPE ty_category VALUE 'X',
