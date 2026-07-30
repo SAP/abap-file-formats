@@ -675,37 +675,37 @@ INTERFACE zif_aff_dynp_v1 PUBLIC.
     BEGIN OF ty_field_special,
       "! <p class="shorttext">Input Status</p>
       "! Defines whether input is allowed, optional, recommended, or required
-      input_status                     TYPE ty_input_status,
+      input_status             TYPE ty_input_status,
       "! <p class="shorttext">Star Entry As First Character</p>
       "! Allows special input processing when an entry begins with '*'
-      star_entry_as_first_char         TYPE abap_bool,
+      star_entry_as_first_char TYPE abap_bool,
       "! <p class="shorttext">Input Reset Disabled</p>
       "! Prevents field input from being cleared with the reset character '!'
-      input_reset_disabled             TYPE abap_bool,
+      input_reset_disabled     TYPE abap_bool,
       "! <p class="shorttext">Case Sensitive Entry</p>
       "! Allows input to retain lowercase and uppercase characters
-      case_sensitive_entry             TYPE abap_bool,
+      case_sensitive_entry     TYPE abap_bool,
       "! <p class="shorttext">Show Sign</p>
       "! Enables display of a plus/minus sign for numeric values
-      show_sign                        TYPE abap_bool,
+      show_sign                TYPE abap_bool,
       "! <p class="shorttext">Template Disabled</p>
       "! Allows all characters to be entered in CHAR fields, including special characters such as '!', '?' and '_'"
-      template_disabled                TYPE abap_bool,
+      template_disabled        TYPE abap_bool,
       "! <p class="shorttext">Foreign Key Check</p>
       "! Enables or disables the Dictionary foreign key check
-      foreign_key_check                TYPE abap_bool,
+      foreign_key_check        TYPE abap_bool,
       "! <p class="shorttext">Set Parameter</p>
       "! Stores the field value in SAP memory using the specified parameter ID
-      set_parameter                    TYPE abap_bool,
+      set_parameter            TYPE abap_bool,
       "! <p class="shorttext">Get Parameter</p>
       "! Retrieves the field value from SAP memory using the specified parameter ID
-      get_parameter                    TYPE abap_bool,
+      get_parameter            TYPE abap_bool,
       "! <p class="shorttext">Parameter ID</p>
       "! Identifies the SAP memory parameter used by SET/GET parameters
-      parameter_id                     TYPE c LENGTH 20,
+      parameter_id             TYPE c LENGTH 20,
       "! <p class="shorttext">Conversion Exit</p>
       "! Specifies the conversion routine used to format and interpret field values
-      conversion_exit                  TYPE c LENGTH 5,
+      conversion_exit          TYPE c LENGTH 5,
     END OF ty_field_special.
 
   "! <p class="shorttext">Display field attributes</p>
