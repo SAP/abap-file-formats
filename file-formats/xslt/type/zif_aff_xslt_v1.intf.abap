@@ -1,4 +1,4 @@
-INTERFACE zif_aff_xslt_v1 PUBLIC .
+INTERFACE zif_aff_xslt_v1 PUBLIC.
 
   "! <p class="shorttext">Transformation Type</p>
   "! Transformation type
