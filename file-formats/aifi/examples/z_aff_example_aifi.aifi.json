@@ -36,7 +36,7 @@
     "expirationBehavior": "archive",
     "direction": "both",
     "usesPreprocessing": false,
-    "usesPostprocesssing": false
+    "usesPostprocessing": false
   },
   "recipientAssignment": [
     {
@@ -78,7 +78,7 @@
         "ruleKeyFields": [
           {
             "name": "TEST_FIELD1",
-            "fieldSequnceNumber": "010"
+            "fieldSequenceNumber": "010"
           }
         ]
       },
@@ -106,7 +106,7 @@
         "ruleKeyFields": [
           {
             "name": "TEST_FIELD2",
-            "fieldSequnceNumber": "010"
+            "fieldSequenceNumber": "010"
           }
         ]
       },
@@ -134,15 +134,15 @@
         "ruleKeyFields": [
           {
             "name": "NON",
-            "fieldSequnceNumber": "010"
+            "fieldSequenceNumber": "010"
           },
           {
             "name": "SENSE",
-            "fieldSequnceNumber": "020"
+            "fieldSequenceNumber": "020"
           },
           {
             "name": "?",
-            "fieldSequnceNumber": "030"
+            "fieldSequenceNumber": "030"
           }
         ]
       },
