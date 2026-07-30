@@ -356,7 +356,7 @@ INTERFACE zif_aff_dynp_v1 PUBLIC.
       name  TYPE string,
       "! <p class="shorttext">Kind</p>
       "! Type identifier of the property bag attribute
-      kind TYPE c LENGTH 1,
+      kind  TYPE c LENGTH 1,
       "! <p class="shorttext">Value</p>
       "! Value of the property bag attribute
       value TYPE string,
@@ -398,10 +398,10 @@ INTERFACE zif_aff_dynp_v1 PUBLIC.
       is_set TYPE abap_bool,
       "! <p class="shorttext">Kind</p>
       "! Type identifier of the tooltip value
-      kind TYPE c LENGTH 1,
+      kind   TYPE c LENGTH 1,
       "! <p class="shorttext">Value</p>
       "! Tooltip text assigned to the screen field
-      value TYPE string,
+      value  TYPE string,
     END OF ty_tooltip_text.
 
   "! <p class="shorttext">Item Count</p>
@@ -410,7 +410,7 @@ INTERFACE zif_aff_dynp_v1 PUBLIC.
     BEGIN OF ty_item_count,
       "! <p class="shorttext">Is Set</p>
       "! Indicates whether the property is explicitly set
-      is_set TYPE abap_bool,
+      is_set   TYPE abap_bool,
       "! <p class="shorttext">Variable</p>
       "! Variable containing the number of displayed items
       variable TYPE string,
@@ -422,7 +422,7 @@ INTERFACE zif_aff_dynp_v1 PUBLIC.
     BEGIN OF ty_set_active_property,
       "! <p class="shorttext">Is Set</p>
       "! Indicates whether the property is explicitly set
-      is_set TYPE abap_bool,
+      is_set    TYPE abap_bool,
       "! <p class="shorttext">Is Active</p>
       "! Indicates whether the property is active
       is_active TYPE abap_bool,
@@ -434,7 +434,7 @@ INTERFACE zif_aff_dynp_v1 PUBLIC.
     BEGIN OF ty_knowledge_object,
       "! <p class="shorttext">Is Set</p>
       "! Indicates whether the property is explicitly set
-      is_set TYPE abap_bool,
+      is_set      TYPE abap_bool,
       "! <p class="shorttext">Description</p>
       "! Description of the linked Knowledge Warehouse object
       description TYPE string,
@@ -449,13 +449,13 @@ INTERFACE zif_aff_dynp_v1 PUBLIC.
       is_set TYPE abap_bool,
       "! <p class="shorttext">URL</p>
       "! URL definition for the hyperlink
-      url TYPE ty_property_bag_attributes,
+      url    TYPE ty_property_bag_attributes,
       "! <p class="shorttext">Target</p>
       "! Target definition for the hyperlink
       target TYPE ty_property_bag_attributes,
       "! <p class="shorttext">Title</p>
       "! Title definition for the hyperlink
-      title TYPE ty_property_bag_attributes,
+      title  TYPE ty_property_bag_attributes,
     END OF ty_hyperlink.
 
   "! <p class="shorttext">Attributes</p>
@@ -468,10 +468,10 @@ INTERFACE zif_aff_dynp_v1 PUBLIC.
     BEGIN OF ty_speech,
       "! <p class="shorttext">Is Set</p>
       "! Indicates whether the property is explicitly set
-      is_set TYPE abap_bool,
+      is_set               TYPE abap_bool,
       "! <p class="shorttext">Attributes</p>
       "! List of speech attributes
-      attributes TYPE ty_speech_attributes,
+      attributes           TYPE ty_speech_attributes,
       "! <p class="shorttext">Speech Effect Active</p>
       "! Indicates whether speech effects are active
       speech_effect_active TYPE abap_bool,
@@ -483,10 +483,10 @@ INTERFACE zif_aff_dynp_v1 PUBLIC.
     BEGIN OF ty_rfid_attribute,
       "! <p class="shorttext">Name</p>
       "! Name of the property bag attribute
-      name TYPE string,
+      name  TYPE string,
       "! <p class="shorttext">Kind</p>
       "! Type identifier of the property bag attribute
-      kind TYPE c LENGTH 1,
+      kind  TYPE c LENGTH 1,
       "! <p class="shorttext">Value</p>
       "! Value of the property bag attribute
       value TYPE string,
@@ -502,7 +502,7 @@ INTERFACE zif_aff_dynp_v1 PUBLIC.
     BEGIN OF ty_rfid,
       "! <p class="shorttext">Is Set</p>
       "! Indicates whether the property is explicitly set
-      is_set TYPE abap_bool,
+      is_set     TYPE abap_bool,
       "! <p class="shorttext">Attributes</p>
       "! List of RFID attributes
       attributes TYPE ty_rfid_attributes,
@@ -514,10 +514,10 @@ INTERFACE zif_aff_dynp_v1 PUBLIC.
     BEGIN OF ty_custom_attribute,
       "! <p class="shorttext">Name</p>
       "! Name of the property bag attribute
-      name TYPE string,
+      name  TYPE string,
       "! <p class="shorttext">Kind</p>
       "! Type identifier of the property bag attribute
-      kind TYPE c LENGTH 1,
+      kind  TYPE c LENGTH 1,
       "! <p class="shorttext">Value</p>
       "! Value of the property bag attribute
       value TYPE string,
@@ -533,13 +533,13 @@ INTERFACE zif_aff_dynp_v1 PUBLIC.
     BEGIN OF ty_custom_property,
       "! <p class="shorttext">Title</p>
       "! Title of the custom property
-      title TYPE string,
+      title      TYPE string,
       "! <p class="shorttext">Type</p>
       "! Type of the custom property
-      type TYPE string,
+      type       TYPE string,
       "! <p class="shorttext">Is Set</p>
       "! Indicates whether the property is explicitly set
-      is_set TYPE abap_bool,
+      is_set     TYPE abap_bool,
       "! <p class="shorttext">Attributes</p>
       "! List of custom attributes
       attributes TYPE ty_custom_attributes,
@@ -603,43 +603,43 @@ INTERFACE zif_aff_dynp_v1 PUBLIC.
       "! <p class="shorttext">Line</p>
       "! Screen line position
       "! $required
-      line              TYPE i,
+      line                TYPE i,
       "! <p class="shorttext">Column</p>
       "! Screen column position
       "! $required
-      column            TYPE i,
+      column              TYPE i,
       "! <p class="shorttext">Defined Length</p>
       "! Defined field length
       "! $required
-      defined_length    TYPE i,
+      defined_length      TYPE i,
       "! <p class="shorttext">Visible Length</p>
       "! Visible field length
       "! $required
-      visible_length    TYPE i,
+      visible_length      TYPE i,
       "! <p class="shorttext">Height</p>
       "! Field height
       "! $required
-      height            TYPE i,
+      height              TYPE i,
       "! <p class="shorttext">Scrollable</p>
       "! Enables scrolling within the field
       "! $required
-      scrollable        TYPE abap_bool,
+      scrollable          TYPE abap_bool,
       "! <p class="shorttext">Format</p>
       "! ABAP Dictionary field format
       "! $required
-      format            TYPE c LENGTH 4,
+      format              TYPE c LENGTH 4,
       "! <p class="shorttext">Input</p>
       "! User input enabled
-      input             TYPE abap_bool,
+      input               TYPE abap_bool,
       "! <p class="shorttext">Output</p>
       "! User output enabled
-      output            TYPE abap_bool,
+      output              TYPE abap_bool,
       "! <p class="shorttext">Output Only</p>
       "! Display-only field
-      output_only       TYPE abap_bool,
+      output_only         TYPE abap_bool,
       "! <p class="shorttext">Dictionary Field</p>
       "! Referenced ABAP Dictionary (DDIC) field
-      dictionary_field  TYPE string,
+      dictionary_field    TYPE string,
       "! <p class="shorttext">Dictionary Modified</p>
       "! Indicates whether DDIC-derived attributes have been modified
       dictionary_modified TYPE ty_dictionary_modified,
@@ -861,7 +861,7 @@ INTERFACE zif_aff_dynp_v1 PUBLIC.
       program TYPE c LENGTH 40,
       "! <p class="shorttext">Screen</p>
       "! The screen number of the target subscreen within the specified program
-      screen TYPE c LENGTH 4,
+      screen  TYPE c LENGTH 4,
     END OF ty_subscreen_target.
 
   "! <p class="shorttext">Specific Subscreen Attributes</p>
@@ -870,16 +870,16 @@ INTERFACE zif_aff_dynp_v1 PUBLIC.
     BEGIN OF ty_subscreen_attributes,
       "! <p class="shorttext">Scrollable</p>
       "! Allows the field content to be scrolled when it exceeds the visible area
-      scrollable TYPE abap_bool,
+      scrollable         TYPE abap_bool,
       "! <p class="shorttext">SFW Switch</p>
       "! Identifier for switch in the switch framework
-      switch TYPE c LENGTH 30,
+      switch             TYPE c LENGTH 30,
       "! <p class="shorttext">Reaction To SFW Switch</p>
       "! Determines whether the object is displayed or hidden when the assigned Switch Framework switch is active
       reaction_to_switch TYPE ty_reaction_to_switch,
       "! <p class="shorttext">Target Subscreen</p>
       "! Specifies the subscreen to be displayed, identified by its program name and screen number
-      target TYPE ty_subscreen_target,
+      target             TYPE ty_subscreen_target,
     END OF ty_subscreen_attributes.
 
   "! <p class="shorttext">Specific Tabstrip Attributes</p>
@@ -911,37 +911,37 @@ INTERFACE zif_aff_dynp_v1 PUBLIC.
     BEGIN OF ty_table_control_attributes,
       "! <p class="shorttext">Context Menu Form</p>
       "! Form routine for context menu handling
-      context_menu_form TYPE string,
+      context_menu_form       TYPE string,
       "! <p class="shorttext">With Title</p>
       "! Determines whether the table control includes a title
-      with_title TYPE abap_bool,
+      with_title              TYPE abap_bool,
       "! <p class="shorttext">Title</p>
       "! Text displayed in the title line of the table control
-      title TYPE string,
+      title                   TYPE string,
       "! <p class="shorttext">With Column Headers</p>
       "! Determines whether the table control columns include a title line
-      with_column_headers TYPE abap_bool,
+      with_column_headers     TYPE abap_bool,
       "! <p class="shorttext">Configurability</p>
       "! Determines whether users can access the table control configuration dialog
-      configurability TYPE abap_bool,
+      configurability         TYPE abap_bool,
       "! <p class="shorttext">Vertical Separators</p>
       "! Determines whether the table control displays vertical separators between columns
-      vertical_separators TYPE abap_bool,
+      vertical_separators     TYPE abap_bool,
       "! <p class="shorttext">Horizontal Separators</p>
       "! Determines whether the table control displays horizontal separators between lines
-      horizontal_separators TYPE abap_bool,
+      horizontal_separators   TYPE abap_bool,
       "! <p class="shorttext">Line Selectability</p>
       "! Determines how many table control lines can be selected simultaneously
-      line_selectability TYPE ty_line_selectability,
+      line_selectability      TYPE ty_line_selectability,
       "! <p class="shorttext">Column Selectability</p>
       "! Determines how many table control columns can be selected simultaneously
-      column_selectability TYPE ty_column_selectability,
+      column_selectability    TYPE ty_column_selectability,
       "! <p class="shorttext">With Selection Column</p>
       "! Determines whether the table control displays a dedicated column for line selection
-      with_selection_column TYPE abap_bool,
+      with_selection_column   TYPE abap_bool,
       "! <p class="shorttext">Selection Column</p>
       "! Text displayed in the selection column of the table control
-      selection_column TYPE string,
+      selection_column        TYPE string,
       "! <p class="shorttext">Number of Fixed Columns</p>
       "! Determines the number of leading table control columns that remain fixed during horizontal scrolling and cannot be moved
       number_of_fixed_columns TYPE i,
@@ -1048,7 +1048,7 @@ INTERFACE zif_aff_dynp_v1 PUBLIC.
 ***      "! <p class="shorttext">Containers Within The Container</p>
 ***      "! Array of containers within the container
 ***      "! $required
-***      containers                   TYPE STANDARD TABLE OF ty_container WITH EMPTY KEY,    // handle recursion in the serializer !
+***      containers                    TYPE STANDARD TABLE OF ty_container WITH EMPTY KEY,    // handle recursion in the serializer !
     END OF ty_container.
 
   "! <p class="shorttext">Dynpro</p>
