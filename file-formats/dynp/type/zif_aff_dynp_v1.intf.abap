@@ -295,56 +295,56 @@ INTERFACE zif_aff_dynp_v1 PUBLIC.
       "! <p class="shorttext">Screen Type</p>
       "! Screen type
       "! $required
-      screen_type                        TYPE ty_screen_type,
+      screen_type                    TYPE ty_screen_type,
       "! <p class="shorttext">Next Screen</p>
       "! Next screen number
-      next_screen                        TYPE c LENGTH 4,
+      next_screen                    TYPE c LENGTH 4,
       "! <p class="shorttext">Screen Width</p>
       "! Maximum number of columns
-      length                             TYPE i,
+      length                         TYPE i,
       "! <p class="shorttext">Screen Height</p>
       "! Maximum number of lines
-      height                             TYPE i,
+      height                         TYPE i,
       "! <p class="shorttext">Lines Occupied</p>
       "! Number of lines occupied by screen elements
-      lines_occupied                     TYPE i,
+      lines_occupied                 TYPE i,
       "! <p class="shorttext">Columns Occupied</p>
       "! Number of columns occupied by screen elements
-      columns_occupied                   TYPE i,
+      columns_occupied               TYPE i,
       "! <p class="shorttext">Hold Data</p>
       "! Keep field contents between calls
-      hold_data                          TYPE abap_bool,
+      hold_data                      TYPE abap_bool,
       "! <p class="shorttext">Switch Off Runtime Compression</p>
       "! Runtime compression disabled
-      switch_off_runtime_compression     TYPE abap_bool,
+      switch_off_runtime_compression TYPE abap_bool,
       "! <p class="shorttext">Template Screen</p>
       "! Screen is a template (not executable)
-      is_template                        TYPE abap_bool,
+      is_template                    TYPE abap_bool,
       "! <p class="shorttext">Hold Scroll Position</p>
       "! Keep scroll position between calls
-      hold_scroll_position               TYPE abap_bool,
+      hold_scroll_position           TYPE abap_bool,
       "! <p class="shorttext">Without Application Toolbar</p>
       "! Application toolbar is hidden
-      without_application_toolbar        TYPE abap_bool,
+      without_application_toolbar    TYPE abap_bool,
       "! <p class="shorttext">Fiori Zoom-In Disabled</p>
       "! Fiori zoom-in disabled
-      fiori_zoom_disabled                TYPE abap_bool,
+      fiori_zoom_disabled            TYPE abap_bool,
       "! <p class="shorttext">Initial Cursor Field</p>
       "! Initial cursor position
-      initial_cursor_field               TYPE c LENGTH 132,
+      initial_cursor_field           TYPE c LENGTH 132,
       "! <p class="shorttext">Screen Group</p>
       "! Logical grouping of screens
-      screen_group                       TYPE c LENGTH 4,
+      screen_group                   TYPE c LENGTH 4,
       "! <p class="shorttext">Context Menu Form</p>
       "! Form routine for context menu handling
-      context_menu_form                  TYPE string,
+      context_menu_form              TYPE string,
       "! <p class="shorttext">Has Fixed Font</p>
       "! Proportional-/Fix-Font
-      has_fixed_font                     TYPE abap_bool,
+      has_fixed_font                 TYPE abap_bool,
       "! <p class="shorttext">OK Code</p>
       "! OK code/function code triggered on screen
       "! $required
-      ok_code                            TYPE c LENGTH 70,
+      ok_code                        TYPE c LENGTH 70,
     END OF ty_attributes.
 
   "! <p class="shorttext">Property Bag Attributes</p>
