@@ -353,7 +353,7 @@ INTERFACE zif_aff_dynp_v1 PUBLIC.
     BEGIN OF ty_property_bag_attributes,
       "! <p class="shorttext">Name</p>
       "! Name of the property bag attribute
-      name TYPE string,
+      name  TYPE string,
       "! <p class="shorttext">Kind</p>
       "! Type identifier of the property bag attribute
       kind TYPE c LENGTH 1,
