@@ -12,7 +12,7 @@ INTERFACE zif_aff_dynp_v1 PUBLIC.
   "! $default {@link zif_aff_dynp_v1.data:co_dictionary_modified.original}
   TYPES ty_dictionary_modified TYPE c LENGTH 1.
 
- "! <p class="shorttext">Dropdown</p>
+  "! <p class="shorttext">Dropdown</p>
   "! Dropdown
   "! $values {@link zif_aff_dynp_v1.data:co_dropdown}
   "! $default {@link zif_aff_dynp_v1.data:co_dropdown.none}
@@ -347,9 +347,9 @@ INTERFACE zif_aff_dynp_v1 PUBLIC.
       ok_code                        TYPE c LENGTH 70,
     END OF ty_attributes.
 
-  "! <p class="shorttext">Property Bag Attributes</p>
-  "! Name, kind and value definition used by property bag attributes
   TYPES:
+    "! <p class="shorttext">Property Bag Attributes</p>
+    "! Name, kind and value definition used by property bag attributes
     BEGIN OF ty_property_bag_attributes,
       "! <p class="shorttext">Name</p>
       "! Name of the property bag attribute
@@ -362,9 +362,9 @@ INTERFACE zif_aff_dynp_v1 PUBLIC.
       value TYPE string,
     END OF ty_property_bag_attributes.
 
-  "! <p class="shorttext">Text Field Label</p>
-  "! Single label definition for accessibility support
   TYPES:
+    "! <p class="shorttext">Text Field Label</p>
+    "! Single label definition for accessibility support
     BEGIN OF ty_text_field_label,
       "! <p class="shorttext">Text</p>
       "! Label text
@@ -375,23 +375,21 @@ INTERFACE zif_aff_dynp_v1 PUBLIC.
   "! Collection of label definitions
   TYPES ty_text_field_labels TYPE STANDARD TABLE OF ty_text_field_label WITH EMPTY KEY.
 
-  "! <p class="shorttext">Text Field</p>
-  "! Assigns a label field for accessibility support
   TYPES:
+    "! <p class="shorttext">Text Field</p>
+    "! Assigns a label field for accessibility support
     BEGIN OF ty_text_field,
       "! <p class="shorttext">Is Set</p>
       "! Indicates whether the property is explicitly set
       is_set TYPE abap_bool,
-
       "! <p class="shorttext">Labels</p>
       "!  Collection of label definitions
       labels TYPE ty_text_field_labels,
-
     END OF ty_text_field.
 
-  "! <p class="shorttext">Tooltip Text</p>
-  "! Assigns a tooltip text to a screen field for accessibility support
   TYPES:
+    "! <p class="shorttext">Tooltip Text</p>
+    "! Assigns a tooltip text to a screen field for accessibility support
     BEGIN OF ty_tooltip_text,
       "! <p class="shorttext">Is Set</p>
       "! Indicates whether the property is explicitly set
@@ -404,9 +402,9 @@ INTERFACE zif_aff_dynp_v1 PUBLIC.
       value  TYPE string,
     END OF ty_tooltip_text.
 
-  "! <p class="shorttext">Item Count</p>
-  "! Displays the number of lines in controls
   TYPES:
+    "! <p class="shorttext">Item Count</p>
+    "! Displays the number of lines in controls
     BEGIN OF ty_item_count,
       "! <p class="shorttext">Is Set</p>
       "! Indicates whether the property is explicitly set
@@ -416,9 +414,9 @@ INTERFACE zif_aff_dynp_v1 PUBLIC.
       variable TYPE string,
     END OF ty_item_count.
 
-  "! <p class="shorttext">Set Active Property</p>
-  "! Generic property with explicit set and activation state
   TYPES:
+    "! <p class="shorttext">Set Active Property</p>
+    "! Generic property with explicit set and activation state
     BEGIN OF ty_set_active_property,
       "! <p class="shorttext">Is Set</p>
       "! Indicates whether the property is explicitly set
@@ -428,9 +426,9 @@ INTERFACE zif_aff_dynp_v1 PUBLIC.
       is_active TYPE abap_bool,
     END OF ty_set_active_property.
 
-  "! <p class="shorttext">Knowledge Object</p>
-  "! Links a dialog help button to a Knowledge Warehouse object
   TYPES:
+    "! <p class="shorttext">Knowledge Object</p>
+    "! Links a dialog help button to a Knowledge Warehouse object
     BEGIN OF ty_knowledge_object,
       "! <p class="shorttext">Is Set</p>
       "! Indicates whether the property is explicitly set
@@ -440,9 +438,9 @@ INTERFACE zif_aff_dynp_v1 PUBLIC.
       description TYPE string,
     END OF ty_knowledge_object.
 
-  "! <p class="shorttext">Hyperlink</p>
-  "! Supports SAP internal Drag&Relate hyperlinks
   TYPES:
+    "! <p class="shorttext">Hyperlink</p>
+    "! Supports SAP internal Drag&Relate hyperlinks
     BEGIN OF ty_hyperlink,
       "! <p class="shorttext">Is Set</p>
       "! Indicates whether the property is explicitly set
@@ -462,9 +460,9 @@ INTERFACE zif_aff_dynp_v1 PUBLIC.
   "! List of speech attributes
   TYPES ty_speech_attributes TYPE STANDARD TABLE OF ty_property_bag_attributes WITH EMPTY KEY.
 
-  "! <p class="shorttext">Speech</p>
-  "! Enables speech input and output features
   TYPES:
+    "! <p class="shorttext">Speech</p>
+    "! Enables speech input and output features
     BEGIN OF ty_speech,
       "! <p class="shorttext">Is Set</p>
       "! Indicates whether the property is explicitly set
@@ -477,9 +475,9 @@ INTERFACE zif_aff_dynp_v1 PUBLIC.
       speech_effect_active TYPE abap_bool,
     END OF ty_speech.
 
-  "! <p class="shorttext">RFID Attribute</p>
-  "! Defines an RFID attribute with name, kind, and value
   TYPES:
+    "! <p class="shorttext">RFID Attribute</p>
+    "! Defines an RFID attribute with name, kind, and value
     BEGIN OF ty_rfid_attribute,
       "! <p class="shorttext">Name</p>
       "! Name of the property bag attribute
@@ -496,9 +494,9 @@ INTERFACE zif_aff_dynp_v1 PUBLIC.
   "! List of RFID attributes
   TYPES ty_rfid_attributes TYPE STANDARD TABLE OF ty_rfid_attribute WITH EMPTY KEY.
 
-  "! <p class="shorttext">RFID</p>
-  "! Enables RFID device integration and data operations
   TYPES:
+    "! <p class="shorttext">RFID</p>
+    "! Enables RFID device integration and data operations
     BEGIN OF ty_rfid,
       "! <p class="shorttext">Is Set</p>
       "! Indicates whether the property is explicitly set
@@ -508,9 +506,9 @@ INTERFACE zif_aff_dynp_v1 PUBLIC.
       attributes TYPE ty_rfid_attributes,
     END OF ty_rfid.
 
-  "! <p class="shorttext">Custom Attribute</p>
-  "! Defines a custom attribute with name, kind, and value
   TYPES:
+    "! <p class="shorttext">Custom Attribute</p>
+    "! Defines a custom attribute with name, kind, and value
     BEGIN OF ty_custom_attribute,
       "! <p class="shorttext">Name</p>
       "! Name of the property bag attribute
@@ -527,9 +525,9 @@ INTERFACE zif_aff_dynp_v1 PUBLIC.
   "! List of custom attributes
   TYPES ty_custom_attributes TYPE STANDARD TABLE OF ty_custom_attribute WITH EMPTY KEY.
 
-  "! <p class="shorttext">Custom</p>
-  "! Defines custom attributes for frontend processing
   TYPES:
+    "! <p class="shorttext">Custom</p>
+    "! Defines custom attributes for frontend processing
     BEGIN OF ty_custom_property,
       "! <p class="shorttext">Title</p>
       "! Title of the custom property
@@ -545,9 +543,9 @@ INTERFACE zif_aff_dynp_v1 PUBLIC.
       attributes TYPE ty_custom_attributes,
     END OF ty_custom_property.
 
-  "! <p class="shorttext">Property Bag</p>
-  "! Property bag of the screen or an element
   TYPES:
+    "! <p class="shorttext">Property Bag</p>
+    "! Property bag of the screen or an element
     BEGIN OF ty_property_bag,
       "! <p class="shorttext">Text Field</p>
       "! Assigns a label field for accessibility support
@@ -596,9 +594,9 @@ INTERFACE zif_aff_dynp_v1 PUBLIC.
       custom_property           TYPE ty_custom_property,
     END OF ty_property_bag.
 
-  "! <p class="shorttext">General</p>
-  "! General field attributes
   TYPES:
+    "! <p class="shorttext">General</p>
+    "! General field attributes
     BEGIN OF ty_field_general,
       "! <p class="shorttext">Line</p>
       "! Screen line position
@@ -645,9 +643,9 @@ INTERFACE zif_aff_dynp_v1 PUBLIC.
       dictionary_modified TYPE ty_dictionary_modified,
     END OF ty_field_general.
 
-  "! <p class="shorttext">Texts And Templates</p>
-  "! Text and templates for screen element
   TYPES:
+    "! <p class="shorttext">Texts And Templates</p>
+    "! Text and templates for screen element
     BEGIN OF ty_field_texts_templates,
       "! <p class="shorttext">Text Or IO Field</p>
       "! Text or input/output Field Template
@@ -669,9 +667,9 @@ INTERFACE zif_aff_dynp_v1 PUBLIC.
       icon_tooltip     TYPE c LENGTH 30,
     END OF ty_field_texts_templates.
 
-  "! <p class="shorttext">Special</p>
-  "! Special
   TYPES:
+    "! <p class="shorttext">Special</p>
+    "! Special
     BEGIN OF ty_field_special,
       "! <p class="shorttext">Input Status</p>
       "! Defines whether input is allowed, optional, recommended, or required
@@ -708,9 +706,9 @@ INTERFACE zif_aff_dynp_v1 PUBLIC.
       conversion_exit          TYPE c LENGTH 5,
     END OF ty_field_special.
 
-  "! <p class="shorttext">Display field attributes</p>
-  "! Display field attributes
   TYPES:
+    "! <p class="shorttext">Display field attributes</p>
+    "! Display field attributes
     BEGIN OF ty_field_display,
       "! <p class="shorttext">Bright</p>
       "! Highlights the field to make it stand out on the screen
@@ -756,51 +754,51 @@ INTERFACE zif_aff_dynp_v1 PUBLIC.
       output_style           TYPE ty_output_style,
     END OF ty_field_display.
 
-  "! <p class="shorttext">Modification Groups And Functions</p>
-  "! Modification groups and functions
   TYPES:
+    "! <p class="shorttext">Modification Groups And Functions</p>
+    "! Modification groups and functions
     BEGIN OF ty_field_mod_groups_funcs,
       "! <p class="shorttext">Group 1</p>
       "! Identifier for SCREEN-GROUP1 used for dynamic field modifications
-      group1                  TYPE c LENGTH 3,
+      group1               TYPE c LENGTH 3,
       "! <p class="shorttext">Group 2</p>
       "! Identifier for SCREEN-GROUP2 used for dynamic field modifications
-      group2                  TYPE c LENGTH 3,
+      group2               TYPE c LENGTH 3,
       "! <p class="shorttext">Group 3</p>
       "! Identifier for SCREEN-GROUP3 used for dynamic field modifications
-      group3                  TYPE c LENGTH 3,
+      group3               TYPE c LENGTH 3,
       "! <p class="shorttext">Group 4</p>
       "! Identifier for SCREEN-GROUP4 used for dynamic field modifications
-      group4                  TYPE c LENGTH 3,
+      group4               TYPE c LENGTH 3,
       "! <p class="shorttext">SFW Switch</p>
       "! Identifier for switch in the switch framework
-      switch                  TYPE c LENGTH 30,
+      switch               TYPE c LENGTH 30,
       "! <p class="shorttext">Reaction To SFW Switch</p>
       "! Determines whether the object is displayed or hidden when the assigned Switch Framework switch is active
-      reaction_to_switch      TYPE ty_reaction_to_switch,
+      reaction_to_switch   TYPE ty_reaction_to_switch,
       "! <p class="shorttext">Entry Help</p>
       "! Indicates whether value help is available for the field
-      entry_help              TYPE abap_bool,
+      entry_help           TYPE abap_bool,
       "! <p class="shorttext">Value List</p>
       "! Determines the source of values displayed in the dropdown list
-      value_list              TYPE ty_value_list,
+      value_list           TYPE ty_value_list,
       "! <p class="shorttext">Input Help Key</p>
       "! Controls the availability and visibility of the input help (F4) button for the field
-      input_help_key          TYPE ty_input_help_key,
+      input_help_key       TYPE ty_input_help_key,
       "! <p class="shorttext">Function Code</p>
       "! Defines the function code triggered by a user interaction
-      function_code           TYPE c LENGTH 20,
+      function_code        TYPE c LENGTH 20,
       "! <p class="shorttext">Function Code Type</p>
       "! Determines how the associated function code is handled at runtime
-      function_code_type      TYPE ty_function_code_type,
+      function_code_type   TYPE ty_function_code_type,
       "! <p class="shorttext">Dynamic Context Menu</p>
       "! Dynamic callback ON_CTMENU
-      dynamic_context_menu    TYPE c LENGTH 20,
+      dynamic_context_menu TYPE c LENGTH 20,
     END OF ty_field_mod_groups_funcs.
 
-  "! <p class="shorttext">References</p>
-  "! Reference assignments for the screen field
   TYPES:
+    "! <p class="shorttext">References</p>
+    "! Reference assignments for the screen field
     BEGIN OF ty_field_references,
       "! <p class="shorttext">Search Help</p>
       "! Specifies the search help assigned to the field, either statically or dynamically
@@ -810,9 +808,9 @@ INTERFACE zif_aff_dynp_v1 PUBLIC.
       reference_field TYPE c LENGTH 132,
     END OF ty_field_references.
 
-  "! <p class="shorttext">Screen Field</p>
-  "! Screen field definition
   TYPES:
+    "! <p class="shorttext">Screen Field</p>
+    "! Screen field definition
     BEGIN OF ty_field,
       "! <p class="shorttext">Field Name</p>
       "! Technical field name
@@ -852,9 +850,9 @@ INTERFACE zif_aff_dynp_v1 PUBLIC.
       property_bag              TYPE ty_property_bag,
     END OF ty_field.
 
-  "! <p class="shorttext">Target Subscreen</p>
-  "! Specifies the subscreen to be displayed, identified by its program name and screen number
   TYPES:
+    "! <p class="shorttext">Target Subscreen</p>
+    "! Specifies the subscreen to be displayed, identified by its program name and screen number
     BEGIN OF ty_subscreen_target,
       "! <p class="shorttext">Program</p>
       "! The program containing the target subscreen
@@ -864,9 +862,9 @@ INTERFACE zif_aff_dynp_v1 PUBLIC.
       screen  TYPE c LENGTH 4,
     END OF ty_subscreen_target.
 
-  "! <p class="shorttext">Specific Subscreen Attributes</p>
-  "! Subscreen-specific attributes
   TYPES:
+    "! <p class="shorttext">Specific Subscreen Attributes</p>
+    "! Subscreen-specific attributes
     BEGIN OF ty_subscreen_attributes,
       "! <p class="shorttext">Scrollable</p>
       "! Allows the field content to be scrolled when it exceeds the visible area
@@ -882,32 +880,32 @@ INTERFACE zif_aff_dynp_v1 PUBLIC.
       target             TYPE ty_subscreen_target,
     END OF ty_subscreen_attributes.
 
-  "! <p class="shorttext">Specific Tabstrip Attributes</p>
-  "! Tabstrip-specific attributes
   TYPES:
+    "! <p class="shorttext">Specific Tabstrip Attributes</p>
+    "! Tabstrip-specific attributes
     BEGIN OF ty_tabstrip_attributes,
       "! <p class="shorttext">Fiori Variable Height</p>
       "! Allows the height of tabstrip pages to automatically adapt to the amount of content displayed in Fiori
       fiori_variable_height TYPE abap_bool,
     END OF ty_tabstrip_attributes.
 
-*  "! <p class="shorttext">Specific Splitter Control Attributes</p>
-*  "! Splitter control-specific attributes
 *  TYPES:
+*    "! <p class="shorttext">Specific Splitter Control Attributes</p>
+*    "! Splitter control-specific attributes
 *    BEGIN OF ty_splitter_attributes,
 **      to be definied later
 *    END OF ty_splitter_attributes.
 
-*  "! <p class="shorttext">Specific Custom Control Attributes</p>
-*  "! Custom control-specific attributes
 *  TYPES:
+*    "! <p class="shorttext">Specific Custom Control Attributes</p>
+*    "! Custom control-specific attributes
 *    BEGIN OF ty_custom_control_attributes,
 **      to be definied later
 *    END OF ty_custom_control_attributes.
 
-  "! <p class="shorttext">Specific Table Control Attributes</p>
-  "! Table control-specific attributes
   TYPES:
+    "! <p class="shorttext">Specific Table Control Attributes</p>
+    "! Table control-specific attributes
     BEGIN OF ty_table_control_attributes,
       "! <p class="shorttext">Context Menu Form</p>
       "! Form routine for context menu handling
@@ -947,23 +945,23 @@ INTERFACE zif_aff_dynp_v1 PUBLIC.
       number_of_fixed_columns TYPE i,
     END OF ty_table_control_attributes.
 
-*  "! <p class="shorttext">Specific Steploop Attributes</p>
-*  "! Steploop-specific attributes
 *  TYPES:
+*    "! <p class="shorttext">Specific Steploop Attributes</p>
+*    "! Steploop-specific attributes
 *    BEGIN OF ty_steploop_attributes,
 **      to be definied later
 *    END OF ty_steploop_attributes.
 
-*  "! <p class="shorttext">Specific Radiobutton Group Attributes</p>
-*  "! Radiobutton group-specific attributes
 *  TYPES:
+*    "! <p class="shorttext">Specific Radiobutton Group Attributes</p>
+*    "! Radiobutton group-specific attributes
 *    BEGIN OF ty_radiobutton_group_attributes,
 **      to be definied later
 *    END OF ty_radiobutton_group_attributes.
 
-  "! <p class="shorttext">Specific Container Attributes</p>
-  "! Container-specific attributes based on the container type
   TYPES:
+    "! <p class="shorttext">Specific Container Attributes</p>
+    "! Container-specific attributes based on the container type
     BEGIN OF ty_container_specifics,
       "! <p class="shorttext">Specific Subscreen Attributes</p>
       "! Subscreen-specific attributes
@@ -993,9 +991,9 @@ INTERFACE zif_aff_dynp_v1 PUBLIC.
 *      radiobutton_group TYPE ty_radiobutton_group_attributes,
     END OF ty_container_specifics.
 
-  "! <p class="shorttext">Container</p>
-  "! Screen container
   TYPES:
+    "! <p class="shorttext">Container</p>
+    "! Screen container
     BEGIN OF ty_container,
       "! <p class="shorttext">Container Type</p>
       "! Type of container
@@ -1051,9 +1049,9 @@ INTERFACE zif_aff_dynp_v1 PUBLIC.
 ***      containers                    TYPE STANDARD TABLE OF ty_container WITH EMPTY KEY,    // handle recursion in the serializer !
     END OF ty_container.
 
-  "! <p class="shorttext">Dynpro</p>
-  "! Dynpro
   TYPES:
+    "! <p class="shorttext">Dynpro</p>
+    "! Dynpro
     BEGIN OF ty_main,
       "! <p class="shorttext">Format Version</p>
       "! Format version
