@@ -1,0 +1,37 @@
+<xsl:transform version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:sap="http://www.sap.com/sapxsl"
+>
+
+<!-- Simple XSLT example: transforms a flat book list into an HTML table -->
+
+<xsl:strip-space elements="*"/>
+
+<!-- Root template: creates the HTML skeleton -->
+<xsl:template match="/">
+  <html>
+    <body>
+      <h1>Book Catalog</h1>
+      <table border="1">
+        <tr>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Year</th>
+        </tr>
+        <!-- Apply a template to every book element -->
+        <xsl:apply-templates select="catalog/book"/>
+      </table>
+    </body>
+  </html>
+</xsl:template>
+
+<!-- Book template: renders one table row per book -->
+<xsl:template match="book">
+  <tr>
+    <td><xsl:value-of select="title"/></td>
+    <td><xsl:value-of select="author"/></td>
+    <td><xsl:value-of select="year"/></td>
+  </tr>
+</xsl:template>
+
+</xsl:transform>
