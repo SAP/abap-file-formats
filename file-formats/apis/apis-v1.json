@@ -37,8 +37,8 @@
       ]
     },
     "directoryObjectKey": {
-      "title": "Directory Object Key",
-      "description": "Directory object key",
+      "title": "Directory Object",
+      "description": "Directory object",
       "type": "object",
       "properties": {
         "type": {
@@ -71,8 +71,8 @@
         "type": "object",
         "properties": {
           "releasableObjectKey": {
-            "title": "Releasable Object Key",
-            "description": "Releasable object key",
+            "title": "Releasable Object",
+            "description": "Releasable object",
             "type": "object",
             "properties": {
               "type": {
@@ -185,8 +185,8 @@
                   "additionalProperties": false
                 },
                 "featureToggleId": {
-                  "title": "Feature Toggle ID",
-                  "description": "Feature toggle ID",
+                  "title": "Feature Toggle",
+                  "description": "Feature toggle",
                   "type": "string",
                   "maxLength": 40
                 },
@@ -219,26 +219,26 @@
                         "type": "object",
                         "properties": {
                           "directoryObjectType": {
-                            "title": "Object Type in Object Directory",
-                            "description": "Object type in object directory",
+                            "title": "Directory Object Type",
+                            "description": "Directory object type",
                             "type": "string",
                             "maxLength": 4
                           },
                           "directoryObjectName": {
-                            "title": "Object Name in Object Directory",
-                            "description": "Object name in object directory",
+                            "title": "Directory Object Name",
+                            "description": "Directory object name",
                             "type": "string",
                             "maxLength": 40
                           },
                           "releasableObjectType": {
-                            "title": "Object Type of Releasable Object",
-                            "description": "Object type of releasable object",
+                            "title": "Releasable Object Type",
+                            "description": "Releasable object type",
                             "type": "string",
                             "maxLength": 20
                           },
                           "releasableObjectName": {
-                            "title": "Object Name of Releasable Object",
-                            "description": "Object name of releasable object",
+                            "title": "Releasable Object Name",
+                            "description": "Releasable object name",
                             "type": "string",
                             "maxLength": 120
                           }

@@ -135,20 +135,20 @@ INTERFACE zif_aff_apis_v1
     "! <p class="shorttext">Successor</p>
     "! Successor
     BEGIN OF ty_successor_api,
-      "! <p class="shorttext">Object Type in Object Directory</p>
-      "! Object type in object directory
+      "! <p class="shorttext">Directory Object Type</p>
+      "! Directory object type
       "! $required
       directory_object_type  TYPE ty_directory_object_type,
-      "! <p class="shorttext">Object Name in Object Directory</p>
-      "! Object name in object directory
+      "! <p class="shorttext">Directory Object Name</p>
+      "! Directory object name
       "! $required
       directory_object_name  TYPE ty_directory_object_name,
-      "! <p class="shorttext">Object Type of Releasable Object</p>
-      "! Object type of releasable object
+      "! <p class="shorttext">Releasable Object Type</p>
+      "! Releasable object type
       "! $required
       releasable_object_type TYPE ty_releasable_object_type,
-      "! <p class="shorttext">Object Name of Releasable Object</p>
-      "! Object name of releasable object
+      "! <p class="shorttext">Releasable Object Name</p>
+      "! Releasable object name
       "! $required
       releasable_object_name TYPE ty_releasable_object_name,
     END OF ty_successor_api.
@@ -188,8 +188,8 @@ INTERFACE zif_aff_apis_v1
       "! <p class="shorttext">Visibility</p>
       "! Visibility
       visibility                   TYPE ty_visibility,
-      "! <p class="shorttext">Feature Toggle ID</p>
-      "! Feature toggle ID
+      "! <p class="shorttext">Feature Toggle</p>
+      "! Feature toggle
       feature_toggle_id            TYPE ty_feature_toggle_id,
       "! <p class="shorttext">Planned Decommissioning Date</p>
       "! Planned decommissioning date
@@ -207,8 +207,8 @@ INTERFACE zif_aff_apis_v1
     "! <p class="shorttext">API</p>
     "! API
     BEGIN OF ty_api,
-      "! <p class="shorttext">Releasable Object Key</p>
-      "! Releasable object key
+      "! <p class="shorttext">Releasable Object</p>
+      "! Releasable object
       "! $required
       releasable_object_key TYPE ty_releasable_object_key,
       "! <p class="shorttext">API Release States</p>
@@ -233,8 +233,8 @@ INTERFACE zif_aff_apis_v1
       "! Header
       "! $required
       header               TYPE zif_aff_types_v1=>ty_header_60_no_abap_lv,
-      "! <p class="shorttext">Directory Object Key</p>
-      "! Directory object key
+      "! <p class="shorttext">Directory Object</p>
+      "! Directory object
       "! $required
       directory_object_key TYPE ty_directory_object_key,
       "! <p class="shorttext">APIs</p>
