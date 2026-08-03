@@ -10,4 +10,4 @@ AIFS  | Structure Mapping | Application Interface Framework
 
 File | Cardinality | Definition | Schema | Example
 :--- | :--- | :--- | :--- | :---
-`<name>.aifs.json` | 1 | [`zif_aff_aifs_v1.intf.abap`](./type/zif_aff_aifs_v1.intf.abap) | [`aifs-v1.json`](./aifs-v1.json)
+`<name>.aifs.json` | 1 | [`zif_aff_aifs_v1.intf.abap`](./type/zif_aff_aifs_v1.intf.abap) | [`aifs-v1.json`](./aifs-v1.json) | [`z_aff_example_aifs.aifs.json`](./examples/z_aff_example_aifs.aifs.json)
