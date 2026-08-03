@@ -1,0 +1,134 @@
+INTERFACE zif_aff_devc_v1 PUBLIC.
+
+  "! <p class="shorttext">Package Type</p>
+  "! Package type
+  "! $values {@link zif_aff_devc_v1.data:co_package_type}
+  "! $default {@link zif_aff_devc_v1.data:co_package_type.development}
+  TYPES ty_package_type TYPE c LENGTH 11.
+
+  CONSTANTS:
+    "! <p class="shorttext">Package Type</p>
+    "! Package type
+    BEGIN OF co_package_type,
+      "! <p class="shorttext">Development</p>
+      "! Development
+      development TYPE ty_package_type VALUE 'development' ##NO_TEXT,
+      "! <p class="shorttext">Main</p>
+      "! Main packages, with the exception of your own package interfaces and subpackages, cannot contain
+      "! other repository objects.
+      "! Subpackages, in turn, can be other main packages and the standard development packages.
+      main        TYPE ty_package_type VALUE 'main' ##NO_TEXT,
+      "! <p class="shorttext">Structure</p>
+      "! Structure
+      structure   TYPE ty_package_type VALUE 'structure' ##NO_TEXT,
+    END OF co_package_type.
+
+  "! <p class="shorttext">Error Severity</p>
+  "! Error severity
+  "! $values {@link zif_aff_devc_v1.data:co_severity}
+  "! $default {@link zif_aff_devc_v1.data:co_severity.none}
+  TYPES ty_severity TYPE c LENGTH 11.
+
+  CONSTANTS:
+    "! <p class="shorttext">Severity</p>
+    "! Severity
+    BEGIN OF co_severity,
+      "! <p class="shorttext">None</p>
+      "! None
+      none        TYPE ty_severity VALUE 'none' ##NO_TEXT,
+      "! <p class="shorttext">Information</p>
+      "! Information
+      information TYPE ty_severity VALUE 'information' ##NO_TEXT,
+      "! <p class="shorttext">Warning</p>
+      "! Warning
+      warning     TYPE ty_severity VALUE 'warning' ##NO_TEXT,
+      "! <p class="shorttext">Error</p>
+      "! Error
+      error       TYPE ty_severity VALUE 'error' ##NO_TEXT,
+      "! <p class="shorttext">Obsolete</p>
+      "! Obsolete
+      obsolete    TYPE ty_severity VALUE 'obsolete' ##NO_TEXT,
+    END OF co_severity.
+
+  TYPES:
+    "! <p class="shorttext">Use Access</p>
+    "! Use access
+    BEGIN OF ty_use_access,
+      "! <p class="shorttext">Package Interface</p>
+      "! Package interface
+      package_interface TYPE c LENGTH 30,
+      "! <p class="shorttext">severity</p>
+      "! Severity
+      severity          TYPE ty_severity,
+    END OF ty_use_access.
+
+  TYPES:
+    "! <p class="shorttext">General Information</p>
+    "! General information
+    BEGIN OF ty_general_information,
+      "! <p class="shorttext">Package Type</p>
+      "! Package type
+      "! $required
+      type                          TYPE ty_package_type,
+      "! <p class="shorttext">Super Package</p>
+      "! Super package
+      super_package                 TYPE c LENGTH 30,
+      "! <p class="shorttext">Switch</p>
+      "! Switch
+      switch                        TYPE c LENGTH 30,
+      "! <p class="shorttext">Application Component</p>
+      "! Name used to identify the application component
+      application_component         TYPE c LENGTH 24,
+      "! <p class="shorttext">Software Component</p>
+      "! The software component describes a set of objects that are always delivered together.
+      software_component            TYPE c LENGTH 30,
+      "! <p class="shorttext">Transport Layer</p>
+      "! The transport layer determines whether objects are assigned to a local or transportable
+      "! change request.
+      transport_layer               TYPE c LENGTH 4,
+      "! <p class="shorttext">Record Object Changes in Transport Requests</p>
+      "! This flag indicates whether the Transport Organizer records changes made to objects in
+      "! this package.
+      "! If changes are recorded, version management is also activated for the objects in this
+      "! package.
+      supports_record_changes       TYPE abap_bool,
+      "! <p class="shorttext">Adding Further Objects not Allowed</p>
+      "! If you set this flag, users cannot create new objects within the package.
+      "! However, they can move existing objects to other packages.
+      is_adding_objects_not_allowed TYPE abap_bool,
+      "! <p class="shorttext">Encapsulated</p>
+      "! When this package property is activated, the package is encapsulated. The consequence of
+      "! this is that only the development
+      "! elements exposed in package interfaces of the package are visible to the outside.
+      "! Possible client packages need use access to those package interfaces that contain the
+      "! development objects used.
+      "! Otherwise, errors occur during the package check.
+      is_encapsulated               TYPE abap_bool,
+      "! <p class="shorttext">Default ABAP Language Version</p>
+      "! Determines ABAP Language Version for all new objects within the package.
+      default_abap_language_version TYPE zif_aff_types_v1=>ty_abap_language_version,
+    END OF ty_general_information.
+
+  TYPES:
+    "! <p class="shorttext">Package</p>
+    "! Package
+    BEGIN OF ty_main,
+      "! <p class="shorttext">Format Version</p>
+      "! Format version
+      "! $required
+      format_version      TYPE zif_aff_types_v1=>ty_format_version,
+      "! <p class="shorttext">Header</p>
+      "! Header
+      "! $required
+      header              TYPE zif_aff_types_v1=>ty_header_60_no_abap_lv,
+      "! <p class="shorttext">General Information</p>
+      "! General information
+      general_information TYPE ty_general_information,
+      "! <p class="shorttext">Use Accesses</p>
+      "! The use access gives a package the right to use the development elements in the package
+      "! interface of another package.
+      "! Note that this right is one-way only.
+      use_accesses        TYPE STANDARD TABLE OF ty_use_access WITH DEFAULT KEY,
+    END OF ty_main.
+
+ENDINTERFACE.
