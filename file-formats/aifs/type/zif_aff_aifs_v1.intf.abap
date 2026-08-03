@@ -196,7 +196,7 @@ INTERFACE zif_aff_aifs_v1
       comparison_field TYPE c LENGTH 120,
       "! <p class="shorttext">AIF Fix Value For Selection</p>
       "! AIF fix value for selection
-      aif_fixvalue     TYPE c LENGTH 40,
+      fix_value     TYPE c LENGTH 40,
     END OF ty_indirect_mapping_selection.
 
   TYPES:
@@ -355,19 +355,19 @@ INTERFACE zif_aff_aifs_v1
       mapped_data_structure TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Move Corresponding Fields</p>
       "! Move corresponding fields
-      move_corresponding    TYPE abap_bool,
+      move_corresponding_fields    TYPE abap_bool,
       "! <p class="shorttext">Copy Fields Only</p>
       "! Copy fields only
-      copy_fields           TYPE abap_bool,
+      copy_fields_only           TYPE abap_bool,
       "! <p class="shorttext">Indirect Mapping</p>
       "! Indirect mapping
       indirect_mapping      TYPE abap_bool,
       "! <p class="shorttext">Class Executed Before Mapping</p>
       "! Class executed before mapping
-      class_before_mapping  TYPE zif_aff_types_v1=>ty_object_name_30,
+      class_executed_before_mapping  TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Class Executed After Mapping</p>
       "! Class executed after mapping
-      class_after_mapping   TYPE zif_aff_types_v1=>ty_object_name_30,
+      class_executed_after_mapping   TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Checks</p>
       "! Checks
       checks                TYPE ty_checks,

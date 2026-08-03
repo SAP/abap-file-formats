@@ -12,12 +12,12 @@
   },
   "mappingInformation": [
     {
-      "name": "10 / ZAIF_BUSINESS_PARTNER / ZAIF_SAP_BUSINESS_PARTNER",
+      "displayName": "10 / ZAIF_BUSINESS_PARTNER / ZAIF_SAP_BUSINESS_PARTNER",
       "numericId": "10",
       "dataStructure": "ZAIF_BUSINESS_PARTNER",
       "mappedDataStructure": "ZAIF_SAP_BUSINESS_PARTNER",
-      "moveCorresponding": false,
-      "copyFields": true,
+      "moveCorrespondingFields": false,
+      "copyFieldsOnly": true,
       "indirectMapping": false,
       "checks": [
         {
@@ -25,7 +25,7 @@
           "numericId": "1",
           "checkSourceData": false,
           "checkBehaviour": "ignoreData",
-          "checkFieldlist": [
+          "checkFields": [
             {
               "number": "1",
               "fieldPath": "GENERL_DATA-BP_ID"
@@ -35,7 +35,7 @@
       ],
       "fieldMapping": [
         {
-          "mappedField": "ADDRESS",
+          "mappedDataStructureField": "ADDRESS",
           "numericId": "1",
           "indirectMapping": {
             "table": "123",
@@ -49,43 +49,43 @@
               "operator": "equals"
             }
           },
-          "sourceFieldlist": [
+          "sourceFields": [
             {
               "fieldNumber": "1",
               "field": "ADDRESS-STREET",
-              "checkBa": "before"
+              "checkTiming": "before"
             },
             {
               "fieldNumber": "2",
               "field": "ADDRESS-HOUSE_NR",
-              "checkBa": "before"
+              "checkTiming": "before"
             },
             {
               "fieldNumber": "3",
               "field": "ADDRESS-POSTAL_CODE",
-              "checkBa": "before"
+              "checkTiming": "before"
             },
             {
               "fieldNumber": "4",
               "field": "ADDRESS-CITY",
-              "checkBa": "before"
+              "checkTiming": "before"
             },
             {
               "fieldNumber": "5",
               "field": "ADDRESS-COUNTRY_CODE",
-              "checkBa": "before"
+              "checkTiming": "before"
             },
             {
               "fieldNumber": "6",
               "field": "ADDRESS-COUNTRY",
-              "checkBa": "before"
+              "checkTiming": "before"
             }
           ],
           "conditions": [
             {
               "check": "CHECK_VALID_ADDRESS",
               "numericId": "1",
-              "conditionType": "altFld",
+              "conditionType": "alternativeField",
               "conditionFields": [
                 {
                   "number": "1",
@@ -118,7 +118,7 @@
           ]
         },
         {
-          "mappedField": "E_MAIL",
+          "mappedDataStructureField": "E_MAIL",
           "numericId": "2",
           "indirectMapping": {
             "indirectMappingSelection1": {
@@ -131,11 +131,11 @@
               "operator": "equals"
             }
           },
-          "sourceFieldlist": [
+          "sourceFields": [
             {
               "fieldNumber": "1",
               "field": "ADDRESS-EMAIL",
-              "checkBa": "before"
+              "checkTiming": "before"
             }
           ],
           "conditions": [
@@ -168,17 +168,17 @@
       ]
     },
     {
-      "name": "20 / ADDRESS / GENERAL_ADDRESS",
+      "displayName": "20 / ADDRESS / GENERAL_ADDRESS",
       "numericId": "20",
       "dataStructure": "ADDRESS",
       "mappedDataStructure": "GENERAL_ADDRESS",
-      "moveCorresponding": true,
-      "copyFields": true,
+      "moveCorrespondingFields": true,
+      "copyFieldsOnly": true,
       "indirectMapping": false,
       "checks": [],
       "fieldMapping": [
         {
-          "mappedField": "NAME",
+          "mappedDataStructureField": "NAME",
           "numericId": "1",
           "indirectMapping": {
             "indirectMappingSelection1": {
@@ -191,11 +191,11 @@
               "operator": "equals"
             }
           },
-          "sourceFieldlist": [
+          "sourceFields": [
             {
               "fieldNumber": "1",
               "field": "NAME",
-              "checkBa": "before"
+              "checkTiming": "before"
             }
           ],
           "conditions": []
@@ -203,13 +203,13 @@
       ]
     },
     {
-      "name": "1",
+      "displayName": "1",
       "numericId": "1",
       "dataStructure": "1",
       "mappedDataStructure": "1",
-      "copyFields": true,
-      "classBeforeMapping": "1",
-      "classAfterMapping": "1",
+      "copyFieldsOnly": true,
+      "classExecutedBeforeMapping": "1",
+      "classExecutedAfterMapping": "1",
       "checks": [],
       "fieldMapping": []
     }

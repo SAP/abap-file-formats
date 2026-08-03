@@ -117,12 +117,12 @@
             "type": "string",
             "maxLength": 30
           },
-          "moveCorresponding": {
+          "moveCorrespondingFields": {
             "title": "Move Corresponding Fields",
             "description": "Move corresponding fields",
             "type": "boolean"
           },
-          "copyFields": {
+          "copyFieldsOnly": {
             "title": "Copy Fields Only",
             "description": "Copy fields only",
             "type": "boolean"
@@ -132,13 +132,13 @@
             "description": "Indirect mapping",
             "type": "boolean"
           },
-          "classBeforeMapping": {
+          "classExecutedBeforeMapping": {
             "title": "Class Executed Before Mapping",
             "description": "Class executed before mapping",
             "type": "string",
             "maxLength": 30
           },
-          "classAfterMapping": {
+          "classExecutedAfterMapping": {
             "title": "Class Executed After Mapping",
             "description": "Class executed after mapping",
             "type": "string",
@@ -390,7 +390,7 @@
                           "type": "string",
                           "maxLength": 120
                         },
-                        "aifFixvalue": {
+                        "fixValue": {
                           "title": "AIF Fix Value For Selection",
                           "description": "AIF fix value for selection",
                           "type": "string",
@@ -458,7 +458,7 @@
                           "type": "string",
                           "maxLength": 120
                         },
-                        "aifFixvalue": {
+                        "fixValue": {
                           "title": "AIF Fix Value For Selection",
                           "description": "AIF fix value for selection",
                           "type": "string",
@@ -526,7 +526,7 @@
                           "type": "string",
                           "maxLength": 120
                         },
-                        "aifFixvalue": {
+                        "fixValue": {
                           "title": "AIF Fix Value For Selection",
                           "description": "AIF fix value for selection",
                           "type": "string",
