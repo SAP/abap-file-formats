@@ -1,0 +1,22 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "DESD",
+    "description": "Logical External Schema",
+    "group": "Core Data Services"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.desd.json",
+          "cardinality": "1",
+          "schema": "desd-v1.json",
+          "definitionInterface": "type/zif_aff_desd_v1.intf.abap",
+          "examples": ["examples/z_aff_example_desd.desd.json"]
+        }
+      ]
+    }
+  ]
+}

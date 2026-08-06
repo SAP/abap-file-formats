@@ -1,0 +1,28 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "DSFD",
+    "description": "Scalar Function Definition",
+    "group": "Core Data Services"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.dsfd.json",
+          "cardinality": "1",
+          "schema": "dsfd-v1.json",
+          "definitionInterface": "type/zif_aff_dsfd_v1.intf.abap",
+          "examples": ["examples/zdsfd_example.dsfd.json"]
+        },
+        {
+          "filePattern": "<name>.dsfd.acds",
+          "cardinality": "1",
+          "definitionUrl": "https://help.sap.com/doc/abapdocu_cp_index_htm/CLOUD/en-US/index.htm?file=abencds.htm",
+          "examples": ["examples/zdsfd_example.dsfd.acds"]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "DMON",
+    "description": "ABAP Daemon"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.dmon.json",
+          "cardinality": "1",
+          "schema": "dmon-v1.json",
+          "definitionInterface": "type/zif_aff_dmon_v1.intf.abap",
+          "examples": ["examples/z_aff_example_dmon.dmon.json"]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "SPRV",
+    "description": "SOAP Provider Model",
+    "group": "Business Services"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.sprv.json",
+          "cardinality": "1",
+          "schema": "sprv-v1.json",
+          "definitionInterface": "type/zif_aff_sprv_v1.intf.abap",
+          "examples": ["examples/z_aff_example_sprv.sprv.json"]
+        }
+      ]
+    }
+  ]
+}

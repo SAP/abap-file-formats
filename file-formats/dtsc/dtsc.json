@@ -1,0 +1,28 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "DTSC",
+    "description": "Dictionary Tuning Static Cache",
+    "group": "Core Data Services"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.dtsc.json",
+          "cardinality": "1",
+          "schema": "dtsc-v1.json",
+          "definitionInterface": "type/zif_aff_dtsc_v1.intf.abap",
+          "examples": ["examples/z_aff_example_dtsc.dtsc.json"]
+        },
+        {
+          "filePattern": "<name>.dtsc.acds",
+          "cardinality": "1",
+          "definitionUrl": "https://help.sap.com/doc/abapdocu_cp_index_htm/CLOUD/en-US/ABENDDIC_STATIC_CACHES.html",
+          "examples": ["examples/z_aff_example_dtsc.dtsc.acds"]
+        }
+      ]
+    }
+  ]
+}

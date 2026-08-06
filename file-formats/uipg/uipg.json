@@ -1,0 +1,22 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "UIPG",
+    "description": "Launchpad Page Template",
+    "group": "Fiori User Interface"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.uipg.json",
+          "cardinality": "1",
+          "schema": "uipg-v1.json",
+          "definitionInterface": "type/zif_aff_uipg_v1.intf.abap",
+          "examples": ["examples/z_aff_example_uipg.uipg.json"]
+        }
+      ]
+    }
+  ]
+}

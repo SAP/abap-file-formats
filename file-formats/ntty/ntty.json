@@ -1,0 +1,22 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "NTTY",
+    "description": "Note Type",
+    "group": "Notes for Application Objects"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.ntty.json",
+          "cardinality": "1",
+          "schema": "ntty-v1.json",
+          "definitionInterface": "type/zif_aff_ntty_v1.intf.abap",
+          "examples": ["examples/z_aff_example_ntty.ntty.json"]
+        }
+      ]
+    }
+  ]
+}

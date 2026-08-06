@@ -1,0 +1,22 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "RONT",
+    "description": "SAP Object Type",
+    "group": "SAP Object Type Management"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.ront.json",
+          "cardinality": "1",
+          "schema": "ront-v1.json",
+          "definitionInterface": "type/zif_aff_ront_v1.intf.abap",
+          "examples": ["examples/z_aff_example_ront.ront.json"]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "EVTB",
+    "description": "Event Binding",
+    "group": "Business Services"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.evtb.json",
+          "cardinality": "1",
+          "schema": "evtb-v1.json",
+          "definitionInterface": "type/zif_aff_evtb_v1.intf.abap",
+          "examples": ["examples/z_aff_example_evtb.evtb.json"]
+        }
+      ]
+    }
+  ]
+}
