@@ -53,7 +53,7 @@
         "properties": {
           "version": {
             "type": "string",
-            "pattern": "^[0-9]+$",
+"pattern": "^[1-9][0-9]*$",
             "description": "Format version number, matching the formatVersion of the JSON files and the -v<version> suffix of the JSON schema"
           },
           "deprecated": {
