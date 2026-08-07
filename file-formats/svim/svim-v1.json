@@ -109,7 +109,7 @@
           "enumTitles": [
             "Standard Recording",
             "No Recording",
-            "User-Defined Recording"
+            "Via Events"
           ],
           "enumDescriptions": [
             "Changes are recorded by the standard recording routine; individual maintenance events supplement it if defined. In case of a table an R3TR TABU entry is recorded and in case of a view R3TR VDAT",
