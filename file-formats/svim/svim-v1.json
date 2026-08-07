@@ -119,7 +119,7 @@
           "enumDescriptions": [
             "Changes are recorded by the standard recording routine; individual maintenance events supplement it if defined. In case of a table an R3TR TABU entry is recorded and in case of a view R3TR VDAT",
             "Changes are not recorded, and it is a current settings object",
-            "Changes are recorded by individual implemented event (events 10, 11, 12), and it is a current settings object"
+            "Changes are recorded by individual implemented event (events 10, 11, 12)"
           ],
           "default": "standard"
         }

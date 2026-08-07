@@ -37,7 +37,7 @@ INTERFACE zif_aff_svim_v1
       "! Changes are not recorded, and it is a current settings object
       none         TYPE ty_transport_recording VALUE 'X',
       "! <p class="shorttext">User-Defined Recording</p>
-      "! Changes are recorded by individual implemented event (events 10, 11, 12), and it is a current settings object
+      "! Changes are recorded by individual implemented event (events 10, 11, 12)
       user_defined TYPE ty_transport_recording VALUE 'U',
     END OF co_transport_recording.
 
