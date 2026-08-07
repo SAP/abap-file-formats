@@ -178,7 +178,8 @@ INTERFACE zif_aff_svim_v1
       "! $showAlways
       overview_screen_number TYPE n LENGTH 4,
       "! <p class="shorttext">Detail Screen Number</p>
-      "! Dynpro number of the generated detail (single-entry) screen; relevant for two-step maintenance only (TVDIR-DETAIL)
+      "! Dynpro number of the generated detail (single-entry) screen; relevant for two-step
+      "! maintenance only (TVDIR-DETAIL)
       "! $showAlways
       detail_screen_number   TYPE n LENGTH 4,
       "! <p class="shorttext">Is Table</p>
