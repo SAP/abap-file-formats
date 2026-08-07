@@ -65,23 +65,23 @@
           "type": "string",
           "maxLength": 26
         },
-        "maintenanceType": {
-          "title": "Maintenance Type",
+        "screenLayout": {
+          "title": "Screen Layout",
           "description": "Controls whether one combined screen or separate overview and detail screens are generated (TVDIR-TYPE)",
           "type": "string",
           "enum": [
-            "oneStep",
-            "twoStep"
+            "overview",
+            "overviewAndDetail"
           ],
           "enumTitles": [
-            "One-Step Maintenance",
-            "Two-Step Maintenance"
+            "Overview Screen",
+            "Overview and Detail Screen"
           ],
           "enumDescriptions": [
-            "A single overview screen is generated for entry",
-            "In addition to the overview screen, a detail screen is also generated"
+            "One-Step Maintenance: A single overview screen is generated for entry",
+            "Two-Step Maintenance: In addition to the overview screen, a detail screen is also generated"
           ],
-          "default": "oneStep"
+          "default": "overview"
         },
         "overviewScreenNumber": {
           "title": "Overview Screen Number",
@@ -97,11 +97,6 @@
           "maxLength": 4,
           "pattern": "^[0-9]+$"
         },
-        "isTable": {
-          "title": "Is Table",
-          "description": "True if the object is a plain database table; false if it is a maintenance view (TVDIR-BASTAB)",
-          "type": "boolean"
-        },
         "transportRecording": {
           "title": "Recording Routine",
           "description": "Controls whether the standard, a user-defined or no recording routine is used for change documents (TVDIR-FLAG)",
@@ -109,7 +104,7 @@
           "enum": [
             "standard",
             "none",
-            "userDefined"
+            "viaEvents"
           ],
           "enumTitles": [
             "Standard Recording",
@@ -127,7 +122,7 @@
       "additionalProperties": false,
       "required": [
         "functionGroup",
-        "maintenanceType"
+        "screenLayout"
       ]
     },
     "events": {
@@ -137,19 +132,19 @@
       "uniqueItems": true,
       "items": {
         "title": "Extended Table Maintenance Event",
-        "description": "ABAP FORM routine registered for a specific maintenance event (TVIMF)",
+        "description": "ABAP subroutine registered for a specific maintenance event (TVIMF)",
         "type": "object",
         "properties": {
           "event": {
-            "title": "Maintenance Event",
+            "title": "Event Code",
             "description": "Two-character event code identifying the hook point in the maintenance dialog (TVIMF-EVENT)",
             "type": "string",
             "enum": [
               "beforeSave",
               "afterSave",
-              "beforeDeleteDisplay",
-              "afterDeleteDisplay",
-              "onNewEntry",
+              "beforeDelete",
+              "afterDelete",
+              "onCreate",
               "afterGetOriginalComplete",
               "beforeContentCorrection",
               "afterContentCorrection",
@@ -259,9 +254,9 @@
               "Event ST - GUI Menu Main Program Name"
             ]
           },
-          "formName": {
+          "subroutine": {
             "title": "Form Routine",
-            "description": "Name of the ABAP FORM routine called at this maintenance event (TVIMF-FORMNAME)",
+            "description": "Name of the ABAP subroutine called at this maintenance event (TVIMF-FORMNAME)",
             "type": "string",
             "maxLength": 30
           }
@@ -269,7 +264,7 @@
         "additionalProperties": false,
         "required": [
           "event",
-          "formName"
+          "subroutine"
         ]
       }
     }

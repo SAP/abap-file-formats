@@ -4,7 +4,7 @@
 
 Object Type | Description | Group
 :--- | :--- | :---
-SVIM  | View/Table Maintenance |
+SVIM  | View/Table Maintenance | 
 
 ## File Structure
 
