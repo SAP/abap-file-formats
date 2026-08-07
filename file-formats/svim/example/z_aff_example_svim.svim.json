@@ -1,0 +1,21 @@
+{
+    "formatVersion": "1",
+    "header": {
+        "description": "Global Parameters of Countries/Regions (New System)",
+        "originalLanguage": "en"
+    },
+    "attributes": {
+        "functionGroup": "0ADR",
+        "maintenanceType": "twoStep",
+        "overviewScreenNumber": "140",
+        "detailScreenNumber": "141",
+        "isTable": false,
+        "transportRecording": "standard"
+    },
+    "events": [
+        {
+            "event": "beforeSave",
+            "formName": "BEFORE_SAVE_T005"
+        }
+    ]
+}
