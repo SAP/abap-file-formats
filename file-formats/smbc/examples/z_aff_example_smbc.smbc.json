@@ -10,8 +10,9 @@
     "serviceVersion": "0001",
     "rootEntitySet": "Customer",
     "name": "Maintain customer",
+    "transportObject": "/DMO/CUS  T",
     "configurationGroup": "/DMO/ADMIN_GROUP",
-    "skipRootEntity": false
+    "skipRootEntity": "skipWithoutCalculation"
   },
   "appConfiguration": {
     "listReport": {
