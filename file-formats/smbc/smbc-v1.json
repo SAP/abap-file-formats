@@ -114,7 +114,7 @@
           "enumDescriptions": [
             "",
             "",
-            "Improved runtime compared to {@link if_aff_smbc_v1.data:co_skip_root_mode.skip}"
+            "Improved runtime compared to {@link zif_aff_smbc_v1.data:co_skip_root_mode.skip}"
           ],
           "default": "doNotSkip"
         }
