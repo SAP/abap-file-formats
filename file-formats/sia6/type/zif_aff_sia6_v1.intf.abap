@@ -43,7 +43,7 @@ INTERFACE zif_aff_sia6_v1
 
   "! <p class="shorttext">Services</p>
   "! Service assignments
-  TYPES tt_services TYPE STANDARD TABLE OF ty_service WITH DEFAULT KEY.
+  TYPES ty_services TYPE STANDARD TABLE OF ty_service WITH DEFAULT KEY.
 
   TYPES:
     "! <p class="shorttext">Authorization Field Value Range</p>
@@ -62,7 +62,7 @@ INTERFACE zif_aff_sia6_v1
 
   "! <p class="shorttext">Authorization Field Values</p>
   "! Authorization field values
-  TYPES tt_auth_field_values TYPE STANDARD TABLE OF ty_auth_field_value WITH DEFAULT KEY.
+  TYPES ty_auth_field_values TYPE STANDARD TABLE OF ty_auth_field_value WITH DEFAULT KEY.
 
   TYPES:
     "! <p class="shorttext">Authorization Field</p>
@@ -76,7 +76,7 @@ INTERFACE zif_aff_sia6_v1
 
       "! <p class="shorttext">Values</p>
       "! Authorization field value ranges
-      values   TYPE tt_auth_field_values,
+      values   TYPE ty_auth_field_values,
 
       "! <p class="shorttext">Status</p>
       "! Maintenance status of authorization field
@@ -94,7 +94,7 @@ INTERFACE zif_aff_sia6_v1
 
   "! <p class="shorttext">Authorization Fields</p>
   "! Authorization fields
-  TYPES tt_auth_fields TYPE STANDARD TABLE OF ty_auth_field WITH DEFAULT KEY.
+  TYPES ty_auth_fields TYPE STANDARD TABLE OF ty_auth_field WITH DEFAULT KEY.
 
   TYPES:
     "! <p class="shorttext">Authorization Instance</p>
@@ -137,13 +137,13 @@ INTERFACE zif_aff_sia6_v1
 
       "! <p class="shorttext">Fields</p>
       "! Authorization field values of the instance
-      fields         TYPE tt_auth_fields,
+      fields         TYPE ty_auth_fields,
 
     END OF ty_auth.
 
   "! <p class="shorttext">Authorization Instances</p>
   "! Authorization object instances
-  TYPES tt_auths TYPE STANDARD TABLE OF ty_auth WITH DEFAULT KEY.
+  TYPES ty_auths TYPE STANDARD TABLE OF ty_auth WITH DEFAULT KEY.
 
   TYPES:
     "! <p class="shorttext">Authorization Object</p>
@@ -165,13 +165,13 @@ INTERFACE zif_aff_sia6_v1
 
       "! <p class="shorttext">Authorization Instances</p>
       "! Authorization object instances
-      auths       TYPE tt_auths,
+      auths       TYPE ty_auths,
 
     END OF ty_auth_object.
 
   "! <p class="shorttext">Authorization Objects</p>
   "! Authorization objects
-  TYPES tt_auth_objects TYPE STANDARD TABLE OF ty_auth_object WITH DEFAULT KEY.
+  TYPES ty_auth_objects TYPE STANDARD TABLE OF ty_auth_object WITH DEFAULT KEY.
 
   TYPES:
     "! <p class="shorttext">Restriction Type</p>
@@ -203,7 +203,7 @@ INTERFACE zif_aff_sia6_v1
 
   "! <p class="shorttext">Restriction Types</p>
   "! Restriction types assigned to the application
-  TYPES tt_restriction_types TYPE STANDARD TABLE OF ty_restriction_type WITH DEFAULT KEY.
+  TYPES ty_restriction_types TYPE STANDARD TABLE OF ty_restriction_type WITH DEFAULT KEY.
 
   TYPES:
 
@@ -240,15 +240,15 @@ INTERFACE zif_aff_sia6_v1
 
       "! <p class="shorttext">Services</p>
       "! Service assignments for the application
-      services                    TYPE tt_services,
+      services                    TYPE ty_services,
 
       "! <p class="shorttext">Authorization Objects</p>
       "! Authorization default objects and values
-      auth_objects                TYPE tt_auth_objects,
+      auth_objects                TYPE ty_auth_objects,
 
       "! <p class="shorttext">Restriction Types</p>
       "! Restriction types assigned to the application
-      restriction_types           TYPE tt_restriction_types,
+      restriction_types           TYPE ty_restriction_types,
 
       "! <p class="shorttext">Publishing Status</p>
       "! Publishing status of the application
