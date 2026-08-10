@@ -99,7 +99,7 @@
         },
         "transportRecording": {
           "title": "Recording Routine",
-          "description": "Controls whether the standard, a user-defined or no recording routine is used for change documents (TVDIR-FLAG)",
+          "description": "Controls whether the standard, via event or no recording routine is used for transport recording (TVDIR-FLAG)",
           "type": "string",
           "enum": [
             "standard",

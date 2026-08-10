@@ -36,7 +36,7 @@ INTERFACE zif_aff_svim_v1
       "! <p class="shorttext">No Recording</p>
       "! Changes are not recorded, and it is a current settings object
       none       TYPE ty_transport_recording VALUE 'X',
-      "! <p class="shorttext">User-Defined Recording</p>
+      "! <p class="shorttext">Via Events</p>
       "! Changes are recorded by individual implemented event (events 10, 11, 12)
       via_events TYPE ty_transport_recording VALUE 'U',
     END OF co_transport_recording.
@@ -183,7 +183,8 @@ INTERFACE zif_aff_svim_v1
       "! $showAlways
       detail_screen_number   TYPE n LENGTH 4,
       "! <p class="shorttext">Recording Routine</p>
-      "! Controls whether the standard, a user-defined or no recording routine is used for change documents (TVDIR-FLAG)
+      "! Controls whether the standard, via event or no recording routine is used for
+      "! transport recording (TVDIR-FLAG)
       "! $values {@link zif_aff_svim_v1.data:co_transport_recording}
       "! $default {@link zif_aff_svim_v1.data:co_transport_recording.standard}
       "! $showAlways
