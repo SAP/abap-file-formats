@@ -1,0 +1,43 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "processInfo": {
+    "state": "approved",
+    "notificationType": "onApprovalAndRejection",
+    "exemptionId": "83E4A351A1C81FE186A72C1EE006C637"
+  },
+  "requestInfo": {
+    "requester": "DOEJ",
+    "requesterEmail": "john.doe@example.com",
+    "reason": "COMP",
+    "justification": "The finding originates from generated framework code that cannot be modified. A follow-up redesign is planned in a future release."
+  },
+  "assessmentInfo": {
+    "approver": "SMITH",
+    "approverEmail": "jane.smith@example.com",
+    "assessment": "Justification reviewed and accepted. Risk is considered low."
+  },
+  "objectValidity": {
+    "objectScope": "finding",
+    "objectName": "ZCL_SALES_ORDER_API",
+    "objectType": "CLAS",
+    "subobjectName": "IF_OO_ADT_CLASSRUN~MAIN",
+    "subobjectType": "METH",
+    "checksumVersion": 1,
+    "checksum": 123456789
+  },
+  "checkValidity": {
+    "checkScope": "finding",
+    "checkClass": "CL_CI_TEST_NO_ORDER_BY",
+    "messageCode": "AMB_SINGLE"
+  },
+  "constraints": {
+    "expirationDate": "2027-12-31",
+    "affectedSoftwareComponent": "ZFIN_CORE",
+    "validRelease": "001",
+    "validSupportPackage": "0001"
+  }
+}
