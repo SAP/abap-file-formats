@@ -14,7 +14,7 @@
   },
   "services": [
     {
-      "id": "Z_SRVC_EXAMPLE",
+      "name": "Z_SRVC_EXAMPLE",
       "description": "Example service",
       "type": "G4BA",
       "typeText": "OData V4",

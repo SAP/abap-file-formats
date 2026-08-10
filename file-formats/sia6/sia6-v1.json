@@ -113,9 +113,9 @@
         "description": "Service assignment",
         "type": "object",
         "properties": {
-          "id": {
-            "title": "Service ID",
-            "description": "ID of the service",
+          "name": {
+            "title": "Service Name",
+            "description": "Name of the service",
             "type": "string",
             "maxLength": 40
           },
@@ -163,7 +163,7 @@
         },
         "additionalProperties": false,
         "required": [
-          "id",
+          "name",
           "type"
         ]
       }
@@ -382,6 +382,7 @@
   "additionalProperties": false,
   "required": [
     "formatVersion",
-    "header"
+    "header",
+    "generalInformation"
   ]
 }

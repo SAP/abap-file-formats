@@ -6,10 +6,10 @@ INTERFACE zif_aff_sia6_v1
     "! Service assignment
     BEGIN OF ty_service,
 
-      "! <p class="shorttext">Service ID</p>
-      "! ID of the service
+      "! <p class="shorttext">Service Name</p>
+      "! Name of the service
       "! $required
-      id                   TYPE c LENGTH 40,
+      name                 TYPE c LENGTH 40,
 
       "! <p class="shorttext">Description</p>
       "! Service description text
@@ -44,7 +44,7 @@ INTERFACE zif_aff_sia6_v1
 
   "! <p class="shorttext">Services</p>
   "! Service assignments
-  TYPES ty_services TYPE SORTED TABLE OF ty_service WITH UNIQUE KEY id type.
+  TYPES ty_services TYPE SORTED TABLE OF ty_service WITH UNIQUE KEY name type.
 
   TYPES:
     "! <p class="shorttext">Authorization Field Value Range</p>
@@ -257,6 +257,7 @@ INTERFACE zif_aff_sia6_v1
 
       "! <p class="shorttext">General Information</p>
       "! General information
+      "! $required
       general_information TYPE ty_general_information,
 
       "! <p class="shorttext">Services</p>
