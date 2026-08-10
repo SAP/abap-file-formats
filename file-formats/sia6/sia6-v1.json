@@ -57,33 +57,57 @@
         "originalLanguage"
       ]
     },
-    "type": {
-      "title": "Application Type",
-      "description": "Type of the IAM application",
-      "type": "string",
-      "maxLength": 4
-    },
-    "uiadId": {
-      "title": "UI5 App ID",
-      "description": "UI5 application identifier linked to this IAM application",
-      "type": "string",
-      "maxLength": 32
-    },
-    "transactionCode": {
-      "title": "Transaction Code",
-      "description": "Transaction code linked to this IAM application",
-      "type": "string",
-      "maxLength": 20
-    },
-    "isScopeDependent": {
-      "title": "Scope Dependent",
-      "description": "Indicates whether the application is scope-dependent",
-      "type": "boolean"
+    "generalInformation": {
+      "title": "General Information",
+      "description": "General information",
+      "type": "object",
+      "properties": {
+        "type": {
+          "title": "Application Type",
+          "description": "Type of the IAM application",
+          "type": "string",
+          "maxLength": 4
+        },
+        "uiadId": {
+          "title": "UI5 App ID",
+          "description": "UI5 application identifier linked to this IAM application",
+          "type": "string",
+          "maxLength": 32
+        },
+        "transactionCode": {
+          "title": "Transaction Code",
+          "description": "Transaction code linked to this IAM application",
+          "type": "string",
+          "maxLength": 20
+        },
+        "isScopeDependent": {
+          "title": "Scope Dependent",
+          "description": "Indicates whether the application is scope-dependent",
+          "type": "boolean"
+        },
+        "publishingStatus": {
+          "title": "Publishing Status",
+          "description": "Publishing status of the application",
+          "type": "string",
+          "maxLength": 1
+        },
+        "restrictionTypeMigStatus": {
+          "title": "Restriction Type Migration Status",
+          "description": "Migration status for restriction types",
+          "type": "string",
+          "maxLength": 1
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "type"
+      ]
     },
     "services": {
       "title": "Services",
       "description": "Service assignments for the application",
       "type": "array",
+      "uniqueItems": true,
       "items": {
         "title": "Service",
         "description": "Service assignment",
@@ -93,7 +117,7 @@
             "title": "Service ID",
             "description": "ID of the service",
             "type": "string",
-            "maxLength": 30
+            "maxLength": 40
           },
           "description": {
             "title": "Description",
@@ -104,25 +128,25 @@
             "title": "Service Type",
             "description": "Type of the service",
             "type": "string",
-            "maxLength": 2
-          },
-          "relName": {
-            "title": "Related Service Name",
-            "description": "Name of the related service",
-            "type": "string",
-            "maxLength": 40
-          },
-          "relType": {
-            "title": "Related Service Type",
-            "description": "Type of the related service",
-            "type": "string",
             "maxLength": 10
           },
-          "relTypeText": {
+          "typeText": {
             "title": "Related Service Type Text",
-            "description": "Display text for the related service type",
+            "description": "Display text for the service type",
             "type": "string",
             "maxLength": 80
+          },
+          "srvcId": {
+            "title": "Underlying Service ID",
+            "description": "ID of the underlying service",
+            "type": "string",
+            "maxLength": 30
+          },
+          "srvcType": {
+            "title": "Underlying Service Type",
+            "description": "Type of the underlying service",
+            "type": "string",
+            "maxLength": 2
           },
           "srcUiad": {
             "title": "UI5 App ID Source",
@@ -139,7 +163,8 @@
         },
         "additionalProperties": false,
         "required": [
-          "id"
+          "id",
+          "type"
         ]
       }
     },
@@ -147,6 +172,7 @@
       "title": "Authorization Objects",
       "description": "Authorization default objects and values",
       "type": "array",
+      "uniqueItems": true,
       "items": {
         "title": "Authorization Object",
         "description": "Authorization object entry with instances",
@@ -174,6 +200,7 @@
             "title": "Authorization Instances",
             "description": "Authorization object instances",
             "type": "array",
+            "uniqueItems": true,
             "items": {
               "title": "Authorization Instance",
               "description": "Authorization object instance",
@@ -231,6 +258,7 @@
                   "title": "Fields",
                   "description": "Authorization field values of the instance",
                   "type": "array",
+                  "uniqueItems": true,
                   "items": {
                     "title": "Authorization Field",
                     "description": "Authorization field with values",
@@ -310,6 +338,7 @@
       "title": "Restriction Types",
       "description": "Restriction types assigned to the application",
       "type": "array",
+      "uniqueItems": true,
       "items": {
         "title": "Restriction Type",
         "description": "Restriction type assigned to the application",
@@ -348,24 +377,11 @@
           "id"
         ]
       }
-    },
-    "publishingStatus": {
-      "title": "Publishing Status",
-      "description": "Publishing status of the application",
-      "type": "string",
-      "maxLength": 1
-    },
-    "restrictionTypeMigStatus": {
-      "title": "Restriction Type Migration Status",
-      "description": "Migration status for restriction types",
-      "type": "string",
-      "maxLength": 1
     }
   },
   "additionalProperties": false,
   "required": [
     "formatVersion",
-    "header",
-    "type"
+    "header"
   ]
 }

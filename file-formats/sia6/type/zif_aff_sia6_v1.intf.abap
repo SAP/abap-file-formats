@@ -9,7 +9,7 @@ INTERFACE zif_aff_sia6_v1
       "! <p class="shorttext">Service ID</p>
       "! ID of the service
       "! $required
-      id                   TYPE c LENGTH 30,
+      id                   TYPE c LENGTH 40,
 
       "! <p class="shorttext">Description</p>
       "! Service description text
@@ -17,19 +17,20 @@ INTERFACE zif_aff_sia6_v1
 
       "! <p class="shorttext">Service Type</p>
       "! Type of the service
-      type                 TYPE c LENGTH 2,
-
-      "! <p class="shorttext">Related Service Name</p>
-      "! Name of the related service
-      rel_name             TYPE c LENGTH 40,
-
-      "! <p class="shorttext">Related Service Type</p>
-      "! Type of the related service
-      rel_type             TYPE c LENGTH 10,
+      "! $required
+      type                 TYPE c LENGTH 10,
 
       "! <p class="shorttext">Related Service Type Text</p>
-      "! Display text for the related service type
-      rel_type_text        TYPE c LENGTH 80,
+      "! Display text for the service type
+      type_text            TYPE c LENGTH 80,
+
+      "! <p class="shorttext">Underlying Service ID</p>
+      "! ID of the underlying service
+      srvc_id              TYPE c LENGTH 30,
+
+      "! <p class="shorttext">Underlying Service Type</p>
+      "! Type of the underlying service
+      srvc_type            TYPE c LENGTH 2,
 
       "! <p class="shorttext">UI5 App ID Source</p>
       "! UI5 application identifier assigned as service source
@@ -43,7 +44,7 @@ INTERFACE zif_aff_sia6_v1
 
   "! <p class="shorttext">Services</p>
   "! Service assignments
-  TYPES ty_services TYPE STANDARD TABLE OF ty_service WITH DEFAULT KEY.
+  TYPES ty_services TYPE SORTED TABLE OF ty_service WITH UNIQUE KEY id type.
 
   TYPES:
     "! <p class="shorttext">Authorization Field Value Range</p>
@@ -94,7 +95,7 @@ INTERFACE zif_aff_sia6_v1
 
   "! <p class="shorttext">Authorization Fields</p>
   "! Authorization fields
-  TYPES ty_auth_fields TYPE STANDARD TABLE OF ty_auth_field WITH DEFAULT KEY.
+  TYPES ty_auth_fields TYPE SORTED TABLE OF ty_auth_field WITH UNIQUE KEY id.
 
   TYPES:
     "! <p class="shorttext">Authorization Instance</p>
@@ -143,7 +144,7 @@ INTERFACE zif_aff_sia6_v1
 
   "! <p class="shorttext">Authorization Instances</p>
   "! Authorization object instances
-  TYPES ty_auths TYPE STANDARD TABLE OF ty_auth WITH DEFAULT KEY.
+  TYPES ty_auths TYPE SORTED TABLE OF ty_auth WITH UNIQUE KEY auth_object_id number.
 
   TYPES:
     "! <p class="shorttext">Authorization Object</p>
@@ -171,7 +172,7 @@ INTERFACE zif_aff_sia6_v1
 
   "! <p class="shorttext">Authorization Objects</p>
   "! Authorization objects
-  TYPES ty_auth_objects TYPE STANDARD TABLE OF ty_auth_object WITH DEFAULT KEY.
+  TYPES ty_auth_objects TYPE SORTED TABLE OF ty_auth_object WITH UNIQUE KEY id.
 
   TYPES:
     "! <p class="shorttext">Restriction Type</p>
@@ -203,23 +204,13 @@ INTERFACE zif_aff_sia6_v1
 
   "! <p class="shorttext">Restriction Types</p>
   "! Restriction types assigned to the application
-  TYPES ty_restriction_types TYPE STANDARD TABLE OF ty_restriction_type WITH DEFAULT KEY.
+  TYPES ty_restriction_types TYPE SORTED TABLE OF ty_restriction_type WITH UNIQUE KEY id.
 
   TYPES:
 
-    "! <p class="shorttext">IAM App</p>
-    "! IAM App
-    BEGIN OF ty_main,
-
-      "! <p class="shorttext">Format Version</p>
-      "! Format version
-      "! $required
-      format_version              TYPE zif_aff_types_v1=>ty_format_version,
-
-      "! <p class="shorttext">Header</p>
-      "! Header
-      "! $required
-      header                      TYPE zif_aff_types_v1=>ty_header_60,
+    "! <p class="shorttext">General Information</p>
+    "! General information
+    BEGIN OF ty_general_information,
 
       "! <p class="shorttext">Application Type</p>
       "! Type of the IAM application
@@ -238,18 +229,6 @@ INTERFACE zif_aff_sia6_v1
       "! Indicates whether the application is scope-dependent
       is_scope_dependent          TYPE abap_bool,
 
-      "! <p class="shorttext">Services</p>
-      "! Service assignments for the application
-      services                    TYPE ty_services,
-
-      "! <p class="shorttext">Authorization Objects</p>
-      "! Authorization default objects and values
-      auth_objects                TYPE ty_auth_objects,
-
-      "! <p class="shorttext">Restriction Types</p>
-      "! Restriction types assigned to the application
-      restriction_types           TYPE ty_restriction_types,
-
       "! <p class="shorttext">Publishing Status</p>
       "! Publishing status of the application
       publishing_status           TYPE c LENGTH 1,
@@ -257,6 +236,40 @@ INTERFACE zif_aff_sia6_v1
       "! <p class="shorttext">Restriction Type Migration Status</p>
       "! Migration status for restriction types
       restriction_type_mig_status TYPE c LENGTH 1,
+
+    END OF ty_general_information.
+
+  TYPES:
+
+    "! <p class="shorttext">IAM App</p>
+    "! IAM App
+    BEGIN OF ty_main,
+
+      "! <p class="shorttext">Format Version</p>
+      "! Format version
+      "! $required
+      format_version      TYPE zif_aff_types_v1=>ty_format_version,
+
+      "! <p class="shorttext">Header</p>
+      "! Header
+      "! $required
+      header              TYPE zif_aff_types_v1=>ty_header_60,
+
+      "! <p class="shorttext">General Information</p>
+      "! General information
+      general_information TYPE ty_general_information,
+
+      "! <p class="shorttext">Services</p>
+      "! Service assignments for the application
+      services            TYPE ty_services,
+
+      "! <p class="shorttext">Authorization Objects</p>
+      "! Authorization default objects and values
+      auth_objects        TYPE ty_auth_objects,
+
+      "! <p class="shorttext">Restriction Types</p>
+      "! Restriction types assigned to the application
+      restriction_types   TYPE ty_restriction_types,
 
     END OF ty_main.
 

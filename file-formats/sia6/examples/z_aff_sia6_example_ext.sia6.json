@@ -5,17 +5,21 @@
     "originalLanguage": "en",
     "abapLanguageVersion": "cloudDevelopment"
   },
-  "type": "EXT",
-  "uiadId": "",
-  "transactionCode": "",
+  "generalInformation": {
+    "type": "EXT",
+    "uiadId": "",
+    "transactionCode": "",
+    "publishingStatus": "p",
+    "restrictionTypeMigStatus": "3"
+  },
   "services": [
     {
-      "id": "30C9E656A21BF6F30B3DA55ABE8BF8",
+      "id": "Z_SRVC_EXAMPLE",
       "description": "Example service",
-      "type": "HT",
-      "relName": "Z_SRVC_EXAMPLE",
-      "relType": "G4BA",
-      "relTypeText": "OData V4",
+      "type": "G4BA",
+      "typeText": "OData V4",
+      "srvcId": "30C9E656A21BF6F30B3DA55ABE8BF8",
+      "srvcType": "HT",
       "srcUiad": "",
       "srcTransactionCode": ""
     }
@@ -27,7 +31,7 @@
       "description": "Example authorization object",
       "auths": [
         {
-          "uuid": "397F5913BC011FD1A591DE9D8C85A01C",
+          "uuid": "397F5913BC011FD1A5937CB7875E368C",
           "authObjectId": "Z_AUTH_OBJ",
           "number": "0001",
           "srcIbs": "30C9E656A21BF6F30B3DA55ABE8BF8",
@@ -68,7 +72,5 @@
       "readAccess": true,
       "f4Access": true
     }
-  ],
-  "publishingStatus": "p",
-  "restrictionTypeMigStatus": "3"
+  ]
 }
