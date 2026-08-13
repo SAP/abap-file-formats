@@ -188,7 +188,7 @@ INTERFACE zif_aff_gsmp_v1
 
       "! <p class="shorttext">Model</p>
       "! Model
-      model     TYPE ty_model,
+      model          TYPE ty_model,
 
     END OF ty_main.
 
