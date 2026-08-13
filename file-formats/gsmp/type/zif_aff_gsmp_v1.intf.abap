@@ -39,7 +39,7 @@ INTERFACE zif_aff_gsmp_v1
       "! <p class="shorttext">Name</p>
       "! Name
       "! $required
-      name TYPE if_aff_types_v1=>ty_object_name_30,
+      name TYPE zif_aff_types_v1=>ty_object_name_30,
 
     END OF ty_provider_implementation,
 
@@ -169,12 +169,12 @@ INTERFACE zif_aff_gsmp_v1
     BEGIN OF ty_main,
 
       "! $required
-      format_version TYPE if_aff_types_v1=>ty_format_version,
+      format_version TYPE zif_aff_types_v1=>ty_format_version,
 
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header         TYPE if_aff_types_v1=>ty_header_60_cloud,
+      header         TYPE zif_aff_types_v1=>ty_header_60_cloud,
 
       "! <p class="shorttext">Implementation</p>
       "! Implementation
