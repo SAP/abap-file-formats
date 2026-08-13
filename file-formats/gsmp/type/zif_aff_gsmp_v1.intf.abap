@@ -55,7 +55,7 @@ INTERFACE zif_aff_gsmp_v1
       "! <p class="shorttext">Priority</p>
       "! Priority
       "! $required
-      priority   TYPE ty_priority,
+      priority        TYPE ty_priority,
 
       "! <p class="shorttext">Instantiation</p>
       "! Instantiation
