@@ -75,7 +75,7 @@ INTERFACE zif_aff_gsmp_v1
 
       "! <p class="shorttext">JSON Data</p>
       "! JSON data
-      data     TYPE string,
+      data TYPE string,
 
     END OF ty_model.
 
