@@ -5,26 +5,26 @@ INTERFACE zif_aff_gsmp_v1
 
     "! <p class="shorttext">Type</p>
     "! Type
-    "! $values {@link zif_aff_gsmp_v1.data:co_provider_type}
-    "! $default {@link zif_aff_gsmp_v1.data:co_provider_type.class}
+    "! $values {@link if_aff_gsmp_v1.data:co_provider_type}
+    "! $default {@link if_aff_gsmp_v1.data:co_provider_type.class}
     ty_provider_type  TYPE c LENGTH 4,
 
     "! <p class="shorttext">Execution Mode</p>
     "! Execution mode
-    "! $values {@link zif_aff_gsmp_v1.data:co_execution_mode}
+    "! $values {@link if_aff_gsmp_v1.data:co_execution_mode}
     ty_execution_mode TYPE c LENGTH 1,
 
 
     "! <p class="shorttext">Priority</p>
     "! Priority
-    "! $values {@link zif_aff_gsmp_v1.data:co_priority}
-    "! $default {@link zif_aff_gsmp_v1.data:co_priority.normal}
+    "! $values {@link if_aff_gsmp_v1.data:co_priority}
+    "! $default {@link if_aff_gsmp_v1.data:co_priority.normal}
     ty_priority   TYPE i,
 
     "! <p class="shorttext">Instantiation</p>
     "! Instantiation
-    "! $values {@link zif_aff_gsmp_v1.data:co_instantiation}
-    "! $default {@link zif_aff_gsmp_v1.data:co_instantiation.create_new}
+    "! $values {@link if_aff_gsmp_v1.data:co_instantiation}
+    "! $default {@link if_aff_gsmp_v1.data:co_instantiation.create_new}
     ty_instantiation TYPE c LENGTH 1,
 
     "! <p class="shorttext">Implementation</p>
@@ -39,7 +39,7 @@ INTERFACE zif_aff_gsmp_v1
       "! <p class="shorttext">Name</p>
       "! Name
       "! $required
-      name TYPE zif_aff_types_v1=>ty_object_name_30,
+      name TYPE if_aff_types_v1=>ty_object_name_30,
 
     END OF ty_provider_implementation,
 
@@ -50,22 +50,22 @@ INTERFACE zif_aff_gsmp_v1
       "! <p class="shorttext">Mode</p>
       "! Mode
       "! $required
-      mode            TYPE ty_execution_mode,
+      mode TYPE ty_execution_mode,
 
       "! <p class="shorttext">Priority</p>
       "! Priority
       "! $required
-      priority        TYPE ty_priority,
+      priority   TYPE ty_priority,
 
       "! <p class="shorttext">Instantiation</p>
       "! Instantiation
       "! $showAlways
-      instantiation   TYPE ty_instantiation,
+      instantiation TYPE ty_instantiation,
 
       "! <p class="shorttext">Scope Dependent</p>
       "! Scope dependent
       "! $required
-      scope_dependent TYPE abap_bool,
+      scope_dependent       TYPE abap_bool,
 
     END OF ty_provider_execution,
 
@@ -75,7 +75,7 @@ INTERFACE zif_aff_gsmp_v1
 
       "! <p class="shorttext">JSON Data</p>
       "! JSON data
-      data TYPE string,
+      data     TYPE string,
 
     END OF ty_model.
 
@@ -111,6 +111,10 @@ INTERFACE zif_aff_gsmp_v1
       "! <p class="shorttext">Job</p>
       "! Job
       job        TYPE ty_execution_mode VALUE 'J',
+
+      "! <p class="shorttext">Extension</p>
+      "! Extension
+      extension  TYPE ty_execution_mode VALUE 'E',
 
       "! <p class="shorttext">None</p>
       "! No execution. Only model. Data from external.
@@ -165,12 +169,12 @@ INTERFACE zif_aff_gsmp_v1
     BEGIN OF ty_main,
 
       "! $required
-      format_version TYPE zif_aff_types_v1=>ty_format_version,
+      format_version TYPE if_aff_types_v1=>ty_format_version,
 
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header         TYPE zif_aff_types_v1=>ty_header_60_cloud,
+      header         TYPE if_aff_types_v1=>ty_header_60_cloud,
 
       "! <p class="shorttext">Implementation</p>
       "! Implementation
@@ -180,11 +184,11 @@ INTERFACE zif_aff_gsmp_v1
       "! <p class="shorttext">Execution</p>
       "! Execution
       "! $required
-      execution      TYPE ty_provider_execution,
+      execution TYPE ty_provider_execution,
 
       "! <p class="shorttext">Model</p>
       "! Model
-      model          TYPE ty_model,
+      model     TYPE ty_model,
 
     END OF ty_main.
 
