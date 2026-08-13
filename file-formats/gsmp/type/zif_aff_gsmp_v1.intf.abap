@@ -152,6 +152,10 @@ INTERFACE zif_aff_gsmp_v1
       "! Creating new instances
       create_new  TYPE ty_instantiation VALUE 'C',
 
+      "! <p class="shorttext">Creating New Asynchronous Instances</p>
+      "! Creating new asynchronous instances
+      async       TYPE ty_instantiation VALUE 'A',
+
     END OF co_instantiation.
 
   TYPES:
