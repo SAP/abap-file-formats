@@ -65,7 +65,7 @@ INTERFACE zif_aff_gsmp_v1
       "! <p class="shorttext">Scope Dependent</p>
       "! Scope dependent
       "! $required
-      scope_dependent       TYPE abap_bool,
+      scope_dependent TYPE abap_bool,
 
     END OF ty_provider_execution,
 
