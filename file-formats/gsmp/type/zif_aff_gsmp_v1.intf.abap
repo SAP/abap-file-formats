@@ -50,7 +50,7 @@ INTERFACE zif_aff_gsmp_v1
       "! <p class="shorttext">Mode</p>
       "! Mode
       "! $required
-      mode TYPE ty_execution_mode,
+      mode            TYPE ty_execution_mode,
 
       "! <p class="shorttext">Priority</p>
       "! Priority
