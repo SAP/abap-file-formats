@@ -215,18 +215,18 @@ INTERFACE zif_aff_smbc_v1
     ty_object_pages   TYPE SORTED TABLE OF ty_object_page WITH UNIQUE KEY entity_set,
     "! <p class="shorttext synchronized" >Table Settings</p>
     ty_table_settings TYPE SORTED TABLE OF ty_table_setting WITH UNIQUE KEY entity_set,
-    "! <p class="shorttext synchronized" >Hiding draft related features</p>
+    "! <p class="shorttext synchronized" >Hiding Draft Related Features</p>
     BEGIN OF ty_hide_draft,
-      "! <p class="shorttext synchronized" >Hide all features related to draft handling</p>
+      "! <p class="shorttext synchronized" >Hide All Features Related to Draft Handling</p>
       enabled                   TYPE abap_bool,
-      "! <p class="shorttext synchronized" >Stay on current page after save</p>
+      "! <p class="shorttext synchronized" >Stay on Current Page After Save</p>
       stay_on_page_after_save   TYPE abap_bool,
-      "! <p class="shorttext synchronized" >Stay on current page after cancel</p>
+      "! <p class="shorttext synchronized" >Stay on Current Page After Cancel</p>
       stay_on_page_after_cancel TYPE abap_bool,
-      "! <p class="shorttext synchronized" >Hide create next button</p>
+      "! <p class="shorttext synchronized" >Hide Create Next Button</p>
       hide_create_next          TYPE abap_bool,
     END OF ty_hide_draft,
-    "! <p class="shorttext synchronized" >Fiori Elements app settings</p>
+    "! <p class="shorttext synchronized" >Fiori Elements App Settings</p>
     BEGIN OF ty_fiori_elements_app,
       hide_draft TYPE ty_hide_draft,
     END OF ty_fiori_elements_app,
