@@ -184,7 +184,7 @@ INTERFACE zif_aff_gsmp_v1
       "! <p class="shorttext">Execution</p>
       "! Execution
       "! $required
-      execution TYPE ty_provider_execution,
+      execution      TYPE ty_provider_execution,
 
       "! <p class="shorttext">Model</p>
       "! Model
