@@ -86,6 +86,12 @@
           "type": "string",
           "maxLength": 50
         },
+        "transportObject": {
+          "title": "Transport Object",
+          "type": "string",
+          "minLength": 11,
+          "maxLength": 31
+        },
         "configurationGroup": {
           "title": "Configuration Group",
           "type": "string",
@@ -107,9 +113,39 @@
       ]
     },
     "appConfiguration": {
-      "title": "Confguration of List Report and Object Pages",
+      "title": "Configuration of List Report and Object Pages",
       "type": "object",
       "properties": {
+        "fioriElementsApp": {
+          "title": "Fiori Elements App Settings",
+          "type": "object",
+          "properties": {
+            "hideDraft": {
+              "title": "Hiding Draft Related Features",
+              "type": "object",
+              "properties": {
+                "enabled": {
+                  "title": "Hide All Features Related to Draft handling",
+                  "type": "boolean"
+                },
+                "stayOnPageAfterSave": {
+                  "title": "Stay on Current Page After Save",
+                  "type": "boolean"
+                },
+                "stayOnPageAfterCancel": {
+                  "title": "Stay on Current Page After Cancel",
+                  "type": "boolean"
+                },
+                "hideCreateNext": {
+                  "title": "Hide Create Next Button",
+                  "type": "boolean"
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "additionalProperties": false
+        },
         "listReport": {
           "title": "List Report Configuration",
           "type": "object",
@@ -221,11 +257,13 @@
                 "type": "string",
                 "enum": [
                   "responsiveTable",
-                  "gridTable"
+                  "gridTable",
+                  "treeTable"
                 ],
                 "enumTitles": [
                   "Responsive Table",
-                  "Grid Table"
+                  "Grid Table",
+                  "Tree Table"
                 ],
                 "default": "responsiveTable"
               },
@@ -257,15 +295,18 @@
                 "type": "string",
                 "enum": [
                   "fixed",
-                  "auto"
+                  "auto",
+                  "interactive"
                 ],
                 "enumTitles": [
                   "Fixed",
-                  "Automatic"
+                  "Automatic",
+                  "Interactive"
                 ],
                 "enumDescriptions": [
                   "The table always has as many rows as defined in the visibleRowCount property",
-                  "The visibleRowCount property is changed by the table automatically"
+                  "The visibleRowCount property is changed by the table automatically",
+                  "The user can change the number of displayed rows by dragging a resize handle"
                 ],
                 "default": "fixed"
               },
@@ -283,6 +324,20 @@
                 "type": "integer",
                 "minimum": 0,
                 "maximum": 30
+              },
+              "threshold": {
+                "title": "Threshold",
+                "description": "Number of initially loaded rows",
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 100000
+              },
+              "scrollThreshold": {
+                "title": "Scroll Threshold",
+                "description": "Additional records loaded when scrolling",
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 100000
               },
               "creationModeName": {
                 "title": "Table Creation Mode",
@@ -329,7 +384,7 @@
               },
               "condensedTableLayout": {
                 "title": "Condensed Table Layout",
-                "description": "If true, display rows in a condensed way. Only applicaple to Table Type 'GridTable'.",
+                "description": "If true, display rows in a condensed way. Only applicable to Table Type 'GridTable'.",
                 "type": "boolean"
               },
               "widthIncludingColumnHeader": {
