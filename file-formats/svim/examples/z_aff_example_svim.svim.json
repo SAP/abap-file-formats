@@ -4,7 +4,7 @@
     "description": "Global Parameters of Countries/Regions (New System)",
     "originalLanguage": "en"
   },
-  "attributes": {
+  "generalInformation": {
     "functionGroup": "0ADR",
     "screenLayout": "overviewAndDetail",
     "overviewScreenNumber": "140",

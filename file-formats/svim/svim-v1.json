@@ -54,8 +54,8 @@
         "originalLanguage"
       ]
     },
-    "attributes": {
-      "title": "Attributes",
+    "generalInformation": {
+      "title": "General Information",
       "description": "Screen layout and configuration of the generated maintenance dialog",
       "type": "object",
       "properties": {
@@ -273,6 +273,6 @@
   "required": [
     "formatVersion",
     "header",
-    "attributes"
+    "generalInformation"
   ]
 }

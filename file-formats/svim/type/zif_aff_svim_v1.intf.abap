@@ -217,18 +217,18 @@ INTERFACE zif_aff_svim_v1
       "! <p class="shorttext">Format Version</p>
       "! Version of the AFF format used to serialize this object
       "! $required
-      format_version TYPE zif_aff_types_v1=>ty_format_version,
+      format_version      TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Administrative header data: object name and description
       "! $required
-      header         TYPE zif_aff_types_v1=>ty_header_60_cloud,
-      "! <p class="shorttext">Attributes</p>
+      header              TYPE zif_aff_types_v1=>ty_header_60_cloud,
+      "! <p class="shorttext">General Information</p>
       "! Screen layout and configuration of the generated maintenance dialog
       "! $required
-      attributes     TYPE ty_attributes,
+      general_information TYPE ty_attributes,
       "! <p class="shorttext">Extended Table Maintenance Events</p>
       "! Optional extended table maintenance events called at specific points during maintenance (table TVIMF)
-      events         TYPE ty_events,
+      events              TYPE ty_events,
     END OF ty_main.
 
 ENDINTERFACE.
