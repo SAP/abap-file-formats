@@ -330,16 +330,14 @@
                 "description": "Number of initially loaded rows",
                 "type": "integer",
                 "minimum": 0,
-                "maximum": 100000,
-                "default": 100
+                "maximum": 100000
               },
               "scrollThreshold": {
                 "title": "Scroll Threshold",
                 "description": "Additional records loaded when scrolling",
                 "type": "integer",
                 "minimum": 1,
-                "maximum": 100000,
-                "default": 300
+                "maximum": 100000
               },
               "creationModeName": {
                 "title": "Table Creation Mode",

@@ -172,13 +172,11 @@ INTERFACE zif_aff_smbc_v1
       "! Number of initially loaded rows
       "! $minimum 0
       "! $maximum 100000
-      "! $default '100'
       threshold                     TYPE i,
       "! <p class="shorttext synchronized">Scroll Threshold</p>
       "! Additional records loaded when scrolling
       "! $minimum 1
       "! $maximum 100000
-      "! $default '300'
       scroll_threshold              TYPE i,
       "! <p class="shorttext synchronized">Table Creation Mode</p>
       "! $values {@link zif_aff_smbc_v1.data:co_creation_mode_name}
