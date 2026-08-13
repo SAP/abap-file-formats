@@ -60,7 +60,7 @@ INTERFACE zif_aff_gsmp_v1
       "! <p class="shorttext">Instantiation</p>
       "! Instantiation
       "! $showAlways
-      instantiation TYPE ty_instantiation,
+      instantiation   TYPE ty_instantiation,
 
       "! <p class="shorttext">Scope Dependent</p>
       "! Scope dependent
