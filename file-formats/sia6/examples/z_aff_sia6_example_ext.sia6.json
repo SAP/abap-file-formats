@@ -6,37 +6,32 @@
     "abapLanguageVersion": "cloudDevelopment"
   },
   "generalInformation": {
-    "type": "EXT",
+    "appType": "external",
     "uiadId": "",
     "transactionCode": "",
-    "publishingStatus": "p",
-    "restrictionTypeMigStatus": "3"
+    "restrictionTypeMigStatus": "migrated"
   },
   "services": [
     {
       "name": "Z_SRVC_EXAMPLE",
       "description": "Example service",
-      "type": "G4BA",
-      "typeText": "OData V4",
-      "srvcId": "30C9E656A21BF6F30B3DA55ABE8BF8",
-      "srvcType": "HT",
-      "srcUiad": "",
-      "srcTransactionCode": ""
+      "type": "odataV4",
+      "serviceId": "30C9E656A21BF6F30B3DA55ABE8BF8",
+      "uiadIdSource": "",
+      "transactionCodeSource": ""
     }
   ],
-  "authObjects": [
+  "authorizationObjects": [
     {
       "id": "Z_AUTH_OBJ",
-      "status": "S",
+      "status": "standard",
       "description": "Example authorization object",
-      "auths": [
+      "authorizations": [
         {
-          "uuid": "397F5913BC011FD1A5937CB7875E368C",
-          "authObjectId": "Z_AUTH_OBJ",
+          "authorizationObjectId": "Z_AUTH_OBJ",
           "number": "0001",
-          "srcIbs": "30C9E656A21BF6F30B3DA55ABE8BF8",
-          "srcIbsType": "HT",
-          "status": "S",
+          "serviceIdSource": "30C9E656A21BF6F30B3DA55ABE8BF8",
+          "status": "standard",
           "fields": [
             {
               "id": "ACTVT",
@@ -46,8 +41,8 @@
                   "highValue": ""
                 }
               ],
-              "status": "S",
-              "isActvt": true
+              "status": "standard",
+              "isActivity": true
             },
             {
               "id": "Z_AUTH_FLD",
@@ -57,7 +52,7 @@
                   "highValue": "B"
                 }
               ],
-              "status": "S"
+              "status": "standard"
             }
           ]
         }

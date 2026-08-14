@@ -62,21 +62,41 @@
       "description": "General information",
       "type": "object",
       "properties": {
-        "type": {
-          "title": "Application Type",
-          "description": "Type of the IAM application",
+        "appType": {
+          "title": "App Type",
+          "description": "Type of the IAM app",
           "type": "string",
-          "maxLength": 4
+          "enum": [
+            "external",
+            "customInboundService",
+            "businessConfigurations",
+            "appJobCatalogEntry",
+            "uiAdaptation"
+          ],
+          "enumTitles": [
+            "External App",
+            "Custom Inbound Service App",
+            "Business Configurations App",
+            "Application Job Catalog Entry",
+            "UI Adaptation App"
+          ],
+          "enumDescriptions": [
+            "External app",
+            "Custom inbound service app",
+            "Business configurations app",
+            "Application job catalog entry",
+            "UI adaptation app"
+          ]
         },
         "uiadId": {
-          "title": "UI5 App ID",
-          "description": "UI5 application identifier linked to this IAM application",
+          "title": "Launchpad App Descriptor Item ID",
+          "description": "Launchpad app descriptor item linked to this IAM app",
           "type": "string",
           "maxLength": 32
         },
         "transactionCode": {
           "title": "Transaction Code",
-          "description": "Transaction code linked to this IAM application",
+          "description": "Transaction code linked to this IAM app",
           "type": "string",
           "maxLength": 20
         },
@@ -85,22 +105,27 @@
           "description": "Indicates whether the application is scope-dependent",
           "type": "boolean"
         },
-        "publishingStatus": {
-          "title": "Publishing Status",
-          "description": "Publishing status of the application",
-          "type": "string",
-          "maxLength": 1
-        },
         "restrictionTypeMigStatus": {
           "title": "Restriction Type Migration Status",
           "description": "Migration status for restriction types",
           "type": "string",
-          "maxLength": 1
+          "enum": [
+            "notMigrated",
+            "migrated"
+          ],
+          "enumTitles": [
+            "Not Migrated",
+            "Migrated"
+          ],
+          "enumDescriptions": [
+            "Not migrated",
+            "Migrated"
+          ]
         }
       },
       "additionalProperties": false,
       "required": [
-        "type"
+        "appType"
       ]
     },
     "services": {
@@ -128,33 +153,44 @@
             "title": "Service Type",
             "description": "Type of the service",
             "type": "string",
-            "maxLength": 10
+            "enum": [
+              "odataV2",
+              "odataV2Deprecated",
+              "odataV4",
+              "http",
+              "inaUi",
+              "sql1Service"
+            ],
+            "enumTitles": [
+              "OData V2",
+              "OData V2 (Deprecated)",
+              "OData V4",
+              "HTTP Service",
+              "InA (Information Access) - UI",
+              "SQL1 Service"
+            ],
+            "enumDescriptions": [
+              "OData V2 service",
+              "OData V2 service (deprecated)",
+              "OData V4 service",
+              "HTTP service",
+              "InA (Information Access) - UI",
+              "SQL1 service"
+            ]
           },
-          "typeText": {
-            "title": "Related Service Type Text",
-            "description": "Display text for the service type",
-            "type": "string",
-            "maxLength": 80
-          },
-          "srvcId": {
-            "title": "Underlying Service ID",
+          "serviceId": {
+            "title": "Service ID",
             "description": "ID of the underlying service",
             "type": "string",
             "maxLength": 30
           },
-          "srvcType": {
-            "title": "Underlying Service Type",
-            "description": "Type of the underlying service",
-            "type": "string",
-            "maxLength": 2
-          },
-          "srcUiad": {
-            "title": "UI5 App ID Source",
-            "description": "UI5 application identifier assigned as service source",
+          "uiadIdSource": {
+            "title": "Launchpad App Descriptor Item ID Source",
+            "description": "Launchpad app descriptor item assigned as service source",
             "type": "string",
             "maxLength": 32
           },
-          "srcTransactionCode": {
+          "transactionCodeSource": {
             "title": "Transaction Code Source",
             "description": "Transaction code used as service source",
             "type": "string",
@@ -168,7 +204,7 @@
         ]
       }
     },
-    "authObjects": {
+    "authorizationObjects": {
       "title": "Authorization Objects",
       "description": "Authorization default objects and values",
       "type": "array",
@@ -188,7 +224,24 @@
             "title": "Status",
             "description": "Maintenance status of authorization object",
             "type": "string",
-            "maxLength": 2
+            "enum": [
+              "standard",
+              "maintained",
+              "changed",
+              "updated"
+            ],
+            "enumTitles": [
+              "Standard",
+              "Maintained",
+              "Changed",
+              "Updated"
+            ],
+            "enumDescriptions": [
+              "Standard",
+              "Maintained",
+              "Changed",
+              "Updated"
+            ]
           },
           "description": {
             "title": "Description",
@@ -196,7 +249,7 @@
             "type": "string",
             "maxLength": 60
           },
-          "auths": {
+          "authorizations": {
             "title": "Authorization Instances",
             "description": "Authorization object instances",
             "type": "array",
@@ -206,13 +259,7 @@
               "description": "Authorization object instance",
               "type": "object",
               "properties": {
-                "uuid": {
-                  "title": "UUID",
-                  "description": "Unique identifier of the authorization instance",
-                  "type": "string",
-                  "maxLength": 32
-                },
-                "authObjectId": {
+                "authorizationObjectId": {
                   "title": "Authorization Object ID",
                   "description": "ID of the authorization object",
                   "type": "string",
@@ -225,34 +272,39 @@
                   "maxLength": 4,
                   "pattern": "^[0-9]+$"
                 },
-                "srcIbs": {
-                  "title": "IBS Source",
-                  "description": "Inbound service source",
+                "serviceIdSource": {
+                  "title": "Service ID Source",
+                  "description": "Service ID source",
                   "type": "string",
                   "maxLength": 30
-                },
-                "srcIbsType": {
-                  "title": "IBS Source Type",
-                  "description": "Inbound service source type",
-                  "type": "string",
-                  "maxLength": 2
                 },
                 "status": {
                   "title": "Status",
                   "description": "Maintenance status of authorization instance",
                   "type": "string",
-                  "maxLength": 2
+                  "enum": [
+                    "standard",
+                    "maintained",
+                    "changed",
+                    "updated"
+                  ],
+                  "enumTitles": [
+                    "Standard",
+                    "Maintained",
+                    "Changed",
+                    "Updated"
+                  ],
+                  "enumDescriptions": [
+                    "Standard",
+                    "Maintained",
+                    "Changed",
+                    "Updated"
+                  ]
                 },
                 "isInactive": {
                   "title": "Is Inactive",
                   "description": "Indicates whether the authorization instance is inactive",
                   "type": "boolean"
-                },
-                "copied": {
-                  "title": "Copied",
-                  "description": "Indicates whether the authorization instance was copied",
-                  "type": "string",
-                  "maxLength": 1
                 },
                 "fields": {
                   "title": "Fields",
@@ -299,18 +351,29 @@
                         "title": "Status",
                         "description": "Maintenance status of authorization field",
                         "type": "string",
-                        "maxLength": 2
+                        "enum": [
+                          "standard",
+                          "maintained",
+                          "changed",
+                          "updated"
+                        ],
+                        "enumTitles": [
+                          "Standard",
+                          "Maintained",
+                          "Changed",
+                          "Updated"
+                        ],
+                        "enumDescriptions": [
+                          "Standard",
+                          "Maintained",
+                          "Changed",
+                          "Updated"
+                        ]
                       },
-                      "isActvt": {
+                      "isActivity": {
                         "title": "Is Activity Field",
                         "description": "Indicates whether the field is an activity field",
                         "type": "boolean"
-                      },
-                      "copied": {
-                        "title": "Copied",
-                        "description": "Indicates whether the field was copied",
-                        "type": "string",
-                        "maxLength": 1
                       }
                     },
                     "additionalProperties": false,
@@ -322,7 +385,7 @@
               },
               "additionalProperties": false,
               "required": [
-                "authObjectId",
+                "authorizationObjectId",
                 "number"
               ]
             }
