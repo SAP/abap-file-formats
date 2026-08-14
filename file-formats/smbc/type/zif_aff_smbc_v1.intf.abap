@@ -170,13 +170,15 @@ INTERFACE zif_aff_smbc_v1
       frozen_column_count           TYPE i,
       "! <p class="shorttext synchronized">Threshold</p>
       "! Number of initially loaded rows
-      "! $minimum 0
+      "! $minimum 1
       "! $maximum 100000
+      "! $default '100'
       threshold                     TYPE i,
       "! <p class="shorttext synchronized">Scroll Threshold</p>
       "! Additional records loaded when scrolling
       "! $minimum 1
       "! $maximum 100000
+      "! $default '300'
       scroll_threshold              TYPE i,
       "! <p class="shorttext synchronized">Table Creation Mode</p>
       "! $values {@link zif_aff_smbc_v1.data:co_creation_mode_name}
@@ -217,7 +219,7 @@ INTERFACE zif_aff_smbc_v1
     ty_table_settings TYPE SORTED TABLE OF ty_table_setting WITH UNIQUE KEY entity_set,
     "! <p class="shorttext synchronized" >Hiding Draft Related Features</p>
     BEGIN OF ty_hide_draft,
-      "! <p class="shorttext synchronized" >Hide All Features Related to Draft handling</p>
+      "! <p class="shorttext synchronized" >Hide All Features Related to Draft Handling</p>
       enabled                   TYPE abap_bool,
       "! <p class="shorttext synchronized" >Stay on Current Page After Save</p>
       stay_on_page_after_save   TYPE abap_bool,
