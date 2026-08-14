@@ -4,7 +4,7 @@ INTERFACE zif_aff_sia6_v1
   "! <p class="shorttext">Inbound Service Type</p>
   "! Type of the inbound service
   "! $values {@link zif_aff_sia6_v1.data:co_service_type }
-  TYPES ty_service_type TYPE c LENGTH 10.
+  TYPES ty_service_type TYPE c LENGTH 4.
 
   "! <p class="shorttext">Authorization Object Status</p>
   "! Maintenance status of authorization objects
@@ -28,27 +28,27 @@ INTERFACE zif_aff_sia6_v1
 
       "! <p class="shorttext">OData V2</p>
       "! OData V2 service
-      odata_v2               TYPE ty_service_type VALUE 'IWSV',
+      odata_v2            TYPE ty_service_type VALUE 'IWSV',
 
       "! <p class="shorttext">OData V2 (Deprecated)</p>
       "! OData V2 service (deprecated)
-      odata_v2_deprecated    TYPE ty_service_type VALUE 'IWSG',
+      odata_v2_deprecated TYPE ty_service_type VALUE 'IWSG',
 
       "! <p class="shorttext">OData V4</p>
       "! OData V4 service
-      odata_v4               TYPE ty_service_type VALUE 'G4BA',
+      odata_v4            TYPE ty_service_type VALUE 'G4BA',
 
       "! <p class="shorttext">HTTP Service</p>
       "! HTTP service
-      http                   TYPE ty_service_type VALUE 'HTTP',
+      http                TYPE ty_service_type VALUE 'HTTP',
 
       "! <p class="shorttext">InA (Information Access) - UI</p>
       "! InA (Information Access) - UI
-      ina_ui                 TYPE ty_service_type VALUE 'INA1',
+      ina_ui              TYPE ty_service_type VALUE 'INA1',
 
       "! <p class="shorttext">SQL1 Service</p>
       "! SQL1 service
-      sql1_service           TYPE ty_service_type VALUE 'SQL1',
+      sql1_service        TYPE ty_service_type VALUE 'SQL1',
 
     END OF co_service_type.
 
@@ -82,23 +82,23 @@ INTERFACE zif_aff_sia6_v1
 
       "! <p class="shorttext">External App</p>
       "! External app
-      external                  TYPE ty_app_type VALUE 'EXT',
+      external                TYPE ty_app_type VALUE 'EXT',
 
       "! <p class="shorttext">Custom Inbound Service App</p>
       "! Custom inbound service app
-      custom_inbound_service    TYPE ty_app_type VALUE 'IBS',
+      custom_inbound_service  TYPE ty_app_type VALUE 'IBS',
 
       "! <p class="shorttext">Business Configurations App</p>
       "! Business configurations app
-      business_configurations   TYPE ty_app_type VALUE 'MBC',
+      business_configurations TYPE ty_app_type VALUE 'MBC',
 
       "! <p class="shorttext">Application Job Catalog Entry</p>
       "! Application job catalog entry
-      app_job_catalog_entry     TYPE ty_app_type VALUE 'SAJC',
+      app_job_catalog_entry   TYPE ty_app_type VALUE 'SAJC',
 
       "! <p class="shorttext">UI Adaptation App</p>
       "! UI adaptation app
-      ui_adaptation             TYPE ty_app_type VALUE 'UI5A',
+      ui_adaptation           TYPE ty_app_type VALUE 'UI5A',
 
     END OF co_app_type.
 
