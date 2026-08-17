@@ -145,8 +145,7 @@
         "name",
         "type",
         "applicationName",
-        "applicationType",
-        "defaultValuesRequired"
+        "applicationType"
       ]
     },
     "authorizationObjects": {
