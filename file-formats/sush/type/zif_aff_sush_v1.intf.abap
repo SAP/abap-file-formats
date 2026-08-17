@@ -69,11 +69,11 @@ INTERFACE zif_aff_sush_v1
       "! <p class="shorttext">Name</p>
       "! Name of the authorization default
       "! $required
-      name        TYPE ty_application_name,
+      name                    TYPE ty_application_name,
       "! <p class="shorttext">Type</p>
       "! Type of authorization defaults
       "! $required
-      type        TYPE ty_application_type,
+      type                    TYPE ty_application_type,
       "! <p class="shorttext">Application Name</p>
       "! Display name of the authorization default
       "! $required
@@ -185,10 +185,10 @@ INTERFACE zif_aff_sush_v1
       "! <p class="shorttext">Object</p>
       "! Name of the authorization object
       "! $required
-      object_name   TYPE ty_auth_object_name,
+      object_name        TYPE ty_auth_object_name,
       "! <p class="shorttext">Object Text</p>
       "! Description of the authorization object
-      object_text   TYPE ty_auth_object_text,
+      object_text        TYPE ty_auth_object_text,
       "! <p class="shorttext">Maintenance Status</p>
       "! The maintenance status of an authorization object controls if AUTHORITY-CHECK runs for
       "! it in its application and whether an authorization default is added to a data of role
