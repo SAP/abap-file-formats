@@ -159,9 +159,9 @@ INTERFACE zif_aff_svim_v1
     END OF co_event_code.
 
   TYPES:
-    "! <p class="shorttext">Attributes</p>
+    "! <p class="shorttext">General Information</p>
     "! Screen layout and configuration attributes of the generated maintenance dialog
-    BEGIN OF ty_attributes,
+    BEGIN OF ty_general_information,
       "! <p class="shorttext">Function Group</p>
       "! Name of the function group that contains the generated maintenance screens (TVDIR-AREA)
       "! $required
@@ -189,7 +189,7 @@ INTERFACE zif_aff_svim_v1
       "! $default {@link zif_aff_svim_v1.data:co_transport_recording.standard}
       "! $showAlways
       transport_recording    TYPE ty_transport_recording,
-    END OF ty_attributes.
+    END OF ty_general_information.
 
   TYPES:
     "! <p class="shorttext">Extended Table Maintenance Event</p>
@@ -225,7 +225,7 @@ INTERFACE zif_aff_svim_v1
       "! <p class="shorttext">General Information</p>
       "! Screen layout and configuration of the generated maintenance dialog
       "! $required
-      general_information TYPE ty_attributes,
+      general_information TYPE ty_general_information,
       "! <p class="shorttext">Extended Table Maintenance Events</p>
       "! Optional extended table maintenance events called at specific points during maintenance (table TVIMF)
       events              TYPE ty_events,
