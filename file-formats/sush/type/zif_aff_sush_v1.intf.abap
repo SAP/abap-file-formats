@@ -89,7 +89,6 @@ INTERFACE zif_aff_sush_v1
       "! <p class="shorttext">Default Values Required</p>
       "! Indicates that no authorization defaults are defined.
       "! Used on cloud systems only.
-      "! $required
       default_values_required TYPE ty_default_values_required,
       "! <p class="shorttext">Documentation</p>
       "! Authorization defaults documentation for application.
