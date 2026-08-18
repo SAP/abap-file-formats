@@ -110,8 +110,8 @@
             "This mode is appropriate as long as maintenance of default data has not been completed yet. New objects whose check has been detected by the authorization trace are added to the object list in change mode with the maintenance status Not maintained.",
             "In change mode, all authorization objects added from the authorization trace are automatically assigned the default status No Default.",
             "Only authorization objects from the application areas Basis (S_*) and HR (P_* and PLOG) are automatically added with the default status No Default. All other new objects are given the status Unmaintained, which must be changed.",
-            "This mode is given to all applications for whose execution only the start authorization is required.",
-            "It is used to classify applications that are not being developed any more but that can still be used.",
+            "This modus is given to all applications for whose execution only the start authorization is required.",
+            "It is used to classify applications that are not being developed any more but that can still be used. In the case of transactions, it is possible to designate successor transactions.",
             "This mode is used to classify applications that are not being developed any more and because of this do not meet important functional requirements or are not needed any more."
           ],
           "default": "manual"
@@ -132,7 +132,7 @@
             "Default values are required",
             "Default values are not required"
           ],
-          "default": "no"
+          "default": "yes"
         },
         "documentation": {
           "title": "Documentation",
@@ -157,13 +157,13 @@
         "description": "Authorization default values define which authorization objects and field values are automatically proposed when creating roles, simplifying role maintenance and ensuring consistent security settings across users and roles.",
         "type": "object",
         "properties": {
-          "objectName": {
+          "authObjectName": {
             "title": "Object",
             "description": "Name of the authorization object",
             "type": "string",
             "maxLength": 10
           },
-          "objectText": {
+          "authObjectText": {
             "title": "Object Text",
             "description": "Description of the authorization object",
             "type": "string",
@@ -178,24 +178,21 @@
               "noDefault",
               "defaultWithValues",
               "defaultWithoutValues",
-              "inactiveValues",
-              "noAuthorizationCheck"
+              "inactiveValues"
             ],
             "enumTitles": [
               "Undefined",
               "No Default",
               "Default With Field Values",
               "Default Without Field Values",
-              "Default Inactive",
-              "No Authorization Check"
+              "Default Inactive"
             ],
             "enumDescriptions": [
               "The maintenance status is undefined and must be specified.",
-              "This status is given to all objects that are not required for the execution of functions in the application.",
+              "This status is given to all objects that are not required for the execution of functions in the application. The authorization check is executed in exactly the same way the statuses described above.",
               "This default status is assigned to all objects that are used to protect functions within the associated application and for which the delivery of fixed values in one or more authorization fields would help to simplify authorization maintenance in roles.",
               "This status is suitable for objects whose authorizations are required for using an application, but all of whose authorization fields have to be maintained by the role administrator with customer-specific values.",
-              "For objects with this status, the authorization check always returns the value sy-subrc = 0 regardless of which authorizations the user actually has.",
-              "No authorization check is performed for this object. Used on cloud systems only."
+              "For objects with this status, the authorization check always returns the value sy-subrc = 0 regardless of which authorizations the user actually has. For objects belonging to the application areas Basis (S_*) and HR (P_* and PLOG), it is forbidden."
             ],
             "default": "defaultWithValues"
           },
@@ -204,57 +201,41 @@
             "description": "Authorization default documentation for object",
             "type": "string"
           },
-          "fields": {
+          "authObjectFieldValues": {
             "title": "Authorization Field Values",
-            "description": "Authorization field values",
+            "description": "Authorization defaults authorization field value",
             "type": "array",
             "items": {
               "title": "Authorization Field Values",
-              "description": "Authorization field with value ranges",
+              "description": "Authorization defaults authorization field value",
               "type": "object",
               "properties": {
-                "field": {
+                "authFieldName": {
                   "title": "Authorization Field",
-                  "description": "Name of the authorization field",
+                  "description": "Authorization field",
                   "type": "string",
                   "maxLength": 10
                 },
-                "values": {
-                  "title": "Values",
-                  "description": "Authorization field value ranges",
-                  "type": "array",
-                  "items": {
-                    "title": "Value Range",
-                    "description": "Authorization field value range",
-                    "type": "object",
-                    "properties": {
-                      "low": {
-                        "title": "From",
-                        "description": "From value",
-                        "type": "string",
-                        "maxLength": 40
-                      },
-                      "high": {
-                        "title": "To",
-                        "description": "To value",
-                        "type": "string",
-                        "maxLength": 40
-                      }
-                    },
-                    "additionalProperties": false
-                  }
+                "authFieldLowValue": {
+                  "title": "From",
+                  "description": "From value",
+                  "type": "string",
+                  "maxLength": 40
+                },
+                "authFieldHighValue": {
+                  "title": "To",
+                  "description": "To value",
+                  "type": "string",
+                  "maxLength": 40
                 }
               },
-              "additionalProperties": false,
-              "required": [
-                "field"
-              ]
+              "additionalProperties": false
             }
           }
         },
         "additionalProperties": false,
         "required": [
-          "objectName"
+          "authObjectName"
         ]
       }
     }

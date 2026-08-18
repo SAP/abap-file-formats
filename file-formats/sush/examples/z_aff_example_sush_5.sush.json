@@ -1,0 +1,33 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "R3TR HTTP Z_YJ_HTTP4",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "name": "0B6828C50B2F522D9A870A0F4DD023",
+    "type": "HT",
+    "applicationName": "Z_YJ_HTTP4",
+    "applicationType": "HTTP",
+    "defaultValuesRequired": "yes"
+  },
+  "authorizationObjects": [
+    {
+      "objectName": "S_START",
+      "objectText": "Start Authorization Check for TADIR Objects",
+      "maintenanceStatus": "noDefault"
+    },
+    {
+      "objectName": "S_TABU_NAM",
+      "objectText": "Table Access by Generic Standard Tools",
+      "maintenanceStatus": "defaultWithValues",
+      "fields": [
+        {
+          "authFieldName": "ACTVT",
+          "authFieldLowValue": "03"
+        }
+      ]
+    }
+  ]
+}

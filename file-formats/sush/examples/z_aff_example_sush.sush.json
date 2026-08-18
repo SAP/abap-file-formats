@@ -5,7 +5,7 @@
     "originalLanguage": "de"
   },
   "generalInformation": {
-    "name": "58325011BD8DCF5D087C6E19CDDCA1HT",
+    "name": "58325011BD8DCF5D087C6E19CDDCA1",
     "type": "HT",
     "applicationName": "ADT_SUSH_SRV",
     "applicationType": "SUCO",
@@ -14,303 +14,109 @@
   "authorizationObjects": [
     {
       "objectName": "S_ABAPDUMP",
-      "objectText": "Authorization for ABAP Dump Analysis"
+      "objectText": "Authorization for ABAP Dump Analysis",
+      "maintenanceStatus": "noDefault"
     },
     {
       "objectName": "S_ABPLNGVS",
-      "objectText": "ABAP Language Version"
+      "objectText": "ABAP Language Version",
+      "maintenanceStatus": "defaultWithoutValues"
     },
     {
       "objectName": "S_ADT_RES",
       "objectText": "ABAP Development Tool Resource",
+      "maintenanceStatus": "defaultWithValues",
       "fields": [
         {
-          "field": "URI",
-          "values": [
-            {
-              "low": "/sap/bc/adt/aps/iam/sush",
-              "high": ""
-            },
-            {
-              "low": "/sap/bc/adt/aps/iam/sush/*",
-              "high": ""
-            }
-          ]
+          "authFieldName": "URI",
+          "authFieldLowValue": "/sap/bc/adt/aps/iam/sush"
+        },
+        {
+          "authFieldName": "URI",
+          "authFieldLowValue": "/sap/bc/adt/aps/iam/sush/*"
         }
       ]
     },
     {
       "objectName": "S_ALV_LAYO",
       "objectText": "ALV Standard Layout",
-      "fields": [
-        {
-          "field": "URI"
-        }
-      ]
+      "maintenanceStatus": "noDefault"
     },
     {
       "objectName": "S_ALV_LAYR",
       "objectText": "ALV Report-Specific Layouts",
-      "fields": [
-        {
-          "field": "URI"
-        }
-      ]
+      "maintenanceStatus": "noDefault"
     },
     {
       "objectName": "S_APPL_LOG",
       "objectText": "Application Log",
-      "fields": [
-        {
-          "field": "URI"
-        }
-      ]
+      "maintenanceStatus": "noDefault"
     },
     {
       "objectName": "S_DATASET",
       "objectText": "Physical Files",
-      "fields": [
-        {
-          "field": "URI"
-        }
-      ]
+      "maintenanceStatus": "noDefault"
     },
     {
       "objectName": "S_DEVELOP",
       "objectText": "ABAP Workbench",
+      "maintenanceStatus": "defaultWithValues",
       "fields": [
         {
-          "field": "DEVCLASS"
-        },
-        {
-          "field": "OBJTYPE",
-          "values": [
-            {
-              "low": "SUSH",
-              "high": ""
-            }
-          ]
-        },
-        {
-          "field": "OBJNAME"
-        },
-        {
-          "field": "P_GROUP"
-        },
-        {
-          "field": "ACTVT"
+          "authFieldName": "OBJTYPE",
+          "authFieldLowValue": "SUSH"
         }
       ]
     },
     {
       "objectName": "S_GUI",
       "objectText": "GUI Objects",
-      "fields": [
-        {
-          "field": "DEVCLASS"
-        },
-        {
-          "field": "OBJTYPE"
-        },
-        {
-          "field": "OBJNAME"
-        },
-        {
-          "field": "P_GROUP"
-        },
-        {
-          "field": "ACTVT"
-        }
-      ]
+      "maintenanceStatus": "noDefault"
     },
     {
       "objectName": "S_ICF_ADM",
       "objectText": "Administration for Internet Communication Framework",
-      "fields": [
-        {
-          "field": "DEVCLASS"
-        },
-        {
-          "field": "OBJTYPE"
-        },
-        {
-          "field": "OBJNAME"
-        },
-        {
-          "field": "P_GROUP"
-        },
-        {
-          "field": "ACTVT"
-        }
-      ]
+      "maintenanceStatus": "noDefault"
     },
     {
       "objectName": "S_PACKSTRU",
       "objectText": "Structure Packages",
-      "fields": [
-        {
-          "field": "DEVCLASS"
-        },
-        {
-          "field": "OBJTYPE"
-        },
-        {
-          "field": "OBJNAME"
-        },
-        {
-          "field": "P_GROUP"
-        },
-        {
-          "field": "ACTVT"
-        }
-      ]
+      "maintenanceStatus": "noDefault"
     },
     {
       "objectName": "S_SCOPE",
       "objectText": "OAuth2 Scope",
-      "fields": [
-        {
-          "field": "DEVCLASS"
-        },
-        {
-          "field": "OBJTYPE"
-        },
-        {
-          "field": "OBJNAME"
-        },
-        {
-          "field": "P_GROUP"
-        },
-        {
-          "field": "ACTVT"
-        }
-      ]
+      "maintenanceStatus": "noDefault"
     },
     {
       "objectName": "S_SERVICE",
       "objectText": "Check at Start of External Services",
-      "fields": [
-        {
-          "field": "DEVCLASS"
-        },
-        {
-          "field": "OBJTYPE"
-        },
-        {
-          "field": "OBJNAME"
-        },
-        {
-          "field": "P_GROUP"
-        },
-        {
-          "field": "ACTVT"
-        }
-      ]
+      "maintenanceStatus": "noDefault"
     },
     {
       "objectName": "S_SYS_INFO",
       "objectText": "Display Authorization for System Information",
-      "fields": [
-        {
-          "field": "DEVCLASS"
-        },
-        {
-          "field": "OBJTYPE"
-        },
-        {
-          "field": "OBJNAME"
-        },
-        {
-          "field": "P_GROUP"
-        },
-        {
-          "field": "ACTVT"
-        }
-      ]
+      "maintenanceStatus": "noDefault"
     },
     {
       "objectName": "S_TABU_DIS",
       "objectText": "Table Maintenance (using standard tools such as SM30)",
-      "fields": [
-        {
-          "field": "DEVCLASS"
-        },
-        {
-          "field": "OBJTYPE"
-        },
-        {
-          "field": "OBJNAME"
-        },
-        {
-          "field": "P_GROUP"
-        },
-        {
-          "field": "ACTVT"
-        }
-      ]
+      "maintenanceStatus": "noDefault"
     },
     {
       "objectName": "S_TABU_NAM",
       "objectText": "Table Access by Generic Standard Tools",
-      "fields": [
-        {
-          "field": "DEVCLASS"
-        },
-        {
-          "field": "OBJTYPE"
-        },
-        {
-          "field": "OBJNAME"
-        },
-        {
-          "field": "P_GROUP"
-        },
-        {
-          "field": "ACTVT"
-        }
-      ]
+      "maintenanceStatus": "noDefault"
     },
     {
       "objectName": "S_TCODE",
       "objectText": "Transaction Code Check at Transaction Start",
-      "fields": [
-        {
-          "field": "DEVCLASS"
-        },
-        {
-          "field": "OBJTYPE"
-        },
-        {
-          "field": "OBJNAME"
-        },
-        {
-          "field": "P_GROUP"
-        },
-        {
-          "field": "ACTVT"
-        }
-      ]
+      "maintenanceStatus": "noDefault"
     },
     {
       "objectName": "S_TRANSPRT",
       "objectText": "Transport Organizer",
-      "fields": [
-        {
-          "field": "DEVCLASS"
-        },
-        {
-          "field": "OBJTYPE"
-        },
-        {
-          "field": "OBJNAME"
-        },
-        {
-          "field": "P_GROUP"
-        },
-        {
-          "field": "ACTVT"
-        }
-      ]
+      "maintenanceStatus": "noDefault"
     }
   ]
 }
