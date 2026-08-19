@@ -13,20 +13,20 @@
   },
   "authorizationObjects": [
     {
-      "objectName": "S_ABAPDUMP",
-      "objectText": "Authorization for ABAP Dump Analysis",
+      "authObjectName": "S_ABAPDUMP",
+      "authObjectText": "Authorization for ABAP Dump Analysis",
       "maintenanceStatus": "noDefault"
     },
     {
-      "objectName": "S_ABPLNGVS",
-      "objectText": "ABAP Language Version",
+      "authObjectName": "S_ABPLNGVS",
+      "authObjectText": "ABAP Language Version",
       "maintenanceStatus": "defaultWithoutValues"
     },
     {
-      "objectName": "S_ADT_RES",
-      "objectText": "ABAP Development Tool Resource",
+      "authObjectName": "S_ADT_RES",
+      "authObjectText": "ABAP Development Tool Resource",
       "maintenanceStatus": "defaultWithValues",
-      "fields": [
+      "authObjectFieldValues": [
         {
           "authFieldName": "URI",
           "authFieldLowValue": "/sap/bc/adt/aps/iam/sush"
@@ -38,84 +38,96 @@
       ]
     },
     {
-      "objectName": "S_ALV_LAYO",
-      "objectText": "ALV Standard Layout",
+      "authObjectName": "S_ALV_LAYO",
+      "authObjectText": "ALV Standard Layout",
       "maintenanceStatus": "noDefault"
     },
     {
-      "objectName": "S_ALV_LAYR",
-      "objectText": "ALV Report-Specific Layouts",
+      "authObjectName": "S_ALV_LAYR",
+      "authObjectText": "ALV Report-Specific Layouts",
       "maintenanceStatus": "noDefault"
     },
     {
-      "objectName": "S_APPL_LOG",
-      "objectText": "Application Log",
+      "authObjectName": "S_APPL_LOG",
+      "authObjectText": "Application Log",
       "maintenanceStatus": "noDefault"
     },
     {
-      "objectName": "S_DATASET",
-      "objectText": "Physical Files",
+      "authObjectName": "S_DATASET",
+      "authObjectText": "Physical Files",
       "maintenanceStatus": "noDefault"
     },
     {
-      "objectName": "S_DEVELOP",
-      "objectText": "ABAP Workbench",
+      "authObjectName": "S_DEVELOP",
+      "authObjectText": "ABAP Workbench",
       "maintenanceStatus": "defaultWithValues",
-      "fields": [
+      "authObjectFieldValues": [
+        {
+          "authFieldName": "DEVCLASS"
+        },
         {
           "authFieldName": "OBJTYPE",
           "authFieldLowValue": "SUSH"
+        },
+        {
+          "authFieldName": "OBJNAME"
+        },
+        {
+          "authFieldName": "P_GROUP"
+        },
+        {
+          "authFieldName": "ACTVT"
         }
       ]
     },
     {
-      "objectName": "S_GUI",
-      "objectText": "GUI Objects",
+      "authObjectName": "S_GUI",
+      "authObjectText": "GUI Objects",
       "maintenanceStatus": "noDefault"
     },
     {
-      "objectName": "S_ICF_ADM",
-      "objectText": "Administration for Internet Communication Framework",
+      "authObjectName": "S_ICF_ADM",
+      "authObjectText": "Administration for Internet Communication Framework",
       "maintenanceStatus": "noDefault"
     },
     {
-      "objectName": "S_PACKSTRU",
-      "objectText": "Structure Packages",
+      "authObjectName": "S_PACKSTRU",
+      "authObjectText": "Structure Packages",
       "maintenanceStatus": "noDefault"
     },
     {
-      "objectName": "S_SCOPE",
-      "objectText": "OAuth2 Scope",
+      "authObjectName": "S_SCOPE",
+      "authObjectText": "OAuth2 Scope",
       "maintenanceStatus": "noDefault"
     },
     {
-      "objectName": "S_SERVICE",
-      "objectText": "Check at Start of External Services",
+      "authObjectName": "S_SERVICE",
+      "authObjectText": "Check at Start of External Services",
       "maintenanceStatus": "noDefault"
     },
     {
-      "objectName": "S_SYS_INFO",
-      "objectText": "Display Authorization for System Information",
+      "authObjectName": "S_SYS_INFO",
+      "authObjectText": "Display Authorization for System Information",
       "maintenanceStatus": "noDefault"
     },
     {
-      "objectName": "S_TABU_DIS",
-      "objectText": "Table Maintenance (using standard tools such as SM30)",
+      "authObjectName": "S_TABU_DIS",
+      "authObjectText": "Table Maintenance (using standard tools such as SM30)",
       "maintenanceStatus": "noDefault"
     },
     {
-      "objectName": "S_TABU_NAM",
-      "objectText": "Table Access by Generic Standard Tools",
+      "authObjectName": "S_TABU_NAM",
+      "authObjectText": "Table Access by Generic Standard Tools",
       "maintenanceStatus": "noDefault"
     },
     {
-      "objectName": "S_TCODE",
-      "objectText": "Transaction Code Check at Transaction Start",
+      "authObjectName": "S_TCODE",
+      "authObjectText": "Transaction Code Check at Transaction Start",
       "maintenanceStatus": "noDefault"
     },
     {
-      "objectName": "S_TRANSPRT",
-      "objectText": "Transport Organizer",
+      "authObjectName": "S_TRANSPRT",
+      "authObjectText": "Transport Organizer",
       "maintenanceStatus": "noDefault"
     }
   ]

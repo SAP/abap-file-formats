@@ -14,18 +14,21 @@
   },
   "authorizationObjects": [
     {
-      "objectName": "S_START",
-      "objectText": "Start Authorization Check for TADIR Objects",
+      "authObjectName": "S_START",
+      "authObjectText": "Start Authorization Check for TADIR Objects",
       "maintenanceStatus": "noDefault"
     },
     {
-      "objectName": "S_TABU_NAM",
-      "objectText": "Table Access by Generic Standard Tools",
+      "authObjectName": "S_TABU_NAM",
+      "authObjectText": "Table Access by Generic Standard Tools",
       "maintenanceStatus": "defaultWithValues",
-      "fields": [
+      "authObjectFieldValues": [
         {
           "authFieldName": "ACTVT",
           "authFieldLowValue": "03"
+        },
+        {
+          "authFieldName": "TABLE"
         }
       ]
     }
