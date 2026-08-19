@@ -1,0 +1,134 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "R3TR SUCO ADT_SUSH_SRV",
+    "originalLanguage": "de"
+  },
+  "generalInformation": {
+    "name": "58325011BD8DCF5D087C6E19CDDCA1",
+    "type": "HT",
+    "applicationName": "ADT_SUSH_SRV",
+    "applicationType": "SUCO",
+    "maintenanceMode": "manual"
+  },
+  "authorizationObjects": [
+    {
+      "authObjectName": "S_ABAPDUMP",
+      "authObjectText": "Authorization for ABAP Dump Analysis",
+      "maintenanceStatus": "noDefault"
+    },
+    {
+      "authObjectName": "S_ABPLNGVS",
+      "authObjectText": "ABAP Language Version",
+      "maintenanceStatus": "defaultWithoutValues"
+    },
+    {
+      "authObjectName": "S_ADT_RES",
+      "authObjectText": "ABAP Development Tool Resource",
+      "maintenanceStatus": "defaultWithValues",
+      "authObjectFieldValues": [
+        {
+          "authFieldName": "URI",
+          "authFieldLowValue": "/sap/bc/adt/aps/iam/sush"
+        },
+        {
+          "authFieldName": "URI",
+          "authFieldLowValue": "/sap/bc/adt/aps/iam/sush/*"
+        }
+      ]
+    },
+    {
+      "authObjectName": "S_ALV_LAYO",
+      "authObjectText": "ALV Standard Layout",
+      "maintenanceStatus": "noDefault"
+    },
+    {
+      "authObjectName": "S_ALV_LAYR",
+      "authObjectText": "ALV Report-Specific Layouts",
+      "maintenanceStatus": "noDefault"
+    },
+    {
+      "authObjectName": "S_APPL_LOG",
+      "authObjectText": "Application Log",
+      "maintenanceStatus": "noDefault"
+    },
+    {
+      "authObjectName": "S_DATASET",
+      "authObjectText": "Physical Files",
+      "maintenanceStatus": "noDefault"
+    },
+    {
+      "authObjectName": "S_DEVELOP",
+      "authObjectText": "ABAP Workbench",
+      "maintenanceStatus": "defaultWithValues",
+      "authObjectFieldValues": [
+        {
+          "authFieldName": "DEVCLASS"
+        },
+        {
+          "authFieldName": "OBJTYPE",
+          "authFieldLowValue": "SUSH"
+        },
+        {
+          "authFieldName": "OBJNAME"
+        },
+        {
+          "authFieldName": "P_GROUP"
+        },
+        {
+          "authFieldName": "ACTVT"
+        }
+      ]
+    },
+    {
+      "authObjectName": "S_GUI",
+      "authObjectText": "GUI Objects",
+      "maintenanceStatus": "noDefault"
+    },
+    {
+      "authObjectName": "S_ICF_ADM",
+      "authObjectText": "Administration for Internet Communication Framework",
+      "maintenanceStatus": "noDefault"
+    },
+    {
+      "authObjectName": "S_PACKSTRU",
+      "authObjectText": "Structure Packages",
+      "maintenanceStatus": "noDefault"
+    },
+    {
+      "authObjectName": "S_SCOPE",
+      "authObjectText": "OAuth2 Scope",
+      "maintenanceStatus": "noDefault"
+    },
+    {
+      "authObjectName": "S_SERVICE",
+      "authObjectText": "Check at Start of External Services",
+      "maintenanceStatus": "noDefault"
+    },
+    {
+      "authObjectName": "S_SYS_INFO",
+      "authObjectText": "Display Authorization for System Information",
+      "maintenanceStatus": "noDefault"
+    },
+    {
+      "authObjectName": "S_TABU_DIS",
+      "authObjectText": "Table Maintenance (using standard tools such as SM30)",
+      "maintenanceStatus": "noDefault"
+    },
+    {
+      "authObjectName": "S_TABU_NAM",
+      "authObjectText": "Table Access by Generic Standard Tools",
+      "maintenanceStatus": "noDefault"
+    },
+    {
+      "authObjectName": "S_TCODE",
+      "authObjectText": "Transaction Code Check at Transaction Start",
+      "maintenanceStatus": "noDefault"
+    },
+    {
+      "authObjectName": "S_TRANSPRT",
+      "authObjectText": "Transport Organizer",
+      "maintenanceStatus": "noDefault"
+    }
+  ]
+}
