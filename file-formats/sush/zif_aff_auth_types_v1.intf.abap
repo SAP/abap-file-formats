@@ -15,20 +15,20 @@ INTERFACE zif_aff_auth_types_v1
 
   "! <p class="shorttext">Maintenance Mode</p>
   "! Maintenance modes for applications define how applications can be modified.
-  "! $values {@link if_aff_tran_v1.data:co_maintenance_mode}
-  "! $default {@link if_aff_tran_v1.data:co_maintenance_mode.manual}
+  "! $values {@link zif_aff_auth_types_v1.data:co_maintenance_mode}
+  "! $default {@link zif_aff_auth_types_v1.data:co_maintenance_mode.manual}
   TYPES ty_maintenance_mode   TYPE c LENGTH 1.
 
-  "! $values {@link if_aff_tran_v1.data:co_default_values_required}
-  "! $default {@link if_aff_tran_v1.data:co_default_values_required.yes}
+  "! $values {@link zif_aff_auth_types_v1.data:co_default_values_required}
+  "! $default {@link zif_aff_auth_types_v1.data:co_default_values_required.yes}
   TYPES ty_default_values_required TYPE c LENGTH 1.
 
   "! <p class="shorttext">Maintenance Status</p>
   "! The maintenance status of an authorization object controls if AUTHORITY-CHECK runs for it
   "! in its application andwhether an authorization default is added to a data of role
   "! by the profile generator when the app is in the role menu.
-  "! $values {@link if_aff_tran_v1.data:co_maintenance_status}
-  "! $default {@link if_aff_tran_v1.data:co_maintenance_status.default_with_values}
+  "! $values {@link zif_aff_auth_types_v1.data:co_maintenance_status}
+  "! $default {@link zif_aff_auth_types_v1.data:co_maintenance_status.default_with_values}
   TYPES ty_maintenance_status TYPE c LENGTH 1.
 
   "! <p class="shorttext">Authorization Object</p>

@@ -178,21 +178,24 @@
               "noDefault",
               "defaultWithValues",
               "defaultWithoutValues",
-              "inactiveValues"
+              "inactiveValues",
+              "noAuthorizationCheck"
             ],
             "enumTitles": [
               "Undefined",
               "No Default",
               "Default With Field Values",
               "Default Without Field Values",
-              "Default Inactive"
+              "Default Inactive",
+              "No Authorization Check"
             ],
             "enumDescriptions": [
               "The maintenance status is undefined and must be specified.",
               "This status is given to all objects that are not required for the execution of functions in the application. The authorization check is executed in exactly the same way the statuses described above.",
               "This default status is assigned to all objects that are used to protect functions within the associated application and for which the delivery of fixed values in one or more authorization fields would help to simplify authorization maintenance in roles.",
               "This status is suitable for objects whose authorizations are required for using an application, but all of whose authorization fields have to be maintained by the role administrator with customer-specific values.",
-              "For objects with this status, the authorization check always returns the value sy-subrc = 0 regardless of which authorizations the user actually has. For objects belonging to the application areas Basis (S_*) and HR (P_* and PLOG), it is forbidden."
+              "For objects with this status, the authorization check always returns the value sy-subrc = 0 regardless of which authorizations the user actually has. For objects belonging to the application areas Basis (S_*) and HR (P_* and PLOG), it is forbidden.",
+              "No authorization check is performed for this object. Used on cloud systems only."
             ],
             "default": "defaultWithValues"
           },
