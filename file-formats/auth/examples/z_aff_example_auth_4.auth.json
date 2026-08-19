@@ -1,0 +1,18 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Plan Version",
+    "originalLanguage": "de"
+  },
+  "generalInformation": {
+    "dataElement": "PLVAR",
+    "orgLevelInfo": "Field is defined as Organizational level with Variable $PLVAR."
+  },
+  "maintenanceDialog": {
+    "exitFunctionModule": ""
+  },
+  "provideSearchHelp": {
+    "checkTable": "T778P",
+    "typeOfSearchHelp": "checkTable"
+  }
+}
