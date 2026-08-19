@@ -15,10 +15,10 @@ INTERFACE zif_aff_sush_v1
       "! <p class="shorttext">General Information</p>
       "! General information
       "! $required
-      general_information   TYPE if_aff_auth_types_v1=>ty_general_information,
+      general_information   TYPE zif_aff_auth_types_v1=>ty_general_information,
       "! <p class="shorttext">Authorization Objects</p>
       "! Authorization objects with maintenance status and field values
-      authorization_objects TYPE if_aff_auth_types_v1=>ty_authorization_object_t,
+      authorization_objects TYPE zif_aff_auth_types_v1=>ty_authorization_object_t,
     END OF ty_main.
 
 ENDINTERFACE.
