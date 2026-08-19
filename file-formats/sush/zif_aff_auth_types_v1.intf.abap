@@ -1,5 +1,5 @@
 INTERFACE zif_aff_auth_types_v1
-  PUBLIC .
+  PUBLIC.
 
   "! <p class="shorttext">Application Name</p>
   "! Application name of authorization defaults
