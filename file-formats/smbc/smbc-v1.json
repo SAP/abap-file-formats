@@ -107,7 +107,7 @@
       ]
     },
     "appConfiguration": {
-      "title": "Confguration of List Report and Object Pages",
+      "title": "Configuration of List Report and Object Pages",
       "type": "object",
       "properties": {
         "listReport": {
@@ -329,7 +329,7 @@
               },
               "condensedTableLayout": {
                 "title": "Condensed Table Layout",
-                "description": "If true, display rows in a condensed way. Only applicaple to Table Type 'GridTable'.",
+                "description": "If true, display rows in a condensed way. Only applicable to Table Type 'GridTable'.",
                 "type": "boolean"
               },
               "widthIncludingColumnHeader": {

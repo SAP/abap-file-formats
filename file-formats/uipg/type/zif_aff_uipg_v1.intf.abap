@@ -119,7 +119,7 @@ INTERFACE zif_aff_uipg_v1
       ladi_id TYPE ty_ladi_id,
 
       "! <p class="shorttext">Tile ID</p>
-      "! ID of a tile in the the referenced Launchpad App Descriptor Item
+      "! ID of a tile in the referenced Launchpad App Descriptor Item
       "! $required
       tile_id TYPE ty_ladi_tile_id,
 
@@ -135,7 +135,7 @@ INTERFACE zif_aff_uipg_v1
 
   CONSTANTS:
     "! <p class="shorttext">Visualization Type</p>
-    "! Describes how the visualization is referenzed
+    "! Describes how the visualization is referenced
     BEGIN OF co_visualization_type,
 
       "! <p class="shorttext">Launchpad App Descriptor Item Assignment</p>

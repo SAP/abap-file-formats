@@ -467,8 +467,8 @@ INTERFACE zif_aff_cfdf_v2
       "! <p class="shorttext">Numerical Text</p>
       "! Numerical text
       numerical_text             TYPE ty_type VALUE 'NUMC_TEXT',
-      "! <p class="shorttext">Posting Perioid</p>
-      "! Posting perioid
+      "! <p class="shorttext">Posting Period</p>
+      "! Posting period
       posting_period             TYPE ty_type VALUE 'PST_PERIOD',
       "! <p class="shorttext">Raw</p>
       "! Raw
