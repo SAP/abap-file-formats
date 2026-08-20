@@ -115,7 +115,10 @@
           "type": "boolean"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "required": [
+        "typeOfMaintenanceDialog"
+      ]
     },
     "provideSearchHelp": {
       "title": "Search Help in Standard Maintenance Dialog",
@@ -152,7 +155,10 @@
           "type": "boolean"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "required": [
+        "typeOfSearchHelp"
+      ]
     }
   },
   "additionalProperties": false,

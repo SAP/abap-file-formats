@@ -36,6 +36,7 @@ INTERFACE zif_aff_auth_v1
     BEGIN OF ty_maintenance_dialog,
       "! <p class="shorttext">Type of Maintenance Dialog</p>
       "! Type of maintenance dialog
+      "! $required
       type_of_maintenance_dialog TYPE ty_type_of_maintenance_dialog,
       "! <p class="shorttext">Exit Function Module</p>
       "! The authorization field uses an individual maintenance dialog that is implemented in the named function module
@@ -75,6 +76,7 @@ INTERFACE zif_aff_auth_v1
       check_table              TYPE c LENGTH 30,
       "! <p class="shorttext">Type of Search Help</p>
       "! Type of search help
+      "! $required
       type_of_search_help      TYPE ty_type_of_search_help,
       "! <p class="shorttext">Some Authorization Objects use an Object Field Search Help</p>
       "! If the search help for an authorization field returns unsuitable selection results in a particular
@@ -95,7 +97,7 @@ INTERFACE zif_aff_auth_v1
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header              TYPE zif_aff_types_v1=>ty_header_60_src,
+      header              TYPE zif_aff_types_v1=>ty_header_60,
       "! <p class="shorttext">General Information</p>
       "! General information
       "! $required
