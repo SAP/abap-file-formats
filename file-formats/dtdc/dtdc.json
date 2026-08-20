@@ -1,0 +1,28 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "DTDC",
+    "description": "Dynamic Cache",
+    "group": "Dictionary"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.dtdc.json",
+          "cardinality": "1",
+          "schema": "dtdc-v1.json",
+          "definitionInterface": "type/zif_aff_dtdc_v1.intf.abap",
+          "examples": ["examples/z_aff_example_dtdc.dtdc.json"]
+        },
+        {
+          "filePattern": "<name>.dtdc.acds",
+          "cardinality": "1",
+          "definitionUrl": "https://help.sap.com/doc/abapdocu_cp_index_htm/CLOUD/en-US/index.htm?file=abencds.htm",
+          "examples": ["examples/z_aff_example_dtdc.dtdc.acds"]
+        }
+      ]
+    }
+  ]
+}

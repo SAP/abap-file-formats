@@ -1,0 +1,22 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "SIAD",
+    "description": "Business Role Template - Launchpad Space Template Assignment",
+    "group": "Identity and Access Management"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.siad.json",
+          "cardinality": "1",
+          "schema": "siad-v1.json",
+          "definitionInterface": "type/zif_aff_siad_v1.intf.abap",
+          "examples": ["examples/z_aff_siad_example.siad.json"]
+        }
+      ]
+    }
+  ]
+}
