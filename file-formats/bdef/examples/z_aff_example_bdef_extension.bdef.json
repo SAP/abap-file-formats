@@ -4,7 +4,7 @@
     "description": "Example BDEF for ABAP file formats",
     "originalLanguage": "en"
   },
-  "extendedBehaviorDefintion": {
+  "extendedBehaviorDefinition": {
     "name": "Z_AFF_EXAMPLE_BDEF"
   }
 }
