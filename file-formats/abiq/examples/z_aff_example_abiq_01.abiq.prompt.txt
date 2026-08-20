@@ -1,0 +1,55 @@
+The following is a review booklet with a hierarchical structure in CSV format:
+```
+{result_set}
+```
+The following are some context regarding the review booklet:
+```
+Every value is separated using ; except the last value of the row, which is separated using 
+. Each row ends with 
+.
+1) Dataset Structure:
+   1.1) The dataset likely contains multiple columns, including airline names, revenue figures, and seat capacity information.
+   1.2) There may be additional columns for time periods (e.g., months, quarters, years) and routes or destinations.
+   1.3) Each row probably represents a specific airline's performance for a given time period or route.
+ 
+2) Key Metrics and Terms:
+   2.1) Revenue: The total amount of money earned by an airline from its operations.
+   2.2) Seat Capacity: The total number of seats available on an airline's flights.
+   2.3) Revenue per seat offered: A key performance indicator calculated by dividing total revenue by the number of seats offered.
+   2.4) Load Factor: The percentage of available seats that are filled with passengers, which may impact revenue per seat.
+ 
+3) Factors Influencing Revenue per Seat:
+   3.1) Pricing strategies: Different airlines may have varying ticket prices, affecting their revenue.
+   3.2) Route network: The destinations served by an airline can impact its revenue potential.
+   3.3) Aircraft type and configuration: The size and layout of planes affect seat capacity and potential revenue.
+   3.4) Seasonality: Revenue and seat occupancy may vary depending on the time of year.
+ 
+4) Potential Data Variations:
+   4.1) The dataset may include data for domestic and international flights separately.
+   4.2) There could be breakdowns by cabin class (e.g., economy, business, first class).
+   4.3) Historical data might be present, allowing for trend analysis over time.
+ 
+5) Additional Considerations:
+   5.1) Some airlines may operate as low-cost carriers, while others are full-service airlines, which can affect their revenue per seat strategies.
+   5.2) Currency differences may need to be accounted for if the dataset includes airlines from multiple countries.
+   5.3) The data might distinguish between passenger revenue and other revenue sources (e.g., cargo, ancillary services).
+Depending on the headers of the review booklet, the comparison can be between two periods / quarters or between the current period and the budgeted amount.
+```
+ 
+Answer the following question: Which airline has the highest average revenue per seat offered?
+ 
+The following are the instructions on how to answer the question:
+```
+1) Calculate the revenue per seat offered for each airline by dividing total revenue by total seats offered.
+2) Compute the average revenue per seat offered for each airline across all available data points.
+3) Sort the airlines based on their average revenue per seat offered in descending order.
+4) Identify the airline with the highest average revenue per seat offered (which will now be the first in the sorted list).
+5) Report the name of the airline and its corresponding average revenue per seat offered value.
+```
+ 
+Support the answer with any relevant comments provided.
+ 
+Do not use any negative signs in your answer. If the comparison is between two periods / quarters, use the word "increased", "decreased", "matched", "growth", "decline", or "no change" accordingly. If it is between the current period and the budgeted amount, use the word "exceeded", "fell short", "matched", "overrun", "shortfall" or "no difference" accordingly.
+ 
+The final answer should be in HTML format with a <h3> header and <p> body. Values taken from the provided data should be enclosed within <strong>. Use <br> for newline. Remove ```html from the answer.
+ 
