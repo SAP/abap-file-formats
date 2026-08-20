@@ -9,6 +9,7 @@
     "orgLevelInfo": "Field is defined as Organizational level with Variable $PLVAR."
   },
   "maintenanceDialog": {
+    "typeOfMaintenanceDialog": "standard",
     "exitFunctionModule": ""
   },
   "provideSearchHelp": {
