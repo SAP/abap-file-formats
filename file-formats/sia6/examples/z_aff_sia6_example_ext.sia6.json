@@ -1,0 +1,71 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Example IAM app",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "external",
+    "uiadId": "",
+    "transactionCode": "",
+    "restrictionTypeMigStatus": "migrated"
+  },
+  "services": [
+    {
+      "name": "Z_SRVC_EXAMPLE",
+      "description": "Example service",
+      "type": "odataV4",
+      "serviceId": "30C9E656A21BF6F30B3DA55ABE8BF8",
+      "uiadIdSource": "",
+      "transactionCodeSource": ""
+    }
+  ],
+  "authorizationObjects": [
+    {
+      "id": "Z_AUTH_OBJ",
+      "status": "standard",
+      "description": "Example authorization object",
+      "authorizations": [
+        {
+          "authorizationObjectId": "Z_AUTH_OBJ",
+          "number": "0001",
+          "serviceIdSource": "30C9E656A21BF6F30B3DA55ABE8BF8",
+          "status": "standard",
+          "fields": [
+            {
+              "id": "ACTVT",
+              "values": [
+                {
+                  "lowValue": "03",
+                  "highValue": ""
+                }
+              ],
+              "status": "standard",
+              "isActivity": true
+            },
+            {
+              "id": "Z_AUTH_FLD",
+              "values": [
+                {
+                  "lowValue": "A",
+                  "highValue": "B"
+                }
+              ],
+              "status": "standard"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "restrictionTypes": [
+    {
+      "id": "Z_RSTR_TYP",
+      "description": "Example restriction type",
+      "writeAccess": true,
+      "readAccess": true,
+      "f4Access": true
+    }
+  ]
+}
