@@ -1,0 +1,19 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Activity",
+    "originalLanguage": "de"
+  },
+  "generalInformation": {
+    "dataElement": "ACTIV_AUTH",
+    "orgLevelInfo": "Field cannot be defined as Organizational level."
+  },
+  "maintenanceDialog": {
+    "typeOfMaintenanceDialog": "standard",
+    "objectOwnMaintDialog": true
+  },
+  "searchHelp": {
+    "checkTable": "TACT",
+    "typeOfSearchHelp": "checkTable"
+  }
+}
