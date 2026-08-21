@@ -175,7 +175,8 @@ INTERFACE zif_aff_sco2_v1
     BEGIN OF ty_general_information,
 
       "! <p class="shorttext">Inbound Service Type</p>
-      "! Type of the inbound service. Determines which field or group of the service details is filled. Check the {@link zif_aff_sco2_v1.data:co_ibs_type} constants for possible values.
+      "! Type of the inbound service. Determines which field or group of the service details is filled.
+      "! Check the {@link zif_aff_sco2_v1.data:co_ibs_type} constants for possible values.
       "! $required
       "! $values {@link zif_aff_sco2_v1.data:co_ibs_type}
       ibs_type        TYPE ty_ibs_type,
