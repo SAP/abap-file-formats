@@ -10,7 +10,6 @@
   },
   "maintenanceDialog": {
     "typeOfMaintenanceDialog": "standard",
-    "exitFunctionModule": "",
     "objectOwnMaintDialog": true
   },
   "provideSearchHelp": {

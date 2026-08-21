@@ -70,7 +70,7 @@
         },
         "orgLevelInfo": {
           "title": "Organizational Level",
-          "description": "Organizational level information",
+          "description": "Describes whether the authorization field is currently defined as an organizational level or cannot be defined as one.",
           "type": "string",
           "maxLength": 120
         }
@@ -120,7 +120,7 @@
         "typeOfMaintenanceDialog"
       ]
     },
-    "provideSearchHelp": {
+    "searchHelp": {
       "title": "Search Help in Standard Maintenance Dialog",
       "description": "Search help in standard maintenance dialog",
       "type": "object",
@@ -167,6 +167,6 @@
     "header",
     "generalInformation",
     "maintenanceDialog",
-    "provideSearchHelp"
+    "searchHelp"
   ]
 }

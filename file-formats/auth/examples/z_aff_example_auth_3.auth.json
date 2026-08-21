@@ -9,11 +9,9 @@
     "orgLevelInfo": "Field is not defined as Organizational level."
   },
   "maintenanceDialog": {
-    "typeOfMaintenanceDialog": "standard",
-    "exitFunctionModule": ""
+    "typeOfMaintenanceDialog": "standard"
   },
   "provideSearchHelp": {
-    "checkTable": "",
     "typeOfSearchHelp": "searchHelpOfDataElement",
     "objectFieldSearchHelp": true
   }

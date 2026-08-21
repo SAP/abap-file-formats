@@ -11,7 +11,8 @@ INTERFACE zif_aff_auth_v1
       "! $required
       data_element   TYPE c LENGTH 30,
       "! <p class="shorttext">Organizational Level</p>
-      "! Organizational level information
+      "! Describes whether the authorization field is currently defined as an organizational level or cannot be defined
+      "! as one.
       org_level_info TYPE c LENGTH 120,
     END OF ty_general_information.
 
@@ -109,6 +110,6 @@ INTERFACE zif_aff_auth_v1
       "! <p class="shorttext">Search Help in Standard Maintenance Dialog</p>
       "! Search help in standard maintenance dialog
       "! $required
-      provide_search_help TYPE ty_search_help,
+      search_help         TYPE ty_search_help,
     END OF ty_main.
 ENDINTERFACE.

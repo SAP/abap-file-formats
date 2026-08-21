@@ -13,7 +13,6 @@
     "exitFunctionModule": "F4_PFCG_SICF"
   },
   "provideSearchHelp": {
-    "checkTable": "",
     "typeOfSearchHelp": "searchHelpOfDataElement"
   }
 }
