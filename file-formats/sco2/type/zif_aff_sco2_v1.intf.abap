@@ -115,7 +115,7 @@ INTERFACE zif_aff_sco2_v1
 
   "! <p class="shorttext">Inbound Service Type</p>
   "! Type of the inbound service
-  "! $values  {@link zif_aff_sco2_v1.data:co_ibs_type}
+  "! $values {@link zif_aff_sco2_v1.data:co_ibs_type}
   TYPES ty_ibs_type TYPE c LENGTH 4.
 
   CONSTANTS:
@@ -177,19 +177,20 @@ INTERFACE zif_aff_sco2_v1
       "! <p class="shorttext">Inbound Service Type</p>
       "! Type of the inbound service. Determines which field or group of the service details is filled. Check the {@link zif_aff_sco2_v1.data:co_ibs_type} constants for possible values.
       "! $required
-      ibs_type                       TYPE ty_ibs_type,
+      "! $values {@link zif_aff_sco2_v1.data:co_ibs_type}
+      ibs_type        TYPE ty_ibs_type,
 
       "! <p class="shorttext">Scope Dependent</p>
       "! Indicates whether the inbound service is scope-dependent
-      scope_dependent                TYPE abap_bool,
+      scope_dependent TYPE abap_bool,
 
       "! <p class="shorttext">App Type</p>
       "! Inbound service app type for extensibility
-      ibs_app_type                   TYPE c LENGTH 4,
+      ibs_app_type    TYPE c LENGTH 4,
 
       "! <p class="shorttext">Leading Business Object</p>
       "! SAP object type of the leading business object
-      leading_bo_type                TYPE c LENGTH 30,
+      leading_bo_type TYPE c LENGTH 30,
 
 *      "! <p class="shorttext">Released for Customer Scenarios</p>
 *      "! Indicates whether the inbound service is released for communication
