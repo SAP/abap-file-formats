@@ -11,7 +11,7 @@
   "maintenanceDialog": {
     "typeOfMaintenanceDialog": "standard"
   },
-  "provideSearchHelp": {
+  "searchHelp": {
     "checkTable": "T778P",
     "typeOfSearchHelp": "checkTable"
   }

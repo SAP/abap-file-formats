@@ -12,7 +12,7 @@
     "typeOfMaintenanceDialog": "standard",
     "objectOwnMaintDialog": true
   },
-  "provideSearchHelp": {
+  "searchHelp": {
     "checkTable": "TACT",
     "typeOfSearchHelp": "checkTable"
   }

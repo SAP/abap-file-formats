@@ -11,7 +11,7 @@
   "maintenanceDialog": {
     "typeOfMaintenanceDialog": "standard"
   },
-  "provideSearchHelp": {
+  "searchHelp": {
     "typeOfSearchHelp": "searchHelpOfDataElement",
     "objectFieldSearchHelp": true
   }
