@@ -1,0 +1,12 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "For unit tests",
+    "originalLanguage": "en"
+  },
+  "generalInformation": {
+    "handlerClass": "CL_HTTP_TEST_SERVICE",
+    "servicePath": "/sap/bc/http/sap/http_test_service",
+    "authValues": "664EAD779465EC68CC1752AB233E60HT"
+  }
+}
