@@ -12,9 +12,6 @@ INTERFACE zif_aff_http_v1
       "! <p class="shorttext">Service Path</p>
       "! Service path
       service_path  TYPE string,
-      "! <p class="shorttext">Authorization Default Values</p>
-      "! Configure authorization default values
-      auth_values   TYPE string,
       "! <p class="shorttext">Enable CSRF Token Handling</p>
       "! Enable CSRF token handling
       token_handling TYPE abap_bool,
