@@ -8,10 +8,10 @@ INTERFACE zif_aff_http_v1
     BEGIN OF ty_general_information,
       "! <p class="shorttext">Handler Class</p>
       "! Handler class
-      handler_class TYPE zif_aff_types_v1=>ty_object_name_30,
+      handler_class  TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Service Path</p>
       "! Service path
-      service_path  TYPE string,
+      service_path   TYPE string,
       "! <p class="shorttext">Enable CSRF Token Handling</p>
       "! Enable CSRF token handling
       token_handling TYPE abap_bool,
