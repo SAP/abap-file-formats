@@ -123,7 +123,7 @@ INTERFACE zif_aff_sia6_v1
     BEGIN OF ty_service,
 
       "! <p class="shorttext">Service Name</p>
-      "! Name of the service
+      "! Service name
       "! $required
       name                    TYPE c LENGTH 40,
 

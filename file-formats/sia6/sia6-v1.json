@@ -140,7 +140,7 @@
         "properties": {
           "name": {
             "title": "Service Name",
-            "description": "Name of the service",
+            "description": "Service name",
             "type": "string",
             "maxLength": 40
           },

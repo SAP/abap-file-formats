@@ -7,8 +7,6 @@
   },
   "generalInformation": {
     "appType": "external",
-    "uiadId": "",
-    "transactionCode": "",
     "restrictionTypeMigStatus": "migrated"
   },
   "services": [
@@ -16,9 +14,7 @@
       "name": "Z_SRVC_EXAMPLE",
       "description": "Example service",
       "type": "odataV4",
-      "serviceId": "30C9E656A21BF6F30B3DA55ABE8BF8",
-      "uiadIdSource": "",
-      "transactionCodeSource": ""
+      "serviceId": "30C9E656A21BF6F30B3DA55ABE8BF8"
     }
   ],
   "authorizationObjects": [
@@ -37,8 +33,7 @@
               "id": "ACTVT",
               "values": [
                 {
-                  "lowValue": "03",
-                  "highValue": ""
+                  "lowValue": "03"
                 }
               ],
               "status": "standard",
