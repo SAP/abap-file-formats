@@ -70,11 +70,6 @@
           "description": "Service path",
           "type": "string"
         },
-        "authValues": {
-          "title": "Authorization Default Values",
-          "description": "Configure authorization default values",
-          "type": "string"
-        },
         "tokenHandling": {
           "title": "Enable CSRF Token Handling",
           "description": "Enable CSRF token handling",
