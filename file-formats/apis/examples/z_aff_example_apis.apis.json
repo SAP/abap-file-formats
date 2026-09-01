@@ -1,0 +1,39 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "originalLanguage": "en",
+    "description": "API Release State of I_BUSINESSUSER"
+  },
+  "directoryObjectKey": {
+    "type": "DDLS",
+    "name": "I_BUSINESSUSER"
+  },
+  "apis": [
+    {
+      "releasableObjectKey": {
+        "type": "CDS_STOB",
+        "name": "I_BUSINESSUSER"
+      },
+      "apiReleaseStates": [
+        {
+          "releaseContract": "c1",
+          "releaseState": "deprecated",
+          "visibility": {
+            "useInCloudDevelopment": true,
+            "useInKeyUserApps": true
+          },
+          "successorInformation": {
+            "successorApis": [
+              {
+                "directoryObjectType": "DDLS",
+                "directoryObjectName": "I_BUSINESSUSERBASIC",
+                "releasableObjectType": "CDS_STOB",
+                "releasableObjectName": "I_BUSINESSUSERBASIC"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

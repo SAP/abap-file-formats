@@ -1,4 +1,4 @@
-t# Transaction File Format
+# Transaction File Format
 
 ## Object Type Information
 
