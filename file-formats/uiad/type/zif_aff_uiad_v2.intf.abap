@@ -475,7 +475,7 @@ INTERFACE if_aff_uiad_v2
 
       "! <p class="shorttext">Plug-In App Information</p>
       "! Plug-In app information
-      plugin_app_details TYPE ty_app_details_plugin,
+      plugin_app_details       TYPE ty_app_details_plugin,
 
       "! <p class="shorttext">Navigation Information</p>
       "! Navigation information
