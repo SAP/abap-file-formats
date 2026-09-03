@@ -57,11 +57,6 @@
         "originalLanguage"
       ]
     },
-    "createFields": {
-      "title": "Create Fields",
-      "description": "Indicates whether the restriction fields are created automatically",
-      "type": "boolean"
-    },
     "fields": {
       "title": "Restriction Fields",
       "description": "Restriction fields assigned to the restriction type",
@@ -72,41 +67,26 @@
         "description": "Restriction field assigned to the restriction type",
         "type": "object",
         "properties": {
-          "fieldName": {
+          "name": {
             "title": "Field Name",
             "description": "Name of the restriction field",
             "type": "string",
             "maxLength": 30
-          },
-          "pfcgFieldName": {
-            "title": "PFCG Field Name",
-            "description": "Name of the corresponding PFCG authorization field",
-            "type": "string",
-            "maxLength": 30
-          },
-          "sortOrder": {
-            "title": "Sort Order",
-            "description": "Sort order of the restriction field, with leading zeros",
-            "type": "string",
-            "maxLength": 2,
-            "pattern": "^[0-9]+$"
           },
           "description": {
             "title": "Text",
             "description": "Description text of the restriction field",
             "type": "string",
             "maxLength": 80
-          },
-          "isSelected": {
-            "title": "Is Selected",
-            "description": "Indicates whether the restriction field is selected",
-            "type": "boolean"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "required": [
+          "name"
+        ]
       }
     },
-    "authObjects": {
+    "authObjectExtensions": {
       "title": "Authorization Object Extensions",
       "description": "Authorization object extensions of the restriction type",
       "type": "array",
@@ -116,26 +96,29 @@
         "description": "Authorization object extension of the restriction type",
         "type": "object",
         "properties": {
-          "authObjectId": {
-            "title": "Object ID",
+          "id": {
+            "title": "Authorization Object Extension ID",
             "description": "ID of the authorization object extension",
             "type": "string",
             "maxLength": 30
           },
-          "authObject": {
-            "title": "Authorization Object",
+          "authorizationObjectId": {
+            "title": "Authorization Object ID",
             "description": "ID of the assigned authorization object",
             "type": "string",
             "maxLength": 10
           },
           "description": {
-            "title": "Object Text",
+            "title": "Authorization Object Extension Description",
             "description": "Description text of the authorization object extension",
             "type": "string",
             "maxLength": 80
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "required": [
+          "id"
+        ]
       }
     }
   },
