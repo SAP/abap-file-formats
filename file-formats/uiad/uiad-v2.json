@@ -122,15 +122,7 @@
         "isDefaultLadi": {
           "title": "Is Default for Transaction",
           "description": "Is default for transaction",
-          "type": "string",
-          "enum": [
-            "yes",
-            "no"
-          ],
-          "enumDescriptions": [
-            "Yes",
-            "No"
-          ]
+          "type": "boolean"
         },
         "information": {
           "title": "Target Mapping Information",
