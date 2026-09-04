@@ -45,7 +45,7 @@ INTERFACE zif_aff_uiad_v2
 
       "! <p class="shorttext">Is Default for Transaction</p>
       "! Is default for transaction
-      is_default_ladi      TYPE abap_bool,
+      is_default_ladi      TYPE /ui2/ad_mm_is_default_for_tx,
 
       "! <p class="shorttext">Target Mapping Information</p>
       "! Target mapping information
@@ -159,7 +159,7 @@ INTERFACE zif_aff_uiad_v2
     BEGIN OF ty_app_details_plugin,
 
       "! <p class="shorttext">Launchpad Plug-In ID</p>
-      "! Launchpad Plug-In ID
+      "! Launchpad plug-in ID
       "! $required
       plugin_id TYPE c LENGTH 32,
 
