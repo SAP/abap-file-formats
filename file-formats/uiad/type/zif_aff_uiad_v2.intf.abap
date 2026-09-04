@@ -45,7 +45,7 @@ INTERFACE zif_aff_uiad_v2
 
       "! <p class="shorttext">Is Default for Transaction</p>
       "! Is default for transaction
-      is_default_ladi      TYPE /ui2/ad_mm_is_default_for_tx,
+      is_default_ladi      TYPE abap_bool,
 
       "! <p class="shorttext">Target Mapping Information</p>
       "! Target mapping information
