@@ -15,8 +15,8 @@ INTERFACE zif_aff_uiad_v2
 
       abap_language_version TYPE zif_aff_types_v1=>ty_abap_language_version,
     END OF ty_header.
-  "! <p class="shorttext">Application Type</p>
-  "! LADI application type
+  "! <p class="shorttext">App Type</p>
+  "! LADI app type
   "! $values {@link zif_aff_uiad_v2.data:co_app_type}
   "! $default {@link zif_aff_uiad_v2.data:co_app_type.ui5}
   TYPES ty_app_type TYPE c LENGTH 1.
@@ -25,7 +25,7 @@ INTERFACE zif_aff_uiad_v2
     "! General information
     BEGIN OF ty_general_information,
 
-      "! <p class="shorttext">Application Type</p>
+      "! <p class="shorttext">App Type</p>
       "! Application type
       "! $required
       app_type             TYPE ty_app_type,
@@ -39,34 +39,38 @@ INTERFACE zif_aff_uiad_v2
       "! SAP Fiori ID
       fiori_id             TYPE c LENGTH 20,
 
-      "! <p class="shorttext">Transaction Code</p>
-      "! Transaction code
+      "! <p class="shorttext">Transaction</p>
+      "! Transaction
       transaction          TYPE c LENGTH 20,
+
+      "! <p class="shorttext">Is Default for Transaction</p>
+      "! Is default for transaction
+      is_default_ladi      TYPE abap_bool,
 
       "! <p class="shorttext">Target Mapping Information</p>
       "! Target mapping information
       information          TYPE c LENGTH 255,
 
-      "! <p class="shorttext">Application Component (ACH)</p>
-      "! Application component (ACH)
+      "! <p class="shorttext">Application Component</p>
+      "! Application component
       support_component    TYPE c LENGTH 24,
-
-      "! <p class="shorttext">Suppress Tiles</p>
-      "! Suppress tiles
-      suppress_tiles       TYPE abap_bool,
 
       "! <p class="shorttext">Target Mapping Title</p>
       "! Target mapping title (smart link)
       target_mapping_title TYPE c LENGTH 255,
 
+      "! <p class="shorttext">Suppress Tiles</p>
+      "! Suppress tiles
+      suppress_tiles       TYPE abap_bool,
+
     END OF ty_general_information.
   TYPES:
-    "! <p class="shorttext">SAPUI5 Fiori Application Information</p>
-    "! SAPUI5 Fiori application information
+    "! <p class="shorttext">SAPUI5 Fiori App Information</p>
+    "! SAPUI5 Fiori app information
     BEGIN OF ty_app_details_ui5,
 
-      "! <p class="shorttext">SAPUI5 Component ID</p>
-      "! SAPUI5 Component ID
+      "! <p class="shorttext">SAPUI5 App ID</p>
+      "! SAPUI5 app ID
       "! $required
       app_id   TYPE c LENGTH 70,
 
@@ -80,12 +84,12 @@ INTERFACE zif_aff_uiad_v2
   "! $default {@link zif_aff_uiad_v2.data:co_web_dynpro_integration_mode.system_default}
   TYPES ty_web_dynpro_integration_mode TYPE c LENGTH 1.
   TYPES:
-    "! <p class="shorttext">Web Dynpro Application Inforation</p>
+    "! <p class="shorttext">Web Dynpro App Information</p>
     "! Web Dynpro application information
     BEGIN OF ty_app_details_web_dynpro,
 
-      "! <p class="shorttext">Web Dynpro Application</p>
-      "! Web Dynpro application
+      "! <p class="shorttext">Web Dynpro ABAP</p>
+      "! Web Dynpro ABAP
       "! $required
       app_id             TYPE c LENGTH 30,
 
@@ -107,8 +111,8 @@ INTERFACE zif_aff_uiad_v2
 
     END OF ty_app_details_web_dynpro.
   TYPES:
-    "! <p class="shorttext">Web Client Application Information</p>
-    "! Web Client application information
+    "! <p class="shorttext">WebClient UI App Information</p>
+    "! WebClient UI app information
     BEGIN OF ty_app_details_web_client,
 
       "! <p class="shorttext">Target ID</p>
@@ -134,8 +138,8 @@ INTERFACE zif_aff_uiad_v2
     END OF ty_url_template_parameter.
   TYPES ty_url_template_parameters TYPE STANDARD TABLE OF ty_url_template_parameter WITH DEFAULT KEY.
   TYPES:
-    "! <p class="shorttext">URL Template Application Information</p>
-    "! URL template application information
+    "! <p class="shorttext">URL Template App Information</p>
+    "! URL template app information
     BEGIN OF ty_app_details_url_template,
 
       "! <p class="shorttext">URL Template</p>
@@ -148,6 +152,19 @@ INTERFACE zif_aff_uiad_v2
       parameters  TYPE ty_url_template_parameters,
 
     END OF ty_app_details_url_template.
+
+  TYPES:
+    "! <p class="shorttext">Plug-In App Information</p>
+    "! Plug-In app information
+    BEGIN OF ty_app_details_plugin,
+
+      "! <p class="shorttext">Launchpad Plug-In ID</p>
+      "! Launchpad plug-in ID
+      "! $required
+      plugin_id TYPE c LENGTH 32,
+
+    END OF ty_app_details_plugin.
+
   "! <p class="shorttext">Filter Type</p>
   "! Type of the filter value
   "! $values {@link zif_aff_uiad_v2.data:co_filter_type}
@@ -217,6 +234,10 @@ INTERFACE zif_aff_uiad_v2
       "! <p class="shorttext">System Alias</p>
       "! System alias
       system_alias                  TYPE c LENGTH 32,
+
+*      "! <p class="shorttext">Communication Target</p>
+*      "! Communication Target
+*      communication_target          TYPE c LENGTH 30,
 
       "! <p class="shorttext">Desktop</p>
       "! Desktop is supported as device type
@@ -436,21 +457,25 @@ INTERFACE zif_aff_uiad_v2
       "! $required
       general_information      TYPE ty_general_information,
 
-      "! <p class="shorttext">SAPUI5 Application Information</p>
-      "! SAPUI5 application information
+      "! <p class="shorttext">SAPUI5 App Information</p>
+      "! SAPUI5 app information
       ui5_app_details          TYPE ty_app_details_ui5,
 
-      "! <p class="shorttext">Web Dynpro Application Information</p>
-      "! Web Dynpro application information
+      "! <p class="shorttext">Web Dynpro ABAP App Information</p>
+      "! Web Dynpro app information
       web_dynpro_app_details   TYPE ty_app_details_web_dynpro,
 
-      "! <p class="shorttext">Web Client Application Information</p>
-      "! Web Client application information
+      "! <p class="shorttext">WebClient UI App Information</p>
+      "! WebClient UI app information
       web_client_app_details   TYPE ty_app_details_web_client,
 
-      "! <p class="shorttext">URL Template Application Information</p>
-      "! URL Template application information
+      "! <p class="shorttext">URL Template App Information</p>
+      "! URL Template app information
       url_template_app_details TYPE ty_app_details_url_template,
+
+      "! <p class="shorttext">Plug-In App Information</p>
+      "! Plug-In app information
+      plugin_app_details       TYPE ty_app_details_plugin,
 
       "! <p class="shorttext">Navigation Information</p>
       "! Navigation information
@@ -469,31 +494,31 @@ INTERFACE zif_aff_uiad_v2
     END OF ty_main.
 
   CONSTANTS:
-    "! <p class="shorttext">Application Type</p>
+    "! <p class="shorttext">App Type</p>
     "! LADI application type
     BEGIN OF co_app_type,
 
-      "! <p class="shorttext">Transaction</p>
-      "! Transaction
+      "! <p class="shorttext">SAP GUI Transaction</p>
+      "! SAP GUI Transaction
       transaction  TYPE ty_app_type VALUE 'T',
 
-      "! <p class="shorttext">Web Dynpro Application</p>
-      "! Web Dynpro application
+      "! <p class="shorttext">Web Dynpro ABAP</p>
+      "! Web Dynpro ABAP application
       web_dynpro   TYPE ty_app_type VALUE 'W',
 
-      "! <p class="shorttext">Web Client UI Application</p>
-      "! Web Client UI application
+      "! <p class="shorttext">WebClient UI</p>
+      "! WebClient UI application
       web_client   TYPE ty_app_type VALUE 'C',
 
-      "! <p class="shorttext">SAPUI5 Fiori Application</p>
+      "! <p class="shorttext">SAPUI5</p>
       "! SAPUI5 Fiori application
       ui5          TYPE ty_app_type VALUE 'U',
 
-      "! <p class="shorttext">SAPUI5 Fiori Application on SAP BTP (Deprecated)</p>
+      "! <p class="shorttext">SAPUI5 on SAP BTP (Deprecated)</p>
       "! SAPUI5 Fiori application on SAP BTP (deprecated)
       legacy_ui5   TYPE ty_app_type VALUE 'S',
 
-      "! <p class="shorttext">URL Application</p>
+      "! <p class="shorttext">URL</p>
       "! URL application
       url          TYPE ty_app_type VALUE 'R',
 
@@ -504,6 +529,10 @@ INTERFACE zif_aff_uiad_v2
       "! <p class="shorttext">URL Template</p>
       "! URL template
       url_template TYPE ty_app_type VALUE 'G',
+
+      "! <p class="shorttext">Plug-In</p>
+      "! Plug-in
+      plug_in      TYPE ty_app_type VALUE 'P',
 
     END OF co_app_type.
   CONSTANTS:
