@@ -11,6 +11,14 @@
         "description": "Table Creation Mode"
       },
       {
+        "name": "TY_FIORI_ELEMENTS_APP",
+        "description": "Fiori Elements App Settings"
+      },
+      {
+        "name": "TY_HIDE_DRAFT",
+        "description": "Hiding Draft Related Features"
+      },
+      {
         "name": "TY_LIST_REPORT",
         "description": "List Report Configuration"
       },
@@ -28,7 +36,7 @@
       },
       {
         "name": "TY_SETTINGS",
-        "description": "Confguration of List Report and Object Pages"
+        "description": "Configuration of List Report and Object Pages"
       },
       {
         "name": "TY_TABLE_SETTING",
