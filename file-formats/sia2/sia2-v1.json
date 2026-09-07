@@ -57,7 +57,7 @@
         "originalLanguage"
       ]
     },
-    "fields": {
+    "restrictionFields": {
       "title": "Restriction Fields",
       "description": "Restriction fields assigned to the restriction type",
       "type": "array",
@@ -67,22 +67,16 @@
         "description": "Restriction field assigned to the restriction type",
         "type": "object",
         "properties": {
-          "name": {
-            "title": "Field Name",
+          "id": {
+            "title": "Restriction Field Name",
             "description": "Name of the restriction field",
             "type": "string",
             "maxLength": 30
-          },
-          "description": {
-            "title": "Text",
-            "description": "Description text of the restriction field",
-            "type": "string",
-            "maxLength": 80
           }
         },
         "additionalProperties": false,
         "required": [
-          "name"
+          "id"
         ]
       }
     },
@@ -107,12 +101,6 @@
             "description": "ID of the assigned authorization object",
             "type": "string",
             "maxLength": 10
-          },
-          "description": {
-            "title": "Authorization Object Extension Description",
-            "description": "Description text of the authorization object extension",
-            "type": "string",
-            "maxLength": 80
           }
         },
         "additionalProperties": false,
