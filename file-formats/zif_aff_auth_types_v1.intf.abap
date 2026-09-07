@@ -65,14 +65,6 @@ INTERFACE zif_aff_auth_types_v1
     ty_authorization_field_t TYPE STANDARD TABLE OF ty_authorization_field WITH DEFAULT KEY.
   TYPES:
     BEGIN OF ty_general_info_sush_susi,
-      "! <p class="shorttext">Name</p>
-      "! Name of the authorization default
-      "! $required
-      name                    TYPE ty_application_name,
-      "! <p class="shorttext">Type</p>
-      "! Type of authorization defaults
-      "! $required
-      type                    TYPE ty_application_type,
       "! <p class="shorttext">Application Name</p>
       "! Display name of the authorization default
       "! $required

@@ -6,8 +6,6 @@
     "abapLanguageVersion": "cloudDevelopment"
   },
   "generalInformation": {
-    "name": "0B6828C50B2F522D9A870A0F4DD023",
-    "type": "HT",
     "applicationName": "Z_YJ_HTTP4",
     "applicationType": "HTTP",
     "defaultValuesRequired": "yes"
