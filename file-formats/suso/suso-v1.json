@@ -96,12 +96,6 @@
             "type": "string",
             "maxLength": 10
           },
-          "description": {
-            "title": "Description",
-            "description": "Description of authorization field",
-            "type": "string",
-            "maxLength": 60
-          },
           "isActivityField": {
             "title": "Activity Field",
             "description": "By selecting this option, an authorization field can be flagged that can contain activity-related values. The ACTVT field is always an activity field. Organizational levels always represent organizational responsibilities, but never activities. Therefore, they cannot be declared as activity fields. If fields do not have a search help, it is very difficult to tell whether or not they can contain activity-related values. Therefore, they cannot be declared as activity fields.",

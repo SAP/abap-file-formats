@@ -30,10 +30,7 @@ INTERFACE zif_aff_suso_v1
       "! <p class="shorttext">Authorization Field</p>
       "! Name of the authorization field. An authorization object can contain up to 10 authorization fields.
       "! $required
-      authorization_field TYPE c LENGTH 10,
-      "! <p class="shorttext">Description</p>
-      "! Description of authorization field
-      description         TYPE c LENGTH 60,
+      authorization_field TYPE if_aff_auth_types_v1=>ty_auth_field,
       "! <p class="shorttext">Activity Field</p>
       "! By selecting this option, an authorization field can be flagged that can contain activity-related values.
       "! The ACTVT field is always an activity field.

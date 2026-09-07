@@ -10,16 +10,13 @@
   },
   "authorizationFields": [
     {
-      "authorizationField": "ACTVT",
-      "description": "Activity"
+      "authorizationField": "ACTVT"
     },
     {
-      "authorizationField": "USR_OBJECT",
-      "description": "Data Object Name"
+      "authorizationField": "USR_OBJECT"
     },
     {
-      "authorizationField": "USR_OBJNAM",
-      "description": "Object"
+      "authorizationField": "USR_OBJNAM"
     }
   ],
   "permittedActivities": [

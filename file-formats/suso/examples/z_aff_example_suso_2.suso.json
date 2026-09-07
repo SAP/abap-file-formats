@@ -11,12 +11,10 @@
   },
   "authorizationFields": [
     {
-      "authorizationField": "ACTVT",
-      "description": "Activity"
+      "authorizationField": "ACTVT"
     },
     {
-      "authorizationField": "/DMO/CN_30",
-      "description": "Country/Region Key"
+      "authorizationField": "/DMO/CN_30"
     }
   ],
   "permittedActivities": [
