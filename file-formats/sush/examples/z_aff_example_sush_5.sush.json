@@ -8,6 +8,7 @@
   "generalInformation": {
     "applicationName": "Z_YJ_HTTP4",
     "applicationType": "HTTP",
+    "maintenanceMode": "manual",    
     "defaultValuesRequired": "yes"
   },
   "authorizationObjects": [

@@ -7,7 +7,8 @@
   "generalInformation": {
     "applicationName": "BAPI_USER_CLONE",
     "applicationType": "FUNC",
-    "maintenanceMode": "noDefaultValues"
+    "maintenanceMode": "noDefaultValues",
+    "defaultValuesRequired": "no"  
   },
   "authorizationObjects": [
     {
