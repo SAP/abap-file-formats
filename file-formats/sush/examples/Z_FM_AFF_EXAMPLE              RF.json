@@ -1,0 +1,41 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Test example for AFF",
+    "originalLanguage": "en"
+  },
+  "generalInformation": {
+    "applicationName": "Z_FM_AFF_EXAMPLE",
+    "applicationType": "FUNC",
+    "maintenanceMode": "manual",
+    "defaultValuesRequired": "yes"    
+  },
+  "authorizationObjects": [
+    {
+      "authObjectName": "S_DEVELOP",
+      "maintenanceStatus": "defaultWithValues",
+      "authObjectFieldValues": [
+        {
+          "authFieldName": "DEVCLASS"
+        },
+        {
+          "authFieldName": "OBJTYPE"
+        },
+        {
+          "authFieldName": "OBJNAME"
+        },
+        {
+          "authFieldName": "P_GROUP"
+        },
+        {
+          "authFieldName": "ACTVT",
+          "authFieldLowValue": "03"
+        }
+      ]
+    },
+    {
+      "authObjectName": "S_RFC",
+      "maintenanceStatus": "noDefault"
+    }
+  ]
+}

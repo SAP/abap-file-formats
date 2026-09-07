@@ -1,17 +1,26 @@
 {
   "formatVersion": "1",
   "header": {
-    "description": "R3TR HTTP Z_YJ_HTTP4",
+    "description": "R3TR HTTP AFF_EXAMPLE_FOR_SUSH",
     "originalLanguage": "en",
     "abapLanguageVersion": "cloudDevelopment"
   },
   "generalInformation": {
-    "applicationName": "Z_YJ_HTTP4",
+    "applicationName": "AFF_EXAMPLE_FOR_SUSH",
     "applicationType": "HTTP",
-    "maintenanceMode": "manual",    
+    "maintenanceMode": "manual",
     "defaultValuesRequired": "yes"
   },
   "authorizationObjects": [
+    {
+      "authObjectName": "S_AUTH_DEV",
+      "maintenanceStatus": "inactiveValues",
+      "authObjectFieldValues": [
+        {
+          "authFieldName": "ACTVT"
+        }
+      ]
+    },
     {
       "authObjectName": "S_START",
       "maintenanceStatus": "noDefault"
