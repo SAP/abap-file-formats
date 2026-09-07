@@ -1,0 +1,18 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Create/Change Users (Only Usable by CUA Distribution)",
+    "originalLanguage": "de"
+  },
+  "generalInformation": {
+    "applicationName": "BAPI_USER_CLONE",
+    "applicationType": "FUNC",
+    "maintenanceMode": "noDefaultValues"
+  },
+  "authorizationObjects": [
+    {
+      "authObjectName": "S_RFC",
+      "maintenanceStatus": "noDefault"
+    }
+  ]
+}

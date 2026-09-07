@@ -76,10 +76,12 @@ INTERFACE zif_aff_auth_types_v1
       "! <p class="shorttext">Maintenance Mode</p>
       "! Maintenance modes for applications define how applications can be modified
       "! Used on on-premise systems only.
+      "! $required
       maintenance_mode        TYPE ty_maintenance_mode,
       "! <p class="shorttext">Default Values Required</p>
       "! Indicates that no authorization defaults are defined.
       "! Used on cloud systems only.
+      "! $required
       default_values_required TYPE ty_default_values_required,
       "! <p class="shorttext">Documentation</p>
       "! Authorization defaults documentation for application.

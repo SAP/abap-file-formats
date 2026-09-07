@@ -128,7 +128,9 @@
       "additionalProperties": false,
       "required": [
         "applicationName",
-        "applicationType"
+        "applicationType",
+        "maintenanceMode",
+        "defaultValuesRequired"
       ]
     },
     "authorizationObjects": {
