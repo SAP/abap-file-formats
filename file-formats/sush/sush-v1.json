@@ -59,18 +59,6 @@
       "description": "General information",
       "type": "object",
       "properties": {
-        "name": {
-          "title": "Name",
-          "description": "Name of the authorization default",
-          "type": "string",
-          "maxLength": 132
-        },
-        "type": {
-          "title": "Type",
-          "description": "Type of authorization defaults",
-          "type": "string",
-          "maxLength": 80
-        },
         "applicationName": {
           "title": "Application Name",
           "description": "Display name of the authorization default",
@@ -139,8 +127,6 @@
       },
       "additionalProperties": false,
       "required": [
-        "name",
-        "type",
         "applicationName",
         "applicationType"
       ]
