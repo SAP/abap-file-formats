@@ -57,7 +57,7 @@
         "originalLanguage"
       ]
     },
-    "extendedBehaviorDefintion": {
+    "extendedBehaviorDefinition": {
       "title": "Extended Behavior Definition",
       "description": "Extended Behavior Definition",
       "type": "object",
