@@ -68,7 +68,7 @@
         "type": "object",
         "properties": {
           "id": {
-            "title": "Restriction Field Name",
+            "title": "Restriction Field ID",
             "description": "Name of the restriction field",
             "type": "string",
             "maxLength": 30

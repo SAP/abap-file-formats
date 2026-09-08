@@ -6,7 +6,7 @@ INTERFACE zif_aff_sia2_v1
     "! Restriction field assigned to the restriction type
     BEGIN OF ty_field,
 
-      "! <p class="shorttext">Restriction Field Name</p>
+      "! <p class="shorttext">Restriction Field ID</p>
       "! Name of the restriction field
       "! $required
       id TYPE c LENGTH 30,
