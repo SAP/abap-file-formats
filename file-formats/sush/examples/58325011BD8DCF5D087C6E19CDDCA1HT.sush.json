@@ -1,0 +1,115 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "R3TR SUCO ADT_SUSH_SRV",
+    "originalLanguage": "de"
+  },
+  "generalInformation": {
+    "applicationName": "ADT_SUSH_SRV",
+    "applicationType": "SUCO",
+    "maintenanceMode": "manual",
+    "defaultValuesRequired": "yes"
+  },
+  "authorizationObjects": [
+    {
+      "authObjectName": "S_ABAPDUMP",
+      "maintenanceStatus": "noDefault"
+    },
+    {
+      "authObjectName": "S_ABPLNGVS",
+      "maintenanceStatus": "defaultWithoutValues"
+    },
+    {
+      "authObjectName": "S_ADT_RES",
+      "maintenanceStatus": "defaultWithValues",
+      "authObjectFieldValues": [
+        {
+          "authFieldName": "URI",
+          "authFieldLowValue": "/sap/bc/adt/aps/iam/sush"
+        },
+        {
+          "authFieldName": "URI",
+          "authFieldLowValue": "/sap/bc/adt/aps/iam/sush/*"
+        }
+      ]
+    },
+    {
+      "authObjectName": "S_ALV_LAYO",
+      "maintenanceStatus": "noDefault"
+    },
+    {
+      "authObjectName": "S_ALV_LAYR",
+      "maintenanceStatus": "noDefault"
+    },
+    {
+      "authObjectName": "S_APPL_LOG",
+      "maintenanceStatus": "noDefault"
+    },
+    {
+      "authObjectName": "S_DATASET",
+      "maintenanceStatus": "noDefault"
+    },
+    {
+      "authObjectName": "S_DEVELOP",
+      "maintenanceStatus": "defaultWithValues",
+      "authObjectFieldValues": [
+        {
+          "authFieldName": "DEVCLASS"
+        },
+        {
+          "authFieldName": "OBJTYPE",
+          "authFieldLowValue": "SUSH"
+        },
+        {
+          "authFieldName": "OBJNAME"
+        },
+        {
+          "authFieldName": "P_GROUP"
+        },
+        {
+          "authFieldName": "ACTVT"
+        }
+      ]
+    },
+    {
+      "authObjectName": "S_GUI",
+      "maintenanceStatus": "noDefault"
+    },
+    {
+      "authObjectName": "S_ICF_ADM",
+      "maintenanceStatus": "noDefault"
+    },
+    {
+      "authObjectName": "S_PACKSTRU",
+      "maintenanceStatus": "noDefault"
+    },
+    {
+      "authObjectName": "S_SCOPE",
+      "maintenanceStatus": "noDefault"
+    },
+    {
+      "authObjectName": "S_SERVICE",
+      "maintenanceStatus": "noDefault"
+    },
+    {
+      "authObjectName": "S_SYS_INFO",
+      "maintenanceStatus": "noDefault"
+    },
+    {
+      "authObjectName": "S_TABU_DIS",
+      "maintenanceStatus": "noDefault"
+    },
+    {
+      "authObjectName": "S_TABU_NAM",
+      "maintenanceStatus": "noDefault"
+    },
+    {
+      "authObjectName": "S_TCODE",
+      "maintenanceStatus": "noDefault"
+    },
+    {
+      "authObjectName": "S_TRANSPRT",
+      "maintenanceStatus": "noDefault"
+    }
+  ]
+}
