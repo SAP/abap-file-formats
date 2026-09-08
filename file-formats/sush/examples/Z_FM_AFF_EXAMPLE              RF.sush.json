@@ -8,7 +8,7 @@
     "applicationName": "Z_FM_AFF_EXAMPLE",
     "applicationType": "FUNC",
     "maintenanceMode": "manual",
-    "defaultValuesRequired": "yes"    
+    "defaultValuesRequired": "yes"
   },
   "authorizationObjects": [
     {
