@@ -181,12 +181,12 @@
                   ],
                   "enumDescriptions": [
                     "Field is in source structure",
-                    "Field is in desctination structure",
+                    "Field is in destination structure",
                     "Field is constant value",
                     "Field is system field",
-                    "Field is in sending systemte",
+                    "Field is in sending system",
                     "Field is current line number",
-                    "Fieldpath is starting from a parant node"
+                    "Fieldpath is starting from a parent node"
                   ],
                   "default": "sourceStructure"
                 },
