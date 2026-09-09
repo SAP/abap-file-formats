@@ -1,0 +1,22 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "SXTG",
+    "description": "SAP GUI Extension Point",
+    "group": "Extensibility"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.sxtg.json",
+          "cardinality": "1",
+          "schema": "sxtg-v1.json",
+          "definitionInterface": "type/zif_aff_sxtg_v1.intf.abap",
+          "examples": ["examples/sxtg_tsm_so.sxtg.json"]
+        }
+      ]
+    }
+  ]
+}

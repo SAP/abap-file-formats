@@ -1,0 +1,22 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "DEVC",
+    "description": "Package",
+    "group": "Package"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.devc.json",
+          "cardinality": "1",
+          "schema": "devc-v1.json",
+          "definitionInterface": "type/zif_aff_devc_v1.intf.abap",
+          "examples": ["examples/test_aff_example_devc.devc.json"]
+        }
+      ]
+    }
+  ]
+}

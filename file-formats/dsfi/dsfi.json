@@ -1,0 +1,22 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "DSFI",
+    "description": "Dictionary Scalar Function Implementation Reference",
+    "group": "Core Data Services"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.dsfi.json",
+          "cardinality": "1",
+          "schema": "dsfi-v1.json",
+          "definitionInterface": "type/zif_aff_dsfi_v1.intf.abap",
+          "examples": ["examples/z_aff_example_dsfi_ana.dsfi.json", "examples/z_aff_example_dsfi_sql.dsfi.json"]
+        }
+      ]
+    }
+  ]
+}

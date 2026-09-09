@@ -1,0 +1,22 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "ADVC",
+    "description": "Application Variant",
+    "group": "LRep"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.advc.json",
+          "cardinality": "1",
+          "schema": "advc-v1.json",
+          "definitionInterface": "type/zif_aff_advc_v1.intf.abap",
+          "examples": ["examples/z_aff_example_advc.advc.json"]
+        }
+      ]
+    }
+  ]
+}

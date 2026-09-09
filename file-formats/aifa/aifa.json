@@ -1,0 +1,22 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "AIFA",
+    "description": "Action",
+    "group": "Application Interface Framework"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.aifa.json",
+          "cardinality": "1",
+          "schema": "aifa-v1.json",
+          "definitionInterface": "type/zif_aff_aifa_v1.intf.abap",
+          "examples": ["examples/z_aff_example_aifa.aifa.json"]
+        }
+      ]
+    }
+  ]
+}
