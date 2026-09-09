@@ -81,6 +81,7 @@ INTERFACE zif_aff_suso_v1
     BEGIN OF ty_permitted_activity,
       "! <p class="shorttext">Activity</p>
       "! Activity
+      "! $required
       activity        TYPE c LENGTH 2,
       "! <p class="shorttext">Description</p>
       "! Description of the activity
