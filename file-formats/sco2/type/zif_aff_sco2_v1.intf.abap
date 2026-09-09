@@ -8,11 +8,11 @@ INTERFACE zif_aff_sco2_v1
 
       "! <p class="shorttext">Message Type</p>
       "! IDoc message type
-      msg_type TYPE c LENGTH 30,
+      message_type TYPE c LENGTH 30,
 
       "! <p class="shorttext">Basic Type</p>
       "! IDoc basic type
-      type     TYPE c LENGTH 30,
+      basic_type   TYPE c LENGTH 30,
 
     END OF ty_idoc.
 
@@ -27,7 +27,7 @@ INTERFACE zif_aff_sco2_v1
 
       "! <p class="shorttext">SOAP Operation</p>
       "! Internal name of the SOAP operation
-      operation_name TYPE c LENGTH 30,
+      soap_operation TYPE c LENGTH 30,
 
     END OF ty_soap.
 
@@ -38,11 +38,11 @@ INTERFACE zif_aff_sco2_v1
 
       "! <p class="shorttext">Service Document Identifier</p>
       "! Identifier of the OData service document
-      srv_identifier TYPE c LENGTH 40,
+      service_identifier TYPE c LENGTH 40,
 
       "! <p class="shorttext">OData V4 Group ID</p>
       "! Group ID of the OData V4 service
-      v4_group_id    TYPE c LENGTH 36,
+      v4_group_id        TYPE c LENGTH 36,
 
     END OF ty_odata.
 
@@ -53,11 +53,11 @@ INTERFACE zif_aff_sco2_v1
 
       "! <p class="shorttext">Registration ID</p>
       "! ID of the event registration
-      id      TYPE c LENGTH 36,
+      registration_id      TYPE c LENGTH 36,
 
       "! <p class="shorttext">Registration Version</p>
       "! Version of the event registration, with leading zeros
-      version TYPE n LENGTH 4,
+      registration_version TYPE n LENGTH 4,
 
     END OF ty_eeec.
 
@@ -125,47 +125,47 @@ INTERFACE zif_aff_sco2_v1
 
       "! <p class="shorttext">ABAP Daemon</p>
       "! ABAP daemon, application ID
-      abap_daemon         TYPE ty_ibs_type VALUE 'DMON',
+      abap_daemon             TYPE ty_ibs_type VALUE 'DMON',
 
       "! <p class="shorttext">Event Consumption Model</p>
       "! Event consumption model
-      event_consumption   TYPE ty_ibs_type VALUE 'EEEC',
+      event_consumption_model TYPE ty_ibs_type VALUE 'EEEC',
 
       "! <p class="shorttext">OData V4</p>
       "! OData V4 service
-      odata_v4            TYPE ty_ibs_type VALUE 'G4BA',
+      odata_v4                TYPE ty_ibs_type VALUE 'G4BA',
 
       "! <p class="shorttext">HTTP Service</p>
       "! HTTP service
-      http_service        TYPE ty_ibs_type VALUE 'HTTP',
+      http_service            TYPE ty_ibs_type VALUE 'HTTP',
 
       "! <p class="shorttext">IDoc</p>
       "! IDoc
-      idoc                TYPE ty_ibs_type VALUE 'IDOC',
+      idoc                    TYPE ty_ibs_type VALUE 'IDOC',
 
       "! <p class="shorttext">OData V2</p>
       "! OData V2 service
-      odata_v2            TYPE ty_ibs_type VALUE 'IWSG',
+      odata_v2                TYPE ty_ibs_type VALUE 'IWSG',
 
       "! <p class="shorttext">ADT Service Group</p>
       "! ADT service group
-      adt_service_group   TYPE ty_ibs_type VALUE 'SADT',
+      adt_service_group       TYPE ty_ibs_type VALUE 'SADT',
 
       "! <p class="shorttext">ICF</p>
       "! ICF service
-      icf                 TYPE ty_ibs_type VALUE 'SICF',
+      icf                     TYPE ty_ibs_type VALUE 'SICF',
 
       "! <p class="shorttext">SQL Service Binding</p>
       "! SQL service binding
-      sql_service_binding TYPE ty_ibs_type VALUE 'SQL1',
+      sql_service_binding     TYPE ty_ibs_type VALUE 'SQL1',
 
       "! <p class="shorttext">RFC</p>
       "! RFC service
-      rfc                 TYPE ty_ibs_type VALUE 'SRFC',
+      rfc                     TYPE ty_ibs_type VALUE 'SRFC',
 
       "! <p class="shorttext">SOAP</p>
       "! SOAP service
-      soap                TYPE ty_ibs_type VALUE 'WEBI',
+      soap                    TYPE ty_ibs_type VALUE 'WEBI',
 
     END OF co_ibs_type.
 
@@ -179,29 +179,19 @@ INTERFACE zif_aff_sco2_v1
       "! Check the {@link zif_aff_sco2_v1.data:co_ibs_type} constants for possible values.
       "! $required
       "! $values {@link zif_aff_sco2_v1.data:co_ibs_type}
-      ibs_type        TYPE ty_ibs_type,
+      type                    TYPE ty_ibs_type,
 
       "! <p class="shorttext">Scope Dependent</p>
       "! Indicates whether the inbound service is scope-dependent
-      scope_dependent TYPE abap_bool,
+      scope_dependent         TYPE abap_bool,
 
       "! <p class="shorttext">App Type</p>
       "! Inbound service app type for extensibility
-      ibs_app_type    TYPE c LENGTH 4,
+      app_type                TYPE c LENGTH 4,
 
       "! <p class="shorttext">Leading Business Object</p>
       "! SAP object type of the leading business object
-      leading_bo_type TYPE c LENGTH 30,
-
-*      "! <p class="shorttext">Released for Customer Scenarios</p>
-*      "! Indicates whether the inbound service is released for communication
-*      "! scenarios of type Customer
-*      released_for_customer_scenario TYPE abap_bool,
-*
-*      "! <p class="shorttext">Publish on SAP Business Accelerator Hub</p>
-*      "! Indicates whether the inbound service is published on the
-*      "! SAP Business Accelerator Hub
-*      publish_api_hub                TYPE abap_bool,
+      leading_business_object TYPE c LENGTH 30,
 
     END OF ty_general_information.
 

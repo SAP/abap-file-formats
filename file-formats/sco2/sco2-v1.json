@@ -62,13 +62,13 @@
       "description": "General information",
       "type": "object",
       "properties": {
-        "ibsType": {
+        "type": {
           "title": "Inbound Service Type",
           "description": "Type of the inbound service. Determines which field or group of the service details is filled. Check the {@link zif_aff_sco2_v1.data:co_ibs_type} constants for possible values.",
           "type": "string",
           "enum": [
             "abapDaemon",
-            "eventConsumption",
+            "eventConsumptionModel",
             "odataV4",
             "httpService",
             "idoc",
@@ -111,13 +111,13 @@
           "description": "Indicates whether the inbound service is scope-dependent",
           "type": "boolean"
         },
-        "ibsAppType": {
+        "appType": {
           "title": "App Type",
           "description": "Inbound service app type for extensibility",
           "type": "string",
           "maxLength": 4
         },
-        "leadingBoType": {
+        "leadingBusinessObject": {
           "title": "Leading Business Object",
           "description": "SAP object type of the leading business object",
           "type": "string",
@@ -126,7 +126,7 @@
       },
       "additionalProperties": false,
       "required": [
-        "ibsType"
+        "type"
       ]
     },
     "serviceDetails": {
@@ -145,13 +145,13 @@
           "description": "Details of an inbound service of type IDoc",
           "type": "object",
           "properties": {
-            "msgType": {
+            "messageType": {
               "title": "Message Type",
               "description": "IDoc message type",
               "type": "string",
               "maxLength": 30
             },
-            "type": {
+            "basicType": {
               "title": "Basic Type",
               "description": "IDoc basic type",
               "type": "string",
@@ -177,7 +177,7 @@
               "type": "string",
               "maxLength": 30
             },
-            "operationName": {
+            "soapOperation": {
               "title": "SOAP Operation",
               "description": "Internal name of the SOAP operation",
               "type": "string",
@@ -191,7 +191,7 @@
           "description": "Details of an inbound service of type OData",
           "type": "object",
           "properties": {
-            "srvIdentifier": {
+            "serviceIdentifier": {
               "title": "Service Document Identifier",
               "description": "Identifier of the OData service document",
               "type": "string",
@@ -229,13 +229,13 @@
           "description": "Details of an inbound service of type EEEC",
           "type": "object",
           "properties": {
-            "id": {
+            "registrationId": {
               "title": "Registration ID",
               "description": "ID of the event registration",
               "type": "string",
               "maxLength": 36
             },
-            "version": {
+            "registrationVersion": {
               "title": "Registration Version",
               "description": "Version of the event registration, with leading zeros",
               "type": "string",
