@@ -21,13 +21,13 @@ INTERFACE zif_aff_sco2_v1
     "! Details of an inbound service of type SOAP
     BEGIN OF ty_soap,
 
-      "! <p class="shorttext">Service Definition</p>
-      "! Name of the service definition
-      interface_name TYPE c LENGTH 30,
+      "! <p class="shorttext">Interface</p>
+      "! Name of the soap interface (service definition)
+      interface TYPE c LENGTH 30,
 
-      "! <p class="shorttext">SOAP Operation</p>
-      "! Internal name of the SOAP operation
-      soap_operation TYPE c LENGTH 30,
+      "! <p class="shorttext">Operation</p>
+      "! SOAP operation
+      operation TYPE c LENGTH 30,
 
     END OF ty_soap.
 

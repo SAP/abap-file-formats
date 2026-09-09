@@ -171,15 +171,15 @@
           "description": "Details of an inbound service of type SOAP",
           "type": "object",
           "properties": {
-            "interfaceName": {
-              "title": "Service Definition",
-              "description": "Name of the service definition",
+            "interface": {
+              "title": "Interface",
+              "description": "Name of the soap interface (service definition)",
               "type": "string",
               "maxLength": 30
             },
-            "soapOperation": {
-              "title": "SOAP Operation",
-              "description": "Internal name of the SOAP operation",
+            "operation": {
+              "title": "Operation",
+              "description": "SOAP operation",
               "type": "string",
               "maxLength": 30
             }
