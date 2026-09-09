@@ -1,0 +1,44 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Access to Configuration Objects",
+    "originalLanguage": "de"
+  },
+  "generalInformation": {
+    "objectClass": "BC_A",
+    "objectClassDescription": "Basis: Administration"
+  },
+  "authorizationFields": [
+    {
+      "authorizationField": "ACTVT"
+    },
+    {
+      "authorizationField": "USR_OBJECT"
+    },
+    {
+      "authorizationField": "USR_OBJNAM"
+    }
+  ],
+  "permittedActivities": [
+    {
+      "activity": "02",
+      "description": "Change"
+    },
+    {
+      "activity": "03",
+      "description": "Display"
+    },
+    {
+      "activity": "06",
+      "description": "Delete"
+    },
+    {
+      "activity": "08",
+      "description": "Display change documents"
+    }
+  ],
+  "objectAttributes": {
+    "criticality": "critical",
+    "classCopyToDefaultData": "ifInSameSoftwareComponent"
+  }
+}

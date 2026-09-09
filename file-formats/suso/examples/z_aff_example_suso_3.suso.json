@@ -1,0 +1,17 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Test Object",
+    "originalLanguage": "en"
+  },
+  "generalInformation": {
+    "objectClass": "CPAE",
+    "objectClassDescription": "Authorization Objects for Cloud Development"
+  },
+  "authorizationFields": [
+    {
+      "authorizationField": "Z_TEST_1",
+      "isActivityField": true
+    }
+  ]
+}
