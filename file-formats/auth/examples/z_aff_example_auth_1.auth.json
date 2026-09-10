@@ -5,11 +5,6 @@
     "originalLanguage": "de"
   },
   "generalInformation": {
-    "dataElement": "ICF_NODE",
-    "orgLevelInfo": "Field is not defined as Organizational level."
-  },
-  "maintenanceDialog": {
-    "typeOfMaintenanceDialog": "individual",
-    "exitFunctionModule": "F4_PFCG_SICF"
+    "dataElement": "ICF_NODE"
   }
 }

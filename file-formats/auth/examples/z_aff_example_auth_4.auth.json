@@ -5,11 +5,9 @@
     "originalLanguage": "de"
   },
   "generalInformation": {
-    "dataElement": "PLVAR",
-    "orgLevelInfo": "Field is defined as Organizational level with Variable $PLVAR."
+    "dataElement": "PLVAR"
   },
-  "searchHelp": {
-    "checkTable": "T778P",
-    "typeOfSearchHelp": "checkTable"
+  "alternativeSearchHelp": {
+    "checkTable": "T778P"
   }
 }

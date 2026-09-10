@@ -5,10 +5,6 @@
     "originalLanguage": "en"
   },
   "generalInformation": {
-    "dataElement": "SUID_ATTR_ID_MONITORING",
-    "orgLevelInfo": "Field is not defined as Organizational level."
-  },
-  "searchHelp": {
-    "objectFieldSearchHelp": true
+    "dataElement": "SUID_ATTR_ID_MONITORING"
   }
 }

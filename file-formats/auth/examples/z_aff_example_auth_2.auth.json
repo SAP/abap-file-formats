@@ -5,14 +5,9 @@
     "originalLanguage": "de"
   },
   "generalInformation": {
-    "dataElement": "ACTIV_AUTH",
-    "orgLevelInfo": "Field cannot be defined as Organizational level."
+    "dataElement": "ACTIV_AUTH"
   },
-  "maintenanceDialog": {
-    "objectOwnMaintDialog": true
-  },
-  "searchHelp": {
-    "checkTable": "TACT",
-    "typeOfSearchHelp": "checkTable"
+  "alternativeSearchHelp": {
+    "checkTable": "TACT"
   }
 }
