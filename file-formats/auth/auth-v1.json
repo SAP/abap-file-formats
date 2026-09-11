@@ -17,12 +17,6 @@
       "description": "Header",
       "type": "object",
       "properties": {
-        "description": {
-          "title": "Description",
-          "description": "Description of the ABAP object",
-          "type": "string",
-          "maxLength": 60
-        },
         "originalLanguage": {
           "title": "Original Language",
           "description": "Original language of the ABAP object",
@@ -48,11 +42,7 @@
           "default": "standard"
         }
       },
-      "additionalProperties": false,
-      "required": [
-        "description",
-        "originalLanguage"
-      ]
+      "additionalProperties": false
     },
     "generalInformation": {
       "title": "General Information",
