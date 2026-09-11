@@ -69,47 +69,47 @@ INTERFACE zif_aff_sco2_v1
 
       "! <p class="shorttext">ICF Path</p>
       "! Path of the ICF node (case-sensitive)
-      icf_path        TYPE c LENGTH 200,
+      icf_path                TYPE c LENGTH 200,
 
       "! <p class="shorttext">IDoc Service</p>
       "! Details of an inbound service of type IDoc
-      idoc            TYPE ty_idoc,
+      idoc                    TYPE ty_idoc,
 
       "! <p class="shorttext">RFC Service ID</p>
       "! ID of the RFC service
-      rfc_service_id  TYPE c LENGTH 30,
+      rfc_service_id          TYPE c LENGTH 30,
 
       "! <p class="shorttext">SOAP Service</p>
       "! Details of an inbound service of type SOAP
-      soap            TYPE ty_soap,
+      soap                    TYPE ty_soap,
 
       "! <p class="shorttext">OData Service</p>
       "! Details of an inbound service of type OData
-      odata           TYPE ty_odata,
+      odata                   TYPE ty_odata,
 
       "! <p class="shorttext">HTTP Service ID</p>
       "! ID of the HTTP service
-      http_service_id TYPE c LENGTH 30,
+      http_service_id         TYPE c LENGTH 30,
 
       "! <p class="shorttext">ADT Service Group</p>
       "! Name of the ADT service group
-      sadt_group_name TYPE c LENGTH 40,
+      sadt_group_name         TYPE c LENGTH 40,
 
       "! <p class="shorttext">SQL Service Binding</p>
       "! ID of the SQL service binding
-      sql1_name       TYPE c LENGTH 30,
+      sql1_name               TYPE c LENGTH 30,
 
       "! <p class="shorttext">Event Consumption Service</p>
       "! Details of an inbound service of type EEEC
-      eeec            TYPE ty_eeec,
+      eeec                    TYPE ty_eeec,
 
       "! <p class="shorttext">ABAP Daemon ID</p>
       "! ID of the ABAP daemon application
-      daemon_id       TYPE c LENGTH 30,
+      daemon_id               TYPE c LENGTH 30,
 
       "! <p class="shorttext">INA Service ID</p>
       "! ID of the INA service
-      ina1_service_id TYPE c LENGTH 40,
+      ina1_service_id         TYPE c LENGTH 40,
 
       "! <p class="shorttext">Leading Business Object</p>
       "! SAP object type of the leading business object
@@ -184,15 +184,15 @@ INTERFACE zif_aff_sco2_v1
       "! Check the {@link zif_aff_sco2_v1.data:co_ibs_type} constants for possible values.
       "! $required
       "! $values {@link zif_aff_sco2_v1.data:co_ibs_type}
-      type                    TYPE ty_ibs_type,
+      type            TYPE ty_ibs_type,
 
       "! <p class="shorttext">Scope Dependent</p>
       "! Indicates whether the inbound service is scope-dependent
-      scope_dependent         TYPE abap_bool,
+      scope_dependent TYPE abap_bool,
 
       "! <p class="shorttext">App Type</p>
       "! Inbound service app type for extensibility
-      app_type                TYPE c LENGTH 4,
+      app_type        TYPE c LENGTH 4,
 
     END OF ty_general_information.
 
