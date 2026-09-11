@@ -116,12 +116,6 @@
           "description": "Inbound service app type for extensibility",
           "type": "string",
           "maxLength": 4
-        },
-        "leadingBusinessObject": {
-          "title": "Leading Business Object",
-          "description": "SAP object type of the leading business object",
-          "type": "string",
-          "maxLength": 30
         }
       },
       "additionalProperties": false,
@@ -256,6 +250,12 @@
           "description": "ID of the INA service",
           "type": "string",
           "maxLength": 40
+        },
+        "leadingBusinessObject": {
+          "title": "Leading Business Object",
+          "description": "SAP object type of the leading business object",
+          "type": "string",
+          "maxLength": 30
         }
       },
       "additionalProperties": false

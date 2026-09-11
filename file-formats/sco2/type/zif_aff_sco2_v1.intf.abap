@@ -111,6 +111,11 @@ INTERFACE zif_aff_sco2_v1
       "! ID of the INA service
       ina1_service_id TYPE c LENGTH 40,
 
+      "! <p class="shorttext">Leading Business Object</p>
+      "! SAP object type of the leading business object
+      leading_business_object TYPE c LENGTH 30,
+
+
     END OF ty_service_details.
 
   "! <p class="shorttext">Inbound Service Type</p>
@@ -188,10 +193,6 @@ INTERFACE zif_aff_sco2_v1
       "! <p class="shorttext">App Type</p>
       "! Inbound service app type for extensibility
       app_type                TYPE c LENGTH 4,
-
-      "! <p class="shorttext">Leading Business Object</p>
-      "! SAP object type of the leading business object
-      leading_business_object TYPE c LENGTH 30,
 
     END OF ty_general_information.
 
