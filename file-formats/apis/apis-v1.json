@@ -195,7 +195,7 @@
                   "description": "Planned decommissioning date",
                   "type": "string",
                   "maxLength": 7,
-                  "pattern": "[0-9]{4}-[0-9]{2}"
+                  "pattern": "20[0-9]{2}-(0[1-9]|1[0-2])"
                 },
                 "successorInformation": {
                   "title": "Successor Information",
