@@ -1,0 +1,12 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Example restriction field",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "authorizationFieldId": "Z_AUTH_FLD",
+    "isRangeSupported": true
+  }
+}
