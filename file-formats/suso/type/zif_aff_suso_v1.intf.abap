@@ -27,7 +27,7 @@ INTERFACE zif_aff_suso_v1
       "! <p class="shorttext">Authorization Field</p>
       "! Name of the authorization field. An authorization object can contain up to 10 authorization fields.
       "! $required
-      authorization_field TYPE if_aff_auth_types_v1=>ty_auth_field,
+      authorization_field TYPE zif_aff_auth_types_v1=>ty_auth_field,
       "! <p class="shorttext">Search Help</p>
       "! If the search help for the authorization field returns unsuitable selection results in the current
       "! authorization object, an alternative search help can be maintained for the field, in order to select suitable
