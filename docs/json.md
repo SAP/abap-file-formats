@@ -225,6 +225,168 @@ In case additional values for the enum should be added compatibly later, a defau
 
 The order of the comments and annotations presented here is important: First, there is the comment for the title followed by the one for the description, in case they are both provided. After these two, the remaining annotations are always located. Between them, the order is irrelevant.
 
+### Union Types (oneOf)
+
+To model alternatives in JSON files, `oneOf` groups can be defined by ABAP Doc annotations on the corresponding structure components.
+
+
+The following annotations are available:
+
+```abap
+"! $oneOfDiscriminatorFor <group_name>
+"! $oneOfGroup <group_name>
+"! $oneOfValue 'enumValue'
+"! $oneOfValue {@link source_name.data:constant_name.component_name}
+```
+
+The annotation `$oneOfGroup` assigns a field to a union group. All fields that share the same group name belong to the same `oneOf`.
+
+The annotation `$oneOfDiscriminatorFor` marks a field as discriminator for the referenced `oneOf` group. For each `$oneOfGroup`, `$oneOfDiscriminatorFor` must be specified exactly once on the discriminator field.
+
+The annotation `$oneOfValue` defines the discriminator value that activates the annotated branch. It can be specified either as a literal JSON value in single quotation marks or as a link to a constant component.
+
+If `$oneOfValue` is specified as a link to an enum constant component, the resulting JSON value is derived exactly as for enum values:
+
+1. If the referenced enum component has an `$enumValue` annotation, this value is used.
+2. Otherwise, the component name is transformed to camel case.
+
+This guarantees consistency between enum definitions and `oneOf` discriminator values.
+
+Recommended usage:
+
+1. Define the discriminator as an enum field with `$values`.
+2. Specify `$oneOfDiscriminatorFor <group_name>` on the discriminator field.
+3. The discriminator may be located in a different structure (for example in `general_information`) as long as it is in the same object scope.
+4. Use `{@link ...}` for `$oneOfValue` to avoid duplication.
+5. Use one unique `$oneOfValue` per branch in the same `$oneOfGroup`.
+
+In the example below, enum metadata (`$values`) is defined on the type `ty_kind` and is therefore reused by the field `payload_kind` via its type.
+
+Simple example:
+
+```abap
+TYPES:
+  "! <p class="shorttext">Payload Kind</p>
+  "! Payload kind
+  "! $values {@link zif_aff_example_v1.data:co_kind}
+  ty_kind TYPE c LENGTH 1.
+
+CONSTANTS:
+  "! <p class="shorttext">Payload Kind Values</p>
+  "! Allowed values for payload kind
+  BEGIN OF co_kind,
+    "! <p class="shorttext">Inline</p>
+    "! Inline payload variant
+    inline    TYPE ty_kind VALUE 'I',
+    "! <p class="shorttext">Reference</p>
+    "! Reference payload variant
+    reference TYPE ty_kind VALUE 'R',
+  END OF co_kind.
+
+TYPES:
+  "! <p class="shorttext">General Information</p>
+  "! General information for payload selection
+  BEGIN OF ty_general_information,
+    "! <p class="shorttext">Payload Kind</p>
+    "! Payload kind selecting the active payload variant
+    "! $required
+    "! $oneOfDiscriminatorFor payload_variant
+    payload_kind TYPE ty_kind,
+  END OF ty_general_information.
+
+TYPES:
+  "! <p class="shorttext">Main Data</p>
+  "! Main data of the example format.
+  "! For simplicity we skip the fields `formatVersion` and `header` in this example.
+  BEGIN OF ty_main,
+    "! <p class="shorttext">General Information</p>
+    "! General information containing discriminator fields
+    "! $required
+    general_information TYPE ty_general_information,
+
+    "! <p class="shorttext">Inline Payload</p>
+    "! Payload content for inline variant
+    "! $oneOfGroup payload_variant
+    "! $oneOfValue {@link zif_aff_example_v1.data:co_kind.inline}
+    inline_payload    TYPE string,
+
+    "! <p class="shorttext">Reference Payload</p>
+    "! Payload content for reference variant
+    "! $oneOfGroup payload_variant
+    "! $oneOfValue {@link zif_aff_example_v1.data:co_kind.reference}
+    reference_payload TYPE string,
+  END OF ty_main.
+```
+
+This is translated to JSON Schema with `oneOf` branches that constrain the discriminator value (via `const`) and require the corresponding branch field:
+
+
+```json
+{
+  "type": "object",
+  "properties": {
+    "generalInformation": {
+      "type": "object",
+      "properties": {
+        "payloadKind": {
+          "type": "string",
+          "enum": ["inline", "reference"]
+        }
+      },
+      "required": ["payloadKind"]
+    },
+    "inlinePayload": {
+      "type": "string"
+    },
+    "referencePayload": {
+      "type": "string"
+    }
+  },
+  "oneOf": [
+    {
+      "required": ["generalInformation", "inlinePayload"],
+      "properties": {
+        "generalInformation": {
+          "type": "object",
+          "properties": {
+            "payloadKind": {
+              "const": "inline"
+            }
+          },
+          "required": ["payloadKind"]
+        }
+      }
+    },
+    {
+      "required": ["generalInformation", "referencePayload"],
+      "properties": {
+        "generalInformation": {
+          "type": "object",
+          "properties": {
+            "payloadKind": {
+              "const": "reference"
+            }
+          },
+          "required": ["payloadKind"]
+        }
+      }
+    }
+  ]
+}
+```
+
+For a given `$oneOfGroup`, generated schemas enforce exactly one valid branch.
+
+#### Deserialization Behavior
+
+ABAP's type system cannot express `oneOf` natively. When deserializing JSON to an ABAP structure (e.g., via `CALL TRANSFORMATION`), all branch fields exist as optional components simultaneously. The transformation populates whichever fields are present in the incoming JSON and leaves the others initial.
+
+This means the `oneOf` constraint is enforced at the JSON Schema validation layer, not at the transformation layer. If JSON Schema validation runs before deserialization (which is the expected usage), only the active branch field is present in the JSON, and the transformation result is correct.
+
+Without the `$oneOfGroup` annotations, alternative branches in ABAP type definitions are invisible to any tooling. Both branches could be populated simultaneously in the JSON without any validation error, leading to silent data inconsistency. The `oneOf` annotations close this gap by making the mutual exclusivity of branches verifiable at the schema level.
+
+Changes that introduce, remove, or alter `oneOf` constraints are usually incompatible and require increasing `formatVersion`.
+
 ### Additional Properties
 
 Adding additional custom fields in any ABAP file formats JSON file is not allowed.
