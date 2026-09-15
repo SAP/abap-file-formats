@@ -1,0 +1,33 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Authorization Object for Travel Scenario",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "objectClass": "CPAE"
+  },
+  "authorizationFields": [
+    {
+      "authorizationField": "ACTVT"
+    },
+    {
+      "authorizationField": "/DMO/CN_30"
+    }
+  ],
+  "permittedActivities": [
+    {
+      "activity": "01"
+    },
+    {
+      "activity": "02"
+    },
+    {
+      "activity": "03"
+    },
+    {
+      "activity": "06"
+    }
+  ]
+}
