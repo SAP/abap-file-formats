@@ -6,8 +6,7 @@
     "abapLanguageVersion": "cloudDevelopment"
   },
   "generalInformation": {
-    "objectClass": "CPAE",
-    "objectClassDescription": "Authorization Objects for Cloud Development"
+    "objectClass": "CPAE"
   },
   "authorizationFields": [
     {
@@ -19,20 +18,16 @@
   ],
   "permittedActivities": [
     {
-      "activity": "01",
-      "description": "Create or generate"
+      "activity": "01"
     },
     {
-      "activity": "02",
-      "description": "Change"
+      "activity": "02"
     },
     {
-      "activity": "03",
-      "description": "Display"
+      "activity": "03"
     },
     {
-      "activity": "06",
-      "description": "Delete"
+      "activity": "06"
     }
   ]
 }

@@ -5,8 +5,7 @@
     "originalLanguage": "de"
   },
   "generalInformation": {
-    "objectClass": "BC_A",
-    "objectClassDescription": "Basis: Administration"
+    "objectClass": "BC_A"
   },
   "authorizationFields": [
     {
@@ -21,20 +20,16 @@
   ],
   "permittedActivities": [
     {
-      "activity": "02",
-      "description": "Change"
+      "activity": "02"
     },
     {
-      "activity": "03",
-      "description": "Display"
+      "activity": "03"
     },
     {
-      "activity": "06",
-      "description": "Delete"
+      "activity": "06"
     },
     {
-      "activity": "08",
-      "description": "Display change documents"
+      "activity": "08"
     }
   ],
   "objectAttributes": {

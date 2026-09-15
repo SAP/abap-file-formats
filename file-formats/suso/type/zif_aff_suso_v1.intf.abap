@@ -17,10 +17,7 @@ INTERFACE zif_aff_suso_v1
       "! from, should be assigned to object class 'AAAA' (obsolete authorization objects). This only applies to
       "! authorization objects with ABAP language version 'Standard ABAP'.
       "! $required
-      object_class             TYPE c LENGTH 4,
-      "! <p class="shorttext">Object Class Description</p>
-      "! Description of the authorization object class
-      object_class_description TYPE c LENGTH 60,
+      object_class TYPE c LENGTH 4,
     END OF ty_general_information.
 
   TYPES:
@@ -30,15 +27,7 @@ INTERFACE zif_aff_suso_v1
       "! <p class="shorttext">Authorization Field</p>
       "! Name of the authorization field. An authorization object can contain up to 10 authorization fields.
       "! $required
-      authorization_field TYPE zif_aff_auth_types_v1=>ty_auth_field,
-      "! <p class="shorttext">Activity Field</p>
-      "! By selecting this option, an authorization field can be flagged that can contain activity-related values.
-      "! The ACTVT field is always an activity field.
-      "! Organizational levels always represent organizational responsibilities, but never activities. Therefore, they
-      "! cannot be declared as activity fields.
-      "! If fields do not have a search help, it is very difficult to tell whether or not they can contain
-      "! activity-related values. Therefore, they cannot be declared as activity fields.
-      is_activity_field   TYPE abap_bool,
+      authorization_field TYPE if_aff_auth_types_v1=>ty_auth_field,
       "! <p class="shorttext">Search Help</p>
       "! If the search help for the authorization field returns unsuitable selection results in the current
       "! authorization object, an alternative search help can be maintained for the field, in order to select suitable
@@ -51,30 +40,6 @@ INTERFACE zif_aff_suso_v1
   "! Authorization fields
   TYPES ty_authorization_fields TYPE SORTED TABLE OF ty_authorization_field WITH UNIQUE KEY authorization_field.
 
-  "! $values {@link zif_aff_suso_v1.data:co_access_category}
-  "! $default {@link zif_aff_suso_v1.data:co_access_category.not_classified}
-  TYPES ty_access_category      TYPE c LENGTH 1.
-  CONSTANTS:
-    "! <p class="shorttext">Access Category</p>
-    "! Access category
-    BEGIN OF co_access_category,
-      "! <p class="shorttext">Read</p>
-      "! Read
-      read           TYPE ty_access_category VALUE 'R',
-      "! <p class="shorttext">Write</p>
-      "! Write
-      write          TYPE ty_access_category VALUE 'W',
-      "! <p class="shorttext">Value Help</p>
-      "! Value help
-      value_help     TYPE ty_access_category VALUE 'F',
-      "! <p class="shorttext">Others</p>
-      "! Others
-      others         TYPE ty_access_category VALUE 'O',
-      "! <p class="shorttext">Not Classified</p>
-      "! Not classified
-      not_classified TYPE ty_access_category VALUE ' ',
-    END OF co_access_category.
-
   TYPES:
     "! <p class="shorttext">Permitted Activities</p>
     "! Permitted activities
@@ -82,17 +47,7 @@ INTERFACE zif_aff_suso_v1
       "! <p class="shorttext">Activity</p>
       "! Activity
       "! $required
-      activity        TYPE c LENGTH 2,
-      "! <p class="shorttext">Description</p>
-      "! Description of the activity
-      description     TYPE c LENGTH 30,
-      "! <p class="shorttext">Access Category</p>
-      "! The purpose is to store additional information directly on the authorization field about how the authorization
-      "! object should be used when generating business roles.
-      "! This classification is used during the generation of roles in order to generate roles that contain read
-      "! authorizations only.
-      "! This function is only supported in SAP S/4HANA Cloud Public Edition and SAP BTP ABAP Environment.
-      access_category TYPE ty_access_category,
+      activity TYPE c LENGTH 2,
     END OF ty_permitted_activity.
 
   "! <p class="shorttext">Permitted Activities</p>

@@ -67,12 +67,6 @@
           "description": "Name of the authorization object class with a length of up to four characters. An authorization object class contains authorization objects from a given application area. Every object is assigned to exactly one class. This assignment has no functional meaning. It is required however in order to display an object in role maintenance. For authorization objects with ABAP language version 'ABAP for Cloud Development', the authorization object class will be set to 'CPAE' and cannot be changed. Caution: Authorization objects that should not be used any more, regardless of which application area they are from, should be assigned to object class 'AAAA' (obsolete authorization objects). This only applies to authorization objects with ABAP language version 'Standard ABAP'.",
           "type": "string",
           "maxLength": 4
-        },
-        "objectClassDescription": {
-          "title": "Object Class Description",
-          "description": "Description of the authorization object class",
-          "type": "string",
-          "maxLength": 60
         }
       },
       "additionalProperties": false,
@@ -95,11 +89,6 @@
             "description": "Name of the authorization field. An authorization object can contain up to 10 authorization fields.",
             "type": "string",
             "maxLength": 10
-          },
-          "isActivityField": {
-            "title": "Activity Field",
-            "description": "By selecting this option, an authorization field can be flagged that can contain activity-related values. The ACTVT field is always an activity field. Organizational levels always represent organizational responsibilities, but never activities. Therefore, they cannot be declared as activity fields. If fields do not have a search help, it is very difficult to tell whether or not they can contain activity-related values. Therefore, they cannot be declared as activity fields.",
-            "type": "boolean"
           },
           "searchHelp": {
             "title": "Search Help",
@@ -129,39 +118,6 @@
             "description": "Activity",
             "type": "string",
             "maxLength": 2
-          },
-          "description": {
-            "title": "Description",
-            "description": "Description of the activity",
-            "type": "string",
-            "maxLength": 30
-          },
-          "accessCategory": {
-            "title": "Access Category",
-            "description": "The purpose is to store additional information directly on the authorization field about how the authorization object should be used when generating business roles. This classification is used during the generation of roles in order to generate roles that contain read authorizations only. This function is only supported in SAP S/4HANA Cloud Public Edition and SAP BTP ABAP Environment.",
-            "type": "string",
-            "enum": [
-              "read",
-              "write",
-              "valueHelp",
-              "others",
-              "notClassified"
-            ],
-            "enumTitles": [
-              "Read",
-              "Write",
-              "Value Help",
-              "Others",
-              "Not Classified"
-            ],
-            "enumDescriptions": [
-              "Read",
-              "Write",
-              "Value help",
-              "Others",
-              "Not classified"
-            ],
-            "default": "notClassified"
           }
         },
         "additionalProperties": false,
