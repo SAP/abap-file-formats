@@ -1,0 +1,44 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "PROG",
+    "description": "Programs and Includes",
+    "group": "Source Code Library"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.prog.json",
+          "cardinality": "1",
+          "schema": "prog-v1.json",
+          "definitionInterface": "type/zif_aff_prog_v1.intf.abap",
+          "examples": ["examples/program/z_aff_example_prog.prog.json", "examples/include/z_aff_example_include.prog.json"]
+        },
+        {
+          "filePattern": "<name>.prog.abap",
+          "cardinality": "1",
+          "definitionUrl": "https://help.sap.com/doc/abapdocu_cp_index_htm/CLOUD/en-US/index.htm?file=abapprogram.htm",
+          "examples": ["examples/program/z_aff_example_prog.prog.abap", "examples/include/z_aff_example_include.prog.abap"]
+        },
+        {
+          "filePattern": "<name>.prog.texts.<lang>.properties",
+          "cardinality": "0...n",
+          "definitionUrl": "https://help.sap.com/viewer/c238d694b825421f940829321ffa326a/7.40.19/en-US/4ec6cf916e391014adc9fffe4e204223.html",
+          "examples": ["examples/program/z_aff_example_prog.prog.texts.en.properties"]
+        },
+        {
+          "filePattern": "<name>.prog.headings.<lang>.properties",
+          "cardinality": "0...n",
+          "examples": ["examples/program/z_aff_example_prog.prog.headings.en.properties"]
+        },
+        {
+          "filePattern": "<name>.prog.selections.<lang>.properties",
+          "cardinality": "0...n",
+          "examples": ["examples/program/z_aff_example_prog.prog.selections.en.properties"]
+        }
+      ]
+    }
+  ]
+}

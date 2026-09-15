@@ -1,0 +1,22 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "SRVC",
+    "description": "Service Consumption Model",
+    "group": "Business Services"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.srvc.json",
+          "cardinality": "1",
+          "schema": "srvc-v1.json",
+          "definitionInterface": "type/zif_aff_srvc_v1.intf.abap",
+          "examples": ["examples/z_aff_example_srvc.srvc.json"]
+        }
+      ]
+    }
+  ]
+}

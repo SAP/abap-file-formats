@@ -1,0 +1,28 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "INTF",
+    "description": "Interface",
+    "group": "Source Code Library"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.intf.json",
+          "cardinality": "1",
+          "schema": "intf-v1.json",
+          "definitionInterface": "type/zif_aff_intf_v1.intf.abap",
+          "examples": ["examples/z_aff_example_intf.intf.json"]
+        },
+        {
+          "filePattern": "<name>.intf.abap",
+          "cardinality": "1",
+          "definitionUrl": "https://help.sap.com/doc/abapdocu_cp_index_htm/CLOUD/en-US/index.htm?file=abapinterface_definition.htm",
+          "examples": ["examples/z_aff_example_intf.intf.abap"]
+        }
+      ]
+    }
+  ]
+}
