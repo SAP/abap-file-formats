@@ -10,4 +10,4 @@ SCO2  | Inbound Service | Cloud Communication Management
 
 File | Cardinality | Definition | Schema | Example
 :--- | :--- | :--- | :--- | :---
-`<name>.sco2.json` | 1 | [`zif_aff_sco2_v1.intf.abap`](./type/zif_aff_sco2_v1.intf.abap) | [`sco2-v1.json`](./sco2-v1.json)
+`<name>.sco2.json` | 1 | [`zif_aff_sco2_v1.intf.abap`](./type/zif_aff_sco2_v1.intf.abap) | [`sco2-v1.json`](./sco2-v1.json) | [z_aff_siad_example.siad.json](./examples/z_aff_sco2_example.sco2.json)

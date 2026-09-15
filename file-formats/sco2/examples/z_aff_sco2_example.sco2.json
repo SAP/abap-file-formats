@@ -1,0 +1,31 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Bank",
+    "originalLanguage": "en"
+  },
+  "generalInformation": {
+    "type": "odataV4",
+    "scopeDependent": true,
+    "appType": ""
+  },
+  "serviceDetails": {
+    "icfPath": "",
+    "idoc": {
+      "messageType": "",
+      "basicType": ""
+    },
+    "rfcServiceId": "",
+    "soap": {
+      "interface": "",
+      "operation": ""
+    },
+    "odata": {
+      "serviceIdentifier": "",
+      "v4GroupId": "API_BANK"
+    },
+    "httpServiceId": "",
+    "sadtGroupName": "",
+    "leadingBusinessObject": "Bank"
+  }
+}
