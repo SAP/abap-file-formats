@@ -134,7 +134,7 @@
           "type": "string",
           "maxLength": 200
         },
-        "idoc": {
+        "idocService": {
           "title": "IDoc Service",
           "description": "Details of an inbound service of type IDoc",
           "type": "object",
@@ -160,7 +160,7 @@
           "type": "string",
           "maxLength": 30
         },
-        "soap": {
+        "soapService": {
           "title": "SOAP Service",
           "description": "Details of an inbound service of type SOAP",
           "type": "object",
@@ -180,13 +180,13 @@
           },
           "additionalProperties": false
         },
-        "odata": {
+        "odataService": {
           "title": "OData Service",
           "description": "Details of an inbound service of type OData",
           "type": "object",
           "properties": {
-            "serviceIdentifier": {
-              "title": "Service Document Identifier",
+            "serviceId": {
+              "title": "Service Document ID",
               "description": "Identifier of the OData service document",
               "type": "string",
               "maxLength": 40
@@ -206,19 +206,19 @@
           "type": "string",
           "maxLength": 30
         },
-        "sadtGroupName": {
+        "adtServiceGroup": {
           "title": "ADT Service Group",
           "description": "Name of the ADT service group",
           "type": "string",
           "maxLength": 40
         },
-        "sql1Name": {
-          "title": "SQL Service Binding",
+        "sql1Id": {
+          "title": "SQL Service Binding ID",
           "description": "ID of the SQL service binding",
           "type": "string",
           "maxLength": 30
         },
-        "eeec": {
+        "eventConsumptionService": {
           "title": "Event Consumption Service",
           "description": "Details of an inbound service of type EEEC",
           "type": "object",
@@ -239,7 +239,7 @@
           },
           "additionalProperties": false
         },
-        "daemonId": {
+        "abapDaemonId": {
           "title": "ABAP Daemon ID",
           "description": "ID of the ABAP daemon application",
           "type": "string",
