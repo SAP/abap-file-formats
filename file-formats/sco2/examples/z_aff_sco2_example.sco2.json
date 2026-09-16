@@ -6,26 +6,14 @@
   },
   "generalInformation": {
     "type": "odataV4",
-    "scopeDependent": true,
-    "appType": ""
+    "scopeDependent": true
   },
   "serviceDetails": {
-    "icfPath": "",
-    "idoc": {
-      "messageType": "",
-      "basicType": ""
-    },
-    "rfcServiceId": "",
-    "soap": {
-      "interface": "",
-      "operation": ""
-    },
-    "odata": {
-      "serviceIdentifier": "",
+    "idocService": {},
+    "soapService": {},
+    "odataService": {
       "v4GroupId": "API_BANK"
     },
-    "httpServiceId": "",
-    "sadtGroupName": "",
     "leadingBusinessObject": "Bank"
   }
 }

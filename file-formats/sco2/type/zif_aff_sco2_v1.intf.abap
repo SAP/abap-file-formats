@@ -47,21 +47,6 @@ INTERFACE zif_aff_sco2_v1
     END OF ty_odata.
 
   TYPES:
-    "! <p class="shorttext">Event Consumption Service</p>
-    "! Details of an inbound service of type EEEC
-    BEGIN OF ty_eeec,
-
-      "! <p class="shorttext">Registration ID</p>
-      "! ID of the event registration
-      registration_id      TYPE c LENGTH 36,
-
-      "! <p class="shorttext">Registration Version</p>
-      "! Version of the event registration, with leading zeros
-      registration_version TYPE n LENGTH 4,
-
-    END OF ty_eeec.
-
-  TYPES:
     "! <p class="shorttext">Service Details</p>
     "! Protocol-specific details of the inbound service.
     "! Only the field or group that corresponds to the inbound service type is filled.
@@ -95,26 +80,9 @@ INTERFACE zif_aff_sco2_v1
       "! Name of the ADT service group
       adt_service_group         TYPE c LENGTH 40,
 
-      "! <p class="shorttext">SQL Service Binding ID</p>
-      "! ID of the SQL service binding
-      sql1_id                   TYPE c LENGTH 30,
-
-      "! <p class="shorttext">Event Consumption Service</p>
-      "! Details of an inbound service of type EEEC
-      event_consumption_service TYPE ty_eeec,
-
-      "! <p class="shorttext">ABAP Daemon ID</p>
-      "! ID of the ABAP daemon application
-      abap_daemon_id            TYPE c LENGTH 30,
-
-      "! <p class="shorttext">INA Service ID</p>
-      "! ID of the INA service
-      ina1_service_id           TYPE c LENGTH 40,
-
       "! <p class="shorttext">Leading Business Object</p>
       "! SAP object type of the leading business object
       leading_business_object   TYPE c LENGTH 30,
-
 
     END OF ty_service_details.
 

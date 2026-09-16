@@ -212,45 +212,6 @@
           "type": "string",
           "maxLength": 40
         },
-        "sql1Id": {
-          "title": "SQL Service Binding ID",
-          "description": "ID of the SQL service binding",
-          "type": "string",
-          "maxLength": 30
-        },
-        "eventConsumptionService": {
-          "title": "Event Consumption Service",
-          "description": "Details of an inbound service of type EEEC",
-          "type": "object",
-          "properties": {
-            "registrationId": {
-              "title": "Registration ID",
-              "description": "ID of the event registration",
-              "type": "string",
-              "maxLength": 36
-            },
-            "registrationVersion": {
-              "title": "Registration Version",
-              "description": "Version of the event registration, with leading zeros",
-              "type": "string",
-              "maxLength": 4,
-              "pattern": "^[0-9]+$"
-            }
-          },
-          "additionalProperties": false
-        },
-        "abapDaemonId": {
-          "title": "ABAP Daemon ID",
-          "description": "ID of the ABAP daemon application",
-          "type": "string",
-          "maxLength": 30
-        },
-        "ina1ServiceId": {
-          "title": "INA Service ID",
-          "description": "ID of the INA service",
-          "type": "string",
-          "maxLength": 40
-        },
         "leadingBusinessObject": {
           "title": "Leading Business Object",
           "description": "SAP object type of the leading business object",
