@@ -62,11 +62,11 @@
       "description": "General information",
       "type": "object",
       "properties": {
-        "authorizationFieldId": {
-          "title": "Authorization Field ID",
-          "description": "ID of the authorization field",
+        "authorizationField": {
+          "title": "Authorization Field",
+          "description": "Name of the authorization field",
           "type": "string",
-          "maxLength": 30
+          "maxLength": 10
         },
         "isRangeSupported": {
           "title": "Is Range Supported",

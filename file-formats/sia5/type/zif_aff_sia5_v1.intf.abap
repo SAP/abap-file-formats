@@ -7,13 +7,13 @@ INTERFACE zif_aff_sia5_v1
     "! General information
     BEGIN OF ty_general_information,
 
-      "! <p class="shorttext">Authorization Field ID</p>
-      "! ID of the authorization field
-      authorization_field_id TYPE zif_aff_types_v1=>ty_object_name_30,
+      "! <p class="shorttext">Authorization Field</p>
+      "! Name of the authorization field
+      authorization_field TYPE c LENGTH 10,
 
       "! <p class="shorttext">Is Range Supported</p>
       "! Is range supported
-      is_range_supported     TYPE abap_bool,
+      is_range_supported  TYPE abap_bool,
 
     END OF ty_general_information.
 
