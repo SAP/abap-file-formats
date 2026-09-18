@@ -6,7 +6,7 @@
     "abapLanguageVersion": "cloudDevelopment"
   },
   "generalInformation": {
-    "authorizationFieldId": "Z_AUTH_FLD",
+    "authorizationField": "Z_AUTH_FLD",
     "isRangeSupported": true
   }
 }
