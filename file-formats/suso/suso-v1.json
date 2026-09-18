@@ -90,6 +90,11 @@
             "type": "string",
             "maxLength": 10
           },
+          "isActivityField": {
+            "title": "Activity Field",
+            "description": "By selecting this option, an authorization field can be flagged that can contain activity-related values. The ACTVT field is always an activity field. Organizational levels always represent organizational responsibilities, but never activities. Therefore, they cannot be declared as activity fields. If fields do not have a search help, it is very difficult to tell whether or not they can contain activity-related values. Therefore, they cannot be declared as activity fields.",
+            "type": "boolean"
+          },
           "searchHelp": {
             "title": "Search Help",
             "description": "If the search help for the authorization field returns unsuitable selection results in the current authorization object, an alternative search help can be maintained for the field, in order to select suitable values for the object/field combination. This object/field search help always has priority over the search help for the field.",
@@ -118,6 +123,33 @@
             "description": "Activity",
             "type": "string",
             "maxLength": 2
+          },
+          "accessCategory": {
+            "title": "Access Category",
+            "description": "The purpose is to store additional information directly on the authorization field about how the authorization object should be used when generating business roles. This classification is used during the generation of roles in order to generate roles that contain read authorizations only. This function is only supported in SAP S/4HANA Cloud Public Edition and SAP BTP ABAP Environment.",
+            "type": "string",
+            "enum": [
+              "read",
+              "write",
+              "valueHelp",
+              "others",
+              "notClassified"
+            ],
+            "enumTitles": [
+              "Read",
+              "Write",
+              "Value Help",
+              "Others",
+              "Not Classified"
+            ],
+            "enumDescriptions": [
+              "Read",
+              "Write",
+              "Value help",
+              "Others",
+              "Not classified"
+            ],
+            "default": "notClassified"
           }
         },
         "additionalProperties": false,

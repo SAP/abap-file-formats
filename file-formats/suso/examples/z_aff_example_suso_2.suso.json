@@ -1,7 +1,7 @@
 {
   "formatVersion": "1",
   "header": {
-    "description": "Authorization Object for Travel Scenario",
+    "description": "Test Object Cloud",
     "originalLanguage": "en",
     "abapLanguageVersion": "cloudDevelopment"
   },
@@ -10,24 +10,14 @@
   },
   "authorizationFields": [
     {
-      "authorizationField": "ACTVT"
-    },
-    {
-      "authorizationField": "/DMO/CN_30"
+      "authorizationField": "ACTVT",
+      "isActivityField": true
     }
   ],
   "permittedActivities": [
     {
-      "activity": "01"
-    },
-    {
-      "activity": "02"
-    },
-    {
-      "activity": "03"
-    },
-    {
-      "activity": "06"
+      "activity": "03",
+      "accessCategory": "read"
     }
   ]
 }
