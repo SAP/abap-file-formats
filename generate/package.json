@@ -4,10 +4,10 @@
   "version": "0.0.0",
   "description": "File formats that define and specify the file representation for ABAP development objects",
   "scripts": {
-    "pull": "oras-pull ghcr.io/sap/abap-file-formats-tools/abap-file-formats-tools:latest",
-    "copy": "cp ../file-formats/*.abap downport && cp ../file-formats/*/type/*.abap downport && cp cl_run.clas.abap downport",
+    "clone": "rm -rf tools && git clone --depth 1 https://github.com/SAP/abap-file-formats-tools.git tools",
+    "copy": "cp -r tools/src downport && cp tools/deps/* downport && rm downport/*.prog.* && rm downport/zcl_aff_writer_xslt.clas.testclasses.abap && cp ../file-formats/*.abap downport && cp ../file-formats/*/type/*.abap downport && cp cl_run.clas.abap downport",
     "transpile": "rm -rf output && abap_transpile abap_transpile.json",
-    "compile": "rm -rf downport && npm run pull && npm run copy && npm run transpile",
+    "compile": "rm -rf downport && npm run clone && npm run copy && npm run transpile",
     "generate": "rm -rf generated && node aff.mjs",
     "test": "npm run compile && npm run generate"
   },
