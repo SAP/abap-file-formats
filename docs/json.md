@@ -93,7 +93,7 @@ n | string | `"maxLength": <length of character field>, "pattern": "^[0-9]+$"`
 p | number | `"minimum": <minimum value>, "maximum": <maximum value>
 abap_bool | boolean |
 sy-langu | string | `"minLength": 2`
-table | array | if the table has unique keys, `"uniqueItems": true` is added to the schema; hashed tables are not supported
+table | array | if the table has unique keys, `"uniqueItems": true` is added to the schema; hashed tables are not supported. The number of items can be constrained via `"minItems": <value>` and `"maxItems": <value>`, see [`Number of Items`](#number-of-items)
 
 ### Title
 To provide a title, an ABAP Doc shorttext
@@ -129,6 +129,14 @@ Choosing an ABAP data type with length specification results in the field `maxLe
 "! $minLength value
 ```
 followed by a space and the desired value are used.
+
+### Number of Items
+For tables (arrays), the minimum and maximum number of items can be specified via the annotation keywords
+```abap
+"! $minItems value
+"! $maxItems value
+```
+followed by a space and the desired value. This results in the fields `minItems` and `maxItems` being written to the JSON Schema.
 
 ### Regular Expressions
 
