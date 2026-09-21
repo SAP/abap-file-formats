@@ -93,7 +93,7 @@ n | string | `"maxLength": <length of character field>, "pattern": "^[0-9]+$"`
 p | number | `"minimum": <minimum value>, "maximum": <maximum value>
 abap_bool | boolean |
 sy-langu | string | `"minLength": 2`
-table | array | if the table has unique keys, `"uniqueItems": true` is added to the schema; hashed tables are not supported. The number of items can be constrained via `"minItems": <value>` and `"maxItems": <value>`, see [`Number of Items`](#number-of-items)
+table | array | if the table has unique keys, `"uniqueItems": true` is added to the schema; hashed tables are not supported
 
 ### Title
 To provide a title, an ABAP Doc shorttext
