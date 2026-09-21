@@ -63,6 +63,7 @@
       "title": "Selected Checks",
       "description": "The checks selected in the ATC check variant",
       "type": "array",
+      "minItems": 1,
       "items": {
         "title": "Check",
         "description": "Check with its parameters",

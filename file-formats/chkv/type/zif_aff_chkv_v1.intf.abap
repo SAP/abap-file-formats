@@ -108,7 +108,8 @@ INTERFACE zif_aff_chkv_v1
       "! <p class="shorttext">Selected Checks</p>
       "! The checks selected in the ATC check variant
       "! $required
-      selected_checks TYPE ty_checks,
+      "! $minItems 1
+      selected_checks    TYPE ty_checks,
     END OF ty_main.
 
 ENDINTERFACE.
