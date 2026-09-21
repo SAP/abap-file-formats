@@ -109,7 +109,7 @@ INTERFACE zif_aff_chkv_v1
       "! The checks selected in the ATC check variant
       "! $required
       "! $minItems 1
-      selected_checks    TYPE ty_checks,
+      selected_checks TYPE ty_checks,
     END OF ty_main.
 
 ENDINTERFACE.
