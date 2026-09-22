@@ -4,18 +4,18 @@ INTERFACE zif_aff_sia2_v1
   TYPES:
     "! <p class="shorttext">Restriction Field</p>
     "! Restriction field assigned to the restriction type
-    BEGIN OF ty_field,
+    BEGIN OF ty_restriction_field,
 
       "! <p class="shorttext">Restriction Field ID</p>
       "! Name of the restriction field
       "! $required
-      id TYPE c LENGTH 30,
+      id TYPE zif_aff_types_v1=>ty_object_name_30,
 
-    END OF ty_field.
+    END OF ty_restriction_field.
 
   "! <p class="shorttext">Restriction Fields</p>
   "! Restriction fields assigned to the restriction type
-  TYPES ty_fields TYPE SORTED TABLE OF ty_field WITH UNIQUE KEY id.
+  TYPES ty_restriction_fields TYPE SORTED TABLE OF ty_restriction_field WITH UNIQUE KEY id.
 
   TYPES:
     "! <p class="shorttext">Authorization Object Extension</p>
@@ -25,7 +25,7 @@ INTERFACE zif_aff_sia2_v1
       "! <p class="shorttext">Authorization Object Extension ID</p>
       "! ID of the authorization object extension
       "! $required
-      id                      TYPE c LENGTH 30,
+      id                      TYPE zif_aff_types_v1=>ty_object_name_30,
 
       "! <p class="shorttext">Authorization Object ID</p>
       "! ID of the assigned authorization object
@@ -55,7 +55,7 @@ INTERFACE zif_aff_sia2_v1
 
       "! <p class="shorttext">Restriction Fields</p>
       "! Restriction fields assigned to the restriction type
-      restriction_fields     TYPE ty_fields,
+      restriction_fields     TYPE ty_restriction_fields,
 
       "! <p class="shorttext">Authorization Object Extensions</p>
       "! Authorization object extensions of the restriction type
