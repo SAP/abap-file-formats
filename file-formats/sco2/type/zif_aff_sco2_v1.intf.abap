@@ -47,6 +47,21 @@ INTERFACE zif_aff_sco2_v1
     END OF ty_odata.
 
   TYPES:
+    "! <p class="shorttext">Event Consumption Service</p>
+    "! Details of an inbound service of type EEEC
+    BEGIN OF ty_eeec,
+
+      "! <p class="shorttext">Registration ID</p>
+      "! ID of the event registration
+      registration_id      TYPE c LENGTH 36,
+
+      "! <p class="shorttext">Registration Version</p>
+      "! Version of the event registration, with leading zeros
+      registration_version TYPE n LENGTH 4,
+
+    END OF ty_eeec.
+
+  TYPES:
     "! <p class="shorttext">Service Details</p>
     "! Protocol-specific details of the inbound service.
     "! Only the field or group that corresponds to the inbound service type is filled.
@@ -54,35 +69,52 @@ INTERFACE zif_aff_sco2_v1
 
       "! <p class="shorttext">ICF Path</p>
       "! Path of the ICF node (case-sensitive)
-      icf_path                TYPE c LENGTH 200,
+      icf_path                  TYPE c LENGTH 200,
 
       "! <p class="shorttext">IDoc Service</p>
       "! Details of an inbound service of type IDoc
-      idoc_service            TYPE ty_idoc,
+      idoc_service              TYPE ty_idoc,
 
-      "! <p class="shorttext">RFC Service ID</p>
+      "! <p class="shorttext">RFC Service</p>
       "! ID of the RFC service
-      rfc_service_id          TYPE c LENGTH 30,
+      rfc_service               TYPE c LENGTH 30,
 
       "! <p class="shorttext">SOAP Service</p>
       "! Details of an inbound service of type SOAP
-      soap_service            TYPE ty_soap,
+      soap_service              TYPE ty_soap,
 
       "! <p class="shorttext">OData Service</p>
       "! Details of an inbound service of type OData
-      odata_service           TYPE ty_odata,
+      odata_service             TYPE ty_odata,
 
-      "! <p class="shorttext">HTTP Service ID</p>
+      "! <p class="shorttext">HTTP Service</p>
       "! ID of the HTTP service
-      http_service_id         TYPE c LENGTH 30,
+      http_service              TYPE c LENGTH 30,
 
       "! <p class="shorttext">ADT Service Group</p>
       "! Name of the ADT service group
-      adt_service_group       TYPE c LENGTH 40,
+      adt_service_group         TYPE c LENGTH 40,
+
+      "! <p class="shorttext">SQL Service Binding</p>
+      "! ID of the SQL service binding
+      sql1                      TYPE c LENGTH 30,
+
+      "! <p class="shorttext">Event Consumption Service</p>
+      "! Details of an inbound service of type EEEC
+      event_consumption_service TYPE ty_eeec,
+
+      "! <p class="shorttext">ABAP Daemon</p>
+      "! ID of the ABAP daemon application
+      abap_daemon               TYPE c LENGTH 30,
+
+      "! <p class="shorttext">INA Service</p>
+      "! ID of the INA service
+      ina1_service              TYPE c LENGTH 40,
 
       "! <p class="shorttext">Leading Business Object</p>
       "! SAP object type of the leading business object
-      leading_business_object TYPE c LENGTH 30,
+      leading_business_object   TYPE c LENGTH 30,
+
 
     END OF ty_service_details.
 

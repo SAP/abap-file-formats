@@ -154,8 +154,8 @@
           },
           "additionalProperties": false
         },
-        "rfcServiceId": {
-          "title": "RFC Service ID",
+        "rfcService": {
+          "title": "RFC Service",
           "description": "ID of the RFC service",
           "type": "string",
           "maxLength": 30
@@ -200,8 +200,8 @@
           },
           "additionalProperties": false
         },
-        "httpServiceId": {
-          "title": "HTTP Service ID",
+        "httpService": {
+          "title": "HTTP Service",
           "description": "ID of the HTTP service",
           "type": "string",
           "maxLength": 30
@@ -209,6 +209,45 @@
         "adtServiceGroup": {
           "title": "ADT Service Group",
           "description": "Name of the ADT service group",
+          "type": "string",
+          "maxLength": 40
+        },
+        "sql1": {
+          "title": "SQL Service Binding",
+          "description": "ID of the SQL service binding",
+          "type": "string",
+          "maxLength": 30
+        },
+        "eventConsumptionService": {
+          "title": "Event Consumption Service",
+          "description": "Details of an inbound service of type EEEC",
+          "type": "object",
+          "properties": {
+            "registrationId": {
+              "title": "Registration ID",
+              "description": "ID of the event registration",
+              "type": "string",
+              "maxLength": 36
+            },
+            "registrationVersion": {
+              "title": "Registration Version",
+              "description": "Version of the event registration, with leading zeros",
+              "type": "string",
+              "maxLength": 4,
+              "pattern": "^[0-9]+$"
+            }
+          },
+          "additionalProperties": false
+        },
+        "abapDaemon": {
+          "title": "ABAP Daemon",
+          "description": "ID of the ABAP daemon application",
+          "type": "string",
+          "maxLength": 30
+        },
+        "ina1Service": {
+          "title": "INA Service",
+          "description": "ID of the INA service",
           "type": "string",
           "maxLength": 40
         },
