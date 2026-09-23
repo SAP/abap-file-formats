@@ -1,0 +1,17 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Bank",
+    "originalLanguage": "en"
+  },
+  "generalInformation": {
+    "type": "odataV4",
+    "scopeDependent": true
+  },
+  "serviceDetails": {
+    "odataService": {
+      "v4GroupId": "API_BANK"
+    },
+    "leadingBusinessObject": "Bank"
+  }
+}
