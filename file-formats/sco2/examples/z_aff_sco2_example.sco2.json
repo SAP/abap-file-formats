@@ -9,8 +9,6 @@
     "scopeDependent": true
   },
   "serviceDetails": {
-    "idocService": {},
-    "soapService": {},
     "odataService": {
       "v4GroupId": "API_BANK"
     },
