@@ -139,7 +139,7 @@ INTERFACE zif_aff_uiad_v1
     END OF co_web_dynpro_integration_mode.
 
   TYPES:
-    "! <p class="shorttext">Web Dynpro Application Inforation</p>
+    "! <p class="shorttext">Web Dynpro Application Information</p>
     "! Web Dynpro application information
     BEGIN OF ty_app_details_web_dynpro,
 
