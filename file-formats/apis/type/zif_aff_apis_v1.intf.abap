@@ -35,7 +35,7 @@ INTERFACE zif_aff_apis_v1
 
   "! <p class="shorttext">Planned Decommissioning Date</p>
   "! Planned decommissioning date as year month (i.e. YYYY-MM)
-  "! $pattern '<[0-9]{4}-[0-9]{2}>'
+  "! $pattern '20[0-9]{2}-(0[1-9]|1[0-2])'
   TYPES ty_decommissioning_date   TYPE c LENGTH 7.
 
   "! <p class="shorttext">Successor Concept Name</p>
