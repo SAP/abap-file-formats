@@ -1,0 +1,21 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "EDCK",
+    "description": "Consistency Check"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.edck.json",
+          "cardinality": "1",
+          "schema": "edck-v1.json",
+          "definitionInterface": "type/zif_aff_edck_v1.intf.abap",
+          "examples": ["examples/z_aff_example_edck.edck.json"]
+        }
+      ]
+    }
+  ]
+}

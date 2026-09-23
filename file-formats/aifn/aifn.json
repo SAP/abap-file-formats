@@ -1,0 +1,22 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "AIFN",
+    "description": "Namespace",
+    "group": "Application Interface Framework"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.aifn.json",
+          "cardinality": "1",
+          "schema": "aifn-v1.json",
+          "definitionInterface": "type/zif_aff_aifn_v1.intf.abap",
+          "examples": ["examples/z_aff_example_aifn.aifn.json"]
+        }
+      ]
+    }
+  ]
+}

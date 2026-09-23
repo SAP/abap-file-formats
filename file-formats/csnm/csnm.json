@@ -1,0 +1,26 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "CSNM",
+    "description": "Core Schema Notation Model"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.csnm.json",
+          "cardinality": "1",
+          "schema": "csnm-v1.json",
+          "definitionInterface": "type/zif_aff_csnm_v1.intf.abap",
+          "examples": ["examples/z_aff_example_csnm.csnm.json"]
+        },
+        {
+          "filePattern": "<name>.csnm.<csnfilename>.csn",
+          "cardinality": "0...n",
+          "examples": ["examples/z_aff_example_csnm.csnm.model_inferred.csn"]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "DDLA",
+    "description": "Annotation Definition",
+    "group": "Core Data Services"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.ddla.json",
+          "cardinality": "1",
+          "schema": "ddla-v1.json",
+          "definitionInterface": "type/zif_aff_ddla_v1.intf.abap",
+          "examples": ["examples/abapcatalog.ddla.json"]
+        },
+        {
+          "filePattern": "<name>.ddla.acds",
+          "cardinality": "1",
+          "definitionUrl": "https://help.sap.com/doc/abapdocu_cp_index_htm/CLOUD/en-US/index.htm?file=abencds.htm",
+          "examples": ["examples/abapcatalog.ddla.acds"]
+        }
+      ]
+    }
+  ]
+}

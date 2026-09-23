@@ -1,0 +1,22 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "CHKE",
+    "description": "Exemption",
+    "group": "ABAP Test Cockpit"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.chke.json",
+          "cardinality": "1",
+          "schema": "chke-v1.json",
+          "definitionInterface": "type/zif_aff_chke_v1.intf.abap",
+          "examples": ["examples/z_aff_example_chke.chke.json"]
+        }
+      ]
+    }
+  ]
+}

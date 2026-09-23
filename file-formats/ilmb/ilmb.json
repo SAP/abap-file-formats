@@ -1,0 +1,21 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "ILMB",
+    "description": "ILM Object"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.ilmb.json",
+          "cardinality": "1",
+          "schema": "ilmb-v1.json",
+          "definitionInterface": "type/zif_aff_ilmb_v1.intf.abap",
+          "examples": ["examples/z_aff_example_ilmb.ilmb.json"]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "AIFF",
+    "description": "Fix Value",
+    "group": "Application Interface Framework"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.aiff.json",
+          "cardinality": "1",
+          "schema": "aiff-v1.json",
+          "definitionInterface": "type/zif_aff_aiff_v1.intf.abap",
+          "examples": ["examples/z_aff_example_aiff.aiff.json"]
+        }
+      ]
+    }
+  ]
+}
