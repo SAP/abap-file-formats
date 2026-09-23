@@ -1,0 +1,19 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "SIA2 Example Restriction Type",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "restrictionFields": [
+    {
+      "id": "Z_RSTR_FLD"
+    }
+  ],
+  "authObjectExtensions": [
+    {
+      "id": "Z_AUTH_OBJ",
+      "authorizationObjectId": "Z_AUTH_OBJ"
+    }
+  ]
+}
