@@ -7,12 +7,14 @@ INTERFACE zif_aff_chko_v1
     BEGIN OF ty_parameter,
       "! <p class="shorttext">Parameter Name</p>
       "! Name of a parameter
+      "! $required
       name        TYPE string,
       "! <p class="shorttext">Parameter Description</p>
       "! Description of a parameter
       description TYPE c LENGTH 255,
       "! <p class="shorttext">Is Hidden</p>
       "! The parameter is hidden
+      "! $required
       hidden      TYPE abap_bool,
     END OF ty_parameter.
 

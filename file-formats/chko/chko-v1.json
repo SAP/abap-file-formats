@@ -113,7 +113,11 @@
             "type": "boolean"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "hidden"
+        ]
       }
     }
   },
