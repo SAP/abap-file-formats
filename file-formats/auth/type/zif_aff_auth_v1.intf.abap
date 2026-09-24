@@ -16,7 +16,7 @@ INTERFACE zif_aff_auth_v1
       "! <p class="shorttext">Data Element</p>
       "! Name of the data element
       "! $required
-      data_element TYPE c LENGTH 30,
+      data_element zif_aff_types_v1=>ty_object_name_30,
     END OF ty_general_information.
 
   TYPES:
