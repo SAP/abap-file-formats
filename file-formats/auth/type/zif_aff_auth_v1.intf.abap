@@ -32,7 +32,7 @@ INTERFACE zif_aff_auth_v1
       "! authorization object, an alternative search help can be maintained in the authorization object definition for
       "! the authorization field, in order to select suitable values for the object/field combination. This object/field
       "! search help always has priority over the search help for the field.
-      check_table TYPE c LENGTH 30,
+      check_table TYPE zif_aff_types_v1=>ty_object_name_30,
     END OF ty_alternative_search_help.
 
   TYPES:
