@@ -65,12 +65,32 @@
         "authorizationField": {
           "title": "Authorization Field",
           "description": "Name of the authorization field",
-          "type": "string",
-          "maxLength": 10
+          "type": "object",
+          "properties": {
+            "authFieldName": {
+              "title": "Authorization Field",
+              "description": "Authorization field",
+              "type": "string",
+              "maxLength": 10
+            },
+            "authFieldLowValue": {
+              "title": "From",
+              "description": "From value",
+              "type": "string",
+              "maxLength": 40
+            },
+            "authFieldHighValue": {
+              "title": "To",
+              "description": "To value",
+              "type": "string",
+              "maxLength": 40
+            }
+          },
+          "additionalProperties": false
         },
         "isRangeSupported": {
           "title": "Is Range Supported",
-          "description": "Is range supported",
+          "description": "Can ranges be maintained in authorization field values",
           "type": "boolean"
         }
       },
