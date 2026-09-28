@@ -90,7 +90,7 @@
         },
         "isRangeSupported": {
           "title": "Is Range Supported",
-          "description": "Can ranges be maintained in authorization field values",
+          "description": "Whether ranges can be maintained in authorization field values",
           "type": "boolean"
         }
       },
