@@ -186,7 +186,7 @@ INTERFACE zif_aff_vcls_v1
       object_name             TYPE c LENGTH 30,
       "! <p class="shorttext">Predecessor Object</p>
       "! Parent object one level up. Equals object_name for root objects (self-reference).
-      "! Drives all tree traversal — both downward recursion and upward root search.
+      "! Drives all tree traversal, both downward recursion and upward root search.
       predecessor_object      TYPE c LENGTH 30,
       "! <p class="shorttext">Position</p>
       "! Display position within the cluster hierarchy. Must be unique within the cluster.

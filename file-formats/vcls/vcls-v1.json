@@ -129,7 +129,7 @@
           },
           "predecessorObject": {
             "title": "Predecessor Object",
-            "description": "Parent object one level up. Equals object_name for root objects (self-reference). Drives all tree traversal — both downward recursion and upward root search.",
+            "description": "Parent object one level up. Equals object_name for root objects (self-reference). Drives all tree traversal, both downward recursion and upward root search.",
             "type": "string",
             "maxLength": 30
           },
