@@ -9,7 +9,7 @@ INTERFACE zif_aff_sia5_v1
 
       "! <p class="shorttext">Authorization Field</p>
       "! Name of the authorization field
-      authorization_field TYPE zif_aff_auth_types_v1=>ty_authorization_field,
+      authorization_field TYPE if_aff_auth_types_v1=>ty_auth_field,
 
       "! <p class="shorttext">Is Range Supported</p>
       "! Whether ranges can be maintained in authorization field values
