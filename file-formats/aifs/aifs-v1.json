@@ -93,11 +93,6 @@
         "description": "Structure mapping information",
         "type": "object",
         "properties": {
-          "displayName": {
-            "title": "Display Name",
-            "description": "Display name",
-            "type": "string"
-          },
           "numericId": {
             "title": "Numeric ID",
             "description": "Numeric ID",
@@ -300,7 +295,8 @@
                   "enumDescriptions": [
                     "Convert from external to internal format",
                     "Convert from internal to external format"
-                  ]
+                  ],
+                  "default": "externalToInternal"
                 },
                 "fieldNameForDataLink": {
                   "title": "Field Name for Data Link",
@@ -595,7 +591,8 @@
                     "additionalProperties": false,
                     "required": [
                       "fieldNumber",
-                      "field"
+                      "field",
+                      "checkTiming"
                     ]
                   }
                 },
@@ -751,14 +748,14 @@
               "additionalProperties": false,
               "required": [
                 "mappedDataStructureField",
-                "numericId"
+                "numericId",
+                "directionOfConversion"
               ]
             }
           }
         },
         "additionalProperties": false,
         "required": [
-          "displayName",
           "numericId",
           "dataStructure",
           "mappedDataStructure"

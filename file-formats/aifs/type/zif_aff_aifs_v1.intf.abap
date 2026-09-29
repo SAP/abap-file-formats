@@ -50,6 +50,7 @@ INTERFACE zif_aff_aifs_v1
     END OF co_check_timing.
 
   "! $values { @link zif_aff_aifs_v1.data:co_direction_of_conversion }
+  "! $default { @link zif_aff_aifs_v1.data:co_direction_of_conversion.external_to_internal }
   TYPES ty_direction_of_conversion TYPE c LENGTH 1.
   CONSTANTS:
     BEGIN OF co_direction_of_conversion,
@@ -237,6 +238,7 @@ INTERFACE zif_aff_aifs_v1
       field_length TYPE n LENGTH 4,
       "! <p class="shorttext">Check Before/After</p>
       "! Check before or after
+      "! $required
       check_timing TYPE ty_check_timing,
     END OF ty_field_mapping_field.
 
@@ -274,6 +276,7 @@ INTERFACE zif_aff_aifs_v1
       conversion_routine          TYPE c LENGTH 5,
       "! <p class="shorttext">Direction of Conversion</p>
       "! Direction of conversion
+      "! $required
       direction_of_conversion     TYPE ty_direction_of_conversion,
       "! <p class="shorttext">Field Name for Data Link</p>
       "! Field name for data link
@@ -335,10 +338,6 @@ INTERFACE zif_aff_aifs_v1
     "! <p class="shorttext">Mapping Information</p>
     "! Structure mapping information
     BEGIN OF ty_mapping_information,
-      "! <p class="shorttext">Display Name</p>
-      "! Display name
-      "! $required
-      display_name                  TYPE string,
       "! <p class="shorttext">Numeric ID</p>
       "! Numeric ID
       "! $required

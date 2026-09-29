@@ -12,7 +12,6 @@
   },
   "mappingInformation": [
     {
-      "displayName": "10 / ZAIF_BUSINESS_PARTNER / ZAIF_SAP_BUSINESS_PARTNER",
       "numericId": "10",
       "dataStructure": "ZAIF_BUSINESS_PARTNER",
       "mappedDataStructure": "ZAIF_SAP_BUSINESS_PARTNER",
@@ -37,6 +36,7 @@
         {
           "mappedDataStructureField": "ADDRESS",
           "numericId": "1",
+          "directionOfConversion": "externalToInternal",
           "indirectMapping": {
             "table": "123",
             "indirectMappingSelection1": {
@@ -120,6 +120,7 @@
         {
           "mappedDataStructureField": "E_MAIL",
           "numericId": "2",
+          "directionOfConversion": "externalToInternal",
           "indirectMapping": {
             "indirectMappingSelection1": {
               "operator": "equals"
@@ -168,7 +169,6 @@
       ]
     },
     {
-      "displayName": "20 / ADDRESS / GENERAL_ADDRESS",
       "numericId": "20",
       "dataStructure": "ADDRESS",
       "mappedDataStructure": "GENERAL_ADDRESS",
@@ -180,6 +180,7 @@
         {
           "mappedDataStructureField": "NAME",
           "numericId": "1",
+          "directionOfConversion": "externalToInternal",
           "indirectMapping": {
             "indirectMappingSelection1": {
               "operator": "equals"
@@ -203,7 +204,6 @@
       ]
     },
     {
-      "displayName": "1",
       "numericId": "1",
       "dataStructure": "1",
       "mappedDataStructure": "1",
@@ -215,3 +215,4 @@
     }
   ]
 }
+
