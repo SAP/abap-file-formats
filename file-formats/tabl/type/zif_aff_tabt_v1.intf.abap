@@ -4,56 +4,9 @@ INTERFACE zif_aff_tabt_v1 PUBLIC.
   "! Data class category
   TYPES ty_data_class_category    TYPE c LENGTH 5.
 
-  "! $values {@link zif_aff_tabt_v1.data:co_size_category}
-  "! $default {@link zif_aff_tabt_v1.data:co_size_category.cat_0}
-  TYPES ty_size_category TYPE c LENGTH 2.
-
-  CONSTANTS:
-    BEGIN OF co_size_category,
-      "! <p class="shorttext">Undefined</p>
-      "! Undefined - Obsolete for new tables
-      undefined TYPE ty_size_category VALUE space,
-      "! <p class="shorttext">Size Category 0</p>
-      "! Size category 0
-      "! $enumValue '0'
-      cat_0 TYPE ty_size_category VALUE 0,
-      "! <p class="shorttext">Size Category 1</p>
-      "! Size category 1
-      "! $enumValue '1'
-      cat_1 TYPE ty_size_category VALUE 1,
-      "! <p class="shorttext">Size Category 2</p>
-      "! Size category 2
-      "! $enumValue '2'
-      cat_2 TYPE ty_size_category VALUE 2,
-      "! <p class="shorttext">Size Category 3</p>
-      "! Size category 3
-      "! $enumValue '3'
-      cat_3 TYPE ty_size_category VALUE 3,
-      "! <p class="shorttext">Size Category 4</p>
-      "! Size category 4
-      "! $enumValue '4'
-      cat_4 TYPE ty_size_category VALUE 4,
-      "! <p class="shorttext">Size Category 5</p>
-      "! Size category 5
-      "! $enumValue '5'
-      cat_5 TYPE ty_size_category VALUE 5,
-      "! <p class="shorttext">Size Category 6</p>
-      "! Size category 6
-      "! $enumValue '6'
-      cat_6 TYPE ty_size_category VALUE 6,
-      "! <p class="shorttext">Size Category 7</p>
-      "! Size category 7
-      "! $enumValue '7'
-      cat_7 TYPE ty_size_category VALUE 7,
-      "! <p class="shorttext">Size Category 8</p>
-      "! Size category 8
-      "! $enumValue '8'
-      cat_8 TYPE ty_size_category VALUE 8,
-      "! <p class="shorttext">Size Category 9</p>
-      "! Size category 9
-      "! $enumValue '9'
-      cat_9 TYPE ty_size_category VALUE 9,
-    END OF co_size_category.
+  "! $pattern '^([0-9]|undefined)$'
+  "! $default '0'
+  TYPES ty_size_category TYPE string.
 
   TYPES:
     "! $values {@link zif_aff_tabt_v1.data:co_buffer_state}
