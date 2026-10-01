@@ -10,4 +10,4 @@ HTTP  | HTTP Service | Connectivity
 
 File | Cardinality | Definition | Schema | Example
 :--- | :--- | :--- | :--- | :---
-`<name>.http.json` | 1 | [`zif_aff_http_v1.intf.abap`](./type/zif_aff_http_v1.intf.abap) | [`http-v1.json`](./http-v1.json)
+`<name>.http.json` | 1 | [`zif_aff_http_v1.intf.abap`](./type/zif_aff_http_v1.intf.abap) | [`http-v1.json`](./http-v1.json) | [`http_test_service.http.json`](./examples/http_test_service.http.json)

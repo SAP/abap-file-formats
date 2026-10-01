@@ -13,7 +13,7 @@ INTERFACE zif_aff_smbc_v1
       "! <p class="shorttext synchronized">Control</p>
       control TYPE string VALUE 'Control',
       "! <p class="shorttext synchronized">None</p>
-      none TYPE string VALUE 'None',
+      none    TYPE string VALUE 'None',
     END OF co_page_variant_management,
     "! <p class="shorttext synchronized">Selection Mode</p>
     BEGIN OF co_selection_mode,
@@ -32,6 +32,8 @@ INTERFACE zif_aff_smbc_v1
       responsive_table TYPE string VALUE 'ResponsiveTable',
       "! <p class="shorttext synchronized">Grid Table</p>
       grid_table       TYPE string VALUE 'GridTable',
+      "! <p class="shorttext synchronized">Tree Table</p>
+      tree_table       TYPE string VALUE 'TreeTable',
     END OF co_table_type,
     "! <p class="shorttext synchronized">Section Layout</p>
     BEGIN OF co_section_layout,
@@ -44,13 +46,13 @@ INTERFACE zif_aff_smbc_v1
     BEGIN OF co_creation_mode_name,
       "! <p class="shorttext synchronized">New Page</p>
       "! Item is created in subpage
-      new_page     TYPE string VALUE 'NewPage',
+      new_page             TYPE string VALUE 'NewPage',
       "! <p class="shorttext synchronized">Inline</p>
       "! By clicking on 'Create' a new line is created but automatic navigation to subpage is not performed.
-      inline       TYPE string VALUE 'Inline',
+      inline               TYPE string VALUE 'Inline',
       "! <p class="shorttext synchronized">Creation Row</p>
       "! By clicking on 'Add row' a new line is created but automatic navigation to subpage is not performed.
-      creation_row TYPE string VALUE 'CreationRow',
+      creation_row         TYPE string VALUE 'CreationRow',
       "! <p class="shorttext synchronized">Empty Row</p>
       "! In create or edit mode, one new empty row is added to the table.
       inline_creation_rows TYPE string VALUE 'InlineCreationRows',
@@ -74,7 +76,10 @@ INTERFACE zif_aff_smbc_v1
       fixed TYPE string VALUE 'Fixed',
       "! <p class="shorttext synchronized">Automatic</p>
       "! The visibleRowCount property is changed by the table automatically
-      auto TYPE string VALUE 'Auto',
+      auto  TYPE string VALUE 'Auto',
+      "! <p class="shorttext synchronized">Interactive</p>
+      "! The user can change the number of displayed rows by dragging a resize handle
+      interactive TYPE string VALUE 'Interactive',
     END OF co_row_count_mode.
 
   TYPES:
@@ -102,7 +107,7 @@ INTERFACE zif_aff_smbc_v1
     "! <p class="shorttext synchronized">Table Type</p>
     "! $values {@link zif_aff_smbc_v1.data:co_table_type}
     "! $default {@link zif_aff_smbc_v1.data:co_table_type.responsive_table}
-    ty_table_type TYPE string,
+    ty_table_type       TYPE string,
     "! <p class="shorttext synchronized">List Report Configuration</p>
     BEGIN OF ty_list_report,
       "! <p class="shorttext synchronized">Initial Load</p>
@@ -163,6 +168,18 @@ INTERFACE zif_aff_smbc_v1
       "! $minimum 0
       "! $maximum 30
       frozen_column_count           TYPE i,
+      "! <p class="shorttext synchronized">Threshold</p>
+      "! Number of initially loaded rows
+      "! $minimum 1
+      "! $maximum 100000
+      "! $default '100'
+      threshold                     TYPE i,
+      "! <p class="shorttext synchronized">Scroll Threshold</p>
+      "! Additional records loaded when scrolling
+      "! $minimum 1
+      "! $maximum 100000
+      "! $default '300'
+      scroll_threshold              TYPE i,
       "! <p class="shorttext synchronized">Table Creation Mode</p>
       "! $values {@link zif_aff_smbc_v1.data:co_creation_mode_name}
       "! $default {@link zif_aff_smbc_v1.data:co_creation_mode_name.new_page}
@@ -180,7 +197,7 @@ INTERFACE zif_aff_smbc_v1
       "! If true, the user cannot add and remove columns to the table
       hide_column                   TYPE ty_personalization-hide_column,
       "! <p class="shorttext synchronized">Condensed Table Layout</p>
-      "! If true, display rows in a condensed way. Only applicaple to Table Type 'GridTable'.
+      "! If true, display rows in a condensed way. Only applicable to Table Type 'GridTable'.
       condensed_table_layout        TYPE abap_bool,
       "! <p class="shorttext synchronized">Include Column Headers in Width Calculation</p>
       "! If true, include the column labels while calculating the default column width.
@@ -200,11 +217,27 @@ INTERFACE zif_aff_smbc_v1
     ty_object_pages   TYPE SORTED TABLE OF ty_object_page WITH UNIQUE KEY entity_set,
     "! <p class="shorttext synchronized" >Table Settings</p>
     ty_table_settings TYPE SORTED TABLE OF ty_table_setting WITH UNIQUE KEY entity_set,
-    "! <p class="shorttext synchronized" >Confguration of List Report and Object Pages</p>
+    "! <p class="shorttext synchronized" >Hiding Draft Related Features</p>
+    BEGIN OF ty_hide_draft,
+      "! <p class="shorttext synchronized" >Hide All Features Related to Draft Handling</p>
+      enabled                   TYPE abap_bool,
+      "! <p class="shorttext synchronized" >Stay on Current Page After Save</p>
+      stay_on_page_after_save   TYPE abap_bool,
+      "! <p class="shorttext synchronized" >Stay on Current Page After Cancel</p>
+      stay_on_page_after_cancel TYPE abap_bool,
+      "! <p class="shorttext synchronized" >Hide Create Next Button</p>
+      hide_create_next          TYPE abap_bool,
+    END OF ty_hide_draft,
+    "! <p class="shorttext synchronized" >Fiori Elements App Settings</p>
+    BEGIN OF ty_fiori_elements_app,
+      hide_draft TYPE ty_hide_draft,
+    END OF ty_fiori_elements_app,
+    "! <p class="shorttext synchronized" >Configuration of List Report and Object Pages</p>
     BEGIN OF ty_settings,
-      list_report    TYPE ty_list_report,
-      object_pages   TYPE ty_object_pages,
-      table_settings TYPE ty_table_settings,
+      fiori_elements_app TYPE ty_fiori_elements_app,
+      list_report        TYPE ty_list_report,
+      object_pages       TYPE ty_object_pages,
+      table_settings     TYPE ty_table_settings,
     END OF ty_settings.
   TYPES:
     "! <p class="shorttext">Service Configuration</p>
@@ -228,6 +261,10 @@ INTERFACE zif_aff_smbc_v1
       "! Name of the Business Configuration
       "! $required
       name                TYPE c LENGTH 50,
+      "! <p class="shorttext">Transport Object</p>
+      "! $showAlways
+      "! $minLength 11
+      transport_object    TYPE c LENGTH 31,
       "! <p class="shorttext">Configuration Group</p>
       "! $showAlways
       configuration_group TYPE c LENGTH 30,

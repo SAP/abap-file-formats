@@ -103,7 +103,7 @@
       "type": "array",
       "items": {
         "title": "Email Template Content",
-        "description": "Displays the HTML und plain text template content.",
+        "description": "Displays the HTML and plain text template content.",
         "type": "object",
         "properties": {
           "name": {
