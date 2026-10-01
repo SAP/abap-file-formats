@@ -46,6 +46,7 @@ INTERFACE zif_aff_suso_v1
 
   "! <p class="shorttext">Authorization Fields</p>
   "! Authorization fields
+  "! $maxItems 10
   TYPES ty_authorization_fields TYPE SORTED TABLE OF ty_authorization_field WITH UNIQUE KEY authorization_field.
 
   "! $values {@link zif_aff_suso_v1.data:co_access_category}
@@ -74,7 +75,8 @@ INTERFACE zif_aff_suso_v1
 
   TYPES:
     "! <p class="shorttext">Permitted Activities</p>
-    "! Permitted activities
+    "! Permitted activities can only be defined for authorization field ACTVT and only if it is contained in the
+    "! authorization fields list.
     BEGIN OF ty_permitted_activity,
       "! <p class="shorttext">Activity</p>
       "! Activity
@@ -193,7 +195,7 @@ INTERFACE zif_aff_suso_v1
       "! Authorization fields
       authorization_fields TYPE ty_authorization_fields,
       "! <p class="shorttext">Permitted Activities</p>
-      "! Permitted activities
+      "! Permitted activities. This structure is only relevant if one of the authorization fields is ACTVT.
       permitted_activities TYPE ty_permitted_activities,
       "! <p class="shorttext">Object Attributes</p>
       "! Object attributes

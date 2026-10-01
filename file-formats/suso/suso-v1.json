@@ -79,6 +79,7 @@
       "description": "Authorization fields",
       "type": "array",
       "uniqueItems": true,
+      "maxItems": 10,
       "items": {
         "title": "Authorization Fields",
         "description": "Authorization fields",
@@ -110,12 +111,12 @@
     },
     "permittedActivities": {
       "title": "Permitted Activities",
-      "description": "Permitted activities",
+      "description": "Permitted activities. This structure is only relevant if one of the authorization fields is ACTVT.",
       "type": "array",
       "uniqueItems": true,
       "items": {
         "title": "Permitted Activities",
-        "description": "Permitted activities",
+        "description": "Permitted activities can only be defined for authorization field ACTVT and only if it is contained in the authorization fields list.",
         "type": "object",
         "properties": {
           "activity": {
