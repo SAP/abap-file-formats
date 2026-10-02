@@ -27,7 +27,7 @@ INTERFACE zif_aff_suso_v1
       "! <p class="shorttext">Authorization Field</p>
       "! Name of the authorization field. An authorization object can contain up to 10 authorization fields.
       "! $required
-      authorization_field TYPE zif_aff_auth_types_v1=>ty_auth_field,
+      authorization_field TYPE if_aff_auth_types_v1=>ty_auth_field,
       "! <p class="shorttext">Activity Field</p>
       "! By selecting this option, an authorization field can be flagged that can contain activity-related values.
       "! The ACTVT field is always an activity field.
@@ -35,6 +35,7 @@ INTERFACE zif_aff_suso_v1
       "! cannot be declared as activity fields.
       "! If fields do not have a search help, it is very difficult to tell whether or not they can contain
       "! activity-related values. Therefore, they cannot be declared as activity fields.
+      "! This field is only relevant in cloud systems.
       is_activity_field   TYPE abap_bool,
       "! <p class="shorttext">Search Help</p>
       "! If the search help for the authorization field returns unsuitable selection results in the current
@@ -87,7 +88,7 @@ INTERFACE zif_aff_suso_v1
       "! object should be used when generating business roles.
       "! This classification is used during the generation of roles in order to generate roles that contain read
       "! authorizations only.
-      "! This function is only supported in SAP S/4HANA Cloud Public Edition and SAP BTP ABAP Environment.
+      "! This field is only relevant in cloud systems.
       access_category TYPE ty_access_category,
     END OF ty_permitted_activity.
 

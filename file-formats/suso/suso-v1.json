@@ -93,7 +93,7 @@
           },
           "isActivityField": {
             "title": "Activity Field",
-            "description": "By selecting this option, an authorization field can be flagged that can contain activity-related values. The ACTVT field is always an activity field. Organizational levels always represent organizational responsibilities, but never activities. Therefore, they cannot be declared as activity fields. If fields do not have a search help, it is very difficult to tell whether or not they can contain activity-related values. Therefore, they cannot be declared as activity fields.",
+            "description": "By selecting this option, an authorization field can be flagged that can contain activity-related values. The ACTVT field is always an activity field. Organizational levels always represent organizational responsibilities, but never activities. Therefore, they cannot be declared as activity fields. If fields do not have a search help, it is very difficult to tell whether or not they can contain activity-related values. Therefore, they cannot be declared as activity fields. This field is only relevant in cloud systems.",
             "type": "boolean"
           },
           "searchHelp": {
@@ -127,7 +127,7 @@
           },
           "accessCategory": {
             "title": "Access Category",
-            "description": "The purpose is to store additional information directly on the authorization field about how the authorization object should be used when generating business roles. This classification is used during the generation of roles in order to generate roles that contain read authorizations only. This function is only supported in SAP S/4HANA Cloud Public Edition and SAP BTP ABAP Environment.",
+            "description": "The purpose is to store additional information directly on the authorization field about how the authorization object should be used when generating business roles. This classification is used during the generation of roles in order to generate roles that contain read authorizations only. This field is only relevant in cloud systems.",
             "type": "string",
             "enum": [
               "read",
