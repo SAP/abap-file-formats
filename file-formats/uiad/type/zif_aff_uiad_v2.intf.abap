@@ -44,7 +44,7 @@ INTERFACE zif_aff_uiad_v2
       transaction          TYPE c LENGTH 20,
 
       "! <p class="shorttext">Is Default for Transaction</p>
-      "! Is default for transaction
+      "! Is default LADI for transaction
       is_default_ladi      TYPE abap_bool,
 
       "! <p class="shorttext">Target Mapping Information</p>
@@ -234,10 +234,6 @@ INTERFACE zif_aff_uiad_v2
       "! <p class="shorttext">System Alias</p>
       "! System alias
       system_alias                  TYPE c LENGTH 32,
-
-*      "! <p class="shorttext">Communication Target</p>
-*      "! Communication Target
-*      communication_target          TYPE c LENGTH 30,
 
       "! <p class="shorttext">Desktop</p>
       "! Desktop is supported as device type
