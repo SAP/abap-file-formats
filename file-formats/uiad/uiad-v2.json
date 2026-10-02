@@ -121,7 +121,7 @@
         },
         "isDefaultLadi": {
           "title": "Is Default for Transaction",
-          "description": "Is default for transaction",
+          "description": "Is default LADI for transaction",
           "type": "boolean"
         },
         "information": {
