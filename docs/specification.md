@@ -60,9 +60,10 @@ ABAP file formats use the file types:
 * **`.acds`** stores source code of ABAP Core Data Services (CDS) as plain text
 * **`.csn`** is a notation for compact representations of CDS models and is part of CSN Models (CSNM)
 * **`.ddic`** stores source code of Data Dictionary (DDIC) tables or structures as plain text
-* **`.json`** stores content of form-based editors or properties of objects, such as `originalLanguage`, `abapLanguageVersion` and others.
+* **`.json`** stores content of form-based editors or properties of objects, such as `originalLanguage`, `abapLanguageVersion` and others
 Details are found in [JSON Files in ABAP File Formats](./json.md)
 * **`.properties`** stores text elements as plain text and [translation texts](properties.md)
+* **`.txt** stores plain text
 * **`.xdp`** stands for XML Data Packaging and is part of Form Objects (SFPF)
 
 
