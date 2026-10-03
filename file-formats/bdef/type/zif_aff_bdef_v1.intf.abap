@@ -14,14 +14,14 @@ INTERFACE zif_aff_bdef_v1 PUBLIC.
     "! Bdef object type
     BEGIN OF ty_main,
       "! $required
-      format_version              TYPE zif_aff_types_v1=>ty_format_version,
+      format_version               TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header                      TYPE zif_aff_types_v1=>ty_header_60_src,
+      header                       TYPE zif_aff_types_v1=>ty_header_60_src,
       "! <p class="shorttext">Extended Behavior Definition</p>
       "! Extended Behavior Definition
-      extended_behavior_defintion TYPE ty_extended_behavior_def,
+      extended_behavior_definition TYPE ty_extended_behavior_def,
     END OF ty_main.
 
 ENDINTERFACE.
