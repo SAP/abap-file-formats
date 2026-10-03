@@ -1,0 +1,35 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "SITO",
+    "description": "Situation Object",
+    "group": "Situation Handling"
+  },
+  "versions": [
+    {
+      "version": "2",
+      "files": [
+        {
+          "filePattern": "<name>.sito.json",
+          "cardinality": "1",
+          "schema": "sito-v2.json",
+          "definitionInterface": "type/zif_aff_sito_v2.intf.abap",
+          "examples": ["examples/z_aff_example_v2.sito.json"]
+        }
+      ]
+    },
+    {
+      "version": "1",
+      "deprecated": true,
+      "files": [
+        {
+          "filePattern": "<name>.sito.json",
+          "cardinality": "1",
+          "schema": "sito-v1.json",
+          "definitionInterface": "type/zif_aff_sito_v1.intf.abap",
+          "examples": ["examples/z_aff_example_v1.sito.json"]
+        }
+      ]
+    }
+  ]
+}

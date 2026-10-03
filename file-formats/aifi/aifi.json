@@ -1,0 +1,22 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "AIFI",
+    "description": "Application",
+    "group": "Application Interface Framework"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.aifi.json",
+          "cardinality": "1",
+          "schema": "aifi-v1.json",
+          "definitionInterface": "type/zif_aff_aifi_v1.intf.abap",
+          "examples": ["examples/z_aff_example_aifi.aifi.json"]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "EEEC",
+    "description": "Event Consumption Model",
+    "group": "Business Services"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.eeec.json",
+          "cardinality": "1",
+          "schema": "eeec-v1.json",
+          "definitionInterface": "type/zif_aff_eeec_v1.intf.abap",
+          "examples": ["examples/z_aff_example_eeec.eeec.json"]
+        }
+      ]
+    }
+  ]
+}

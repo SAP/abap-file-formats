@@ -1,0 +1,22 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "SUSI",
+    "description": "Authorization Default (External)",
+    "group": "Authorizations"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.susi.json",
+          "cardinality": "1",
+          "schema": "susi-v1.json",
+          "definitionInterface": "type/zif_aff_susi_v1.intf.abap",
+          "examples": ["examples/55fae0107acd2ee619d9f869c651edhs.susi.json"]
+        }
+      ]
+    }
+  ]
+}

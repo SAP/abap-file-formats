@@ -1,0 +1,28 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "DCLS",
+    "description": "ABAP Data Control Language Source",
+    "group": "Core Data Services"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.dcls.json",
+          "cardinality": "1",
+          "schema": "dcls-v1.json",
+          "definitionInterface": "type/zif_aff_dcls_v1.intf.abap",
+          "examples": ["examples/z_aff_example_dcls.dcls.json"]
+        },
+        {
+          "filePattern": "<name>.dcls.acds",
+          "cardinality": "1",
+          "definitionUrl": "https://help.sap.com/doc/abapdocu_cp_index_htm/CLOUD/en-US/index.htm?file=abencds.htm",
+          "examples": ["examples/z_aff_example_dcls.dcls.acds"]
+        }
+      ]
+    }
+  ]
+}
