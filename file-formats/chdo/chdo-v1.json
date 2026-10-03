@@ -65,7 +65,7 @@
           "type": "string",
           "enum": [
             "standard",
-            "behaviorDefiniton"
+            "behaviorDefinition"
           ],
           "enumTitles": [
             "Standard",
