@@ -46,7 +46,8 @@
             "value": "STANDARD"
           }
         ],
-        "validFrom": "",
+        "validFrom": "2026-01-01",
+        "validTo": "2099-12-31",
         "checkAssignments": [
           {
             "id": "001",
