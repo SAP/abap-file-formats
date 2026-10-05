@@ -222,7 +222,7 @@ INTERFACE zif_aff_vcls_v1
       "! <p class="shorttext">Switch ID</p>
       "! Switch Framework switch name (SFW5). If set, the level is automatically suppressed
       "! when the switch status is OFF or STAND_BY at runtime.
-      switch_id               TYPE c LENGTH 30,
+      switch_id               TYPE ty_switch_id,
       "! <p class="shorttext">Object Texts</p>
       "! Language-dependent labels for this cluster level.
       "! Overrides the DDIC short text when present.
