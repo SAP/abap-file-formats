@@ -343,7 +343,7 @@
                 "enumDescriptions": [
                   "Event EQ - Instead of the Standard 'Locking/Unlocking' Routine",
                   "Event GR - Instead of the Standard 'Specify Selection Conditions' Routine",
-                  "Event RE - IInstead of the Standard 'Cluster Data Read' Routine",
+                  "Event RE - Instead of the Standard 'Cluster Data Read' Routine",
                   "Event SV - Instead of the Standard 'Cluster Data Save' Routine",
                   "Event CK - Instead of the Standard 'New or Changed Entries check' Routine",
                   "Event 01 - After Initializing Global Variables, Field Symbols, Etc.",
@@ -364,7 +364,7 @@
                 "title": "Subroutine",
                 "description": "Name of the ABAP subroutine in the maintenance program called when the event fires",
                 "type": "string",
-                "maxLength": 30
+                "maxLength": 40
               }
             },
             "additionalProperties": false,
@@ -375,7 +375,11 @@
           }
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "required": [
+        "programName",
+        "eventList"
+      ]
     }
   },
   "additionalProperties": false,

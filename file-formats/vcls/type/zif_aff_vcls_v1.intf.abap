@@ -85,7 +85,7 @@ INTERFACE zif_aff_vcls_v1
       "! Event GR - Instead of the Standard 'Specify Selection Conditions' Routine
       replace_std_get_selection      TYPE ty_event_code VALUE 'GR',
       "! <p class="shorttext">Instead of the Standard 'Cluster Data Read' Routine</p>
-      "! Event RE - IInstead of the Standard 'Cluster Data Read' Routine
+      "! Event RE - Instead of the Standard 'Cluster Data Read' Routine
       replace_std_read               TYPE ty_event_code VALUE 'RE',
       "! <p class="shorttext">Instead of the Standard 'Cluster Data Save' Routine</p>
       "! Event SV - Instead of the Standard 'Cluster Data Save' Routine
@@ -149,6 +149,9 @@ INTERFACE zif_aff_vcls_v1
   "! <p class="shorttext">Object Level Texts</p>
   TYPES ty_cluster_obj_level_texts TYPE SORTED TABLE OF ty_cluster_obj_level_text WITH UNIQUE KEY language.
 
+  "! <p class="shorttext">Field Name</p>
+  TYPES ty_field_name TYPE c LENGTH 30.
+
   TYPES:
     "! <p class="shorttext">Field Dependency</p>
     "! Defines how a field in a dependent object receives its value from a predecessor object.
@@ -157,14 +160,14 @@ INTERFACE zif_aff_vcls_v1
       "! <p class="shorttext">Object Field</p>
       "! Field name in the dependent object that receives its value or constraint from the predecessor
       "! $required
-      object_field       TYPE c LENGTH 30,
+      object_field       TYPE ty_field_name,
       "! <p class="shorttext">Predecessor Object</p>
       "! The parent object that provides the value. Must be the root object for copySelectionCondition Type.
-      predecessor_object TYPE c LENGTH 30,
+      predecessor_object TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Predecessor Field</p>
       "! Field in the predecessor object whose current value is propagated to objectField.
       "! Blank for root self-reference rows.
-      predecessor_field  TYPE c LENGTH 30,
+      predecessor_field  TYPE ty_field_name,
       "! <p class="shorttext">Field Dependency Type</p>
       "! Classifies the type of field dependency and determines how it is used at runtime
       "! $values {@link zif_aff_vcls_v1.data:co_field_dependency_type}
@@ -175,6 +178,9 @@ INTERFACE zif_aff_vcls_v1
   "! <p class="shorttext">Field Dependencies</p>
   TYPES ty_field_dependencies TYPE SORTED TABLE OF ty_field_dependency WITH UNIQUE KEY object_field.
 
+  "! <p class="shorttext">Switch ID</p>
+  TYPES ty_switch_id TYPE c LENGTH 30.
+
   TYPES:
     "! <p class="shorttext">Cluster Level</p>
     "! One object (view or table) participating in the view cluster hierarchy.
@@ -183,11 +189,11 @@ INTERFACE zif_aff_vcls_v1
       "! <p class="shorttext">Object Name</p>
       "! Technical name of the DDIC view or table at this hierarchy level.
       "! $required
-      object_name             TYPE c LENGTH 30,
+      object_name             TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Predecessor Object</p>
       "! Parent object one level up. Equals object_name for root objects (self-reference).
       "! Drives all tree traversal, both downward recursion and upward root search.
-      predecessor_object      TYPE c LENGTH 30,
+      predecessor_object      TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Position</p>
       "! Display position within the cluster hierarchy. Must be unique within the cluster.
       "! $minimum 1
@@ -230,6 +236,9 @@ INTERFACE zif_aff_vcls_v1
   "! <p class="shorttext">Cluster Levels</p>
   TYPES ty_cluster_levels TYPE SORTED TABLE OF ty_cluster_level WITH UNIQUE KEY object_name.
 
+  "! <p class="shorttext">Subroutine Name</p>
+  TYPES ty_subroutine_name TYPE c LENGTH 40.
+
   TYPES:
     "! <p class="shorttext">View Cluster Maintenance Event</p>
     "! ABAP subroutine registered for a specific view cluster maintenance event
@@ -242,12 +251,15 @@ INTERFACE zif_aff_vcls_v1
       "! <p class="shorttext">Subroutine</p>
       "! Name of the ABAP subroutine in the maintenance program called when the event fires
       "! $required
-      subroutine TYPE c LENGTH 30,
+      subroutine TYPE ty_subroutine_name,
     END OF ty_event.
 
   "! <p class="shorttext">View Cluster Maintenance Events</p>
   "! Extended maintenance events registered for this view cluster
   TYPES ty_event_list TYPE SORTED TABLE OF ty_event WITH UNIQUE KEY event.
+
+  "! <p class="shorttext">Program Name</p>
+  TYPES ty_program_name TYPE c LENGTH 40.
 
   TYPES:
     "! <p class="shorttext">Maintenance Events</p>
@@ -256,10 +268,11 @@ INTERFACE zif_aff_vcls_v1
       "! <p class="shorttext">Program Name</p>
       "! Name of the ABAP subroutine pool (type S) containing the event handler routines.
       "! Must exist in TRDIR and must not be an include (type I) or function group include (type F).
-      program_name TYPE c LENGTH 40,
+      "! $required
+      program_name TYPE ty_program_name,
       "! <p class="shorttext">Event List</p>
       "! ABAP subroutines registered for specific maintenance lifecycle events (table VCLMF)
-      "! $showAlways
+      "! $required
       event_list   TYPE ty_event_list,
     END OF ty_events.
 
@@ -284,7 +297,7 @@ INTERFACE zif_aff_vcls_v1
       "! <p class="shorttext">Base View Cluster</p>
       "! Name of the base view cluster this variant is derived from.
       "! Only relevant when this cluster is a variant derived from the base view cluster.
-      base_view_cluster      TYPE c LENGTH 30,
+      base_view_cluster      TYPE zif_aff_types_v1=>ty_object_name_30,
     END OF ty_general_information.
 
   TYPES:
