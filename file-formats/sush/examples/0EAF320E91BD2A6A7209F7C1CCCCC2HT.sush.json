@@ -1,0 +1,42 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "R3TR HTTP AFF_EXAMPLE_FOR_SUSH",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "applicationName": "AFF_EXAMPLE_FOR_SUSH",
+    "applicationType": "HTTP",
+    "maintenanceMode": "manual",
+    "defaultValuesRequired": "yes"
+  },
+  "authorizationObjects": [
+    {
+      "authObjectName": "S_AUTH_DEV",
+      "maintenanceStatus": "inactiveValues",
+      "authObjectFieldValues": [
+        {
+          "authFieldName": "ACTVT"
+        }
+      ]
+    },
+    {
+      "authObjectName": "S_START",
+      "maintenanceStatus": "noDefault"
+    },
+    {
+      "authObjectName": "S_TABU_NAM",
+      "maintenanceStatus": "defaultWithValues",
+      "authObjectFieldValues": [
+        {
+          "authFieldName": "ACTVT",
+          "authFieldLowValue": "03"
+        },
+        {
+          "authFieldName": "TABLE"
+        }
+      ]
+    }
+  ]
+}
