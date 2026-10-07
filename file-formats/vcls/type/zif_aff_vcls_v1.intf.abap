@@ -259,7 +259,7 @@ INTERFACE zif_aff_vcls_v1
   TYPES ty_event_list TYPE SORTED TABLE OF ty_event WITH UNIQUE KEY event.
 
   "! <p class="shorttext">Program Name</p>
-  TYPES ty_program_name TYPE c LENGTH 40.
+  TYPES ty_program_name TYPE zif_aff_types_v1=>ty_object_name_40.
 
   TYPES:
     "! <p class="shorttext">Maintenance Events</p>
