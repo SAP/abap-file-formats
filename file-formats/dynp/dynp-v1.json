@@ -771,34 +771,6 @@
               "searchHelp",
               "referenceField"
             ]
-          },
-          "tableCtrl": {
-            "title": "Table Control Field Role",
-            "description": "Role of this field within a Table Control container",
-            "type": "object",
-            "properties": {
-              "title": {
-                "title": "Title",
-                "description": "Marks this element as the title row of the Table Control",
-                "type": "boolean"
-              },
-              "columnHeading": {
-                "title": "Column Heading",
-                "description": "Marks this element as a column heading of the Table Control",
-                "type": "boolean"
-              },
-              "selectionColumn": {
-                "title": "Selection Column",
-                "description": "Marks this element as the row selection column of the Table Control",
-                "type": "boolean"
-              }
-            },
-            "additionalProperties": false,
-            "required": [
-              "title",
-              "columnHeading",
-              "selectionColumn"
-            ]
           }
         },
         "additionalProperties": false,
@@ -810,8 +782,7 @@
           "special",
           "display",
           "modGroupsAndFuncs",
-          "references",
-          "tableCtrl"
+          "references"
         ]
       }
     },
@@ -829,12 +800,21 @@
             "description": "Type of container",
             "type": "string",
             "enum": [
+              "subscreenArea",
+              "tabstripControl",
+              "customControl",
               "tableControl"
             ],
             "enumTitles": [
+              "Subscreen",
+              "Tabstrip Control",
+              "Custom Control",
               "Table Control"
             ],
             "enumDescriptions": [
+              "Subscreen container",
+              "Tabstrip control container",
+              "Custom control container",
               "Table control container"
             ]
           },
@@ -900,13 +880,877 @@
             "description": "Allows the container width to adapt to horizontal window resizing",
             "type": "boolean"
           },
-          "specificContainerAttributes": {
-            "title": "Specific Container Attributes",
-            "description": "Container-specific attributes based on the container type",
+          "subscreen": {
+            "title": "Specific Subscreen Attributes",
+            "description": "Subscreen-specific attributes",
             "type": "object",
             "properties": {
-              "tableControl": {
-                "title": "Specific Table Control Attributes",
+              "verticalScrollable": {
+                "title": "Vertical Scrollable",
+                "description": "Allows the subscreen area to scroll vertically when its content exceeds the visible height",
+                "type": "boolean"
+              },
+              "horizontalScrollable": {
+                "title": "Horizontal Scrollable",
+                "description": "Allows the subscreen area to scroll horizontally when its content exceeds the visible width",
+                "type": "boolean"
+              },
+              "switch": {
+                "title": "SFW Switch",
+                "description": "Identifier for switch in the switch framework",
+                "type": "string",
+                "maxLength": 30
+              },
+              "reactionToSwitch": {
+                "title": "Reaction To SFW Switch",
+                "description": "Determines whether the object is displayed or hidden when the assigned Switch Framework switch is active",
+                "type": "string",
+                "enum": [
+                  "display",
+                  "hide"
+                ],
+                "enumTitles": [
+                  "Display",
+                  "Hide"
+                ],
+                "enumDescriptions": [
+                  "Display when switch framework switch is active",
+                  "Hide when switch framework switch is active"
+                ]
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "verticalScrollable",
+              "horizontalScrollable",
+              "switch",
+              "reactionToSwitch"
+            ]
+          },
+          "tabstripControl": {
+            "title": "Specific Tabstrip Attributes",
+            "description": "Tabstrip-specific attributes",
+            "type": "object",
+            "properties": {
+              "attributes": {
+                "title": "Tabstrip Attributes",
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "title": "Title",
+                    "description": "Title displayed above the tabstrip control",
+                    "type": "string"
+                  },
+                  "fioriVariableHeight": {
+                    "title": "Fiori Variable Height",
+                    "description": "Allows the height of tabstrip pages to automatically adapt to the amount of content displayed in Fiori",
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false,
+                "required": [
+                  "title",
+                  "fioriVariableHeight"
+                ]
+              },
+              "tabs": {
+                "title": "Tabs",
+                "description": "Tab pages of the tabstrip control",
+                "type": "array",
+                "items": {
+                  "title": "Tab",
+                  "description": "A single tab within a tabstrip control",
+                  "type": "object",
+                  "properties": {
+                    "pushbutton": {
+                      "title": "Pushbutton",
+                      "description": "Tab header pushbutton",
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "title": "Field Name",
+                          "description": "Technical field name",
+                          "type": "string",
+                          "maxLength": 132
+                        },
+                        "type": {
+                          "title": "Field Type",
+                          "description": "Screen element type",
+                          "type": "string",
+                          "maxLength": 45
+                        },
+                        "general": {
+                          "title": "General",
+                          "description": "General field attributes",
+                          "type": "object",
+                          "properties": {
+                            "line": {
+                              "title": "Line",
+                              "description": "Screen line position",
+                              "type": "integer",
+                              "minimum": -2147483648,
+                              "maximum": 2147483647
+                            },
+                            "column": {
+                              "title": "Column",
+                              "description": "Screen column position",
+                              "type": "integer",
+                              "minimum": -2147483648,
+                              "maximum": 2147483647
+                            },
+                            "definedLength": {
+                              "title": "Defined Length",
+                              "description": "Defined field length",
+                              "type": "integer",
+                              "minimum": -2147483648,
+                              "maximum": 2147483647
+                            },
+                            "visibleLength": {
+                              "title": "Visible Length",
+                              "description": "Visible field length",
+                              "type": "integer",
+                              "minimum": -2147483648,
+                              "maximum": 2147483647
+                            },
+                            "height": {
+                              "title": "Height",
+                              "description": "Field height",
+                              "type": "integer",
+                              "minimum": -2147483648,
+                              "maximum": 2147483647
+                            },
+                            "scrollable": {
+                              "title": "Scrollable",
+                              "description": "Enables scrolling within the field",
+                              "type": "boolean"
+                            },
+                            "format": {
+                              "title": "Format",
+                              "description": "ABAP Dictionary field format",
+                              "type": "string",
+                              "maxLength": 4
+                            },
+                            "input": {
+                              "title": "Input",
+                              "description": "User input enabled",
+                              "type": "boolean"
+                            },
+                            "output": {
+                              "title": "Output",
+                              "description": "User output enabled",
+                              "type": "boolean"
+                            },
+                            "outputOnly": {
+                              "title": "Output Only",
+                              "description": "Display-only field",
+                              "type": "boolean"
+                            },
+                            "dictionaryField": {
+                              "title": "Dictionary Field",
+                              "description": "Referenced ABAP Dictionary (DDIC) field",
+                              "type": "string"
+                            },
+                            "dictionaryModified": {
+                              "title": "Dictionary Modified",
+                              "description": "Indicates whether DDIC-derived attributes have been modified",
+                              "type": "string",
+                              "enum": [
+                                "original",
+                                "modified",
+                                "fixed",
+                                "variableLabel",
+                                "fixedLabel1",
+                                "fixedLabel2",
+                                "fixedLabel3",
+                                "fixedHeader"
+                              ],
+                              "enumTitles": [
+                                "Original",
+                                "Modified",
+                                "Fixed",
+                                "Variable Label",
+                                "Fixed Label 1",
+                                "Fixed Label 2",
+                                "Fixed Label 3",
+                                "Fixed Header"
+                              ],
+                              "enumDescriptions": [
+                                "Original DDIC field",
+                                "Modified DDIC field",
+                                "Fixed DDIC field",
+                                "Variable label from field",
+                                "Fixed label variant 1",
+                                "Fixed label variant 2",
+                                "Fixed label variant 3",
+                                "Fixed header labels"
+                              ],
+                              "default": "original"
+                            }
+                          },
+                          "additionalProperties": false,
+                          "required": [
+                            "line",
+                            "column",
+                            "definedLength",
+                            "visibleLength",
+                            "height",
+                            "scrollable",
+                            "format",
+                            "input",
+                            "output",
+                            "outputOnly",
+                            "dictionaryField",
+                            "dictionaryModified"
+                          ]
+                        },
+                        "textsAndTemplates": {
+                          "title": "Texts And Templates",
+                          "description": "Text and Templates for screen element",
+                          "type": "object",
+                          "properties": {
+                            "textOrIoField": {
+                              "title": "Text Or IO Field",
+                              "description": "Text or input/output Field Template",
+                              "type": "string",
+                              "maxLength": 132
+                            },
+                            "dropdown": {
+                              "title": "Dropdown",
+                              "description": "Dropdown",
+                              "type": "string",
+                              "enum": [
+                                "none",
+                                "listBox",
+                                "listBoxKey"
+                              ],
+                              "enumTitles": [
+                                "None",
+                                "List Box",
+                                "List Box With Key Values"
+                              ],
+                              "enumDescriptions": [
+                                "No dropdown",
+                                "List box dropdown",
+                                "List box with key values dropdown"
+                              ],
+                              "default": "none"
+                            },
+                            "withIcon": {
+                              "title": "With Icon",
+                              "description": "Allows the output field to display an icon and optional text",
+                              "type": "boolean"
+                            },
+                            "iconName": {
+                              "title": "Icon Name",
+                              "description": "Specifies the name of the icon assigned to the screen element",
+                              "type": "string",
+                              "maxLength": 30
+                            },
+                            "iconTooltip": {
+                              "title": "Icon Tooltip",
+                              "description": "Specifies the tooltip text displayed when hovering over the element",
+                              "type": "string",
+                              "maxLength": 30
+                            }
+                          },
+                          "additionalProperties": false,
+                          "required": [
+                            "textOrIoField",
+                            "dropdown",
+                            "withIcon",
+                            "iconName",
+                            "iconTooltip"
+                          ]
+                        },
+                        "special": {
+                          "title": "Special",
+                          "description": "Special field attributes",
+                          "type": "object",
+                          "properties": {
+                            "inputStatus": {
+                              "title": "Input Status",
+                              "description": "Defines whether input is allowed, optional, recommended, or required",
+                              "type": "string",
+                              "enum": [
+                                "notPossible",
+                                "possible",
+                                "recommended",
+                                "required"
+                              ],
+                              "enumTitles": [
+                                "Not Possible",
+                                "Possible",
+                                "Recommended",
+                                "Required"
+                              ],
+                              "enumDescriptions": [
+                                "Input not possible",
+                                "Input possible",
+                                "Input recommended",
+                                "Input required"
+                              ],
+                              "default": "possible"
+                            },
+                            "starEntryAsFirstChar": {
+                              "title": "Star Entry As First Character",
+                              "description": "Allows special input processing when an entry begins with '*'",
+                              "type": "boolean"
+                            },
+                            "inputResetDisabled": {
+                              "title": "Input Reset Disabled",
+                              "description": "Prevents field input from being cleared with the reset character '!'",
+                              "type": "boolean"
+                            },
+                            "caseSensitiveEntry": {
+                              "title": "Case Sensitive Entry",
+                              "description": "Allows input to retain lowercase and uppercase characters",
+                              "type": "boolean"
+                            },
+                            "showSign": {
+                              "title": "Show Sign",
+                              "description": "Enables display of a plus/minus sign for numeric values",
+                              "type": "boolean"
+                            },
+                            "templateDisabled": {
+                              "title": "Template Disabled",
+                              "description": "Allows all characters to be entered in CHAR fields, including special characters such as '!', '?' and '_'\"",
+                              "type": "boolean"
+                            },
+                            "foreignKeyCheck": {
+                              "title": "Foreign Key Check",
+                              "description": "Enables or disables the Dictionary foreign key check",
+                              "type": "boolean"
+                            },
+                            "setParameter": {
+                              "title": "Set Parameter",
+                              "description": "Stores the field value in SAP memory using the specified parameter ID",
+                              "type": "boolean"
+                            },
+                            "getParameter": {
+                              "title": "Get Parameter",
+                              "description": "Retrieves the field value from SAP memory using the specified parameter ID",
+                              "type": "boolean"
+                            },
+                            "parameterId": {
+                              "title": "Parameter ID",
+                              "description": "Identifies the SAP memory parameter used by SET/GET parameters",
+                              "type": "string",
+                              "maxLength": 20
+                            },
+                            "conversionExit": {
+                              "title": "Conversion Exit",
+                              "description": "Specifies the conversion routine used to format and interpret field values",
+                              "type": "string",
+                              "maxLength": 5
+                            }
+                          },
+                          "additionalProperties": false,
+                          "required": [
+                            "inputStatus",
+                            "starEntryAsFirstChar",
+                            "inputResetDisabled",
+                            "caseSensitiveEntry",
+                            "showSign",
+                            "templateDisabled",
+                            "foreignKeyCheck",
+                            "setParameter",
+                            "getParameter",
+                            "parameterId",
+                            "conversionExit"
+                          ]
+                        },
+                        "display": {
+                          "title": "Display",
+                          "description": "Display field attributes",
+                          "type": "object",
+                          "properties": {
+                            "bright": {
+                              "title": "Bright",
+                              "description": "Highlights the field to make it stand out on the screen",
+                              "type": "boolean"
+                            },
+                            "invisible": {
+                              "title": "Invisible",
+                              "description": "Hides the field and its contents at runtime",
+                              "type": "boolean"
+                            },
+                            "rightJustified": {
+                              "title": "Right Justified",
+                              "description": "Aligns field content to the right",
+                              "type": "boolean"
+                            },
+                            "leadingZeros": {
+                              "title": "Display Leading Zeros",
+                              "description": "Displays numeric values with leading zeros",
+                              "type": "boolean"
+                            },
+                            "twoDimensional": {
+                              "title": "Two-Dimensional Display",
+                              "description": "Displays input/output fields in a flat two-dimensional style",
+                              "type": "boolean"
+                            },
+                            "fixedFont": {
+                              "title": "Fixed Font",
+                              "description": "Displays field content using a fixed-width font",
+                              "type": "boolean"
+                            },
+                            "labelLeft": {
+                              "title": "As Label On Left",
+                              "description": "Uses the field as the label for the element on its right",
+                              "type": "boolean"
+                            },
+                            "labelRight": {
+                              "title": "As Label On Right",
+                              "description": "Uses the field as the label for the element on its left",
+                              "type": "boolean"
+                            },
+                            "doubleClick": {
+                              "title": "Double Click",
+                              "description": "Triggers an action when the field is double-clicked",
+                              "type": "boolean"
+                            },
+                            "ltrDirection": {
+                              "title": "Left-To-Right Direction",
+                              "description": "Defines left-to-right text display and input",
+                              "type": "boolean"
+                            },
+                            "disableBidiFiltering": {
+                              "title": "No BIDI Character Filtering",
+                              "description": "Preserves bidirectional text formatting characters",
+                              "type": "boolean"
+                            },
+                            "noInputHistory": {
+                              "title": "No GUI Input History",
+                              "description": "Prevents SAP GUI from storing field input history",
+                              "type": "boolean"
+                            },
+                            "amPmTimeFormat": {
+                              "title": "AM/PM-Enabled Time Format",
+                              "description": "Allows time values to use the 12-hour AM/PM format",
+                              "type": "boolean"
+                            },
+                            "outputStyle": {
+                              "title": "Output Style",
+                              "description": "Defines how decimal floating point numbers are formatted and displayed on the screen",
+                              "type": "string",
+                              "enum": [
+                                "simple",
+                                "signAsPostfix",
+                                "scalePreserving",
+                                "scientific",
+                                "scientificLeadingZeros",
+                                "scalePreservingSci",
+                                "engineering",
+                                "extendedMonetary",
+                                "monetary"
+                              ],
+                              "enumTitles": [
+                                "Simple",
+                                "Sign as postfix",
+                                "Scale-preserving",
+                                "Scientific",
+                                "Scientific with leading zeros",
+                                "Scale-preserving scientific",
+                                "Engineering",
+                                "Extended monetary",
+                                "Monetary"
+                              ]
+                            }
+                          },
+                          "additionalProperties": false,
+                          "required": [
+                            "bright",
+                            "invisible",
+                            "rightJustified",
+                            "leadingZeros",
+                            "twoDimensional",
+                            "fixedFont",
+                            "labelLeft",
+                            "labelRight",
+                            "doubleClick",
+                            "ltrDirection",
+                            "disableBidiFiltering",
+                            "noInputHistory",
+                            "amPmTimeFormat",
+                            "outputStyle"
+                          ]
+                        },
+                        "modGroupsAndFuncs": {
+                          "title": "Modification Groups And Functions",
+                          "description": "Modification groups and functions",
+                          "type": "object",
+                          "properties": {
+                            "group1": {
+                              "title": "Group 1",
+                              "description": "Identifier for SCREEN-GROUP1 used for dynamic field modifications",
+                              "type": "string",
+                              "maxLength": 3
+                            },
+                            "group2": {
+                              "title": "Group 2",
+                              "description": "Identifier for SCREEN-GROUP2 used for dynamic field modifications",
+                              "type": "string",
+                              "maxLength": 3
+                            },
+                            "group3": {
+                              "title": "Group 3",
+                              "description": "Identifier for SCREEN-GROUP3 used for dynamic field modifications",
+                              "type": "string",
+                              "maxLength": 3
+                            },
+                            "group4": {
+                              "title": "Group 4",
+                              "description": "Identifier for SCREEN-GROUP4 used for dynamic field modifications",
+                              "type": "string",
+                              "maxLength": 3
+                            },
+                            "switch": {
+                              "title": "SFW Switch",
+                              "description": "Identifier for switch in the switch framework",
+                              "type": "string",
+                              "maxLength": 30
+                            },
+                            "reactionToSwitch": {
+                              "title": "Reaction To SFW Switch",
+                              "description": "Determines whether the object is displayed or hidden when the assigned Switch Framework switch is active",
+                              "type": "string",
+                              "enum": [
+                                "display",
+                                "hide"
+                              ],
+                              "enumTitles": [
+                                "Display",
+                                "Hide"
+                              ],
+                              "enumDescriptions": [
+                                "Display when switch framework switch is active",
+                                "Hide when switch framework switch is active"
+                              ]
+                            },
+                            "entryHelp": {
+                              "title": "Entry Help",
+                              "description": "Indicates whether value help is available for the field",
+                              "type": "boolean"
+                            },
+                            "valueList": {
+                              "title": "Value List",
+                              "description": "Determines the source of values displayed in the dropdown list",
+                              "type": "string",
+                              "enum": [
+                                "automatic",
+                                "abapProgrammed"
+                              ],
+                              "enumTitles": [
+                                "Automatic Value Help",
+                                "ABAP Programmed Value List"
+                              ],
+                              "enumDescriptions": [
+                                "Automatic value help",
+                                "ABAP-programmed value list"
+                              ],
+                              "default": "automatic"
+                            },
+                            "inputHelpKey": {
+                              "title": "Input Help Key",
+                              "description": "Controls the availability and visibility of the input help (F4) button for the field",
+                              "type": "string",
+                              "enum": [
+                                "temporaryIfF4Exists",
+                                "disabled",
+                                "temporary",
+                                "permanent"
+                              ],
+                              "enumTitles": [
+                                "Temporary If F4 Exists",
+                                "Disabled",
+                                "Temporary",
+                                "Permanent"
+                              ],
+                              "enumDescriptions": [
+                                "Temporary F4 help if field help exists",
+                                "F4 help disabled",
+                                "Temporary F4 help",
+                                "Permanent F4 help"
+                              ],
+                              "default": "temporaryIfF4Exists"
+                            },
+                            "functionCode": {
+                              "title": "Function Code",
+                              "description": "Defines the function code triggered by a user interaction",
+                              "type": "string",
+                              "maxLength": 20
+                            },
+                            "functionCodeType": {
+                              "title": "Function Code Type",
+                              "description": "Determines how the associated function code is handled at runtime",
+                              "type": "string",
+                              "enum": [
+                                "normal",
+                                "exitCommand",
+                                "systemFunction",
+                                "transactionCall",
+                                "localGuiFunction",
+                                "internalUse"
+                              ],
+                              "enumTitles": [
+                                "Normal Application Function",
+                                "Exit Command",
+                                "System Function",
+                                "Transaction Call",
+                                "Local GUI Function",
+                                "Internal Use"
+                              ],
+                              "enumDescriptions": [
+                                "Normal application function",
+                                "Exit command",
+                                "System function",
+                                "Transaction call",
+                                "Local GUI function",
+                                "Internal use"
+                              ],
+                              "default": "normal"
+                            },
+                            "dynamicContextMenu": {
+                              "title": "Dynamic Context Menu",
+                              "description": "Dynamic callback ON_CTMENU",
+                              "type": "string",
+                              "maxLength": 20
+                            }
+                          },
+                          "additionalProperties": false,
+                          "required": [
+                            "group1",
+                            "group2",
+                            "group3",
+                            "group4",
+                            "switch",
+                            "reactionToSwitch",
+                            "entryHelp",
+                            "valueList",
+                            "inputHelpKey",
+                            "functionCode",
+                            "functionCodeType",
+                            "dynamicContextMenu"
+                          ]
+                        },
+                        "references": {
+                          "title": "References",
+                          "description": "Reference assignments for the screen field",
+                          "type": "object",
+                          "properties": {
+                            "searchHelp": {
+                              "title": "Search Help",
+                              "description": "Specifies the search help assigned to the field, either statically or dynamically",
+                              "type": "string",
+                              "maxLength": 132
+                            },
+                            "referenceField": {
+                              "title": "Reference Field",
+                              "description": "Defines a link to another screen element",
+                              "type": "string",
+                              "maxLength": 132
+                            }
+                          },
+                          "additionalProperties": false,
+                          "required": [
+                            "searchHelp",
+                            "referenceField"
+                          ]
+                        }
+                      },
+                      "additionalProperties": false,
+                      "required": [
+                        "name",
+                        "type",
+                        "general",
+                        "textsAndTemplates",
+                        "special",
+                        "display",
+                        "modGroupsAndFuncs",
+                        "references"
+                      ]
+                    },
+                    "subscreenArea": {
+                      "title": "Subscreen Area",
+                      "description": "Subscreen area displaying this tab's content",
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "title": "Container Name",
+                          "description": "Technical container name",
+                          "type": "string"
+                        },
+                        "line": {
+                          "title": "Line",
+                          "description": "Screen line position",
+                          "type": "integer",
+                          "minimum": -2147483648,
+                          "maximum": 2147483647
+                        },
+                        "column": {
+                          "title": "Column",
+                          "description": "Screen column position",
+                          "type": "integer",
+                          "minimum": -2147483648,
+                          "maximum": 2147483647
+                        },
+                        "length": {
+                          "title": "Container Width",
+                          "description": "Maximum number of columns",
+                          "type": "integer",
+                          "minimum": -2147483648,
+                          "maximum": 2147483647
+                        },
+                        "height": {
+                          "title": "Container Height",
+                          "description": "Maximum number of lines",
+                          "type": "integer",
+                          "minimum": -2147483648,
+                          "maximum": 2147483647
+                        },
+                        "minimumLength": {
+                          "title": "Minimum Container Length",
+                          "description": "Minimum number of columns",
+                          "type": "integer",
+                          "minimum": -2147483648,
+                          "maximum": 2147483647
+                        },
+                        "minimumHeight": {
+                          "title": "Minimum Container Height",
+                          "description": "Minimum number of lines",
+                          "type": "integer",
+                          "minimum": -2147483648,
+                          "maximum": 2147483647
+                        },
+                        "verticalResizing": {
+                          "title": "Vertical Resizing",
+                          "description": "Allows the container height to adapt to vertical window resizing",
+                          "type": "boolean"
+                        },
+                        "horizontalResizing": {
+                          "title": "Horizontal Resizing",
+                          "description": "Allows the container width to adapt to horizontal window resizing",
+                          "type": "boolean"
+                        },
+                        "subscreen": {
+                          "title": "Subscreen Attributes",
+                          "description": "Subscreen-specific attributes of this tab page area",
+                          "type": "object",
+                          "properties": {
+                            "verticalScrollable": {
+                              "title": "Vertical Scrollable",
+                              "description": "Allows the subscreen area to scroll vertically when its content exceeds the visible height",
+                              "type": "boolean"
+                            },
+                            "horizontalScrollable": {
+                              "title": "Horizontal Scrollable",
+                              "description": "Allows the subscreen area to scroll horizontally when its content exceeds the visible width",
+                              "type": "boolean"
+                            },
+                            "switch": {
+                              "title": "SFW Switch",
+                              "description": "Identifier for switch in the switch framework",
+                              "type": "string",
+                              "maxLength": 30
+                            },
+                            "reactionToSwitch": {
+                              "title": "Reaction To SFW Switch",
+                              "description": "Determines whether the object is displayed or hidden when the assigned Switch Framework switch is active",
+                              "type": "string",
+                              "enum": [
+                                "display",
+                                "hide"
+                              ],
+                              "enumTitles": [
+                                "Display",
+                                "Hide"
+                              ],
+                              "enumDescriptions": [
+                                "Display when switch framework switch is active",
+                                "Hide when switch framework switch is active"
+                              ]
+                            }
+                          },
+                          "additionalProperties": false,
+                          "required": [
+                            "verticalScrollable",
+                            "horizontalScrollable",
+                            "switch",
+                            "reactionToSwitch"
+                          ]
+                        }
+                      },
+                      "additionalProperties": false,
+                      "required": [
+                        "name",
+                        "line",
+                        "column",
+                        "length",
+                        "height",
+                        "minimumLength",
+                        "minimumHeight",
+                        "verticalResizing",
+                        "horizontalResizing",
+                        "subscreen"
+                      ]
+                    }
+                  },
+                  "additionalProperties": false,
+                  "required": [
+                    "pushbutton",
+                    "subscreenArea"
+                  ]
+                }
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "attributes",
+              "tabs"
+            ]
+          },
+          "customControl": {
+            "title": "Specific Custom Control Attributes",
+            "description": "Custom control-specific attributes",
+            "type": "object",
+            "properties": {
+              "switch": {
+                "title": "SFW Switch",
+                "description": "Identifier for switch in the switch framework",
+                "type": "string",
+                "maxLength": 30
+              },
+              "reactionToSwitch": {
+                "title": "Reaction To SFW Switch",
+                "description": "Determines whether the object is displayed or hidden when the assigned Switch Framework switch is active",
+                "type": "string",
+                "enum": [
+                  "display",
+                  "hide"
+                ],
+                "enumTitles": [
+                  "Display",
+                  "Hide"
+                ],
+                "enumDescriptions": [
+                  "Display when switch framework switch is active",
+                  "Hide when switch framework switch is active"
+                ]
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "switch",
+              "reactionToSwitch"
+            ]
+          },
+          "tableControl": {
+            "title": "Table Control",
+            "description": "Table control container with its attributes and columns",
+            "type": "object",
+            "properties": {
+              "attributes": {
+                "title": "Table Control Attributes",
                 "description": "Table control-specific attributes",
                 "type": "object",
                 "properties": {
@@ -1003,652 +1847,681 @@
                     "maximum": 2147483647
                   }
                 },
-                "additionalProperties": false
-              }
-            },
-            "additionalProperties": false
-          },
-          "fields": {
-            "title": "Container Screen Fields",
-            "description": "Array of screen fields within the container",
-            "type": "array",
-            "items": {
-              "title": "Screen Field",
-              "description": "Screen field definition",
-              "type": "object",
-              "properties": {
-                "name": {
-                  "title": "Field Name",
-                  "description": "Technical field name",
-                  "type": "string",
-                  "maxLength": 132
-                },
-                "type": {
-                  "title": "Field Type",
-                  "description": "Screen element type",
-                  "type": "string",
-                  "maxLength": 45
-                },
-                "general": {
-                  "title": "General",
-                  "description": "General field attributes",
+                "additionalProperties": false,
+                "required": [
+                  "contextMenuForm",
+                  "withTitle",
+                  "titleField",
+                  "withColumnHeaders",
+                  "configurability",
+                  "verticalSeparators",
+                  "horizontalSeparators",
+                  "lineSelectability",
+                  "columnSelectability",
+                  "withSelectionColumn",
+                  "selectionColumn",
+                  "numberOfFixedColumns"
+                ]
+              },
+              "fields": {
+                "title": "Columns",
+                "description": "Column fields of the table control",
+                "type": "array",
+                "items": {
+                  "title": "Table Control Column",
+                  "description": "Screen field with its role within a table control",
                   "type": "object",
                   "properties": {
-                    "line": {
-                      "title": "Line",
-                      "description": "Screen line position",
-                      "type": "integer",
-                      "minimum": -2147483648,
-                      "maximum": 2147483647
-                    },
-                    "column": {
-                      "title": "Column",
-                      "description": "Screen column position",
-                      "type": "integer",
-                      "minimum": -2147483648,
-                      "maximum": 2147483647
-                    },
-                    "definedLength": {
-                      "title": "Defined Length",
-                      "description": "Defined field length",
-                      "type": "integer",
-                      "minimum": -2147483648,
-                      "maximum": 2147483647
-                    },
-                    "visibleLength": {
-                      "title": "Visible Length",
-                      "description": "Visible field length",
-                      "type": "integer",
-                      "minimum": -2147483648,
-                      "maximum": 2147483647
-                    },
-                    "height": {
-                      "title": "Height",
-                      "description": "Field height",
-                      "type": "integer",
-                      "minimum": -2147483648,
-                      "maximum": 2147483647
-                    },
-                    "scrollable": {
-                      "title": "Scrollable",
-                      "description": "Enables scrolling within the field",
-                      "type": "boolean"
-                    },
-                    "format": {
-                      "title": "Format",
-                      "description": "ABAP Dictionary field format",
-                      "type": "string",
-                      "maxLength": 4
-                    },
-                    "input": {
-                      "title": "Input",
-                      "description": "User input enabled",
-                      "type": "boolean"
-                    },
-                    "output": {
-                      "title": "Output",
-                      "description": "User output enabled",
-                      "type": "boolean"
-                    },
-                    "outputOnly": {
-                      "title": "Output Only",
-                      "description": "Display-only field",
-                      "type": "boolean"
-                    },
-                    "dictionaryField": {
-                      "title": "Dictionary Field",
-                      "description": "Referenced ABAP Dictionary (DDIC) field",
-                      "type": "string"
-                    },
-                    "dictionaryModified": {
-                      "title": "Dictionary Modified",
-                      "description": "Indicates whether DDIC-derived attributes have been modified",
-                      "type": "string",
-                      "enum": [
-                        "original",
-                        "modified",
-                        "fixed",
-                        "variableLabel",
-                        "fixedLabel1",
-                        "fixedLabel2",
-                        "fixedLabel3",
-                        "fixedHeader"
-                      ],
-                      "enumTitles": [
-                        "Original",
-                        "Modified",
-                        "Fixed",
-                        "Variable Label",
-                        "Fixed Label 1",
-                        "Fixed Label 2",
-                        "Fixed Label 3",
-                        "Fixed Header"
-                      ],
-                      "enumDescriptions": [
-                        "Original DDIC field",
-                        "Modified DDIC field",
-                        "Fixed DDIC field",
-                        "Variable label from field",
-                        "Fixed label variant 1",
-                        "Fixed label variant 2",
-                        "Fixed label variant 3",
-                        "Fixed header labels"
-                      ],
-                      "default": "original"
-                    }
-                  },
-                  "additionalProperties": false,
-                  "required": [
-                    "line",
-                    "column",
-                    "definedLength",
-                    "visibleLength",
-                    "height",
-                    "scrollable",
-                    "format",
-                    "input",
-                    "output",
-                    "outputOnly",
-                    "dictionaryField",
-                    "dictionaryModified"
-                  ]
-                },
-                "textsAndTemplates": {
-                  "title": "Texts And Templates",
-                  "description": "Text and Templates for screen element",
-                  "type": "object",
-                  "properties": {
-                    "textOrIoField": {
-                      "title": "Text Or IO Field",
-                      "description": "Text or input/output Field Template",
-                      "type": "string",
-                      "maxLength": 132
-                    },
-                    "dropdown": {
-                      "title": "Dropdown",
-                      "description": "Dropdown",
-                      "type": "string",
-                      "enum": [
-                        "none",
-                        "listBox",
-                        "listBoxKey"
-                      ],
-                      "enumTitles": [
-                        "None",
-                        "List Box",
-                        "List Box With Key Values"
-                      ],
-                      "enumDescriptions": [
-                        "No dropdown",
-                        "List box dropdown",
-                        "List box with key values dropdown"
-                      ],
-                      "default": "none"
-                    },
-                    "withIcon": {
-                      "title": "With Icon",
-                      "description": "Allows the output field to display an icon and optional text",
-                      "type": "boolean"
-                    },
-                    "iconName": {
-                      "title": "Icon Name",
-                      "description": "Specifies the name of the icon assigned to the screen element",
-                      "type": "string",
-                      "maxLength": 30
-                    },
-                    "iconTooltip": {
-                      "title": "Icon Tooltip",
-                      "description": "Specifies the tooltip text displayed when hovering over the element",
-                      "type": "string",
-                      "maxLength": 30
-                    }
-                  },
-                  "additionalProperties": false,
-                  "required": [
-                    "textOrIoField",
-                    "dropdown",
-                    "withIcon",
-                    "iconName",
-                    "iconTooltip"
-                  ]
-                },
-                "special": {
-                  "title": "Special",
-                  "description": "Special field attributes",
-                  "type": "object",
-                  "properties": {
-                    "inputStatus": {
-                      "title": "Input Status",
-                      "description": "Defines whether input is allowed, optional, recommended, or required",
-                      "type": "string",
-                      "enum": [
-                        "notPossible",
-                        "possible",
-                        "recommended",
-                        "required"
-                      ],
-                      "enumTitles": [
-                        "Not Possible",
-                        "Possible",
-                        "Recommended",
-                        "Required"
-                      ],
-                      "enumDescriptions": [
-                        "Input not possible",
-                        "Input possible",
-                        "Input recommended",
-                        "Input required"
-                      ],
-                      "default": "possible"
-                    },
-                    "starEntryAsFirstChar": {
-                      "title": "Star Entry As First Character",
-                      "description": "Allows special input processing when an entry begins with '*'",
-                      "type": "boolean"
-                    },
-                    "inputResetDisabled": {
-                      "title": "Input Reset Disabled",
-                      "description": "Prevents field input from being cleared with the reset character '!'",
-                      "type": "boolean"
-                    },
-                    "caseSensitiveEntry": {
-                      "title": "Case Sensitive Entry",
-                      "description": "Allows input to retain lowercase and uppercase characters",
-                      "type": "boolean"
-                    },
-                    "showSign": {
-                      "title": "Show Sign",
-                      "description": "Enables display of a plus/minus sign for numeric values",
-                      "type": "boolean"
-                    },
-                    "templateDisabled": {
-                      "title": "Template Disabled",
-                      "description": "Allows all characters to be entered in CHAR fields, including special characters such as '!', '?' and '_'\"",
-                      "type": "boolean"
-                    },
-                    "foreignKeyCheck": {
-                      "title": "Foreign Key Check",
-                      "description": "Enables or disables the Dictionary foreign key check",
-                      "type": "boolean"
-                    },
-                    "setParameter": {
-                      "title": "Set Parameter",
-                      "description": "Stores the field value in SAP memory using the specified parameter ID",
-                      "type": "boolean"
-                    },
-                    "getParameter": {
-                      "title": "Get Parameter",
-                      "description": "Retrieves the field value from SAP memory using the specified parameter ID",
-                      "type": "boolean"
-                    },
-                    "parameterId": {
-                      "title": "Parameter ID",
-                      "description": "Identifies the SAP memory parameter used by SET/GET parameters",
-                      "type": "string",
-                      "maxLength": 20
-                    },
-                    "conversionExit": {
-                      "title": "Conversion Exit",
-                      "description": "Specifies the conversion routine used to format and interpret field values",
-                      "type": "string",
-                      "maxLength": 5
-                    }
-                  },
-                  "additionalProperties": false,
-                  "required": [
-                    "inputStatus",
-                    "starEntryAsFirstChar",
-                    "inputResetDisabled",
-                    "caseSensitiveEntry",
-                    "showSign",
-                    "templateDisabled",
-                    "foreignKeyCheck",
-                    "setParameter",
-                    "getParameter",
-                    "parameterId",
-                    "conversionExit"
-                  ]
-                },
-                "display": {
-                  "title": "Display",
-                  "description": "Display field attributes",
-                  "type": "object",
-                  "properties": {
-                    "bright": {
-                      "title": "Bright",
-                      "description": "Highlights the field to make it stand out on the screen",
-                      "type": "boolean"
-                    },
-                    "invisible": {
-                      "title": "Invisible",
-                      "description": "Hides the field and its contents at runtime",
-                      "type": "boolean"
-                    },
-                    "rightJustified": {
-                      "title": "Right Justified",
-                      "description": "Aligns field content to the right",
-                      "type": "boolean"
-                    },
-                    "leadingZeros": {
-                      "title": "Display Leading Zeros",
-                      "description": "Displays numeric values with leading zeros",
-                      "type": "boolean"
-                    },
-                    "twoDimensional": {
-                      "title": "Two-Dimensional Display",
-                      "description": "Displays input/output fields in a flat two-dimensional style",
-                      "type": "boolean"
-                    },
-                    "fixedFont": {
-                      "title": "Fixed Font",
-                      "description": "Displays field content using a fixed-width font",
-                      "type": "boolean"
-                    },
-                    "labelLeft": {
-                      "title": "As Label On Left",
-                      "description": "Uses the field as the label for the element on its right",
-                      "type": "boolean"
-                    },
-                    "labelRight": {
-                      "title": "As Label On Right",
-                      "description": "Uses the field as the label for the element on its left",
-                      "type": "boolean"
-                    },
-                    "doubleClick": {
-                      "title": "Double Click",
-                      "description": "Triggers an action when the field is double-clicked",
-                      "type": "boolean"
-                    },
-                    "ltrDirection": {
-                      "title": "Left-To-Right Direction",
-                      "description": "Defines left-to-right text display and input",
-                      "type": "boolean"
-                    },
-                    "disableBidiFiltering": {
-                      "title": "No BIDI Character Filtering",
-                      "description": "Preserves bidirectional text formatting characters",
-                      "type": "boolean"
-                    },
-                    "noInputHistory": {
-                      "title": "No GUI Input History",
-                      "description": "Prevents SAP GUI from storing field input history",
-                      "type": "boolean"
-                    },
-                    "amPmTimeFormat": {
-                      "title": "AM/PM-Enabled Time Format",
-                      "description": "Allows time values to use the 12-hour AM/PM format",
-                      "type": "boolean"
-                    },
-                    "outputStyle": {
-                      "title": "Output Style",
-                      "description": "Defines how decimal floating point numbers are formatted and displayed on the screen",
-                      "type": "string",
-                      "enum": [
-                        "simple",
-                        "signAsPostfix",
-                        "scalePreserving",
-                        "scientific",
-                        "scientificLeadingZeros",
-                        "scalePreservingSci",
-                        "engineering",
-                        "extendedMonetary",
-                        "monetary"
-                      ],
-                      "enumTitles": [
-                        "Simple",
-                        "Sign as postfix",
-                        "Scale-preserving",
-                        "Scientific",
-                        "Scientific with leading zeros",
-                        "Scale-preserving scientific",
-                        "Engineering",
-                        "Extended monetary",
-                        "Monetary"
-                      ]
-                    }
-                  },
-                  "additionalProperties": false,
-                  "required": [
-                    "bright",
-                    "invisible",
-                    "rightJustified",
-                    "leadingZeros",
-                    "twoDimensional",
-                    "fixedFont",
-                    "labelLeft",
-                    "labelRight",
-                    "doubleClick",
-                    "ltrDirection",
-                    "disableBidiFiltering",
-                    "noInputHistory",
-                    "amPmTimeFormat",
-                    "outputStyle"
-                  ]
-                },
-                "modGroupsAndFuncs": {
-                  "title": "Modification Groups And Functions",
-                  "description": "Modification groups and functions",
-                  "type": "object",
-                  "properties": {
-                    "group1": {
-                      "title": "Group 1",
-                      "description": "Identifier for SCREEN-GROUP1 used for dynamic field modifications",
-                      "type": "string",
-                      "maxLength": 3
-                    },
-                    "group2": {
-                      "title": "Group 2",
-                      "description": "Identifier for SCREEN-GROUP2 used for dynamic field modifications",
-                      "type": "string",
-                      "maxLength": 3
-                    },
-                    "group3": {
-                      "title": "Group 3",
-                      "description": "Identifier for SCREEN-GROUP3 used for dynamic field modifications",
-                      "type": "string",
-                      "maxLength": 3
-                    },
-                    "group4": {
-                      "title": "Group 4",
-                      "description": "Identifier for SCREEN-GROUP4 used for dynamic field modifications",
-                      "type": "string",
-                      "maxLength": 3
-                    },
-                    "switch": {
-                      "title": "SFW Switch",
-                      "description": "Identifier for switch in the switch framework",
-                      "type": "string",
-                      "maxLength": 30
-                    },
-                    "reactionToSwitch": {
-                      "title": "Reaction To SFW Switch",
-                      "description": "Determines whether the object is displayed or hidden when the assigned Switch Framework switch is active",
-                      "type": "string",
-                      "enum": [
+                    "definition": {
+                      "title": "Field",
+                      "description": "Screen field definition",
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "title": "Field Name",
+                          "description": "Technical field name",
+                          "type": "string",
+                          "maxLength": 132
+                        },
+                        "type": {
+                          "title": "Field Type",
+                          "description": "Screen element type",
+                          "type": "string",
+                          "maxLength": 45
+                        },
+                        "general": {
+                          "title": "General",
+                          "description": "General field attributes",
+                          "type": "object",
+                          "properties": {
+                            "line": {
+                              "title": "Line",
+                              "description": "Screen line position",
+                              "type": "integer",
+                              "minimum": -2147483648,
+                              "maximum": 2147483647
+                            },
+                            "column": {
+                              "title": "Column",
+                              "description": "Screen column position",
+                              "type": "integer",
+                              "minimum": -2147483648,
+                              "maximum": 2147483647
+                            },
+                            "definedLength": {
+                              "title": "Defined Length",
+                              "description": "Defined field length",
+                              "type": "integer",
+                              "minimum": -2147483648,
+                              "maximum": 2147483647
+                            },
+                            "visibleLength": {
+                              "title": "Visible Length",
+                              "description": "Visible field length",
+                              "type": "integer",
+                              "minimum": -2147483648,
+                              "maximum": 2147483647
+                            },
+                            "height": {
+                              "title": "Height",
+                              "description": "Field height",
+                              "type": "integer",
+                              "minimum": -2147483648,
+                              "maximum": 2147483647
+                            },
+                            "scrollable": {
+                              "title": "Scrollable",
+                              "description": "Enables scrolling within the field",
+                              "type": "boolean"
+                            },
+                            "format": {
+                              "title": "Format",
+                              "description": "ABAP Dictionary field format",
+                              "type": "string",
+                              "maxLength": 4
+                            },
+                            "input": {
+                              "title": "Input",
+                              "description": "User input enabled",
+                              "type": "boolean"
+                            },
+                            "output": {
+                              "title": "Output",
+                              "description": "User output enabled",
+                              "type": "boolean"
+                            },
+                            "outputOnly": {
+                              "title": "Output Only",
+                              "description": "Display-only field",
+                              "type": "boolean"
+                            },
+                            "dictionaryField": {
+                              "title": "Dictionary Field",
+                              "description": "Referenced ABAP Dictionary (DDIC) field",
+                              "type": "string"
+                            },
+                            "dictionaryModified": {
+                              "title": "Dictionary Modified",
+                              "description": "Indicates whether DDIC-derived attributes have been modified",
+                              "type": "string",
+                              "enum": [
+                                "original",
+                                "modified",
+                                "fixed",
+                                "variableLabel",
+                                "fixedLabel1",
+                                "fixedLabel2",
+                                "fixedLabel3",
+                                "fixedHeader"
+                              ],
+                              "enumTitles": [
+                                "Original",
+                                "Modified",
+                                "Fixed",
+                                "Variable Label",
+                                "Fixed Label 1",
+                                "Fixed Label 2",
+                                "Fixed Label 3",
+                                "Fixed Header"
+                              ],
+                              "enumDescriptions": [
+                                "Original DDIC field",
+                                "Modified DDIC field",
+                                "Fixed DDIC field",
+                                "Variable label from field",
+                                "Fixed label variant 1",
+                                "Fixed label variant 2",
+                                "Fixed label variant 3",
+                                "Fixed header labels"
+                              ],
+                              "default": "original"
+                            }
+                          },
+                          "additionalProperties": false,
+                          "required": [
+                            "line",
+                            "column",
+                            "definedLength",
+                            "visibleLength",
+                            "height",
+                            "scrollable",
+                            "format",
+                            "input",
+                            "output",
+                            "outputOnly",
+                            "dictionaryField",
+                            "dictionaryModified"
+                          ]
+                        },
+                        "textsAndTemplates": {
+                          "title": "Texts And Templates",
+                          "description": "Text and Templates for screen element",
+                          "type": "object",
+                          "properties": {
+                            "textOrIoField": {
+                              "title": "Text Or IO Field",
+                              "description": "Text or input/output Field Template",
+                              "type": "string",
+                              "maxLength": 132
+                            },
+                            "dropdown": {
+                              "title": "Dropdown",
+                              "description": "Dropdown",
+                              "type": "string",
+                              "enum": [
+                                "none",
+                                "listBox",
+                                "listBoxKey"
+                              ],
+                              "enumTitles": [
+                                "None",
+                                "List Box",
+                                "List Box With Key Values"
+                              ],
+                              "enumDescriptions": [
+                                "No dropdown",
+                                "List box dropdown",
+                                "List box with key values dropdown"
+                              ],
+                              "default": "none"
+                            },
+                            "withIcon": {
+                              "title": "With Icon",
+                              "description": "Allows the output field to display an icon and optional text",
+                              "type": "boolean"
+                            },
+                            "iconName": {
+                              "title": "Icon Name",
+                              "description": "Specifies the name of the icon assigned to the screen element",
+                              "type": "string",
+                              "maxLength": 30
+                            },
+                            "iconTooltip": {
+                              "title": "Icon Tooltip",
+                              "description": "Specifies the tooltip text displayed when hovering over the element",
+                              "type": "string",
+                              "maxLength": 30
+                            }
+                          },
+                          "additionalProperties": false,
+                          "required": [
+                            "textOrIoField",
+                            "dropdown",
+                            "withIcon",
+                            "iconName",
+                            "iconTooltip"
+                          ]
+                        },
+                        "special": {
+                          "title": "Special",
+                          "description": "Special field attributes",
+                          "type": "object",
+                          "properties": {
+                            "inputStatus": {
+                              "title": "Input Status",
+                              "description": "Defines whether input is allowed, optional, recommended, or required",
+                              "type": "string",
+                              "enum": [
+                                "notPossible",
+                                "possible",
+                                "recommended",
+                                "required"
+                              ],
+                              "enumTitles": [
+                                "Not Possible",
+                                "Possible",
+                                "Recommended",
+                                "Required"
+                              ],
+                              "enumDescriptions": [
+                                "Input not possible",
+                                "Input possible",
+                                "Input recommended",
+                                "Input required"
+                              ],
+                              "default": "possible"
+                            },
+                            "starEntryAsFirstChar": {
+                              "title": "Star Entry As First Character",
+                              "description": "Allows special input processing when an entry begins with '*'",
+                              "type": "boolean"
+                            },
+                            "inputResetDisabled": {
+                              "title": "Input Reset Disabled",
+                              "description": "Prevents field input from being cleared with the reset character '!'",
+                              "type": "boolean"
+                            },
+                            "caseSensitiveEntry": {
+                              "title": "Case Sensitive Entry",
+                              "description": "Allows input to retain lowercase and uppercase characters",
+                              "type": "boolean"
+                            },
+                            "showSign": {
+                              "title": "Show Sign",
+                              "description": "Enables display of a plus/minus sign for numeric values",
+                              "type": "boolean"
+                            },
+                            "templateDisabled": {
+                              "title": "Template Disabled",
+                              "description": "Allows all characters to be entered in CHAR fields, including special characters such as '!', '?' and '_'\"",
+                              "type": "boolean"
+                            },
+                            "foreignKeyCheck": {
+                              "title": "Foreign Key Check",
+                              "description": "Enables or disables the Dictionary foreign key check",
+                              "type": "boolean"
+                            },
+                            "setParameter": {
+                              "title": "Set Parameter",
+                              "description": "Stores the field value in SAP memory using the specified parameter ID",
+                              "type": "boolean"
+                            },
+                            "getParameter": {
+                              "title": "Get Parameter",
+                              "description": "Retrieves the field value from SAP memory using the specified parameter ID",
+                              "type": "boolean"
+                            },
+                            "parameterId": {
+                              "title": "Parameter ID",
+                              "description": "Identifies the SAP memory parameter used by SET/GET parameters",
+                              "type": "string",
+                              "maxLength": 20
+                            },
+                            "conversionExit": {
+                              "title": "Conversion Exit",
+                              "description": "Specifies the conversion routine used to format and interpret field values",
+                              "type": "string",
+                              "maxLength": 5
+                            }
+                          },
+                          "additionalProperties": false,
+                          "required": [
+                            "inputStatus",
+                            "starEntryAsFirstChar",
+                            "inputResetDisabled",
+                            "caseSensitiveEntry",
+                            "showSign",
+                            "templateDisabled",
+                            "foreignKeyCheck",
+                            "setParameter",
+                            "getParameter",
+                            "parameterId",
+                            "conversionExit"
+                          ]
+                        },
+                        "display": {
+                          "title": "Display",
+                          "description": "Display field attributes",
+                          "type": "object",
+                          "properties": {
+                            "bright": {
+                              "title": "Bright",
+                              "description": "Highlights the field to make it stand out on the screen",
+                              "type": "boolean"
+                            },
+                            "invisible": {
+                              "title": "Invisible",
+                              "description": "Hides the field and its contents at runtime",
+                              "type": "boolean"
+                            },
+                            "rightJustified": {
+                              "title": "Right Justified",
+                              "description": "Aligns field content to the right",
+                              "type": "boolean"
+                            },
+                            "leadingZeros": {
+                              "title": "Display Leading Zeros",
+                              "description": "Displays numeric values with leading zeros",
+                              "type": "boolean"
+                            },
+                            "twoDimensional": {
+                              "title": "Two-Dimensional Display",
+                              "description": "Displays input/output fields in a flat two-dimensional style",
+                              "type": "boolean"
+                            },
+                            "fixedFont": {
+                              "title": "Fixed Font",
+                              "description": "Displays field content using a fixed-width font",
+                              "type": "boolean"
+                            },
+                            "labelLeft": {
+                              "title": "As Label On Left",
+                              "description": "Uses the field as the label for the element on its right",
+                              "type": "boolean"
+                            },
+                            "labelRight": {
+                              "title": "As Label On Right",
+                              "description": "Uses the field as the label for the element on its left",
+                              "type": "boolean"
+                            },
+                            "doubleClick": {
+                              "title": "Double Click",
+                              "description": "Triggers an action when the field is double-clicked",
+                              "type": "boolean"
+                            },
+                            "ltrDirection": {
+                              "title": "Left-To-Right Direction",
+                              "description": "Defines left-to-right text display and input",
+                              "type": "boolean"
+                            },
+                            "disableBidiFiltering": {
+                              "title": "No BIDI Character Filtering",
+                              "description": "Preserves bidirectional text formatting characters",
+                              "type": "boolean"
+                            },
+                            "noInputHistory": {
+                              "title": "No GUI Input History",
+                              "description": "Prevents SAP GUI from storing field input history",
+                              "type": "boolean"
+                            },
+                            "amPmTimeFormat": {
+                              "title": "AM/PM-Enabled Time Format",
+                              "description": "Allows time values to use the 12-hour AM/PM format",
+                              "type": "boolean"
+                            },
+                            "outputStyle": {
+                              "title": "Output Style",
+                              "description": "Defines how decimal floating point numbers are formatted and displayed on the screen",
+                              "type": "string",
+                              "enum": [
+                                "simple",
+                                "signAsPostfix",
+                                "scalePreserving",
+                                "scientific",
+                                "scientificLeadingZeros",
+                                "scalePreservingSci",
+                                "engineering",
+                                "extendedMonetary",
+                                "monetary"
+                              ],
+                              "enumTitles": [
+                                "Simple",
+                                "Sign as postfix",
+                                "Scale-preserving",
+                                "Scientific",
+                                "Scientific with leading zeros",
+                                "Scale-preserving scientific",
+                                "Engineering",
+                                "Extended monetary",
+                                "Monetary"
+                              ]
+                            }
+                          },
+                          "additionalProperties": false,
+                          "required": [
+                            "bright",
+                            "invisible",
+                            "rightJustified",
+                            "leadingZeros",
+                            "twoDimensional",
+                            "fixedFont",
+                            "labelLeft",
+                            "labelRight",
+                            "doubleClick",
+                            "ltrDirection",
+                            "disableBidiFiltering",
+                            "noInputHistory",
+                            "amPmTimeFormat",
+                            "outputStyle"
+                          ]
+                        },
+                        "modGroupsAndFuncs": {
+                          "title": "Modification Groups And Functions",
+                          "description": "Modification groups and functions",
+                          "type": "object",
+                          "properties": {
+                            "group1": {
+                              "title": "Group 1",
+                              "description": "Identifier for SCREEN-GROUP1 used for dynamic field modifications",
+                              "type": "string",
+                              "maxLength": 3
+                            },
+                            "group2": {
+                              "title": "Group 2",
+                              "description": "Identifier for SCREEN-GROUP2 used for dynamic field modifications",
+                              "type": "string",
+                              "maxLength": 3
+                            },
+                            "group3": {
+                              "title": "Group 3",
+                              "description": "Identifier for SCREEN-GROUP3 used for dynamic field modifications",
+                              "type": "string",
+                              "maxLength": 3
+                            },
+                            "group4": {
+                              "title": "Group 4",
+                              "description": "Identifier for SCREEN-GROUP4 used for dynamic field modifications",
+                              "type": "string",
+                              "maxLength": 3
+                            },
+                            "switch": {
+                              "title": "SFW Switch",
+                              "description": "Identifier for switch in the switch framework",
+                              "type": "string",
+                              "maxLength": 30
+                            },
+                            "reactionToSwitch": {
+                              "title": "Reaction To SFW Switch",
+                              "description": "Determines whether the object is displayed or hidden when the assigned Switch Framework switch is active",
+                              "type": "string",
+                              "enum": [
+                                "display",
+                                "hide"
+                              ],
+                              "enumTitles": [
+                                "Display",
+                                "Hide"
+                              ],
+                              "enumDescriptions": [
+                                "Display when switch framework switch is active",
+                                "Hide when switch framework switch is active"
+                              ]
+                            },
+                            "entryHelp": {
+                              "title": "Entry Help",
+                              "description": "Indicates whether value help is available for the field",
+                              "type": "boolean"
+                            },
+                            "valueList": {
+                              "title": "Value List",
+                              "description": "Determines the source of values displayed in the dropdown list",
+                              "type": "string",
+                              "enum": [
+                                "automatic",
+                                "abapProgrammed"
+                              ],
+                              "enumTitles": [
+                                "Automatic Value Help",
+                                "ABAP Programmed Value List"
+                              ],
+                              "enumDescriptions": [
+                                "Automatic value help",
+                                "ABAP-programmed value list"
+                              ],
+                              "default": "automatic"
+                            },
+                            "inputHelpKey": {
+                              "title": "Input Help Key",
+                              "description": "Controls the availability and visibility of the input help (F4) button for the field",
+                              "type": "string",
+                              "enum": [
+                                "temporaryIfF4Exists",
+                                "disabled",
+                                "temporary",
+                                "permanent"
+                              ],
+                              "enumTitles": [
+                                "Temporary If F4 Exists",
+                                "Disabled",
+                                "Temporary",
+                                "Permanent"
+                              ],
+                              "enumDescriptions": [
+                                "Temporary F4 help if field help exists",
+                                "F4 help disabled",
+                                "Temporary F4 help",
+                                "Permanent F4 help"
+                              ],
+                              "default": "temporaryIfF4Exists"
+                            },
+                            "functionCode": {
+                              "title": "Function Code",
+                              "description": "Defines the function code triggered by a user interaction",
+                              "type": "string",
+                              "maxLength": 20
+                            },
+                            "functionCodeType": {
+                              "title": "Function Code Type",
+                              "description": "Determines how the associated function code is handled at runtime",
+                              "type": "string",
+                              "enum": [
+                                "normal",
+                                "exitCommand",
+                                "systemFunction",
+                                "transactionCall",
+                                "localGuiFunction",
+                                "internalUse"
+                              ],
+                              "enumTitles": [
+                                "Normal Application Function",
+                                "Exit Command",
+                                "System Function",
+                                "Transaction Call",
+                                "Local GUI Function",
+                                "Internal Use"
+                              ],
+                              "enumDescriptions": [
+                                "Normal application function",
+                                "Exit command",
+                                "System function",
+                                "Transaction call",
+                                "Local GUI function",
+                                "Internal use"
+                              ],
+                              "default": "normal"
+                            },
+                            "dynamicContextMenu": {
+                              "title": "Dynamic Context Menu",
+                              "description": "Dynamic callback ON_CTMENU",
+                              "type": "string",
+                              "maxLength": 20
+                            }
+                          },
+                          "additionalProperties": false,
+                          "required": [
+                            "group1",
+                            "group2",
+                            "group3",
+                            "group4",
+                            "switch",
+                            "reactionToSwitch",
+                            "entryHelp",
+                            "valueList",
+                            "inputHelpKey",
+                            "functionCode",
+                            "functionCodeType",
+                            "dynamicContextMenu"
+                          ]
+                        },
+                        "references": {
+                          "title": "References",
+                          "description": "Reference assignments for the screen field",
+                          "type": "object",
+                          "properties": {
+                            "searchHelp": {
+                              "title": "Search Help",
+                              "description": "Specifies the search help assigned to the field, either statically or dynamically",
+                              "type": "string",
+                              "maxLength": 132
+                            },
+                            "referenceField": {
+                              "title": "Reference Field",
+                              "description": "Defines a link to another screen element",
+                              "type": "string",
+                              "maxLength": 132
+                            }
+                          },
+                          "additionalProperties": false,
+                          "required": [
+                            "searchHelp",
+                            "referenceField"
+                          ]
+                        }
+                      },
+                      "additionalProperties": false,
+                      "required": [
+                        "name",
+                        "type",
+                        "general",
+                        "textsAndTemplates",
+                        "special",
                         "display",
-                        "hide"
-                      ],
-                      "enumTitles": [
-                        "Display",
-                        "Hide"
-                      ],
-                      "enumDescriptions": [
-                        "Display when switch framework switch is active",
-                        "Hide when switch framework switch is active"
+                        "modGroupsAndFuncs",
+                        "references"
                       ]
                     },
-                    "entryHelp": {
-                      "title": "Entry Help",
-                      "description": "Indicates whether value help is available for the field",
-                      "type": "boolean"
-                    },
-                    "valueList": {
-                      "title": "Value List",
-                      "description": "Determines the source of values displayed in the dropdown list",
-                      "type": "string",
-                      "enum": [
-                        "automatic",
-                        "abapProgrammed"
-                      ],
-                      "enumTitles": [
-                        "Automatic Value Help",
-                        "ABAP Programmed Value List"
-                      ],
-                      "enumDescriptions": [
-                        "Automatic value help",
-                        "ABAP-programmed value list"
-                      ],
-                      "default": "automatic"
-                    },
-                    "inputHelpKey": {
-                      "title": "Input Help Key",
-                      "description": "Controls the availability and visibility of the input help (F4) button for the field",
-                      "type": "string",
-                      "enum": [
-                        "temporaryIfF4Exists",
-                        "disabled",
-                        "temporary",
-                        "permanent"
-                      ],
-                      "enumTitles": [
-                        "Temporary If F4 Exists",
-                        "Disabled",
-                        "Temporary",
-                        "Permanent"
-                      ],
-                      "enumDescriptions": [
-                        "Temporary F4 help if field help exists",
-                        "F4 help disabled",
-                        "Temporary F4 help",
-                        "Permanent F4 help"
-                      ],
-                      "default": "temporaryIfF4Exists"
-                    },
-                    "functionCode": {
-                      "title": "Function Code",
-                      "description": "Defines the function code triggered by a user interaction",
-                      "type": "string",
-                      "maxLength": 20
-                    },
-                    "functionCodeType": {
-                      "title": "Function Code Type",
-                      "description": "Determines how the associated function code is handled at runtime",
-                      "type": "string",
-                      "enum": [
-                        "normal",
-                        "exitCommand",
-                        "systemFunction",
-                        "transactionCall",
-                        "localGuiFunction",
-                        "internalUse"
-                      ],
-                      "enumTitles": [
-                        "Normal Application Function",
-                        "Exit Command",
-                        "System Function",
-                        "Transaction Call",
-                        "Local GUI Function",
-                        "Internal Use"
-                      ],
-                      "enumDescriptions": [
-                        "Normal application function",
-                        "Exit command",
-                        "System function",
-                        "Transaction call",
-                        "Local GUI function",
-                        "Internal use"
-                      ],
-                      "default": "normal"
-                    },
-                    "dynamicContextMenu": {
-                      "title": "Dynamic Context Menu",
-                      "description": "Dynamic callback ON_CTMENU",
-                      "type": "string",
-                      "maxLength": 20
+                    "role": {
+                      "title": "Table Control Field Role",
+                      "description": "Role of this field within the table control (title, column heading, selection column)",
+                      "type": "object",
+                      "properties": {
+                        "title": {
+                          "title": "Title",
+                          "description": "Marks this element as the title row of the Table Control",
+                          "type": "boolean"
+                        },
+                        "columnHeading": {
+                          "title": "Column Heading",
+                          "description": "Marks this element as a column heading of the Table Control",
+                          "type": "boolean"
+                        },
+                        "selectionColumn": {
+                          "title": "Selection Column",
+                          "description": "Marks this element as the row selection column of the Table Control",
+                          "type": "boolean"
+                        }
+                      },
+                      "additionalProperties": false,
+                      "required": [
+                        "title",
+                        "columnHeading",
+                        "selectionColumn"
+                      ]
                     }
                   },
                   "additionalProperties": false,
                   "required": [
-                    "group1",
-                    "group2",
-                    "group3",
-                    "group4",
-                    "switch",
-                    "reactionToSwitch",
-                    "entryHelp",
-                    "valueList",
-                    "inputHelpKey",
-                    "functionCode",
-                    "functionCodeType",
-                    "dynamicContextMenu"
-                  ]
-                },
-                "references": {
-                  "title": "References",
-                  "description": "Reference assignments for the screen field",
-                  "type": "object",
-                  "properties": {
-                    "searchHelp": {
-                      "title": "Search Help",
-                      "description": "Specifies the search help assigned to the field, either statically or dynamically",
-                      "type": "string",
-                      "maxLength": 132
-                    },
-                    "referenceField": {
-                      "title": "Reference Field",
-                      "description": "Defines a link to another screen element",
-                      "type": "string",
-                      "maxLength": 132
-                    }
-                  },
-                  "additionalProperties": false,
-                  "required": [
-                    "searchHelp",
-                    "referenceField"
-                  ]
-                },
-                "tableCtrl": {
-                  "title": "Table Control Field Role",
-                  "description": "Role of this field within a Table Control container",
-                  "type": "object",
-                  "properties": {
-                    "title": {
-                      "title": "Title",
-                      "description": "Marks this element as the title row of the Table Control",
-                      "type": "boolean"
-                    },
-                    "columnHeading": {
-                      "title": "Column Heading",
-                      "description": "Marks this element as a column heading of the Table Control",
-                      "type": "boolean"
-                    },
-                    "selectionColumn": {
-                      "title": "Selection Column",
-                      "description": "Marks this element as the row selection column of the Table Control",
-                      "type": "boolean"
-                    }
-                  },
-                  "additionalProperties": false,
-                  "required": [
-                    "title",
-                    "columnHeading",
-                    "selectionColumn"
+                    "definition",
+                    "role"
                   ]
                 }
-              },
-              "additionalProperties": false,
-              "required": [
-                "name",
-                "type",
-                "general",
-                "textsAndTemplates",
-                "special",
-                "display",
-                "modGroupsAndFuncs",
-                "references",
-                "tableCtrl"
-              ]
-            }
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "attributes",
+              "fields"
+            ]
           }
         },
         "additionalProperties": false,
@@ -1664,8 +2537,9 @@
           "minimumHeight",
           "verticalResizing",
           "horizontalResizing",
-          "specificContainerAttributes",
-          "fields"
+          "subscreen",
+          "tabstripControl",
+          "tableControl"
         ]
       }
     }
