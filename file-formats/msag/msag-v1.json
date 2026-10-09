@@ -59,7 +59,10 @@
             "maxLength": 73
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "required": [
+          "number"
+        ]
       }
     }
   },
