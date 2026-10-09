@@ -27,45 +27,7 @@
           "title": "Size Category",
           "description": "Size category",
           "type": "string",
-          "enum": [
-            "undefined",
-            "0",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9"
-          ],
-          "enumTitles": [
-            "Undefined",
-            "Size Category 0",
-            "Size Category 1",
-            "Size Category 2",
-            "Size Category 3",
-            "Size Category 4",
-            "Size Category 5",
-            "Size Category 6",
-            "Size Category 7",
-            "Size Category 8",
-            "Size Category 9"
-          ],
-          "enumDescriptions": [
-            "Undefined - Obsolete for new tables",
-            "Size category 0",
-            "Size category 1",
-            "Size category 2",
-            "Size category 3",
-            "Size category 4",
-            "Size category 5",
-            "Size category 6",
-            "Size category 7",
-            "Size category 8",
-            "Size category 9"
-          ],
+          "pattern": "^([0-9]|undefined)$",
           "default": "0"
         },
         "logChanges": {
