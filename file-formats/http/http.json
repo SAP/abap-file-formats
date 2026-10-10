@@ -1,0 +1,21 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "HTTP",
+    "description": "HTTP Service",
+    "group": "Connectivity"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.http.json",
+          "cardinality": "1",
+          "schema": "http-v1.json",
+          "definitionInterface": "type/zif_aff_http_v1.intf.abap"
+        }
+      ]
+    }
+  ]
+}

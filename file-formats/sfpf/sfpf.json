@@ -1,0 +1,28 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "SFPF",
+    "description": "Form",
+    "group": "Form Objects"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.sfpf.json",
+          "cardinality": "1",
+          "schema": "sfpf-v1.json",
+          "definitionInterface": "type/zif_aff_sfpf_v1.intf.abap",
+          "examples": ["examples/z_aff_example_sfpf.sfpf.json"]
+        },
+        {
+          "filePattern": "<name>.sfpf.xdp",
+          "cardinality": "1",
+          "definitionUrl": "https://www.pdfa.org/norm-refs/XFA-3_3.pdf",
+          "examples": ["examples/z_aff_example_sfpf.sfpf.xdp"]
+        }
+      ]
+    }
+  ]
+}

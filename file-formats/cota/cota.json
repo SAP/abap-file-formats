@@ -1,0 +1,21 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "COTA",
+    "description": "Communication Target"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.cota.json",
+          "cardinality": "1",
+          "schema": "cota-v1.json",
+          "definitionInterface": "type/zif_aff_cota_v1.intf.abap",
+          "examples": ["examples/sap_cota_testobject.cota.json"]
+        }
+      ]
+    }
+  ]
+}

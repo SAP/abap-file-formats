@@ -1,0 +1,22 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "CHDO",
+    "description": "Change Document Object",
+    "group": "Change Document Management"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.chdo.json",
+          "cardinality": "1",
+          "schema": "chdo-v1.json",
+          "definitionInterface": "type/zif_aff_chdo_v1.intf.abap",
+          "examples": ["examples/z_aff_example_chdo.chdo.json"]
+        }
+      ]
+    }
+  ]
+}

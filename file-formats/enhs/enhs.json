@@ -1,0 +1,22 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "ENHS",
+    "description": "Enhancement Spot",
+    "group": "Enhancements"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.enhs.json",
+          "cardinality": "1",
+          "schema": "enhs-v1.json",
+          "definitionInterface": "type/zif_aff_enhs_v1.intf.abap",
+          "examples": ["examples/z_aff_example_enhs.enhs.json"]
+        }
+      ]
+    }
+  ]
+}

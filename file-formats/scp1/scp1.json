@@ -1,0 +1,22 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "SCP1",
+    "description": "Business Configuration Set",
+    "group": "Business Configuration Management"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.scp1.json",
+          "cardinality": "1",
+          "schema": "scp1-v1.json",
+          "definitionInterface": "type/zif_aff_scp1_v1.intf.abap",
+          "examples": ["examples/z_aff_example_scp1.scp1.json"]
+        }
+      ]
+    }
+  ]
+}

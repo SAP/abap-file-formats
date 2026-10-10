@@ -1,0 +1,22 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "SMBC",
+    "description": "Business Configuration Maintenance Object",
+    "group": "Business Configuration Management"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.smbc.json",
+          "cardinality": "1",
+          "schema": "smbc-v1.json",
+          "definitionInterface": "type/zif_aff_smbc_v1.intf.abap",
+          "examples": ["examples/z_aff_example_smbc.smbc.json"]
+        }
+      ]
+    }
+  ]
+}
