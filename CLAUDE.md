@@ -29,8 +29,8 @@ npm test          # Runs both compile and generate
 ```
 
 The generation process:
-1. Downloads ABAP generator classes from [SAP/abap-file-formats-tools](https://github.com/SAP/abap-file-formats-tools) via `oras-pull` (OCI artifact from `ghcr.io/sap/abap-file-formats-tools`)
-2. Copies ABAP interface files from `file-formats/` to `downport/`
+1. Clones ABAP generator classes from [SAP/abap-file-formats-tools](https://github.com/SAP/abap-file-formats-tools) into `tools/`
+2. Copies `tools/src` + `tools/deps` and the ABAP interface files from `file-formats/` to `downport/`
 3. Transpiles ABAP to JavaScript in `output/` using `@abaplint/transpiler-cli`
 4. Runs `aff.mjs` to generate JSON schemas in `generated/`
 

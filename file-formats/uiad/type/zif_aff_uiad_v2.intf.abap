@@ -80,7 +80,7 @@ INTERFACE zif_aff_uiad_v2
   "! $default {@link zif_aff_uiad_v2.data:co_web_dynpro_integration_mode.system_default}
   TYPES ty_web_dynpro_integration_mode TYPE c LENGTH 1.
   TYPES:
-    "! <p class="shorttext">Web Dynpro Application Inforation</p>
+    "! <p class="shorttext">Web Dynpro Application Information</p>
     "! Web Dynpro application information
     BEGIN OF ty_app_details_web_dynpro,
 
