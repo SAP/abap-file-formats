@@ -19,5 +19,12 @@
       "activity": "03",
       "accessCategory": "read"
     }
-  ]
+  ],
+  "objectAttributes": {
+    "criticality": "notCritical"
+  },
+  "classForCdsBdef": {
+    "usageInOwnAuthContext": "allowed",
+    "usageInPrivilegedBdefMode": "allowed"
+  }
 }

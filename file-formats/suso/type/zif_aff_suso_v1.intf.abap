@@ -27,7 +27,7 @@ INTERFACE zif_aff_suso_v1
       "! <p class="shorttext">Authorization Field</p>
       "! Name of the authorization field. An authorization object can contain up to 10 authorization fields.
       "! $required
-      authorization_field TYPE zif_aff_auth_types_v1=>ty_auth_field,
+      authorization_field TYPE if_aff_auth_types_v1=>ty_auth_field,
       "! <p class="shorttext">Activity Field</p>
       "! By selecting this option, an authorization field can be flagged that can contain activity-related values.
       "! The ACTVT field is always an activity field.
@@ -48,10 +48,9 @@ INTERFACE zif_aff_suso_v1
   "! <p class="shorttext">Authorization Fields</p>
   "! Authorization fields
   "! $maxItems 10
-  TYPES ty_authorization_fields TYPE SORTED TABLE OF ty_authorization_field WITH UNIQUE KEY authorization_field.
+  TYPES ty_authorization_fields TYPE STANDARD TABLE OF ty_authorization_field WITH DEFAULT KEY.
 
   "! $values {@link zif_aff_suso_v1.data:co_access_category}
-  "! $default {@link zif_aff_suso_v1.data:co_access_category.not_classified}
   TYPES ty_access_category      TYPE c LENGTH 1.
   CONSTANTS:
     "! <p class="shorttext">Access Category</p>
@@ -59,19 +58,13 @@ INTERFACE zif_aff_suso_v1
     BEGIN OF co_access_category,
       "! <p class="shorttext">Read</p>
       "! Read
-      read           TYPE ty_access_category VALUE 'R',
+      read       TYPE ty_access_category VALUE 'R',
       "! <p class="shorttext">Write</p>
       "! Write
-      write          TYPE ty_access_category VALUE 'W',
+      write      TYPE ty_access_category VALUE 'W',
       "! <p class="shorttext">Value Help</p>
       "! Value help
-      value_help     TYPE ty_access_category VALUE 'F',
-      "! <p class="shorttext">Others</p>
-      "! Others
-      others         TYPE ty_access_category VALUE 'O',
-      "! <p class="shorttext">Not Classified</p>
-      "! Not classified
-      not_classified TYPE ty_access_category VALUE ' ',
+      value_help TYPE ty_access_category VALUE 'F',
     END OF co_access_category.
 
   TYPES:
@@ -89,15 +82,15 @@ INTERFACE zif_aff_suso_v1
       "! This classification is used during the generation of roles in order to generate roles that contain read
       "! authorizations only.
       "! This field is only relevant in cloud systems.
+      "! $required
       access_category TYPE ty_access_category,
     END OF ty_permitted_activity.
 
   "! <p class="shorttext">Permitted Activities</p>
   "! Permitted activities
-  TYPES ty_permitted_activities TYPE SORTED TABLE OF ty_permitted_activity WITH UNIQUE KEY activity.
+  TYPES ty_permitted_activities TYPE STANDARD TABLE OF ty_permitted_activity WITH DEFAULT KEY.
 
   "! $values {@link zif_aff_suso_v1.data:co_criticality}
-  "! $default {@link zif_aff_suso_v1.data:co_criticality.not_critical}
   TYPES ty_criticality          TYPE c LENGTH 1.
   CONSTANTS:
     "! <p class="shorttext">Criticality</p>
@@ -147,6 +140,7 @@ INTERFACE zif_aff_suso_v1
       "! classification cannot be changed. This also applies for objects that have already been delivered.
       "! For authorization objects with ABAP language version 'ABAP for Cloud Development', this function is not
       "! supported.
+      "! $required
       criticality                TYPE ty_criticality,
       "! <p class="shorttext">Classification for Copy to Default Data</p>
       "! When switching to change mode in transaction SU22 or press the 'Retrieve' button in the ADT editors for SUSH,
@@ -177,6 +171,67 @@ INTERFACE zif_aff_suso_v1
       is_relevant_to_sap_new TYPE abap_bool,
     END OF ty_sap_new_relevance.
 
+  "! $values {@link zif_aff_suso_v1.data:co_usage_in_own_context}
+  TYPES ty_usage_in_own_context TYPE c LENGTH 1.
+  CONSTANTS:
+    "! <p class="shorttext">Classification for Usage in the OWN Authorization Context</p>
+    "! Classification for usage in OWN authorization context
+    BEGIN OF co_usage_in_own_context,
+      "! <p class="shorttext">Not Allowed</p>
+      "! The authorization object must not be used in the OWN authorization context.
+      not_allowed                TYPE ty_usage_in_own_context VALUE 'N',
+      "! <p class="shorttext">Allowed</p>
+      "! The authorization object can be used in the OWN authorization context.
+      allowed                    TYPE ty_usage_in_own_context VALUE 'A',
+      "! <p class="shorttext">BDEF and authorization object in the same software component</p>
+      "! The authorization object can be used in the OWN authorization context if the CDS behavior definition of the RAP
+      "! business object and the authorization object both belong to the same software component.
+      in_same_software_component TYPE c LENGTH 1              VALUE 'S',
+    END OF co_usage_in_own_context.
+
+  "! $values {@link zif_aff_suso_v1.data:co_usage_in_privil_bdef_mode}
+  TYPES ty_usage_in_privil_bdef_mode TYPE c LENGTH 1.
+  CONSTANTS:
+    "! <p class="shorttext">Classification for Usage in privileged BDEF Mode</p>
+    "! Classification for usage in privileged ABAP CDS behavior definition mode
+    BEGIN OF co_usage_in_privil_bdef_mode,
+      "! <p class="shorttext">Not Allowed</p>
+      "! Authorization object cannot be used in authorization context 'ContextName'. Critical authorization objects are
+      "! automatically set to this value.
+      not_allowed TYPE ty_usage_in_privil_bdef_mode VALUE 'N',
+      "! <p class="shorttext">Allowed</p>
+      "! Authorization object can be used in authorization context 'ContextName'.
+      allowed     TYPE ty_usage_in_privil_bdef_mode VALUE 'A',
+    END OF co_usage_in_privil_bdef_mode.
+
+  TYPES:
+    "! <p class="shorttext">Classification for ABAP CDS Behavior Definition</p>
+    "! Classification for ABAP CDS behavior definition
+    BEGIN OF ty_classification_for_cds_bdef,
+      "! <p class="shorttext">Usage in the OWN Authorization Context</p>
+      "! In the header of a CDS behavior definition in a RAP business object, an OWN authorization context is specified
+      "! using the statement define own authorization context. This statement documents which authorization objects are
+      "! checked by the implementation of the RAP business object.
+      "! Value is set automatically during creation of the authorization object or when an already existing
+      "! authorization without a value for this field is edited.
+      "! The explicit selection or change of this value is only possible in SAP internal systems and only in transaction
+      "! SU21. For objects with ABAP language version 'ABAP for Cloud Development', no changes can be made.
+      "! $required
+      usage_in_own_auth_context     TYPE ty_usage_in_own_context,
+      "! <p class="shorttext">Usage in the privileged BDEF Mode</p>
+      "! In the header part of a ABAP CDS behavior definition of a managed or unmanaged RAP business object, it is
+      "! possible to specify 'with privileged mode disabling ContextName'. This causes authorization context
+      "! 'ContextName' to be automatically disabled when a RAP business object consumer uses privileged access to the
+      "! RAP business object in question.
+      "! This classification defines whether an authorization object can be used in authorization context 'ContextName'.
+      "! Value is set automatically during creation of the authorization object or when an already existing
+      "! authorization without a value for this field is edited.
+      "! The explicit selection or change of this value is only possible in SAP internal systems and only in transaction
+      "! SU21. For objects with ABAP language version 'ABAP for Cloud Development', no changes can be made.
+      "! $required
+      usage_in_privileged_bdef_mode TYPE ty_usage_in_privil_bdef_mode,
+    END OF ty_classification_for_cds_bdef.
+
   TYPES:
     "! <p class="shorttext">Authorization Object</p>
     "! Authorization object
@@ -204,5 +259,8 @@ INTERFACE zif_aff_suso_v1
       "! <p class="shorttext">SAP New Relevance</p>
       "! SAP new relevance
       sap_new_relevance    TYPE ty_sap_new_relevance,
+      "! <p class="shorttext">Classification for ABAP CDS Behavior Definitions</p>
+      "! Classification for ABAP CDS behavior definitions
+      class_for_cds_bdef   TYPE ty_classification_for_cds_bdef,
     END OF ty_main.
 ENDINTERFACE.

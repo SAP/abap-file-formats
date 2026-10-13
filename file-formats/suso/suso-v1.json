@@ -78,7 +78,6 @@
       "title": "Authorization Fields",
       "description": "Authorization fields",
       "type": "array",
-      "uniqueItems": true,
       "maxItems": 10,
       "items": {
         "title": "Authorization Fields",
@@ -113,7 +112,6 @@
       "title": "Permitted Activities",
       "description": "Permitted activities. This structure is only relevant if one of the authorization fields is ACTVT.",
       "type": "array",
-      "uniqueItems": true,
       "items": {
         "title": "Permitted Activities",
         "description": "Permitted activities can only be defined for authorization field ACTVT and only if it is contained in the authorization fields list.",
@@ -132,30 +130,24 @@
             "enum": [
               "read",
               "write",
-              "valueHelp",
-              "others",
-              "notClassified"
+              "valueHelp"
             ],
             "enumTitles": [
               "Read",
               "Write",
-              "Value Help",
-              "Others",
-              "Not Classified"
+              "Value Help"
             ],
             "enumDescriptions": [
               "Read",
               "Write",
-              "Value help",
-              "Others",
-              "Not classified"
-            ],
-            "default": "notClassified"
+              "Value help"
+            ]
           }
         },
         "additionalProperties": false,
         "required": [
-          "activity"
+          "activity",
+          "accessCategory"
         ]
       }
     },
@@ -179,8 +171,7 @@
           "enumDescriptions": [
             "Critical",
             "Not critical"
-          ],
-          "default": "notCritical"
+          ]
         },
         "classCopyToDefaultData": {
           "title": "Classification for Copy to Default Data",
@@ -210,7 +201,10 @@
           "default": "withoutRestriction"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "required": [
+        "criticality"
+      ]
     },
     "sapNewRelevance": {
       "title": "SAP New Relevance",
@@ -224,6 +218,55 @@
         }
       },
       "additionalProperties": false
+    },
+    "classForCdsBdef": {
+      "title": "Classification for ABAP CDS Behavior Definitions",
+      "description": "Classification for ABAP CDS behavior definitions",
+      "type": "object",
+      "properties": {
+        "usageInOwnAuthContext": {
+          "title": "Usage in the OWN Authorization Context",
+          "description": "In the header of a CDS behavior definition in a RAP business object, an OWN authorization context is specified using the statement define own authorization context. This statement documents which authorization objects are checked by the implementation of the RAP business object. Value is set automatically during creation of the authorization object or when an already existing authorization without a value for this field is edited. The explicit selection or change of this value is only possible in SAP internal systems and only in transaction SU21. For objects with ABAP language version 'ABAP for Cloud Development', no changes can be made.",
+          "type": "string",
+          "enum": [
+            "notAllowed",
+            "allowed",
+            "inSameSoftwareComponent"
+          ],
+          "enumTitles": [
+            "Not Allowed",
+            "Allowed",
+            "BDEF and authorization object in the same software component"
+          ],
+          "enumDescriptions": [
+            "The authorization object must not be used in the OWN authorization context.",
+            "The authorization object can be used in the OWN authorization context.",
+            "The authorization object can be used in the OWN authorization context if the CDS behavior definition of the RAP business object and the authorization object both belong to the same software component."
+          ]
+        },
+        "usageInPrivilegedBdefMode": {
+          "title": "Usage in the privileged BDEF Mode",
+          "description": "In the header part of a ABAP CDS behavior definition of a managed or unmanaged RAP business object, it is possible to specify 'with privileged mode disabling ContextName'. This causes authorization context 'ContextName' to be automatically disabled when a RAP business object consumer uses privileged access to the RAP business object in question. This classification defines whether an authorization object can be used in authorization context 'ContextName'. Value is set automatically during creation of the authorization object or when an already existing authorization without a value for this field is edited. The explicit selection or change of this value is only possible in SAP internal systems and only in transaction SU21. For objects with ABAP language version 'ABAP for Cloud Development', no changes can be made.",
+          "type": "string",
+          "enum": [
+            "notAllowed",
+            "allowed"
+          ],
+          "enumTitles": [
+            "Not Allowed",
+            "Allowed"
+          ],
+          "enumDescriptions": [
+            "Authorization object cannot be used in authorization context 'ContextName'. Critical authorization objects are automatically set to this value.",
+            "Authorization object can be used in authorization context 'ContextName'."
+          ]
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "usageInOwnAuthContext",
+        "usageInPrivilegedBdefMode"
+      ]
     }
   },
   "additionalProperties": false,

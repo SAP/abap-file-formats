@@ -20,20 +20,28 @@
   ],
   "permittedActivities": [
     {
-      "activity": "02"
+      "activity": "02",
+      "accessCategory": "write"
     },
     {
-      "activity": "03"
+      "activity": "03",
+      "accessCategory": "read"
     },
     {
-      "activity": "06"
+      "activity": "06",
+      "accessCategory": "write"
     },
     {
-      "activity": "08"
+      "activity": "08",
+      "accessCategory": "read"
     }
   ],
   "objectAttributes": {
     "criticality": "critical",
     "classCopyToDefaultData": "ifInSameSoftwareComponent"
+  },
+  "classForCdsBdef": {
+    "usageInOwnAuthContext": "notAllowed",
+    "usageInPrivilegedBdefMode": "notAllowed"
   }
 }
