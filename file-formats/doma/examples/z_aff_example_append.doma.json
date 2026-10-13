@@ -1,0 +1,21 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Example DOMA for ABAP file formats",
+    "originalLanguage": "en"
+  },
+  "baseDomain": "Z_AFF_EXAMPLE",
+  "format": {
+    "dataType": "CHAR",
+    "length": 3
+  },
+  "outputCharacteristics": {
+    "length": 3
+  },
+  "fixedValues": [
+    {
+      "fixedValue": "DEF",
+      "description": "Fixed Value DEF"
+    }
+  ]
+}
