@@ -29,7 +29,7 @@ INTERFACE zif_aff_sia2_v1
 
       "! <p class="shorttext">Authorization Object ID</p>
       "! ID of the assigned authorization object
-      authorization_object_id TYPE c LENGTH 10,
+      authorization_object_id TYPE if_aff_auth_types_v1=>ty_auth_object_name,
 
     END OF ty_auth_object_extension.
 
