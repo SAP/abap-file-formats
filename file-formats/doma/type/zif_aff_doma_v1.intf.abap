@@ -149,7 +149,7 @@ INTERFACE zif_aff_doma_v1 PUBLIC.
 
       "! <p class="shorttext">Base Domain</p>
       "! Base domain
-      base_domain    TYPE zif_aff_types_v1=>ty_object_name_30,
+      base_domain            TYPE zif_aff_types_v1=>ty_object_name_30,
 
       "! <p class="shorttext">Format</p>
       "! Format
