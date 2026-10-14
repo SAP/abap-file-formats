@@ -69,8 +69,8 @@ INTERFACE zif_aff_suso_v1
 
   TYPES:
     "! <p class="shorttext">Permitted Activities</p>
-    "! Permitted activities can only be defined for authorization field ACTVT and only if it is contained in the
-    "! authorization fields list.
+    "! Permitted activities can only be defined for authorization field ACTVT if it is contained in the
+    "! authorization fields list or for authorization fields that are flagged as activity field.
     BEGIN OF ty_permitted_activity,
       "! <p class="shorttext">Activity</p>
       "! Activity
@@ -251,7 +251,8 @@ INTERFACE zif_aff_suso_v1
       "! Authorization fields
       authorization_fields TYPE ty_authorization_fields,
       "! <p class="shorttext">Permitted Activities</p>
-      "! Permitted activities. This structure is only relevant if one of the authorization fields is ACTVT.
+      "! Permitted activities. This structure is only relevant if one of the authorization fields is ACTVT or if one
+      "! other authorization field is flagged as activity field.
       permitted_activities TYPE ty_permitted_activities,
       "! <p class="shorttext">Object Attributes</p>
       "! Object attributes
