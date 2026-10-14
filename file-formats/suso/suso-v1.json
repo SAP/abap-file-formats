@@ -110,11 +110,11 @@
     },
     "permittedActivities": {
       "title": "Permitted Activities",
-      "description": "Permitted activities. This structure is only relevant if one of the authorization fields is ACTVT.",
+      "description": "Permitted activities. This structure is only relevant if one of the authorization fields is ACTVT or if one other authorization field is flagged as activity field.",
       "type": "array",
       "items": {
         "title": "Permitted Activities",
-        "description": "Permitted activities can only be defined for authorization field ACTVT and only if it is contained in the authorization fields list.",
+        "description": "Permitted activities can only be defined for authorization field ACTVT if it is contained in the authorization fields list or for authorization fields that are flagged as activity field.",
         "type": "object",
         "properties": {
           "activity": {
