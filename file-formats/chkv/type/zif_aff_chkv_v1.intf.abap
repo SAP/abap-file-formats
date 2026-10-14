@@ -107,6 +107,8 @@ INTERFACE zif_aff_chkv_v1
       remote_enabled  TYPE abap_bool,
       "! <p class="shorttext">Selected Checks</p>
       "! The checks selected in the ATC check variant
+      "! $required
+      "! $minItems 1
       selected_checks TYPE ty_checks,
     END OF ty_main.
 
