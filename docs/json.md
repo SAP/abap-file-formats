@@ -130,6 +130,14 @@ Choosing an ABAP data type with length specification results in the field `maxLe
 ```
 followed by a space and the desired value are used.
 
+### Number of Items
+For tables (arrays), the minimum and maximum number of items can be specified via the annotation keywords
+```abap
+"! $minItems value
+"! $maxItems value
+```
+followed by a space and the desired value. This results in the fields `minItems` and `maxItems` being written to the JSON Schema.
+
 ### Regular Expressions
 
 In order to express constraints to the values of a field, it is possible to pass regular expressions enclosed in single quotes:
