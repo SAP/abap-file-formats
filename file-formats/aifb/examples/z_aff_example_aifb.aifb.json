@@ -1,0 +1,130 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Example AIFB for ABAP File Format",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "standard"
+  },
+  "generalInformation": {
+    "ifdType": "soap"
+  },
+  "soapSpecificKeys": {
+    "soapClass": "ZCL_PROXY_ORDER",
+    "soapMethod": "PROCESS_ORDER"
+  },
+  "idocSpecificKeys": {},
+  "strBasedSpecificKeys": {},
+  "customImplementation": {
+    "functionModule": "ZFM_IFD_CUSTOM_IMPL"
+  },
+  "factors": [
+    {
+      "number": 1,
+      "fieldCategory": "xiHeaderData",
+      "fieldName": "SENDER_PARTY"
+    },
+    {
+      "number": 2,
+      "fieldCategory": "proxyPayloadStructure",
+      "fieldName": "ORDER_TYPE"
+    }
+  ],
+  "determinationDetails": {
+    "interfaceAssignments": [
+      {
+        "id": "001",
+        "applicationInterface": "Z_ORDER_INB_V1",
+        "conditions": [
+          {
+            "number": 1,
+            "operator": "equal",
+            "value": "SYSTEM_ABC"
+          },
+          {
+            "number": 2,
+            "operator": "equal",
+            "value": "STANDARD"
+          }
+        ],
+        "validFrom": "2026-01-01",
+        "validTo": "2099-12-31",
+        "checkAssignments": [
+          {
+            "id": "001",
+            "aifCheck": "CHECK_1",
+            "checkFieldAssignments": [
+              {
+                "id": "001",
+                "fieldName": "FIELD1"
+              },
+              {
+                "id": "002",
+                "fieldName": "FIELD2"
+              }
+            ]
+          },
+          {
+            "id": "002",
+            "aifCheck": "CHECK_2",
+            "checkFieldAssignments": [
+              {
+                "id": "001",
+                "fieldName": "STRUCTURE_LEVEL1-STRUCTURE_LEVEL2-FIELD1"
+              },
+              {
+                "id": "002",
+                "fieldName": "STRUCTURE_LEVEL1-STRUCTURE_LEVEL2-FIELD2"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "002",
+        "applicationInterface": "Z_ORDER_INB_V2",
+        "conditions": [
+          {
+            "number": 1,
+            "operator": "equal",
+            "value": "SYSTEM_ABC"
+          },
+          {
+            "number": 2,
+            "operator": "notEqual",
+            "value": "STANDARD"
+          }
+        ],
+        "checkAssignments": [
+          {
+            "id": "001",
+            "aifCheck": "CHECK_A",
+            "checkFieldAssignments": [
+              {
+                "id": "001",
+                "fieldName": "FIELDX"
+              },
+              {
+                "id": "002",
+                "fieldName": "FIELDY"
+              }
+            ]
+          },
+          {
+            "id": "002",
+            "aifCheck": "CHECK_B",
+            "checkFieldAssignments": [
+              {
+                "id": "001",
+                "fieldName": "STRUCTURE_LEVEL1-STRUCTURE_LEVEL2-FIELDX"
+              },
+              {
+                "id": "002",
+                "fieldName": "STRUCTURE_LEVEL1-STRUCTURE_LEVEL2-FIELDY"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
