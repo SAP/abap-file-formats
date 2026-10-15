@@ -28,27 +28,75 @@ INTERFACE zif_aff_sia6_v1
 
       "! <p class="shorttext">OData V2</p>
       "! OData V2 service
-      odata_v2            TYPE ty_service_type VALUE 'IWSV',
+      odata_v2               TYPE ty_service_type VALUE 'IWSV',
 
       "! <p class="shorttext">OData V2 (Deprecated)</p>
       "! OData V2 service (deprecated)
-      odata_v2_deprecated TYPE ty_service_type VALUE 'IWSG',
+      odata_v2_deprecated    TYPE ty_service_type VALUE 'IWSG',
 
       "! <p class="shorttext">OData V4</p>
       "! OData V4 service
-      odata_v4            TYPE ty_service_type VALUE 'G4BA',
+      odata_v4               TYPE ty_service_type VALUE 'G4BA',
 
       "! <p class="shorttext">HTTP Service</p>
       "! HTTP service
-      http                TYPE ty_service_type VALUE 'HTTP',
+      http                   TYPE ty_service_type VALUE 'HTTP',
+
+      "! <p class="shorttext">RFC</p>
+      "! RFC service
+      rfc                    TYPE ty_service_type VALUE 'SRFC',
 
       "! <p class="shorttext">InA (Information Access) - UI</p>
       "! InA (Information Access) - UI
-      ina_ui              TYPE ty_service_type VALUE 'INA1',
+      ina_ui                 TYPE ty_service_type VALUE 'INA1',
 
       "! <p class="shorttext">SQL1 Service</p>
       "! SQL1 service
-      sql1_service        TYPE ty_service_type VALUE 'SQL1',
+      sql1_service           TYPE ty_service_type VALUE 'SQL1',
+
+      "! <p class="shorttext">Transaction</p>
+      "! Transaction
+      transaction            TYPE ty_service_type VALUE 'TR',
+
+      "! <p class="shorttext">Function Module</p>
+      "! Function module
+      function_module        TYPE ty_service_type VALUE 'RF',
+
+      "! <p class="shorttext">Application Job Catalog Entry</p>
+      "! Application job catalog entry
+      app_job_catalog_entry  TYPE ty_service_type VALUE 'SAJC',
+
+      "! <p class="shorttext">Transaction With Dependencies</p>
+      "! Transaction with dependencies
+      transaction_with_deps  TYPE ty_service_type VALUE 'TRAN',
+
+      "! <p class="shorttext">ABAP Push Channel</p>
+      "! ABAP push channel
+      abap_push_channel      TYPE ty_service_type VALUE 'SAPC',
+
+      "! <p class="shorttext">Web Dynpro Application</p>
+      "! Web Dynpro application
+      web_dynpro_application TYPE ty_service_type VALUE 'WDYA',
+
+      "! <p class="shorttext">Web Dynpro Application Configuration</p>
+      "! Web Dynpro application configuration
+      web_dynpro_app_config  TYPE ty_service_type VALUE 'WDCA',
+
+      "! <p class="shorttext">BSP (Business Server Pages) Application</p>
+      "! BSP (Business Server Pages) application
+      bsp_application        TYPE ty_service_type VALUE 'WAPA',
+
+      "! <p class="shorttext">Advanced Compliance Reporting Report Category</p>
+      "! Advanced Compliance Reporting report category
+      acr_report_category    TYPE ty_service_type VALUE 'SRFQ',
+
+      "! <p class="shorttext">Event Consumption Model</p>
+      "! Event consumption model
+      event_consumption      TYPE ty_service_type VALUE 'EEEC',
+
+      "! <p class="shorttext">IDoc (Intermediate Document)</p>
+      "! IDoc (Intermediate Document)
+      idoc                   TYPE ty_service_type VALUE 'IDOC',
 
     END OF co_service_type.
 
@@ -80,25 +128,97 @@ INTERFACE zif_aff_sia6_v1
     "! IAM app types
     BEGIN OF co_app_type,
 
+      "! <p class="shorttext">Analytical Query App</p>
+      "! Analytical query app
+      analytical_query          TYPE ty_app_type VALUE 'AQRY',
+
+      "! <p class="shorttext">WebDynpro Grid App</p>
+      "! WebDynpro grid app
+      webdynpro_grid            TYPE ty_app_type VALUE 'AQWG',
+
+      "! <p class="shorttext">SAP Analytics Cloud Story App</p>
+      "! SAP Analytics Cloud story app
+      sac_story                 TYPE ty_app_type VALUE 'BOCT',
+
+      "! <p class="shorttext">Custom Tile</p>
+      "! Custom tile
+      custom_tile               TYPE ty_app_type VALUE 'CAP',
+
+      "! <p class="shorttext">Data Analyzer App</p>
+      "! Data analyzer app
+      data_analyzer             TYPE ty_app_type VALUE 'DACT',
+
+      "! <p class="shorttext">Embedded Analytics Cloud Story App</p>
+      "! Embedded analytics cloud story app
+      embedded_analytics_story  TYPE ty_app_type VALUE 'EACS',
+
       "! <p class="shorttext">External App</p>
       "! External app
-      external                TYPE ty_app_type VALUE 'EXT',
+      external                  TYPE ty_app_type VALUE 'EXT',
+
+      "! <p class="shorttext">Variant Tile</p>
+      "! Variant tile
+      variant_tile              TYPE ty_app_type VALUE 'FLAV',
 
       "! <p class="shorttext">Custom Inbound Service App</p>
       "! Custom inbound service app
-      custom_inbound_service  TYPE ty_app_type VALUE 'IBS',
+      custom_inbound_service    TYPE ty_app_type VALUE 'IBS',
 
       "! <p class="shorttext">Business Configurations App</p>
       "! Business configurations app
-      business_configurations TYPE ty_app_type VALUE 'MBC',
+      business_configurations   TYPE ty_app_type VALUE 'MBC',
+
+      "! <p class="shorttext">Report App</p>
+      "! Report app
+      report                    TYPE ty_app_type VALUE 'REP',
 
       "! <p class="shorttext">Application Job Catalog Entry</p>
       "! Application job catalog entry
-      app_job_catalog_entry   TYPE ty_app_type VALUE 'SAJC',
+      app_job_catalog_entry     TYPE ty_app_type VALUE 'SAJC',
+
+      "! <p class="shorttext">Custom Business Object Audit App</p>
+      "! Custom business object audit app
+      custom_bo_audit           TYPE ty_app_type VALUE 'SCBA',
+
+      "! <p class="shorttext">Custom Business Object App</p>
+      "! Custom business object app
+      custom_bo                 TYPE ty_app_type VALUE 'SCBO',
+
+      "! <p class="shorttext">Run Advanced Compliance Reports App</p>
+      "! Run advanced compliance reports app
+      run_compliance_reports    TYPE ty_app_type VALUE 'SRFQ',
+
+      "! <p class="shorttext">KPI App</p>
+      "! KPI app
+      kpi                       TYPE ty_app_type VALUE 'SSB',
+
+      "! <p class="shorttext">Custom UI5 App</p>
+      "! Custom UI5 app
+      custom_ui5                TYPE ty_app_type VALUE 'UI5R',
+
+      "! <p class="shorttext">App Authorization Variant</p>
+      "! App authorization variant
+      app_authorization_variant TYPE ty_app_type VALUE 'TRAN',
+
+      "! <p class="shorttext">Enterprise Search Model</p>
+      "! Enterprise search model
+      enterprise_search_model   TYPE ty_app_type VALUE 'ESH1',
+
+      "! <p class="shorttext">Review Booklet App</p>
+      "! Review booklet app
+      review_booklet            TYPE ty_app_type VALUE 'RVBA',
 
       "! <p class="shorttext">UI Adaptation App</p>
       "! UI adaptation app
-      ui_adaptation           TYPE ty_app_type VALUE 'UI5A',
+      ui_adaptation             TYPE ty_app_type VALUE 'UI5A',
+
+      "! <p class="shorttext">Analytical Query Flexible Analysis</p>
+      "! Analytical query flexible analysis
+      analytical_query_flex     TYPE ty_app_type VALUE 'AQFA',
+
+      "! <p class="shorttext">Custom Business Object 2 App</p>
+      "! Custom business object 2 app
+      custom_bo_2               TYPE ty_app_type VALUE 'CBO2',
 
     END OF co_app_type.
 
