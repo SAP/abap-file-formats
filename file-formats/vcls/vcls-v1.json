@@ -158,7 +158,8 @@
               "Root entry of the view cluster. No parent selection is required for navigation.",
               "Multiple parent entries can be selected to navigate into this dependent object",
               "Exactly one parent entry must be selected to navigate into this dependent object"
-            ]
+            ],
+            "default": "header"
           },
           "isStartObject": {
             "title": "Is Start Object",
@@ -206,7 +207,8 @@
               },
               "additionalProperties": false,
               "required": [
-                "language"
+                "language",
+                "objectText"
               ]
             }
           },
@@ -265,7 +267,8 @@
               },
               "additionalProperties": false,
               "required": [
-                "objectField"
+                "predecessorObject",
+                "dependencyType"
               ]
             }
           }
@@ -273,7 +276,11 @@
         "additionalProperties": false,
         "required": [
           "objectName",
-          "vcEntrySelectionType"
+          "predecessorObject",
+          "position",
+          "vcEntrySelectionType",
+          "objectTexts",
+          "fieldDependencies"
         ]
       }
     },

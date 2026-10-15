@@ -143,6 +143,7 @@ INTERFACE zif_aff_vcls_v1
       "! <p class="shorttext">Object Text</p>
       "! Description for the cluster level objects
       "! Overrides the DDIC short text when present.
+      "! $required
       object_text TYPE c LENGTH 50,
     END OF ty_cluster_obj_level_text.
 
@@ -159,19 +160,22 @@ INTERFACE zif_aff_vcls_v1
     BEGIN OF ty_field_dependency,
       "! <p class="shorttext">Object Field</p>
       "! Field name in the dependent object that receives its value or constraint from the predecessor
-      "! $required
+      "! $showAlways
       object_field       TYPE ty_field_name,
       "! <p class="shorttext">Predecessor Object</p>
       "! The parent object that provides the value. Must be the root object for copySelectionCondition Type.
+      "! $required
       predecessor_object TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Predecessor Field</p>
       "! Field in the predecessor object whose current value is propagated to objectField.
       "! Blank for root self-reference rows.
+      "! $showAlways
       predecessor_field  TYPE ty_field_name,
       "! <p class="shorttext">Field Dependency Type</p>
       "! Classifies the type of field dependency and determines how it is used at runtime
       "! $values {@link zif_aff_vcls_v1.data:co_field_dependency_type}
       "! $default {@link zif_aff_vcls_v1.data:co_field_dependency_type.navigation_key_relationship}
+      "! $required
       dependency_type    TYPE ty_field_dependency_type,
     END OF ty_field_dependency.
 
@@ -193,16 +197,19 @@ INTERFACE zif_aff_vcls_v1
       "! <p class="shorttext">Predecessor Object</p>
       "! Parent object one level up. Equals object_name for root objects (self-reference).
       "! Drives all tree traversal, both downward recursion and upward root search.
+      "! $required
       predecessor_object      TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Position</p>
       "! Display position within the cluster hierarchy. Must be unique within the cluster.
       "! $minimum 1
       "! $maximum 50
+      "! $required
       position                TYPE i,
       "! <p class="shorttext">View Cluster Entry Selection Type</p>
       "! Defines how many parent entries must be marked to navigate into this cluster level.
       "! $required
       "! $values {@link zif_aff_vcls_v1.data:co_vc_entry_selection_type}
+      "! $default {@link zif_aff_vcls_v1.data:co_vc_entry_selection_type.header}
       vc_entry_selection_type TYPE ty_vc_entry_selection_type,
       "! <p class="shorttext">Is Start Object</p>
       "! Marks the entry point shown when cluster maintenance opens.
@@ -226,10 +233,12 @@ INTERFACE zif_aff_vcls_v1
       "! <p class="shorttext">Object Texts</p>
       "! Language-dependent labels for this cluster level.
       "! Overrides the DDIC short text when present.
+      "! $required
       object_texts            TYPE ty_cluster_obj_level_texts,
       "! <p class="shorttext">Field Dependencies</p>
       "! Field-level mappings between this level and its predecessor.
       "! Controls key propagation, selection list population, and hierarchical operation matching.
+      "! $required
       field_dependencies      TYPE ty_field_dependencies,
     END OF ty_cluster_level.
 
