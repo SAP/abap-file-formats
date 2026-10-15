@@ -23,7 +23,7 @@
   "objectAttributes": {
     "criticality": "notCritical"
   },
-  "classForCdsBdef": {
+  "classificationForCdsBdef": {
     "usageInOwnAuthContext": "allowed",
     "usageInPrivilegedBdefMode": "allowed"
   }

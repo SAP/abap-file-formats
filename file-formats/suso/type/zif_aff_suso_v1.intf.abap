@@ -239,29 +239,29 @@ INTERFACE zif_aff_suso_v1
       "! <p class="shorttext">Format Version</p>
       "! Format version
       "! $required
-      format_version       TYPE zif_aff_types_v1=>ty_format_version,
+      format_version              TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header               TYPE zif_aff_types_v1=>ty_header_60,
+      header                      TYPE zif_aff_types_v1=>ty_header_60,
       "! <p class="shorttext">General Information</p>
       "! General information
-      general_information  TYPE ty_general_information,
+      general_information         TYPE ty_general_information,
       "! <p class="shorttext">Authorization Fields</p>
       "! Authorization fields
-      authorization_fields TYPE ty_authorization_fields,
+      authorization_fields        TYPE ty_authorization_fields,
       "! <p class="shorttext">Permitted Activities</p>
       "! Permitted activities. This structure is only relevant if one of the authorization fields is ACTVT or if one
       "! other authorization field is flagged as activity field.
-      permitted_activities TYPE ty_permitted_activities,
+      permitted_activities        TYPE ty_permitted_activities,
       "! <p class="shorttext">Object Attributes</p>
       "! Object attributes
-      object_attributes    TYPE ty_object_attributes,
+      object_attributes           TYPE ty_object_attributes,
       "! <p class="shorttext">SAP New Relevance</p>
       "! SAP new relevance
-      sap_new_relevance    TYPE ty_sap_new_relevance,
+      sap_new_relevance           TYPE ty_sap_new_relevance,
       "! <p class="shorttext">Classification for ABAP CDS Behavior Definitions</p>
       "! Classification for ABAP CDS behavior definitions
-      class_for_cds_bdef   TYPE ty_classification_for_cds_bdef,
+      classification_for_cds_bdef TYPE ty_classification_for_cds_bdef,
     END OF ty_main.
 ENDINTERFACE.

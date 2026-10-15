@@ -40,7 +40,7 @@
     "criticality": "critical",
     "classCopyToDefaultData": "ifInSameSoftwareComponent"
   },
-  "classForCdsBdef": {
+  "classificationForCdsBdef": {
     "usageInOwnAuthContext": "notAllowed",
     "usageInPrivilegedBdefMode": "notAllowed"
   }

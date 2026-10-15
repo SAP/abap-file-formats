@@ -219,7 +219,7 @@
       },
       "additionalProperties": false
     },
-    "classForCdsBdef": {
+    "classificationForCdsBdef": {
       "title": "Classification for ABAP CDS Behavior Definitions",
       "description": "Classification for ABAP CDS behavior definitions",
       "type": "object",
