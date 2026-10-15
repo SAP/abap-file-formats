@@ -57,6 +57,12 @@
         "originalLanguage"
       ]
     },
+    "baseDomain": {
+      "title": "Base Domain",
+      "description": "Base domain",
+      "type": "string",
+      "maxLength": 30
+    },
     "format": {
       "title": "Format",
       "description": "Format",
