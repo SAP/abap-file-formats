@@ -1,0 +1,27 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "XSLT",
+    "description": "Transformation",
+    "group": "Transformation"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.xslt.json",
+          "cardinality": "1",
+          "schema": "xslt-v1.json",
+          "definitionInterface": "type/zif_aff_xslt_v1.intf.abap",
+          "examples": ["examples/z_aff_example_xslt.xslt.json"]
+        },
+        {
+          "filePattern": "<name>.xslt.xml",
+          "cardinality": "1",
+          "examples": ["examples/z_aff_example_xslt.xslt.xml"]
+        }
+      ]
+    }
+  ]
+}

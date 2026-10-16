@@ -1,0 +1,22 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "NONT",
+    "description": "SAP Object Node Type",
+    "group": "SAP Object Type Management"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.nont.json",
+          "cardinality": "1",
+          "schema": "nont-v1.json",
+          "definitionInterface": "type/zif_aff_nont_v1.intf.abap",
+          "examples": ["examples/z_aff_example_nont.nont.json"]
+        }
+      ]
+    }
+  ]
+}

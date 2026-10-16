@@ -1,0 +1,21 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "EDCR",
+    "description": "Representation Type"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.edcr.json",
+          "cardinality": "1",
+          "schema": "edcr-v1.json",
+          "definitionInterface": "type/zif_aff_edcr_v1.intf.abap",
+          "examples": ["examples/z_aff_example_edcr.edcr.json"]
+        }
+      ]
+    }
+  ]
+}

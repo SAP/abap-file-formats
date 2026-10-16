@@ -1,0 +1,22 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "EVTO",
+    "description": "Event Object",
+    "group": "Business Services"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.evto.json",
+          "cardinality": "1",
+          "schema": "evto-v1.json",
+          "definitionInterface": "type/zif_aff_evto_v1.intf.abap",
+          "examples": ["examples/z_aff_example.evto.json"]
+        }
+      ]
+    }
+  ]
+}

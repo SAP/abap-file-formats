@@ -1,0 +1,22 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "DTEL",
+    "description": "Dictionary Data Elements",
+    "group": "Dictionary"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.dtel.json",
+          "cardinality": "1",
+          "schema": "dtel-v1.json",
+          "definitionInterface": "type/zif_aff_dtel_v1.intf.abap",
+          "examples": ["examples/z_aff_example_domain.dtel.json", "examples/z_aff_example_predefined_type.dtel.json"]
+        }
+      ]
+    }
+  ]
+}
