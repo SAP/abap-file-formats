@@ -59,8 +59,8 @@
       "description": "General information",
       "type": "object",
       "properties": {
-        "ifdType": {
-          "title": "Interface Determination Type",
+        "type": {
+          "title": "Type",
           "description": "Interface determination type",
           "type": "string",
           "enum": [
@@ -71,7 +71,7 @@
           "enumTitles": [
             "SOAP",
             "IDoc",
-            "Structure-based"
+            "Structure-Based"
           ],
           "enumDescriptions": [
             "SOAP",
@@ -83,7 +83,7 @@
       },
       "additionalProperties": false,
       "required": [
-        "ifdType"
+        "type"
       ]
     },
     "soapSpecificKeys": {
@@ -186,21 +186,21 @@
             ],
             "enumTitles": [
               "System Fields",
-              "Field from XI Header Data",
-              "Sender Field from Routing Data",
-              "Field from Proxy-generated Structure",
+              "XI Header Data",
+              "XI Routing Data",
+              "Proxy-generated Structure",
               "IDoc Data Record",
               "IDoc Control Record",
-              "Field from XML Structure"
+              "XML Structure"
             ],
             "enumDescriptions": [
               "System fields",
-              "Field from XI header data",
-              "Sender field from routing data",
-              "Field from proxy-generated structure",
+              "XI header data",
+              "XI routing data",
+              "Proxy-generated structure",
               "IDoc data record",
               "IDoc control record",
-              "Field from XML structure"
+              "XML structure"
             ],
             "default": "systemFields"
           },

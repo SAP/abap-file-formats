@@ -2,9 +2,9 @@ INTERFACE zif_aff_aifb_v1
   PUBLIC.
 
 
-  "! $values { @link zif_aff_aifb_v1.data:co_ifd_type }
-  "! $default { @link zif_aff_aifb_v1.data:co_ifd_type.soap }
-  TYPES ty_ifd_type       TYPE n LENGTH 3.
+  "! $values { @link zif_aff_aifb_v1.data:co_type }
+  "! $default { @link zif_aff_aifb_v1.data:co_type.soap }
+  TYPES ty_type           TYPE n LENGTH 3.
   "! $values { @link zif_aff_aifb_v1.data:co_field_category }
   "! $default { @link zif_aff_aifb_v1.data:co_field_category.system_fields }
   TYPES ty_field_category TYPE c LENGTH 1.
@@ -90,7 +90,7 @@ INTERFACE zif_aff_aifb_v1
       "! <p class="shorttext">AIF Check</p>
       "! AIF check
       "! $required
-      aif_check               TYPE c LENGTH 40,
+      aif_check               TYPE zif_aff_types_v1=>ty_object_name_40,
       "! <p class="shorttext">Check Field Assignments</p>
       "! Check field assignments
       "! $required
@@ -111,7 +111,7 @@ INTERFACE zif_aff_aifb_v1
       "! <p class="shorttext">Application Interface</p>
       "! Application interface
       "! $required
-      application_interface TYPE c LENGTH 40,
+      application_interface TYPE zif_aff_types_v1=>ty_object_name_40,
       "! <p class="shorttext">Conditions</p>
       "! Conditions
       conditions            TYPE ty_conditions,
@@ -171,10 +171,10 @@ INTERFACE zif_aff_aifb_v1
     "! <p class="shorttext">General Information</p>
     "! General information
     BEGIN OF ty_general_information,
-      "! <p class="shorttext">Interface Determination Type</p>
+      "! <p class="shorttext">Type</p>
       "! Interface determination type
       "! $required
-      ifd_type TYPE ty_ifd_type,
+      type TYPE ty_type,
     END OF ty_general_information.
   TYPES:
     "! <p class="shorttext">Interface Determination</p>
@@ -211,30 +211,30 @@ INTERFACE zif_aff_aifb_v1
     END OF ty_main.
 
   CONSTANTS:
-    BEGIN OF co_ifd_type,
+    BEGIN OF co_type,
       "! <p class="shorttext">SOAP</p>
       "! SOAP
-      soap            TYPE ty_ifd_type VALUE '000',
+      soap            TYPE ty_type VALUE '000',
       "! <p class="shorttext">IDoc</p>
       "! IDoc
-      idoc            TYPE ty_ifd_type VALUE '001',
-      "! <p class="shorttext">Structure-based</p>
+      idoc            TYPE ty_type VALUE '001',
+      "! <p class="shorttext">Structure-Based</p>
       "! Structure-based
-      structure_based TYPE ty_ifd_type VALUE '002',
-    END OF co_ifd_type.
+      structure_based TYPE ty_type VALUE '002',
+    END OF co_type.
   CONSTANTS:
     BEGIN OF co_field_category,
       "! <p class="shorttext">System Fields</p>
       "! System fields
       system_fields           TYPE ty_field_category VALUE 'S',
-      "! <p class="shorttext">Field from XI Header Data</p>
-      "! Field from XI header data
+      "! <p class="shorttext">XI Header Data</p>
+      "! XI header data
       xi_header_data          TYPE ty_field_category VALUE 'X',
-      "! <p class="shorttext">Sender Field from Routing Data</p>
-      "! Sender field from routing data
+      "! <p class="shorttext">XI Routing Data</p>
+      "! XI routing data
       xi_routing_data         TYPE ty_field_category VALUE 'R',
-      "! <p class="shorttext">Field from Proxy-generated Structure</p>
-      "! Field from proxy-generated structure
+      "! <p class="shorttext">Proxy-generated Structure</p>
+      "! Proxy-generated structure
       proxy_payload_structure TYPE ty_field_category VALUE 'P',
       "! <p class="shorttext">IDoc Data Record</p>
       "! IDoc data record
@@ -242,8 +242,8 @@ INTERFACE zif_aff_aifb_v1
       "! <p class="shorttext">IDoc Control Record</p>
       "! IDoc control record
       idoc_control_record     TYPE ty_field_category VALUE 'C',
-      "! <p class="shorttext">Field from XML Structure</p>
-      "! Field from XML structure
+      "! <p class="shorttext">XML Structure</p>
+      "! XML structure
       payload_structure       TYPE ty_field_category VALUE 'A',
     END OF co_field_category.
   CONSTANTS:
