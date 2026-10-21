@@ -86,9 +86,9 @@
         "type"
       ]
     },
-    "soapSpecificKeys": {
-      "title": "SOAP-specific Determination Keys",
-      "description": "SOAP-specific determination keys",
+    "soapSpecificKey": {
+      "title": "SOAP-specific Determination Key",
+      "description": "SOAP-specific determination key",
       "type": "object",
       "properties": {
         "soapClass": {
@@ -106,9 +106,9 @@
       },
       "additionalProperties": false
     },
-    "idocSpecificKeys": {
-      "title": "IDoc-specific Determination Keys",
-      "description": "IDoc-specific determination keys",
+    "idocSpecificKey": {
+      "title": "IDoc-specific Determination Key",
+      "description": "IDoc-specific determination key",
       "type": "object",
       "properties": {
         "basicType": {
@@ -126,9 +126,9 @@
       },
       "additionalProperties": false
     },
-    "strBasedSpecificKeys": {
-      "title": "Structure-based-specific Determination Keys",
-      "description": "Structure-based-specific determination keys",
+    "strBasedSpecificKey": {
+      "title": "Structure-based-specific Determination Key",
+      "description": "Structure-based-specific determination key",
       "type": "object",
       "properties": {
         "structure": {
@@ -191,7 +191,7 @@
               "Proxy-generated Structure",
               "IDoc Data Record",
               "IDoc Control Record",
-              "XML Structure"
+              "Payload Structure"
             ],
             "enumDescriptions": [
               "System fields",
@@ -200,7 +200,7 @@
               "Proxy-generated structure",
               "IDoc data record",
               "IDoc control record",
-              "XML structure"
+              "Payload structure"
             ],
             "default": "systemFields"
           },

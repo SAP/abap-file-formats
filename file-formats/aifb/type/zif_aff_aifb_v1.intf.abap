@@ -181,33 +181,33 @@ INTERFACE zif_aff_aifb_v1
     "! Interface determination
     BEGIN OF ty_main,
       "! $required
-      format_version          TYPE zif_aff_types_v1=>ty_format_version,
+      format_version         TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header                  TYPE zif_aff_types_v1=>ty_header_60_cloud,
+      header                 TYPE zif_aff_types_v1=>ty_header_60_cloud,
       "! <p class="shorttext">General Information</p>
       "! General information
       "! $required
-      general_information     TYPE ty_general_information,
-      "! <p class="shorttext">SOAP-specific Determination Keys</p>
-      "! SOAP-specific determination keys
-      soap_specific_keys      TYPE ty_key_soap,
-      "! <p class="shorttext">IDoc-specific Determination Keys</p>
-      "! IDoc-specific determination keys
-      idoc_specific_keys      TYPE ty_key_idoc,
-      "! <p class="shorttext">Structure-based-specific Determination Keys</p>
-      "! Structure-based-specific determination keys
-      str_based_specific_keys TYPE ty_key_structure_based,
+      general_information    TYPE ty_general_information,
+      "! <p class="shorttext">SOAP-specific Determination Key</p>
+      "! SOAP-specific determination key
+      soap_specific_key      TYPE ty_key_soap,
+      "! <p class="shorttext">IDoc-specific Determination Key</p>
+      "! IDoc-specific determination key
+      idoc_specific_key      TYPE ty_key_idoc,
+      "! <p class="shorttext">Structure-based-specific Determination Key</p>
+      "! Structure-based-specific determination key
+      str_based_specific_key TYPE ty_key_structure_based,
       "! <p class="shorttext">Custom Implementation</p>
       "! Custom implementation
-      custom_implementation   TYPE ty_custom_implementation,
+      custom_implementation  TYPE ty_custom_implementation,
       "! <p class="shorttext">Factors</p>
       "! Factors
-      factors                 TYPE ty_factors,
+      factors                TYPE ty_factors,
       "! <p class="shorttext">Determination Details</p>
       "! Determination details
-      determination_details   TYPE ty_determination_details,
+      determination_details  TYPE ty_determination_details,
     END OF ty_main.
 
   CONSTANTS:
@@ -242,8 +242,8 @@ INTERFACE zif_aff_aifb_v1
       "! <p class="shorttext">IDoc Control Record</p>
       "! IDoc control record
       idoc_control_record     TYPE ty_field_category VALUE 'C',
-      "! <p class="shorttext">XML Structure</p>
-      "! XML structure
+      "! <p class="shorttext">Payload Structure</p>
+      "! Payload structure
       payload_structure       TYPE ty_field_category VALUE 'A',
     END OF co_field_category.
   CONSTANTS:

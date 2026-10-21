@@ -2,18 +2,15 @@
   "formatVersion": "1",
   "header": {
     "description": "Example AIFB for ABAP File Format",
-    "originalLanguage": "en",
-    "abapLanguageVersion": "standard"
+    "originalLanguage": "en"
   },
   "generalInformation": {
     "type": "soap"
   },
-  "soapSpecificKeys": {
+  "soapSpecificKey": {
     "soapClass": "ZCL_PROXY_ORDER",
     "soapMethod": "PROCESS_ORDER"
   },
-  "idocSpecificKeys": {},
-  "strBasedSpecificKeys": {},
   "customImplementation": {
     "functionModule": "ZFM_IFD_CUSTOM_IMPL"
   },
