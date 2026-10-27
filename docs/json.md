@@ -177,7 +177,9 @@ is added. Note that also the `$required` annotation leads to such behavior.
 To restrict when a field may or must occur depending on the value of another field, the annotations
 ```abap
 "! $availableWhen {@link interface_name.data:ty_discriminator} = value
+"! $availableWhen {@link interface_name.data:ty_discriminator} != value
 "! $requiredWhen {@link interface_name.data:ty_discriminator} = value
+"! $requiredWhen {@link interface_name.data:ty_discriminator} != value
 ```
 are used. Each annotation may occur at most once per component.
 
@@ -185,7 +187,7 @@ are used. Each annotation may occur at most once per component.
 `$requiredWhen` means the field must be present when the condition is true. When the condition is false, no additional constraint is imposed.
 When both annotations are used with the same condition, the field is required when the condition is true and forbidden when it is false.
 
-The condition is a single equality comparison. The left side is always a `{@link ...}` to the **named ABAP type** of the discriminator field, for example `{@link zif_aff_func_v1.data:ty_processing_type}`. The type must resolve to exactly one field in the containing scope.
+The condition is a single comparison using `=` (equals) or `!=` (not equals). The left side is always a `{@link ...}` to the **named ABAP type** of the discriminator field, for example `{@link zif_aff_func_v1.data:ty_processing_type}`. The type must resolve to exactly one field in the containing scope.
 
 The right side depends on the discriminator's type:
 
