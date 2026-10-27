@@ -228,15 +228,6 @@ This results in the following behavior:
 | RFC | Required | Forbidden |
 | Update | Forbidden | Required |
 
-Similarly, in [`zif_aff_tran_v1`](../file-formats/tran/type/zif_aff_tran_v1.intf.abap) the transaction-type-specific detail groups can be expressed the same way:
-```abap
-"! <p class="shorttext">Dialog Transaction</p>
-"! The runtime calls a dynpro of a function group, module pool or report
-"! $availableWhen {@link zif_aff_tran_v1.data:ty_transaction_type} = {@link zif_aff_tran_v1.data:co_transaction_type.dialog_transaction}
-"! $requiredWhen {@link zif_aff_tran_v1.data:ty_transaction_type} = {@link zif_aff_tran_v1.data:co_transaction_type.dialog_transaction}
-dialog_transaction TYPE ty_dialog_transaction,
-```
-
 If a detail group should be optional rather than required when the condition matches, omit the `$requiredWhen` annotation.
 
 ### Default Values
