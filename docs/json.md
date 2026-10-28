@@ -60,9 +60,17 @@ The following changes to file formats are considered incompatible:
 - Length of a field is shortened
 - Length of a field is extended if some systems cannot store this information
 - Values for a field (enum) that has no specified default value are added.
+
+
+#### Conditional Fields (`$availableWhen` / `$requiredWhen`)
+
+The following changes related to [conditional fields](#conditional-fields) are considered incompatible:
+
 - A conditional availability (`$availableWhen`) is added that forbids a field for a value combination previously allowed by the schema
 - A conditional requiredness (`$requiredWhen`) is added that requires a field for a value combination under which it was previously optional
 - A conditional requiredness (`$requiredWhen`) is removed or weakened, for the same reason that removing a mandatory field is incompatible (old implementations might rely on the field being present)
+
+Technical incompatibility with the previously published schema can be distinguished from semantic incompatibility: the changes listed above are technically incompatible, even if implementations already enforced the conditions and therefore experience no change in accepted files.
 
 
 ## Writing JSON Schema with ABAP Types
