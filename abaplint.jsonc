@@ -9,6 +9,7 @@
     "errorNamespace": "."
   },
   "rules": {
+    "abapdoc_short_link": true,
     "align_parameters": true,
     "align_type_expressions": true,
     "cds_comment_style": true,
@@ -98,7 +99,7 @@
     "keep_single_parameter_on_one_line": true,
     "keyword_case": true,
     "line_break_multiple_parameters": true,
-    "line_break_style": true,
+    "line_break_style": false,
     "line_length": true,
     "line_only_punc": true,
     "local_class_naming": true,

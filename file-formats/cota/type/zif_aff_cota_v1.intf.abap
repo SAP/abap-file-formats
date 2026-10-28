@@ -2,7 +2,7 @@ INTERFACE zif_aff_cota_v1
   PUBLIC.
 
   "! <p class="shorttext">Communication Type</p>
-  "! $values {@link zif_aff_cota_v1.data:co_comm_type}
+  "! $values {@link .data:co_comm_type}
   TYPES ty_comm_type TYPE c LENGTH 1.
 
   CONSTANTS:
@@ -15,7 +15,7 @@ INTERFACE zif_aff_cota_v1
     END OF co_comm_type.
 
   "! <p class="shorttext">Multitenancy Mode</p>
-  "! $values {@link zif_aff_cota_v1.data:co_multi_type}
+  "! $values {@link .data:co_multi_type}
   TYPES ty_multi_type TYPE c LENGTH 30.
 
   CONSTANTS:
@@ -37,14 +37,14 @@ INTERFACE zif_aff_cota_v1
     BEGIN OF ty_configuration,
       "! <p class="shorttext">Communication Type</p>
       "! Communication type
-      "! $default {@link zif_aff_cota_v1.data:co_comm_type.http}
+      "! $default {@link .data:co_comm_type.http}
       communication_type          TYPE ty_comm_type,
       "! <p class="shorttext">Communication Target Class</p>
       "! Communication target class
       communication_target_class  TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Multitenancy Mode</p>
       "! Multitenancy mode
-      "! $default {@link zif_aff_cota_v1.data:co_multi_type.client_specific}
+      "! $default {@link .data:co_multi_type.client_specific}
       multitenancy_mode           TYPE ty_multi_type,
       "! <p class="shorttext">Allow Multiple Application Destinations</p>
       "! Allow multiple application destinations
@@ -52,7 +52,7 @@ INTERFACE zif_aff_cota_v1
     END OF ty_configuration.
 
   "! <p class="shorttext">Default Compression Mode</p>
-  "! $values {@link zif_aff_cota_v1.data:co_compress_mode}
+  "! $values {@link .data:co_compress_mode}
   TYPES ty_comp_mode TYPE c LENGTH 1.
 
   CONSTANTS:
@@ -79,7 +79,7 @@ INTERFACE zif_aff_cota_v1
       enforce_fast_serialization TYPE abap_bool,
       "! <p class="shorttext">Default Compression Mode</p>
       "! Default compression mode
-      "! $default {@link zif_aff_cota_v1.data:co_compress_mode.fast}
+      "! $default {@link .data:co_compress_mode.fast}
       default_compression_mode   TYPE ty_comp_mode,
     END OF ty_rfc_settings.
 

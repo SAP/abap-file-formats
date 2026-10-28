@@ -98,26 +98,26 @@ INTERFACE zif_aff_smbc_v1
     "! <p class="shorttext synchronized" >Table Creation Mode</p>
     BEGIN OF ty_creation_mode,
       "! <p class="shorttext synchronized">Table Creation Mode</p>
-      "! $values {@link zif_aff_smbc_v1.data:co_creation_mode_name}
+      "! $values {@link .data:co_creation_mode_name}
       name          TYPE string,
       "! <p class="shorttext synchronized">Create at End</p>
       "! If true, a new row is added to the end of the table instead of the beginning of the table
       create_at_end TYPE abap_bool,
     END OF ty_creation_mode,
     "! <p class="shorttext synchronized">Table Type</p>
-    "! $values {@link zif_aff_smbc_v1.data:co_table_type}
-    "! $default {@link zif_aff_smbc_v1.data:co_table_type.responsive_table}
+    "! $values {@link .data:co_table_type}
+    "! $default {@link .data:co_table_type.responsive_table}
     ty_table_type       TYPE string,
     "! <p class="shorttext synchronized">List Report Configuration</p>
     BEGIN OF ty_list_report,
       "! <p class="shorttext synchronized">Initial Load</p>
       "! Defines whether data in the List Report is automatically loaded on first app start.
-      "! $values {@link zif_aff_smbc_v1.data:co_initial_load}
-      "! $default {@link zif_aff_smbc_v1.data:co_initial_load.enabled}
+      "! $values {@link .data:co_initial_load}
+      "! $default {@link .data:co_initial_load.enabled}
       initial_load       TYPE string,
       "! <p class="shorttext synchronized">Variant Management</p>
-      "! $values {@link zif_aff_smbc_v1.data:co_list_variant_management}
-      "! $default {@link zif_aff_smbc_v1.data:co_list_variant_management.page}
+      "! $values {@link .data:co_list_variant_management}
+      "! $default {@link .data:co_list_variant_management.page}
       variant_management TYPE string,
     END OF ty_list_report,
     "! <p class="shorttext synchronized">Object Page Settings</p>
@@ -126,12 +126,12 @@ INTERFACE zif_aff_smbc_v1
       entity_set                     TYPE string,
       "! <p class="shorttext synchronized">Section Layout</p>
       "! Toggle between onepage concept and tabs.
-      "! $values {@link zif_aff_smbc_v1.data:co_section_layout}
-      "! $default {@link zif_aff_smbc_v1.data:co_section_layout.page}
+      "! $values {@link .data:co_section_layout}
+      "! $default {@link .data:co_section_layout.page}
       section_layout                 TYPE string,
       "! <p class="shorttext synchronized">Variant Management</p>
-      "! $values {@link zif_aff_smbc_v1.data:co_page_variant_management}
-      "! $default {@link zif_aff_smbc_v1.data:co_page_variant_management.none}
+      "! $values {@link .data:co_page_variant_management}
+      "! $default {@link .data:co_page_variant_management.none}
       variant_management             TYPE string,
       "! <p class="shorttext synchronized">Editable Header Content</p>
       "! If true, the header content is changeable in edit mode
@@ -146,16 +146,16 @@ INTERFACE zif_aff_smbc_v1
       entity_set                    TYPE string,
       table_type                    TYPE ty_table_type,
       "! <p class="shorttext synchronized">Selection Mode</p>
-      "! $values {@link zif_aff_smbc_v1.data:co_selection_mode}
-      "! $default {@link zif_aff_smbc_v1.data:co_selection_mode.multi}
+      "! $values {@link .data:co_selection_mode}
+      "! $default {@link .data:co_selection_mode.multi}
       selection_mode                TYPE string,
       "! <p class="shorttext synchronized">Select All</p>
       "! Enable Select all checkbox
       select_all                    TYPE abap_bool,
       "! <p class="shorttext synchronized">Row Count Mode</p>
       "! Defines how the table handles the visible rows in the table
-      "! $values {@link zif_aff_smbc_v1.data:co_row_count_mode}
-      "! $default {@link zif_aff_smbc_v1.data:co_row_count_mode.fixed}
+      "! $values {@link .data:co_row_count_mode}
+      "! $default {@link .data:co_row_count_mode.fixed}
       row_count_mode                TYPE string,
       "! <p class="shorttext synchronized">Row Count</p>
       "! Number of visible rows of the table
@@ -181,8 +181,8 @@ INTERFACE zif_aff_smbc_v1
       "! $default '300'
       scroll_threshold              TYPE i,
       "! <p class="shorttext synchronized">Table Creation Mode</p>
-      "! $values {@link zif_aff_smbc_v1.data:co_creation_mode_name}
-      "! $default {@link zif_aff_smbc_v1.data:co_creation_mode_name.new_page}
+      "! $values {@link .data:co_creation_mode_name}
+      "! $default {@link .data:co_creation_mode_name.new_page}
       creation_mode_name            TYPE ty_creation_mode-name,
       "! <p class="shorttext synchronized">Create at End</p>
       "! If true, a new row is added to the end of the table instead of the beginning of the table

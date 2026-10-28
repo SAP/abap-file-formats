@@ -3,7 +3,7 @@ INTERFACE zif_aff_enho_v1
 
   "! <p class="shorttext">Range Filter Comparator</p>
   "! Range filter comparator
-  "! $values {@link zif_aff_enho_v1.data:co_range_filter_comparator}
+  "! $values {@link .data:co_range_filter_comparator}
   "! $required
   TYPES ty_range_filter_comparator TYPE c LENGTH 2.
 
@@ -23,8 +23,8 @@ INTERFACE zif_aff_enho_v1
 
   "! <p class="shorttext">Comparator</p>
   "! Filter comparator
-  "! $values {@link zif_aff_enho_v1.data:co_comparator}
-  "! $default {@link zif_aff_enho_v1.data:co_comparator.not_specified}
+  "! $values {@link .data:co_comparator}
+  "! $default {@link .data:co_comparator.not_specified}
   TYPES ty_comparator TYPE c LENGTH 2.
 
   CONSTANTS:
@@ -180,8 +180,8 @@ INTERFACE zif_aff_enho_v1
 
   "! <p class="shorttext">Customizing</p>
   "! Customizing
-  "! $values {@link zif_aff_enho_v1.data:co_customizing}
-  "! $default {@link zif_aff_enho_v1.data:co_customizing.not_supported}
+  "! $values {@link .data:co_customizing}
+  "! $default {@link .data:co_customizing.not_supported}
   TYPES ty_customizing TYPE c LENGTH 1.
 
   CONSTANTS:

@@ -113,14 +113,14 @@ INTERFACE zif_aff_edcc_v1
   TYPES ty_mismatch_field_group TYPE c LENGTH 20.
   "! <p class="shorttext">Level</p>
   "! Level of comparison field group
-  "! $values {@link zif_aff_edcc_v1.data:co_field_group_level}
-  "! $default {@link zif_aff_edcc_v1.data:co_field_group_level.header}
+  "! $values {@link .data:co_field_group_level}
+  "! $default {@link .data:co_field_group_level.header}
   TYPES ty_level                TYPE c LENGTH 1.
   TYPES ty_comparison_sequence  TYPE c LENGTH 5.
   "! <p class="shorttext">Check Formula</p>
   "! Formula applied to perform the content check on the field group
-  "! $values {@link zif_aff_edcc_v1.data:co_check_formula}
-  "! $default {@link zif_aff_edcc_v1.data:co_check_formula.field}
+  "! $values {@link .data:co_check_formula}
+  "! $default {@link .data:co_check_formula.field}
   TYPES ty_check_formula        TYPE c LENGTH 1.
   TYPES:
     "! <p class="shorttext">Comparison Field Name</p>
@@ -203,8 +203,8 @@ INTERFACE zif_aff_edcc_v1
   TYPES ty_content_checks    TYPE SORTED TABLE OF ty_content_check WITH UNIQUE KEY check_id check_number.
   "! <p class="shorttext">Control Parameter</p>
   "! Check execution control parameter
-  "! $values {@link zif_aff_edcc_v1.data:co_control_parameter}
-  "! $default {@link zif_aff_edcc_v1.data:co_control_parameter.always_run_check}
+  "! $values {@link .data:co_control_parameter}
+  "! $default {@link .data:co_control_parameter.always_run_check}
   TYPES ty_control_parameter TYPE c LENGTH 2.
   TYPES:
     "! <p class="shorttext">Check Sequence</p>
@@ -289,8 +289,8 @@ INTERFACE zif_aff_edcc_v1
   TYPES ty_comparison_types TYPE SORTED TABLE OF ty_comparison_type WITH UNIQUE KEY name.
   "! <p class="shorttext">Relevance</p>
   "! Relevance
-  "! $values {@link zif_aff_edcc_v1.data:co_relevance}
-  "! $default {@link zif_aff_edcc_v1.data:co_relevance.unchanged}
+  "! $values {@link .data:co_relevance}
+  "! $default {@link .data:co_relevance.unchanged}
   TYPES ty_relevance        TYPE c LENGTH 1.
   "! <p class="shorttext">Event Name</p>
   "! Event name
@@ -403,8 +403,8 @@ INTERFACE zif_aff_edcc_v1
   TYPES ty_inconsistency_categories TYPE SORTED TABLE OF ty_inconsistency_category WITH UNIQUE KEY name.
   "! <p class="shorttext">Field Type</p>
   "! Field type
-  "! $values {@link zif_aff_edcc_v1.data:co_field_type}
-  "! $default {@link zif_aff_edcc_v1.data:co_field_type.select_options}
+  "! $values {@link .data:co_field_type}
+  "! $default {@link .data:co_field_type.select_options}
   TYPES ty_field_type               TYPE c LENGTH 1.
   TYPES:
     "! <p class="shorttext">Additional Selection Field</p>

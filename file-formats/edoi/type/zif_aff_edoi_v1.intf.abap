@@ -2,8 +2,8 @@ INTERFACE zif_aff_edoi_v1 PUBLIC.
 
   "! <p class="shorttext">Direction</p>
   "! Interface direction
-  "! $values {@link zif_aff_edoi_v1.data:co_interface_direction}
-  "! $default {@link zif_aff_edoi_v1.data:co_interface_direction.outbound}
+  "! $values {@link .data:co_interface_direction}
+  "! $default {@link .data:co_interface_direction.outbound}
   TYPES ty_direction TYPE c LENGTH 1.
   CONSTANTS:
     "! <p class="shorttext">Direction</p>

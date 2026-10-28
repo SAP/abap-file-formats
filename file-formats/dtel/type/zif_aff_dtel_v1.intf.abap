@@ -69,14 +69,14 @@ INTERFACE zif_aff_dtel_v1 PUBLIC.
 
   "! <p class="shorttext">Category</p>
   "! Category
-  "! $values {@link zif_aff_dtel_v1.data:co_category}
+  "! $values {@link .data:co_category}
   TYPES ty_category TYPE c LENGTH 30.
 
 
   CONSTANTS:
     "! <p class="shorttext">Category</p>
     "! Category
-    "! {@link zif_aff_dtel_v1.data:ty_category }
+    "! {@link .data:ty_category }
     BEGIN OF co_category,
       "! <p class="shorttext">Domain</p>
       "! Domain
@@ -127,8 +127,8 @@ INTERFACE zif_aff_dtel_v1 PUBLIC.
 
   "! <p class="shorttext">Basic Direction</p>
   "! Basic direction
-  "! $values {@link zif_aff_dtel_v1.co_bidi_basic_direction }
-  "! $default {@link zif_aff_dtel_v1.co_bidi_basic_direction.left_to_right }
+  "! $values {@link .co_bidi_basic_direction }
+  "! $default {@link .co_bidi_basic_direction.left_to_right }
   TYPES ty_basic_direction TYPE c LENGTH 1.
 
   CONSTANTS:

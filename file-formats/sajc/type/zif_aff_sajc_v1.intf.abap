@@ -72,8 +72,8 @@ INTERFACE zif_aff_sajc_v1
   TYPES ty_radio_button_group TYPE c LENGTH 4.
   "! <p class="shorttext">Screen Element</p>
   "! Type of the screen element
-  "! $values {@link zif_aff_sajc_v1.data:co_screen_element}
-  "! $default {@link zif_aff_sajc_v1.data:co_screen_element.none}
+  "! $values {@link .data:co_screen_element}
+  "! $default {@link .data:co_screen_element.none}
   TYPES ty_screen_element TYPE c LENGTH 1.
 
   CONSTANTS:
@@ -96,8 +96,8 @@ INTERFACE zif_aff_sajc_v1
 
   "! <p class="shorttext">Value Help Type</p>
   "! Type of the value help
-  "! $values {@link zif_aff_sajc_v1.data:co_value_help_type}
-  "! $default {@link zif_aff_sajc_v1.data:co_value_help_type.none}
+  "! $values {@link .data:co_value_help_type}
+  "! $default {@link .data:co_value_help_type.none}
   TYPES ty_value_help_type TYPE c LENGTH 1.
 
   CONSTANTS:

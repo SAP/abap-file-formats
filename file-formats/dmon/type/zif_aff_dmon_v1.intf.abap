@@ -4,7 +4,7 @@ INTERFACE zif_aff_dmon_v1
   TYPES:
   "! <p class="shorttext">Caller Object Type</p>
   "! Caller object type
-  "! $values {@link zif_aff_dmon_v1.data:co_caller_object_type}
+  "! $values {@link .data:co_caller_object_type}
     ty_caller_object_type TYPE c LENGTH 4.
 
   CONSTANTS:
@@ -39,15 +39,15 @@ INTERFACE zif_aff_dmon_v1
 
     "! <p class="shorttext">Daemon Type</p>
     "! Daemon type
-    "! $values {@link zif_aff_dmon_v1.data:co_daemon_type}
-    "! $default {@link zif_aff_dmon_v1.data:co_daemon_type.application}
+    "! $values {@link .data:co_daemon_type}
+    "! $default {@link .data:co_daemon_type.application}
     ty_daemon_type TYPE c LENGTH 1.
 
   TYPES:
    "! <p class="shorttext">Start Type</p>
    "! Start type
-   "! $values {@link zif_aff_dmon_v1.data:co_start_type}
-   "! $default {@link zif_aff_dmon_v1.data:co_start_type.automatically_started}
+   "! $values {@link .data:co_start_type}
+   "! $default {@link .data:co_start_type.automatically_started}
     ty_start_type TYPE c LENGTH 1.
 
   CONSTANTS:

@@ -3,14 +3,14 @@ INTERFACE zif_aff_srvd_v1
 
   "! <p class="shorttext">Source Type</p>
   "! States which statement is used in the service definition
-  "! $values {@link zif_aff_srvd_v1.data:co_source_type}
-  "! $default {@link zif_aff_srvd_v1.data:co_source_type.definition}
+  "! $values {@link .data:co_source_type}
+  "! $default {@link .data:co_source_type.definition}
   TYPES ty_source_type TYPE c LENGTH 1.
 
   "! <p class="shorttext">Source Origin</p>
   "! States which tool was used to create the service definition
-  "! $values {@link zif_aff_srvd_v1.data:co_source_origin}
-  "! $default {@link zif_aff_srvd_v1.data:co_source_origin.abap_development_tools}
+  "! $values {@link .data:co_source_origin}
+  "! $default {@link .data:co_source_origin.abap_development_tools}
   TYPES ty_source_origin TYPE c LENGTH 1.
 
   CONSTANTS:
@@ -67,14 +67,14 @@ INTERFACE zif_aff_srvd_v1
     BEGIN OF ty_general_information,
       "! <p class="shorttext">Source Origin</p>
       "! Source Origin states which tool was used to create the service definition
-      "! $values {@link zif_aff_srvd_v1.data:co_source_origin}
-      "! $default {@link zif_aff_srvd_v1.data:co_source_origin.abap_development_tools}
+      "! $values {@link .data:co_source_origin}
+      "! $default {@link .data:co_source_origin.abap_development_tools}
       "! $required
       source_origin TYPE ty_source_origin,
       "! <p class="shorttext">Source Type</p>
       "! Source type states which statement is in the service definition.
-      "! $values {@link zif_aff_srvd_v1.data:co_source_type}
-      "! $default {@link zif_aff_srvd_v1.data:co_source_type.definition}
+      "! $values {@link .data:co_source_type}
+      "! $default {@link .data:co_source_type.definition}
       "! $required
       source_type   TYPE ty_source_type,
     END OF ty_general_information,

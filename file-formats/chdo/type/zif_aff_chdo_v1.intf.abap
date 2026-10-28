@@ -80,8 +80,8 @@ INTERFACE zif_aff_chdo_v1
   TYPES:
   "! <p class="shorttext">Category</p>
   "! Change Document Category
-  "! $values {@link zif_aff_chdo_v1.data:co_category}
-  "! $default {@link zif_aff_chdo_v1.data:co_category.standard }
+  "! $values {@link .data:co_category}
+  "! $default {@link .data:co_category.standard }
     ty_category TYPE c LENGTH 1.
 
   CONSTANTS:

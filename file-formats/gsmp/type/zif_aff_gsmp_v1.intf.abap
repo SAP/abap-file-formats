@@ -5,26 +5,26 @@ INTERFACE zif_aff_gsmp_v1
 
     "! <p class="shorttext">Type</p>
     "! Type
-    "! $values {@link zif_aff_gsmp_v1.data:co_provider_type}
-    "! $default {@link zif_aff_gsmp_v1.data:co_provider_type.class}
+    "! $values {@link .data:co_provider_type}
+    "! $default {@link .data:co_provider_type.class}
     ty_provider_type  TYPE c LENGTH 4,
 
     "! <p class="shorttext">Execution Mode</p>
     "! Execution mode
-    "! $values {@link zif_aff_gsmp_v1.data:co_execution_mode}
+    "! $values {@link .data:co_execution_mode}
     ty_execution_mode TYPE c LENGTH 1,
 
 
     "! <p class="shorttext">Priority</p>
     "! Priority
-    "! $values {@link zif_aff_gsmp_v1.data:co_priority}
-    "! $default {@link zif_aff_gsmp_v1.data:co_priority.normal}
+    "! $values {@link .data:co_priority}
+    "! $default {@link .data:co_priority.normal}
     ty_priority   TYPE i,
 
     "! <p class="shorttext">Instantiation</p>
     "! Instantiation
-    "! $values {@link zif_aff_gsmp_v1.data:co_instantiation}
-    "! $default {@link zif_aff_gsmp_v1.data:co_instantiation.create_new}
+    "! $values {@link .data:co_instantiation}
+    "! $default {@link .data:co_instantiation.create_new}
     ty_instantiation TYPE c LENGTH 1,
 
     "! <p class="shorttext">Implementation</p>

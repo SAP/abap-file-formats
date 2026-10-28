@@ -2,8 +2,8 @@ INTERFACE zif_aff_xslt_v1 PUBLIC.
 
   "! <p class="shorttext">Transformation Type</p>
   "! Transformation type
-  "! $values {@link zif_aff_xslt_v1.data:co_transformation_type}
-  "! $default {@link zif_aff_xslt_v1.data:co_transformation_type.xslt_program}
+  "! $values {@link .data:co_transformation_type}
+  "! $default {@link .data:co_transformation_type.xslt_program}
   TYPES ty_transformation_type TYPE c LENGTH 20.
 
   CONSTANTS:

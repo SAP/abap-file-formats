@@ -50,7 +50,7 @@ INTERFACE zif_aff_suso_v1
   "! $maxItems 10
   TYPES ty_authorization_fields TYPE STANDARD TABLE OF ty_authorization_field WITH DEFAULT KEY.
 
-  "! $values {@link zif_aff_suso_v1.data:co_access_category}
+  "! $values {@link .data:co_access_category}
   TYPES ty_access_category      TYPE c LENGTH 1.
   CONSTANTS:
     "! <p class="shorttext">Access Category</p>
@@ -90,7 +90,7 @@ INTERFACE zif_aff_suso_v1
   "! Permitted activities
   TYPES ty_permitted_activities TYPE STANDARD TABLE OF ty_permitted_activity WITH DEFAULT KEY.
 
-  "! $values {@link zif_aff_suso_v1.data:co_criticality}
+  "! $values {@link .data:co_criticality}
   TYPES ty_criticality          TYPE c LENGTH 1.
   CONSTANTS:
     "! <p class="shorttext">Criticality</p>
@@ -104,8 +104,8 @@ INTERFACE zif_aff_suso_v1
       not_critical TYPE ty_criticality VALUE 'N',
     END OF co_criticality.
 
-  "! $values {@link zif_aff_suso_v1.data:co_class_copy_to_default_data}
-  "! $default {@link zif_aff_suso_v1.data:co_class_copy_to_default_data.without_restriction}
+  "! $values {@link .data:co_class_copy_to_default_data}
+  "! $default {@link .data:co_class_copy_to_default_data.without_restriction}
   TYPES ty_class_copy_to_default_data TYPE c LENGTH 1.
   CONSTANTS:
     "! <p class="shorttext">Classification for Copy to Default Data</p>
@@ -171,7 +171,7 @@ INTERFACE zif_aff_suso_v1
       is_relevant_to_sap_new TYPE abap_bool,
     END OF ty_sap_new_relevance.
 
-  "! $values {@link zif_aff_suso_v1.data:co_usage_in_own_context}
+  "! $values {@link .data:co_usage_in_own_context}
   TYPES ty_usage_in_own_context TYPE c LENGTH 1.
   CONSTANTS:
     "! <p class="shorttext">Classification for Usage in the OWN Authorization Context</p>
@@ -189,7 +189,7 @@ INTERFACE zif_aff_suso_v1
       in_same_software_component TYPE c LENGTH 1              VALUE 'S',
     END OF co_usage_in_own_context.
 
-  "! $values {@link zif_aff_suso_v1.data:co_usage_in_privil_bdef_mode}
+  "! $values {@link .data:co_usage_in_privil_bdef_mode}
   TYPES ty_usage_in_privil_bdef_mode TYPE c LENGTH 1.
   CONSTANTS:
     "! <p class="shorttext">Classification for Usage in privileged BDEF Mode</p>

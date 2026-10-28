@@ -22,8 +22,8 @@ INTERFACE zif_aff_scp1_v1
     BEGIN OF ty_attributes,
       "! <p class="shorttext">Type</p>
       "! Type of BC Set i.e. a simple BC Set or hierarchical BC Set, which contains several other BC Sets
-      "! $values {@link zif_aff_scp1_v1.data:co_type}
-      "! $default {@link zif_aff_scp1_v1.data:co_type.simple}
+      "! $values {@link .data:co_type}
+      "! $default {@link .data:co_type.simple}
       "! $required
       type                  TYPE ty_type,
       "! <p class="shorttext">Scoping Relevant</p>
@@ -142,8 +142,8 @@ INTERFACE zif_aff_scp1_v1
       "! <p class="shorttext">Operation at Activation</p>
       "! Data records which are to be deleted at activation are flagged with value 'L'
       "! $required
-      "! $values {@link zif_aff_scp1_v1.data:co_operation_at_activation}
-      "! $default {@link zif_aff_scp1_v1.data:co_operation_at_activation.upsert}
+      "! $values {@link .data:co_operation_at_activation}
+      "! $default {@link .data:co_operation_at_activation.upsert}
       operation_at_activation TYPE ty_operation_at_activation,
       "! <p class="shorttext">Data</p>
       "! Complete data record of selected key value
@@ -169,8 +169,8 @@ INTERFACE zif_aff_scp1_v1
       "! Defines the attribute of field like during BC Set activation, the field value must be copied to database
       "! table or not
       "! $required
-      "! $values {@link zif_aff_scp1_v1.data:co_field_attribute}
-      "! $default {@link zif_aff_scp1_v1.data:co_field_attribute.default_value}
+      "! $values {@link .data:co_field_attribute}
+      "! $default {@link .data:co_field_attribute.default_value}
       field_attribute TYPE ty_field_attribute_value,
     END OF ty_field_attribute.
 
@@ -207,7 +207,7 @@ INTERFACE zif_aff_scp1_v1
       object_name  TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Type</p>
       "! Object type is used to classify customizing objects
-      "! $values {@link zif_aff_scp1_v1.data:co_object_type}
+      "! $values {@link .data:co_object_type}
       "! $required
       object_type  TYPE ty_object_type,
       "! <p class="shorttext">IMG Activity</p>

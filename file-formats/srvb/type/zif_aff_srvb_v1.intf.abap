@@ -2,7 +2,7 @@ INTERFACE zif_aff_srvb_v1
   PUBLIC.
   "! <p class="shorttext">Binding Category</p>
   "! Service Binding category
-  "! $values {@link zif_aff_srvb_v1.data:co_bind_type_category}
+  "! $values {@link .data:co_bind_type_category}
   TYPES ty_bind_type_category TYPE c LENGTH 1.
 
   CONSTANTS:

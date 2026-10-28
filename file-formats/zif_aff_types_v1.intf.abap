@@ -8,20 +8,20 @@ INTERFACE zif_aff_types_v1 PUBLIC.
 
   "! <p class="shorttext">ABAP Language Version</p>
   "! ABAP language version
-  "! $values {@link zif_aff_types_v1.data:co_abap_language_version}
-  "! $default {@link zif_aff_types_v1.data:co_abap_language_version.standard}
+  "! $values {@link .data:co_abap_language_version}
+  "! $default {@link .data:co_abap_language_version.standard}
   TYPES ty_abap_language_version TYPE c LENGTH 1.
 
   "! <p class="shorttext">ABAP Language Version</p>
   "! ABAP language version
-  "! $values {@link zif_aff_types_v1.data:co_abap_language_version_cloud}
-  "! $default {@link zif_aff_types_v1.data:co_abap_language_version_cloud.standard}
+  "! $values {@link .data:co_abap_language_version_cloud}
+  "! $default {@link .data:co_abap_language_version_cloud.standard}
   TYPES ty_abap_language_version_cloud TYPE c LENGTH 1.
 
   "! <p class="shorttext">ABAP Language Version</p>
   "! ABAP language version
-  "! $values {@link zif_aff_types_v1.data:co_abap_language_version_src}
-  "! $default {@link zif_aff_types_v1.data:co_abap_language_version_src.standard}
+  "! $values {@link .data:co_abap_language_version_src}
+  "! $default {@link .data:co_abap_language_version_src.standard}
   TYPES ty_abap_language_version_src TYPE c LENGTH 1.
 
   CONSTANTS:
@@ -194,8 +194,8 @@ INTERFACE zif_aff_types_v1 PUBLIC.
 
   "! <p class="shorttext">Option</p>
   "! Option
-  "! $values {@link zif_aff_types_v1.data:co_option}
-  "! $default {@link zif_aff_types_v1.data:co_option.equals}
+  "! $values {@link .data:co_option}
+  "! $default {@link .data:co_option.equals}
   TYPES ty_option TYPE c LENGTH 2.
 
   CONSTANTS:
@@ -236,8 +236,8 @@ INTERFACE zif_aff_types_v1 PUBLIC.
 
   "! <p class="shorttext">Sign</p>
   "! Sign
-  "! $values {@link zif_aff_types_v1.data:co_sign}
-  "! $default {@link zif_aff_types_v1.data:co_sign.include}
+  "! $values {@link .data:co_sign}
+  "! $default {@link .data:co_sign.include}
   TYPES ty_sign TYPE c LENGTH 1.
 
   CONSTANTS:

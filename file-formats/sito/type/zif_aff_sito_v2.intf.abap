@@ -2,7 +2,7 @@ INTERFACE zif_aff_sito_v2
   PUBLIC.
 
   "! SIT2_DO_SCOPE
-  "! $values {@link zif_aff_sito_v2.data:co_sit2_do_scope}
+  "! $values {@link .data:co_sit2_do_scope}
   TYPES ty_sit2_do_scope TYPE n LENGTH 2.
 
   CONSTANTS:
@@ -18,7 +18,7 @@ INTERFACE zif_aff_sito_v2
     END OF co_sit2_do_scope.
 
   "! SIT2_DO_OBJ_STRUC_TYPE
-  "! $values {@link zif_aff_sito_v2.data:co_sit2_do_obj_struc_type}
+  "! $values {@link .data:co_sit2_do_obj_struc_type}
   TYPES ty_sit2_do_obj_struc_type TYPE n LENGTH 2.
 
   CONSTANTS:
@@ -34,7 +34,7 @@ INTERFACE zif_aff_sito_v2
     END OF co_sit2_do_obj_struc_type.
 
   "! SIT2_DO_OBJ_STR_P_DTA_LVL
-  "! $values {@link zif_aff_sito_v2.data:co_sit2_do_obj_str_p_dta_lvl}
+  "! $values {@link .data:co_sit2_do_obj_str_p_dta_lvl}
   TYPES ty_sit2_do_obj_str_p_dta_lvl TYPE n LENGTH 2.
 
   CONSTANTS:
@@ -52,7 +52,7 @@ INTERFACE zif_aff_sito_v2
     END OF co_sit2_do_obj_str_p_dta_lvl.
 
   "! SWFECLSTYP
-  "! $values {@link zif_aff_sito_v2.data:co_swfeclstyp}
+  "! $values {@link .data:co_swfeclstyp}
   TYPES ty_swfeclstyp TYPE c LENGTH 2.
 
   CONSTANTS:
@@ -76,7 +76,7 @@ INTERFACE zif_aff_sito_v2
     END OF co_swfeclstyp.
 
   "! SIT2_DO_ACTION_TYPE
-  "! $values {@link zif_aff_sito_v2.data:co_sit2_do_action_type}
+  "! $values {@link .data:co_sit2_do_action_type}
   TYPES ty_sit2_do_action_type TYPE n LENGTH 2.
 
   CONSTANTS:
@@ -91,7 +91,7 @@ INTERFACE zif_aff_sito_v2
     END OF co_sit2_do_action_type.
 
   "! SIT2_DO_VH_SRV_PROTOCOL_VER
-  "! $values {@link zif_aff_sito_v2.data:co_sit2_do_vh_srv_protocol_ver}
+  "! $values {@link .data:co_sit2_do_vh_srv_protocol_ver}
   TYPES ty_sit2_do_vh_srv_protocol_ver TYPE n LENGTH 2.
 
   CONSTANTS:
@@ -108,7 +108,7 @@ INTERFACE zif_aff_sito_v2
     END OF co_sit2_do_vh_srv_protocol_ver.
 
   "! SIT2_DO_VH_SRV_PATH_TYPE
-  "! $values {@link zif_aff_sito_v2.data:co_sit2_do_vh_srv_path_type}
+  "! $values {@link .data:co_sit2_do_vh_srv_path_type}
   TYPES ty_sit2_do_vh_srv_path_type TYPE n LENGTH 2.
 
   CONSTANTS:
@@ -123,7 +123,7 @@ INTERFACE zif_aff_sito_v2
     END OF co_sit2_do_vh_srv_path_type.
 
   "! SIT2_DO_VH_APP_TYPE
-  "! $values {@link zif_aff_sito_v2.data:co_sit2_do_vh_app_type}
+  "! $values {@link .data:co_sit2_do_vh_app_type}
   TYPES ty_sit2_do_vh_app_type TYPE n LENGTH 2.
 
   CONSTANTS:
@@ -135,7 +135,7 @@ INTERFACE zif_aff_sito_v2
     END OF co_sit2_do_vh_app_type.
 
   "! SIT2_DO_VH_TYPE
-  "! $values {@link zif_aff_sito_v2.data:co_sit2_do_vh_type}
+  "! $values {@link .data:co_sit2_do_vh_type}
   TYPES ty_sit2_do_vh_type TYPE n LENGTH 2.
 
   CONSTANTS:
