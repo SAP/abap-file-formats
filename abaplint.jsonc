@@ -99,7 +99,9 @@
     "keyword_case": true,
     "line_break_multiple_parameters": true,
     "line_break_style": true,
-    "line_length": true,
+    "line_length": {
+      "length": 187
+    },
     "line_only_punc": true,
     "local_class_naming": true,
     "local_variable_names": false,
