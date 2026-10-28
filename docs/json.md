@@ -68,7 +68,8 @@ The following changes related to [conditional fields](#conditional-fields) are c
 
 - A conditional availability (`$availableWhen`) is added that forbids a field for a value combination previously allowed by the schema
 - A conditional requiredness (`$requiredWhen`) is added that requires a field for a value combination under which it was previously optional
-- A conditional requiredness (`$requiredWhen`) is removed or weakened, for the same reason that removing a mandatory field is incompatible (old implementations might rely on the field being present)
+- A conditional requiredness (`$requiredWhen`) is removed or weakened, if old implementations rely on the field being present
+- A conditional availability (`$availableWhen`) is added or strengthened on an existing enum value, excluding value combinations previously allowed by the schema
 
 Technical incompatibility with the previously published schema can be distinguished from semantic incompatibility: the changes listed above are technically incompatible, even if implementations already enforced the conditions and therefore experience no change in accepted files.
 
