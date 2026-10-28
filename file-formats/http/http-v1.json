@@ -65,10 +65,15 @@
           "type": "string",
           "maxLength": 30
         },
-        "url": {
-          "title": "URL",
-          "description": "URL",
+        "servicePath": {
+          "title": "Service Path",
+          "description": "Service path",
           "type": "string"
+        },
+        "tokenHandling": {
+          "title": "Enable CSRF Token Handling",
+          "description": "Enable CSRF token handling",
+          "type": "boolean"
         }
       },
       "additionalProperties": false

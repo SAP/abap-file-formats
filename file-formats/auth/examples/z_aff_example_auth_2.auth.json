@@ -1,0 +1,12 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "originalLanguage": "de"
+  },
+  "generalInformation": {
+    "dataElement": "ACTIV_AUTH"
+  },
+  "alternativeSearchHelp": {
+    "checkTable": "TACT"
+  }
+}
