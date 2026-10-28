@@ -189,10 +189,10 @@ is added. Note that also the `$required` annotation leads to such behavior.
 ### Conditional Fields
 To restrict when a field may or must occur depending on the value of another field, the annotations
 ```abap
-"! $availableWhen {@link interface_name.data:ty_discriminator} = value
-"! $availableWhen {@link interface_name.data:ty_discriminator} != value
-"! $requiredWhen {@link interface_name.data:ty_discriminator} = value
-"! $requiredWhen {@link interface_name.data:ty_discriminator} != value
+"! $availableWhen {@link interface_name.ty_main.discriminator} = value
+"! $availableWhen {@link interface_name.ty_main.discriminator} != value
+"! $requiredWhen {@link interface_name.ty_main.discriminator} = value
+"! $requiredWhen {@link interface_name.ty_main.discriminator} != value
 ```
 are used. Each annotation may occur at most once per component.
 
@@ -200,7 +200,7 @@ are used. Each annotation may occur at most once per component.
 `$requiredWhen` means the field must be present when the condition is true. When the condition is false, no additional constraint is imposed.
 When both annotations are used with the same condition, the field is required when the condition is true and forbidden when it is false.
 
-The condition is a single comparison using `=` (equals) or `!=` (not equals). The left side is always a `{@link ...}` to the discriminator field, either via its **named ABAP type**, for example `{@link zif_aff_func_v1.data:ty_processing_type}`, or via a field path, for example `{@link zif_aff_example_v1.data:ty_main.general_information.parallel_enabled}`. The link must resolve to exactly one reachable field in the usage context.
+The condition is a single comparison using `=` (equals) or `!=` (not equals). The left side is always a `{@link ...}` to the discriminator field, given as a path starting at `ty_main`, for example `{@link zif_aff_func_v1.ty_main.processing_type}`. The link must resolve to exactly one reachable field in the usage context.
 
 The right side depends on the discriminator's type:
 
@@ -222,14 +222,14 @@ In [`zif_aff_func_v1`](../file-formats/fugr/type/zif_aff_func_v1.intf.abap), the
 ```abap
 "! <p class="shorttext">RFC Specific Fields</p>
 "! Specific fields for RFC function modules
-"! $availableWhen {@link zif_aff_func_v1.data:ty_processing_type} = {@link zif_aff_func_v1.data:co_processing_type.rfc}
-"! $requiredWhen {@link zif_aff_func_v1.data:ty_processing_type} = {@link zif_aff_func_v1.data:co_processing_type.rfc}
+"! $availableWhen {@link zif_aff_func_v1.ty_main.processing_type} = {@link zif_aff_func_v1.data:co_processing_type.rfc}
+"! $requiredWhen {@link zif_aff_func_v1.ty_main.processing_type} = {@link zif_aff_func_v1.data:co_processing_type.rfc}
 rfc_properties TYPE ty_rfc_properties,
 
 "! <p class="shorttext">Update Specific Fields</p>
 "! Specific fields for update function modules
-"! $availableWhen {@link zif_aff_func_v1.data:ty_processing_type} = {@link zif_aff_func_v1.data:co_processing_type.update}
-"! $requiredWhen {@link zif_aff_func_v1.data:ty_processing_type} = {@link zif_aff_func_v1.data:co_processing_type.update}
+"! $availableWhen {@link zif_aff_func_v1.ty_main.processing_type} = {@link zif_aff_func_v1.data:co_processing_type.update}
+"! $requiredWhen {@link zif_aff_func_v1.ty_main.processing_type} = {@link zif_aff_func_v1.data:co_processing_type.update}
 update_properties TYPE ty_update_properties,
 ```
 
