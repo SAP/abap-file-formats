@@ -1,6 +1,40 @@
 INTERFACE zif_aff_enho_v1
   PUBLIC.
 
+  "! <p class="shorttext">Kind</p>
+  "! Kind of enhancement implementation
+  "! $values {@link zif_aff_enho_v1.data:co_kind}
+  TYPES ty_kind TYPE c LENGTH 9.
+
+  CONSTANTS:
+    "! <p class="shorttext">Kind</p>
+    "! Kind of enhancement implementation
+    BEGIN OF co_kind,
+      "! <p class="shorttext">BAdI Implementation</p>
+      "! Enhancement implementation containing BAdI implementations
+      badi_implementation TYPE ty_kind VALUE 'BADI_IMPL',
+      "! <p class="shorttext">Source Code Plug-In</p>
+      "! Enhancement implementation containing source code plug-ins
+      source_code_plugin  TYPE ty_kind VALUE 'HOOK_IMPL',
+    END OF co_kind.
+
+  "! <p class="shorttext">Enhancement Mode</p>
+  "! Static or dynamic enhancement mode
+  "! $values {@link zif_aff_enho_v1.data:co_enhancement_mode}
+  TYPES ty_enhancement_mode TYPE c LENGTH 1.
+
+  CONSTANTS:
+    "! <p class="shorttext">Enhancement Mode</p>
+    "! Static or dynamic enhancement mode
+    BEGIN OF co_enhancement_mode,
+      "! <p class="shorttext">Static</p>
+      "! Static enhancement point or section
+      static  TYPE ty_enhancement_mode VALUE 'S',
+      "! <p class="shorttext">Dynamic</p>
+      "! Dynamic enhancement point or section
+      dynamic TYPE ty_enhancement_mode VALUE 'D',
+    END OF co_enhancement_mode.
+
   "! <p class="shorttext">Range Filter Comparator</p>
   "! Range filter comparator
   "! $values {@link zif_aff_enho_v1.data:co_range_filter_comparator}
@@ -55,14 +89,14 @@ INTERFACE zif_aff_enho_v1
       "! True, if the value of operand1 is not equal to the value of operand2.
       "! $enumValue '<>'
       not_equal                   TYPE ty_comparator VALUE '<>',
-      "! <p class="shorttext">Conforms To Pattern</p>
+      "! <p class="shorttext">Conforms to Pattern</p>
       "! True, if the content of operand1 matches the pattern in operand2.
       "! Wildcard characters can be used to form the operand2 pattern, where * represents any character string,
       "! including an empty string, and + represents any character. It is not case-sensitive. Trailing blanks in
       "! the left operand are respected.
       "! $enumValue 'CP'
       conforms_to_pattern         TYPE ty_comparator VALUE 'CP',
-      "! <p class="shorttext">Does Not Conform To Pattern</p>
+      "! <p class="shorttext">Does Not Conform to Pattern</p>
       "! True, if a comparison expression with CP is false, that is, operand1 does not fit the pattern in
       "! operand2.
       "! $enumValue 'NP'
@@ -80,11 +114,10 @@ INTERFACE zif_aff_enho_v1
       "! of operand2.
       "! $enumValue 'NS'
       contains_no_string          TYPE ty_comparator VALUE 'NS',
-      "! <p class="shorttext">Not specified</p>
+      "! <p class="shorttext">Not Specified</p>
       "! Not specified: used in case of range filter
       not_specified               TYPE ty_comparator VALUE 'XX',
     END OF co_comparator.
-
 
   TYPES:
     "! <p class="shorttext">Range Filter</p>
@@ -201,7 +234,7 @@ INTERFACE zif_aff_enho_v1
 
   TYPES:
     "! <p class="shorttext">BAdI Implementation</p>
-    "! BAdI Implementation
+    "! BAdI implementation
     BEGIN OF ty_badi_implementation,
       "! <p class="shorttext">Name</p>
       "! Name of the BAdI implementation
@@ -212,7 +245,7 @@ INTERFACE zif_aff_enho_v1
       "! $required
       description               TYPE c LENGTH 255,
       "! <p class="shorttext">BAdI Definition</p>
-      "! BAdI Definition
+      "! BAdI definition
       "! $required
       badi_definition           TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Implementing Class</p>
@@ -226,7 +259,7 @@ INTERFACE zif_aff_enho_v1
       "! Is the default implementation of the BAdI definition
       "! $showAlways
       is_default_implementation TYPE abap_bool,
-      "! <p class="shorttext">BAdI Implementation is Active</p>
+      "! <p class="shorttext">BAdI Implementation Is Active</p>
       "! BAdI implementation is active
       "! $showAlways
       is_active_implementation  TYPE abap_bool,
@@ -246,31 +279,127 @@ INTERFACE zif_aff_enho_v1
 
   TYPES:
     "! <p class="shorttext">General Information</p>
-    "! General information
+    "! Information shared by all enhancement implementation kinds
     BEGIN OF ty_general_information,
+      "! <p class="shorttext">Kind</p>
+      "! Kind of enhancement implementation
+      "! $required
+      kind TYPE ty_kind,
+    END OF ty_general_information,
+
+    "! <p class="shorttext">BAdI Information</p>
+    "! Information shared by the BAdI implementations
+    BEGIN OF ty_badi_information,
       "! <p class="shorttext">Enhancement Spot</p>
-      "! Enhancement Spot name
+      "! Enhancement Spot containing the BAdI definitions
       "! $required
       enhancement_spot TYPE zif_aff_types_v1=>ty_object_name_30,
-    END OF ty_general_information.
+    END OF ty_badi_information,
+
+    "! <p class="shorttext">Original Object</p>
+    "! Enhanced repository object and its program context
+    BEGIN OF ty_original_object,
+      "! <p class="shorttext">Program ID</p>
+      "! Program ID of the enhanced repository object
+      "! $required
+      program_id       TYPE c LENGTH 4,
+      "! <p class="shorttext">Object Type</p>
+      "! Type of the enhanced repository object
+      "! $required
+      object_type      TYPE c LENGTH 4,
+      "! <p class="shorttext">Object Name</p>
+      "! Name of the enhanced repository object
+      "! $required
+      object_name      TYPE c LENGTH 120,
+      "! <p class="shorttext">Main Object Type</p>
+      "! Type of the main object; defaults to object type when omitted
+      main_object_type TYPE c LENGTH 4,
+      "! <p class="shorttext">Main Object Name</p>
+      "! Name of the main object; defaults to object name when omitted
+      main_object_name TYPE zif_aff_types_v1=>ty_object_name_40,
+      "! <p class="shorttext">Program Name</p>
+      "! Program context of the enhanced object
+      "! $required
+      program_name     TYPE zif_aff_types_v1=>ty_object_name_40,
+    END OF ty_original_object,
+
+    "! <p class="shorttext">Source Code Plug-In Information</p>
+    "! Information shared by the source code plug-ins
+    BEGIN OF ty_source_code_plugin_info,
+      "! <p class="shorttext">Original Object</p>
+      "! Enhanced repository object and its program context
+      "! $required
+      original_object TYPE ty_original_object,
+      "! <p class="shorttext">Include Bound</p>
+      "! Enhancement implementation is bound to an include
+      "! $showAlways
+      include_bound   TYPE abap_bool,
+    END OF ty_source_code_plugin_info,
+
+    "! <p class="shorttext">Source Code Plug-In</p>
+    "! Attachment metadata for one enhancement block in the ABAP file
+    BEGIN OF ty_source_code_plugin,
+      "! <p class="shorttext">Enhancement Number</p>
+      "! File-local association key matching the ENHANCEMENT statement in the ABAP file
+      "! $required
+      "! $minimum 1
+      enhancement_number TYPE i,
+      "! <p class="shorttext">Full Name</p>
+      "! Backend identifier of the enhancement option
+      "! $required
+      full_name          TYPE string,
+      "! <p class="shorttext">Enhancement Mode</p>
+      "! Static or dynamic enhancement mode
+      "! $required
+      enhancement_mode   TYPE ty_enhancement_mode,
+      "! <p class="shorttext">Enhancement Spot</p>
+      "! Enhancement Spot of an explicit enhancement option, if applicable
+      enhancement_spot   TYPE zif_aff_types_v1=>ty_object_name_30,
+      "! <p class="shorttext">Overwrite</p>
+      "! Overwrite flag of the hook implementation
+      "! $showAlways
+      overwrite          TYPE abap_bool,
+      "! <p class="shorttext">Parent Full Name</p>
+      "! Backend identifier of the parent enhancement option, if applicable
+      parent_full_name   TYPE string,
+    END OF ty_source_code_plugin,
+
+    "! <p class="shorttext">Source Code Plug-Ins</p>
+    "! Source code plug-ins ordered by their enhancement numbers
+    ty_source_code_plugins TYPE SORTED TABLE OF ty_source_code_plugin WITH UNIQUE KEY enhancement_number.
 
   TYPES:
     "! <p class="shorttext">ENHO</p>
     "! Object type ENHO
     BEGIN OF ty_main,
       "! $required
-      format_version       TYPE zif_aff_types_v1=>ty_format_version,
+      format_version                 TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header               TYPE zif_aff_types_v1=>ty_header_100,
+      header                         TYPE zif_aff_types_v1=>ty_header_100,
       "! <p class="shorttext">General Information</p>
-      "! General information
+      "! Information shared by all enhancement implementation kinds
       "! $required
-      general_information  TYPE ty_general_information,
+      general_information            TYPE ty_general_information,
+      "! <p class="shorttext">BAdI Information</p>
+      "! Information shared by the BAdI implementations
+      "! $availableWhen {@link zif_aff_enho_v1.data:ty_general_information.kind} = {@link zif_aff_enho_v1.data:co_kind.badi_implementation}
+      "! $requiredWhen {@link zif_aff_enho_v1.data:ty_general_information.kind} = {@link zif_aff_enho_v1.data:co_kind.badi_implementation}
+      badi_information               TYPE ty_badi_information,
       "! <p class="shorttext">BAdI Implementations</p>
       "! BAdI implementations
-      badi_implementations TYPE ty_badi_implementations,
+      "! $availableWhen {@link zif_aff_enho_v1.data:ty_general_information.kind} = {@link zif_aff_enho_v1.data:co_kind.badi_implementation}
+      badi_implementations           TYPE ty_badi_implementations,
+      "! <p class="shorttext">Source Code Plug-In Information</p>
+      "! Information shared by the source code plug-ins
+      "! $availableWhen {@link zif_aff_enho_v1.data:ty_general_information.kind} = {@link zif_aff_enho_v1.data:co_kind.source_code_plugin}
+      "! $requiredWhen {@link zif_aff_enho_v1.data:ty_general_information.kind} = {@link zif_aff_enho_v1.data:co_kind.source_code_plugin}
+      source_code_plugin_information TYPE ty_source_code_plugin_info,
+      "! <p class="shorttext">Source Code Plug-Ins</p>
+      "! Optional attachment metadata; an enhancement implementation can have no plug-ins
+      "! $availableWhen {@link zif_aff_enho_v1.data:ty_general_information.kind} = {@link zif_aff_enho_v1.data:co_kind.source_code_plugin}
+      source_code_plugins            TYPE ty_source_code_plugins,
     END OF ty_main.
 
 ENDINTERFACE.

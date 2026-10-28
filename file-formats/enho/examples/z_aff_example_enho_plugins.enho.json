@@ -1,0 +1,36 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "Example explicit and implicit source code plug-ins",
+    "originalLanguage": "en"
+  },
+  "generalInformation": {
+    "kind": "sourceCodePlugin"
+  },
+  "sourceCodePluginInformation": {
+    "originalObject": {
+      "programId": "R3TR",
+      "objectType": "PROG",
+      "objectName": "Z_AFF_EXAMPLE_PROG",
+      "mainObjectType": "PROG",
+      "mainObjectName": "Z_AFF_EXAMPLE_PROG",
+      "programName": "Z_AFF_EXAMPLE_PROG"
+    },
+    "includeBound": false
+  },
+  "sourceCodePlugins": [
+    {
+      "enhancementNumber": 1,
+      "fullName": "\\PR:Z_AFF_EXAMPLE_PROG\\EX:EXAMPLE_POINT\\EI",
+      "enhancementMode": "dynamic",
+      "enhancementSpot": "Z_AFF_EXAMPLE_ENHS",
+      "overwrite": false
+    },
+    {
+      "enhancementNumber": 2,
+      "fullName": "\\PR:Z_AFF_EXAMPLE_PROG\\FO:EXAMPLE_FORM\\SE:END\\EI",
+      "enhancementMode": "dynamic",
+      "overwrite": false
+    }
+  ]
+}
