@@ -7,6 +7,7 @@ For its annotation and validation, the ABAP file formats provide JSON Schemas.
 * [Format Versions and Compatibility](#format-versions-and-compatibility)
 * [Writing JSON Schema with ABAP Types](#writing-json-schema-with-abap-types)
   * [Conditional Fields](#conditional-fields)
+  * [Conditional Enum Availability](#conditional-enum-availability)
 * [Example](#example)
 * [Reusable Fields in JSON Files](#reusable-fields-in-json-files)
 
@@ -190,7 +191,7 @@ are used. Each annotation may occur at most once per component.
 `$requiredWhen` means the field must be present when the condition is true. When the condition is false, no additional constraint is imposed.
 When both annotations are used with the same condition, the field is required when the condition is true and forbidden when it is false.
 
-The condition is a single comparison using `=` (equals) or `!=` (not equals). The left side is always a `{@link ...}` to the **named ABAP type** of the discriminator field, for example `{@link zif_aff_func_v1.data:ty_processing_type}`. The type must resolve to exactly one field in the containing scope.
+The condition is a single comparison using `=` (equals) or `!=` (not equals). The left side is always a `{@link ...}` to the discriminator field, either via its **named ABAP type**, for example `{@link zif_aff_func_v1.data:ty_processing_type}`, or via a field path, for example `{@link zif_aff_example_v1.data:ty_main.general_information.parallel_enabled}`. The link must resolve to exactly one reachable field in the usage context.
 
 The right side depends on the discriminator's type:
 
@@ -232,6 +233,8 @@ This results in the following behavior:
 | Update | Forbidden | Required |
 
 If a detail group should be optional rather than required when the condition matches, omit the `$requiredWhen` annotation.
+
+The `$availableWhen` annotation can also restrict individual enum values without forbidding the field itself; see [Conditional Enum Availability](#conditional-enum-availability).
 
 ### Default Values
 To specify the `default` value for a field of the JSON Schema, the annotation
@@ -293,6 +296,12 @@ Remark: If an enum is used, it should be checked if one of the following points 
 In case additional values for the enum should be added compatibly later, a default value must always be specified (see [Format Versions and Compatibility](#format-versions-and-compatibility)). If systems don't support the new enumeration value (e.g., in lower releases), the value will be changed to the default value by the file format implementations.
 
 The order of the comments and annotations presented here is important: First, there is the comment for the title followed by the one for the description, in case they are both provided. After these two, the remaining annotations are always located. Between them, the order is irrelevant.
+
+#### Conditional Enum Availability
+
+[`$availableWhen`](#conditional-fields) on an enum constant referenced by `$values` allows that value only when the condition is true. Other values remain allowed; multiple restrictions apply together and respect `$enumValue` overrides. If no values remain available, the field cannot be present.
+
+Conditions use the same syntax as for conditional fields. Links must resolve unambiguously to a reachable field in an enclosing structure for each usage, including table rows. `$requiredWhen` is unsupported on enum constants. Restrictions do not make the field required or change its default; avoid conditionally unavailable values as unconditional defaults.
 
 ### Additional Properties
 
