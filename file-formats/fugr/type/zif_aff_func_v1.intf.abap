@@ -209,13 +209,13 @@ INTERFACE zif_aff_func_v1
       processing_type      TYPE ty_processing_type,
       "! <p class="shorttext">RFC Specific Fields</p>
       "! Specific fields for rfc function modules
-      "! $availableWhen {@link zif_aff_func_v1.data:ty_main.processing_type} = {@link zif_aff_func_v1.data:co_processing_type.rfc}
-      "! $requiredWhen {@link zif_aff_func_v1.data:ty_main.processing_type} = {@link zif_aff_func_v1.data:co_processing_type.rfc}
+      "! $availableWhen {@link zif_aff_func_v1.ty_main.processing_type} = {@link zif_aff_func_v1.data:co_processing_type.rfc}
+      "! $requiredWhen {@link zif_aff_func_v1.ty_main.processing_type} = {@link zif_aff_func_v1.data:co_processing_type.rfc}
       rfc_properties       TYPE ty_rfc_properties,
       "! <p class="shorttext">Update Specific Fields</p>
       "! Specific fields for update function modules
-      "! $availableWhen {@link zif_aff_func_v1.data:ty_main.processing_type} = {@link zif_aff_func_v1.data:co_processing_type.update}
-      "! $requiredWhen {@link zif_aff_func_v1.data:ty_main.processing_type} = {@link zif_aff_func_v1.data:co_processing_type.update}
+      "! $availableWhen {@link zif_aff_func_v1.ty_main.processing_type} = {@link zif_aff_func_v1.data:co_processing_type.update}
+      "! $requiredWhen {@link zif_aff_func_v1.ty_main.processing_type} = {@link zif_aff_func_v1.data:co_processing_type.update}
       update_properties    TYPE ty_update_properties,
       "! <p class="shorttext">Release State</p>
       "! Release state
