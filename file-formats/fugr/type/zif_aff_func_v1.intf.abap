@@ -23,8 +23,8 @@ INTERFACE zif_aff_func_v1
 
   "! <p class="shorttext">Processing Type</p>
   "! Processing type
-  "! $values {@link zif_aff_func_v1.data:co_processing_type}
-  "! $default {@link zif_aff_func_v1.data:co_processing_type.normal}
+  "! $values {@link .data:co_processing_type}
+  "! $default {@link .data:co_processing_type.normal}
   TYPES ty_processing_type TYPE c LENGTH 1.
 
   CONSTANTS:
@@ -45,8 +45,8 @@ INTERFACE zif_aff_func_v1
 
   "! <p class="shorttext">RFC Scope</p>
   "! Indicates the scope of function module calls
-  "! $values {@link zif_aff_func_v1.data:co_rfc_scope}
-  "! $default {@link zif_aff_func_v1.data:co_rfc_scope.not_classified}
+  "! $values {@link .data:co_rfc_scope}
+  "! $default {@link .data:co_rfc_scope.not_classified}
   TYPES ty_rfc_scope TYPE c LENGTH 1.
 
   CONSTANTS:
@@ -69,8 +69,8 @@ INTERFACE zif_aff_func_v1
 
   "! <p class="shorttext">RFC Version</p>
   "! Indicates the permitted serializations for the function module
-  "! $values {@link zif_aff_func_v1.data:co_rfc_version}
-  "! $default {@link zif_aff_func_v1.data:co_rfc_version.any}
+  "! $values {@link .data:co_rfc_version}
+  "! $default {@link .data:co_rfc_version.any}
   TYPES ty_rfc_version TYPE c LENGTH 10.
 
   CONSTANTS:
@@ -119,8 +119,8 @@ INTERFACE zif_aff_func_v1
 
   "! <p class="shorttext">Update Task Kind</p>
   "! Update task kind
-  "! $values {@link zif_aff_func_v1.data:co_update_task_kind}
-  "! $default {@link zif_aff_func_v1.data:co_update_task_kind.start_immediately}
+  "! $values {@link .data:co_update_task_kind}
+  "! $default {@link .data:co_update_task_kind.start_immediately}
   TYPES ty_update_task_kind TYPE c LENGTH 1.
 
   CONSTANTS:
@@ -146,8 +146,8 @@ INTERFACE zif_aff_func_v1
 
   "! <p class="shorttext">Release State</p>
   "! Release state
-  "! $values {@link zif_aff_func_v1.data:co_release_state}
-  "! $default {@link zif_aff_func_v1.data:co_release_state.not_released}
+  "! $values {@link .data:co_release_state}
+  "! $default {@link .data:co_release_state.not_released}
   TYPES ty_release_state TYPE c LENGTH 1.
 
   CONSTANTS:
@@ -209,13 +209,13 @@ INTERFACE zif_aff_func_v1
       processing_type      TYPE ty_processing_type,
       "! <p class="shorttext">RFC Specific Fields</p>
       "! Specific fields for rfc function modules
-      "! $availableWhen {@link zif_aff_func_v1.ty_main.processing_type} = {@link zif_aff_func_v1.data:co_processing_type.rfc}
-      "! $requiredWhen {@link zif_aff_func_v1.ty_main.processing_type} = {@link zif_aff_func_v1.data:co_processing_type.rfc}
+      "! $availableWhen {@link .ty_main.processing_type} = {@link .data:co_processing_type.rfc}
+      "! $requiredWhen {@link .ty_main.processing_type} = {@link .data:co_processing_type.rfc}
       rfc_properties       TYPE ty_rfc_properties,
       "! <p class="shorttext">Update Specific Fields</p>
       "! Specific fields for update function modules
-      "! $availableWhen {@link zif_aff_func_v1.ty_main.processing_type} = {@link zif_aff_func_v1.data:co_processing_type.update}
-      "! $requiredWhen {@link zif_aff_func_v1.ty_main.processing_type} = {@link zif_aff_func_v1.data:co_processing_type.update}
+      "! $availableWhen {@link .ty_main.processing_type} = {@link .data:co_processing_type.update}
+      "! $requiredWhen {@link .ty_main.processing_type} = {@link .data:co_processing_type.update}
       update_properties    TYPE ty_update_properties,
       "! <p class="shorttext">Release State</p>
       "! Release state
