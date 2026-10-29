@@ -5,10 +5,6 @@
     "originalLanguage": "en"
   },
   "baseDomain": "Z_AFF_EXAMPLE",
-  "format": {
-    "dataType": "CHAR",
-    "length": 3
-  },
   "outputCharacteristics": {
     "length": 3
   },

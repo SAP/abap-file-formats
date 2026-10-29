@@ -153,7 +153,8 @@ INTERFACE zif_aff_doma_v1 PUBLIC.
 
       "! <p class="shorttext">Format</p>
       "! Format
-      "! $required
+      "! $availableWhen {@link zif_aff_doma_v1.ty_main.base_domain} = ''
+      "! $requiredWhen {@link zif_aff_doma_v1.ty_main.base_domain} = ''
       format                 TYPE ty_format,
 
       "! <p class="shorttext">Output Characteristics</p>
