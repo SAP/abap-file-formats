@@ -296,45 +296,34 @@ INTERFACE zif_aff_enho_v1
       enhancement_spot TYPE zif_aff_types_v1=>ty_object_name_30,
     END OF ty_badi_information,
 
-    "! <p class="shorttext">Original Object</p>
-    "! Enhanced repository object and its program context
-    BEGIN OF ty_original_object,
-      "! <p class="shorttext">Program ID</p>
-      "! Program ID of the enhanced repository object
-      "! $required
-      program_id       TYPE c LENGTH 4,
+    "! <p class="shorttext">Object Reference</p>
+    "! Type and name of a main object or subobject
+    BEGIN OF ty_object_reference,
       "! <p class="shorttext">Object Type</p>
       "! Type of the enhanced repository object
       "! $required
-      object_type      TYPE c LENGTH 4,
+      object_type TYPE c LENGTH 4,
       "! <p class="shorttext">Object Name</p>
       "! Name of the enhanced repository object
       "! $required
-      object_name      TYPE c LENGTH 120,
-      "! <p class="shorttext">Main Object Type</p>
-      "! Type of the main object; defaults to object type when omitted
-      main_object_type TYPE c LENGTH 4,
-      "! <p class="shorttext">Main Object Name</p>
-      "! Name of the main object; defaults to object name when omitted
-      main_object_name TYPE zif_aff_types_v1=>ty_object_name_40,
-      "! <p class="shorttext">Program Name</p>
-      "! Program context of the enhanced object
-      "! $required
-      program_name     TYPE zif_aff_types_v1=>ty_object_name_40,
-    END OF ty_original_object,
+      object_name TYPE c LENGTH 120,
+    END OF ty_object_reference,
 
-    "! <p class="shorttext">Source Code Plug-In Information</p>
-    "! Information shared by the source code plug-ins
-    BEGIN OF ty_source_code_plugin_info,
-      "! <p class="shorttext">Original Object</p>
-      "! Enhanced repository object and its program context
+    "! <p class="shorttext">Subobjects</p>
+    "! Enhanced subobjects ordered by object type and name
+    ty_sub_objects TYPE SORTED TABLE OF ty_object_reference WITH UNIQUE KEY object_type object_name,
+
+    "! <p class="shorttext">Enhanced Object</p>
+    "! Main object and subobjects enhanced by the source code plug-ins
+    BEGIN OF ty_enhanced_object,
+      "! <p class="shorttext">Main Object</p>
+      "! Single main object shared by all source code plug-ins
       "! $required
-      original_object TYPE ty_original_object,
-      "! <p class="shorttext">Include Bound</p>
-      "! Enhancement implementation is bound to an include
-      "! $showAlways
-      include_bound   TYPE abap_bool,
-    END OF ty_source_code_plugin_info,
+      main_object TYPE ty_object_reference,
+      "! <p class="shorttext">Subobjects</p>
+      "! Optional enhanced subobjects belonging to the main object
+      sub_objects TYPE ty_sub_objects,
+    END OF ty_enhanced_object,
 
     "! <p class="shorttext">Source Code Plug-In</p>
     "! Attachment metadata for one enhancement block in the ABAP file
@@ -357,7 +346,6 @@ INTERFACE zif_aff_enho_v1
       enhancement_spot   TYPE zif_aff_types_v1=>ty_object_name_30,
       "! <p class="shorttext">Overwrite</p>
       "! Overwrite flag of the hook implementation
-      "! $showAlways
       overwrite          TYPE abap_bool,
       "! <p class="shorttext">Parent Full Name</p>
       "! Backend identifier of the parent enhancement option, if applicable
@@ -373,33 +361,33 @@ INTERFACE zif_aff_enho_v1
     "! Object type ENHO
     BEGIN OF ty_main,
       "! $required
-      format_version                 TYPE zif_aff_types_v1=>ty_format_version,
+      format_version      TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header                         TYPE zif_aff_types_v1=>ty_header_100,
+      header              TYPE zif_aff_types_v1=>ty_header_100,
       "! <p class="shorttext">General Information</p>
       "! Information shared by all enhancement implementation kinds
       "! $required
-      general_information            TYPE ty_general_information,
+      general_information TYPE ty_general_information,
       "! <p class="shorttext">BAdI Information</p>
       "! Information shared by the BAdI implementations
       "! $availableWhen {@link zif_aff_enho_v1.data:ty_general_information.kind} = {@link zif_aff_enho_v1.data:co_kind.badi_implementation}
       "! $requiredWhen {@link zif_aff_enho_v1.data:ty_general_information.kind} = {@link zif_aff_enho_v1.data:co_kind.badi_implementation}
-      badi_information               TYPE ty_badi_information,
+      badi_information    TYPE ty_badi_information,
       "! <p class="shorttext">BAdI Implementations</p>
       "! BAdI implementations
       "! $availableWhen {@link zif_aff_enho_v1.data:ty_general_information.kind} = {@link zif_aff_enho_v1.data:co_kind.badi_implementation}
-      badi_implementations           TYPE ty_badi_implementations,
-      "! <p class="shorttext">Source Code Plug-In Information</p>
-      "! Information shared by the source code plug-ins
+      badi_implementations TYPE ty_badi_implementations,
+      "! <p class="shorttext">Enhanced Object</p>
+      "! Main object and subobjects enhanced by the source code plug-ins
       "! $availableWhen {@link zif_aff_enho_v1.data:ty_general_information.kind} = {@link zif_aff_enho_v1.data:co_kind.source_code_plugin}
       "! $requiredWhen {@link zif_aff_enho_v1.data:ty_general_information.kind} = {@link zif_aff_enho_v1.data:co_kind.source_code_plugin}
-      source_code_plugin_information TYPE ty_source_code_plugin_info,
+      enhanced_object     TYPE ty_enhanced_object,
       "! <p class="shorttext">Source Code Plug-Ins</p>
       "! Optional attachment metadata; an enhancement implementation can have no plug-ins
       "! $availableWhen {@link zif_aff_enho_v1.data:ty_general_information.kind} = {@link zif_aff_enho_v1.data:co_kind.source_code_plugin}
-      source_code_plugins            TYPE ty_source_code_plugins,
+      source_code_plugins TYPE ty_source_code_plugins,
     END OF ty_main.
 
 ENDINTERFACE.

@@ -7,16 +7,17 @@
   "generalInformation": {
     "kind": "sourceCodePlugin"
   },
-  "sourceCodePluginInformation": {
-    "originalObject": {
-      "programId": "R3TR",
+  "enhancedObject": {
+    "mainObject": {
       "objectType": "PROG",
-      "objectName": "Z_AFF_EXAMPLE_PROG",
-      "mainObjectType": "PROG",
-      "mainObjectName": "Z_AFF_EXAMPLE_PROG",
-      "programName": "Z_AFF_EXAMPLE_PROG"
+      "objectName": "Z_AFF_EXAMPLE_PROG"
     },
-    "includeBound": false
+    "subObjects": [
+      {
+        "objectType": "REPS",
+        "objectName": "Z_AFF_EXAMPLE_PROG"
+      }
+    ]
   },
   "sourceCodePlugins": [
     {
