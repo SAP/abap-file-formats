@@ -374,25 +374,7 @@
   "additionalProperties": false,
   "required": [
     "formatVersion",
-    "header"
-  ],
-  "allOf": [
-    {
-      "if": {
-        "required": [
-          "baseDomain"
-        ]
-      },
-      "then": {
-        "properties": {
-          "format": false
-        }
-      },
-      "else": {
-        "required": [
-          "format"
-        ]
-      }
-    }
+    "header",
+    "format"
   ]
 }
