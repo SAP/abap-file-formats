@@ -2,8 +2,8 @@ INTERFACE zif_aff_devc_v1 PUBLIC.
 
   "! <p class="shorttext">Package Type</p>
   "! Package type
-  "! $values {@link zif_aff_devc_v1.data:co_package_type}
-  "! $default {@link zif_aff_devc_v1.data:co_package_type.development}
+  "! $values {@link .data:co_package_type}
+  "! $default {@link .data:co_package_type.development}
   TYPES ty_package_type TYPE c LENGTH 11.
 
   CONSTANTS:
@@ -25,8 +25,8 @@ INTERFACE zif_aff_devc_v1 PUBLIC.
 
   "! <p class="shorttext">Error Severity</p>
   "! Error severity
-  "! $values {@link zif_aff_devc_v1.data:co_severity}
-  "! $default {@link zif_aff_devc_v1.data:co_severity.none}
+  "! $values {@link .data:co_severity}
+  "! $default {@link .data:co_severity.none}
   TYPES ty_severity TYPE c LENGTH 11.
 
   CONSTANTS:

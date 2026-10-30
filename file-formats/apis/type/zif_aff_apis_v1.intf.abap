@@ -19,14 +19,14 @@ INTERFACE zif_aff_apis_v1
 
   "! <p class="shorttext">Release Contract</p>
   "! Release contract
-  "! $values {@link zif_aff_apis_v1.data:co_release_contract}
-  "! $default {@link zif_aff_apis_v1.data:co_release_contract.c1}
+  "! $values {@link .data:co_release_contract}
+  "! $default {@link .data:co_release_contract.c1}
   TYPES ty_release_contract       TYPE c LENGTH 2.
 
   "! <p class="shorttext">Release State</p>
   "! Release state
-  "! $values {@link zif_aff_apis_v1.data:co_release_state}
-  "! $default {@link zif_aff_apis_v1.data:co_release_state.released}
+  "! $values {@link .data:co_release_state}
+  "! $default {@link .data:co_release_state.released}
   TYPES ty_release_state          TYPE c LENGTH 30.
 
   "! <p class="shorttext">Feature Toggle ID</p>

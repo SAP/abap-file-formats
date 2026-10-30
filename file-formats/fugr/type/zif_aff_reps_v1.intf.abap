@@ -3,8 +3,8 @@ INTERFACE zif_aff_reps_v1
 
   "! <p class="shorttext">Include Type</p>
   "! Include type
-  "! $values {@link zif_aff_reps_v1.data:co_include_type}
-  "! $default {@link zif_aff_reps_v1.data:co_include_type.include}
+  "! $values {@link .data:co_include_type}
+  "! $default {@link .data:co_include_type.include}
   TYPES ty_include_type TYPE c LENGTH 1.
 
   CONSTANTS:

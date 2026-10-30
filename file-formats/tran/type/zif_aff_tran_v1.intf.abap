@@ -6,14 +6,14 @@ INTERFACE zif_aff_tran_v1
   "! Transaction code
   TYPES ty_transaction_code TYPE c LENGTH 20.
 
-  "! $values {@link zif_aff_tran_v1.data:co_transaction_type}
-  "! $default {@link zif_aff_tran_v1.data:co_transaction_type.parameter_transaction}
+  "! $values {@link .data:co_transaction_type}
+  "! $default {@link .data:co_transaction_type.parameter_transaction}
   TYPES ty_transaction_type TYPE c LENGTH 1.
   CONSTANTS:
     "! <p class="shorttext">Transaction Type</p>
     "! The transaction type defines which object will be started at runtime when the transaction is called.
     "! Depending on the transaction type, other type of object can be started and different fields become relevant.
-    "! {@link zif_aff_tran_v1.data:ty_transaction_type }
+    "! {@link .data:ty_transaction_type }
     BEGIN OF co_transaction_type,
       "! <p class="shorttext">Dialog Transaction</p>
       "! The runtime calls a dynpro of a function group, module pool or report.
@@ -47,8 +47,8 @@ INTERFACE zif_aff_tran_v1
   "! Transaction start dynpro number for dialog transaction
   TYPES ty_program_dynnr TYPE n LENGTH 4.
 
-  "! $values {@link zif_aff_tran_v1.data:co_lock_status}
-  "! $default {@link zif_aff_tran_v1.data:co_lock_status.Not_Locked}
+  "! $values {@link .data:co_lock_status}
+  "! $default {@link .data:co_lock_status.Not_Locked}
   TYPES ty_lock_status   TYPE c LENGTH 1.
   CONSTANTS:
     "! <p class="shorttext">Lock Status</p>
@@ -61,8 +61,8 @@ INTERFACE zif_aff_tran_v1
       not_locked TYPE ty_lock_status VALUE ' ',
     END OF co_lock_status.
 
-  "! $values {@link zif_aff_tran_v1.data:co_skip_initial_screen_mode}
-  "! $default {@link zif_aff_tran_v1.data:co_skip_initial_screen_mode.skip}
+  "! $values {@link .data:co_skip_initial_screen_mode}
+  "! $default {@link .data:co_skip_initial_screen_mode.skip}
   TYPES ty_skip_initial_screen_mode TYPE c LENGTH 1.
   CONSTANTS:
     "! <p class="shorttext">Skip Initial Screen Mode</p>
@@ -75,7 +75,7 @@ INTERFACE zif_aff_tran_v1
       show TYPE ty_skip_initial_screen_mode VALUE 'N',
     END OF co_skip_initial_screen_mode.
 
-  "! $values {@link zif_aff_tran_v1.data:co_stv_maintenance_mode}
+  "! $values {@link .data:co_stv_maintenance_mode}
   TYPES ty_stv_maintenance_mode TYPE c LENGTH 1.
   CONSTANTS:
     "! <p class="shorttext">Editing of standard transaction variant</p>
@@ -88,8 +88,8 @@ INTERFACE zif_aff_tran_v1
       not_allowed TYPE ty_stv_maintenance_mode VALUE 'N',
     END OF co_stv_maintenance_mode.
 
-  "! $values {@link zif_aff_tran_v1.data:co_update_mode}
-  "! $default {@link zif_aff_tran_v1.data:co_update_mode.not_set}
+  "! $values {@link .data:co_update_mode}
+  "! $default {@link .data:co_update_mode.not_set}
   TYPES ty_update_mode TYPE c LENGTH 1.
   CONSTANTS:
     "! <p class="shorttext">Update Mode</p>
@@ -296,16 +296,16 @@ INTERFACE zif_aff_tran_v1
 
   "! <p class="shorttext">Maintenance Mode</p>
   "! Maintenance modes for applications define how applications can be modified.
-  "! $values {@link zif_aff_tran_v1.data:co_maintenance_mode}
-  "! $default {@link zif_aff_tran_v1.data:co_maintenance_mode.manual}
+  "! $values {@link .data:co_maintenance_mode}
+  "! $default {@link .data:co_maintenance_mode.manual}
   TYPES ty_maintenance_mode   TYPE c LENGTH 1.
 
   "! <p class="shorttext">Maintenance Status</p>
   "! The maintenance status of an authorization object controls if AUTHORITY-CHECK runs for it
   "! in its application and whether an authorization default is added to a data of role
   "! by the profile generator when the app is in the role menu.
-  "! $values {@link zif_aff_tran_v1.data:co_maintenance_status}
-  "! $default {@link zif_aff_tran_v1.data:co_maintenance_status.default_with_values}
+  "! $values {@link .data:co_maintenance_status}
+  "! $default {@link .data:co_maintenance_status.default_with_values}
   TYPES ty_maintenance_status TYPE c LENGTH 1.
 
   CONSTANTS:
@@ -340,8 +340,8 @@ INTERFACE zif_aff_tran_v1
       obsolete                TYPE ty_maintenance_mode VALUE 'O',
     END OF co_maintenance_mode.
 
-  "! $values {@link zif_aff_tran_v1.data:co_default_values_required}
-  "! $default {@link zif_aff_tran_v1.data:co_default_values_required.yes}
+  "! $values {@link .data:co_default_values_required}
+  "! $default {@link .data:co_default_values_required.yes}
   TYPES ty_default_values_required TYPE c LENGTH 1.
   CONSTANTS:
     "! <p class="shorttext">Default Values Are Required</p>
@@ -385,8 +385,8 @@ INTERFACE zif_aff_tran_v1
       inactive_values        TYPE ty_maintenance_status VALUE 'I',
     END OF co_maintenance_status.
 
-  "! $values {@link zif_aff_tran_v1.data:co_inheritance_mode}
-  "! $default {@link zif_aff_tran_v1.data:co_inheritance_mode.inactive}
+  "! $values {@link .data:co_inheritance_mode}
+  "! $default {@link .data:co_inheritance_mode.inactive}
   TYPES ty_inheritance_mode TYPE c LENGTH 10.
   CONSTANTS:
     "! <p class="shorttext">Authorization Defaults Inheritance Mode</p>core
@@ -568,7 +568,7 @@ INTERFACE zif_aff_tran_v1
     END OF ty_transaction_service.
   TYPES ty_transaction_service_t TYPE STANDARD TABLE OF ty_transaction_service WITH DEFAULT KEY.
 
-  "! $values {@link zif_aff_tran_v1.data:co_transaction_rel_type}
+  "! $values {@link .data:co_transaction_rel_type}
   TYPES ty_transaction_rel_type TYPE c LENGTH 10.
   CONSTANTS:
     "! <p class="shorttext">Transaction Relationship</p>
@@ -597,7 +597,7 @@ INTERFACE zif_aff_tran_v1
   TYPES ty_transaction_relationship_t TYPE STANDARD TABLE OF ty_transaction_relationship WITH DEFAULT KEY.
 
 
-  "! $values {@link zif_aff_tran_v1.data:co_transaction_srv_rel_type}
+  "! $values {@link .data:co_transaction_srv_rel_type}
   TYPES ty_transaction_srv_rel_type TYPE c LENGTH 10.
   CONSTANTS:
     "! <p class="shorttext">Transaction Relationship</p>
@@ -645,8 +645,8 @@ INTERFACE zif_aff_tran_v1
     END OF ty_service_relationship.
   TYPES ty_service_relationship_t TYPE STANDARD TABLE OF ty_service_relationship WITH DEFAULT KEY.
 
-  "! $values {@link zif_aff_tran_v1.data:co_ui_classification}
-  "! $default {@link zif_aff_tran_v1.data:co_ui_classification.professional_user_transaction}
+  "! $values {@link .data:co_ui_classification}
+  "! $default {@link .data:co_ui_classification.professional_user_transaction}
   TYPES ty_ui_classification TYPE c LENGTH 1.
   CONSTANTS:
     "! <p class="shorttext">UI Classification</p>
@@ -663,8 +663,8 @@ INTERFACE zif_aff_tran_v1
       easy_web_transaction          TYPE ty_ui_classification VALUE 'E',
     END OF co_ui_classification.
 
-  "! $values {@link zif_aff_tran_v1.data:co_ua_inheritance_mode}
-  "! $default {@link zif_aff_tran_v1.data:co_ua_inheritance_mode.inactive}
+  "! $values {@link .data:co_ua_inheritance_mode}
+  "! $default {@link .data:co_ua_inheritance_mode.inactive}
   TYPES ty_ua_inheritance_mode TYPE c LENGTH 1.
   CONSTANTS:
     "! <p class="shorttext">UI Attributes Inheritance Mode</p>
@@ -678,8 +678,8 @@ INTERFACE zif_aff_tran_v1
       inactive TYPE ty_ua_inheritance_mode VALUE 'I',
     END OF co_ua_inheritance_mode.
 
-  "! $values {@link zif_aff_tran_v1.data:co_ua_pervasive_mode}
-  "! $default {@link zif_aff_tran_v1.data:co_ua_pervasive_mode.enabled}
+  "! $values {@link .data:co_ua_pervasive_mode}
+  "! $default {@link .data:co_ua_pervasive_mode.enabled}
   TYPES ty_ua_pervasive_mode TYPE c LENGTH 1.
   CONSTANTS:
     "! <p class="shorttext">UI Attributes Inheritance Mode</p>
@@ -693,8 +693,8 @@ INTERFACE zif_aff_tran_v1
       enabled  TYPE ty_ua_pervasive_mode VALUE 'E',
     END OF co_ua_pervasive_mode.
 
-  "! $values {@link zif_aff_tran_v1.data:co_ua_support_mode}
-  "! $default {@link zif_aff_tran_v1.data:co_ua_support_mode.supported}
+  "! $values {@link .data:co_ua_support_mode}
+  "! $default {@link .data:co_ua_support_mode.supported}
   TYPES ty_ua_support_mode TYPE c LENGTH 1.
   CONSTANTS:
     "! <p class="shorttext">SAP GUI Support</p>
@@ -710,18 +710,18 @@ INTERFACE zif_aff_tran_v1
 
   "! <p class="shorttext">SAP GUI for Java</p>
   "! SAP GUI for Java
-  "! $values {@link zif_aff_tran_v1.data:co_ua_support_mode}
-  "! $default {@link zif_aff_tran_v1.data:co_ua_support_mode.supported}
+  "! $values {@link .data:co_ua_support_mode}
+  "! $default {@link .data:co_ua_support_mode.supported}
   TYPES ty_ua_platin_mode TYPE ty_ua_support_mode.
   "! <p class="shorttext">SAP GUI for HTML</p>
   "! SAP GUI for HTML
-  "! $values {@link zif_aff_tran_v1.data:co_ua_support_mode}
-  "! $default {@link zif_aff_tran_v1.data:co_ua_support_mode.supported}
+  "! $values {@link .data:co_ua_support_mode}
+  "! $default {@link .data:co_ua_support_mode.supported}
   TYPES ty_ua_webgui_mode TYPE ty_ua_support_mode.
   "! <p class="shorttext">SAP GUI for Windows</p>
   "! SAP GUI for Windows
-  "! $values {@link zif_aff_tran_v1.data:co_ua_support_mode}
-  "! $default {@link zif_aff_tran_v1.data:co_ua_support_mode.supported}
+  "! $values {@link .data:co_ua_support_mode}
+  "! $default {@link .data:co_ua_support_mode.supported}
   TYPES ty_ua_win32_mode  TYPE ty_ua_support_mode.
 
   TYPES:

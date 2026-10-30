@@ -120,7 +120,7 @@ INTERFACE zif_aff_sco2_v1
 
   "! <p class="shorttext">Inbound Service Type</p>
   "! Type of the inbound service
-  "! $values {@link zif_aff_sco2_v1.data:co_ibs_type}
+  "! $values {@link .data:co_ibs_type}
   TYPES ty_ibs_type TYPE c LENGTH 4.
 
   CONSTANTS:
@@ -181,9 +181,9 @@ INTERFACE zif_aff_sco2_v1
 
       "! <p class="shorttext">Inbound Service Type</p>
       "! Type of the inbound service. Determines which field or group of the service details is filled.
-      "! Check the {@link zif_aff_sco2_v1.data:co_ibs_type} constants for possible values.
+      "! Check the {@link .data:co_ibs_type} constants for possible values.
       "! $required
-      "! $values {@link zif_aff_sco2_v1.data:co_ibs_type}
+      "! $values {@link .data:co_ibs_type}
       type            TYPE ty_ibs_type,
 
       "! <p class="shorttext">Scope Dependent</p>

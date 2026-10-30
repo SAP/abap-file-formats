@@ -9,8 +9,8 @@ INTERFACE zif_aff_tabt_v1 PUBLIC.
   TYPES ty_size_category TYPE string.
 
   TYPES:
-    "! $values {@link zif_aff_tabt_v1.data:co_buffer_state}
-    "! $default {@link zif_aff_tabt_v1.data:co_buffer_state.not_allowed}
+    "! $values {@link .data:co_buffer_state}
+    "! $default {@link .data:co_buffer_state.not_allowed}
     ty_buffer_state TYPE c LENGTH 1.
 
   CONSTANTS:
@@ -27,8 +27,8 @@ INTERFACE zif_aff_tabt_v1 PUBLIC.
     END OF co_buffer_state.
 
   TYPES:
-    "! $values {@link zif_aff_tabt_v1.data:co_buffer_type}
-    "! $default {@link zif_aff_tabt_v1.data:co_buffer_type.no_buffer}
+    "! $values {@link .data:co_buffer_type}
+    "! $default {@link .data:co_buffer_type.no_buffer}
     ty_buffer_type TYPE c LENGTH 1.
 
   CONSTANTS:
@@ -63,8 +63,8 @@ INTERFACE zif_aff_tabt_v1 PUBLIC.
 
   "! <p class="shorttext">Translation Type</p>
   "! Type of table translation for multilingual tables
-  "! $values {@link zif_aff_tabt_v1.data:co_translation_type}
-  "! $default {@link zif_aff_tabt_v1.data:co_translation_type.no_language_key}
+  "! $values {@link .data:co_translation_type}
+  "! $default {@link .data:co_translation_type.no_language_key}
   TYPES ty_translation_type TYPE c LENGTH 1.
 
   CONSTANTS:
@@ -90,8 +90,8 @@ INTERFACE zif_aff_tabt_v1 PUBLIC.
 
   "! <p class="shorttext">Storage Type</p>
   "! Storage type for database table (Row Store vs Column Store)
-  "! $values {@link zif_aff_tabt_v1.data:co_storage_type}
-  "! $default {@link zif_aff_tabt_v1.data:co_storage_type.column_store}
+  "! $values {@link .data:co_storage_type}
+  "! $default {@link .data:co_storage_type.column_store}
   TYPES ty_storage_type TYPE c LENGTH 1.
 
 
@@ -110,8 +110,8 @@ INTERFACE zif_aff_tabt_v1 PUBLIC.
 
   "! <p class="shorttext">Load Unit</p>
   "! Specifies how data is loaded into memory (HANA-specific)
-  "! $values {@link zif_aff_tabt_v1.data:co_load_unit}
-  "! $default {@link zif_aff_tabt_v1.data:co_load_unit.column_preferred}
+  "! $values {@link .data:co_load_unit}
+  "! $default {@link .data:co_load_unit.column_preferred}
   TYPES ty_load_unit TYPE c LENGTH 1.
 
   CONSTANTS:

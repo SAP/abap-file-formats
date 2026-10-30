@@ -2,7 +2,7 @@ INTERFACE zif_aff_cdbo_v1
   PUBLIC.
   "! <p class="shorttext">Object Type</p>
   "! Object type
-  "! $values {@link zif_aff_cdbo_v1.data:co_object_type}
+  "! $values {@link .data:co_object_type}
   TYPES ty_object_type TYPE c LENGTH 2.
 
   CONSTANTS:
@@ -21,7 +21,7 @@ INTERFACE zif_aff_cdbo_v1
 
   "! <p class="shorttext">Field Nature</p>
   "! Nature of the field
-  "! $values {@link zif_aff_cdbo_v1.data:co_field_nature}
+  "! $values {@link .data:co_field_nature}
   TYPES ty_field_nature TYPE c LENGTH 2.
 
   CONSTANTS:

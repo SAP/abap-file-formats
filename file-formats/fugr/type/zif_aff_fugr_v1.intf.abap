@@ -3,8 +3,8 @@ INTERFACE zif_aff_fugr_v1
 
   "! <p class="shorttext">Status</p>
   "! Status
-  "! $values {@link zif_aff_fugr_v1.data:co_status}
-  "! $default {@link zif_aff_fugr_v1.data:co_status.not_classified}
+  "! $values {@link .data:co_status}
+  "! $default {@link .data:co_status.not_classified}
   TYPES ty_status TYPE c LENGTH 1.
 
   CONSTANTS:

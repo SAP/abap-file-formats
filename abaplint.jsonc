@@ -9,6 +9,10 @@
     "errorNamespace": "."
   },
   "rules": {
+    "abapdoc_short_link": true,
+    "abapdoc_html_tag": true,
+    "abapdoc_leading_at": true,
+    "abapdoc_parameter_names": true,
     "align_parameters": true,
     "align_type_expressions": true,
     "cds_comment_style": true,

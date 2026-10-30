@@ -2,7 +2,7 @@ INTERFACE zif_aff_srvc_v1
   PUBLIC.
   "! <p class="shorttext">Consumer Type</p>
   "! Consumer type
-  "! $values {@link zif_aff_srvc_v1.data:co_cons_type}
+  "! $values {@link .data:co_cons_type}
   TYPES ty_cons_type TYPE c LENGTH 2.
 
   CONSTANTS:

@@ -168,8 +168,8 @@ INTERFACE zif_aff_svim_v1
       function_group         TYPE c LENGTH 26,
       "! <p class="shorttext">Screen Layout</p>
       "! Controls whether one combined screen or separate overview and detail screens are generated (TVDIR-TYPE)
-      "! $values {@link zif_aff_svim_v1.data:co_screen_layout}
-      "! $default {@link zif_aff_svim_v1.data:co_screen_layout.overview}
+      "! $values {@link .data:co_screen_layout}
+      "! $default {@link .data:co_screen_layout.overview}
       "! $required
       screen_layout          TYPE ty_screen_layout,
       "! <p class="shorttext">Overview Screen Number</p>
@@ -185,8 +185,8 @@ INTERFACE zif_aff_svim_v1
       "! <p class="shorttext">Recording Routine</p>
       "! Controls whether the standard, via event or no recording routine is used for
       "! transport recording (TVDIR-FLAG)
-      "! $values {@link zif_aff_svim_v1.data:co_transport_recording}
-      "! $default {@link zif_aff_svim_v1.data:co_transport_recording.standard}
+      "! $values {@link .data:co_transport_recording}
+      "! $default {@link .data:co_transport_recording.standard}
       "! $showAlways
       transport_recording    TYPE ty_transport_recording,
     END OF ty_general_information.
@@ -197,7 +197,7 @@ INTERFACE zif_aff_svim_v1
     BEGIN OF ty_event,
       "! <p class="shorttext">Event Code</p>
       "! Two-character event code identifying the hook point in the maintenance dialog (TVIMF-EVENT)
-      "! $values {@link zif_aff_svim_v1.data:co_event_code}
+      "! $values {@link .data:co_event_code}
       "! $required
       event      TYPE ty_event_code,
       "! <p class="shorttext">Form Routine</p>

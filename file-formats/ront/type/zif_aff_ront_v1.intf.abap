@@ -38,8 +38,8 @@ INTERFACE zif_aff_ront_v1
       "! <p class="shorttext">Type Category</p>
       "! The category of the SAP Object Type
       "! $required
-      "! $values {@link zif_aff_ront_v1.data:co_category}
-      "! $default {@link zif_aff_ront_v1.data:co_category.business_object}
+      "! $values {@link .data:co_category}
+      "! $default {@link .data:co_category.business_object}
       type_category                 TYPE c LENGTH 2,
 
       "! <p class="shorttext">Name</p>

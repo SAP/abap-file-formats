@@ -18,8 +18,8 @@ INTERFACE zif_aff_uiad_v1
 
   "! <p class="shorttext">Application Type</p>
   "! LADI application type
-  "! $values {@link zif_aff_uiad_v1.data:co_app_type}
-  "! $default {@link zif_aff_uiad_v1.data:co_app_type.ui5}
+  "! $values {@link .data:co_app_type}
+  "! $default {@link .data:co_app_type.ui5}
   TYPES ty_app_type TYPE c LENGTH 1.
 
   CONSTANTS:
@@ -115,8 +115,8 @@ INTERFACE zif_aff_uiad_v1
     END OF ty_app_details_ui5.
 
   "! Web Dynpro integration mode
-  "! $values {@link zif_aff_uiad_v1.data:co_web_dynpro_integration_mode}
-  "! $default {@link zif_aff_uiad_v1.data:co_web_dynpro_integration_mode.system_default}
+  "! $values {@link .data:co_web_dynpro_integration_mode}
+  "! $default {@link .data:co_web_dynpro_integration_mode.system_default}
   TYPES ty_web_dynpro_integration_mode TYPE c LENGTH 1.
 
   CONSTANTS:
@@ -214,8 +214,8 @@ INTERFACE zif_aff_uiad_v1
 
   "! <p class="shorttext">Filter Type</p>
   "! Type of the filter value
-  "! $values {@link zif_aff_uiad_v1.data:co_filter_type}
-  "! $default {@link zif_aff_uiad_v1.data:co_filter_type.plain}
+  "! $values {@link .data:co_filter_type}
+  "! $default {@link .data:co_filter_type.plain}
   TYPES ty_filter_type TYPE c LENGTH 1.
 
   CONSTANTS:
@@ -269,8 +269,8 @@ INTERFACE zif_aff_uiad_v1
 
   "! <p class="shorttext">Additional Parameter Handling</p>
   "! How additional parameters are handled
-  "! $values {@link zif_aff_uiad_v1.data:co_additional_param_handling}
-  "! $default {@link zif_aff_uiad_v1.data:co_additional_param_handling.allowed}
+  "! $values {@link .data:co_additional_param_handling}
+  "! $default {@link .data:co_additional_param_handling.allowed}
   TYPES ty_additional_param_handling TYPE c LENGTH 1.
 
   CONSTANTS:
@@ -344,8 +344,8 @@ INTERFACE zif_aff_uiad_v1
 
   "! <p class="shorttext">Tile Type</p>
   "! Tile type
-  "! $values {@link zif_aff_uiad_v1.data:co_tile_type}
-  "! $default {@link zif_aff_uiad_v1.data:co_tile_type.static}
+  "! $values {@link .data:co_tile_type}
+  "! $default {@link .data:co_tile_type.static}
   TYPES ty_tile_type TYPE c LENGTH 1.
 
   CONSTANTS:
@@ -531,8 +531,8 @@ INTERFACE zif_aff_uiad_v1
 
   "! <p class="shorttext">Life Cycle Deprecation Status</p>
   "! Life cycle deprecation status
-  "! $values {@link zif_aff_uiad_v1.data:co_life_cycle_status}
-  "! $default {@link zif_aff_uiad_v1.data:co_life_cycle_status.active}
+  "! $values {@link .data:co_life_cycle_status}
+  "! $default {@link .data:co_life_cycle_status.active}
   TYPES ty_life_cycle_status TYPE c LENGTH 1.
 
   CONSTANTS:

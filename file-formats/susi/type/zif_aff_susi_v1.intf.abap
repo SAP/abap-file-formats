@@ -4,13 +4,13 @@ INTERFACE zif_aff_susi_v1
   TYPES:
     "! <p class="shorttext">Maintenance Mode</p>
     "! Maintenance mode
-    "! $values {@link zif_aff_susi_v1.data:co_maintenance_mode}
-    "! $default {@link zif_aff_susi_v1.data:co_maintenance_mode.manual}
+    "! $values {@link .data:co_maintenance_mode}
+    "! $default {@link .data:co_maintenance_mode.manual}
     ty_maintenance_mode   TYPE c LENGTH 1,
     "! <p class="shorttext">Maintenance Status</p>
     "! Maintenance status
-    "! $values {@link zif_aff_susi_v1.data:co_maintenance_status}
-    "! $default {@link zif_aff_susi_v1.data:co_maintenance_status.default_with_values}
+    "! $values {@link .data:co_maintenance_status}
+    "! $default {@link .data:co_maintenance_status.default_with_values}
     ty_maintenance_status TYPE c LENGTH 1.
 
   CONSTANTS:
@@ -77,8 +77,8 @@ INTERFACE zif_aff_susi_v1
       application_type TYPE ty_type,
       "! <p class="shorttext">Maintenance Mode</p>
       "! Maintenance mode
-      "! $values {@link zif_aff_susi_v1.data:co_maintenance_mode}
-      "! $default {@link zif_aff_susi_v1.data:co_maintenance_mode.manual}
+      "! $values {@link .data:co_maintenance_mode}
+      "! $default {@link .data:co_maintenance_mode.manual}
       "! $showAlways
       maintenance_mode TYPE ty_maintenance_mode,
       "! <p class="shorttext">Documentation</p>
@@ -125,8 +125,8 @@ INTERFACE zif_aff_susi_v1
       object             TYPE c LENGTH 10,
       "! <p class="shorttext">Maintenance Status</p>
       "! Maintenance Status
-      "! $values {@link zif_aff_susi_v1.data:co_maintenance_status}
-      "! $default {@link zif_aff_susi_v1.data:co_maintenance_status.default_with_values}
+      "! $values {@link .data:co_maintenance_status}
+      "! $default {@link .data:co_maintenance_status.default_with_values}
       "! $showAlways
       maintenance_status TYPE ty_maintenance_status,
       "! <p class="shorttext">Documentation</p>

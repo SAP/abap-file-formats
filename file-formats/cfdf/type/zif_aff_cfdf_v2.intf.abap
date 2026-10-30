@@ -23,8 +23,8 @@ INTERFACE zif_aff_cfdf_v2
       "! <p class="shorttext">Component Kind</p>
       "! Component kind
       "! $required
-      "! $values {@link zif_aff_cfdf_v2.data:co_component_kind}
-      "! $default {@link zif_aff_cfdf_v2.data:co_component_kind.main}
+      "! $values {@link .data:co_component_kind}
+      "! $default {@link .data:co_component_kind.main}
       component_kind       TYPE ty_component_kind,
 
       "! <p class="shorttext">Component Field Identifier</p>
@@ -95,8 +95,8 @@ INTERFACE zif_aff_cfdf_v2
 
       "! <p class="shorttext">Field Control Property</p>
       "! Field control property
-      "! $values {@link zif_aff_cfdf_v2.data:co_field_control_property}
-      "! $default {@link zif_aff_cfdf_v2.data:co_field_control_property.optional}
+      "! $values {@link .data:co_field_control_property}
+      "! $default {@link .data:co_field_control_property.optional}
       field_control_property        TYPE ty_field_control_property,
     END OF ty_gs_extended_cds_view.
   TYPES ty_gt_extended_cds_view TYPE STANDARD TABLE OF ty_gs_extended_cds_view
@@ -170,8 +170,8 @@ INTERFACE zif_aff_cfdf_v2
       "! <p class="shorttext">Message Direction</p>
       "! Message direction
       "! $required
-      "! $values {@link zif_aff_cfdf_v2.data:co_soap_message_direction}
-      "! $default {@link zif_aff_cfdf_v2.data:co_soap_message_direction.request}
+      "! $values {@link .data:co_soap_message_direction}
+      "! $default {@link .data:co_soap_message_direction.request}
       message_direction    TYPE ty_message_direction,
 
       "! <p class="shorttext">Business Context</p>
@@ -277,8 +277,8 @@ INTERFACE zif_aff_cfdf_v2
     BEGIN OF ty_gs_dpp_properties,
       "! <p class="shorttext">Data Subject</p>
       "! Data subject
-      "! $values {@link zif_aff_cfdf_v2.data:co_data_subject_id_type}
-      "! $default {@link zif_aff_cfdf_v2.data:co_data_subject_id_type.not_applicable}
+      "! $values {@link .data:co_data_subject_id_type}
+      "! $default {@link .data:co_data_subject_id_type.not_applicable}
       data_subject_id_type       TYPE ty_data_subject_id_type,
 
       "! <p class="shorttext">BAdI Implementation for Data Subject</p>
@@ -321,8 +321,8 @@ INTERFACE zif_aff_cfdf_v2
       "! <p class="shorttext">Type</p>
       "! Type
       "! $required
-      "! $values {@link zif_aff_cfdf_v2.data:co_type}
-      "! $default {@link zif_aff_cfdf_v2.data:co_type.text}
+      "! $values {@link .data:co_type}
+      "! $default {@link .data:co_type.text}
       type                        TYPE ty_type,
 
       "! <p class="shorttext">Type Details</p>
@@ -340,8 +340,8 @@ INTERFACE zif_aff_cfdf_v2
 
         "! <p class="shorttext">Aggregation</p>
         "! Aggregation
-        "! $values {@link zif_aff_cfdf_v2.data:co_aggregation}
-        "! $default {@link zif_aff_cfdf_v2.data:co_aggregation.none}
+        "! $values {@link .data:co_aggregation}
+        "! $default {@link .data:co_aggregation.none}
         aggregation                TYPE ty_aggregation,
 
         "! <p class="shorttext">Code List Uppercase Only</p>

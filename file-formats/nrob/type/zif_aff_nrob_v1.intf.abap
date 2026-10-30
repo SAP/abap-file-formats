@@ -49,7 +49,7 @@ INTERFACE zif_aff_nrob_v1
 
   "! <p class="shorttext">Buffering</p>
   "! Choose a buffer type for no buffering, for buffering via main memory or for parallel buffering.
-  "! $values {@link zif_aff_nrob_v1.data:co_buffering}
+  "! $values {@link .data:co_buffering}
   TYPES ty_buffering TYPE c LENGTH 1.
 
   CONSTANTS:
@@ -85,7 +85,7 @@ INTERFACE zif_aff_nrob_v1
       "! Choose a buffer type for no buffering, for buffering via main memory or for parallel buffering.
       "! Default is mainBuffer.
       "! $required
-      "! $default {@link zif_aff_nrob_v1.data:co_buffering.main_buffer}
+      "! $default {@link .data:co_buffering.main_buffer}
       buffering        TYPE ty_buffering,
       "! <p class="shorttext">Buffered Numbers</p>
       "! This value specifies the numbers in buffer. In case of parallel and main memory buffering, add a

@@ -5,7 +5,7 @@ INTERFACE zif_aff_chke_v1
   TYPES ty_email_address TYPE c LENGTH 241.
   "! <p class="shorttext">Exemption State</p>
   "! State in the approval workflow (e.g. open/approved/rejected)
-  "! $values {@link zif_aff_chke_v1.data:co_state}
+  "! $values {@link .data:co_state}
   TYPES ty_state TYPE c LENGTH 4.
   CONSTANTS:
     "! <p class="shorttext">Exemption State</p>
@@ -23,7 +23,7 @@ INTERFACE zif_aff_chke_v1
     END OF co_state.
   "! <p class="shorttext">Notification Type</p>
   "! Defines when email notifications are sent to the requester
-  "! $values {@link zif_aff_chke_v1.data:co_notification_type}
+  "! $values {@link .data:co_notification_type}
   TYPES ty_notification_type TYPE c LENGTH 4.
   CONSTANTS:
     "! <p class="shorttext">Notification Type</p>
@@ -41,8 +41,8 @@ INTERFACE zif_aff_chke_v1
     END OF co_notification_type.
   "! <p class="shorttext">Object Scope</p>
   "! The scope of the exemption at the object level
-  "! $values {@link zif_aff_chke_v1.data:co_object_scope}
-  "! $default {@link zif_aff_chke_v1.data:co_object_scope.finding}
+  "! $values {@link .data:co_object_scope}
+  "! $default {@link .data:co_object_scope.finding}
   TYPES ty_object_scope TYPE c LENGTH 4.
   CONSTANTS:
     "! <p class="shorttext">Object Scope</p>
@@ -54,8 +54,8 @@ INTERFACE zif_aff_chke_v1
     END OF co_object_scope.
   "! <p class="shorttext">Check Scope</p>
   "! The scope of the exemption at the check level
-  "! $values {@link zif_aff_chke_v1.data:co_check_scope}
-  "! $default {@link zif_aff_chke_v1.data:co_check_scope.finding}
+  "! $values {@link .data:co_check_scope}
+  "! $default {@link .data:co_check_scope.finding}
   TYPES ty_check_scope TYPE c LENGTH 3.
   CONSTANTS:
     "! <p class="shorttext">Check Scope</p>

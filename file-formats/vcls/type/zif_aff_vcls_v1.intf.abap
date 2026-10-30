@@ -173,8 +173,8 @@ INTERFACE zif_aff_vcls_v1
       predecessor_field  TYPE ty_field_name,
       "! <p class="shorttext">Field Dependency Type</p>
       "! Classifies the type of field dependency and determines how it is used at runtime
-      "! $values {@link zif_aff_vcls_v1.data:co_field_dependency_type}
-      "! $default {@link zif_aff_vcls_v1.data:co_field_dependency_type.navigation_key_relationship}
+      "! $values {@link .data:co_field_dependency_type}
+      "! $default {@link .data:co_field_dependency_type.navigation_key_relationship}
       "! $required
       dependency_type    TYPE ty_field_dependency_type,
     END OF ty_field_dependency.
@@ -208,8 +208,8 @@ INTERFACE zif_aff_vcls_v1
       "! <p class="shorttext">View Cluster Entry Selection Type</p>
       "! Defines how many parent entries must be marked to navigate into this cluster level.
       "! $required
-      "! $values {@link zif_aff_vcls_v1.data:co_vc_entry_selection_type}
-      "! $default {@link zif_aff_vcls_v1.data:co_vc_entry_selection_type.header}
+      "! $values {@link .data:co_vc_entry_selection_type}
+      "! $default {@link .data:co_vc_entry_selection_type.header}
       vc_entry_selection_type TYPE ty_vc_entry_selection_type,
       "! <p class="shorttext">Is Start Object</p>
       "! Marks the entry point shown when cluster maintenance opens.
@@ -255,7 +255,7 @@ INTERFACE zif_aff_vcls_v1
       "! <p class="shorttext">Event Code</p>
       "! Two-character event code identifying the hook point in the maintenance framework
       "! $required
-      "! $values {@link zif_aff_vcls_v1.data:co_event_code}
+      "! $values {@link .data:co_event_code}
       event      TYPE ty_event_code,
       "! <p class="shorttext">Subroutine</p>
       "! Name of the ABAP subroutine in the maintenance program called when the event fires
@@ -292,16 +292,16 @@ INTERFACE zif_aff_vcls_v1
       "! <p class="shorttext">Hierarchical Operation Dependent Handling</p>
       "! Controls whether dependent sub-objects are included in hierarchical operations
       "! (copy, delete, undo, transport) and whether the user is prompted.
-      "! $default {@link zif_aff_vcls_v1.data:co_hier_oper_dep_handling.with_confirmation}
+      "! $default {@link .data:co_hier_oper_dep_handling.with_confirmation}
       "! $required
-      "! $values {@link zif_aff_vcls_v1.data:co_hier_oper_dep_handling}
+      "! $values {@link .data:co_hier_oper_dep_handling}
       hier_oper_dep_handling TYPE ty_hier_oper_dep_handling,
       "! <p class="shorttext">Data Read Type</p>
       "! Controls whether all cluster objects are read at once or only the subtree
       "! relevant to the current navigation target (performance optimization for large clusters).
-      "! $default {@link zif_aff_vcls_v1.data:co_data_read_type.complete}
+      "! $default {@link .data:co_data_read_type.complete}
       "! $required
-      "! $values {@link zif_aff_vcls_v1.data:co_data_read_type}
+      "! $values {@link .data:co_data_read_type}
       data_read_type         TYPE ty_data_read_type,
       "! <p class="shorttext">Base View Cluster</p>
       "! Name of the base view cluster this variant is derived from.

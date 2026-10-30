@@ -8,13 +8,13 @@ INTERFACE zif_aff_edck_v1
     BEGIN OF ty_attributes,
       "! <p class="shorttext">Check Category</p>
       "! Consistency check category
-      "! $values {@link zif_aff_edck_v1.data:co_check_category}
-      "! $default {@link zif_aff_edck_v1.data:co_check_category.existence_check}
+      "! $values {@link .data:co_check_category}
+      "! $default {@link .data:co_check_category.existence_check}
       check_category         TYPE ty_check_category,
       "! <p class="shorttext">Check Classification</p>
       "! Consistency check ID classification
-      "! $values {@link zif_aff_edck_v1.data:co_check_classification}
-      "! $default {@link zif_aff_edck_v1.data:co_check_classification.core_delivered_checks}
+      "! $values {@link .data:co_check_classification}
+      "! $default {@link .data:co_check_classification.core_delivered_checks}
       check_classification   TYPE ty_check_classification,
       "! <p class="shorttext">Additional Check Class</p>
       "! Consistency check class

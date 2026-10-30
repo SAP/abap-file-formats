@@ -2,8 +2,8 @@ INTERFACE zif_aff_prog_v1 PUBLIC.
 
   "! <p class="shorttext">Program Type</p>
   "! Program type
-  "! $values {@link zif_aff_prog_v1.data:co_program_type}
-  "! $default {@link zif_aff_prog_v1.data:co_program_type.executable_program}
+  "! $values {@link .data:co_program_type}
+  "! $default {@link .data:co_program_type.executable_program}
   TYPES ty_program_type TYPE c LENGTH 1.
 
   CONSTANTS:
@@ -26,8 +26,8 @@ INTERFACE zif_aff_prog_v1 PUBLIC.
 
   "! <p class="shorttext">Program Status</p>
   "! Program status
-  "! $values {@link zif_aff_prog_v1.data:co_program_status}
-  "! $default {@link zif_aff_prog_v1.data:co_program_status.unknown}
+  "! $values {@link .data:co_program_status}
+  "! $default {@link .data:co_program_status.unknown}
   TYPES ty_program_status TYPE c LENGTH 1.
 
   CONSTANTS:
