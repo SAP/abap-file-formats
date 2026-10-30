@@ -57,6 +57,12 @@
         "originalLanguage"
       ]
     },
+    "baseDomain": {
+      "title": "Base Domain",
+      "description": "Base domain",
+      "type": "string",
+      "maxLength": 30
+    },
     "format": {
       "title": "Format",
       "description": "Format",
@@ -368,7 +374,25 @@
   "additionalProperties": false,
   "required": [
     "formatVersion",
-    "header",
-    "format"
+    "header"
+  ],
+  "allOf": [
+    {
+      "if": {
+        "required": [
+          "baseDomain"
+        ]
+      },
+      "then": {
+        "properties": {
+          "format": false
+        }
+      },
+      "else": {
+        "required": [
+          "format"
+        ]
+      }
+    }
   ]
 }
