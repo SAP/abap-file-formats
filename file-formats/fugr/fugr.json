@@ -1,0 +1,66 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "FUGR",
+    "description": "Function Group",
+    "group": "Source Code Library"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.fugr.json",
+          "cardinality": "1",
+          "schema": "fugr-v1.json",
+          "definitionInterface": "type/zif_aff_fugr_v1.intf.abap",
+          "examples": ["examples/z_aff_example_fugr.fugr.json"]
+        },
+        {
+          "filePattern": "<name>.fugr.sapl<name>.reps.abap",
+          "cardinality": "1",
+          "definitionUrl": "https://help.sap.com/doc/abapdocu_cp_index_htm/CLOUD/en-US/index.htm?file=abenfunction_pool_glosry.htm",
+          "examples": ["examples/z_aff_example_fugr.fugr.saplz_aff_example_fugr.reps.abap"]
+        },
+        {
+          "filePattern": "<name>.fugr.sapl<name>.reps.json",
+          "cardinality": "1",
+          "schema": "reps-v1.json",
+          "definitionInterface": "type/zif_aff_reps_v1.intf.abap",
+          "examples": ["examples/z_aff_example_fugr.fugr.saplz_aff_example_fugr.reps.json"]
+        },
+        {
+          "filePattern": "<name>.fugr.l<name>top.reps.abap",
+          "cardinality": "1",
+          "examples": ["examples/z_aff_example_fugr.fugr.lz_aff_example_fugrtop.reps.abap"]
+        },
+        {
+          "filePattern": "<name>.fugr.l<name>top.reps.json",
+          "cardinality": "1",
+          "schema": "reps-v1.json",
+          "definitionInterface": "type/zif_aff_reps_v1.intf.abap",
+          "examples": ["examples/z_aff_example_fugr.fugr.lz_aff_example_fugrtop.reps.json"]
+        },
+        {
+          "filePattern": "<name>.fugr.<fmname>.func.abap",
+          "cardinality": "0...n",
+          "definitionUrl": "https://help.sap.com/doc/abapdocu_cp_index_htm/CLOUD/en-US/index.htm?file=abenabap_functions.htm",
+          "examples": ["examples/z_aff_example_fugr.fugr.z_aff_example_func.func.abap"]
+        },
+        {
+          "filePattern": "<name>.fugr.<fmname>.func.json",
+          "cardinality": "0...n",
+          "schema": "func-v1.json",
+          "definitionInterface": "type/zif_aff_func_v1.intf.abap",
+          "examples": ["examples/z_aff_example_fugr.fugr.z_aff_example_func.func.json"]
+        },
+        {
+          "filePattern": "<name>.fugr.texts.<lang>.properties",
+          "cardinality": "0...n",
+          "definitionUrl": "https://help.sap.com/viewer/c238d694b825421f940829321ffa326a/7.40.19/en-US/4ec6cf916e391014adc9fffe4e204223.html",
+          "examples": ["examples/z_aff_example_fugr.fugr.texts.en.properties"]
+        }
+      ]
+    }
+  ]
+}

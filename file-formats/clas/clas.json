@@ -2,7 +2,8 @@
   "$schema": "../meta-schema.json",
   "objectType": {
     "name": "CLAS",
-    "description": "Class"
+    "description": "Class",
+    "group": "Source Code Library"
   },
   "versions": [
     {

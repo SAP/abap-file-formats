@@ -1,0 +1,28 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "TYPE",
+    "description": "Type Pool",
+    "group": "Source Code Library"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.type.json",
+          "cardinality": "1",
+          "schema": "type-v1.json",
+          "definitionInterface": "type/zif_aff_type_v1.intf.abap",
+          "examples": ["examples/zaff.type.json"]
+        },
+        {
+          "filePattern": "<name>.type.abap",
+          "cardinality": "1",
+          "definitionUrl": "https://help.sap.com/doc/abapdocu_latest_index_htm/latest/en-US/ABAPTYPE-POOL.html",
+          "examples": ["examples/zaff.type.abap"]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "DTEB",
+    "description": "Entity Buffer",
+    "group": "Core Data Services"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.dteb.json",
+          "cardinality": "1",
+          "schema": "dteb-v1.json",
+          "definitionInterface": "type/zif_aff_dteb_v1.intf.abap",
+          "examples": ["examples/z_aff_example_dteb.dteb.json"]
+        },
+        {
+          "filePattern": "<name>.dteb.acds",
+          "cardinality": "1",
+          "definitionUrl": "https://help.sap.com/doc/abapdocu_cp_index_htm/CLOUD/en-US/index.htm?file=abencds.htm",
+          "examples": ["examples/z_aff_example_dteb.dteb.acds"]
+        }
+      ]
+    }
+  ]
+}

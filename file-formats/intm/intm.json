@@ -1,0 +1,22 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "INTM",
+    "description": "Intelligent Scenario Model",
+    "group": "Intelligent Scenario Lifecycle Management"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.intm.json",
+          "cardinality": "1",
+          "schema": "intm-v1.json",
+          "definitionInterface": "type/zif_aff_intm_v1.intf.abap",
+          "examples": ["examples/z_aff_example_intm.intm.json"]
+        }
+      ]
+    }
+  ]
+}
