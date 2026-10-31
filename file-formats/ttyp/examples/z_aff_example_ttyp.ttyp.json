@@ -1,0 +1,25 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Example table type for ABAP file formats",
+    "originalLanguage": "en"
+  },
+  "rowType": {
+    "typeKind": "dictionaryType",
+    "typeName": "Z_AFF_EXAMPLE_STRUC"
+  },
+  "initializationAndAccess": {
+    "accessType": "sorted",
+    "initialRowCount": 10
+  },
+  "keySettings": {
+    "primaryKey": {
+      "definition": "keyComponents",
+      "uniqueness": "unique",
+      "components": [
+        "FIELD1",
+        "FIELD2"
+      ]
+    }
+  }
+}
