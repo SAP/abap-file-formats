@@ -6,6 +6,8 @@ For its annotation and validation, the ABAP file formats provide JSON Schemas.
 ## Table of Contents
 * [Format Versions and Compatibility](#format-versions-and-compatibility)
 * [Writing JSON Schema with ABAP Types](#writing-json-schema-with-abap-types)
+  * [Conditional Fields](#conditional-fields)
+  * [Conditional Enum Availability](#conditional-enum-availability)
 * [Example](#example)
 * [Reusable Fields in JSON Files](#reusable-fields-in-json-files)
 
@@ -58,6 +60,18 @@ The following changes to file formats are considered incompatible:
 - Length of a field is shortened
 - Length of a field is extended if some systems cannot store this information
 - Values for a field (enum) that has no specified default value are added.
+
+
+#### Conditional Fields (`$availableWhen` / `$requiredWhen`)
+
+The following changes related to [conditional fields](#conditional-fields) are considered incompatible:
+
+- A conditional availability (`$availableWhen`) is added that forbids a field for a value combination previously allowed by the schema
+- A conditional requiredness (`$requiredWhen`) is added that requires a field for a value combination under which it was previously optional
+- A conditional requiredness (`$requiredWhen`) is removed or weakened, if old implementations rely on the field being present
+- A conditional availability (`$availableWhen`) is added or strengthened on an existing enum value, excluding value combinations previously allowed by the schema
+
+Technical incompatibility with the previously published schema can be distinguished from semantic incompatibility: the changes listed above are technically incompatible, even if implementations already enforced the conditions and therefore experience no change in accepted files.
 
 
 ## Writing JSON Schema with ABAP Types
@@ -172,6 +186,65 @@ Normally, if an ABAP object is serialized, only the components of the correspond
 ```
 is added. Note that also the `$required` annotation leads to such behavior.
 
+### Conditional Fields
+To restrict when a field may or must occur depending on the value of another field, the annotations
+```abap
+"! $availableWhen {@link interface_name.ty_main.discriminator} = value
+"! $availableWhen {@link interface_name.ty_main.discriminator} != value
+"! $requiredWhen {@link interface_name.ty_main.discriminator} = value
+"! $requiredWhen {@link interface_name.ty_main.discriminator} != value
+```
+are used. Each annotation may occur at most once per component.
+
+`$availableWhen` means the field may only be present when the condition is true. When the condition is false, the field is forbidden.
+`$requiredWhen` means the field must be present when the condition is true. When the condition is false, no additional constraint is imposed.
+When both annotations are used with the same condition, the field is required when the condition is true and forbidden when it is false.
+
+The condition is a single comparison using `=` (equals) or `!=` (not equals). The left side is always a `{@link ...}` to the discriminator field, given as a path starting at `ty_main`, for example `{@link zif_aff_func_v1.ty_main.processing_type}`. The link must resolve to exactly one reachable field in the usage context.
+
+The right side depends on the discriminator's type:
+
+| Discriminator type | Right side | Example |
+| --- | --- | --- |
+| Enum (with [`$values`](#enum-values)) | `{@link ...}` to a member of the constant group | `{@link zif_aff_func_v1.data:co_processing_type.rfc}` |
+| Boolean | `true` or `false` | `true` |
+| String | Literal in single quotes | `'ACTVT'` |
+| Number | Numeric literal | `0`, `-1`, `1.5` |
+
+The annotation [`$required`](#required-fields) remains unconditional. Do not combine unconditional `$required` with `$availableWhen` on the same field; use `$requiredWhen` instead.
+[`$showAlways`](#always-shown-fields) does not override `$availableWhen`: a forbidden field must not be emitted.
+
+If the discriminator field is absent from the JSON file, its [`$default`](#default-values) value is used for the comparison. An absent boolean without a declared default is treated as `false`. An absent field without a default makes the condition false.
+
+#### Example
+
+In [`zif_aff_func_v1`](../file-formats/fugr/type/zif_aff_func_v1.intf.abap), the fields `rfc_properties` and `update_properties` are only relevant depending on the `processing_type`. This can be expressed as follows:
+```abap
+"! <p class="shorttext">RFC Specific Fields</p>
+"! Specific fields for RFC function modules
+"! $availableWhen {@link zif_aff_func_v1.ty_main.processing_type} = {@link zif_aff_func_v1.data:co_processing_type.rfc}
+"! $requiredWhen {@link zif_aff_func_v1.ty_main.processing_type} = {@link zif_aff_func_v1.data:co_processing_type.rfc}
+rfc_properties TYPE ty_rfc_properties,
+
+"! <p class="shorttext">Update Specific Fields</p>
+"! Specific fields for update function modules
+"! $availableWhen {@link zif_aff_func_v1.ty_main.processing_type} = {@link zif_aff_func_v1.data:co_processing_type.update}
+"! $requiredWhen {@link zif_aff_func_v1.ty_main.processing_type} = {@link zif_aff_func_v1.data:co_processing_type.update}
+update_properties TYPE ty_update_properties,
+```
+
+This results in the following behavior:
+
+| Processing type | `rfcProperties` | `updateProperties` |
+| --- | --- | --- |
+| Normal (default) | Forbidden | Forbidden |
+| RFC | Required | Forbidden |
+| Update | Forbidden | Required |
+
+If a detail group should be optional rather than required when the condition matches, omit the `$requiredWhen` annotation.
+
+The `$availableWhen` annotation can also restrict individual enum values without forbidding the field itself; see [Conditional Enum Availability](#conditional-enum-availability).
+
 ### Default Values
 To specify the `default` value for a field of the JSON Schema, the annotation
 ```abap
@@ -232,6 +305,12 @@ Remark: If an enum is used, it should be checked if one of the following points 
 In case additional values for the enum should be added compatibly later, a default value must always be specified (see [Format Versions and Compatibility](#format-versions-and-compatibility)). If systems don't support the new enumeration value (e.g., in lower releases), the value will be changed to the default value by the file format implementations.
 
 The order of the comments and annotations presented here is important: First, there is the comment for the title followed by the one for the description, in case they are both provided. After these two, the remaining annotations are always located. Between them, the order is irrelevant.
+
+#### Conditional Enum Availability
+
+[`$availableWhen`](#conditional-fields) on an enum constant referenced by `$values` allows that value only when the condition is true. Other values remain allowed; multiple restrictions apply together and respect `$enumValue` overrides. If no values remain available, the field cannot be present.
+
+Conditions use the same syntax as for conditional fields. Links must resolve unambiguously to a reachable field in an enclosing structure for each usage, including table rows. `$requiredWhen` is unsupported on enum constants. Restrictions do not make the field required or change its default; avoid conditionally unavailable values as unconditional defaults.
 
 ### Additional Properties
 

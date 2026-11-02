@@ -106,11 +106,6 @@
             "SOAP service"
           ]
         },
-        "scopeDependent": {
-          "title": "Scope Dependent",
-          "description": "Indicates whether the inbound service is scope-dependent",
-          "type": "boolean"
-        },
         "appType": {
           "title": "App Type",
           "description": "Inbound service app type for extensibility",
