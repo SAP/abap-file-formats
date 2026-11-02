@@ -52,7 +52,7 @@ INTERFACE zif_aff_edot_v1
       contingency_edoc_type       TYPE c LENGTH 10,
     END OF ty_general_information.
   TYPES:
-    "! <p class="shorttext">Header for EDOT object</p>
+    "! <p class="shorttext">Header for EDOT Object</p>
     "! The header for an ABAP main object (without source code) with a description of 30 characters (no key user)
     BEGIN OF ty_header_30_cloud,
       "! <p class="shorttext">Description</p>
