@@ -1,0 +1,47 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Access to Configuration Objects",
+    "originalLanguage": "de"
+  },
+  "generalInformation": {
+    "objectClass": "BC_A"
+  },
+  "authorizationFields": [
+    {
+      "authorizationField": "ACTVT"
+    },
+    {
+      "authorizationField": "USR_OBJECT"
+    },
+    {
+      "authorizationField": "USR_OBJNAM"
+    }
+  ],
+  "permittedActivities": [
+    {
+      "activity": "02",
+      "accessCategory": "write"
+    },
+    {
+      "activity": "03",
+      "accessCategory": "read"
+    },
+    {
+      "activity": "06",
+      "accessCategory": "write"
+    },
+    {
+      "activity": "08",
+      "accessCategory": "read"
+    }
+  ],
+  "objectAttributes": {
+    "criticality": "critical",
+    "classCopyToDefaultData": "ifInSameSoftwareComponent"
+  },
+  "classificationForCdsBdef": {
+    "usageInOwnAuthContext": "notAllowed",
+    "usageInPrivilegedBdefMode": "notAllowed"
+  }
+}

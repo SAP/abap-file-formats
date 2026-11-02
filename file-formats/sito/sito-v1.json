@@ -97,7 +97,7 @@
         },
         "text": {
           "title": "Text",
-          "description": "Text for ituation object",
+          "description": "Text for situation object",
           "type": "object",
           "properties": {
             "name": {

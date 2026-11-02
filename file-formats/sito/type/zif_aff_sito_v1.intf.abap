@@ -280,7 +280,7 @@ INTERFACE zif_aff_sito_v1
     ty_sit2_obj_vh_s_p_list TYPE STANDARD TABLE OF ty_sit2_obj_vh_s_p WITH DEFAULT KEY,
 
     "! <p class="shorttext">Text</p>
-    "! Text for ituation object
+    "! Text for situation object
     BEGIN OF ty_sit2_object_t,
       "! <p class="shorttext">Name</p>
       "! Situation object name

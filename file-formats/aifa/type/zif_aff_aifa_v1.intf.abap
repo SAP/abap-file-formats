@@ -10,7 +10,7 @@ INTERFACE zif_aff_aifa_v1
       "! Field is in source structure
       source_structure      TYPE c LENGTH 5 VALUE 'SRC_S',
       "! <p class="shorttext">Destination Structure</p>
-      "! Field is in desctination structure
+      "! Field is in destination structure
       destination_structure TYPE c LENGTH 5 VALUE 'DST_S',
       "! <p class="shorttext">Constant</p>
       "! Field is constant value
@@ -19,13 +19,13 @@ INTERFACE zif_aff_aifa_v1
       "! Field is system field
       system_field          TYPE c LENGTH 5 VALUE 'SYSTF',
       "! <p class="shorttext">Sending System</p>
-      "! Field is in sending systemte
+      "! Field is in sending system
       sending_system        TYPE c LENGTH 5 VALUE 'SND_S',
       "! <p class="shorttext">Current Line Number</p>
       "! Field is current line number
       current_line_number   TYPE c LENGTH 5 VALUE 'LINEN',
       "! <p class="shorttext">Hierarchical Mapping</p>
-      "! Fieldpath is starting from a parant node
+      "! Fieldpath is starting from a parent node
       hierarchical_mapping  TYPE c LENGTH 5 VALUE 'MAP_H',
     END OF co_field_type.
 

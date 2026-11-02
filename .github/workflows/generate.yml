@@ -3,6 +3,9 @@ name: Generate JSON Schema
 on:
   pull_request:
 
+permissions:
+  contents: read
+
 jobs:
   validate:
     name: Compare generated against provided

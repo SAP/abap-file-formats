@@ -1,10 +1,10 @@
-# Business Configuration Maintenance Object  File Format
+# Repository Type for Business Configuration Maintenance Object File Format
 
 ## Object Type Information
 
-Object Type | Description | Group
+Object Type | Description | Group
 :--- | :--- | :---
-SMBC | Business Configuration Maintenance Object | Business Configuration Management
+SMBC  | Repository Type for Business Configuration Maintenance Object | Business Configuration Management
 
 ## File Structure
 

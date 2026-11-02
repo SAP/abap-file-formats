@@ -1,0 +1,34 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Lock Object Example",
+    "originalLanguage": "en"
+  },
+  "primaryTable": {
+    "name": "ZTABL_TEST",
+    "lockMode": "exclusive"
+  },
+  "secondaryTables": [
+    {
+      "name": "ZTABL_SECOND",
+      "lockMode": "exclusive"
+    }
+  ],
+  "lockParameters": [
+    {
+      "name": "PARAM_NAME",
+      "table": "ZTABL_TEST",
+      "field": "TEST_ID",
+      "active": true
+    },
+    {
+      "name": "SECOND_NAME",
+      "table": "ZTABL_SECOND",
+      "field": "SECOND_ID",
+      "active": false
+    }
+  ],
+  "lockModules": {
+    "allowRfc": false
+  }
+}

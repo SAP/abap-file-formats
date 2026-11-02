@@ -7,6 +7,7 @@ INTERFACE zif_aff_msag_v1
     BEGIN OF ty_message,
       "! <p class="shorttext">Message Number</p>
       "! Message number
+      "! $required
       number TYPE c LENGTH 3,
       "! <p class="shorttext">Message Text</p>
       "! Message text

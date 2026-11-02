@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/SAP/abap-file-formats/main/file-formats/meta-schema.json",
+  "title": "AFF Object Type Metadata",
+  "description": "Machine-readable metadata for an ABAP File Format object type folder",
+  "type": "object",
+  "required": [
+    "objectType",
+    "versions"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "objectType": {
+      "description": "The ABAP object type covered by this folder",
+      "type": "object",
+      "required": [
+        "name",
+        "description"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "ABAP object type code (e.g. CLAS, INTF)",
+          "pattern": "^[A-Z0-9]{2,4}$"
+        },
+        "description": {
+          "type": "string",
+          "description": "Human-readable description of the object type"
+        }
+      }
+    },
+    "versions": {
+      "description": "All format versions, newest first",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "version",
+          "files"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "version": {
+            "type": "string"
+          },
+          "deprecated": {
+            "type": "boolean",
+            "description": "True when this version is superseded by a newer one"
+          },
+          "files": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": [
+                "filePattern",
+                "cardinality"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "filePattern": {
+                  "type": "string",
+                  "description": "File name pattern; use <name>, <lang>, <fmname> etc. as placeholders"
+                },
+                "cardinality": {
+                  "type": "string",
+                  "enum": [
+                    "1",
+                    "0...1",
+                    "0...n"
+                  ],
+                  "description": "Number of files of this type per repository object"
+                },
+                "schema": {
+                  "type": "string",
+                  "description": "Relative path to the JSON schema that validates this file (omit for non-JSON files)"
+                },
+                "definitionInterface": {
+                  "type": "string",
+                  "description": "ABAP interface name that defines the JSON structure (e.g. zif_aff_clas_v1)"
+                },
+                "definitionUrl": {
+                  "type": "string",
+                  "format": "uri",
+                  "description": "URL to external documentation for non-JSON files (ABAP syntax reference etc.)"
+                },
+                "examples": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "description": "Relative paths from the folder root to example files"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Notification provider example",
+    "originalLanguage": "en"
+  },
+  "generalInformation": {
+    "providerClass": "ZCL_NOTIF_EXAMPLE_PROVIDER"
+  }
+}

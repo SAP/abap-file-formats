@@ -1,0 +1,30 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Test Object Cloud",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "objectClass": "CPAE"
+  },
+  "authorizationFields": [
+    {
+      "authorizationField": "ACTVT",
+      "isActivityField": true
+    }
+  ],
+  "permittedActivities": [
+    {
+      "activity": "03",
+      "accessCategory": "read"
+    }
+  ],
+  "objectAttributes": {
+    "criticality": "notCritical"
+  },
+  "classificationForCdsBdef": {
+    "usageInOwnAuthContext": "allowed",
+    "usageInPrivilegedBdefMode": "allowed"
+  }
+}

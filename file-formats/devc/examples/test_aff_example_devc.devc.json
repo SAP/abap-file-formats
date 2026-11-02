@@ -1,0 +1,12 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Example package",
+    "originalLanguage": "en"
+  },
+  "generalInformation": {
+    "type": "development",
+    "superPackage": "$TMP",
+    "softwareComponent": "LOCAL"
+  }
+}

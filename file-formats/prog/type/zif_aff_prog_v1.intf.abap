@@ -104,7 +104,7 @@ INTERFACE zif_aff_prog_v1 PUBLIC.
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
-      header              TYPE zif_aff_types_v1=>ty_header_70_src,
+      header              TYPE zif_aff_types_v1=>ty_header_70_no_abap_lv,
       "! <p class="shorttext">General Information</p>
       "! General information
       general_information TYPE ty_general_information,

@@ -6,5 +6,6 @@
   },
   "generalInformation": {
     "programStatus": "customerProductionProgram"
+    "programType": "include"
   }
 }
