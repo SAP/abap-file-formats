@@ -307,5 +307,45 @@
     "header",
     "processingType",
     "includeNumber"
+  ],
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "processingType": {
+            "const": "rfc"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "rfcProperties"
+        ]
+      },
+      "else": {
+        "properties": {
+          "rfcProperties": false
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "processingType": {
+            "const": "update"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "updateProperties"
+        ]
+      },
+      "else": {
+        "properties": {
+          "updateProperties": false
+        }
+      }
+    }
   ]
 }
