@@ -188,7 +188,7 @@ INTERFACE zif_aff_sco2_v1
 
       "! <p class="shorttext">App Type</p>
       "! Inbound service app type for extensibility
-      app_type        TYPE c LENGTH 4,
+      app_type TYPE c LENGTH 4,
 
     END OF ty_general_information.
 
