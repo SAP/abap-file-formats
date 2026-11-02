@@ -1,0 +1,136 @@
+{
+"formatVersion": "1",
+  "header": {
+    "description": "Aufbau von Organisationskriterien",
+    "originalLanguage": "DE",
+    "abapLanguageVersion": "standard"
+  },
+  "generalInformation": {
+    "hierOperDepHandling": "automatic",
+    "dataReadType": "complete"
+  },
+  "clusterLevels": [
+    {
+      "objectName": "ORGCRIT",
+      "predecessorObject": "ORGCRIT",
+      "position": 1,
+      "vcEntrySelectionType": "header",
+      "isStartObject": true,
+      "isSuppressed": false,
+      "hasNmCardinality": false,
+      "objectTexts": [
+        { "language": "DE", "objectText": "Organisationskriterien" },
+        { "language": "EN", "objectText": "Organization criteria" }
+      ],
+      "fieldDependencies": [
+        {
+          "objectField": "",
+          "predecessorObject": "ORGCRIT",
+          "predecessorField": "",
+          "dependencyType": "navigationKeyRelationship"
+        }
+      ]
+    },
+    {
+      "objectName": "V_ORGCRAUTHOBJ",
+      "predecessorObject": "ORGCRIT",
+      "position": 2,
+      "vcEntrySelectionType": "single",
+      "isStartObject": false,
+      "isSuppressed": false,
+      "hasNmCardinality": false,
+      "objectTexts": [
+        { "language": "EN", "objectText": "Assign Authorization Object" }
+      ],
+      "fieldDependencies": [
+        {
+          "objectField": "ORGCRITBEZ",
+          "predecessorObject": "ORGCRIT",
+          "predecessorField": "ORGCRITBEZ",
+          "dependencyType": "readOnlyFieldRelationship"
+        },
+        {
+          "objectField": "ORG_CRIT",
+          "predecessorObject": "ORGCRIT",
+          "predecessorField": "ORG_CRIT",
+          "dependencyType": "navigationKeyRelationship"
+        }
+      ]
+    },
+    {
+      "objectName": "V_ORGCRATT",
+      "predecessorObject": "ORGCRIT",
+      "position": 3,
+      "vcEntrySelectionType": "single",
+      "isStartObject": false,
+      "isSuppressed": false,
+      "hasNmCardinality": false,
+      "objectTexts": [
+        { "language": "DE", "objectText": "Attribute" },
+        { "language": "EN", "objectText": "Attributes" }
+      ],
+      "fieldDependencies": [
+        {
+          "objectField": "ORGCRITBEZ",
+          "predecessorObject": "ORGCRIT",
+          "predecessorField": "ORGCRITBEZ",
+          "dependencyType": "readOnlyFieldRelationship"
+        },
+        {
+          "objectField": "ORG_CRIT",
+          "predecessorObject": "ORGCRIT",
+          "predecessorField": "ORG_CRIT",
+          "dependencyType": "navigationKeyRelationship"
+        }
+      ]
+    },
+    {
+      "objectName": "V_ORGCRFLD",
+      "predecessorObject": "V_ORGCRATT",
+      "position": 4,
+      "vcEntrySelectionType": "single",
+      "isStartObject": false,
+      "isSuppressed": false,
+      "hasNmCardinality": false,
+      "objectTexts": [
+        { "language": "DE", "objectText": "Tabellenfelder" },
+        { "language": "EN", "objectText": "Table Fields" }
+      ],
+      "fieldDependencies": [
+        {
+          "objectField": "ATTRBEZ",
+          "predecessorObject": "V_ORGCRATT",
+          "predecessorField": "ATTRBEZ",
+          "dependencyType": "readOnlyFieldRelationship"
+        },
+        {
+          "objectField": "ORGCRITBEZ",
+          "predecessorObject": "V_ORGCRATT",
+          "predecessorField": "ORGCRITBEZ",
+          "dependencyType": "readOnlyFieldRelationship"
+        },
+        {
+          "objectField": "ORG_ATTR",
+          "predecessorObject": "V_ORGCRATT",
+          "predecessorField": "ORG_ATTR",
+          "dependencyType": "navigationKeyRelationship"
+        },
+        {
+          "objectField": "ORG_CRIT",
+          "predecessorObject": "V_ORGCRATT",
+          "predecessorField": "ORG_CRIT",
+          "dependencyType": "navigationKeyRelationship"
+        }
+      ]
+    }
+  ],
+  "events": {
+    "programName": "SAPMORG_CRITERION",
+    "eventList": [
+      {
+        "event": "beforeSave",
+        "subroutine": "CHECK_ORGCRIT_CONSISTENCY"
+      }
+    ]
+  }
+}
