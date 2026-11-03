@@ -4,7 +4,9 @@
     "description": "Example DOMA for ABAP file formats",
     "originalLanguage": "en"
   },
-  "baseDomain": "Z_AFF_EXAMPLE",
+  "baseDomain": {
+    "name": "Z_AFF_EXAMPLE"
+  },
   "outputCharacteristics": {
     "length": 3
   },
