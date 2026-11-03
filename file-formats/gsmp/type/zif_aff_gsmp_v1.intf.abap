@@ -112,6 +112,10 @@ INTERFACE zif_aff_gsmp_v1
       "! Job
       job        TYPE ty_execution_mode VALUE 'J',
 
+      "! <p class="shorttext">Extension</p>
+      "! Extension
+      extension  TYPE ty_execution_mode VALUE 'E',
+
       "! <p class="shorttext">None</p>
       "! No execution. Only model. Data from external.
       none        TYPE ty_execution_mode VALUE 'N',
@@ -151,6 +155,10 @@ INTERFACE zif_aff_gsmp_v1
       "! <p class="shorttext">Creating New Instances</p>
       "! Creating new instances
       create_new  TYPE ty_instantiation VALUE 'C',
+
+      "! <p class="shorttext">Creating New Asynchronous Instances</p>
+      "! Creating new asynchronous instances
+      async       TYPE ty_instantiation VALUE 'A',
 
     END OF co_instantiation.
 
