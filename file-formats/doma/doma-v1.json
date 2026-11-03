@@ -56,12 +56,20 @@
         "description",
         "originalLanguage"
       ]
-    },
+},
     "baseDomain": {
       "title": "Base Domain",
       "description": "Base domain",
-      "type": "string",
-      "maxLength": 30
+      "type": "object",
+      "properties": {
+        "name": {
+          "title": "Name",
+          "description": "Name",
+          "type": "string",
+          "maxLength": 30
+        }
+      },
+      "additionalProperties": false
     },
     "format": {
       "title": "Format",
