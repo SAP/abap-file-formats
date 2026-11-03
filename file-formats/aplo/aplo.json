@@ -1,0 +1,21 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "APLO",
+    "description": "Application Log Object"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.aplo.json",
+          "cardinality": "1",
+          "schema": "aplo-v1.json",
+          "definitionInterface": "type/zif_aff_aplo_v1.intf.abap",
+          "examples": ["examples/z_aff_example_aplo.aplo.json"]
+        }
+      ]
+    }
+  ]
+}

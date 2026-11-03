@@ -1,0 +1,22 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "CHKO",
+    "description": "ATC Check",
+    "group": "ABAP Test Cockpit"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.chko.json",
+          "cardinality": "1",
+          "schema": "chko-v1.json",
+          "definitionInterface": "type/zif_aff_chko_v1.intf.abap",
+          "examples": ["examples/z_aff_example_chko.chko.json"]
+        }
+      ]
+    }
+  ]
+}

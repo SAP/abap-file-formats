@@ -1,0 +1,21 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "APOB",
+    "description": "Application Object"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.apob.json",
+          "cardinality": "1",
+          "schema": "apob-v1.json",
+          "definitionInterface": "type/zif_aff_apob_v1.intf.abap",
+          "examples": ["examples/z_aff_example_apob.apob.json"]
+        }
+      ]
+    }
+  ]
+}

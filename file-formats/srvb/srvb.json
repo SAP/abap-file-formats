@@ -1,0 +1,22 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "SRVB",
+    "description": "Service Binding",
+    "group": "Business Services"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.srvb.json",
+          "cardinality": "1",
+          "schema": "srvb-v1.json",
+          "definitionInterface": "type/zif_aff_srvb_v1.intf.abap",
+          "examples": ["examples/z_aff_example_srvb.srvb.json"]
+        }
+      ]
+    }
+  ]
+}

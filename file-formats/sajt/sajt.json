@@ -1,0 +1,22 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "SAJT",
+    "description": "Application Job Template",
+    "group": "Application Jobs"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.sajt.json",
+          "cardinality": "1",
+          "schema": "sajt-v1.json",
+          "definitionInterface": "type/zif_aff_sajt_v1.intf.abap",
+          "examples": ["examples/z_aff_example_sajt.sajt.json"]
+        }
+      ]
+    }
+  ]
+}

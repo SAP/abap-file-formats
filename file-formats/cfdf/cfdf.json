@@ -1,0 +1,35 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "CFDF",
+    "description": "Custom Field",
+    "group": "Extensibility"
+  },
+  "versions": [
+    {
+      "version": "2",
+      "files": [
+        {
+          "filePattern": "<name>.cfdf.json",
+          "cardinality": "1",
+          "schema": "cfdf-v2.json",
+          "definitionInterface": "type/zif_aff_cfdf_v2.intf.abap",
+          "examples": ["examples/yy1_aff_example_v2.cfdf.json"]
+        }
+      ]
+    },
+    {
+      "version": "1",
+      "deprecated": true,
+      "files": [
+        {
+          "filePattern": "<name>.cfdf.json",
+          "cardinality": "1",
+          "schema": "cfdf-v1.json",
+          "definitionInterface": "type/zif_aff_cfdf_v1.intf.abap",
+          "examples": ["examples/yy1_aff_example.cfdf.json"]
+        }
+      ]
+    }
+  ]
+}
