@@ -220,10 +220,6 @@ This also applies when an enclosing structure is absent.
 For an enum without a declared default, an initial-valued enum constant, if one exists, supplies the corresponding external JSON value.
 These implicit initial values are used for comparisons; they do not add a `default` keyword to the generated JSON Schema or require initial fields to be serialized.
 
-A comparison with a value different from the discriminator's explicit default or implicit initial value still matches only when the field is present with that value.
-The generated `if` schema retains presence requirements for the field and any optional enclosing structures in this case; these are not unconditional requirements on the JSON file.
-`$availableWhen` alone only permits the target field when its condition matches. A matching `$requiredWhen` is needed to require it.
-
 #### Example
 
 In [`zif_aff_func_v1`](../file-formats/fugr/type/zif_aff_func_v1.intf.abap), the fields `rfc_properties` and `update_properties` are only relevant depending on the `processing_type`. This can be expressed as follows:
