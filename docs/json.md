@@ -214,7 +214,16 @@ The right side depends on the discriminator's type:
 The annotation [`$required`](#required-fields) remains unconditional. Do not combine unconditional `$required` with `$availableWhen` on the same field; use `$requiredWhen` instead.
 [`$showAlways`](#always-shown-fields) does not override `$availableWhen`: a forbidden field must not be emitted.
 
-If the discriminator field is absent from the JSON file, its [`$default`](#default-values) value is used for the comparison. An absent boolean without a declared default is treated as `false`. An absent field without a default makes the condition false.
+If the discriminator field is absent from the JSON file, its [`$default`](#default-values) value is used for the comparison.
+If no default is declared, the ABAP initial value of its type is used instead, for example `""` for a character field, `0` for a number, or `false` for a boolean.
+This also applies when an enclosing structure is absent.
+For an enum without a declared default, an initial-valued enum constant, if one exists, supplies the corresponding external JSON value.
+These implicit initial values are used for comparisons; they do not add a `default` keyword to the generated JSON Schema or require initial fields to be serialized.
+
+For example, a condition comparing an optional `base_domain.name` character field with `''` matches when `baseDomain` or `name` is omitted, as well as when `name` is explicitly `""`.
+A comparison with a non-default value such as `'blabla'` still matches only when the field is present with that value.
+The generated `if` schema retains presence requirements for the field and any optional enclosing structures in this case; these are not unconditional requirements on the JSON file.
+`$availableWhen` alone only permits the target field when its condition matches. A matching `$requiredWhen` is needed to require it.
 
 #### Example
 
