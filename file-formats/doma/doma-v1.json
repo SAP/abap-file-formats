@@ -57,6 +57,20 @@
         "originalLanguage"
       ]
     },
+    "baseDomain": {
+      "title": "Base Domain",
+      "description": "Base domain",
+      "type": "object",
+      "properties": {
+        "name": {
+          "title": "Name",
+          "description": "Name",
+          "type": "string",
+          "maxLength": 30
+        }
+      },
+      "additionalProperties": false
+    },
     "format": {
       "title": "Format",
       "description": "Format",
@@ -192,7 +206,8 @@
           "maximum": 999999
         },
         "decimals": {
-          "description": "Set if decimal",
+          "title": "Decimals",
+          "description": "Decimals",
           "type": "integer",
           "minimum": 0,
           "maximum": 999999
@@ -250,6 +265,7 @@
           "maximum": 999999
         },
         "conversionRoutine": {
+          "title": "Conversion Routine",
           "description": "Conversion Routine",
           "type": "string",
           "maxLength": 5
@@ -368,7 +384,31 @@
   "additionalProperties": false,
   "required": [
     "formatVersion",
-    "header",
-    "format"
+    "header"
+  ],
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "baseDomain": {
+            "properties": {
+              "name": {
+                "const": ""
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "format"
+        ]
+      },
+      "else": {
+        "properties": {
+          "format": false
+        }
+      }
+    }
   ]
 }

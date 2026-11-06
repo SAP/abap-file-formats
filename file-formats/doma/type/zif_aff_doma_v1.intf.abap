@@ -1,43 +1,56 @@
 INTERFACE zif_aff_doma_v1 PUBLIC.
 
+  TYPES:
+    "! <p class="shorttext">Base Domain</p>
+    "! Base domain
+    BEGIN OF ty_base_domain,
+      "! <p class="shorttext">Name</p>
+      "! Name
+      name TYPE zif_aff_types_v1=>ty_object_name_30,
+    END OF ty_base_domain.
+
+  "! <p class="shorttext">Output Style</p>
+  "! Output style
   "! $values {@link zif_aff_doma_v1.data:co_output_style}
   "! $default {@link zif_aff_doma_v1.data:co_output_style.normal}
   TYPES ty_output_style TYPE n LENGTH 2.
 
   CONSTANTS:
+    "! <p class="shorttext">Output Style</p>
+    "! Output style
     BEGIN OF co_output_style,
-               "! <p class="shorttext">Normal</p>
-               "! Normal
-               normal                       TYPE ty_output_style VALUE '00',
-               "! <p class="shorttext">Sign right</p>
-               "! Sign right
-               sign_right                   TYPE ty_output_style VALUE '01',
-               "! <p class="shorttext">Scale-preserving</p>
-               "! Scale-preserving
-               scale_preserving             TYPE ty_output_style VALUE '02',
-               "! <p class="shorttext">Scientific</p>
-               "! Scientific
-               scientific                   TYPE ty_output_style VALUE '03',
-               "! <p class="shorttext">Scientific with leading zero</p>
-               "! Scientific with leading zero
-               scientific_with_leading_zero TYPE ty_output_style VALUE '04',
-               "! <p class="shorttext">Scale-preserving scientific</p>
-               "! Scale-preserving scientific
-               scale_preserving_scientific  TYPE ty_output_style VALUE '05',
-               "! <p class="shorttext">Engineering</p>
-               "! Engineering
-               engineering                  TYPE ty_output_style VALUE '06',
-             END OF co_output_style.
+      "! <p class="shorttext">Normal</p>
+      "! Normal
+      normal                       TYPE ty_output_style VALUE '00',
+      "! <p class="shorttext">Sign right</p>
+      "! Sign right
+      sign_right                   TYPE ty_output_style VALUE '01',
+      "! <p class="shorttext">Scale-preserving</p>
+      "! Scale-preserving
+      scale_preserving             TYPE ty_output_style VALUE '02',
+      "! <p class="shorttext">Scientific</p>
+      "! Scientific
+      scientific                   TYPE ty_output_style VALUE '03',
+      "! <p class="shorttext">Scientific with leading zero</p>
+      "! Scientific with leading zero
+      scientific_with_leading_zero TYPE ty_output_style VALUE '04',
+      "! <p class="shorttext">Scale-preserving scientific</p>
+      "! Scale-preserving scientific
+      scale_preserving_scientific  TYPE ty_output_style VALUE '05',
+      "! <p class="shorttext">Engineering</p>
+      "! Engineering
+      engineering                  TYPE ty_output_style VALUE '06',
+    END OF co_output_style.
 
   "! <p class="shorttext">Output Length</p>
   "! Output length
   "! $minimum 0
   "! $maximum 999999
-  TYPES ty_output_length        TYPE i.
+  TYPES ty_output_length TYPE i.
 
   "! <p class="shorttext">Conversion Routine</p>
   "! Conversion routine
-  TYPES ty_conv_routine         TYPE c LENGTH 5.
+  TYPES ty_conv_routine  TYPE c LENGTH 5.
 
   TYPES:
     BEGIN OF ty_format,
@@ -51,7 +64,8 @@ INTERFACE zif_aff_doma_v1 PUBLIC.
       "! $required
       length    TYPE zif_aff_ddic_types_v1=>ty_length,
 
-      "! Set if decimal
+      "! <p class="shorttext">Decimals</p>
+      "! Decimals
       decimals  TYPE zif_aff_ddic_types_v1=>ty_decimals,
 
     END OF ty_format.
@@ -66,6 +80,7 @@ INTERFACE zif_aff_doma_v1 PUBLIC.
       "! Set the output length
       length             TYPE ty_output_length,
 
+      "! <p class="shorttext">Conversion Routine</p>
       "! Conversion Routine
       conversion_routine TYPE ty_conv_routine,
 
@@ -147,9 +162,14 @@ INTERFACE zif_aff_doma_v1 PUBLIC.
       "! $required
       header                 TYPE zif_aff_types_v1=>ty_header_60,
 
+      "! <p class="shorttext">Base Domain</p>
+      "! Base domain
+      base_domain            TYPE ty_base_domain,
+
       "! <p class="shorttext">Format</p>
       "! Format
-      "! $required
+      "! $availableWhen {@link zif_aff_doma_v1.ty_main.base_domain.name} = ''
+      "! $requiredWhen {@link zif_aff_doma_v1.ty_main.base_domain.name} = ''
       format                 TYPE ty_format,
 
       "! <p class="shorttext">Output Characteristics</p>

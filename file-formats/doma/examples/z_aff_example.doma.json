@@ -20,5 +20,10 @@
       "fixedValue": "XYZ",
       "description": "Fixed Value XYZ"
     }
+  ],
+  "fixedValueAppends": [
+    {
+      "name": "Z_AFF_EXAMPLE_APPEND"
+    }
   ]
 }
