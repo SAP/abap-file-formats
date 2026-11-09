@@ -216,7 +216,6 @@ The annotation [`$required`](#required-fields) remains unconditional. Do not com
 
 If the discriminator field is absent from the JSON file, its [`$default`](#default-values) value is used for the comparison.
 If no default is declared, the ABAP initial value of its type is used instead, for example `""` for a character field, `0` for a number, or `false` for a boolean.
-This also applies when an enclosing structure is absent.
 For an enum without a declared default, an initial-valued enum constant, if one exists, supplies the corresponding external JSON value.
 These implicit initial values are used for comparisons; they do not add a `default` keyword to the generated JSON Schema or require initial fields to be serialized.
 
