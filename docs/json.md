@@ -191,10 +191,10 @@ To restrict when a field may or must occur depending on the value of another fie
 ```abap
 "! $availableWhen {@link interface_name.ty_main.discriminator} = value
 "! $availableWhen {@link interface_name.ty_main.discriminator} != value
-"! $availableWhen {@link interface_name.ty_main.discriminator} in (value, ...)
+"! $availableWhen {@link interface_name.ty_main.discriminator} IN (value, ...)
 "! $requiredWhen {@link interface_name.ty_main.discriminator} = value
 "! $requiredWhen {@link interface_name.ty_main.discriminator} != value
-"! $requiredWhen {@link interface_name.ty_main.discriminator} in (value, ...)
+"! $requiredWhen {@link interface_name.ty_main.discriminator} IN (value, ...)
 ```
 are used. Each annotation may occur at most once per component.
 
@@ -261,8 +261,8 @@ A field can be available or required for several discriminator values:
 ```abap
 BEGIN OF ty_main,
   kind TYPE string,
-  "! $availableWhen {@link zif_example.ty_main.kind} in ('static', 'dynamic')
-  "! $requiredWhen {@link zif_example.ty_main.kind} in ('static', 'dynamic')
+  "! $availableWhen {@link zif_example.ty_main.kind} IN ('static', 'dynamic')
+  "! $requiredWhen {@link zif_example.ty_main.kind} IN ('static', 'dynamic')
   details TYPE ty_details,
 END OF ty_main.
 ```
@@ -272,7 +272,7 @@ END OF ty_main.
 For enum discriminators, use links to the enum constants:
 
 ```abap
-"! $requiredWhen {@link zif_example.ty_main.mode} in (
+"! $requiredWhen {@link zif_example.ty_main.mode} IN (
 "! {@link zif_example.data:co_mode.standard},
 "! {@link zif_example.data:co_mode.cloud})
 details TYPE ty_details,
