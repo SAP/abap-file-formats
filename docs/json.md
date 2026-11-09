@@ -191,8 +191,10 @@ To restrict when a field may or must occur depending on the value of another fie
 ```abap
 "! $availableWhen {@link interface_name.ty_main.discriminator} = value
 "! $availableWhen {@link interface_name.ty_main.discriminator} != value
+"! $availableWhen {@link interface_name.ty_main.discriminator} in (value, ...)
 "! $requiredWhen {@link interface_name.ty_main.discriminator} = value
 "! $requiredWhen {@link interface_name.ty_main.discriminator} != value
+"! $requiredWhen {@link interface_name.ty_main.discriminator} in (value, ...)
 ```
 are used. Each annotation may occur at most once per component.
 
@@ -200,9 +202,11 @@ are used. Each annotation may occur at most once per component.
 `$requiredWhen` means the field must be present when the condition is true. When the condition is false, no additional constraint is imposed.
 When both annotations are used with the same condition, the field is required when the condition is true and forbidden when it is false.
 
-The condition is a single comparison using `=` (equals) or `!=` (not equals). The left side is always a `{@link ...}` to the discriminator field, given as a path starting at `ty_main`, for example `{@link zif_aff_func_v1.ty_main.processing_type}`. The link must resolve to exactly one reachable field in the usage context.
+The condition is a single comparison using `=` (equals), `!=` (not equals), or `IN` (membership in a list). `IN` evaluates to true when the discriminator equals any value in the list.
 
-The right side depends on the discriminator's type:
+The left side is always a `{@link ...}` to the discriminator field, given as a path starting at `ty_main`, for example `{@link zif_aff_func_v1.ty_main.processing_type}`. The link must resolve to exactly one reachable field in the usage context.
+
+For `=` and `!=`, the right side is a single value. For `IN`, it is a nonempty, comma-separated list of values enclosed in parentheses. Each value follows the rules for the discriminator's type in the table below.
 
 | Discriminator type | Right side | Example |
 | --- | --- | --- |
@@ -218,6 +222,8 @@ If the discriminator field is absent from the JSON file, its [`$default`](#defau
 If no default is declared, the ABAP initial value of its type is used instead, for example `""` for a character field, `0` for a number, or `false` for a boolean.
 For an enum without a declared default, an initial-valued enum constant, if one exists, supplies the corresponding external JSON value.
 These implicit initial values are used for comparisons; they do not add a `default` keyword to the generated JSON Schema or require initial fields to be serialized.
+
+For `IN`, the same fallback value is tested for membership in the list. If the discriminator is omitted, the condition is true when its declared default or implicit initial value belongs to the list, and false otherwise.
 
 #### Example
 
@@ -247,6 +253,32 @@ This results in the following behavior:
 If a detail group should be optional rather than required when the condition matches, omit the `$requiredWhen` annotation.
 
 The `$availableWhen` annotation can also restrict individual enum values without forbidding the field itself; see [Conditional Enum Availability](#conditional-enum-availability).
+
+#### Membership Conditions
+
+A field can be available or required for several discriminator values:
+
+```abap
+BEGIN OF ty_main,
+  kind TYPE string,
+  "! $availableWhen {@link zif_example.ty_main.kind} in ('static', 'dynamic')
+  "! $requiredWhen {@link zif_example.ty_main.kind} in ('static', 'dynamic')
+  details TYPE ty_details,
+END OF ty_main.
+```
+
+`details` is required when `kind` is `static` or `dynamic`, and forbidden otherwise. If `kind` is omitted, its implicit initial value `""` is used, so `details` is forbidden.
+
+For enum discriminators, use links to the enum constants:
+
+```abap
+"! $requiredWhen {@link zif_example.ty_main.mode} in (
+"! {@link zif_example.data:co_mode.standard},
+"! {@link zif_example.data:co_mode.cloud})
+details TYPE ty_details,
+```
+
+Membership conditions can also be used with `$availableWhen` on enum constants; see [Conditional Enum Availability](#conditional-enum-availability).
 
 ### Default Values
 To specify the `default` value for a field of the JSON Schema, the annotation
