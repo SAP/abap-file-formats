@@ -352,15 +352,15 @@ INTERFACE zif_aff_dynp_v1 PUBLIC.
       "! <p class="shorttext">Screen Type</p>
       "! Screen type
       "! $required
-      screen_type                    TYPE ty_screen_type,
+      screen_type                  TYPE ty_screen_type,
       "! <p class="shorttext">Next Screen</p>
       "! Next screen number
       "! $required
-      next_screen                    TYPE c LENGTH 4,
+      next_screen                  TYPE c LENGTH 4,
       "! <p class="shorttext">Screen Width</p>
       "! Maximum number of columns
       "! $required
-      length                         TYPE i,
+      length                       TYPE i,
       "! <p class="shorttext">Screen Height</p>
       "! Maximum number of lines
       "! $required
