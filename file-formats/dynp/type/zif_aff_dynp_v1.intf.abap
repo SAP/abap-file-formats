@@ -1292,7 +1292,7 @@ INTERFACE zif_aff_dynp_v1 PUBLIC.
       "! <p class="shorttext">Format Version</p>
       "! Format version
       "! $required
-      format_version TYPE if_aff_types_v1=>ty_format_version,
+      format_version TYPE zif_aff_types_v1=>ty_format_version,
       "! <p class="shorttext">Header</p>
       "! Header
       "! $required
