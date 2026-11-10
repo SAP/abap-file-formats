@@ -1,4 +1,4 @@
-INTERFACE if_aff_dynp_v1 PUBLIC.
+INTERFACE zif_aff_dynp_v1 PUBLIC.
 
   "! <p class="shorttext">Screen Type</p>
   "! Screen type
@@ -298,7 +298,7 @@ INTERFACE if_aff_dynp_v1 PUBLIC.
     "! Value kind of a property bag attribute
     BEGIN OF co_attr_kind,
       "! <p class="shorttext">Direct</p>
-      "! Direct/literal value — default, omitted from JSON
+      "! Direct/literal value - default, omitted from JSON
       direct   TYPE ty_attr_kind VALUE ' ',
       "! <p class="shorttext">Variable</p>
       "! Variable reference, stored as &&VARNAME&& in ABAP
@@ -364,46 +364,46 @@ INTERFACE if_aff_dynp_v1 PUBLIC.
       "! <p class="shorttext">Screen Height</p>
       "! Maximum number of lines
       "! $required
-      height                         TYPE i,
+      height                       TYPE i,
       "! <p class="shorttext">Lines Occupied</p>
-      "! Actual lines occupied by screen elements (read-only, derived — not written on deserialization)
-      lines_occupied                 TYPE i,
+      "! Actual lines occupied by screen elements (read-only, derived - not written on deserialization)
+      lines_occupied               TYPE i,
       "! <p class="shorttext">Columns Occupied</p>
-      "! Actual columns occupied by screen elements (read-only, derived — not written on deserialization)
-      columns_occupied               TYPE i,
+      "! Actual columns occupied by screen elements (read-only, derived - not written on deserialization)
+      columns_occupied             TYPE i,
       "! <p class="shorttext">Hold Data</p>
       "! Keep field contents between calls
-      hold_data                      TYPE abap_bool,
+      hold_data                    TYPE abap_bool,
       "! <p class="shorttext">Runtime Compression Disabled</p>
       "! Runtime compression disabled
-      runtime_compression_disabled   TYPE abap_bool,
+      runtime_compression_disabled TYPE abap_bool,
       "! <p class="shorttext">Template Screen</p>
       "! Screen is a template (not executable)
-      is_template                    TYPE abap_bool,
+      is_template                  TYPE abap_bool,
       "! <p class="shorttext">Hold Scroll Position</p>
       "! Keep scroll position between calls
-      hold_scroll_position           TYPE abap_bool,
+      hold_scroll_position         TYPE abap_bool,
       "! <p class="shorttext">Without Application Toolbar</p>
       "! Application toolbar is hidden
-      application_toolbar_hidden     TYPE abap_bool,
+      application_toolbar_hidden   TYPE abap_bool,
       "! <p class="shorttext">Fiori Zoom-In Disabled</p>
       "! Fiori zoom-in disabled
-      fiori_zoom_disabled            TYPE abap_bool,
+      fiori_zoom_disabled          TYPE abap_bool,
       "! <p class="shorttext">Initial Cursor Field</p>
       "! Initial cursor position
-      initial_cursor_field           TYPE c LENGTH 132,
+      initial_cursor_field         TYPE c LENGTH 132,
       "! <p class="shorttext">Screen Group</p>
       "! Logical grouping of screens
-      screen_group                   TYPE c LENGTH 4,
+      screen_group                 TYPE c LENGTH 4,
       "! <p class="shorttext">Context Menu Form</p>
       "! Form routine for context menu handling
-      context_menu_form              TYPE string,
+      context_menu_form            TYPE string,
       "! <p class="shorttext">Has Fixed Font</p>
       "! Proportional-/Fix-Font
-      has_fixed_font                 TYPE abap_bool,
+      has_fixed_font               TYPE abap_bool,
       "! <p class="shorttext">OK Code</p>
       "! OK code/function code triggered on screen
-      ok_code                        TYPE c LENGTH 70,
+      ok_code                      TYPE c LENGTH 70,
     END OF ty_attributes.
 
   TYPES:
@@ -435,7 +435,7 @@ INTERFACE if_aff_dynp_v1 PUBLIC.
 
   "! <p class="shorttext">Text Field Labels</p>
   "! Collection of label definitions
-  TYPES ty_text_field_labels TYPE STANDARD TABLE OF ty_text_field_label WITH EMPTY KEY.
+  TYPES ty_text_field_labels TYPE STANDARD TABLE OF ty_text_field_label WITH DEFAULT KEY.
 
   TYPES:
     "! <p class="shorttext">Text Field</p>
@@ -457,7 +457,7 @@ INTERFACE if_aff_dynp_v1 PUBLIC.
       "! Indicates whether the property is explicitly set
       is_set TYPE abap_bool,
       "! <p class="shorttext">Kind</p>
-      "! Origin of the tooltip value — see co_tooltip_kind
+      "! Origin of the tooltip value - see co_tooltip_kind
       kind   TYPE string,
       "! <p class="shorttext">Value</p>
       "! Tooltip text, variable name, or text element key
@@ -508,7 +508,7 @@ INTERFACE if_aff_dynp_v1 PUBLIC.
 
   "! <p class="shorttext">Attributes</p>
   "! List of speech attributes
-  TYPES ty_speech_attributes TYPE STANDARD TABLE OF ty_property_bag_attributes WITH EMPTY KEY.
+  TYPES ty_speech_attributes TYPE STANDARD TABLE OF ty_property_bag_attributes WITH DEFAULT KEY.
 
   TYPES:
     "! <p class="shorttext">Speech</p>
@@ -542,7 +542,7 @@ INTERFACE if_aff_dynp_v1 PUBLIC.
 
   "! <p class="shorttext">Attributes</p>
   "! List of RFID attributes
-  TYPES ty_rfid_attributes TYPE STANDARD TABLE OF ty_rfid_attribute WITH EMPTY KEY.
+  TYPES ty_rfid_attributes TYPE STANDARD TABLE OF ty_rfid_attribute WITH DEFAULT KEY.
 
   TYPES:
     "! <p class="shorttext">RFID</p>
@@ -573,7 +573,7 @@ INTERFACE if_aff_dynp_v1 PUBLIC.
 
   "! <p class="shorttext">Attributes</p>
   "! List of custom attributes
-  TYPES ty_custom_attributes TYPE STANDARD TABLE OF ty_custom_attribute WITH EMPTY KEY.
+  TYPES ty_custom_attributes TYPE STANDARD TABLE OF ty_custom_attribute WITH DEFAULT KEY.
 
   TYPES:
     "! <p class="shorttext">Custom</p>
@@ -638,7 +638,7 @@ INTERFACE if_aff_dynp_v1 PUBLIC.
       custom_property            TYPE ty_custom_property,
       "! <p class="shorttext">Highlighted label (area label)</p>
       "! Highlighted label (area label)
-      areatitle                 TYPE ty_set_active_property,
+      areatitle                  TYPE ty_set_active_property,
       "! <p class="shorttext">Specially highlighted pushbuttons (Large Action Button)</p>
       "! Specially highlighted pushbuttons (Large Action Button)
       emphasized                 TYPE ty_set_active_property,
@@ -720,37 +720,37 @@ INTERFACE if_aff_dynp_v1 PUBLIC.
     BEGIN OF ty_field_special,
       "! <p class="shorttext">Input Status</p>
       "! Defines whether input is allowed, optional, recommended, or required
-      input_status                     TYPE ty_input_status,
+      input_status             TYPE ty_input_status,
       "! <p class="shorttext">Star Entry As First Character</p>
       "! Allows special input processing when an entry begins with '*'
-      star_entry_as_first_char         TYPE abap_bool,
+      star_entry_as_first_char TYPE abap_bool,
       "! <p class="shorttext">Input Reset Disabled</p>
       "! Prevents field input from being cleared with the reset character '!'
-      input_reset_disabled             TYPE abap_bool,
+      input_reset_disabled     TYPE abap_bool,
       "! <p class="shorttext">Case Sensitive Entry</p>
       "! Allows input to retain lowercase and uppercase characters
-      case_sensitive_entry             TYPE abap_bool,
+      case_sensitive_entry     TYPE abap_bool,
       "! <p class="shorttext">Show Sign</p>
       "! Enables display of a plus/minus sign for numeric values
-      show_sign                        TYPE abap_bool,
+      show_sign                TYPE abap_bool,
       "! <p class="shorttext">Template Disabled</p>
       "! Allows all characters to be entered in CHAR fields, including special characters such as '!', '?' and '_'"
-      template_disabled                TYPE abap_bool,
+      template_disabled        TYPE abap_bool,
       "! <p class="shorttext">Foreign Key Check</p>
       "! Enables or disables the Dictionary foreign key check
-      foreign_key_check                TYPE abap_bool,
+      foreign_key_check        TYPE abap_bool,
       "! <p class="shorttext">Set Parameter</p>
       "! Stores the field value in SAP memory using the specified parameter ID
-      set_parameter                    TYPE abap_bool,
+      set_parameter            TYPE abap_bool,
       "! <p class="shorttext">Get Parameter</p>
       "! Retrieves the field value from SAP memory using the specified parameter ID
-      get_parameter                    TYPE abap_bool,
+      get_parameter            TYPE abap_bool,
       "! <p class="shorttext">Parameter ID</p>
       "! Identifies the SAP memory parameter used by SET/GET parameters
-      parameter_id                     TYPE c LENGTH 20,
+      parameter_id             TYPE c LENGTH 20,
       "! <p class="shorttext">Conversion Exit</p>
       "! Specifies the conversion routine used to format and interpret field values
-      conversion_exit                  TYPE c LENGTH 5,
+      conversion_exit          TYPE c LENGTH 5,
     END OF ty_field_special.
 
   TYPES:
@@ -998,12 +998,12 @@ INTERFACE if_aff_dynp_v1 PUBLIC.
       "! <p class="shorttext">Tabs</p>
       "! Tab pages of the tabstrip control
       "! $required
-      tabs       TYPE STANDARD TABLE OF ty_tab WITH EMPTY KEY,
+      tabs       TYPE STANDARD TABLE OF ty_tab WITH DEFAULT KEY,
     END OF ty_tabstrip_control.
 
   TYPES:
     "! <p class="shorttext">Splitter Cell</p>
-    "! One panel (area) of a splitter control — corresponds to a SUBSCREEN container
+    "! One panel (area) of a splitter control - corresponds to a SUBSCREEN container
     "! with element_of pointing to the owning splitter
     BEGIN OF ty_splitter_cell,
       "! <p class="shorttext">Name</p>
@@ -1050,11 +1050,11 @@ INTERFACE if_aff_dynp_v1 PUBLIC.
       "! $required
       orientation        TYPE ty_splitter_orientation,
       "! <p class="shorttext">Sash Position</p>
-      "! Position of the splitter divider in percent (0–100)
+      "! Position of the splitter divider in percent (0-100)
       sash_position      TYPE i,
       "! <p class="shorttext">Function Code</p>
       "! Function code fired when the user moves the sash
-      function_code      TYPE rpy_dyfatc-push_fcode,   "< TODO: Feldname in rpy_dycatt verifizieren
+      function_code      TYPE rpy_dyfatc-push_fcode,
       "! <p class="shorttext">Function Code Type</p>
       "! $values {@link if_aff_dynp_v1.data:co_function_code_type}
       function_code_type TYPE ty_function_code_type,
@@ -1132,7 +1132,7 @@ INTERFACE if_aff_dynp_v1 PUBLIC.
       "! Text displayed in the selection column of the table control
       selection_column        TYPE string,
       "! <p class="shorttext">Number of Fixed Columns</p>
-      "! Determines the number of leading table control columns that remain fixed during horizontal scrolling and cannot be moved
+      "! Determines the number of leading columns that remain fixed during horizontal scrolling and cannot be moved
       number_of_fixed_columns TYPE i,
       "! <p class="shorttext">Vertical Scrollable</p>
       "! Allows vertical scrolling within the table control
@@ -1156,7 +1156,7 @@ INTERFACE if_aff_dynp_v1 PUBLIC.
       "! <p class="shorttext">Columns</p>
       "! Column fields of the table control
       "! $required
-      fields     TYPE STANDARD TABLE OF ty_table_control_column WITH EMPTY KEY,
+      fields     TYPE STANDARD TABLE OF ty_table_control_column WITH DEFAULT KEY,
     END OF ty_table_control.
 
   TYPES:
@@ -1188,7 +1188,7 @@ INTERFACE if_aff_dynp_v1 PUBLIC.
       "! <p class="shorttext">Fields</p>
       "! Screen fields belonging to the step loop
       "! $required
-      fields     TYPE STANDARD TABLE OF ty_field WITH EMPTY KEY,
+      fields     TYPE STANDARD TABLE OF ty_field WITH DEFAULT KEY,
     END OF ty_step_loop.
 
   TYPES:
@@ -1198,7 +1198,7 @@ INTERFACE if_aff_dynp_v1 PUBLIC.
       "! <p class="shorttext">Fields</p>
       "! Screen fields belongign to the radiobutton group
       "! $required
-      fields TYPE STANDARD TABLE OF ty_field WITH EMPTY KEY,
+      fields TYPE STANDARD TABLE OF ty_field WITH DEFAULT KEY,
     END OF ty_radiobutton_group.
 
   TYPES:
@@ -1306,10 +1306,10 @@ INTERFACE if_aff_dynp_v1 PUBLIC.
       property_bag   TYPE ty_property_bag,
       "! <p class="shorttext">Screen Fields</p>
       "! Array of screen fields
-      fields         TYPE STANDARD TABLE OF ty_field WITH EMPTY KEY,
+      fields         TYPE STANDARD TABLE OF ty_field WITH DEFAULT KEY,
       "! <p class="shorttext">Containers</p>
       "! Array of containers
       "! $required
-      containers     TYPE STANDARD TABLE OF ty_container WITH EMPTY KEY,
+      containers     TYPE STANDARD TABLE OF ty_container WITH DEFAULT KEY,
     END OF ty_main.
 ENDINTERFACE.
