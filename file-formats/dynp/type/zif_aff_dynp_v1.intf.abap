@@ -1054,7 +1054,7 @@ INTERFACE zif_aff_dynp_v1 PUBLIC.
       sash_position      TYPE i,
       "! <p class="shorttext">Function Code</p>
       "! Function code fired when the user moves the sash
-      function_code      TYPE rpy_dyfatc-push_fcode,
+      function_code      TYPE c LENGTH 20,
       "! <p class="shorttext">Function Code Type</p>
       "! $values {@link if_aff_dynp_v1.data:co_function_code_type}
       function_code_type TYPE ty_function_code_type,
