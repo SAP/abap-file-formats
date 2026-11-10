@@ -86,14 +86,40 @@ INTERFACE zif_aff_doma_v1 PUBLIC.
 
       "! <p class="shorttext">Case Sensitive</p>
       "! Values are case sensitive
+      "! $availableWhen {@link zif_aff_doma_v1.ty_main.format.data_type} IN (
+      "! {@link zif_aff_ddic_types_v1.data:co_data_type.char},
+      "! {@link zif_aff_ddic_types_v1.data:co_data_type.lchr},
+      "! {@link zif_aff_ddic_types_v1.data:co_data_type.sstring},
+      "! {@link zif_aff_ddic_types_v1.data:co_data_type.string},
+      "! {@link zif_aff_ddic_types_v1.data:co_data_type.varc})
       case_sensitive     TYPE abap_bool,
 
       "! <p class="shorttext">Negative Values</p>
       "! Supports negative values
+      "! $availableWhen {@link zif_aff_doma_v1.ty_main.format.data_type} IN (
+      "! {@link zif_aff_ddic_types_v1.data:co_data_type.dec},
+      "! {@link zif_aff_ddic_types_v1.data:co_data_type.curr},
+      "! {@link zif_aff_ddic_types_v1.data:co_data_type.quan},
+      "! {@link zif_aff_ddic_types_v1.data:co_data_type.int1},
+      "! {@link zif_aff_ddic_types_v1.data:co_data_type.int2},
+      "! {@link zif_aff_ddic_types_v1.data:co_data_type.int4},
+      "! {@link zif_aff_ddic_types_v1.data:co_data_type.int8},
+      "! {@link zif_aff_ddic_types_v1.data:co_data_type.fltp},
+      "! {@link zif_aff_ddic_types_v1.data:co_data_type.df16_dec},
+      "! {@link zif_aff_ddic_types_v1.data:co_data_type.df16_raw},
+      "! {@link zif_aff_ddic_types_v1.data:co_data_type.df16_scl},
+      "! {@link zif_aff_ddic_types_v1.data:co_data_type.decfloat16},
+      "! {@link zif_aff_ddic_types_v1.data:co_data_type.df34_dec},
+      "! {@link zif_aff_ddic_types_v1.data:co_data_type.df34_raw},
+      "! {@link zif_aff_ddic_types_v1.data:co_data_type.df34_scl},
+      "! {@link zif_aff_ddic_types_v1.data:co_data_type.decfloat34})
       negative_values    TYPE abap_bool,
 
       "! <p class="shorttext">AM/PM Time Format</p>
       "! AM/PM time format supported
+      "! $availableWhen {@link zif_aff_doma_v1.ty_main.format.data_type} IN (
+      "! {@link zif_aff_ddic_types_v1.data:co_data_type.timn},
+      "! {@link zif_aff_ddic_types_v1.data:co_data_type.tims})
       am_pm_time_format  TYPE abap_bool,
 
     END OF ty_output_characteristics.
