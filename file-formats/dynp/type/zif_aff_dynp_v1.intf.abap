@@ -1009,35 +1009,35 @@ INTERFACE zif_aff_dynp_v1 PUBLIC.
       "! <p class="shorttext">Name</p>
       "! Name of the subscreen area for this cell (e.g. SUBSCREEN11)
       "! $required
-      name                  TYPE rpy_dycatt-name,
+      name                  TYPE string,
       "! <p class="shorttext">Line</p>
       "! Row position
       "! $required
-      line                  TYPE rpy_dycatt-line,
+      line                  TYPE i,
       "! <p class="shorttext">Column</p>
       "! Column position
       "! $required
-      column                TYPE rpy_dycatt-column,
+      column                TYPE i,
       "! <p class="shorttext">Length</p>
       "! Width
       "! $required
-      length                TYPE rpy_dycatt-length,
+      length                TYPE i,
       "! <p class="shorttext">Height</p>
       "! Height
       "! $required
-      height                TYPE rpy_dycatt-height,
+      height                TYPE i,
       "! <p class="shorttext">Minimum Length</p>
       "! Minimum width the cell can be resized to
-      minimum_length        TYPE rpy_dycatt-c_coln_min,
+      minimum_length        TYPE i,
       "! <p class="shorttext">Minimum Height</p>
       "! Minimum height the cell can be resized to
-      minimum_height        TYPE rpy_dycatt-c_line_min,
+      minimum_height        TYPE i,
       "! <p class="shorttext">Vertical Scrollable</p>
       "! Allows vertical scrolling within the cell
-      vertical_scrollable   TYPE rpy_dycatt-c_scroll_v,
+      vertical_scrollable   TYPE abap_bool,
       "! <p class="shorttext">Horizontal Scrollable</p>
       "! Allows horizontal scrolling within the cell
-      horizontal_scrollable TYPE rpy_dycatt-c_scroll_h,
+      horizontal_scrollable TYPE abap_bool,
     END OF ty_splitter_cell.
 
   TYPES:
