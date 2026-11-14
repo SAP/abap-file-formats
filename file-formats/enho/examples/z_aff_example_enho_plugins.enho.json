@@ -1,0 +1,37 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "Example explicit and implicit source code plug-ins",
+    "originalLanguage": "en"
+  },
+  "generalInformation": {
+    "kind": "sourceCodePlugin"
+  },
+  "enhancedObject": {
+    "mainObject": {
+      "objectType": "PROG",
+      "objectName": "Z_AFF_EXAMPLE_PROG"
+    },
+    "subObjects": [
+      {
+        "objectType": "REPS",
+        "objectName": "Z_AFF_EXAMPLE_PROG"
+      }
+    ]
+  },
+  "sourceCodePlugins": [
+    {
+      "enhancementNumber": 1,
+      "fullName": "\\PR:Z_AFF_EXAMPLE_PROG\\EX:EXAMPLE_POINT\\EI",
+      "enhancementMode": "dynamic",
+      "enhancementSpot": "Z_AFF_EXAMPLE_ENHS",
+      "overwrite": false
+    },
+    {
+      "enhancementNumber": 2,
+      "fullName": "\\PR:Z_AFF_EXAMPLE_PROG\\FO:EXAMPLE_FORM\\SE:END\\EI",
+      "enhancementMode": "dynamic",
+      "overwrite": false
+    }
+  ]
+}
