@@ -1,0 +1,21 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "SMTG",
+    "description": "Output Management Email Template",
+    "group": "Others"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.smtg.json",
+          "cardinality": "1",
+          "schema": "smtg-v1.json",
+          "definitionInterface": "type/zif_aff_smtg_v1.intf.abap"
+        }
+      ]
+    }
+  ]
+}

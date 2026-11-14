@@ -1,0 +1,22 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "SAJC",
+    "description": "Application Job Catalog Entry",
+    "group": "Application Jobs"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.sajc.json",
+          "cardinality": "1",
+          "schema": "sajc-v1.json",
+          "definitionInterface": "type/zif_aff_sajc_v1.intf.abap",
+          "examples": ["examples/z_aff_example_sajc.sajc.json"]
+        }
+      ]
+    }
+  ]
+}
