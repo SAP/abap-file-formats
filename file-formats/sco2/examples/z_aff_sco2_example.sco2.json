@@ -5,8 +5,7 @@
     "originalLanguage": "en"
   },
   "generalInformation": {
-    "type": "odataV4",
-    "scopeDependent": true
+    "type": "odataV4"
   },
   "serviceDetails": {
     "odataService": {

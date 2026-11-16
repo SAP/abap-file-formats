@@ -121,7 +121,7 @@
             "title": "Activity",
             "description": "Activity",
             "type": "string",
-            "maxLength": 2
+            "maxLength": 40
           },
           "accessCategory": {
             "title": "Access Category",

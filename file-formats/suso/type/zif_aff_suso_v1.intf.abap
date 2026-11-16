@@ -75,7 +75,7 @@ INTERFACE zif_aff_suso_v1
       "! <p class="shorttext">Activity</p>
       "! Activity
       "! $required
-      activity        TYPE c LENGTH 2,
+      activity        TYPE c LENGTH 40,
       "! <p class="shorttext">Access Category</p>
       "! The purpose is to store additional information directly on the authorization field about how the authorization
       "! object should be used when generating business roles.
