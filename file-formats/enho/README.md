@@ -26,7 +26,8 @@ Property | `badiImplementation` | `sourceCodePlugin`
 `<name>.enho.abap` | Forbidden | Required
 
 The file `<name>.enho.abap` contains the source code of all source code plug-ins, each enclosed in `ENHANCEMENT <number>.` and `ENDENHANCEMENT.`, ordered by number.
-Each entry in `sourceCodePlugins` belongs to exactly one of these blocks via `enhancementNumber`.
+Each entry in `sourceCodePlugins` must match exactly one ABAP block via `enhancementNumber`, and every ABAP block must have exactly one matching entry.
+Enhancement numbers must be unique within `sourceCodePlugins` and within `<name>.enho.abap`.
 The number is a file-local key and not stable across systems.
 
 ### Previous Versions
