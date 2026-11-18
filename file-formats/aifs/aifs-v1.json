@@ -93,51 +93,72 @@
         "description": "Structure mapping information",
         "type": "object",
         "properties": {
-          "numericId": {
-            "title": "Numeric ID",
-            "description": "Numeric ID",
-            "type": "string",
-            "maxLength": 3,
-            "pattern": "^[0-9]+$"
+          "mappingProperties": {
+            "title": "Mapping Properties",
+            "description": "Mapping properties",
+            "type": "object",
+            "properties": {
+              "numericId": {
+                "title": "Numeric ID",
+                "description": "Numeric ID",
+                "type": "string",
+                "maxLength": 3,
+                "pattern": "^[0-9]+$"
+              },
+              "dataStructure": {
+                "title": "Data Structure",
+                "description": "Data structure",
+                "type": "string",
+                "maxLength": 30
+              },
+              "mappedDataStructure": {
+                "title": "Mapped Data Structure",
+                "description": "Mapped data structure",
+                "type": "string",
+                "maxLength": 30
+              },
+              "classExecutedBeforeMapping": {
+                "title": "Class Executed Before Mapping",
+                "description": "Class executed before mapping",
+                "type": "string",
+                "maxLength": 30
+              },
+              "classExecutedAfterMapping": {
+                "title": "Class Executed After Mapping",
+                "description": "Class executed after mapping",
+                "type": "string",
+                "maxLength": 30
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "numericId",
+              "dataStructure",
+              "mappedDataStructure"
+            ]
           },
-          "dataStructure": {
-            "title": "Data Structure",
-            "description": "Data structure",
-            "type": "string",
-            "maxLength": 30
-          },
-          "mappedDataStructure": {
-            "title": "Mapped Data Structure",
-            "description": "Mapped data structure",
-            "type": "string",
-            "maxLength": 30
-          },
-          "moveCorrespondingFields": {
-            "title": "Move Corresponding Fields",
-            "description": "Move corresponding fields",
-            "type": "boolean"
-          },
-          "copyFieldsOnly": {
-            "title": "Copy Fields Only",
-            "description": "Copy fields only",
-            "type": "boolean"
-          },
-          "indirectMapping": {
-            "title": "Indirect Mapping",
-            "description": "Indirect mapping",
-            "type": "boolean"
-          },
-          "classExecutedBeforeMapping": {
-            "title": "Class Executed Before Mapping",
-            "description": "Class executed before mapping",
-            "type": "string",
-            "maxLength": 30
-          },
-          "classExecutedAfterMapping": {
-            "title": "Class Executed After Mapping",
-            "description": "Class executed after mapping",
-            "type": "string",
-            "maxLength": 30
+          "mappingOptions": {
+            "title": "Mapping Options",
+            "description": "Mapping options",
+            "type": "object",
+            "properties": {
+              "moveCorrespondingFields": {
+                "title": "Move Corresponding Fields",
+                "description": "Move corresponding fields",
+                "type": "boolean"
+              },
+              "copyFieldsOnly": {
+                "title": "Copy Fields Only",
+                "description": "Copy fields only",
+                "type": "boolean"
+              },
+              "indirectMapping": {
+                "title": "Indirect Mapping",
+                "description": "Indirect mapping",
+                "type": "boolean"
+              }
+            },
+            "additionalProperties": false
           },
           "checks": {
             "title": "Checks",
@@ -160,11 +181,6 @@
                   "type": "string",
                   "maxLength": 3,
                   "pattern": "^[0-9]+$"
-                },
-                "checkSourceData": {
-                  "title": "Check Source Data",
-                  "description": "Check source data",
-                  "type": "boolean"
                 },
                 "checkBehaviour": {
                   "title": "Check Behavior",
@@ -199,9 +215,9 @@
                     "description": "Check fieldlist",
                     "type": "object",
                     "properties": {
-                      "number": {
-                        "title": "Number",
-                        "description": "Number",
+                      "fieldNumber": {
+                        "title": "Field Number",
+                        "description": "Field number",
                         "type": "string",
                         "maxLength": 3,
                         "pattern": "^[0-9]+$"
@@ -214,10 +230,15 @@
                     },
                     "additionalProperties": false,
                     "required": [
-                      "number",
+                      "fieldNumber",
                       "fieldPath"
                     ]
                   }
+                },
+                "checkSourceData": {
+                  "title": "Check Source Data",
+                  "description": "Check source data",
+                  "type": "boolean"
                 }
               },
               "additionalProperties": false,
@@ -672,9 +693,9 @@
                           "description": "Condition field",
                           "type": "object",
                           "properties": {
-                            "number": {
-                              "title": "Number",
-                              "description": "Number",
+                            "fieldNumber": {
+                              "title": "Field Number",
+                              "description": "Field number",
                               "type": "string",
                               "maxLength": 3,
                               "pattern": "^[0-9]+$"
@@ -687,7 +708,7 @@
                           },
                           "additionalProperties": false,
                           "required": [
-                            "number",
+                            "fieldNumber",
                             "field"
                           ]
                         }
@@ -701,9 +722,9 @@
                           "description": "Alternative field",
                           "type": "object",
                           "properties": {
-                            "number": {
-                              "title": "Number",
-                              "description": "Number",
+                            "fieldNumber": {
+                              "title": "Field Number",
+                              "description": "Field number",
                               "type": "string",
                               "maxLength": 3,
                               "pattern": "^[0-9]+$"
@@ -730,7 +751,7 @@
                           },
                           "additionalProperties": false,
                           "required": [
-                            "number",
+                            "fieldNumber",
                             "field"
                           ]
                         }
@@ -756,9 +777,7 @@
         },
         "additionalProperties": false,
         "required": [
-          "numericId",
-          "dataStructure",
-          "mappedDataStructure"
+          "mappingProperties"
         ]
       }
     }
