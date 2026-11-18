@@ -85,6 +85,71 @@
         "kind"
       ]
     },
+    "enhancedObject": {
+      "title": "Enhanced Object",
+      "description": "Main object and subobjects enhanced by the source code plug-ins",
+      "type": "object",
+      "properties": {
+        "mainObject": {
+          "title": "Main Object",
+          "description": "Single main object shared by all source code plug-ins",
+          "type": "object",
+          "properties": {
+            "objectType": {
+              "title": "Object Type",
+              "description": "Type of the enhanced repository object",
+              "type": "string",
+              "maxLength": 4
+            },
+            "objectName": {
+              "title": "Object Name",
+              "description": "Name of the enhanced repository object",
+              "type": "string",
+              "maxLength": 120
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "objectType",
+            "objectName"
+          ]
+        },
+        "subObjects": {
+          "title": "Subobjects",
+          "description": "Optional enhanced subobjects belonging to the main object",
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "title": "Object Reference",
+            "description": "Type and name of a main object or subobject",
+            "type": "object",
+            "properties": {
+              "objectType": {
+                "title": "Object Type",
+                "description": "Type of the enhanced repository object",
+                "type": "string",
+                "maxLength": 4
+              },
+              "objectName": {
+                "title": "Object Name",
+                "description": "Name of the enhanced repository object",
+                "type": "string",
+                "maxLength": 120
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "objectType",
+              "objectName"
+            ]
+          }
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "mainObject"
+      ]
+    },
     "badiInformation": {
       "title": "BAdI Information",
       "description": "Information shared by all BAdI implementations",
@@ -1142,71 +1207,6 @@
         ]
       }
     },
-    "enhancedObject": {
-      "title": "Enhanced Object",
-      "description": "Main object and subobjects enhanced by the source code plug-ins",
-      "type": "object",
-      "properties": {
-        "mainObject": {
-          "title": "Main Object",
-          "description": "Single main object shared by all source code plug-ins",
-          "type": "object",
-          "properties": {
-            "objectType": {
-              "title": "Object Type",
-              "description": "Type of the enhanced repository object",
-              "type": "string",
-              "maxLength": 4
-            },
-            "objectName": {
-              "title": "Object Name",
-              "description": "Name of the enhanced repository object",
-              "type": "string",
-              "maxLength": 120
-            }
-          },
-          "additionalProperties": false,
-          "required": [
-            "objectType",
-            "objectName"
-          ]
-        },
-        "subObjects": {
-          "title": "Subobjects",
-          "description": "Optional enhanced subobjects belonging to the main object",
-          "type": "array",
-          "uniqueItems": true,
-          "items": {
-            "title": "Object Reference",
-            "description": "Type and name of a main object or subobject",
-            "type": "object",
-            "properties": {
-              "objectType": {
-                "title": "Object Type",
-                "description": "Type of the enhanced repository object",
-                "type": "string",
-                "maxLength": 4
-              },
-              "objectName": {
-                "title": "Object Name",
-                "description": "Name of the enhanced repository object",
-                "type": "string",
-                "maxLength": 120
-              }
-            },
-            "additionalProperties": false,
-            "required": [
-              "objectType",
-              "objectName"
-            ]
-          }
-        }
-      },
-      "additionalProperties": false,
-      "required": [
-        "mainObject"
-      ]
-    },
     "sourceCodePlugins": {
       "title": "Source Code Plug-Ins",
       "description": "Attachment metadata; the implementation may contain no plug-ins",
@@ -1244,7 +1244,8 @@
             "enumDescriptions": [
               "Static enhancement point or section",
               "Dynamic enhancement point or section"
-            ]
+            ],
+            "default": "dynamic"
           },
           "enhancementSpot": {
             "title": "Enhancement Spot",
@@ -1266,8 +1267,7 @@
         "additionalProperties": false,
         "required": [
           "enhancementNumber",
-          "fullName",
-          "enhancementMode"
+          "fullName"
         ]
       }
     }

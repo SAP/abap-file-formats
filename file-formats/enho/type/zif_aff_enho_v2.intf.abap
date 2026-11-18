@@ -339,7 +339,8 @@ INTERFACE zif_aff_enho_v2
       full_name          TYPE string,
       "! <p class="shorttext">Enhancement Mode</p>
       "! Static or dynamic enhancement mode
-      "! $required
+      "! $default {@link zif_aff_enho_v2.data:co_enhancement_mode.dynamic}
+      "! $showAlways
       enhancement_mode   TYPE ty_enhancement_mode,
       "! <p class="shorttext">Enhancement Spot</p>
       "! Enhancement spot for an explicit enhancement option, if applicable
@@ -370,6 +371,11 @@ INTERFACE zif_aff_enho_v2
       "! Information shared by all enhancement implementation kinds
       "! $required
       general_information  TYPE ty_general_information,
+      "! <p class="shorttext">Enhanced Object</p>
+      "! Main object and subobjects enhanced by the source code plug-ins
+      "! $availableWhen {@link .ty_main.general_information.kind} = {@link .data:co_kind.source_code_plugin}
+      "! $requiredWhen {@link .ty_main.general_information.kind} = {@link .data:co_kind.source_code_plugin}
+      enhanced_object      TYPE ty_enhanced_object,
       "! <p class="shorttext">BAdI Information</p>
       "! Information shared by all BAdI implementations
       "! $availableWhen {@link .ty_main.general_information.kind} = {@link .data:co_kind.badi_implementation}
@@ -379,11 +385,6 @@ INTERFACE zif_aff_enho_v2
       "! BAdI implementations
       "! $availableWhen {@link .ty_main.general_information.kind} = {@link .data:co_kind.badi_implementation}
       badi_implementations TYPE ty_badi_implementations,
-      "! <p class="shorttext">Enhanced Object</p>
-      "! Main object and subobjects enhanced by the source code plug-ins
-      "! $availableWhen {@link .ty_main.general_information.kind} = {@link .data:co_kind.source_code_plugin}
-      "! $requiredWhen {@link .ty_main.general_information.kind} = {@link .data:co_kind.source_code_plugin}
-      enhanced_object      TYPE ty_enhanced_object,
       "! <p class="shorttext">Source Code Plug-Ins</p>
       "! Attachment metadata; the implementation may contain no plug-ins
       "! $availableWhen {@link .ty_main.general_information.kind} = {@link .data:co_kind.source_code_plugin}
