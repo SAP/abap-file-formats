@@ -139,10 +139,9 @@ INTERFACE zif_aff_aifs_v1
       field_length TYPE n LENGTH 4,
     END OF ty_alternative_field.
 
-  TYPES:
-   "! <p class="shorttext">Alternative Fields</p>
-   "! Alternative fields
-   ty_alternative_fields TYPE STANDARD TABLE OF ty_alternative_field WITH DEFAULT KEY.
+  "! <p class="shorttext">Alternative Fields</p>
+  "! Alternative fields
+  TYPES ty_alternative_fields TYPE STANDARD TABLE OF ty_alternative_field WITH DEFAULT KEY.
 
   TYPES:
     "! <p class="shorttext">Condition</p>
