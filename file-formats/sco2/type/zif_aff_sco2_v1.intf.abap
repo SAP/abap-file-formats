@@ -184,15 +184,11 @@ INTERFACE zif_aff_sco2_v1
       "! Check the {@link zif_aff_sco2_v1.data:co_ibs_type} constants for possible values.
       "! $required
       "! $values {@link zif_aff_sco2_v1.data:co_ibs_type}
-      type            TYPE ty_ibs_type,
-
-      "! <p class="shorttext">Scope Dependent</p>
-      "! Indicates whether the inbound service is scope-dependent
-      scope_dependent TYPE abap_bool,
+      type     TYPE ty_ibs_type,
 
       "! <p class="shorttext">App Type</p>
       "! Inbound service app type for extensibility
-      app_type        TYPE c LENGTH 4,
+      app_type TYPE c LENGTH 4,
 
     END OF ty_general_information.
 
