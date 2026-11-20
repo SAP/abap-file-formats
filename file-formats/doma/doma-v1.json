@@ -360,25 +360,6 @@
         }
       },
       "additionalProperties": false
-    },
-    "fixedValueAppends": {
-      "title": "Fixed Value Appends",
-      "description": "Fixed value appends",
-      "type": "array",
-      "items": {
-        "title": "Fixed Value Appends",
-        "description": "Fixed value appends",
-        "type": "object",
-        "properties": {
-          "name": {
-            "title": "Name",
-            "description": "Name",
-            "type": "string",
-            "maxLength": 30
-          }
-        },
-        "additionalProperties": false
-      }
     }
   },
   "additionalProperties": false,

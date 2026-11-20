@@ -167,17 +167,6 @@ INTERFACE zif_aff_doma_v1 PUBLIC.
     ty_intervals_values TYPE STANDARD TABLE OF ty_intervals_value WITH DEFAULT KEY.
 
   TYPES:
-    "! <p class="shorttext">Fixed Value Appends</p>
-    "! Fixed value appends
-    BEGIN OF ty_fixed_value_append,
-      "! <p class="shorttext">Name</p>
-      "! Name
-      name TYPE zif_aff_types_v1=>ty_object_name_30,
-    END OF ty_fixed_value_append,
-
-    ty_fixed_value_appends TYPE STANDARD TABLE OF ty_fixed_value_append WITH DEFAULT KEY.
-
-  TYPES:
     "! <p class="shorttext">Domain Properties</p>
     "! Domain properties
     BEGIN OF ty_main,
@@ -213,10 +202,6 @@ INTERFACE zif_aff_doma_v1 PUBLIC.
       "! <p class="shorttext">Value Table</p>
       "! Value table
       value_table            TYPE ty_value_table,
-
-      "! <p class="shorttext">Fixed Value Appends</p>
-      "! Fixed value appends
-      fixed_value_appends    TYPE ty_fixed_value_appends,
     END OF ty_main.
 
 ENDINTERFACE.
