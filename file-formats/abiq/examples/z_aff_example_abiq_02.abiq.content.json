@@ -1,0 +1,25 @@
+{
+  "name": "Z_AFF_EXAMPLE_ABIQ_02",
+  "steps": {
+    "Step01": {
+      "parameters": [{ "value": "AirlineId" }],
+      "commandName": "ShowSingleDimension",
+      "commandType": "Predefined"
+    },
+    "Step02": {
+      "parameters": [{ "value": "Revenue" }],
+      "commandName": "ShowSingleMeasure",
+      "commandType": "Predefined"
+    },
+    "Step03": {
+      "parameters": [{ "value": "MaximumSeats" }],
+      "commandName": "AddMeasure",
+      "commandType": "Predefined"
+    },
+    "Step04": {
+      "commandName": "Z_AFF_EXAMPLE_ABIQ_01",
+      "commandType": "LLM"
+    }
+  },
+  "$schema": "http://sap.com/sap/bw/ana/abi/QuickAction"
+}
