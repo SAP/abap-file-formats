@@ -283,7 +283,7 @@
           "description": "Preprocessing",
           "type": "boolean"
         },
-        "usesPostprocesssing": {
+        "usesPostprocessing": {
           "title": "Postprocessing",
           "description": "Postprocessing",
           "type": "boolean"
@@ -641,7 +641,7 @@
                       "type": "string",
                       "maxLength": 30
                     },
-                    "fieldSequnceNumber": {
+                    "fieldSequenceNumber": {
                       "title": "Field Sequence Number",
                       "description": "Field sequence number",
                       "type": "string",
