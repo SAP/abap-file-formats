@@ -1,0 +1,22 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "NTTA",
+    "description": "Note Type Assignment",
+    "group": "Notes for Application Objects"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.ntta.json",
+          "cardinality": "1",
+          "schema": "ntta-v1.json",
+          "definitionInterface": "type/zif_aff_ntta_v1.intf.abap",
+          "examples": ["examples/z_aff_example_ntta.ntta.json"]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "AOBJ",
+    "description": "Archiving Object"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.aobj.json",
+          "cardinality": "1",
+          "schema": "aobj-v1.json",
+          "definitionInterface": "type/zif_aff_aobj_v1.intf.abap",
+          "examples": ["examples/z_aff_example_aobj.aobj.json"]
+        }
+      ]
+    }
+  ]
+}
