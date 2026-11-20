@@ -207,13 +207,14 @@
           "fieldName": {
             "title": "Field Name",
             "description": "Field name",
-            "type": "string",
-            "maxLength": 120
+            "type": "string"
           }
         },
         "additionalProperties": false,
         "required": [
-          "fieldCategory"
+          "number",
+          "fieldCategory",
+          "fieldName"
         ]
       }
     },
@@ -303,7 +304,9 @@
                   },
                   "additionalProperties": false,
                   "required": [
-                    "operator"
+                    "number",
+                    "operator",
+                    "value"
                   ]
                 }
               },
@@ -360,8 +363,7 @@
                           "fieldName": {
                             "title": "Field Name",
                             "description": "Field name",
-                            "type": "string",
-                            "maxLength": 40
+                            "type": "string"
                           }
                         },
                         "additionalProperties": false,

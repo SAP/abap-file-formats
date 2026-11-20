@@ -19,6 +19,7 @@ INTERFACE zif_aff_aifb_v1
       "! Number
       "! $minimum 1
       "! $maximum 5
+      "! $required
       number         TYPE i,
       "! <p class="shorttext">Field Category</p>
       "! Field category
@@ -26,7 +27,8 @@ INTERFACE zif_aff_aifb_v1
       field_category TYPE ty_field_category,
       "! <p class="shorttext">Field Name</p>
       "! Field name
-      field_name     TYPE c LENGTH 120,
+      "! $required
+      field_name     TYPE string,
     END OF ty_factor.
   "! <p class="shorttext">Factors</p>
   "! Factors
@@ -40,6 +42,7 @@ INTERFACE zif_aff_aifb_v1
       "! Number
       "! $minimum 1
       "! $maximum 5
+      "! $required
       number   TYPE i,
       "! <p class="shorttext">Operator</p>
       "! Operator
@@ -47,6 +50,7 @@ INTERFACE zif_aff_aifb_v1
       operator TYPE ty_operator,
       "! <p class="shorttext">Value</p>
       "! Value
+      "! $required
       value    TYPE c LENGTH 45,
     END OF ty_condition.
   "! <p class="shorttext">Conditions</p>
@@ -69,11 +73,10 @@ INTERFACE zif_aff_aifb_v1
       "! ID
       "! $required
       id         TYPE n LENGTH 3,
-      " (type /aif/check_obj_name)
       "! <p class="shorttext">Field Name</p>
       "! Field name
       "! $required
-      field_name TYPE c LENGTH 40,
+      field_name TYPE string,
     END OF ty_check_field_assignment.
   "! <p class="shorttext">Check Field Assignments</p>
   "! Check field assignments
