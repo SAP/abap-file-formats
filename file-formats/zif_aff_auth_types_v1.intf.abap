@@ -151,7 +151,7 @@ INTERFACE zif_aff_auth_types_v1
       yes TYPE ty_default_values_required VALUE '1',
       "! <p class="shorttext">No</p>
       "! Default values are not required
-      no  TYPE ty_default_values_required VALUE '0',
+      no  TYPE ty_default_values_required VALUE '2',
     END OF co_default_values_required.
   CONSTANTS:
     "! <p class="shorttext">Maintenance Status</p>
