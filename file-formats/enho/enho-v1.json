@@ -1110,7 +1110,8 @@
           "name",
           "description",
           "badiDefinition",
-          "implementingClass"
+          "implementingClass",
+          "customizing"
         ]
       }
     }
