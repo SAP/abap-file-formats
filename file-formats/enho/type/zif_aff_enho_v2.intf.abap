@@ -265,7 +265,7 @@ INTERFACE zif_aff_enho_v2
       is_active_implementation  TYPE abap_bool,
       "! <p class="shorttext">Customizing</p>
       "! Customizing
-      "! $showAlways
+      "! $required
       customizing               TYPE ty_customizing,
       "! <p class="shorttext">Filter Values</p>
       "! Filter values
