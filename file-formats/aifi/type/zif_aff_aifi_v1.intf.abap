@@ -209,7 +209,7 @@ INTERFACE zif_aff_aifi_v1
       uses_preprocessing    TYPE abap_bool,
       "! <p class="shorttext">Postprocessing</p>
       "! Postprocessing
-      uses_postprocesssing  TYPE abap_bool,
+      uses_postprocessing   TYPE abap_bool,
     END OF ty_general_information.
 
   TYPES:
@@ -321,11 +321,11 @@ INTERFACE zif_aff_aifi_v1
       " (type /aif/key_fieldname_enh)
       "! <p class="shorttext">Name</p>
       "! Rule Key field name
-      name                 TYPE zif_aff_types_v1=>ty_object_name_30,
+      name                  TYPE zif_aff_types_v1=>ty_object_name_30,
       " (type /aif/field_number_enh)
       "! <p class="shorttext">Field Sequence Number</p>
       "! Field sequence number
-      field_sequnce_number TYPE c LENGTH 3,
+      field_sequence_number TYPE c LENGTH 3,
     END OF ty_rule_key_field.
 
   "! <p class="shorttext">Rule Key Fields</p>
