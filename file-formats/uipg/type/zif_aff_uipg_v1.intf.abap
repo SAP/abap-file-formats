@@ -70,7 +70,6 @@ INTERFACE zif_aff_uipg_v1
 
       "! <p class="shorttext">Catalog Type</p>
       "! Catalog type
-      "! $default 'CAT'
       catalog_type TYPE ty_catalog_type,
 
       "! <p class="shorttext">Catalog Item ID</p>

@@ -178,8 +178,7 @@
                           "title": "Catalog Type",
                           "description": "Catalog type",
                           "type": "string",
-                          "maxLength": 3,
-                          "default": "CAT"
+                          "maxLength": 3
                         },
                         "id": {
                           "title": "Catalog Item ID",
@@ -209,8 +208,7 @@
                           "title": "Catalog Type",
                           "description": "Catalog type",
                           "type": "string",
-                          "maxLength": 3,
-                          "default": "CAT"
+                          "maxLength": 3
                         },
                         "id": {
                           "title": "Catalog Item ID",
