@@ -161,6 +161,16 @@ In order to express constraints to the values of a field, it is possible to pass
 ```
 The complete syntax of regular expressions is not widely supported, therefore it is recommended to stick on the subset described [here](https://json-schema.org/understanding-json-schema/reference/regular_expressions).
 
+### Content Media Type
+
+The annotation
+```abap
+"! $contentMediaType '<media type, i.e. text/html>'
+```
+adds `"contentMediaType": "<media type>"` to the JSON Schema, which tells readers how to interpret the content of a string value. The media type is enclosed in single quotes.
+
+It can only be used on elements that are mapped to a JSON Schema `type` of `string`. On elements of other types, and on enum fields, it is not written to the schema; for other types the generator reports a warning.
+
 ### Multiple Of
 The annotation
 ```abap
