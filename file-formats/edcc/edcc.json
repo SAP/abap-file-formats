@@ -1,0 +1,21 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "EDCC",
+    "description": "Consistency Scenario"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.edcc.json",
+          "cardinality": "1",
+          "schema": "edcc-v1.json",
+          "definitionInterface": "type/zif_aff_edcc_v1.intf.abap",
+          "examples": ["examples/z_aff_example_edcc.edcc.json"]
+        }
+      ]
+    }
+  ]
+}

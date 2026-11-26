@@ -30,6 +30,11 @@
         "description": {
           "type": "string",
           "description": "Human-readable description of the object type"
+        },
+        "group": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Object type group (e.g. Source Code Library, Dictionary); omit when the object type has no group"
         }
       }
     },
@@ -37,6 +42,7 @@
       "description": "All format versions, newest first",
       "type": "array",
       "minItems": 1,
+      "uniqueItems": true,
       "items": {
         "type": "object",
         "required": [
@@ -46,7 +52,9 @@
         "additionalProperties": false,
         "properties": {
           "version": {
-            "type": "string"
+            "type": "string",
+            "pattern": "^[1-9][0-9]*$",
+            "description": "Format version number, matching the formatVersion of the JSON files and the -v<version> suffix of the JSON schema"
           },
           "deprecated": {
             "type": "boolean",
@@ -55,6 +63,7 @@
           "files": {
             "type": "array",
             "minItems": 1,
+            "uniqueItems": true,
             "items": {
               "type": "object",
               "required": [
@@ -65,12 +74,14 @@
               "properties": {
                 "filePattern": {
                   "type": "string",
-                  "description": "File name pattern; use <name>, <lang>, <fmname> etc. as placeholders"
+                  "description": "File name pattern, following the file name specification: <name>.<objtype>[.<sub name>.<sub type>][.<content type>][.<language>].<extension>. The known placeholders are <name> for the object name, <lang> for the language, <fmname> for the function module name and <csnfilename> for the CSN file name",
+                  "pattern": "^<name>\\.[a-z0-9]{2,4}(\\.(?:[a-z0-9_]|<name>|<lang>|<fmname>|<csnfilename>)+)*\\.(abap|abdl|acds|csn|ddic|json|properties|xdp|xml)$"
                 },
                 "cardinality": {
                   "type": "string",
                   "enum": [
                     "1",
+                    "1...n",
                     "0...1",
                     "0...n"
                   ],

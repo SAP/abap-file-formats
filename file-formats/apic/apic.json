@@ -1,0 +1,21 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "APIC",
+    "description": "API Catalog"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.apic.json",
+          "cardinality": "1",
+          "schema": "apic-v1.json",
+          "definitionInterface": "type/zif_aff_apic_v1.intf.abap",
+          "examples": ["examples/z_aff_example_apic.apic.json"]
+        }
+      ]
+    }
+  ]
+}

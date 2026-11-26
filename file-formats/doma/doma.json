@@ -1,0 +1,29 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "DOMA",
+    "description": "Domain",
+    "group": "Dictionary"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.doma.json",
+          "cardinality": "1",
+          "schema": "doma-v1.json",
+          "definitionInterface": "type/zif_aff_doma_v1.intf.abap",
+          "examples": ["examples/z_aff_example.doma.json"]
+        },
+        {
+          "filePattern": "<name>.doma.docu.json",
+          "cardinality": "0...1",
+          "schema": "../docu-v1.json",
+          "definitionInterface": "../zif_aff_docu_v1.intf.abap",
+          "examples": ["examples/z_aff_example.doma.docu.json"]
+        }
+      ]
+    }
+  ]
+}

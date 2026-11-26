@@ -1,0 +1,22 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "MSAG",
+    "description": "Message Class",
+    "group": "Texts"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.msag.json",
+          "cardinality": "1",
+          "schema": "msag-v1.json",
+          "definitionInterface": "type/zif_aff_msag_v1.intf.abap",
+          "examples": ["examples/z_aff_example_msag.msag.json"]
+        }
+      ]
+    }
+  ]
+}

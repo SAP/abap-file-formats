@@ -1,0 +1,21 @@
+{
+  "$schema": "../meta-schema.json",
+  "objectType": {
+    "name": "SWCR",
+    "description": "Software Component Relations"
+  },
+  "versions": [
+    {
+      "version": "1",
+      "files": [
+        {
+          "filePattern": "<name>.swcr.json",
+          "cardinality": "1",
+          "schema": "swcr-v1.json",
+          "definitionInterface": "type/zif_aff_swcr_v1.intf.abap",
+          "examples": ["examples/z_aff_example_swcr.swcr.json"]
+        }
+      ]
+    }
+  ]
+}
